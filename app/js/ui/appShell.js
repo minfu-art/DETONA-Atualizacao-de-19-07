@@ -1,7 +1,7 @@
 import { ICO } from './icons.js?v=66';
 import { escapeHtml } from './helpers.js';
 import { isDeveloperUser } from '../auth/authService.js';
-import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=70';
+import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=71';
 
 const LIBRARY_ITEM = { screen: 'library', icon: 'book', label: 'Biblioteca' };
 const DEVELOPER_ITEM = { screen: 'forge', icon: 'question', label: 'Banco de questões' };
@@ -67,8 +67,7 @@ export function initAppShell(navigate, { onLogout } = {}) {
       <span class="app-sidebar__section">Jornada ativa</span>
       ${PRIMARY_NAV_ITEMS.map(menuButton).join('')}
       ${menuButton(DEVELOPER_ITEM)}
-      <span class="app-sidebar__section">Conta e equilíbrio</span>
-      ${UTILITY_NAV_ITEMS.map(menuButton).join('')}
+      ${UTILITY_NAV_ITEMS.length ? `<span class="app-sidebar__section">Conta e equilíbrio</span>${UTILITY_NAV_ITEMS.map(menuButton).join('')}` : ''}
     </nav>
     <button type="button" class="app-sidebar__account" data-shell-screen="profile" aria-label="Abrir meu perfil">${icon('user')}<span>Meu perfil</span></button>
     <button type="button" class="app-sidebar__logout" id="shell-logout">${icon('logout')}<span>Sair da conta</span></button>`;

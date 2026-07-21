@@ -19,7 +19,7 @@ import { icon, semanticIcon, discIcon, discEnemySprite } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 import { getTodayRoutine, metaProgress, metaPreviewText, goalTypeLabel } from '../core/dailyMeta.js';
-import { ensureWellbeingHabits, getTodayWellbeingState } from '../core/wellbeing.js';
+import { ensureWellbeingHabits, getTodayWellbeingState, toggleHabit } from '../core/wellbeing.js';
 import { createReviewSession, getReviewDashboardData } from '../services/reviewService.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 
@@ -137,6 +137,7 @@ export async function renderHome(root, navigate, ctx) {
     phrase,
     log,
     avgAccuracy,
+    wbState,
   });
   return;
 
@@ -429,7 +430,7 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
     player, stage, rank, totalXp, xpNeed, xpPct, editalPct, days,
     routine, meta, planned, doneToday, missionLeft, missionFocus,
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
-    cards = [], phrase = '', log = null, avgAccuracy = 0,
+    cards = [], phrase = '', log = null, avgAccuracy = 0, wbState = null,
   } = data;
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
 
@@ -511,22 +512,6 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
       <p>Nenhuma revisão crítica no momento.</p>
     </div>`;
 
-  const perfRows = [...(discBars || [])]
-    .sort((a, b) => (b.pct || 0) - (a.pct || 0))
-    .slice(0, 5)
-    .map((d) => {
-      const label = KNOWLEDGE_BLOCKS.gerais.labels[d.id]
-        || KNOWLEDGE_BLOCKS.especificos.labels[d.id]
-        || d.name;
-      const pct = Math.round(d.pct || 0);
-      return `
-        <button type="button" class="dj-perf-row" data-disc="${escapeHtml(d.id)}">
-          <span class="dj-perf-row__name">${discIcon(d.id, 'ico--sm')} ${escapeHtml(shortLabel(label, 18))}</span>
-          <span class="dj-perf-row__track"><span style="width:${pct}%"></span></span>
-          <strong>${pct}%</strong>
-        </button>`;
-    }).join('');
-
   const recentCards = (cards || []).slice(-3).reverse();
   const achRows = recentCards.length
     ? recentCards.map((c) => `
@@ -566,6 +551,28 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
 
   const battlesToday = log?.domain_challenges_completed || 0;
   const dayLabel = goalTypeLabel(routine?.goal_type) || 'questões';
+
+  const PREP_ORDER = ['wb_meditacao', 'wb_agua', 'wb_exercicio', 'wb_alimentacao', 'wb_sono'];
+  const prepCards = [...(wbState?.cards || [])].sort((a, b) => {
+    const ia = PREP_ORDER.indexOf(a.habit.id);
+    const ib = PREP_ORDER.indexOf(b.habit.id);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+  }).slice(0, 5);
+  const prepDone = wbState?.doneCount || 0;
+  const prepTotal = wbState?.total || prepCards.length || 0;
+  const prepPct = prepTotal ? Math.round((prepDone / prepTotal) * 100) : 0;
+  const prepAllDone = prepTotal > 0 && prepDone >= prepTotal;
+  const prepRows = prepCards.map((c) => `
+    <button type="button"
+      class="dj-prep-chip ${c.completed ? 'is-done' : ''}"
+      data-prep-habit="${escapeHtml(c.habit.id)}"
+      aria-pressed="${c.completed ? 'true' : 'false'}"
+      title="${escapeHtml(c.habit.name)}">
+      <span class="dj-prep-chip__check" aria-hidden="true">${c.completed ? icon('check', 'ico--sm') : icon('circle', 'ico--sm')}</span>
+      <span class="dj-prep-chip__emoji" aria-hidden="true">${escapeHtml(c.habit.icon || '✦')}</span>
+      <span class="dj-prep-chip__label">${escapeHtml(c.habit.name)}</span>
+    </button>
+  `).join('');
 
   root.innerHTML = `
     <div class="dj">
@@ -623,6 +630,31 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
       </section>
 
+      <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
+        <div class="dj-prep__head">
+          <div>
+            <span class="dj-kicker">Rumo à aprovação</span>
+            <h2 id="dj-prep-title">Cuide do corpo e da mente</h2>
+            <p>Antes das horas de estudo, marque o que já fez. Corpo e mente preparados sustentam a jornada.</p>
+          </div>
+          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Preparação ${prepDone} de ${prepTotal}">
+            <strong>${prepDone}</strong>
+            <small>de ${prepTotal}</small>
+          </div>
+        </div>
+        <div class="dj-prep__list" role="group" aria-label="Hábitos de preparação de hoje">
+          ${prepRows || '<p class="dj-empty-inline">Nenhum hábito configurado ainda.</p>'}
+        </div>
+        <div class="dj-prep__foot">
+          <span class="dj-prep__status">${prepAllDone
+            ? 'Preparação do dia concluída — bom estudo!'
+            : prepDone > 0
+              ? `Você já cuidou de ${prepDone} prática(s). Continue.`
+              : 'Toque para marcar cada preparação antes de estudar.'}</span>
+          <button type="button" class="dj-link" id="today-wellbeing">Abrir hábitos ${icon('seedling', 'ico--sm')}</button>
+        </div>
+      </section>
+
       <div class="dj-split">
         <section class="dj-card dj-card--reviews" aria-labelledby="dj-reviews-title">
           <div class="dj-card__head">
@@ -677,25 +709,14 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
       </section>
 
-      <div class="dj-split dj-split--bottom">
-        <section class="dj-card dj-card--perf" aria-labelledby="dj-perf-title">
-          <div class="dj-card__head">
-            <span class="dj-card__ico">${icon('chartSteps')}</span>
-            <h2 id="dj-perf-title">Desempenho geral</h2>
-          </div>
-          <div class="dj-perf-list">${perfRows || '<p class="dj-empty-inline">Sem dados ainda.</p>'}</div>
-          <button type="button" class="dj-link" id="today-performance">Ver desempenho completo ${icon('chevronRight', 'ico--sm')}</button>
-        </section>
-
-        <section class="dj-card dj-card--ach" aria-labelledby="dj-ach-title">
-          <div class="dj-card__head">
-            <span class="dj-card__ico">${icon('trophy')}</span>
-            <h2 id="dj-ach-title">Conquistas recentes</h2>
-          </div>
-          <div class="dj-ach-list">${achRows}</div>
-          <button type="button" class="dj-link" id="today-achievements">Ver todas as conquistas ${icon('chevronRight', 'ico--sm')}</button>
-        </section>
-      </div>
+      <section class="dj-card dj-card--ach" aria-labelledby="dj-ach-title">
+        <div class="dj-card__head">
+          <span class="dj-card__ico">${icon('trophy')}</span>
+          <h2 id="dj-ach-title">Conquistas recentes</h2>
+        </div>
+        <div class="dj-ach-list">${achRows}</div>
+        <button type="button" class="dj-link" id="today-achievements">Ver todas as conquistas ${icon('chevronRight', 'ico--sm')}</button>
+      </section>
     </div>`;
 
   mountPageContainer(root, { variant: 'today' });
@@ -731,13 +752,20 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
   });
   $('#today-routine', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
-  $('#today-performance', root)?.addEventListener('click', () => { SFX.click(); navigate('performance'); });
   $('#today-achievements', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
-  root.querySelectorAll('.dj-perf-row[data-disc]').forEach((btn) => {
-    btn.addEventListener('click', () => {
+  $('#today-wellbeing', root)?.addEventListener('click', () => { SFX.click(); navigate('wellbeing'); });
+  root.querySelectorAll('[data-prep-habit]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
       SFX.click();
-      ctx.disciplineId = btn.getAttribute('data-disc');
-      navigate('topicTree');
+      const id = btn.getAttribute('data-prep-habit');
+      if (!id) return;
+      try {
+        await toggleHabit(id);
+        // re-render home to refresh prep state
+        await renderHome(root, navigate, ctx);
+      } catch (error) {
+        toast(error.message || 'Não foi possível atualizar o hábito.');
+      }
     });
   });
 

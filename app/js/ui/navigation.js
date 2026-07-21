@@ -7,11 +7,12 @@ export const PRIMARY_NAV_ITEMS = Object.freeze([
   { screen: 'map', icon: 'book', label: 'Estudar' },
   { screen: 'edital', icon: 'clipboard', label: 'Edital' },
   { screen: 'expedition', icon: 'calendar', label: 'Plano' },
+  { screen: 'wellbeing', icon: 'seedling', label: 'Hábitos' },
   { screen: 'performance', icon: 'chartSteps', label: 'Evolução' },
 ]);
 
 export const UTILITY_NAV_ITEMS = Object.freeze([
-  { screen: 'wellbeing', icon: 'seedling', label: 'Preparação' },
+  // Preparação/hábitos já está na navegação principal (mobile + sidebar)
 ]);
 
 export const SCREEN_TITLES = Object.freeze({

@@ -84,13 +84,66 @@ function classifyAccuracy(accuracy) {
   return 'Prioridade de revisão';
 }
 
-function disciplinePerformance(disciplines, subtopics, cutoff) {
+function minutesBySubtopic(blocks, cutoff) {
+  const map = new Map();
+  for (const block of blocks || []) {
+    if (!inPeriod(block.date || block.completedAt, cutoff)) continue;
+    const minutes = Number(block.actualMinutes) || 0;
+    const sid = block.subtopicId || block.topicId || null;
+    if (!minutes || !sid) continue;
+    map.set(sid, (map.get(sid) || 0) + minutes);
+  }
+  return map;
+}
+
+function minutesByDiscipline(blocks, cutoff) {
+  const map = new Map();
+  for (const block of blocks || []) {
+    if (!inPeriod(block.date || block.completedAt, cutoff)) continue;
+    const minutes = Number(block.actualMinutes) || 0;
+    const did = block.subjectId || block.disciplineId || null;
+    if (!minutes || !did) continue;
+    map.set(did, (map.get(did) || 0) + minutes);
+  }
+  return map;
+}
+
+function subtopicPerformanceRows(related, cutoff, minutesMap) {
+  return [...related]
+    .sort((a, b) => String(a.edital_numbering || '').localeCompare(String(b.edital_numbering || ''), 'pt', { numeric: true }))
+    .map((subtopic) => {
+      const totals = subtopicQuestionTotals(subtopic, cutoff);
+      const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
+      const best = clampPercent(subtopic.melhorPercentual ?? subtopic.best_accuracy ?? accuracy ?? 0);
+      return {
+        id: subtopic.id,
+        name: subtopic.name,
+        numbering: subtopic.edital_numbering || '',
+        answered: totals.answered,
+        correct: totals.correct,
+        errors: totals.errors,
+        accuracy,
+        classification: classifyAccuracy(accuracy),
+        minutes: minutesMap.get(subtopic.id) || 0,
+        stars: Number(subtopic.stars) || 0,
+        masteryPct: best,
+        memory: subtopic.memory_temperature || null,
+      };
+    });
+}
+
+function disciplinePerformance(disciplines, subtopics, cutoff, blocks = []) {
+  const subMinutes = minutesBySubtopic(blocks, cutoff);
+  const discMinutes = minutesByDiscipline(blocks, cutoff);
   return [...disciplines]
     .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))
     .map((discipline) => {
       const related = subtopics.filter((subtopic) => subtopic.discipline_id === discipline.id);
       const totals = questionTotals(related, cutoff);
       const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
+      const subRows = subtopicPerformanceRows(related, cutoff, subMinutes);
+      const minutesFromSubs = subRows.reduce((sum, row) => sum + (row.minutes || 0), 0);
+      const minutes = minutesFromSubs || discMinutes.get(discipline.id) || 0;
       return {
         id: discipline.id,
         name: discipline.name,
@@ -102,6 +155,9 @@ function disciplinePerformance(disciplines, subtopics, cutoff) {
         classification: classifyAccuracy(accuracy),
         needsReview: accuracy != null && accuracy < 55,
         masteryPct: clampPercent(discipline.mastery_pct),
+        minutes,
+        subtopics: subRows,
+        subtopicCount: related.length,
       };
     });
 }
@@ -221,7 +277,7 @@ export class PerformanceService {
     const allTotals = questionTotals(subtopics, null);
     const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
     const edital = clampPercent(player?.edital_completion_pct);
-    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff);
+    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, blocks);
     const completedTopics = verticalized.filter((item) => item.theory_status === 'concluido').length;
     const time = studyTime({ blocks, sessions, dailyStates, disciplines, cutoff });
     const reviews = reviewMetrics(verticalized, reviewQueue, cutoff, this.now());

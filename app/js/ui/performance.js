@@ -1,5 +1,5 @@
 import { performanceService } from '../services/performanceService.js';
-import { ICO } from './icons.js?v=67';
+import { ICO, discIcon } from './icons.js?v=67';
 import { escapeHtml } from './helpers.js';
 import { emptyState } from './components.js';
 
@@ -123,22 +123,70 @@ export function sortDisciplines(rows, mode = 'edital') {
   return result.sort((a, b) => a.order - b.order);
 }
 
+function subtopicRowsHtml(subtopics = []) {
+  if (!subtopics.length) {
+    return '<p class="ev-disc-empty">Nenhum subtópico cadastrado nesta disciplina.</p>';
+  }
+  return `<ul class="ev-subtopic-list" role="list">
+    ${subtopics.map((sub) => {
+      const tone = performanceTone(sub.accuracy);
+      const acc = sub.accuracy == null ? '—' : `${sub.accuracy}%`;
+      const time = sub.minutes ? formatMinutes(sub.minutes) : '—';
+      return `<li class="ev-subtopic-card performance-discipline--${tone}" data-subtopic="${escapeHtml(sub.id)}">
+        <div class="ev-subtopic-card__head">
+          <div>
+            ${sub.numbering ? `<small class="ev-subtopic-card__num">${escapeHtml(sub.numbering)}</small>` : ''}
+            <strong>${escapeHtml(sub.name)}</strong>
+          </div>
+          <span class="ev-subtopic-card__acc">${escapeHtml(acc)}</span>
+        </div>
+        <div class="ev-subtopic-card__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${sub.accuracy ?? 0}">
+          <span style="width:${sub.accuracy ?? 0}%"></span>
+        </div>
+        <div class="ev-subtopic-card__stats">
+          <span><small>Questões</small><strong>${sub.answered}</strong></span>
+          <span><small>Acertos</small><strong>${sub.correct}</strong></span>
+          <span><small>Erros</small><strong>${sub.errors}</strong></span>
+          <span><small>Tempo</small><strong>${escapeHtml(time)}</strong></span>
+        </div>
+        <div class="ev-subtopic-card__foot">
+          <em>${escapeHtml(sub.classification)}</em>
+          ${sub.stars ? `<span>★ ${sub.stars}</span>` : ''}
+        </div>
+      </li>`;
+    }).join('')}
+  </ul>`;
+}
+
 function disciplineRows(rows, mode = 'edital') {
   const ordered = sortDisciplines(rows, mode);
   return ordered.map((discipline) => {
     const tone = performanceTone(discipline.accuracy);
     const value = discipline.accuracy ?? 0;
     const percent = discipline.accuracy == null ? '—' : `${discipline.accuracy}%`;
-    return `<li class="performance-discipline performance-discipline--${tone} ev-disc-box">
-      <div class="performance-discipline__title">
-        <strong>${escapeHtml(discipline.name)}</strong>
-        <span>${escapeHtml(percent)}</span>
-      </div>
-      <div class="performance-discipline__bar" role="progressbar" aria-label="Taxa de acertos em ${escapeHtml(discipline.name)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${value}"><span style="--discipline-value:${value}%"></span></div>
-      <div class="performance-discipline__details">
-        <span>${discipline.answered} resp.</span>
-        <span>${discipline.errors} erros</span>
-        <strong>${escapeHtml(discipline.classification)}</strong>
+    const timeLabel = discipline.minutes ? formatMinutes(discipline.minutes) : '—';
+    const panelId = `ev-disc-panel-${escapeHtml(discipline.id)}`;
+    return `<li class="ev-disc-acc performance-discipline--${tone}" data-disc-id="${escapeHtml(discipline.id)}">
+      <button type="button" class="ev-disc-acc__trigger" aria-expanded="false" aria-controls="${panelId}" id="trig-${escapeHtml(discipline.id)}">
+        <span class="ev-disc-acc__ico" aria-hidden="true">${discIcon(discipline.id, 'ico--sm')}</span>
+        <span class="ev-disc-acc__copy">
+          <strong>${escapeHtml(discipline.name)}</strong>
+          <small>${discipline.answered} questões · ${escapeHtml(timeLabel)} · ${discipline.subtopicCount || 0} subt.</small>
+        </span>
+        <span class="ev-disc-acc__pct">${escapeHtml(percent)}</span>
+        <span class="ev-disc-acc__chev" aria-hidden="true">${ICO.chevronDown?.() || '▾'}</span>
+      </button>
+      <div class="ev-disc-acc__mini-bar" aria-hidden="true"><span style="width:${value}%"></span></div>
+      <div class="ev-disc-acc__panel" id="${panelId}" hidden>
+        <div class="ev-disc-acc__summary">
+          <div><small>Taxa de acerto</small><strong>${escapeHtml(percent)}</strong></div>
+          <div><small>Questões realizadas</small><strong>${discipline.answered}</strong></div>
+          <div><small>Acertos / erros</small><strong>${discipline.correct}/${discipline.errors}</strong></div>
+          <div><small>Tempo na matéria</small><strong>${escapeHtml(timeLabel)}</strong></div>
+        </div>
+        <p class="ev-disc-acc__class">${escapeHtml(discipline.classification)}</p>
+        <h3 class="ev-disc-acc__sub-title">Subtópicos</h3>
+        ${subtopicRowsHtml(discipline.subtopics || [])}
       </div>
     </li>`;
   }).join('');
@@ -147,11 +195,11 @@ function disciplineRows(rows, mode = 'edital') {
 function disciplinesCard(data) {
   return `<section class="performance-panel performance-disciplines" aria-labelledby="performance-disciplines-title">
     <div class="performance-section-heading">
-      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Caixas de domínio</h2></div>
+      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Toque para expandir</h2></div>
       <label class="performance-sort"><span>Ordenar</span><select id="performance-discipline-sort"><option value="edital">Ordem do edital</option><option value="lowest">Menor desempenho</option><option value="highest">Maior desempenho</option></select></label>
     </div>
     ${data.disciplines.length
-      ? `<ol id="performance-discipline-list" class="ev-disc-grid">${disciplineRows(data.disciplines)}</ol>`
+      ? `<ol id="performance-discipline-list" class="ev-disc-accordion">${disciplineRows(data.disciplines)}</ol>`
       : emptyState({ title: 'Sem disciplinas avaliadas', description: 'As disciplinas aparecerão quando este concurso possuir conteúdo disponível.' })}
   </section>`;
 }
@@ -260,10 +308,37 @@ function bind(root, navigate, ctx, data, rerender) {
     ctx.reviewFilters = {};
     navigate('review');
   });
+  const bindDiscAccordion = () => {
+    root.querySelectorAll('.ev-disc-acc__trigger').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.ev-disc-acc');
+        const panel = item?.querySelector('.ev-disc-acc__panel');
+        if (!item || !panel) return;
+        const willOpen = panel.hidden;
+        // fecha os outros
+        root.querySelectorAll('.ev-disc-acc').forEach((other) => {
+          if (other === item) return;
+          other.classList.remove('is-open');
+          const otherPanel = other.querySelector('.ev-disc-acc__panel');
+          const otherBtn = other.querySelector('.ev-disc-acc__trigger');
+          if (otherPanel) otherPanel.hidden = true;
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        });
+        item.classList.toggle('is-open', willOpen);
+        panel.hidden = !willOpen;
+        btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      });
+    });
+  };
+
   root.querySelector('#performance-discipline-sort')?.addEventListener('change', (event) => {
     const list = root.querySelector('#performance-discipline-list');
-    if (list) list.innerHTML = disciplineRows(data.disciplines, event.target.value);
+    if (list) {
+      list.innerHTML = disciplineRows(data.disciplines, event.target.value);
+      bindDiscAccordion();
+    }
   });
+  bindDiscAccordion();
 }
 
 export async function renderPerformance(root, navigate, ctx = {}) {
