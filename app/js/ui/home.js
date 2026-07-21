@@ -630,31 +630,6 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
       </section>
 
-      <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
-        <div class="dj-prep__head">
-          <div>
-            <span class="dj-kicker">Rumo à aprovação</span>
-            <h2 id="dj-prep-title">Cuide do corpo e da mente</h2>
-            <p>Antes das horas de estudo, marque o que já fez. Corpo e mente preparados sustentam a jornada.</p>
-          </div>
-          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Preparação ${prepDone} de ${prepTotal}">
-            <strong>${prepDone}</strong>
-            <small>de ${prepTotal}</small>
-          </div>
-        </div>
-        <div class="dj-prep__list" role="group" aria-label="Hábitos de preparação de hoje">
-          ${prepRows || '<p class="dj-empty-inline">Nenhum hábito configurado ainda.</p>'}
-        </div>
-        <div class="dj-prep__foot">
-          <span class="dj-prep__status">${prepAllDone
-            ? 'Preparação do dia concluída — bom estudo!'
-            : prepDone > 0
-              ? `Você já cuidou de ${prepDone} prática(s). Continue.`
-              : 'Toque para marcar cada preparação antes de estudar.'}</span>
-          <button type="button" class="dj-link" id="today-wellbeing">Abrir hábitos ${icon('seedling', 'ico--sm')}</button>
-        </div>
-      </section>
-
       <div class="dj-split">
         <section class="dj-card dj-card--reviews" aria-labelledby="dj-reviews-title">
           <div class="dj-card__head">
@@ -690,6 +665,31 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
           <button type="button" class="dj-link" id="today-routine">Ver minhas metas ${icon('chevronRight', 'ico--sm')}</button>
         </section>
       </div>
+
+      <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
+        <div class="dj-prep__head">
+          <div>
+            <span class="dj-kicker">Rumo à aprovação</span>
+            <h2 id="dj-prep-title">Cuide do corpo e da mente</h2>
+            <p>Antes de estudar, marque o que já fez. Corpo e mente preparados sustentam a jornada.</p>
+          </div>
+          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Preparação ${prepDone} de ${prepTotal}">
+            <strong>${prepDone}</strong>
+            <small>de ${prepTotal}</small>
+          </div>
+        </div>
+        <div class="dj-prep__list" role="group" aria-label="Hábitos de preparação de hoje">
+          ${prepRows || '<p class="dj-empty-inline">Nenhum hábito configurado ainda.</p>'}
+        </div>
+        <div class="dj-prep__foot">
+          <span class="dj-prep__status">${prepAllDone
+            ? 'Preparação do dia concluída — bom estudo!'
+            : prepDone > 0
+              ? `Você já cuidou de ${prepDone} prática(s). Continue.`
+              : 'Toque para marcar cada preparação antes de estudar.'}</span>
+          <button type="button" class="dj-link" id="today-wellbeing">Abrir preparação ${icon('seedling', 'ico--sm')}</button>
+        </div>
+      </section>
 
       <section class="dj-card dj-card--day" aria-labelledby="dj-day-title">
         <div class="dj-card__head">

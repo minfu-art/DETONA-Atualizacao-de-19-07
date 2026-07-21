@@ -1,7 +1,7 @@
 import { ICO } from './icons.js?v=66';
 import { escapeHtml } from './helpers.js';
 import { isDeveloperUser } from '../auth/authService.js';
-import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=71';
+import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=72';
 
 const LIBRARY_ITEM = { screen: 'library', icon: 'book', label: 'Biblioteca' };
 const DEVELOPER_ITEM = { screen: 'forge', icon: 'question', label: 'Banco de questões' };

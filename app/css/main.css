@@ -263,16 +263,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
   background: none;
   border: none;
   color: #6b7498;
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  padding: 5px 1px;
+  padding: 6px 1px;
   border-radius: 12px;
   transition: color .15s, background .15s, box-shadow .15s;
 }
