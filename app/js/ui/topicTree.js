@@ -7,7 +7,7 @@ import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 import { MIN_QUESTIONS_BATTLE, getQuestionCounts } from '../core/ssot.js';
 import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/memory.js';
-import { createBattleSession } from '../core/battle.js?v=68';
+import { createBattleSession } from '../core/battle.js?v=69';
 import { SFX } from '../core/audio.js';
 import { enemyImgHtml } from './enemyAssets.js';
 import { icon, discIcon } from './icons.js?v=67';
@@ -199,14 +199,26 @@ export async function renderTopicTree(root, navigate, ctx) {
     });
     $('#m-fight')?.addEventListener('click', async () => {
       SFX.click();
+      const btn = $('#m-fight');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Carregando questões…';
+      }
       try {
         const session = await createBattleSession(sid);
+        if (!session?.questions?.length) {
+          throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
+        }
         ctx.battleSession = session;
         ctx.returnToTree = discId;
         closeModal();
         navigate('battle');
       } catch (e) {
-        toast(e.message);
+        toast(e.message || 'Falha ao iniciar as questões.');
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = `${semanticIcon('focus', 'ico--inline')} Iniciar questões`;
+        }
       }
     });
   }

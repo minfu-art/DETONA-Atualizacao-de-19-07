@@ -1,5 +1,5 @@
 import { $, starsHtml, formatStars, escapeHtml, escapeAttr } from './helpers.js';
-import { answerQuestion, finalizeBattle } from '../core/battle.js?v=68';
+import { answerQuestion, finalizeBattle } from '../core/battle.js?v=69';
 import { SFX } from '../core/audio.js';
 import { getPlayer } from '../core/seed.js';
 import { heroImgHtml } from './heroAssets.js';

@@ -1,10 +1,20 @@
 import * as database from '../core/db.js';
 import { requireActiveUserId } from '../auth/activeUser.js';
 import { requireActiveContestId } from '../contest/activeContest.js';
+import { isCloudEnabled } from '../config/cloudConfig.js';
+import { hybridProgressAdapter } from '../supabase/hybridProgressAdapter.js';
+
+function resolveDefaultAdapter() {
+  try {
+    return isCloudEnabled() ? hybridProgressAdapter : database;
+  } catch {
+    return database;
+  }
+}
 
 export class ProgressRepository {
-  constructor({ adapter = database, userContext = { getUserId: requireActiveUserId }, contestContext = { getContestId: requireActiveContestId } } = {}) {
-    this.adapter = adapter;
+  constructor({ adapter = null, userContext = { getUserId: requireActiveUserId }, contestContext = { getContestId: requireActiveContestId } } = {}) {
+    this.adapter = adapter || resolveDefaultAdapter();
     this.userContext = userContext;
     this.contestContext = contestContext;
   }

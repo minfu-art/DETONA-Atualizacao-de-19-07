@@ -15,9 +15,25 @@ import { questionService } from '../services/questionService.js';
 
 /** Pool de batalha: nunca usa questões DEMO (mesmo se restarem no store legado). */
 async function loadBattlePool(subtopicId) {
-  const imported = (await questionService.listar({ subtopicId, mode: 'json' })).filter(isQuestionEligible);
+  const sid = String(subtopicId || '');
+  const matchSub = (q) => {
+    const a = String(q.subtopic_id || '');
+    const b = String(q.topicoEditalId || '');
+    return a === sid || b === sid;
+  };
+  const imported = (await questionService.listar({ subtopicId: sid, mode: 'json' }))
+    .filter(isQuestionEligible)
+    .filter(matchSub);
   if (imported.length >= CHALLENGE_QUESTION_COUNT) return imported;
-  return (await questionService.listar({ subtopicId })).filter(isQuestionEligible);
+  // fallback híbrido + varredura por topicoEditalId
+  const hybrid = (await questionService.listar({ subtopicId: sid }))
+    .filter(isQuestionEligible)
+    .filter(matchSub);
+  if (hybrid.length >= CHALLENGE_QUESTION_COUNT) return hybrid;
+  // último recurso: lista geral e filtra (cobre caches/aliases)
+  return (await questionService.listar({ mode: 'json' }))
+    .filter(isQuestionEligible)
+    .filter(matchSub);
 }
 
 function prioritizeUnseenDetonaQuestion(selected, pool, history = {}) {

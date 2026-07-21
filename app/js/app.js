@@ -29,6 +29,9 @@ import { clearActiveContestId, getActiveContestId, setActiveContestId } from './
 import { getContestById } from './contest/contestCatalog.js';
 import { skeleton } from './ui/components.js';
 import { primaryScreenFor } from './ui/navigation.js?v=70';
+import { isCloudEnabled } from './config/cloudConfig.js';
+import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
+import { progressRepository } from './repositories/progressRepository.js';
 
 const ctx = {
   battleSession: null,
@@ -172,8 +175,30 @@ async function openContest(contestId) {
   document.getElementById('app')?.classList.remove('app-shell--library');
   await contestDataMigrationService.ensureCompatibility(user.id, contestId);
   await openDB();
+  // Nuvem híbrida: pull antes do seed para não sobrescrever progresso remoto com seed vazio
+  if (isCloudEnabled()) {
+    try {
+      await syncOnContestOpen(user.id, contestId);
+    } catch (err) {
+      console.warn('[cloud] sync on open failed', err?.message || err);
+    }
+  }
   await ensureSeed();
   await recalculateEditalSSOT();
+  // Push inicial uma vez (local → nuvem) quando ainda não houve push
+  if (isCloudEnabled()) {
+    try {
+      const last = await progressRepository.getMeta('cloud_last_push_at');
+      if (!last) {
+        const result = await pushAllLocalProgress(user.id, contestId);
+        if (result?.pushed > 0) {
+          await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
+        }
+      }
+    } catch (err) {
+      console.warn('[cloud] initial push failed', err?.message || err);
+    }
+  }
   const player = await getPlayer();
   setMuted(player?.sound_enabled === false);
   if (!player?.onboarded) {
@@ -246,6 +271,8 @@ async function init() {
       console.warn('PWA install init failed', e);
     }
 
+    bindOnlineFlush();
+
     const restored = await authService.restoreSession();
     if (restored) await initializeAuthenticatedApp();
     else showAuth();
@@ -262,4 +289,13 @@ async function init() {
 document.addEventListener('DOMContentLoaded', init);
 
 // expose for debug
-window.__DETONA = { navigate, ctx, authService, libraryService };
+window.__DETONA = {
+  navigate,
+  ctx,
+  authService,
+  libraryService,
+  cloud: {
+    isEnabled: isCloudEnabled,
+    syncOnContestOpen,
+  },
+};

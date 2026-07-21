@@ -7,7 +7,7 @@ import { $, toast, escapeHtml, formatDate, starsHtml } from './helpers.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 import { getQuestionCounts, recalculateEditalSSOT, MIN_QUESTIONS_BATTLE } from '../core/ssot.js';
-import { createBattleSession } from '../core/battle.js?v=68';
+import { createBattleSession } from '../core/battle.js?v=69';
 import { SFX } from '../core/audio.js';
 import { tempLabel, computeMemoryTemperature } from '../core/memory.js';
 import { mountPageContainer, sectionHeader } from './appShell.js';

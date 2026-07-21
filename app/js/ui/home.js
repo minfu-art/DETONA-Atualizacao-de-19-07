@@ -10,7 +10,7 @@ import { getRadarStats } from '../core/ssot.js';
 import { getTitle, daysUntilExam, xpForNextLevel } from '../core/progression.js';
 import { randomPhrase } from '../data/phrases.js?v=68';
 import { SFX } from '../core/audio.js';
-import { createBattleSession } from '../core/battle.js?v=68';
+import { createBattleSession } from '../core/battle.js?v=69';
 import {
   heroImgHtml, lifetimeXp, rankLabel, DISC_BAR_COLORS,
 } from './heroAssets.js';

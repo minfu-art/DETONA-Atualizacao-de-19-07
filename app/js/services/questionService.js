@@ -36,18 +36,29 @@ export function normalizarQuestao(question) {
   const source = structuredClone(question);
   const discipline = legacyDisciplineId(source);
   const topicId = resolveLegacySubtopicId(source);
-  const alternativas = source.tipo === 'certo_errado' ? [] : (source.alternativas || []).map((item) => ({ ...item }));
+  const rawTipo = source.tipo || source.format || '';
+  const isCE = rawTipo === 'certo_errado' || (!String(rawTipo).includes('multipla') && !Array.isArray(source.alternativas));
+  const alternativas = isCE
+    ? []
+    : (source.alternativas || source.options || []).map((item) => (typeof item === 'string'
+      ? item
+      : { ...item }));
   const normalized = normalizeQuestion({
     ...source,
     disciplina: discipline,
     subtopic_id: topicId,
     topicoEditalId: topicId,
-    format: source.tipo || source.format,
+    format: String(rawTipo).includes('multipla') ? 'multipla_escolha' : 'certo_errado',
+    tipo: String(rawTipo).includes('multipla') ? 'multipla_escolha' : 'certo_errado',
     statement: source.enunciado || source.statement,
+    enunciado: source.enunciado || source.statement,
     options: alternativas,
+    alternativas,
     correct_answer: source.respostaCorreta ?? source.correct_answer,
+    respostaCorreta: source.respostaCorreta ?? source.correct_answer,
     explanation: source.explicacao || source.explanation,
-    situacao: source.status === 'revisada' ? 'ativa' : (source.situacao || source.status),
+    situacao: source.situacao || source.status,
+    status: source.status || source.situacao,
     is_user_created: false,
   }, { disciplina: discipline, topicoEditalId: topicId, topicoEdital: source.subtopico || source.assunto || '' });
   // O schema legado higieniza espaços; os bancos editoriais precisam manter quebras de linha de código e comentários integrais.
@@ -60,7 +71,13 @@ export function normalizarQuestao(question) {
     statement,
     explicacao: explanation,
     explanation,
-    comentariosAlternativas: alternativas.map((item) => ({ letra: item.letra, comentario: item.comentario || '' })),
+    subtopic_id: normalized.subtopic_id || topicId,
+    topicoEditalId: normalized.topicoEditalId || topicId,
+    comentariosAlternativas: (normalized.alternativas || []).map((item, index) => (
+      typeof item === 'string'
+        ? { letra: String.fromCharCode(65 + index), comentario: '' }
+        : { letra: item.letra || String.fromCharCode(65 + index), comentario: item.comentario || '' }
+    )),
   };
 }
 
@@ -71,7 +88,12 @@ export function createQuestionService(repository = questionRepository) {
       if (filtros.concursoId && question.concursoId !== filtros.concursoId) return false;
       if (filtros.disciplinaId && question.disciplina !== filtros.disciplinaId && question.metadata?.disciplinaId !== filtros.disciplinaId) return false;
       if (filtros.assunto && question.assunto !== filtros.assunto) return false;
-      if (filtros.subtopicId && question.subtopic_id !== filtros.subtopicId) return false;
+      if (filtros.subtopicId) {
+        const sid = String(filtros.subtopicId);
+        const qSid = String(question.subtopic_id || '');
+        const qTid = String(question.topicoEditalId || '');
+        if (qSid !== sid && qTid !== sid) return false;
+      }
       return true;
     });
   }

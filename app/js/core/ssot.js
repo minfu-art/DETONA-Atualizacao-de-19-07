@@ -142,7 +142,9 @@ export async function getQuestionCounts() {
   const map = {};
   for (const q of questions) {
     if (!isQuestionEligible(q)) continue;
-    map[q.subtopic_id] = (map[q.subtopic_id] || 0) + 1;
+    const sid = q.subtopic_id || q.topicoEditalId;
+    if (!sid) continue;
+    map[sid] = (map[sid] || 0) + 1;
   }
   return map;
 }

@@ -104,8 +104,26 @@ function metadataFromOriginal(item) {
   return metadata;
 }
 
+/** Status editorial → situação do app (só arquivada/rejeitada bloqueiam de fato). */
+export function normalizeSituacao(raw, { structurallyValid = true, forceReview = false } = {}) {
+  if (forceReview || !structurallyValid) return QUESTION_STATUS.REVIEW;
+  const s = String(raw ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+  if (['arquivada', 'arquivado', 'rejeitada', 'rejeitado', 'inativa', 'inativo'].includes(s)) {
+    return QUESTION_STATUS.ARCHIVED;
+  }
+  // revisada / revisao / pendente / extraida: se a estrutura é válida, libera para batalha
+  return QUESTION_STATUS.ACTIVE;
+}
+
 export function normalizeQuestion(item = {}, context = {}) {
-  const format = item.format === 'multipla_escolha' ? 'multipla_escolha' : 'certo_errado';
+  const rawFormat = item.format || item.tipo || '';
+  const format = rawFormat === 'multipla_escolha' || String(rawFormat).includes('multipla')
+    ? 'multipla_escolha'
+    : 'certo_errado';
   const statementResult = sanitizeSensitiveText(item.enunciado ?? item.statement ?? '');
   const explanationResult = sanitizeSensitiveText(item.explicacao ?? item.explanation ?? item.resolucao ?? 'Sem resolução.');
   const sourceResult = sanitizeSensitiveText(item.fonte ?? item.source ?? '');
@@ -115,8 +133,17 @@ export function normalizeQuestion(item = {}, context = {}) {
   const topicId = context.topicoEditalId || item.topicoEditalId || item.subtopic_id || '';
   const discipline = context.disciplina || item.disciplina || item.discipline || item.discipline_id || '';
   const explicitReview = QUESTION_REVIEW_OVERRIDES[id];
-  const structurallyValid = Boolean(statementResult.value && topicId && options.length >= 2 && answer.valid);
-  const status = explicitReview || !structurallyValid ? QUESTION_STATUS.REVIEW : (item.situacao || item.status || QUESTION_STATUS.ACTIVE);
+  // C/E sempre tem Certo/Errado após normalizeOptions; múltipla exige 2+ alternativas
+  const structurallyValid = Boolean(
+    statementResult.value
+    && topicId
+    && answer.valid
+    && (format === 'certo_errado' ? options.length >= 2 : options.length >= 2)
+  );
+  const status = normalizeSituacao(item.situacao || item.status, {
+    structurallyValid,
+    forceReview: Boolean(explicitReview),
+  });
   const createdAt = item.createdAt || item.created_at || context.now || '1970-01-01T00:00:00.000Z';
   const updatedAt = item.updatedAt || item.updated_at || createdAt;
   const fonte = sourceResult.value;
@@ -192,12 +219,31 @@ export function isDemoQuestion(question) {
 
 export function isQuestionEligible(question) {
   if (isDemoQuestion(question)) return false;
-  return question?.situacao !== QUESTION_STATUS.REVIEW
-    && question?.situacao !== QUESTION_STATUS.ARCHIVED
-    && Boolean(question?.statement && question?.subtopic_id)
-    && Array.isArray(question?.options)
-    && question.options.length >= 2
-    && normalizeAnswer(question.correct_answer, question.format, question.options).valid;
+  const situacao = String(question?.situacao || question?.status || '').toLowerCase();
+  if (situacao === QUESTION_STATUS.ARCHIVED || situacao === 'arquivada' || situacao === 'arquivado') {
+    return false;
+  }
+  const statement = question?.statement || question?.enunciado;
+  const subtopicId = question?.subtopic_id || question?.topicoEditalId;
+  if (!statement || !subtopicId) return false;
+
+  const format = question?.format === 'multipla_escolha' || question?.tipo === 'multipla_escolha'
+    ? 'multipla_escolha'
+    : 'certo_errado';
+  let options = Array.isArray(question?.options) ? question.options : (question?.alternativas || []);
+  // Certo/Errado: pool editorial muitas vezes vem sem alternativas
+  if (format === 'certo_errado' && options.length < 2) {
+    options = ['Certo', 'Errado'];
+  }
+  if (format === 'multipla_escolha' && options.length < 2) return false;
+
+  // Status "revisao" só bloqueia se a estrutura estiver inválida (já coberta acima).
+  // Questões com gabarito e enunciado ok entram na batalha.
+  return normalizeAnswer(
+    question.correct_answer ?? question.respostaCorreta,
+    format,
+    options,
+  ).valid;
 }
 
 export function analyzeQuestionCollection(questions = []) {
