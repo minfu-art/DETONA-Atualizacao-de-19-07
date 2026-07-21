@@ -1,0 +1,153 @@
+{
+  "topicoEditalId": "ciber_2",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 2,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0064",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_2",
+      "subtopic_id": "ciber_2",
+      "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "subtopico": "1.2.2.2-politicas-de-seguranca",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Uma política de segurança deve estabelecer diretrizes, responsabilidades e regras, mas sua existência documental não garante que os controles sejam efetivamente cumpridos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Políticas de segurança.\n\nPolíticas precisam ser comunicadas, implementadas, monitoradas, revisadas e apoiadas por procedimentos e controles. Um documento sem execução não produz proteção suficiente.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Políticas de segurança.\n\nErro provável: confusão entre documento e prática\n\nDica: Política orienta; processos, pessoas e tecnologia executam.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_2.json",
+        "sourceSubtopicId": "1.2.2.2-politicas-de-seguranca",
+        "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+        "mappedTopicoEditalId": "ciber_2",
+        "hashQuestao": "70062bda4350cc54",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "políticas de segurança"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre documento e prática"
+          ],
+          "palavrasChave": [
+            "Políticas de segurança",
+            "Gestão de riscos e conformidade"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Políticas de segurança",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "481a304941963a156bcb5d66bc9ef05b1028ccd62a01a5237370d4f53a960411",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0066",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_2",
+      "subtopic_id": "ciber_2",
+      "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "subtopico": "1.2.2.2-conformidade-com-regulamentacoes",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Conformidade com regulamentações envolve atender requisitos legais e regulatórios aplicáveis, que podem ser diferentes das regras internas da organização.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Conformidade com regulamentações.\n\nRegulamentos são obrigações externas emitidas por autoridades competentes, enquanto políticas internas são definidas pela própria organização. Ambos precisam ser mapeados e harmonizados.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com regulamentações.\n\nErro provável: equiparação entre regra interna e obrigação legal\n\nDica: Identifique a origem do requisito: lei, regulador, contrato, norma ou política interna.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_2.json",
+        "sourceSubtopicId": "1.2.2.2-conformidade-com-regulamentacoes",
+        "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+        "mappedTopicoEditalId": "ciber_2",
+        "hashQuestao": "1ae703458fbdc9b3",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "conformidade regulatória"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equiparação entre regra interna e obrigação legal"
+          ],
+          "palavrasChave": [
+            "Conformidade com regulamentações",
+            "Gestão de riscos e conformidade"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Conformidade com regulamentações",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "4afcb82656fd0446062d01c856d39d68e3f147f0e1351839e023189813c0e105",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    }
+  ]
+}

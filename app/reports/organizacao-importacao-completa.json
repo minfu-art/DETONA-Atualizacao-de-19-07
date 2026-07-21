@@ -1,0 +1,1431 @@
+{
+  "geradoEm": "2026-07-21T02:11:29.517Z",
+  "dryRun": false,
+  "fontesLidas": [
+    "C:\\Users\\wwwmi\\Documents\\ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico",
+    "C:\\Users\\wwwmi\\Documents\\ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\ciclos-ready",
+    "C:\\Users\\wwwmi\\Documents\\DETONA-TRABALHO\\app\\imports\\questions",
+    "C:\\Users\\wwwmi\\Documents\\DETONA-TRABALHO\\app\\data\\questions\\curated",
+    "C:\\Users\\wwwmi\\Documents\\DETONA-TRABALHO\\app\\js\\data",
+    "C:\\Users\\wwwmi\\Documents\\DETONA-TRABALHO\\app\\data\\questoes_pc_al_importadas.json",
+    "C:\\Users\\wwwmi\\Documents\\DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+  ],
+  "fontesAusentes": [],
+  "arquivosProcessados": 138,
+  "linhasLidas": 8643,
+  "arquivosInvalidos": [],
+  "duplicadasId": 1048,
+  "duplicadasHash": 862,
+  "ignoradas": [
+    {
+      "id": "q_lote_q_import_0443",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\js\\data\\questions_pc_al_lote.json"
+    },
+    {
+      "id": "q_import_0001",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0002",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0003",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0004",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0005",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0006",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0007",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0008",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0009",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0010",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0025",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0038",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0039",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0040",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0041",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0042",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0043",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0044",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0046",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0047",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0050",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0051",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0052",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0058",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0059",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0060",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0061",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0065",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0066",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0077",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0078",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0079",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0080",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0096",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0097",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0108",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0109",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0110",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0111",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0112",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0113",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0114",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0115",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0116",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0117",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0118",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0119",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0120",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0121",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0122",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0123",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0124",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0125",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0126",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0127",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0128",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0129",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0130",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0131",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0132",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0133",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0134",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0135",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0136",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0137",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0138",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0139",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0140",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0141",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0142",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0143",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0149",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0150",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0151",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0152",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0153",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0159",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0160",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0169",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0170",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0173",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0174",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0175",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0180",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0186",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0187",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0188",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0189",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0190",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0198",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0208",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0239",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0240",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0241",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0248",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0249",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0250",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0251",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0266",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0267",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0270",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0271",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0272",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0279",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0280",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0281",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0282",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0285",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0288",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0290",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0291",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0293",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0308",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0309",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0311",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0323",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0330",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0331",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0332",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0335",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0337",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0349",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0350",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0352",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0353",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0357",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0358",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0359",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0365",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0369",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0374",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0375",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0381",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0396",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0400",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0401",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0406",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0407",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0408",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0410",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0411",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0412",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0413",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0414",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0415",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0416",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0417",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0418",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0421",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0422",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0425",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0428",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0429",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0430",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0439",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0440",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0443",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0446",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0447",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0448",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0450",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0451",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0452",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0453",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0454",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0455",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0456",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0457",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0468",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0469",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0472",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0474",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0475",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0477",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0478",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0480",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0483",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0484",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0485",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0486",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0487",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0488",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0491",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0493",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0494",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0495",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0496",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0497",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0498",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0499",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0500",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0501",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0502",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0503",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0504",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0505",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0506",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0507",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0508",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0509",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0510",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0511",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0512",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0516",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0518",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0519",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0520",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0521",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0540",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0541",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0542",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0543",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0544",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0545",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0547",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0550",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0552",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0553",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0554",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0555",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0558",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0562",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0566",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0569",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0570",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0571",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0572",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0573",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0574",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0575",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0576",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0577",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0578",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0579",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0580",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0581",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0582",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0583",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0584",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0585",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0586",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0587",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0588",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0589",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0590",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0591",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0592",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0593",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0594",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0595",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0596",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    },
+    {
+      "id": "q_import_0597",
+      "motivo": "invalida_ou_sem_enunciado",
+      "fonte": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_lote_original.json"
+    }
+  ],
+  "totalFinal": 6480,
+  "porDisciplina": {
+    "analise_de_dados": 695,
+    "contabilidade": 466,
+    "direitos_humanos": 276,
+    "direito_constitucional": 644,
+    "direito_penal": 1008,
+    "estatistica": 231,
+    "raciocinio_logico_matematico": 665,
+    "legislacao_estadual_estatutos_de_alagoas": 259,
+    "lingua_portuguesa": 1538,
+    "seguranca_cibernetica": 26,
+    "tecnologia_informacao": 522,
+    "etica": 150
+  },
+  "porTopico": {
+    "dados_1": 288,
+    "dados_2": 112,
+    "dados_3": 27,
+    "dados_4": 193,
+    "dados_5": 75,
+    "contab_1": 43,
+    "contab_2": 155,
+    "contab_3": 40,
+    "contab_4": 50,
+    "contab_5": 13,
+    "contab_6": 83,
+    "contab_7": 82,
+    "dh_1": 63,
+    "dh_2": 44,
+    "dh_3": 3,
+    "dh_4": 61,
+    "dh_5": 30,
+    "dh_6": 75,
+    "const_1": 391,
+    "const_2": 26,
+    "penal_1": 520,
+    "penal_2": 91,
+    "penal_3": 115,
+    "penal_4": 282,
+    "estat_1": 20,
+    "estat_2": 1,
+    "estat_3": 3,
+    "estat_4": 28,
+    "estat_5": 106,
+    "estat_6": 12,
+    "estat_7": 18,
+    "estat_8": 21,
+    "estat_9": 22,
+    "rlm_1": 92,
+    "leg_al_1": 73,
+    "leg_al_2": 39,
+    "leg_al_3": 144,
+    "port_1": 100,
+    "port_2": 60,
+    "port_3": 57,
+    "port_4_1": 259,
+    "port_4_2": 54,
+    "port_5_1": 107,
+    "port_5_2": 71,
+    "port_5_3": 45,
+    "port_5_4": 149,
+    "port_5_5": 68,
+    "port_5_6": 29,
+    "port_5_7": 71,
+    "port_5_8": 53,
+    "port_6_1": 217,
+    "port_6_2": 61,
+    "port_6_3": 10,
+    "port_6_4": 22,
+    "rlm_10": 31,
+    "rlm_11": 10,
+    "rlm_12": 86,
+    "rlm_2": 3,
+    "rlm_3": 30,
+    "rlm_4": 23,
+    "rlm_5": 24,
+    "rlm_6": 41,
+    "rlm_7": 106,
+    "rlm_8": 110,
+    "rlm_9": 109,
+    "ciber_1": 3,
+    "ciber_10": 1,
+    "ciber_11": 1,
+    "ciber_2": 2,
+    "ciber_3": 4,
+    "ciber_4": 2,
+    "ciber_5": 1,
+    "ciber_6": 6,
+    "ciber_7": 3,
+    "ciber_8": 2,
+    "ciber_9": 1,
+    "ti_3_1": 229,
+    "ti_1": 89,
+    "ti_5_2": 19,
+    "ti_2": 4,
+    "ti_3_2": 41,
+    "ti_3_4": 3,
+    "ti_3_5": 12,
+    "ti_4": 15,
+    "ti_6_2": 8,
+    "ti_6_3": 3,
+    "ti_5_1": 10,
+    "ti_5_3": 13,
+    "ti_9": 58,
+    "ti_10": 4,
+    "ti_3_3": 2,
+    "ti_5_4": 3,
+    "ti_6_1": 5,
+    "ti_7": 3,
+    "ti_8": 1,
+    "etica_2": 47,
+    "etica_5": 31,
+    "lingua_portuguesa_encontros_vocalicos": 2,
+    "lingua_portuguesa_regras_gerais_de_acentuacao": 40,
+    "lingua_portuguesa_acentuacao_do_hiato": 6,
+    "lingua_portuguesa_acentos_diferenciais": 6,
+    "lingua_portuguesa_ortografia_oficial": 2,
+    "lingua_portuguesa_emprego_do_hifen": 8,
+    "lingua_portuguesa_uso_de_letras_maiusculas_e_minusculas": 1,
+    "lingua_portuguesa_siglas_e_abreviacoes": 1,
+    "lingua_portuguesa_expressoes_problematicas": 20,
+    "lingua_portuguesa_expressoes_com_substantivo_e_adjetivo": 1,
+    "lingua_portuguesa_palavras_especiais": 18,
+    "etica_servico_publico_1": 72,
+    "dir_constitucional_1_1": 210,
+    "dir_constitucional_1": 7,
+    "dir_constitucional_1_2": 10,
+    "legislacao_alagoas_3": 3
+  },
+  "disciplinasGeradas": [
+    "analise_de_dados",
+    "contabilidade",
+    "direito_constitucional",
+    "direito_penal",
+    "direitos_humanos",
+    "estatistica",
+    "etica",
+    "legislacao_estadual_estatutos_de_alagoas",
+    "lingua_portuguesa",
+    "raciocinio_logico_matematico",
+    "seguranca_cibernetica",
+    "tecnologia_informacao"
+  ],
+  "arquivosJsonCriados": 13
+}

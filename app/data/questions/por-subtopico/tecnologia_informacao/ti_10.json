@@ -1,0 +1,299 @@
+{
+  "topicoEditalId": "ti_10",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 4,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0056",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_10",
+      "subtopic_id": "ti_10",
+      "assunto": "1.2.1.10-linguagens-de-programacao",
+      "subtopico": "1.2.1.10-java",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Programas Java são comumente compilados para bytecode, que pode ser executado por uma máquina virtual Java compatível.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Java.\n\nO compilador Java produz bytecode para a JVM. Essa camada contribui para portabilidade entre plataformas que possuam ambiente de execução compatível.\n\nFundamento: Conteúdo programático 1.2.1.10 — Linguagens de programação: Java.\n\nErro provável: confusão entre bytecode e código nativo específico\n\nDica: Java compila para bytecode; a JVM executa.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_10.json",
+        "sourceSubtopicId": "1.2.1.10-java",
+        "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+        "mappedTopicoEditalId": "ti_10",
+        "hashQuestao": "9506808ac789169b",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "Java"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre bytecode e código nativo específico"
+          ],
+          "palavrasChave": [
+            "Java",
+            "Linguagens de programação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Java",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ef71511e84f14b937176d400c775df4379c19d35e46ccfbda11d5c95760aa811",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0057",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_10",
+      "subtopic_id": "ti_10",
+      "assunto": "1.2.1.10-linguagens-de-programacao",
+      "subtopico": "1.2.1.10-python",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em Python, a indentação possui significado sintático e é utilizada para delimitar blocos de código.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Python.\n\nBlocos de funções, condicionais e laços são definidos por indentação consistente. Diferentemente de várias linguagens, chaves não são o mecanismo principal para essa delimitação.\n\nFundamento: Conteúdo programático 1.2.1.10 — Linguagens de programação: Python.\n\nErro provável: tratamento da indentação como mero estilo\n\nDica: Em Python, identar corretamente faz parte da sintaxe.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_10.json",
+        "sourceSubtopicId": "1.2.1.10-python",
+        "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+        "mappedTopicoEditalId": "ti_10",
+        "hashQuestao": "fcf6060c71ca36da",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "Python"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "tratamento da indentação como mero estilo"
+          ],
+          "palavrasChave": [
+            "Python",
+            "Linguagens de programação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Python",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "fa1b3e26ba6c27e41287eae58fbffa22f163f6417d1bde0bb2dd5f82144f181d",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0058",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_10",
+      "subtopic_id": "ti_10",
+      "assunto": "1.2.1.10-linguagens-de-programacao",
+      "subtopico": "1.2.1.10-apex",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Apex é uma linguagem de programação fortemente associada à plataforma Salesforce e pode executar lógica de negócio no ambiente da plataforma.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Apex.\n\nApex é uma linguagem orientada a objetos utilizada no ecossistema Salesforce para gatilhos, classes e automações executadas na infraestrutura da plataforma.\n\nFundamento: Conteúdo programático 1.2.1.10 — Linguagens de programação: Apex.\n\nErro provável: confusão com linguagem genérica de sistema operacional\n\nDica: Associe Apex ao desenvolvimento na plataforma Salesforce.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_10.json",
+        "sourceSubtopicId": "1.2.1.10-apex",
+        "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+        "mappedTopicoEditalId": "ti_10",
+        "hashQuestao": "1365c6fa9c763f40",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "Apex"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão com linguagem genérica de sistema operacional"
+          ],
+          "palavrasChave": [
+            "Apex",
+            "Linguagens de programação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Apex",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "7ee04cb70a78f52b25f15f07372fa6d56bf12d364671e3f884b789a432a8782c",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0059",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_10",
+      "subtopic_id": "ti_10",
+      "assunto": "1.2.1.10-linguagens-de-programacao",
+      "subtopico": "1.2.1.10-c",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "C# integra o ecossistema .NET e não deve ser confundida com as linguagens C ou C++, embora compartilhe parte de sua sintaxe.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de C#.\n\nC# é uma linguagem própria, orientada a objetos e desenvolvida para a plataforma .NET. Semelhanças sintáticas não tornam essas linguagens equivalentes.\n\nFundamento: Conteúdo programático 1.2.1.10 — Linguagens de programação: C#.\n\nErro provável: equiparação entre linguagens da família C\n\nDica: C, C++ e C# são linguagens distintas, com ecossistemas e modelos próprios.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_10.json",
+        "sourceSubtopicId": "1.2.1.10-c",
+        "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+        "mappedTopicoEditalId": "ti_10",
+        "hashQuestao": "481e952f991381cc",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "C#"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equiparação entre linguagens da família C"
+          ],
+          "palavrasChave": [
+            "C#",
+            "Linguagens de programação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "C#",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "613ad92d876ad476897db1b655ad4a89f87395964d14e6c792c283cabd2aec86",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "topicoEditalId": "ti_5_1",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 10,
+  "questions": [
+    {
+      "id": "PCAL-TI-05-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O procedimento de associar a\n   autenticação de dois fatores (2FA) ao uso de senha contribui muito pouco para o ganho de\n   segurança da informação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A autenticação de dois fatores (2FA) adiciona uma camada extra de segurança ao exigir um segundo fator\nalém da senha, como um código enviado ao celular. Isso dificulta acessos não autorizados, mesmo que a\nsenha seja comprometida.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O controle de acesso físico é um procedimento de segurança\n   utilizado para garantir a segurança de informação de uma empresa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O controle de acesso físico é uma medida de segurança essencial para proteger informações,\nrestringindo o acesso a áreas críticas, como data centers e salas de servidores. Isso evita acessos não\nautorizados que possam comprometer a integridade e confidencialidade dos dados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Ainda que muito eficiente, o uso de criptografia é insuficiente para\n   garantir a segurança das informações em determinado computador.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A criptografia protege a confidencialidade dos dados, mas, sozinha, não garante segurança total. Outros\ncontroles, como firewall, antivírus, autenticação forte e backup, são necessários para proteger contra\nameaças como malware, acesso não autorizado e falhas do sistema.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "A assinatura digital é um dos recursos mais eficientes para garantir\n   o sigilo de uma informação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A assinatura digital garante autenticidade, integridade e não repúdio, mas não assegura sigilo. Para\ngarantir sigilo, é necessário o uso de criptografia, que protege os dados contra acesso não autorizado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / ITAIPU BINACIONAL – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Tendo em vista que o uso diário de computadores\n   para realizar atividades profissionais, de lazer ou estudos requer uma atenção especial por parte\n   dos usuários, a fim de assegurar a proteção adequada de seus dados e arquivos, assinale a opção\n   correta com referência às práticas fundamentais para garantir a segurança da informação.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Vírus de computador só tem capacidade de contaminar computadores que estiverem conectados em rede ou na Internet.",
+          "comentario": "Errado. Vírus podem infectar computadores de diversas formas, incluindo dispositivos USB, e-mails, downloads e arquivos infectados, não sendo necessária conexão com a Internet ou rede;"
+        },
+        {
+          "letra": "B",
+          "texto": "Manter softwares de antivírus atualizados impede o acesso não autorizado ao computador.",
+          "comentario": "Errado. Antivírus atualizado protege contra malwares, mas não impede acessos não autorizados, pois essa função é desempenhada por firewalls e autenticação forte;"
+        },
+        {
+          "letra": "C",
+          "texto": "Mesclar letras, números e caracteres especiais na definição de senhas é uma boa prática para torná- las mais seguras.",
+          "comentario": "Correto. Criar senhas fortes, mesclando letras, números e caracteres especiais, reduz a vulnerabilidade contra ataques de força bruta e tentativas de adivinhação;"
+        },
+        {
+          "letra": "D",
+          "texto": "O acesso a serviços on-line em computadores de uso compartilhado, como em faculdades ou lan houses, não representa risco se for realizado o logout nos serviços antes de desligar o computador.",
+          "comentario": "Errado. Mesmo após o logout, keyloggers e outros malwares podem capturar credenciais em computadores compartilhados. O ideal é usar modos anônimos e autenticação multifator;"
+        },
+        {
+          "letra": "E",
+          "texto": "Abrir arquivos ou clicar em links recebidos por e-mails enviados por remetentes conhecidos não representa risco de segurança.",
+          "comentario": "Errado. E-mails de phishing podem ser enviados por remetentes conhecidos se suas contas forem comprometidas. É essencial verificar links e anexos antes de abrir."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Vírus podem infectar computadores de diversas formas, incluindo dispositivos USB, e-mails,\ndownloads e arquivos infectados, não sendo necessária conexão com a Internet ou rede;\n\n(b) Errado. Antivírus atualizado protege contra malwares, mas não impede acessos não autorizados, pois\nessa função é desempenhada por firewalls e autenticação forte;\n\n(c) Correto. Criar senhas fortes, mesclando letras, números e caracteres especiais, reduz a vulnerabilidade\ncontra ataques de força bruta e tentativas de adivinhação;\n\n(d) Errado. Mesmo após o logout, keyloggers e outros malwares podem capturar credenciais em\ncomputadores compartilhados. O ideal é usar modos anônimos e autenticação multifator;\n\n(e) Errado. E-mails de phishing podem ser enviados por remetentes conhecidos se suas contas forem\ncomprometidas. É essencial verificar links e anexos antes de abrir.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE / Prefeitura de São Cristóvão-SE – 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "A respeito de segurança da informação,\n   assinale a opção correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O mero recebimento de um link com malware é suficiente para que o dispositivo do usuário seja contaminado, mesmo que ele não clique no link.",
+          "comentario": "Errado. O mero recebimento de um link com malware não infecta o dispositivo. A contaminação ocorre caso o usuário clique no link e execute um código malicioso;"
+        },
+        {
+          "letra": "B",
+          "texto": "A instalação e a configuração de aplicativos de segurança bastam para garantir a proteção de dados e informações armazenados em um computador.",
+          "comentario": "Errado. Apenas instalar e configurar aplicativos de segurança não é suficiente. Boas práticas, como atualizações regulares, autenticação forte e conscientização do usuário, são essenciais para proteção completa;"
+        },
+        {
+          "letra": "C",
+          "texto": "Entre os procedimentos de segurança da informação, recomenda-se não abrir anexos de emails recebidos de usuário desconhecido.",
+          "comentario": "Correto. Não abrir anexos de e-mails desconhecidos é uma recomendação de segurança para evitar phishing, malwares e ataques de engenharia social;"
+        },
+        {
+          "letra": "D",
+          "texto": "A instalação de firewalls no computador apenas garante um melhor desempenho da máquina, sem colaborar para a segurança da informação.",
+          "comentario": "Errado. Firewalls não servem para melhorar o desempenho, mas sim para controlar o tráfego de rede, protegendo contra acessos não autorizados e ameaças."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. O mero recebimento de um link com malware não infecta o dispositivo. A contaminação ocorre\ncaso o usuário clique no link e execute um código malicioso;\n\n(b) Errado. Apenas instalar e configurar aplicativos de segurança não é suficiente. Boas práticas, como\natualizações regulares, autenticação forte e conscientização do usuário, são essenciais para proteção\ncompleta;\n\n(c) Correto. Não abrir anexos de e-mails desconhecidos é uma recomendação de segurança para evitar\nphishing, malwares e ataques de engenharia social;\n\n(d) Errado. Firewalls não servem para melhorar o desempenho, mas sim para controlar o tráfego de rede,\nprotegendo contra acessos não autorizados e ameaças.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE / AGER-MT - 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "A ICP-Brasil foi criada para viabilizar a emissão de certificados\n   digitais no país, para transações que precisam de validade e segurança dos dados. Conforme o\n   ITI, e considerando o uso de um certificado digital ICP-Brasil, é correto afirmar que a assinatura\n   digital é:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A gerada a partir do uso do certificado digital ICP-Brasil e possui pleno valor jurídico garantido pela legislação brasileira.",
+          "comentario": "Correto. A assinatura digital gerada com um certificado digital ICP-Brasil possui pleno valor jurídico, conforme a legislação brasileira, garantindo autenticidade, integridade e não repúdio;"
+        },
+        {
+          "letra": "B",
+          "texto": "importada no computador via a cadeia de certificação nível a3 e possui pleno valor jurídico garantido pela legislação brasileira.",
+          "comentario": "Errado. O valor jurídico da assinatura digital não depende do tipo de certificado (A1, A3, etc.), mas sim da ICP-Brasil, que garante sua validade legal;"
+        },
+        {
+          "letra": "C",
+          "texto": "gerada a partir do uso do certificado digital ICP-Brasil e seu valor jurídico depende da autoridade pública do município que é apresentado.",
+          "comentario": "Errado. O valor jurídico não depende da autoridade pública municipal, mas sim da regulamentação da ICP-Brasil em nível nacional;"
+        },
+        {
+          "letra": "D",
+          "texto": "gerada por um navegador, que também autentica automaticamente o certificado emissor, e está restrita ao governo federal pelas regras do judiciário.",
+          "comentario": "Errado. A assinatura digital não é restrita ao governo federal e pode ser utilizada por empresas e cidadãos em diversas aplicações privadas e públicas;"
+        },
+        {
+          "letra": "E",
+          "texto": "gerada a partir do uso do certificado digital ICP-Brasil e, uma vez assinado um documento, sua alteração é possível em qualquer situação nos sistemas de governo.",
+          "comentario": "Errado. Após assinar um documento digitalmente, qualquer alteração invalida a assinatura, garantindo a integridade do conteúdo assinado."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. A assinatura digital gerada com um certificado digital ICP-Brasil possui pleno valor jurídico,\nconforme a legislação brasileira, garantindo autenticidade, integridade e não repúdio;\n\n(b) Errado. O valor jurídico da assinatura digital não depende do tipo de certificado (A1, A3, etc.), mas\nsim da ICP-Brasil, que garante sua validade legal;\n\n(c) Errado. O valor jurídico não depende da autoridade pública municipal, mas sim da regulamentação\nda ICP-Brasil em nível nacional;\n\n(d) Errado. A assinatura digital não é restrita ao governo federal e pode ser utilizada por empresas e\ncidadãos em diversas aplicações privadas e públicas;\n\n(e) Errado. Após assinar um documento digitalmente, qualquer alteração invalida a assinatura, garantindo\na integridade do conteúdo assinado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE / TRT8 - 2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em uma VPN, a confidencialidade dos dados garante que:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "o conteúdo da mensagem não foi alterado durante a transmissão entre o emissor e o receptor.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "o conteúdo da mensagem foi armazenado fisicamente em ambiente seguro.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "a mensagem foi enviada por uma fonte autêntica e será entregue a um destino autêntico.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "o emissor não poderá repudiar o envio da mensagem, ou seja, dizer que não enviou a referida mensagem.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "a mensagem não poderá ser interpretada por origens não autorizadas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado, isso seria a integridade; (b) Errado, isso não tem nenhuma relação com confidencialidade; (c)\nErrado, isso seria autenticidade; (d) Errado, isso seria irretratabilidade ou não-repúdio; (e) Correto, essa\ndefinição representa perfeitamente a confidencialidade dos dados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-05-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "Segurança da Informação - Multibancas",
+      "subtopico": "Segurança da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE / TRT8 - 2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em relação à criptografia assimétrica é correto afirmar que:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "a criptografia de chave pública pode ser menos segura, em relação à criptoanálise, do que a criptografia simétrica.",
+          "comentario": "Correto, não existe uma regra de qual tipo de criptografia (simétrica ou assimétrica) é mais segura, logo a criptografia assimétrica pode ser menos segura; (b) Errado, a criptografia simétrica ainda é amplamente utilizada; (c) Errado, não é sempre mais trivial e fácil; (d) Errado, utiliza uma chave pública e uma chave privada; (e) Errado, esses são algoritmos de criptografia simétrica. Gabarito: Letra A 10.(CEBRASPE / DPDF - 2022) O algoritmo de hash é capaz de verificar e validar a integridade de um arquivo. Comentários: A integridade é a capacidade de garantir que a informação manipulada está correta, fidedigna e que não foi corrompida. O algoritmo de hash é basicamente um algoritmo criptográfico que transforma uma entrada de dados em uma saída de dados de tamanho fixo. Dessa forma, se um único bit for alterado, teremos um resultado diferente. Logo, ele realmente é capaz de verificar e validar a integridade de um arquivo. Gabarito: Correto 11.(FCC / SEFAZ-AP – 2022) Para proteger as informações e a comunicação de dados que circulam em redes de computadores, o processo criptográfico tem por objetivo: a) a autenticação, a confidencialidade, o não repúdio e a integridade."
+        },
+        {
+          "letra": "B",
+          "texto": "a criptografia de chave pública é uma técnica de uso geral que tornou a criptografia simétrica obsoleta.",
+          "comentario": "a autenticação, a confidencialidade, o hashing e a temporização."
+        },
+        {
+          "letra": "C",
+          "texto": "a distribuição de chave pública é sempre mais trivial e fácil quando comparada com o mecanismo de troca de mensagens para distribuição de chave para a criptografia simétrica.",
+          "comentario": "a sanitização de dados, a integridade, a temporização e o não repúdio."
+        },
+        {
+          "letra": "D",
+          "texto": "envolve a utilização de duas chaves privadas para realizar a criptoanálise.",
+          "comentario": "o protecionismo, a confidencialidade, a verificação e a integridade."
+        },
+        {
+          "letra": "E",
+          "texto": "utiliza os algoritmos simétricos Data Encryption Standard (DES) e o Triple DES (DES triplo).",
+          "comentario": "a temporização, a autenticação, o não repúdio e a informatização. Comentários: O processo criptográfico tem por objetivo a autenticação, a confidencialidade, o não-repúdio e a integridade. Não são princípios de segurança: hashing, temporização, sanitização, protecionismo, verificação ou informatização. Gabarito: Letra A 12.(FCC/ SEFAZ-SC – 2018) O estabelecimento e a implantação da segurança da informação requerem o uso de diferentes mecanismos e recursos para atender os atributos de segurança da informação. Nesse contexto, o Hash tem a função de: a) realizar a transformação reversível da informação de forma a torná-la ininteligível a terceiros. b) criar uma chave criptográfica a partir do certificado digital. c) comprovar a identidade do emissor de um documento. d) atestar a validade de um documento. e) garantir a integridade de um documento. Comentários: (a) Errado, é irreversível; (b) Errado, não faz nenhum sentido; (c) Errado, hash não garante autenticidade; (d) Errado, ele não atesta se um documento é válido; (e) Correto, ele garante a integridade do documento, isto é, o documento recebido é idêntico ao documento enviado. Gabarito: Letra E 13.(FCC / FITO – 2020) Deseja-se adquirir um Certificado Digital para assegurar e comprovar a assinatura digital dos documentos emitidos por uma empresa. Considerando a aquisição por meio de um órgão autorizado pelo ICP-Brasil e que a chave deve ter o comprimento de 4096 bits, o tipo de Certificado a adquirir é: a) A1 b) A3 c) A4 d) S1 e) S3 Comentários: Se a chave deve ter comprimento de 4096 bits, o certificado é do tipo A4. Gabarito: Letra C 14.(FCC / TJ-MA – 2019) Considere as asserções a seguir, a respeito do processo de autenticação usando criptografia assimétrica: O autor utiliza sua chave privada para cifrar um documento de modo a garantir sua autoria ou sua identificação em uma transação. Se este autor cifrar um documento com sua chave privada e enviar para o destinatário, este poderá decifrar o documento PORQUE pode ter acesso à chave privada do autor. O fato de ser necessário o uso da chave privada do autor para produzir o texto cifrado caracteriza uma operação que somente ele tem condições de realizar. É correto afirmar que: a) as duas asserções são verdadeiras, sendo a segunda a justificativa correta da primeira. b) as duas asserções são falsas. c) a primeira asserção é falsa e a segunda é verdadeira. d) a primeira asserção é verdadeira e a segunda é falsa. e) as duas asserções são verdadeiras, porém a segunda não é a justificativa correta da primeira. Comentários: A primeira asserção está correta, visto que o autor utiliza sua chave privada para cifrar um documento em um processo de autenticação. No entanto, o destinatário somente poderá decifrar o documento utilizando a sua chave pública do autor – ele não tem acesso à chave privada do autor, que é secreta e de conhecimento apenas desse. Logo, a primeira asserção é verdadeira e a segunda é falsa. Gabarito: Letra D 15.(FCC / TJ-MA – 2019) As informações protegidas utilizando os algoritmos de criptografia assimétrica têm garantidas, em teoria, a) somente a confidencialidade. b) tanto a confidencialidade quanto a autenticidade. c) somente a integridade. d) somente a autenticidade. e) tanto a confidencialidade quanto a veracidade. Comentários: A utilização de algoritmos de criptografia assimétrica garante, em teoria, confidencialidade ou autenticidade. Se você criptografa com a chave pública do destinatário, garante a confidencialidade se você criptografa com a chave privada do remetente, garante a autenticidade. Gabarito: Letra B 16.(FCC / SANASA – 2019) Além de ser usado para verificar transações com criptomoedas, como Bitcoin, a função hash é usada em assinaturas digitais, para: a) garantir a integridade do documento assinado. b) aumentar o tempo de autenticação da assinatura. c) gerar um valor aleatório de tamanho variável. d) garantir a autenticidade do documento assinado. e) gerar um resumo de 256 bits por meio do algoritmo RSA. Comentários: (a) Correto, funções de hash garantem a integridade do documento assinado; (b) Errado, isso sequer faz sentido; (c) Errado, não é um valor aleatório e o tamanho é fixo; (d) Errado, ele não garante autenticidade e, sim, integridade; (e) Errado, RSA é um algoritmo de criptografia assimétrica e, não, uma função de hash. Gabarito: Letra A 17.(FCC / Prefeitura de Manaus/AM – 2019) No processo da assinatura digital, a propriedade que identifica qualquer alteração no documento e faz com que a assinatura não seja mais reconhecida garantindo, assim, a inalterabilidade, é denominada: a) autenticidade. b) autoria. c) integridade. d) não repúdio. e) irretratabilidade. Comentários: A propriedade que identifica qualquer alteração no documento e faz com que a assinatura não seja mais reconhecida garantindo, assim, a inalterabilidade, é denominada Integridade. Gabarito: Letra C 18.(FCC / TRF4 – 2019) Considere o esquema hipotético abaixo referente à comunicação segura estabelecida pelo Tribunal Regional Federal da 4ª Região – TRF4: O esquema descreve: a) autenticação e gerenciamento de sessão. b) autenticação segura com XSS via assinatura eletrônica. c) criptografia de chave assimétrica. d) comunicação segura híbrida de chave pública. e) criptografia de chave simétrica. Comentários: Notem que um cidadão está criptografando um texto claro por meio da chave pública do TRF4, que posteriormente é descriptografado pelo TRF por meio da chave privada do TRF4. Quando se criptografa um documento com a chave pública do emissor, ocorre um processo de criptografia de chave assimétrica (ou chave pública). Gabarito: Letra C 19.(FCC / TRF4 – 2019) Considere o esquema abaixo. Trata-se de uma hipotética comunicação criptografada entre o computador de um Juiz e um computador do TRF4. Os textos Chave, Processo 1 e Processo 2, bem como a categoria de criptografia apresentados no esquema representam, correta e respectivamente, a) chave secreta compartilhada, decriptografia, criptografia e criptografia de chave assimétrica. b) chave pública, criptografia, decriptografia e criptografia de chave assimétrica. c) chave secreta compartilhada, criptografia, decriptografia e criptografia de chave simétrica. d) chave pública, decriptografia, criptografia e criptografia de chave simétrica. e) chave pública compartilhada, criptografia, decriptografia e criptografia de curvas elípticas. Comentários: Notem que existe apenas uma chave compartilhada entre emissor e receptor tanto para cifrar quanto para decifrar uma mensagem. Logo, temos uma chave secreta compartilhada entre as entidades da comunicação, sendo que o primeiro processo é uma criptografia, o segundo processo é uma descriptografia – ambas simétricas. Gabarito: Letra C 20.(FCC / SEGEP-MA – 2018) A segurança da informação considera alguns atributos básicos como: confidencialidade, integridade, disponibilidade, autenticidade e irretratabilidade. O mecanismo de segurança da informação que tem o objetivo de garantir a confidencialidade é: a) a assinatura digital. b) o certificado digital. c) a função hash. d) o Token criptográfico. e) a criptografia. Comentários: O mecanismo capaz de garantir a confidencialidade é a criptografia. Gabarito: Letra E 21.(FGV / Câmara dos Deputados – 2023) Na área da Segurança da Informação, há aspectos fundamentais para o desenvolvimento de políticas de armazenamento e uso de dados, tais como Confidencialidade, Integridade, Disponibilidade e Autenticidade. No campo da Tecnologia da Informação, dada a necessidade de trafegar dados pela Internet, a confidencialidade torna-se um ponto crítico. Nesse contexto, assinale a estratégia de proteção mais adequada para preservar a confiabilidade de dados. a) Criação de backups em tempo real. b) Emprego de software antivírus. c) Instalação de centros de supercomputação. d) Redundância nos dispositivos de armazenamento. e) Uso de criptografia. Comentários: A confidencialidade dos dados, especialmente na área de Segurança da Informação, é um aspecto crítico que garante que as informações sejam acessíveis somente a pessoas autorizadas. Ao considerar o tráfego de dados pela Internet, a proteção da confidencialidade torna-se ainda mais crucial. Vamos analisar as opções: (a) Errado. Esta prática é essencial para garantir a disponibilidade dos dados, mas não aborda diretamente a confidencialidade. (b) Errado. Embora os antivírus sejam importantes para a segurança dos dados, eles são mais focados em proteger contra malware e não garantem especificamente a confidencialidade dos dados. (c) Errado. Os centros de supercomputação não são diretamente relacionados à proteção da confidencialidade dos dados. Eles são mais voltados para processamento de dados em grande escala. (d) Errado. A redundância é uma estratégia para garantir a disponibilidade e a integridade dos dados, mas não aborda a confidencialidade. (e) Correto. A criptografia é a técnica mais adequada para proteger a confidencialidade dos dados. Ela garante que os dados, mesmo se interceptados durante a transmissão pela Internet, não possam ser lidos ou compreendidos sem a chave de descriptografia apropriada. Portanto, para preservar a confidencialidade dos dados, especialmente no tráfego pela Internet, a estratégia mais adequada é o uso de criptografia. Gabarito: Letra E 22.(FGV / SEFAZ-MT - 2023) Algoritmos de ciframento são frequentemente utilizados para proteger informações, transações comerciais e financeiras realizadas por meio de meios eletrônicos, em particular, pela internet. Sobra esses algoritmos, assinale a afirmativa correta. a) 3DES é uma função de espelhamento unidirecional. b) ElGamal é um algoritmo de chave privada. c) AES é um algoritmo assimétrico com chaves de tamanho fixo. d) Blowfish é uma cifra simétrica de blocos. e) SHA é um algoritmo de chave pública de tamanho variável. Comentários: (a) Errado. 3DES (Triple Data Encryption Standard) é um algoritmo simétrico de criptografia que utiliza três vezes a aplicação do algoritmo DES; (b) Errado. ElGamal é um algoritmo de criptografia assimétrica que utiliza um par de chaves: uma chave pública e uma chave privada; (c) Errado. AES (Advanced Encryption Standard) é um algoritmo simétrico de criptografia com chaves de tamanho variável (128, 192 ou 256 bits); (d) Correto. Blowfish é de fato uma cifra simétrica de blocos amplamente utilizada para criptografia de dados; (e) Errado. Trata-se de uma família de algoritmos de hash criptográficos que produzem um resumo único (hash) de tamanho fixo para dados de entrada. Não é um algoritmo de chave pública. Gabarito: Letra D 23.(FGV / SEAD-AP – 2022) Com relação aos métodos de criptografia de chave pública, considere as afirmativas a seguir. I. Cada participante em um sistema de chave pública possui um par de chaves, uma pública e outra, privada. II. Qualquer participante pode criptografar e decriptografar uma mensagem usando a própria chave privada. III. Quando o participante P1 envia uma mensagem criptografada para P2, é preciso que P2 conheça a chave privada de P1. É correto somente o que se afirma em a) I. b) II. c) III. d) I e II. e) II e III. Comentários: (I) Correto; (II) Errado, só é possível decriptografar uma mensagem usando a própria chave privada se ela foi criptografada usando sua chave pública; (III) Errado, a chave privada é... privada, logo P2 não pode conhecer a chave privada de P1. Gabarito: Letra A 24.(FGV / TCE-TO – 2022) O auditor José recebeu o arquivo AnexoJ em formato digital. Antes de proceder com a abertura do AnexoJ, José determinou a fidedignidade do referido arquivo, avaliando a conformidade dos dados do AnexoJ por ele recebido com os dados do AnexoJ transmitido pelo emissor. Essa avaliação feita por José em AnexoJ está diretamente relacionada com o seguinte princípio da segurança de informações: a) integridade; b) confidencialidade; c) autenticidade; d) disponibilidade; e) qualidade. Comentários: José quer saber se os dados recebidos são fidedignos em relação aos dados enviados, logo se trata de uma preocupação com relação à integridade. Gabarito: Letra A 25.(FGV / TCE-TO – 2022) As funções de hash são comumente empregadas nos mecanismos de segurança da informação. Quanto às suas propriedades básicas, para que o algoritmo de hash seja considerado forte, é correto afirmar que: a) a mesma entrada deve produzir saídas diferentes; b) deve ser difícil encontrar duas entradas que produzam o mesmo hash; c) deve ser possível produzir a entrada original a partir do hash resultante; d) pequenas mudanças na entrada devem produzir pequenas mudanças no hash resultante; e) mesmo que as entradas possuam o mesmo tamanho, os resultados de hash terão tamanhos diferentes. Comentários: (a) Errado, deve produzir a mesma saída; (b) Correto; (c) Errado, idealmente deve ser impossível produzir a enrada original a partir do hash resultante; (d) Errado, pequenas mudanças na entrada devem produzir grandes mudanças no hash resultante; (e) Errado, o hash resultante sempre terá o mesmo tamanho. Gabarito: Letra B 26.(FGV / TCE-TO – 2022) Bernardo e João são auditores recém-concursados no TCE/TO. Bernardo precisa enviar documentos sigilosos para João e vice-versa, contudo, nenhum deles utilizou ainda a ferramenta de criptografia disponível na instituição. Sabendo-se que é utilizada a criptografia por chave pública, o procedimento que deve ser seguido por cada auditor antes de tramitar os documentos é: a) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a chave pública no registrador público da instituição; guardar a chave privada; e encriptar os documentos utilizando a chave pública do destinatário; b) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a chave pública no registrador público da instituição; enviar a chave privada para o destinatário; e encriptar um documento utilizando a chave privada enviada; c) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a chave pública no registrador público da instituição; guardar a chave privada; e encriptar os documentos utilizando a chave privada do remetente; d) gerar a chave pública para encriptação e decriptação dos documentos; enviar a chave pública para o destinatário; e encriptar os documentos utilizando a chave pública enviada; e) combinar uma senha entre eles; encriptar e decriptar os documentos utilizando a senha combinada. Comentários: (a) Correto; (b) Errado, não se envia sua chave privada para o destinatário, porque a chave é privada. E encripta-se o documento utilizando a chave pública do destinatário; (c) Errado, encripta-se os documentos utilizando a chave pública do destinatário; (d) Errado, deve-se gerar o par de chaves e não é necessário enviar a chave pública para o destinatário; (e) Errado, não faz nenhum sentido. Gabarito: Letra A 27.(FGV / TRT-MA – 2022) Os sistemas de chave pública são caracterizados pelo uso de um algoritmo criptográfico com duas chaves, uma privada e uma pública. Com relação às categorias de uso dos criptossistemas de chave pública, analise as afirmativas a seguir: I. Criptografia/descriptografia: um emissor criptografa uma mensagem com a chave pública do seu destinatário. II. Assinatura digital: um emissor assina uma mensagem com sua chave pública. A assinatura é feita por um algoritmo criptográfico aplicado à mensagem ou a um pequeno bloco de dados que é uma função da mensagem. III. Troca de chave: dois lados cooperam para trocar uma chave de sessão. Várias técnicas diferentes são possíveis, envolvendo as chaves públicas de uma ou de ambas as partes. Está correto o que se afirma em a) I, apenas. b) II, apenas. c) III, apenas. d) I e II, apenas.; e) II e III, apenas. Comentários: (I) Correto; (II) Errado. Se ele assinar com a própria chave pública, só ele poderá descriptografar. O intuito da assinatura digital é permitir que qualquer pessoa identifique a autenticidade de uma mensagem, logo ele deve assinar uma mensagem com a sua chave privada para que qualquer pessoa com a sua chave pública possa descriptografá-la e conferir a autenticidade; (III) Errado. Envolvem as chaves privadas de uma ou de ambas as partes. Gabarito: Letra A 28.(FGV / MPE-GO – 2022) João quer usar um serviço de armazenamento em nuvem que ofereça o recurso de verificação de sua identidade em duas etapas. Para isso, João escolheu um serviço que usa um aplicativo autenticador instalado em seu dispositivo móvel. O tipo de verificação em duas etapas do serviço escolhido por João é o(a): a) código de verificação. b) token gerador de senhas. c) cartão de segurança. d) dispositivo confiável. e) chave de recuperação. Comentários: (a) Correto. Existem vários aplicativos autenticadores (Ex: Google Authenticator, Microsoft Authenticator, entre outros) que permitem fazer a verificação em duas etapas: em geral, o usuário insere login e senha na primeira etapa e depois insere um código de verificador gerado pelo aplicativo na segunda etapa; (b) Errado, token gerador de senha é um dispositivo físico e, não, um autenticador instalado em seu dispositivo móvel que usa um serviço de armazenamento em nuvem; (c) Errado, cartão de segurança é um cartão físico que contém um conjunto de códigos que permitem a autenticação em duas etapas – não tem relação com aplicativo autenticador; (d) Errado, dispositivo confiável é um computador ou dispositivo móvel que você frequentemente usa para acessar suas contas. Pode ser necessário inserir um código de segurança no primeiro acesso. Ele não será́ necessário nos demais, pois seu dispositivo será “lembrado” – não tem relação com um aplicativo autenticador; (e) Errado, chave de recuperação é um código que permite recuperar uma senha ou o acesso a alguma aplicação – não tem relação com um aplicativo autenticador. Gabarito: Letra A 29.(FGV / TJDFT – 2022) Ana precisa enviar a mensagem M para Bráulio de forma sigilosa pela rede do Tribunal de Justiça atendendo aos requisitos de segurança: autenticidade, não repúdio, integridade e confidencialidade. Para isso, Ana deve enviar uma chave secreta K para Bráulio e gerar uma assinatura digital AD(M). Considerando que a chave K deve ser conhecida apenas por Ana e Bráulio, após esse processo deve- se cifrar K e AD(M) com a chave: a) privada de Braúlio; b) privada de Ana; c) pública de Ana; d) pública de Braúlio; e) secreta de Ana. Comentários: Essa questão é bastante interessante – nunca havia visto uma questão que cobrasse esse tipo de conhecimento. Vamos analisá-la: O enunciado afirma que Ana deve enviar uma chave secreta K para Bráulio. Ora, se foi utilizado o termo “chave secreta”, trata-se da utilização de criptografia simétrica. No entanto, logo em seguida o enunciado afirma que Ana gera uma assinatura digital da mensagem que ela deseja enviar para Bráulio. Ora, então estamos tratando de criptografia assimétrica. Conforme vamos ver, a questão trata de uma mistura de criptografia simétrica com criptografia assimétrica. O enunciado afirma que a chave secreta (K) deve ser conhecida apenas por Ana e Bráulio, reforçando que se trata de criptografia simétrica. Não poderia ser uma chave pública, professor? Não, dado que ela só deve ser conhecida por Ana e Bráulio. E não poderia ser uma chave privada, professor? Também não, chave privada só é conhecida pelo seu proprietário. Por fim, o enunciado afirma que a chave secreta e a assinatura digital da mensagem deve ser criptografada. Agora vamos entender o cenário completo: Ana precisa enviar uma mensagem para Bráulio. Para tal, ela gera uma assinatura digital da mensagem com sua chave privada para que qualquer pessoa possa utilizar sua chave pública para verificar a autenticidade, integridade e não-repúdio da mensagem. Professor, onde entra a criptografia? E também não entendi como Bráulio vai saber qual é a chave secreta? Ana junta a chave secreta com a assinatura da mensagem, criptografa tudo com a chave pública de Bráulio e envia o conjunto todo (garantindo a confidencialidade). Quando Bráulio receber, somente ele poderá descriptografar porque somente ele sabe qual é a sua chave privada. Após descriptografar, ele terá a chave secreta a sua disposição, além da assinatura digital – lembrando que a assinatura digital contém a mensagem em claro + hash criptografado da mensagem. Agora Bráulio poderá descriptografar o hash criptografado da mensagem com a chave pública de Ana, obtendo o hash da mensagem. Pronto! Bráulio tem acesso à chave secreta, à mensagem em claro e ao hash da mensagem em claro. Basta gerar outro hash da mensagem em claro e comparar com o hash da mensagem recebido: se forem iguais, significa que a mensagem é íntegra, autêntica e irretratável. E por que fazer esse processo todo complicado, professor? Porque algoritmos de criptografia simétrica possuem uma performance melhor do que algoritmos de criptografia assimétrica. Em regra, a criptografia de chave pública é utilizada para a troca de chave simétrica (além de geração de assinaturas digitais), mas – na prática – a criptografia simétrica é mais eficiente para o restante dos casos. Bacana? Galera, questão bem chatinha que cobra um caso muito específico. De todo modo, está claro que foi utilizada a chave pública de Bráulio. Gabarito: Letra D 30.(FGV / TJDFT – 2022) Lucas é um trader profissional que trabalha em uma corretora de valores. Ele efetua muitas operações durante o período em que a bolsa negocia seus ativos. Após fazer uma revisão em suas operações do dia, não validou, como sendo efetuadas por ele, algumas das operações que obtiveram prejuízo. Lucas, então, entrou em contato com a corretora e esta demonstrou, a partir de registros de auditoria e garantia de identidade, que as operações em questão realmente foram executadas por ele. Para que a corretora prove que foi Lucas quem realmente executou as operações, ela deve fazer uso do conceito de segurança chamado: a) confidencialidade; b) autenticidade; c) integridade; d) disponibilidade; e) irretratabilidade. Comentários: Para que a corretora prove que foi Lucas quem realmente executou as operações, ela deve fazer uso do conceito de segurança chamado Irretratabilidade ou Não-Repúdio, que é a garantia de que o autor não possa negar que ele realizou as operações. Gabarito: Letra E 31.(CESGRANRIO / IPEA - 2024) A entidade J enviou uma mensagem (M) assinada para a entidade K, utilizando o padrão RSA de assinatura digital. A assinatura digital (AD) de M está acompanhada do certificado digital de J (CertJ/AC), emitido pela Autoridade Certificadora (AC). A entidade K tem confiança na AC; logo, o certificado digital da AC (CertAC/AC), emitido pela própria AC, está armazenado na sua base de certificados digitais confiáveis. Ambos os certificados digitais CertJ/AC e CertAC/AC passaram no teste de validação de certificados digitais, e a cadeia de certificados está verificada com sucesso. Como parte do processo de verificação da AD de M, a entidade K deve decriptar a AD com a(as) chave(s): a) pública de J, presente em CertJ/AC b) pública de AC, presente em CertAC/AC c) públicas de J e de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC d) pública de J e a privada de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC e) privada de J e a pública de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC Comentários: (a) Correto. Para verificar uma assinatura digital criada com a chave privada do remetente (neste caso, a entidade J), o destinatário (neste caso, a entidade K) deve usar a chave pública do remetente, que é disponibilizada por meio do certificado digital do remetente (CertJ/AC). Isso permite ao destinatário assegurar que a mensagem foi de fato assinada pela chave privada correspondente à chave pública no certificado, autenticando assim a origem e integridade da mensagem. (b) Errado. A chave pública da Autoridade Certificadora (AC) é usada para verificar a validade do certificado digital de J (CertJ/AC), mas não para decriptar a assinatura digital da mensagem (M) em si. (c) Errado. Apenas a chave pública de J é necessária para decriptar a assinatura digital de M. A chave pública de AC é usada para validar o certificado de J, mas não participa diretamente no processo de decriptação da assinatura digital de M. (d) Errado. Não é necessário usar a chave privada de AC no processo de verificação da assinatura digital. A chave privada de uma Autoridade Certificadora é usada exclusivamente por ela para assinar certificados digitais. (e) Errado. A chave privada de J é utilizada para criar a assinatura digital, e a entidade K não necessita dessa chave para a verificação. A chave pública de AC é usada para validar o certificado de J, não para decriptar a assinatura digital de M. Gabarito: Letra A 32.(CESGRANRIO / AgeRIO – 2023) Para evitar a utilização inadequada de recursos de informática em uma organização, é comum que sejam configuradas credenciais de acesso, como, por exemplo, um nome de usuário e uma senha associada. Essas credenciais podem ser utilizadas para controlar acesso a computadores (estações de trabalho), arquivos compartilhados na nuvem e sistemas de informação, entre outros. Uma boa prática que pode ser usada no que se refere a senhas é: a) anotar a sua senha e deixá-la afixada próxima à sua estação de trabalho, pois caso ela seja esquecida, não haverá uma interrupção no seu trabalho. b) confirmar a sua senha por telefone, caso venha a ser solicitado. c) definir uma senha que não possa ser facilmente adivinhada, de modo que apenas você tenha o seu conhecimento. d) garantir que seus colegas mais próximos saibam a sua senha, para que ela possa ser utilizada na sua ausência. e) informar a sua senha a qualquer pessoa que a solicite e que trabalhe na mesma organização em que você atue. Comentários: (a) Errado. Anotar a senha e deixá-la afixada próxima à estação de trabalho é uma prática altamente insegura. Isso expõe a senha a qualquer pessoa que passe pela área, aumentando o risco de acesso não autorizado. (b) Errado. Confirmar a senha por telefone não é recomendado, especialmente se a solicitação vem de uma fonte não verificada. Isso pode ser uma tentativa de phishing ou outro tipo de ataque para obter credenciais de acesso indevidamente. (c) Correto. Definir uma senha forte e única, que não possa ser facilmente adivinhada, é uma prática essencial de segurança. A senha deve ser conhecida apenas pelo usuário, sendo complexa o suficiente para resistir a tentativas de adivinhação ou ataques de força bruta. (d) Errado. Compartilhar a senha com colegas, mesmo os mais próximos, compromete a segurança das informações. Cada usuário deve ter suas próprias credenciais para garantir a responsabilização e a rastreabilidade das ações no sistema. (e) Errado. Nunca se deve informar a senha a qualquer pessoa que a solicite, mesmo que trabalhe na mesma organização. A senha é pessoal e intransferível, e sua divulgação pode levar a violações de segurança. Gabarito: Letra C 33.(CESGRANRIO / BB – 2023) Os mecanismos de segurança combinam técnicas e ações de segurança para prover a proteção de usuários e de dados. O mecanismo de segurança que consiste em definir as ações que uma determinada entidade pode executar, ou a quais informações essa entidade pode ter acesso, é o de: a) identificação b) integridade c) autenticação d) autorização e) confidencialidade Comentários: (a) Errado. Este mecanismo está relacionado ao processo de reconhecimento de um usuário no sistema. A identificação normalmente ocorre por meio de um nome de usuário ou ID, mas não define as permissões ou acessos desse usuário. (b) Errado. Refere-se à garantia de que os dados não serão alterados de forma não autorizada. Este mecanismo assegura a precisão e a consistência dos dados ao longo do tempo, mas não está diretamente relacionado ao controle de ações ou acesso a informações. (c) Errado. Este processo confirma a identidade de um usuário ou entidade. Normalmente ocorre após a identificação e pode envolver senhas, tokens ou outros métodos. A autenticação verifica se o usuário é quem afirma ser, mas não define suas permissões. (d) Correto. Este mecanismo determina as ações que uma entidade pode executar ou a quais informações pode ter acesso após ter sido identificada e autenticada. A autorização define o que um usuário está permitido fazer no sistema. (e) Errado. Refere-se à proteção de informações para que sejam acessadas apenas por pessoas autorizadas. Embora esteja relacionada ao acesso a dados, ela é mais sobre proteger os dados de acessos não autorizados, e não sobre definir quais ações um usuário pode executar. Gabarito: Letra D 34.(CESGRANRIO / BB – 2023) Para acessar sistemas de informação é comum que seus usuários sejam solicitados a informar suas credenciais, que normalmente são definidas por meio de uma identificação de usuário e uma senha. Como identificação de usuário é comum ser utilizado o email ou o CPF do usuário. Nesse contexto, um exemplo de uma senha bem formada e segura é: a) “XYZ”, pois é fácil de lembrar b) “1234567”, pois é fácil de lembrar e tem tamanho adequado c) A data de aniversário do usuário d) Igual à identificação do usuário e) “Yk.9821-Z” Comentários: (a) Errado. É muito curta e simples, o que a torna vulnerável a ataques de força bruta; (b) Errado. Apesar de ter um tamanho razoável, usa apenas números e uma sequência óbvia, o que a torna insegura; (c) Errado. A data de aniversário do usuário: É uma informação pessoal facilmente acessível, tornando a senha previsível; (d) Errado. Igual à identificação do usuário: Usar a mesma informação para o nome de usuário e senha é uma prática de segurança extremamente fraca, pois uma vez que o nome de usuário é conhecido, a senha também seria; (e) Correto. Esse é um exemplo de senha bem formada e segura dado que é complexa, tem um bom tamanho e não é baseada em informações pessoais. Gabarito: Letra E 35.(CESGRANRIO / BANRISUL – 2023) Os serviços de segurança de uma empresa são implementados por mecanismos de segurança e visam a satisfazer os requisitos da política de segurança dessa empresa. Para aprimorar o serviço de segurança que controla o acesso aos sistemas de informação, o controle de autenticação em uma etapa de verificação está sendo substituído pelo controle de autenticação em mais de uma etapa de verificação. Esse controle em mais de uma etapa de verificação é conhecido como autenticação: a) complexa b) resistente c) qualificada d) estendida e) multifator Comentários: A autenticação em mais de uma etapa de verificação é conhecida como autenticação multifator. A autenticação multifator (MFA, do inglês Multi-Factor Authentication) é um método de controle de acesso que requer mais de uma forma independente de verificação para estabelecer a identidade do usuário. Este método melhora significativamente a segurança, pois mesmo que uma das credenciais seja comprometida, é improvável que um invasor possua as outras formas de verificação. As outras opções, como autenticação complexa, resistente, qualificada e estendida, não são termos padrão usados para descrever a autenticação em mais de uma etapa. Gabarito: Letra E 36.(CESGRANRIO / BB – 2023) O mecanismo de segurança é um método ou processo que pode ser utilizado por um sistema para implementar um serviço de segurança. Para verificar a autenticidade ou a autoria de um documento com relação ao seu signatário, deve-se validar a(o): a) envelope digital b) assinatura digital c) criptograma simétrico d) chave simétrica e) algoritmo simétrico Comentários: (a) Errado. O envelope digital é uma técnica usada para proteger informações confidenciais, mas não é usada diretamente para verificar a autenticidade ou autoria de um documento. (b) Correto. A assinatura digital é usada para confirmar que um documento eletrônico é autêntico, ou seja, foi criado pelo signatário alegado e não foi alterado após a assinatura. (c) Errado. Um criptograma simétrico é um texto cifrado usando criptografia simétrica, mas não se destina à verificação de autenticidade ou autoria de um documento. (d) Errado. Uma chave simétrica é usada na criptografia simétrica para cifrar e decifrar mensagens, mas não para validar a autenticidade ou autoria de um documento. (e) Errado. Um algoritmo simétrico é um método para cifrar e decifrar mensagens, mas, novamente, não é utilizado para verificar a autenticidade ou autoria de um documento. Gabarito: Letra B 37.(CESGRANRIO / AgeRIO – 2023) Para evitar a utilização inadequada de recursos de informática em uma organização, é comum que sejam configuradas credenciais de acesso, como, por exemplo, um nome de usuário e uma senha associada. Essas credenciais podem ser utilizadas para controlar acesso a computadores (estações de trabalho), arquivos compartilhados na nuvem e sistemas"
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Correto, não existe uma regra de qual tipo de criptografia (simétrica ou assimétrica) é mais segura,\nlogo a criptografia assimétrica pode ser menos segura; (b) Errado, a criptografia simétrica ainda é\namplamente utilizada; (c) Errado, não é sempre mais trivial e fácil; (d) Errado, utiliza uma chave pública e\numa chave privada; (e) Errado, esses são algoritmos de criptografia simétrica.\n\n                                                                                         Gabarito: Letra A\n\n10.(CEBRASPE / DPDF - 2022) O algoritmo de hash é capaz de verificar e validar a integridade de\n   um arquivo.\n\nComentários:\n\nA integridade é a capacidade de garantir que a informação manipulada está correta, fidedigna e que não\nfoi corrompida. O algoritmo de hash é basicamente um algoritmo criptográfico que transforma uma\nentrada de dados em uma saída de dados de tamanho fixo. Dessa forma, se um único bit for alterado,\nteremos um resultado diferente. Logo, ele realmente é capaz de verificar e validar a integridade de um\narquivo.\n\n                                                                             Gabarito: Correto\n11.(FCC / SEFAZ-AP – 2022) Para proteger as informações e a comunicação de dados que circulam\n   em redes de computadores, o processo criptográfico tem por objetivo:\n\n   a) a autenticação, a confidencialidade, o não repúdio e a integridade.\n   b) a autenticação, a confidencialidade, o hashing e a temporização.\n   c) a sanitização de dados, a integridade, a temporização e o não repúdio.\n   d) o protecionismo, a confidencialidade, a verificação e a integridade.\n   e) a temporização, a autenticação, o não repúdio e a informatização.\n\nComentários:\n\nO processo criptográfico tem por objetivo a autenticação, a confidencialidade, o não-repúdio e a\nintegridade. Não são princípios de segurança: hashing, temporização, sanitização, protecionismo,\nverificação ou informatização.\n\n                                                                                          Gabarito: Letra A\n\n12.(FCC/ SEFAZ-SC – 2018) O estabelecimento e a implantação da segurança da informação\n   requerem o uso de diferentes mecanismos e recursos para atender os atributos de segurança da\n   informação. Nesse contexto, o Hash tem a função de:\n\n   a) realizar a transformação reversível da informação de forma a torná-la ininteligível a terceiros.\n   b) criar uma chave criptográfica a partir do certificado digital.\n   c) comprovar a identidade do emissor de um documento.\n   d) atestar a validade de um documento.\n   e) garantir a integridade de um documento.\n\nComentários:\n\n(a) Errado, é irreversível; (b) Errado, não faz nenhum sentido; (c) Errado, hash não garante autenticidade;\n(d) Errado, ele não atesta se um documento é válido; (e) Correto, ele garante a integridade do documento,\nisto é, o documento recebido é idêntico ao documento enviado.\n\n                                                                                          Gabarito: Letra E\n\n13.(FCC / FITO – 2020) Deseja-se adquirir um Certificado Digital para assegurar e comprovar a\n   assinatura digital dos documentos emitidos por uma empresa. Considerando a aquisição por\n   meio de um órgão autorizado pelo ICP-Brasil e que a chave deve ter o comprimento de 4096\n   bits, o tipo de Certificado a adquirir é:\n\n   a) A1\n   b) A3\n   c) A4\n   d) S1\n   e) S3\n\nComentários:\n\nSe a chave deve ter comprimento de 4096 bits, o certificado é do tipo A4.\n\n                                                                                         Gabarito: Letra C\n\n14.(FCC / TJ-MA – 2019) Considere as asserções a seguir, a respeito do processo de autenticação\n   usando criptografia assimétrica:\n\n   O autor utiliza sua chave privada para cifrar um documento de modo a garantir sua autoria ou sua\n   identificação em uma transação. Se este autor cifrar um documento com sua chave privada e enviar\n   para o destinatário, este poderá decifrar o documento\n\n                                                      PORQUE\n\n   pode ter acesso à chave privada do autor. O fato de ser necessário o uso da chave privada do autor\n   para produzir o texto cifrado caracteriza uma operação que somente ele tem condições de realizar.\n\n   É correto afirmar que:\n\n   a)   as duas asserções são verdadeiras, sendo a segunda a justificativa correta da primeira.\n   b)   as duas asserções são falsas.\n   c)   a primeira asserção é falsa e a segunda é verdadeira.\n   d)   a primeira asserção é verdadeira e a segunda é falsa.\n   e)   as duas asserções são verdadeiras, porém a segunda não é a justificativa correta da primeira.\n\nComentários:\n\nA primeira asserção está correta, visto que o autor utiliza sua chave privada para cifrar um documento em\num processo de autenticação. No entanto, o destinatário somente poderá decifrar o documento\nutilizando a sua chave pública do autor – ele não tem acesso à chave privada do autor, que é secreta e de\nconhecimento apenas desse. Logo, a primeira asserção é verdadeira e a segunda é falsa.\n\n                                                                                         Gabarito: Letra D\n\n15.(FCC / TJ-MA – 2019) As informações protegidas utilizando os algoritmos de criptografia\n   assimétrica têm garantidas, em teoria,\n\n   a) somente a confidencialidade.\n   b) tanto a confidencialidade quanto a autenticidade.\n   c) somente a integridade.\n   d) somente a autenticidade.\n   e) tanto a confidencialidade quanto a veracidade.\n\nComentários:\n\nA utilização de algoritmos de criptografia assimétrica garante, em teoria, confidencialidade ou\nautenticidade. Se você criptografa com a chave pública do destinatário, garante a confidencialidade se\nvocê criptografa com a chave privada do remetente, garante a autenticidade.\n\n                                                                                         Gabarito: Letra B\n\n16.(FCC / SANASA – 2019) Além de ser usado para verificar transações com criptomoedas, como\n   Bitcoin, a função hash é usada em assinaturas digitais, para:\n\n   a) garantir a integridade do documento assinado.\n   b) aumentar o tempo de autenticação da assinatura.\n   c) gerar um valor aleatório de tamanho variável.\n   d) garantir a autenticidade do documento assinado.\n   e) gerar um resumo de 256 bits por meio do algoritmo RSA.\n\nComentários:\n\n(a) Correto, funções de hash garantem a integridade do documento assinado; (b) Errado, isso sequer faz\nsentido; (c) Errado, não é um valor aleatório e o tamanho é fixo; (d) Errado, ele não garante autenticidade\ne, sim, integridade; (e) Errado, RSA é um algoritmo de criptografia assimétrica e, não, uma função de hash.\n\n                                                                                         Gabarito: Letra A\n\n17.(FCC / Prefeitura de Manaus/AM – 2019) No processo da assinatura digital, a propriedade que\n   identifica qualquer alteração no documento e faz com que a assinatura não seja mais\n   reconhecida garantindo, assim, a inalterabilidade, é denominada:\n\n   a) autenticidade.\n   b) autoria.\n   c) integridade.\n   d) não repúdio.\n   e) irretratabilidade.\n\nComentários:\n\nA propriedade que identifica qualquer alteração no documento e faz com que a assinatura não seja mais\nreconhecida garantindo, assim, a inalterabilidade, é denominada Integridade.\n\n                                                                                         Gabarito: Letra C\n\n18.(FCC / TRF4 – 2019) Considere o esquema hipotético abaixo referente à comunicação segura\n   estabelecida pelo Tribunal Regional Federal da 4ª Região – TRF4:\n\n   O esquema descreve:\n\n   a) autenticação e gerenciamento de sessão.\n   b) autenticação segura com XSS via assinatura eletrônica.\n\n   c) criptografia de chave assimétrica.\n   d) comunicação segura híbrida de chave pública.\n   e) criptografia de chave simétrica.\n\nComentários:\n\nNotem que um cidadão está criptografando um texto claro por meio da chave pública do TRF4, que\nposteriormente é descriptografado pelo TRF por meio da chave privada do TRF4. Quando se criptografa\num documento com a chave pública do emissor, ocorre um processo de criptografia de chave assimétrica\n(ou chave pública).\n\n                                                                                         Gabarito: Letra C\n\n19.(FCC / TRF4 – 2019) Considere o esquema abaixo.\n\n   Trata-se de uma hipotética comunicação criptografada entre o computador de um Juiz e um\n   computador do TRF4. Os textos Chave, Processo 1 e Processo 2, bem como a categoria de criptografia\n   apresentados no esquema representam, correta e respectivamente,\n\n   a) chave secreta compartilhada, decriptografia, criptografia e criptografia de chave assimétrica.\n   b) chave pública, criptografia, decriptografia e criptografia de chave assimétrica.\n   c) chave secreta compartilhada, criptografia, decriptografia e criptografia de chave simétrica.\n   d) chave pública, decriptografia, criptografia e criptografia de chave simétrica.\n   e) chave pública compartilhada, criptografia, decriptografia e criptografia de curvas elípticas.\n\nComentários:\n\nNotem que existe apenas uma chave compartilhada entre emissor e receptor tanto para cifrar quanto para\ndecifrar uma mensagem. Logo, temos uma chave secreta compartilhada entre as entidades da\ncomunicação, sendo que o primeiro processo é uma criptografia, o segundo processo é uma\ndescriptografia – ambas simétricas.\n\n                                                                                         Gabarito: Letra C\n\n20.(FCC / SEGEP-MA – 2018) A segurança da informação considera alguns atributos básicos como:\n   confidencialidade, integridade, disponibilidade, autenticidade e irretratabilidade. O\n   mecanismo de segurança da informação que tem o objetivo de garantir a confidencialidade é:\n\n   a) a assinatura digital.\n   b) o certificado digital.\n   c) a função hash.\n   d) o Token criptográfico.\n   e) a criptografia.\n\nComentários:\n\nO mecanismo capaz de garantir a confidencialidade é a criptografia.\n\n                                                                                         Gabarito: Letra E\n\n21.(FGV / Câmara dos Deputados – 2023) Na área da Segurança da Informação, há aspectos\n   fundamentais para o desenvolvimento de políticas de armazenamento e uso de dados, tais\n   como Confidencialidade, Integridade, Disponibilidade e Autenticidade. No campo da\n   Tecnologia da Informação, dada a necessidade de trafegar dados pela Internet, a\n   confidencialidade torna-se um ponto crítico. Nesse contexto, assinale a estratégia de proteção\n   mais adequada para preservar a confiabilidade de dados.\n\n   a) Criação de backups em tempo real.\n   b) Emprego de software antivírus.\n   c) Instalação de centros de supercomputação.\n   d) Redundância nos dispositivos de armazenamento.\n   e) Uso de criptografia.\n\nComentários:\n\nA confidencialidade dos dados, especialmente na área de Segurança da Informação, é um aspecto crítico\nque garante que as informações sejam acessíveis somente a pessoas autorizadas. Ao considerar o tráfego\nde dados pela Internet, a proteção da confidencialidade torna-se ainda mais crucial. Vamos analisar as\nopções:\n\n(a) Errado. Esta prática é essencial para garantir a disponibilidade dos dados, mas não aborda\ndiretamente a confidencialidade.\n\n(b) Errado. Embora os antivírus sejam importantes para a segurança dos dados, eles são mais focados em\nproteger contra malware e não garantem especificamente a confidencialidade dos dados.\n\n(c) Errado. Os centros de supercomputação não são diretamente relacionados à proteção da\nconfidencialidade dos dados. Eles são mais voltados para processamento de dados em grande escala.\n\n(d) Errado. A redundância é uma estratégia para garantir a disponibilidade e a integridade dos dados,\nmas não aborda a confidencialidade.\n\n(e) Correto. A criptografia é a técnica mais adequada para proteger a confidencialidade dos dados. Ela\ngarante que os dados, mesmo se interceptados durante a transmissão pela Internet, não possam ser lidos\nou compreendidos sem a chave de descriptografia apropriada.\n\nPortanto, para preservar a confidencialidade dos dados, especialmente no tráfego pela Internet, a\nestratégia mais adequada é o uso de criptografia.\n\n                                                                                         Gabarito: Letra E\n\n22.(FGV / SEFAZ-MT - 2023) Algoritmos de ciframento são frequentemente utilizados para proteger\n   informações, transações comerciais e financeiras realizadas por meio de meios eletrônicos, em\n   particular, pela internet.\n\n   Sobra esses algoritmos, assinale a afirmativa correta.\n\n   a) 3DES é uma função de espelhamento unidirecional.\n\n   b) ElGamal é um algoritmo de chave privada.\n   c) AES é um algoritmo assimétrico com chaves de tamanho fixo.\n   d) Blowfish é uma cifra simétrica de blocos.\n   e) SHA é um algoritmo de chave pública de tamanho variável.\n\nComentários:\n\n(a) Errado. 3DES (Triple Data Encryption Standard) é um algoritmo simétrico de criptografia que utiliza\ntrês vezes a aplicação do algoritmo DES;\n\n(b) Errado. ElGamal é um algoritmo de criptografia assimétrica que utiliza um par de chaves: uma chave\npública e uma chave privada;\n\n(c) Errado. AES (Advanced Encryption Standard) é um algoritmo simétrico de criptografia com chaves de\ntamanho variável (128, 192 ou 256 bits);\n\n(d) Correto. Blowfish é de fato uma cifra simétrica de blocos amplamente utilizada para criptografia de\ndados;\n\n(e) Errado. Trata-se de uma família de algoritmos de hash criptográficos que produzem um resumo único\n(hash) de tamanho fixo para dados de entrada. Não é um algoritmo de chave pública.\n\n                                                                                         Gabarito: Letra D\n\n23.(FGV / SEAD-AP – 2022) Com relação aos métodos de criptografia de chave pública, considere\n   as afirmativas a seguir.\n\n   I. Cada participante em um sistema de chave pública possui um par de chaves, uma pública e outra,\n   privada.\n   II. Qualquer participante pode criptografar e decriptografar uma mensagem usando a própria chave\n   privada.\n   III. Quando o participante P1 envia uma mensagem criptografada para P2, é preciso que P2 conheça\n   a chave privada de P1.\n\n   É correto somente o que se afirma em\n\n   a) I.\n   b) II.\n   c) III.\n   d) I e II.\n   e) II e III.\n\nComentários:\n\n(I) Correto; (II) Errado, só é possível decriptografar uma mensagem usando a própria chave privada se ela\nfoi criptografada usando sua chave pública; (III) Errado, a chave privada é... privada, logo P2 não pode\nconhecer a chave privada de P1.\n\n                                                                                         Gabarito: Letra A\n\n24.(FGV / TCE-TO – 2022) O auditor José recebeu o arquivo AnexoJ em formato digital. Antes de\n   proceder com a abertura do AnexoJ, José determinou a fidedignidade do referido arquivo,\n\n   avaliando a conformidade dos dados do AnexoJ por ele recebido com os dados do AnexoJ\n   transmitido pelo emissor.\n\n   Essa avaliação feita por José em AnexoJ está diretamente relacionada com o seguinte princípio da\n   segurança de informações:\n\n   a) integridade;\n   b) confidencialidade;\n   c) autenticidade;\n   d) disponibilidade;\n   e) qualidade.\n\nComentários:\n\nJosé quer saber se os dados recebidos são fidedignos em relação aos dados enviados, logo se trata de\numa preocupação com relação à integridade.\n\n                                                                                         Gabarito: Letra A\n\n25.(FGV / TCE-TO – 2022) As funções de hash são comumente empregadas nos mecanismos de\n   segurança da informação.\n\n   Quanto às suas propriedades básicas, para que o algoritmo de hash seja considerado forte, é correto\n   afirmar que:\n\n   a) a mesma entrada deve produzir saídas diferentes;\n   b) deve ser difícil encontrar duas entradas que produzam o mesmo hash;\n   c) deve ser possível produzir a entrada original a partir do hash resultante;\n   d) pequenas mudanças na entrada devem produzir pequenas mudanças no hash resultante;\n   e) mesmo que as entradas possuam o mesmo tamanho, os resultados de hash terão tamanhos\n   diferentes.\n\nComentários:\n\n(a) Errado, deve produzir a mesma saída; (b) Correto; (c) Errado, idealmente deve ser impossível produzir\na enrada original a partir do hash resultante; (d) Errado, pequenas mudanças na entrada devem produzir\ngrandes mudanças no hash resultante; (e) Errado, o hash resultante sempre terá o mesmo tamanho.\n\n                                                                                         Gabarito: Letra B\n\n26.(FGV / TCE-TO – 2022) Bernardo e João são auditores recém-concursados no TCE/TO. Bernardo\n   precisa enviar documentos sigilosos para João e vice-versa, contudo, nenhum deles utilizou\n   ainda a ferramenta de criptografia disponível na instituição.\n\n   Sabendo-se que é utilizada a criptografia por chave pública, o procedimento que deve ser seguido\n   por cada auditor antes de tramitar os documentos é:\n\n   a) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a\n   chave pública no registrador público da instituição; guardar a chave privada; e encriptar os\n   documentos utilizando a chave pública do destinatário;\n\n   b) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a\n   chave pública no registrador público da instituição; enviar a chave privada para o destinatário; e\n   encriptar um documento utilizando a chave privada enviada;\n\n   c) gerar um par de chaves a ser usado para encriptação e decriptação dos documentos; importar a\n   chave pública no registrador público da instituição; guardar a chave privada; e encriptar os\n   documentos utilizando a chave privada do remetente;\n\n   d) gerar a chave pública para encriptação e decriptação dos documentos; enviar a chave pública para\n   o destinatário; e encriptar os documentos utilizando a chave pública enviada;\n\n   e) combinar uma senha entre eles; encriptar e decriptar os documentos utilizando a senha combinada.\n\nComentários:\n\n(a) Correto; (b) Errado, não se envia sua chave privada para o destinatário, porque a chave é privada. E\nencripta-se o documento utilizando a chave pública do destinatário; (c) Errado, encripta-se os\ndocumentos utilizando a chave pública do destinatário; (d) Errado, deve-se gerar o par de chaves e não\né necessário enviar a chave pública para o destinatário; (e) Errado, não faz nenhum sentido.\n\n                                                                                           Gabarito: Letra A\n\n27.(FGV / TRT-MA – 2022) Os sistemas de chave pública são caracterizados pelo uso de um\n   algoritmo criptográfico com duas chaves, uma privada e uma pública. Com relação às categorias\n   de uso dos criptossistemas de chave pública, analise as afirmativas a seguir:\n\n   I. Criptografia/descriptografia: um emissor criptografa uma mensagem com a chave pública do seu\n   destinatário.\n\n   II. Assinatura digital: um emissor assina uma mensagem com sua chave pública. A assinatura é feita\n   por um algoritmo criptográfico aplicado à mensagem ou a um pequeno bloco de dados que é uma\n   função da mensagem.\n\n   III. Troca de chave: dois lados cooperam para trocar uma chave de sessão. Várias técnicas diferentes\n   são possíveis, envolvendo as chaves públicas de uma ou de ambas as partes.\n\n   Está correto o que se afirma em\n\n   a) I, apenas.\n   b) II, apenas.\n   c) III, apenas.\n   d) I e II, apenas.;\n   e) II e III, apenas.\n\nComentários:\n\n(I) Correto; (II) Errado. Se ele assinar com a própria chave pública, só ele poderá descriptografar. O intuito\nda assinatura digital é permitir que qualquer pessoa identifique a autenticidade de uma mensagem, logo\nele deve assinar uma mensagem com a sua chave privada para que qualquer pessoa com a sua chave\npública possa descriptografá-la e conferir a autenticidade; (III) Errado. Envolvem as chaves privadas de\numa ou de ambas as partes.\n\n                                                                                         Gabarito: Letra A\n\n28.(FGV / MPE-GO – 2022) João quer usar um serviço de armazenamento em nuvem que ofereça o\n   recurso de verificação de sua identidade em duas etapas. Para isso, João escolheu um serviço\n   que usa um aplicativo autenticador instalado em seu dispositivo móvel.\n\n   O tipo de verificação em duas etapas do serviço escolhido por João é o(a):\n\n   a) código de verificação.\n   b) token gerador de senhas.\n   c) cartão de segurança.\n   d) dispositivo confiável.\n   e) chave de recuperação.\n\nComentários:\n\n(a) Correto. Existem vários aplicativos autenticadores (Ex: Google Authenticator, Microsoft Authenticator,\nentre outros) que permitem fazer a verificação em duas etapas: em geral, o usuário insere login e senha\nna primeira etapa e depois insere um código de verificador gerado pelo aplicativo na segunda etapa;\n\n(b) Errado, token gerador de senha é um dispositivo físico e, não, um autenticador instalado em seu\ndispositivo móvel que usa um serviço de armazenamento em nuvem;\n\n(c) Errado, cartão de segurança é um cartão físico que contém um conjunto de códigos que permitem a\nautenticação em duas etapas – não tem relação com aplicativo autenticador;\n\n(d) Errado, dispositivo confiável é um computador ou dispositivo móvel que você frequentemente usa\npara acessar suas contas. Pode ser necessário inserir um código de segurança no primeiro acesso. Ele\nnão será́ necessário nos demais, pois seu dispositivo será “lembrado” – não tem relação com um aplicativo\nautenticador;\n\n(e) Errado, chave de recuperação é um código que permite recuperar uma senha ou o acesso a alguma\naplicação – não tem relação com um aplicativo autenticador.\n\n                                                                                         Gabarito: Letra A\n\n29.(FGV / TJDFT – 2022) Ana precisa enviar a mensagem M para Bráulio de forma sigilosa pela rede\n   do Tribunal de Justiça atendendo aos requisitos de segurança: autenticidade, não repúdio,\n   integridade e confidencialidade. Para isso, Ana deve enviar uma chave secreta K para Bráulio e\n   gerar uma assinatura digital AD(M).\n\n   Considerando que a chave K deve ser conhecida apenas por Ana e Bráulio, após esse processo deve-\n   se cifrar K e AD(M) com a chave:\n\n   a) privada de Braúlio;\n   b) privada de Ana;\n   c) pública de Ana;\n   d) pública de Braúlio;\n   e) secreta de Ana.\n\nComentários:\n\nEssa questão é bastante interessante – nunca havia visto uma questão que cobrasse esse tipo de\nconhecimento. Vamos analisá-la:\n\nO enunciado afirma que Ana deve enviar uma chave secreta K para Bráulio. Ora, se foi utilizado o termo\n“chave secreta”, trata-se da utilização de criptografia simétrica. No entanto, logo em seguida o enunciado\nafirma que Ana gera uma assinatura digital da mensagem que ela deseja enviar para Bráulio. Ora, então\nestamos tratando de criptografia assimétrica. Conforme vamos ver, a questão trata de uma mistura de\ncriptografia simétrica com criptografia assimétrica.\n\nO enunciado afirma que a chave secreta (K) deve ser conhecida apenas por Ana e Bráulio, reforçando\nque se trata de criptografia simétrica. Não poderia ser uma chave pública, professor? Não, dado que ela\nsó deve ser conhecida por Ana e Bráulio. E não poderia ser uma chave privada, professor? Também não,\nchave privada só é conhecida pelo seu proprietário. Por fim, o enunciado afirma que a chave secreta e a\nassinatura digital da mensagem deve ser criptografada.\n\nAgora vamos entender o cenário completo: Ana precisa enviar uma mensagem para Bráulio. Para tal, ela\ngera uma assinatura digital da mensagem com sua chave privada para que qualquer pessoa possa utilizar\nsua chave pública para verificar a autenticidade, integridade e não-repúdio da mensagem. Professor,\nonde entra a criptografia? E também não entendi como Bráulio vai saber qual é a chave secreta?\n\nAna junta a chave secreta com a assinatura da mensagem, criptografa tudo com a chave pública de Bráulio\ne envia o conjunto todo (garantindo a confidencialidade). Quando Bráulio receber, somente ele poderá\ndescriptografar porque somente ele sabe qual é a sua chave privada. Após descriptografar, ele terá a\nchave secreta a sua disposição, além da assinatura digital – lembrando que a assinatura digital contém a\nmensagem em claro + hash criptografado da mensagem.\n\nAgora Bráulio poderá descriptografar o hash criptografado da mensagem com a chave pública de Ana,\nobtendo o hash da mensagem. Pronto! Bráulio tem acesso à chave secreta, à mensagem em claro e ao\nhash da mensagem em claro. Basta gerar outro hash da mensagem em claro e comparar com o hash da\nmensagem recebido: se forem iguais, significa que a mensagem é íntegra, autêntica e irretratável.\n\nE por que fazer esse processo todo complicado, professor? Porque algoritmos de criptografia simétrica\npossuem uma performance melhor do que algoritmos de criptografia assimétrica. Em regra, a criptografia\nde chave pública é utilizada para a troca de chave simétrica (além de geração de assinaturas digitais), mas\n– na prática – a criptografia simétrica é mais eficiente para o restante dos casos. Bacana?\n\nGalera, questão bem chatinha que cobra um caso muito específico. De todo modo, está claro que foi\nutilizada a chave pública de Bráulio.\n\n                                                                                         Gabarito: Letra D\n\n30.(FGV / TJDFT – 2022) Lucas é um trader profissional que trabalha em uma corretora de valores.\n   Ele efetua muitas operações durante o período em que a bolsa negocia seus ativos. Após fazer\n   uma revisão em suas operações do dia, não validou, como sendo efetuadas por ele, algumas das\n   operações que obtiveram prejuízo. Lucas, então, entrou em contato com a corretora e esta\n   demonstrou, a partir de registros de auditoria e garantia de identidade, que as operações em\n   questão realmente foram executadas por ele.\n\n   Para que a corretora prove que foi Lucas quem realmente executou as operações, ela deve fazer uso\n   do conceito de segurança chamado:\n\n   a) confidencialidade;\n\n   b) autenticidade;\n   c) integridade;\n   d) disponibilidade;\n   e) irretratabilidade.\n\nComentários:\n\nPara que a corretora prove que foi Lucas quem realmente executou as operações, ela deve fazer uso do\nconceito de segurança chamado Irretratabilidade ou Não-Repúdio, que é a garantia de que o autor não\npossa negar que ele realizou as operações.\n\n                                                                                         Gabarito: Letra E\n\n31.(CESGRANRIO / IPEA - 2024) A entidade J enviou uma mensagem (M) assinada para a entidade\n   K, utilizando o padrão RSA de assinatura digital. A assinatura digital (AD) de M está\n   acompanhada do certificado digital de J (CertJ/AC), emitido pela Autoridade Certificadora (AC).\n   A entidade K tem confiança na AC; logo, o certificado digital da AC (CertAC/AC), emitido pela\n   própria AC, está armazenado na sua base de certificados digitais confiáveis. Ambos os\n   certificados digitais CertJ/AC e CertAC/AC passaram no teste de validação de certificados\n   digitais, e a cadeia de certificados está verificada com sucesso.\n\n   Como parte do processo de verificação da AD de M, a entidade K deve decriptar a AD com a(as)\n   chave(s):\n\n   a) pública de J, presente em CertJ/AC\n   b) pública de AC, presente em CertAC/AC\n   c) públicas de J e de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC\n   d) pública de J e a privada de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC\n   e) privada de J e a pública de AC, presentes, respectivamente, em CertJ/AC e CertAC/AC\n\nComentários:\n\n(a) Correto. Para verificar uma assinatura digital criada com a chave privada do remetente (neste caso, a\nentidade J), o destinatário (neste caso, a entidade K) deve usar a chave pública do remetente, que é\ndisponibilizada por meio do certificado digital do remetente (CertJ/AC). Isso permite ao destinatário\nassegurar que a mensagem foi de fato assinada pela chave privada correspondente à chave pública no\ncertificado, autenticando assim a origem e integridade da mensagem.\n\n(b) Errado. A chave pública da Autoridade Certificadora (AC) é usada para verificar a validade do\ncertificado digital de J (CertJ/AC), mas não para decriptar a assinatura digital da mensagem (M) em si.\n\n(c) Errado. Apenas a chave pública de J é necessária para decriptar a assinatura digital de M. A chave\npública de AC é usada para validar o certificado de J, mas não participa diretamente no processo de\ndecriptação da assinatura digital de M.\n\n(d) Errado. Não é necessário usar a chave privada de AC no processo de verificação da assinatura digital.\nA chave privada de uma Autoridade Certificadora é usada exclusivamente por ela para assinar certificados\ndigitais.\n\n(e) Errado. A chave privada de J é utilizada para criar a assinatura digital, e a entidade K não necessita\ndessa chave para a verificação. A chave pública de AC é usada para validar o certificado de J, não para\ndecriptar a assinatura digital de M.\n\n                                                                                         Gabarito: Letra A\n\n32.(CESGRANRIO / AgeRIO – 2023) Para evitar a utilização inadequada de recursos de informática\n   em uma organização, é comum que sejam configuradas credenciais de acesso, como, por\n   exemplo, um nome de usuário e uma senha associada. Essas credenciais podem ser utilizadas\n   para controlar acesso a computadores (estações de trabalho), arquivos compartilhados na\n   nuvem e sistemas de informação, entre outros. Uma boa prática que pode ser usada no que se\n   refere a senhas é:\n\n   a) anotar a sua senha e deixá-la afixada próxima à sua estação de trabalho, pois caso ela seja\n   esquecida, não haverá uma interrupção no seu trabalho.\n\n   b) confirmar a sua senha por telefone, caso venha a ser solicitado.\n\n   c) definir uma senha que não possa ser facilmente adivinhada, de modo que apenas você tenha o seu\n   conhecimento.\n\n   d) garantir que seus colegas mais próximos saibam a sua senha, para que ela possa ser utilizada na\n   sua ausência.\n\n   e) informar a sua senha a qualquer pessoa que a solicite e que trabalhe na mesma organização em\n   que você atue.\n\nComentários:\n\n(a) Errado. Anotar a senha e deixá-la afixada próxima à estação de trabalho é uma prática altamente\ninsegura. Isso expõe a senha a qualquer pessoa que passe pela área, aumentando o risco de acesso não\nautorizado.\n\n(b) Errado. Confirmar a senha por telefone não é recomendado, especialmente se a solicitação vem de\numa fonte não verificada. Isso pode ser uma tentativa de phishing ou outro tipo de ataque para obter\ncredenciais de acesso indevidamente.\n\n(c) Correto. Definir uma senha forte e única, que não possa ser facilmente adivinhada, é uma prática\nessencial de segurança. A senha deve ser conhecida apenas pelo usuário, sendo complexa o suficiente\npara resistir a tentativas de adivinhação ou ataques de força bruta.\n\n(d) Errado. Compartilhar a senha com colegas, mesmo os mais próximos, compromete a segurança das\ninformações. Cada usuário deve ter suas próprias credenciais para garantir a responsabilização e a\nrastreabilidade das ações no sistema.\n\n(e) Errado. Nunca se deve informar a senha a qualquer pessoa que a solicite, mesmo que trabalhe na\nmesma organização. A senha é pessoal e intransferível, e sua divulgação pode levar a violações de\nsegurança.\n\n                                                                                         Gabarito: Letra C\n\n33.(CESGRANRIO / BB – 2023) Os mecanismos de segurança combinam técnicas e ações de\n   segurança para prover a proteção de usuários e de dados. O mecanismo de segurança que\n   consiste em definir as ações que uma determinada entidade pode executar, ou a quais\n   informações essa entidade pode ter acesso, é o de:\n\n   a) identificação\n   b) integridade\n   c) autenticação\n   d) autorização\n   e) confidencialidade\n\nComentários:\n\n(a) Errado. Este mecanismo está relacionado ao processo de reconhecimento de um usuário no sistema.\nA identificação normalmente ocorre por meio de um nome de usuário ou ID, mas não define as\npermissões ou acessos desse usuário.\n\n(b) Errado. Refere-se à garantia de que os dados não serão alterados de forma não autorizada. Este\nmecanismo assegura a precisão e a consistência dos dados ao longo do tempo, mas não está diretamente\nrelacionado ao controle de ações ou acesso a informações.\n\n(c) Errado. Este processo confirma a identidade de um usuário ou entidade. Normalmente ocorre após a\nidentificação e pode envolver senhas, tokens ou outros métodos. A autenticação verifica se o usuário é\nquem afirma ser, mas não define suas permissões.\n\n(d) Correto. Este mecanismo determina as ações que uma entidade pode executar ou a quais informações\npode ter acesso após ter sido identificada e autenticada. A autorização define o que um usuário está\npermitido fazer no",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_1",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.762Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_1.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0028",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_1",
+      "subtopic_id": "ti_5_1",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-procedimentos-de-seguranca",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O princípio do menor privilégio recomenda conceder a cada usuário apenas as permissões necessárias para executar suas atividades.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Procedimentos de segurança.\n\nA limitação de privilégios reduz a superfície de ataque e o impacto de erros ou comprometimentos. Permissões adicionais devem ser justificadas e revisadas.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Procedimentos de segurança.\n\nErro provável: concessão ampla por conveniência\n\nDica: Acesso suficiente para trabalhar, não acesso máximo.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_1.json",
+        "sourceSubtopicId": "1.2.1.5-procedimentos-de-seguranca",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_1",
+        "hashQuestao": "6431b98152856f62",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "procedimentos de segurança"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "concessão ampla por conveniência"
+          ],
+          "palavrasChave": [
+            "Procedimentos de segurança",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Procedimentos de segurança",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "f44cb902b4cd57209786aa53d6c3bb5479baa717d044013f40955863a5be9c05",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,548 @@
+{
+  "topicoEditalId": "ti_6_2",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 8,
+  "questions": [
+    {
+      "id": "PCAL-TI-10-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "Análise de Informações - Teoria da Informação - Multibancas",
+      "subtopico": "Análise de Informações - Teoria da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CESPE / PF - 2021",
+      "tipo": "certo_errado",
+      "enunciado": "Os dados estruturados diferenciam-se dos dados não estruturados pela\n    rigidez em seu formato e pelo fato de poderem ser armazenados em campos de tabelas de um\n    banco de dados relacional.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Perfeito! Esta questão trata da distinção entre dados estruturados e não estruturados. Os dados\nestruturados são aqueles que possuem um formato definido e organizado, facilitando seu\narmazenamento, acesso e análise. Eles são comumente armazenados em bancos de dados\nrelacionais, onde cada elemento de dado está organizado em tabelas, linhas e colunas, permitindo\nque sejam facilmente acessados e manipulados por meio de consultas estruturadas, como SQL.\n\nPor outro lado, dados não estruturados não possuem um formato ou modelo predefinido, o que os\ntorna mais desafiadores para serem gerenciados e analisados usando métodos tradicionais.\nExemplos de dados não estruturados incluem textos, imagens, vídeos, e-mails e postagens em\nredes sociais. Eles geralmente requerem técnicas mais complexas de processamento e\narmazenamento, como o uso de sistemas de arquivos ou bancos de dados NoSQL.\n\nLogo, a afirmação da questão é correta ao destacar a rigidez no formato e a capacidade de\narmazenamento em bancos de dados relacionais como características distintivas dos dados\nestruturados em comparação com os não estruturados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_6_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.766Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_6_2.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0039",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-metodos-de-acesso",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A criação de um índice em banco de dados pode acelerar determinadas consultas, embora gere consumo adicional de armazenamento e custo de manutenção em operações de escrita.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Métodos de acesso.\n\nÍndices criam estruturas auxiliares para localizar dados mais rapidamente. Inserções, atualizações e exclusões podem precisar atualizar também os índices, o que adiciona custo.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Métodos de acesso.\n\nErro provável: visão de índice sem custos\n\nDica: Índice favorece leitura, mas ocupa espaço e afeta escrita.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-metodos-de-acesso",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "1b549c0129fef466",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "métodos de acesso"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "visão de índice sem custos"
+          ],
+          "palavrasChave": [
+            "Métodos de acesso",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Métodos de acesso",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "903da394402a893e2a19e108911746c965fdda209de780bf8a924be793ebb662",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0042",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-sistemas-gerenciadores-de-banco-de-dados",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um sistema gerenciador de banco de dados pode controlar armazenamento, consultas, concorrência, transações, segurança e recuperação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Sistemas gerenciadores de banco de dados.\n\nO SGBD fornece mecanismos para definir, manipular, proteger e recuperar dados, além de coordenar acessos simultâneos e manter propriedades transacionais.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Sistemas gerenciadores de banco de dados.\n\nErro provável: redução do SGBD a arquivo de dados\n\nDica: SGBD administra dados e operações, não apenas os armazena.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-sistemas-gerenciadores-de-banco-de-dados",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "85c2406dd34ff1e4",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "SGBD"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "redução do SGBD a arquivo de dados"
+          ],
+          "palavrasChave": [
+            "Sistemas gerenciadores de banco de dados",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Sistemas gerenciadores de banco de dados",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "13042c0055efbe7510f71f09d7e739190b526ec020482a5684cec0ecb2dc7b3a",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0043",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-linguagens-de-definicao-de-dados",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Comandos como CREATE, ALTER e DROP são associados à definição da estrutura de objetos em SQL.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Linguagens de definição de dados.\n\nEsses comandos integram a linguagem de definição de dados: CREATE cria objetos, ALTER modifica sua estrutura e DROP remove objetos definidos no banco.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Linguagens de definição de dados.\n\nErro provável: confusão entre DDL e DML\n\nDica: DDL define estrutura: CREATE, ALTER, DROP.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-linguagens-de-definicao-de-dados",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "0743d39b1e4aa6ef",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "linguagem de definição de dados"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre DDL e DML"
+          ],
+          "palavrasChave": [
+            "Linguagens de definição de dados",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Linguagens de definição de dados",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "0e0b3020febaebfe1f43724f6804b75101ce261ab663f66434c0a1e1aa0925ce",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0045",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-sql",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "SQL é uma linguagem predominantemente declarativa: em geral, o usuário informa o resultado desejado, e o SGBD decide como executar a consulta.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de SQL.\n\nConsultas SQL descrevem quais dados devem ser retornados ou modificados. O otimizador do SGBD escolhe planos de execução com base em estatísticas, índices e custos estimados.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: SQL.\n\nErro provável: confusão entre linguagem declarativa e procedural\n\nDica: SQL diz o que obter; o SGBD decide como executar.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-sql",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "52b559face3ba318",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "SQL"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre linguagem declarativa e procedural"
+          ],
+          "palavrasChave": [
+            "SQL",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "SQL",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ebec3435f0067a20fb7f18949bf045e18fcb5ca5f2c2b1ce145341394f94c5ee",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0046",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-controle-de-protecao",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O controle de proteção de um banco de dados pode incluir concessão e revogação de privilégios para usuários e papéis.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Controle de proteção.\n\nPrivilégios definem operações permitidas sobre objetos e funções. O uso de papéis facilita a administração e apoia o princípio do menor privilégio.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Controle de proteção.\n\nErro provável: concessão irrestrita de acesso\n\nDica: Conceda por função e revise privilégios periodicamente.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-controle-de-protecao",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "cf43fc9eb2e13745",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "controle de proteção"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "concessão irrestrita de acesso"
+          ],
+          "palavrasChave": [
+            "Controle de proteção",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Controle de proteção",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "b95b5f1fe7aadc7134d3634bcd154533982cca64b198b43df08ee5828b35075f",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0047",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-seguranca-de-banco-de-dados",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A criptografia dos dados elimina a necessidade de autenticação, autorização e auditoria em um banco de dados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Segurança de banco de dados.\n\nCriptografia protege conteúdo em determinados cenários, mas não define quem pode acessar, quais operações pode executar ou como as ações serão registradas. Esses controles são complementares.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Segurança de banco de dados.\n\nErro provável: tratamento da criptografia como controle único\n\nDica: Segurança eficaz combina identidade, privilégios, criptografia, auditoria e atualização.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-seguranca-de-banco-de-dados",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "bd6f2599b96dc9d3",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "segurança de banco de dados"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "tratamento da criptografia como controle único"
+          ],
+          "palavrasChave": [
+            "Segurança de banco de dados",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Segurança de banco de dados",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ddc86d248d1d311dec82c3fa03dd990bc46e24eaf75a55ae37bc922f7b861c2c",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0049",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_2",
+      "subtopic_id": "ti_6_2",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-bancos-de-dados-distribuidos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em um banco de dados distribuído, partes dos dados podem estar armazenadas em nós distintos e ainda compor uma visão lógica integrada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Bancos de dados distribuídos.\n\nDistribuição pode envolver fragmentação, replicação e coordenação entre locais. O objetivo é oferecer acesso coerente apesar da separação física dos dados.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Bancos de dados distribuídos.\n\nErro provável: confusão entre distribuição física e isolamento lógico\n\nDica: Distribuído fisicamente, integrado logicamente.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_2.json",
+        "sourceSubtopicId": "1.2.1.6-bancos-de-dados-distribuidos",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_2",
+        "hashQuestao": "82613dc626ba5772",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "bancos de dados distribuídos"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre distribuição física e isolamento lógico"
+          ],
+          "palavrasChave": [
+            "Bancos de dados distribuídos",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Bancos de dados distribuídos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "b450662d963bee0f23d5538f5e1f2b29b7ab112dc31f71e53f6d7b1081a517f7",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "topicoEditalId": "lingua_portuguesa_encontros_vocalicos",
+  "disciplinaId": "lingua_portuguesa",
+  "quantidade": 2,
+  "questions": [
+    {
+      "id": "q_import_001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "topicoEditalId": "lingua_portuguesa_encontros_vocalicos",
+      "subtopic_id": "lingua_portuguesa_encontros_vocalicos",
+      "assunto": "",
+      "subtopico": "",
+      "microtopico": "",
+      "banca": "",
+      "ano": null,
+      "fonteProva": "",
+      "tipo": "certo_errado",
+      "enunciado": "1. (CEBRASPE / INOVERSASUL / 2025) Os vocábulos “lado”, “produto”, “natalina” e “objetivo” possuem a mesma classificação quanto à posição do acento tônico.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "<strong>Gabarito: Certo.</strong><br>Todos s&#227;o parox&#237;tonas, palavras com a t&#244;nica na pen&#250;ltima s&#237;laba: “LAdo”, “proDUto”, “nataLIna” e “objeTIvo” Gabarito: Correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "organizadoEm": "2026-07-21T02:11:29.848Z",
+        "origemImport": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_importadas.json",
+        "disciplinaCurta": "port"
+      }
+    },
+    {
+      "id": "q_import_002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "topicoEditalId": "lingua_portuguesa_encontros_vocalicos",
+      "subtopic_id": "lingua_portuguesa_encontros_vocalicos",
+      "assunto": "",
+      "subtopico": "",
+      "microtopico": "",
+      "banca": "",
+      "ano": null,
+      "fonteProva": "",
+      "tipo": "certo_errado",
+      "enunciado": "2. (CEBRASPE / BNB / 2022) A palavra “consequências” pode ser grafada, de acordo com a ortografia oficial, com o uso do trema: conseqüências.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "<strong>Gabarito: Errado.</strong><br>O trema foi abolido na reforma ortogr&#225;fica, mantendo-se somente em nomes pr&#243;prios ou em palavras derivadas de voc&#225;bulos estrangeiros, como: M&#252;lleriano, B&#252;ndchen... Quest&#227;o incorreta.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "organizadoEm": "2026-07-21T02:11:29.848Z",
+        "origemImport": "DETONA-TRABALHO\\app\\data\\questoes_pc_al_importadas.json",
+        "disciplinaCurta": "port"
+      }
+    }
+  ]
+}

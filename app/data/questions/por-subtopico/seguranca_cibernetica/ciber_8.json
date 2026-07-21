@@ -1,0 +1,153 @@
+{
+  "topicoEditalId": "ciber_8",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 2,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0083",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_8",
+      "subtopic_id": "ciber_8",
+      "assunto": "1.2.2.8-seguranca-de-aplicacoes",
+      "subtopico": "1.2.2.8-controles-de-seguranca-para-aplicacoes-web",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A validação realizada apenas no navegador é insuficiente como controle de segurança de uma aplicação web, pois requisições podem ser enviadas diretamente ao servidor.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Controles de segurança para aplicações web.\n\nControles do lado cliente podem ser alterados ou contornados. O servidor deve validar, normalizar e autorizar entradas independentemente do comportamento da interface.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para aplicações web.\n\nErro provável: confiança exclusiva em validação client-side\n\nDica: Valide no cliente por usabilidade e no servidor por segurança.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_8.json",
+        "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-aplicacoes-web",
+        "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+        "mappedTopicoEditalId": "ciber_8",
+        "hashQuestao": "bf4f0f744404cc7c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "controles de segurança em aplicações web"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confiança exclusiva em validação client-side"
+          ],
+          "palavrasChave": [
+            "Controles de segurança para aplicações web",
+            "Segurança de aplicações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Controles de segurança para aplicações web",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "acd9aa83817eadeaed8e23cf7181626a08ee4b70e8cf88bee8d60dd9945d93ae",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0085",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_8",
+      "subtopic_id": "ciber_8",
+      "assunto": "1.2.2.8-seguranca-de-aplicacoes",
+      "subtopico": "1.2.2.8-controles-de-seguranca-para-web-services",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em web services, autenticação e criptografia do canal não eliminam a necessidade de autorização por operação e por recurso.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Controles de segurança para web services.\n\nUma identidade autenticada pode não ter permissão para todas as ações ou objetos. A API deve verificar autorização em cada requisição relevante, além de proteger o transporte.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para web services.\n\nErro provável: confusão entre autenticação e autorização\n\nDica: Em cada chamada, confirme identidade, permissão e escopo do recurso.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_8.json",
+        "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-web-services",
+        "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+        "mappedTopicoEditalId": "ciber_8",
+        "hashQuestao": "8532c9d071e0d422",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "controles de segurança em web services"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre autenticação e autorização"
+          ],
+          "palavrasChave": [
+            "Controles de segurança para web services",
+            "Segurança de aplicações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Controles de segurança para web services",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "dcaf6adff7f26e60a34718a708db750fac86c885a474441d59b0ffe7a77d0a64",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    }
+  ]
+}

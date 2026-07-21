@@ -1,0 +1,299 @@
+{
+  "topicoEditalId": "ciber_3",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 4,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0067",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_3",
+      "subtopic_id": "ciber_3",
+      "assunto": "1.2.2.3-seguranca-de-rede",
+      "subtopico": "1.2.2.3-firewalls",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um firewall com inspeção de estado pode considerar o contexto e o estado de conexões ao decidir se um pacote deve ser permitido.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Firewalls.\n\nFirewalls stateful mantêm informações sobre sessões e distinguem tráfego pertencente a conexões estabelecidas de tentativas inesperadas. Isso permite regras mais contextuais que filtros puramente estáticos.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Firewalls.\n\nErro provável: confusão entre filtro sem estado e inspeção de estado\n\nDica: Stateful acompanha a sessão; stateless avalia pacotes de forma mais isolada.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
+        "sourceSubtopicId": "1.2.2.3-firewalls",
+        "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+        "mappedTopicoEditalId": "ciber_3",
+        "hashQuestao": "c5d3f804f4dde29d",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "firewalls"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre filtro sem estado e inspeção de estado"
+          ],
+          "palavrasChave": [
+            "Firewalls",
+            "Segurança de rede"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Firewalls",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "b960315e5fafadb99b2d72fa9e1a66a0a380366fd5f2b90f584451ab4b2fae00",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0068",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_3",
+      "subtopic_id": "ciber_3",
+      "assunto": "1.2.2.3-seguranca-de-rede",
+      "subtopico": "1.2.2.3-sistemas-de-deteccao-de-intrusao-ids",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um IDS é projetado principalmente para detectar atividades suspeitas e gerar alertas, não sendo obrigatório que bloqueie automaticamente o tráfego.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Sistemas de Detecção de Intrusão — IDS.\n\nSistemas de detecção de intrusão analisam eventos ou tráfego e notificam possíveis incidentes. O bloqueio ativo é característica mais diretamente associada ao IPS, embora integrações possam ampliar funções.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Detecção de Intrusão — IDS.\n\nErro provável: confusão entre detecção e prevenção\n\nDica: IDS detecta e alerta; IPS pode bloquear.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
+        "sourceSubtopicId": "1.2.2.3-sistemas-de-deteccao-de-intrusao-ids",
+        "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+        "mappedTopicoEditalId": "ciber_3",
+        "hashQuestao": "d0acc7d91f6cea52",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "IDS"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre detecção e prevenção"
+          ],
+          "palavrasChave": [
+            "Sistemas de Detecção de Intrusão — IDS",
+            "Segurança de rede"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Sistemas de Detecção de Intrusão — IDS",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "bb1e8bd47e74bf6dfd977a177b22806defe5a5a21b8260795f7c7680288e0c3e",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0069",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_3",
+      "subtopic_id": "ciber_3",
+      "assunto": "1.2.2.3-seguranca-de-rede",
+      "subtopico": "1.2.2.3-sistemas-de-prevencao-de-intrusao-ips",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um IPS pode operar em linha com o tráfego e bloquear ou interromper comunicações consideradas maliciosas conforme suas regras.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Sistemas de Prevenção de Intrusão — IPS.\n\nPor estar no caminho do tráfego, o IPS pode descartar pacotes, encerrar sessões ou aplicar outras respostas. Configuração inadequada pode gerar falsos positivos e impacto operacional.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Prevenção de Intrusão — IPS.\n\nErro provável: redução do IPS a ferramenta passiva\n\nDica: IPS previne ativamente, mas precisa de ajuste para não bloquear tráfego legítimo.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
+        "sourceSubtopicId": "1.2.2.3-sistemas-de-prevencao-de-intrusao-ips",
+        "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+        "mappedTopicoEditalId": "ciber_3",
+        "hashQuestao": "ede096465b7964ca",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "IPS"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "redução do IPS a ferramenta passiva"
+          ],
+          "palavrasChave": [
+            "Sistemas de Prevenção de Intrusão — IPS",
+            "Segurança de rede"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Sistemas de Prevenção de Intrusão — IPS",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "dcd24e485d923792ca4386db6e419267a067ebb3189681cc13f781aa42e56d05",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0071",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_3",
+      "subtopic_id": "ciber_3",
+      "assunto": "1.2.2.3-seguranca-de-rede",
+      "subtopico": "1.2.2.3-segmentacao-de-rede",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A segmentação de rede pode limitar a movimentação lateral de um atacante ao separar sistemas em zonas com regras de comunicação específicas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Segmentação de rede.\n\nSegmentar reduz comunicação desnecessária entre grupos de ativos e permite aplicar controles conforme criticidade. A eficácia depende de regras, monitoramento e arquitetura adequados.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Segmentação de rede.\n\nErro provável: confiança em rede interna totalmente confiável\n\nDica: Separe ambientes e permita apenas fluxos necessários.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
+        "sourceSubtopicId": "1.2.2.3-segmentacao-de-rede",
+        "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+        "mappedTopicoEditalId": "ciber_3",
+        "hashQuestao": "34ee1050b88a50f7",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "segmentação de rede"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confiança em rede interna totalmente confiável"
+          ],
+          "palavrasChave": [
+            "Segmentação de rede",
+            "Segurança de rede"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Segmentação de rede",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "13422b41021427282aec54bf8588293e77a7052a3777cc5c38c467a1d3695b13",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "topicoEditalId": "estat_7",
+  "disciplinaId": "estatistica",
+  "quantidade": 18,
+  "questions": [
+    {
+      "id": "PCAL-EST-00-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Conceitos Iniciais",
+      "subtopico": "Questões Comentadas - Conceitos Iniciais - CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2015,
+      "fonteProva": "CEBRASPE/DEPEN/2015",
+      "tipo": "certo_errado",
+      "enunciado": "O diretor de um sistema penitenciário, com o propósito de estimar o\npercentual de detentos que possuem filhos, entregou a um analista um cadastro com os nomes de\n500 detentos da instituição para que esse profissional realizasse entrevistas com os indivíduos\nselecionados.\nA partir dessa situação hipotética e dos múltiplos aspectos a ela relacionados, julgue o item,\nreferente a técnicas de amostragem.\nA diferença entre um censo e uma amostra consiste no fato de esta última exigir a realização de\num número maior de entrevistas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Um censo é a análise de todos os elementos de determinada população. Trabalhamos com uma\namostra quando obtemos informações de apenas uma parte dessa população. Portanto, o censo\nrequer a realização de um número maior de entrevistas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-14-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Lei dos Grandes Números",
+      "subtopico": "Questões Comentadas - Lei dos Grandes Números - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "CESPE/2012 – ANAC",
+      "tipo": "certo_errado",
+      "enunciado": "Se X é uma variável aleatória e se {X 1, X2, ... Xn} são observações aleatórias\nindependentes dessa variável, então, com base na lei forte dos grandes n úmeros, é correto afirmar que,\nquando o tamanho amostral cresce (at é o infinito), a m édia amostral tem distribui ção normal de m édia\nm=E(X).",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A Lei dos Grandes Números não trata da distribuição da média amostral, mas sim da sua convergência à\nmédia populacional. Logo, a questão está errada.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Conceitos Iniciais",
+      "subtopico": "Questões Comentadas - Conceitos Iniciais - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/2019 – TCE-RO",
+      "tipo": "multipla_escolha",
+      "enunciado": "Nos processos de controle, o objetivo fundamental da amostragem\nestatística consiste em",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "identificar os fatores que podem influenciar variáveis específicas de um processo em desenvolvimento.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "calcular, por meio de iterações, estimativas de custos ou cronogramas, usando valores de entrada\naleatórios.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "estimar como uma mudança na variável independente influenciará o valor da variável dependente.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "garantir que um subgrupo selecionado represente, de forma adequada, a população de interesse.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "aferir resultados médios com bases em possíveis cenários futuros, que podem ocorrer ou não.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "O principal objetivo da amostragem é a representação adequada da população, conforme indicado na\nalternativa D.\nEm relação às alternativas A e C, o estudo de como uma variável influencia outra não pertence ao processo\nde amostragem.\nA simulação de cenários futuros, indicada na alternativa E, também não pertence a esse processo.\nEm relação à alternativa B, a estimativa de custos não é um objetivo da amostragem.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Conceitos Iniciais",
+      "subtopico": "Questões Comentadas - Conceitos Iniciais - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/2019 – TJ-AM",
+      "tipo": "certo_errado",
+      "enunciado": "Em determinado município brasileiro, realizou-se um levantamento para\nestimar o percentual P de pessoas que conhecem o programa justiça itinerante. Para esse propósito, foram\nselecionados 1.000 domicílios por amostragem aleatória simples de um conjunto de 10 mil domicílios. Nos\ndomicílios selecionados, foram entrevistados todos os residentes maiores de idade, que totalizaram 3.000\npessoas entrevistadas, entre as quais 2.250 afirmaram conhecer o programa justiça itinerante.\nDe acordo com essa situação hipotética, julgue o seguinte item.\nA fração amostral do levantamento em tela foi superior a 0,5.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A fração amostral é a razão entre o tamanho amostral e o tamanho populacional:\n𝑓 = 𝑛\n𝑁\nO enunciado informa que foram selecionados 1.000 domicílios (n = 1.000), dentre 10.000 domicílios (N =\n10.000). Logo, a fração é:\n𝑓 = 1.000\n10.000 = 1\n10 = 0,1\nQue é inferior a 0,5.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/2025 – PC/DF",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, acerca de técnicas de amostragem.\nSuponha que, na auditoria no banco de dados de certa delegacia, um analista de tecnologia da informação\nprecise verificar a consistência de registros de boletins de ocorrência. Suponha, também, que esse analista\ndecida selecionar 1 registro a cada 10 em or dem cronológica, começando de um registro inicial escolhido\naleatoriamente entre os 10 primeiros registros.\nSuponha, ainda, que, após essa seleção, os registros escolhidos sejam analisados detalhadamente quanto à\ncompletude e precisão das informações. Com base nessa situação hipotética, é correto afirmar que o analista\nefetuará uma amostragem sistemática.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O analista irá selecionar 1 registro a cada 10, seguindo determinada ordem; e o primeiro registro será\nselecionado aleatoriamente entre os 10 primeiros. Com isso, temos realmente uma amostragem sistemática,\nem que a seleção ocorre periodicamente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/2025 – PC/DF",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, acerca de técnicas de amostragem.\nSuponha que certo analista tenha efetuado um levantamento estatístico para estimar o percentual de\nboletins de ocorrência inconsistentes considerando cinco diferentes tipos: roubo a residência, furto, acidente\nde trânsito, ameaça e estelionato.\nSuponha, ainda, que, embora alguns tipos sejam mais comuns que outros, o referido analista tenha\nselecionado aleatoriamente quantidades iguais de boletins de cada tipo. Nessa situação hipotética, o plano\namostral descrito terá sido o da amostragem aleatória estratificada com alocação uniforme.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O levantamento envolve 5 tipos diferentes de boletins de ocorrência, ou seja, a população é subdividida em\ngrupos diferentes, sendo cada um composto de elementos considerados similares para os propósitos do\nlevantamento. Portanto, temos uma amostragem estratificada.\nComo as quantidades de elementos selecionados de cada grupo são iguais, embora as quantidades\npopulacionais sejam diferentes, a alocação é uniforme.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/2025 – PC/DF",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, acerca de técnicas de amostragem.\nConsidere que, em determinada rodovia, policiais em uma barreira selecionem veículos de forma aleatória.\nConsidere, ainda, que os veículos selecionados sejam parados e todos os ocupantes adultos sejam\nquestionados acerca de determinado assunto. Suponha, por fim, que, após essa ação, os policiais registrem\no total de 120 pessoas questionadas em 80 veículos. Nessa situação hipotética, a amostragem será do tipo\naleatória simples com tamanho amostral de 120 pessoas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Os policiais selecionaram alguns veículos e questionaram todos os ocupantes dos veículos selecionados. Em\noutras palavras, a população foi segregada em conglomerados e foram selecionados alguns conglomerados\npara a amostra, dos quais todos os elementos foram analisados.\nNessa situação, temos uma amostragem por conglomerados, em que os conglomerados (no caso, os\nveículos) correspondem às unidades amostrais. Portanto, o tamanho amostral é de 80 veículos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/2025 – TRF 6ª Região",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, em relação às técnicas de amostragem.\nA amostragem sistemática envolve a partição da população em grupos internamente homogêneos de igual\ntamanho, para evitar viés na estimativa dos parâmetros populacionais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A amostragem sistemática envolve a seleção periódica de elementos previamente ordenados, partindo -se\nde um ponto definido aleatoriamente. Por outro lado, a partição da população em grupos internamente\nhomogêneos corresponde à amostragem estratificada.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/2025 – TRF 6ª Região",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, em relação às técnicas de amostragem.\nNa amostragem por conglomerados, espera -se que os conglomerados repliquem, o máximo possível, a\nheterogeneidade da população.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na amostragem por conglomerados, a população é dividida em conglomerados. Cada conglomerado é\ncomposto por elementos heterogêneos, enquanto os conglomerados são similares entre si. Portanto, os\nconglomerados devem, de fato, replicar a heterogeneidade da população.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/2024 – CAPES",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a técnicas de amostragem, julgue o item que se segue.\nEm uma amostragem aleatória simples, qualquer amostra de determinado tamanho terá a mesma\nprobabilidade de ser escolhida.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na amostragem aleatória simples, a probabilidade de seleção de cada elemento é igual para todos os\nelementos da população, o que nos permite utilizar a definição clássica de probabilidade. Assim, a\nprobabilidade de selecionar determinada amostra é igual a 1 (caso favorável) dividido pelo número de\nmaneiras de formar amostras de mesmo tamanho (total de casos possíveis).\nPortanto, de fato, qualquer amostra de determinado tamanho terá a mesma probabilidade de ser escolhida.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/2024 – CAPES",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a técnicas de amostragem, julgue o item que se segue.\nEm uma amostragem estratificada, deve-se fixar a probabilidade de escolher um elemento do estrato como\nigual à porcentagem do estrato em relação à população.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na amostragem estratificada proporcional, o número de elementos selecionados de cada estrato é\nproporcional à razão entre o tamanho do estrato e o tamanho total da população:\n𝑛𝑒 = 𝑛\n𝑁 × 𝑁𝑒\nEm que 𝑛𝑒 é o tamanho amostral do estrato, 𝑛 é o tamanho total da amostra, 𝑁𝑒 é o tamanho populacional\ndo estrato e 𝑁 é o tamanho total da população.\nPela definição clássica, a probabilidade de selecionar algum elemento do estrato é a razão entre a quantidade\nde casos favoráveis (tamanho amostral do estrato) e a quantidade total de eventos possíveis (tamanho total\nda amostra):\n𝑃𝑒 = 𝑛(𝑐𝑎𝑠𝑜𝑠 𝑓𝑎𝑣𝑜𝑟á𝑣𝑒𝑖𝑠)\n𝑛(𝑐𝑎𝑠𝑜𝑠 𝑡𝑜𝑡𝑎𝑖𝑠) = 𝑛𝑒\n𝑛\nPontue-se que essa definição pode ser utilizada porque os casos são equiprováveis.\nSabendo que 𝑛𝑒 =\n𝑛\n𝑁 × 𝑁𝑒, temos:\n𝑃𝑒 = 𝑛𝑒\n𝑛 = (𝑛\n𝑁 × 𝑁𝑒) × 1\n𝑛 = 𝑁𝑒\n𝑁\nPortanto, a probabilidade de selecionar um elemento do estrato é realmente igual à proporção do estrato\nem relação à população, nesse tipo de amostragem.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/2024 – CAPES",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a técnicas de amostragem, julgue o item que se segue.\nConsiderando a população de trabalhadores de fábricas de roupas em determinada região, a seleção\naleatória de algumas fábricas para se medir as características dos seus trabalhadores representa uma\namostragem aleatória simples dos trabalhadores de fábricas de roupas da região.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Para uma população segregada em fábricas, a seleção de algumas fábricas para a amostra corresponde a\numa amostragem por conglomerados, em que são selecionados alguns grupos (no caso, algumas fábricas),\ndos quais todos os elementos são analisados. Portanto, não se trata de uma amostragem aleatória simples.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/2024 – PC/PE",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um estudo acerca da saúde mental de detentos foi efetuado em\ndeterminada penitenciária que reúne 2 mil detentos acomodados em 100 celas. O levantamento dos dados\nfoi conduzido da seguinte forma: dez celas foram selecionadas mediante sorteio aleatório, e todos os 193\ndetentos encontrados nessas celas foram entrevistados por uma equipe psicossocial.\nNo levantamento amostral da situação hipotética apresentada, a técnica de amostragem empregada foi a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "estratificada com alocação proporcional.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "por conglomerados",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "estratificada com alocação uniforme.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "aleatória simples",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "sistemática",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "O enunciado informa que são selecionadas aleatoriamente algumas celas, sendo entrevistados todos os\ndetentos encontrados nessas celas. Em outras palavras, alguns grupos são selecionados para a amostra,\nsendo analisados todos os elementos que os compõem, o que corresponde à amostragem por\nconglomerados (alternativa B correta).\nNa amostragem estratificada (alternativas A e C), seriam selecionados alguns detentos de cada uma das\ncelas; na amostragem simples e sistemática (alternativas D e E), seriam selecionados alguns detentos,\nindependentemente da cela.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.646Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-024",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/2022 – PC-RO",
+      "tipo": "multipla_escolha",
+      "enunciado": "Caso uma amostra aleatória simples de tamanho n = 2 seja retirada, sem\nreposição, de uma população de tamanho N = 10, cada uma das possíveis amostras de tamanho n = 2 pode\nocorrer com probabilidade igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "1/45.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "1/25.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "1/5.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "1/15.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "1/10.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Para uma amostra aleatória simples extraída sem reposição, o número de amostras possíveis é 𝐶𝑁,𝑛. Sabendo\nque o tamanho da população é N = 10 e que o tamanho da amostra é n = 2, temos:\n𝐶10,2 = 10!\n(10 − 2)! × 2! = 10 × 9 × 8!\n8! × 2 = 45\nAssim, a probabilidade de cada possível amostra é:\n𝑃 = 𝑛(𝑒𝑣𝑒𝑛𝑡𝑜𝑠 𝑓𝑎𝑣𝑜𝑟á𝑣𝑒𝑖𝑠)\n𝑛(𝑡𝑜𝑡𝑎𝑙 𝑒𝑣𝑒𝑛𝑡𝑜𝑠 𝑝𝑜𝑠𝑠í𝑣𝑒𝑖𝑠) = 1\n45",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.647Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-025",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/2022 – PC-RO",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um pesquisador deseja extrair uma amostra aleatória estratificada de\ntamanho 𝒏 = 𝟏𝟎 de uma população de tamanho 𝑵 = 𝟏. 𝟎𝟎𝟎. Essa população consiste de três estratos de\ntamanhos 𝑵𝟏 = 𝟓𝟎𝟎, 𝑵𝟐 = 𝟑𝟎𝟎 e 𝑵𝟑 = 𝟐𝟎𝟎, e os desvios -padrão da variável de interesse\ncorrespondentes a esses estratos valem, respectivamente, 𝝈𝟏 = 𝟏, 𝝈𝟐 = 𝟓 e 𝝈𝟑 = 𝟓.\nNessa situação hipotética, considerando -se que o custo da pesquisa seja constante, não dependendo,\nportanto, do estrato, conclui -se, com base no método da alocação ótima de Neyman, que o tamanho da\namostra referente ao estrato 2 deve ser igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "3.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "4.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "5.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "6.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "7.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Essa questão trabalha com a amostragem por estratificação, com a alocação ótima de Neyman. O tamanho\nda amostra de um estrato 𝑥 é dada por:\n𝑛𝑥 = 𝑛𝑇 × 𝑁𝑥 × 𝜎𝑥\n∑ 𝑁𝑖 × 𝜎𝑖𝑖\n,\nem que 𝑛𝑇 é o tamanho total da amostra; 𝑁𝑖 é o tamanho do estrato populacional 𝑖; e 𝜎𝑖 é o desvio padrão\ndo estrato 𝑖.\nO enunciado informa que:\n• o tamanho total da amostra é 𝑛𝑇 = 10;\n• os tamanhos dos estratos populacionais são 𝑁1 = 500, 𝑁2 = 300 e 𝑁3 = 200;\n• os desvios padrão dos estratos populacionais são 𝜎1 = 1, 𝜎2 = 5 e 𝜎3 = 5.\nSubstituindo esses dados na fórmula acima, podemos calcular o tamanho da amostra para o estrato 𝑥 = 2:\n𝑛2 = 10 × 300 × 5\n500 × 1 + 300 × 5 + 200 × 5 = 10 × 1500\n500 + 1500 + 1000 = 10 × 1500\n3000 = 10 × 1\n2 = 5",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.647Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-026",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/2022 – PC-RO",
+      "tipo": "multipla_escolha",
+      "enunciado": "Determinado presídio, que possui 500 celas, será objeto de um\nlevantamento para se estimar a proporção p de detentos que são portadores de certa doença. O\nlevantamento seguirá o seguinte plano amostral: (a) 10 celas serão sorteadas por amostragem aleatória\nsimples; (b) todos os detentos encon trados nessas 10 celas sorteadas serão testados clinicamente para a\ncontagem do número de portadores da doença em questão nesse levantamento.\nConsiderando-se a situação hipotética apresentada, é correto afirmar que o plano amostral em tela para\na estimação da proporção p representa uma",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "amostragem por conglomerados.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "amostragem sistemática.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "amostragem estratificada com alocação proporcional.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "amostragem aleatória simples.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "amostragem estratificada com alocação ótima de Pearson.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "O enunciado informa que serão sorteadas 10 celas e que todos os detentos dessas celas serão testados. Esse\nprocesso corresponde à amostragem por conglomerados, em que são sorteados alguns grupos (chamados\nconglomerados), em que todos os elementos dos grupos sorteados fazem parte da amostra (alternativa A é\ncorreta).\nCaso a amostragem fosse estratificada (alternativas C e E), deveriam ser sorteados alguns detentos de cada\ncela. Na amostragem aleatória simples (alternativa D), seriam sorteados alguns detentos dentre todos os\ndetentos, independentemente das celas.\nE, na amostragem sistemática (alternativa B), todos os detentos seriam ordenados e a amostra seria\nselecionada de acordo com um intervalo fixo, sendo sorteada a posição do primeiro detento selecionado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.647Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-033",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/2022 – TELEBRÁS",
+      "tipo": "certo_errado",
+      "enunciado": "Uma pesquisa de opinião foi realizada para se estimar o percentual\nde funcionários da empresa A que estão satisfeitos com certo serviço prestado por uma empresa\nterceirizada B. Cada funcionário atua em uma única equipe de trabalho, sendo que existem 500 eq uipes\nde trabalho na empresa A. Para essa pesquisa, 50 equipes foram selecionadas por amostragem aleatória\nsimples. Todos os funcionários que constituem as equipes selecionadas foram entrevistados, perfazendo\no total de 260 funcionários entrevistados. Desse total, 200 funcionários se manifestaram satisfeitos com o\nserviço.\nCom respeito a essa situação hipotética, julgue o item seguinte.\nA técnica descrita no texto para a estimação do percentual de funcionários da empresa A que estão\nsatisfeitos com o serviço prestado por B refere-se à amostragem aleatória simples.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O enunciado informa que são selecionadas 50 equipes, por meio de uma técnica de seleção aleatória, sendo\nentrevistados todos os funcionários das equipes selecionadas.\nIsso caracteriza a amostragem por conglomerados (e não uma AAS), em que são selecionados alguns\nconglomerados (no caso, as equipes) para a amostra, sendo analisados todos os elementos dos\nconglomerados selecionados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.647Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-15-S02-034",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_7",
+      "subtopic_id": "estat_7",
+      "assunto": "Amostragem Probabilística",
+      "subtopico": "Questões Comentadas - Amostragem Probabilística - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/2022 – TELEBRÁS",
+      "tipo": "certo_errado",
+      "enunciado": "Uma pesquisa de opinião foi realizada para se estimar o percentual\nde funcionários da empresa A que estão satisfeitos com certo serviço prestado por uma empresa\nterceirizada B. Cada funcionário atua em uma única equipe de trabalho, sendo que existem 500 eq uipes\nde trabalho na empresa A. Para essa pesquisa, 50 equipes foram selecionadas por amostragem aleatória\nsimples. Todos os funcionários que constituem as equipes selecionadas foram entrevistados, perfazendo\no total de 260 funcionários entrevistados. Desse total, 200 funcionários se manifestaram satisfeitos com o\nserviço.\nCom respeito a essa situação hipotética, julgue o item seguinte.\nCada funcionário representa uma unidade amostral e, por isso, o tamanho da amostra foi igual a 260\nfuncionários.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Na questão anterior, vimos que se trata de uma amostragem por conglomerados , em que as unidades\namostrais são os próprios conglomerados selecionados. Portanto, o tamanho da amostra corresponde às 50\nequipes, e não aos funcionários que as compõem.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_7",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.647Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_7.json"
+      }
+    }
+  ]
+}

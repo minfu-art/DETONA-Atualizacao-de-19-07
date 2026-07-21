@@ -1,0 +1,3290 @@
+{
+  "topicoEditalId": "rlm_12",
+  "disciplinaId": "raciocinio_logico_matematico",
+  "quantidade": 86,
+  "questions": [
+    {
+      "id": "PCAL-RLM-09-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/PETROBRAS/2023",
+      "tipo": "certo_errado",
+      "enunciado": "Um grupo de estagiários do setor de atendimento ao público de uma\nempresa deve ser avaliado em relação ao tempo de duração do atendimento. Um estagiárioé\nconsiderando eficiente quando todos os seus atendimentos duram, no máximo, 9 minutos. Todas as\npessoas que procuram esse setor buscam a solução de um mesmo tipo de problema, demandando, assim,\num mesmo tempo aproximado. A partir dessa situação hipotética, julgue o item seguinte.\n\nSe todos os tempos de atendimentos de um estagiário forem sempre inferiores a (0,5)3 hora, então esse\nestagiário será considerado eficiente.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Sabemos que 1 hora equivale a 60 minutos, então (0,5)3 hora corresponde a (𝟎, 𝟓)𝟑 ⋅ 𝟔𝟎 minutos, queé:\n\n0,5 ⋅ 0,5 ⋅ 0,5 ⋅ 60\n\n0,25 ⋅ 30\n\n7,5 minutos\n\nPortanto, se todos os tempos de atendimentos de um estagiário forem inferiores a 7,5 minutos, ele será\nconsiderado eficiente, pois esse valoré menor que o limite de 9 minutos estabelecido pela empresa.\n\nLogo, o item está certo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.719Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/PREF. RECIFE/2023",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a operações com números decimais, julgue o próximo\nitem.\n\nA diferença entre 1,1³ e 0,9³é 0,2³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos calcular os valores das expressões \"manualmente\". Temos que:\n\n1,13 = 1,1 ⋅ 1,1 ⋅ 1,1 = 1,21 ⋅ 1,1 = 1,331\n\n0,93 = 0,9 ⋅ 0,9 ⋅ 0,9 = 0,81 ⋅ 0,9 = 0,729\n\n0,23 = 0,2 ⋅ 0,2 ⋅ 0,2 = 0,04 ⋅ 0,2 = 0,008\n\nCom os valores, vamos fazer a diferença:\n\n1,13 − 0,92 = 1,331 − 0,729 = 0,602\n\nObserve que a diferença entre 𝟏, 𝟏𝟑 e 𝟎, 𝟗𝟑é 𝟎, 𝟔𝟎𝟐, queé diferente de 0,23.\n\nPortanto, o item está errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/PREF. RECIFE/2023",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a operações com números decimais, julgue o próximo\nitem.\n\nO número √√√7\n357\npode ser reescrito na forma √771105\n.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Nessa questão, utilizaremos a seguinte propriedade vista na teoria:\n\n√ √𝑎\n𝑚𝑛\n= √𝑎\n𝑛∙𝑚\n\nVamos lá!\n\n√√√7\n357\n= √ √7\n3⋅57\n= √7\n7⋅3⋅5\n= √7\n105\n\nObserve que o resultado que obtivemosé diferente do proposto no item, pois não existe essa potência de\n71 no radicando. Logo, item errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/PREF. RECIFE/2023",
+      "tipo": "certo_errado",
+      "enunciado": "Acerca dos números reais e das suas propriedades, julgue o item\nsubsequente.\n\nO número\n1\n√6−√5é igual ao número √6 + √5.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Dessa vez, precisamos racionalizar o denominador!\n\n𝑁 = 1\n√6 − √5\n\n𝑁 = 1\n(√6 − √5)\n⋅ (√6 + √5)\n(√6 + √5)\n\n𝑁 = √6 + √5\n6 − 5\n\n𝑁 = √6 + √5\n\nOpa! Realmente, o número\n1\n√6−√5é igual ao número √6 + √5. Item correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "Cebraspe/SEDF/2017",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de números reais e números complexos, julgue o item subsecutivo.\nSe 𝒓 for um número real positivo, então √𝒓\n𝟑\n< √𝒓 .",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Quando estamos lidando com potências de números reais, devemos nos atentar a generalizações como a\npresente nesse enunciado. Potências e raízes se comportam de maneiras diferentes e dependem do\nnúmero que está na base ou no radicando . Por exemplo, potências de números maiores d o que um\nproduzem resultados maiores que a base.\n\n22 = 4 (4 > 2)\n\nQuando a baseé um número menor do que um, o resultadoé contrário.\n\n0,12 = 0,01 (0,01 < 0,1)\n\nO raciocínio para as raízesé o inverso do que vimos até agora. Por exemplo, quando tirando a raiz quadrada\nde um número maior do que um, nosso resultado será menor do que o radicando.\n\n√2 = 1,41 … (1,41 < 2)\n\nQuando queremos a raiz cúbica, o resultadoé menor ainda.\n\n√2\n3\n= 1,25 … (1,25 < 2)\n\nNessa situação, temos que √2\n3\n< √2, conforme o enunciado fala. No entanto, quando o radicandoé menor\nque um, há uma inversão.\n\n√0,64 = 0,8 (0,8 > 0,64)\n\nQuando tiramos a raiz de um número menor do que um, o resultadoé maior do que o radicando! Seé uma\nraiz cúbica, o númeroé maior ainda.\n\n√0,64\n3\n= 0,86 … (0,86 > 0,64)\n\nNessa situação, temos que √𝒓\n𝟑\n> √𝒓. Portanto, o item está incorreto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2014,
+      "fonteProva": "Cebraspe/MDIC/2014",
+      "tipo": "certo_errado",
+      "enunciado": "Lúcio, Breno, Cláudia e Denise abriram a loja virtual Lik, para a qual, no ato de\nabertura, Lúcio contribuiu com R$ 10.000,00; Breno, com R$ 15.000,00; Cláudia, com R$ 12.000,00; e\nDenise, com R$ 13.000,00. Os lucros obtidos por essa loja serão distribuídos de forma diretamente\nproporcional à participação financeira de c ada um dos sócios no ato de abertura da loja. A partir dessas\ninformações, julgue o item a seguir: Se M for a quantidade média de acessos por minuto ao sítio eletrônico\nda loja Lik e 𝑴𝟐 = 𝟎, 𝟖, então M será um número irracional menor que 0,8.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Como 𝑴é um número positivo , podemos dizer que 𝑀 = √0,8. Sabemos que raízes de números menores\ndo que um produzem resultados maiores do que o radicando. Por exemplo, lembre-se:\n\n√0,64 = 0,8 (0,8 > 0,64)\n\n√0,25 = 0,5 (0,5 > 0,25)\n\nNesse raciocínio, M, queé a raiz quadrada positiva de 0,8, é maior do que 0,8 e não menor.\n\n==5eb381==",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TJ-RR/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\nDeterminado jogo consiste em explorar o fato de que todo número natural não nulo pode ser escrito como\na soma de potências de base 2, distintas, com expoentes inteiros (por exemplo: 𝟏𝟒 = 𝟐 + 𝟒 + 𝟖 = 𝟐 +\n𝟐𝟐 + 𝟐𝟑; 𝟏𝟕 = 𝟏 + 𝟏𝟕 = 𝟐𝟎 + 𝟐𝟒 ). No jogo entre os jogadores A e B, B indica expoentes e A aponta\nqualé o número natural correspondente. A respeito desse jogo e do fato mencionado, julgue o item\nseguinte.\nSe o jogador A apontar corretamente que o número correspondenteé um\nnúmero par, então entre os expoentes indicados por B não estará o número 1.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto. Para provar isso, é suficiente encontrarmos um contraexemplo.\n\n𝟏𝟒 = 𝟐 + 𝟒 + 𝟖 = 𝟐𝟏 + 𝟐𝟐 + 𝟐𝟑.\n\nVocê concorda comigo que 14é um número par e que, mesmo assim, ainda temos o expoente 1? Logo, não\nprocede a informação que entre os expoentes indicados por B não estará o número 1.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TJ-RR/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Suponha que A tenha acertado ao apontar que o número correspondenteé o\nEntão, nesse caso, B indicou os números 0, 2 e 5.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Seja 𝑛 o número que estamos procurando. Se os expoentes são 0, 2 e 5, então\n\n𝒏 = 𝟐𝟎 + 𝟐𝟐 + 𝟐𝟓\n\n𝒏 = 𝟏 + 𝟒 + 𝟑𝟐\n\n𝒏 = 𝟑𝟕",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TJ-RR/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Se B indicar os expoentes 1, 2, 5 e 6, então A acertará se apontar um número\nmenor que 100.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Seja 𝑛 o número que estamos procurando. Se os expoentes são 0, 2 e 5, então\n\n𝒏 = 𝟐𝟏 + 𝟐𝟐 + 𝟐𝟓 + 𝟐𝟔\n\n𝒏 = 𝟐 + 𝟒 + 𝟑𝟐 + 𝟔𝟒\n\n𝒏 = 𝟏𝟎𝟐\n\nOs expoentes indicados por B resultam no número 102. Se A falar um número menor que 100, ele errará.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/PRF/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Criança A\nIdade (anos completados) 0 1 2 3\nPeso (em kg) 3,3 10,1 13,0 15,5\nEstatura (em cm) 50 70 86 98\n\nCriança B\nIdade (anos completados) 0 1 2 3\nPeso (em kg) 3,9 10,6 13,4 *\n\nConsiderando as tabelas acima, que apresentam, respectivamente, o peso e a estatura da criança A, desde\no nascimento (0 ano) até o 3º ano de vida, bem como o peso da criança B, desde o nascimento até o 2º\nano de vida, julgue o item a seguir.\n\nSabendo-se que oíndice de massa corporal de um indivíduo corresponde ao quociente entre o peso, em\nquilogramas, e o quadrado da altura, em metros, é correto afirmar que, se oíndice de massa corporal da\ncriança B ao nascer era de 𝟏𝟓, 𝟔 𝒌𝒈/𝒎𝟐, então, ela nasceu com mais de 52 cm de altura.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "De acordo com o enunciado, oíndice de massa corporal (𝑰𝑴𝑪) é dado pela relação:\n\n𝐼𝑀𝐶 = 𝑃𝐸𝑆𝑂\n𝐴𝐿𝑇𝑈𝑅𝐴2\n\nAssim quando nasce, a criança B possui 𝟑, 𝟗 kg.\n\nCriança B\nIdade (anos completados) 0 1 2 3\nPeso (em kg) 3,9 10,6 13,4 *\n\nO 𝐼𝑀𝐶 dessa criançaé de 15,6 𝑘𝑔/𝑚2. Podemos utilizar a fórmula para obter a sua altura.\n\n15,6 = 3,9\n𝐴𝐿𝑇𝑈𝑅𝐴2 ⟹ 𝐴𝐿𝑇𝑈𝑅𝐴2 = 3,9\n15,6 ⟹ 𝐴𝐿𝑇𝑈𝑅𝐴 = √ 3,9\n15,6\n\n𝐴𝐿𝑇𝑈𝑅𝐴 = √0,25 ⟹ 𝐴𝐿𝑇𝑈𝑅𝐴 = 0,5 𝑚\n\nLogo, a altura que a criança nasceu foi 𝟎, 𝟓 metros (𝟓𝟎 centímetros). O item diz que a criança nasceu com\nmais de 𝟓𝟐 cm de altura, o que, como percebemos, está errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Operações Básicas",
+      "subtopico": "Operações Básicas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2009,
+      "fonteProva": "Cebraspe/FINEP/2009",
+      "tipo": "multipla_escolha",
+      "enunciado": "Umaárvore cuja alturaé igual a 𝟖\n𝟐\n𝟑 m mede",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "menos de 3 m de altura.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "mais de 3 m e menos de 5 m de altura.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "mais de 5 m e menos de 7 m de altura.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "mais de 7 m e menos de 9 m de altura.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "mais de 9 m de altura.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Lembre-se que 8 = 23!\n\n𝟖\n𝟐\n𝟑 = (𝟐𝟑)\n𝟐\n𝟑 = 𝟐𝟑×𝟐\n𝟑 = 𝟐𝟐 = 𝟒\n\nLogo, o número 8\n2\n3é apenas um jeito mais complicado de falar o número 4! O 4 está entre o 3 e o 5.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Joinville/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Para ensinar números inteiros, uma professora criou um jogo em que\nsão distribuídos chocolates aos alunos. Cada aluno deve colocar o preço que quiser no chocolate e vender\npara outro colega; o dinheiro se chama dinmat e só existem notas de 5 e 9 dinmats. N esse caso, se um\naluno vender um chocolate por 107 dinmats, então ele poderá receber",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "17 notas de 5 dinmats e 2 notas de 9 dinmats.",
+          "comentario": "17 notas de 5 dinmats e 2 notas de 9 dinmats.\nTemos:\n17 notas de 5 dinmats = 17 * 5 = 85 dinmats.\n2 notas de 9 dinmats = 2 * 9 = 18 dinmats.\nTotal = 85 + 18 = 103 dinmats.\n\nLogo, alternativa incorreta, pois não soma 107 dinmats."
+        },
+        {
+          "letra": "B",
+          "texto": "24 notas de 9 dinmats e devolver 18 notas de 5 dinmats de troco.",
+          "comentario": "24 notas de 9 dinmats e devolver 18 notas de 5 dinmats de troco.\nTemos:\n24 notas de 9 dinmats = 24 * 9 = 216 dinmats.\nDevolvendo 18 notas de 5 dinmats como troco = 18 * 5 = 90 dinmats.\nTotal = 216 - 90 = 126 dinmats.\n\nLogo, alternativa incorreta!"
+        },
+        {
+          "letra": "C",
+          "texto": "5 notas de 5 dinmats e 9 notas de 9 dinmats.",
+          "comentario": "5 notas de 5 dinmats e 9 notas de 9 dinmats.\nTemos:\n5 notas de 5 dinmats = 5 * 5 = 25 dinmats.\n9 notas de 9 dinmats = 9 * 9 = 81 dinmats.\nTotal = 25 + 81 = 106 dinmats.\n\nLogo, alternativa incorreta!"
+        },
+        {
+          "letra": "D",
+          "texto": "33 notas de 5 dinmats e devolver 6 notas de 5 dinmats de troco.",
+          "comentario": "33 notas de 5 dinmats e devolver 6 notas de 5 dinmats de troco.\nTemos:\n33 notas de 5 dinmats = 33 * 5 = 165 dinmats.\nDevolvendo 6 notas de 5 dinmats como troco = 6 * 5 = 30 dinmats.\nTotal = 165 - 30 = 135 dinmats.\n\nLogo, alternativa incorreta!"
+        },
+        {
+          "letra": "E",
+          "texto": "18 notas de 9 dinmats e devolver 11 notas de 5 dinmats de troco.",
+          "comentario": "18 notas de 9 dinmats e devolver 11 notas de 5 dinmats de troco.\nTemos:\n18 notas de 9 dinmats = 18 * 9 = 162 dinmats.\nDevolvendo 11 notas de 5 dinmats como troco = 11 * 5 = 55 dinmats.\nTotal = 162 - 55 = 107 dinmats.\n\nNosso gabarito, pois soma exatamente 107 dinmats."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Devemos verificar cada uma das alternativas e ver se elas somam 107 dinmats de forma válida, utilizando\napenas notas de 5 e 9 dinmats.\n\nA) 17 notas de 5 dinmats e 2 notas de 9 dinmats.\nTemos:\n17 notas de 5 dinmats = 17 * 5 = 85 dinmats.\n2 notas de 9 dinmats = 2 * 9 = 18 dinmats.\nTotal = 85 + 18 = 103 dinmats.\n\nLogo, alternativa incorreta, pois não soma 107 dinmats.\n\nB) 24 notas de 9 dinmats e devolver 18 notas de 5 dinmats de troco.\nTemos:\n24 notas de 9 dinmats = 24 * 9 = 216 dinmats.\nDevolvendo 18 notas de 5 dinmats como troco = 18 * 5 = 90 dinmats.\nTotal = 216 - 90 = 126 dinmats.\n\nLogo, alternativa incorreta!\n\nC) 5 notas de 5 dinmats e 9 notas de 9 dinmats.\nTemos:\n5 notas de 5 dinmats = 5 * 5 = 25 dinmats.\n9 notas de 9 dinmats = 9 * 9 = 81 dinmats.\nTotal = 25 + 81 = 106 dinmats.\n\nLogo, alternativa incorreta!\n\nD) 33 notas de 5 dinmats e devolver 6 notas de 5 dinmats de troco.\nTemos:\n33 notas de 5 dinmats = 33 * 5 = 165 dinmats.\nDevolvendo 6 notas de 5 dinmats como troco = 6 * 5 = 30 dinmats.\nTotal = 165 - 30 = 135 dinmats.\n\nLogo, alternativa incorreta!\n\nE) 18 notas de 9 dinmats e devolver 11 notas de 5 dinmats de troco.\nTemos:\n18 notas de 9 dinmats = 18 * 9 = 162 dinmats.\nDevolvendo 11 notas de 5 dinmats como troco = 11 * 5 = 55 dinmats.\nTotal = 162 - 55 = 107 dinmats.\n\nNosso gabarito, pois soma exatamente 107 dinmats.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Camaçari/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se, para a fabricação de 1.000 unidades um produto, o custo total for\ncomposto por um valor fixo de R$ 500,00 e um custo variável de R$ 5,00 por unidade, então, nessas\ncondições, o custo total das 1.000 unidades do produto será igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 550,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 5.500,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 1.505,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 3.250,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 5.000,00.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Nós devemos calcular o custo total da fabricação de 1.000 unidades de um produto, considerando que o\ncusto totalé composto por um custo fixo e um custo variável por unidade.\n\nPrimeiro, temos o custo fixo, queé de R$ 500,00. Em seguida, temos o custo variável, queé de R$ 5,00 por\nunidade. Como estamos produzindo 1.000 unidades, o custo variável total será:\n\nCusto variável total = Custo variável por unidade × Número de unidades\nCusto variável total = R$ 5,00 × 1.000\nCusto variável total = R$ 5.000,00\n\nAgora, somamos o custo fixo e o custo variável total para obter o custo total:\n\nCusto total = Custo fixo + Custo variável total\nCusto total = R$ 500,00 + R$ 5.000,00\nCusto total = R$ 5.500,00\n\nPortanto, o custo total das 1.000 unidades do produto será igual a R$ 5.500,00.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Camaçari/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Uma fábrica estima que o custo total para a fabricação de cada unidade\nde um produto será composto por R$ 5,00, referente à mão de obra, e R$ 3,00, de material. Ela estima\ntambém que cada unidade do produto será vendida por R$ 15,00. Nessas condições, se forem produzidas\ne vendidas 1.000 unidades do produto, o lucro obtido pela fábrica será igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 5.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 13.500,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 11.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 8.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 7.000,00.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Nessa questão, devemos calcular o custo total de fabricação, a receita e, depois, o lucro.\n\n1. Calcular o custo total para a fabricação de 1.000 unidades do produto:\nCusto por unidade referente à mão de obra: R$ 5,00\nCusto por unidade referente ao material: R$ 3,00\nCusto total por unidade = R$ 5,00 + R$ 3,00 = R$ 8,00\nCusto total para 1.000 unidades = 1.000 x R$ 8,00 = R$ 8.000,00\n\n2. Calcular a receita total da venda de 1.000 unidades:\nPreço de venda por unidade = R$ 15,00\nReceita total = 1.000 x R$ 15,00 = R$ 15.000,00\n\n3. Calcular o lucro obtido pela fábrica:\nLucro = Receita total - Custo total\nLucro = R$ 15.000,00 - R$ 8.000,00 = R$ 7.000,00\n\nPortanto, o lucro obtido pela fábrica ao produzir e vender 1.000 unidades do produtoé de R$ 7.000,00.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/PETROBRAS/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Um helicóptero que transporta passageiros entre o continente e as\nplataformas de petróleo realiza apenas um voo pela manhã e um pela tarde, sendo capaz de transportar\ncinco passageiros, além dos pilotos. Esse tipo de aeronaveé bastante confiável e segura, mas produz\nbastante barulho. A rotação das hélices de um helicóptero pode gerar ruídos sonoros com intensidade de\n120 dB. A intensidade de ruídos sonoros, β, em decibéis, é calculada por meio da fórmula β = 10∙log10(I/I0),\nna qual Ié a intensidade sonora e I0 = 10−12 W/m2é uma intensidade de referência próxima ao limiar da\naudição humana. A partir dessas informações e considerando que haja cinco homens e cinco mulheres\naguardando o transporte do continente a uma plataforma de petróleo, julgue o próximo item.\n\nCaso as hélices de um helicóptero façam 475 rotações por minuto durante o voo, então, em um voo de 1 h\ne 15 min, essas hélices girarão 35.625 vezes.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, em 1h15min, temos 75 minutos. Como as hélices fazem 475 rotações por minuto, elas girarão:\n\n𝐺 = 475 ⋅ 75\n\n𝐺 = 35.625\n\nLogo, as hélices girarão 35.625 vezes, conforme o item afirma.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "Cebraspe/PREF. DOS COQUEIROS/2020",
+      "tipo": "multipla_escolha",
+      "enunciado": "Carlos cumpre a seguinte jornada de trabalho semanal:\n\n• segundas, quartas e sextas — das 8 horas às 12 horas e das 14 horas às 18 horas;\n• terças e quintas — das 15 horas às 19 horas;\n• sábados — das 8 horas às 14 horas.\n\nCom base nessas informações, é correto afirmar que, semanalmente, Carlos trabalha",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "24 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "32 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "38 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "40 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "44 horas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Existem questões que cobram as operações básicas de uma forma mais contextualizada. Perceba que, nesse\nexercício, devemos apenas contabilizar as horas trabalhadas por dia e somá-las. Durante três dias (segunda,\n\nquarta e sexta), Carlos trabalha 4 horas pela manhã (de 8:00 às 12:00) e quatro horas pela tarde (14:00 às\n18:00). Logo, nesses dias, ele cumpre 4 + 4 = 𝟖 horas diárias.\n\nNas terças e quintas, ele trabalha apenas 4 horas à tarde (15:00 às 19:00). Por fim, no sábado, trabalha 6\nhoras corridas (08:00 às 14:00). Seja 𝐻𝑇 a quantidade de horas trabalhadas na semana, então:\n\nHT = 3 × 8 + 2 × 4 + 6\n\nHT = 24 + 8 + 6\n\nHT = 38",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/COGE-CE/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Segundo o portal cearatransparente.ce.gov.br, em 2018, dos 184 municípios\ndo estado do Ceará, 4 celebraram exatamente 1 convênio com o governo estadual, 22 celebraram\nexatamente 2 convênios com o governo estadual, e 156 celebraram 3 ou mais convênios com o governo\nestadual. De acordo com o texto, se, para cada 𝒋 = 𝟎, 𝟏, 𝟐, . . ., 𝒏𝒋 indicar a quantidade de municípios\ncearenses que celebraram, pelo menos, 𝒋 convênios com o governo estadual, então 𝒏𝟏 será igual a:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "2.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "18.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "134.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "178.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "182.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "𝑛𝑗 indica a quantidade de municípios cearenses que celebraram, PELO MENOS , 𝒋 convênios. Quando o\nexaminador pergunta o valor de 𝑛1, então ele quer saber quantos munícipios celebraram pelo menos 1\nconvênio.\n\nEle disse que 4 celebraram 1 convênio (vai pra conta), 22 celebraram 2 convênios (vai pra conta) e 156\nmunícipios celebraram três ou mais . Ora, veja que todos esses munícipios celebraram pelo menos um\nconvênio, então devemos somar todos eles.\n\n𝑆 = 4 + 22 + 156\n\n𝑆 = 182",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Ao organizar uma prova de concurso público com 24 questões, uma\ninstituição estabeleceu o seguinte critério de correção:\n\n• o candidato receberá 4 pontos por cada resposta correta (ou seja, em concordância com o gabarito\noficial);\n• o candidato perderá 1 ponto por cada resposta errada;\n• o candidato não ganhará nem perderá pontos por questões deixadas por ele em branco (ou seja, sem\nresposta) ou por questões anuladas.\n\nNessa situação hipotética, a quantidade máxima de respostas corretas que podem ser dadas por um\ncandidato que obtiver 52 pontos na provaé igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "14",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "15",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "16",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "17",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "18",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Vamos chamar a quantidade de acertos de 𝒄, a quantidade de questões erradas de 𝒆 e a quantidade de\nquestões deixadas em branco ou anuladas de 𝒃. Se temos 24 questões, o somatório dessas quantidades\ndeve ser o total de questões da prova. Logo,\n\n𝑐 + 𝑒 + 𝑎 = 24\n\nAlém disso, foi dito que o candidato obteve 52 pontos na prova . Ora, o enunciado falou que cada acerto\nvale 4 pontos, se ele acertou 𝒄 questões, então pontuou 𝟒𝒄 pontos. Só que o candidato pode ter errado\nquestões. Cada questão errada tira um ponto dele! Se ele errou 𝑒 questões, então a quantidade de pontos\nque vai descontada dele vale 𝑒. Como questão anuladas ou em branco não valem pontos , a pontuação do\ncandidatoé assim formada:\n\n4𝑐 − 𝑒 = 52\n\nSomando as duas equações acima membro a membro, obtemos a seguinte expressão:\n\n5𝑐 + 𝑎 = 76\n\nA questão pergunta a quantidade máxima de acertos 𝒄 que o candidato pode ter feito. Vamos isolar o c na\nexpressão acima.\n\n𝑐 = 76 − 𝑎\n5\n\nObserve que para 𝒄 ser máximo, 𝒂 tem que ser mínimo. O primeiro valor que podemos imaginaré 𝑎 = 0,\nou seja, que não houveram questões anuladas ou deixadas em branco. Mas, se isso for verdade, 𝑐 vale:\n\n𝑐 = 76 − 0\n5 = 76\n5 = 15,2\n\nNote que obtivemos 𝑐 = 15,2. Ora, isso não pode acontecer , 𝑐 deve ser um número inteiro poisé a\nquantidade de questões acertadas na prova . Você não pode acertar 𝟎, 𝟐 de uma questão objetiva . Logo,\ndevemos procurar o próximo valor mínimo de 𝒂. Nesse caso, devemos tentar com 𝑎 = 1.\n\n𝑐 = 76 − 1\n5 = 75\n5 = 15\n\nOpa, agora sim temos um valor inteiro para a quantidade de questões acertadas! É um número válido e,\nportanto, reflete a quantidade máxima de questões que o candidato pode acertar.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Uma repartição com 6 auditores fiscais responsabilizou-se por fiscalizar 18\nempresas. Cada empresa foi fiscalizada por exatamente 4 auditores, e cada auditor fiscalizou exatamente\na mesma quantidade de empresas. Nessa situação, cada auditor fiscalizou",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "8 empresas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "10 empresas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "12 empresas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "14 empresas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "16 empresas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "São 18 empresas e cada empresaé fiscalizada por 4 auditores. Quantas fiscalizações ocorrerão?\n\n18 × 4 = 72\n\nPerceba que serão necessárias 72 fiscalizações para dividir entre os 6 auditores.\n\n72\n6 = 12\n\nCada auditor realizará 12 fiscalizações, em que cada fiscalização ocorre em empresas diferentes.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "No ato de pagamento por um produto, um cliente entregou ao caixa uma\nnota de R$ 50. Informado de que o dinheiro entregue não era suficiente, o cliente entregou mais uma nota\nde R$ 50 e recebeu do caixa R$ 27 de troco. O cliente reclamou que ainda faltavam R$ 9 de troco e foi\nimediatamente atendido pelo caixa. Nessa situação hipotética, o valor da compra foi",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 52.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 53.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 57.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 63.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 64.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "O cliente entregou 𝑅$ 50,00 + 𝑅$ 50,00 = 𝑹$ 𝟏𝟎𝟎, 𝟎𝟎 para o caixa. O atendente, apesar de inicialmente\nter errado o troco, devolveu 𝑅$ 27,00 + 𝑅$ 9,00 = 𝑹$ 𝟑𝟔, 𝟎𝟎. O valor da compra foi:\n\n𝑅$ 100,00 − 𝑅$ 36,00 = 𝑅$ 64,00",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/PF/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Em uma operação de busca e apreensão na residência de um suspeito de tráfico\nde drogas, foram encontrados R$ 5.555 em notas de R$ 2, de R$ 5 e de R$ 20. A respeito dessa situação,\njulgue o item seguinte: a menor quantidade de notas em moeda corrente brasileira pelas quais o montante\napreendido poderia ser trocadoé superior a 60.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Naépoca da prova ainda não existia a nota de R$ 200. Por isso, vamos considerar que a nota de maior valor\nem circulação seja a nota de R$ 100 . Como a questão quer trocar o valor de R$ 5.555 usando a menor\nquantidade de notas, devemos usar o maior número de notas de R$ 100 possível. Com 55 notas de R$ 100,\nficamos com R$ 5.500. Falta 55 reais. Devemos pegar uma de R$ 50 e mais uma de R$ 5. Logo, são 55 notas\nde R$ 100, 1 nota de R$ 50 e 1 nota de R$ 5.\n\n𝑛 = 55 + 1 + 1 → 𝑛 = 57\n\nO item diz que a quantidade de notas para fazer essa trocaé superior a 60, o que nãoé verdade. Vimos que\nsão necessárias 57 notas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2014,
+      "fonteProva": "Cebraspe/PF/2014",
+      "tipo": "certo_errado",
+      "enunciado": "Um batalhãoé composto por 20 policiais: 12 do sexo masculino e 8 do sexo\nfeminino. A região atendida pelo batalhãoé composta por 10 quadras e, em cada dia da semana, uma\ndupla de policiais policia cada uma das quadras. Com referência a essa situação, julgue o item\nsubsequente: se, dos 20 policiais do batalhão, 15 tiverem, no mínimo, 10 anos de serviço, e 13 tiverem, no\nmáximo, 20 anos de serviço, então mais de 6 policiais terão menos de 10 anos de serviço.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "São 20 policiais. A questão informa que 15 possuem no mínimo 10 anos de serviço . Logo, sobram 𝟐𝟎 −\n𝟏𝟓 = 𝟓 policiais que terão menos de 10 anos de serviço . O item afirma que são 6 policiais nessa situação,\npor isso, encontra-se errada.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/SEGER-ES/2013",
+      "tipo": "multipla_escolha",
+      "enunciado": "Com a finalidade de conquistar novos clientes, uma empresa de turismo\noferece gratuitamente um pacote de serviços que dá direito a até sete dias de estadia em hotéis de sua\nrede conveniada, sendo necessário pagar somente uma taxa fixa — mas que pode variar de um hotel para\noutro — de uso por dia e por pessoa. Caso o cliente deseje, poderá adquirir, por R$ 3.600,00, um título de\nsócio que lhe dará direito a sessenta diárias por ano em qualquer hotel da rede. Se um cliente, ao usufruir\ndo pacote de serviços, pagou, para ele e para sua esposa, a quantia de R$ 300,00 de taxa de uso, por três\ndias de estadia em um hotel da rede, então, para passar os quatro dias restantes com a esposa e com dois\nfilhos no mesmo hotel, o cliente pagará",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 800,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 900,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 1.200,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 400,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 600,00.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "O cliente e sua esposa gastaram 𝑹$ 𝟑𝟎𝟎, 𝟎𝟎 para passar três dias no hotel. Logo, a diáriaé de R$ 100,00 .\nNos primeiros três dias só havia o casal, então ele gastou R$ 50,00 por dia e por pessoa. Se ele quer passar\nmais quatro dias com quatro pessoas (o casal + dois filhos), então a diária custará 50 × 4 = 𝑅$ 200. Como\nele deseja passar mais quatro dias: 𝑹$ 𝟐𝟎𝟎 × 𝟒 = 𝑹$ 𝟖𝟎𝟎, 𝟎𝟎.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/TRT-10/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Em um jogo para dois jogadores constituído por uma pilha de 1.000 palitos,\ncada jogador retira da pilha, alternadamente e sem reposição, uma quantidade de palitos, a qual pode\nconsistir em 1 palito, 2 palitos, 3 palitos, 4 palitos ou 5 palitos. Nesse jogo, ganha o jogador que retirar o\núltimo palito da pilha. Acerca do jogo acima descrito, julgue o item que se segue: do início ao término do\njogo, é possível que algum dos jogadores faça menos de 100 retiradas de palitos.\n\n==5eb381==",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Para algum jogador fazer a menor quantidade de retiradas possíve l, eles devem sempre retirar a maior\nquantidade de palitos por vez, no caso, 5 palitos. Logo, como são 1.000 palitos,\n\n1000\n5 = 200\n\nRetirando 5 palitos, precisamos de 200 retiradas para esgotar os 1000 palitos . Como são dois jogadores ,\nentão cada um retira 200/2 = 𝟏𝟎𝟎 vezes. Logo, é preciso, no mínimo, 100 retiradas por jogador. O item diz\nqueé possível algum jogador fazer menos de 100 retiradas, o que está errado, pois concluímos queé preciso\npelo menos 100 retiradas por jogador.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/PC-DF/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Considerando que 300 pessoas tenham sido selecionadas para trabalhar em\nlocais de apoio na próxima copa do mundo e que 175 dessas pessoas sejam do sexo masculino, julgue o\nseguinte item: se, em um dia de jogo, funcionarem 24 postos de apoio e se cada posto necessitar de 6\nmulheres e 6 homens, então a quantidade de pessoas selecionadas será suficiente.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Se 175 das 300 pessoas são homens, então temos 300 − 175 = 𝟏𝟐𝟓 mulheres nessa seleção. Cada um dos\n24 postos precisa de 6 mulheres, totalizando 𝟐𝟒 × 𝟔 = 𝟏𝟒𝟒 mulheres necessárias para preencher essas\nposições. Como temos apenas 125, a quantidade de pessoas selecionadas não será o suficiente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/FUB/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Se, em um supermercado que vende arroz somente em pacotes de 2 kg e de 5\nkg, um consumidor comprar, 71 kg de arroz, então ele comprará, entre pacotes de 2 kg e de 5 kg, mais de\n15 pacotes de arroz.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Temos que combinar pacotes de 2 kg e 5 kg para totalizar os 71 kg de arroz. Observe que 13 pacotes de\narroz de 5 kg pesam 𝟏𝟑 × 𝟓 = 𝟔𝟓 kg. Para totalizar os 71 kg, precisamos de mais 3 sacos de 2 kg.\n\n13 + 3 = 16 𝑠𝑎𝑐𝑜𝑠\n\nComo o item afirma que precisamos de mais de 15 sacos de arroz, ele está correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-017",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TRE-RJ/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\nNa campanha eleitoral de determinado município, seis candidatos a prefeito participarão de um debate\ntelevisivo. Na primeira etapa, o mediador fará duas perguntas a cada candidato; na segunda, cada\ncandidato fará uma pergunta a cada um dos outros adversários; e, na terceira etapa, o mediador\nselecionará aleatoriamente dois candidatos e o primeiro formulará uma pergunta para o segundo\nresponder. Acerca dessa situação, julgue os itens a seguir.\nNa terceira etapa do debate serão feitas mais perguntas que na primeira\netapa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Na primeira etapa, o mediador fará duas perguntas a cada candidato. São seis candidatos, logo:\n\n2 × 6 = 12 𝑝𝑒𝑟𝑔𝑢𝑛𝑡𝑎𝑠\n\nNa terceira etapa, o mediador seleciona aleatoriamente dois candidatos . O primeiro candidato sorteado\nfará uma pergunta para o segundo sorteado. Essa terceira etapa está um pouco mal escrita pois não fica\nclaro se a terceira etapa será composta por essaúnica pergunta fruto desse sorteio ou se serão realizados\nsorteios até todos os candidatos perguntarem (tirando do sorteio quem já perguntou).\n\nSupondo que o examinador tinha como intenção essaúltima proposta de interpretação, na terceira etapa\ncada candidato perguntará umaúnica vez. Como são seis candidatos, serão 6 perguntas nessa etapa.\nObserve que a quantidade de perguntas da terceira etapa será menor do que na primeira.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-018",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TRE-RJ/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Menos de 10 perguntas serão feitas na primeira etapa do debate.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Na primeira etapa, o mediador fará duas perguntas a cada candidato. São seis candidatos, logo:\n\n2 × 6 = 12 𝑝𝑒𝑟𝑔𝑢𝑛𝑡𝑎𝑠\n\nO item afirma que serão apenas menos de 10 perguntas, logo, encontra-se errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-09-S02-019",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Situações Problemas",
+      "subtopico": "Situações Problemas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/TRE-RJ/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Mais de 20 perguntas serão feitas na segunda etapa do debate.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na segunda etapa, cada candidato faz uma pergunta aos outros 5 candidatos . Logo, todo candidato\nrealizará 5 perguntas. Como são seis candidatos, o total de perguntas será:\n\n5 × 6 = 30 𝑝𝑒𝑟𝑔𝑢𝑛𝑡𝑎𝑠\n\nO item diz que serão realizadas mais de 20 perguntas na segunda etapa, logo, está correto!",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE/InoversaSul/2025",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões A respeito das operações com números no sistema decimal, julgue os itens que se seguem.\nA adição de duas dízimas periódicas inﬁnitas sempre será\numa\n\ndízima\n\nperiódica\n\ninﬁnita.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Sabemos que toda dízima periódica pode ser escrita como uma fração. Observe que, ao se\nsomar\n\nduas\n\ndízimas\n\nperiódicas, estamos somando duas frações cujo resultado não\nnecessariamente\n\nserá\n\numa\n\ndízima\n\nperiódica.\nConsidere, por exemplo, as frações e . Note que essas frações representam dízimas\n3\n9\n6\n9\nperiódicas:\n●\n\n3\n9\n= 0 , 333…●\n\n6\n9\n= 0 , 666…\nPor outro lado, ao somarmos essas duas dízimas periódicas, obtemos um número inteiro:\n\n0\n,\n333…\n+\n0\n,\n666…\n=\n3\n9\n+\n6\n9\n\n=\n3 + 6\n9\n\n=\n9\n9\n= 1",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE/InoversaSul/2025",
+      "tipo": "certo_errado",
+      "enunciado": "O produto entre 333 e a dízima periódica 4,317317...\nfornecerá\n\na\n\nseguinte\n\ndízima.\n437,666666…",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Inicialmente, vamos reescrever 4,317317... como a soma de um número inteiro com uma fração.\nNote\n\nque:\n\n4 , 317317 . . . = 4 + 0 , 317317 ...\n\n=\n4\n+\n\nLogo, o produto solicitadoé:\n\n333× 4 , 317317 . . . ( )\n\n=\n333×\n4\n+\n\n(\n)\n\n=\n333×4\n+\n333×\n\n=\n1332\n+\n317\n3\n\n=\n1332\n+\n317\n3\n= 1332 + 105 , 666…\n= 1332 + 105 + 0 , 666…\n= 1332 + 105 + 0 , 666…\n= 1 . 437 + 0 , 666…\n= 1 . 437 , 666…",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/Pref. Aracaju/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item subsecutivo, relativo à resolução de\nProblemas que envolvam números naturais, inteiros e fracionários.\nSe Márcia, Fátima e Sandra dividirem as despesas da empresa em que elas são sócias, tal que Márcia pague 3/8 das contas e Fátima pague 5/12 das contas, então\nSandra pagará a metade do valor pago por Fátima.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Sabemos que Márcia , Fátima e Sandra dividiram todas as despesas da empresa entre si.\nComo Márcia pagou 3/8 das contas e Fátima pagou 5/12 das contas, elas pagaram, juntas:\n\n3\n8\n+\n\n=\n9 + 10\n24\n=\n\nObserve que Sandra pagou o valor restante, que corresponde à fração complementar de 19/24 :\n\n1\n−\n\n=\n24 − 19\n24\n\n=\n\nComo Fátima pagou 5/12 das contas, observe que a metade desse valor (1/2 de 5/12)\ncorresponde\n\nao\n\nvalor\n\npago\n\npor\n\nSandra\n\n(\n5/24\n):\n\n1\n2\n\n𝑑𝑒\n\n=\n1\n2\n×\n\n=\n1×5\n2×12\n\n=\n\nLogo, é correto aﬁrmar que Sandra pagará a metade do valor pago por Fátima.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE/SESI SP/2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "A fração pode ser reescrita corretamente na\n1 , 6 × 2 , 25 + 3 , 46 , 94\nforma",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "1 . 069\n1\n.\n032",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "20 . 967\n3\n.\n817",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Para resolver a expressão, vamos primeiro obter as frações correspondentes às dízimas\nperiódicas.\n\nCálculo da dízima periódica 1 , 6\n1 , 6= 1 , 666…\n= 1 + 0 , 666…\n\n=\n1\n+\n6\n9\n\n=\n1\n+\n2\n3\n\n=\n3 + 2\n3\n\n=\n5\n3\nCálculo da dízima periódica 2 , 25\n2 , 25= 2 , 252525…\n= 2 + 0 , 252525…\n\n=\n2\n+\n\n=\n198 + 25\n99\n\n=\n\nCálculo da dízima periódica 3 , 4\n3 , 4= 3 , 444…\n= 3 + 0 , 444…\n\n=\n3\n+\n4\n9\n\n=\n27 + 4\n9\n\n=\n31\n9\nCálculo da dízima periódica 6 , 94\n6 , 94= 6 , 949494…\n= 6 + 0 , 949494…\n\n=\n6\n+\n\n=\n594 + 94\n99\n\n=\n\nCálculo da expressão\nSubstituindo as dízimas periódicas pelas frações encontradas, temos:\n\n1 , 6 × 2 , 25 + 3 , 46 , 94\n\n=\n5\n3\n×\n\n+\n31\n9688\n99\n\n=\n5\n3\n×\n\n+\n31\n9\n(\n)\n×\n\n=\n1115\n297\n+\n31\n9\n(\n)\n×\n\n=\n1115 + 1023\n297\n(\n)\n×\n\n=\n2138\n297\n(\n)\n×\n\nSimpliﬁcando 297 e 99 por 99, temos:\n\n=\n2138\n3\n×\n\nSimpliﬁcando 2138 e 688 por 2, temos:\n\n=\n1069\n3\n×\n\n=\n1069\n1032",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "CEBRASPE/TJPA/2020",
+      "tipo": "multipla_escolha",
+      "enunciado": "Dois colaboradores do setor de informática de uma empresa são\nresponsáveis\n\npor\n\nfazer\n\na\n\nmanutenção\n\ndos\n\ncomputadores\n\nda\n\nempresa.\n\nDurante\n\ncerto\n\nperíodo\n\nde\ntempo, um dos colaboradores fez manutenção em da quantidade total de 0 , 26= 0 , 262626computadores da empresa e, nesse mesmo período de tempo, o outro colaborador fez manutenção em dessa quantidade total de computadores, tendo restado 110 0 , 18= 0 , 181818computadores sem manutenção.\nNessa situação, a quantidade total de computadores dessa empresaé igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "130.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "139.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "155.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "159.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "198.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Seja o total de computadores da empresa. O número de computadores com manutençãoé: 𝑇\n0 , 26 𝑑𝑜 𝑡𝑜𝑡𝑎𝑙 + 0 , 18 𝑑𝑜 𝑡𝑜𝑡𝑎𝑙\n= 0 , 26 × 𝑇 + 0 , 18 × 𝑇\n\n=\n\n𝑇\n+\n\n𝑇\n\n=\n26 + 18\n99\n𝑇\n\n=\n\n𝑇\n\n=\n4\n9\n𝑇\nO total de computadores sem manutençãoé tal que:\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝑐𝑜𝑚𝑝𝑢𝑡𝑎𝑑𝑜𝑟𝑒𝑠( ) − 𝐶𝑜𝑚𝑝𝑢𝑡𝑎𝑑𝑜𝑟𝑒𝑠 𝑐𝑜𝑚 𝑚𝑎𝑛𝑢𝑡𝑒𝑛çã 𝑜 ( ) = ( 𝐶𝑜𝑚𝑝𝑢𝑡𝑎𝑑𝑜𝑟𝑒𝑠 𝑠𝑒𝑚 𝑚𝑎𝑛𝑢𝑡𝑒𝑛çã 𝑜 )\n\n𝑇\n−\n4\n9\n𝑇 = 110\n\n9 − 4\n9\n𝑇 = 110\n\n5\n9\n𝑇 = 110\n\n𝑇\n=\n110×9\n\n101\n𝑇 = 198\nTemos, portanto 198 computadores na empresa.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-10-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Frações",
+      "subtopico": "Frações - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Paulo, Maria e João, servidores lotados em uma biblioteca\npública,\n\ntrabalham\n\nna\n\ncatalogação\n\ndos\n\nlivros\n\nrecém-adquiridos.\n\nIndependentemente\n\nda\n\nquantidade\n\nde\n\nlivros\n\na\n\nserem\n\ncatalogados\n\nem\n\ncada\n\ndia,\n\nPaulo\n\ncataloga\n\n1/4,\n\nMaria\n\ncataloga\n\n1/3\n\ne\n\nJoão,\n\n5/12.\n\nA respeito da catalogação de livros por esses servidores, julgue o item a seguir. Entre os três servidores, Mariaé a mais eﬁciente, istoé, em cada dia de trabalho, ela cataloga\nmais\n\nlivros\n\nque\n\ncada\n\num\n\ndos\n\noutros\n\ndois.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Para determinar o servidor que cataloga mais livros, devemos determinar qual fração dentre ,\n1\n4\n1\n3\neé a maior.\n\nAo comparar frações, devemos encontrar frações equivalentes que apresentem o mesmo\ndenominador.\n\nO\n\ndenominador\n\nserá\n\no\n\nMMC\n\nentre\n\n4,\n\n3\n\ne\n\n12,\n\nque\n\né\n\n12.\n\nTemos\n\nque:\n\n1\n4\n=\n\n𝑒\n\n1\n3\n=\n\nPortanto, as frações com denominador 12 correspondentes à quantidade de livros catalogados\npor\n\nPaulo\n,\nMaria e João são, respectivamente:\n\n;\n\n;\n\nLogo, João cataloga mais livros do que cada um dos outros dois.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Circunferência",
+      "subtopico": "Circunferência",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CESPE/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um quadrado tem todos os seus vértices sobre uma circunferência de 4 cm de raio.\nNesse caso, a área desse quadrado é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "4 cm²",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "8 cm²",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "16 cm²",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "32 cm²",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "64 cm²",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Temos um quadrado que está dentro de uma circunferência. Essa circunferência raio igual a 4 cm. Queremos\ndeterminar a área do quadrado. Lembre -se que a área de um quadrado nada mais é do que comprimento\ndo lado elevado ao quadrado. Tudo bem? Acompanhe como fica a esquematização do problema:\n\nNote que o raio da circunferência é igual a metade da diagonal do quadrado (d). Lembre-se:\n\n𝑑 = 𝑎√2\n\nEm outras palavras, temos que a diagonal do quadrado coincide com diâmetro da circunferência. Portanto,\npodemos determinar quanto vale \"a\".\n\n8 = 𝑎√2       →         𝑎 = 8\n√2\n       →         𝒂 = 𝟒√𝟐 𝒄𝒎\n\nCom o lado encontrado, podemos calcular a sua área.\n\n𝐴𝑄 = 𝑎2       →        𝐴𝑄 = (4√2)\n2\n       →         𝐴𝑄 = 16 ∙ 2       →        𝑨𝑸 = 𝟑𝟐 𝒄𝒎²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/PETROBRAS/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Uma quadra de vôlei mede 18 m × 9 m, sendo a altura da rede igual a\n2,20 m. Em uma partida, uma jogadora bate em uma bola que estava a 3 m de altura; a bola viaja em linha\nreta até tocar o chão da quadra adversária. Essa jogada pode ser representada por um triângulo retângulo\nABC, de tal forma que os vértices A e B correspondam, respectivamente, ao ponto em que a bola foi batida\ne ao ponto em que a bola tocou o chão; e o segmento corresponda à altura da bola em relação ao piso da\nquadra no momento em que a jogadora bateu na bola. Tendo como referência essa situação hipotética,\njulgue os itens subsequentes.\n\nSe 𝐵𝐴̂𝐶 = 60°, então, no instante em que bateu na bola, a jogadora estava a uma distância inferior a 5 m\ndo ponto em que a bola tocou a quadra.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos desenhar o triângulo retângulo ABC descrito no texto inicial.\n\n\"x\" é a distância entre a jogadora e o ponto onde a bola tocou a quadra.\n\nObserve que podemos usar a tangente de 60° para determinar \"x\".\n\ntan 60° = √3 = 𝑥\n3\n\n𝑥 = 3√3\n\nA\nB\nC\n3,0 m\n60°\nx\n\nVamos usar a aproximação que √𝟑 ≅ 𝟏, 𝟕𝟑.\n\n𝑥 ≅ 3 ⋅ 1,73\n\n𝒙 ≅ 𝟓, 𝟏𝟗 𝐦\n\nObserve que a bola tocou a quadra em uma distância maior do que 5,0. Portanto, item errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/FUB/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, relacionados a geometria plana e espacial.\n\nConsidere que um triângulo 𝐴𝐵𝐶 tenha lados com as seguintes medidas: 3 cm, 5 cm e 7 cm. Se o triângulo\n𝐷𝐸𝐹 é semelhante ao triângulo 𝐴𝐵𝐶 e tem perímetro 25 cm, então o menor lado do triângulo 𝐷𝐸𝐹 é 5 cm.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Temos todos os lados do triângulo ABC, conseguimos calcular o perímetro (2p).\n\n2𝑝𝐴𝐵𝐶 = 3 + 5 + 7         →          2𝑝𝐴𝐵𝐶 = 15 cm\n\nComo também temos o perímetro do triângulo DEF, podemos calcular a razão de semelhança (k).\n\n𝑘 = 2𝑝𝐴𝐵𝐶\n2𝑝𝐷𝐸𝐹\n         →         𝑘 = 15\n25          →           𝑘 = 3\n5         →        𝑘 = 0,6\n\nAgora, com a razão de semelhança, conseguimos calcular o menor lado do triângulo DEF (𝒍𝑫𝑬𝑭). Para isso,\ndevemos utilizar também o menor lado do triângulo ABC (𝒍𝑨𝑩𝑪), ou seja, 3 cm.\n\n𝑘 = 𝑙𝐴𝐵𝐶\n𝑙𝐷𝐸𝐹\n      →          𝑙𝐷𝐸𝐹 = 𝑙𝐴𝐵𝐶\n𝑘       →        𝑙𝐷𝐸𝐹 = 3\n0,6       →         𝒍𝑫𝑬𝑭 = 𝟓 𝐜𝐦",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/FUB/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, relacionados a geometria plana e espacial.\n\nSeja 𝐴𝐵𝐶 um triângulo com 𝐴𝐵̂𝐶 = 90° e 𝐴𝐶̂𝐵 = 30°. Se 𝐵𝐶̅̅̅̅ = √3 cm e se a altura com relação ao vértice\n𝐵 encontra o segmento 𝐴𝐶̅̅̅̅ no ponto D, então o comprimento do segmento 𝐴𝐷̅̅̅̅ é 1 cm.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos esquematizar o triângulo ABC com as informações do item!\n\nQueremos determinar \"x\"! Para isso, precisaremos primeiro encontrar \"y\".\n\n𝐴\n𝐵\n 𝐶\n30°\n60°\n√3\n𝐷\n𝑥\n𝑦\n\ntan 30° = 𝑦\n√3\n       →         𝑦 = √3 tan 30°\n\nA tangente de 30° é uma daquelas que você precisa decorar! Trata-se de um ângulo notável! Vamos revisitar\naquela tabela!\n\n Seno Cosseno Tangente\n𝟑𝟎° 1\n2 √3\n2  √3\n3\n𝟒𝟓° √2\n2  √2\n𝟔𝟎° √3\n2\n1\n2 √3\n\nCom isso,\n\n𝑦 = √3 ⋅ √3\n3        →         y = 1 cm\n\nAgora, com o valor de \"y\", podemos encontrar \"x\", observando o triângulo ADB.\n\ncos 60° = 𝑥\n𝑦       →       𝑥 = 𝑦 ⋅ cos 60°        →         𝒙 = 𝟏\n𝟐  𝐜𝐦\n\nNote que \"x\" é igual a 0,5 cm. O item afirma que é igual a 1 cm. Logo, está errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em um triângulo retângulo, a hipotenusa mede 13 centímetros e um dos\ncatetos mede 5 centímetros. Nesse triângulo, considere o retângulo inscrito, em que o comprimento do\nlado maior é igual ao dobro do comprimento do lado menor, e um dos lad os maiores está sobre o cateto\nmaior do triângulo. Com base nessas informações, é correto afirmar que a área desse retângulo é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "11.250\n529  𝑐𝑚²",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "3.600\n289  𝑐𝑚²",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "3.600\n49  𝑐𝑚²",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "1800\n121 𝑐𝑚²",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "1.800 𝑐𝑚²",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Observe que o enunciado falou em triângulo retângulo. Além disso, ele deu o valor da hipotenusa e um dos\ncatetos. Nessa situação, podemos encontrar o valor do outro cateto aplicando o teorema de Pitágoras.\n\n𝑎2 = 𝑏2 + 𝑐2       →        132 = 55 + 𝑐2       →        169 = 25 + 𝑐2       →       𝑐2 = 144      →       𝒄 = 𝟏𝟐\n\nPronto, agora temos os dois catetos e a hipotenusa. Podemos desenhar o triângulo retângulo.\n\nDepois, o enunciado fala em um retângulo inscrito. Lembre-se que quando temos alguma figura \"inscrita\"\nem outra, significa que ela está dentro dessa outra. Além disso, o maior lado desse retângulo está sobre o\nmaior lado do triângulo. Essa informação é super importante para conseguirmos desenhar a figura.\n\nO comprimento do lado maior do retângulo é igual ao dobro do lado menor. Assim,\n\nQueremos determinar a área do retângulo, isto é, o produto dos seus lados. Para isso, note o seguinte:\n\nVeja que quando somamos as áreas das regiões I, II e III, vamos obter a área total do triângulo maior.\n• Área do triângulo retângulo maior:\n\n𝐴𝑇 = 12 ∙ 5\n2       →       𝐴𝑇 = 30 𝑐𝑚²\n\n• Área do triângulo retângulo I:\n\n𝐴𝐼 = (5 − 𝑥) ∙ (2𝑥)\n2       →       𝐴𝐼 = 𝑥 ∙ (5 − 𝑥)\n\n• Área do triângulo retângulo II:\n\n𝐴𝐼𝐼 = (12 − 2𝑥) ∙ 𝑥\n2       →       𝐴𝐼𝐼 = 𝑥 ∙ (6 − 𝑥)\n\n• Área do retângulo III:\n\n𝐴𝐼𝐼𝐼 = 2𝑥 ∙ 𝑥      →       𝐴𝐼𝐼𝐼 = 2𝑥²\n\nAssim, sabendo que 𝑨𝑻 = 𝑨𝑰 + 𝑨𝑰𝑰 + 𝑨𝑰𝑰𝑰, podemos escrever que:\n\n𝑥 ∙ (5 − 𝑥) + 𝑥 ∙ (6 − 𝑥) + 2𝑥2 = 30\n\n5𝑥 − 𝑥2 + 6𝑥 − 𝑥2 + 2𝑥2 = 30\n\n11𝑥 = 30\n\n𝑥 = 30\n11  𝑐𝑚\n\nAssim, com o valor de x descoberto, podemos achar a área do retângulo.\n\n𝐴𝐼𝐼𝐼 = 2𝑥2      →          𝐴𝐼𝐼𝐼 = 2 ∙ (30\n11)\n2\n      →          𝑨𝑰𝑰𝑰 = 𝟏𝟖𝟎𝟎\n𝟏𝟐𝟏  𝒄𝒎²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "CEBRASPE/CBM-DF/2016",
+      "tipo": "certo_errado",
+      "enunciado": "A diferença entre o comprimento da divisa dos lotes 1 e 2 e o comprimento\nda divisa da praça e do lote 1 é superior a 45 metros.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos primeiro identificar no desenho que divisas são essas que o item está falando.\n\nBeleza! Agora, veja que a diferença entre os comprimentos é exatamente a região destacada abaixo.\n\nPronto, sabemos exatamente o que estamos atrás. Observe que temos vários triângulos retângulos na figura\ne, portanto, podemos tentar usar da semelhança. Um ponto bom que devemos notar é aquele \"30 m\" isolado\nlá no canto superior direito. Ele certamente está lá por um motivo. Acompanhe mais um esquema.\n\nOs triângulos I e II são semelhantes e, portanto, podemos estabelecer a seguinte relação de semelhança:\n\n𝑑\n40 = 𝑐\n20      →       𝑑 = 2𝑐\n\nNote que a diferença entre as divisas é o dobro do comprimento c. Podemos determinar c usando o teorema\nde Pitágoras.\n\n302 = 202 + 𝑐2       →       900 = 400 + 𝑐2        →       𝑐2 = 500      →       𝑐 = 10√5\n\nAssim, a diferença entre as divisas é:\n\n𝑑 = 2 ∙ 10√5       →        𝑑 = 20√5 𝑚\n\nA dificuldade nesse ponto é saber quanto vale √𝟓. Afinal, precisamos de \"d\" com uma certa precisão, de\nmodo a conseguir julgar se o valor é maior ou menor que 45 metros. Minha sugestão é: pergunte -se qual o\nnúmero devo multiplicar 20 para dar 45. Ora, basta dividirmos 45 por 20 e vamos obter 2,25. Assim,\n\n20 ∙ 2,25 = 45\n\nA próxima pergunta é: √𝟓 é maior ou menor do que 2,25? Se for menor, então d será menor do que 45. Se\nfor maior, então d é maior do que 45. Tudo bem até aqui?! Para saber isso, basta fazermos 2,25².\n\n2,252 = 2,25 × 2,25 = 5,0625\n\nVeja que o quadrado de 2,25 ultrapassa 5. Logo, podemos dizer que √5 < 2,25. Sendo assim,\n\n𝒅 < 𝟒𝟓 𝒎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "CEBRASPE/CBM-DF/2016",
+      "tipo": "certo_errado",
+      "enunciado": "A frente do lote 2 para a rua São Joaquim mede 45 metros.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Temos que encontrar mais uma semelhança de triângulos.\n\nOs triângulos II e III são semelhantes e, portanto, podemos escrever a seguinte relação de semelhança:\n\n𝑥\n30 = 30\n20       →       𝑥 = 900\n20       →       𝒙 = 𝟒𝟓 𝒎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CEBRASPE/SEGP-AL/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Ao descrever a cena de um crime, um agente mencionou que o corpo foi\nlocalizado em um terreno plano e que o ponto do terreno correspondente à posição da cabeça da vítima\nestava a 2,5 m de um poste de iluminação, a 3,2 m de uma placa de trânsito e a 4,1 m de um semáforo\nvertical, no interior da região triangular determinada pelo poste, pela placa de trânsito e pelo semáforo.\nCom base nessa situação, julgue o item seguinte.\n\nA distância entre o poste de iluminação e a placa de trânsito é superior a 6 m.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Considere que o poste de iluminação esteja representado pela letra P, a placa de trânsito por T, o semáforo\npor S e a vítima por V. Um desenho que representa adequadamente a situação descrita no enunciado é o\nseguinte:\n\nDa desigualdade triangular, sabemos que o lado de um triângulo deve ser sempre menor do que a soma\ndos outros dois. Preste atenção no triângulo PVT. Queremos saber informações do lado PT. Como temos os\ndois outros lados do triângulo, podemos escrever que:\n\n𝑃𝑇 < 2,5 + 3,2      →        𝑃𝑇 < 5,7 𝑚\n\nNote que a distância entre os dois é inferior a 5,7 metros. Como o enunciado afirma que é superior a 6 m,\no item encontra-se errado.\n\nTexto para as próximas questões\n\n(EBC/2011) Considere que as retas r e s sejam paralelas e que a distância entre elas é de 2 cm; que, na reta\nr, sejam marcados 4 pontos, de forma que a distância de qualquer um deles ao mais próximo seja de 5 cm;\nque, na reta s, sejam marcados 5 pontos, de forma que  a distância de qualquer um deles ao mais próximo\nseja de 3 cm. Com base nessas informações e considerando, ainda, as áreas dos triângulos de vértices nos\npontos marcados nas retas r e s, é correto afirmar que",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "CEBRASPE/EBC/2011",
+      "tipo": "certo_errado",
+      "enunciado": "A maior área é igual a 15 cm².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O desenho que representa a situação do enunciado é o seguinte:\n\nQueremos desenhar um triângulo com a maior área possível. Lembre-se da fórmula:\n\n𝐴 = 𝑏 ∙ ℎ\n2\n\nOra, para o triângulo possuir a maior área, ele deve ter a maior base e a maior altura possível . Concorda?!\nA altura do triângulo será dada pela distância entre as retas. Essa distância é fixa e vale 2 cm. Logo, com\nrelação à altura, não temos muito o que fazer. Devemos tentar maximizar a base. Note que a base é máxima\nquando pegamos os pontos mais externos na reta r.\n\nEm qualquer um dos pontos da reta s que colocássemos o vértice do triângulo, a área seria a mesma. Isso,\npois, a altura é fixa e a base continuaria a mesma (15 cm). Assim, a área máxima é:\n\n𝐴𝑚á𝑥 = 15 ∙ 2\n2      →        𝑨𝒎á𝒙 = 𝟏𝟓 𝒄𝒎²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S03-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Triângulos",
+      "subtopico": "Triângulos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "CEBRASPE/EBC/2011",
+      "tipo": "certo_errado",
+      "enunciado": "A menor área é igual a 5 cm².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O desenho que representa a situação do enunciado é o seguinte:\n\nQueremos desenhar um triângulo com a menor área possível. Lembre-se da fórmula:\n\n𝐴 = 𝑏 ∙ ℎ\n2\n\nOra, para o triângulo possuir a menor área, ele deve ter a menor base e a menor altura possível. Concorda?!\nA altura do triângulo será dada pela distância entre as retas. Essa distância é fixa e vale 2 cm. Logo, com\nrelação à altura, não temos muito o que fazer. Devemos tentar minimizar a base. Essa base vai ser mínima\nquando pegarmos dois pontos consecutivos na reta s. Observe:\n\nEm qualquer um dos pontos da reta r que colocássemos o vértice do triângulo, a área seria a mesma. Isso,\npois, a altura é fixa e a base continuaria a mesma (3 cm). Assim, a área mínima é:\n\n𝐴𝑚í𝑛 = 3 ∙ 2\n2      →        𝑨𝒎í𝒏 = 𝟑 𝒄𝒎²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/PETROBRAS/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Uma quadra de vôlei mede 18 m × 9 m, sendo a altura da rede igual a\n2,20 m. Em uma partida, uma jogadora bate em uma bola que estava a 3 m de altura; a bola viaja em linha\nreta até tocar o chão da quadra adversária. Essa jogada pode ser representada por um triângulo retângulo\nABC, de tal forma que os vértices A e B correspondam, respectivamente, ao ponto em que a bola foi batida\ne ao ponto em que a bola tocou o chão; e o segmento corresponda à altura da bola em relação ao piso da\nquadra no momento em que a jogadora bateu na bola. Tendo como referência essa situação hipotética,\njulgue os itens subsequentes.\n\nA área da quadra de vôlei é igual a 162 m².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A quadra de vôlei tem formato de retângulo.\n\nSendo assim, podemos calcular a área pelo produto de suas dimensões.\n\n𝐴𝑞 = 18 ⋅ 9\n\n𝑨𝒒 = 𝟏𝟔𝟐 m²\n\nObserve que é exatamente a área que o item trouxe! Logo, item correto!",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/CBM-PA/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "“...e, graças à atuação do corpo de bombeiros, apenas 5% da reserva florestal foi perdida no incêndio”.\n\nConsiderando-se que o formato da reserva florestal citada no trecho da reportagem precedente\ncorresponda a um retângulo de 800 metros de largura por 1.200 metros de comprimento, conclui -se que\na área queimada no incêndio, em m2, corresponde a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "760.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "1.140.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "48.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "192.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "480.000.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "O primeiro passo é calcular a área da reserva florestal. Como o formato dela é retangular, basta multiplicar\na largura pelo comprimento.\n\n𝐴 = 800 ⋅ 1.200\n\n𝐴 = 960.000 m²\n\nDe acordo com os bombeiros, 5% da reserva foi perdida no incêndio.\n\n𝐴𝑝 = 960.000 ⋅ 5%\n\n𝐴𝑝 = 960.000 ⋅ 5\n100\n\n𝑨𝒑 = 𝟒𝟖. 𝟎𝟎𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/FUB/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, relacionados a geometria plana e espacial.\n\nUm paralelogramo 𝐴𝐵𝐶𝐷 com 𝐴𝐵̅̅̅̅ = 10 𝑐𝑚, 𝐵𝐶̅̅̅̅ = 6 𝑐𝑚 e 𝐴𝐵̂𝐶 = 30° tem área igual a 30 𝑐𝑚².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos desenhar esse paralelogramo!\n\nPara calcular a área desse paralelogramo, precisamos primeiramente encontrar sua altura.\n\n𝐴\n𝐵\n 𝐶\n𝐷\n10 cm\n6 cm\n30°\n𝐴\n𝐵\n 𝐶\n𝐷\n10 cm\n6 cm\n30°\nℎ\n\nNote que \"h\" é o cateto oposto do ângulo de 30°, enquanto o lado AB é a hipotenusa do triângulo destacado\nem verde. Sendo assim, podemos escrever:\n\nsen 30° = ℎ\n10       →        ℎ = 10 ⋅ 1\n2      →       𝐡 = 𝟓 𝐜𝐦\n\nCom a altura, podemos encontrar a área multiplicando a base BC por h.\n\n𝐴 = 𝐵𝐶 ⋅ ℎ       →        𝐴 = 6 ⋅ 5      →        𝑨 = 𝟑𝟎 𝐜𝐦²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "O carpinteiro José cortou um retângulo de madeira medindo 80 cm de\ncomprimento por 60 cm de largura. Ele precisa cortar outro retângulo, com a mesma área do primeiro,\nmas com comprimento um quarto maior que o daquele outro. Desse modo, em rela ção à largura do\nprimeiro retângulo, a largura do segundo deverá",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "diminuir um terço.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "diminuir um quinto.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "aumentar três vezes.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "aumentar um quinze avos.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "aumentar trinta e seis quinze avos.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "José cortou um retângulo de madeira medindo 80 cm x 60 cm. Assim, temos algo do tipo:\n\nA área de um retângulo é o produto dos seus lados.\n\n𝐴 = 80 ∙ 60      →        𝐴 = 4800 𝑐𝑚²\n\nEle quer cortar outro retângulo com essa mesma área e com comprimento um quarto maior que 80 cm .\nOra, um quarto de 80 cm é 20 cm. Assim, o comprimento do novo retângulo será 80 + 20 = 100 𝑐𝑚.\n\nA questão nos pergunta qual deve ser a largura do novo retângulo para que a área continue a mesma. Para\ndeterminar isso, podemos usando novamente a fórmula da área.\n\n4800 = 100 ∙ 𝑥      →        𝒙 = 𝟒𝟖 𝒄𝒎\n\nNote, portanto, que a largura deve diminuir de 60 cm para 48 cm, para que a área continue igual. A\ndiminuição foi de 12 unidades. Observe que 12 é exatamente um quinto de 60 . Assim, podemos marcar a\nletra B.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/PREF. SÃO CRISTOVÃO/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, relativo a sequências numéricas.\n\nSituação hipotética: As margens de uma folha de papel retangular medem 21 cm × 29 cm. Cortando essa\nfolha ao meio, pelo ponto médio da margem maior, obtêm-se duas folhas em que as margens medem 21 cm\n× 29/2 cm.\n\nDesprezando uma delas, a outra é denominada folha F1. Cortando F1 ao meio, pelo ponto médio da margem\nmaior, obtêm-se duas folhas em que as margens medem 21/2 cm x 29/2 cm. Desprezando uma delas, a outra\né denominada folha F2. Esse processo de divisão pode ser continuado sucessivamente.\n\nAssertiva: Nessa situação, a área da folha F6 será inferior a 9 cm².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Temos uma folha com o seguinte aspecto:\n\nVamos cortá-la ao meio, pelo ponto médio da margem maior.\n\nConcorda que F1 vai ter metade da área da folha inicial? E quando partimos F1 no meio novamente, vamos\nficar com metade da metade? E assim sucessivamente? Vamos calcular a área da folha inteira:\n\n𝐴 = 21 ∙ 29      →        𝐴 = 609 𝑐𝑚²\n\nA folha 𝐹1 terá área igual a metade da área da folha inteira.\n\n𝐴𝐹1 = 609\n2        →         𝐴𝐹1 = 304,5 𝑐𝑚²\n\nQuando você partir na metade novamente, a área da folha 𝐹2 será a metade da área da folha 𝐹1.\n\n𝐴𝐹2 = 304,5\n2       →         𝐴𝐹2 = 152,25 𝑐𝑚²\n\nPodemos fazer isso até a folha F6.\n\n𝐴𝐹3 = 152,25\n2       →         𝐴𝐹3 = 76,125 𝑐𝑚²\n\n𝐴𝐹4 = 76,125\n2       →         𝐴𝐹4 = 38,0625 𝑐𝑚2\n\n𝐴𝐹5 = 38,0625\n2       →         𝐴𝐹5 = 19,03125 𝑐𝑚2\n\n𝐴𝐹6 = 19,03125\n2       →         𝐴𝐹6 = 9,515625 𝑐𝑚²\n\nEssa solução seria uma via mais \"força bruta\". Ir dividindo um por um até encontrar a área de F6. No entanto,\nvocê poderia perceber no começo que dividir algo pela metade 6 vezes é o mesmo que dividir por 𝟐𝟔 = 𝟔𝟒.\nSendo assim, você obteria o mesmo resultado fazendo direto que:\n\n𝐴𝐹6 = 609\n26       →        𝐴𝐹6 = 609\n64       →        𝐴𝐹6 = 9,515625 𝑐𝑚²\n\nessalto também que você não necessita dessa \"precisão\" toda , uma vez que a questão não pede o valor\nexato, mas apenas quer saber se é inferior ou superior a um determinado número. Logo, fazer as contas\nconsiderando apenas duas casas decimais  já é suficiente (rsrs) . Firmeza?! Note que a área é superior a 9\ncm², tornando o item incorreto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/CAGE-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em um bairro nobre de determinada cidade, uma imobiliária colocou à\nvenda vários terrenos: independentemente do tamanho, o preço do metro quadrado é o mesmo para\ntodos os terrenos à venda. Um terreno retangular de 600 m² de área custa R$ 3.240.000. Em outro terreno,\ntambém retangular, um dos lados é 25% maior que o lado equivalente do primeiro terreno; o outro lado\né 20% menor que o lado equivalente do primeiro terreno. Nesse caso, o preço do segundo terreno é igual\na",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 1.458.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 3.240.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 3.402.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 3.078.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 3.564.000.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Note que os terrenos são retângulos  e, portanto, a área é dada pelo produto dos lados . Considere que o\nprimeiro terreno tenha lados 𝒂 e 𝒃. Assim, 𝑎 ∙ 𝑏 = 600.\n\nO segundo terreno tem um dos lados medindo 25% a mais do que o lado equivalente no primeiro terreno.\nCom isso, esse lado valeria 𝟏, 𝟐𝟓𝒂. Concorda? Analogamente, se o outro lado é 20% menor, então ele vale\n80% do lado equivalente no primeiro terreno. Assim, o segundo lado valeria 𝟎, 𝟖𝟎𝒃. A área do terreno é:\n\n𝐴 = (1,25𝑎) ∙ (0,8𝑏)             →              𝐴 = 𝑎𝑏             →            𝐴 = 600\n\nVeja que 𝟏, 𝟐𝟓 ∙ 𝟎, 𝟖 = 𝟏. Sendo assim, o segundo terreno tem a mesma área do primeiro e, portanto, deve\npossuir a mesmo valor. Com isso, seu preço também é de R$ 3.240.000.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os lados de um terreno quadrado medem 100 m. Houve erro na escrituração, e\nele foi registrado como se o comprimento do lado medisse 10% a menos que a medida correta. Nessa\nsituação, deixou-se de registrar uma área do terreno igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "20 m².",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "100 m².",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "1.000 m².",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "1.900 m².",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "2.000 m².",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "A área de um quadrado é o comprimento do lado elevado ao quadrado. Assim, em um terreno quadrado\nde lado 100 m, temos que sua área é:\n\n𝐴𝑇 = 𝑎2       →        𝐴𝑇 = 1002       →        𝑨𝑻 = 𝟏𝟎. 𝟎𝟎𝟎 𝒎²\n\nMas, na hora de escriturar, o lado do terreno foi registrado por um valor errado. Esse valor é 10% menor\ndo que o real. Assim, o lado considerado foi de apenas 90 m. Tudo bem?! Se o lado registrado é 10% menor,\nentão ele vale 90% do lado real. 90% de 100 é 90. A área desse quadrado de lado igual a 90 metros é:\n\n𝐴𝐸𝑅𝑅𝑂 = 902       →       𝑨𝑬𝑹𝑹𝑶 = 𝟖. 𝟏𝟎𝟎 𝒎²\n\nSe a área real é de 10.000 m² e foi registrado uma área de 8.100 m², então a diferença entre as áreas é de:\n\n𝐷𝑖𝑓𝑒𝑟𝑒𝑛ç𝑎 = 10.000 − 8.100      →       𝑫𝒊𝒇𝒆𝒓𝒆𝒏ç𝒂 = 𝟏. 𝟗𝟎𝟎 𝒎²\n\n(PM-AL/2018) Texto para as próximas questões\n\nA figura seguinte mostra a planta baixa de um condomínio. O terreno ocupado pelo condomínio é um\nquadrado de lados que mede 60 m. Nesse condomínio, as áreas indicadas por E1, E2 e E3 correspondem aos\nlocais onde estão construídos os prédios residenciais, e as regiões em branco correspondem às vias de livre\ncirculação para pedestres e veículos.\n\nA partir da figura e das informações precedentes, julgue os itens a seguir, considerando que a área de E2 seja\nigual a 200 m².",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/PM-AL/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Se a área de E3 for igual à área da região ocupada pelas vias de livre\ncirculação e se a área de E1 for igual a 900 m², então a área de E3 será igual a 1.250 m².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O terreno ocupado pelo condomínio é um quadrado de lado 60 m. Assim, a área total do terreno é:\n\n𝐴𝑇 = 602      →        𝐴𝑇 = 3600 𝑚²\n\nSabemos que a área E2 mede 200 m² e a área de E1 é igual a 900 m². A pergunta que fazemos é: quanto de\nespaço sobrará para a construção de E3 e das vias? Devemos fazer a seguinte subtração:\n\n𝐴𝑠𝑜𝑏𝑟𝑎 = 𝐴𝑇 − 𝐴𝐸1 − 𝐴𝐸2      →     𝐴𝑠𝑜𝑏𝑟𝑎 = 3600 − 900 − 200      →         𝐴𝑠𝑜𝑏𝑟𝑎 = 2500 𝑚²\n\nNote que temos disponíveis 2.500 m² para a construção de E3 e das vias. Como as duas devem ocupar igual\nárea, então a área de cada uma será metade desse valor.\n\n𝐴𝐸3 = 𝐴𝑣𝑖𝑎𝑠 = 2500\n2 = 1.250 𝑚²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "CEBRASPE/SEDF/2017",
+      "tipo": "certo_errado",
+      "enunciado": "No item a seguir, é apresentada uma situação hipotética seguida de uma\nassertiva a ser julgada, a respeito de juros, divisão proporcional e regra de três.\n\nUm terreno retangular medindo 100 m × 200 m foi colocado à venda por R$ 250.000,00. O terreno poderá\nser vendido inteiro ou em frações e, nesse caso, o preço do m² da fração de terreno é igual ao do m² do\nterreno inteiro. Nessa situação, se um indivíduo de sejar comprar uma fração medindo 50 m × 100 m, ele\npagará R$ 125.000,00 por essa fração de terreno.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Pessoal, o terreno colocado à venda tem 200 × 100 = 𝟐𝟎. 𝟎𝟎𝟎 𝒎² de área.\n\nEle foi colocado a venda por R$ 250.000,00. Logo, podemos calcular o preço do metro quadrado.\n\n𝑃𝑚2 = 𝑅$ 250.000,00\n20.000 𝑚²       →        𝑃𝑚2 = 𝑅$ 12,5 𝑝𝑜𝑟 𝑚²\n\nUma pessoa quer comprar uma fração desse terreno, de tamanho 50 por 100 m. Algo do tipo:\n\nPortanto, a área da fração desejada pelo indivíduo é 50 × 100 = 5.000 𝑚². Como o preço do metro\nquadrado da fração é igual ao do m² do terreno inteiro, basta fazermos:\n\n𝑃𝑓𝑟𝑎çã𝑜 = 𝐴𝑓𝑟𝑎çã𝑜 ∙ 𝑃𝑚2      →        𝑃𝑓𝑟𝑎çã𝑜 = 12,5 ∙ 5000      →       𝑃𝑓𝑟𝑎çã𝑜 = 𝑅$ 62.500,00\n\nLogo, ele pagará R$ 62.500,00 e não R$ 125.000,00.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "CEBRASPE/CPRM/2016",
+      "tipo": "multipla_escolha",
+      "enunciado": "A área do trapézio apresentado, em que a altura é igual a 80 m, a base maior mede 200 m e a base menor,\n150 m, é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "8.000 m²",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "6.000 m²",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "23.000 m²",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "21.000 m²",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "14.000 m²",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Questão que exige a aplicação direta da fórmula da área do trapézio. Lembre-se da teoria que:\n\n𝐴𝑡𝑟𝑎𝑝é𝑧𝑖𝑜 = (𝐵 + 𝑏) ∙ ℎ\n2\n\n• 𝐵: representa o comprimento da base maior;\n• 𝑏: representa o comprimento da base menor;\n• ℎ: representa a altura do trapézio.\n\nO enunciado forneceu os seguintes valores:\n\n• 𝐵 = 200 𝑚;\n• 𝑏 = 150 𝑚;\n• ℎ = 80 𝑚.\n\nSubstituindo na expressão:\n\n𝐴𝑡𝑟𝑎𝑝é𝑧𝑖𝑜 = (200 + 150) ∙ 80\n2       →        𝐴𝑡𝑟𝑎𝑝é𝑧𝑖𝑜 = 28000\n2       →       𝑨𝒕𝒓𝒂𝒑é𝒛𝒊𝒐 = 𝟏𝟒. 𝟎𝟎𝟎 𝒎²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CEBRASPE/BACEN/2013",
+      "tipo": "certo_errado",
+      "enunciado": "A numeração das notas de papel -moeda de determinado país é constituída\npor duas das 26 letras do alfabeto da língua portuguesa, com ou sem repetição, seguidas de um numeral\n\ncom 9 algarismos arábicos, de 0 a 9, com ou sem repetição. Julgue o próximo item relativos a esse sistema\nde numeração.\n\nConsidere que, até o ano 2000, as notas de papel-moeda desse país fossem retangulares e medissem 14 cm\n× 6,5 cm e que, a partir de 2001, essas notas tivessem passado a medir 12,8 cm × 6,5 cm, mas tivessem\nmantido a forma retangular. Nesse caso, com o papel-moeda gasto para se fabricar 10 notas de acordo com\nas medidas adotadas antes de 2000 é possível fabricar 11 notas conforme as medidas determinadas após\n2001.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O primeiro passo é calcular as áreas de cada uma das notas.\n\n• Nota antiga (14 cm x 6,5 cm)\n\n𝐴𝑎𝑛𝑡𝑖𝑔𝑎 = 14 ∙ 6,5      →        𝐴𝑎𝑛𝑡𝑖𝑔𝑎 = 91 𝑐𝑚²\n\n• Nota nova (12,8 cm x 6,5 cm)\n\n𝐴𝑛𝑜𝑣𝑎 = 12,8 ∙ 6,5      →       𝐴𝑛𝑜𝑣𝑎 = 83,2 𝑐𝑚²\n\nAgora, vamos calcular quanto papel moeda é gasto para fabricar 10 notas antigas e 11 notas novas.\n\n• 10 notas antigas possuem uma área de:\n\n𝐴10 = 𝟏𝟎 ∙ 𝐴𝑎𝑛𝑡𝑖𝑔𝑎      →        𝐴10 = 10 ∙ 91      →        𝐴10 = 910 𝑐𝑚²\n\n• 11 notas novas possuem uma área de:\n\n𝐴11 = 𝟏𝟏 ∙ 𝐴𝑛𝑜𝑣𝑎        →       𝐴11 = 11 ∙ 83,2      →       𝐴11 = 915,2 𝑐𝑚²\n\nA área de papel necessária para produzir 11 notas novas é maior do que para produzir 10 notas antigas.\nAssim, o item erra quando afirma que com o papel gasto para produzir 10 notas antigas seria possível\nproduzir 11 novas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-22-S04-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Quadriláteros",
+      "subtopico": "Quadriláteros",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "CEBRASPE/CORREIOS/2011",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em 2008, nos 200 anos do Banco do Brasil, os Correios lançaram um selo\ncomemorativo com uma tiragem de 1.020.000 unidades. No selo, cujo formato é de um retângulo medindo\n40 mm × 30 mm, a estampa ocupa um retângulo que mede 35 mm × 25 mm. Dadas essas condições, é\ncorreto afirmar que a área do retângulo da estampa é",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "superior a 90% da área do retângulo do selo.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "inferior a 75% da área do retângulo do selo.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "superior a 75% e inferior a 80% da área do retângulo do selo.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "superior a 80% e inferior a 85% da área do retângulo do selo.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "superior a 85% e inferior a 90% da área do retângulo do selo.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Pessoal, o selo descrito no enunciado tem o seguinte aspecto:\n\nCom outras palavras, a questão nos pergunta quantos % a área destacada ocupa. Vamos calcular cada uma\ndas áreas individualmente.\n\n• Área do retângulo do selo.\n\n𝐴𝑠𝑒𝑙𝑜 = 40 ∙ 30      →       𝐴𝑠𝑒𝑙𝑜 = 1200 𝑚𝑚²\n\n• Área do retângulo da estampa.\n\n𝐴𝑒𝑠𝑡𝑎𝑚𝑝𝑎 = 35 ∙ 25      →        𝐴𝑒𝑠𝑡𝑎𝑚𝑝𝑎 = 875 𝑚𝑚²\n\nAgora, para encontrar quanto 875 mm² corresponde de 1200 mm², basta dividir a primeira quantidade pela\nsegunda e, depois, multiplicar por 100 (para dar em porcentagem).\n\n%𝐴 = 𝐴𝑒𝑠𝑡𝑎𝑚𝑝𝑎\n𝐴𝑠𝑒𝑙𝑜\n∙ 100     →       %𝐴 = 875\n1200 ∙ 100     →        %𝑨 = 𝟕𝟐, 𝟗𝟏%\n\nLogo, a área é inferior a 75%, conforme afirma a alternativa B.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CESPE/SEDUC-AL/2021",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item subsequente, relativos a geometria.\n\nSuponha que o volume (em cm³) de um cubo seja numericamente menor do que a área (em cm²) de sua\nsuperfície, isto é, a soma das áreas de suas faces. Nessa situação, o comprimento da aresta desse cubo é\ninferior a 6 cm.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos relembrar as fórmulas do volume do cubo e da área superficial.\n\n1) Volume do cubo\n𝑉 = 𝑎3\n\n2) Área superficial\n𝐴𝑠 = 6𝑎2\n\nA questão quer o valor da aresta \"a\" para que V seja inferior a 𝐴𝑠.\n\n𝑉 < 𝐴𝑠         →          𝑎3 < 6𝑎2       →         𝒂 < 𝟔 𝐜𝐦",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.720Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CESPE/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Mesmo com a informatização dos processos, ainda é grande o volume de papéis\nconsumidos nas instituições públicas, o que demanda grandes espaços para seu armazenamento. Por\nexemplo, uma caixa na forma de um paralelepípedo retângulo medindo 31 cm de largura, 25 cm de altura\ne 42 cm de comprimento armazena 10 resmas de papel A4. Nesse caso, para armazenar 1.000 dessas caixas\nem um contêiner, é necessário que a capacidade desse contêiner seja de",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "32,55 m³.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "39,20 m³.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "77,50 m³.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "98 m³.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "105 m³.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Temos uma caixa no formato de paralelepípedo.\n\nSabemos que para calcular o volume de um paralelepípedo, devemos multiplicar suas três dimensões. Note\nque as dimensões estão em centímetros e as respostas estão em metros cúbicos . Para transformar\ncentímetros em metros, basta dividir aquele por 100. Assim, o volume de uma única caixa é:\n\n𝑉 = 0,25 ∙ 0,42 ∙ 0,31      →        𝑉 = 0,03255 𝑚³\n\nVeja que esse volume é o volume de uma única caixa. O enunciado quer saber o volume de 1000 delas. Logo,\ndevemos multiplicar o resultado por 1000.\n\n𝑉𝑡𝑜𝑡𝑎𝑙 = 1000 ∙ 𝑉      →       𝑉𝑡𝑜𝑡𝑎𝑙 = 1000 ∙ 0,03255      →       𝑉𝑡𝑜𝑡𝑎𝑙 = 32,55 𝑚³",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CESPE/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Paulo, Maria e João, servidores lotados em uma biblioteca pública, trabalham na\ncatalogação dos livros recém -adquiridos. Independentemente da quantidade de livros a serem\ncatalogados em cada dia, Paulo cataloga 1/4, Maria cataloga 1/3 e João, 5/12. A respeito da catalogação\nde livros por esses servidores, julgue o item a seguir.\n\nSituação hipotética: Cada um dos livros que serão catalogados em três dias de trabalho constitui um sólido\nque tem a forma de um paralelepípedo retângulo de 2.000 cm³ de volume. Assertiva: Nessa situação, se,\nnesse período, João catalogar 375 desses livros, então, nesse período, os três servidores ju ntos catalogarão\numa quantidade de livros cuja soma dos volumes será superior a 2 m³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Beleza, vamos primeiro determinar a quantidade total de livros. O enunciado adiantou para nós e disse que\nJoão cataloga 375 deles. Esse valor corresponde a 5/12 da quantidade total de livros. Podemos fazer uma\nregra de três simples e determinar quantos livros foram catalogados ao total, tudo bem?!\n\n12\n𝑥                                                                        1\n\nMultiplicando cruzado, ficamos com:\n\n5𝑥\n12 = 375      →         𝑥 = 900\n\nLogo, o total de livros é 900. Pessoal, se não ficou claro, vou tentar explicar melhor.\n\n• Quando o enunciado fala que João cataloga 5/12 dos livros, podemos dizer, com outras palavras, que\nJoão cataloga 5/12 = 0,41666. . . = 𝟒𝟏, 𝟔% 𝐝𝐨𝐬 𝐥𝐢𝐯𝐫𝐨𝐬. Tudo bem?!\n\n• Além disso, a questão disse que João catalogou 375 livros. Ora, podemos fazer uma regra de três a partir\ndaí. Pensamos assim: \"se 375 livros correspondem a 41,6%, então x livros correspondem a 100%\".\n\nSe são 900 livros e cada livro tem 2.000 cm³, então o volume total ocupado pelos 900 é dado por:\n\n𝑉𝑡𝑜𝑡𝑎𝑙 = 900 ∙ 2000      →       𝑉𝑡𝑜𝑡𝑎𝑙 = 1.800.000 𝑐𝑚³\n\nO problema é que encontramos um volume em cm³ e é preciso comparar com m³. Para fazer a conversão,\npodemos usar a seguinte estratégia:\n\n• 1 m³ equivale a multiplicar \"1 m\" três vezes.\n\n𝑉 = 1 𝑚3 = (1 𝑚) ∙ (1 𝑚) ∙ (1 𝑚)\n\n• Quantos centímetros existem em \"1 m\"? Ora, 1 metro tem 100 centímetros.\n\n𝑉 = 1 𝑚3 = (100 𝑐𝑚) ∙ (100 𝑐𝑚) ∙ (100 𝑐𝑚) = 1.000.000 𝑐𝑚³\n\nLogo, acabamos de encontrar 1 m³ tem 1.000.000 cm³. Assim, podemos fazer outra regra de três.\n\n1 𝑚3                                                                      1.000.000 𝑐𝑚³\n𝑥                                                                        1.800.000 𝑐𝑚 ³\n\nMultiplicando cruzado.\n\n1.000.000 ∙ 𝑥 = 1.800.000      →        𝑥 = 1,8 𝑚³\n\nNote que a soma dos volumes é inferior a 2 m³ e, portanto, o item encontra-se errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "CESPE/PREF. SÃO LUIS/2017",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os biscoitos de sal de determinada marca têm a forma de um\nparalelepípedo retângulo: a base é um quadrado de lados medindo 6 cm; a altura mede 0,25 cm. Os\nbiscoitos são acondicionados em caixas com capacidade para 5.184 cm³. Nesse caso, a quantidade de\nbiscoitos que podem ser acondicionados em uma dessas caixas é",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "superior a 1.500.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "inferior a 100.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "superior a 100 e inferior a 500.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "superior a 500 e inferior a 1.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "superior a 1.000 e inferior a 1.500.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Inicialmente, vamos calcular o volume de um biscoito. Ele tem base quadrada de lado 6 cm e altura 0,25 cm.\n\nO volume de um paralelepípedo é dado pelo produto das três dimensões. Assim,\n\n𝑉 = 0,25 ∙ 6 ∙ 6       →        𝑉 = 9 𝑐𝑚³\n\nCada biscoito possui um volume de 9 cm³. Se a caixa tem capacidade para 5.184 cm³, então cada caixa cabe:\n\n𝑁 = 5184\n9       →        𝑁 = 576 𝑏𝑖𝑠𝑐𝑜𝑖𝑡𝑜𝑠\n\nLogo, um número superior a 500 e inferior a 1.000.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "CESPE/PM-ES/2017",
+      "tipo": "certo_errado",
+      "enunciado": "No item a seguir é apresentada uma situação hipotética, seguida de uma assertiva\na ser julgada, a respeito de modelos lineares, modelos periódicos e geometria dos sólidos.\n\nO tanque para água de um veículo de combate a incêndio tem a forma de um paralelepípedo retângulo e\nestá completamente cheio. No combate a um incêndio, gastou-se 1/3 de sua capacidade. No combate a um\nsegundo incêndio, gastou-se 3/7 do que sobrou. Nesse caso, depois de extintos os dois incêndios, restou, no\ntanque, água até uma altura superior a 1/3 da altura original.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, temos um tanque na forma de um paralelepípedo. O volume de um paralelepípedo é linearmente\nproporcional a altura. Mas o que isso significa? Significa que se gastamos 1/3 da capacidade, a altura cai em\n\num terço também. Se for usando metade do tanque, a altura vai cair na metade (mantido a área da base\nconstante).\n\nDito isso, vamos analisar as informações do enunciado. Inicialmente, gastou-se 1/3 da sua capacidade. Com\nisso, a altura do tanque também desceu 1/3, resultando em uma altura e volumes iguais a 2/3 da original.\nTudo bem até aqui?! Depois, consome-se mais 3/7 do que sobrou. Ou seja, 3/7 dos 2/3 que havia sobrado.\nSendo assim, sobram 4/7 dos 2/3.\n\n4\n7 ∙ 2\n3 = 8\n21 ≅ 0,3809 ≅ 38,09%\n\nPercebemos que, depois dos consumos, o tanque ficou com 𝟑𝟖, 𝟎𝟗% de sua capacidade, indicando que sua\naltura está 𝟑𝟖, 𝟎𝟗% da original. Note que 38,09% é maior que\n1\n3 = 0,333 = 33,3%. Portanto, item correto.\n\n(PRF/2012) Texto para as próximas questões\nConsidere que o interior de um recipiente tenha a forma de um paralelepípedo retângulo de base quadrada\nde lado medindo 50 cm e altura, 40 cm. Considere, ainda, que esse recipiente tenha sido enchido com um\ncombustível homogêneo composto de gasolina pura e álcool e que 40% do combustível constitua -se de\nálcool. Com base nessas informações, julgue o item subsequente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "CESPE/PRF/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Se o recipiente estiver assentado sobre um plano horizontal e 30 litros do\ncombustível forem retirados, a altura do combustível que restou no recipiente será inferior a 30 cm.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Inicialmente, calcular o volume do recipiente. Pelas informações do enunciado, temos o seguinte:\n\nO volume de um paralelepípedo é dado pelo produto de suas três dimensões. Então,\n\n𝑉 = 40 ∙ 50 ∙ 50      →        𝑉 = 100.000 𝑐𝑚³\n\nNote que obtemos um volume em cm³ e precisamos passar para litros. Lembre-se:\n\n1 𝑐𝑚3 = 1 𝑚𝐿\n\nAssim,\n𝑉 = 100.000 𝑐𝑚3 = 100.000 𝑚𝐿 = 100 𝐿\n\nVeja que temos 100 L de combustível . Se 30 litros foram retirados, então o volume foi reduzido em 30%.\nNaturalmente, a altura do combustível no tanque foi reduzida em 30%, ficando com 70% da original. Assim,\nse no início a altura era 40 cm, então, depois da retirada dos 30L, ficamos com:\n\nℎ = (40 𝑐𝑚) × 70%       →         ℎ = 28 𝑐𝑚\n\nA altura resultante é, portanto, menor do que 30 cm.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "CESPE/PRF/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Menos de 55 litros do combustível contido no recipiente constitui -se de gasolina\npura.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos aproveitar a resolução do item anterior. Inicialmente, temos 100 L de combustível. Depois, 30 litros\nsão retirados. Com essa retira da, ficamos com 70 litros . Tudo bem?! O enunciado diz que 40% desse\ncombustível é álcool. Consequentemente, 60% será a gasolina pura. Para saber quanto de gasolina sobrou\napós a retirada, basta multiplicarmos a porcentagem de gasolina pelo volume restante.\n\n𝑉𝑔𝑎𝑠𝑜𝑙𝑖𝑛𝑎 = 60% ∙ 70      →         𝑉𝑔𝑎𝑠𝑜𝑙𝑖𝑛𝑎 = 48 𝐿",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "CESPE/CORREIOS/2011",
+      "tipo": "multipla_escolha",
+      "enunciado": "Considerando -se que duas caixas, A e B, tenham, ambas, a forma de um\nparalelepípedo retângulo, que a caixa A tenha arestas que meçam 27 cm, 18 cm e 9 cm, e a caixa B tenha\narestas medindo o dobro das arestas da caixa A, é correto afirmar que o volume da caixa B corresponde a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "8 vezes o volume da caixa A.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "2 vezes o volume da caixa A.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "3 vezes o volume da caixa A.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "4 vezes o volume da caixa A.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "6 vezes o volume da caixa A.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Para resolver esse item, não precisaremos dos valores informados ! Imagine um paralelepípedo genérico,\nconforme representado no desenho abaixo.\n\nSabemos que o volume dele é dado pelo produto das três dimensões.\n\n𝑉𝑖 = 𝑎𝑏𝑐\n\nAgora, considere que dobramos as arestas. Assim,\n\n𝑉𝑓 = (2𝑎) ∙ (2𝑏) ∙ (2𝑐)     →        𝑉𝑓 = 8𝑎𝑏𝑐       →       𝑽𝒇 = 𝟖 ∙ 𝑽𝒊\n\nNote que o volume do novo paralelepípedo é 8 vezes o valor do volume inicial! Já podemos marcar.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2010,
+      "fonteProva": "CESPE/CBM-ES/2010",
+      "tipo": "certo_errado",
+      "enunciado": "Uma caixa-d’água tem formato de um paralelepípedo retângulo, e outra, de um\ncilindro circular. A caixa -d’água com formato de paralelepípedo tem base igual a 20 m e 15 m, e altura\nigual a 5 m. O raio da base da caixa com formato cilíndrico mede 10 m, e a altura, 5 m. Tomando 3,14 como\no valor aproximado da constante julgue o item que se segue.\n\nA caixa com formato de paralelepípedo tem mais capacidade de armazenamento de água que a caixa com\nformato cilíndrico.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Precisamos calcular o volume da caixa com formato de paralelepípedo. Com as informações do enunciado,\npodemos desenhar o seguinte sólido:\n\nSabemos que o volume de um paralelepípedo é dado pelo produto de suas três dimensões. Assim,\n\n𝑉𝑝 = 5 ∙ 20 ∙ 15       →        𝑉𝑝 = 1.500 𝑚³\n\nNo item anterior, calculamos o volume da caixa cilíndrica e encontramos 𝑽𝒄 = 𝟏. 𝟓𝟕𝟎 𝒎³. Observe que a\ncaixa cilíndrica tem maior capacidade, ao contrário do que afirma o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2009,
+      "fonteProva": "CESPE/PREF. IPOJUCA/2009",
+      "tipo": "certo_errado",
+      "enunciado": "Em uma  piscina que tenha a forma de um paralelepípedo com\ncomprimento igual a 6 m, largura igual a 3 m e altura igual a 2 m, cabem 36.000 litros d’água.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Questão que nos exige calcular o volume de um paralelepípedo . Note que a questão trouxe todas as\ndimensões dele. Assim, para encontrar o seu volume, basta fazer a multiplicação das três quantidades.\n\n𝑉 = 𝑎𝑏𝑐     →         𝑉 = 2 ∙ 6 ∙ 3        →         𝑉 = 36 𝑚³\n\nCreio que o maior foco da questão era determinar se conhecíamos a conversão entre metro cúbico e litros.\nSaber essas conversões é de extrema importância, galera! Lembre-se:\n\n1 𝑚3 = 1.000 𝐿\n\nLogo, quando encontramos que o volume da piscina era 36 m³, estamos dizendo, com outras unidades, que\no volume dela é 36.000 litros.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2008,
+      "fonteProva": "CESPE/MPE-RR/2008",
+      "tipo": "certo_errado",
+      "enunciado": "Considere que a carroceria de um caminhão de transporte de cargas tenha a\nforma de um paralelepípedo retângulo medindo 8 m × 3 m × 4 m. Com base nessas informações, julgue o\nitem que se segue.\n\nO volume máximo de carga que esse caminhão pode transportar em sua carroceria é inferior a 100.000 litros.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Questão que nos exige a aplicação direta da fórmula de volume para o paralelepípedo. Lembre-se que\nquando temos esse sólido, o volume é dado pelo produto das três dimensões. Assim,\n\n𝑉 = 𝑎𝑏𝑐\n\nO enunciado forneceu o valores: 8m, 3m e 4m. Logo,\n\n𝑉 = 8 ∙ 3 ∙ 4      →       𝑉 = 96 𝑚³\n\nNo entanto, a questão quer a resposta em litros. Para isso, devemos ter em mente que 𝟏 𝒎𝟑 = 𝟏. 𝟎𝟎𝟎 𝑳.\n\n𝑉 = 96 𝑚3 = 96.000 𝐿\n\nLogo, o item acerta quando afirma que a capacidade da carroceria é inferior a 100.000L.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Prisma",
+      "subtopico": "Prisma",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2007,
+      "fonteProva": "CESPE/PGE-PA/2007",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se uma caixa d’água tem a forma de um paralelepípedo retângulo, em que a\nbase é um retângulo de lados 100 cm × 50 cm e a altura mede 80 cm, então o volume da caixa d’água, em\nlitros, é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "200.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "400.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "2.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "4.000.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Essa questão é idêntica à anterior. Coloquei mais p ara treino e enfatizar o quanto é importante sabermos a\ndo volume para o paralelepípedo. Lembre-se que quando temos esse sólido, o volume é dado pelo produto\ndas três dimensões.\n\n𝑉 = 𝑎𝑏𝑐\n\nO enunciado forneceu o valores: 100 cm, 50 cm e 80 cm. Logo,\n\n𝑉 = 100 ∙ 50 ∙ 80      →       𝑉 = 400.000 𝑐𝑚³\n\nNo entanto, a questão quer a resposta em litros. Para isso, devemos ter em mente que 𝟏 𝒄𝒎𝟑 = 𝟏 𝒎𝑳.\n\n𝑉 = 400.000 𝑐𝑚3 = 400.000 𝑚𝐿 = 400 𝐿",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Pirâmide",
+      "subtopico": "Pirâmide",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CESPE/FUB/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, relacionados a geometria plana e espacial.\n\nUma pirâmide de altura ℎ = 2√3 cm com base dada por um hexágono regular de lado 𝑙 = 3 cm tem volume\n𝑉 = √3 cm³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos lá, moçada! É hora de calcular o volume de uma pirâmide de base hexagonal regular.\n\nLembre-se que o volume de qualquer pirâmide é dado por:\n\n𝑉 = 𝐴𝑏𝐻\n3\n\nComo a base é um hexágono regular, então sua área é dada por:\n\n𝐴𝑏 = 3𝐿2√3\n2\n\nO enunciado passou o valor do lado: 𝑳 = 𝟑 𝒄𝒎. Assim,\n\n𝐴𝑏 = 3 ⋅ 32 ⋅ √3\n2      →       𝐴𝑏 = 27√3\n2\n\nCom o valor da área da base e da altura, usamos agora a fórmula do volume.\n\nV =\n(27√3\n2 ) ⋅ 2√3\n3       →       𝐕 = 𝟐𝟕 𝐜𝐦³",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Pirâmide",
+      "subtopico": "Pirâmide",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CESPE/CBM-AL/2021",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o seguinte item, relativos a geometria espacial.\n\nPara cobrir um tetraedro regular de aresta igual a √3\n4\n m com um material adesivo que custa R$ 5,50/m ²,\ndeve-se gastar R$ 16,50.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Primeiramente, precisamos encontrar a área superficial do tetraedro regular. Lembre-se que um tetraedro\nregular tem 4 faces e cada uma delas é um triângulo equilátero. Sendo assim, a área superficial do tetraedro\né igual a:\n\n𝐴𝑠 = 4 ⋅ (𝐿2√3\n4 )       →        𝐴𝑠 = 𝐿2√3\n\nDe acordo com o enunciado, a aresta desse tetraedro é igual a √3\n4\n m.\n\nAs = (√3\n4\n)\n2\n√3         →          As = √3 ⋅ √3        →        As = 3 m²\n\nComo o custo de material adesivo é de R$ 5,50 /m². Sendo assim, o total que se deve gastar é:\n\n𝐶𝑡 = 3 ⋅ 5,50      →        𝑪𝒕 = 𝟏𝟔, 𝟓𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Pirâmide",
+      "subtopico": "Pirâmide",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CESPE/PM-AL/2021",
+      "tipo": "certo_errado",
+      "enunciado": "Com relação às geometrias plana, espacial e analítica, julgue o item que se segue.\n\nA área superficial de uma pirâmide de base quadrada regular em que todas as arestas são iguais a 2 é 𝑆 =\n4 + 4√3.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, se todas as arestas são iguais a 2, então as faces laterais dessa pirâmide são triângulos equiláteros\nde lados iguais a 2.\n\nA área de um triângulo equilátero é igual a:\n\n𝐴𝑒 = 𝐿2√3\n4\n\nComo a base dessa pirâmide é um quadrado, vamos ter 4 triângulos equiláteros nas laterais.\n\nSendo assim, a areal lateral é 4 vezes a área acima.\n\n𝐴𝑙 = 4𝐴𝑒      →       𝐴𝑙 = 𝐿2√3\n\nA aresta é igual a 2, com isso, podemos substituir:\n\nAl = 22√3       →         Al = 4√3 cm²\n\nEssa é a área lateral, falta ainda contabilizarmos a área da base, para obtermos a área superficial.\n\nComo a base é um quadrado:\n\nAb = L2      →         Ab = 22       →       Ab = 4 cm²\n\nPronto! A área superficial é a soma da área lateral com a área da base.\n\nAs = Ab + Al       →        𝐀𝐬 = 𝟒 + 𝟒√𝟑 𝐜𝐦²",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Pirâmide",
+      "subtopico": "Pirâmide",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CESPE/PREF. SÃO CRISTOVÃO/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item seguinte, referente a geometria analítica, geometria\nplana e geometria espacial.\n\nSituação hipotética: As faces laterais de uma pirâmide regular quadrangular são triângulos equiláteros, e\ntodas as arestas da pirâmide medem L cm. Assertiva: Nessa situação, a altura da pirâmide é igual a\n𝐿\n√2 cm.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Observe que se temos uma pirâmide regular quadrada em que as faces são triângulos equiláteros, então\ntodas as arestas dessa pirâmide, incluindo as da base, medem L cm . Assim, podemos compor o seguinte\ndesenho.\n\nEstamos querendo determinar a altura da pirâmide H. Como vamos fazer isso? Ora, quero que você perceba\no triângulo retângulo formado pelos catetos H e L/2 e hipotenusa h . É com ele que resolveremos nosso\nproblema. ℎ nada mais é do que a altura do triângulo equilátero. Da nossa teoria, vimos que ela é dada por:\n\nℎ = 𝐿√3\n2\n\nCom o valor de h explicitado, podemos usar o teorema de Pitágoras e encontrar o valor da altura.\n\n𝐻2 + (𝐿\n2)\n2\n= ℎ2     →       𝐻2 + 𝐿2\n4 = 𝐿2 ∙ 3\n4       →        𝐻2 = 3𝐿2\n4 − 𝐿2\n4       →        𝐻2 = 𝐿2\n2\n\n𝑯 = 𝑳\n√𝟐\n  𝒄𝒎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/CBM-PA/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um reservatório com a forma de um cilindro circular reto de raio igual a 1\nmetro e altura igual a 3 metros, totalmente cheio, teve todo volume de água transferido para outra caixa\nde mesmo formato, porém com raio igual a 2 metros e altura igual a 4 metros. Sabendo-se que a segunda\ncaixa estava inicialmente vazia, é correto afirmar que a altura do nível de água nessa nova caixa é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "75 cm.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "300 cm.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "150 cm.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "225 cm.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "100 cm.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Vamos esquematizar essa situação.\n\nPessoal, o volume de água dentro do cilindro (2) é igual ao volume de água que estava no cilindro (1). Dessa\nforma, podemos escrever:\n\n𝑉1 = 𝑉2\n\n𝜋𝑅1\n2𝐻1 = 𝜋𝑅2\n2𝐻2\n\n12 ⋅ 3 = 22 ⋅ 𝑥\n1\n 2\n3\n 𝑥\n(𝟏)\n(𝟐)\n\n𝑥 = 3\n4\n\n𝒙 = 𝟎, 𝟕𝟓 𝐦 = 𝟕𝟓 𝐜𝐦",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CEBRASPE/CBM-TO/2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "Considere um caminhão -pipa cujo tanque é cilíndrico com comprimento\nigual a 4 metros e diâmetro igual a 2 metros. Usando -se π = 3,14, é correto estimar que o volume desse\ntanque é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "6.280 litros.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "12.560 litros.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "25.120 litros.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "50.240 litros.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Questão bem direta para aplicarmos a fórmula do volume de um cilindro. Lembre-se da teoria que:\n\n𝑉 = 𝜋𝑅2𝐻\n\nDe acordo com o enunciado, temos 𝑯 = 𝟒 m e 𝑹 = 𝟏 m. O raio é metade do diâmetro.\n\nComo o enunciado pediu para usar 𝜋 = 3,14, ficamos com:\n\n𝑉 = 3,14 ⋅ 12 ⋅ 4\n\n 𝑉 = 12,56 𝑚³\n\nO resultado está em metros cúbicos (m³) mas todas as alternativas estão em litros.\n\nPara transformar m³ em litros, devemos multiplicar o resultado por mil.\n\n𝑉 = 12,56 ⋅ 1000\n\n𝑽 = 𝟏𝟐𝟓𝟔𝟎 𝑳",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/PREF. SÃO CRISTOVÃO/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item seguinte, referente a geometria analítica,\ngeometria plana e geometria espacial.\n\nSe a área total de um cilindro circular reto de 3 cm de altura for igual ao triplo de sua área lateral, então o\nvolume desse cilindro será inferior a 400 cm³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Temos um cilindro circular reto de 3 cm de altura. Vamos desenhá-lo.\n\nAlém disso, o enunciado informa que a área total é o triplo da área lateral . Lembre-se que a área total é o\nsomatório da área lateral com duas vezes a área da base. Assim,\n\n𝐴𝑡𝑜𝑡𝑎𝑙 = 2 ∙ 𝐴𝑏𝑎𝑠𝑒 + 𝐴𝑙𝑎𝑡 = 3 ∙ 𝐴𝑙𝑎𝑡         →          2 ∙ 𝐴𝑏𝑎𝑠𝑒 = 2 ∙ 𝐴𝑙𝑎𝑡         →          𝐴𝑏𝑎𝑠𝑒 = 𝐴𝑙𝑎𝑡\n\nObserve que, para a condição do enunciado ser satisfeita, a área da base deve ser igual a área lateral. Na\nbase temos um círculo, logo, 𝐴𝑏𝑎𝑠𝑒 = 𝜋𝑅2. A lateral do cilindro é um retângulo com um dos lados medindo\na própria altura do cilindro e o outro lado medindo o comprimento da circunferência. Lembre-se:\n\nAssim, 𝐴𝑙𝑎𝑡 = (2𝜋𝑅) ∙ 3 = 6𝜋𝑅. Logo, podemos encontrar o valor do raio usando 𝐴𝑏𝑎𝑠𝑒 = 𝐴𝑙𝑎𝑡.\n\n𝜋𝑅2 = 6𝜋𝑅      →       𝑹 = 𝟔 𝒄𝒎\n\nCom o raio em mãos, podemos determinar o volume do cilindro.\n\n𝑉 = 𝐴𝑏𝑎𝑠𝑒 ∙ 𝐻       →        𝑉 = 𝜋 ∙ 62 ∙ 3       →        𝑉 = 108𝜋   𝑐𝑚²\n\nUsando que 𝝅 ≅ 𝟑, 𝟏𝟒, ficamos com 𝑉 = 108 ∙ 3,14     →        𝑽 = 𝟑𝟑𝟗, 𝟏𝟐 𝒄𝒎². O resultado é inferior a\n400 cm³, logo, o item está correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um cilindro circular reto, cuja base tem diâmetro de 8 cm, foi cortado por um plano inclinado em relação\nà base, dando origem ao tronco de cone apresentado. A altura maior do tronco de cone mede 20 cm e a\nmenor, 16 cm. Nesse caso, o volume do tronco de cone é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "256π cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "288π cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "320π cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "576π cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "1.152π cm³.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "O primeiro comentário importante que deve ser feito é sobre o enunciado chamar o sólido resultante de\ntronco de cone. O que temos é um tronco de cilindro. Tudo bem?!\n\nExiste mais de uma maneira de resolver essa questão, vou explicar a que julgo mais simples, pois não\nprecisaremos saber de outras fórmulas ou princípios além do que já estudamos.\n\nVeja que temos um cilindro grandão e que foi tirado um pedaço dele. Esse pedaço retirado é exatamente\nmetade de um cilindro menor, que destacamos na figura acima. Portanto, para calcular o volume do sólido,\nseguiremos exatamente essa linha de raciocínio:\n\n• Calcularemos o volume do cilindro maior, como se completo fosse.\n• Descontaremos metade do volume do cilindro menor, que está destacado na figura.\n\nNa teoria, mostramos que o volume do cilindro é dado produto da área da base pela altura.\n\n𝑉 = 𝐴𝑏 ∙ 𝐻\n\nPara o cilindro maior, temos 𝑅 = 4 𝑐𝑚 e 𝐻 = 20 𝑐𝑚:\n\n𝐴𝑏 = 𝜋𝑅2       →        𝐴𝑏 = 𝜋 ∙ 42        →         𝐴𝑏 = 16𝜋 𝑐𝑚²\n\n𝑉 = 16𝜋 ∙ 20      →          𝑉 = 320𝜋 𝑐𝑚³\n\nAgora, devemos descontar o volume arrancado. Observe que a área da base do cilindro menor é a mesma.\nTemos apenas uma mudança na altura que passa a ser 𝐻 = 4 cm.\n\n𝑉𝑚𝑒𝑛𝑜𝑟 = 16𝜋 ∙ 4      →       𝑉𝑚𝑒𝑛𝑜𝑟 = 64𝜋\n\nEsse é o volume do cilindro menor. Como, depois do corte, ainda sobrou metade desse cilindro, devemos\nsubtrair do cilindro maior apenas a metade desse volume. Tudo bem?!\n\n𝑉𝑠ó𝑙𝑖𝑑𝑜 = 𝑉 − 𝑉𝑚𝑒𝑛𝑜𝑟\n2       →        𝑉𝑠ó𝑙𝑖𝑑𝑜 = 320𝜋 − 32𝜋      →       𝑉𝑠ó𝑙𝑖𝑑𝑜 = 288𝜋 𝑐𝑚³\n\n(INPE/2013) Texto para as próximas questões\nConsidere um reservatório de formato cilíndrico com volume de 60 m³ que esteja conectado a um cano para\nenchê-lo. Sabendo que a vazão do cano é definida como sendo o volume de água que sai do cano por\nsegundo, julgue os itens seguintes.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CEBRASPE/INPI/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Se o custo para encher esse reservatório de 60.000 dm³ for de R$ 0,03 por\nsegundo, então a utilização de uma vazão de 40.000 mL por segundo será 25% mais econômico que a\nutilização de uma vazão de 0,0125 m³ por segundo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O enunciado trouxe o conceito de vazão: volume de água que sai do cano por segundo. Matematicamente,\n\n𝑧 = ∆𝑉\n∆𝑡\n\nCalma, pessoal. Essa não é uma aula de física. Na prática, não precisamos saber essa fórmula para resolver a\nquestão. No entanto, entender bem a vazão é importante, pois muitos e exercícios que envolvem sólidos e\nvolumes trazem esse conceito. Tudo bem?!\n\nQueremos encher um reservatório de 60.000 dm³ . Já podemos perceber uma unidade \"estranha\" aqui.\nLembre-se que:\n\n1 𝑑𝑚3 = 1 𝐿\n\nLogo, podemos reescrever a informação: queremos encher um reservatório de 60.000 litros . Melhor, né?!\nPara encher esse reservatório, temos duas opções:\n\n• Na primeira, a vazão é 40.000 mL por segundo.\n\nAqui, a unidade foi mL, sabemos que 1 litro possui 1.000 mL . Logo, 40.000 mL = 40 L. Assim, a vazão pode\nser reescrita como 40L por segundo.\n\n• Na segunda, a vazão é 0,0125 m³ por segundo.\n\nDessa vez, o enunciado trouxe a unidade m³. Em nossa teoria, mostramos que 1 m³ possui 1.000 L . Assim,\ncom uma regra de três, a vazão dada é equivalente 12,5 L por segundo.\n\nNote que a primeira opção encherá o reservatório muito mais rápido! (40 L/s contra 12,5 L/s). Vamos calcular\no tempo necessário para cada um encher o reservatório. Para isso, podemos dividir o volume pela vazão.\n\n∆𝑡1 = 60000\n40       →       ∆𝑡1 = 1500 𝑠\n\n∆𝑡2 = 60000\n12,5       →       ∆𝑡2 = 4800 𝑠\n\nPara saber quanto cada um vai pagar, basta multiplicamos o tempo pelo preço do segundo.\n\n𝑃1 = 1500 ∙ 0,03      →        𝑃1 = 𝑅$ 45,00\n\n𝑃2 = 4800 ∙ 0,03      →        𝑃2 = 𝑅$ 144,00\n\nVeja que, enquanto a primeira opção custa R$ 45,00, a segunda custará R$ 144,00. Logo, a economia é de:\n\n𝐸𝑐𝑜𝑛𝑜𝑚𝑖𝑎 = (144 − 45)\n144 ∙ 100      →        𝐸𝑐𝑜𝑛𝑜𝑚𝑖𝑎 = 68,75%\n\nA economia é bem maior do que os 25% informado pelo item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CEBRASPE/SEE-AL/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Para confeccionar os brigadeiros e os doces de coco para a festa de seu filho,\nMaria preparou uma lata de brigadeiro — cilíndrica, com medidas internas iguais a 12 cm de diâmetro e\n10 cm de altura — e uma lata de docinho de coco — cilíndrica, com medidas internas iguais a 8 cm de\ndiâmetro e 10 cm de altura. Considerando que os brigadeiros e os docinhos de coco tenham sido enrolados\nsob a forma de uma pequena esfera de 1 cm de raio, julgue o item a seguir.\n\nMaria preparou ingredientes suficientes para enrolar mais de 250 brigadeiros.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Temos dois cilindros com bases diferentes, no entanto, vamos focar na lata de brigadeiro.\n\nPrimeiro, devemos calcular o volume da lata, para sabermos a quantidade de brigadeiro. Lembre -se que o\nvolume de um cilindro é o produto da área da base pela altura. Assim,\n\n𝑉 = 𝐴𝑏 ∙ 𝐻        →          𝑉 = (𝜋 ∙ 62) ∙ 10       →         𝑉 = 360𝜋 𝑐𝑚³\n\nAgora, vamos calcular o volume de um único brigadeiro. O enunciado diz que o brigadeiro tem formato de\numa esfera de raio 1 cm. O volume de uma esfera é dado por:\n\n𝑉 = 4\n3 ∙ 𝜋 ∙ 𝑅3        →          𝑉 = 4\n3 ∙ 𝜋 ∙ 13         →          𝑉 = 4\n3 𝜋  𝑐𝑚³\n\nO número de brigadeiros é dado pelo volume total da lata dividido pelo volume de um único brigadeiro.\n\n𝑁 = 360𝜋\n4\n3 𝜋\n      →       𝑁 = 270 𝑏𝑟𝑖𝑔𝑎𝑑𝑒𝑖𝑟𝑜𝑠\n\nVeja que serão possíveis enrolar 270 brigadeiros, quantidade essa realmente superior aos 250 do item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S03-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cilindro",
+      "subtopico": "Cilindro",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2010,
+      "fonteProva": "CEBRASPE/CBM-ES/2010",
+      "tipo": "certo_errado",
+      "enunciado": "Uma caixa-d’água tem formato de um paralelepípedo retângulo, e outra, de\num cilindro circular. A caixa-d’água com formato de paralelepípedo tem base igual a 20 m e 15 m, e altura\nigual a 5 m. O raio da base da caixa com formato cilíndrico mede 10 m, e a altura, 5 m. Tomando 3,14 como\no valor aproximado da constante 𝝅  julgue o item que se segue.\n\nA caixa com formato cilíndrico tem capacidade de 1.570 𝑚3.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Precisamos calcular o volume do cilindro.\n\nPara isso, basta multiplicarmos a área da base pela altura. Sabemos que a área de um círculo é dada por:\n\n𝐴𝑏 = 𝜋𝑅2       →         𝐴𝑏 = 3,14 ∙ 102        →        𝐴𝑏 = 314 𝑚²\n\nAgora, o volume do cilindro fica:\n\n𝑉 = 𝐴𝑏 ∙ 𝐻       →        𝑉 = 314 ∙ 5       →        𝑽 = 𝟏. 𝟓𝟕𝟎 𝒎³",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S04-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Cone",
+      "subtopico": "Cone",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2010,
+      "fonteProva": "CESPE/PC-ES/2010",
+      "tipo": "certo_errado",
+      "enunciado": "Os policiais da delegacia de defesa do consumidor apreenderam, em um\nsupermercado, 19,5 kg de mercadorias impróprias para o consumo: potes de 150 g de queijo e peças de\n160 g de salaminho. Com base nessa situação, julgue o item a seguir.\n\nSuponha que os potes de queijo tenham a forma de um tronco de cone de 7 cm de altura, em que o raio da\nbase maior meça 4 cm e o da base menor, 3 cm. Nesse caso, tomando 3,14 como valor aproximado  para 𝝅,\né correto afirmar que essas embalagens têm capacidade para, no máximo, 250 mL.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Essa é uma excelente questão para treinarmos um pouco sobre tronco de cone. Vamos resolver a questão\nde duas maneiras: uma aplicando a fórmula direta (caso você lembre) e outra sem ter que lembrar de\nfórmulas difíceis.\n\nCom as informações passadas pelo enunciado, conseguimos desenhar o sólido acima. Na nossa teoria,\ndemonstramos que o volume do tronco de cone é dado pela seguinte fórmula:\n\n𝑉 = 𝜋ℎ\n3 ∙ (𝑅2 + 𝑅𝑟 + 𝑟2)\n\nPortanto, para encontrarmos o volume, basta substituirmos os valores.\n\n𝑉 = 3,14 ∙ 7\n3 ∙ (42 + 4 ∙ 3 + 32)       →        𝑉 ≅ 271,08 𝑐𝑚³\n\nGalera, eu sei que a fórmula do tronco de cone não é nada intuitiva.  Ela é horrível de decorar. Por sorte,\nalgumas vezes, usá-la não será necessário. Para resolver uma questão de tronco de cone sem usar a fórmula,\nprecisaremos fazer a subtração de dois volumes: o volume do cone maior e o volume do cone menor. Mas\nque cones são esses? Veja o desenho abaixo:\n\nNote que o volume do tronco (em verde) é a diferença entre o volume do cone (em azul) pelo volume do\ncone (em marrom). Tudo bem? O volume de um cone nós lembramos:\n\n𝑉𝑐𝑜𝑛𝑒 = 𝐴𝑏 ∙ 𝐻\n3\n\nO raio da base do cone azul é 4 cm. Assim,\n\n𝐴𝑏,𝑎𝑧𝑢𝑙 = 𝜋 ∙ 42       →       𝐴𝑏,𝑎𝑧𝑢𝑙 = 16𝜋 𝑐𝑚²\n\nO raio da base do cone marrom é 3 cm. Assim,\n\n𝐴𝑏,𝑚𝑎𝑟𝑟𝑜𝑚 = 𝜋 ∙ 32       →       𝐴𝑏,𝑚𝑎𝑟𝑟𝑜𝑚 = 9𝜋 𝑐𝑚²\n\nAgora, falta determinarmos as alturas do cones. Para isso, precisamos atentar para a seguinte figura:\n\nObserve que o cone menor tem a altura 𝒉. Por sua vez, a altura do cone maior será 𝒉 + 𝟕. Para determinar\nℎ, nós precisamos fazer uma semelhança de triângulos.\n\nℎ\nℎ + 7 = 3\n4      →       4ℎ = 3ℎ + 21      →        ℎ = 21 𝑐𝑚\n\nAgora, podemos calcular os volumes.\n\n𝑉𝑎𝑧𝑢𝑙 = 𝐴𝑏,𝑎𝑧𝑢𝑙 ∙ (ℎ + 7)\n3       →       𝑉𝑎𝑧𝑢𝑙 = 16𝜋 ∙ 28\n3       →       𝑉𝑎𝑧𝑢𝑙 = 448𝜋\n3  𝑐𝑚³\n\n𝑉𝑚𝑎𝑟𝑟𝑜𝑚 = 𝐴𝑏,𝑚𝑎𝑟𝑟𝑜𝑚 ∙ ℎ\n3       →       𝑉𝑚𝑎𝑟𝑟𝑜𝑚 = 9𝜋 ∙ 21\n3       →       𝑉𝑚𝑎𝑟𝑟𝑜𝑚 = 189𝜋\n3  𝑐𝑚³\n\nVimos que o volume do tronco será a diferença desses dois volumes.\n\n𝑉𝑡𝑟𝑜𝑛𝑐𝑜 = 𝑉𝑎𝑧𝑢𝑙 − 𝑉𝑚𝑎𝑟𝑟𝑜𝑚 = 448𝜋\n3 − 189𝜋\n3 = 259 ∙ 3,14\n3 = 271,08 𝑐𝑚³\n\nEsse é o mesmo resultado que encontramos usando a fórmula (ainda bem! rsrs). Veja que deu um pouco\nmais de trabalho (pois foi além de apenas uma aplicação de  fórmula). Cada uma das resoluções apresenta\nsuas vantagens e desvantagens. A primeira vai te fazer economizar tempo. Por sua vez, a segunda evita que\ntenha que decorar mais uma fórmula (bem grande por sinal, rsrs). A melhor maneira é você que decide!",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S05-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Esfera",
+      "subtopico": "Esfera",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/PETROBRAS/2024",
+      "tipo": "certo_errado",
+      "enunciado": "A altura (h) que uma bola alcança em relação ao solo, em metros, é\ndescrita pela função 𝒉(𝒅)=−𝒅𝟐/𝟏𝟐+𝒅, em que d é a distância, em metros, desde o chute até a bola\ntocar novamente o solo. Com base nessas informações, e considerando 3,14 como o valor aproximado de\n𝝅, julgue os seguintes itens.\n\nSe o diâmetro de uma bola é 20 cm, então o seu volume é inferior a 4.000 cm³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Se o diâmetro da bola é 20 cm, então o raio é 10. Com o valor do raio, podemos calcular o volume:\n\n𝑉=4𝜋𝑅3\n3         →          𝑉=4⋅3,14⋅103\n3           →          𝑉=12.560\n3         →          𝑉=4186,67 cm³\n\nObserve que o volume da bola é superior a 4.000 cm³.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S05-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Esfera",
+      "subtopico": "Esfera",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "O volume de um cubo que tem seus vértices sobre uma superfície esférica de\nraio igual a 𝟓√𝟑 centímetros é igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "75 cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "125 cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "375√3 cm³",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "1.000 cm³.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "3.000√3 cm³.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Temos um cubo dentro de uma esfera. Imagine algo como a figura abaixo.\n\nSei que não é a melhor das figuras, mas minha intenção é fazer você perceber que o diâmetro da esfera\ncoincide com a diagonal do cubo. Na teoria, vimos que a diagonal de um cubo é dada por:\n\n𝑑=𝐿√3\n\n𝐿 representa o valor da aresta do cubo. Como o diâmetro é igual a essa diagonal, podemos igualar as duas\nquantidades.\n\n𝐿√3=2𝑅      →       𝐿=2𝑅\n√3\n      →       𝐿=2√3𝑅\n3\n\nEsse o valor da aresta em função do raio da esfera . O enunciado forneceu que 𝑅=5√3 𝑐𝑚, substitua na\nfórmula para obter o 𝐿.\n\n𝐿=2√3∙(5√3)\n3       →       𝐿=10 𝑐𝑚\n\nCom a aresta do cubo determinada, vamos encontrar o volume.\n\n𝑉=𝐿3      →      𝑉=103      →       𝑽=𝟏𝟎𝟎𝟎 𝒄𝒎³\n\n(SEPLAG-DF/2008) Texto para as próximas questões\nJulgue os itens a seguir, acerca de um reservatório de gás que tem a forma de uma esfera de 10 m de raio.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S05-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Esfera",
+      "subtopico": "Esfera",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2008,
+      "fonteProva": "CEBRASPE/SEPLAG-DF/2008",
+      "tipo": "certo_errado",
+      "enunciado": "Se for construído um novo reservatório esférico, com raio igual à metade\ndo raio do reservatório original, então o volume desse novo reservatório será igual à metade do volume\ndo outro reservatório.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Nós vimos na teoria que o volume de uma esfera é dado pela seguinte fórmula:\n\n𝑉1 =4\n3𝜋𝑅3\n\nSe o raio da esfera for reduzido pela metade, então ficamos com o volume:\n\n𝑉2 =4\n3𝜋(𝑅\n2)\n3\n      →      𝑉2 =4\n3𝜋𝑅3\n⏟\n𝑉1\n∙(1\n8)       →       𝑉2 =1\n8∙𝑉1\n\nVeja que se reduzirmos o raio na metade, o volume do reservatório diminuirá numa proporção bem maior,\nresultando em um volume igual a um oitavo do original (12,5%). Logo, o item está incorreto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S05-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Esfera",
+      "subtopico": "Esfera",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2008,
+      "fonteProva": "CEBRASPE/SEPLAG-DF/2008",
+      "tipo": "certo_errado",
+      "enunciado": "O volume desse reservatório é igual a 4.000π m³.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Nós vimos na teoria que o volume de uma esfera é dado pela seguinte fórmula:\n\n𝑉=4\n3𝜋𝑅3\n\nSe o raio do reservatório é 𝑹=𝟏𝟎𝒎, então, devemos substituir:\n\n𝑉=4\n3𝜋103     →     𝑉=4\n3𝜋∙1000       →      𝑉=4000𝜋\n3  𝑚³\n\nO item \"esqueceu\" de dividir por 3. Logo, encontra-se errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-23-S05-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_12",
+      "subtopic_id": "rlm_12",
+      "assunto": "Esfera",
+      "subtopico": "Esfera",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2008,
+      "fonteProva": "CEBRASPE/SEPLAG-DF/2008",
+      "tipo": "certo_errado",
+      "enunciado": "A área de superfície do reservatório é igual a 400π m².",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Questão para treinarmos a aplicação da fórmula da área de uma superfície esférica. Lembre-se:\n\n𝐴𝑠 =4𝜋𝑅2\n\nComo o raio de reservatório é 𝑹=𝟏𝟎 𝒎, devemos substituir o valor:\n\n𝐴𝑠 =4𝜋∙102      →      𝐴𝑠 =400𝜋 𝑐𝑚²\n\nO resultado que encontramos bate com o trazido pelo item. Portanto, correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_12",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.721Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_12.json"
+      }
+    }
+  ]
+}

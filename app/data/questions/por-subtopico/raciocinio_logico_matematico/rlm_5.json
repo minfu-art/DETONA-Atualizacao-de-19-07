@@ -1,0 +1,987 @@
+{
+  "topicoEditalId": "rlm_5",
+  "disciplinaId": "raciocinio_logico_matematico",
+  "quantidade": 24,
+  "questions": [
+    {
+      "id": "PCAL-RLM-13-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Cach. de Itapemirim/2024",
+      "tipo": "certo_errado",
+      "enunciado": "O item a seguir, é apresentada uma situação hipotética\nseguida de uma assertiva a ser julgada a respeito de noções de probabilidade, de regra de três simples, de\nproporções, das quatro operações fundamentais e de sequências.\n\nMárcia está juntando dinheiro para comprar uma moto. No primeiro mês, ela guardou R$ 400,00 e, depois\ndisso, passou a guardar a mesma quantia todo mês, de modo que, após 16 meses, ela tem guardados R$\n275,00. Então, é correto afirmar que a quantidade que ela passou a guardar mensalmenteé de R$ 125,00.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Márcia guardou R$ 400,00 no primeiro mês. Nos meses seguintes, ela guardou uma quantia fixa “x” por mês.\nO total guardado após 16 meses foi R$ 2.275,00. Sendo assim, a primeira parte do totalé o valor guardado\nno primeiro mês:\n\n𝑃 = 400\n\nPor sua vez, a segunda parte do totalé o valor guardado nos restantes 15 meses:\n\n𝑆 = 15𝑥\n\nPortanto, podemos então escrever a equação:\n\n400 + 15𝑥 = 2275\n\nResolvendo a equação:\n\n15𝑥 = 2275 − 400 → 15𝑥 = 1875 → 𝑥 = 1875\n15 → 𝒙 = 𝟏𝟐𝟓\n\nLogo, Márcia passou a guardar R$ 125,00 mensalmente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/AGER-MT/2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "A compra de dois computadores e um aparelho de televisão custou R$\n000,00 e a compra de um computador e dois aparelhos de televisão custou R$ 15.000,00. Considere\n\nque os computadores e os aparelhos de televisão são iguais para as duas compras. Com base nas\ninformações apresentadas, a diferença entre o valor de um computador e um aparelho de televisão será\nde",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 1.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 1.500,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 3.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 2.000,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 2.500,00.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Considere que \"C\" seja o valor de um computador e \"T\" o valor de um aparelho de televisão. Com base nas\ninformações fornecidas no enunciado podemos escrever o seguinte sistema de equações:\n\n2𝐶 + 𝑇 = 18000 (1)\n𝐶 + 2𝑇 = 15000 (2)\n\nVamos resolvê-lo!\n\nPrimeiramente, isolamos T na equação (1):\n\n𝑇 = 18000 − 2𝐶 (3)\n\nSubstituímos a expressão de T da equação (3) na equação (2):\n\n𝐶 + 2(18000 − 2𝐶) = 15000\n𝐶 + 36000 − 4𝐶 = 15000\n−3𝐶 + 36000 = 1.000\n−3𝐶 = −21000\n𝐶 = 7000\n\nCom o valor de C encontrado, substituímos na equação (3) para encontrar T:\n\n𝑇 = 18000 − 2(7000)\n𝑇 = 18000 − 14000\n𝑇 = 4000\n\nAgora, encontramos a diferença entre o valor de um computador e um aparelho de televisão:\n\n𝐶 − 𝑇 = 7000 − 4000\n𝑪 − 𝑻 = 𝟑𝟎𝟎𝟎\n\nPortanto, a diferença entre o valor de um computador e um aparelho de televisãoé de R$ 3.000,00.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/PC-PB/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "A empresa Vila Real comercializa três tipos de vinho: Real Prata, Real Ouro e\nReal Premium. O preço de uma garrafa de Real Ouroé igual ao dobro do preço de uma garrafa de Real\nPrata. Além disso, uma garrafa de Real Ouroé também igual à metade do preço de uma garrafa de Real\nPremium. No ano passado, essa empresa vendeu mil garrafas de cada um dos três tipos de vinho, tendo\nobtido uma receita de 350 mil reais. A partir dessas informações, conclui-se que o preço de",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "uma garrafa de vinho Real Prataé superior a R$ 62,00.",
+          "comentario": "uma garrafa de vinho Real Prataé superior a R$ 62,00.\nErrado. Uma garra de vinho Real Prataé R$ 50,00. Logo, inferior a R$ 62,00."
+        },
+        {
+          "letra": "B",
+          "texto": "três garrafas de vinho de tipos diferentesé superior a R$ 387,00.",
+          "comentario": "três garrafas de vinho de tipos diferentesé superior a R$ 387,00.\nErrado. Três garrafas de vinho de tipos diferenteé igual a R$ 350,00, conforme a nossa equação (3)."
+        },
+        {
+          "letra": "C",
+          "texto": "uma garrafa de vinho Real Ouroé inferior a R$ 93,00.",
+          "comentario": "uma garrafa de vinho Real Ouroé inferior a R$ 93,00.\nErrado. Uma garrafa de vinho Real Ouroé R$ 100,00. Logo, superior a R$ 93,00."
+        },
+        {
+          "letra": "D",
+          "texto": "uma garrafa de vinho Real Premiumé superior a R$ 187,00.",
+          "comentario": "uma garrafa de vinho Real Premiumé superior a R$ 187,00.\nCorreto. Uma garrafa de vinho Real Premiumé R$ 200,00. Logo, superior a R$ 187,00."
+        },
+        {
+          "letra": "E",
+          "texto": "duas garrafas de vinho, sendo uma do Real Prata e outra de Real Premium, é inferior a R$ 245,00.",
+          "comentario": "duas garrafas de vinho, sendo uma do Real Prata e outra de Real Premium, é inferior a R$ 245,00.\nErrado. Uma garrafa do Real Prata mais uma garrafa do Real Premium custa R$ 250,00. Logo, superior a R$\n245,00."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Vamos chamar o preço do Real Prata de \"P\", o do Real Ouro de \"O\" e o do Real Premium de \"M\".\n\nComo o preço de uma garrafa de Real Ouroé igual ao dobro do preço de uma garrafa de Real Prata, podemos\nescrever que:\n\n𝑂 = 2𝑃 (1)\n\nPor sua vez, uma garrafa de Real Ouro custa metade do preço de uma garrafa de Real Premium.\n\n𝑂 = 𝑀\n2 (2)\n\nAdemais, o enunciado disse que a receita da venda de mil garrafas de cada um dos três tipos de vinho foi\n350 mil. Assim:\n\n1.000 ⋅ 𝑂 + 1.000 ⋅ 𝑀 + 1.000 ⋅ 𝑃 = 350.000\n\nSimplificando por 1.000,\n\n𝑂 + 𝑀 + 𝑃 = 350 (3)\n\nVamos isolar o \"P\" em (1) e o \"M\" em (2)\n\n𝑃 = 𝑂\n2 𝑒 𝑀 = 2𝑂\n\nSubstituindo essas expressões em (3), deixando tudo em função de O:\n𝑂 + 𝑂\n2 + 2𝑂 = 350 → 7𝑂\n2 = 350 → 𝑂 = 100\n\nCom o valor do Real Ouro, conseguimos determinar o preço dos restantes.\n\n𝑃 = 𝑂\n2 → 𝑃 = 100\n2 → 𝑃 = 50\n\n𝑀 = 2𝑂 → 𝑀 = 2 ⋅ 100 → 𝑀 = 200\n\nPronto! Temos todos os preços.\n\nVinho Preço\nReal Prata R$ 50,00\nReal Ouro R$ 100,00\n\nReal Premium R$ 200,00\n\nAgora, vamos analisar as alternativas.\nA) uma garrafa de vinho Real Prataé superior a R$ 62,00.\nErrado. Uma garra de vinho Real Prataé R$ 50,00. Logo, inferior a R$ 62,00.\n\nB) três garrafas de vinho de tipos diferentesé superior a R$ 387,00.\nErrado. Três garrafas de vinho de tipos diferenteé igual a R$ 350,00, conforme a nossa equação (3).\n\nC) uma garrafa de vinho Real Ouroé inferior a R$ 93,00.\nErrado. Uma garrafa de vinho Real Ouroé R$ 100,00. Logo, superior a R$ 93,00.\n\nD) uma garrafa de vinho Real Premiumé superior a R$ 187,00.\nCorreto. Uma garrafa de vinho Real Premiumé R$ 200,00. Logo, superior a R$ 187,00.\n\nE) duas garrafas de vinho, sendo uma do Real Prata e outra de Real Premium, é inferior a R$ 245,00.\nErrado. Uma garrafa do Real Prata mais uma garrafa do Real Premium custa R$ 250,00. Logo, superior a R$\n245,00.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "Cebraspe/TJ-PA/2020",
+      "tipo": "multipla_escolha",
+      "enunciado": "Determinada empresa tem 70 atendentes, divididos em 3 equipes de\natendimento ao público que trabalham em 3 turnos: de 7 h às 13 h, de 11 h às 17 h e de 14 h às 20 h, de\nmodo que, nos horários de maior movimento, existam duas equipes em atendimento. Se a quantidade de\natendentes trabalhando às 12 h for igual a 42 e se a quantidade de atendentes trabalhando às 15 h for\nigual a 40, então a quantidade de atendentes que começam a trabalhar às 7 h será igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "12.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "24.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "28.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "30.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "42.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Vamos chamar a quantidade de pessoas que atendem em cada turno de x, y e z, conforme a tabela:\n\nTurno Quantidade de\natendentes\n7h às 13h 𝑥\n11h às 17h 𝑦\n\n14h às 20h 𝑧\n\nDe acordo com o enunciado, às 12 horas temos 42 atendentes. Observe que às 12h temos 𝑥 atendentes do\nprimeiro turno e 𝒚 atendentes do segundo turno, que já estão trabalhando desde às 11h. Assim, podemos\nescrever que:\n\n𝑥 + 𝑦 = 42 (1)\n\nAnalogamente, sabemos que às 15h temos 40 pessoas atendendo . Nesse horário, vamos ter 𝑦 pessoas do\nsegundo turno e 𝒛 pessoas do terceiro turno, que já tinham chegado par trabalhar desde às 14h. Logo,\n\n𝑦 + 𝑧 = 40 (2)\n\nAlém disso, uma informação crucialé o total de atendentes da empresa: 70. Então,\n\n𝑥 + 𝑦 + 𝑧 = 70 (3)\n\nO enunciado pede o número de pessoas que começam a trabalhar às 7h. Ora, essaé a moçada que cumpre\no primeiro turno (𝒙 atendentes). Podemos substituir (2) em (3) e encontrar 𝑥:\n\n𝑥 + 40 = 70 → 𝑥 = 30\n\nLogo, 30 pessoas começam às 7h.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "Cebraspe/ME/2020",
+      "tipo": "certo_errado",
+      "enunciado": "O setor de gestão de pessoas de determinada empresa realiza regularmente a\nanálise de pedidos de férias e de licenças dos seus funcionários. Os pedidos são feitos em processos, em\nque o funcionário solicita apenas férias, apenas licença ou ambos (férias e licença). Em determinado dia,\n30 processos foram analisados, nos quais constavam 15 pedidos de férias e 23 pedidos de licenças. Com\nbase nessa situação hipotética, julgue o item que se segue.\n\nSuponha que uma quantidade x de novos processos tenha sido enviada a esse setor para análise naquele\ndia; suponha, ainda, que, ao final do expediente, apenas a metade do total de processos, incluídos os novos,\ntenha sido relatada. Nessa situação, se a quan tidade de processos relatados nesse dia tiver sido igual a 26,\nentão x < 20.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Temos uma quantidade inicial de 30 processos. No entanto, x novos processos aparecem para a análise do\nsetor. Assim, temos um total de (30 + 𝑥) processos. O enunciado diz que apenas 26 deles foram relatados\ne que esse valor corresponde a metade do total de processos que o setor possuía. Assim,\n\n30 + 𝑥\n2 = 26 ⇒ 30 + 𝑥 = 52 ⇒ 𝑥 = 22\n\nObserve que o enunciado diz que xé menor do que 20, o que vimos que nãoé verdade, pois 𝑥 = 22.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um grupo de 256 auditores fiscais, entre eles Antônio, saiu de determinado\nórgão para realizar trabalhos individuais em campo. Após cumprirem suas obrigações, todos os auditores\nfiscais retornaram aoórgão, em momentos distintos. A quantidade de auditores que chegaram antes de\nAntônio foi igual a um quarto da quantidade de auditores que chegaram depois dele. Nessa situação\nhipotética, Antônio foi o",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "46º auditor a retornar aoórgão.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "50º auditor a retornar aoórgão.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "51º auditor a retornar aoórgão.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "52º auditor a retornar aoórgão.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "64º auditor a retornar aoórgão.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "São 256 auditores fiscais, uma parte deles chegou antes de Antônio e uma outra, depois. Vamos considerar\nque 𝒙 auditores fiscais chegaram depois de Antônio. De acordo com o enunciado, um quarto dessa\nquantidade chegou antes, logo, foram 𝒙/𝟒 auditores que chegaram antes. Vocês concordam comigo que se\nsomarmos a quantidade que chegou antes com a quantidade que chegou depois e o próprio Antônio, então\nvamos ter os 256?\n𝑥 + 𝑥\n4 + 1 = 256 ⇒ 5𝑥\n4 = 255 ⇒ 𝑥 = 204\n\nAchamos a quantidade de pessoas que chegaram depois de Antônio. Sabemos que um quarto dessa\nquantidade chegou antes, logo,\n𝟐𝟎𝟒\n𝟒 = 𝟓𝟏. Note que, se 51 pessoas chegaram antes de Antônio, então\nAntônio foi 52º auditor a retornar aoórgão.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/PGE-PE/2019",
+      "tipo": "certo_errado",
+      "enunciado": "No item seguinte apresenta uma situação hipotética, seguida de uma assertiva\na ser julgada, a respeito de proporcionalidade, porcentagens e descontos.\n\nNo primeiro dia de abril, o casal Marcos e Paula comprou alimentos em quantidades suficientes para que\neles e seus dois filhos consumissem durante os 30 dias do mês. No dia 7 desse mês, um casal de amigos\nchegou de surpresa para passar o restante do mês com a família. Nessa situação, se cada uma de ssas seis\npessoas consumir diariamente a mesma quantidade de alimentos, os alimentos comprados pelo casal\nacabarão antes do dia 20 do mesmo mês.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Galera, vamos dar nome aos bois pra facilitar nossa vida. Imagine que foram 30 quilogramas de comida que\nessa família comprou. Concordam comigo que ela deve comer 1 kg por dia para que a comida dure todo o\nmês? Ok! Nesse ritmo, no dia 7 essa família terá consumido 7 kg desses 30. A família terá 23 kg de estoque\nde comida para quando o casal de amigos chegarem!\n\nVamos descobrir quanto de comida eles irão consumir por dia! Note que essa quantidade vai mudar, pois\ntemos mais pessoas na casa e ninguém diminui seu consumo de alimento . Antes, tínhamos 4 pessoas\ncomendo 1 kg de comida todos os dias. Logo, cada uma das pessoas dessa família comia 0,25 kg (1/4) por\ndia.\n\nSe essa taxaé mantida constante, as 6 pessoas comerão, juntas, 0,25 × 6 = 1,5 kg de comida por dia.\nQuantos dias vai levar para comer 23 quilogramas de comida a uma taxa de 1,5 kg por dia? Basta fazermos:\n\n23\n1,5 = 15,33 … dias\n\nLogo, o estoque de comida durará aproximadamente mais 15 dias. Como já haviam passado 7 dias, os\nalimentos comprados pelo casal acabarão depois do dia 20.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um grupo de técnicos do TJ/PRé composto por estudantes universitários: a\nmetade dos estudantes cursa administração; um quarto deles cursa direito; e o restante, em número de\nquatro, faz o curso de contabilidade. Nesse caso, a quantidade de estudantes desse grupoé igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "12.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "16.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "20.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "24.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "32.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Queremos descobrir a quantidade de alunos desse grupo, vamos chamá -la de 𝑥. A metade desse número\ncursa administração, logo, são 𝒙/𝟐 estudantes. Ainda, temos que um quarto dos alunos cursa direito, então\n\nsão mais 𝒙/𝟒 estudantes. Por fim, 4 fazem contabilidade . Concordam comigo que se somarmos essas\ninformações, obtemos a quantidade total de estudantes?\n\n𝑥\n2 + 𝑥\n4 + 4 = 𝑥 ⇒ 3𝑥\n4 + 4 = 𝑥 ⇒ 𝑥\n4 = 4 ⇒ 𝑥 = 16",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.723Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Na assembleia legislativa de um estado da Federação, há 50 parlamentares,\nentre homens e mulheres. Em determinada sessão plenária estavam presentes somente 20% das\ndeputadas e 10% dos deputados, perfazendo -se um total de 7 parlamentares presentes à sessão. Infere-\nse da situação apresentada que, nessa assembleia legislativa, havia",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "10 deputadas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "14 deputadas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "15 deputadas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "20 deputadas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "25 deputadas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Galera, imaginem que a assembleia possui x deputados e y deputadas. Logo,\n\n𝑥 + 𝑦 = 50 (1)\n\nObserve ainda que 20% das deputadas equivale a 𝟎, 𝟐𝒚. Além disso, 10% dos deputados equivale a 𝟎, 𝟏𝒙.\nO enunciado diz que uma sessão plenária com 20% das deputadas e 10% dos deputados tem um total de 7\nparlamentares presentes. Assim,\n\n0,1𝑥 + 0,2𝑦 = 7 (2)\n\nTemos um sistema de equações com duas incógnitas a ser resolvido: { 𝑥 + 𝑦 = 50\n0,1𝑥 + 0,2𝑦 = 7\n\nVamos resolver pelo método da substituição . Como queremos o número de deputadas, vamos isolar o\nnúmero de deputados na equação (1).\n\n𝑥 = 50 − 𝑦\n\nSubstituindo em (2):\n\n0,1 ∙ (50 − 𝑦) + 0,2𝑦 = 7\n\n5 − 0,1𝑦 + 0,2𝑦 = 7\n0,1𝑦 = 2\n𝑦 = 20\n\nLogo, temos 20 deputadas na assembleia.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Maria fez compras em três lojas. Em cada uma das lojas em que ela entrou,\na compra feita foi paga, sem haver troco, com a quarta parte da quantia que ela tinha na bolsa ao entrar\nna loja. Ao sair da terceira loja, Maria tinha R$ 270 na bolsa. Nesse caso, é correto afirmar que, ao entrar\nna primeira loja, Maria tinha na bolsa",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 810.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 1.080.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 2.430.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 7.290.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 640.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Imagine que Maria está inicialmente com 𝑥 reais na sua bolsa. Quando ela entrar na primeira loja, sua compra\ncustará um quarto dessa quantia. Logo, Maria deixará\n𝑥\n4 na loja e ficará apenas com\n𝟑𝒙\n𝟒 . Essa será a quantia\nque Maria terá disponível para entrar na segunda loja.\n\nQuando chegar na Loja 2, ela gasta um quarto da quantia que está na bolsa. Dessa vez, Maria deixa\n3𝑥\n16 na\nloja 2. Para calcular quanto sobra na bolsa dela, basta fazermos a quantidade com que ela chega na loja\nmenos a quantia que ela deixa, no caso\n3𝑥\n4 −\n3𝑥\n16 =\n9𝑥\n16. Vamos ver um esquema?\n\nObserve que Maria vai entrar na loja 3 com apenas\n𝟗𝒙\n𝟏𝟔 reais. Novamente, ela gastará um quarto da quantia.\nCom isso, são\n9𝑥\n64 reais que fica na loja 3. Para saber a quantia que fica na bolsa de Maria, basta subtrair\nquanto ela tinha por quanto ela gastou:\n\n9𝑥\n16 − 9𝑥\n64 = 27𝑥\n64\n\nO enunciado disse que a quantia que Maria sai da Loja 3é R$ 270 reais. Logo,\n\n27𝑥\n64 = 270 ⇒ 𝑥\n64 = 10 ⇒ 𝑥 = 640",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um casal tem 4 filhos: Fábio, Dirceu, Alberto e Aldo. Fábioé o mais velho.\nDirceué 4 anos mais novo que Fábio. Alberto e Aldo são gêmeos e nasceram 4 anos depois de Dirceu.\nTodos fazem aniversário no mês de junho. Em 2020, depois dos aniversários, a soma das idades dos filhos\nserá 40 anos. Nesse caso, a respeito das idades desses filhos, assinale a opção correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Fábio nasceu em 2005.",
+          "comentario": "Fábio nasceu em 2005.\nAlternativa correta. Galera, se Fábio completou 15 anos em 2020, então ele nasceu em 2005."
+        },
+        {
+          "letra": "B",
+          "texto": "Em julho de 2020, a soma das idades de Fábio e Dirceu será superior a 30 anos.",
+          "comentario": "Em julho de 2020, a soma das idades de Fábio e Dirceu será superior a 30 anos.\nAlternativa incorreta. Fábio tem 15 anos e Dirceu tem 11. A soma das idadesé 26, queé inferior a 30.\n\n==5eb381=="
+        },
+        {
+          "letra": "C",
+          "texto": "Em junho de 2018, Alberto e Aldo completaram 7 anos de idade.",
+          "comentario": "Em junho de 2018, Alberto e Aldo completaram 7 anos de idade.\nAlternativa incorreta. Alberto e Aldo completaram 7 anos em junho de 2020."
+        },
+        {
+          "letra": "D",
+          "texto": "Dirceu nasceu em 2010.",
+          "comentario": "Dirceu nasceu em 2010.\nAlternativa incorreta. Dirceu completou 11 anos em 2020 e, portanto, nasceu em 2009."
+        },
+        {
+          "letra": "E",
+          "texto": "Alberto e Aldo nasceram antes de 2012",
+          "comentario": "Alberto e Aldo nasceram antes de 2012\nAlternativa incorreta. Alberto e Aldo completaram 7 anos em 2020 e, portanto, nasceram em 2013."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Fábioé o mais velho, vamos dizer que ele tem 𝒙 anos de idade. Se Dirceué 4 anos mais novo que Fábio ,\nentão ele tem (𝑥 − 4) anos de idade. Se Alberto e Aldo são gêmeos e nasceram 4 anos depois de Dirceu ,\nentão eles possuem (𝑥 − 8) anos de idade (4 anos a menos que Dirceu). Se em 2020 a soma das idadesé 40\nanos, então,\n\n𝑥 + (𝑥 − 4) + (𝑥 − 8) + (𝑥 − 8) = 40\n4𝑥 − 20 = 40\n4𝑥 = 60\n𝑥 = 15\n\nCom isso, descobrimos que Fábio tem 15 anos, Dirceu tem 11 anos e Alberto e Alto têm 7 anos. Vamos ver\nas alternativas.\n\nA) Fábio nasceu em 2005.\nAlternativa correta. Galera, se Fábio completou 15 anos em 2020, então ele nasceu em 2005.\n\nB) Em julho de 2020, a soma das idades de Fábio e Dirceu será superior a 30 anos.\nAlternativa incorreta. Fábio tem 15 anos e Dirceu tem 11. A soma das idadesé 26, queé inferior a 30.\n\n==5eb381==\n\nC) Em junho de 2018, Alberto e Aldo completaram 7 anos de idade.\nAlternativa incorreta. Alberto e Aldo completaram 7 anos em junho de 2020.\n\nD) Dirceu nasceu em 2010.\nAlternativa incorreta. Dirceu completou 11 anos em 2020 e, portanto, nasceu em 2009.\n\nE) Alberto e Aldo nasceram antes de 2012\nAlternativa incorreta. Alberto e Aldo completaram 7 anos em 2020 e, portanto, nasceram em 2013.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Paulo, Maria e João, servidores lotados em uma biblioteca pública, trabalham\nna catalogação dos livros recém -adquiridos. Independentemente da quantidade de livros a serem\ncatalogados em cada dia, Paulo cataloga 1/4, Maria cataloga 1/3 e João, 5/12. A respeito da catalogação\nde livros por esses servidores, julgue o item a seguir.\n\nSe, em determinado dia Maria, catalogar 20 livros a mais que Paulo, então, nesse dia, João catalogará mais\nde 90 livros.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos supor que nesse dia existam 𝒙 livros para serem catalogados. Maria vai catalogar\n𝑥\n3 deles e Paulo\ncataloga\n𝑥\n4. Se, nessas condições, Maria cataloga 20 livros a mais que Paulo, então,\n\n𝑥\n3 = 𝑥\n4 + 20 ⇒ 𝑥\n12 = 20 ⇒ 𝑥 = 240\n\nNesse dia, existem 240 livros para catalogação. Assim, se João cataloga 5/12 desses livros,\n\n𝐽𝑂Ã𝑂 = 5 ∙ 240\n12 ⇒ 𝐽𝑂Ã𝑂 = 100\n\nAssim, realmente João catalogará mais de 90 livros.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "Cebraspe/PREF. SÃO LUÍS/2017",
+      "tipo": "multipla_escolha",
+      "enunciado": "Na cidade de São Luís, em 2015, havia 142 mil alunos matriculados\nno ensino fundamental, distribuídos nas escolas estaduais (EE), municipais (EM) e particulares (EP). A\ndiferença entre o número de matriculados nas EM e o número de matriculados nas EP era i gual à metade\n\ndo número de matriculados nas EE. Além disso, o número de matriculados nas EP adicionado ao número\nde matriculados nas EE excedia o número de matriculados nas EM em 14 mil. Nessa situação, em 2015, o\nnúmero de alunos do ensino fundamental matriculados nas EE de São Luís era",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "superior a 25 mil e inferior a 40 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "superior a 40 mil e inferior a 55 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "superior a 55 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "inferior a 10 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "superior a 10 mil e inferior a 25 mil.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "São 142 mil alunos de ensino fundamental distribuídos nas escolas estaduais ( 𝐸𝐸), municipais (𝐸𝑀) e\nparticulares (𝐸𝑃). Assim,\n\n𝐸𝐸 + 𝐸𝑀 + 𝐸𝑃 = 142 (1)\n\nAlém disso, a diferença entre o número de alunos nas escolas municipais (𝐸𝑀) e o número nas escolas\nprivadas (𝐸𝑃) era igual à metade dos matriculados nas escolas estaduais (𝑬𝑬):\n\n𝐸𝑀 − 𝐸𝑃 = 𝐸𝐸\n2 (2)\n\nPor fim, o número de alunos das escolas privadas (𝐸𝑃) adicionado ao número dos de escola estadual (𝐸𝐸)\nexcede o número de alunos da escola municipal (𝑬𝑴) em 14 mil. Logo,\n\n𝐸𝑃 + 𝐸𝐸 = 𝐸𝑀 + 14 (3)\n\nObserve que temos três equações e três incógnitas . Queremos descobrir o número de alunos nas escolas\nestaduais (𝐸𝐸). Substituindo (3) em (1), podemos encontrar 𝐸𝑀.\n\n(𝐸𝐸 + 𝐸𝑃) + 𝐸𝑀 = 142\n\n(𝐸𝑀 + 14) + 𝐸𝑀 = 142\n\n2𝐸𝑀 = 128\n\n𝐸𝑀 = 64\n\nPodemos reescrever as equações (1) e (2):\n\n{\n𝐸𝐸 + 𝐸𝑃 = 78 (4)\n𝐸𝐸\n2 + 𝐸𝑃 = 64 (5)\n\nComo queremos descobrir 𝐸𝐸, podemos isolar 𝐸𝑃 em (4) e substituir em (5).\n\n𝐸𝑃 = 78 − 𝐸𝐸\n\n𝐸𝐸\n2 + (78 − 𝐸𝐸) = 64\n\n− 𝐸𝐸\n2 = −14\n\n𝐸𝐸 = 28\n\nAssim, temos 28 mil alunos matriculados no ensino fundamental de escolas estaduais em São Luís.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S01-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Primeiro Grau",
+      "subtopico": "Equações de Primeiro Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "Cebraspe/PM-AL/2017",
+      "tipo": "certo_errado",
+      "enunciado": "No item a seguiré apresentada uma situação hipotética, seguida de uma\nassertiva a ser julgada, a respeito de modelos lineares, modelos periódicos e geometria dos sólidos.\n\nOs soldados Pedro e José, na função de armeiros, são responsáveis pela manutenção de determinada\nquantidade de armas da corporação — limpeza, lubrificação e municiamento. Se Pedro fizer a manutenção\ndas armas que estavam a seu encargo e de mais 50 que estavam a cargo de José, então Pedro fará a\nmanutenção do dobro de armas que sobraram para José. Se José fizer a manutenção das armas que estavam\na seu encargo e de mais 60 que estavam a cargo de Pedro, José fará a manutenção do triplo de armas que\nsobraram para Pedro. Nesse caso, a quantidade de armas para manutenção a cargo de Pedro e Joséé\nsuperior a 260.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Como não sabemos a quantidade de armas que José e Pedro estão responsáveis, vamos usar letras para\nrepresentá-las. Imagine que Pedro está responsável pela manutenção de x armas e José, y.\n\n\"Se Pedro fizer a manutenção das armas que estavam a seu encargo e de mais 50 que estavam a cargo de\nJosé, então Pedro fará a manutenção do dobro de armas que sobraram para José.\" Matematicamente,\n\n𝑥 + 50 = 2 ∙ (𝑦 − 50)\n\nObserve queé o dobro das armas que sobraram para José. Ora, se Joséé responsável por y armas e Pedro\nfez manutenção em 50 delas, então sobraram 𝒚 − 𝟓𝟎 armas para José. Compreendido como obtivemos essa\nprimeira equação? Precisamos de mais uma para montar um sistema. Vamos usar a informação subsequente\ndo enunciado.\n\n\"Se José fizer a manutenção das armas que estavam a seu encargo e de mais 60 que estavam a cargo de\nPedro, José fará a manutenção do triplo de armas que sobraram para Pedro.\"\n\n𝑦 + 60 = 3 ∙ (𝑥 − 60)\n\nO raciocínio aquié análogo ao que usamos na primeira equação. Vamos reorganizar as duas equações.\n\n𝑥 + 50 = 2 ∙ (𝑦 − 50) ⇒ 𝑥 + 50 = 2𝑦 − 100 ⇒ 𝒙 − 𝟐𝒚 = −𝟏𝟓𝟎 (1)\n\n𝑦 + 60 = 3 ∙ (𝑥 − 60) ⇒ 𝑦 + 60 = 3𝑥 − 180 ⇒ 𝟑𝒙 − 𝒚 = 𝟐𝟒𝟎 (2)\n\nVamos isolar o 𝑥 em (1) e substituir em (2):\n\n3 ∙ (2𝑦 − 150) − 𝑦 = 240\n6𝑦 − 450 − 𝑦 = 240\n5𝑦 = 690\n𝒚 = 𝟏𝟑𝟖\n\nEncontramos o número de armas que José está responsável. Para encontrar a de Pedro, podemos pegar o\nvalor que encontramos para y e substituir em (1), encontrando o x.\n\n𝑥 − 2 ∙ 138 = −150 ⇒ 𝑥 = −150 + 276 ⇒ 𝒙 = 𝟏𝟐𝟔\n\nPara encontrar o total de armas a cargo dos dois , basta somarmos as quantidades que cada um está\nresponsável.\n\n𝑥 + 𝑦 = 138 + 126 = 264\n\nO número de armasé, de fato, superior a 260.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "Cebraspe/PC-DF/2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, considerando que 25 novos computadores tenham sido\ndistribuídos pela Secretaria de Segurança Pública do DF para três de suas delegacias.\n\nConsidere que 𝑥² + 9𝑥 + 14, 15𝑥 + 30 e 4𝑥² + 15𝑥 + 12, representam as quantidades de agentes nas três\ndelegacias, as quais têm um efetivo total de 100 agentes. Nesse caso, a delegacia com a menor quantidade\nde efetivo tem menos de 25 agentes.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos resolver a questão considerando as equações fornecidas para as três delegacias:\n\nDelegacia 1: x² + 9x + 14\nDelegacia 2: 15x + 30\nDelegacia 3: 4x² + 15x + 12\n\nPrimeiro, precisamos encontrar os valores de x que satisfazem a soma total dos agentes, queé 100. Então,\ntemos a seguinte equação:\n\n(𝑥² + 9𝑥 + 14) + (15𝑥 + 30) + (4𝑥² + 15𝑥 + 12) = 100\n\nSimplificando a equação, obtemos:\n\n5𝑥² + 39𝑥 − 44 = 0\n\nAgora, precisamos resolver essa equação quadrática. Vamos calcular o discriminante!\n\nΔ = 𝑏2 − 4𝑎𝑐 → Δ = 392 − 4 ⋅ 5 ⋅ (−44) → Δ = 1521 + 880 → Δ = 2401\n\nCalculando \"x\":\n\n𝑥 = −𝑏 ± √Δ\n2𝑎 → 𝑥 = −39 ± √2401\n2 × 5 → 𝑥 = −39 ± 49\n10\n\n𝑥′ = −39 + 49\n10 → 𝑥′ = 10\n10 → 𝑥′ = 1\n\n𝑥′′ = −39 − 49\n10 → 𝑥′′ = −88\n10 → 𝑥′′ = −8.8\n\nComo x representa uma quantidade de agentes, descartamos a solução negativa. Portanto, 𝑥 = 1.\n\nAgora substituímos x = 1 nas equações das delegacias para encontrar a quantidade de agentes em cada uma:\n\nDelegacia 1:\n𝑥² + 9𝑥 + 14\n= 1² + 9 ∗ 1 + 14\n= 1 + 9 + 14\n= 24\n\nDelegacia 2:\n15𝑥 + 30\n= 15 ∗ 1 + 30\n= 15 + 30\n= 45\n\nDelegacia 3:\n4𝑥² + 15𝑥 + 12\n= 4 ∗ 1² + 15 ∗ 1 + 12\n= 4 + 15 + 12\n= 31\n\nPortanto, as quantidades de agentes nas delegacias são 24, 45 e 31, respectivamente.\n\nA delegacia com a menor quantidade de agentes possui 24 agentes.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/UnB/2023",
+      "tipo": "certo_errado",
+      "enunciado": "Considerando que uma família constituída de um casal e oito filhos faz uso diário\nde duas canoas para se deslocar por um igarapé, julgue o item a seguir.\n\nSe as raízes da equação 𝑥² − 30𝑥 + 125 = 0 correspondem, respectivamente, às idades do filho mais novo\ne do filho mais velho do casal, então nenhum filho do casal tem mais de 28 anos de idade.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Primeiro, vamos resolver a equação 𝒙² − 𝟑𝟎𝒙 + 𝟏𝟐𝟓 = 𝟎 para encontrar as raízes, que são as idades do\nfilho mais novo e do filho mais velho do casal. Para isso, usamos a fórmula de Bhaskara:\n\n𝑥 = −𝑏 ± √Δ\n2𝑎\n\nonde 𝑎 = 1, 𝑏 = −30 e 𝑐 = 125.\n\nCalculando o discriminante:\n\nΔ = 𝑏2 − 4𝑎𝑐 = (−30)2 − 4 ⋅ 1 ⋅ 125\nΔ = 900 − 500\nΔ == 400\n\nAgora aplicamos a fórmula de Bhaskara:\n\n𝑥 = (−(−30) ± √400)\n2 → 𝑥 = 30 ± 20\n2\n\nEncontramos duas raízes:\n\n𝑥1 = 30 + 20\n2 → 𝑥1 = 50\n2 → 𝑥1 = 25\n\n𝑥2 = 30 − 20\n2 → 𝑥2 = 10\n2 → 𝑥2 = 5\n\nPortanto, as raízes da equação são 5 e 25, que correspondem, respectivamente, às idades do filho mais novo\ne do filho mais velho do casal. Assim, verificamos que nenhum filho do casal tem mais de 28 anos de idade.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/TELEBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Quanto a equações e inequações de 1º e 2º graus, julgue o próximo item.\n\nSe 𝑥1 = −1 e 𝑥2 = −3 são as raízes da equação de 2º grau 𝑥2 + 𝑎𝑥 + 𝑏 = 0, então não existem raízes reais\npara a equação −𝑎𝑥² + 𝑏𝑥 + 1 = 0.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O primeiro passo aquié encontrar o valor de \"a\" e de \"b\".\n\nPara isso, podemos substituir as raízes na equação e montar um sistema, veja só!\n\n𝑥2 + 𝑎𝑥 + 𝑏 = 0\n\nPara 𝑥 = −1:\n\n(−1)2 + 𝑎 ⋅ (−1) + 𝑏 = 0 → 𝑏 − 𝑎 + 1 = 0 → 𝑏 = 𝑎 − 1 (1)\n\nPara 𝑥 = −3:\n\n(−3)2 + 𝑎 ⋅ (−3) + 𝑏 = 0 → 9 − 3𝑎 + 𝑏 = 0 (2)\n\nVamos usar (1) em (2).\n\n9 − 3𝑎 + (𝑎 − 1) = 0 → 8 − 2𝑎 = 0 → 𝑎 = 4\n\nCom o valor de \"a\", podemos usá-lo em (1) para determinar \"b\".\n\n𝑏 = 4 − 1 → 𝑏 = 3\n\nPronto, encontramos \"a\" e \"b\", agora podemos usar esses valores na segunda equação que ele deu:\n\n−𝑎𝑥2 + 𝑏𝑥 + 1 = 0 → −4𝑥2 + 3𝑥 + 1 = 0\n\nO item quer saber se a equação acima tem raízes reais. Para isso, basta olharmos o \"delta\".\n\nΔ = 𝑏2 − 4𝑎𝑐 → Δ = 32 − 4 ⋅ 1 ⋅ (−4) → Δ = 9 + 16 → Δ = 25\n\nOpa! Discriminante positivo! Quando isso acontece, vamos ter duas raízes reais distintas. Logo, item errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2012,
+      "fonteProva": "Cebraspe/MCT/2012",
+      "tipo": "certo_errado",
+      "enunciado": "Uma creperia vende, em média, 500 crepes por semana, a R$ 20,00 a unidade. O\nproprietário estima que, para cada real de aumento no preço unitário de venda dos crepes, haverá redução\nde dez unidades na média semanal de vendas. Com base nessas informações, julgue os itens seguintes.\n\nCaso o proprietário aumente em x reais o preço unitário de venda dos crepes, então o faturamento médio\nsemanal será de 10.000 + 500𝑥 – 10𝑥2 reais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Galera, devemos achar o faturamento médio da creperia, em função do aumento de preço em 𝑥 reais. O\nfaturamento nada maisé do que o produto da quantidade vendida pelo preço unitário . Por exemplo, se o\nproprietário vende, em média, 500 crepes por semana e o valor de cada crepeé R$ 20,00 , então, seu\nfaturamento médio semanalé:\n\n𝐹𝑎𝑡𝑚 = 500 × 20 ⇒ 𝐹𝑎𝑡𝑚 = 10.000\n\nOu seja, sem aumento de preços, o faturamento médio semanal do proprietárioé de R$ 10.000,00. Imagine\nagora, que o proprietário aumentou em 𝑥 reais o preço do crepe. Dessa forma, o preço unitário passa a ser\n(𝟐𝟎 + 𝒙) reais.\n\nUma consequência dissoé uma queda nas vendas semanais. Ora, o preço aumentou! O enunciado diz que\npara cada real de aumento, ele deixa de vender dez unidades na média da semana . Em outras palavras,\ntemos o seguinte:\n\n• Se o proprietário aumentou 𝑅$ 1,00, então a quantidade de crepes vendidos na semana diminui 10.\n• Se o proprietário aumentou 𝑅$ 2,00, então a quantidade de crepes vendidos na semana diminui 20.\n• Se o proprietário aumentou 𝑅$ 5,00, então a quantidade de crepes vendidos na semana diminui 50.\n• Se o proprietário aumentou 𝑅$ 𝑥, então a quantidade de crepes vendidos na semana diminui 10 ∙ 𝑥.\n\nAssim, o novo faturamento, contabilizando esse aumento, é dado por:\n\n𝐹𝑎𝑡(𝑥) = (500 − 10𝑥) ∙ (20 + 𝑥)\n\nAplicando a propriedade distributiva da multiplicação, chegamos ao seguinte faturamento médio:\n\n𝐹𝑎𝑡(𝑥) = 10000 + 300𝑥 − 10𝑥2\n\nObserve que a expressão do enunciado está diferente e, portanto, equivocada.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "Cebraspe/SEDUC-AM/2011",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item seguinte, acerca de equações e inequações.\n\nSe ké um número real diferente de 2, então a equação (𝐾 − 2)𝑥2 − 3𝐾𝑥 + 1 = 0 sempre terá raízes reais\ndistintas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na teoria, vimos que uma equação de segundo grau terá raízes reais distintas quando o seu discriminante\nfor maior do que 0. O enunciado forneceu a seguinte equação:\n\n(𝐾 − 2)𝑥2 − 3𝐾𝑥 + 1 = 0\n\nTiramos que: {\n𝑎 = 𝐾 − 2\n𝑏 = −3𝐾\n𝑐 = 1\n\nO delta (discriminante) é calculado por 𝚫 = 𝒃𝟐 − 𝟒𝒂𝒄. Vamos substituir?\n\nΔ = (−3𝐾)2 − 4 ∙ (𝐾 − 2) ∙ 1\n∆= 9𝐾2 − 4𝐾 + 8\n\nPara que a equação tenha sempre raízes reais e distintas, devemos ter que 𝟗𝑲𝟐 − 𝟒𝑲 + 𝟖 > 𝟎.\n\nObserve que nossa condição gera uma inequação de segundo grau, e, para ela, devemos também encontrar\no discriminante. Temos que: 𝑎 = 9, 𝑏 = −4 e 𝑐 = 8. O discriminante dessa nova expressão fica:\n\nΔ = 𝑏2 − 4𝑎𝑐 ⇒ Δ = (−4)2 − 4 ∙ 9 ∙ 8 ⇒ Δ = −272\n\nObserve que o discriminante deu negativo , indicando que 𝟗𝑲𝟐 − 𝟒𝑲 + 𝟖 não possui raízes reais . Uma\nconsequência dissoé que a expressão nunca mudará de sinal (uma vez que não cruza o eixo x). Na prática,\nteremos uma parábola que ocupará o primeiro e o segundo quadrante do plano cartesiano, nunca sendo\nnegativa. Por esse motivo, a inequação 9𝐾2 − 4𝐾 + 8 > 0 será sempre verdadeira qualquer que seja K.\n\nComo a inequação acimaé sempre verdadeira, (𝐾 − 2)𝑥2 − 3𝐾𝑥 + 1 = 0 terá sempre raízes reais\ndistintas. Vale ressaltar que a condição para que 𝐾 seja diferente de 2é para impedir que o coeficiente \"a\"\nda equação não se anule.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "Cebraspe/SEDUC-AM/2011",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item seguinte, acerca de equações e inequações.\n\nSuponha que A, B e C sejam constantes reais e que 𝑥1 = −2 e 𝑥2 = 3 sejam as raízes da equação 𝐴𝑥2 +\n𝐵𝑥 + 𝐶 = 0. caso, é correto afirmar que 𝑥1 = −5 𝑒 𝑥2 = 0 são as raízes da equação 𝐴(𝑥 + 3)2 + 𝐵(𝑥 +\n3) + 𝐶 = 0.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Ora, temos duas raízes e queremos encontrar a equação de segundo grau correspondente! Aprendemos\nisso na teoria! Podemos escrever uma equação de segundo grau na forma:\n\n(𝑥 − 𝑥1) ∙ (𝑥 − 𝑥2) = 0\n\nAs raízes do enunciado são 𝒙𝟏 = −𝟐 e 𝒙𝟐 = 𝟑, logo,\n\n(𝑥 − (−2)) ∙ (𝑥 − 3) = 0\n(𝑥 + 2) ∙ (𝑥 − 3) = 0\n\nUsando a propriedade distributiva da multiplicação:\n\n𝑥2 − 𝑥 − 6 = 0\n\nAssim, encontramos o valor de 𝐴, 𝐵 e 𝐶: {\n𝐴 = 1\n𝐵 = −1\n𝐶 = −6\n\nVamos usar esses valores na outra equação dada:\n\n𝐴(𝑥 + 3)2 + 𝐵(𝑥 + 3) + 𝐶 = 0\n1 ∙ (𝑥 + 3)2 + (−1) ∙ (𝑥 + 3) − 6 = 0\n(𝑥 + 3)2 − (𝑥 + 3) − 6 = 0\n\nVamos abrir o quadrado e tentar escrever essa expressão na forma que estamos habituados.\n\n𝑥2 + 6𝑥 + 9 − 𝑥 − 3 − 6 = 0\n𝑥2 + 5𝑥 = 0\n\nShow! Agora, calculando o discriminante:\n\n∆ = 𝑏2 − 4𝑎𝑐 ⇒ Δ = 52 − 4 ∙ 1 ∙ 0 ⇒ ∆ = 25\n\nNa fórmula de Bhaskara, vamos ter que:\n\n𝑥 = −𝑏 ± √∆\n2𝑎 ⇒ 𝑥 = −5 ± √25\n2 ⇒ 𝑥1 = −5 𝑒 𝑥2 = 0\n\nObserve queé exatamente as raízes dadas no item. Portanto, o mesmo se encontra correto.\n\nObs.: Existe um jeito mais rápido de resolver. Observe a equação 𝑥2 + 5𝑥 = 0. Se você colocar o x em\nevidência, temos que 𝒙 ∙ (𝒙 + 𝟓) = 𝟎. Escrito dessa forma, podemos igualar cada um dos termos a zero e\nver qual a raiz.\n\n𝑥 = 0 𝑒 𝑥 + 5 = 0 → 𝑥2 = 0 𝑒 𝑥1 = −5",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2008,
+      "fonteProva": "Cebraspe/HEMOBRÁS/2008",
+      "tipo": "certo_errado",
+      "enunciado": "O custo para a produção mensal de x milhares de unidades de certo\nprodutoé de 𝒙² + 𝟐𝒙 reais. O preço de venda de x milhares desse produtoé de 𝟒𝒙 + 𝟐𝟒 reais. Nessas\ncondições, julgue os itens a seguir.\n\nO lucro máximo da empresa será obtido com a produção e venda de 1.000 unidades do produto.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O lucro de uma empresa será, simplificadamente, a receita menos o custo.\n\n𝐿(𝑥) = 𝑅(𝑥) − 𝐶(𝑥)\n\nO custoé dado por 𝑪(𝒙) = 𝒙𝟐 + 𝟐𝒙. Já a receita vai ser dada por 𝑹(𝒙) = 𝟒𝒙 + 𝟐𝟒. Assim,\n\n𝐿(𝑥) = 4𝑥 + 24 − 𝑥2 − 2𝑥 ⇒ 𝐿(𝑥) = −𝑥2 + 2𝑥 + 24.\n\nObserve que a expressão para o lucro possui coeficiente dominante negativo, indicando que a parábola tem\nconcavidade para baixo e que, portanto, teremos ponto de máximo. O ponto em que ocorre esse máximo\nserá dado pelas coordenadas do vértice. Como queremos saber apenas a quantidade do produto, devemos\nbuscar o x do vértice.\n\n𝑥𝑣 = − 𝑏\n2𝑎 ⇒ 𝑥𝑣 = − 2\n2 ∙ (−1) ⇒ 𝑥𝑣 = 1\n\nComo x está em milhares, o lucro máximo realmente será obtido com a produção e venda de 1.000 unidades\ndo produto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2007,
+      "fonteProva": "Cebraspe/BB/2007",
+      "tipo": "certo_errado",
+      "enunciado": "Um grupo de amigos fez, em conjunto, um jogo em determinada loteria, tendo\nsido premiado com a importância de R$ 2.800.000,00 que deveria ser dividida igualmente entre todos eles.\nNo momento da partilha, constatou-se que 3 deles não haviam pago a parcela correspondente ao jogo, e,\ndessa forma, não faziam jus ao quinhão do prêmio. Com a retirada dos 3 amigos que não pagaram o jogo,\n\ncoube a cada um dos restantes mais R$ 120.000,00. Considerando a situação hipotética apresentada,\njulgue o item que se segue.\n\nA quantidade de elementos do grupo de amigos que fizeram jus ao prêmioé superior a 11.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Galera, vamos considerar que esse grupo seja composto por 𝒙 amigos. Logo, como a quantia deveria ser\nrepartida igualmente entre cada um deles, o prêmio individual (𝑝) que cada um receberia era:\n\n𝑝 = 2.800.000\n𝑥 (1)\n\nNote que 3 amigos não pagaram a parcela. Sendo assim, devemos dividir o mesmo prêmio por 𝑥 − 𝟑 e não\nmais só por 𝒙. Quando fazemos isso, o prêmio individual que antes era 𝒑, agora passa a ser 𝒑 + 𝟏𝟐𝟎. 𝟎𝟎𝟎.\nMatematicamente,\n\n𝑝 + 120.000 = 2.800.000\n𝑥 − 3 (2)\n\nTemos duas equações e duas incógnitas . Para resolver esse sistema, usaremos o método da substituição.\nSubstituindo (1) em (2), ficamos com:\n\n2.800.000\n𝑥 + 120.000 = 2.800.000\n𝑥 − 3\n\nVamos simplificar a expressão, dividindo tudo por 𝟒𝟎. 𝟎𝟎𝟎, para sumir com os zeros e diminuir os números.\n\n70\n𝑥 + 3 = 70\n𝑥 − 3\n\n70 + 3𝑥\n𝑥 = 70\n𝑥 − 3\n(70 + 3𝑥)(𝑥 − 3) = 70𝑥\n70𝑥 − 210 + 3𝑥2 − 9𝑥 = 70𝑥\n3𝑥2 − 9𝑥 − 210 = 0\n𝑥2 − 3𝑥 − 70 = 0\n\nResolvendo a equação de segundo grau acima, encontramos as raízes 𝑥1 = −7 e 𝑥2 = 10. Como estamos\nfalando da quantidade de amigos, a raiz negativa não tem sentido para nós . Sendo assim, o tamanho do\ngrupo de amigosé 10 e aqueles que fazem jus ao prêmio são apenas 7. Esse númeroé inferior a 11. Portanto,\no item encontra-se errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2007,
+      "fonteProva": "Cebraspe/PM-ES/2007",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, a respeito de equações algébricas, equações e\nfunções polinomiais de 1º e de 2º graus, progressões aritméticas e geométricas.\n\nA respeito da equação 𝑥2 + 𝑚𝑥 + 𝑚 = 0, em que mé um número real, todas as seguintes afirmações são\nverdadeiras.\n\nI. se 𝑚 = 0, então a equação tem umaúnica solução;\nII. se 𝑚 = 4, então a equação tem umaúnica solução;\nIII. se 0 < 𝑚 < 4, então a equação não tem nenhuma solução real;\nIV. para cada valor de m tal que 𝑚 < 0 ou 𝑚 > 4, a equação tem duas soluções reais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Lembrem-se sempre que para avaliarmos a quantidade de raízes, devemos olhar para o discriminante.\n\n• Se ∆ > 0, teremos duas raízes reais e distintas.\n• Se ∆ = 0, teremos apenas umaúnica raiz real.\no Rigorosamente, são duas raízes, porém idênticas.\n• Se ∆ < 0, não temos raízes reais.\no Não significa que a equação não possui raízes. Significa apenas que as raízes não são reais.\nQuando o discriminanteé negativo, temos duas raízes complexas.\n\nVamos calcular o discriminante da equação em função de m:\n\n∆ = 𝑚2 − 4𝑚\n\nI. Se 𝑚 = 0, então o discriminante também será nulo ∆ = 0. Dessa forma, afirmação correta.\nII. Se 𝑚 = 4, então o discriminante será nulo ∆ = 42 − 4 ∙ 4 = 16 − 16 = 0. Dessa forma, afirmação correta.\nIII. Para a equação não ter solução real, precisamos que:\n∆ < 0 ⇒ 𝑚2 − 4𝑚 < 0\n\nSe colocarmos o 𝑚 em evidência, ficamos com 𝑚 ∙ (𝑚 − 4) < 0. Quando a expressão da esquerda vai ser\nnegativa? Ora, quando os termos do produto apresentarem sinais distintos, istoé,\n\n𝑚 > 0 𝑒 (𝑚 − 4) < 0 ⇒ 𝑚 > 0 𝑒 𝑚 < 4 ⇒ 0 < 𝑚 < 4\n\n𝑜𝑢\n\n𝑚 < 0 𝑒 (𝑚 − 4) > 0 ⇒ 𝑚 < 0 𝑒 𝑚 > 4\n\nObserve que o segundo resultado não serve, já que não existe número queé, ao mesmo tempo, menor do\nque zero e maior do que 4 . Dessa forma, nem consideramos. Veja que a resposta finalé exatamente a\ncondição do item, portanto, o mesmo está correto.\n\nIV. Dessa vez, queremos os intervalos de valores de m em que a equação possui duas raízes reais.\n\n∆ > 0 ⇒ 𝑚2 − 4𝑚 > 0\n\nQuando colocamos o 𝑚 em evidencia, ficamos com 𝑚 ∙ (𝑚 − 4) > 0. Pergunte-se: quando o produto de dois\nnúmero vai ser um número positivo? Ora, quando eles tiverem o mesmo sinal ! Ou os dois são positivos ou\nos dois são negativos. Assim,\n\n𝑚 > 0 𝑒 (𝑚 − 4) > 0 ⇒ 𝑚 > 0 𝑒 𝑚 > 4 ⇒ 𝑚 > 4\n\n𝑜𝑢\n\n𝑚 < 0 𝑒 (𝑚 − 4) < 0 ⇒ 𝑚 < 0 𝑒 𝑚 < 4 ⇒ 𝑚 < 0\n\nVeja que chegamos a 𝑚 > 4 𝑜𝑢 𝑚 < 0. Essa foi a condição trazida pelo item e, portanto, também está\ncorreta.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-13-S02-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_5",
+      "subtopic_id": "rlm_5",
+      "assunto": "Equações de Segundo Grau",
+      "subtopico": "Equações de Segundo Grau - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "Cebraspe/PREF. SÃO LUÍS/2017",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se 𝑿𝟏 e 𝑿𝟐, em que 𝑿𝟏 < 𝑿𝟐, são as raízes positivas da equação 𝒙𝟐 −\n𝟏𝟔𝟒𝒙 + 𝟔𝟒𝟎𝟎 = 𝟎, então a diferença 𝑿𝟐 − 𝑿𝟏é igual a:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "2.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "1.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "36.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "18.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "4.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Temos uma equação de segundo grau. Para encontrar as raízes, devemos usar a fórmula de Bhaskara.\n\n𝑥2 − 164𝑥 + 6400 = 0\n\n∆ = 𝑏2 − 4𝑎𝑐 ⇒ ∆ = 1642 − 4 ∙ 1 ∙ 6400 ⇒ ∆ = 26.896 − 25600 ⇒ ∆ = 1296\n\nAgora,\n\n𝑥 = −𝑏 ± √𝑏2 − 4𝑎𝑐\n2𝑎\n\n𝑥 = −(−164) ± √1296\n2\n\n𝑥 = 164 ± 36\n2 ⇒ 𝑥1 = 64 𝑒 𝑥2 = 100\n\nSendo assim, a diferença entre as raízes da equaçãoé:\n\n𝑥2 − 𝑥1 = 100 − 64 = 36",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_5",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_5.json"
+      }
+    }
+  ]
+}

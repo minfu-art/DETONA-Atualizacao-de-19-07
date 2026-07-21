@@ -1,0 +1,496 @@
+{
+  "topicoEditalId": "contab_5",
+  "disciplinaId": "contabilidade",
+  "quantidade": 13,
+  "questions": [
+    {
+      "id": "PCAL-CONT-02-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Contabilidade Básica - Parte II",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/FUB/Técnico em Contabilidade/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, em relação aos tipos de registros que devem ser feitos nas respectivas contas e à\nnatureza dos saldos.\n\nO saldo credor em uma conta de estoques de\nmatérias-primas indica que a contabilização efetuada no período foi realizada sem erros.",
+      "contextoCompartilhado": "Julgue o item a seguir, em relação aos tipos de registros que devem ser feitos nas respectivas contas e à\nnatureza dos saldos.",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A conta estoques pertence ao ativo da entidade. Vimos que o ativo possui saldo devedor, por conta disso\nessa conta só poderá ter saldo devedor ou nulo. Dessa forma, um saldo credor nessa conta indica que houve\num erro na escrituração.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-03-S01-022",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Escrituração - Parte I",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/APEX/Analista Processos Contábeis/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um evento foi escriturado corretamente\n    conforme se segue.\ndebite – contas a pagar\ncredite – caixa\ncredite – desconto obtido\nEssa contabilização expressa um fato patrimonial",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "modificativo aumentativo.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "misto.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "permutativo.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "modificativo diminutivo.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "No tocante ao fato misto, ele envolve, ao mesmo tempo, um fato permutativo e um fato modificativo. Um\nexemplo seria o Pagamento de uma duplicata no valor de R$ 1.000,00, com desconto de R$ 200,00:\n\nD – Duplicatas a pagar 1.000,00 (- Passivo)\nC – Bancos 800,00 (- Ativo)\nC – Descontos Obtidos 200,00 (+ Resultado = Receita)\n\nPara facilitar a visualização, vamos dividi-lo em dois lançamentos:\n\nFato permutativo:\n\nD – Duplicatas a pagar (Passivo) 800,00\nC – Bancos (Ativo) 800,00\n\nFato modificativo aumentativo:\n\nD – Duplicatas a pagar (Passivo) 200,00\nC – Descontos Obtidos (Receita) 200,00",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-05-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Apuração do Resultado",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/MPE TO/Técnico em Contabilidade/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Quanto à contabilização de operações realizadas por uma entidade, julgue o item seguinte.\n\nA entidade que utiliza recursos do caixa para\n   efetuar o pagamento antecipado de uma dívida, beneficiando-se de um desconto concedido pelo\n   credor, deve contabilizar a operação a débito de uma conta de passivo, a crédito de uma conta de ativo\n   e a crédito de uma conta de receita.",
+      "contextoCompartilhado": "Quanto à contabilização de operações realizadas por uma entidade, julgue o item seguinte.",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O desconto financeiro OBTIDO representa uma receita FINANCEIRA; NÃO É receita DE VENDA.\n\nO lançamento é feito do seguinte modo:\n\nD – Contas a pagar (passivo)\nC – Caixa (ativo)\nC – Descontos Financeiro obtido (resultado)\n\nRealmente houve um débito de uma conta de passivo, a crédito de uma conta de ativo e a crédito de uma\nconta de receita.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-07-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Estoques",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/SEFAZ AC/Contador/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "No início do mês de março de 2023, uma empresa comercial\ntípica possuía em estoque 10 calças contabilizadas pelo valor total de R$ 1.600,00. Durante o referido mês,\na empresa adquiriu um lote com mais 10 unidades. O valor total da nota fiscal foi de R$ 2.090,00, e nela\nfoi informada a aplicação da alíquota de IPI de 10% sobre o preço das mercadorias. O ICMS da operação\nfoi calculado pela alíquota de 18%. Após realização do inventário no final do mês, constatou-se a existência\nde 8 calças em estoque. Foi utilizada a média ponderada para fins de cálculo do custo da mercadoria\nvendida. Na situação hipotética em apreço, o valor do estoque, em 31 de março de 2023, e o custo da\nmercadoria vendida, em março de 2023, foram, respectivamente,",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 1.263,20 e R$ 1.894,80.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 1.324,00 e R$ 1.986,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 1.339,20 e R$ 2.008,80.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 1.400,00 e R$ 2.100,00.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 1.460,00 e R$ 2.191,20.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Faremos algumas observações:\n\n- A mercadoria foi adquirida pelo preço, mas, por determinação do CPC 16 – Estoques, temos que retirar o\nICMS do custo dos estoques, pois trata-se de um tributo recuperável.\n\n- O quesito informou que foi adotado o método da média ponderada. Para calcularmos o custo médio temos\nque somar o valor total dos estoques e dividir pelo número de unidades. Vamos lá:\n\nParte 1 - No início do mês de março de 2023, uma empresa comercial típica possuía em estoque 10 calças\ncontabilizadas pelo valor total de R$ 1.600,00.\n\nEI = 10 X R$ 160 = R$ 1.600\n\nParte 2 - Durante o referido mês, a empresa adquiriu um lote com mais 10 unidades. O valor total da nota\nfiscal foi de R$ 2.090,00, e nela foi informada a aplicação da alíquota de IPI de 10% sobre o preço das\nmercadorias. O ICMS da operação foi calculado pela alíquota de 18%.\n\nO quesito informou o seguinte: uma empresa comercial, destinada à revenda de calças, adquire do\nfabricante. Neste caso, o IPI não é recuperável. Vejam. Estamos comprando mercadoria de uma indústria\npara revender. Como se trata de mercadoria destinada à comercialização, o IPI não entra na base de cálculo\ndo ICMS.\n\nOutro detalhe, o quesito informou o valor da nota fiscal. Tal valor já inclui o IPI e o ICMS.\n\nDica: para retirarmos o “Imposto por fora” (IPI) do valor total da nota fiscal basta pegarmos o valor da nota\nfiscal e dividirmos por (1 + alíquota), vejam:\n\n                                                             2.090\n                                           Valor sem IPI =         = 1.900\n                                                             1,10\n\nICMS recuperável = Base Cálculo x Alíquota = R$ 1.900 x 18% = R$ 342\n\nO valor do estoque é: Nota Fiscal - ICMS a recuperar = R$ 2.090 - R$ 342 = R$ 1.748\n\nCompras 1 = 10 unidades x R$ 174,80 = 1.748\n\nAté agora temos o estoque inicial e uma compra. O custo médio será o seguinte:\n\n                                 Custo Total = R$ 1.600 + R$ 1.748 = R$ 3.348\n\n                                       Número de Unidades = 10 + 10 = 20\n\n                                      Custo Médio = R$ 3.348/20 = R$ 167,40\n\nParte 3 - Após realização do inventário no final do mês, constatou-se a existência de 8 calças em estoque.\n\nEF = 8 unidades x 167,40 = 1.339,20\n\nCMV = (20 unidades – 8 unidades) x Custo médio = 12 unidades x R$ 167,40 = R$ 2.008,80",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-07-S01-030",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Estoques",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/SEFAZ-RS/Técnico/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "De acordo com a legislação vigente, adiantamentos em dinheiro\nde uma empresa a seus fornecedores nacionais de mercadorias devem ser contabilizados",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "como despesa, no resultado do exercício.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "no grupo de estoques, no ativo.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "nas contas a receber, no ativo.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "na conta de fornecedores, no passivo.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "em resultados de exercícios futuros, no passivo.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "O adiantamento a fornecedores de mercadorias deve ficar registrado junto aos Estoques, pois possuem\nvinculação específica, ou seja, a compra de mercadorias.\n\nMuitos alunos tiveram dúvidas nessa questão e nos perguntaram se não seria possível fazer a classificação\ncomo Contas a Receber. Adiantamento a Terceiros é uma conta registrada em Contas a Receber, que engloba\n\no numerário entregue a terceiros, mas sem vinculação específica ao fornecimento de bens, produtos ou\nserviços contratuais predeterminados.\n\nPara finalizar, você sabia que Adiantamento a Fornecedores de Imobilizado é classificada no Imobilizado,\npela mesma lógica do Adiantamento a Fornecedores de estoques? Resumindo:\n\n                                                                             Estoques\n                                                   Destinação\n                                                   Específica\n                                                                            Imobilizado\n                     Adiantamentos\n\n                                                Sem destinação               Contas a\n                                                  específica                 Receber",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-08-S01-027",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Depreciação, Exaustão e Ativo Imobilizado",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CEBRASPE/PG-DF/Analista Jurídico Contabilidade/2021",
+      "tipo": "certo_errado",
+      "enunciado": "Embora terrenos e edificações sejam ativos\ncontabilizados separadamente, ainda que tenham sido adquiridos em conjunto, caso o terreno sofra\nacréscimo de valor, a edificação que nele estiver construída também sofrerá acréscimo em seu valor\ncontábil.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A valorização do terreno não provoca acréscimo no valor contábil da edificação. Isso é previsto no CPC 27:\n\n        58. Terrenos e edifícios são ativos separáveis e são contabilizados separadamente, mesmo\n        quando sejam adquiridos conjuntamente. Com algumas exceções, como as pedreiras e os\n        locais usados como aterro, os terrenos têm vida útil ilimitada e, portanto, não são\n        depreciados. Os edifícios têm vida útil limitada e, por isso, são ativos depreciáveis. O\n        aumento de valor de um terreno no qual um edifício esteja construído não afeta o valor\n        contábil do edifício.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-09-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Passivo e Ajuste a Valor Presente",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/CODEVASF/Analista/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, relativo a operações contábeis diversas.\nSuponha que, ao final de determinado mês, uma entidade verifique as seguintes ocorrências relativas à sua\nfolha de pagamento, cujos valores estão em reais.\n                                 salários brutos                      20.000\n                                 adiantamentos de salários realizados 2.000\n                                 INSS cota patronal                   3.800\n                                 INSS cota empregados                 1.600\n                                 IRRF empregados                      1.400\n\nNessa situação hipotética, a contabilização da folha de\n   pagamento da entidade gerará um saldo de salários a pagar no valor de R$ 11.200.",
+      "contextoCompartilhado": "Julgue o item a seguir, relativo a operações contábeis diversas.\nSuponha que, ao final de determinado mês, uma entidade verifique as seguintes ocorrências relativas à sua\nfolha de pagamento, cujos valores estão em reais.\n                                 salários brutos                      20.000\n                                 adiantamentos de salários realizados 2.000\n                                 INSS cota patronal                   3.800\n                                 INSS cota empregados                 1.600\n                                 IRRF empregados                      1.400",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Cuidado! O Valor bruto dos salários a pagar foi de R$ 20.000. Todavia, alguns valores são deduzidos dos\nfuncionários (INSS, IRPF).\n\nsalários brutos 20.000:\n\nOs salários são registrados como despesa da empresa. O mesmo tratamento deve ser dado às contribuições\ne encargos trabalhistas que sejam ônus do empregador.\n\nadiantamentos de salários realizados 2.000\n\nAtendendo ao Princípio da Competência, quando a empresa concede um adiantamento de salários para os\nempregados, ainda não será reconhecida a despesa; trata-se, na verdade, de uma despesa antecipada,\nclassificada no Ativo Circulante:\n\nD – Adiantamento de salários..........R$ 2.000\nC – Disponibilidades........................R$ 2.000\n\nNo final do mês, a empresa irá reconhecer a despesa no resultado com a seguinte contabilização:\n\nD – Despesas com Salários                  50.000\nC – Adiantamento de salários               10.000\nC – Salários a pagar                       40.000\n\nINSS cota patronal 3.800\n\nO INSS patronal constitui um encargo (despesa) da empresa, que deve recolher 20% do valor da folha salarial\nao INSS.\n\nINSS cota empregados 1.600\n\nO INSS retido é despesa efetiva do próprio empregado, e, portanto, não deve ser contabilizado como\ndespesa da empresa. (Basicamente, retiramos do montante que deve ser pago aos funcionários e\nrepassamos ao governo)\n\nIRRF empregados 1.400\n\nO IRPF é despesa efetiva do próprio empregado, e, portanto, não deve ser contabilizado como despesa da\nempresa. (Basicamente, retiramos do montante que deve ser pago aos funcionários e repassamos ao\ngoverno)\n\nPara facilitar a visualização, montemos o razonete dessa conta:\n\n                                                            Salários a Pagar\n                Adiantamentos realizados               R$    2.000,00 R$ 20.000,00 Valor bruto\n                INSS Retido                            R$    1.600,00\n                IRPF Retido                            R$    1.400,00\n                                                                      R$ 15.000,00\n\nA contabilização completa é a seguinte:\n\nD – Despesa de salário (Resultado)                                   R$ 20.000,00\nD - Despesa com Contribuição previdenciária patronal                R$ 3.800,00\nC – Salários a pagar (Passivo Circulante)                            R$ 15.000,00\nC – INSS patronal recolher (Passivo Circulante)                      R$ 3.800,00\nC – Adiantamento de Salários                                         R$ 2.000,00\nC – INSS retido a recolher (Passivo Circulante)                      R$ 1.600,00\nC- IRRF a recolher (Passivo Circulante)                              R$ 1.400,00",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-09-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Passivo e Ajuste a Valor Presente",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/Especialista em Regulação/ANTT/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Considere as informações a seguir, extraídas da folha de pagamento de uma empresa hipotética.\nsalários brutos: R$ 15.500\nINSS descontado dos funcionários: R$ 1.240\nFGTS: R$ 1.240\nsalário-família: R$ 145\nINSS – cota patronal: R$ 4.500\n\nSendo essas as únicas informações a considerar, o\n    valor dos salários a pagar após as devidas contabilizações é de R$ 14.405.",
+      "contextoCompartilhado": "Considere as informações a seguir, extraídas da folha de pagamento de uma empresa hipotética.\nsalários brutos: R$ 15.500\nINSS descontado dos funcionários: R$ 1.240\nFGTS: R$ 1.240\nsalário-família: R$ 145\nINSS – cota patronal: R$ 4.500",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Em questões de folha de pagamento, temos encargos que são de responsabilidade da empresa e aqueles\nque são dos empregados. Para apurarmos o valor dos salários a pagar, temos que encontrar o valor dos\nsalários brutos devidos, retirarmos eventuais descontos que a empresa tem que fazer dos empregados e, se\nhouver, adicionar alguns benefícios, como o salário-família.\n\nSalários a Pagar = salários brutos - INSS descontado dos funcionários + salário família = 15.500 - 1.240 + 145\n= R$ 14.405",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-09-S01-023",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Passivo e Ajuste a Valor Presente",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/TELEBRAS/Especialista em Gestão de Telecomunicações/Auditoria/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Considerando os componentes do ativo, do passivo e do patrimônio líquido, julgue o item seguinte.\n\nA contabilização\n    de férias de empregados é enquadrada como passivo derivado de apropriações por competência.",
+      "contextoCompartilhado": "Considerando os componentes do ativo, do passivo e do patrimônio líquido, julgue o item seguinte.",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Entre os direitos dos funcionários, encontra-se o direito às férias, após trabalhar um ano. Mas,\ncontabilmente, deve ser reconhecido 1/12 por mês, para observar o Regime da Competência. Além do\nsalário, devem ser também provisionados os encargos e o adicional de férias (um terço). Lembrando que o\nabono deve ser somado ao salário, para cálculo dos encargos sociais.\n\nExemplo: Vamos considerar um funcionário com salário de R$ 1.212 reais e com direito a 10/12 avos de\nférias. A provisão de férias, com abono e encargos, ficaria assim\n\nObservação: vamos calcular apenas o INSS patronal, de 20%, e o FGTS, de 8%, como encargos.\n\n Salário                         1.212,00\n Base para provisão (10/12 avos) 1.010,00\n Abono de férias (1/3)            336,67\n\n Subtotal                              1.346,67\n INSS (20%)                             269,33\n FGTS (8%)                              107,76\n Total Provisão férias                 1.723,73\n\nEsse cálculo deve ser feito para todos os funcionários, um a um. A contabilização, para os funcionários da\nprodução, entra como custo de mão-de-obra; para os outros funcionários, como despesa:\n\nFuncionários da produção:\n\nD – Custo de Mão de obra – provisão de férias                  1.723,73\nC – Provisão de Férias (passivo circulante)                    1.723,73\n\nOutros funcionários (escritório):\n\nD – Despesa admin. – provisão de férias (resultado)             1.723,73\nC – Provisão de Férias (passivo circulante)                    1.723,73\n\n         Observação: A empresa pode contabilizar separadamente cada parcela da provisão de\n         férias (férias, abono, INSS a Recolher, FGTS a recolher) ou pode contabilizar um valor total\n         e manter um controle à parte, extracontábil.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-10-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Operações Diversas",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/MPE TO/Técnico em Contabilidade/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Quanto à contabilização de operações realizadas por uma entidade, julgue o item seguinte.\n\nA entidade que possui passivos em moeda\n    estrangeira deverá reconhecer receitas de variação cambial sempre que o real vier a sofrer\n    desvalorização em relação à moeda estrangeira.",
+      "contextoCompartilhado": "Quanto à contabilização de operações realizadas por uma entidade, julgue o item seguinte.",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "•   Suponha que a entidade tenha a seguinte obrigação (cotação do dólar era de R$5,00):\n\nFornecedores do exterior – variação cambial = $10.000\n\nFornecedores = 10.000 x R$5,00 = R$50.000\n\nPosteriormente, na data de fechamento, o dólar esteja R$5,20:\n\nFornecedores = 10.000 x R$5,20 = R$52.000\n\nNota-se uma variação de R$ 2.000 (52.000 – 50.000) provocada pela desvalorização do real em relação ao\ndólar. Tal diferença será contabilizada como despesa de variação cambial e não receita.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-10-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Operações Diversas",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "CEBRASPE/PCDF/Agente2021",
+      "tipo": "certo_errado",
+      "enunciado": "Acerca dos reflexos de determinados eventos contábeis sobre o patrimônio/resultado das empresas, julgue\nos itens a seguir.\n\nA contabilização da variação monetária ativa, advinda de operações de\n    crédito em moeda estrangeira, fará que o resultado do exercício seja reduzido no mês em que a\n    variação ocorrer.",
+      "contextoCompartilhado": "Acerca dos reflexos de determinados eventos contábeis sobre o patrimônio/resultado das empresas, julgue\nos itens a seguir.",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Em algumas situações, as empresas podem efetuar operações em moeda estrangeira, como por exemplo, a\naquisição de mercadorias à vista ou a prazo, a aquisição de ativos imobilizados, ou até mesmo, obter\nempréstimos ou financiamentos em outras moedas, tais como, dólar, euro, etc.\n\nNesse sentido, podemos ter variações na taxa de câmbio nas operações envolvidas e precisamos conhecer o\ntratamento contábil adequado para essas situações.\n\nExemplificando! A Cia JLS possui saldo em espécie de $ 10.000,00, contabilizados inicialmente a uma taxa de\ncâmbio de R$ 4,00. Na contabilidade da empresa teríamos o seguinte:\n\nDepósitos em moeda estrangeira = $ 10.000,00 → x 4,00 = R$ 40.000,00\n\nAgora, suponha que tenha ocorrido uma alteração na taxa de câmbio para R$ 4,50, nesse caso, a empresa\ndeverá fazer a conversão:\n\nDepósitos em moeda estrangeira = $ 10.000,00 → x 4,50 = R$ 45.000,00\n\nComo vamos contabilizar a diferença positiva para a empresa de 45.000 – 40.000 = R$ 5.000,00? Será uma\nreceita com variação cambial positiva, vejam a contabilização:\n\nD – Disponibilidades em Moeda Estrangeira                    R$ 5.000,00\nC – Variação Cambial Positiva – Receita Financeira           R$ 5.000,00\n\nAgora, imaginem que a taxa de câmbio tenha uma queda e passe para R$ 4,30. Devemos fazer a conversão:\n\nDepósitos em moeda estrangeira = $ 10.000,00 → x 4,30 = R$ 43.000,00\n\nComo vamos contabilizar a diferença negativa para a empresa de 43.000 – 45.000 = (R$ 2.000,00)?\n\nSerá uma receita com variação cambial negativa, uma despesa financeira para a empresa. Vejam a\ncontabilização:\n\nD – Variação Cambial Negativa – Despesa Financeira R$ 2.000,00\nC – Disponibilidades em Moeda Estrangeira              R$ 2.000,00\n\nPercebam que a variação cambial pode trazer benefícios ou prejuízos para a entidade, isto é, pode ser uma\nreceita ou uma despesa, de acordo com a variação ocorrida no câmbio. Em síntese:\n\n                                                                         Receita\n                                               Positiva\n                                                                       Financeira\n                       Variação\n                       Cambial\n                                                                        Despesa\n                                              Negativa\n                                                                       Financeira\n\nObserve que a variação ativa fará que o resultado do exercício aumente no mês em que a variação ocorrer.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-11-S01-017",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Patrimônio Líquido - Parte I",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/Especialista em Regulação/ANTT/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue os itens seguintes, a respeito de contas, devedoras ou credoras e seus saldos\n\nConsidere que a carteira de investimentos de\n    determinada empresa tenha sido avaliada pelo seu valor justo, sendo constatada uma perda de valor\n    de seus componentes. Considere, ainda, que essa carteira tenha sido avaliada a valor justo em outros\n    resultados abrangentes, tendo sua variação registrada em conta apropriada do patrimônio líquido.\n   Nessa situação, a contabilização adequada provocará um lançamento credor em conta do patrimônio\n   líquido",
+      "contextoCompartilhado": "Julgue os itens seguintes, a respeito de contas, devedoras ou credoras e seus saldos",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Se os investimentos da empresa tenham sido avaliados a valor justo em outros resultados abrangentes, as\nvariações ocorridas no valor justo não serão lançadas no resultado do exercício, mas diretamente no\npatrimônio líquido, na conta de ajuste de avaliação patrimonial.\n\nSe for valorização:\n\nD - Ativo Financeiro\nC - Ajuste de Avaliação Patrimonial - PL\n\nSe for desvalorização:\n\nD - Ajuste de Avaliação Patrimonial - PL\nC - Ativo Financeiro\n\nPercebam que o item está errado, pois a perda registrada será contabilizada com um lançamento DEVEDOR\nno patrimônio líquido e não credor.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    },
+    {
+      "id": "PCAL-CONT-15-S01-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "contabilidade",
+      "topicoEditalId": "contab_5",
+      "subtopic_id": "contab_5",
+      "assunto": "Redução ao Valor Recuperável de Ativos",
+      "subtopico": "CEBRASPE",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/Pref. Maringá/Auditor/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um equipamento industrial foi adquirido, no início de dado\n   ano, e reconhecido, inicialmente, pelo valor de R$ 480 mil, tendo sua vida útil estimada em 60 meses,\n   pois seria utilizado em três turnos de 8 h diárias, o que o faria sofrer depreciação acelerada. O valor\n   residual do equipamento foi estimado em 10%. A depreciação foi calculada pelo método linear.\n   Decorridos 30 meses, foi realizada uma avaliação do valor recuperável desse equipamento, tendo sido\n   encontrados os valores realizáveis de R$ 245 mil em uso, e de R$ 255 mil para venda, já deduzidos os\n   custos de venda.\n  Com relação a essa situação hipotética, nessas condições, após o teste de recuperabilidade e a sua\n  contabilização, caso seja cabível, o valor contábil líquido do bem no imobilizado da indústria será de",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "R$ 48 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "R$ 240 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "R$ 245 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "R$ 255 mil.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "R$ 264 mil.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Questão interessante que envolve dois pronunciamentos contábeis: CPC 27 - Ativo Imobilizado e CPC 01 (R1)\n  - Redução ao Valor Recuperável de Ativos.\n\n     •   Conhecimentos relacionados ao CPC 27 - Ativo Imobilizado:\n\n  Vamos usar a nossa receita de bolo:\n\n  Como calcular a depreciação pelo método da linha reta?\n\n  1) Pegue o valor de aquisição: R$ 480.000,00\n  2) Encontre o valor residual: R$ 480.000,00 x 10% = R$ 48.000,00\n  3) Faça a diferença entre o valor e aquisição e o valor residual e encontraremos o chamado valor depreciável:\n  R$ 480.000,00 - R$ 48.000,00 = R$ 432.000,00\n  4) Encontre a vida útil (em meses ou anos, geralmente). 60 meses ou 5 anos ou taxa de 20% ao ano.\n\n  5) Divida o valor depreciável pela vida útil: R$ 432.000,00/5 = R$ 86.400,00\n\n  Cuidado! Precisamos calcular o valor proporcional aos 30 meses:\n\n  Depreciação no período = R$ 86.400,00 x 30/12 = R$ 86.400,00 x 2,5 anos = R$ 216.000,00\n\n            Obs.: a entidade definiu a vida útil de 60 meses, já considerando que irá utilizar em três\n            turnos de 8 h. Aqui não precisamos multiplicar pelo fator 2.\n\n  Antes do teste de recuperabilidade, o valor contábil desse ativo correspondia a:\n\n  Valor Histórico                     R$ 480.000,00\n  (-) Depreciação Acumulada          (R$ 216.000,00)\n  = Valor Contábil                        R$ 264.000,00\n\n       •   Conhecimentos relacionados ao CPC 01 (R1) - Redução ao Valor Recuperável de Ativos:\n\n  O valor contábil deve ser comparado com o valor recuperável, que é o MAIOR entre o valor em uso e o valor\n  justo líquido das despesas de venda:\n\n  •    Valor em uso = R$ 245 mil\n  •    Valor líquido de venda = R$ 255 mil.\n\n  Assim, o valor recuperável é R$ 255 mil. Como é menor que o valor contábil (R$ 264 mil), então a sociedade\n  empresária deverá reconhecer uma perda por redução ao valor recuperável de R$ 9.000 (R$ 264.000 - R$\n  255.000). O valor contábil após o primeiro teste de recuperabilidade:\n\n  Valor Histórico                     R$ 480.000,00\n  (-) Depreciação Acumulada          (R$ 216.000,00)\n  (-) Ajuste por recuperabilidade (R$ 9.000,00)\n  = Valor Contábil                        R$ 255.000,00",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "contab_5",
+        "disciplinaCurta": "contab",
+        "organizadoEm": "2026-07-21T02:11:29.565Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\contabilidade\\contab_5.json"
+      }
+    }
+  ]
+}

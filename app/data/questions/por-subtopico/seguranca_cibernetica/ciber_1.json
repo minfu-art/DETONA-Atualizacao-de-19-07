@@ -1,0 +1,226 @@
+{
+  "topicoEditalId": "ciber_1",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0061",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_1",
+      "subtopic_id": "ciber_1",
+      "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "subtopico": "1.2.2.1-integridade",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Integridade da informação está relacionada à proteção contra alteração ou destruição não autorizada e à manutenção da exatidão dos dados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Integridade.\n\nMecanismos como hash, assinatura digital, controle de versões e permissões podem ajudar a detectar ou impedir mudanças indevidas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Integridade.\n\nErro provável: confusão com sigilo\n\nDica: Integridade responde: o dado permanece correto e não adulterado?",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
+        "sourceSubtopicId": "1.2.2.1-integridade",
+        "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ciber_1",
+        "hashQuestao": "eea170b05062583b",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "integridade"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão com sigilo"
+          ],
+          "palavrasChave": [
+            "Integridade",
+            "Fundamentos de Segurança da Informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Integridade",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "3a41192b79915a63e467cf1d1e2111abb11a6b6e5ea711a5fdafa2ca59a86124",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.740Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0062",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_1",
+      "subtopic_id": "ciber_1",
+      "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "subtopico": "1.2.2.1-disponibilidade",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Disponibilidade significa que sistemas e informações devem estar acessíveis a usuários autorizados quando necessários.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Disponibilidade.\n\nRedundância, monitoramento, capacidade, manutenção, continuidade e recuperação contribuem para disponibilidade. Ela não significa acesso irrestrito por qualquer pessoa.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Disponibilidade.\n\nErro provável: interpretação como acesso público\n\nDica: Disponível para quem está autorizado, no momento necessário.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
+        "sourceSubtopicId": "1.2.2.1-disponibilidade",
+        "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ciber_1",
+        "hashQuestao": "e6eb99b9e4838c11",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "disponibilidade"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "interpretação como acesso público"
+          ],
+          "palavrasChave": [
+            "Disponibilidade",
+            "Fundamentos de Segurança da Informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Disponibilidade",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "349738ca27272bf86f9497504bad355771220d655a681920f919fbef6f979687",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.740Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0084",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_1",
+      "subtopic_id": "ciber_1",
+      "assunto": "1.2.2.8-seguranca-de-aplicacoes",
+      "subtopico": "1.2.2.8-testes-de-seguranca-para-aplicacoes-web",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Testes de penetração podem identificar falhas em aplicações web, mas não substituem revisão de código, análise automatizada, modelagem de ameaças e práticas seguras de desenvolvimento.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Testes de segurança para aplicações web.\n\nPentests avaliam determinados cenários, escopos e momentos. Uma estratégia madura combina atividades preventivas e detectivas durante todo o ciclo de desenvolvimento.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Testes de segurança para aplicações web.\n\nErro provável: dependência exclusiva de teste final\n\nDica: Segurança deve acompanhar todo o ciclo, não apenas o pentest.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
+        "sourceSubtopicId": "1.2.2.8-testes-de-seguranca-para-aplicacoes-web",
+        "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+        "mappedTopicoEditalId": "ciber_1",
+        "hashQuestao": "008ea8fecd9c43ba",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "testes de segurança em aplicações web"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "dependência exclusiva de teste final"
+          ],
+          "palavrasChave": [
+            "Testes de segurança para aplicações web",
+            "Segurança de aplicações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Testes de segurança para aplicações web",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "0975690afd7c59cbb298f80b0d4ea19e5bcce6d6870fdef151f3c606b5917b37",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.740Z"
+      }
+    }
+  ]
+}

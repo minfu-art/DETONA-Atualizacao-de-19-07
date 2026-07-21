@@ -1,0 +1,226 @@
+{
+  "topicoEditalId": "ciber_7",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0063",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_7",
+      "subtopic_id": "ciber_7",
+      "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "subtopico": "1.2.2.2-avaliacao-de-riscos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A avaliação de riscos considera elementos como ativos, ameaças, vulnerabilidades, probabilidade e impacto para priorizar tratamentos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Avaliação de riscos.\n\nO risco resulta da possibilidade de uma ameaça explorar vulnerabilidades e causar consequências. A análise apoia decisões de aceitar, reduzir, transferir ou evitar riscos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Avaliação de riscos.\n\nErro provável: análise isolada de apenas uma variável\n\nDica: Risco combina possibilidade e consequência no contexto do ativo.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
+        "sourceSubtopicId": "1.2.2.2-avaliacao-de-riscos",
+        "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+        "mappedTopicoEditalId": "ciber_7",
+        "hashQuestao": "d9750516a58e45a5",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "avaliação de riscos"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "análise isolada de apenas uma variável"
+          ],
+          "palavrasChave": [
+            "Avaliação de riscos",
+            "Gestão de riscos e conformidade"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Avaliação de riscos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "9e0ce8a204a0c7a06fda591a460013cd109a664e8db8928de22662b10b45c5fe",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0070",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_7",
+      "subtopic_id": "ciber_7",
+      "assunto": "1.2.2.3-seguranca-de-rede",
+      "subtopico": "1.2.2.3-redes-privadas-virtuais-vpn",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Uma VPN pode criar um túnel criptografado sobre uma rede não confiável, mas não corrige automaticamente vulnerabilidades existentes nos dispositivos conectados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Redes Privadas Virtuais — VPN.\n\nA VPN protege o canal e pode autenticar participantes, porém endpoints comprometidos continuam capazes de expor dados ou atacar recursos acessíveis pelo túnel.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Redes Privadas Virtuais — VPN.\n\nErro provável: suposição de proteção integral do endpoint\n\nDica: VPN protege o caminho; o dispositivo ainda precisa de atualização e controles próprios.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
+        "sourceSubtopicId": "1.2.2.3-redes-privadas-virtuais-vpn",
+        "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+        "mappedTopicoEditalId": "ciber_7",
+        "hashQuestao": "2aa21205888d2ae7",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "VPN"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "suposição de proteção integral do endpoint"
+          ],
+          "palavrasChave": [
+            "Redes Privadas Virtuais — VPN",
+            "Segurança de rede"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Redes Privadas Virtuais — VPN",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "a6298499db85edaaaed0c3ea82096a7ff336a3e21d8c06f8ea0f433778c3e852",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0081",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_7",
+      "subtopic_id": "ciber_7",
+      "assunto": "1.2.2.7-ataques-e-vulnerabilidades",
+      "subtopico": "1.2.2.7-principais-tipos-de-ataques-ciberneticos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Phishing explora engenharia social para induzir a vítima a fornecer dados ou executar ações, enquanto um ataque de negação de serviço distribuída busca comprometer a disponibilidade por meio de múltiplas origens.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Principais tipos de ataques cibernéticos.\n\nPhishing manipula confiança e aparência de legitimidade. DDoS coordena grande volume de tráfego ou requisições para esgotar recursos e impedir o atendimento normal.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais tipos de ataques cibernéticos.\n\nErro provável: confusão entre objetivos dos ataques\n\nDica: Phishing engana pessoas; DDoS sobrecarrega serviços.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
+        "sourceSubtopicId": "1.2.2.7-principais-tipos-de-ataques-ciberneticos",
+        "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
+        "mappedTopicoEditalId": "ciber_7",
+        "hashQuestao": "cc3d6e6f4d23f88d",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "tipos de ataques cibernéticos"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre objetivos dos ataques"
+          ],
+          "palavrasChave": [
+            "Principais tipos de ataques cibernéticos",
+            "Ataques e vulnerabilidades"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Principais tipos de ataques cibernéticos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "868ca0edc5da37d8ee24f3a8cf93f141329fc2bb0e159a34e41664abe9e5a180",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    }
+  ]
+}

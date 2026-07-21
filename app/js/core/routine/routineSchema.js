@@ -8,7 +8,16 @@ export const ROUTINE_SCHEMA_VERSION = 2;
 export const ACTIVITY_TYPES = Object.freeze([
   'teoria', 'questoes', 'revisao', 'revisao_fila', 'lei_seca', 'resumo',
   'flashcards', 'simulado', 'correcao_simulado', 'aula', 'personalizada',
+  /* vida / planejamento do edital */
+  'estudo', 'trabalho', 'descanso', 'lazer', 'compromisso',
 ]);
+
+/** Família do bloco para UI (estudo / trabalho / descanso) */
+export function activityFamily(type) {
+  if (type === 'trabalho' || type === 'compromisso') return 'trabalho';
+  if (type === 'descanso' || type === 'lazer') return 'descanso';
+  return 'estudo';
+}
 
 export const SCHEDULE_TYPES = Object.freeze(['horario_fixo', 'janela_flexivel', 'qualquer_horario']);
 export const ANCHOR_TYPES = Object.freeze(['horario', 'apos_evento', 'janela', 'manual']);
@@ -436,13 +445,19 @@ export function activityLabel(type) {
     correcao_simulado: 'Correção de simulado',
     aula: 'Aula',
     personalizada: 'Atividade personalizada',
+    estudo: 'Estudo (edital)',
+    trabalho: 'Trabalho',
+    descanso: 'Descanso',
+    lazer: 'Lazer',
+    compromisso: 'Compromisso',
   };
   return map[type] || 'Estudo';
 }
 
 export function moduleTargetForActivity(type) {
+  if (type === 'trabalho' || type === 'descanso' || type === 'lazer' || type === 'compromisso') return 'expedition';
   if (type === 'revisao' || type === 'revisao_fila') return 'review';
-  if (type === 'questoes' || type === 'simulado' || type === 'correcao_simulado') return 'map';
+  if (type === 'questoes' || type === 'simulado' || type === 'correcao_simulado' || type === 'estudo') return 'map';
   if (type === 'teoria' || type === 'lei_seca' || type === 'aula') return 'map';
   return 'home';
 }

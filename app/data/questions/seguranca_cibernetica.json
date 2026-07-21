@@ -4,8 +4,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
     "subtopico": "1.2.2.1-confidencialidade",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -16,30 +19,15 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Confidencialidade.\n\nControles de identidade, acesso, criptografia e classificação ajudam a preservar a confidencialidade. O objetivo é limitar conhecimento e uso a entidades autorizadas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Confidencialidade.\n\nErro provável: confusão com disponibilidade\n\nDica: Confidencialidade responde: quem pode ver?",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_1",
-    "subtopic_id": "ciber_1",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "1",
-    "format": "certo_errado",
-    "statement": "Confidencialidade busca impedir que informações sejam acessadas ou divulgadas a pessoas, processos ou sistemas não autorizados.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Confidencialidade.\n\nControles de identidade, acesso, criptografia e classificação ajudam a preservar a confidencialidade. O objetivo é limitar conhecimento e uso a entidades autorizadas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Confidencialidade.\n\nErro provável: confusão com disponibilidade\n\nDica: Confidencialidade responde: quem pode ver?",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.1-confidencialidade",
       "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
-      "mappedTopicoEditalId": "ciber_1",
+      "mappedTopicoEditalId": "ciber_6",
       "hashQuestao": "4c7f6e2f594ba7d2",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -79,7 +67,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -87,8 +77,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_1",
+    "subtopic_id": "ciber_1",
     "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
     "subtopico": "1.2.2.1-integridade",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -99,27 +92,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Integridade.\n\nMecanismos como hash, assinatura digital, controle de versões e permissões podem ajudar a detectar ou impedir mudanças indevidas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Integridade.\n\nErro provável: confusão com sigilo\n\nDica: Integridade responde: o dado permanece correto e não adulterado?",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_1",
-    "subtopic_id": "ciber_1",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "1",
-    "format": "certo_errado",
-    "statement": "Integridade da informação está relacionada à proteção contra alteração ou destruição não autorizada e à manutenção da exatidão dos dados.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Integridade.\n\nMecanismos como hash, assinatura digital, controle de versões e permissões podem ajudar a detectar ou impedir mudanças indevidas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Integridade.\n\nErro provável: confusão com sigilo\n\nDica: Integridade responde: o dado permanece correto e não adulterado?",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
       "sourceSubtopicId": "1.2.2.1-integridade",
       "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
       "mappedTopicoEditalId": "ciber_1",
@@ -162,7 +140,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.740Z"
     }
   },
   {
@@ -170,8 +150,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_1",
+    "subtopic_id": "ciber_1",
     "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
     "subtopico": "1.2.2.1-disponibilidade",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -182,27 +165,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Disponibilidade.\n\nRedundância, monitoramento, capacidade, manutenção, continuidade e recuperação contribuem para disponibilidade. Ela não significa acesso irrestrito por qualquer pessoa.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Disponibilidade.\n\nErro provável: interpretação como acesso público\n\nDica: Disponível para quem está autorizado, no momento necessário.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_1",
-    "subtopic_id": "ciber_1",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "1",
-    "format": "certo_errado",
-    "statement": "Disponibilidade significa que sistemas e informações devem estar acessíveis a usuários autorizados quando necessários.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Disponibilidade.\n\nRedundância, monitoramento, capacidade, manutenção, continuidade e recuperação contribuem para disponibilidade. Ela não significa acesso irrestrito por qualquer pessoa.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Disponibilidade.\n\nErro provável: interpretação como acesso público\n\nDica: Disponível para quem está autorizado, no momento necessário.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
       "sourceSubtopicId": "1.2.2.1-disponibilidade",
       "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
       "mappedTopicoEditalId": "ciber_1",
@@ -245,7 +213,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.740Z"
     }
   },
   {
@@ -253,8 +223,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_7",
+    "subtopic_id": "ciber_7",
     "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
     "subtopico": "1.2.2.2-avaliacao-de-riscos",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -265,30 +238,15 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Avaliação de riscos.\n\nO risco resulta da possibilidade de uma ameaça explorar vulnerabilidades e causar consequências. A análise apoia decisões de aceitar, reduzir, transferir ou evitar riscos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Avaliação de riscos.\n\nErro provável: análise isolada de apenas uma variável\n\nDica: Risco combina possibilidade e consequência no contexto do ativo.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_2",
-    "subtopic_id": "ciber_2",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "A avaliação de riscos considera elementos como ativos, ameaças, vulnerabilidades, probabilidade e impacto para priorizar tratamentos.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Avaliação de riscos.\n\nO risco resulta da possibilidade de uma ameaça explorar vulnerabilidades e causar consequências. A análise apoia decisões de aceitar, reduzir, transferir ou evitar riscos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Avaliação de riscos.\n\nErro provável: análise isolada de apenas uma variável\n\nDica: Risco combina possibilidade e consequência no contexto do ativo.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
       "sourceSubtopicId": "1.2.2.2-avaliacao-de-riscos",
       "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
-      "mappedTopicoEditalId": "ciber_2",
+      "mappedTopicoEditalId": "ciber_7",
       "hashQuestao": "d9750516a58e45a5",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -328,7 +286,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -336,8 +296,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_2",
+    "subtopic_id": "ciber_2",
     "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
     "subtopico": "1.2.2.2-politicas-de-seguranca",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -348,27 +311,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Políticas de segurança.\n\nPolíticas precisam ser comunicadas, implementadas, monitoradas, revisadas e apoiadas por procedimentos e controles. Um documento sem execução não produz proteção suficiente.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Políticas de segurança.\n\nErro provável: confusão entre documento e prática\n\nDica: Política orienta; processos, pessoas e tecnologia executam.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_2",
-    "subtopic_id": "ciber_2",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Uma política de segurança deve estabelecer diretrizes, responsabilidades e regras, mas sua existência documental não garante que os controles sejam efetivamente cumpridos.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Políticas de segurança.\n\nPolíticas precisam ser comunicadas, implementadas, monitoradas, revisadas e apoiadas por procedimentos e controles. Um documento sem execução não produz proteção suficiente.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Políticas de segurança.\n\nErro provável: confusão entre documento e prática\n\nDica: Política orienta; processos, pessoas e tecnologia executam.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_2.json",
       "sourceSubtopicId": "1.2.2.2-politicas-de-seguranca",
       "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
       "mappedTopicoEditalId": "ciber_2",
@@ -411,7 +359,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -419,8 +369,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_11",
+    "subtopic_id": "ciber_11",
     "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
     "subtopico": "1.2.2.2-conformidade-com-normas",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -431,30 +384,15 @@
     "respostaCorreta": "E",
     "explicacao": "O item está incorreto à luz do conteúdo de Conformidade com normas.\n\nNormas estruturam requisitos e boas práticas, mas nenhum conjunto de controles elimina todos os riscos. Mudanças tecnológicas, ameaças e falhas exigem monitoramento e melhoria contínuos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com normas.\n\nErro provável: interpretação de conformidade como risco zero\n\nDica: Conformidade reduz e organiza riscos; não cria segurança absoluta.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_2",
-    "subtopic_id": "ciber_2",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "A conformidade com uma norma de segurança elimina completamente a possibilidade de incidentes e dispensa a gestão contínua de riscos.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": false,
-    "explanation": "O item está incorreto à luz do conteúdo de Conformidade com normas.\n\nNormas estruturam requisitos e boas práticas, mas nenhum conjunto de controles elimina todos os riscos. Mudanças tecnológicas, ameaças e falhas exigem monitoramento e melhoria contínuos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com normas.\n\nErro provável: interpretação de conformidade como risco zero\n\nDica: Conformidade reduz e organiza riscos; não cria segurança absoluta.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_11.json",
       "sourceSubtopicId": "1.2.2.2-conformidade-com-normas",
       "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
-      "mappedTopicoEditalId": "ciber_2",
+      "mappedTopicoEditalId": "ciber_11",
       "hashQuestao": "3ec8f29f5abfb3ea",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -494,7 +432,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.740Z"
     }
   },
   {
@@ -502,8 +442,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_2",
+    "subtopic_id": "ciber_2",
     "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
     "subtopico": "1.2.2.2-conformidade-com-regulamentacoes",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -514,27 +457,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Conformidade com regulamentações.\n\nRegulamentos são obrigações externas emitidas por autoridades competentes, enquanto políticas internas são definidas pela própria organização. Ambos precisam ser mapeados e harmonizados.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com regulamentações.\n\nErro provável: equiparação entre regra interna e obrigação legal\n\nDica: Identifique a origem do requisito: lei, regulador, contrato, norma ou política interna.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_2",
-    "subtopic_id": "ciber_2",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Conformidade com regulamentações envolve atender requisitos legais e regulatórios aplicáveis, que podem ser diferentes das regras internas da organização.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Conformidade com regulamentações.\n\nRegulamentos são obrigações externas emitidas por autoridades competentes, enquanto políticas internas são definidas pela própria organização. Ambos precisam ser mapeados e harmonizados.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com regulamentações.\n\nErro provável: equiparação entre regra interna e obrigação legal\n\nDica: Identifique a origem do requisito: lei, regulador, contrato, norma ou política interna.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_2.json",
       "sourceSubtopicId": "1.2.2.2-conformidade-com-regulamentacoes",
       "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
       "mappedTopicoEditalId": "ciber_2",
@@ -577,7 +505,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -585,8 +515,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_3",
+    "subtopic_id": "ciber_3",
     "assunto": "1.2.2.3-seguranca-de-rede",
     "subtopico": "1.2.2.3-firewalls",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -597,27 +530,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Firewalls.\n\nFirewalls stateful mantêm informações sobre sessões e distinguem tráfego pertencente a conexões estabelecidas de tentativas inesperadas. Isso permite regras mais contextuais que filtros puramente estáticos.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Firewalls.\n\nErro provável: confusão entre filtro sem estado e inspeção de estado\n\nDica: Stateful acompanha a sessão; stateless avalia pacotes de forma mais isolada.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_3",
-    "subtopic_id": "ciber_3",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "Um firewall com inspeção de estado pode considerar o contexto e o estado de conexões ao decidir se um pacote deve ser permitido.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Firewalls.\n\nFirewalls stateful mantêm informações sobre sessões e distinguem tráfego pertencente a conexões estabelecidas de tentativas inesperadas. Isso permite regras mais contextuais que filtros puramente estáticos.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Firewalls.\n\nErro provável: confusão entre filtro sem estado e inspeção de estado\n\nDica: Stateful acompanha a sessão; stateless avalia pacotes de forma mais isolada.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
       "sourceSubtopicId": "1.2.2.3-firewalls",
       "sourceTopicId": "1.2.2.3-seguranca-de-rede",
       "mappedTopicoEditalId": "ciber_3",
@@ -660,7 +578,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -668,8 +588,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_3",
+    "subtopic_id": "ciber_3",
     "assunto": "1.2.2.3-seguranca-de-rede",
     "subtopico": "1.2.2.3-sistemas-de-deteccao-de-intrusao-ids",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -680,27 +603,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Sistemas de Detecção de Intrusão — IDS.\n\nSistemas de detecção de intrusão analisam eventos ou tráfego e notificam possíveis incidentes. O bloqueio ativo é característica mais diretamente associada ao IPS, embora integrações possam ampliar funções.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Detecção de Intrusão — IDS.\n\nErro provável: confusão entre detecção e prevenção\n\nDica: IDS detecta e alerta; IPS pode bloquear.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_3",
-    "subtopic_id": "ciber_3",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Um IDS é projetado principalmente para detectar atividades suspeitas e gerar alertas, não sendo obrigatório que bloqueie automaticamente o tráfego.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Sistemas de Detecção de Intrusão — IDS.\n\nSistemas de detecção de intrusão analisam eventos ou tráfego e notificam possíveis incidentes. O bloqueio ativo é característica mais diretamente associada ao IPS, embora integrações possam ampliar funções.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Detecção de Intrusão — IDS.\n\nErro provável: confusão entre detecção e prevenção\n\nDica: IDS detecta e alerta; IPS pode bloquear.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
       "sourceSubtopicId": "1.2.2.3-sistemas-de-deteccao-de-intrusao-ids",
       "sourceTopicId": "1.2.2.3-seguranca-de-rede",
       "mappedTopicoEditalId": "ciber_3",
@@ -743,7 +651,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -751,8 +661,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_3",
+    "subtopic_id": "ciber_3",
     "assunto": "1.2.2.3-seguranca-de-rede",
     "subtopico": "1.2.2.3-sistemas-de-prevencao-de-intrusao-ips",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -763,27 +676,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Sistemas de Prevenção de Intrusão — IPS.\n\nPor estar no caminho do tráfego, o IPS pode descartar pacotes, encerrar sessões ou aplicar outras respostas. Configuração inadequada pode gerar falsos positivos e impacto operacional.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Prevenção de Intrusão — IPS.\n\nErro provável: redução do IPS a ferramenta passiva\n\nDica: IPS previne ativamente, mas precisa de ajuste para não bloquear tráfego legítimo.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_3",
-    "subtopic_id": "ciber_3",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Um IPS pode operar em linha com o tráfego e bloquear ou interromper comunicações consideradas maliciosas conforme suas regras.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Sistemas de Prevenção de Intrusão — IPS.\n\nPor estar no caminho do tráfego, o IPS pode descartar pacotes, encerrar sessões ou aplicar outras respostas. Configuração inadequada pode gerar falsos positivos e impacto operacional.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Sistemas de Prevenção de Intrusão — IPS.\n\nErro provável: redução do IPS a ferramenta passiva\n\nDica: IPS previne ativamente, mas precisa de ajuste para não bloquear tráfego legítimo.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
       "sourceSubtopicId": "1.2.2.3-sistemas-de-prevencao-de-intrusao-ips",
       "sourceTopicId": "1.2.2.3-seguranca-de-rede",
       "mappedTopicoEditalId": "ciber_3",
@@ -826,7 +724,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -834,8 +734,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_7",
+    "subtopic_id": "ciber_7",
     "assunto": "1.2.2.3-seguranca-de-rede",
     "subtopico": "1.2.2.3-redes-privadas-virtuais-vpn",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -846,30 +749,15 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Redes Privadas Virtuais — VPN.\n\nA VPN protege o canal e pode autenticar participantes, porém endpoints comprometidos continuam capazes de expor dados ou atacar recursos acessíveis pelo túnel.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Redes Privadas Virtuais — VPN.\n\nErro provável: suposição de proteção integral do endpoint\n\nDica: VPN protege o caminho; o dispositivo ainda precisa de atualização e controles próprios.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_3",
-    "subtopic_id": "ciber_3",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "Uma VPN pode criar um túnel criptografado sobre uma rede não confiável, mas não corrige automaticamente vulnerabilidades existentes nos dispositivos conectados.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Redes Privadas Virtuais — VPN.\n\nA VPN protege o canal e pode autenticar participantes, porém endpoints comprometidos continuam capazes de expor dados ou atacar recursos acessíveis pelo túnel.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Redes Privadas Virtuais — VPN.\n\nErro provável: suposição de proteção integral do endpoint\n\nDica: VPN protege o caminho; o dispositivo ainda precisa de atualização e controles próprios.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
       "sourceSubtopicId": "1.2.2.3-redes-privadas-virtuais-vpn",
       "sourceTopicId": "1.2.2.3-seguranca-de-rede",
-      "mappedTopicoEditalId": "ciber_3",
+      "mappedTopicoEditalId": "ciber_7",
       "hashQuestao": "2aa21205888d2ae7",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -909,7 +797,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -917,8 +807,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_3",
+    "subtopic_id": "ciber_3",
     "assunto": "1.2.2.3-seguranca-de-rede",
     "subtopico": "1.2.2.3-segmentacao-de-rede",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -929,27 +822,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Segmentação de rede.\n\nSegmentar reduz comunicação desnecessária entre grupos de ativos e permite aplicar controles conforme criticidade. A eficácia depende de regras, monitoramento e arquitetura adequados.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Segmentação de rede.\n\nErro provável: confiança em rede interna totalmente confiável\n\nDica: Separe ambientes e permita apenas fluxos necessários.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_3",
-    "subtopic_id": "ciber_3",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "A segmentação de rede pode limitar a movimentação lateral de um atacante ao separar sistemas em zonas com regras de comunicação específicas.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Segmentação de rede.\n\nSegmentar reduz comunicação desnecessária entre grupos de ativos e permite aplicar controles conforme criticidade. A eficácia depende de regras, monitoramento e arquitetura adequados.\n\nFundamento: Conteúdo programático 1.2.2.3 — Segurança de rede: Segmentação de rede.\n\nErro provável: confiança em rede interna totalmente confiável\n\nDica: Separe ambientes e permita apenas fluxos necessários.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_3.json",
       "sourceSubtopicId": "1.2.2.3-segmentacao-de-rede",
       "sourceTopicId": "1.2.2.3-seguranca-de-rede",
       "mappedTopicoEditalId": "ciber_3",
@@ -992,7 +870,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -1000,8 +880,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_4",
+    "subtopic_id": "ciber_4",
     "assunto": "1.2.2.4-criptografia",
     "subtopico": "1.2.2.4-tecnicas-de-criptografia",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1012,27 +895,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Técnicas de criptografia.\n\nCriptografia simétrica é eficiente para grandes volumes, mas exige compartilhamento seguro da chave. A assimétrica usa chave pública e privada e apoia troca de chaves e assinaturas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Técnicas de criptografia.\n\nErro provável: inversão entre criptografia simétrica e assimétrica\n\nDica: Simétrica: uma chave compartilhada; assimétrica: par pública e privada.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_4",
-    "subtopic_id": "ciber_4",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Na criptografia simétrica, a mesma chave secreta é utilizada para cifrar e decifrar os dados; na assimétrica, utiliza-se um par de chaves relacionado matematicamente.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Técnicas de criptografia.\n\nCriptografia simétrica é eficiente para grandes volumes, mas exige compartilhamento seguro da chave. A assimétrica usa chave pública e privada e apoia troca de chaves e assinaturas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Técnicas de criptografia.\n\nErro provável: inversão entre criptografia simétrica e assimétrica\n\nDica: Simétrica: uma chave compartilhada; assimétrica: par pública e privada.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_4.json",
       "sourceSubtopicId": "1.2.2.4-tecnicas-de-criptografia",
       "sourceTopicId": "1.2.2.4-criptografia",
       "mappedTopicoEditalId": "ciber_4",
@@ -1075,7 +943,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -1083,8 +953,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_4",
+    "subtopic_id": "ciber_4",
     "assunto": "1.2.2.4-criptografia",
     "subtopico": "1.2.2.4-principais-ferramentas-de-criptografia",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1095,27 +968,12 @@
     "respostaCorreta": "E",
     "explicacao": "O item está incorreto à luz do conteúdo de Principais ferramentas de criptografia.\n\nHash é projetado como função unidirecional e produz um resumo de tamanho definido. Não existe operação normal de decifragem; ataques tentam adivinhar entradas ou explorar fraquezas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Principais ferramentas de criptografia.\n\nErro provável: confusão entre hash e cifra\n\nDica: Cifra é reversível com chave; hash é resumo unidirecional.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_4",
-    "subtopic_id": "ciber_4",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Uma função hash criptográfica é uma forma de criptografia reversível: conhecendo-se o algoritmo, sempre é possível recuperar o texto original a partir do resumo.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": false,
-    "explanation": "O item está incorreto à luz do conteúdo de Principais ferramentas de criptografia.\n\nHash é projetado como função unidirecional e produz um resumo de tamanho definido. Não existe operação normal de decifragem; ataques tentam adivinhar entradas ou explorar fraquezas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Principais ferramentas de criptografia.\n\nErro provável: confusão entre hash e cifra\n\nDica: Cifra é reversível com chave; hash é resumo unidirecional.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_4.json",
       "sourceSubtopicId": "1.2.2.4-principais-ferramentas-de-criptografia",
       "sourceTopicId": "1.2.2.4-criptografia",
       "mappedTopicoEditalId": "ciber_4",
@@ -1158,7 +1016,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -1166,8 +1026,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_5",
+    "subtopic_id": "ciber_5",
     "assunto": "1.2.2.5-seguranca-em-nuvem",
     "subtopico": "1.2.2.5-praticas-de-seguranca-para-ambientes-de-nuvem",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1178,27 +1041,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Práticas de segurança para ambientes de nuvem.\n\nO provedor protege componentes sob seu controle, enquanto o cliente permanece responsável por aspectos como identidades, configurações, dados e aplicações, em grau variável entre IaaS, PaaS e SaaS.\n\nFundamento: Conteúdo programático 1.2.2.5 — Segurança em nuvem: Práticas de segurança para ambientes de nuvem.\n\nErro provável: transferência integral de responsabilidade ao provedor\n\nDica: Nuvem não terceiriza toda a segurança; entenda a divisão de responsabilidades.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_5",
-    "subtopic_id": "ciber_5",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "Em segurança em nuvem, o modelo de responsabilidade compartilhada distribui obrigações entre o provedor e o cliente, variando conforme o serviço contratado.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Práticas de segurança para ambientes de nuvem.\n\nO provedor protege componentes sob seu controle, enquanto o cliente permanece responsável por aspectos como identidades, configurações, dados e aplicações, em grau variável entre IaaS, PaaS e SaaS.\n\nFundamento: Conteúdo programático 1.2.2.5 — Segurança em nuvem: Práticas de segurança para ambientes de nuvem.\n\nErro provável: transferência integral de responsabilidade ao provedor\n\nDica: Nuvem não terceiriza toda a segurança; entenda a divisão de responsabilidades.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_5.json",
       "sourceSubtopicId": "1.2.2.5-praticas-de-seguranca-para-ambientes-de-nuvem",
       "sourceTopicId": "1.2.2.5-seguranca-em-nuvem",
       "mappedTopicoEditalId": "ciber_5",
@@ -1241,7 +1089,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.741Z"
     }
   },
   {
@@ -1249,8 +1099,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-autenticacao",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1261,27 +1114,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Autenticação.\n\nCredenciais, certificados, tokens e fatores biométricos podem ser usados para demonstrar identidade. Depois da autenticação, outros mecanismos decidem o que a identidade pode acessar.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autenticação.\n\nErro provável: confusão entre identidade e permissão\n\nDica: Autenticação responde: quem é você?",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "1",
-    "format": "certo_errado",
-    "statement": "Autenticação é o processo de verificar a identidade declarada por um usuário, serviço ou dispositivo.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Autenticação.\n\nCredenciais, certificados, tokens e fatores biométricos podem ser usados para demonstrar identidade. Depois da autenticação, outros mecanismos decidem o que a identidade pode acessar.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autenticação.\n\nErro provável: confusão entre identidade e permissão\n\nDica: Autenticação responde: quem é você?",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.6-autenticacao",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
       "mappedTopicoEditalId": "ciber_6",
@@ -1324,7 +1162,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1332,8 +1172,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-autorizacao",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1344,27 +1187,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Autorização.\n\nApós reconhecer a identidade, o sistema aplica papéis, atributos, políticas ou listas de controle para permitir ou negar ações específicas.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autorização.\n\nErro provável: confusão entre autenticar e autorizar\n\nDica: Autorização responde: o que você pode fazer?",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "1",
-    "format": "certo_errado",
-    "statement": "Autorização determina quais recursos e operações uma identidade autenticada pode utilizar.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Autorização.\n\nApós reconhecer a identidade, o sistema aplica papéis, atributos, políticas ou listas de controle para permitir ou negar ações específicas.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autorização.\n\nErro provável: confusão entre autenticar e autorizar\n\nDica: Autorização responde: o que você pode fazer?",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.6-autorizacao",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
       "mappedTopicoEditalId": "ciber_6",
@@ -1407,7 +1235,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1415,8 +1245,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-single-sign-on-sso",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1427,27 +1260,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Single Sign-On — SSO.\n\nSSO reduz a repetição de credenciais e centraliza a autenticação. Como uma conta pode abrir diversos serviços, comprometimentos no ponto central podem ter impacto amplo.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Single Sign-On — SSO.\n\nErro provável: interpretação de SSO como senha diferente em cada sistema\n\nDica: SSO simplifica acesso, mas concentra confiança no provedor de identidade.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Single Sign-On permite que uma autenticação seja utilizada para acessar múltiplos sistemas integrados, o que aumenta a importância da proteção do provedor de identidade.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Single Sign-On — SSO.\n\nSSO reduz a repetição de credenciais e centraliza a autenticação. Como uma conta pode abrir diversos serviços, comprometimentos no ponto central podem ter impacto amplo.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Single Sign-On — SSO.\n\nErro provável: interpretação de SSO como senha diferente em cada sistema\n\nDica: SSO simplifica acesso, mas concentra confiança no provedor de identidade.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.6-single-sign-on-sso",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
       "mappedTopicoEditalId": "ciber_6",
@@ -1490,7 +1308,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1498,8 +1318,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-security-assertion-markup-language-saml",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1510,27 +1333,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Security Assertion Markup Language — SAML.\n\nEm cenários comuns, um provedor de identidade emite uma assertion SAML para um provedor de serviço. O padrão é amplamente usado em SSO corporativo baseado em navegador.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Security Assertion Markup Language — SAML.\n\nErro provável: confusão com protocolo de acesso a banco de dados\n\nDica: SAML associa-se a assertions XML e federação de identidade.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "SAML utiliza mensagens estruturadas em XML para transportar declarações de autenticação e atributos entre participantes de uma federação de identidade.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Security Assertion Markup Language — SAML.\n\nEm cenários comuns, um provedor de identidade emite uma assertion SAML para um provedor de serviço. O padrão é amplamente usado em SSO corporativo baseado em navegador.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Security Assertion Markup Language — SAML.\n\nErro provável: confusão com protocolo de acesso a banco de dados\n\nDica: SAML associa-se a assertions XML e federação de identidade.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.6-security-assertion-markup-language-saml",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
       "mappedTopicoEditalId": "ciber_6",
@@ -1573,7 +1381,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1581,8 +1391,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_10",
+    "subtopic_id": "ciber_10",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-oauth-2",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1593,30 +1406,15 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de OAuth 2.\n\nOAuth 2 permite que um cliente obtenha acesso limitado a recursos em nome do titular. Para autenticação e identidade, costuma-se utilizar uma camada específica, como OpenID Connect.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OAuth 2.\n\nErro provável: uso de OAuth como sinônimo automático de login\n\nDica: OAuth autoriza acesso; OIDC acrescenta identidade.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "OAuth 2 é um framework de autorização delegada e, isoladamente, não define um protocolo completo de autenticação do usuário.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de OAuth 2.\n\nOAuth 2 permite que um cliente obtenha acesso limitado a recursos em nome do titular. Para autenticação e identidade, costuma-se utilizar uma camada específica, como OpenID Connect.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OAuth 2.\n\nErro provável: uso de OAuth como sinônimo automático de login\n\nDica: OAuth autoriza acesso; OIDC acrescenta identidade.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_10.json",
       "sourceSubtopicId": "1.2.2.6-oauth-2",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
-      "mappedTopicoEditalId": "ciber_6",
+      "mappedTopicoEditalId": "ciber_10",
       "hashQuestao": "2d00d22219001f28",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -1656,7 +1454,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.740Z"
     }
   },
   {
@@ -1664,8 +1464,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_6",
+    "subtopic_id": "ciber_6",
     "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
     "subtopico": "1.2.2.6-openid-connect",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1676,27 +1479,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de OpenID Connect.\n\nOIDC padroniza autenticação sobre fluxos do OAuth 2. O ID Token contém claims sobre o usuário e o evento de autenticação, devendo ser validado pelo cliente.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OpenID Connect.\n\nErro provável: confusão entre access token e ID token\n\nDica: Access token acessa recurso; ID token informa identidade ao cliente.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_6",
-    "subtopic_id": "ciber_6",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "OpenID Connect adiciona uma camada de identidade sobre o OAuth 2 e utiliza, entre outros elementos, um ID Token para transmitir informações sobre a autenticação.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de OpenID Connect.\n\nOIDC padroniza autenticação sobre fluxos do OAuth 2. O ID Token contém claims sobre o usuário e o evento de autenticação, devendo ser validado pelo cliente.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OpenID Connect.\n\nErro provável: confusão entre access token e ID token\n\nDica: Access token acessa recurso; ID token informa identidade ao cliente.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
       "sourceSubtopicId": "1.2.2.6-openid-connect",
       "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
       "mappedTopicoEditalId": "ciber_6",
@@ -1739,7 +1527,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1747,8 +1537,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_7",
+    "subtopic_id": "ciber_7",
     "assunto": "1.2.2.7-ataques-e-vulnerabilidades",
     "subtopico": "1.2.2.7-principais-tipos-de-ataques-ciberneticos",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1759,27 +1552,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Principais tipos de ataques cibernéticos.\n\nPhishing manipula confiança e aparência de legitimidade. DDoS coordena grande volume de tráfego ou requisições para esgotar recursos e impedir o atendimento normal.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais tipos de ataques cibernéticos.\n\nErro provável: confusão entre objetivos dos ataques\n\nDica: Phishing engana pessoas; DDoS sobrecarrega serviços.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_7",
-    "subtopic_id": "ciber_7",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Phishing explora engenharia social para induzir a vítima a fornecer dados ou executar ações, enquanto um ataque de negação de serviço distribuída busca comprometer a disponibilidade por meio de múltiplas origens.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Principais tipos de ataques cibernéticos.\n\nPhishing manipula confiança e aparência de legitimidade. DDoS coordena grande volume de tráfego ou requisições para esgotar recursos e impedir o atendimento normal.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais tipos de ataques cibernéticos.\n\nErro provável: confusão entre objetivos dos ataques\n\nDica: Phishing engana pessoas; DDoS sobrecarrega serviços.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_7.json",
       "sourceSubtopicId": "1.2.2.7-principais-tipos-de-ataques-ciberneticos",
       "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
       "mappedTopicoEditalId": "ciber_7",
@@ -1822,7 +1600,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1830,8 +1610,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_9",
+    "subtopic_id": "ciber_9",
     "assunto": "1.2.2.7-ataques-e-vulnerabilidades",
     "subtopico": "1.2.2.7-principais-vulnerabilidades",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1842,30 +1625,15 @@
     "respostaCorreta": "E",
     "explicacao": "O item está incorreto à luz do conteúdo de Principais vulnerabilidades.\n\nVulnerabilidade é uma fraqueza que pode ser explorada. Ameaça é uma causa ou agente potencial de incidente. Uma ameaça pode explorar uma vulnerabilidade e produzir impacto.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais vulnerabilidades.\n\nErro provável: equiparação entre ameaça e fraqueza\n\nDica: Ameaça explora; vulnerabilidade permite; impacto é a consequência.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_7",
-    "subtopic_id": "ciber_7",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "2",
-    "format": "certo_errado",
-    "statement": "Vulnerabilidade e ameaça são termos equivalentes: ambos designam necessariamente uma falha existente em um sistema.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": false,
-    "explanation": "O item está incorreto à luz do conteúdo de Principais vulnerabilidades.\n\nVulnerabilidade é uma fraqueza que pode ser explorada. Ameaça é uma causa ou agente potencial de incidente. Uma ameaça pode explorar uma vulnerabilidade e produzir impacto.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais vulnerabilidades.\n\nErro provável: equiparação entre ameaça e fraqueza\n\nDica: Ameaça explora; vulnerabilidade permite; impacto é a consequência.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_9.json",
       "sourceSubtopicId": "1.2.2.7-principais-vulnerabilidades",
       "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
-      "mappedTopicoEditalId": "ciber_7",
+      "mappedTopicoEditalId": "ciber_9",
       "hashQuestao": "f7056b2f74a22202",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -1905,7 +1673,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.743Z"
     }
   },
   {
@@ -1913,8 +1683,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_8",
+    "subtopic_id": "ciber_8",
     "assunto": "1.2.2.8-seguranca-de-aplicacoes",
     "subtopico": "1.2.2.8-controles-de-seguranca-para-aplicacoes-web",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -1925,27 +1698,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Controles de segurança para aplicações web.\n\nControles do lado cliente podem ser alterados ou contornados. O servidor deve validar, normalizar e autorizar entradas independentemente do comportamento da interface.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para aplicações web.\n\nErro provável: confiança exclusiva em validação client-side\n\nDica: Valide no cliente por usabilidade e no servidor por segurança.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_8",
-    "subtopic_id": "ciber_8",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "A validação realizada apenas no navegador é insuficiente como controle de segurança de uma aplicação web, pois requisições podem ser enviadas diretamente ao servidor.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Controles de segurança para aplicações web.\n\nControles do lado cliente podem ser alterados ou contornados. O servidor deve validar, normalizar e autorizar entradas independentemente do comportamento da interface.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para aplicações web.\n\nErro provável: confiança exclusiva em validação client-side\n\nDica: Valide no cliente por usabilidade e no servidor por segurança.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_8.json",
       "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-aplicacoes-web",
       "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
       "mappedTopicoEditalId": "ciber_8",
@@ -1988,7 +1746,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   },
   {
@@ -1996,8 +1756,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_1",
+    "subtopic_id": "ciber_1",
     "assunto": "1.2.2.8-seguranca-de-aplicacoes",
     "subtopico": "1.2.2.8-testes-de-seguranca-para-aplicacoes-web",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -2008,30 +1771,15 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Testes de segurança para aplicações web.\n\nPentests avaliam determinados cenários, escopos e momentos. Uma estratégia madura combina atividades preventivas e detectivas durante todo o ciclo de desenvolvimento.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Testes de segurança para aplicações web.\n\nErro provável: dependência exclusiva de teste final\n\nDica: Segurança deve acompanhar todo o ciclo, não apenas o pentest.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_8",
-    "subtopic_id": "ciber_8",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "Testes de penetração podem identificar falhas em aplicações web, mas não substituem revisão de código, análise automatizada, modelagem de ameaças e práticas seguras de desenvolvimento.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Testes de segurança para aplicações web.\n\nPentests avaliam determinados cenários, escopos e momentos. Uma estratégia madura combina atividades preventivas e detectivas durante todo o ciclo de desenvolvimento.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Testes de segurança para aplicações web.\n\nErro provável: dependência exclusiva de teste final\n\nDica: Segurança deve acompanhar todo o ciclo, não apenas o pentest.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_1.json",
       "sourceSubtopicId": "1.2.2.8-testes-de-seguranca-para-aplicacoes-web",
       "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
-      "mappedTopicoEditalId": "ciber_8",
+      "mappedTopicoEditalId": "ciber_1",
       "hashQuestao": "008ea8fecd9c43ba",
       "revisado": false,
       "statusImportacao": "revisao",
@@ -2071,7 +1819,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.740Z"
     }
   },
   {
@@ -2079,8 +1829,11 @@
     "concursoId": "pc_al_2026",
     "cargoId": "agente_policia",
     "disciplinaId": "seguranca_cibernetica",
+    "topicoEditalId": "ciber_8",
+    "subtopic_id": "ciber_8",
     "assunto": "1.2.2.8-seguranca-de-aplicacoes",
     "subtopico": "1.2.2.8-controles-de-seguranca-para-web-services",
+    "microtopico": "",
     "banca": "CEBRASPE",
     "ano": null,
     "fonteProva": "PC AL — conteúdo programático organizado",
@@ -2091,27 +1844,12 @@
     "respostaCorreta": "C",
     "explicacao": "O item está correto à luz do conteúdo de Controles de segurança para web services.\n\nUma identidade autenticada pode não ter permissão para todas as ações ou objetos. A API deve verificar autorização em cada requisição relevante, além de proteger o transporte.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para web services.\n\nErro provável: confusão entre autenticação e autorização\n\nDica: Em cada chamada, confirme identidade, permissão e escopo do recurso.",
     "status": "revisao",
-    "situacao": "revisao",
     "versao": 1,
-    "topicoEditalId": "ciber_8",
-    "subtopic_id": "ciber_8",
-    "fonte": "Ciclos 002–006 · Texto colado(6).txt",
     "dificuldade": "3",
-    "format": "certo_errado",
-    "statement": "Em web services, autenticação e criptografia do canal não eliminam a necessidade de autorização por operação e por recurso.",
-    "options": [
-      "Certo",
-      "Errado"
-    ],
-    "correct_answer": true,
-    "explanation": "O item está correto à luz do conteúdo de Controles de segurança para web services.\n\nUma identidade autenticada pode não ter permissão para todas as ações ou objetos. A API deve verificar autorização em cada requisição relevante, além de proteger o transporte.\n\nFundamento: Conteúdo programático 1.2.2.8 — Segurança de aplicações: Controles de segurança para web services.\n\nErro provável: confusão entre autenticação e autorização\n\nDica: Em cada chamada, confirme identidade, permissão e escopo do recurso.",
-    "is_user_created": false,
-    "created_at": "2026-07-16T19:49:36Z",
-    "createdAt": "2026-07-16T19:49:36Z",
-    "updatedAt": "2026-07-16T19:49:36Z",
+    "pegadinhaDaBanca": "",
     "metadata": {
       "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
-      "origemImport": "pcal-ciclos-002-a-006",
+      "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_8.json",
       "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-web-services",
       "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
       "mappedTopicoEditalId": "ciber_8",
@@ -2154,7 +1892,9 @@
         "agente",
         "escrivao"
       ],
-      "noXpOnImport": true
+      "noXpOnImport": true,
+      "disciplinaCurta": "ciber",
+      "organizadoEm": "2026-07-21T02:11:29.742Z"
     }
   }
 ]

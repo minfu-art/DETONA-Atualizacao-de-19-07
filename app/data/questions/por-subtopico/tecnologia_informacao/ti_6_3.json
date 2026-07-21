@@ -1,0 +1,192 @@
+{
+  "topicoEditalId": "ti_6_3",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "PCAL-TI-10-S02-021",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_3",
+      "subtopic_id": "ti_6_3",
+      "assunto": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "subtopico": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "microtopico": "",
+      "banca": "FCC",
+      "ano": 2016,
+      "fonteProva": "FCC / TRF3 – 2016",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um Analista Judiciário da Área Administrativa do TRF3 deseja solicitar ao\n    departamento de Tecnologia da Informação − TI o desenvolvimento de um sistema de\n    informação para fazer com que cada vez que uma resma de 500 folhas de papel sulfite seja\n    retirada do estoque, um registro apareça, automaticamente, nos computadores da empresa\n    fabricante e fornecedora de papel sulfite, de forma que ela possa fabricar a quantidade\n    necessária e enviar diretamente ao TRF3, eliminando distribuidores e reduzindo custos de\n    armazenamento. Neste caso, o sistema de informação que o Analista deseja solicitar é um:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Customer Relationship Management − CRM.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "Supply Chain Management − SCM.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "Enterprise Resource Planning − ERP.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "Knowledge Management System − KMS.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "Transaction Support System − TSS.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Nota-se claramente um relacionamento entre cliente e empresa responsável por fabricar e fornecer\no papel sulfite. Logo, trata-se do SCM, que é uma ferramenta que, usando a Tecnologia da\nInformação (TI), possibilita à organização gerenciar a cadeia de suprimentos com maior eficácia e\neficiência, cobrindo todo o movimento e armazenamento de matéria prima, trabalho em processo\nde inventário, e produtos acabados do ponto de origem até o ponto de consumo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_6_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.766Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_6_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S02-029",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_3",
+      "subtopic_id": "ti_6_3",
+      "assunto": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "subtopico": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CESGRANRIO",
+      "ano": 2012,
+      "fonteProva": "CESGRANRIO / LIQUIGÁS – 2012",
+      "tipo": "multipla_escolha",
+      "enunciado": "O proprietário de uma pequena distribuidora de material\n    de limpeza comprou um sistema para registrar os pedidos e os pagamentos de seus clientes.\n    Diariamente, o software gera os boletos de cobrança e, mensalmente, um relatório de\n    movimento de caixa. Considerando o nível de complexidade e a forma de utilização, esse\n    sistema deve ser classificado como um sistema:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "especialista",
+          "comentario": "Errado. Um sistema especialista é projetado para emular o julgamento de um humano em uma área de especialização específica e não se concentra em transações rotineiras como pedidos e pagamentos;"
+        },
+        {
+          "letra": "B",
+          "texto": "de informações executivas (SIE)",
+          "comentario": "Errado. Sistemas de Informações Executivas (SIE) são usados principalmente por executivos para obter visões gerais e estratégicas da organização, não detalhando operações cotidianas como pedidos e pagamentos;"
+        },
+        {
+          "letra": "C",
+          "texto": "de nível de conhecimento",
+          "comentario": "Errado. Sistemas de nível de conhecimento ajudam a organização a gerenciar e disseminar o conhecimento acumulado, o que não é o foco principal do sistema descrito que lida com transações diárias e relatórios financeiros;"
+        },
+        {
+          "letra": "D",
+          "texto": "de nível estratégico",
+          "comentario": "Errado. Sistemas de nível estratégico são utilizados para tomar decisões de longo prazo e ajudar na formulação de estratégias organizacionais, enquanto o sistema descrito lida com operações rotineiras e transacionais;"
+        },
+        {
+          "letra": "E",
+          "texto": "de processamento de transações (SPT)",
+          "comentario": "Correto. Sistemas de Processamento de Transações (SPT) são projetados para gerenciar e registrar transações diárias de uma organização. No caso descrito, o software que registra pedidos e pagamentos e gera boletos e relatórios mensais de caixa se enquadra perfeitamente nesta categoria, pois trata das transações diárias de forma eficiente e sistemática."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado. Um sistema especialista é projetado para emular o julgamento de um humano em uma\nárea de especialização específica e não se concentra em transações rotineiras como pedidos e\npagamentos;\n\n(b) Errado. Sistemas de Informações Executivas (SIE) são usados principalmente por executivos\npara obter visões gerais e estratégicas da organização, não detalhando operações cotidianas como\npedidos e pagamentos;\n\n(c) Errado. Sistemas de nível de conhecimento ajudam a organização a gerenciar e disseminar o\nconhecimento acumulado, o que não é o foco principal do sistema descrito que lida com transações\ndiárias e relatórios financeiros;\n\n(d) Errado. Sistemas de nível estratégico são utilizados para tomar decisões de longo prazo e ajudar\nna formulação de estratégias organizacionais, enquanto o sistema descrito lida com operações\nrotineiras e transacionais;\n\n(e) Correto. Sistemas de Processamento de Transações (SPT) são projetados para gerenciar e\nregistrar transações diárias de uma organização. No caso descrito, o software que registra pedidos\ne pagamentos e gera boletos e relatórios mensais de caixa se enquadra perfeitamente nesta\ncategoria, pois trata das transações diárias de forma eficiente e sistemática.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_6_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.766Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_6_3.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0048",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_3",
+      "subtopic_id": "ti_6_3",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-integridade-de-banco-de-dados",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Uma chave primária deve identificar unicamente cada linha da tabela e não pode assumir valor nulo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Integridade de banco de dados.\n\nA chave primária impõe unicidade e obrigatoriedade ao identificador da linha. Uma tabela possui uma restrição de chave primária, que pode envolver uma ou mais colunas.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Integridade de banco de dados.\n\nErro provável: confusão entre chave primária e índice comum\n\nDica: Chave primária: única e não nula.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_3.json",
+        "sourceSubtopicId": "1.2.1.6-integridade-de-banco-de-dados",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_3",
+        "hashQuestao": "9f04273aaf6a566c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "integridade de banco de dados"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre chave primária e índice comum"
+          ],
+          "palavrasChave": [
+            "Integridade de banco de dados",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Integridade de banco de dados",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e7f7dbcc626f90b4dbb1e0a65171869e1a5b2be6a466005610a948ce966e417d",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    }
+  ]
+}

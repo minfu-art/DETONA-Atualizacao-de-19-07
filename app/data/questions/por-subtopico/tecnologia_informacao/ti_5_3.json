@@ -1,0 +1,620 @@
+{
+  "topicoEditalId": "ti_5_3",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 13,
+  "questions": [
+    {
+      "id": "PCAL-TI-07-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Os antivírus, além de eliminar vírus do computador, têm a função\n   de eliminar programas espiões, usando o mesmo método de pesquisa, por padrão.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Os antivírus podem detectar e remover diversos tipos de malwares, incluindo spywares, mas sua eficácia\ndepende das assinaturas e da heurística do software. No entanto, alguns antispywares são específicos\npara detectar ameaças voltadas à espionagem.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Um antivírus trabalha por meio da identificação de vírus\n   conhecidos por ele dentro de programas que estejam servindo de hospedeiros no computador,\n   por isso é importante que se mantenha o antivírus atualizado para que não se perca a eficácia\n   esperada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os antivírus detectam ameaças comparando arquivos com uma base de assinaturas de vírus conhecidos.\nComo novas ameaças surgem constantemente, é essencial manter o antivírus atualizado para garantir a\ndetecção e remoção eficaz de malwares recentes.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / PC-PE – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Antivírus são capazes de detectar, prevenir e até mesmo remover\n   malwares, garantindo proteção contra códigos maliciosos. Para manter o bom funcionamento\n   de um software de antivírus em um contexto de surgimento de novos malwares, recomenda-se",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "acompanhar o site do fabricante do software, onde serão fornecidas informações acerca de novos malwares.",
+          "comentario": "Errado. Acompanhar o site do fabricante pode fornecer informações úteis, mas não substitui a atualização automática da base de dados do antivírus;"
+        },
+        {
+          "letra": "B",
+          "texto": "desativar a opção de busca por malwares em tempo real.",
+          "comentario": "Errado. Desativar a proteção em tempo real aumenta a vulnerabilidade do sistema, pois novas ameaças podem se infiltrar antes de uma varredura manual ser feita;"
+        },
+        {
+          "letra": "C",
+          "texto": "manter atualização contínua da solução do software de antivírus.",
+          "comentario": "Correto. Manter o antivírus atualizado garante que ele reconheça as assinaturas de novos malwares e use técnicas heurísticas mais eficientes para detectar ameaças emergentes;"
+        },
+        {
+          "letra": "D",
+          "texto": "substituir a solução de antivírus por uma solução de firewall pessoal.",
+          "comentario": "Errado. O firewall pessoal controla o tráfego de rede, mas não substitui um antivírus, pois não detecta nem remove malwares presentes no sistema;"
+        },
+        {
+          "letra": "E",
+          "texto": "configurar manualmente a verificação de cada novo arquivo no computador",
+          "comentario": "Errado. A configuração manual de cada verificação é impraticável e não garante proteção contínua contra ameaças que podem se espalhar rapidamente."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Acompanhar o site do fabricante pode fornecer informações úteis, mas não substitui a\natualização automática da base de dados do antivírus;\n\n(b) Errado. Desativar a proteção em tempo real aumenta a vulnerabilidade do sistema, pois novas\nameaças podem se infiltrar antes de uma varredura manual ser feita;\n\n(c) Correto. Manter o antivírus atualizado garante que ele reconheça as assinaturas de novos malwares e\nuse técnicas heurísticas mais eficientes para detectar ameaças emergentes;\n\n(d) Errado. O firewall pessoal controla o tráfego de rede, mas não substitui um antivírus, pois não detecta\nnem remove malwares presentes no sistema;\n\n(e) Errado. A configuração manual de cada verificação é impraticável e não garante proteção contínua\ncontra ameaças que podem se espalhar rapidamente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O filtro antispam permite\n   proteger os emails por meio de criptografia nas mensagens; esse filtro protege os dados dos\n   usuários contra acessos indevidos tanto aos emails que trafegam pela Internet quanto aos\n   emails já gravados em computador.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O filtro antispam identifica e bloqueia e-mails indesejados, como mensagens de phishing e propagandas.\nNo entanto, ele não realiza criptografia das mensagens. A proteção por criptografia é feita por protocolos\ncomo PGP e S/MIME, que garantem a confidencialidade dos e-mails.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE / Prefeitura de São Cristóvão - SE – 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "O software que monitora uma rede de\n   computadores e bloqueia ou permite a liberação do tráfego de dados a partir de regras\n   predefinidas é denominado",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "antispyware.",
+          "comentario": "Errado. O antispyware é voltado para a detecção e remoção de spyware, que são programas espiões que coletam informações do usuário sem consentimento;"
+        },
+        {
+          "letra": "B",
+          "texto": "firewall.",
+          "comentario": "Correto. O firewall monitora e controla o tráfego de rede com base em regras predefinidas, bloqueando acessos não autorizados e protegendo a rede contra ameaças;"
+        },
+        {
+          "letra": "C",
+          "texto": "antivírus.",
+          "comentario": "Errado. O antivírus protege contra malwares, mas não tem como função principal o controle do tráfego de rede;"
+        },
+        {
+          "letra": "D",
+          "texto": "antispam.",
+          "comentario": "Errado. O antispam é utilizado para filtrar e bloquear emails indesejados, mas não atua no controle do tráfego de rede."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. O antispyware é voltado para a detecção e remoção de spyware, que são programas espiões\nque coletam informações do usuário sem consentimento;\n\n(b) Correto. O firewall monitora e controla o tráfego de rede com base em regras predefinidas,\nbloqueando acessos não autorizados e protegendo a rede contra ameaças;\n\n(c) Errado. O antivírus protege contra malwares, mas não tem como função principal o controle do tráfego\nde rede;\n\n(d) Errado. O antispam é utilizado para filtrar e bloquear emails indesejados, mas não atua no controle do\ntráfego de rede.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Antimalwares - Multibancas",
+      "subtopico": "Antimalwares - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE / Prefeitura de Boa Vista-RR – 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção que indica um programa que,\n   se existente no computador, poderá protegê-lo de um arquivo malicioso baixado da Internet.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Lixeira",
+          "comentario": "Errado. A Lixeira apenas armazena arquivos excluídos temporariamente, não oferecendo proteção contra arquivos maliciosos;"
+        },
+        {
+          "letra": "B",
+          "texto": "antivírus",
+          "comentario": "Correto. O antivírus protege o computador ao detectar, bloquear e remover arquivos maliciosos baixados da Internet, prevenindo infecções;"
+        },
+        {
+          "letra": "C",
+          "texto": "Limpeza de Disco",
+          "comentario": "Errado. A Limpeza de Disco remove arquivos temporários e desnecessários para liberar espaço, mas não protege contra malware;"
+        },
+        {
+          "letra": "D",
+          "texto": "Explorador de Arquivos.",
+          "comentario": "Errado. O Explorador de Arquivos é usado para navegar e gerenciar arquivos no sistema, mas não tem função de segurança. Gabarito: Letra B 10.(CEBRASPE / Prefeitura de Fortaleza – 2023) Certo analista fazendário recebeu arquivo em formato pdf e deverá aproveitar parte das informações e dos dados constantes do arquivo para elaborar parecer técnico. Considerando essa situação hipotética, julgue o item seguinte. Caso o arquivo tenha sido enviado por e-mail, recomenda-se que o analista utilize um software antivírus para escanear o arquivo em busca de possíveis ameaças, como vírus e malware. Comentários: Arquivos recebidos por e-mail, especialmente de fontes não verificadas ou desconhecidas, podem conter malwares, incluindo vírus, trojans, worms, entre outros. Isso vale mesmo para arquivos em formatos comuns, como PDF, que podem ser utilizados para disfarçar códigos maliciosos. Um software antivírus é projetado para escanear arquivos em busca de ameaças conhecidas, utilizando uma combinação de assinaturas de malware, heurísticas e outras técnicas de detecção. Ao escanear um arquivo PDF recebido por e-mail antes de abri-lo, o analista pode identificar e neutralizar possíveis malwares, reduzindo significativamente o risco de infecção do sistema. Esta prática é parte de uma abordagem de segurança proativa para proteger dados e sistemas de informação contra ataques cibernéticos. Gabarito: Correto 11.(FCC / TRF4 – 2019) Caso uma praga virtual seja muito forte e sua remoção por meio do processo de deleção de arquivos ou programas infectados possa afetar todo o funcionamento do computador, os antivírus devem executar um processo: a) para isolar completamente o sistema operacional do sistema de arquivos. b) para criptografar o arquivo ou programa infectado inteiro, antes renomeando-o em uma cópia com os caracteres $~ na frente de seu nome. c) que visa manter o sistema operacional suspenso. d) que visa manter o arquivo ou programa infectado em quarentena. e) que se incumbe apenas de renomear o arquivo ou programa infectado com os caracteres $~ na frente de seu nome. Comentários: (a) Errado. Isso deixaria o sistema operacional inutilizável, logo não ajudaria a resolver o problema; (b) Errado. Isso tornaria o arquivo ou programa inutilizável, logo não ajudaria a resolver o problema; (c) Errado. Isso deixaria o sistema operacional inutilizável, logo não ajudaria a resolver o problema; (d) Correto. Essa é uma maneira de deixar o arquivo isolado em uma área protegida do disco rígido por um período, logo é a ação mais adequada para o problema; (e) Errado. Isso não teria qualquer efeito prático. Gabarito: Letra D 12.(FCC / SEMEF-Manaus – 2019) Um técnico tentou instalar uma aplicação no seu computador, mas o antivírus o impediu mostrando uma mensagem que o programa era legítimo, mas que poderia ser usado por criminosos para danificar o computador ou furtar dados pessoais. Analisando que as perdas que poderiam ser causadas pela execução do software seriam menores do que as perdas causadas pela não execução, o técnico pensou nas seguintes possibilidades para instalar e executar o software: I. Incluir o software na lista de exclusão do antivírus, ou seja, na lista de programas que o antivírus não deverá verificar. II. Mudar o nome do software para um nome amigável parecido com o nome recursos legítimos do sistema operacional, a fim de enganar o antivírus no momento da instalação e execução. III. Desativar/Pausar o antivírus por um tempo determinado, ou seja, pelo tempo necessário para instalar e usar o software para o que necessita. IV. Colocar o antivírus no modo de verificação apenas de disco rígido, de forma que ele não seja ativado quando perceber um possível malware carregado na memória. Considerando que o técnico estava utilizando um dos principais antivírus do mercado, permitirá a instalação e execução do software APENAS o que consta em: a) III. b) I e III. c) I e IV. d) III e IV. e) I e II. Comentários: (I) Correto. Caso ele esteja seguro, poderá incluir o software na lista de exclusão do antivírus de forma que o antivírus não o verifique; (II) Errado. Isso não teria qualquer efeito prático em termos de detecção pelo antivírus, uma vez que ele não verifica o nome do programa; (III) Correto. Caso ele esteja seguro, poderá pausar o antivírus enquanto instala o programa, de modo que o antivírus não impeça a instalação; (IV) Errado. Ao verificar apenas o disco rígido, ele poderá ser detectado normalmente pelo antivírus. Gabarito: Letra B 13.(FCC / SABESP – 2017) Os programas antimalware, apesar da grande quantidade de funcionalidades, não são capazes de impedir que um atacante tente explorar, pela rede, alguma vulnerabilidade existente no computador e nem evitar o acesso não autorizado, caso haja algum backdoor nele instalado. Devido a isto, além da instalação do antimalware, é necessário que também seja utilizado outro mecanismo de segurança. Quando bem configurado, este mecanismo pode ser capaz de: − registrar as tentativas de acesso aos serviços habilitados no computador e bloquear o envio para terceiros de informações coletadas por invasores e códigos maliciosos; − bloquear as tentativas de invasão e de exploração de vulnerabilidades do computador e possibilitar a identificação das origens destas tentativas; − analisar continuamente o conteúdo das conexões, filtrando diversos tipos de códigos maliciosos e barrando a comunicação entre um invasor e um código malicioso já instalado; − evitar que um código malicioso já instalado seja capaz de se propagar, impedindo que vulnerabilidades em outros computadores sejam exploradas. O mecanismo de segurança referenciado no texto é um a) filtro antibackdoor. b) WOT (Web of Trust). c) filtro Adblock. d) log pessoal. e) firewall pessoal. Comentários: (a) Errado. \"Filtro antibackdoor\" não é uma tecnologia reconhecida para proteger o sistema conforme descrito; o termo não corresponde a uma solução de segurança com essas características; (b) Errado. O WOT (Web of Trust) é uma extensão para avaliação de reputação de sites, e não fornece funcionalidades como bloqueio de invasões ou monitoramento de tentativas de acesso ao sistema; (c) Errado. O Adblock é um filtro para bloquear anúncios indesejados, mas não oferece proteção contra invasões, registros de acessos ou controle de comunicação com invasores; (d) Errado. \"Log pessoal\" apenas registra eventos no sistema, mas não é capaz de bloquear tentativas de acesso nem fornecer monitoramento e bloqueio ativo contra invasões;"
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. A Lixeira apenas armazena arquivos excluídos temporariamente, não oferecendo proteção\ncontra arquivos maliciosos;\n\n(b) Correto. O antivírus protege o computador ao detectar, bloquear e remover arquivos maliciosos\nbaixados da Internet, prevenindo infecções;\n\n(c) Errado. A Limpeza de Disco remove arquivos temporários e desnecessários para liberar espaço, mas\nnão protege contra malware;\n\n(d) Errado. O Explorador de Arquivos é usado para navegar e gerenciar arquivos no sistema, mas não tem\nfunção de segurança.\n\n                                                                                         Gabarito: Letra B\n\n10.(CEBRASPE / Prefeitura de Fortaleza – 2023) Certo analista fazendário recebeu arquivo em\n   formato pdf e deverá aproveitar parte das informações e dos dados constantes do arquivo para\n   elaborar parecer técnico. Considerando essa situação hipotética, julgue o item seguinte.\n\n   Caso o arquivo tenha sido enviado por e-mail, recomenda-se que o analista utilize um software\n   antivírus para escanear o arquivo em busca de possíveis ameaças, como vírus e malware.\n\nComentários:\n\nArquivos recebidos por e-mail, especialmente de fontes não verificadas ou desconhecidas, podem conter\nmalwares, incluindo vírus, trojans, worms, entre outros. Isso vale mesmo para arquivos em formatos\ncomuns, como PDF, que podem ser utilizados para disfarçar códigos maliciosos. Um software antivírus é\nprojetado para escanear arquivos em busca de ameaças conhecidas, utilizando uma combinação de\nassinaturas de malware, heurísticas e outras técnicas de detecção.\n\nAo escanear um arquivo PDF recebido por e-mail antes de abri-lo, o analista pode identificar e neutralizar\npossíveis malwares, reduzindo significativamente o risco de infecção do sistema. Esta prática é parte de\numa abordagem de segurança proativa para proteger dados e sistemas de informação contra ataques\ncibernéticos.\n\n                                                                                 Gabarito: Correto\n11.(FCC / TRF4 – 2019) Caso uma praga virtual seja muito forte e sua remoção por meio do processo\n   de deleção de arquivos ou programas infectados possa afetar todo o funcionamento do\n   computador, os antivírus devem executar um processo:\n\n   a) para isolar completamente o sistema operacional do sistema de arquivos.\n   b) para criptografar o arquivo ou programa infectado inteiro, antes renomeando-o em uma cópia com\n   os caracteres $~ na frente de seu nome.\n   c) que visa manter o sistema operacional suspenso.\n   d) que visa manter o arquivo ou programa infectado em quarentena.\n   e) que se incumbe apenas de renomear o arquivo ou programa infectado com os caracteres $~ na\n   frente de seu nome.\n\nComentários:\n\n(a) Errado. Isso deixaria o sistema operacional inutilizável, logo não ajudaria a resolver o problema; (b)\nErrado. Isso tornaria o arquivo ou programa inutilizável, logo não ajudaria a resolver o problema; (c)\nErrado. Isso deixaria o sistema operacional inutilizável, logo não ajudaria a resolver o problema; (d)\nCorreto. Essa é uma maneira de deixar o arquivo isolado em uma área protegida do disco rígido por um\nperíodo, logo é a ação mais adequada para o problema; (e) Errado. Isso não teria qualquer efeito prático.\n\n                                                                                           Gabarito: Letra D\n\n12.(FCC / SEMEF-Manaus – 2019) Um técnico tentou instalar uma aplicação no seu computador, mas\n   o antivírus o impediu mostrando uma mensagem que o programa era legítimo, mas que poderia\n   ser usado por criminosos para danificar o computador ou furtar dados pessoais. Analisando que\n   as perdas que poderiam ser causadas pela execução do software seriam menores do que as\n   perdas causadas pela não execução, o técnico pensou nas seguintes possibilidades para instalar\n   e executar o software:\n\n   I. Incluir o software na lista de exclusão do antivírus, ou seja, na lista de programas que o antivírus não\n   deverá verificar.\n\n   II. Mudar o nome do software para um nome amigável parecido com o nome recursos legítimos do\n   sistema operacional, a fim de enganar o antivírus no momento da instalação e execução.\n\n   III. Desativar/Pausar o antivírus por um tempo determinado, ou seja, pelo tempo necessário para\n   instalar e usar o software para o que necessita.\n\n   IV. Colocar o antivírus no modo de verificação apenas de disco rígido, de forma que ele não seja\n   ativado quando perceber um possível malware carregado na memória.\n\n   Considerando que o técnico estava utilizando um dos principais antivírus do mercado, permitirá a\n   instalação e execução do software APENAS o que consta em:\n\n   a) III.\n   b) I e III.\n   c) I e IV.\n   d) III e IV.\n   e) I e II.\n\nComentários:\n\n(I) Correto. Caso ele esteja seguro, poderá incluir o software na lista de exclusão do antivírus de forma\nque o antivírus não o verifique; (II) Errado. Isso não teria qualquer efeito prático em termos de detecção\npelo antivírus, uma vez que ele não verifica o nome do programa; (III) Correto. Caso ele esteja seguro,\npoderá pausar o antivírus enquanto instala o programa, de modo que o antivírus não impeça a instalação;\n(IV) Errado. Ao verificar apenas o disco rígido, ele poderá ser detectado normalmente pelo antivírus.\n\n                                                                                           Gabarito: Letra B\n\n13.(FCC / SABESP – 2017) Os programas antimalware, apesar da grande quantidade de\n   funcionalidades, não são capazes de impedir que um atacante tente explorar, pela rede, alguma\n   vulnerabilidade existente no computador e nem evitar o acesso não autorizado, caso haja algum\n\n   backdoor nele instalado. Devido a isto, além da instalação do antimalware, é necessário que\n   também seja utilizado outro mecanismo de segurança. Quando bem configurado, este\n   mecanismo pode ser capaz de:\n\n   − registrar as tentativas de acesso aos serviços habilitados no computador e bloquear o envio para\n   terceiros de informações coletadas por invasores e códigos maliciosos;\n\n   − bloquear as tentativas de invasão e de exploração de vulnerabilidades do computador e possibilitar\n   a identificação das origens destas tentativas;\n\n   − analisar continuamente o conteúdo das conexões, filtrando diversos tipos de códigos maliciosos e\n   barrando a comunicação entre um invasor e um código malicioso já instalado;\n\n   − evitar que um código malicioso já instalado seja capaz de se propagar, impedindo que\n   vulnerabilidades em outros computadores sejam exploradas.\n\n   O mecanismo de segurança referenciado no texto é um\n\n   a) filtro antibackdoor.\n   b) WOT (Web of Trust).\n   c) filtro Adblock.\n   d) log pessoal.\n   e) firewall pessoal.\n\nComentários:\n\n(a) Errado. \"Filtro antibackdoor\" não é uma tecnologia reconhecida para proteger o sistema conforme\ndescrito; o termo não corresponde a uma solução de segurança com essas características;\n\n(b) Errado. O WOT (Web of Trust) é uma extensão para avaliação de reputação de sites, e não fornece\nfuncionalidades como bloqueio de invasões ou monitoramento de tentativas de acesso ao sistema;\n\n(c) Errado. O Adblock é um filtro para bloquear anúncios indesejados, mas não oferece proteção contra\ninvasões, registros de acessos ou controle de comunicação com invasores;\n\n(d) Errado. \"Log pessoal\" apenas registra eventos no sistema, mas não é capaz de bloquear tentativas de\nacesso nem fornecer monitoramento e bloqueio ativo contra invasões;\n\n(e) Correto. O firewall pessoal é capaz de monitorar, bloquear tentativas de invasão, e registrar tentativas\nde acesso aos serviços habilitados, fornecendo uma barreira de proteção ao computador.\n\n                                                                                          Gabarito: Letra E\n\n14.(FCC / Prefeitura de Teresina-PI – 2016) A proteção das informações e dos sistemas das\n   organizações requer o uso de recursos de proteção como os firewalls, utilizados para:\n\n   a) ajudar a impedir que a rede privada da empresa seja acessada sem autorização a partir da Internet.\n\n   b) liberar o uso de todos os serviços de rede somente aos usuários registrados pelo administrador da\n   rede.\n\n   c) garantir que cada pacote de dados seja entregue com segurança apenas ao destinatário informado,\n   reduzindo assim o tráfego na rede.\n\n   d) garantir que nenhum colaborador possa comprometer a segurança das informações da\n   organização.\n\n   e) garantir que os computadores da rede não sejam infectados por malwares ou atacados por hackers.\n\nComentários:\n\n(a) Correto. O firewall é uma ferramenta de segurança que controla o tráfego de entrada e saída na rede,\najudando a impedir o acesso não autorizado à rede privada a partir da Internet;\n\n(b) Errado. Firewalls não têm a função de liberar todos os serviços apenas a usuários registrados, mas sim\nde filtrar acessos conforme regras configuradas, independente do registro de usuários;\n\n(c) Errado. Firewalls não garantem a entrega segura de pacotes nem reduzem o tráfego da rede; eles\napenas controlam e filtram o tráfego de acordo com as políticas de segurança;\n\n(d) Errado. Embora o firewall ofereça proteção contra ameaças externas, ele não é capaz de impedir que\num colaborador comprometa a segurança, pois esse é um controle mais amplo e envolve políticas\ninternas;\n\n(e) Errado. Firewalls não garantem proteção completa contra malwares ou hackers; sua função é bloquear\nacessos não autorizados, mas eles não substituem antivírus e outras medidas de proteção.\n\n                                                                                         Gabarito: Letra A\n\n15.(FCC / DPE-RR – 2015) Um Técnico em Informática sabe que um firewall bem configurado é um\n   instrumento importante para implantar a política de segurança da informação. Um firewall:\n\n   a) reduz significativamente a informação disponível sobre a rede, evitando ataques internos.\n\n   b) consegue barrar todos os ataques a vulnerabilidades, menos os que ainda não foram divulgados\n   publicamente.\n\n   c) garante que a rede esteja 100% segura contra invasores.\n\n   d) deve ser a única linha de defesa, por ser o mecanismo mais eficiente para garantir a segurança da\n   rede.\n\n   e) protege apenas contra ataques externos, nada podendo fazer contra ataques que partem de dentro\n   da rede por ele protegida.\n\nComentários:\n\n(a) Errado. O firewall limita o acesso a recursos internos, mas não tem como objetivo principal reduzir a\ninformação disponível para evitar ataques internos, pois ataques internos exigem controles adicionais;\n\n(b) Errado. Um firewall não é capaz de barrar todos os ataques a vulnerabilidades, especialmente ataques\ncomplexos que exploram métodos mais avançados, mesmo que conhecidos;\n\n(c) Errado. Nenhum firewall garante 100% de segurança, pois ele é apenas uma camada de defesa que\nprecisa ser combinada com outras medidas para aumentar a segurança;\n\n(d) Errado. O firewall não deve ser a única linha de defesa. Uma política de segurança completa envolve\nvárias camadas de proteção, incluindo antivírus, IDS/IPS, e boas práticas de segurança;\n\n(e) Correto. O firewall é eficaz contra ataques externos, mas, em geral, não impede ataques originados de\ndentro da própria rede, pois ele não filtra o tráfego interno da rede de forma a proteger contra esses tipos\nde ameaças.\n\n                                                                                          Gabarito: Letra E\n\n16.(FCC / TRT4 – 2015) Ferramentas antimalware, como os antivírus, procuram detectar, anular ou\n   remover os códigos maliciosos de um computador. Para que estas ferramentas possam atuar\n   preventivamente, diversos cuidados devem ser tomados, por exemplo:\n\n   a) utilizar sempre um antimalware online, que é mais atualizado e mais completo que os locais.\n\n   b) configurar o antimalware para verificar apenas arquivos que tenham a extensão .EXE.\n\n   c) não configurar o antimalware para verificar automaticamente os discos rígidos e as unidades\n   removíveis (como pen-drives e discos externos), pois podem ser uma fonte de contaminação que o\n   usuário não percebe.\n\n   d) atualizar o antimalware somente quando o sistema operacional for atualizado, para evitar que o\n   antimalware entre em conflito com a versão atual do sistema instalado.\n\n   e) evitar executar simultaneamente diferentes programas antimalware, pois eles podem entrar em\n   conflito, afetar o desempenho do computador e interferir na capacidade de detecção um do outro.\n\nComentários:\n\n(a) Errado, o ideal é que haja um antimalware instalado localmente na máquina do usuário – lembrem-se\nque um malware pode realizar ações maliciosas em um computador mesmo sem acesso à internet;\n\n(b) Errado, há diversos outros formatos de arquivos que podem causar danos além dos arquivos\nexecutáveis;\n\n(c) Errado, ambos devem ser sempre verificados – unidades removíveis, por exemplo, são fontes típicas\nde contaminação por malwares;\n\n(d) Errado, recomenda-se atualizar o antimalware sempre que houver novas atualizações\nindependentemente da atualização do sistema operacional;\n\n(e) Correto, recomenda-se utilizar um único programa antimalware, uma vez que eles realmente podem\nentrar em conflito e afetar o desempenho do computador.\n\n                                                                                          Gabarito: Letra E\n\n17.(FCC / SEFAZ-PE – 2014) Um dos mecanismos básicos de segurança da informação é um\n   componente de uma rede de computadores que tem por objetivo aplicar uma política de\n   segurança a um determinado ponto da rede. Este componente de segurança existe na forma de\n\n   software, de hardware ou da combinação de ambos. Atualmente, os principais sistemas\n   operacionais trazem este componente embutido na forma de software para proteger\n   computadores contra acessos não autorizados vindos da Internet.\n\n   O texto descreve o componente conhecido como\n\n   a) firewall.\n   b) sniffer.\n   c) antivirus.\n   d) proxy.\n   e) scandisk.\n\nComentários:\n\n(a) Correto. O texto descreve um firewall, que é um componente de segurança usado para aplicar políticas\nde controle de acesso em pontos específicos da rede. Firewalls podem ser implementados via software,\nhardware ou ambos, e os sistemas operacionais modernos geralmente incluem um firewall para proteger\ncontra acessos não autorizados;\n\n(b) Errado. Sniffers monitoram o tráfego de rede, mas não aplicam políticas de segurança nem bloqueiam\nacessos não autorizados;\n\n(c) Errado. Antivírus detecta e remove malware, mas não aplica políticas de segurança a um ponto da rede\npara bloquear acessos não autorizados;\n\n(d) Errado. Um proxy atua como intermediário no acesso à internet, podendo realizar filtragem, mas seu\nprincipal papel não é aplicar políticas de segurança na rede;\n\n(e) Errado. Scandisk é uma ferramenta de diagnóstico para verificar e corrigir erros no disco, não\nrelacionado à segurança de rede.\n\n                                                                                         Gabarito: Letra A\n\n18.(FCC / SABESP – 2014) São, comumente, utilizados na proteção e segurança da informação\n   como, por exemplo, contra atos praticados por ataques externos, tentativas de invasão, acesso\n   não autorizado, roubo, adulteração de informação e outros atos ilícitos:\n\n   a) modem e roteador.\n   b) firewall e senha.\n   c) navegador e login.\n   d) placa de rede e antivírus.\n   e) backup e desfragmentação.\n\nComentários:\n\n(a) Errado. Modem e roteador são dispositivos de rede usados para conectar dispositivos à internet, mas\nnão são mecanismos de segurança da informação contra invasões ou acessos não autorizados;\n\n(b) Correto. Firewall e senha são comumente utilizados para proteger contra ataques externos e acessos\nnão autorizados. O firewall restringe o acesso a redes, e a senha controla o acesso a sistemas e dados;\n\n(c) Errado. Navegador e login são ferramentas de acesso à internet e autenticação, mas, sozinhos, não\nconfiguram uma proteção completa contra invasões ou adulteração de informações;\n\n(d) Errado. Placa de rede é um dispositivo de conexão, e o antivírus protege contra malware, mas essa\ncombinação não garante proteção contra todos os atos ilícitos descritos;\n\n(e) Errado. Backup e desfragmentação são medidas de manutenção e proteção de dados, mas não\nimpedem ataques externos ou acessos não autorizados.\n\n                                                                                         Gabarito: Letra B\n\n19.(FCC / MPE-AM – 2013) Com relação à utilização correta de ferramentas antimalware, considere:\n\n   I. É aconselhável utilizar programas antimalware on-line quando se suspeitar que o antimalware local\n   esteja desabilitado ou comprometido ou quando se necessitar de uma segunda verificação.\n\n   II. Devem ser configuradas para verificar apenas arquivos executáveis, pois são os únicos que podem\n   conter vírus e outros tipos de malware.\n\n   III. Deve-se evitar executar simultaneamente diferentes programas antimalware, pois eles podem\n   entrar em conflito, afetar o desempenho do computador e interferir na capacidade de detecção um\n   do outro.\n\n   IV. Não é recomendável ter um antimalware instalado no computador, pois os programas on-line além\n   de serem mais eficientes, são suficientes para proteger o computador.\n\n   Está correto o que se afirma APENAS em:\n\n   a) I, II e III.\n   b) III e IV.\n   c) I e III.\n   d) II e IV.\n   e) I.\n\nComentários:\n\n(I) Correto. Recomenda-se utilizar programas online quando suspeitar que o antimalware local esteja\ndesabilitado/comprometido ou quando necessitar de uma segunda opinião (quiser confirmar o estado\nde um arquivo que já foi verificado pelo antimalware local);\n\n(II) Errado. Recomenda-se configurar o antimalware para verificar toda e qualquer extensão de arquivo;\n\n(III) Correto. Recomenda-se evitar a execução simultânea de diferentes programas antimalware, uma vez\nque eles podem entrar em conflito, afetar o desempenho do computador e interferir na capacidade de\ndetecção um do outro;\n\n(IV) Errado. Recomenda-se ter um antimalware instalado em seu computador (programas online, apesar\nde bastante úteis, exigem que seu computador esteja conectado à Internet para que funcionem\ncorretamente e podem conter funcionalidades reduzidas).\n\n                                                                                         Gabarito: Letra C\n\n20.(FCC / MPE-AM – 2013) Uma barreira protetora que monitora e restringe as informações\n   passadas entre o seu computador e uma rede ou a Internet, fornece uma defesa por software\n   contra pessoas que podem tentar acessar seu computador de fora sem a sua permissão é\n   chamada de\n\n   a) ActiveX.\n   b) Roteador.\n   c) Chaves públicas.\n   d) Criptografia.\n   e) Firewall.\n\nComentários:\n\n(a) Errado. ActiveX é uma tecnologia da Microsoft para criação de componentes de software, geralmente\nutilizados em navegadores, mas não funciona como barreira de proteção de rede;\n\n(b) Errado. O roteador direciona o tráfego de rede, mas sua função principal não é restringir ou monitorar\ninformações entre o computador e a rede como uma medida de segurança;\n\n(c) Errado. Chaves públicas são usadas em criptografia para garantir segurança na troca de dados, mas\nnão monitoram nem restringem o tráfego de rede;\n\n(d) Errado. Criptografia protege a confidencialidade dos dados, mas não atua como uma barreira de\nproteção que monitora o tráfego entre a rede e o computador;\n\n(e) Correto. O firewall monitora e controla o tráfego entre o computador e a rede, funcionando como uma\nbarreira protetora contra acessos não autorizados.\n\n                                                                                         Gabarito: Letra E\n\n21.(FGV / Câmara dos Deputados – 2023) Um cibercriminoso liga para números aleatórios de uma\n   sociedade empresária, passando-se por alguém do setor de suporte técnico.\n\n   Uma dessas investidas telefônicas alcança Carlos, um colaborador recém-contratado que está com\n   um problema legítimo em seu computador. O cibercriminoso oferece ajuda e, agradecido por alguém\n   do suporte técnico estar ligando para ajudá-lo, Carlos compartilha informações sensíveis, como\n   senhas e dados de cadastro, em troca de resolver o seu problema.\n\n   Carlos foi vítima de um ataque de engenharia social denominado:\n\n   a) baiting.\n   b) dumpster diving.\n   c) quid pro quo.\n   d) smishing.\n   e) tailgating.\n\nComentários:\n\nA situação descrita é um exemplo clássico de um ataque de engenharia social conhecido como quid pro\nquo. Este tipo de ataque ocorre quando o criminoso oferece uma vantagem ou serviço em troca de\ninformações ou acesso. No caso apresentado, o cibercriminoso se passa por um funcionário do suporte\n\ntécnico e oferece ajuda para um problema de computador, induzindo Carlos a compartilhar informações\nconfidenciais.\n\nOutras opções, como Baiting, Dumpster Diving, Smishing e Tailgating, são também técnicas de\nengenharia social, mas não se aplicam a este cenário:\n\n(a) Errado. É semelhante ao phishing, mas envolve a oferta de algo tentador para roubar informações\npessoais ou infestar sistemas com malware; (b) Errado. É utilizado para recuperar informações\nimportantes de lixeiras ou resíduos descartados; (d) Errado. É um ataque de phishing realizado através\nde mensagens SMS; (e) Errado. É utilizado para ganhar acesso físico a uma área restrita seguindo alguém\nque tenha acesso legítimo.\n\n                                                                                         Gabarito: Letra C\n\n22.(FGV / CGU – 2022) Roberto é funcionário de um órgão público e está trabalhando em home\n   office devido ao cenário pandêmico. Para que não haja perda de produtividade, Roberto precisa\n   acessar a rede interna do órgão onde trabalha. Para isso, Roberto irá utilizar um computador\n   considerado um endpoint, por se tratar de um dispositivo final que se conecta fisicamente a uma\n   rede interna do órgão. Para que o órgão público em que Roberto trabalha possa confiar em\n   conexões externas com a rede interna, soluções de segurança de endpoints precisam ser\n   implementadas e ter como características:\n\n   a) redução de custos e facilidade de atualização;\n   b) configuração simplificada e fácil instalação de API;\n   c) monitoramento completo e antivírus atualizado;\n   d) administração descentralizada e facilidade de integração com novas tecnologias;\n   e) bloqueio de ações indesejadas e controle no lado do usuário.\n\nComentários:\n\nEndpoint é qualquer dispositivo, seja ele móvel ou não, desde uma estação de trabalho até notebooks,\ntablets e celulares, que podem ser conectados a uma rede. Logo, a segurança de endpoint visa assegurar\nque todos os serviços conectados a uma rede estejam protegidos contra vários tipos de ataques\ncibernéticos como worms, cavalos de troia, spywares, adwares, etc. Ué, professor... isso não é\nsimplesmente um antivírus? Não...\n\nEnquanto o antivírus é um software que detecta, impede e atua na remoção de programas de software\nmaliciosos, como vírus e worms em PCs – único ou muitos -, a segurança de endpoint cobre toda a\ninfraestrutura. Ele contém não apenas anti-malware, comum entre os antivírus, mas muitas ferramentas de\nsegurança contra diferentes tipos de ameaças. Com ele, é possível manter a integridade dos dispositivos,\na autenticação/autorização do usuário, para assim, preservar os endpoints seguros, o que não está\nincluído no pacote do antivírus.\n\nEntre os benefícios da segurança de endpoint, temos:\n\n- Redução de Custos: ao invés de investir em componentes separados para garantir a proteção de cada\ndispositivo conectado na rede, o sistema de endpoint reúne os componentes necessários em um só\nconjunto, o que é muito mais vantajoso financeiramente (Letra A);\n\n- Fácil Instalação: basta instalar e configurar o servidor central que fará a segurança da rede. Assim, os\ndispositivos só conseguirão acessar a rede a partir da instalação do cliente em seus dispositivos;\n\n- Administração Centralizada: é possível centralizar a rede a partir do sistema gerenciador de segurança,\nno caso, o endpoint. Assim, o gerente de infraestrutura de TI da empresa ou o parceiro terceirizado passa\na ser o administrador do servidor de endpoint, sendo responsável pelo controle para revogar e conceder\npermissões de uso, auditar a segurança, obter relatórios, monitorar a rede, entre outros aspectos. Essas\nações ocorrem por meio de um orquestrador ou portal de gerenciamento remoto;\n\n- Bloqueio de Ações Indesejadas: apesar de muitas vezes não ser intencional, invasões indesejadas\npodem ser frequentes no ambiente organizacional. Por exemplo, se um funcionário de uma empresa\ncoloca um pendrive infectado no computador de trabalho, pode causar uma vulnerabilidade no sistema.\nPor esse motivo, algumas empresas possuem políticas de segurança que impedem que funcionários\npluguem dispositivos internos em estações de trabalho. Assim, softwares de segurança de endpoint\najudam a bloquear esse tipo de atividade;\n\n- Fácil integração com novas tecnologias: como o sistema de segurança é apenas um composto, torna-\nse mais fácil que novas soluções sejam adicionadas ao sistema de forma simples. Assim, as empresas têm\nacesso às atualizações de forma segura e unificada, de uma vez só, para todos os dispositivos.\n\n                                                                                         Gabarito: Letra A\n\n23.(FGV / PC-MA – 2012) Um funcionário em uma viagem de negócios teve de levar em seu\n   notebook arquivos classificados para uma reunião com clientes. Ele foi então aconselhado pelo\n   pessoal de suporte da empresa a instalar um antivírus em sua máquina. Resistindo à orientação\n   recebida, o funcionário argumentou que:\n\n   I. O software antivírus deixa minha máquina muito lenta.\n   II. Eu não preciso de um software antivírus porque eu nunca abro arquivos anexados em e-mails de\n   pessoas que eu não conheço.\n   III. Tantas pessoas usam a Internet, eu sou apenas um na multidão. Ninguém vai me achar.\n\n   São motivos válidos para a não instalação de um programa antivírus:\n\n   a) somente a opção I\n   b) somente a opção II\n   c) somente a opção III\n   d) somente as opções I e II\n   e) nenhuma das opções.\n\nComentários:\n\n(I) Errado, esse não é um motivo válido porque a máquina não fica muito lenta – ele consome recursos\ncomputacionais, mas não deixam a máquina muito lenta; (II) Errado, abrir anexos de e-mail de pessoas\nconhecidas também pode ocasionar infecções, além disso existem outras formas de contaminação por\nvírus; (III) Errado, a infecção por malwares pode ocorrer mesmo sem acesso à internet como, por exemplo,\natravés de mídias removíveis.\n\n                                                                                         Gabarito: Letra E\n\n24.(CESGRANRIO / BB – 2023) Uma prática comum e recomendada para proteção de estações de\n   trabalho é que programas do tipo antivírus e antimalware sejam mantidos atualizados nessas\n   estações e computadores em geral. Essas atualizações são necessárias principalmente para que\n   esses programas:\n\n   a) possuam uma interface moderna com o usuário.\n   b) ocupem o menor espaço possível em disco.\n   c) funcionem, porque versões desatualizadas não funcionam.\n   d) possam identificar vírus e problemas mais recentes.\n   e) sejam executados de forma mais rápida e eficiente.\n\nComentários:\n\n(a) Errado. Embora uma interface moderna possa melhorar a experiência do usuário, esse não é o motivo\nprincipal para manter programas antivírus e antimalware atualizados. A interface é mais uma questão de\nusabilidade do que de eficácia na detecção de ameaças.\n\n(b) Errado. O tamanho ocupado em disco é um aspecto importante, mas não é a principal razão para\nmanter esses programas atualizados. O foco das atualizações está mais na eficácia e na capacidade de\nresposta a novas ameaças do que no espaço ocupado em disco.\n\n(c) Errado. Versões desatualizadas de antivírus e antimalware ainda funcionam, mas podem não ser\neficazes contra novas ameaças. A funcionalidade básica permanece, mas a proteção contra as ameaças\nmais recentes é comprometida.\n\n(d) Correto. A principal razão para manter programas antivírus e antimalware atualizados é para que\npossam identificar e proteger contra vírus e problemas mais recentes. Novas ameaças surgem\nconstantemente, e as atualizações incluem definições de vírus atualizadas e melhorias nas técnicas de\ndetecção.\n\n(e) Errado. Embora a eficiência e a velocidade de execução sejam importantes, elas não são as razões\nprincipais para as atualizações. Melhorias de desempenho podem ocorrer com atualizações, mas o foco\nprincipal é na capacidade de detecção e proteção contra ameaças novas e evoluídas.\n\n                                                                                         Gabarito: Letra D\n\n25.(CESGRANRIO / BB – 2023) Uma prática comum e recomendada para proteção de estações de\n   trabalho é que programas do tipo antivírus e antimalware sejam mantidos atualizados nessas\n   estações e computadores em geral. Essas atualizações são necessárias principalmente para que\n   esses programas:\n\n   a) possuam uma interface moderna com o usuário.\n   b) ocupem o menor espaço possível em disco.\n   c) funcionem, porque versões desatualizadas não funcionam.\n   d) possam identificar vírus e problemas mais recentes.\n   e) sejam executados de forma mais rápida e eficiente.\n\nComentários:\n\n(a) Errado. Embora uma interface moderna possa melhorar a experiência do usuário, esse não é o motivo\nprincipal para manter programas antivírus e antimalware atualizados. A interface é mais uma questão de\nusabilidade do que de eficácia na detecção de ameaças.\n\n(b) Errado. O tamanho ocupado em disco é um aspecto importante, mas não é a principal razão para\nmanter esses programas atualizados. O foco das atualizações está mais na eficácia e na capacidade de\nresposta a novas ameaças do que no espaço ocupado em disco.\n\n(c) Errado. Versões desatualizadas de antivírus e antimalware ainda funcionam, mas podem não ser\neficazes contra novas ameaças. A funcionalidade básica permanece, mas a proteção contra as ameaças\nmais recentes é comprometida.\n\n(d) Correto. A principal razão para manter programas antivírus e antimalware atualizados é para que\npossam identificar e proteger contra vírus e problemas mais recentes. Novas ameaças surgem\nconstantemente, e as atualizações incluem definições de vírus atualizadas e melhorias nas técnicas de\ndetecção.\n\n(e) Errado. Embora a eficiência e a velocidade de execução sejam importantes, elas não são as razões\nprincipais para as atualizações. Melhorias de desempenho podem ocorrer com atualizações, mas o foco\nprincipal é na capacidade de detecção e proteção contra ameaças novas e evoluídas.\n\n                                                                                         Gabarito: Letra D\n\n26.(CESGRANRIO / Petrobrás – 2011) Dentre as ferramentas que auxiliam a proteção de um\n   computador, inclui-se o:\n\n   a) HTTP.\n   b) driver do HD.\n   c) FTP.\n   d) RSS.\n   e) antivirus.\n\nComentários:\n\n(a) Errado, isso é um protocolo de comunicação; (b) Errado, isso é uma mídia de armazenamento; (c)\nErrado, isso é um protocolo de comunicação; (d) Errado, isso é um formato de distribuição de informações\nem tempo real; (e) Correto, eles realmente auxiliam na proteção de um computador.\n\n                                                                                         Gabarito: Letra E\n\n27.(VUNESP / Prefeitura de Palmas-TO – 2023) Tem-se 4 computadores com antivírus instalado,\n   com as seguintes características descritas na tabela a seguir.\n\n   Considerando que a data atual é 23.janeiro.2023, assinale a alternativa que apresenta o computador\n   que está mais protegido.\n\n   a) Computador A.\n   b) Computador B.\n   c) Computador C.\n   d) Computador D.\n\nComentários:\n\nO computador mais protegido é aquele em que o antivírus teve suas definições atualizadas mais\nrecentemente e em que o antivírus foi executado mais recentemente. Dito isso, trata-se do Computador\nC. Note que a última atualização de definições do antivírus ocorreu no dia 21 de janeiro e a última\nexecução do antivírus, realizando uma varredura completa foi no dia 22 de janeiro.\n\n                                                                                         Gabarito: Letra C\n\n28.(VUNESP / PC-SP – 2022) Visando aumentar a proteção e a segurança dos computadores,\n   diversas ferramentas antimalware podem ser utilizadas, como as antirootkit, que visam impedir\n   que:\n\n   a) sejam capturadas e armazenadas posições do cursor e a tela apresentada no monitor, nos\n   momentos em que o mouse é clicado, ou a região que circunda a posição onde o mouse é clicado.\n\n   b) sejam capturadas e armazenadas as teclas digitadas pelo usuário no teclado do computador.\n\n   c) um programa se instale para permitir o retorno de um invasor a um computador compro",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Firewall - Multibancas",
+      "subtopico": "Firewall - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Um firewall é um software que controla o fluxo que entra e sai de\n   uma rede de computadores, bloqueando aqueles que representam ameaças aos recursos\n   disponibilizados naquela rede.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Um firewall pode ser um software ou hardware que monitora e controla o tráfego de rede com base em\nregras de segurança predefinidas. Ele bloqueia acessos não autorizados e protege a rede contra ameaças\nexternas, regulando o fluxo de dados entre redes confiáveis e não confiáveis.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Firewall - Multibancas",
+      "subtopico": "Firewall - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / ANAC – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Os firewalls são dispositivos constituídos pela combinação de\n   software e hardware, utilizados para controlar o acesso entre redes de computadores; alguns\n   programas de firewall permitem analisar continuamente o conteúdo das conexões, filtrando\n   vírus de email, cavalos de troia e outros tipos de malware, antes mesmo que os antivírus entrem\n   em ação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Firewalls podem ser implementados como hardware, software ou ambos, controlando o tráfego entre\nredes. Alguns firewalls avançados, como os de inspeção profunda de pacotes (DPI), analisam o conteúdo\ndas conexões e detectam ameaças, complementando a segurança antes da atuação do antivírus.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Firewall - Multibancas",
+      "subtopico": "Firewall - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim - ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O firewall pessoal é um tipo\n   específico de proteção utilizado para proteger um computador contra acessos não autorizados\n   vindos da Internet, como, por exemplo, bloquear as tentativas de invasão e de exploração de\n   vulnerabilidades do computador.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O firewall pessoal monitora e controla o tráfego de rede em um único computador, impedindo acessos\nnão autorizados e ataques externos. Ele pode bloquear tentativas de invasão e exploração de\nvulnerabilidades, funcionando como uma camada adicional de segurança contra ameaças vindas da\nInternet.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-07-S02-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "Firewall - Multibancas",
+      "subtopico": "Firewall - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "CEBRASPE / TJ-CE – 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "O tipo de programa de computador malicioso que se propaga por\n   meio de copias de si mesmo e infecta computadores tornando-os lentos ou indisponíveis, é\n   chamado de",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "BackDoor.",
+          "comentario": "Errado. Backdoor é um tipo de malware que cria acessos ocultos no sistema para invasores, mas não se propaga automaticamente;"
+        },
+        {
+          "letra": "B",
+          "texto": "firewall.",
+          "comentario": "Errado. Firewall é um mecanismo de segurança que protege a rede, controlando o tráfego de dados, mas não é um malware;"
+        },
+        {
+          "letra": "C",
+          "texto": "softweare.",
+          "comentario": "Errado. Softweare é um termo incorreto. O correto seria software, que significa qualquer programa de computador, sem relação específica com malwares;"
+        },
+        {
+          "letra": "D",
+          "texto": "hardweare.",
+          "comentario": "Errado. Hardweare é outro termo incorreto. O correto seria hardware, que se refere aos componentes físicos do computador;"
+        },
+        {
+          "letra": "E",
+          "texto": "malware.",
+          "comentario": "Correto. Malware é o termo geral para programas maliciosos, incluindo worms, que se replicam automaticamente e podem deixar os computadores lentos ou indisponíveis."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado. Backdoor é um tipo de malware que cria acessos ocultos no sistema para invasores, mas não\nse propaga automaticamente;\n\n(b) Errado. Firewall é um mecanismo de segurança que protege a rede, controlando o tráfego de dados,\nmas não é um malware;\n\n(c) Errado. Softweare é um termo incorreto. O correto seria software, que significa qualquer programa de\ncomputador, sem relação específica com malwares;\n\n(d) Errado. Hardweare é outro termo incorreto. O correto seria hardware, que se refere aos componentes\nfísicos do computador;\n\n(e) Correto. Malware é o termo geral para programas maliciosos, incluindo worms, que se replicam\nautomaticamente e podem deixar os computadores lentos ou indisponíveis.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_3",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.765Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_3.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0032",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-aplicativos-antivirus",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Mesmo atualizado, um antivírus não garante a detecção de toda ameaça existente ou futura.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Aplicativos antivírus.\n\nAntivírus utiliza assinaturas, heurística, análise comportamental e outros mecanismos, mas pode falhar diante de ameaças novas, técnicas de evasão ou configurações inadequadas. Ele integra uma defesa em camadas.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Aplicativos antivírus.\n\nErro provável: confiança absoluta em uma única ferramenta\n\nDica: Antivírus reduz risco; não substitui atualização, backup e comportamento seguro.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_3.json",
+        "sourceSubtopicId": "1.2.1.5-aplicativos-antivirus",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_3",
+        "hashQuestao": "e5fb166354cae45f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "antivírus"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confiança absoluta em uma única ferramenta"
+          ],
+          "palavrasChave": [
+            "Aplicativos antivírus",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Aplicativos antivírus",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "70afe6476f2b5d3c5d8d756d8f485387dff1baa0903f60a79cd0e3fe602419ef",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0033",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-firewall",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um firewall pode filtrar conexões com base em regras de rede, mas não substitui necessariamente ferramentas destinadas a examinar e remover arquivos maliciosos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Firewall.\n\nFirewalls controlam tráfego conforme endereços, portas, protocolos, estado e outras políticas. A análise e remoção de malware em arquivos é função típica de outras soluções de segurança.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Firewall.\n\nErro provável: atribuição de todas as funções de segurança ao firewall\n\nDica: Firewall controla tráfego; antivírus analisa conteúdo malicioso.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_3.json",
+        "sourceSubtopicId": "1.2.1.5-firewall",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_3",
+        "hashQuestao": "b5cc615974396e8f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "firewall"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "atribuição de todas as funções de segurança ao firewall"
+          ],
+          "palavrasChave": [
+            "Firewall",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Firewall",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "7cec6c753d3a3f0c9981e98f9e6b5d7eaf7b2fabefb5a7902de3b01de110deed",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0034",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_3",
+      "subtopic_id": "ti_5_3",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-aplicativos-anti-spyware",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Aplicativos anti-spyware são voltados à detecção e ao bloqueio de programas que monitoram atividades ou coletam informações sem autorização adequada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Aplicativos anti-spyware.\n\nSpyware busca observar comportamento, capturar dados ou exibir publicidade invasiva. Ferramentas anti-spyware procuram identificar, bloquear e remover esse tipo de software.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Aplicativos anti-spyware.\n\nErro provável: confusão com firewall de rede\n\nDica: Spyware espiona; anti-spyware detecta e remove esse comportamento.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_3.json",
+        "sourceSubtopicId": "1.2.1.5-aplicativos-anti-spyware",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_3",
+        "hashQuestao": "e76c57491f58823b",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "anti-spyware"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão com firewall de rede"
+          ],
+          "palavrasChave": [
+            "Aplicativos anti-spyware",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Aplicativos anti-spyware",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e84d7582889f26cb2890b3c3dd577a3ce0dc769a3ac69312d36b12d2c9ca2f54",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    }
+  ]
+}

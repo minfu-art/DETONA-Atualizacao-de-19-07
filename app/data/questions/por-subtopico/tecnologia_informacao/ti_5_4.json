@@ -1,0 +1,226 @@
+{
+  "topicoEditalId": "ti_5_4",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0035",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_4",
+      "subtopic_id": "ti_5_4",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-procedimentos-de-backup",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A estratégia de backup 3-2-1 recomenda manter três cópias dos dados, em pelo menos dois tipos de mídia, com uma cópia fora do ambiente principal.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Procedimentos de backup.\n\nA regra reduz a chance de perda simultânea por falha física, erro humano, desastre ou ataque. As cópias devem ser testadas e protegidas contra alteração não autorizada.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Procedimentos de backup.\n\nErro provável: manutenção de uma única cópia\n\nDica: Três cópias, duas mídias, uma fora do local.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_4.json",
+        "sourceSubtopicId": "1.2.1.5-procedimentos-de-backup",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_4",
+        "hashQuestao": "a465d03216c8c016",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "procedimentos de backup"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "manutenção de uma única cópia"
+          ],
+          "palavrasChave": [
+            "Procedimentos de backup",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Procedimentos de backup",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "4e9c0635e47c5e73facfd8b782cabe92df859882eff6b4732f371a674e557b45",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0036",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_4",
+      "subtopic_id": "ti_5_4",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-armazenamento-de-dados-na-nuvem",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A sincronização automática com armazenamento em nuvem é sempre equivalente a um backup independente, pois uma exclusão local nunca é propagada para a nuvem.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Armazenamento de dados na nuvem.\n\nServiços de sincronização podem replicar exclusões, corrupção ou criptografia indevida para os dispositivos conectados. Recursos de versionamento e retenção ajudam, mas devem ser verificados.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Armazenamento de dados na nuvem.\n\nErro provável: confusão entre sincronização e backup\n\nDica: Sincronização replica mudanças; backup mantém cópia recuperável e independente.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_4.json",
+        "sourceSubtopicId": "1.2.1.5-armazenamento-de-dados-na-nuvem",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_4",
+        "hashQuestao": "ca6648be6b488c90",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "armazenamento em nuvem"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre sincronização e backup"
+          ],
+          "palavrasChave": [
+            "Armazenamento de dados na nuvem",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Armazenamento de dados na nuvem",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e821df61cc48b387c1f9c5989a5d18940a29e6440a01ae3106f2b7301f03d376",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0037",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_4",
+      "subtopic_id": "ti_5_4",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-cloud-storage",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Cloud storage permite armazenar e acessar dados por meio de infraestrutura remota, mas sua disponibilidade depende de fatores como conexão, serviço contratado e continuidade do provedor.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Cloud storage.\n\nO armazenamento em nuvem oferece acesso remoto, escalabilidade e compartilhamento, porém não elimina dependências de rede, credenciais, políticas do serviço e medidas de continuidade.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Cloud storage.\n\nErro provável: suposição de disponibilidade absoluta\n\nDica: Nuvem reduz algumas limitações, mas não elimina riscos operacionais.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_4.json",
+        "sourceSubtopicId": "1.2.1.5-cloud-storage",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_4",
+        "hashQuestao": "2b8b0273148561ed",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "cloud storage"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "suposição de disponibilidade absoluta"
+          ],
+          "palavrasChave": [
+            "Cloud storage",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Cloud storage",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ef2a3c1490aa663a1002c8e35e99b75ea6409f3bb0e7d77ec4e1a4920629f283",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    }
+  ]
+}

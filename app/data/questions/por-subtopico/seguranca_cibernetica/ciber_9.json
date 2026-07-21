@@ -1,0 +1,80 @@
+{
+  "topicoEditalId": "ciber_9",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 1,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0082",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_9",
+      "subtopic_id": "ciber_9",
+      "assunto": "1.2.2.7-ataques-e-vulnerabilidades",
+      "subtopico": "1.2.2.7-principais-vulnerabilidades",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Vulnerabilidade e ameaça são termos equivalentes: ambos designam necessariamente uma falha existente em um sistema.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Principais vulnerabilidades.\n\nVulnerabilidade é uma fraqueza que pode ser explorada. Ameaça é uma causa ou agente potencial de incidente. Uma ameaça pode explorar uma vulnerabilidade e produzir impacto.\n\nFundamento: Conteúdo programático 1.2.2.7 — Ataques e vulnerabilidades: Principais vulnerabilidades.\n\nErro provável: equiparação entre ameaça e fraqueza\n\nDica: Ameaça explora; vulnerabilidade permite; impacto é a consequência.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_9.json",
+        "sourceSubtopicId": "1.2.2.7-principais-vulnerabilidades",
+        "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
+        "mappedTopicoEditalId": "ciber_9",
+        "hashQuestao": "f7056b2f74a22202",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "vulnerabilidades"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equiparação entre ameaça e fraqueza"
+          ],
+          "palavrasChave": [
+            "Principais vulnerabilidades",
+            "Ataques e vulnerabilidades"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Principais vulnerabilidades",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "53ae17ced202a749d732e76b12b80a63cd5c0a04bb0b4bcebc0004943f993e24",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.743Z"
+      }
+    }
+  ]
+}

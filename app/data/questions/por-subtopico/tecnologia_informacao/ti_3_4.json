@@ -1,0 +1,209 @@
+{
+  "topicoEditalId": "ti_3_4",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "PCAL-TI-12-S01-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_4",
+      "subtopic_id": "ti_3_4",
+      "assunto": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "subtopico": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2021,
+      "fonteProva": "OBJETIVA - 2021 - Prefeitura de Santa Maria - RS - Analista de Sistemas",
+      "tipo": "multipla_escolha",
+      "enunciado": "De acordo com a Lei nº 12.965/2014, sobre a guarda de registros de conexão, em relação à atuação do Poder\nPúblico, as iniciativas públicas de fomento à cultura digital e de promoção da internet como ferramenta social\ndevem:\nI. Promover a inclusão digital.\n\nII. Buscar reduzir as desigualdades, sobretudo entre as diferentes regiões do País, no acesso às tecnologias\nda informação e comunicação e no seu uso.\nIII. Fomentar a importação e a circulação de conteúdo estrangeiro.\nEstá(ão) CORRETO(S):",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Somente o item III.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "Somente os itens I e II.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "Somente os itens I e III.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "Somente os itens II e III.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "Todos os itens.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "A questão cobrou as iniciativas públicas de fomento à cultura digital e de promoção da internet como\nferramenta social:\n         Art. 27. As iniciativas públicas de fomento à cultura digital e de promoção da internet como\n         ferramenta social devem:\n         I - promover a inclusão digital;\n         II - buscar reduzir as desigualdades, sobretudo entre as diferentes regiões do País, no\n         acesso às tecnologias da informação e comunicação e no seu uso; e\n         III - fomentar a produção e circulação de conteúdo nacional.\n\nNotem que o item III está incorreto, visto que o fomento diz respeito ao conteúdo nacional,\nlogicamente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.756Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_4.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_4",
+      "subtopic_id": "ti_3_4",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-microsoft-edge",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O Microsoft Edge é um mecanismo de busca, e não um navegador web.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Microsoft Edge.\n\nMicrosoft Edge é um navegador. Mecanismos de busca são serviços que indexam e localizam conteúdo, como Bing ou Google Search, e podem ser acessados pelo navegador.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Microsoft Edge.\n\nErro provável: confusão entre navegador e buscador\n\nDica: Navegador abre páginas; buscador ajuda a encontrá-las.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_4.json",
+        "sourceSubtopicId": "1.2.1.3-microsoft-edge",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_4",
+        "hashQuestao": "fc7901dfea79fa84",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "Microsoft Edge"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre navegador e buscador"
+          ],
+          "palavrasChave": [
+            "Microsoft Edge",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Microsoft Edge",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "5edc46e42cab9791d142eb563fd5ba59c7e430b289076c8117e055fec0fc7a64",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_4",
+      "subtopic_id": "ti_3_4",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-sitios-de-busca-na-internet",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em muitos mecanismos de busca, colocar uma expressão entre aspas pode restringir os resultados à ocorrência daquela sequência exata de palavras.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Sítios de busca na Internet.\n\nAs aspas funcionam comumente como operador de pesquisa de frase exata. O comportamento específico pode variar, mas a finalidade geral é reduzir resultados que não contenham a sequência informada.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Sítios de busca na Internet.\n\nErro provável: uso de aspas sem finalidade\n\nDica: Aspas procuram frase exata; sinal de menos costuma excluir termos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_4.json",
+        "sourceSubtopicId": "1.2.1.3-sitios-de-busca-na-internet",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_4",
+        "hashQuestao": "a4a208fab940a458",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "sítios de busca"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "uso de aspas sem finalidade"
+          ],
+          "palavrasChave": [
+            "Sítios de busca na Internet",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Sítios de busca na Internet",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "8072ceb512d9a2fa439cb75e720ca1935d8f0ad6300dfe0d927cdd4fbb863719",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2718 @@
+{
+  "topicoEditalId": "ti_9",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 58,
+  "questions": [
+    {
+      "id": "PCAL-TI-11-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "AOCP",
+      "ano": 2025,
+      "fonteProva": "AOCP / TRE TO - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Durante o desenvolvimento de um sistema de automação de relatórios\n   para o TRE-TO, um técnico utiliza um Large Language Model (LLM) para gerar sumários de\n   documentos técnicos. Ele nota que o modelo, às vezes, interpreta mal termos específicos, como\n   “TCPIIP”, gerando explicações erradas. Qual estratégia de engenharia de prompts pode ser\n   implementada para corrigir esse problema e garantir que o modelo respeite o significado\n   técnico dos termos?",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Adicionar um prefixo aleatório ao prompt para diversificar as respostas.",
+          "comentario": "Errado. Prefixo aleatório só aumenta variação/ruído e não orienta o LLM a respeitar definições técnicas específicas."
+        },
+        {
+          "letra": "B",
+          "texto": "Treinar o modelo com um conjunto de dados específico de redes antes de usar o prompt.",
+          "comentario": "Errado. Treinar o modelo é ajuste de modelo (fine-tuning), não uma estratégia de engenharia de prompts para corrigir interpretação no uso imediato."
+        },
+        {
+          "letra": "C",
+          "texto": "Usar um prompt genérico como “Escreva um sumário” para evitar vieses.",
+          "comentario": "Errado. Prompt genérico reduz controle e não evita que o modelo confunda termos; faltam regras sobre vocabulário técnico."
+        },
+        {
+          "letra": "D",
+          "texto": "Incluir uma instrução explícita como “Interprete termos técnicos conforme definições padrão de redes”.",
+          "comentario": "Correto. Instrução explícita direciona o modelo a seguir definições padrão de redes, reduzindo interpretações equivocadas de termos como “TCPIIP”."
+        },
+        {
+          "letra": "E",
+          "texto": "Limitar o tamanho da resposta do modelo a 50 palavras para forçar concisão.",
+          "comentario": "Errado. Limitar palavras só afeta concisão; não corrige o entendimento de termos técnicos nem impõe definições."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Prefixo aleatório só aumenta variação/ruído e não orienta o LLM a respeitar definições técnicas\nespecíficas.\n\n(b) Errado. Treinar o modelo é ajuste de modelo (fine-tuning), não uma estratégia de engenharia de\nprompts para corrigir interpretação no uso imediato.\n\n(c) Errado. Prompt genérico reduz controle e não evita que o modelo confunda termos; faltam regras\nsobre vocabulário técnico.\n\n(d) Correto. Instrução explícita direciona o modelo a seguir definições padrão de redes, reduzindo\ninterpretações equivocadas de termos como “TCPIIP”.\n\n(e) Errado. Limitar palavras só afeta concisão; não corrige o entendimento de termos técnicos nem impõe\ndefinições.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2025,
+      "fonteProva": "FAFIPA / Prefeitura de Araucária-PR - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em inteligência artificial, ferramentas como o\n   ChatGPT podem ser classificadas como:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "banco de dados.",
+          "comentario": "Errado. ChatGPT não é um banco de dados, embora utilize informações de grandes volumes de dados em seu treinamento;"
+        },
+        {
+          "letra": "B",
+          "texto": "algoritmos determinísticos para automação industrial.",
+          "comentario": "Errado. ChatGPT não é um algoritmo determinístico nem voltado para automação industrial;"
+        },
+        {
+          "letra": "C",
+          "texto": "ferramentas de modelagem estatística univariada.",
+          "comentario": "Errado. ChatGPT não se limita à modelagem estatística univariada, sendo muito mais complexo e multivariado;"
+        },
+        {
+          "letra": "D",
+          "texto": "sistemas baseados em aprendizado de máquina e processamento de linguagem natural (PLN).",
+          "comentario": "Correto. ChatGPT é um sistema baseado em aprendizado de máquina (machine learning) e usa técnicas de processamento de linguagem natural (PLN) para entender e gerar textos;"
+        },
+        {
+          "letra": "E",
+          "texto": "modelos criptográficos para segurança digital.",
+          "comentario": "Errado. ChatGPT não é um modelo criptográfico nem tem como função principal a segurança digital."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. ChatGPT não é um banco de dados, embora utilize informações de grandes volumes de dados\nem seu treinamento;\n\n(b) Errado. ChatGPT não é um algoritmo determinístico nem voltado para automação industrial;\n\n(c) Errado. ChatGPT não se limita à modelagem estatística univariada, sendo muito mais complexo e\nmultivariado;\n\n(d) Correto. ChatGPT é um sistema baseado em aprendizado de máquina (machine learning) e usa\ntécnicas de processamento de linguagem natural (PLN) para entender e gerar textos;\n\n(e) Errado. ChatGPT não é um modelo criptográfico nem tem como função principal a segurança digital.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "UNESC",
+      "ano": 2025,
+      "fonteProva": "UNESC / Câmara de Três Barras-SC - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "A inteligência artificial (IA) tem se popularizado\n      nos últimos anos, influenciando diretamente diversos aspectos da vida cotidiana,\n      popularizando assistentes virtuais, algoritmos de recomendação e ferramentas de geração\n      de conteúdo. Entre as informações verdadeiras relacionadas a este tema, é correto dizer que:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O uso da inteligência artificial em redes sociais tem reduzido completamente a disseminação de fake news, graças à sua precisão na checagem de fatos.",
+          "comentario": "Errado. A IA pode ajudar na detecção de fake news, mas ainda está longe de eliminar completamente sua disseminação, devido à complexidade do conteúdo e à velocidade de propagação nas redes;"
+        },
+        {
+          "letra": "B",
+          "texto": "Aplicações de IA em ambientes escolares ainda são ilegais no Brasil, por não estarem regulamentadas pelo Ministério da Educação (MEC).",
+          "comentario": "Errado. Não há ilegalidade no uso de IA em ambientes escolares no Brasil. Embora não haja uma regulamentação específica do MEC, seu uso é permitido e vem sendo incentivado;"
+        },
+        {
+          "letra": "C",
+          "texto": "Ferramentas de IA, como assistentes virtuais e tradutores automáticos, vêm sendo incorporadas em dispositivos móveis, facilitando tarefas do cotidiano.",
+          "comentario": "Correto. Ferramentas baseadas em IA, como assistentes virtuais (ex: Siri, Alexa) e tradutores automáticos (ex: Google Tradutor), estão amplamente presentes em dispositivos móveis, tornando atividades diárias mais práticas;"
+        },
+        {
+          "letra": "D",
+          "texto": "Os algoritmos utilizados por plataformas de streaming, como Netflix e Spotify, não utilizam nenhum tipo de inteligência artificial para sugerir conteúdos aos usuários.",
+          "comentario": "Errado. Plataformas como Netflix e Spotify utilizam amplamente algoritmos de IA para recomendar conteúdos com base no comportamento dos usuários;"
+        },
+        {
+          "letra": "E",
+          "texto": "A inteligência artificial é uma tecnologia exclusiva da área científica e não possui aplicações práticas no comércio ou nos serviços.",
+          "comentario": "Errado. A IA tem ampla aplicação prática em diversos setores, como comércio, saúde, transporte, atendimento ao cliente e muitos outros."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. A IA pode ajudar na detecção de fake news, mas ainda está longe de eliminar completamente\nsua disseminação, devido à complexidade do conteúdo e à velocidade de propagação nas redes;\n\n(b) Errado. Não há ilegalidade no uso de IA em ambientes escolares no Brasil. Embora não haja uma\nregulamentação específica do MEC, seu uso é permitido e vem sendo incentivado;\n\n(c) Correto. Ferramentas baseadas em IA, como assistentes virtuais (ex: Siri, Alexa) e tradutores\nautomáticos (ex: Google Tradutor), estão amplamente presentes em dispositivos móveis, tornando\natividades diárias mais práticas;\n\n(d) Errado. Plataformas como Netflix e Spotify utilizam amplamente algoritmos de IA para recomendar\nconteúdos com base no comportamento dos usuários;\n\n(e) Errado. A IA tem ampla aplicação prática em diversos setores, como comércio, saúde, transporte,\natendimento ao cliente e muitos outros.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "UNESPAR",
+      "ano": 2025,
+      "fonteProva": "UNESPAR / UNESPAR - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "No verão de 1956 na Faculdade de Dartmouth, nos Estados\n      Unidos foi realizado um workshop que é considerado o evento cientifico fundador do campo\n      de pesquisa em Artificial Intelligence (AI). Em 2025 preocupações legais e éticas estão se\n      acelerando entorno da AI porque esta é uma tecnologia que:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "usa algoritmos para imitar processos de inteligência humana, como a tomada de decisão e a resolução de problemas.",
+          "comentario": "Correto. A Inteligência Artificial utiliza algoritmos para simular processos de inteligência humana, como raciocínio, tomada de decisão, aprendizado e resolução de problemas — justamente o que tem levantado debates éticos e legais em 2025;"
+        },
+        {
+          "letra": "B",
+          "texto": "trabalha com o cruzamento entre duas espécies de seres vivos diferentes, e pode ser aplicada a plantas ou aruma1s.",
+          "comentario": "Errado. O cruzamento de espécies refere-se à engenharia genética ou biotecnologia, não à IA;"
+        },
+        {
+          "letra": "C",
+          "texto": "se vale da liberação de uma energia invisível, que atravessa o ar e as paredes, partindo de um material radioativo.",
+          "comentario": "Errado. A descrição envolve radiação, o que está relacionado à física nuclear, não à Inteligência Artificial;"
+        },
+        {
+          "letra": "D",
+          "texto": "se baseia na transferência de contaminantes, como bactérias, vírus, produtos químicos ou tóxicos, de um lugar para outro.",
+          "comentario": "Errado. A transferência de contaminantes é um tema ligado à biotecnologia ou segurança ambiental, e não à IA;"
+        },
+        {
+          "letra": "E",
+          "texto": "visa a realização de uma cirurgia experimental que consiste na transferência da cabeça de uma pessoa para o corpo de outra.",
+          "comentario": "Errado. A transferência de cabeça é um conceito médico extremamente controverso e experimental, sem relação com os fundamentos ou preocupações reais da IA."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. A Inteligência Artificial utiliza algoritmos para simular processos de inteligência humana, como\nraciocínio, tomada de decisão, aprendizado e resolução de problemas — justamente o que tem levantado\ndebates éticos e legais em 2025;\n\n(b) Errado. O cruzamento de espécies refere-se à engenharia genética ou biotecnologia, não à IA;\n\n(c) Errado. A descrição envolve radiação, o que está relacionado à física nuclear, não à Inteligência\nArtificial;\n\n(d) Errado. A transferência de contaminantes é um tema ligado à biotecnologia ou segurança ambiental,\ne não à IA;\n\n(e) Errado. A transferência de cabeça é um conceito médico extremamente controverso e experimental,\nsem relação com os fundamentos ou preocupações reais da IA.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2025,
+      "fonteProva": "Instituto Ágata / Prefeitura de Piçarra - PA - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "No contexto da Inteligência Artificial\n      Generativa, a engenharia de prompt é utilizada para:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Orientar a IA a gerar os resultados desejados, relevantes e de alta qualidade.",
+          "comentario": "Correto. A engenharia de prompt é uma técnica que visa orientar a IA a produzir resultados que sejam relevantes e de alta qualidade, ajustando as instruções dadas ao modelo."
+        },
+        {
+          "letra": "B",
+          "texto": "Construir modelos Generativos especialistas por contexto.",
+          "comentario": "Errado. A engenharia de prompt não se concentra na construção de modelos, mas sim na formulação de perguntas ou instruções para obter melhores respostas."
+        },
+        {
+          "letra": "C",
+          "texto": "Realizar fine tuning no modelo.",
+          "comentario": "Errado. O fine tuning refere-se ao ajuste de um modelo pré-treinado, enquanto a engenharia de prompt se ocupa da interação com o modelo já existente."
+        },
+        {
+          "letra": "D",
+          "texto": "Aumentar a velocidade de inferência dos modelos.",
+          "comentario": "Errado. A engenharia de prompt não está diretamente relacionada à velocidade de inferência, mas sim à qualidade das respostas geradas pela IA."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. A engenharia de prompt é uma técnica que visa orientar a IA a produzir resultados que sejam\nrelevantes e de alta qualidade, ajustando as instruções dadas ao modelo.\n\n(b) Errado. A engenharia de prompt não se concentra na construção de modelos, mas sim na formulação\nde perguntas ou instruções para obter melhores respostas.\n\n(c) Errado. O fine tuning refere-se ao ajuste de um modelo pré-treinado, enquanto a engenharia de\nprompt se ocupa da interação com o modelo já existente.\n\n(d) Errado. A engenharia de prompt não está diretamente relacionada à velocidade de inferência, mas\nsim à qualidade das respostas geradas pela IA.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FUVEST",
+      "ano": 2025,
+      "fonteProva": "FUVEST / USP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "O uso de Inteligência Artificial (IA) generativa em larga escala levanta\n      preocupações sobre privacidade e segurança dos dados, especialmente em aplicações que\n      envolvem processamento de informações sensíveis. Qual das opções melhor representa um\n      princípio essencial para a proteção de dados nesses sistemas?",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O princípio da transparência exige que os critérios e processos de tomada de decisão da IA sejam compreensíveis e auditáveis.",
+          "comentario": "Correto. O princípio da transparência é fundamental para garantir que os usuários compreendam como suas informações são processadas, promovendo confiança e responsabilidade nas aplicações de IA."
+        },
+        {
+          "letra": "B",
+          "texto": "A soberania digital pressupõe que apenas os governos tenham controle sobre o desenvolvimento da IA.",
+          "comentario": "Errado. A soberania digital refere-se ao controle de dados por países, mas não limita o desenvolvimento da IA apenas a governos, pois empresas também desempenham um papel crucial."
+        },
+        {
+          "letra": "C",
+          "texto": "O consentimento informado permite que os usuários escolham como seus dados serão utilizados e armazenados.",
+          "comentario": "Errado. Embora o consentimento informado seja um pilar da proteção de dados, ele é um direito do titular, não um princípio específico da IA generativa em larga escala."
+        },
+        {
+          "letra": "D",
+          "texto": "A supervisão algorítmica impede que sistemas de IA tomem decisões sem intervenção humana.",
+          "comentario": "Errado. A supervisão algorítmica é importante, mas não impede totalmente que sistemas de IA operem de forma autônoma; é uma questão de balancear automação e controle humano."
+        },
+        {
+          "letra": "E",
+          "texto": "O princípio da imparcialidade impede que qualquer dado seja usado para treinamento de IA sem permissão judicial.",
+          "comentario": "Errado. O princípio da imparcialidade busca evitar discriminação, mas não impede o uso de dados para treinamento de IA sem permissão judicial, desde que respeitadas as normas de privacidade."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. O princípio da transparência é fundamental para garantir que os usuários compreendam\ncomo suas informações são processadas, promovendo confiança e responsabilidade nas aplicações de\nIA.\n\n(b) Errado. A soberania digital refere-se ao controle de dados por países, mas não limita o\ndesenvolvimento da IA apenas a governos, pois empresas também desempenham um papel crucial.\n\n(c) Errado. Embora o consentimento informado seja um pilar da proteção de dados, ele é um direito do\ntitular, não um princípio específico da IA generativa em larga escala.\n\n(d) Errado. A supervisão algorítmica é importante, mas não impede totalmente que sistemas de IA operem\nde forma autônoma; é uma questão de balancear automação e controle humano.\n\n(e) Errado. O princípio da imparcialidade busca evitar discriminação, mas não impede o uso de dados\npara treinamento de IA sem permissão judicial, desde que respeitadas as normas de privacidade.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / ANM - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a inteligências artificiais (IAs) generativas e\n      discriminativas, julgue o item seguinte.\n\n   Uma IA generativa cujo aprendizado é realizado a partir da distribuição de probabilidade conjunta\n   p(x,y), em que x é o dado de entrada e y é o rótulo que se queira classificar, pode gerar mais amostras\n   por si só artificialmente, com base em suposições a respeito da distribuição de dados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Uma IA generativa modela a distribuição conjunta p(x,y) e pode criar novas amostras a partir dessa\ndistribuição, utilizando suposições sobre os dados para gerar exemplos que não estavam presentes no\nconjunto original.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "Gama Consult / Prefeitura de Inocência - MS - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "A inteligência artificial (IA) generativa,\n       como o ChatGPT, tem se destacado na produção de textos e imagens a partir de comandos\n       em linguagem natural. No entanto, o uso dessa tecnologia em áreas como educação e\n       comunicação levanta debates sobre a necessidade de regulamentação, devido\n       a preocupações como:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Aumento da produtividade e criatividade dos usuários, que podem gerar conteúdos mais rapidamente e com maior qualidade, o que pode levar à obsolescência de profissões que dependem da produção de textos e imagens.",
+          "comentario": "Errado. Embora a IA generativa possa aumentar a produtividade, a obsolescência de profissões não é uma consequência direta e imediata, pois muitas funções ainda requerem habilidades humanas."
+        },
+        {
+          "letra": "B",
+          "texto": "Disseminação de informações falsas e enviesadas, geradas por modelos de IA que não possuem capacidade de discernimento crítico e podem reproduzir estereótipos e preconceitos presentes nos dados de treinamento.",
+          "comentario": "Correto. A IA generativa pode disseminar informações falsas, pois não possui discernimento crítico e pode replicar preconceitos dos dados de treinamento, levantando preocupações éticas."
+        },
+        {
+          "letra": "C",
+          "texto": "Redução do custo de produção de conteúdo, tornando-o mais acessível a pequenas empresas e criadores independentes, o que pode democratizar o acesso à informação e à cultura.",
+          "comentario": "Errado. A redução de custos pode democratizar o acesso, mas não é uma preocupação central em relação à regulamentação da IA, que se foca mais em ética e veracidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Melhora da qualidade da educação, com a criação de ferramentas personalizadas de ensino e tutoria, que podem adaptar o conteúdo às necessidades individuais de cada aluno, tornando o aprendizado mais eficiente.",
+          "comentario": "Errado. Embora a IA possa melhorar a educação, a regulamentação se preocupa mais com os riscos de desinformação e preconceitos do que com os benefícios diretos da tecnologia."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. Embora a IA generativa possa aumentar a produtividade, a obsolescência de profissões não é\numa consequência direta e imediata, pois muitas funções ainda requerem habilidades humanas.\n\n(b) Correto. A IA generativa pode disseminar informações falsas, pois não possui discernimento crítico e\npode replicar preconceitos dos dados de treinamento, levantando preocupações éticas.\n\n(c) Errado. A redução de custos pode democratizar o acesso, mas não é uma preocupação central em\nrelação à regulamentação da IA, que se foca mais em ética e veracidade.\n\n(d) Errado. Embora a IA possa melhorar a educação, a regulamentação se preocupa mais com os riscos\nde desinformação e preconceitos do que com os benefícios diretos da tecnologia.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "INSTITUTO ACCESS",
+      "ano": 2024,
+      "fonteProva": "Instituto Access / MAST - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os algoritmos, a Inteligência Artificial e o Aprendizado de\n       máquinas desempenham papel crucial na compreensão das tecnologias que moldam a\n       sociedade contemporânea. Analise as afirmativas a seguir:\n\n   I. Os algoritmos são estruturas lógicas simples que orientam os computadores na resolução de\n   problemas e na tomada de decisão.\n\n   II. Inteligência artificial engloba uma ampla gama de tecnologias e sistemas capazes de\n   realizadas tarefas que normalmente não requerem inteligência humana.\n\n   III. O aprendizado de máquina é uma grande área da Inteligência artificial que se concentra no\n   desenvolvimento de algoritmos e modelos computacionais que permitem aprendizado e\n   melhora de um sistema com base em dados, sem a necessidade de serem explicitamente\n   programados para realizar tarefas específicas.\n\n   Assinale",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "se todas as afirmativas estiverem corretas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "se somente as afirmativas II e III estiverem corretas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "se somente as afirmativas I e III estiverem corretas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "se somente as afirmativas I e II estiverem corretas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "se nenhuma afirmativa estiver correta.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(I) Correto. Algoritmos são instruções lógicas e bem definidas que orientam computadores na resolução\nde problemas e na tomada de decisões, formando a base de funcionamento de sistemas computacionais;\n\n(II) Errado. A IA realiza tarefas que normalmente requerem (e não que não requerem) inteligência humana,\ncomo reconhecimento de fala, visão computacional, e tomada de decisões complexas;\n\n(III) Correto. O aprendizado de máquina é uma área da IA que desenvolve modelos capazes de aprender\ncom dados, ajustando-se automaticamente sem precisar ser reprogramado para cada nova tarefa.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "COTEC / Prefeitura de Limeira do Oeste - MG - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em 2023, houve um grande aumento\n       no uso de tecnologias que envolvem máquinas, executando tarefas e tomando decisões por\n       meio de algoritmos. Um exemplo que ganhou popularidade no Brasil é o uso do recurso que\n       simula diálogos quase perfeitamente humanos. O trecho descrito se refere a qual conceito?",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Realidade Virtual (RV).",
+          "comentario": "Errado. Realidade Virtual (RV) cria ambientes imersivos simulados, mas não é focada em simulação de diálogos com humanos;"
+        },
+        {
+          "letra": "B",
+          "texto": "Inteligência Artificial (IA).",
+          "comentario": "Correto. O uso de modelos que simulam diálogos com linguagem natural, como chatbots avançados e assistentes virtuais, está diretamente relacionado à Inteligência Artificial (IA), especialmente à IA generativa;"
+        },
+        {
+          "letra": "C",
+          "texto": "Automação Robótica de Processos (RPA).",
+          "comentario": "Errado. RPA automatiza tarefas repetitivas em sistemas, mas não simula diálogos humanos com fluência;"
+        },
+        {
+          "letra": "D",
+          "texto": "Internet das Coisas (IoT).",
+          "comentario": "Errado. A IoT conecta dispositivos à internet, mas não é centrada em comunicação por linguagem natural;"
+        },
+        {
+          "letra": "E",
+          "texto": "Computação em Nuvem (Cloud Computing).",
+          "comentario": "Errado. Computação em nuvem é a infraestrutura que pode suportar esses sistemas, mas não é o conceito que descreve a simulação de diálogos."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. Realidade Virtual (RV) cria ambientes imersivos simulados, mas não é focada em simulação de\ndiálogos com humanos;\n\n(b) Correto. O uso de modelos que simulam diálogos com linguagem natural, como chatbots avançados\ne assistentes virtuais, está diretamente relacionado à Inteligência Artificial (IA), especialmente à IA\ngenerativa;\n\n(c) Errado. RPA automatiza tarefas repetitivas em sistemas, mas não simula diálogos humanos com\nfluência;\n\n(d) Errado. A IoT conecta dispositivos à internet, mas não é centrada em comunicação por linguagem\nnatural;\n\n(e) Errado. Computação em nuvem é a infraestrutura que pode suportar esses sistemas, mas não é o\nconceito que descreve a simulação de diálogos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "AMEOSC / Prefeitura de Guarujá do Sul-SC - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "A Inteligência Artificial (IA) está\n       remodelando vários aspectos da vida cotidiana e da economia. Qual das seguintes áreas\n       NÃO é considerada um benefício potencial do avanço da IA?",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Melhoria nos diagnósticos médicos através do processamento avançado de imagens.",
+          "comentario": "Errado. A IA é amplamente utilizada na área da saúde, especialmente no diagnóstico por imagem, auxiliando médicos na detecção precoce de doenças;"
+        },
+        {
+          "letra": "B",
+          "texto": "Personalização do aprendizado em ambientes educacionais, adaptando-se às necessidades individuais dos alunos.",
+          "comentario": "Errado. A personalização do ensino com IA é um benefício importante, pois adapta conteúdos ao ritmo e estilo de aprendizagem de cada aluno;"
+        },
+        {
+          "letra": "C",
+          "texto": "Redução da necessidade de interação humana em processos de atendimento ao cliente, promovendo o isolamento social.",
+          "comentario": "Correto. Embora a automação no atendimento ao cliente seja um uso comum da IA, a promoção do isolamento social não é considerada um benefício, mas sim uma possível consequência negativa desse avanço;"
+        },
+        {
+          "letra": "D",
+          "texto": "Otimização de rotas de entrega e logística, reduzindo custos e emissões de carbono.",
+          "comentario": "Errado. A IA tem contribuído para a logística inteligente, otimizando rotas, economizando recursos e diminuindo o impacto ambiental."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. A IA é amplamente utilizada na área da saúde, especialmente no diagnóstico por imagem,\nauxiliando médicos na detecção precoce de doenças;\n\n(b) Errado. A personalização do ensino com IA é um benefício importante, pois adapta conteúdos ao ritmo\ne estilo de aprendizagem de cada aluno;\n\n(c) Correto. Embora a automação no atendimento ao cliente seja um uso comum da IA, a promoção do\nisolamento social não é considerada um benefício, mas sim uma possível consequência negativa desse\navanço;\n\n(d) Errado. A IA tem contribuído para a logística inteligente, otimizando rotas, economizando recursos e\ndiminuindo o impacto ambiental.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "OBJETIVA / Prefeitura de Fontoura Xavier - RS - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Considerando-se o avanço\n       tecnológico, assinalar a alternativa que preenche a lacuna abaixo CORRETAMENTE: A\n       _______________ é a capacidade que uma máquina para reproduzir competências\n       semelhantes às humanas, como é o caso do raciocínio e da criatividade, por exemplo.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "inteligência emocional",
+          "comentario": "Errado. Inteligência emocional refere-se à capacidade humana de reconhecer, compreender e gerenciar emoções, não sendo uma tecnologia aplicada em máquinas;"
+        },
+        {
+          "letra": "B",
+          "texto": "inteligência artificial",
+          "comentario": "Correto. Inteligência artificial é a área da tecnologia que permite que máquinas simulem habilidades humanas, como raciocínio, criatividade, percepção e tomada de decisão;"
+        },
+        {
+          "letra": "C",
+          "texto": "inteligência espacial",
+          "comentario": "Errado. Inteligência espacial é uma das inteligências humanas descritas por Gardner, relacionada à percepção visual e espacial, não à capacidade de máquinas;"
+        },
+        {
+          "letra": "D",
+          "texto": "inteligência naturalista",
+          "comentario": "Errado. Inteligência naturalista também é uma das inteligências múltiplas, associada à identificação de elementos da natureza, sem relação com o contexto tecnológico da questão."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. Inteligência emocional refere-se à capacidade humana de reconhecer, compreender e\ngerenciar emoções, não sendo uma tecnologia aplicada em máquinas;\n\n(b) Correto. Inteligência artificial é a área da tecnologia que permite que máquinas simulem habilidades\nhumanas, como raciocínio, criatividade, percepção e tomada de decisão;\n\n(c) Errado. Inteligência espacial é uma das inteligências humanas descritas por Gardner, relacionada à\npercepção visual e espacial, não à capacidade de máquinas;\n\n(d) Errado. Inteligência naturalista também é uma das inteligências múltiplas, associada à identificação de\nelementos da natureza, sem relação com o contexto tecnológico da questão.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "DECORP / Prefeitura de Feijó - AC - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Qual dos seguintes conceitos é fundamental para\n       o desenvolvimento de sistemas de Inteligência Artificial (IA) que podem aprender e se\n       adaptar com base em dados?",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Algoritmos de criptografia.",
+          "comentario": "Errado. Algoritmos de criptografia são usados para proteger dados, mas não estão diretamente ligados ao aprendizado e adaptação de sistemas de IA;"
+        },
+        {
+          "letra": "B",
+          "texto": "Redes de computadores.",
+          "comentario": "Errado. Redes de computadores possibilitam a comunicação entre dispositivos, mas não são o conceito central para o aprendizado em IA;"
+        },
+        {
+          "letra": "C",
+          "texto": "Aprendizado de máquina.",
+          "comentario": "Correto. Aprendizado de máquina (machine learning) é o conceito fundamental para o desenvolvimento de sistemas de IA capazes de aprender com dados e se adaptar com base neles;"
+        },
+        {
+          "letra": "D",
+          "texto": "Linguagens de programação orientadas a objetos.",
+          "comentario": "Errado. Linguagens de programação orientadas a objetos ajudam na estruturação de software, mas não são o componente principal do processo de aprendizado da IA."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Algoritmos de criptografia são usados para proteger dados, mas não estão diretamente\nligados ao aprendizado e adaptação de sistemas de IA;\n\n(b) Errado. Redes de computadores possibilitam a comunicação entre dispositivos, mas não são o\nconceito central para o aprendizado em IA;\n\n(c) Correto. Aprendizado de máquina (machine learning) é o conceito fundamental para o\ndesenvolvimento de sistemas de IA capazes de aprender com dados e se adaptar com base neles;\n\n(d) Errado. Linguagens de programação orientadas a objetos ajudam na estruturação de software, mas\nnão são o componente principal do processo de aprendizado da IA.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-017",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "MS CONCURSOS",
+      "ano": 2024,
+      "fonteProva": "MS CONCURSOS / SAAE de São Carlos - SP - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "A Inteligência Artificial, (IA), é uma área\n       da tecnologia que permite que computadores e dispositivos digitais, realizem atividades\n       semelhantes às humanas. Entre as capacidades da IA, podemos destacar:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Realizar tarefas repetitivas de maneira mais rápidas, analisando dados e fazendo recomendações baseadas no aprendizado com grandes volumes de informações.",
+          "comentario": "Correto. Uma das principais capacidades da Inteligência Artificial é automatizar tarefas repetitivas, analisar grandes volumes de dados e fazer recomendações inteligentes com base em padrões aprendidos, otimizando processos em diversas áreas;"
+        },
+        {
+          "letra": "B",
+          "texto": "Criar programas que eliminem, completamente, a necessidade de interação humana em todos os sistemas computacionais.",
+          "comentario": "Errado. Embora a IA permita automação, a eliminação total da interação humana não é realista nem recomendada, principalmente em sistemas críticos ou complexos;"
+        },
+        {
+          "letra": "C",
+          "texto": "Desenvolver máquinas que não precisem de energia elétrica para processar informações e acessar a internet automaticamente.",
+          "comentario": "Errado. Máquinas baseadas em IA necessitam de energia elétrica e infraestrutura computacional para operar; não existe IA sem consumo de energia;"
+        },
+        {
+          "letra": "D",
+          "texto": "Garantir que os dispositivos eletrônicos, nunca precisem ser atualizados ou configurados por humanos.",
+          "comentario": "Errado. Dispositivos com IA ainda precisam de atualizações, configurações e supervisão humana, especialmente para corrigir erros, atualizar modelos e garantir segurança."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. Uma das principais capacidades da Inteligência Artificial é automatizar tarefas repetitivas,\nanalisar grandes volumes de dados e fazer recomendações inteligentes com base em padrões\naprendidos, otimizando processos em diversas áreas;\n\n(b) Errado. Embora a IA permita automação, a eliminação total da interação humana não é realista nem\nrecomendada, principalmente em sistemas críticos ou complexos;\n\n(c) Errado. Máquinas baseadas em IA necessitam de energia elétrica e infraestrutura computacional para\noperar; não existe IA sem consumo de energia;\n\n(d) Errado. Dispositivos com IA ainda precisam de atualizações, configurações e supervisão humana,\nespecialmente para corrigir erros, atualizar modelos e garantir segurança.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-018",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "UFG",
+      "ano": 2024,
+      "fonteProva": "IV - UFG / Câmara de Anápolis - GO - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "O conceito que representa a capacidade de um\n       computador/dispositivo eletrônico de se comportar assemelhando-se à forma de pensar de\n       um ser humano, em que pode, usando variáveis do ambiente, tomar decisões e resolver\n       problemas é",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "a realidade aumentada.",
+          "comentario": "Errado. Realidade aumentada é a sobreposição de elementos virtuais ao ambiente real, mas não envolve tomada de decisão ou raciocínio semelhante ao humano;"
+        },
+        {
+          "letra": "B",
+          "texto": "o metaverso.",
+          "comentario": "Errado. O metaverso é um ambiente virtual imersivo e interativo, mas não define a capacidade de raciocínio ou decisão dos dispositivos;"
+        },
+        {
+          "letra": "C",
+          "texto": "a internet das coisas.",
+          "comentario": "Errado. A internet das coisas (IoT) conecta dispositivos à internet para coleta e troca de dados, mas não implica, por si só, em inteligência ou tomada de decisão avançada;"
+        },
+        {
+          "letra": "D",
+          "texto": "a inteligência artificial.",
+          "comentario": "Correto. A inteligência artificial (IA) é o conceito que representa a capacidade de dispositivos realizarem tarefas que imitam o raciocínio humano, como tomar decisões, aprender com dados e resolver problemas com base em variáveis do ambiente."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Realidade aumentada é a sobreposição de elementos virtuais ao ambiente real, mas não\nenvolve tomada de decisão ou raciocínio semelhante ao humano;\n\n(b) Errado. O metaverso é um ambiente virtual imersivo e interativo, mas não define a capacidade de\nraciocínio ou decisão dos dispositivos;\n\n(c) Errado. A internet das coisas (IoT) conecta dispositivos à internet para coleta e troca de dados, mas\nnão implica, por si só, em inteligência ou tomada de decisão avançada;\n\n(d) Correto. A inteligência artificial (IA) é o conceito que representa a capacidade de dispositivos\nrealizarem tarefas que imitam o raciocínio humano, como tomar decisões, aprender com dados e resolver\nproblemas com base em variáveis do ambiente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-019",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "OBJETIVA / Prefeitura de Canguçu - RS - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Considerando-se o uso da tecnologia\n       atualmente, assinalar a alternativa que preenche a lacuna abaixo CORRETAMENTE:\n\n   O ______________ é um modelo de linguagem capaz de entregar tanto soluções simples para o\n   dia a dia quanto gerar respostas complexas e atualizadas acerca de temas extremamente\n   específicos. O grande diferencial dele para os mecanismos de busca atuais ou até assistentes\n   virtuais é a capacidade que ele tem de conversar com o público enquanto aprende.\n   Basicamente, trata-se de uma plataforma na qual é possível digitar uma pergunta e ter uma\n   resposta personalizada, com um altíssimo nível de adaptabilidade para a sua demanda.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "ChatGPT",
+          "comentario": "Correto. O ChatGPT é um modelo de linguagem baseado em inteligência artificial capaz de gerar respostas personalizadas, adaptáveis e com linguagem natural, simulando uma conversa com o usuário, sendo seu grande diferencial a capacidade de aprender e se adaptar ao contexto;"
+        },
+        {
+          "letra": "B",
+          "texto": "Skype",
+          "comentario": "Errado. O Skype é uma ferramenta de comunicação por voz e vídeo, sem as capacidades de linguagem natural e adaptabilidade mencionadas;"
+        },
+        {
+          "letra": "C",
+          "texto": "Facebook Menssenger",
+          "comentario": "Errado. O Facebook Messenger é um aplicativo de mensagens, que pode usar bots simples, mas não possui o nível de interação e compreensão do ChatGPT;"
+        },
+        {
+          "letra": "D",
+          "texto": "TikTok",
+          "comentario": "Errado. O TikTok é uma rede social baseada em vídeos curtos, sem relação com modelos de linguagem ou respostas baseadas em IA conversacional."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. O ChatGPT é um modelo de linguagem baseado em inteligência artificial capaz de gerar\nrespostas personalizadas, adaptáveis e com linguagem natural, simulando uma conversa com o usuário,\nsendo seu grande diferencial a capacidade de aprender e se adaptar ao contexto;\n\n(b) Errado. O Skype é uma ferramenta de comunicação por voz e vídeo, sem as capacidades de linguagem\nnatural e adaptabilidade mencionadas;\n\n(c) Errado. O Facebook Messenger é um aplicativo de mensagens, que pode usar bots simples, mas não\npossui o nível de interação e compreensão do ChatGPT;\n\n(d) Errado. O TikTok é uma rede social baseada em vídeos curtos, sem relação com modelos de\nlinguagem ou respostas baseadas em IA conversacional.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-020",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FURB",
+      "ano": 2024,
+      "fonteProva": "FURB / SED-SC - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "As primeiras pesquisa sobre Inteligência Artificial iniciaram ainda\n       nos anos 40 do século XX. Nos últimos anos, foram popularizados novos modelos por meio\n       de recursos como ChatGPT, Gemini, CoPilot, entre outros que têm transformado as relações\n       de trabalho e os processos educacionais. Esses novos modelos são baseado em tecnologias\n       da Inteligência Artificial denominadas de:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Inteligência Artificial Genética.",
+          "comentario": "Errado. Inteligência Artificial Genética refere-se ao uso de algoritmos inspirados na evolução biológica, não sendo a base dos modelos como ChatGPT ou Gemini;"
+        },
+        {
+          "letra": "B",
+          "texto": "Sistemas Especialistas.",
+          "comentario": "Errado. Sistemas Especialistas são programas que simulam a tomada de decisão humana em domínios específicos, baseados em regras, e não geram conteúdos novos;"
+        },
+        {
+          "letra": "C",
+          "texto": "Inteligências Digitais do Século XXI.",
+          "comentario": "Errado. “Inteligências Digitais do Século XXI” não é um termo técnico reconhecido em IA;"
+        },
+        {
+          "letra": "D",
+          "texto": "Inteligência Artificial Generativa.",
+          "comentario": "Correto. Modelos como ChatGPT, Gemini e Copilot são exemplos de Inteligência Artificial Generativa, que cria novos conteúdos (textos, códigos, imagens) com base em grandes volumes de dados;"
+        },
+        {
+          "letra": "E",
+          "texto": "Redes Neurais Inteligentes.",
+          "comentario": "Errado. Embora esses modelos usem redes neurais, o termo mais apropriado e atual para descrevê- los é IA Generativa."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Inteligência Artificial Genética refere-se ao uso de algoritmos inspirados na evolução biológica,\nnão sendo a base dos modelos como ChatGPT ou Gemini;\n\n(b) Errado. Sistemas Especialistas são programas que simulam a tomada de decisão humana em domínios\nespecíficos, baseados em regras, e não geram conteúdos novos;\n\n(c) Errado. “Inteligências Digitais do Século XXI” não é um termo técnico reconhecido em IA;\n\n(d) Correto. Modelos como ChatGPT, Gemini e Copilot são exemplos de Inteligência Artificial Generativa,\nque cria novos conteúdos (textos, códigos, imagens) com base em grandes volumes de dados;\n\n(e) Errado. Embora esses modelos usem redes neurais, o termo mais apropriado e atual para descrevê-\nlos é IA Generativa.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-021",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FIOCRUZ",
+      "ano": 2024,
+      "fonteProva": "FIOCRUZ / FIOCRUZ - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "O ChatGPT é um modelo de linguagem desenvolvido pela\n       OpenAI, baseado na arquitetura GPT (Generative Pre-trained Transformer). Sobre o Chat-\n       GPT, é correto afirmar que:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "é uma abordagem de aprendizado de máquina que utiliza uma rede neural transformadora treinada sob demanda em uma grande quantidade de dados textuais para realizar tarefas diversas, como geração de texto, tradução, questionamento e resposta, entre outras.",
+          "comentario": "Errado. O ChatGPT é treinado antes (pre-trained) em grandes volumes de dados e não é treinado sob demanda. Sua arquitetura utiliza Transformers, e ele pode realizar tarefas como geração de texto, tradução e Q&A, mas a descrição contém um erro conceitual sobre o processo de treinamento;"
+        },
+        {
+          "letra": "B",
+          "texto": "ele aprende a prever a próxima palavra em uma sequência, mas não tem uma compreensão profunda da estrutura e do conteúdo da linguagem.",
+          "comentario": "Errado. Embora o modelo realmente aprenda a prever a próxima palavra, ele também desenvolve uma compreensão estatística profunda da linguagem, suficiente para manter coerência e estrutura em textos complexos;"
+        },
+        {
+          "letra": "C",
+          "texto": "apesar de ele entender contextos, gerar respostas coesas e manter uma conversa significativa, ele não foi afinado especificamente para tarefas de conversação.",
+          "comentario": "Errado. O ChatGPT foi ajustado (fine-tuned) especificamente para conversação, incluindo o uso de Reinforcement Learning from Human Feedback (RLHF);"
+        },
+        {
+          "letra": "D",
+          "texto": "é uma ferramenta poderosa, mas pode gerar respostas que não são necessariamente precisas ou contextualmente apropriadas, pois sua geração é baseada em padrões aprendidos nos dados de treinamento.",
+          "comentario": "Correto. O modelo é poderoso e versátil, mas pode gerar respostas incorretas ou imprecisas, pois se baseia em padrões aprendidos, não em verificação factual em tempo real;"
+        },
+        {
+          "letra": "E",
+          "texto": "lista uma bibliografia segura de onde as informações apresentadas foram retiradas.",
+          "comentario": "Errado. O ChatGPT não lista fontes confiáveis automaticamente nem garante que suas respostas estejam baseadas em uma bibliografia específica."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. O ChatGPT é treinado antes (pre-trained) em grandes volumes de dados e não é treinado sob\ndemanda. Sua arquitetura utiliza Transformers, e ele pode realizar tarefas como geração de texto,\ntradução e Q&A, mas a descrição contém um erro conceitual sobre o processo de treinamento;\n\n(b) Errado. Embora o modelo realmente aprenda a prever a próxima palavra, ele também desenvolve\numa compreensão estatística profunda da linguagem, suficiente para manter coerência e estrutura em\ntextos complexos;\n\n(c) Errado. O ChatGPT foi ajustado (fine-tuned) especificamente para conversação, incluindo o uso de\nReinforcement Learning from Human Feedback (RLHF);\n\n(d) Correto. O modelo é poderoso e versátil, mas pode gerar respostas incorretas ou imprecisas, pois se\nbaseia em padrões aprendidos, não em verificação factual em tempo real;\n\n(e) Errado. O ChatGPT não lista fontes confiáveis automaticamente nem garante que suas respostas\nestejam baseadas em uma bibliografia específica.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-022",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "IBFC",
+      "ano": 2024,
+      "fonteProva": "IBFC / TRF - 5ª REGIÃO - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a alternativa correta sobre a importância da criação\n       de prompts detalhados para obter resultados úteis de uma Inteligência Artificial (IA)\n       generativa.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prompts detalhados ajudam a IA generativa a prever a melhor saída com base em treinamentos anteriores, gerando resultados mais precisos e relevantes",
+          "comentario": "Correto. Prompts detalhados fornecem contexto claro e específico, o que permite à IA generativa prever saídas mais precisas e relevantes, com base no que aprendeu durante o treinamento;"
+        },
+        {
+          "letra": "B",
+          "texto": "Prompts detalhados são importantes para garantir que a IA generativa opere com maior velocidade, reduzindo o tempo de resposta",
+          "comentario": "Errado. A velocidade de resposta da IA depende de outros fatores técnicos (como capacidade computacional), e não apenas da complexidade ou detalhamento do prompt;"
+        },
+        {
+          "letra": "C",
+          "texto": "Prompts detalhados são necessários para a IA generativa realizar análises estatísticas complexas e otimizar seus modelos de linguagem",
+          "comentario": "Errado. A IA generativa não realiza análises estatísticas complexas por conta própria com base em prompts — ela gera texto com base em padrões aprendidos, não em análise estatística;"
+        },
+        {
+          "letra": "D",
+          "texto": "Prompts detalhados são utilizados para atualizar os modelos de machine learning da IA generativa com novos dados de treinamento",
+          "comentario": "Errado. Prompts não atualizam o modelo nem servem como novos dados de treinamento — eles apenas instruem a IA durante o uso."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. Prompts detalhados fornecem contexto claro e específico, o que permite à IA generativa\nprever saídas mais precisas e relevantes, com base no que aprendeu durante o treinamento;\n\n(b) Errado. A velocidade de resposta da IA depende de outros fatores técnicos (como capacidade\ncomputacional), e não apenas da complexidade ou detalhamento do prompt;\n\n(c) Errado. A IA generativa não realiza análises estatísticas complexas por conta própria com base em\nprompts — ela gera texto com base em padrões aprendidos, não em análise estatística;\n\n(d) Errado. Prompts não atualizam o modelo nem servem como novos dados de treinamento — eles\napenas instruem a IA durante o uso.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-023",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "IBFC",
+      "ano": 2024,
+      "fonteProva": "IBFC / TRF - 5ª REGIÃO - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a alternativa que apresenta a principal função da\n       engenharia de prompt no contexto da inteligência artificial (IA) generativa.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A engenharia de prompt visa desenvolver novos algoritmos de aprendizado de máquina para melhorar a precisão dos modelos de IA generativa",
+          "comentario": "Errado. O desenvolvimento de novos algoritmos de aprendizado de máquina é papel de pesquisadores em machine learning, não da engenharia de prompt;"
+        },
+        {
+          "letra": "B",
+          "texto": "A engenharia de prompt é responsável por criar instruções detalhadas e formatos específicos que orientam a IA generativa para gerar resultados relevantes e de alta qualidade",
+          "comentario": "Correto. A engenharia de prompt consiste em criar instruções claras, estruturadas e eficazes para orientar a IA generativa a produzir respostas mais precisas, úteis e contextualizadas;"
+        },
+        {
+          "letra": "C",
+          "texto": "A engenharia de prompt foca em implementar soluções de hardware para melhorar a performance da IA generativa em termos de processamento",
+          "comentario": "Errado. A melhoria de performance via hardware é responsabilidade de áreas como engenharia de sistemas ou arquitetura computacional, e não da engenharia de prompt;"
+        },
+        {
+          "letra": "D",
+          "texto": "A engenharia de prompt trata da integração de diferentes plataformas de IA generativa para maximizar a eficiência na execução de tarefas",
+          "comentario": "Errado. A integração de plataformas é parte da engenharia de software ou arquitetura de soluções, não é o foco da engenharia de prompt."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. O desenvolvimento de novos algoritmos de aprendizado de máquina é papel de\npesquisadores em machine learning, não da engenharia de prompt;\n\n(b) Correto. A engenharia de prompt consiste em criar instruções claras, estruturadas e eficazes para\norientar a IA generativa a produzir respostas mais precisas, úteis e contextualizadas;\n\n(c) Errado. A melhoria de performance via hardware é responsabilidade de áreas como engenharia de\nsistemas ou arquitetura computacional, e não da engenharia de prompt;\n\n(d) Errado. A integração de plataformas é parte da engenharia de software ou arquitetura de soluções,\nnão é o foco da engenharia de prompt.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-024",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "IGEDUC / Prefeitura de Cupira - PE - 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Os modelos de IA, como GPT (Generative Pre-\n       trained Transformer), são baseados em grandes modelos de linguagem que utilizam milhões\n       de parâmetros para gerar texto de maneira coerente e natural, sendo capazes de realizar\n       tarefas como tradução automática, resumo de textos e chatbots.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Modelos como o GPT (Generative Pre-trained Transformer) são grandes modelos de linguagem treinados\ncom milhões (ou bilhões) de parâmetros, capazes de gerar texto coerente, realizar tradução automática,\nproduzir resumos, atuar como chatbots e desempenhar diversas tarefas envolvendo linguagem natural.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-025",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "OBJETIVA / Prefeitura de Nova Roma do Sul - RS - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "As inteligências artificiais vêm\n       conquistando cada vez mais o interesse do público, principalmente devido à ascensão de\n       ferramentas como o ChatGPT. Em relação à inteligência artificial (IA) e ao ChatGPT, assinalar\n       a alternativa CORRETA:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "É desenvolvido pela OpenAI, que usa IA para interagir com os usuários. Apresenta uma variedade maior de respostas, e estas são realizadas por textos.",
+          "comentario": "Correto. O ChatGPT é um modelo de linguagem desenvolvido pela OpenAI, que utiliza inteligência artificial para interagir com os usuários por meio de texto, oferecendo uma ampla variedade de respostas em diversos contextos, como educação, programação, redação, entre outros;"
+        },
+        {
+          "letra": "B",
+          "texto": "É desenvolvido pela Microsoft, que usa IA para retocar imagens, assim como para gerenciar as publicações em redes socais.",
+          "comentario": "Errado. Embora a Microsoft seja parceira da OpenAI e integre o ChatGPT ao Bing e outros produtos, o desenvolvimento do ChatGPT é da OpenAI, e a ferramenta não é focada em retoque de imagens;"
+        },
+        {
+          "letra": "C",
+          "texto": "É desenvolvido pela Microsoft, que usa IA para ensinar o passo a passo de temas escolares. Apresenta poucas respostas, e estas são realizadas exclusivamente por áudios.",
+          "comentario": "Errado. O ChatGPT não é exclusivo da Microsoft, nem apresenta respostas apenas em áudio — ele é majoritariamente baseado em texto;"
+        },
+        {
+          "letra": "D",
+          "texto": "É desenvolvido pela OpenAI, que usa IA para corrigir os usuários. Apresenta poucas respostas, e estas são realizadas exclusivamente por áudios.",
+          "comentario": "Errado. Além de a descrição do propósito estar incorreta, o ChatGPT não é limitado a correções e não responde exclusivamente por áudios."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. O ChatGPT é um modelo de linguagem desenvolvido pela OpenAI, que utiliza inteligência\nartificial para interagir com os usuários por meio de texto, oferecendo uma ampla variedade de respostas\nem diversos contextos, como educação, programação, redação, entre outros;\n\n(b) Errado. Embora a Microsoft seja parceira da OpenAI e integre o ChatGPT ao Bing e outros produtos,\no desenvolvimento do ChatGPT é da OpenAI, e a ferramenta não é focada em retoque de imagens;\n\n(c) Errado. O ChatGPT não é exclusivo da Microsoft, nem apresenta respostas apenas em áudio — ele é\nmajoritariamente baseado em texto;\n\n(d) Errado. Além de a descrição do propósito estar incorreta, o ChatGPT não é limitado a correções e não\nresponde exclusivamente por áudios.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-026",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / PF - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue os itens a seguir, relativos à inteligência artificial (IA).\n\n   LLM (Large Language Models) são modelos de aprendizado profundo pré-treinados em grandes\n   quantidades de dados que podem ser utilizados para gerar texto e outros conteúdos, além de\n   executar outras tarefas de processamento de linguagem natural.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "LLMs são modelos de aprendizado profundo treinados com grandes volumes de dados textuais. Eles são\ncapazes de gerar texto, traduzir, responder perguntas, resumir conteúdos e realizar diversas tarefas\nrelacionadas à linguagem natural.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-027",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / STM - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item que se segue, relativo a ciência de dados e\n       inteligência artificial (IA).\n\n   Viés algorítmico pode ocorrer quando os dados utilizados no treinamento de um sistema de IA\n   refletem desigualdades sociais, o que pode resultar em decisões discriminatórias automatizadas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O viés algorítmico ocorre quando modelos de IA reproduzem ou amplificam preconceitos presentes nos\ndados de treinamento, frequentemente herdando desigualdades sociais e levando a decisões\nautomatizadas injustas ou discriminatórias.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-028",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / IBAMA - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item seguinte, relativos aos programas de navegação\n       web Google Chrome e Microsoft Edge, à inteligência artificial e a malwares.\n\n   O conceito de inteligência artificial fraca compreende sistemas desenvolvidos para realizar tarefas\n   específicas, por exemplo, reconhecimento de voz.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A inteligência artificial fraca (ou estreita) refere-se a sistemas projetados para realizar tarefas específicas,\ncomo reconhecimento de voz, recomendação de conteúdo ou classificação de imagens, sem consciência\nou entendimento geral.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-029",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / EMBRAPA - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a gestão do conhecimento, vocabulários\n       controlados e utilização de inteligência artificial em gestão de dados e informação, julgue o\n       item subsecutivo.\n\n   A inteligência artificial pode reconhecer padrões, identificar anomalias e antecipar tendências futuras\n   por meio da análise de dados e informações.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A inteligência artificial é amplamente utilizada na análise de dados para reconhecer padrões, detectar\nanomalias (como comportamentos fora do comum) e prever tendências futuras, contribuindo\nsignificativamente para a gestão da informação e do conhecimento.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-030",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / INSA - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de acessibilidade e inclusão digital, julgue o item que\n       se segue.\n\n   A inteligência artificial amplia a inclusão digital ao personalizar experiências e eliminar barreiras de\n   acesso à informação. Quando treinada com dados diversos e aplicada com rigor técnico, sua\n   automação neutraliza vieses preexistentes, o que garante equidade para grupos historicamente\n   marginalizados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A primeira parte está correta: a IA pode ampliar a inclusão digital ao personalizar interfaces e facilitar o\nacesso à informação para pessoas com diferentes necessidades. No entanto, a segunda parte é imprecisa:\na automação por si só não neutraliza vieses. Pelo contrário, se os dados de treinamento forem enviesados,\no sistema pode reforçar desigualdades existentes. É necessário aplicar práticas rigorosas de auditoria e\ngovernança algorítmica para mitigar esses riscos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-031",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / ANM - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere a inteligências artificiais (IAs) generativas e\n       discriminativas, julgue o item seguinte.\n\n   Um prompt é um conjunto de instruções que o modelo generativo utiliza para prever a resposta\n   desejada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Um prompt é, de fato, um conjunto de instruções ou entradas fornecidas a um modelo generativo para\nguiá-lo na geração de uma resposta. O modelo utiliza o conteúdo do prompt como base para prever e\nproduzir a saída mais adequada ao contexto solicitado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-032",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / Polícia Federal - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue os itens a seguir, relativos à inteligência artificial\n       (IA).\n\n   Deepfakes são vídeos gerados por IA para produzir conteúdo altamente realista e podem ser criados\n   por meio de rede adversária generativa (GAN), a qual corresponde a uma arquitetura de aprendizado\n   profundo que treina duas redes neurais para competirem entre si.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Deepfakes utilizam redes adversárias generativas (GAN) para criar vídeos realistas, onde uma rede gera\no conteúdo e a outra avalia sua autenticidade, promovendo um processo de competição que aprimora a\nqualidade do resultado final.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-033",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "CEBRASPE / TRT - 10ª REGIÃO (DF e TO",
+      "tipo": "certo_errado",
+      "enunciado": "- 2025) A inteligência artificial (IA) é uma das mais\n       relevantes novas tecnologias de comunicação. A respeito da IA, julgue o item seguinte.\n\n   A IA já estava integrada a diversas aplicações décadas atrás, a exemplo da leitura de cheques e\n   correspondências, mas apenas recentemente ganhou notoriedade com a ascensão dos modelos\n   generativos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A inteligência artificial, embora tenha sido utilizada em aplicações como leitura de cheques e\ncorrespondências há décadas, realmente ganhou destaque mais recentemente com o avanço dos\nmodelos generativos, que revolucionaram sua aplicação.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-035",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / TRF 6ª Região - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, relativo a inteligência artificial\n       (IA).\n\n    A IA generativa consiste em técnicas de IA baseadas prioritariamente na utilização de aprendizado\n    supervisionado para a criação de novas amostras de dados que se assemelham aos dados de\n    treinamento.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "IA generativa não se baseia prioritariamente em aprendizado supervisionado; em geral, aprende padrões\nde forma auto/semissupervisionada e, a partir disso, gera novas amostras semelhantes às do treinamento.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-036",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / BDMG - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "Acerca de LLM, IA generativa e data science, julgue o item\n    subsequente.\n\n    No contexto da IA generativa, o conceito de latent space refere-se a um espaço vetorial\n    multidimensional em que características abstratas de dados de entrada são representadas e\n    manipuladas para gerarem novos dados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Em IA generativa, o latent space é um espaço vetorial multidimensional que codifica atributos abstratos\ndos dados; ao navegar/manipular esses vetores, o modelo combina características e gera novas amostras\ncoerentes.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-037",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / TRT 10ª Região - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "A inteligência artificial (IA) é uma das mais relevantes\n    novas tecnologias de comunicação. A respeito da IA, julgue o item seguinte.\n\n    O treinamento de modelos como o ChatGPT envolve bilhões de atualizações nos parâmetros da rede\n    neural a fim de melhorar suas previsões.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "No treinamento, o modelo ajusta repetidamente seus pesos (parâmetros) por otimização (ex.: gradiente),\nrealizando inúmeras atualizações ao longo de grandes volumes de dados para reduzir erros e melhorar\nas previsões.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-038",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / TRT 10ª Região - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "A inteligência artificial (IA) é uma das mais relevantes\n    novas tecnologias de comunicação. A respeito da IA, julgue o item seguinte.\n\n    Como os dados usados para treinar as inteligências artificiais provêm predominantemente de fontes\n    confiáveis, os modelos generativos produzem informações majoritariamente precisas e imparciais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Dados de treino vêm de fontes diversas (inclusive enviesadas e com erros). Por isso, modelos generativos\npodem “alucinar”, reproduzir vieses e gerar respostas imprecisas, não garantindo precisão nem\nimparcialidade.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-039",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonteProva": "CEBRASPE / TRT 10ª Região - 2025",
+      "tipo": "certo_errado",
+      "enunciado": "A inteligência artificial (IA) é uma das mais relevantes\n    novas tecnologias de comunicação. A respeito da IA, julgue o item seguinte.\n\n    A sigla GPT, presente no nome da ferramenta de IA ChatGPT, significa “gerador de processamento\n    de texto”, sendo o principal objetivo da referida ferramenta gerar respostas automáticas baseadas\n    em padrões linguísticos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A sigla GPT não corresponde a “gerador de processamento de texto”. Além disso, embora o ChatGPT\ngere respostas com base em padrões linguísticos, a justificativa do item fica comprometida pela expansão\nincorreta da sigla.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-041",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2025,
+      "fonteProva": "FCC / Prefeitura de SP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Uma cidade enfrenta desafios constantes para melhorar sua\n       mobilidade urbana. Recentemente, soluções baseadas em Inteligência Artificial (IA), como\n       sistemas preditivos para controle de tráfego e algoritmos de roteamento inteligente para\n       transporte público, começaram a ser implementadas. No entanto, essas tecnologias também\n       levantam questões éticas e legais, como a privacidade dos dados dos cidadãos, a\n       responsabilidade por decisões automatizadas e o impacto no mercado de trabalho. Ao\n       implementar sistemas de IA para otimizar a mobilidade urbana, o principal desafio ético e\n       legal que deve ser priorizado para garantir um equilíbrio entre inovação tecnológica e\n       direitos dos cidadãos é",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "implementar sanções financeiras severas a todas as empresas que coletam dados dos usuários.",
+          "comentario": "Errado. Sanções severas e generalizadas desincentivam inovação e não resolvem o núcleo ético (uso legítimo, transparência e governança dos dados)."
+        },
+        {
+          "letra": "B",
+          "texto": "centralizar o controle dos algoritmos em uma única autoridade municipal.",
+          "comentario": "Errado. Centralizar algoritmos em uma única autoridade aumenta risco de opacidade e abuso; o foco deve ser controle social, auditoria e prestação de contas."
+        },
+        {
+          "letra": "C",
+          "texto": "garantir que as decisões automatizadas sejam explicáveis e auditáveis.",
+          "comentario": "Correto. Explicabilidade e auditabilidade permitem responsabilização por decisões automatizadas, detecção de vieses e conformidade com privacidade e direitos dos cidadãos."
+        },
+        {
+          "letra": "D",
+          "texto": "restringir o uso de IA apenas a aplicações que não envolvam dados pessoais.",
+          "comentario": "Errado. Restringir IA a casos sem dados pessoais é inviável na mobilidade urbana e não enfrenta o ponto central: uso responsável, transparente e controlável dos dados."
+        },
+        {
+          "letra": "E",
+          "texto": "priorizar a redução de custos operacionais em detrimento de preocupações éticas.",
+          "comentario": "Errado. Redução de custos não pode se sobrepor a direitos fundamentais; priorizar apenas eficiência ignora privacidade, responsabilidade e impactos sociais."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Sanções severas e generalizadas desincentivam inovação e não resolvem o núcleo ético (uso\nlegítimo, transparência e governança dos dados).\n\n(b) Errado. Centralizar algoritmos em uma única autoridade aumenta risco de opacidade e abuso; o foco\ndeve ser controle social, auditoria e prestação de contas.\n\n(c) Correto. Explicabilidade e auditabilidade permitem responsabilização por decisões automatizadas,\ndetecção de vieses e conformidade com privacidade e direitos dos cidadãos.\n\n(d) Errado. Restringir IA a casos sem dados pessoais é inviável na mobilidade urbana e não enfrenta o\nponto central: uso responsável, transparente e controlável dos dados.\n\n(e) Errado. Redução de custos não pode se sobrepor a direitos fundamentais; priorizar apenas eficiência\nignora privacidade, responsabilidade e impactos sociais.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-042",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FCC",
+      "ano": 2025,
+      "fonteProva": "FCC / TRF 4ª Região - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "No exercício das atividades de desenvolvimento e supervisão\n       de soluções de Inteligência Altificial (IA) no Poder Judiciário, a equipe de inovação precisa\n       avaliar cuidadosamente os riscos associados ao uso de sistemas de IA generativa.\n       Considerando os principais desafios identificados na literatura e nas normativas sobre o\n       tema, o uso de IA generativa pode implicar riscos relacionados",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "a proteção intrínseca dos dados sensíveis suprimindo a regulamentação adicional.",
+          "comentario": "Errado. IA generativa não “protege intrinsecamente” dados sensíveis nem dispensa governança; ao contrário, pode ampliar riscos de vazamento e exige regulamentação e controles adicionais."
+        },
+        {
+          "letra": "B",
+          "texto": "ao aumento da transparência nos dados e redução de vieses algoritmicos.",
+          "comentario": "Errado. Transparência e redução de vieses não são efeitos garantidos; modelos podem ser opacos (“caixa-preta”) e reproduzir/amplificar vieses presentes nos dados e no treinamento."
+        },
+        {
+          "letra": "C",
+          "texto": "ao fortalecimento automático da autoria individual em conteúdos gerados.",
+          "comentario": "Errado. Conteúdos gerados podem dificultar a atribuição de autoria e responsabilidade, inclusive por uso de material prévio no treinamento, não havendo “fortalecimento automático” da autoria individual."
+        },
+        {
+          "letra": "D",
+          "texto": "à disseminação de desinformação e violaçao de direitos autorais.",
+          "comentario": "Correto. Há risco de alucinações e uso malicioso para desinformação, além de possíveis violações de direitos autorais por reprodução/derivação de obras e conflitos de licenciamento."
+        },
+        {
+          "letra": "E",
+          "texto": "à eliminação de impactos sociais decorrentes da automação de tarefas.",
+          "comentario": "Errado. A automação pode gerar impactos sociais (substituição/transformação de funções, desigualdades, dependência tecnológica); IA generativa não elimina esses efeitos, podendo até intensificá-los."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. IA generativa não “protege intrinsecamente” dados sensíveis nem dispensa governança; ao\ncontrário, pode ampliar riscos de vazamento e exige regulamentação e controles adicionais.\n\n(b) Errado. Transparência e redução de vieses não são efeitos garantidos; modelos podem ser opacos\n(“caixa-preta”) e reproduzir/amplificar vieses presentes nos dados e no treinamento.\n\n(c) Errado. Conteúdos gerados podem dificultar a atribuição de autoria e responsabilidade, inclusive por\nuso de material prévio no treinamento, não havendo “fortalecimento automático” da autoria individual.\n\n(d) Correto. Há risco de alucinações e uso malicioso para desinformação, além de possíveis violações de\ndireitos autorais por reprodução/derivação de obras e conflitos de licenciamento.\n\n(e) Errado. A automação pode gerar impactos sociais (substituição/transformação de funções,\ndesigualdades, dependência tecnológica); IA generativa não elimina esses efeitos, podendo até\nintensificá-los.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.768Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-043",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / CNU - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em relação aos desafios presentes na relação entre Inteligência Artificial\n       Generativa (IAG) e comunicação ética, analise as afirmativas a seguir.\n\n   I. O uso de dados gerados por inteligência artificial deve cumprir as regulamentações vigentes,\n   embora enfrente desafios impostos pelo rápido avanço tecnológico, que frequentemente\n   supera a velocidade da elaboração legislativa.\n\n   II. O uso de dados gerados por inteligência artificial deve respeitar a privacidade e a proteção\n   de dados, embora enfrente desafios para assegurar a defesa contra usos indevidos.\n\n   III. O uso de dados gerados por inteligência artificial deve se pautar na autonomia exercida pela\n   própria IA em relação à supervisão humana, embora enfrente desafios para promover uma\n   comunicação clara e eficiente.\n\n   Está correto o que se afirma em:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "I, apenas;",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "I e II, apenas",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "I e III, apenas;",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "II e III, apenas;",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "I, II e III.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(I) Correto. O uso de dados gerados por IA deve seguir regulamentações, enfrentando o desafio da\nvelocidade do avanço tecnológico em relação à legislação, que muitas vezes não acompanha essa\nevolução.\n\n(II) Correto. A proteção da privacidade é essencial no uso de dados de IA, e os desafios para evitar usos\nindevidos são significativos, exigindo medidas rigorosas de segurança.\n\n(III) Errado. A autonomia da IA não deve ser priorizada em detrimento da supervisão humana, pois isso\npode comprometer a clareza e a eficiência na comunicação, que dependem da intervenção humana.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-044",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / CNU - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "No setor público, as ferramentas de Inteligência Artificial Generativa\n       (IAG) oferecem oportunidades para modernizar processos, como automação de tarefas\n       repetitivas, redação de documentos e criação de materiais visuais. Contudo,\n       sua implementação precisa de supervisão humana para que vieses ou informações\n       imprecisas não sejam reproduzidos, especialmente em instituições públicas que lidam com\n       informações sensíveis e de impacto social. A fase do ciclo de desenvolvimento de modelos\n       de IAG na qual ocorre essa supervisão, com o ajuste e a captura de padrões nos dados, é a\n       de:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "aplicação;",
+          "comentario": "Errado. A fase de aplicação refere-se ao uso do modelo já treinado, não à supervisão e ajuste dos dados."
+        },
+        {
+          "letra": "B",
+          "texto": "inferência;",
+          "comentario": "Errado. A inferência é a fase em que o modelo faz previsões com base em dados novos, sem ajustes ou supervisão."
+        },
+        {
+          "letra": "C",
+          "texto": "alucinação;",
+          "comentario": "Errado. Alucinação é um termo que descreve quando o modelo gera informações incorretas, não é uma fase do desenvolvimento."
+        },
+        {
+          "letra": "D",
+          "texto": "implantação;",
+          "comentario": "Errado. A implantação é a fase em que o modelo é colocado em operação, não envolve supervisão ou ajuste de padrões."
+        },
+        {
+          "letra": "E",
+          "texto": "treinamento.",
+          "comentario": "Correto. O treinamento é a fase em que ocorre a supervisão e ajuste dos dados, capturando padrões para melhorar a performance do modelo."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado. A fase de aplicação refere-se ao uso do modelo já treinado, não à supervisão e ajuste dos\ndados.\n\n(b) Errado. A inferência é a fase em que o modelo faz previsões com base em dados novos, sem ajustes\nou supervisão.\n\n(c) Errado. Alucinação é um termo que descreve quando o modelo gera informações incorretas, não é\numa fase do desenvolvimento.\n\n(d) Errado. A implantação é a fase em que o modelo é colocado em operação, não envolve supervisão ou\najuste de padrões.\n\n(e) Correto. O treinamento é a fase em que ocorre a supervisão e ajuste dos dados, capturando padrões\npara melhorar a performance do modelo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-045",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / TCE-PE - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Muitos cenários de análise de dados envolvem conjuntos sem rótulos\n       disponíveis, como é comum em agrupamentos de clientes, detecção de padrões anômalos\n       ou redução de dimensionalidade. Nesses casos, técnicas de aprendizado não supervisionado\n       são essenciais para extrair conhecimento oculto nos dados.\n\n    Com relação ao aprendizado não supervisionado em Machine Learning, assinale a afirmativa correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "O aprendizado não supervisionado depende de conjuntos de dados previamente rotulados para mapear entradas a saídas durante o treinamento.",
+          "comentario": "Errado. Aprendizado não supervisionado não depende de rótulos; ele busca estrutura/padrões nos dados sem saídas conhecidas no treino."
+        },
+        {
+          "letra": "B",
+          "texto": "Técnicas de aprendizado não supervisionado, como árvores de decisão e regressão logística, são ideais para prever rótulos em problemas de classificação supervisionada.",
+          "comentario": "Errado. Árvores de decisão e regressão logística são técnicas típicas de aprendizado supervisionado, voltadas a prever rótulos já definidos."
+        },
+        {
+          "letra": "C",
+          "texto": "O aprendizado não supervisionado é utilizado para gerar automaticamente rótulos com base em padrões nos dados, sem necessidade de saídas conhecidas previamente.",
+          "comentario": "Correto. Identifica padrões/estruturas (ex.: clusters, anomalias) e pode inferir agrupamentos que servem como “rótulos” gerados a partir dos dados."
+        },
+        {
+          "letra": "D",
+          "texto": "A principal limitação do aprendizado não supervisionado é que ele não consegue lidar com grandes volumes de dados, sendo restrito a pequenos conjuntos.",
+          "comentario": "Errado. Não há essa restrição “a pequenos conjuntos”; a limitação central é a ausência de rótulos para validação direta, não o volume em si."
+        },
+        {
+          "letra": "E",
+          "texto": "O aprendizado não supervisionado só pode ser utilizado quando todos os atributos do conjunto de dados forem categóricos.",
+          "comentario": "Errado. Pode trabalhar com atributos numéricos e categóricos; não exige que todos os atributos sejam categóricos."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Aprendizado não supervisionado não depende de rótulos; ele busca estrutura/padrões nos\ndados sem saídas conhecidas no treino.\n\n(b) Errado. Árvores de decisão e regressão logística são técnicas típicas de aprendizado supervisionado,\nvoltadas a prever rótulos já definidos.\n\n(c) Correto. Identifica padrões/estruturas (ex.: clusters, anomalias) e pode inferir agrupamentos que\nservem como “rótulos” gerados a partir dos dados.\n\n(d) Errado. Não há essa restrição “a pequenos conjuntos”; a limitação central é a ausência de rótulos para\nvalidação direta, não o volume em si.\n\n(e) Errado. Pode trabalhar com atributos numéricos e categóricos; não exige que todos os atributos sejam\ncategóricos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-046",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / TCE-PE - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "No campo da inteligência artificial, os agentes desempenham papel\n       central como entidades capazes de perceber o ambiente, tomar decisões e agir com base em\n       metas definidas. Compreender sua estrutura e tipos é fundamental para o desenvolvimento\n       de sistemas inteligentes. Assinale a afirmativa que descreve corretamente uma característica\n       de agentes de inteligência artificial.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Um agente reativo simples armazena historicamente os estados anteriores do ambiente para prever ações futuras com base em aprendizado profundo.",
+          "comentario": "Errado. Agente reativo simples não mantém histórico nem usa aprendizado profundo; reage ao estado/percepção atual por regras condição‑ação."
+        },
+        {
+          "letra": "B",
+          "texto": "Agentes baseados em objetivos não consideram o estado atual do ambiente, mas tomam decisões aleatórias até alcançarem a meta desejada.",
+          "comentario": "Errado. Agentes baseados em objetivos consideram o estado atual e planejam ações para atingir a meta, não decidem aleatoriamente."
+        },
+        {
+          "letra": "C",
+          "texto": "Agentes baseados em utilidade avaliam diferentes cursos de ação e escolhem aquele que maximiza um valor numérico associado à satisfação da meta.",
+          "comentario": "Correto. Agentes baseados em utilidade comparam alternativas e escolhem a ação que maximiza uma função numérica de utilidade (grau de satisfação da meta)."
+        },
+        {
+          "letra": "D",
+          "texto": "Um agente só pode ser considerado inteligente se tiver consciência própria e habilidades linguísticas semelhantes às humanas.",
+          "comentario": "Errado. Inteligência em agentes não exige autoconsciência nem linguagem humana; basta perceber, decidir e agir de forma racional conforme metas."
+        },
+        {
+          "letra": "E",
+          "texto": "Agentes de IA operam exclusivamente em ambientes totalmente observáveis e determinísticos, pois exigem informações completas para funcionar.",
+          "comentario": "Errado. Agentes podem atuar em ambientes parcialmente observáveis e/ou estocásticos, usando crenças/estimativas; não dependem de informação completa."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Agente reativo simples não mantém histórico nem usa aprendizado profundo; reage ao\nestado/percepção atual por regras condição‑ação.\n\n(b) Errado. Agentes baseados em objetivos consideram o estado atual e planejam ações para atingir a\nmeta, não decidem aleatoriamente.\n\n(c) Correto. Agentes baseados em utilidade comparam alternativas e escolhem a ação que maximiza uma\nfunção numérica de utilidade (grau de satisfação da meta).\n\n(d) Errado. Inteligência em agentes não exige autoconsciência nem linguagem humana; basta perceber,\ndecidir e agir de forma racional conforme metas.\n\n(e) Errado. Agentes podem atuar em ambientes parcialmente observáveis e/ou estocásticos, usando\ncrenças/estimativas; não dependem de informação completa.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-047",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / CNU - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Martin está elaborando uma cartilha sobre o uso ético da Inteligência\n       Artificial (IA) em seu setor, que atua no atendimento ao público. Para isso, a IA deve fornecer\n       informações sobre as entradas, as saídas e o funcionamento do algoritmo utilizado, bem\n       como a forma como cada parte contribui para o resultado final. Na cartilha de uso ético da IA\n       de Martin, devem constar requisitos sobre:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "explicabilidade;",
+          "comentario": "Correto. Explicabilidade exige transparência sobre entradas, saídas e lógica do algoritmo, indicando como cada componente influencia o resultado, o que é central no uso ético da IA no atendimento ao público."
+        },
+        {
+          "letra": "B",
+          "texto": "hiperparametrização;",
+          "comentario": "Errado. Hiperparametrização trata de ajustes de treinamento (parâmetros do modelo), não de explicar decisões, entradas/saídas e contribuições para o resultado final."
+        },
+        {
+          "letra": "C",
+          "texto": "aprendizado profundo;",
+          "comentario": "Errado. Aprendizado profundo é uma abordagem/modelagem (redes neurais), mas não é, por si, um requisito ético de transparência e prestação de contas do sistema."
+        },
+        {
+          "letra": "D",
+          "texto": "modelos largos de linguagem;",
+          "comentario": "Errado. Modelos largos de linguagem descrevem um tipo de modelo (LLM), enquanto o enunciado pede requisito de compreensão/justificativa do funcionamento e do resultado."
+        },
+        {
+          "letra": "E",
+          "texto": "processamento de linguagem natural.",
+          "comentario": "Errado. Processamento de linguagem natural é uma área/técnica para lidar com texto e fala, não um requisito voltado a tornar o algoritmo compreensível e auditável."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. Explicabilidade exige transparência sobre entradas, saídas e lógica do algoritmo, indicando\ncomo cada componente influencia o resultado, o que é central no uso ético da IA no atendimento ao\npúblico.\n\n(b) Errado. Hiperparametrização trata de ajustes de treinamento (parâmetros do modelo), não de explicar\ndecisões, entradas/saídas e contribuições para o resultado final.\n\n(c) Errado. Aprendizado profundo é uma abordagem/modelagem (redes neurais), mas não é, por si, um\nrequisito ético de transparência e prestação de contas do sistema.\n\n(d) Errado. Modelos largos de linguagem descrevem um tipo de modelo (LLM), enquanto o enunciado\npede requisito de compreensão/justificativa do funcionamento e do resultado.\n\n(e) Errado. Processamento de linguagem natural é uma área/técnica para lidar com texto e fala, não um\nrequisito voltado a tornar o algoritmo compreensível e auditável.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-048",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / TCE-PE - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Com relação aos Grandes Modelos de Linguagens (LLMs), avalie\n       as afirmativas a seguir e assinale (V) para verdadeira e (F) para falsa.\n\n   ( ) LLMs são capazes de fazer inferências a partir de um contexto, gerar respostas\n   contextualmente relevantes, traduzir documentos para outros idiomas, resumir textos,\n   responder a perguntas ou mesmo auxiliar em tarefas de redação criativa ou geração de\n   código.\n\n   ( ) Os LLMs representam um avanço considerável no processamento de linguagem natural (PNL)\n   e tornaram-se facilmente acessíveis ao público por meio de interfaces como o Chat GPT-3 e o\n   GPT-4. Outros exemplos de LLMs são os modelos Llama e as representações de\n   codificadores bidirecionais, como BERT e RoBERTa.\n\n   ( ) LLM é um modelo de aprendizado de máquina que pode ser usado na inteligência artificial\n   generativa, capaz de executar diferentes funções. Os LLM são treinados a partir de\n   grandes volumes de dados.\n\n   As afirmativas são, segundo a ordem apresentada,",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "V – F – V.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "V – F – F.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "V – V – V.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "F – V – V.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "F – V – F.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(I) Correto. LLMs realmente têm a capacidade de fazer inferências, gerar respostas relevantes e auxiliar\nem diversas tarefas, como tradução e redação criativa.\n\n(II) Correto. Os LLMs, como GPT-3 e GPT-4, representam um avanço significativo em PNL e são\namplamente acessíveis, incluindo modelos como Llama, BERT e RoBERTa.\n\n(III) Correto. LLMs são modelos de aprendizado de máquina usados em IA generativa, treinados com\ngrandes volumes de dados para executar diversas funções.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-049",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / TCE-PE - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Com o avanço do deep learning, redes neurais profundas e grandes\n       modelos de linguagem (LLMs) vêm sendo amplamente utilizados em aplicações como\n       tradução automática, geração de texto, reconhecimento de imagens e assistentes virtuais. A\n       respeito de redes neurais profundas, deep learning e grandes modelos de linguagem (LLMs),\n       assinale a afirmativa correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Redes neurais profundas possuem apenas uma camada oculta entre a entrada e a saída e são ideais para tarefas simples de classificação linear.",
+          "comentario": "Errado. Redes profundas têm várias camadas ocultas (não apenas uma) e não se limitam a classificação linear, sendo usadas para padrões complexos."
+        },
+        {
+          "letra": "B",
+          "texto": "O termo deep learning refere-se a técnicas que dispensam o uso de redes neurais artificiais, utilizando apenas algoritmos estatísticos tradicionais.",
+          "comentario": "Errado. Deep learning está diretamente ligado ao uso de redes neurais (especialmente profundas), e não à dispensa delas em favor de estatística “tradicional”."
+        },
+        {
+          "letra": "C",
+          "texto": "Os grandes modelos de linguagem (LLMs) são caracterizados por seu tamanho reduzido, pois dependem de poucos parâmetros para evitar sobrecarga computacional.",
+          "comentario": "Errado. LLMs se destacam justamente pelo grande número de parâmetros e alta capacidade, o que aumenta (não reduz) a demanda computacional."
+        },
+        {
+          "letra": "D",
+          "texto": "Os grandes modelos de linguagem (LLMs) utilizam arquiteturas de redes neurais profundas, como os transformadores, para processar sequências de texto e aprender padrões complexos.",
+          "comentario": "Correto. LLMs empregam arquiteturas profundas, como Transformers, para modelar sequências de texto e capturar dependências e padrões complexos."
+        },
+        {
+          "letra": "E",
+          "texto": "Redes neurais profundas são indicadas exclusivamente para reconhecimento de imagens e não são aplicadas em processamento de linguagem natural.",
+          "comentario": "Errado. Redes profundas também são amplamente aplicadas em PLN (NLP), como tradução, geração de texto e chatbots, não ficando restritas a imagens."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Redes profundas têm várias camadas ocultas (não apenas uma) e não se limitam a classificação\nlinear, sendo usadas para padrões complexos.\n\n(b) Errado. Deep learning está diretamente ligado ao uso de redes neurais (especialmente profundas), e\nnão à dispensa delas em favor de estatística “tradicional”.\n\n(c) Errado. LLMs se destacam justamente pelo grande número de parâmetros e alta capacidade, o que\naumenta (não reduz) a demanda computacional.\n\n(d) Correto. LLMs empregam arquiteturas profundas, como Transformers, para modelar sequências de\ntexto e capturar dependências e padrões complexos.\n\n(e) Errado. Redes profundas também são amplamente aplicadas em PLN (NLP), como tradução, geração\nde texto e chatbots, não ficando restritas a imagens.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-050",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2025,
+      "fonteProva": "FGV / TCE-PE - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Com a popularização de modelos de linguagem de grande escala\n       (LLMs), como o GPT e o Claude, a engenharia de prompt tornou-se uma habilidade essencial\n       para direcionar corretamente esses modelos, extraindo respostas mais úteis, seguras e\n       alinhadas ao objetivo do usuário. Em relação às boas práticas de engenharia de prompt\n       aplicadas a grandes modelos de linguagem (LLMs), assinale a afirmativa correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A engenharia de prompt exige conhecimento profundo de linguagens de programação, pois os prompts devem ser escritos em linguagens formais como Python ou SQL.",
+          "comentario": "Errado. Prompt é texto em linguagem natural; não exige escrever em Python/SQL, embora possa incluir trechos técnicos quando útil."
+        },
+        {
+          "letra": "B",
+          "texto": "Prompts vagos e abertos tendem a melhorar a criatividade dos modelos e garantem maior precisão, especialmente em tarefas críticas e factuais.",
+          "comentario": "Errado. Vagueza pode aumentar variação/criatividade, mas não “garante” precisão; em tarefas factuais e críticas, especificidade reduz ambiguidades."
+        },
+        {
+          "letra": "C",
+          "texto": "Instruções explícitas, exemplos no prompt e delimitação clara da tarefa aumentam a probabilidade de o LLM produzir respostas relevantes e adequadas ao objetivo.",
+          "comentario": "Correto. Instruções claras, exemplos (few-shot) e delimitação do escopo orientam o modelo, elevando a chance de respostas relevantes e alinhadas ao objetivo."
+        },
+        {
+          "letra": "D",
+          "texto": "LLMs interpretam todos os prompts da mesma forma, independentemente da estrutura, do idioma ou da ordem em que as informações são fornecidas.",
+          "comentario": "Errado. Estrutura, idioma, contexto e ordem influenciam a interpretação e a qualidade da saída; prompts bem organizados tendem a performar melhor."
+        },
+        {
+          "letra": "E",
+          "texto": "A engenharia de prompt não tem impacto sobre a segurança das respostas geradas, já que os LLMs seguem regras internas fixas de filtragem de conteúdo.",
+          "comentario": "Errado. O prompt impacta segurança (ex.: restrições, contexto e limites); boas práticas ajudam a reduzir riscos e a orientar respostas mais seguras."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Prompt é texto em linguagem natural; não exige escrever em Python/SQL, embora possa\nincluir trechos técnicos quando útil.\n\n(b) Errado. Vagueza pode aumentar variação/criatividade, mas não “garante” precisão; em tarefas factuais\ne críticas, especificidade reduz ambiguidades.\n\n(c) Correto. Instruções claras, exemplos (few-shot) e delimitação do escopo orientam o modelo, elevando\na chance de respostas relevantes e alinhadas ao objetivo.\n\n(d) Errado. Estrutura, idioma, contexto e ordem influenciam a interpretação e a qualidade da saída;\nprompts bem organizados tendem a performar melhor.\n\n(e) Errado. O prompt impacta segurança (ex.: restrições, contexto e limites); boas práticas ajudam a\nreduzir riscos e a orientar respostas mais seguras.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-052",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2024,
+      "fonteProva": "FGV / MACAEPREV - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Large Language Models (LLMs) são um tipo de modelo IA\n       projetado para lidar com tarefas de processamento de linguagem natural (PLN) em uma\n       escala muito grande. Esses modelos são treinados com enormes quantidades de dados\n       textuais e são capazes de entender e gerar texto em linguagem natural de forma altamente\n       sofisticada. Em relação aos Large Language Models (LLMs), como o GPT, a abordagem mais\n       relevante para melhorar a capacidade do modelo de gerar respostas coerentes e\n       contextualmente apropriadas em conversas prolongadas, entre as listadas, é",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "aumentar o número de parâmetros do modelo.",
+          "comentario": "Errado. Mais parâmetros podem melhorar desempenho geral, mas não garantem, por si só, coerência e manutenção de contexto em diálogos longos."
+        },
+        {
+          "letra": "B",
+          "texto": "utilizar a técnica de fine-tuning em um grande conjunto de dados não rotulados.",
+          "comentario": "Errado. Fine-tuning em dados não rotulados tende a não alinhar o modelo para conversação; o ganho de coerência contextual não é o foco principal dessa abordagem."
+        },
+        {
+          "letra": "C",
+          "texto": "implementar um mecanismo de atenção (Attention Mechanism).",
+          "comentario": "Correto. O mecanismo de atenção permite ao modelo “focar” em partes relevantes do histórico, capturando dependências de longo alcance e mantendo respostas coerentes e contextuais."
+        },
+        {
+          "letra": "D",
+          "texto": "aplicar a tokenização BPE (Byte Pair Encoding) ao texto de entrada.",
+          "comentario": "Errado. BPE melhora a representação de palavras/subpalavras e cobertura de vocabulário, mas não é o fator central para sustentar contexto em conversas prolongadas."
+        },
+        {
+          "letra": "E",
+          "texto": "aumentar a frequência de palavras raras no conjunto de treinamento.",
+          "comentario": "Errado. Reponderar palavras raras altera a distribuição do treino, mas não resolve o problema de acompanhar e relacionar informações ao longo do diálogo."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Mais parâmetros podem melhorar desempenho geral, mas não garantem, por si só, coerência\ne manutenção de contexto em diálogos longos.\n\n(b) Errado. Fine-tuning em dados não rotulados tende a não alinhar o modelo para conversação; o ganho\nde coerência contextual não é o foco principal dessa abordagem.\n\n(c) Correto. O mecanismo de atenção permite ao modelo “focar” em partes relevantes do histórico,\ncapturando dependências de longo alcance e mantendo respostas coerentes e contextuais.\n\n(d) Errado. BPE melhora a representação de palavras/subpalavras e cobertura de vocabulário, mas não é\no fator central para sustentar contexto em conversas prolongadas.\n\n(e) Errado. Reponderar palavras raras altera a distribuição do treino, mas não resolve o problema de\nacompanhar e relacionar informações ao longo do diálogo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-053",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "QUADRIX",
+      "ano": 2025,
+      "fonteProva": "QUADRIX / CORE-BA - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "É uma das áreas mais fascinantes e promissoras da tecnologia\n       atual. Ela permite que máquinas e dispositivos eletrônicos realizem tarefas que antes eram\n       exclusivas dos seres humanos. E não apenas tarefas mecânicas, mas também tarefas que\n       exigiam a atuação de profissionais especializados. Ramo da ciência da computação que se\n       concentra no desenvolvimento de sistemas e algoritmos capazes de realizar tarefas que\n       normalmente exigem inteligência humana.             Internet: <www.alura.com.br> (com\n       adaptações). Os trechos acima se referem ao(à)",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "tecnologia da informação.",
+          "comentario": "Errado. Embora a Inteligência Artificial esteja relacionada à Tecnologia da Informação, o foco dos trechos é em sistemas que imitam a inteligência humana, o que vai além do escopo da TI como um todo;"
+        },
+        {
+          "letra": "B",
+          "texto": "ensino à distância (EaD).",
+          "comentario": "Errado. O ensino à distância (EaD) é uma aplicação tecnológica na educação, mas os textos tratam de máquinas realizando tarefas inteligentes, não de ensino;"
+        },
+        {
+          "letra": "C",
+          "texto": "inteligência artificial.",
+          "comentario": "Correto. Os trechos descrevem exatamente o conceito de Inteligência Artificial: máquinas executando tarefas que exigem inteligência humana, como tomada de decisão, percepção e aprendizado;"
+        },
+        {
+          "letra": "D",
+          "texto": "conhecimento remoto.",
+          "comentario": "Errado. \"Conhecimento remoto\" não é um termo técnico amplamente reconhecido, e os textos não abordam especificamente o acesso remoto ao conhecimento;"
+        },
+        {
+          "letra": "E",
+          "texto": "revolução Industrial",
+          "comentario": "Errado. A Revolução Industrial foi marcada pela mecanização da produção, e não pelo desenvolvimento de sistemas inteligentes baseados em algoritmos."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Embora a Inteligência Artificial esteja relacionada à Tecnologia da Informação, o foco dos\ntrechos é em sistemas que imitam a inteligência humana, o que vai além do escopo da TI como um todo;\n\n(b) Errado. O ensino à distância (EaD) é uma aplicação tecnológica na educação, mas os textos tratam de\nmáquinas realizando tarefas inteligentes, não de ensino;\n\n(c) Correto. Os trechos descrevem exatamente o conceito de Inteligência Artificial: máquinas executando\ntarefas que exigem inteligência humana, como tomada de decisão, percepção e aprendizado;\n\n(d) Errado. \"Conhecimento remoto\" não é um termo técnico amplamente reconhecido, e os textos não\nabordam especificamente o acesso remoto ao conhecimento;\n\n(e) Errado. A Revolução Industrial foi marcada pela mecanização da produção, e não pelo\ndesenvolvimento de sistemas inteligentes baseados em algoritmos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-054",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "QUADRIX",
+      "ano": null,
+      "fonteProva": "QUADRIX / CRQ - 12ª Região (GO, TO e DF",
+      "tipo": "certo_errado",
+      "enunciado": "- 2024) A respeito das inovações que apontam\n       para o desenvolvimento na área de ciência da computação, Internet e inteligência artificial,\n       julgue o item.\n\n   A inteligência artificial tem se desenvolvido a ponto de criar chatbot que leva jovens a fazerem terapia\n   de ajuda às dificuldades da vida.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A inteligência artificial tem avançado significativamente, possibilitando a criação de chatbots voltados à\nsaúde mental, que oferecem apoio emocional inicial e incentivam jovens e adultos a procurarem terapia.\nEmbora não substituam profissionais, esses sistemas podem servir como porta de entrada para o cuidado\npsicológico.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-055",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "QUADRIX",
+      "ano": 2023,
+      "fonteProva": "QUADRIX / CRO - SC - 2023",
+      "tipo": "certo_errado",
+      "enunciado": "No que diz respeito às novas tecnologias, julgue o item.\n\n   A inteligência artificial refere-se a um campo de conhecimento que não está associado à\n   aprendizagem, uma vez que esta é uma capacidade puramente humana; contudo, este campo está\n   associado à linguagem e à inteligência, ao raciocínio e à resolução de problemas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A inteligência artificial (IA) está diretamente associada à aprendizagem, especialmente por meio do\naprendizado de máquina (machine learning), que permite aos sistemas aprenderem com dados e\nmelhorarem seu desempenho ao longo do tempo. Embora a IA também envolva linguagem, raciocínio e\nresolução de problemas, o aprendizado não é uma capacidade exclusivamente humana no contexto\ncomputacional.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-056",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "QUADRIX",
+      "ano": 2023,
+      "fonteProva": "QUADRIX / CRM-TO - 2023",
+      "tipo": "certo_errado",
+      "enunciado": "No que se refere às novas tecnologias, julgue o item.\n\n    O aprendizado de máquina é um subcampo da IA que se concentra no desenvolvimento de\n    algoritmos e modelos que permitem aos sistemas aprenderem com os dados e melhorarem suas\n    decisões ao longo do tempo, ajustando seu desempenho com base no feedback recebido.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Machine Learning é subárea da IA voltada a criar modelos que aprendem padrões a partir de dados e\naprimoram previsões/decisões com o tempo, ajustando parâmetros conforme novos exemplos e\nfeedback (supervisionado ou por reforço).",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-057",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "QUADRIX",
+      "ano": 2022,
+      "fonteProva": "QUADRIX / CRT-04 - 2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item, referentes às novas tecnologias.\n\n   O conceito de inteligência artificial (IA) refere-se, unicamente, a duas grandes áreas do conhecimento:\n   ciência da computação e matemática.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Embora a inteligência artificial (IA) tenha fundamentos sólidos na ciência da computação e na matemática,\nseu desenvolvimento e aplicação não se restringem a essas duas áreas. A IA também envolve estatística,\nlinguística, psicologia, neurociência, ética, direito, engenharia e até sociologia, especialmente quando\naplicada em contextos humanos e sociais.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-058",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "VUNESP",
+      "ano": 2025,
+      "fonteProva": "VUNESP / TCE-SP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a alternativa que apresenta uma medida eficaz para\n       minimizar o viés de resposta na utilização de inteligência artificial generativa.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Não atualizar o modelo ou o conjunto de dados com frequência, pois a tendência natural do modelo é que o viés de resposta estabilize-se ao longo do tempo.",
+          "comentario": "Errado. Não atualizar o modelo pode perpetuar viéses existentes, pois a falta de atualização impede a adaptação a novas realidades e contextos."
+        },
+        {
+          "letra": "B",
+          "texto": "Basear a validação do modelo em um único conjunto de dados homogêneo, desconsiderando variações contextuais.",
+          "comentario": "Errado. Utilizar um único conjunto homogêneo ignora a diversidade necessária para um modelo robusto, aumentando o risco de viés."
+        },
+        {
+          "letra": "C",
+          "texto": "Permitir que o modelo se autotreine e se ajuste sem supervisão e intervenção humana enviesada.",
+          "comentario": "Errado. O autotreinamento sem supervisão pode amplificar viéses existentes, pois o modelo pode aprender padrões enviesados sem correção."
+        },
+        {
+          "letra": "D",
+          "texto": "Implementar revisões regulares do conjunto de dados, visando assegurar a diversidade e a representatividade dos dados utilizados para treinar e ajustar o modelo",
+          "comentario": "Correto. Revisões regulares garantem que o conjunto de dados permaneça diversificado e representativo, minimizando o viés de resposta e melhorando a eficácia do modelo."
+        },
+        {
+          "letra": "E",
+          "texto": "Selecionar apenas dados históricos e antigos, pois sempre fornecem credibilidade histórica ao modelo.",
+          "comentario": "Errado. Dados antigos podem não refletir a realidade atual, levando a decisões enviesadas e desatualizadas."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Não atualizar o modelo pode perpetuar viéses existentes, pois a falta de atualização impede a\nadaptação a novas realidades e contextos.\n\n(b) Errado. Utilizar um único conjunto homogêneo ignora a diversidade necessária para um modelo\nrobusto, aumentando o risco de viés.\n\n(c) Errado. O autotreinamento sem supervisão pode amplificar viéses existentes, pois o modelo pode\naprender padrões enviesados sem correção.\n\n(d) Correto. Revisões regulares garantem que o conjunto de dados permaneça diversificado e\nrepresentativo, minimizando o viés de resposta e melhorando a eficácia do modelo.\n\n(e) Errado. Dados antigos podem não refletir a realidade atual, levando a decisões enviesadas e\ndesatualizadas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-059",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "VUNESP",
+      "ano": 2025,
+      "fonteProva": "VUNESP / UNESP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Consiste em um desafio ético associado ao uso de inteligência\n       artificial generativa:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "incapacidade de gerar conteúdo criativo.",
+          "comentario": "Errado. A inteligência artificial generativa é capaz de criar conteúdo criativo, como textos, imagens e músicas, utilizando algoritmos avançados de aprendizado de máquina;"
+        },
+        {
+          "letra": "B",
+          "texto": "risco de propagação de informação incorreta por meio de textos falsos.",
+          "comentario": "Correto. O uso de inteligência artificial generativa pode levar à criação e disseminação de informações incorretas, como notícias falsas, o que representa um desafio ético significativo;"
+        },
+        {
+          "letra": "C",
+          "texto": "falta de recursos computacionais para treinar modelos.",
+          "comentario": "Errado. A falta de recursos computacionais não é um desafio ético, mas sim uma limitação técnica que pode ser superada com investimentos;"
+        },
+        {
+          "letra": "D",
+          "texto": "exclusão de dados estruturados no treinamento.",
+          "comentario": "Errado. A exclusão de dados estruturados pode afetar a qualidade do treinamento, mas não é um desafio ético em si;"
+        },
+        {
+          "letra": "E",
+          "texto": "limitação de modelos a tarefas simples.",
+          "comentario": "Errado. A limitação de modelos a tarefas simples não é um desafio ético, mas uma questão de capacidade técnica e desenvolvimento de algoritmos mais complexos."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. A inteligência artificial generativa é capaz de criar conteúdo criativo, como textos, imagens e\nmúsicas, utilizando algoritmos avançados de aprendizado de máquina;\n\n(b) Correto. O uso de inteligência artificial generativa pode levar à criação e disseminação de informações\nincorretas, como notícias falsas, o que representa um desafio ético significativo;\n\n(c) Errado. A falta de recursos computacionais não é um desafio ético, mas sim uma limitação técnica que\npode ser superada com investimentos;\n\n(d) Errado. A exclusão de dados estruturados pode afetar a qualidade do treinamento, mas não é um\ndesafio ético em si;\n\n(e) Errado. A limitação de modelos a tarefas simples não é um desafio ético, mas uma questão de\ncapacidade técnica e desenvolvimento de algoritmos mais complexos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-060",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "VUNESP",
+      "ano": 2025,
+      "fonteProva": "VUNESP / TCE SP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Acerca dos contextos relacionados à inteligência artificial generativa,\n    assinale a alternativa que apresenta o conceito mais adequado à explicação a seguir:\n\n    “É a prática de criar e ajustar instruções, sem a necessidade de retreinar o modelo, de forma\n    estratégica, para orientá-lo a produzir respostas mais precisas e úteis.”",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Prompt engineering (engenharia de prompt).",
+          "comentario": "Correto. Prompt engineering é criar e ajustar instruções (prompts) estrategicamente, sem retreinar o modelo, para direcionar respostas mais úteis e precisas."
+        },
+        {
+          "letra": "B",
+          "texto": "Fine-tuning (ajuste fino).",
+          "comentario": "Errado. Fine-tuning envolve ajustar o modelo com novos dados/treinamento, não apenas mudar instruções."
+        },
+        {
+          "letra": "C",
+          "texto": "Tokenization (tokenização).",
+          "comentario": "Errado. Tokenization é o processo de dividir texto em tokens para processamento, não uma técnica de orientar respostas."
+        },
+        {
+          "letra": "D",
+          "texto": "Explainability (explicabilidade).",
+          "comentario": "Errado. Explainability trata de tornar decisões/saídas do modelo mais compreensíveis, não de ajustar prompts."
+        },
+        {
+          "letra": "E",
+          "texto": "Hallucination (alucinação).",
+          "comentario": "Errado. Hallucination é quando o modelo gera conteúdo incorreto/inventado, não uma prática de melhoria por instruções."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. Prompt engineering é criar e ajustar instruções (prompts) estrategicamente, sem retreinar o\nmodelo, para direcionar respostas mais úteis e precisas.\n\n(b) Errado. Fine-tuning envolve ajustar o modelo com novos dados/treinamento, não apenas mudar\ninstruções.\n\n(c) Errado. Tokenization é o processo de dividir texto em tokens para processamento, não uma técnica de\norientar respostas.\n\n(d) Errado. Explainability trata de tornar decisões/saídas do modelo mais compreensíveis, não de ajustar\nprompts.\n\n(e) Errado. Hallucination é quando o modelo gera conteúdo incorreto/inventado, não uma prática de\nmelhoria por instruções.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-061",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "FUNDATEC",
+      "ano": 2025,
+      "fonteProva": "FUNDATEC / IF Farroupilha - RS - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Ciência e engenharia de construir e tornar máquinas\n       inteligentes, especialmente “computadores inteligentes”. É a inteligência exibida por\n       máquinas. Trata-se de um campo na ciência da computação que se define como o estudo de\n       “agentes inteligentes”, ou seja, quando uma máquina simula funções associadas à mente\n       humana, como aprendizagem e resolução de problemas. O texto aborda conceitos de:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Aplicações de Big Data.",
+          "comentario": "Errado. Big Data refere-se à coleta e análise de grandes volumes de dados, mas não envolve diretamente a construção de máquinas inteligentes;"
+        },
+        {
+          "letra": "B",
+          "texto": "Data Science.",
+          "comentario": "Errado. Data Science é o estudo de dados para obter insights, e embora possa usar IA, o foco do texto é na construção de agentes inteligentes, não na análise de dados;"
+        },
+        {
+          "letra": "C",
+          "texto": "Computação quântica.",
+          "comentario": "Errado. Computação quântica trata de um novo paradigma computacional baseado em princípios da mecânica quântica, não na simulação da inteligência humana;"
+        },
+        {
+          "letra": "D",
+          "texto": "Inteligência artificial (IA).",
+          "comentario": "Correto. O texto descreve claramente os fundamentos da Inteligência Artificial (IA): máquinas inteligentes, agentes autônomos e simulação de capacidades cognitivas humanas como aprendizado e resolução de problemas;"
+        },
+        {
+          "letra": "E",
+          "texto": "Blockchain e criptomoedas.",
+          "comentario": "Errado. Blockchain e criptomoedas estão relacionados à segurança e descentralização de informações, não à simulação da inteligência humana."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Big Data refere-se à coleta e análise de grandes volumes de dados, mas não envolve\ndiretamente a construção de máquinas inteligentes;\n\n(b) Errado. Data Science é o estudo de dados para obter insights, e embora possa usar IA, o foco do texto\né na construção de agentes inteligentes, não na análise de dados;\n\n(c) Errado. Computação quântica trata de um novo paradigma computacional baseado em princípios da\nmecânica quântica, não na simulação da inteligência humana;\n\n(d) Correto. O texto descreve claramente os fundamentos da Inteligência Artificial (IA): máquinas\ninteligentes, agentes autônomos e simulação de capacidades cognitivas humanas como aprendizado e\nresolução de problemas;\n\n(e) Errado. Blockchain e criptomoedas estão relacionados à segurança e descentralização de informações,\nnão à simulação da inteligência humana.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-11-S01-062",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Noções de Inteligência Artificial - Multibancas",
+      "subtopico": "Noções de Inteligência Artificial - Multibancas",
+      "microtopico": "",
+      "banca": "LEGALLE",
+      "ano": 2025,
+      "fonteProva": "LEGALLE / TCE-SP - 2025",
+      "tipo": "multipla_escolha",
+      "enunciado": "Acerca da importância dos modelos de linguagem na engenharia\n       de prompts, analise o texto:\n\n    Comandos bem projetados são essenciais para garantir que os modelos de IA compreendam\n    corretamente a intenção do usuário e forneçam respostas úteis. Isso é especialmente\n    importante em aplicações críticas, como auditorias de controle externo, onde a precisão é\n    fundamental.\n\n    Acerca do texto, pode-se afirmar que ele está:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Plenamente adequado, pois apresenta somente informações verdadeiras.",
+          "comentario": "Correto. O texto destaca que prompts bem elaborados ajudam o modelo a captar a intenção do usuário e a entregar respostas úteis; em contextos críticos, como auditorias, a ênfase na precisão torna essa preocupação ainda mais pertinente."
+        },
+        {
+          "letra": "B",
+          "texto": "Parcialmente adequado, visto que IA não necessita de comandos bem projetados.",
+          "comentario": "Errado. Contraria o texto, que justamente afirma a necessidade de comandos bem projetados para orientar a compreensão do modelo e melhorar a utilidade das respostas."
+        },
+        {
+          "letra": "C",
+          "texto": "Parcialmente adequado, visto que a IA é sempre precisa, não havendo situações especiais.",
+          "comentario": "Errado. O texto não presume precisão absoluta; ao contrário, ressalta que, por haver aplicações críticas, é essencial projetar bem os comandos para reduzir ambiguidades e aumentar a confiabilidade."
+        },
+        {
+          "letra": "D",
+          "texto": "Parcialmente adequado, visto que auditorias de controle externo não podem fazer uso de IA.",
+          "comentario": "Errado. O texto apenas cita auditorias como exemplo de aplicação crítica em que a precisão é fundamental, sem afirmar qualquer vedação ao uso de IA nesse contexto."
+        },
+        {
+          "letra": "E",
+          "texto": "Plenamente inadequado, pois apresenta somente informações falsas.",
+          "comentario": "Errado. O conteúdo não é “somente falso”; ele apresenta uma relação coerente entre qualidade do prompt, entendimento da intenção e utilidade/precisão das respostas, especialmente em cenários sensíveis."
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "(a) Correto. O texto destaca que prompts bem elaborados ajudam o modelo a captar a intenção do\nusuário e a entregar respostas úteis; em contextos críticos, como auditorias, a ênfase na precisão torna\nessa preocupação ainda mais pertinente.\n\n(b) Errado. Contraria o texto, que justamente afirma a necessidade de comandos bem projetados para\norientar a compreensão do modelo e melhorar a utilidade das respostas.\n\n(c) Errado. O texto não presume precisão absoluta; ao contrário, ressalta que, por haver aplicações\ncríticas, é essencial projetar bem os comandos para reduzir ambiguidades e aumentar a confiabilidade.\n\n(d) Errado. O texto apenas cita auditorias como exemplo de aplicação crítica em que a precisão é\nfundamental, sem afirmar qualquer vedação ao uso de IA nesse contexto.\n\n(e) Errado. O conteúdo não é “somente falso”; ele apresenta uma relação coerente entre qualidade do\nprompt, entendimento da intenção e utilidade/precisão das respostas, especialmente em cenários\nsensíveis.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-12-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "subtopico": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2022,
+      "fonteProva": "FGV - 2022 - Senado Federal - Técnico Legislativo - Policial Legislativo",
+      "tipo": "multipla_escolha",
+      "enunciado": "A criação de perfis falsos em redes sociais, bem como a utilização de ferramentas de inteligência artificial para\nmanipulação de falas (deepfake), são algumas das grandes celeumas a ameaçar a Internet nos dias de hoje. O\navanço da tecnologia traz para o operador do Direito diversos desafios, alguns deles enfrentados pelo Marco\nCivil da Internet (Lei nº 12.965/2014). A respeito do tema, assinale a afirmativa correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "A rede social poderá ser responsabilizada civilmente por danos decorrentes da criação de perfil falso se, após ordem judicial específica, não tomar as providências necessárias para tornar o conteúdo indisponível. B)Em respeito à liberdade de expressão, o Marco Civil da Internet veda a concessão de tutela provisória de urgência para determinar a indisponibilização de conteúdo lesivo à honra de outrem, a qual somente pode ser imposta por decisão judicial definitiva.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "A Lei nº 12.965/2014 estabelece, de maneira expressa, a responsabilidade objetiva do autor de conteúdo lesivo na Internet, que apenas poderá ser afastada se comprovada a culpa exclusiva da vítima ou o fato exclusivo de terceiro.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "A decisão judicial que determinar a remoção de conteúdo lesivo a determinada pessoa poderá ser genérica, englobando informações ou usuários indistintos, a critério do juiz ou Tribunal.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "O princípio da neutralidade da rede impede o fornecimento, mediante decisão judicial, de registro de conexão a aplicação de Internet, mesmo que haja fundados indícios da ocorrência de ilícito.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "A alternativa (A) estava correta à época da prova. Naquela época, a rede social (provedor de\naplicação) poderia ser responsabilizada por conteúdo gerado por terceiro, após receber ordem\njudicial e não remover o conteúdo:\n         Art. 19. Com o intuito de assegurar a liberdade de expressão e impedir a censura, o\n         provedor de aplicações de internet somente poderá ser responsabilizado civilmente por\n         danos decorrentes de conteúdo gerado por terceiros se, após ordem judicial específica,\n         não tomar as providências para, no âmbito e nos limites técnicos do seu serviço e dentro\n         do prazo assinalado, tornar indisponível o conteúdo apontado como infringente,\n         ressalvadas as disposições legais em contrário.\n\nAtualmente, todavia, valem os efeitos da decisão do STF tomada no bojo dos REs 1037396 e\n1057258.\n\nA alternativa (B) está incorreta, visto que é perfeitamente possível a antecipação de tutela:\n              Art. 19. § 4º O juiz, inclusive no procedimento previsto no § 3º , poderá antecipar, total ou\n              parcialmente, os efeitos da tutela pretendida no pedido inicial, existindo prova inequívoca\n              do fato e considerado o interesse da coletividade na disponibilização do conteúdo na\n              internet, desde que presentes os requisitos de verossimilhança da alegação do autor e de\n              fundado receio de dano irreparável ou de difícil reparação.\n\nA alternativa (C) está incorreta, visto que a lei não prevê a responsabilidade do autor de conteúdo,\nmuito menos sua responsabilização objetiva.\nA alternativa (D) está incorreta, visto que tal decisão precisa especificar o conteúdo a ser removido:\n              Art. 19. § 1º A ordem judicial de que trata o caput deverá conter, sob pena de nulidade,\n              identificação clara e específica do conteúdo apontado como infringente, que permita a\n              localização inequívoca do material.\n\nPor fim, a alternativa (E) está incorreta, visto que o provedor está obrigado a fornecer tais registros\nse houver ordem judicial nesse sentido:\n              Art. 10, § 1º O provedor responsável pela guarda somente será obrigado a disponibilizar os\n              registros mencionados no caput, de forma autônoma ou associados a dados pessoais ou a\n              outras informações que possam contribuir para a identificação do usuário ou do terminal,\n              mediante ordem judicial, na forma do disposto na Seção IV deste Capítulo, respeitado o\n              disposto no art. 7º .",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_9",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.769Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_9.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0055",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_9",
+      "subtopic_id": "ti_9",
+      "assunto": "1.2.1.9-inteligencia-artificial",
+      "subtopico": "1.2.1.9-conceitos-de-inteligencia-artificial",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Aprendizado de máquina é uma área da inteligência artificial em que modelos identificam padrões a partir de dados para realizar previsões, classificações ou outras tarefas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Conceitos de Inteligência Artificial.\n\nMachine learning é um subconjunto da IA. Os modelos ajustam parâmetros com base em exemplos ou interações, sem que cada regra de decisão precise ser programada explicitamente.\n\nFundamento: Conteúdo programático 1.2.1.9 — Inteligência Artificial: Conceitos de Inteligência Artificial.\n\nErro provável: equiparação entre IA e um único método\n\nDica: IA é o campo amplo; aprendizado de máquina é uma de suas abordagens.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_9.json",
+        "sourceSubtopicId": "1.2.1.9-conceitos-de-inteligencia-artificial",
+        "sourceTopicId": "1.2.1.9-inteligencia-artificial",
+        "mappedTopicoEditalId": "ti_9",
+        "hashQuestao": "547a78e1ad72e44f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "conceitos de inteligência artificial"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equiparação entre IA e um único método"
+          ],
+          "palavrasChave": [
+            "Conceitos de Inteligência Artificial",
+            "Inteligência Artificial"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Conceitos de Inteligência Artificial",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1d5027296db7ace458f5393eeabf168fa0fb70ba8b404f30e891f864c659e346",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.775Z"
+      }
+    }
+  ]
+}

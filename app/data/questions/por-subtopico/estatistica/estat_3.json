@@ -1,0 +1,123 @@
+{
+  "topicoEditalId": "estat_3",
+  "disciplinaId": "estatistica",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "PCAL-EST-11-S01-034",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_3",
+      "subtopic_id": "estat_3",
+      "assunto": "Noções Iniciais de Variáveis Contínuas",
+      "subtopico": "Questões Comentadas - Noções Iniciais de Variáveis Contínuas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "CEBRASPE/2020 – TJ/PA",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se Y for uma variável aleatória contínua e simétrica em torno de zero, tal\nque P(Y 2 < 4) = 0,4, então P(Y > 2) será igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "0,2",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "0,3",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "0,4",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "0,5",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "0,6",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Se Y2 < 4, então extraindo a raiz de ambos os lados, temos:\n√𝑌2 < √4\n|𝑌| < 2\nO enunciado informa que essa probabilidade é de 0,4:\n𝑃(𝑌2 < 4) = 𝑃(|𝑌| < 2) = 0,4\nPelo complementar, temos:\n𝑃(|𝑌| > 2) = 1 − 𝑃(|𝑌| < 2) = 1 − 0,4 = 0,6\nSubstituindo o módulo, temos:\n𝑃(|𝑌| > 2) = 𝑃(𝑌 < −2 ∪ 𝑌 > 2) = 𝑃(𝑌 < −2) + 𝑃(𝑌 > 2) = 0,6\nComo a distribuição é simétrica em torno de zero, então:\n𝑃(𝑌 < −2) = 𝑃(𝑌 > 2)\nLogo:\n𝑃(𝑌 < −2) + 𝑃(𝑌 > 2) = 2. 𝑃(𝑌 > 2) = 0,6\n𝑃(𝑌 > 2) = 0,3",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_3",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.638Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_3.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-13-S04-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_3",
+      "subtopic_id": "estat_3",
+      "assunto": "Transformação de Variáveis",
+      "subtopico": "Questões Comentadas - Transformação de Variáveis - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/2024 – ANTT - Adaptada",
+      "tipo": "certo_errado",
+      "enunciado": "Com relação a probabilidade e variáveis aleatórias, julgue o\nitem a seguir.\nSuponha que X seja uma variável aleatória contínua com função densidade de probabilidade 𝑓(𝑥) =\n3\n2 exp(−3|𝑥|), para todo 𝑥 ∈ ℝ. Nesse caso, se 𝑌 = 𝑋4, então a função densidade de probabilidade para 𝑌 é\n𝑔(𝑦) =\n3\n4 .\nexp(−3 √𝑦4 )\n√𝑦34 para todo 𝑦 > 0.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Para encontrar a função densidade de probabilidade de 𝑌 = 𝑋4, vamos utilizar o método Jacobiano:\n𝑔(𝑦) = 𝑓[ℎ−1(𝑦)] |𝑑ℎ−1(𝑦)\n𝑑𝑦 |\nO primeiro passo é inverter a função 𝑦 = ℎ(𝑥) = 𝑥4, isolando 𝑥\n𝑦 = 𝑥4\n𝑥 = ± (𝑦\n1\n4) = ±√𝑦4\nUtilizamos o sinal ± porque 𝑥 pode assumir tanto valores positivos quanto valores negativos. Considerando\nque ±(𝑦1/4) não é uma função, pois um único valor do domínio (no caso, 𝑦) está associado a mais de um\nvalor do contradomínio, precisamos utilizar 2 funções:\nℎ1\n−1(𝑦) = 𝑦1/4 = √𝑦4 , ℎ2\n−1(𝑦) = −𝑦\n1\n4 = −√𝑦4\nDessa forma, a função densidade de 𝑌 corresponde à soma:\n𝑔(𝑦) = 𝑓[ℎ1\n−1(𝑦)] |𝑑ℎ1\n−1(𝑦)\n𝑑𝑦 | + 𝑓[ℎ2\n−1(𝑦)] |𝑑ℎ2\n−1(𝑦)\n𝑑𝑦 |\nVamos agora calcular a derivada das funções inversas:\n𝑑ℎ1\n−1(𝑦)\n𝑑𝑦 = 𝑑𝑦1/4\n𝑑𝑦 = 1\n4 . 𝑦\n1\n4−1 = 1\n4 . 𝑦−3\n4 = 1\n4. 𝑦3/4 = 1\n4. √𝑦34\nEm relação à função ℎ2\n−1(𝑦) = −𝑦1/4, obtemos o mesmo resultado, mas com sinal contrário:\n𝑑ℎ2\n−1(𝑦)\n𝑑𝑦 = − 1\n4. √𝑦34\nComo precisamos do módulo da derivada, o resultado é o mesmo:\n|𝑑ℎ1\n−1(𝑦)\n𝑑𝑦 | = |𝑑ℎ2\n−1(𝑦)\n𝑑𝑦 | = 1\n4. √𝑦34\nAgora, aplicamos as funções inversas na função densidade de 𝑓(𝑥) =\n3\n2 exp(−3|𝑥|), no lugar de 𝑥:\n𝑓[ℎ1\n−1(𝑦)] = 3\n2 exp(−3|√𝑦4 |) = 3\n2 exp(−3√𝑦4 )\n𝑓[ℎ2\n−1(𝑦)] = 3\n2 exp(−3|−√𝑦4 |) = 3\n2 exp(−3√𝑦4 )\nComo a função densidade 𝑓(𝑥) utiliza o módulo de 𝑥, o resultado é o mesmo para ambas as inversas.\nAgora, podemos encontrar a expressão de 𝑔(𝑦):\n𝑔(𝑦) = 3\n2 exp(−3√𝑦4 ) 1\n4. √𝑦34 + 3\n2 exp(−3√𝑦4 ) 1\n4. √𝑦34 = 3\n4 .\nexp(−3√𝑦4 )\n√𝑦34",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_3",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.638Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_3.json"
+      }
+    },
+    {
+      "id": "PCAL-EST-14-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "estatistica",
+      "topicoEditalId": "estat_3",
+      "subtopic_id": "estat_3",
+      "assunto": "Lei dos Grandes Números",
+      "subtopico": "Questões Comentadas - Lei dos Grandes Números - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2015,
+      "fonteProva": "CESPE/2015 – TELEBRAS",
+      "tipo": "certo_errado",
+      "enunciado": "Nas chamadas de suporte de uma empresa de telecomunicações, o\nfuncionário Pedro resolve o problema do cliente em duas de cada três vezes em que é solicitado, enquanto\nMarcos resolve em três de cada quatro chamadas.\nA partir dessa situação hipotética, julgue o item seguinte, considerando que os funcionários sejam\nsuficientemente experientes para que a tentativa de resolução do problema de qualquer chamada não\nesteja subordinada a tentativas anteriores.\nConsidere que, para i = 1, 2, 3, ..., Xi seja a variável aleatória que assume o valor 1 quando, na i-ésima\nchamada, Marcos resolve o problema, e o valor 0, em caso contrário. Se Sn = X1 + X2 + ... + Xn, então, quase\ncertamente, Sn/n converge para ¾.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O enunciado informa que Marcos resolve o problema em 3 de cada 4 chamadas e que as tentativas são\nindependentes entre si. Assim, temos uma distribuição de Bernoulli com p = ¾. Como Sn/n corresponde à\nmédia amostral e considerando que a distribuição de Bernoulli atende às condições da Lei Forte dos Grandes\nNúmeros, então podemos concluir que de fato Sn/n converge para p = ¾.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "estat_3",
+        "disciplinaCurta": "estat",
+        "organizadoEm": "2026-07-21T02:11:29.638Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\estatistica\\estat_3.json"
+      }
+    }
+  ]
+}

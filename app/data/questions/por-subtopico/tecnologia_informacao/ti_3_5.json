@@ -1,0 +1,531 @@
+{
+  "topicoEditalId": "ti_3_5",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 12,
+  "questions": [
+    {
+      "id": "PCAL-TI-03-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / TCE-AC – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Na infraestrutura como serviço (IaaS), a camada de virtualização é\n   responsável por permitir o compartilhamento de determinados recursos de hardware entre\n   várias máquinas virtuais diferentes.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Na Infraestrutura como Serviço (IaaS), a camada de virtualização gerencia e compartilha recursos físicos,\ncomo processamento, memória e armazenamento, entre várias máquinas virtuais. Isso permite o\nisolamento dos ambientes e a utilização eficiente do hardware subjacente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / TCE-AC – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O modelo IaaS proíbe a virtualização da camada de\n   armazenamento (storage).",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "No modelo Infraestrutura como Serviço (IaaS), a virtualização da camada de armazenamento (storage) é\namplamente utilizada para fornecer flexibilidade, escalabilidade e isolamento entre diferentes usuários.\nServiços como Amazon EBS e Google Persistent Disk são exemplos de armazenamento virtualizado no\nIaaS.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / CAGEPA-PB – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção correta acerca da computação em nuvem.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "No modelo de nuvem SaaS, aplicação e banco de dados são geridos pelo cliente.",
+          "comentario": "Errado. No modelo Software como Serviço (SaaS), tanto a aplicação quanto o banco de dados são gerenciados pelo provedor, e não pelo cliente;"
+        },
+        {
+          "letra": "B",
+          "texto": "Serviços de comunicação por vídeo e VoIP operam em nuvem do tipo IaaS.",
+          "comentario": "Errado. Serviços de comunicação por vídeo e VoIP geralmente operam no modelo Software como Serviço (SaaS) ou Plataforma como Serviço (PaaS), e não diretamente em Infraestrutura como Serviço (IaaS);"
+        },
+        {
+          "letra": "C",
+          "texto": "Em uma nuvem PaaS, servidores, rede, sistema operacional e armazenamento são gerenciados pelo cliente.",
+          "comentario": "Errado. No modelo Plataforma como Serviço (PaaS), servidores, rede, sistema operacional e armazenamento são gerenciados pelo provedor, enquanto o cliente foca no desenvolvimento das aplicações;"
+        },
+        {
+          "letra": "D",
+          "texto": "Na nuvem híbrida, os serviços estão disponíveis para qualquer cliente e os recursos são controlados pelo provedor.",
+          "comentario": "Errado. Na nuvem híbrida, há uma combinação de nuvens públicas e privadas, mas os recursos não são necessariamente acessíveis a qualquer cliente, pois podem ser restritos a uma organização específica;"
+        },
+        {
+          "letra": "E",
+          "texto": "Segurança, integração e padronização são os três itens mais desafiadores para a implementação da computação em nuvem.",
+          "comentario": "Correto. Segurança, integração e padronização são desafios críticos na computação em nuvem, pois envolvem proteção de dados, compatibilidade entre sistemas e conformidade com normas e regulamentações."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado. No modelo Software como Serviço (SaaS), tanto a aplicação quanto o banco de dados são\ngerenciados pelo provedor, e não pelo cliente;\n\n(b) Errado. Serviços de comunicação por vídeo e VoIP geralmente operam no modelo Software como\nServiço (SaaS) ou Plataforma como Serviço (PaaS), e não diretamente em Infraestrutura como Serviço\n(IaaS);\n\n(c) Errado. No modelo Plataforma como Serviço (PaaS), servidores, rede, sistema operacional e\narmazenamento são gerenciados pelo provedor, enquanto o cliente foca no desenvolvimento das\naplicações;\n\n(d) Errado. Na nuvem híbrida, há uma combinação de nuvens públicas e privadas, mas os recursos não\nsão necessariamente acessíveis a qualquer cliente, pois podem ser restritos a uma organização específica;\n\n(e) Correto. Segurança, integração e padronização são desafios críticos na computação em nuvem, pois\nenvolvem proteção de dados, compatibilidade entre sistemas e conformidade com normas e\nregulamentações.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Mossoró - RN – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O OneDrive permite que o usuário armazene\n   arquivos pessoais na nuvem da Microsoft. Por motivos de segurança, tais arquivos não podem\n   ser compartilhados com outros usuários.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O OneDrive permite o armazenamento de arquivos na nuvem da Microsoft e oferece funcionalidades de\ncompartilhamento. O usuário pode definir permissões para que outras pessoas visualizem ou editem os\narquivos, garantindo controle sobre a segurança e o acesso aos dados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / SEFAZ-AC – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Para o armazenamento de arquivos diversos em nuvem, é\n   correto o uso do",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Google Chrome.",
+          "comentario": "Errado. Google Chrome é um navegador web e não um serviço de armazenamento em nuvem;"
+        },
+        {
+          "letra": "B",
+          "texto": "Mozila Thunderbird.",
+          "comentario": "Errado. Mozilla Thunderbird é um cliente de e-mail, não uma plataforma para armazenamento de arquivos em nuvem;"
+        },
+        {
+          "letra": "C",
+          "texto": "OneDrive.",
+          "comentario": "Correto. OneDrive é um serviço de armazenamento em nuvem da Microsoft, permitindo salvar e sincronizar arquivos entre dispositivos;"
+        },
+        {
+          "letra": "D",
+          "texto": "Spotify.",
+          "comentario": "Errado. Spotify é um serviço de streaming de música, não destinado ao armazenamento geral de arquivos;"
+        },
+        {
+          "letra": "E",
+          "texto": "NordVPN.",
+          "comentario": "Errado. NordVPN é um serviço de VPN que melhora a segurança e privacidade online, mas não armazena arquivos em nuvem."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Google Chrome é um navegador web e não um serviço de armazenamento em nuvem;\n\n(b) Errado. Mozilla Thunderbird é um cliente de e-mail, não uma plataforma para armazenamento de\narquivos em nuvem;\n\n(c) Correto. OneDrive é um serviço de armazenamento em nuvem da Microsoft, permitindo salvar e\nsincronizar arquivos entre dispositivos;\n\n(d) Errado. Spotify é um serviço de streaming de música, não destinado ao armazenamento geral de\narquivos;\n\n(e) Errado. NordVPN é um serviço de VPN que melhora a segurança e privacidade online, mas não\narmazena arquivos em nuvem.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "As nuvens privadas sempre\n   oferecem menos escalabilidade em comparação com a infraestrutura local, uma vez que elas são\n   recursos de computação em nuvem usados exclusivamente por uma única empresa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Embora as nuvens privadas sejam usadas exclusivamente por uma única empresa, elas podem ser\naltamente escaláveis, dependendo da infraestrutura implementada. Além disso, podem utilizar\ntecnologias de cloud bursting ou integração com nuvens públicas para aumentar sua capacidade\nconforme necessário. Já uma infraestrutura local tradicional (on-premises) tende a ter limitações maiores\nde escalabilidade devido a restrições físicas e financeiras.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Em comparação com o IaaS\n   (infraestrutura como serviço), o SaaS (software como serviço) é a modalidade de computação\n   em nuvem que oferece menos recursos; nela são ofertadas ao usuário somente soluções\n   fundamentais de computação e de armazenamento sob demanda e pagas conforme o uso.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "No modelo Software como Serviço (SaaS), o usuário tem acesso a aplicações completas hospedadas na\nnuvem, sem necessidade de gerenciar infraestrutura ou armazenamento. O IaaS oferece mais controle\nsobre recursos de computação, mas o SaaS entrega soluções prontas, como e-mail, ferramentas de\nprodutividade e CRMs.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Uma das formas de fazer becape\n   de arquivos é armazená-los na nuvem.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O armazenamento em nuvem é uma das formas mais utilizadas para backup, garantindo acesso remoto,\nsegurança e redundância dos arquivos. Serviços como Google Drive, OneDrive e Dropbox permitem\nsincronizar e restaurar dados facilmente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O Windows 10 é um aplicativo\n   da Microsoft que permite controlar todos os aspectos da computação em nuvem.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O Windows 10 é um sistema operacional da Microsoft, não um aplicativo específico para gerenciar todos\nos aspectos da computação em nuvem. Embora tenha integração com serviços em nuvem, como\nOneDrive e Azure, ele não é projetado para controle total da nuvem.\n\n                                                                                         Gabarito: Errado\n\n10.(CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024) Uma nuvem híbrida é um\n   ambiente de computação misto onde aplicativos são executados usando uma combinação de\n   computação, armazenamento e serviços em diferentes ambientes, tais como nuvens públicas e\n   privadas e data centers.\n\nComentários:\n\nA nuvem híbrida combina recursos de nuvem pública, nuvem privada e data centers locais para oferecer\nmaior flexibilidade, escalabilidade e controle. Esse modelo permite que as organizações distribuam\ncargas de trabalho conforme suas necessidades de segurança, desempenho e custo.\n\n                                                                                 Gabarito: Correto\n11.(FCC / CLDF – 2018) Na adoção dos recursos de computação na nuvem o Analista de Sistemas\n   selecionou o modelo IaaS que disponibiliza, dentre outros recursos, o serviço de:\n\n   a) armazenamento de Backup.\n   b) gerenciamento de banco de dados.\n   c) provedor de e-mail.\n   d) edição de documento.\n   e) hospedagem de site.\n\nComentários:\n\n(a) Correto, esse é um recurso do IaaS; (b) Errado, esse é um recurso do PaaS; (c) Errado, esse é um recurso\ndo SaaS; (d) Errado, esse é um recurso do SaaS; Errado, esse é um recurso de PaaS ou SaaS.\n\n                                                                                         Gabarito: Letra A\n\n12.(FCC / TRT-SP – 2018) Ao pesquisar sobre cloud storage, um Técnico verificou que há diferentes\n   tipos de armazenamento em nuvem, dependendo de como o storage é feito, dentre os quais\n   estão:\n\n   I. Voltada para pessoas físicas, esta nuvem é composta por sites que disponibilizam um pequeno\n   espaço de armazenamento gratuitamente e oferecem planos para expandir a capacidade. Ideal para\n   quem quer testar o serviço de cloud storage ou possui um pequeno volume de dados e não necessita\n   de um alto nível de segurança e desempenho.\n\n   II. Dividida entre clientes com negócios em comum, que rateiam os custos de utilização e manutenção,\n   esta nuvem pode ser hospedada e gerenciada dentro das empresas ou, então, terceirizada.\n\n   III. Esta nuvem é projetada para uso exclusivo de uma única empresa, nas dependências da qual todo\n   o hardware (storages e servidores) fica alocado. A empresa possui controle total da implementação\n   das aplicações na nuvem.\n\n   Os tipos de I, II e III são, correta e respectivamente,\n\n   a) FaaS, SaaS e IaaS.\n   b) nuvem pública, comunitária e privada.\n   c) IaaS, CaaS e SaaS.\n   d) nuvem gratuita, híbrida e corporativa.\n   e) IaaS, EaaS e PaaS.\n\nComentários:\n\n(I) Dentre as opções apresentadas, essa pode ser uma nuvem pública ou uma nuvem gratuita; (II) Essa\nopção necessariamente é uma nuvem comunitária; (III) Essa opção necessariamente é uma nuvem\nprivada. Logo, trata-se de nuvem pública, nuvem comunitária e nuvem privada.\n\n                                                                                         Gabarito: Letra B\n\n13.(FCC / TRT-PE – 2018) Um Analista utiliza um conjunto de aplicativos de escritório (Google Docs)\n   que não estão instalados em seu computador, mas em servidores espalhados em pontos\n   diversos da internet. Além de acessar os aplicativos, guarda também os documentos produzidos\n   por meio deles nesses servidores, de forma a poder acessá-los a partir de qualquer computador\n   com acesso à internet. O Analista utiliza um tipo de computação em nuvem conhecido como:\n\n   a) Development as a Service.\n   b) Software as a Service.\n   c) Plataform as a Service.\n   d) Infrastructure as a Service.\n   e) Communication as a Service.\n\nComentários:\n\nConjunto de aplicativos que não estão instalados em seu computador? Aplicativos instalados em\nservidores espalhados em pontos diversos da internet? Permite acessar os aplicativos e guardar\ndocumentos nesses servidores? Pode acessá-los a partir de qualquer computador com acesso à internet?\nTudo nos remete a SaaS (Software as a Service).\n\n                                                                                         Gabarito: Letra B\n\n14.(FCC / TRE-AP – 2015) Serviços de cloud storage armazenam dados físicos on-line em pools\n   virtualizados e especializados. É uma desvantagem deste tipo de armazenamento:\n\n   a) As organizações geralmente pagam apenas para o armazenamento que realmente utilizarem.\n\n   b) Dispensa instalação de dispositivos de armazenamento físico no ambiente de TI da organização.\n\n   c) O desempenho pode ser menor do que o armazenamento local. Isso pode implicar que a\n   organização tenha que realizar altos investimentos em banda larga e infraestrutura de rede.\n\n   d) Os custos de localização offshore costumam ser mais baixos e ainda permite à organização se\n   concentrar mais em seu core business.\n\n   e) Tarefas como backup, replicação de dados e compra de dispositivos de armazenamento adicionais\n   são transferidas para o prestador de serviços.\n\nComentários:\n\n(a) Errado, essa é uma vantagem; (b) Errado, essa é uma vantagem; (c) Correto, o desempenho nem\nsempre é igual ao desempenho de um armazenamento local e talvez seja necessário investir em recursos\nde rede; (d) Errado, essa é uma vantagem – offshores são locais que possuem menor tributação ou\nincentivos fiscais; (e) Errado, essa é uma vantagem.\n\n                                                                                         Gabarito: Letra C\n\n15.(FCC / CNMP – 2015) Na Computação em Nuvem (Cloud Computing), diversos tipos de serviços\n   podem ser disponibilizados aos usuários. O serviço que fornece uma infraestrutura de\n   integração para implementar e testar aplicações elaboradas para a nuvem, é denominado:\n\n   a) SaaS - Software as a Service.\n   b) AaaS - Application as a Service.\n   c) DaaS - Development as a Service.\n   d) IaaS - Implementation as a Service.\n   e) PaaS - Platform as a Service.\n\nComentários:\n\nO serviço que fornece uma infraestrutura de integração para implementar e testar aplicações é a\nplataforma como um serviço (Paas). O examinador sempre joga a palavra “infraestrutura” para tentar\nconfundir o candidato. Cuidado!\n\n                                                                                         Gabarito: Letra E\n\n16.(FCC / TRT-15 – 2015) Os serviços de edição de texto online, como o do Google Docs, são\n   serviços disponibilizados na internet por meio do conceito de Computação na Nuvem. Dentre\n   os diferentes tipos de Computação na Nuvem, esses serviços são do tipo:\n\n   a) PaaS − Plataform as a Service.\n   b) IaaS − Infrastructure as a Service.\n   c) CaaS − Communication as a Service.\n   d) DBaas − Data Base as a Service.\n   e) SaaS − Software as a Service.\n\nComentários:\n\nGoogle Docs – serviço de edição de texto online – é um serviço do tipo Software as a Service (Saas).",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-03-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "Computação em Nuvem - Multibancas",
+      "subtopico": "Computação em Nuvem - Multibancas",
+      "microtopico": "",
+      "banca": "FCC",
+      "ano": 2015,
+      "fonteProva": "FCC / DPE-SP – 2015",
+      "tipo": "multipla_escolha",
+      "enunciado": "Para fazer um backup seguro de seus arquivos um internauta usou um\n   serviço da Google que se baseia no conceito de computação em nuvem, pois poderá armazenar\n   arquivos através deste serviço e acessá-los a partir de qualquer computador ou outros\n   dispositivos compatíveis, desde que ligados à internet, com toda garantia de guarda dos dados,\n   segurança e sigilo, por contrato de uso. Além disso, tal serviço disponibiliza vários aplicativos\n   via on-line, sem que esses programas estejam instalados no computador da pessoa que os\n   utiliza. Trata-se do Google:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Blogger.",
+          "comentario": "Errado, trata-se de um ferramenta para criação de blogs; (b) Errado, trata-se de um navegador web; (c) Errado, trata-se de uma cópia de segurança; (d) Errado, trata-se uma agenda, salvo engano; (e) Correto, trata-se de uma ferramenta de armazenamento em nuvem. Gabarito: Letra E 18.(FCC / TRT-MG – 2015) A computação na nuvem apresenta a grande vantagem de acessar os recursos computacionais (processamento, banco de dados, etc) a partir da internet sem a necessidade de instalar programas e aplicações nos computadores e dispositivos. Dentre os diferentes tipos de serviços da computação na nuvem, quando recursos de hardware são acessados na nuvem, está se utilizando o tipo de serviço: a) DevaaS. b) IaaS. c) CaaS. d) SaaS. e) PaaS. Comentários: Quando recursos de hardware são acessados na nuvem, está se utilizando o tipo de serviço de Infrastructure as a Serviço (IaaS). Gabarito: Letra B 19.(FCC / TCE-SP – 2010) Quanto à computação em nuvem, considere: I. Ao acessar seus dados na nuvem computacional, o usuário não precisa se preocupar com o hardware nem com o sistema operacional de seu computador, uma vez que dele utilizará somente o navegador. II. O trabalho corporativo e o compartilhamento de arquivos se tornam mais fáceis, uma vez que todas as informações se encontram no mesmo espaço físico, o que assegura ao próprio usuário manter seus dados sob sigilo. III. O usuário tem um melhor controle de gastos ao usar aplicativos, pois a maioria dos sistemas de computação em nuvem fornecem aplicações gratuitamente e, quando cobrado, o usuário paga somente pelo tempo de utilização dos recursos. IV. A Computação em nuvem é uma tendência integrante da Web 2.0 de se levar todo tipo de dados de usuários a servidores online, tornando desnecessário o uso de dispositivos de armazenamento. É correto o que consta em: a) I, II e III, apenas. b) I, III e IV, apenas. c) I e II, apenas. d) III e IV, apenas. e) I, II, III e IV. Comentários: (I) Correto, não precisa instalar nada – tudo é acessado via browser; (II) Errado, as informações não estão necessariamente em um mesmo espaço físico; (III) Correto, há uma maior eficiência e transparência dos gastos – pay-per-use; (IV) Correto, tem sido uma tendência realmente levar dados para servidores em nuvem, tornando desnecessário o uso de dispositivos de armazenamento – eu, por exemplo, uso cada vez menos o meu HD/SSD. Gabarito: Letra B 20.(FGV / Senado Federal – Análise de Suporte – 2022) Nos últimos anos, a adoção de ambientes em nuvem cresceu expressivamente. Modelos de serviços em nuvem facilitam a criação de soluções tecnológicas modernas de maneiras diferentes. A seguir, estão listadas algumas características de um desses modelos. I. O provedor de nuvem fica responsável pelo gerenciamento da infraestrutura de servidores, sistemas operacionais, atualizações e outras tarefas administrativas. II. Acessível pela internet por meio do navegador web. III. Permite equipes de desenvolvimento colaborarem em todo o ciclo de vida de um aplicativo, incluindo codificação, integração, teste, entrega, implantação e feedback. As características descritas nos itens I, II e III referem-se a: a) IAC. b) TaaS. c) SaaS. d) IaaS. e) PaaS. Comentários: (I) Essa característica serviria a qualquer modelo de serviço; (II) Essa característica também serviria a qualquer modelo de serviço; (III) Essa característica menciona colaboração no ciclo de vida de um aplicativo, desde codificação, integração, teste, entrega, implantação, etc – todas essas são características de plataformas de desenvolvimento de software, logo se referem ao PaaS. Gabarito: Letra E 21.(FGV / PC-AM – 2022) O desenvolvimento e a disponibilização de serviços na nuvem é uma prática muito comum. Sobre uma plataforma de streaming de filmes que cobra por assinatura, assinale a opção que indica o modelo de serviço recebido do provedor de nuvem e o que é entregue pelo desenvolvedor ao usuário final. a) Recebe SaaS e entrega PaaS. b) Recebe SaaS e entrega IaaS. c) Recebe PaaS e entrega SaaS. d) Recebe PaaS e entrega IaaS. e) Recebe IaaS e entrega IaaS. Comentários: O provedor de nuvem entrega um PaaS, dado que oferece uma plataforma para hospedagem de um software em nuvem. Já o usuário final recebe do desenvolvedor um SaaS, dado que ele recebe um software hospedado em nuvem. Em outras palavras, o desenvolvedor recebe um PaaS do provedor de nuvem e entrega um SaaS para o usuário final. Gabarito: Letra C 22.(FGV / SEFAZ-AM – 2022) Assinale a opção que denota apenas elementos que tornaram possível a evolução de serviços em nuvem. a) Virtualização, Internet, computação escalável. b) Bancos de dados, Internet, computação escalável. c) Bancos de dados virtuais, Internet, computação escalável. d) Internet das Coisas, virtualização, computação escalável. e) Sistemas de ERP, virtualização, computação escalável. Comentários: (a) Correto, todos esses tornaram possível a evolução de serviços em nuvem; (b) Errado, não há nenhuma relação direta com bancos de dados; (c) Errado, não há nenhuma relação direta com bancos de dados virtuais; (d) Errado, não há nenhuma relação direta com Internet das Coisas; (e) Errado, não há nenhuma relação direta com Sistemas de ERP. Gabarito: Letra A 23.(FGV / SEFAZ-AM – 2022) Existem alguns benefícios na adoção de nuvens privadas em relação às nuvens públicas. Assinale a opção que descreve apenas benefícios de uma nuvem privada. a) Melhor nível de serviço, em oposição às diversas equipes especializadas que operam nas nuvens públicas. b) Melhor controle e estabilidade, em oposição ao compartilhamento de recursos inerente às nuvens públicas. c) Melhor contingenciamento, em oposição às nuvens públicas, que possuem Data Centers distribuídos no mundo todo. d) Menor custo de administração, em oposição aos altos custos iniciais dos serviços das nuvens públicas. e) Rápida atualização no menu de serviços, em oposição à escassez de serviços das nuvens públicas. Comentários: (a) Errado. Nuvens privadas realmente possuem melhor nível de serviço, mas nuvens públicas não possuem equipes especializadas e, sim, genéricas – quem possui equipes especializadas são as nuvens privadas; (b) Correto. Nuvens privadas apresentam melhor controle e estabilidade, dado que não são compartilhadas com outros clientes; (c) Errado. Nuvens públicas possuem melhor contingenciamento, dado que os centros de dados são distribuídos em todo mundo; (d) Errado. Nuvens privadas possuem maior custo de administração, dado que os custos são distribuídos por vários clientes; (e) Errado. Não há escassez de serviços em nuvens públicas. Gabarito: Letra B 24.(FGV / SEFAZ-AM – 2022) O provisionamento de serviços em nuvem divide-se basicamente em: IaaS – Infraestrutura como Serviço, PaaS – Plataforma como Serviço e SaaS – Software como Serviço. Assinale a opção que indica o modelo de serviço que dá mais autonomia de gerenciamento do ambiente ao cliente: a) SaaS, porque o cliente é capaz de gerenciar o sistema operacional do serviço. b) PaaS, porque o cliente é capaz de gerenciar a virtualização do serviço. c) IaaS, porque o cliente é capaz de gerenciar o sistema operacional, os dados e a aplicação do serviço. d) SaaS, porque o cliente é capaz de gerenciar a unidade de armazenamento do serviço. e) SaaS, porque o cliente é capaz de gerenciar a virtualização do serviço. Comentários: Em vermelho, temos aquilo que é gerenciado pelo provedor de nuvem e, em verde, temos aquilo que é gerenciado pelo cliente. Note que o IaaS (Infrastructure as a Service) é o modelo que dá mais autonomia ao cliente, que pode gerenciar sistema operacional, middleware, ambiente de execução, dados e aplicações. Gabarito: Letra C 25.(FGV / TJDFT – 2022) O órgão XPTO do Poder Judiciário está implementando tecnologia em nuvem para prover serviços para outros órgãos. Os serviços ofertados consistirão em um ambiente no qual os clientes receberão máquinas virtuais, com suas áreas de armazenamento definidas (storage) e as interfaces de rede de acordo com os ambientes (produtivos ou não produtivos), nas quais poderão instalar os sistemas operacionais e suas aplicações para disponibilizarem serviços para seus clientes. De acordo com a NIST SP 800-145, o modelo de serviço de nuvem implementado pelo órgão XPTO é o: a) infrastructure as a service; b) on-demand self-service; c) software as a service; d) platform as a service; e) measured service. Comentários: De acordo com o enunciado, os serviços ofertados consistirão em um ambiente no qual os clientes receberão máquinas virtuais, com suas áreas de armazenamento definidas (storage) e as interfaces de rede de acordo com os ambientes nas quais poderão instalar os sistemas operacionais e suas aplicações. Vamos lembrar da nossa figurinha básica... Note que é a Infrastructure as a Service (IaaS) que gerencia storage (armazenamento), virtualização (máquinas virtuais) que permite aos usuários instalarem seus sistemas operacionais e aplicações. Lembrando que em verde é gerenciado pelo usuário e, em vermelho, é gerenciado pela infraestrutura como serviço. Gabarito: Letra A 26.(FGV / MPE-GO – 2021) Júlia e seus colegas de faculdade estão fazendo um trabalho em grupo e decidiram compartilhar seus arquivos de imagens e texto na nuvem de modo que cada integrante do grupo possa ver e acessar as atualizações dos outros pela Internet. Para compartilhar na nuvem os arquivos do trabalho com os colegas do grupo, Júlia deve usar o: a) Dropbox. b) Pendrive. c) Mozilla Thunderbird. d) Windows Explorer. e) Infraestrutura como Serviço (IaaS). Comentários: (a) Correto, essa é uma das ferramentas mais famosas de compartilhamento em nuvem do mercado; (b) Errado, pendrive é um dispositivo de memória flash que permite armazenar arquivos localmente; (c) Errado, Mozilla Thunderbird é um software gerenciador de correio eletrônico; (d) Errado, Windows Explorer é o gerenciador de arquivos e pastas do Microsoft Windows; (e) Errado, IaaS é um modelo de computação em nuvem que fornece recursos de rede, armazenamento, servidores, virtualização, entre outros. Gabarito: Letra A 27.(FGV / TJ-RO – 2021) João é um cientista de dados que iniciou o processo de estudo dos dados de sua empresa com o objetivo de identificar um diferencial competitivo diante de seus concorrentes. Como resultado, João decidiu implementar um Big Data e hospedá-lo em um ambiente de nuvem. Diante das possibilidades dos serviços, considerando os requisitos de escalabilidade e elasticidade, em caso de aumento de demanda pontual, aliados à tecnologia de Big Data, a alternativa que melhor descreve o tipo de serviço em nuvem a ser contratado por João é: a) infraestrutura como serviço (IaaS), que consiste na entrega de funções de computação, incluindo hardware, redes, armazenamento e espaço de Datacenter com base em um modelo de aluguel; b) plataforma como serviço (PaaS), que oferece um conjunto consistente de serviços que garantem que os desenvolvedores tenham um modo integrado para a criação de aplicativos em nuvem; c) software como serviço (SaaS), que consiste em um aplicativo de negócios criado e hospedado por um provedor em um modelo de múltiplos usuários; d) dados como serviço (DaaS), que é um serviço independente de plataforma que permite conexão à nuvem para armazenar e recuperar informações; e) infraestrutura como código (IaC), que consiste em uma abordagem baseada na agilidade para entregar uma infraestrutura de forma muito mais rápida, com uma codificação objetiva e simples. Comentários: Se João deseja hospedar um Big Data para poder realizar consultas e identificar diferenciais competitivos que o ajudem na tomada de decisão, então ele precisa contratar um DaaS (Data as a Service). Dessa forma, ele poderá utilizar diversos recursos de armazenamento, processamento, recuperação e análise de dados. Gabarito: Letra D 28.(FGV / Câmara Municipal de Caruaru/PE – 2015) A computação em nuvem objetiva a utilização de servidores remotos, acessados por meio da Internet, para a realização de processos computacionais, que antes eram dependentes do hardware de cada usuário. De modo geral, a computação em nuvem pode ser dividida em duas categorias, caracterizadas a seguir: I. o processamento de dados está associado a programas que são acessados nos servidores centrais e é, ainda, a forma menos utilizada de computação em nuvem. Com as ferramentas disponíveis, é possível editar textos, planilhas, apresentações, tabelas, gráficos e outros documentos sem precisar ter um programa instalado no seu computador; porém, isso traz a necessidade de ter um navegador e uma conexão à Internet. Os documentos ficam armazenados “em nuvem\", podendo-se editar um documento no computador pessoal, ou até mesmo por meio de um celular, sem precisar de dispositivos como o pendrive, por exemplo. II. o armazenamento de dados é a forma mais utilizada pelos usuários da Internet. Os primeiros serviços de armazenamento de dados estavam ligados aos servidores online de e-mails. Há necessidade de o usuário criar uma conta em algum servidor e enviar os seus arquivos. Isso significa que esse usuário precisa identificar quais servidores armazenam o tipo de arquivo que ele pretende salvar, além de avaliar se o servidor oferece a capacidade de armazenamento de que precisa. A forma de envio dos arquivos, assim como o tipo de arquivo a ser armazenado, varia de acordo com o conjunto de serviços oferecidos por cada servidor remoto. Nesse contexto, dois exemplos de recursos que suportam a computação em nuvem são: a) DataStore e GoogleDocs. b) DropBox e DataStore. c) iCloud e DropBox. d) Thunderbird e iCloud. e) GoogleDocs e Thunderbird. Comentários: (a) Errado, desconheço ferramenta chamada DataStore; (b) Errado, desconheço ferramenta chamada DataStore; (c) Correto, ambas são ferramentas de computação em nuvem; (d) Errado, Thunderbird é um cliente de correio eletrônico; (e) Errado, Thunderbird é um cliente de correio eletrônico. Gabarito: Letra C 29.(FGV / DPE-MT – 2015) A respeito do armazenamento de dados na nuvem, analise as afirmativas a seguir. I. A principal função da nuvem é o armazenamento de dados. II. A robustez da conexão à Internet é essencial para o uso da nuvem. III. Uma nuvem descartável é indicada para projetos que são realizados uma única vez. Assinale: a) se somente a afirmativa I estiver correta. b) se somente a afirmativa II estiver correta. c) se somente a afirmativa III estiver correta. d) se somente as afirmativas I e II estiverem corretas. e) se somente as afirmativas II e III estiverem corretas. Comentários: (I) Errado, a principal função de uma nuvem é fornecer serviços sob demanda acessíveis, escaláveis, etc; (II) Correto, é realmente necessário ter uma conexão estável de internet; (III) Correto, de acordo com a banca. No entanto, acredito ser uma grande viagem... nunca ouvi falar em uma nuvem descartável e não acho que esse item faça qualquer sentido lógico. Gabarito: Letra E 30.(CESGRANRIO / IPEA - 2024) Os provedores de computação em nuvem praticam modelos de serviço bastante distintos para procurar atender às necessidades específicas dos clientes, que, por sua vez, pagam pela quantidade de recursos alocados e/ou utilizados durante um período de tempo. Um desses modelos oferece alocação, acesso e gerenciamento de um conjunto de recursos de suporte computacional básico, como servidores virtuais, rede de comunicação e armazenamento de dados, através de uma camada de abstração e de uma camada de orquestração que une os recursos abstraídos. Esse modelo é conhecido como: a) Backup as a Service b) Communications as a Service c) Infrastructure as a Service d) Platform as a Service e) Software as a Service Comentários: (a) Errado. BaaS se refere especificamente a soluções de backup e recuperação de dados hospedados na nuvem, não abrangendo a ampla gama de recursos computacionais como servidores, rede e armazenamento."
+        },
+        {
+          "letra": "B",
+          "texto": "Chrome.",
+          "comentario": "Errado. CaaS é um modelo focado na entrega de soluções de comunicação, como VoIP, mensagens instantâneas e videoconferência, não abordando diretamente a alocação de recursos de suporte computacional básico."
+        },
+        {
+          "letra": "C",
+          "texto": "Backup.",
+          "comentario": "Correto. IaaS descreve precisamente a oferta de recursos computacionais básicos, como servidores virtuais, rede e armazenamento, de forma escalável e sob demanda. Este modelo permite aos clientes alugar infraestrutura de TI em vez de comprá-la, pagando conforme o uso."
+        },
+        {
+          "letra": "D",
+          "texto": "Schedule.",
+          "comentario": "Errado. PaaS fornece aos clientes uma plataforma de desenvolvimento, execução e gerenciamento de aplicações sem a complexidade de construir e manter a infraestrutura associada a processos de desenvolvimento e lançamento de aplicações."
+        },
+        {
+          "letra": "E",
+          "texto": "Drive.",
+          "comentario": "Errado. SaaS refere-se à disponibilização de aplicações de software sobre a internet, permitindo aos usuários acessar e usar o software sem precisar instalá-lo localmente. Gabarito: Letra C 31.(CESGRANRIO / AgeRIO – 2023) A disseminação e a confiabilidade das tecnologias utilizadas na Internet deram origem a serviços de armazenamento de dados em nuvem, oferecidos por empresas como Google (Drive), Microsoft (OneDrive) e Amazon (AWS), entre outras. Esses dados podem ser: a) acessados por uma estação de trabalho que não tenha conexão com a Internet. b) baixados (download) para o sistema de arquivos de uma estação de trabalho conectada à Internet. c) compartilhados apenas com pessoas que possuem um endereço de correio eletrônico válido na Internet. d) misturados inadvertidamente entre si, devido às tecnologias utilizadas. e) preservados eternamente, pois não podem ser removidos. Comentários: (a) Errado. O acesso a dados armazenados em nuvem normalmente requer uma conexão com a Internet. Sem internet, não é possível acessar esses dados. (b) Correto. É possível baixar dados da nuvem para o sistema de arquivos local de uma estação de trabalho, desde que haja conexão com a Internet; (c) Errado. O compartilhamento de dados em nuvem pode ser feito com qualquer pessoa, não se limitando apenas a quem possui um endereço de e-mail válido; (d) Errado. As tecnologias de armazenamento em nuvem são projetadas para manter a integridade e a separação dos dados de diferentes usuários; (e) Errado. Os dados armazenados em nuvem podem ser removidos ou excluídos pelo usuário ou pela política de armazenamento do provedor de serviço. Gabarito: Letra B 32.(CESGRANRIO / BB – 2021) O Google Drive é uma ferramenta que permite o armazenamento de arquivos na nuvem. Suponha que um usuário A tenha criado uma pasta no Google Drive para arquivos de um Projeto X qualquer. Para compartilhar essa pasta do Projeto X no Google Drive com outros usuários, a partir de uma estação de trabalho, é necessário: a) solicitar o compartilhamento da pasta ao Google, por e-mail. b) dispor do número do telefone celular dos outros usuários, de modo a cadastrá-los para ter acesso à pasta. c) notificar os outros usuários que eles precisam estar usando o Google Drive no momento em que o usuário A compartilhar a pasta. d) enviar aos outros usuários o endereço (link) da pasta. e) aguardar três dias após a criação da pasta para que ela possa ser compartilhada. Comentários: (a) Errado. Não é necessário solicitar o compartilhamento ao Google por e-mail. O compartilhamento é feito diretamente através da plataforma do Google Drive; (b) Errado. O número de telefone não é necessário para o compartilhamento de pastas no Google Drive; (c) Errado. Não é necessário que os outros usuários estejam usando o Google Drive no momento do compartilhamento; (d) Correto. A maneira correta de compartilhar uma pasta no Google Drive é enviando o link da pasta para os outros usuários. Eles podem então acessar e, se permitido, editar os arquivos na pasta; (e) Errado. Não existe um tempo de espera após a criação da pasta para que ela possa ser compartilhada no Google Drive. Gabarito: Letra D 33.(CESGRANRIO / BB – 2021) O Google Drive é um sistema de armazenamento de arquivos em nuvem que permite o acesso ao seu conteúdo a qualquer pessoa, bastando para isso possuir uma conta do Google e ter acesso à internet. Esse sistema é particularmente interessante para o fluxo de trabalho de uma organização, dado que seus colaboradores podem, por exemplo, redigir e acessar textos e relatórios produzidos no Google Docs e direcionados ao atendimento dos seus clientes. Uma opção de configuração geral oferecida pelo Google Drive é a densidade, que: a) aumenta ou reduz a quantidade de informação apresentada na tela do computador. b) controla o tamanho dos arquivos armazenados, gerenciando o espaço armazenado no Drive. c) converte arquivos externos enviados para o formato adotado pelo editor de documentos do Google. d) importa a quantidade de arquivos externos ao Google Drive que podem ser carregados no sistema. e) permite adquirir mais espaço disponível no Google Drive, a partir da assinatura do serviço Google One. Comentários: (a) Correto. Essa opção refere-se à quantidade de informação exibida na tela do usuário. Ao ajustá-la, é possível mostrar mais ou menos itens na tela, o que afeta a densidade visual da interface; (b) Errado. A densidade não está relacionada ao controle do tamanho dos arquivos armazenados no Google Drive; (c) Errado. A conversão de arquivos para o formato do Google Docs é uma funcionalidade separada e não está relacionada à configuração de densidade; (d) Errado. A densidade não tem relação com a importação de arquivos externos para o Google Drive; (e) Errado. A opção de adquirir mais espaço no Google Drive através do Google One é independente da configuração de densidade e se relaciona com o armazenamento disponível na nuvem. Gabarito: Letra A 34.(VUNESP / PC-SP – 2018) O recurso de armazenamento na nuvem (Cloud Storage) é bastante eficiente e útil para as necessidades de processamento e armazenamento de dados. Entretanto, deve-se tomar alguns cuidados no uso desse recurso, como: a) acessar o sistema de armazenamento utilizando dispositivos móveis que permitem a comunicação de vários lugares. b) acessar o sistema de armazenamento utilizando uma conexão sem fio com WPA-2. c) realizar backups próprios, uma vez que não há esquema de backup no armazenamento na nuvem. d) não realizar o compartilhamento dos arquivos, pois não há como configurar as permissões de acesso no armazenamento na nuvem. e) acessar o sistema de armazenamento utilizando os recursos de criptografia e segurança da informação. Comentários: (a) Errado, não há qualquer ressalva quanto à utilização de dispositivos móveis para acesso ao sistema de armazenamento em nuvem; (b) Errado, uma conexão sem fio com WPA-2 é segura, criptografada e autenticada, logo também não é uma preocupação específica; (c) Errado, há esquemas de backup no armazenamento em nuvem; (d) Errado, é possível – sim – configurar permissões de acesso no armazenamento em nuvem; (e) Correto, é realmente recomendável acessar o sistema de armazenamento utilizando os recursos de criptografia e segurança da informação."
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "(a) Errado, trata-se de um ferramenta para criação de blogs; (b) Errado, trata-se de um navegador web;\n(c) Errado, trata-se de uma cópia de segurança; (d) Errado, trata-se uma agenda, salvo engano; (e)\nCorreto, trata-se de uma ferramenta de armazenamento em nuvem.\n\n                                                                                         Gabarito: Letra E\n\n18.(FCC / TRT-MG – 2015) A computação na nuvem apresenta a grande vantagem de acessar os\n   recursos computacionais (processamento, banco de dados, etc) a partir da internet sem a\n   necessidade de instalar programas e aplicações nos computadores e dispositivos. Dentre os\n   diferentes tipos de serviços da computação na nuvem, quando recursos de hardware são\n   acessados na nuvem, está se utilizando o tipo de serviço:\n\n   a) DevaaS.\n   b) IaaS.\n   c) CaaS.\n   d) SaaS.\n   e) PaaS.\n\nComentários:\n\nQuando recursos de hardware são acessados na nuvem, está se utilizando o tipo de serviço de\nInfrastructure as a Serviço (IaaS).\n\n                                                                                         Gabarito: Letra B\n\n19.(FCC / TCE-SP – 2010) Quanto à computação em nuvem, considere:\n\n   I. Ao acessar seus dados na nuvem computacional, o usuário não precisa se preocupar com o\n   hardware nem com o sistema operacional de seu computador, uma vez que dele utilizará somente o\n   navegador.\n\n   II. O trabalho corporativo e o compartilhamento de arquivos se tornam mais fáceis, uma vez que todas\n   as informações se encontram no mesmo espaço físico, o que assegura ao próprio usuário manter seus\n   dados sob sigilo.\n\n   III. O usuário tem um melhor controle de gastos ao usar aplicativos, pois a maioria dos sistemas de\n   computação em nuvem fornecem aplicações gratuitamente e, quando cobrado, o usuário paga\n   somente pelo tempo de utilização dos recursos.\n\n   IV. A Computação em nuvem é uma tendência integrante da Web 2.0 de se levar todo tipo de dados\n   de usuários a servidores online, tornando desnecessário o uso de dispositivos de armazenamento.\n\n   É correto o que consta em:\n\n   a) I, II e III, apenas.\n   b) I, III e IV, apenas.\n   c) I e II, apenas.\n   d) III e IV, apenas.\n   e) I, II, III e IV.\n\nComentários:\n\n(I) Correto, não precisa instalar nada – tudo é acessado via browser; (II) Errado, as informações não estão\nnecessariamente em um mesmo espaço físico; (III) Correto, há uma maior eficiência e transparência dos\ngastos – pay-per-use; (IV) Correto, tem sido uma tendência realmente levar dados para servidores em\nnuvem, tornando desnecessário o uso de dispositivos de armazenamento – eu, por exemplo, uso cada\nvez menos o meu HD/SSD.\n\n                                                                                          Gabarito: Letra B\n\n20.(FGV / Senado Federal – Análise de Suporte – 2022) Nos últimos anos, a adoção de ambientes\n   em nuvem cresceu expressivamente. Modelos de serviços em nuvem facilitam a criação de\n   soluções tecnológicas modernas de maneiras diferentes.\n\n   A seguir, estão listadas algumas características de um desses modelos.\n\n   I. O provedor de nuvem fica responsável pelo gerenciamento da infraestrutura de servidores, sistemas\n   operacionais, atualizações e outras tarefas administrativas.\n   II. Acessível pela internet por meio do navegador web.\n   III. Permite equipes de desenvolvimento colaborarem em todo o ciclo de vida de um aplicativo,\n   incluindo codificação, integração, teste, entrega, implantação e feedback.\n\n   As características descritas nos itens I, II e III referem-se a:\n\n   a) IAC.\n   b) TaaS.\n   c) SaaS.\n   d) IaaS.\n   e) PaaS.\n\nComentários:\n\n(I) Essa característica serviria a qualquer modelo de serviço; (II) Essa característica também serviria a\nqualquer modelo de serviço; (III) Essa característica menciona colaboração no ciclo de vida de um\naplicativo, desde codificação, integração, teste, entrega, implantação, etc – todas essas são características\nde plataformas de desenvolvimento de software, logo se referem ao PaaS.\n\n                                                                                          Gabarito: Letra E\n\n21.(FGV / PC-AM – 2022) O desenvolvimento e a disponibilização de serviços na nuvem é uma\n   prática muito comum.\n\n   Sobre uma plataforma de streaming de filmes que cobra por assinatura, assinale a opção que indica\n   o modelo de serviço recebido do provedor de nuvem e o que é entregue pelo desenvolvedor ao\n   usuário final.\n\n   a) Recebe SaaS e entrega PaaS.\n   b) Recebe SaaS e entrega IaaS.\n   c) Recebe PaaS e entrega SaaS.\n   d) Recebe PaaS e entrega IaaS.\n   e) Recebe IaaS e entrega IaaS.\n\nComentários:\n\nO provedor de nuvem entrega um PaaS, dado que oferece uma plataforma para hospedagem de um\nsoftware em nuvem. Já o usuário final recebe do desenvolvedor um SaaS, dado que ele recebe um\nsoftware hospedado em nuvem. Em outras palavras, o desenvolvedor recebe um PaaS do provedor de\nnuvem e entrega um SaaS para o usuário final.\n\n                                                                                         Gabarito: Letra C\n\n22.(FGV / SEFAZ-AM – 2022) Assinale a opção que denota apenas elementos que tornaram possível\n   a evolução de serviços em nuvem.\n\n   a) Virtualização, Internet, computação escalável.\n   b) Bancos de dados, Internet, computação escalável.\n   c) Bancos de dados virtuais, Internet, computação escalável.\n   d) Internet das Coisas, virtualização, computação escalável.\n   e) Sistemas de ERP, virtualização, computação escalável.\n\nComentários:\n\n(a) Correto, todos esses tornaram possível a evolução de serviços em nuvem; (b) Errado, não há nenhuma\nrelação direta com bancos de dados; (c) Errado, não há nenhuma relação direta com bancos de dados\nvirtuais; (d) Errado, não há nenhuma relação direta com Internet das Coisas; (e) Errado, não há nenhuma\nrelação direta com Sistemas de ERP.\n\n                                                                                         Gabarito: Letra A\n\n23.(FGV / SEFAZ-AM – 2022) Existem alguns benefícios na adoção de nuvens privadas em relação\n   às nuvens públicas. Assinale a opção que descreve apenas benefícios de uma nuvem privada.\n\n   a) Melhor nível de serviço, em oposição às diversas equipes especializadas que operam nas nuvens\n   públicas.\n\n   b) Melhor controle e estabilidade, em oposição ao compartilhamento de recursos inerente às nuvens\n   públicas.\n\n   c) Melhor contingenciamento, em oposição às nuvens públicas, que possuem Data Centers\n   distribuídos no mundo todo.\n\n   d) Menor custo de administração, em oposição aos altos custos iniciais dos serviços das nuvens\n   públicas.\n\n   e) Rápida atualização no menu de serviços, em oposição à escassez de serviços das nuvens públicas.\n\nComentários:\n\n(a) Errado. Nuvens privadas realmente possuem melhor nível de serviço, mas nuvens públicas não\npossuem equipes especializadas e, sim, genéricas – quem possui equipes especializadas são as nuvens\nprivadas; (b) Correto. Nuvens privadas apresentam melhor controle e estabilidade, dado que não são\ncompartilhadas com outros clientes; (c) Errado. Nuvens públicas possuem melhor contingenciamento,\ndado que os centros de dados são distribuídos em todo mundo; (d) Errado. Nuvens privadas possuem\nmaior custo de administração, dado que os custos são distribuídos por vários clientes; (e) Errado. Não há\nescassez de serviços em nuvens públicas.\n\n                                                                                         Gabarito: Letra B\n\n24.(FGV / SEFAZ-AM – 2022) O provisionamento de serviços em nuvem divide-se basicamente em:\n   IaaS – Infraestrutura como Serviço, PaaS – Plataforma como Serviço e SaaS – Software como\n\n   Serviço. Assinale a opção que indica o modelo de serviço que dá mais autonomia de\n   gerenciamento do ambiente ao cliente:\n\n   a) SaaS, porque o cliente é capaz de gerenciar o sistema operacional do serviço.\n   b) PaaS, porque o cliente é capaz de gerenciar a virtualização do serviço.\n   c) IaaS, porque o cliente é capaz de gerenciar o sistema operacional, os dados e a aplicação do serviço.\n   d) SaaS, porque o cliente é capaz de gerenciar a unidade de armazenamento do serviço.\n   e) SaaS, porque o cliente é capaz de gerenciar a virtualização do serviço.\n\nComentários:\n\nEm vermelho, temos aquilo que é gerenciado pelo provedor de nuvem e, em verde, temos aquilo que é\ngerenciado pelo cliente. Note que o IaaS (Infrastructure as a Service) é o modelo que dá mais autonomia\nao cliente, que pode gerenciar sistema operacional, middleware, ambiente de execução, dados e\naplicações.\n\n                                                                                         Gabarito: Letra C\n\n25.(FGV / TJDFT – 2022) O órgão XPTO do Poder Judiciário está implementando tecnologia em\n   nuvem para prover serviços para outros órgãos. Os serviços ofertados consistirão em um\n   ambiente no qual os clientes receberão máquinas virtuais, com suas áreas de armazenamento\n   definidas (storage) e as interfaces de rede de acordo com os ambientes (produtivos ou não\n   produtivos), nas quais poderão instalar os sistemas operacionais e suas aplicações para\n   disponibilizarem serviços para seus clientes.\n\n   De acordo com a NIST SP 800-145, o modelo de serviço de nuvem implementado pelo órgão XPTO\n   é o:\n\n   a) infrastructure as a service;\n   b) on-demand self-service;\n   c) software as a service;\n   d) platform as a service;\n   e) measured service.\n\nComentários:\n\nDe acordo com o enunciado, os serviços ofertados consistirão em um ambiente no qual os clientes\nreceberão máquinas virtuais, com suas áreas de armazenamento definidas (storage) e as interfaces de\nrede de acordo com os ambientes nas quais poderão instalar os sistemas operacionais e suas aplicações.\nVamos lembrar da nossa figurinha básica...\n\nNote que é a Infrastructure as a Service (IaaS) que gerencia storage (armazenamento), virtualização\n(máquinas virtuais) que permite aos usuários instalarem seus sistemas operacionais e aplicações.\nLembrando que em verde é gerenciado pelo usuário e, em vermelho, é gerenciado pela infraestrutura\ncomo serviço.\n\n                                                                                         Gabarito: Letra A\n\n26.(FGV / MPE-GO – 2021) Júlia e seus colegas de faculdade estão fazendo um trabalho em grupo\n   e decidiram compartilhar seus arquivos de imagens e texto na nuvem de modo que cada\n   integrante do grupo possa ver e acessar as atualizações dos outros pela Internet.\n\n   Para compartilhar na nuvem os arquivos do trabalho com os colegas do grupo, Júlia deve usar o:\n\n   a) Dropbox.\n   b) Pendrive.\n   c) Mozilla Thunderbird.\n   d) Windows Explorer.\n   e) Infraestrutura como Serviço (IaaS).\n\nComentários:\n\n(a) Correto, essa é uma das ferramentas mais famosas de compartilhamento em nuvem do mercado; (b)\nErrado, pendrive é um dispositivo de memória flash que permite armazenar arquivos localmente; (c)\nErrado, Mozilla Thunderbird é um software gerenciador de correio eletrônico; (d) Errado, Windows\nExplorer é o gerenciador de arquivos e pastas do Microsoft Windows; (e) Errado, IaaS é um modelo de\ncomputação em nuvem que fornece recursos de rede, armazenamento, servidores, virtualização, entre\noutros.\n\n                                                                                         Gabarito: Letra A\n\n27.(FGV / TJ-RO – 2021) João é um cientista de dados que iniciou o processo de estudo dos dados\n   de sua empresa com o objetivo de identificar um diferencial competitivo diante de seus\n   concorrentes. Como resultado, João decidiu implementar um Big Data e hospedá-lo em um\n   ambiente de nuvem. Diante das possibilidades dos serviços, considerando os requisitos de\n   escalabilidade e elasticidade, em caso de aumento de demanda pontual, aliados à tecnologia\n   de Big Data, a alternativa que melhor descreve o tipo de serviço em nuvem a ser contratado por\n   João é:\n\n   a) infraestrutura como serviço (IaaS), que consiste na entrega de funções de computação, incluindo\n   hardware, redes, armazenamento e espaço de Datacenter com base em um modelo de aluguel;\n\n   b) plataforma como serviço (PaaS), que oferece um conjunto consistente de serviços que garantem\n   que os desenvolvedores tenham um modo integrado para a criação de aplicativos em nuvem;\n\n   c) software como serviço (SaaS), que consiste em um aplicativo de negócios criado e hospedado por\n   um provedor em um modelo de múltiplos usuários;\n\n   d) dados como serviço (DaaS), que é um serviço independente de plataforma que permite conexão à\n   nuvem para armazenar e recuperar informações;\n\n   e) infraestrutura como código (IaC), que consiste em uma abordagem baseada na agilidade para\n   entregar uma infraestrutura de forma muito mais rápida, com uma codificação objetiva e simples.\n\nComentários:\n\nSe João deseja hospedar um Big Data para poder realizar consultas e identificar diferenciais competitivos\nque o ajudem na tomada de decisão, então ele precisa contratar um DaaS (Data as a Service). Dessa\nforma, ele poderá utilizar diversos recursos de armazenamento, processamento, recuperação e análise\nde dados.\n\n                                                                                         Gabarito: Letra D\n\n28.(FGV / Câmara Municipal de Caruaru/PE – 2015) A computação em nuvem objetiva a utilização\n   de servidores remotos, acessados por meio da Internet, para a realização de processos\n   computacionais, que antes eram dependentes do hardware de cada usuário. De modo geral, a\n   computação em nuvem pode ser dividida em duas categorias, caracterizadas a seguir:\n\n   I. o processamento de dados está associado a programas que são acessados nos servidores centrais\n   e é, ainda, a forma menos utilizada de computação em nuvem. Com as ferramentas disponíveis, é\n   possível editar textos, planilhas, apresentações, tabelas, gráficos e outros documentos sem precisar\n   ter um programa instalado no seu computador; porém, isso traz a necessidade de ter um navegador\n   e uma conexão à Internet. Os documentos ficam armazenados “em nuvem\", podendo-se editar um\n   documento no computador pessoal, ou até mesmo por meio de um celular, sem precisar de\n   dispositivos como o pendrive, por exemplo.\n\n   II. o armazenamento de dados é a forma mais utilizada pelos usuários da Internet. Os primeiros\n   serviços de armazenamento de dados estavam ligados aos servidores online de e-mails. Há\n   necessidade de o usuário criar uma conta em algum servidor e enviar os seus arquivos. Isso significa\n   que esse usuário precisa identificar quais servidores armazenam o tipo de arquivo que ele pretende\n   salvar, além de avaliar se o servidor oferece a capacidade de armazenamento de que precisa. A forma\n   de envio dos arquivos, assim como o tipo de arquivo a ser armazenado, varia de acordo com o\n   conjunto de serviços oferecidos por cada servidor remoto.\n\n   Nesse contexto, dois exemplos de recursos que suportam a computação em nuvem são:\n\n   a) DataStore e GoogleDocs.\n   b) DropBox e DataStore.\n   c) iCloud e DropBox.\n   d) Thunderbird e iCloud.\n   e) GoogleDocs e Thunderbird.\n\nComentários:\n\n(a) Errado, desconheço ferramenta chamada DataStore; (b) Errado, desconheço ferramenta chamada\nDataStore; (c) Correto, ambas são ferramentas de computação em nuvem; (d) Errado, Thunderbird é um\ncliente de correio eletrônico; (e) Errado, Thunderbird é um cliente de correio eletrônico.\n\n                                                                                         Gabarito: Letra C\n\n29.(FGV / DPE-MT – 2015) A respeito do armazenamento de dados na nuvem, analise as afirmativas\n   a seguir.\n\n   I. A principal função da nuvem é o armazenamento de dados.\n   II. A robustez da conexão à Internet é essencial para o uso da nuvem.\n   III. Uma nuvem descartável é indicada para projetos que são realizados uma única vez.\n\n   Assinale:\n\n   a) se somente a afirmativa I estiver correta.\n   b) se somente a afirmativa II estiver correta.\n   c) se somente a afirmativa III estiver correta.\n   d) se somente as afirmativas I e II estiverem corretas.\n   e) se somente as afirmativas II e III estiverem corretas.\n\nComentários:\n\n(I) Errado, a principal função de uma nuvem é fornecer serviços sob demanda acessíveis, escaláveis, etc;\n(II) Correto, é realmente necessário ter uma conexão estável de internet; (III) Correto, de acordo com a\nbanca. No entanto, acredito ser uma grande viagem... nunca ouvi falar em uma nuvem descartável e não\nacho que esse item faça qualquer sentido lógico.\n\n                                                                                 Gabarito: Letra E\n30.(CESGRANRIO / IPEA - 2024) Os provedores de computação em nuvem praticam modelos de\n   serviço bastante distintos para procurar atender às necessidades específicas dos clientes, que,\n   por sua vez, pagam pela quantidade de recursos alocados e/ou utilizados durante um período\n   de tempo. Um desses modelos oferece alocação, acesso e gerenciamento de um conjunto de\n   recursos de suporte computacional básico, como servidores virtuais, rede de comunicação e\n   armazenamento de dados, através de uma camada de abstração e de uma camada de\n   orquestração que une os recursos abstraídos. Esse modelo é conhecido como:\n\n   a) Backup as a Service\n   b) Communications as a Service\n   c) Infrastructure as a Service\n   d) Platform as a Service\n   e) Software as a Service\n\nComentários:\n\n(a) Errado. BaaS se refere especificamente a soluções de backup e recuperação de dados hospedados na\nnuvem, não abrangendo a ampla gama de recursos computacionais como servidores, rede e\narmazenamento.\n\n(b) Errado. CaaS é um modelo focado na entrega de soluções de comunicação, como VoIP, mensagens\ninstantâneas e videoconferência, não abordando diretamente a alocação de recursos de suporte\ncomputacional básico.\n\n(c) Correto. IaaS descreve precisamente a oferta de recursos computacionais básicos, como servidores\nvirtuais, rede e armazenamento, de forma escalável e sob demanda. Este modelo permite aos clientes\nalugar infraestrutura de TI em vez de comprá-la, pagando conforme o uso.\n\n(d) Errado. PaaS fornece aos clientes uma plataforma de desenvolvimento, execução e gerenciamento de\naplicações sem a complexidade de construir e manter a infraestrutura associada a processos de\ndesenvolvimento e lançamento de aplicações.\n\n(e) Errado. SaaS refere-se à disponibilização de aplicações de software sobre a internet, permitindo aos\nusuários acessar e usar o software sem precisar instalá-lo localmente.\n\n                                                                                         Gabarito: Letra C\n\n31.(CESGRANRIO / AgeRIO – 2023) A disseminação e a confiabilidade das tecnologias utilizadas na\n   Internet deram origem a serviços de armazenamento de dados em nuvem, oferecidos por\n   empresas como Google (Drive), Microsoft (OneDrive) e Amazon (AWS), entre outras. Esses\n   dados podem ser:\n\n   a) acessados por uma estação de trabalho que não tenha conexão com a Internet.\n   b) baixados (download) para o sistema de arquivos de uma estação de trabalho conectada à Internet.\n\n   c) compartilhados apenas com pessoas que possuem um endereço de correio eletrônico válido na\n   Internet.\n   d) misturados inadvertidamente entre si, devido às tecnologias utilizadas.\n   e) preservados eternamente, pois não podem ser removidos.\n\nComentários:\n\n(a) Errado. O acesso a dados armazenados em nuvem normalmente requer uma conexão com a Internet.\nSem internet, não é possível acessar esses dados.\n\n(b) Correto. É possível baixar dados da nuvem para o sistema de arquivos local de uma estação de\ntrabalho, desde que haja conexão com a Internet;\n\n(c) Errado. O compartilhamento de dados em nuvem pode ser feito com qualquer pessoa, não se\nlimitando apenas a quem possui um endereço de e-mail válido;\n\n(d) Errado. As tecnologias de armazenamento em nuvem são projetadas para manter a integridade e a\nseparação dos dados de diferentes usuários;\n\n(e) Errado. Os dados armazenados em nuvem podem ser removidos ou excluídos pelo usuário ou pela\npolítica de armazenamento do provedor de serviço.\n\n                                                                                         Gabarito: Letra B\n\n32.(CESGRANRIO / BB – 2021) O Google Drive é uma ferramenta que permite o armazenamento de\n   arquivos na nuvem. Suponha que um usuário A tenha criado uma pasta no Google Drive para\n   arquivos de um Projeto X qualquer. Para compartilhar essa pasta do Projeto X no Google Drive\n   com outros usuários, a partir de uma estação de trabalho, é necessário:\n\n   a) solicitar o compartilhamento da pasta ao Google, por e-mail.\n\n   b) dispor do número do telefone celular dos outros usuários, de modo a cadastrá-los para ter acesso\n   à pasta.\n\n   c) notificar os outros usuários que eles precisam estar usando o Google Drive no momento em que o\n   usuário A compartilhar a pasta.\n\n   d) enviar aos outros usuários o endereço (link) da pasta.\n\n   e) aguardar três dias após a criação da pasta para que ela possa ser compartilhada.\n\nComentários:\n\n(a) Errado. Não é necessário solicitar o compartilhamento ao Google por e-mail. O compartilhamento é\nfeito diretamente através da plataforma do Google Drive;\n\n(b) Errado. O número de telefone não é necessário para o compartilhamento de pastas no Google Drive;\n\n(c) Errado. Não é necessário que os outros usuários estejam usando o Google Drive no momento do\ncompartilhamento;\n\n(d) Correto. A maneira correta de compartilhar uma pasta no Google Drive é enviando o link da pasta\npara os outros usuários. Eles podem então acessar e, se permitido, editar os arquivos na pasta;\n\n(e) Errado. Não existe um tempo de espera após a criação da pasta para que ela possa ser compartilhada\nno Google Drive.\n\n                                                                                         Gabarito: Letra D\n\n33.(CESGRANRIO / BB – 2021) O Google Drive é um sistema de armazenamento de arquivos em\n   nuvem que permite o acesso ao seu conteúdo a qualquer pessoa, bastando para isso possuir\n   uma conta do Google e ter acesso à internet. Esse sistema é particularmente interessante para o\n   fluxo de trabalho de uma organização, dado que seus colaboradores podem, por exemplo,\n   redigir e acessar textos e relatórios produzidos no Google Docs e direcionados ao atendimento\n   dos seus clientes. Uma opção de configuração geral oferecida pelo Google Drive é a densidade,\n   que:\n\n   a) aumenta ou reduz a quantidade de informação apresentada na tela do computador.\n   b) controla o tamanho dos arquivos armazenados, gerenciando o espaço armazenado no Drive.\n   c) converte arquivos externos enviados para o formato adotado pelo editor de documentos do\n   Google.\n   d) importa a quantidade de arquivos externos ao Google Drive que podem ser carregados no sistema.\n   e) permite adquirir mais espaço disponível no Google Drive, a partir da assinatura do serviço Google\n   One.\n\nComentários:\n\n(a) Correto. Essa opção refere-se à quantidade de informação exibida na tela do usuário. Ao ajustá-la, é\npossível mostrar mais ou menos itens na tela, o que afeta a densidade visual da interface;\n\n(b) Errado. A densidade não está relacionada ao controle do tamanho dos arquivos armazenados no\nGoogle Drive;\n\n(c) Errado. A conversão de arquivos para o formato do Google Docs é uma funcionalidade separada e\nnão está relacionada à configuração de densidade;\n\n(d) Errado. A densidade não tem relação com a importação de arquivos externos para o Google Drive;\n\n(e) Errado. A opção de adquirir mais espaço no Google Drive através do Google One é independente da\nconfiguração de densidade e se relaciona com o armazenamento disponível na nuvem.\n\n                                                                                         Gabarito: Letra A\n\n34.(VUNESP / PC-SP – 2018) O recurso de armazenamento na nuvem (Cloud Storage) é bastante\n   eficiente e útil para as necessidades de processamento e armazenamento de dados. Entretanto,\n   deve-se tomar alguns cuidados no uso desse recurso, como:\n\n   a) acessar o sistema de armazenamento utilizando dispositivos móveis que permitem a comunicação\n   de vários lugares.\n   b) acessar o sistema de armazenamento utilizando uma conexão sem fio com WPA-2.\n   c) realizar backups próprios, uma vez que não há esquema de backup no armazenamento na nuvem.\n   d) não realizar o compartilhamento dos arquivos, pois não há como configurar as permissões de\n   acesso no armazenamento na nuvem.\n\n   e) acessar o sistema de armazenamento utilizando os recursos de criptografia e segurança da\n   informação.\n\nComentários:\n\n(a) Errado, não há qualquer ressalva quanto à utilização de dispositivos móveis para acesso ao sistema de\narmazenamento em nuvem; (b) Errado, uma conexão sem fio com WPA-2 é segura, criptografada e\nautenticada, logo também não é uma preocupação específica; (c) Errado, há esquemas de backup no\narmazenamento em nuvem; (d) Errado, é possível – sim – configurar permissões de acesso no\narmazenamento em nuvem; (e) Correto, é realmente recomendável acessar o sistema de armazenamento\nutilizando os recursos de criptografia e segurança da informação.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_3_5",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.757Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_3_5.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0018",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-computacao-em-nuvem",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Computação em nuvem permite disponibilizar recursos computacionais sob demanda, com capacidade ajustável e acesso por rede.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Computação em nuvem.\n\nO modelo de nuvem oferece recursos como processamento, armazenamento e aplicações de maneira elástica e mensurável. O usuário pode aumentar ou reduzir recursos conforme a necessidade e o contrato.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Computação em nuvem.\n\nErro provável: confusão com simples armazenamento remoto\n\nDica: Nuvem envolve serviços sob demanda, elasticidade, rede e medição de uso.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_5.json",
+        "sourceSubtopicId": "1.2.1.3-computacao-em-nuvem",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_5",
+        "hashQuestao": "817eb32c62a0ba5a",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "computação em nuvem"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão com simples armazenamento remoto"
+          ],
+          "palavrasChave": [
+            "Computação em nuvem",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Computação em nuvem",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ab85d0b342da8fa4fea69e56369caa442517b72a8eab99a5e54b223a9218c864",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0019",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_5",
+      "subtopic_id": "ti_3_5",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-cloud-computing",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "IaaS, PaaS e SaaS são modelos de serviço associados à computação em nuvem.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Cloud computing.\n\nIaaS fornece infraestrutura virtualizada; PaaS oferece plataforma para desenvolvimento e execução; SaaS disponibiliza aplicações prontas como serviço. A divisão de responsabilidades varia entre os modelos.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Cloud computing.\n\nErro provável: confusão entre modelos de serviço e implantação\n\nDica: IaaS é infraestrutura, PaaS é plataforma e SaaS é software.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_5.json",
+        "sourceSubtopicId": "1.2.1.3-cloud-computing",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_5",
+        "hashQuestao": "d10d41dbad27dbf4",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "cloud computing"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre modelos de serviço e implantação"
+          ],
+          "palavrasChave": [
+            "Cloud computing",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Cloud computing",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "764df16613a5969d37bd74bf73cc7b39a8cb14e98e47be5b022e840c54fcddf9",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    }
+  ]
+}

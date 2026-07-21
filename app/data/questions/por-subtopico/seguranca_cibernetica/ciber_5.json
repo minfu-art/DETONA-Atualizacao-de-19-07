@@ -1,0 +1,80 @@
+{
+  "topicoEditalId": "ciber_5",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 1,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0074",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_5",
+      "subtopic_id": "ciber_5",
+      "assunto": "1.2.2.5-seguranca-em-nuvem",
+      "subtopico": "1.2.2.5-praticas-de-seguranca-para-ambientes-de-nuvem",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em segurança em nuvem, o modelo de responsabilidade compartilhada distribui obrigações entre o provedor e o cliente, variando conforme o serviço contratado.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Práticas de segurança para ambientes de nuvem.\n\nO provedor protege componentes sob seu controle, enquanto o cliente permanece responsável por aspectos como identidades, configurações, dados e aplicações, em grau variável entre IaaS, PaaS e SaaS.\n\nFundamento: Conteúdo programático 1.2.2.5 — Segurança em nuvem: Práticas de segurança para ambientes de nuvem.\n\nErro provável: transferência integral de responsabilidade ao provedor\n\nDica: Nuvem não terceiriza toda a segurança; entenda a divisão de responsabilidades.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_5.json",
+        "sourceSubtopicId": "1.2.2.5-praticas-de-seguranca-para-ambientes-de-nuvem",
+        "sourceTopicId": "1.2.2.5-seguranca-em-nuvem",
+        "mappedTopicoEditalId": "ciber_5",
+        "hashQuestao": "b6a5dff53404d0de",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "segurança em nuvem"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "transferência integral de responsabilidade ao provedor"
+          ],
+          "palavrasChave": [
+            "Práticas de segurança para ambientes de nuvem",
+            "Segurança em nuvem"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Práticas de segurança para ambientes de nuvem",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "427dbdfd419233120c2b51918d6818da4d2669ce9179b5bd789e15a70d0e9c4e",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    }
+  ]
+}

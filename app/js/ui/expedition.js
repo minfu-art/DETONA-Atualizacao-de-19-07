@@ -1,14 +1,15 @@
 /**
- * Rotina V3 — Hoje · Semana · Mês · Jornada · Foco · Progresso
- * Calendário dinâmico + jornada até a prova (sem XP acadêmico).
+ * Plano de Edital — Semana · Mês · Vida (estudo/trabalho/descanso)
+ * UI animada com avatar planejando + calendário inteligente.
  */
 import { $, toast, escapeHtml, openModal, closeModal, todayStr } from './helpers.js';
 import { SFX } from '../core/audio.js';
-import { icon, semanticIcon } from './icons.js?v=66';
+import { icon, semanticIcon } from './icons.js?v=67';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 import { routineService } from '../services/routineService.js';
 import {
   activityLabel,
+  activityFamily,
   modelTemplate,
   SKIP_REASONS,
   DISTRACTION_CATEGORIES,
@@ -22,20 +23,44 @@ import {
 } from '../core/routine/routineCalendar.js';
 import { prefersReducedMotion } from './components.js';
 import { daysUntilExam } from '../core/progression.js';
+import { heroImgHtml } from './heroAssets.js';
 
 const TABS = [
-  ['hoje', 'Hoje'],
   ['semana', 'Semana'],
   ['mes', 'Mês'],
-  ['jornada', 'Jornada'],
+  ['hoje', 'Hoje'],
+  ['vida', 'Vida'],
+  ['jornada', 'Prova'],
   ['foco', 'Sessão'],
   ['progresso', 'Análise'],
 ];
 
 const DAY_NAMES = WEEKDAY_SHORT;
+const LIFE_DAY_LABELS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+const PLANNER_ART = 'assets/ui/plan-planner-female.jpg?v=1';
+
+function endTimeFrom(start, minutes) {
+  if (!start || !/^\d{2}:\d{2}$/.test(start)) return null;
+  const [h, m] = start.split(':').map(Number);
+  const total = h * 60 + m + (Number(minutes) || 0);
+  const hh = String(Math.floor((total % (24 * 60)) / 60)).padStart(2, '0');
+  const mm = String(total % 60).padStart(2, '0');
+  return `${hh}:${mm}`;
+}
+
+function familyMinutes(blocks = []) {
+  const out = { estudo: 0, trabalho: 0, descanso: 0 };
+  for (const b of blocks) {
+    if (['cancelled', 'rescheduled'].includes(b.status)) continue;
+    const fam = activityFamily(b.activityType);
+    out[fam] = (out[fam] || 0) + (b.plannedMinutes || 0);
+  }
+  return out;
+}
 
 export async function renderExpedition(root, navigate, ctx) {
-  let tab = 'hoje';
+  let tab = 'semana';
   let profile = await routineService.ensureProfile();
   let focusCtl = null;
   let focusTimer = null;
@@ -60,12 +85,13 @@ export async function renderExpedition(root, navigate, ctx) {
     if (tab === 'hoje') await paintHoje();
     else if (tab === 'semana') await paintSemana();
     else if (tab === 'mes') await paintMes();
+    else if (tab === 'vida') await paintVida();
     else if (tab === 'jornada') await paintJornada();
     else if (tab === 'foco') await paintFoco();
     else if (tab === 'progresso') await paintProgresso();
     else if (tab === 'revisao') await paintRevisao();
 
-    mountShell(TABS.find((t) => t[0] === tab)?.[1] || 'Rotina');
+    mountShell(TABS.find((t) => t[0] === tab)?.[1] || 'Plano');
     bindTabs();
   }
 
@@ -73,20 +99,46 @@ export async function renderExpedition(root, navigate, ctx) {
     mountPageContainer(root, {
       variant: 'routine',
       header: sectionHeader({
-        eyebrow: 'Rotina de Estudos V3',
+        eyebrow: 'Plano de edital',
         title,
-        subtitle: 'Calendário, plano até a prova e execução diária.',
+        subtitle: 'Organize estudo, trabalho e descanso até a prova.',
       }),
     });
   }
 
   function tabsHtml(active) {
     return `
-      <nav class="routine-tabs" aria-label="Áreas da rotina">
+      <nav class="routine-tabs plan-tabs" aria-label="Áreas do plano">
         ${TABS.map(([id, label]) => `
           <button type="button" class="routine-tab ${active === id ? 'is-active' : ''}" data-tab="${id}" aria-current="${active === id ? 'page' : 'false'}">${label}</button>
         `).join('')}
       </nav>`;
+  }
+
+  function planBanner({ title, subtitle, stats = [] } = {}) {
+    const statsHtml = stats.map((s) => `<span>${s.icon || ''}<strong>${escapeHtml(String(s.value))}</strong> ${escapeHtml(s.label || '')}</span>`).join('');
+    return `
+      <section class="plan-banner" aria-label="Planejamento do edital">
+        <div class="plan-banner__copy">
+          <span class="plan-banner__kicker">Sua estrategista</span>
+          <h1>${escapeHtml(title || 'Planeje a semana com inteligência')}</h1>
+          <p>${escapeHtml(subtitle || 'Equilibre estudo, trabalho e descanso para sustentar a jornada até a prova.')}</p>
+          ${statsHtml ? `<div class="plan-banner__stats">${statsHtml}</div>` : ''}
+        </div>
+        <div class="plan-banner__art" aria-hidden="true">
+          <div class="plan-banner__glow"></div>
+          <img class="plan-banner__hero" src="${PLANNER_ART}" alt="" width="300" height="300" decoding="async" />
+        </div>
+      </section>`;
+  }
+
+  function legendHtml() {
+    return `
+      <div class="plan-legend" aria-label="Legenda de blocos">
+        <span><i class="fam-estudo"></i> Estudo</span>
+        <span><i class="fam-trabalho"></i> Trabalho</span>
+        <span><i class="fam-descanso"></i> Descanso</span>
+      </div>`;
   }
 
   function bindTabs() {
@@ -178,54 +230,56 @@ export async function renderExpedition(root, navigate, ctx) {
     const actual = state.actualMinutes || 0;
     const pct = planned ? Math.min(100, Math.round((actual / planned) * 100)) : (state.minGoalMet ? 100 : 0);
     const j = journeySnap.journey;
+    const bal = familyMinutes(blocks);
     const nextLabel = next
-      ? `Próximo passo: ${next.plannedMinutes || 25} min de ${next.title}`
-      : 'Nenhum bloco pendente — adicione um na Semana ou regenere o plano.';
+      ? `${next.plannedMinutes || 25} min · ${next.title}`
+      : 'Nenhum bloco pendente — adicione na Semana.';
 
     root.innerHTML = `
       ${tabsHtml('hoje')}
-      <section class="routine-hero ro-window mb-8" aria-label="Resumo de hoje">
-        <div class="ro-body">
-          <div class="routine-hero__top">
-            <div>
-              <small class="muted">${escapeHtml(dash.date)} · ${escapeHtml(dash.contestId || '')}</small>
-              <h2 class="routine-hello">Olá, ${escapeHtml(dash.playerName)}</h2>
-              <p class="muted">${semanticIcon('fire', 'ico--inline')} Sequência ${streak}d · ${icon('shield', 'ico--inline')} ${shields} proteção(ões)</p>
-              <p class="routine-encouragement">Pequenas ações constroem grandes conquistas.</p>
-              ${j.hasExam
-                ? `<p class="routine-countdown-inline" aria-label="Contagem para a prova">${semanticIcon('exam', 'ico--inline')} Prova em <strong>${j.daysLeft}</strong> dia(s) · jornada ${j.positionPct}%</p>`
-                : `<p class="muted"><button type="button" class="btn btn-ghost" id="rt-goto-jornada" style="padding:0;min-height:auto">Definir data da prova na Jornada</button></p>`}
-            </div>
-            <div class="routine-hero__ring" style="--p:${pct}" aria-label="Progresso do dia ${pct}%">
-              <strong>${pct}%</strong>
-              <small>do plano</small>
-            </div>
-          </div>
-          <div class="routine-next-card" role="status">
-            <small>Comece por aqui</small>
-            <strong>${escapeHtml(nextLabel)}</strong>
-          </div>
-          <div class="routine-kpis" aria-label="Indicadores do dia">
-            <div><small>Meta mínima</small><strong>${state.minGoalMet ? `${icon('check', 'ico--inline')} Cumprida` : `${semanticIcon('plan', 'ico--inline')} Em aberto`}</strong></div>
-            <div><small>Minutos</small><strong>${actual}/${planned || profile.minDailyMinutes || 10}</strong></div>
-            <div><small>Questões</small><strong>${state.answeredQuestions || 0}/${state.plannedQuestions || profile.dailyQuestionsGoal || 0}</strong></div>
-            <div><small>Ação de entrada</small><strong>${state.entryActionDone ? icon('check', 'ico--inline') : '5 min / 1 questão'}</strong></div>
-          </div>
-          <button type="button" class="btn btn-primary btn-block mt-12" id="rt-next" ${next ? '' : 'disabled'}>
-            ▶ Começar agora${next ? ` · ${escapeHtml(next.title)}` : ''}
+      ${planBanner({
+        title: `Olá, ${dash.playerName || 'guerreiro'} — foque no agora`,
+        subtitle: j.hasExam
+          ? `Prova em ${j.daysLeft} dia(s). Equilibre estudo e descanso para chegar inteiro.`
+          : 'Monte o dia em blocos de estudo, trabalho e descanso.',
+        stats: [
+          { value: `${streak}d`, label: 'sequência', icon: icon('flame', 'ico--sm') },
+          { value: `${pct}%`, label: 'do plano', icon: icon('target', 'ico--sm') },
+          { value: `${actual}/${planned || profile.minDailyMinutes || 10}`, label: 'min', icon: icon('focus', 'ico--sm') },
+        ],
+      })}
+      ${legendHtml()}
+      <div class="plan-today-grid">
+        <section class="plan-card" aria-label="Próxima ação">
+          <h2>Comece por aqui</h2>
+          <p class="muted" style="margin:0 0 10px;font-size:13px">${escapeHtml(nextLabel)}</p>
+          <button type="button" class="btn btn-primary btn-block" id="rt-next" ${next ? '' : 'disabled'}>
+            ▶ Iniciar agora
           </button>
           <div class="routine-quick-row mt-8">
-            <button type="button" class="btn" id="rt-little-time">Tenho pouco tempo hoje</button>
-            <button type="button" class="btn btn-ghost" id="rt-close-day">Fechar dia / sequência</button>
+            <button type="button" class="btn" id="rt-add-today">+ Bloco inteligente</button>
+            <button type="button" class="btn btn-ghost" id="rt-little-time">Pouco tempo</button>
           </div>
-        </div>
-      </section>
+        </section>
+        <section class="plan-card" aria-label="Equilíbrio do dia">
+          <h2>Equilíbrio de hoje</h2>
+          <div class="plan-balance">
+            <div class="fam-estudo"><small>Estudo</small><strong>${bal.estudo}m</strong></div>
+            <div class="fam-trabalho"><small>Trabalho</small><strong>${bal.trabalho}m</strong></div>
+            <div class="fam-descanso"><small>Descanso</small><strong>${bal.descanso}m</strong></div>
+          </div>
+          <p class="muted mt-8" style="font-size:12px">${state.minGoalMet ? 'Meta mínima cumprida.' : 'Meta mínima ainda em aberto.'}
+            · ${icon('shield', 'ico--sm')} ${shields} proteção(ões)</p>
+          ${!j.hasExam ? '<button type="button" class="dj-link" id="rt-goto-jornada" style="margin-top:8px">Definir data da prova →</button>' : ''}
+        </section>
+      </div>
 
-      <section class="ro-window mb-8">
-        <div class="ro-title">Blocos de hoje</div>
-        <div class="ro-body">
-          ${blocks.length ? blocks.map(blockCard).join('') : '<p class="muted">Nenhum bloco hoje. Gere a semana ou adicione um bloco na aba Semana.</p>'}
+      <section class="plan-card mb-8">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+          <h2 style="margin:0">Blocos de hoje</h2>
+          <button type="button" class="btn btn-ghost" id="rt-close-day" style="min-height:36px">Fechar dia</button>
         </div>
+        ${blocks.length ? blocks.map(blockCard).join('') : '<p class="muted">Nenhum bloco hoje. Use a Semana ou “+ Bloco inteligente”.</p>'}
       </section>
     `;
 
@@ -239,6 +293,7 @@ export async function renderExpedition(root, navigate, ctx) {
       tab = 'jornada';
       paint();
     });
+    $('#rt-add-today', root)?.addEventListener('click', () => openSmartBlockModal({ date: todayStr() }));
     $('#rt-little-time', root)?.addEventListener('click', () => openLittleTimeModal());
     $('#rt-close-day', root)?.addEventListener('click', async () => {
       SFX.click();
@@ -256,8 +311,9 @@ export async function renderExpedition(root, navigate, ctx) {
       planned: 'Planejado', in_progress: 'Em andamento', completed: 'Concluído',
       partially_completed: 'Parcial', skipped: 'Ignorado', rescheduled: 'Reagendado', cancelled: 'Cancelado',
     }[b.status] || b.status;
+    const fam = activityFamily(b.activityType);
     return `
-      <article class="routine-block status-${b.status}" data-block="${b.id}">
+      <article class="routine-block status-${b.status} fam-${fam}" data-block="${b.id}" style="border-left:3px solid ${fam === 'trabalho' ? '#38bdf8' : fam === 'descanso' ? '#34d399' : '#a855f7'}">
         <div class="routine-block__main">
           <strong>${escapeHtml(b.title)}</strong>
           <small>${activityLabel(b.activityType)} · ${b.plannedMinutes} min${b.startTime ? ` · ${b.startTime}` : ''} · ${statusLabel}</small>
@@ -431,101 +487,112 @@ export async function renderExpedition(root, navigate, ctx) {
     const sum = view.summary || {};
     const maxDaily = view.maxDaily || 90;
     const rangeLabel = `${view.week[0].slice(8)}/${view.week[0].slice(5, 7)} – ${view.week[6].slice(8)}/${view.week[6].slice(5, 7)}`;
+    const weekBlocks = view.blocks || [];
+    const weekBal = familyMinutes(weekBlocks);
 
     root.innerHTML = `
       ${tabsHtml('semana')}
-      <section class="routine-week-desktop ro-window mb-8">
-        <div class="ro-title">Minha semana</div>
-        <div class="ro-body">
-          <div class="routine-cal-nav" role="navigation" aria-label="Navegação semanal">
-            <button type="button" class="btn" id="wk-prev" aria-label="Semana anterior">←</button>
-            <div class="routine-cal-nav__label">
-              <strong>${escapeHtml(rangeLabel)}</strong>
-              <small class="muted">${sum.plannedMinutes || 0} min planejados · ${sum.actualMinutes || 0} executados · adesão ${sum.adherence || 0}%</small>
-            </div>
-            <button type="button" class="btn" id="wk-next" aria-label="Próxima semana">→</button>
-            <button type="button" class="btn btn-ghost" id="wk-today">Hoje</button>
+      ${planBanner({
+        title: 'Caixa da semana — planeje com equilíbrio',
+        subtitle: 'Toque em um dia para adicionar estudo, trabalho ou descanso com horário.',
+        stats: [
+          { value: `${sum.plannedMinutes || 0}m`, label: 'planejados' },
+          { value: `${sum.actualMinutes || 0}m`, label: 'feitos' },
+          { value: `${sum.adherence || 0}%`, label: 'adesão' },
+          { value: `${weekBal.estudo}m`, label: 'estudo' },
+        ],
+      })}
+      ${legendHtml()}
+      <section class="plan-week" aria-label="Grade semanal">
+        <div class="plan-week__nav" role="navigation" aria-label="Navegação semanal">
+          <button type="button" class="btn" id="wk-prev" aria-label="Semana anterior">←</button>
+          <div class="plan-nav-label">
+            <strong>${escapeHtml(rangeLabel)}</strong>
+            <small>Estudo ${weekBal.estudo}m · Trabalho ${weekBal.trabalho}m · Descanso ${weekBal.descanso}m</small>
           </div>
-          <div class="routine-week-grid" role="list">
-            ${(view.days || view.week.map((date) => ({ date, blocks: [], plannedMinutes: 0 }))).map((day, i) => {
-              const date = day.date;
-              const dayBlocks = (day.blocks && day.blocks.length)
-                ? day.blocks.filter((b) => b.status !== 'rescheduled' && b.status !== 'cancelled')
-                : view.blocks.filter((b) => b.date === date && b.status !== 'rescheduled' && b.status !== 'cancelled');
-              const load = day.plannedMinutes ?? dayBlocks.reduce((s, b) => s + (b.plannedMinutes || 0), 0);
-              const level = dayLoadLevel(load, maxDaily);
-              const isRest = day.restDay || (profile.restDays || []).includes(new Date(date + 'T12:00:00').getDay());
-              return `
-                <div class="routine-day-col load-${level} ${date === todayStr() ? 'is-today' : ''} ${isRest ? 'is-rest' : ''}" role="listitem" data-date="${date}">
-                  <header>
-                    <strong>${DAY_NAMES[i] || DAY_NAMES[new Date(date + 'T12:00:00').getDay()]}</strong>
-                    <small>${date.slice(8)}/${date.slice(5, 7)}</small>
-                    <span class="muted">${load} min${day.completed ? ` · ${day.completed}✓` : ''}</span>
-                    ${isRest ? '<span class="routine-badge rest">Descanso</span>' : ''}
-                    ${level === 'overload' ? '<span class="routine-badge overload">Sobrecarga</span>' : ''}
-                  </header>
-                  <div class="routine-day-blocks">
-                    ${dayBlocks.map((b) => `
-                      <button type="button" class="routine-chip status-${b.status}" data-open-block="${b.id}" title="${escapeHtml(b.title)}">
+          <button type="button" class="btn" id="wk-next" aria-label="Próxima semana">→</button>
+          <button type="button" class="btn btn-ghost" id="wk-today">Hoje</button>
+        </div>
+        <div class="plan-week-grid" role="list">
+          ${(view.days || view.week.map((date) => ({ date, blocks: [], plannedMinutes: 0 }))).map((day, i) => {
+            const date = day.date;
+            const dayBlocks = (day.blocks && day.blocks.length)
+              ? day.blocks.filter((b) => b.status !== 'rescheduled' && b.status !== 'cancelled')
+              : weekBlocks.filter((b) => b.date === date && b.status !== 'rescheduled' && b.status !== 'cancelled');
+            const load = day.plannedMinutes ?? dayBlocks.reduce((s, b) => s + (b.plannedMinutes || 0), 0);
+            const loadPct = Math.min(100, Math.round((load / maxDaily) * 100));
+            const level = dayLoadLevel(load, maxDaily);
+            const isRest = day.restDay || (profile.restDays || []).includes(new Date(`${date}T12:00:00`).getDay());
+            const dow = new Date(`${date}T12:00:00`).getDay();
+            return `
+              <div class="plan-day-col load-${level} ${date === todayStr() ? 'is-today' : ''} ${isRest ? 'is-rest' : ''}" role="listitem" data-date="${date}">
+                <header>
+                  <strong>${DAY_NAMES[i] || LIFE_DAY_LABELS[dow]}</strong>
+                  <small>${date.slice(8)}/${date.slice(5, 7)} · ${load} min</small>
+                </header>
+                <div class="plan-day-col__load" aria-hidden="true"><span style="width:${loadPct}%"></span></div>
+                <div class="plan-day-col__blocks">
+                  ${dayBlocks.map((b) => {
+                    const fam = activityFamily(b.activityType);
+                    return `
+                      <button type="button" class="plan-chip fam-${fam} status-${b.status}" data-open-block="${b.id}" title="${escapeHtml(b.title)}">
                         <strong>${escapeHtml(b.title)}</strong>
                         <small>${activityLabel(b.activityType)} · ${b.plannedMinutes}m${b.startTime ? ` · ${b.startTime}` : ''}</small>
-                      </button>
-                    `).join('') || '<span class="muted">—</span>'}
-                  </div>
-                </div>`;
-            }).join('')}
-          </div>
-          ${view.alerts.length ? `
-            <div class="routine-alerts mt-12" role="status">
-              <strong>Alertas de planejamento</strong>
-              <ul>${view.alerts.map((a) => `<li>${escapeHtml(a.message)}</li>`).join('')}</ul>
-              <p class="muted">Sugestões — não bloqueiam o uso.</p>
-            </div>` : ''}
-          <div class="routine-quick-row mt-12">
-            <button type="button" class="btn btn-primary" id="wk-regen">Regenerar plano da semana</button>
-            <button type="button" class="btn" id="wk-add">+ Bloco rápido</button>
-            <button type="button" class="btn btn-ghost" id="wk-pause">${profile.paused ? 'Retomar rotina' : 'Pausar rotina'}</button>
-          </div>
+                      </button>`;
+                  }).join('') || '<span class="muted" style="font-size:11px">Livre</span>'}
+                </div>
+                <button type="button" class="plan-day-col__add" data-add-date="${date}">+ horário</button>
+              </div>`;
+          }).join('')}
+        </div>
+        ${view.alerts?.length ? `
+          <div class="routine-alerts mt-12 plan-suggest" role="status">
+            <strong>Sugestões inteligentes</strong>
+            <ul style="margin:6px 0 0;padding-left:18px">${view.alerts.map((a) => `<li>${escapeHtml(a.message)}</li>`).join('')}</ul>
+          </div>` : ''}
+        <div class="plan-week__actions">
+          <button type="button" class="btn btn-primary" id="wk-add">+ Bloco inteligente</button>
+          <button type="button" class="btn" id="wk-regen">Gerar plano de estudo</button>
+          <button type="button" class="btn btn-ghost" id="wk-vida">Ajustar vida (trabalho/descanso)</button>
+          <button type="button" class="btn btn-ghost" id="wk-pause">${profile.paused ? 'Retomar' : 'Pausar'}</button>
         </div>
       </section>
     `;
 
-    $('#wk-prev', root)?.addEventListener('click', () => {
-      SFX.click();
-      weekCursor = shiftWeek(weekCursor, -1);
-      paint();
-    });
-    $('#wk-next', root)?.addEventListener('click', () => {
-      SFX.click();
-      weekCursor = shiftWeek(weekCursor, 1);
-      paint();
-    });
-    $('#wk-today', root)?.addEventListener('click', () => {
-      SFX.click();
-      weekCursor = dateKey();
-      paint();
-    });
+    $('#wk-prev', root)?.addEventListener('click', () => { SFX.click(); weekCursor = shiftWeek(weekCursor, -1); paint(); });
+    $('#wk-next', root)?.addEventListener('click', () => { SFX.click(); weekCursor = shiftWeek(weekCursor, 1); paint(); });
+    $('#wk-today', root)?.addEventListener('click', () => { SFX.click(); weekCursor = dateKey(); paint(); });
     $('#wk-regen', root)?.addEventListener('click', async () => {
       SFX.click();
       await routineService.regenerateCurrentWeek();
-      toast('Semana regenerada (históricos concluídos preservados).');
+      toast('Plano de estudo regenerado (concluídos preservados).');
       paint();
     });
     $('#wk-pause', root)?.addEventListener('click', async () => {
       profile = await routineService.saveProfile({ paused: !profile.paused });
-      toast(profile.paused ? 'Rotina pausada.' : 'Rotina retomada.');
+      toast(profile.paused ? 'Plano pausado.' : 'Plano retomado.');
       paint();
     });
-    $('#wk-add', root)?.addEventListener('click', async () => {
-      await routineService.createBlock({
-        title: 'Bloco personalizado',
-        activityType: 'questoes',
-        plannedMinutes: profile.preferredSessionMinutes || 25,
-        date: todayStr(),
-        source: 'user',
+    $('#wk-vida', root)?.addEventListener('click', () => { SFX.click(); tab = 'vida'; paint(); });
+    $('#wk-add', root)?.addEventListener('click', () => openSmartBlockModal({ date: todayStr() }));
+    root.querySelectorAll('[data-add-date]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        SFX.click();
+        openSmartBlockModal({ date: btn.getAttribute('data-add-date') });
       });
-      toast('Bloco adicionado a hoje.');
-      paint();
+    });
+    root.querySelectorAll('[data-open-block]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        SFX.click();
+        const id = btn.getAttribute('data-open-block');
+        const block = weekBlocks.find((b) => b.id === id);
+        if (!block) return;
+        if (['trabalho', 'descanso', 'lazer', 'compromisso'].includes(block.activityType)) {
+          toast(`${activityLabel(block.activityType)} · ${block.startTime || '—'} (${block.plannedMinutes} min)`);
+          return;
+        }
+        await startBlockFlow(block, navigate);
+      });
     });
   }
 
@@ -537,66 +604,54 @@ export async function renderExpedition(root, navigate, ctx) {
 
     root.innerHTML = `
       ${tabsHtml('mes')}
-      <section class="ro-window mb-8" aria-label="Calendário mensal">
-        <div class="ro-title">Visão do mês</div>
-        <div class="ro-body">
-          <div class="routine-cal-nav" role="navigation" aria-label="Navegação mensal">
-            <button type="button" class="btn" id="mo-prev" aria-label="Mês anterior">←</button>
-            <div class="routine-cal-nav__label">
-              <strong>${escapeHtml(view.monthName)} ${view.year}</strong>
-              <small class="muted">Toque em um dia para ver detalhes · marca da prova em destaque</small>
-            </div>
-            <button type="button" class="btn" id="mo-next" aria-label="Próximo mês">→</button>
-            <button type="button" class="btn btn-ghost" id="mo-today">Este mês</button>
+      ${planBanner({
+        title: 'Caixa do mês — visão macro do edital',
+        subtitle: 'Barras coloridas: estudo, trabalho e descanso. Toque no dia para detalhar ou adicionar horários.',
+        stats: [
+          { value: escapeHtml(view.monthName), label: String(view.year) },
+        ],
+      })}
+      ${legendHtml()}
+      <section class="plan-month" aria-label="Calendário mensal">
+        <div class="plan-week__nav" role="navigation" aria-label="Navegação mensal">
+          <button type="button" class="btn" id="mo-prev" aria-label="Mês anterior">←</button>
+          <div class="plan-nav-label">
+            <strong>${escapeHtml(view.monthName)} ${view.year}</strong>
+            <small>Prova e carga diária em destaque</small>
           </div>
-          <div class="routine-month-head" aria-hidden="true">
-            ${WEEKDAY_SHORT.map((d) => `<span>${d}</span>`).join('')}
-          </div>
-          <div class="routine-month-grid" role="grid" aria-label="${escapeHtml(view.monthName)} ${view.year}">
-            ${view.cells.map((c) => {
-              const dots = [];
-              if (c.plannedMinutes) dots.push('plan');
-              if (c.minGoalMet || c.completed > 0) dots.push('done');
-              if (c.reviews) dots.push('rev');
-              if (c.restDay) dots.push('rest');
-              return `
-                <button type="button"
-                  class="routine-month-cell load-${c.load || 'empty'} ${c.inMonth ? '' : 'is-out'} ${c.isToday ? 'is-today' : ''} ${c.isExam ? 'is-exam' : ''} ${c.minGoalMet ? 'is-met' : ''}"
-                  data-day="${c.date}"
-                  role="gridcell"
-                  aria-label="${c.date}${c.isExam ? ', dia da prova' : ''}${c.plannedMinutes ? `, ${c.plannedMinutes} min planejados` : ''}"
-                  ${c.inMonth ? '' : 'tabindex="-1"'}>
-                  <span class="routine-month-cell__day">${c.day}</span>
-                  ${c.plannedMinutes ? `<span class="routine-month-cell__min">${c.plannedMinutes}m</span>` : ''}
-                  <span class="routine-month-cell__dots" aria-hidden="true">
-                    ${dots.map((d) => `<i class="dot-${d}"></i>`).join('')}
-                  </span>
-                  ${c.isExam ? '<span class="routine-month-cell__exam">Prova</span>' : ''}
-                </button>`;
-            }).join('')}
-          </div>
-          <div class="routine-month-legend muted mt-12">
-            <span><i class="dot-plan"></i> planejado</span>
-            <span><i class="dot-done"></i> cumprido</span>
-            <span><i class="dot-rev"></i> revisão</span>
-            <span><i class="dot-rest"></i> descanso</span>
-            <span class="is-exam-legend">■ dia da prova</span>
-          </div>
-          <div id="mo-detail" class="routine-day-detail mt-12" hidden></div>
+          <button type="button" class="btn" id="mo-next" aria-label="Próximo mês">→</button>
+          <button type="button" class="btn btn-ghost" id="mo-today">Este mês</button>
         </div>
+        <div class="plan-month-head" aria-hidden="true">
+          ${WEEKDAY_SHORT.map((d) => `<span>${d}</span>`).join('')}
+        </div>
+        <div class="plan-month-grid" role="grid" aria-label="${escapeHtml(view.monthName)} ${view.year}">
+          ${view.cells.map((c) => {
+            const list = (c.blocks || []).filter((b) => !['cancelled', 'rescheduled'].includes(b.status));
+            const bal = familyMinutes(list);
+            return `
+              <button type="button"
+                class="plan-month-cell load-${c.load || 'empty'} ${c.inMonth ? '' : 'is-out'} ${c.isToday ? 'is-today' : ''} ${c.isExam ? 'is-exam' : ''}"
+                data-day="${c.date}"
+                role="gridcell"
+                aria-label="${c.date}${c.isExam ? ', dia da prova' : ''}"
+                ${c.inMonth ? '' : 'tabindex="-1"'}>
+                <span class="plan-month-cell__day">${c.day}</span>
+                <span class="plan-month-cell__bars" aria-hidden="true">
+                  <i class="${bal.estudo ? 'on-estudo' : ''}"></i>
+                  <i class="${bal.trabalho ? 'on-trabalho' : ''}"></i>
+                  <i class="${bal.descanso ? 'on-descanso' : ''}"></i>
+                </span>
+                ${c.plannedMinutes ? `<span class="plan-month-cell__min">${c.plannedMinutes}m</span>` : ''}
+              </button>`;
+          }).join('')}
+        </div>
+        <div id="mo-detail" class="plan-day-detail" hidden></div>
       </section>
     `;
 
-    $('#mo-prev', root)?.addEventListener('click', () => {
-      SFX.click();
-      monthCursor = view.prev;
-      paint();
-    });
-    $('#mo-next', root)?.addEventListener('click', () => {
-      SFX.click();
-      monthCursor = view.next;
-      paint();
-    });
+    $('#mo-prev', root)?.addEventListener('click', () => { SFX.click(); monthCursor = view.prev; paint(); });
+    $('#mo-next', root)?.addEventListener('click', () => { SFX.click(); monthCursor = view.next; paint(); });
     $('#mo-today', root)?.addEventListener('click', () => {
       SFX.click();
       const n = new Date();
@@ -612,21 +667,286 @@ export async function renderExpedition(root, navigate, ctx) {
         if (!panel || !cell) return;
         panel.hidden = false;
         const list = (cell.blocks || []).filter((b) => b.status !== 'cancelled');
+        const bal = familyMinutes(list);
         panel.innerHTML = `
           <strong>${date.slice(8)}/${date.slice(5, 7)}/${date.slice(0, 4)}</strong>
           ${cell.isExam ? ' · <em>Dia da prova</em>' : ''}
-          <p class="muted">Planejado: ${cell.plannedMinutes || 0} min · Realizado: ${cell.actualMinutes || 0} min · Blocos: ${list.length}</p>
+          <p class="muted">Estudo ${bal.estudo}m · Trabalho ${bal.trabalho}m · Descanso ${bal.descanso}m</p>
           <ul class="routine-day-detail__list">
-            ${list.map((b) => `<li>${escapeHtml(b.title)} · ${activityLabel(b.activityType)} · ${b.plannedMinutes}m · ${b.status}</li>`).join('') || '<li class="muted">Sem blocos neste dia.</li>'}
+            ${list.map((b) => `<li><span class="plan-chip fam-${activityFamily(b.activityType)}" style="display:inline-block;padding:4px 8px;margin:2px 0">${escapeHtml(b.title)} · ${b.plannedMinutes}m${b.startTime ? ` · ${b.startTime}` : ''}</span></li>`).join('') || '<li class="muted">Sem blocos neste dia.</li>'}
           </ul>
-          <button type="button" class="btn mt-8" id="mo-goto-week">Ver na semana</button>
+          <div class="routine-quick-row mt-8">
+            <button type="button" class="btn btn-primary" id="mo-add">+ Horário neste dia</button>
+            <button type="button" class="btn" id="mo-goto-week">Abrir na semana</button>
+          </div>
         `;
+        $('#mo-add', root)?.addEventListener('click', () => openSmartBlockModal({ date }));
         $('#mo-goto-week', root)?.addEventListener('click', () => {
           weekCursor = date;
           tab = 'semana';
           paint();
         });
       });
+    });
+  }
+
+  /* ───────── Vida (trabalho / descanso) ───────── */
+  async function paintVida() {
+    profile = await routineService.ensureProfile();
+    const rest = new Set(profile.restDays || [0, 6]);
+    const available = new Set(profile.availableDays || [1, 2, 3, 4, 5]);
+    const win = profile.dayWindows || {};
+    const sampleDow = [...available][0] ?? 1;
+    const sample = win[sampleDow] || { start: '19:00', end: '21:00' };
+    const work = (profile.fixedCommitments || []).find((c) => c.kind === 'trabalho') || {
+      kind: 'trabalho', start: '08:00', end: '17:00',
+    };
+
+    root.innerHTML = `
+      ${tabsHtml('vida')}
+      ${planBanner({
+        title: 'Sua vida real entra no plano',
+        subtitle: 'Marque dias de estudo e descanso, defina janela de trabalho e horário preferido de estudo. O gerador da semana respeita isso.',
+      })}
+      <div class="plan-life">
+        <section class="plan-life-card">
+          <h2>Dias da semana</h2>
+          <p>Toque para alternar: estudo ativo (roxo) ou descanso (verde).</p>
+          <div class="plan-life-days" role="group" aria-label="Dias de estudo e descanso">
+            ${LIFE_DAY_LABELS.map((label, dow) => {
+              const isRest = rest.has(dow);
+              return `<button type="button" class="plan-life-day ${isRest ? 'is-rest' : 'is-study'}" data-life-dow="${dow}">${label}<br/><small>${isRest ? 'Descanso' : 'Estudo'}</small></button>`;
+            }).join('')}
+          </div>
+        </section>
+        <section class="plan-life-card">
+          <h2>Horários padrão</h2>
+          <p>Usados ao gerar o plano e ao sugerir blocos inteligentes.</p>
+          <div class="plan-life-fields">
+            <label>Trabalho — início
+              <input type="time" id="life-work-start" value="${escapeHtml(work.start || '08:00')}" />
+            </label>
+            <label>Trabalho — fim
+              <input type="time" id="life-work-end" value="${escapeHtml(work.end || '17:00')}" />
+            </label>
+            <label>Estudo — início preferido
+              <input type="time" id="life-study-start" value="${escapeHtml(sample.start || '19:00')}" />
+            </label>
+            <label>Estudo — fim preferido
+              <input type="time" id="life-study-end" value="${escapeHtml(sample.end || '21:00')}" />
+            </label>
+            <label>Sessão preferida (min)
+              <input type="number" id="life-session" min="10" max="120" value="${profile.preferredSessionMinutes || 25}" />
+            </label>
+            <label>Meta semanal (horas de estudo)
+              <input type="number" id="life-week-h" min="1" max="40" value="${profile.weeklyHoursGoal || 6}" />
+            </label>
+          </div>
+          <div class="plan-week__actions" style="margin-top:14px">
+            <button type="button" class="btn btn-primary" id="life-save">Salvar e aplicar na semana</button>
+            <button type="button" class="btn" id="life-blocks">Gerar blocos de trabalho/descanso</button>
+          </div>
+          <p class="plan-suggest" id="life-hint" style="margin-top:12px">Dica: se o trabalho ocupa o dia, o estudo sobra na janela da noite — e o gerador evita sobrecarga.</p>
+        </section>
+      </div>
+    `;
+
+    root.querySelectorAll('[data-life-dow]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        SFX.click();
+        const dow = Number(btn.dataset.lifeDow);
+        if (rest.has(dow)) {
+          rest.delete(dow);
+          available.add(dow);
+          btn.classList.remove('is-rest');
+          btn.classList.add('is-study');
+          btn.innerHTML = `${LIFE_DAY_LABELS[dow]}<br/><small>Estudo</small>`;
+        } else {
+          rest.add(dow);
+          available.delete(dow);
+          btn.classList.add('is-rest');
+          btn.classList.remove('is-study');
+          btn.innerHTML = `${LIFE_DAY_LABELS[dow]}<br/><small>Descanso</small>`;
+        }
+      });
+    });
+
+    $('#life-save', root)?.addEventListener('click', async () => {
+      SFX.click();
+      const studyStart = $('#life-study-start', root)?.value || '19:00';
+      const studyEnd = $('#life-study-end', root)?.value || '21:00';
+      const workStart = $('#life-work-start', root)?.value || '08:00';
+      const workEnd = $('#life-work-end', root)?.value || '17:00';
+      const dayWindows = {};
+      for (const d of available) {
+        dayWindows[d] = { start: studyStart, end: studyEnd };
+      }
+      profile = await routineService.saveProfile({
+        restDays: [...rest].sort(),
+        availableDays: [...available].sort(),
+        dayWindows,
+        preferredSessionMinutes: Number($('#life-session', root)?.value) || 25,
+        weeklyHoursGoal: Number($('#life-week-h', root)?.value) || 6,
+        fixedCommitments: [
+          {
+            id: 'work_default',
+            kind: 'trabalho',
+            title: 'Trabalho',
+            start: workStart,
+            end: workEnd,
+            days: [...available],
+          },
+        ],
+      });
+      toast('Vida salva no perfil do plano.');
+      paint();
+    });
+
+    $('#life-blocks', root)?.addEventListener('click', async () => {
+      SFX.click();
+      const studyStart = $('#life-study-start', root)?.value || '19:00';
+      const workStart = $('#life-work-start', root)?.value || '08:00';
+      const workEnd = $('#life-work-end', root)?.value || '17:00';
+      const workMins = (() => {
+        const [a, b] = workStart.split(':').map(Number);
+        const [c, d] = workEnd.split(':').map(Number);
+        return Math.max(30, (c * 60 + d) - (a * 60 + b));
+      })();
+      const week = await routineService.getWeekView(dateKey());
+      let created = 0;
+      for (const date of week.week || []) {
+        const dow = new Date(`${date}T12:00:00`).getDay();
+        if (rest.has(dow)) {
+          await routineService.createBlock({
+            date,
+            title: 'Descanso programado',
+            activityType: 'descanso',
+            plannedMinutes: 60,
+            startTime: '12:00',
+            endTime: '13:00',
+            source: 'user',
+            scheduleType: 'horario_fixo',
+          });
+          created += 1;
+        } else {
+          await routineService.createBlock({
+            date,
+            title: 'Trabalho',
+            activityType: 'trabalho',
+            plannedMinutes: Math.min(480, workMins),
+            startTime: workStart,
+            endTime: workEnd,
+            source: 'user',
+            scheduleType: 'horario_fixo',
+          });
+          created += 1;
+        }
+      }
+      toast(`${created} blocos de vida criados nesta semana.`);
+      tab = 'semana';
+      paint();
+    });
+  }
+
+  /* ───────── Modal: bloco inteligente ───────── */
+  function openSmartBlockModal({ date = todayStr() } = {}) {
+    let family = 'estudo';
+    const win = profile?.dayWindows?.[new Date(`${date}T12:00:00`).getDay()] || { start: '19:00', end: '21:00' };
+    openModal('Novo horário no plano', `
+      <div class="plan-modal">
+        <p class="muted mb-8">Escolha o tipo e o horário. O app sugere duração com base no seu perfil.</p>
+        <div class="plan-type-row" role="group" aria-label="Tipo de bloco">
+          <button type="button" class="plan-type-btn fam-estudo is-selected" data-fam="estudo">📚 Estudo<small>Edital / questões</small></button>
+          <button type="button" class="plan-type-btn fam-trabalho" data-fam="trabalho">💼 Trabalho<small>Expediente / afazeres</small></button>
+          <button type="button" class="plan-type-btn fam-descanso" data-fam="descanso">🌙 Descanso<small>Pausa / lazer</small></button>
+        </div>
+        <div class="field"><label for="sb-title">Título</label><input id="sb-title" type="text" maxlength="80" value="Bloco de estudo" /></div>
+        <div class="field" id="sb-study-wrap">
+          <label for="sb-study-type">Tipo de estudo</label>
+          <select id="sb-study-type">
+            <option value="questoes">Questões</option>
+            <option value="revisao">Revisão</option>
+            <option value="teoria">Teoria</option>
+            <option value="lei_seca">Lei seca</option>
+            <option value="simulado">Simulado</option>
+            <option value="estudo">Estudo geral</option>
+          </select>
+        </div>
+        <div class="field"><label for="sb-date">Dia</label><input id="sb-date" type="date" value="${escapeHtml(date)}" /></div>
+        <div class="field"><label for="sb-start">Início</label><input id="sb-start" type="time" value="${escapeHtml(win.start || '19:00')}" /></div>
+        <div class="field"><label for="sb-mins">Duração (minutos)</label><input id="sb-mins" type="number" min="5" max="480" value="${profile?.preferredSessionMinutes || 25}" /></div>
+        <div class="field">
+          <label><input type="checkbox" id="sb-week" /> Repetir nos dias de estudo desta semana</label>
+        </div>
+        <div class="plan-suggest" id="sb-hint">Sugestão: sessões de ${profile?.preferredSessionMinutes || 25} min cabem melhor na janela de estudo.</div>
+      </div>
+    `, `<button type="button" class="btn btn-primary" id="sb-save">Salvar no plano</button>
+        <button type="button" class="btn" id="sb-cancel">Cancelar</button>`);
+
+    const titles = { estudo: 'Bloco de estudo', trabalho: 'Trabalho', descanso: 'Descanso' };
+    document.querySelectorAll('[data-fam]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        family = btn.dataset.fam;
+        document.querySelectorAll('[data-fam]').forEach((b) => b.classList.toggle('is-selected', b.dataset.fam === family));
+        const title = document.getElementById('sb-title');
+        if (title) title.value = titles[family] || 'Bloco';
+        const wrap = document.getElementById('sb-study-wrap');
+        if (wrap) wrap.hidden = family !== 'estudo';
+        const mins = document.getElementById('sb-mins');
+        if (mins) {
+          if (family === 'trabalho') mins.value = '240';
+          else if (family === 'descanso') mins.value = '60';
+          else mins.value = String(profile?.preferredSessionMinutes || 25);
+        }
+        const hint = document.getElementById('sb-hint');
+        if (hint) {
+          hint.textContent = family === 'estudo'
+            ? `Sugestão: ${profile?.preferredSessionMinutes || 25} min de foco no edital.`
+            : family === 'trabalho'
+              ? 'Marque o expediente para o plano não empilhar estudo em cima do trabalho.'
+              : 'Descanso protege a sequência — o app evita sobrecarga nesses horários.';
+        }
+      });
+    });
+
+    document.getElementById('sb-cancel')?.addEventListener('click', closeModal);
+    document.getElementById('sb-save')?.addEventListener('click', async () => {
+      const d = document.getElementById('sb-date')?.value || date;
+      const start = document.getElementById('sb-start')?.value || null;
+      const mins = Number(document.getElementById('sb-mins')?.value) || 25;
+      const title = document.getElementById('sb-title')?.value || titles[family];
+      let activityType = 'questoes';
+      if (family === 'trabalho') activityType = 'trabalho';
+      else if (family === 'descanso') activityType = 'descanso';
+      else activityType = document.getElementById('sb-study-type')?.value || 'questoes';
+      const payload = {
+        date: d,
+        title,
+        activityType,
+        plannedMinutes: mins,
+        startTime: start,
+        endTime: endTimeFrom(start, mins),
+        source: 'user',
+        scheduleType: start ? 'horario_fixo' : 'janela_flexivel',
+      };
+      const repeat = document.getElementById('sb-week')?.checked;
+      if (repeat) {
+        const week = await routineService.getWeekView(d);
+        const rest = new Set(profile.restDays || []);
+        let n = 0;
+        for (const day of week.week || []) {
+          const dow = new Date(`${day}T12:00:00`).getDay();
+          if (rest.has(dow) && family === 'estudo') continue;
+          await routineService.createBlock({ ...payload, date: day });
+          n += 1;
+        }
+        toast(`${n} blocos criados na semana.`);
+      } else {
+        await routineService.createBlock(payload);
+        toast('Horário adicionado ao plano.');
+      }
+      closeModal();
+      paint();
     });
   }
 

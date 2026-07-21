@@ -1,0 +1,793 @@
+{
+  "topicoEditalId": "ti_4",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 15,
+  "questions": [
+    {
+      "id": "PCAL-TI-10-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Teoria da Informação - Multibancas",
+      "subtopico": "Análise de Informações - Teoria da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CESGRANRIO",
+      "ano": 2023,
+      "fonteProva": "CESGRANRIO / BB – 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "No processo de aprendizagem de máquina, busca-se identificar\n   padrões compreensíveis em bases de dados. Desse modo, supõe-se a existência de uma\n   hierarquia de três níveis: a base, com os itens elementares, captados e armazenados por\n   recursos de Tecnologia da Informação; o nível intermediário, no qual esses itens são\n   processados, com significados e contextos bem definidos; e o nível mais alto, contendo os\n   padrões ou os conjuntos cuja formulação pode envolver ou relacionar os níveis inferiores. Os\n   três níveis dessa hierarquia, listados, respectivamente, da base para o nível mais alto, são:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "conhecimento, informação e dado",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "dado, conhecimento e informação",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "dado, informação e conhecimento",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "informação, conhecimento e dado",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "informação, dado e conhecimento.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "A hierarquia correta começa com dados, que são processados para gerar informações, e, em\nseguida, a informação é utilizada para adquirir conhecimento.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.758Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Teoria da Informação - Multibancas",
+      "subtopico": "Análise de Informações - Teoria da Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "CESPE / SEPLAN-RR - 2023",
+      "tipo": "certo_errado",
+      "enunciado": "Dados de redes sociais são exemplos de dados não estruturados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Perfeito! Os dados das redes sociais, como posts, comentários, fotos, vídeos e mensagens, são\nexemplos típicos de dados não estruturados. Esses dados são gerados pelos usuários de forma livre\ne podem variar muito em termos de formato, conteúdo e contexto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.758Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S02-016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "subtopico": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CESPE / Polícia Federal – 2018",
+      "tipo": "certo_errado",
+      "enunciado": "Em uma organização, um sistema de informação só é eficiente\n    se for parte de departamento isolado. Essa consideração reside no fato de os componentes do\n    sistema, por razões de segurança, serem delimitados e restritos. Por eficiência computacional\n    esse tipo de sistema é desconectado da Internet.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A organização é um sistema aberto, isto é, um sistema de informação só é eficiente se for parte de\ntoda a abrangência da organização. Os componentes não são delimitados e restritos, e esse tipo de\nsistema geralmente é conectado à internet justamente por eficiência computacional.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S02-023",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "subtopico": "Análise de Informações - Sistemas de Informação - Multibancas",
+      "microtopico": "",
+      "banca": "IF-RS",
+      "ano": 2016,
+      "fonteProva": "IF-RS / IF-RS - 2016",
+      "tipo": "multipla_escolha",
+      "enunciado": "Analise as afirmativas, identificando com “V” as VERDADEIRAS e com “F”\n    as FALSAS, e assinale a alternativa CORRETA, na sequência de cima para baixo.\n\n   ( ) Um sistema de informação pode ser definido como um conjunto de componentes\n   interrelacionados que coletam, processam, armazenam e distribuem informações destinadas a\n   apoiar a tomada de decisões, a coordenação e o controle de uma organização.\n\n   ( ) Um sistema de informação possui três atividades básicas: entrada, processamento e saída, ou\n   seja, os dados são coletados/capturados, processados e apresentados de forma adequada. Além\n   disso, os sistemas de informação requerem um feedback para análise e melhoramentos dos\n   dados de entrada.\n\n   ( ) Os sistemas de informações lidam com questões técnicas e comportamentais, apresentando\n   três dimensões: as organizações, as pessoas e a tecnologia de informação. A tecnologia de\n   informação é a dimensão mais importante, em função do custo de aquisição de hardware e\n   software e de implantação de uma infraestrutura de intranet e internet.\n\n   ( ) Os sistemas ERP possuem capacidade de armazenamento de informações sobre transações\n   operacionais e financeiras, organizadas em módulos. O módulo que trata de logística visa\n   programar a produção, alocar os recursos e definir quais componentes serão utilizados em cada\n   etapa da produção. O TMS é um sistema de gerenciamento de armazéns ou depósitos.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "V – V – F – V.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "V – V – F – F.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "V – F – V – V.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "V – F – F – F.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "F – F – V – V.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(I) Correto, essa é uma definição perfeita de sistemas de informação; (II) Correto, essas são as\natividades básicas de todo sistema de informação, mas o feedback seria para melhorar os dados de\nsaída – eu acho que essa questão caberia recurso; (III) Errado, a dimensão mais importante é a\nhumana; (IV) Errado, esse item não é relevante no momento, mas está errado porque TMS é um\nsistema de gerenciamento transportes e, não, depósitos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S03-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CESPE / Polícia Federal – 2018",
+      "tipo": "certo_errado",
+      "enunciado": "Em arquivos no formato XML, as tags não são consideradas\n   metadados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "As tags são, de fato, uma forma de metadados. Metadados são dados sobre dados, fornecendo\ninformações adicionais sobre o conteúdo, contexto ou estrutura de um arquivo. Em XML, as tags\ndesempenham exatamente esse papel. As tags em um documento XML definem a estrutura do\ndocumento e descrevem a natureza dos dados contidos entre elas. Elas ajudam a interpretar o\nsignificado e a estrutura dos dados contidos no documento, tornando-se metadados essenciais.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S03-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2011,
+      "fonteProva": "CESPE/ CNPQ – 2011",
+      "tipo": "certo_errado",
+      "enunciado": "As propriedades de um documento, também conhecidas como\n    metadados, são detalhes de um arquivo que o descrevem ou o identificam. As propriedades\n    incluem detalhes como título, nome do autor, assunto e palavras-chave que identificam o tópico\n    ou o conteúdo do documento.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "As propriedades realmente são conhecidas como metadados, que são capazes de descrever e\nidentificar um arquivo, como título, nome do autor, palavras-chave, entre outros.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S03-019",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CESPE / Polícia Federal – 2018",
+      "tipo": "certo_errado",
+      "enunciado": "Na gestão de documentos digitalizados, os arquivos são\n    criados em formato de imagens, e seus atributos são armazenados em metadados para facilitar\n    a pesquisa e a localização desses arquivos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O que é gestão de documentos digitalizados? É uma tecnologia que provê um meio de facilmente\ngerar, controlar, armazenar, compartilhar e recuperar informações existentes em documentos\ndigitais. Os formatos mais comumente utilizados nessa tecnologia são .pdf, .jpeg, .bitmap e .tiff.\nPDF é um formato de imagem? Poucas pessoas sabem disso, mas ele realmente é um formato de\nimagem vetorial (aquele que pode ser redimensionado sem perder qualidade).\n\nDito isso, os atributos de arquivos em formato de imagem realmente são armazenados em\nmetadados para facilitar a pesquisa e a localização desses arquivos (Ex: data, tamanho, criador,\nformato, comentário, título, direitos autorais, localização, etc).",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S03-020",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CESPE / Polícia Federal – 2021",
+      "tipo": "certo_errado",
+      "enunciado": "A função do metadado de arquivo é descrever o destino final\n    do arquivo definido pelo emissor da mensagem e proprietário do arquivo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Metadados de arquivo são dados sobre dados, isto é, informações que descrevem o conteúdo, a\nqualidade, a condição ou outras características de um arquivo. Geralmente, os metadados incluem\ndetalhes como o autor do arquivo, a data da criação, a última modificação, o tamanho e o tipo do\narquivo. A função dos metadados não é descrever o destino final do arquivo, mas sim fornecer\ninformações contextuais que podem ser usadas para gerenciar, organizar e localizar arquivos\ndentro de sistemas de armazenamento.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-12-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "subtopico": "Marco Civil da Internet - Lei nº 12.965/2014",
+      "microtopico": "",
+      "banca": "FGV",
+      "ano": 2022,
+      "fonteProva": "FGV - 2022 - Senado Federal - Advogado",
+      "tipo": "multipla_escolha",
+      "enunciado": "O Marco Civil da Internet (Lei nº 12.965/2014) estabelece princípios, garantias, direito e deveres para o uso da\nInternet no Brasil. Com base nos princípios previstos nesta legislação, analise os itens a seguir.\nI. É possível a aplicação da graduated response no Brasil, segundo a qual os infratores contumazes de direitos\nautorais na internet recebem respostas cada vez mais duras às infrações cometidas, sendo que, ao final, depois\nde receber multas, notificações e ter sua velocidade de conexão reduzida, se não deixarem de violar direitos\nautorais na rede, podem ser punidos com a interrupção temporária de seu acesso à internet.\nII. É lícito que um provedor de conexão estabeleça, como ferramenta de inibição de compartilhamento não\nautorizado de arquivos de música e filmes, que tudo o que fosse trocado via BitTorrent, por exemplo, trafegue\nmuito lentamente pela rede, de modo a desincentivar a prática delitiva.\nIII. O provedor de aplicações de internet constituído na forma de pessoa jurídica e que exerça essa atividade\nde forma organizada, profissionalmente e com fins econômicos, deverá manter os respectivos registros de\nacesso a aplicações de internet, sob sigilo, em ambiente controlado e de segurança, pelo prazo de 6 (seis)\nmeses, nos termos do regulamento.\nEstá correto o que se afirma em",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "I, II e III.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "II e III, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "I e III, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "I e II, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "III, apenas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "O item I está incorreto, visto que o Brasil não adota o sistema da “graduated response” (resposta\ngradativa). Este sistema é utilizado em países como a Coréia do Sul, em que os infratores\ncontumazes de direitos autorais na internet, a medida que vão reincidindo nas infrações, vão\nrecebendo sanções cada vez mais duras, até o ponto em que podem ter interrompido seu acesso\nà internet.\n           art. 7º O acesso à internet é essencial ao exercício da cidadania, e ao usuário são\n           assegurados os seguintes direitos: (..)\n           IV - não suspensão da conexão à internet, salvo por débito diretamente decorrente de sua\n           utilização;\n\nO item II está incorreto, por contrariar o princípio da neutralidade da rede.\nPor fim, o item III está de acordo com o prazo de guarda dos registros por provedor comercial:\n           art. 15. O provedor de aplicações de internet constituído na forma de pessoa jurídica e que\n           exerça essa atividade de forma organizada, profissionalmente e com fins econômicos\n           deverá manter os respectivos registros de acesso a aplicações de internet, sob sigilo, em\n           ambiente controlado e de segurança, pelo prazo de 6 (seis) meses, nos termos do\n           regulamento.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_4",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.760Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_4.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.1-sistemas-operacionais",
+      "subtopico": "1.2.1.1-ambiente-linux",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em sistemas Linux, nomes de arquivos como \"Relatorio.txt\" e \"relatorio.txt\" podem identificar arquivos distintos, pois os sistemas de arquivos normalmente diferenciam letras maiúsculas de minúsculas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Ambiente Linux.\n\nEm ambientes Linux típicos, o sistema de arquivos é sensível à caixa. Portanto, diferenças entre maiúsculas e minúsculas podem produzir nomes distintos.\n\nFundamento: Conteúdo programático 1.2.1.1 — Sistemas operacionais: Ambiente Linux.\n\nErro provável: generalização do comportamento do Windows\n\nDica: Em Linux, considere maiúsculas e minúsculas como caracteres diferentes nos nomes de arquivos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.1-ambiente-linux",
+        "sourceTopicId": "1.2.1.1-sistemas-operacionais",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "82079dc85abec3d0",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "ambiente Linux"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "generalização do comportamento do Windows"
+          ],
+          "palavrasChave": [
+            "Ambiente Linux",
+            "Sistemas operacionais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Ambiente Linux",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "45e09fbecc7672a122e2bdb5d52bf7ce0e900c72197ec8965025b8673fd6f1e5",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.1-sistemas-operacionais",
+      "subtopico": "1.2.1.1-ambiente-windows",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No Windows, o uso de Shift + Delete normalmente remove o arquivo sem encaminhá-lo para a Lixeira.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Ambiente Windows.\n\nA combinação Shift + Delete realiza exclusão direta no fluxo comum do Windows, evitando a passagem pela Lixeira. Isso não significa, porém, que a recuperação técnica seja sempre impossível.\n\nFundamento: Conteúdo programático 1.2.1.1 — Sistemas operacionais: Ambiente Windows.\n\nErro provável: confusão entre exclusão direta e irrecuperabilidade absoluta\n\nDica: Diferencie exclusão pela Lixeira de exclusão direta com Shift + Delete.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.1-ambiente-windows",
+        "sourceTopicId": "1.2.1.1-sistemas-operacionais",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "08431dc4bb139eca",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "ambiente Windows"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre exclusão direta e irrecuperabilidade absoluta"
+          ],
+          "palavrasChave": [
+            "Ambiente Windows",
+            "Sistemas operacionais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Ambiente Windows",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "a04ad3ccb09a71fabe1c7f3f70990b826dc9e8e5baec87d26f0563bee61887d3",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0020",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-organizacao-de-informacoes",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Metadados, como autor, data e assunto, podem facilitar a classificação e a recuperação de informações.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Organização de informações.\n\nMetadados descrevem características dos dados ou documentos. Quando definidos e preenchidos de modo consistente, auxiliam busca, organização, controle e gestão documental.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Organização de informações.\n\nErro provável: desconsideração de dados descritivos\n\nDica: Metadado é informação sobre a informação.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.4-organizacao-de-informacoes",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "a4f1b0253803b529",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "organização de informações"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "desconsideração de dados descritivos"
+          ],
+          "palavrasChave": [
+            "Organização de informações",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Organização de informações",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "00e7e5b81049f177175da76516c402be2329c4d231a950c51c05c7c6ad51157a",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0021",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-gerenciamento-de-informacoes",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O gerenciamento de informações pode abranger definição de responsáveis, regras de acesso, retenção, descarte e recuperação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Gerenciamento de informações.\n\nGerenciar informação envolve todo o ciclo de vida, desde criação e classificação até armazenamento, proteção, uso, retenção e eliminação segura.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Gerenciamento de informações.\n\nErro provável: redução do gerenciamento ao armazenamento\n\nDica: Pense no ciclo de vida completo, não apenas em guardar arquivos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.4-gerenciamento-de-informacoes",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "90efe3c3a9799b11",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "gerenciamento de informações"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "redução do gerenciamento ao armazenamento"
+          ],
+          "palavrasChave": [
+            "Gerenciamento de informações",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Gerenciamento de informações",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "9491ef60cbad93df910389d8d953eda0d6d75e817eaedfb1af45d6797b8ef680",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0025",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-gerenciamento-de-pastas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Permissões de acesso podem ser definidas de forma diferente para pastas distintas, limitando leitura, gravação ou execução conforme o usuário ou grupo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Gerenciamento de pastas.\n\nSistemas operacionais e serviços de arquivos permitem controlar ações autorizadas em diretórios. As permissões podem ser herdadas ou configuradas especificamente, de acordo com a plataforma.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Gerenciamento de pastas.\n\nErro provável: suposição de acesso idêntico a todas as pastas\n\nDica: Acesso deve seguir necessidade e menor privilégio.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.4-gerenciamento-de-pastas",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "6db57b830bb9d253",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "gerenciamento de pastas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "suposição de acesso idêntico a todas as pastas"
+          ],
+          "palavrasChave": [
+            "Gerenciamento de pastas",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Gerenciamento de pastas",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "27720369508e7e356479352c94acf82d5eab392b0a91ad143c0d6a15303a65c0",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0027",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_4",
+      "subtopic_id": "ti_4",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-gerenciamento-de-programas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Apagar manualmente a pasta de instalação de um programa é sempre equivalente a utilizar o procedimento de desinstalação do sistema.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Gerenciamento de programas.\n\nA desinstalação pode remover serviços, componentes compartilhados, entradas de registro, configurações e atalhos. A simples exclusão da pasta pode deixar resíduos e causar inconsistências.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Gerenciamento de programas.\n\nErro provável: equivalência entre apagar e desinstalar\n\nDica: Use o desinstalador ou o gerenciador oficial de aplicativos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_4.json",
+        "sourceSubtopicId": "1.2.1.4-gerenciamento-de-programas",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_4",
+        "hashQuestao": "ee187c88d04eb75f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "gerenciamento de programas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equivalência entre apagar e desinstalar"
+          ],
+          "palavrasChave": [
+            "Gerenciamento de programas",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Gerenciamento de programas",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "47cab408a6af4f1d6e2b2b0acc18ad1fd26e86bee30775ec04e78d9b226f0b32",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.772Z"
+      }
+    }
+  ]
+}

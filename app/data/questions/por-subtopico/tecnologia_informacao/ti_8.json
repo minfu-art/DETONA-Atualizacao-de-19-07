@@ -1,0 +1,80 @@
+{
+  "topicoEditalId": "ti_8",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 1,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0054",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_8",
+      "subtopic_id": "ti_8",
+      "assunto": "1.2.1.8-servicos-publicos-digitais",
+      "subtopico": "1.2.1.8-conceitos-de-servicos-publicos-digitais",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Serviços públicos digitais podem permitir solicitação, acompanhamento e entrega de resultados por canais eletrônicos, sem que a presença física seja obrigatória em todas as etapas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Conceitos de serviços públicos digitais.\n\nA transformação digital busca ampliar acesso, eficiência, transparência e conveniência. O desenho do serviço deve considerar acessibilidade, segurança e alternativas para usuários com dificuldades digitais.\n\nFundamento: Conteúdo programático 1.2.1.8 — Serviços públicos digitais: Conceitos de serviços públicos digitais.\n\nErro provável: confusão entre digitalização e exclusão de canais\n\nDica: Digital deve simplificar o serviço e preservar inclusão e acessibilidade.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_8.json",
+        "sourceSubtopicId": "1.2.1.8-conceitos-de-servicos-publicos-digitais",
+        "sourceTopicId": "1.2.1.8-servicos-publicos-digitais",
+        "mappedTopicoEditalId": "ti_8",
+        "hashQuestao": "b8283f75c31130f8",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "serviços públicos digitais"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre digitalização e exclusão de canais"
+          ],
+          "palavrasChave": [
+            "Conceitos de serviços públicos digitais",
+            "Serviços públicos digitais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Conceitos de serviços públicos digitais",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e53fac85b9875b4671043afe6965b27688d171d7a6cbbd5435de5f563e74598d",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "topicoEditalId": "ti_6_1",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 5,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0022",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_1",
+      "subtopic_id": "ti_6_1",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-organizacao-de-arquivos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Alterar a extensão de um arquivo de .txt para .pdf é suficiente para converter seu conteúdo para o formato PDF.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Organização de arquivos.\n\nA extensão ajuda o sistema a identificar o tipo esperado, mas renomeá-la não transforma a estrutura interna do arquivo. A conversão exige software ou procedimento apropriado.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Organização de arquivos.\n\nErro provável: confusão entre nome e formato interno\n\nDica: Renomear não converte; é preciso salvar ou exportar no formato desejado.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_1.json",
+        "sourceSubtopicId": "1.2.1.4-organizacao-de-arquivos",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_6_1",
+        "hashQuestao": "ea277f85a449bdc7",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "organização de arquivos"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre nome e formato interno"
+          ],
+          "palavrasChave": [
+            "Organização de arquivos",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Organização de arquivos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1d92d5ebea907cf5931a146c8f0654b108fb610300857da65ffd23cbc6b1774e",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0023",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_1",
+      "subtopic_id": "ti_6_1",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-gerenciamento-de-arquivos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Copiar um arquivo cria outra instância de seus dados no destino, enquanto mover normalmente altera sua localização sem manter uma cópia no local de origem.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Gerenciamento de arquivos.\n\nNa cópia, origem e destino permanecem; na movimentação concluída, o item deixa a origem e passa ao destino. O funcionamento interno pode variar conforme volumes e sistemas de arquivos.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Gerenciamento de arquivos.\n\nErro provável: confusão entre copiar e mover\n\nDica: Copiar duplica; mover transfere.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_1.json",
+        "sourceSubtopicId": "1.2.1.4-gerenciamento-de-arquivos",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_6_1",
+        "hashQuestao": "4daa8f8a9d4e4e73",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "gerenciamento de arquivos"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre copiar e mover"
+          ],
+          "palavrasChave": [
+            "Gerenciamento de arquivos",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Gerenciamento de arquivos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "2ef0ad6409b5a5936f1ae5c77c4fb4dea632ded66ddb4f69229e312459669272",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0024",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_1",
+      "subtopic_id": "ti_6_1",
+      "assunto": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "subtopico": "1.2.1.4-organizacao-de-pastas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Uma estrutura hierárquica de pastas permite que uma pasta contenha subpastas e arquivos, favorecendo a organização por categorias.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Organização de pastas.\n\nA hierarquia representa relações de inclusão entre diretórios. Essa estrutura facilita agrupamento, navegação e definição de caminhos para localizar recursos.\n\nFundamento: Conteúdo programático 1.2.1.4 — Organização e gerenciamento de informações: Organização de pastas.\n\nErro provável: tratamento de pastas como estrutura plana\n\nDica: Use níveis de pastas coerentes e evite profundidade desnecessária.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_1.json",
+        "sourceSubtopicId": "1.2.1.4-organizacao-de-pastas",
+        "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+        "mappedTopicoEditalId": "ti_6_1",
+        "hashQuestao": "c3f8d2725b83ad91",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "organização de pastas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "tratamento de pastas como estrutura plana"
+          ],
+          "palavrasChave": [
+            "Organização de pastas",
+            "Organização e gerenciamento de informações"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Organização de pastas",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ec03fbc08431ff09d4f822c04b5b01117ee883d233f796e3b75548e4088f4490",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0038",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_1",
+      "subtopic_id": "ti_6_1",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-organizacao-de-arquivos",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Em uma organização simples de dados, um arquivo pode conter registros, e cada registro pode ser composto por campos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Organização de arquivos.\n\nCampos representam atributos; registros agrupam valores relacionados a uma ocorrência; arquivos reúnem registros. Essa organização antecede e também aparece em conceitos de bancos de dados.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Organização de arquivos.\n\nErro provável: inversão entre campo e registro\n\nDica: Campo é atributo; registro é conjunto de campos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_1.json",
+        "sourceSubtopicId": "1.2.1.6-organizacao-de-arquivos",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_1",
+        "hashQuestao": "255d2cad0facfef3",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "organização de arquivos em banco de dados"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "inversão entre campo e registro"
+          ],
+          "palavrasChave": [
+            "Organização de arquivos",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Organização de arquivos",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "76907153adf46dd91969e3b0ca424bddebe147462a1a04320615785d017d1ed4",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0040",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_6_1",
+      "subtopic_id": "ti_6_1",
+      "assunto": "1.2.1.6-banco-de-dados",
+      "subtopico": "1.2.1.6-abstracao-de-dados",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A abstração de dados permite ocultar detalhes físicos de armazenamento e apresentar aos usuários visões adequadas às suas necessidades.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Abstração de dados.\n\nCamadas de abstração separam a representação externa, a estrutura lógica e a implementação física. Isso reduz dependência entre usuários, aplicações e mecanismos internos.\n\nFundamento: Conteúdo programático 1.2.1.6 — Banco de dados: Abstração de dados.\n\nErro provável: exposição obrigatória da estrutura física\n\nDica: Abstração mostra o necessário e esconde detalhes de implementação.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_6_1.json",
+        "sourceSubtopicId": "1.2.1.6-abstracao-de-dados",
+        "sourceTopicId": "1.2.1.6-banco-de-dados",
+        "mappedTopicoEditalId": "ti_6_1",
+        "hashQuestao": "55432917a95bd76e",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "abstração de dados"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "exposição obrigatória da estrutura física"
+          ],
+          "palavrasChave": [
+            "Abstração de dados",
+            "Banco de dados"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Abstração de dados",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "332efc04f45e52c31d5c571ff7fc91b7678cbd4bafaf78bda02af4a5a6f3475b",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    }
+  ]
+}

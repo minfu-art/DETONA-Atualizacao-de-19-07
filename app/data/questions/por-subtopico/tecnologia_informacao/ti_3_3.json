@@ -1,0 +1,153 @@
+{
+  "topicoEditalId": "ti_3_3",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 2,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_3",
+      "subtopic_id": "ti_3_3",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-aplicativos-de-internet-e-intranet",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Navegadores web e clientes de correio eletrônico são aplicativos de Internet, mas desempenham funções distintas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Aplicativos de Internet e intranet.\n\nO navegador acessa recursos web, enquanto o cliente de correio gerencia mensagens, contas e protocolos de e-mail. Um aplicativo pode incorporar recursos do outro sem que suas funções principais se confundam.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Aplicativos de Internet e intranet.\n\nErro provável: equiparação entre navegador e correio eletrônico\n\nDica: Classifique o aplicativo pela função predominante e pelos protocolos que utiliza.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_3.json",
+        "sourceSubtopicId": "1.2.1.3-aplicativos-de-internet-e-intranet",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_3",
+        "hashQuestao": "938f3cd31567a30a",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "aplicativos de Internet"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "equiparação entre navegador e correio eletrônico"
+          ],
+          "palavrasChave": [
+            "Aplicativos de Internet e intranet",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Aplicativos de Internet e intranet",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "c695fae549a70812afd38ceae0e825a7673aeb1b964e342e2a68d8647de64f3c",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.771Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_3_3",
+      "subtopic_id": "ti_3_3",
+      "assunto": "1.2.1.3-redes-de-computadores",
+      "subtopico": "1.2.1.3-microsoft-outlook",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O Microsoft Outlook pode reunir recursos de correio eletrônico, calendário, contatos e organização de compromissos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Microsoft Outlook.\n\nO Outlook é um cliente de produtividade que integra mensagens, agenda, contatos e tarefas, conforme a versão e a configuração da conta.\n\nFundamento: Conteúdo programático 1.2.1.3 — Redes de computadores: Microsoft Outlook.\n\nErro provável: redução do Outlook ao envio de mensagens\n\nDica: Lembre-se da integração entre e-mail, calendário e contatos.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_3_3.json",
+        "sourceSubtopicId": "1.2.1.3-microsoft-outlook",
+        "sourceTopicId": "1.2.1.3-redes-de-computadores",
+        "mappedTopicoEditalId": "ti_3_3",
+        "hashQuestao": "5c6b18d001e8ad92",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "Microsoft Outlook"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "redução do Outlook ao envio de mensagens"
+          ],
+          "palavrasChave": [
+            "Microsoft Outlook",
+            "Redes de computadores"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Microsoft Outlook",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1ac1cf2c7a1b9cd6b1cfa2517b1f27e28bddbd3746b167073d3049b06855b855",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.771Z"
+      }
+    }
+  ]
+}

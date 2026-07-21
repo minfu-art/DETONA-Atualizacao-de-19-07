@@ -1,0 +1,445 @@
+{
+  "topicoEditalId": "ciber_6",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 6,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0060",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "subtopico": "1.2.2.1-confidencialidade",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Confidencialidade busca impedir que informações sejam acessadas ou divulgadas a pessoas, processos ou sistemas não autorizados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Confidencialidade.\n\nControles de identidade, acesso, criptografia e classificação ajudam a preservar a confidencialidade. O objetivo é limitar conhecimento e uso a entidades autorizadas.\n\nFundamento: Conteúdo programático 1.2.2.1 — Fundamentos de Segurança da Informação: Confidencialidade.\n\nErro provável: confusão com disponibilidade\n\nDica: Confidencialidade responde: quem pode ver?",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.1-confidencialidade",
+        "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "4c7f6e2f594ba7d2",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "confidencialidade"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão com disponibilidade"
+          ],
+          "palavrasChave": [
+            "Confidencialidade",
+            "Fundamentos de Segurança da Informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Confidencialidade",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1bc2ab79825b064dbaee2c1469118dbd407596591551b3b536b38e79eb4e618b",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0075",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-autenticacao",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Autenticação é o processo de verificar a identidade declarada por um usuário, serviço ou dispositivo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Autenticação.\n\nCredenciais, certificados, tokens e fatores biométricos podem ser usados para demonstrar identidade. Depois da autenticação, outros mecanismos decidem o que a identidade pode acessar.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autenticação.\n\nErro provável: confusão entre identidade e permissão\n\nDica: Autenticação responde: quem é você?",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.6-autenticacao",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "f99f49357077b8af",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "autenticação"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre identidade e permissão"
+          ],
+          "palavrasChave": [
+            "Autenticação",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Autenticação",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "dd122226ddff2ca457d1289c38d6d5a52b3d927e92bb4b9e3fc5ff62ce165172",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0076",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-autorizacao",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Autorização determina quais recursos e operações uma identidade autenticada pode utilizar.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Autorização.\n\nApós reconhecer a identidade, o sistema aplica papéis, atributos, políticas ou listas de controle para permitir ou negar ações específicas.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Autorização.\n\nErro provável: confusão entre autenticar e autorizar\n\nDica: Autorização responde: o que você pode fazer?",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.6-autorizacao",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "4161947ab350accb",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "autorização"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre autenticar e autorizar"
+          ],
+          "palavrasChave": [
+            "Autorização",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Autorização",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "fcf50822325bcd7a4a6f214a574f59688d9a8eaaca8150798c095690e52364a7",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0077",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-single-sign-on-sso",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Single Sign-On permite que uma autenticação seja utilizada para acessar múltiplos sistemas integrados, o que aumenta a importância da proteção do provedor de identidade.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Single Sign-On — SSO.\n\nSSO reduz a repetição de credenciais e centraliza a autenticação. Como uma conta pode abrir diversos serviços, comprometimentos no ponto central podem ter impacto amplo.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Single Sign-On — SSO.\n\nErro provável: interpretação de SSO como senha diferente em cada sistema\n\nDica: SSO simplifica acesso, mas concentra confiança no provedor de identidade.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.6-single-sign-on-sso",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "236ae0f11c318666",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "SSO"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "interpretação de SSO como senha diferente em cada sistema"
+          ],
+          "palavrasChave": [
+            "Single Sign-On — SSO",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Single Sign-On — SSO",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "6ae1515e61ef7c1b21700e280f41bd34a9e829e4ac3bccf896cd15c2d65c3aed",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0078",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-security-assertion-markup-language-saml",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "SAML utiliza mensagens estruturadas em XML para transportar declarações de autenticação e atributos entre participantes de uma federação de identidade.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Security Assertion Markup Language — SAML.\n\nEm cenários comuns, um provedor de identidade emite uma assertion SAML para um provedor de serviço. O padrão é amplamente usado em SSO corporativo baseado em navegador.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: Security Assertion Markup Language — SAML.\n\nErro provável: confusão com protocolo de acesso a banco de dados\n\nDica: SAML associa-se a assertions XML e federação de identidade.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.6-security-assertion-markup-language-saml",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "141c5518e5ac71c4",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "SAML"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão com protocolo de acesso a banco de dados"
+          ],
+          "palavrasChave": [
+            "Security Assertion Markup Language — SAML",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Security Assertion Markup Language — SAML",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "f4e779de5df5777d941f2e82acf581a53d1734d889344ec9c7a38c268d632160",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0080",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_6",
+      "subtopic_id": "ciber_6",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-openid-connect",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "OpenID Connect adiciona uma camada de identidade sobre o OAuth 2 e utiliza, entre outros elementos, um ID Token para transmitir informações sobre a autenticação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de OpenID Connect.\n\nOIDC padroniza autenticação sobre fluxos do OAuth 2. O ID Token contém claims sobre o usuário e o evento de autenticação, devendo ser validado pelo cliente.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OpenID Connect.\n\nErro provável: confusão entre access token e ID token\n\nDica: Access token acessa recurso; ID token informa identidade ao cliente.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_6.json",
+        "sourceSubtopicId": "1.2.2.6-openid-connect",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_6",
+        "hashQuestao": "6386d36cfd4635f9",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "OpenID Connect"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre access token e ID token"
+          ],
+          "palavrasChave": [
+            "OpenID Connect",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "OpenID Connect",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "0c78a6bdb3736307b50ea50a0fb040f1a177693c72e811342a483ea8a6d15863",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.742Z"
+      }
+    }
+  ]
+}

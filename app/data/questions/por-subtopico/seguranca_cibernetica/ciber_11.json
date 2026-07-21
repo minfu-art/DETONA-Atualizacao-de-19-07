@@ -1,0 +1,80 @@
+{
+  "topicoEditalId": "ciber_11",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 1,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0065",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_11",
+      "subtopic_id": "ciber_11",
+      "assunto": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "subtopico": "1.2.2.2-conformidade-com-normas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A conformidade com uma norma de segurança elimina completamente a possibilidade de incidentes e dispensa a gestão contínua de riscos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Conformidade com normas.\n\nNormas estruturam requisitos e boas práticas, mas nenhum conjunto de controles elimina todos os riscos. Mudanças tecnológicas, ameaças e falhas exigem monitoramento e melhoria contínuos.\n\nFundamento: Conteúdo programático 1.2.2.2 — Gestão de riscos e conformidade: Conformidade com normas.\n\nErro provável: interpretação de conformidade como risco zero\n\nDica: Conformidade reduz e organiza riscos; não cria segurança absoluta.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_11.json",
+        "sourceSubtopicId": "1.2.2.2-conformidade-com-normas",
+        "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+        "mappedTopicoEditalId": "ciber_11",
+        "hashQuestao": "3ec8f29f5abfb3ea",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "conformidade com normas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "interpretação de conformidade como risco zero"
+          ],
+          "palavrasChave": [
+            "Conformidade com normas",
+            "Gestão de riscos e conformidade"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Conformidade com normas",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "fb284f1660e6136f47e77b6dcdaf56f4633eb50596219a2da418d4fb17b2e5db",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.740Z"
+      }
+    }
+  ]
+}

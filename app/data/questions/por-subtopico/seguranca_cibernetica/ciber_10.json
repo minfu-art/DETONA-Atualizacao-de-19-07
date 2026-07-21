@@ -1,0 +1,80 @@
+{
+  "topicoEditalId": "ciber_10",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 1,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0079",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_10",
+      "subtopic_id": "ciber_10",
+      "assunto": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "subtopico": "1.2.2.6-oauth-2",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "OAuth 2 é um framework de autorização delegada e, isoladamente, não define um protocolo completo de autenticação do usuário.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de OAuth 2.\n\nOAuth 2 permite que um cliente obtenha acesso limitado a recursos em nome do titular. Para autenticação e identidade, costuma-se utilizar uma camada específica, como OpenID Connect.\n\nFundamento: Conteúdo programático 1.2.2.6 — Gestão de Identidades e Acessos: OAuth 2.\n\nErro provável: uso de OAuth como sinônimo automático de login\n\nDica: OAuth autoriza acesso; OIDC acrescenta identidade.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "3",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_10.json",
+        "sourceSubtopicId": "1.2.2.6-oauth-2",
+        "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+        "mappedTopicoEditalId": "ciber_10",
+        "hashQuestao": "2d00d22219001f28",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "OAuth 2"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "uso de OAuth como sinônimo automático de login"
+          ],
+          "palavrasChave": [
+            "OAuth 2",
+            "Gestão de Identidades e Acessos"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "OAuth 2",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "b20caf8febcb862f64e382bc5e5b2733b2d956eb079e5c03ea8cc6a2a9df270a",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.740Z"
+      }
+    }
+  ]
+}

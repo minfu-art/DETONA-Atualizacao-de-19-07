@@ -1,0 +1,239 @@
+{
+  "topicoEditalId": "ti_2",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 4,
+  "questions": [
+    {
+      "id": "PCAL-TI-10-S03-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_2",
+      "subtopic_id": "ti_2",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CESPE / Polícia Federal – 2013",
+      "tipo": "certo_errado",
+      "enunciado": "Título, assunto, palavras-chave e comentários de um\n   documento são metadados típicos presentes em um documento produzido por processadores\n   de texto como o BrOffice e o Microsoft Office.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os arquivos de processadores de texto realmente possuem metadados como título, assunto,\npalavras-chave, comentários, entre outros – BrOffice e Microsoft Office são suítes de escritório que\npossuem ferramentas específicas de processamento de texto (Writer e Word), mas a questão\ninfelizmente ignorou esse detalhe.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.746Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-10-S03-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_2",
+      "subtopic_id": "ti_2",
+      "assunto": "Análise de Informações - Metadados - Multibancas",
+      "subtopico": "Análise de Informações - Metadados - Multibancas",
+      "microtopico": "",
+      "banca": "BIO-RIO",
+      "ano": 2015,
+      "fonteProva": "BIO-RIO / IF-RJ – 2015",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os metadados que facilitam a navegação e a apresentação de recursos\n    eletrônicos são os:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "descritivos.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "estruturais.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "administrativos.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "operacionais.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "interoperáveis.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "METADADOS                                                    DESCRIÇÃO\n                     Estão relacionados à descrição de um objeto para torná-lo mais fácil de ser descoberto e\n    Descritivos      identificado; podem incluir elementos, tais como título, autor, resumo, palavras-chave e\n                     identificador – dependem dos metadados estruturais para serem construídos;\n                     Estão relacionados à documentação de como um recurso é composto ou organizado –\n   Estruturais       facilitando a navegação e apresentação de recursos. Um livro digitalizado, por exemplo, pode\n                     ser publicado como arquivos de imagens individuais das páginas, arquivos PDF ou HTML.\n                     Estão relacionados ao fornecimento de informações que apoiam os processos de\n  Administrativos    gerenciamento de recursos informacionais. Incluem, por exemplo, informações sobre como e\n                     quando o recurso foi criado e a razão da sua criação.\n\nO tipo de metadado que facilita a navegação e a apresentação de recursos eletrônicos são os\nmetadados estruturais, isto é, descrevem como recursos são organizados estruturalmente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.746Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_2.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_2",
+      "subtopic_id": "ti_2",
+      "assunto": "1.2.1.2-aplicativos-de-escritorio",
+      "subtopico": "1.2.1.2-edicao-de-planilhas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Ao copiar para outra célula uma fórmula de planilha que contém referências relativas, essas referências podem ser ajustadas automaticamente conforme o deslocamento realizado.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Edição de planilhas.\n\nReferências relativas variam de acordo com a posição de destino da fórmula. Para impedir o ajuste de linha ou coluna, usam-se referências absolutas ou mistas, conforme o aplicativo.\n\nFundamento: Conteúdo programático 1.2.1.2 — Aplicativos de escritório: Edição de planilhas.\n\nErro provável: confusão entre referência relativa e absoluta\n\nDica: O cifrão fixa linha ou coluna; sem ele, a referência normalmente acompanha o deslocamento.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_2.json",
+        "sourceSubtopicId": "1.2.1.2-edicao-de-planilhas",
+        "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+        "mappedTopicoEditalId": "ti_2",
+        "hashQuestao": "2496321dca03901f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "edição de planilhas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre referência relativa e absoluta"
+          ],
+          "palavrasChave": [
+            "Edição de planilhas",
+            "Aplicativos de escritório"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Edição de planilhas",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "551f94a0b582505422f9db9262e08ea3dca13d1d0c54a776ef816cd5f52956d3",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_2",
+      "subtopic_id": "ti_2",
+      "assunto": "1.2.1.2-aplicativos-de-escritorio",
+      "subtopico": "1.2.1.2-pacote-microsoft-office",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "O Microsoft Office é um sistema operacional responsável por controlar diretamente o processador, a memória e os dispositivos do computador.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Pacote Microsoft Office.\n\nO Microsoft Office é uma suíte de aplicativos de produtividade. O gerenciamento direto de recursos de hardware é função do sistema operacional, como Windows ou Linux.\n\nFundamento: Conteúdo programático 1.2.1.2 — Aplicativos de escritório: Pacote Microsoft Office.\n\nErro provável: confusão entre suíte de aplicativos e sistema operacional\n\nDica: Office reúne aplicativos; Windows e Linux são sistemas operacionais.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "1",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_2.json",
+        "sourceSubtopicId": "1.2.1.2-pacote-microsoft-office",
+        "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+        "mappedTopicoEditalId": "ti_2",
+        "hashQuestao": "669e36681e229e7e",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "pacote Microsoft Office"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre suíte de aplicativos e sistema operacional"
+          ],
+          "palavrasChave": [
+            "Pacote Microsoft Office",
+            "Aplicativos de escritório"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Pacote Microsoft Office",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "5eb3e715d9b76a5d5459cb9b316a4f4ad9200097a26be7d16673f41e6c2f8a8b",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.770Z"
+      }
+    }
+  ]
+}

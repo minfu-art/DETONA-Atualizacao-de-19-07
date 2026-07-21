@@ -1,0 +1,153 @@
+{
+  "topicoEditalId": "ciber_4",
+  "disciplinaId": "seguranca_cibernetica",
+  "quantidade": 2,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0072",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_4",
+      "subtopic_id": "ciber_4",
+      "assunto": "1.2.2.4-criptografia",
+      "subtopico": "1.2.2.4-tecnicas-de-criptografia",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na criptografia simétrica, a mesma chave secreta é utilizada para cifrar e decifrar os dados; na assimétrica, utiliza-se um par de chaves relacionado matematicamente.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Técnicas de criptografia.\n\nCriptografia simétrica é eficiente para grandes volumes, mas exige compartilhamento seguro da chave. A assimétrica usa chave pública e privada e apoia troca de chaves e assinaturas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Técnicas de criptografia.\n\nErro provável: inversão entre criptografia simétrica e assimétrica\n\nDica: Simétrica: uma chave compartilhada; assimétrica: par pública e privada.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_4.json",
+        "sourceSubtopicId": "1.2.2.4-tecnicas-de-criptografia",
+        "sourceTopicId": "1.2.2.4-criptografia",
+        "mappedTopicoEditalId": "ciber_4",
+        "hashQuestao": "36fc61ff33811310",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "técnicas de criptografia"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "inversão entre criptografia simétrica e assimétrica"
+          ],
+          "palavrasChave": [
+            "Técnicas de criptografia",
+            "Criptografia"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Técnicas de criptografia",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "ec7cbc91b56b92015f1714b3cbd7b05e75a1cd588f4705a3f079beaeb2652bfa",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0073",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "seguranca_cibernetica",
+      "topicoEditalId": "ciber_4",
+      "subtopic_id": "ciber_4",
+      "assunto": "1.2.2.4-criptografia",
+      "subtopico": "1.2.2.4-principais-ferramentas-de-criptografia",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Uma função hash criptográfica é uma forma de criptografia reversível: conhecendo-se o algoritmo, sempre é possível recuperar o texto original a partir do resumo.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de Principais ferramentas de criptografia.\n\nHash é projetado como função unidirecional e produz um resumo de tamanho definido. Não existe operação normal de decifragem; ataques tentam adivinhar entradas ou explorar fraquezas.\n\nFundamento: Conteúdo programático 1.2.2.4 — Criptografia: Principais ferramentas de criptografia.\n\nErro provável: confusão entre hash e cifra\n\nDica: Cifra é reversível com chave; hash é resumo unidirecional.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\seguranca_cibernetica\\ciber_4.json",
+        "sourceSubtopicId": "1.2.2.4-principais-ferramentas-de-criptografia",
+        "sourceTopicId": "1.2.2.4-criptografia",
+        "mappedTopicoEditalId": "ciber_4",
+        "hashQuestao": "1315f143051545c0",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "ferramentas de criptografia"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre hash e cifra"
+          ],
+          "palavrasChave": [
+            "Principais ferramentas de criptografia",
+            "Criptografia"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Principais ferramentas de criptografia",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "d2621b45a29b8f8fd1ca91ce3b9b215da09fa59444f20e81f995fda36f1938c2",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ciber",
+        "organizadoEm": "2026-07-21T02:11:29.741Z"
+      }
+    }
+  ]
+}

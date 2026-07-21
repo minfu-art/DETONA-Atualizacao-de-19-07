@@ -1,0 +1,226 @@
+{
+  "topicoEditalId": "ti_7",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 3,
+  "questions": [
+    {
+      "id": "q_pcal_2026_ti_0051",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_7",
+      "subtopic_id": "ti_7",
+      "assunto": "1.2.1.7-protecao-de-dados-pessoais",
+      "subtopico": "1.2.1.7-lei-n-13-709-2018",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A Lei nº 13.709/2018 disciplina o tratamento de dados pessoais, inclusive nos meios digitais, realizado por pessoas naturais ou jurídicas de direito público ou privado, nas hipóteses de aplicação da lei.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Lei nº 13.709/2018.\n\nA LGPD estabelece regras para operações de tratamento de dados pessoais em meios físicos e digitais e alcança agentes públicos e privados quando presentes seus critérios de aplicação.\n\nFundamento: Conteúdo programático 1.2.1.7 — Proteção de dados pessoais: Lei nº 13.709/2018.\n\nErro provável: restrição indevida aos meios digitais ou ao setor privado\n\nDica: A LGPD não se limita à Internet nem apenas a empresas privadas.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_7.json",
+        "sourceSubtopicId": "1.2.1.7-lei-n-13-709-2018",
+        "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+        "mappedTopicoEditalId": "ti_7",
+        "hashQuestao": "6d8e5cf2135be8d3",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "Lei nº 13.709/2018"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "restrição indevida aos meios digitais ou ao setor privado"
+          ],
+          "palavrasChave": [
+            "Lei nº 13.709/2018",
+            "Proteção de dados pessoais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Lei nº 13.709/2018",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "29871d906bf213241d581b5bcefaed271921fc468ed64b5d3e985e8ee22406f0",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0052",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_7",
+      "subtopic_id": "ti_7",
+      "assunto": "1.2.1.7-protecao-de-dados-pessoais",
+      "subtopico": "1.2.1.7-lei-geral-de-protecao-de-dados-pessoais",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A Lei Geral de Proteção de Dados Pessoais tem entre seus objetivos proteger os direitos fundamentais de liberdade, privacidade e livre desenvolvimento da personalidade.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Lei Geral de Proteção de Dados Pessoais.\n\nA proteção de dados pessoais é tratada como instrumento de tutela da pessoa. A lei vincula o tratamento de dados a direitos fundamentais e a princípios específicos.\n\nFundamento: Conteúdo programático 1.2.1.7 — Proteção de dados pessoais: Lei Geral de Proteção de Dados Pessoais.\n\nErro provável: redução da lei a regras comerciais\n\nDica: LGPD protege pessoas e seus direitos, não apenas bancos de dados.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_7.json",
+        "sourceSubtopicId": "1.2.1.7-lei-geral-de-protecao-de-dados-pessoais",
+        "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+        "mappedTopicoEditalId": "ti_7",
+        "hashQuestao": "75e8a10e43cadd8b",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "finalidade da LGPD"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "redução da lei a regras comerciais"
+          ],
+          "palavrasChave": [
+            "Lei Geral de Proteção de Dados Pessoais",
+            "Proteção de dados pessoais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Lei Geral de Proteção de Dados Pessoais",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "de41c735925021d702d476debe5ed4a25de2a7a20bd74278e95da4069bc840bc",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0053",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_7",
+      "subtopic_id": "ti_7",
+      "assunto": "1.2.1.7-protecao-de-dados-pessoais",
+      "subtopico": "1.2.1.7-lgpd",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na LGPD, o consentimento é a única base legal que pode autorizar o tratamento de dados pessoais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O item está incorreto à luz do conteúdo de LGPD.\n\nA lei prevê diversas bases legais, como cumprimento de obrigação legal, execução de contrato, proteção da vida, tutela da saúde, legítimo interesse e outras hipóteses. O consentimento é apenas uma delas.\n\nFundamento: Conteúdo programático 1.2.1.7 — Proteção de dados pessoais: LGPD.\n\nErro provável: centralização indevida no consentimento\n\nDica: Antes de pedir consentimento, identifique se outra base legal adequada se aplica.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_7.json",
+        "sourceSubtopicId": "1.2.1.7-lgpd",
+        "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+        "mappedTopicoEditalId": "ti_7",
+        "hashQuestao": "53d858183872ac8d",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "bases legais da LGPD"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "centralização indevida no consentimento"
+          ],
+          "palavrasChave": [
+            "LGPD",
+            "Proteção de dados pessoais"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "LGPD",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "0bda0cb69d133e40e2137db208720aea6a44ed7a3781af7a06fb7817a697fcd5",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.774Z"
+      }
+    }
+  ]
+}

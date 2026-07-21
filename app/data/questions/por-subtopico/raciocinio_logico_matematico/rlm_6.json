@@ -1,0 +1,1674 @@
+{
+  "topicoEditalId": "rlm_6",
+  "disciplinaId": "raciocinio_logico_matematico",
+  "quantidade": 41,
+  "questions": [
+    {
+      "id": "PCAL-RLM-19-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/SEFAZ-AC/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Caso uma sequência numérica infinita seja criada de tal forma que cada\ntermo, a partir do terceiro, seja obtido pelo produto dos dois termos imediatamente anteriores, então, se\no primeiro e o segundo termos forem, respectivamente, iguais a 1 e 2, o sétimo termo dessa sequência\nserá igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "2.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "7.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "14.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "128.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "256.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos resolver essa questão passo a passo!\n\n1) Identificar o padrão da sequência numérica.\nDe acordo com o enunciado, cada termo, a partir do terceiro, é obtido pelo produto dos dois termos\nimediatamente anteriores. Isso significa que, se chamarmos o primeiro termo de 𝑎1, o segundo de 𝑎2, o\nterceiro de 𝑎3, e assim por diante, teremos que:\n\n𝑎3 =𝑎1𝑎2\n𝑎4 =𝑎2𝑎3\n𝑎5 = 𝑎3𝑎4\n...\n\nAlém disso, sabemos que o primeiro e o segundo termos são, respectivamente, iguais a 1 e 2. Portanto,\npodemos escrever a sequência como:\n\n1,2,𝑎3,𝑎4,𝑎5,𝑎6,𝑎7,…\n\n2) Calcular os termos da sequência.\nPara encontrar o valor de cada termo, basta aplicar o padrão da sequência, usando os valores dados. Assim,\ntemos que:\n\n𝑎3 =𝑎1𝑎2 =1⋅2=2\n𝑎4 =𝑎2𝑎3 =2⋅2=4\n𝑎5 =𝑎3𝑎4 =2⋅4=8\n\n𝑎6 =𝑎4𝑎5 =4⋅8=32\n𝑎7 =𝑎5𝑎6 =8⋅32=256\n\nPortanto, a sequência fica:\n\n1,2,2,4,8,32,𝟐𝟓𝟔,...\n\nA questão nos pede para encontrar o sétimo termo dessa sequência, queé o 𝒂𝟕. Como já calculamos, 𝒂𝟕 =\n𝟐𝟓𝟔. Logo, a alternativa corretaé a letra E.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/SEFAZ-AC/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Texto CG2A3-II\nUma sequência numérica crescente e infinita foi criada com o seguinte padrão:\n\n0, 1, 3, 7, 15, 31, 63, ...\nNo texto CG2A3-II, o primeiro termo da sequência com valor superior a\n000 será o",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "13º termo.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "14º termo.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "15º termo.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "16º termo.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "17º termo.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Inicialmente, vamos ignorar que o zero seja o primeiro termo (pois ele atrapalha a regra de formação). Dessa\nforma, ficamos com a seguinte sequência:\n\n1, 3, 7, 15, 31, 63...\n\nObserve que a sequência acima pode ser obtida pela regra 𝑎𝑛 =2𝑛 −1, onde né o número da posição do\ntermo. Para encontrar o primeiro termo queé maior que 30.000, basta testar os valores de n até que a\ncondição seja satisfeita. Veja:\n\n𝑎1 = 21 − 1 = 1\n𝑎2 = 22 − 1 = 3\n𝑎3 = 23 − 1 = 7\n𝑎4 = 24 − 1 = 15\n𝑎5 = 25 − 1 = 31\n𝑎6 = 26 − 1 = 63\n\nSendo assim, vamos usar um valor de \"n\" próximo das alternativas e ver o resultado que obtemos.\n\n𝑎14 = 214 − 1 = 16.383\n𝑎15 = 215 − 1 = 32.767\n\nObserve que o 15º termo da sequênciaé o primeiro que supera 30.000. Mas cuidado!!! É o 15º termo da\nnossa sequência modificada. Quando voltamos para a sequência original, devemos considerar que o zeroé\no 𝑎1. Nessa situação, o primeiro termo que supera o 30.000 será o 16º termo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/SEFAZ-AC/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção em queé corretamente indicado o décimo termo da\nsequência numérica apresentada no texto CG2A3-II.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "255",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "511",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "1.023",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "1.024",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "2.047",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Podemos aproveitar o que fizemos na questão anterior! O décimo termo da sequência numérica do texto\nCG2A3-II pode ser encontrada usando n = 9.\n\n𝑎𝑛 =2𝑛 −1\n\n𝑎9 =29 −1\n\n𝑎9 =512−1\n\n𝒂𝟗 =𝟓𝟏𝟏\n\nLembre-se queé o nono termo da nossa sequência modificada, masé o décimo termo da sequência original!\nSendo assim, nosso gabaritoé a alternativa B.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/CBM-RO/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Considere uma sequência numérica an, na qual 𝒂𝟏 =𝟔𝟐𝟓, o termo sucessivo\né sempre igual à raiz quadrada do termo anterior e o termo geral pode ser expresso na forma 𝒂𝒏 =𝟓𝒃𝒏.\nCom base nessas informações, é correto afirmar que a sequência bné uma",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "progressão geométrica de quociente menor que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "progressão geométrica de quociente maior que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "sequência alternada.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "progressão aritmética de razão menor que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "progressão aritmética de razão maior que 1.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Inicialmente, vamos escrever alguns termos da sequência numérica 𝑎𝑛. Lembre-se o termo sucessivo dessa\nsequênciaé sempre à raiz quadrada do termo anterior. Sendo assim:\n\n𝑎2 =√𝑎1 → 𝑎2 =√625 → 𝑎2 =25\n\n𝑎3 =√𝑎2 → 𝑎3 =√25 → 𝑎3 =5\n\n𝑎4 =√𝑎3 → 𝑎4 =√5\n\nPronto. Com esses termos, podemos usar 𝒂𝒏 =𝟓𝒃𝒏 para determinar a sequência 𝑏𝑛.\n\n𝑎1 =5𝑏1 → 625=5𝑏1 → 54 =5𝑏1 → 𝑏1 =4\n\n𝑎2 =5𝑏2 → 25=5𝑏2 → 52 =5𝑏2 → 𝑏2 =2\n\n𝑎3 =5𝑏3 → 5=5𝑏3 → 51 =5𝑏3 → 𝑏3 =1\n\n𝑎4 =5𝑏4 → √5=5𝑏4 → 5\n1\n2 =5𝑏4 → 𝑏4 =1\n2\n\nObserve que 𝑏𝑛é uma sequência decrescente que se assemelha a uma progressão geométrica . Para\nconfirmar, fazemos:\n\n𝑏2\n𝑏1\n=𝑏3\n𝑏2\n=𝑏4\n𝑏3\n=1\n2\nComo a razão de termos sucessivosé uma constante, confirmamos que a sequênciaé PG de razão 1/2.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/PC-RO/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Ao investigar um possível crime de parcelamento irregular de terras, um\nagente de polícia identificou o seguinte padrão no comportamento do suspeito: este vendeu um lote por\ndia na primeira semana, três lotes por dia na segunda, cinco lotes por dia na terceira, seguindo esse mesmo\npadrão até o fim da quinta semana, quando então foi preso em flagrante. Nessa situação hipotética,\nsupondo-se que tenham sido vendidos lotes todos os dias durante esse período, o total de lotes vendidos\nfoi de\n\n==5eb381==",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "175.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "25.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "125.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "63.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "35.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "É possível organizar as informações do enunciado em uma tabela. Vamos fazer isso.\n\nDia 1 Dia 2 Dia 3 Dia 4 Dia 5 Dia 6 Dia 7\nSemana 1 1 1 1 1 1 1 1\nSemana 2 3 3 3 3 3 3 3\nSemana 3 5 5 5 5 5 5 5\nSemana 4 7 7 7 7 7 7 7\nSemana 5 9 9 9 9 9 9 9\n\nEsseé o padrão, pessoal. Observe que a cada semana, ele aumenta o número de lotes vendidos por dia em\nduas unidades. Agora, vamos complementar nossa tabela somando os valores por coluna.\n\nDia 1 Dia 2 Dia 3 Dia 4 Dia 5 Dia 6 Dia 7\nSemana 1 1 1 1 1 1 1 1\nSemana 2 3 3 3 3 3 3 3\nSemana 3 5 5 5 5 5 5 5\nSemana 4 7 7 7 7 7 7 7\nSemana 5 9 9 9 9 9 9 9\nTotal 25 25 25 25 25 25 25\n\nQueremos o total de lote vendidos (T). Para isso, como são sete dias na semana:\n\n𝑇=25⋅7 → 𝑇=175",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/TRT-8/2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Como os processos jurídicos são costumeiramente compostos de centenas de\npáginas e estudos indicam que mudar levemente a tonalidade das páginas pode facilitar a leitura, tomou-\nse uma decisão de que todo processo de determinadoórgão será organizado de modo que as primeiras 25\npáginas tenham fundo branco, as 20 seguintes tenham fundo bege, as 15 seguintes tenham fundo verde\nclaro, com o referido procedimento sendo repetido de modo que as 25 páginas seguintes tenham fundo\nbranco e assim sucessivamente. Se um processo de 400 páginas já tiver sido organizado conforme esse\nprocedimento,",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "a página 67 terá ficado com fundo bege e a página 97 terá ficado com fundo branco.",
+          "comentario": "a página 67 terá ficado com fundo bege e a página 97 terá ficado com fundo branco.\nErrado. Um novo ciclo se inicia na página 61. Portanto, a página 67 ainda terá fundo branco."
+        },
+        {
+          "letra": "B",
+          "texto": "a página 117 terá ficado com fundo verde claro e a página 142 terá ficado com fundo bege.",
+          "comentario": "a página 117 terá ficado com fundo verde claro e a página 142 terá ficado com fundo bege.\nErrado. Um ciclo começa na página 121. Sendo assim, a página 142 (22 páginas depois) ainda terá o fundo\nbranco, pois esse perdura por 25 páginas."
+        },
+        {
+          "letra": "C",
+          "texto": "a página 330 terá ficado fundo verde claro e a página 390 terá ficado fundo bege.",
+          "comentario": "a página 330 terá ficado fundo verde claro e a página 390 terá ficado fundo bege.\nErrado. Um novo ciclo começa na página 301. Sendo assim, a página 330 terá fundo bege (pois já se terão\npassado as 25 páginas de fundo branco)."
+        },
+        {
+          "letra": "D",
+          "texto": "a página 156 terá ficado fundo bege e a página 230 terá ficado fundo verde claro.",
+          "comentario": "a página 156 terá ficado fundo bege e a página 230 terá ficado fundo verde claro.\nCorreto. Lembre-se que começamos um ciclo em 121. Como são 25 páginas com fundo branco, então o\nfundo bege começa em 146 e perdurará pelas 20 páginas seguintes (até a página 165). Dessa forma, a página\n156 terá fundo bege. Da mesma forma, como um ciclo termina em 240, a página 230 estará quase no final e\npossuirá fundo com aúltima cor: verde claro."
+        },
+        {
+          "letra": "E",
+          "texto": "a página 280 terá ficado com fundo branco e a página 317 terá ficado com fundo verde claro.",
+          "comentario": "a página 280 terá ficado com fundo branco e a página 317 terá ficado com fundo verde claro.\nErrado. Lembre-se que a página 301 inicia um novo ciclo. Sendo assim, durante 25 páginas (até a página 325)\no fundo será branco. Portanto, a página 317 não terá fundo verde claro."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Vamos organizar uma tabelinha para nos ajudar a visualizar melhor o padrão.\n\nPáginas 1−25 26−45 46−60\nCor Branco Bege Verde\n\nSão 25 páginas na cor branca, as 20 seguintes na cor bege e as 15 seguintes na cor verde claro. Nesse padrão,\num \"ciclo\" se fecha a cada 60 páginas (páginas 60, 120, 180, 240, 300 e 360 terminam o ciclo). Com isso em\nmente, vamos analisar as alternativas.\n\nA) a página 67 terá ficado com fundo bege e a página 97 terá ficado com fundo branco.\nErrado. Um novo ciclo se inicia na página 61. Portanto, a página 67 ainda terá fundo branco.\n\nB) a página 117 terá ficado com fundo verde claro e a página 142 terá ficado com fundo bege.\nErrado. Um ciclo começa na página 121. Sendo assim, a página 142 (22 páginas depois) ainda terá o fundo\nbranco, pois esse perdura por 25 páginas.\n\nC) a página 330 terá ficado fundo verde claro e a página 390 terá ficado fundo bege.\nErrado. Um novo ciclo começa na página 301. Sendo assim, a página 330 terá fundo bege (pois já se terão\npassado as 25 páginas de fundo branco).\n\nD) a página 156 terá ficado fundo bege e a página 230 terá ficado fundo verde claro.\nCorreto. Lembre-se que começamos um ciclo em 121. Como são 25 páginas com fundo branco, então o\nfundo bege começa em 146 e perdurará pelas 20 páginas seguintes (até a página 165). Dessa forma, a página\n156 terá fundo bege. Da mesma forma, como um ciclo termina em 240, a página 230 estará quase no final e\npossuirá fundo com aúltima cor: verde claro.\n\nE) a página 280 terá ficado com fundo branco e a página 317 terá ficado com fundo verde claro.\nErrado. Lembre-se que a página 301 inicia um novo ciclo. Sendo assim, durante 25 páginas (até a página 325)\no fundo será branco. Portanto, a página 317 não terá fundo verde claro.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CEBRASPE/COREN-SE/2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "A técnica em enfermagem Aline estava sem prática em aplicar vacinas.\nPorém, diante da pandemia, colocou -se à disposição para ajudar. Em seu primeiro dia, conseguiu aplicar\ncento e trinta doses. No segundo dia, duas a mais. No terceiro dia, quatro a mais. N o quarto dia, oito a\n\nmais, e assim sucessivamente, sendo as quantidades a mais sempre acrescentadas em relação ao dia\nanterior. Considerando a permanência desse padrão, assinale a opção correspondente à quantidade de\ndoses que Aline terá aplicado ao fim do sexto dia.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "194",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "160",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "192",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "162",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Para visualizarmos melhor, vamos tabelar as quantidades de vacinas aplicadas por Aline.\n\nDia 1 Dia 2 Dia 3 Dia 4 Dia 5 Dia 6\nVacinas 130 132 136 144 160 192\n\nPortanto, no dia 6, Aline terá aplicado 192 vacinas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "CEBRASPE/ME/2020",
+      "tipo": "certo_errado",
+      "enunciado": "O setor de gestão de pessoas de determinada empresa realiza regularmente a\nanálise de pedidos de férias e de licenças dos seus funcionários. Os pedidos são feitos em processos, em\nque o funcionário solicita apenas férias, apenas licença ou ambos (férias e licença). Em determinado dia,\n30 processos foram analisados, nos quais constavam 15 pedidos de férias e 23 pedidos de licenças. Com\nbase nessa situação hipotética, julgue o item que se segue.\n\nSupondo-se que cada um dos 30 processos analisados nesse dia tenha uma quantidade diferente de páginas,\nque o processo com menor quantidade de páginas tenha 20 páginas e que metade dos processos tenha, cada\num, mais de 50 páginas, conclui-se que mais de 1.100 páginas foram analisadas naquele dia.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, temos 30 processos. É dito que cada um deles possui uma quantidade diferente de páginas. Dessa\nforma, se um dos processos possui 20 páginas, só ele possui 20 páginas. Além disso, metade dos processos\ntem mais de 50 páginas. Vamos, então, formar duas progressões aritméticas. A primeira representando a\nmetade que tem número de páginas inferior a 50 e maior do que 20. A segunda representando a outra\nmetade, em que cada processo possui mais de 50 páginas.\n\n𝒂𝟏 𝒂𝟐 𝒂𝟑 𝒂𝟒 𝒂𝟓 𝒂𝟔 𝒂𝟕 𝒂𝟖 𝒂𝟗 𝒂𝟏𝟎 𝒂𝟏𝟏 𝒂𝟏𝟐 𝒂𝟏𝟑 𝒂𝟏𝟒 𝒂𝟏𝟓\nPáginas 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34\n\n+𝟐\n+𝟒\n+𝟖\n+𝟏𝟔\n+𝟑𝟐\n\nCada um dos 𝒂𝒊 acima representa um processo e seu número de página. Note que todos os processos\npossuem número de páginas diferentes, com a menor quantidade de páginas sendo 20, exatamente como\nproposto pelo enunciado. Ademais, decidimos que cada processo iria ter uma página a mais do que o\nanterior para simular uma condição mínima. Note, então, que temos uma PA de razão 1 e da teoria, sabemos\nsomar seus termos.\n\n𝑆=\n(𝑎1+𝑎𝑛)∙𝑛\n2\n\nNa nossa situação, temos 𝑛=15 termos.\n\n𝑆=\n(𝑎1+𝑎15)∙15\n2 =\n(20+34)∙15\n2 =405\n\nLogo, na primeira metade de processos, temos 405 páginas para serem analisadas . Considere agora a\nsegunda metade, em que cada processo tem mais de 50 páginas, nossa progressão muda.\n\n𝒃𝟏 𝒃𝟐 𝒃𝟑 𝒃𝟒 𝒃𝟓 𝒃𝟔 𝒃𝟕 𝒃𝟖 𝒃𝟗 𝒃𝟏𝟎 𝒃𝟏𝟏 𝒃𝟏𝟐 𝒃𝟏𝟑 𝒃𝟏𝟒 𝒃𝟏𝟓\nPáginas 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65\n\nSomando o número de páginas da segunda metade.\n\n𝑆=\n(𝑏1+𝑏15)∙15\n2 =\n(51+65)∙15\n2 =870\n\nLogo, na segunda metade de processos, temos 870 páginas para serem analisadas. Com isso, totalizamos:\n\n𝑇𝑜𝑡𝑎𝑙=405+870=1275 𝑝á𝑔𝑖𝑛𝑎𝑠\n\nJá que 1275 > 1100, então o item está correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/PRF/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\nUma unidade da PRF interceptou, durante vários meses, lotes de mercadorias vendidas por uma empresa\ncom a emissão de notas fiscais falsas. A sequência dos números das notas fiscais apreendidas, ordenados\npela data de interceptação, é a seguinte: 25, 75, 50, 150, 100, 300, 200, 600, 400, 1.200, 800, ....\n\nTendo como referência essa situação hipotética, julgue o item seguinte, considerando que a sequência dos\nnúmeros das notas fiscais apreendidas segue o padrão apresentado.\nA partir do padrão da sequência, infere-se que o 12º termoé o número 1.600.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos extrair do enunciado a sequência fornecida para uma melhor análise:\n\nO examinador faz uma afirmação sobre o 12º termo, istoé, o 𝑎12. Para conseguir encontrar o seu valor, é\nnecessário determinar o padrão da sequência. Observe que existem duas progressões geométricas dentro\ndessa sequência principal. Vamos destacá-las?\n\nVeja que os números destacados em vermelho formam uma progressão geométrica de razão 2. Além disso,\nos termos que formam essa sequência sempre pulam um termo da sequência principal . A outra PGé\nformada com os demais termos que não estão destacados e também possui razão 2 . Acompanhe no\nesquema abaixo:\n\nPara encontrarmos o valor do 𝑎12, basta seguirmos o padrão acima, multiplicando o 𝑎10 por 2.\n\n𝒂𝟏𝟐 =𝒂𝟏𝟎 ∙𝟐 ⟹ 𝒂𝟏𝟐 =𝟏𝟐𝟎𝟎∙𝟐 ⟹ 𝒂𝟏𝟐 =𝟐𝟒𝟎𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/PRF/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Se 𝒂𝒏 for o n -ésimo termo da sequência, em que 𝒏=𝟏,𝟐,𝟑,… , então, para\n𝒏≥𝟑, tem-se que 𝒂𝒏 =𝟐×𝒂𝒏−𝟐.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos extrair do enunciado a sequência fornecida para uma melhor análise:\n\nO examinador faz uma afirmação sobre o 12º termo, istoé, o 𝑎12. Para conseguir encontrar o seu valor, é\nnecessário determinar o padrão da sequência. Observe que existem duas progressões geométricas dentro\ndessa sequência principal. Vamos destacá-las?\n\nVeja que os números destacados em vermelho formam uma progressão geométrica de razão 2. Além disso,\nos termos que formam essa sequência sempre pulam um termo da sequência principal . A outra PGé\nformada com os demais termos que não estão destacados e também possui razão 2 . Acompanhe no\nesquema abaixo:\n\nObserve que, a partir do terceiro termo, qualquer outro número da sequência pode ser obtido ao multiplicar\npor 2 o \"termo anterior do anterior\". Ou seja, pulamos um olhando para trás na fila. Logo, de uma maneira\ngenérica representamos isso como 𝒂𝒏 =𝟐×𝒂𝒏−𝟐.\n\n𝑎1,𝑎2,𝑎3,….,𝑎𝑛−3,𝒂𝒏−𝟐,𝑎𝑛−1,𝒂𝒏",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/PRE. SÃO CRISTOVÃO/2019",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir: Na sequência de Fibonacci - (𝑭𝒎), em\nque 𝑭𝟏 =𝟏,𝑭𝟐 =𝟏,𝑭𝟑 =𝟐,𝑭𝟒 =𝟑,𝑭𝟓 =𝟓,… , os elementos podem ser obtidos a partir da fórmula:\n\n𝑭𝒎 = (𝟏+√𝟑)\n𝒎\n− (𝟏−√𝟑)\n𝒎\n𝟐𝒎√𝟑",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Essaé uma questão que sai muito rápido quando conhecemos a sequência de Fibonacci . Relembre-se da\naula que os dois jeitos mais comum de representar essa sequência são:\n\n𝐹𝑛 = {\n1,𝑠𝑒 𝑛=1\n1,𝑠𝑒 𝑛=2\n𝐹𝑛−1+𝐹𝑛−2,𝑠𝑒 𝑛 ≥3\n\nou\n\n𝐹𝑛 = (1+√5)\n𝑛\n− (1−√5)\n𝑛\n2𝑛√5\n\nCertamente o examinador tentou confundir o candidato trocando a √𝟓 por √𝟑 na fórmula explícita da\nsequência. No entanto, mesmo que você não saiba disso, você pode testar a fórmula do enunciado e ver se\nbate com os números da sequência que são fornecidos no enunciado:\n\n𝐹1 =1,𝐹2 =1,𝐹3 =2,𝐹4 =3,𝐹5 =5,…\n\nPessoal, para desenvolver os binômios que aparecerão a seguir, utilizaremos as seguintes relações que\naprendemos no estudo dos produtos notáveis:\n1. (𝑥+𝑦)2 =𝑥2 +2𝑥𝑦+𝑦2\n2. (𝑥−𝑦)2 =𝑥2 −2𝑥𝑦+𝑦2\n3. (𝑥+𝑦)3 =𝑥3 +3𝑥2𝑦+3𝑥𝑦2+𝑦3\n4. (𝑥−𝑦)3 =𝑥3 −3𝑥2𝑦+3𝑥𝑦2−𝑦3\n\nVamos aos cálculos:\n\n• Para 𝒎=𝟏:\n\n𝐹1 = (1+√3)\n1\n− (1−√3)\n1\n21√3\n⟹ 𝐹1 = 1+√3−1+√3\n2√3\n⟹ 𝐹1 =2√3\n2√3\n⟹ 𝑭𝟏 =𝟏\n\n• Para 𝒎=𝟐:\n𝐹2 = (1+√3)\n2\n− (1−√3)\n2\n22√3\n⟹\n\n𝐹2 =\n(12 +2∙1∙√3+(√3)\n2\n)−(12 −2∙1∙√3+(√3)\n2\n)\n22√3\n⟹ 𝐹2 =4√3\n4√3\n⟹ 𝑭𝟐 =𝟏\n\n• Para 𝒎=𝟑\n\n𝐹3 = (1+√3)\n3\n− (1−√3)\n3\n23√3\n⟹\n\n𝐹3 =\n(13 +3∙12 ∙√3+3∙1∙(√3)\n2\n+(√3)\n3\n)−(13−3∙12∙√3+3∙1∙(√3)\n2\n−(√3)\n3\n)\n23√3\n⟹\n\n𝐹3 = 1+3√3+9+3√3 −1+3√3−9+3√3\n8√3\n⟹ 𝐹3 =12√3\n8√3\n⟹ 𝑭𝟑 =𝟏,𝟓\n\nComo encontramos que o terceiro termo fornecido pela fórmula não bateu com terceiro termo dado na\nsequência do enunciado, significa que os elementos da sequência não podem ser obtidos a partir da fórmula\ndada.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.724Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Para construir a sequência 𝒂𝟏,𝒂𝟐,𝒂𝟑,𝒂𝟒,𝒂𝟓, de números positivos, foram\ndados 𝒂𝟏 e 𝒂𝟐, e, a partir de 𝒂𝟑, cada termo foi construído como sendo o produto de todos os termos\nanteriores. Se 𝒂𝟓 < 𝟏, então, nessa sequência,",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "todos os termos são, necessariamente, menores que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "apenas dois termos são menores que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "apenas três termos são menores que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "apenas um termo pode ser maior que 1.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "dois termos podem ser maiores que 1.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Primeira coisa a perceber: todos os números da sequência são positivos . Além disso, dados 𝑎1 e 𝑎2, os\ndemais termos são obtidos pelo produto de todos os anteriores. Assim, podemos escrever:\n𝑎3 =𝑎1∙𝑎2\n𝑎4 =𝑎1∙𝑎2∙𝑎3\n𝑎5 =𝑎1∙𝑎2∙𝑎3∙𝑎4\n\nVamos escrever cada um dos termos em função de 𝑎1 e 𝑎2.\n\n𝑎3 =𝑎1∙𝑎2\n𝑎4 =𝑎1∙𝑎2∙(𝑎1∙𝑎2)=(𝑎1∙𝑎2)2\n𝑎5 =𝑎1∙𝑎2∙𝑎3∙𝑎4 =𝑎1∙𝑎2 ∙(𝑎1∙𝑎2)∙(𝑎1∙𝑎2)2 =(𝑎1∙𝑎2)4\nO enunciado diz que 𝑎5 <1, para isso acontecer temos que ter:\n\n(𝑎1∙𝑎2)4 <1 → 𝑎1∙𝑎2 <1\n\nLogo, para que 𝑎1∙𝑎2 <1, pelo menos um dos dois deve ser menor do que 1 . Pode ser até que os dois\nsejam menores do que 1, mas só precisamos de que um seja. Além disso, observe que 𝒂𝟑 =𝒂𝟏 ∙𝒂𝟐 <𝟏. Se\nelevarmos ao quadrado, ficamos com 𝒂𝟒 =(𝒂𝟏 ∙𝒂𝟐)𝟐 <𝟏.\n\nNas condições do enunciado, obrigatoriamente temos que 𝒂𝟑,𝒂𝟒 𝒆 𝒂𝟓 são menores do que 1 . Ademais, já\nsabemos que 𝒂𝟏 ou 𝒂𝟐é menor do que 1 . Com isso, temos espaço apenas para um dos termos dados ser\nmaior do que um.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/ABIN/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\nA sequência infinita 𝒂𝟎,𝒂𝟏,𝒂𝟐,𝒂𝟑,... é definida por 𝒂𝟎 =𝟏,𝒂𝟏 = 𝟑, e, para número cada inteiro 𝒏 ≥ 𝟏,\n𝒂𝟐𝒏 =𝒂𝟐𝒏−𝟏+𝒂𝟐𝒏−𝟐 e 𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏−𝒂𝟐𝒏−𝟏. Com relação a essa sequência, julgue os itens:\nExistem infinitos valores inteiros de p e q tais que 𝒂𝒑 =𝒂𝒒.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O enunciado fornece os dois primeiros termos da sequência: 𝒂𝟎 =𝟏 e 𝒂𝟏 = 𝟑. Usando esses dois primeiros\ntermos, ele espera que seja possível obter os demais termos da sequência utilizando as leis de formação\nfornecida no enunciado:\n\n(𝟏) 𝒂𝟐𝒏 =𝒂𝟐𝒏−𝟏+𝒂𝟐𝒏−𝟐\ne\n(𝟐) 𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏−𝒂𝟐𝒏−𝟏\n\nVamos substituir o 𝒂𝟐𝒏 da relação (2) usando a primeira expressão (1).\n\n𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏 −𝒂𝟐𝒏−𝟏\n\n𝒂𝟐𝒏+𝟏 = (𝒂𝟐𝒏−𝟏+𝒂𝟐𝒏−𝟐)−𝒂𝟐𝒏−𝟏\n\n𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏−𝟏+𝒂𝟐𝒏−𝟐 −𝒂𝟐𝒏−𝟏\n\n𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏−𝟐\n\nSe dizermos que 𝑝=2𝑛+1 e 𝑞=2𝑛−2, então:\n\n𝒂𝒑 = 𝒂𝒒\n\nComo existem infinitos números inteiros 𝒏≥𝟏, então vão existir infinitos pares p e q , tal que a relação\nacimaé satisfeita.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/ABIN/2018",
+      "tipo": "certo_errado",
+      "enunciado": "A soma 𝒂𝟏𝟎 +𝒂𝟗é superior a 𝟐𝟎.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O enunciado fornece os dois primeiros termos da sequência: 𝒂𝟎 =𝟏 e 𝒂𝟏 = 𝟑. Usando esses dois primeiros\ntermos, ele espera que seja possível obter os demais termos da sequência utilizando as leis de formação\nfornecida no enunciado:\n\n(𝟏) 𝒂𝟐𝒏 =𝒂𝟐𝒏−𝟏+𝒂𝟐𝒏−𝟐\ne\n(𝟐) 𝒂𝟐𝒏+𝟏 = 𝒂𝟐𝒏−𝒂𝟐𝒏−𝟏\n\nObserve que a primeira leié válida para os termos de ordem par , ou seja, quando quisermos calcular os\ntermos 𝑎4,𝑎6,𝑎8,𝑎10, por exemplo, utilizaremos a relação (1). Como podemos chegar a essa conclusão?\nBasta substituir o n por 1, depois por 2, depois por 3 e olhar os valores que você obterá.\n\n• Quando 𝑛=1: 𝒂𝟐𝒏 =𝒂𝟐∙𝟏 =𝒂𝟐\n• Quando 𝑛=2: 𝒂𝟐𝒏 =𝒂𝟐∙𝟐 =𝒂𝟒\n• Quando 𝑛=3: 𝒂𝟐𝒏 =𝒂𝟐∙𝟑 =𝒂𝟔\n• Quando 𝑛=4: 𝒂𝟐𝒏 =𝒂𝟐∙𝟏 =𝒂𝟖\n\nLogo, ao utilizar a relação (1) sempre obteremos termos de ordem par . A segunda relação será para os\ntermos de ordemímpar . Em outras palavras, essa lei geral de formação está nos dizendo o seguinte: Se a\nordem do termoé par, seu valoré igual à soma dos termos anteriores . Se a ordem do termoéímpar, seu\nvaloré igual a subtração dos dois anteriores. Podemos determinar os termos usando isso.\n\n𝒂𝟎 𝒂𝟏 𝒂𝟐 𝒂𝟑 𝒂𝟒 𝒂𝟓 𝒂𝟔 𝒂𝟕 𝒂𝟖 𝒂𝟗 𝒂𝟏𝟎\n1 3 𝑎0+𝑎1 𝑎2−𝑎1 𝑎3+𝑎2 𝑎4−𝑎3 𝑎5+𝑎4 𝑎6 −𝑎5 𝑎7+𝑎6 𝑎8−𝑎7 𝑎9+𝑎8\n4 1 5 4 9 5 14 9 23\n\nSomente o 𝒂𝟏𝟎 jáé maior que 20, nem precisaríamos somar com o 𝑎9. Logo, o item está CORRETO.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/BNB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\nA sequência infinita 𝑨𝟏, 𝑨𝟐, 𝑨𝟑, 𝑨𝟒,… é definida da seguinte maneira: para cada 𝒋=𝟏,𝟐,𝟑,𝟒,…\n\n𝑨𝒋 =𝟏, se 𝒋 for múltiplo de 3;\n𝑨𝒋 =𝟑, se 𝒋−𝟏 for múltiplo de 3;\n𝑨𝒋 =𝟓, se 𝒋−𝟐 for múltiplo de 3.\n\nDessa forma, por exemplo, 𝑨𝟏 =𝟑 e 𝑨𝟐 =𝟓. Com base nessas informações, julgue os itens seguintes.\n\nO produto 𝑨𝟏𝟒 × 𝑨𝟑𝟎é igual a 𝟖.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Pessoal, percebam que os termos dessa sequência só podem assumir três valores: 1, 3 ou 5 . Observe que\nnenhuma multiplicação entre dois deles poderá dar 8 . Com essa análise, já poderíamos marcar o gabarito\ndo item como errado. No entanto, vamos realizar a solução propriamente dita.\n\nQueremos o produto 𝑨𝟏𝟒 × 𝑨𝟑𝟎 . Para calcular esse produto, precisamos encontrar 𝑨𝟏𝟒 e 𝑨𝟑𝟎. A questão\ndefiniu a sequência do seguinte modo:\n\n𝑨𝒋 =𝟏, se 𝒋 for múltiplo de 3;\n𝑨𝒋 =𝟑, se 𝒋−𝟏 for múltiplo de 3;\n𝑨𝒋 =𝟓, se 𝒋−𝟐 for múltiplo de 3.\n\nNote que 𝒋é a ordem do termo. Quando a ordem do termo for múltipla de 3, então esse termo valerá 1. É\no caso do nosso 𝐴30. Como 30é um múltiplo de 3, então 𝑨𝟑𝟎 =𝟏.\n\nSe 𝑗 não for um múltiplo de 3, temos que olhar o número anterior a ele: 𝑗−1. Se 𝒋−𝟏 for múltiplo de 3 ,\nentão o termo adotará o valor 3. Se mesmo olhando o número anterior 𝑗−1, ainda assim o número não\nfor múltiplo de 3, devemos olhar o número 𝑗−2. Se 𝒋−𝟐 for múltiplo de 3, então 𝑨𝒋 vale 5.\n\nVeja o caso do 𝐴14. 14 (𝑗) é múltiplo de 3? não! 13 (𝑗−1) é múltiplo de 3? Também não! E 12 (𝑗−2)? 12é\nmúltiplo de 3! Logo 𝐴14 =5.\n\n𝐴14 × 𝐴30 =1×5 ⟹ 𝐴14× 𝐴30 =5",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/BNB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "A soma dos primeiros 60 termos dessa sequênciaé igual a 160.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Para resolver essa questão, não precisamos listar todos os 60 termos . Nós iremos listar alguns e procurar\npor algum padrão de repetição. A questão definiu a sequência do seguinte modo:\n\n𝑨𝒋 =𝟏, se 𝒋 for múltiplo de 3;\n𝑨𝒋 =𝟑, se 𝒋−𝟏 for múltiplo de 3;\n𝑨𝒋 =𝟓, se 𝒋−𝟐 for múltiplo de 3.\n\nNote que 𝒋é a ordem do termo. Quando a ordem do termo for múltipla de 3, então esse termo valerá 1. Se\n𝑗 não for um múltiplo de 3, temos que olhar o número anterior a ele: 𝑗−1. Se 𝒋−𝟏 for múltiplo de 3, então\no termo adotará o valor 3. Se mesmo olhando o número anterior 𝑗−1, ainda assim o número não for\n\nmúltiplo de 3, devemos olhar o número 𝑗−2. Se 𝒋−𝟐 for múltiplo de 3, então 𝑨𝒋 vale 5. Usando essa regra\ne lembrando que 0 pode ser considerado um múltiplo de qualquer número inteiro, então podemos montar\na seguinte tabela:\n\n𝒋 1 2 3 4 5 6 7 8 9 ⋯\n𝑨𝒋 3 5 1 3 5 1 3 5 1 ⋯\n\nPerceba que a cada 3 termos, o padrão 3 -5-1 se repete. A soma desses termosé 3+5+1=9. Logo, os\ntermos vão somar 9 a cada 3 termos. Como queremos somar os 60 primeiros termos, do 1 ao 60 são 20\npadrões desse, pois 60 3⁄ =20. Se esse cicloé repetido 20 vezes e cada ciclo tem seus termos somando 9,\nentão:\n\n20×9=180\n\nO item afirma que a somaé 160 e, por isso, está errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-017",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/BNB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "O produto dos primeiros 53 termos dessa sequênciaé igual a 𝟏𝟓𝟏𝟖.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Para resolver essa questão, não precisamos listar todos os 60 termos . Nós iremos listar alguns e procurar\npor algum padrão de repetição. A questão definiu a sequência do seguinte modo:\n\n𝑨𝒋 =𝟏, se 𝒋 for múltiplo de 3;\n𝑨𝒋 =𝟑, se 𝒋−𝟏 for múltiplo de 3;\n𝑨𝒋 =𝟓, se 𝒋−𝟐 for múltiplo de 3.\n\nNote que 𝒋é a ordem do termo. Quando a ordem do termo for múltipla de 3, então esse termo valerá 1. Se\n𝑗 não for um múltiplo de 3, temos que olhar o número anterior a ele: 𝑗−1. Se 𝒋−𝟏 for múltiplo de 3, então\no termo adotará o valor 3. Se mesmo olhando o número anterior 𝑗−1, ainda assim o número não for\nmúltiplo de 3, devemos olhar o número 𝑗−2. Se 𝒋−𝟐 for múltiplo de 3, então 𝑨𝒋 vale 5. Usando essa regra\ne lembrando que 0 pode ser considerado um múltiplo de qualquer número inteiro, então podemos montar\na seguinte tabela:\n\n𝒋 1 2 3 4 5 6 7 8 9 ⋯\n𝑨𝒋 3 5 1 3 5 1 3 5 1 ⋯\n\nPerceba que a cada 3 termos, o padrão 3 -5-1 se repete. Quando multiplicamos os números que aparecem\nnesse ciclo temos: 𝑀=3∙5∙1 ⟹𝑀=15 . A pergunta que falta responderé: quantos padrões desse\n\naparecem até chegarmos em 53? Note que 17∙3=51. Logo, esse padrão se repete 17 vezes até chegar ao\n51, como queremos ir até o 53, devemos ainda pegar os dois primeiros números do ciclo: 3 e 5.\n\n𝑃=15∙15∙…∙15⏟\n17 𝑣𝑒𝑧𝑒𝑠\n∙ 5⏟\n52º\n∙ 3⏟\n53º\n⟹ 𝑃=1517 ∙15 ⟹ 𝑷= 𝟏𝟓𝟏𝟖",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S01-020",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Sequências Numéricas",
+      "subtopico": "Sequências Numéricas - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2014,
+      "fonteProva": "CEBRASPE/CÂMARA DOS DEPUTADOS/2014",
+      "tipo": "certo_errado",
+      "enunciado": "Em determinado colégio, todos os 215 alunos estiveram\npresentes no primeiro dia de aula; no segundo dia letivo, 2 alunos faltaram; no terceiro dia, 4 alunos\nfaltaram; no quarto dia, 6 alunos faltaram, e assim sucessivamente. Com base nessas informações, julgue\no próximo item, sabendo que o número de alunos presentes às aulas não pode ser negativo.\n\nSe houver um número de aulas suficientes e se a regra que define o número de faltosos for mantida, então\nhaverá um dia letivo em que todos os alunos faltarão",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O número de faltosos aumenta conforme uma progressão aritmética de razão 2, observe:\n𝒂𝟏 =𝟎\n𝒂𝟐 =𝟐\n𝒂𝟑 =𝟒\n𝒂𝟒 =𝟔\n\nPerceba que o número de alunosé 215 ( um númeroímpar ), já o número de faltosos sempre será um\nnúmero par . Dessa forma, não existirá um dia em que o número de faltosos será igual ao de alunos .\nPortanto, o item encontra-se errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE/CBM-PA/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em determinado dia, uma central telefônica da segurança pública para\nchamadas de emergência registrou, entre 6 e 7 horas da manhã, um total de 12 ligações. Nesse dia, entre\nas 6 e as 19 horas, a quantidade de ligações por hora aumentou em progressão aritmética com razão igual\na 4. Nessa situação, a quantidade de ligações registrada entre 18 e 19 horas foi igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "52.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "56.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "60.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "64.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "72.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos organizar as informações do enunciado em uma tabela.\n\n06h-\n07h\n07h-\n08h\n08h-\n09h\n09h-\n10h\n10h-\n11h\n11h-\n12h\n12h-\n13h\n13h-\n14h\n14h-\n15h\n15h-\n16h\n16h-\n17h\n17h-\n18h\n18h-\n19h\n12 𝑎2 𝑎3 𝑎4 𝑎5 𝑎6 𝑎7 𝑎8 𝑎9 𝑎10 𝑎11 𝑎12 𝑎13\n\nObserve que temos uma PA, de primeiro termo igual a 12 e razão igual a 4 . Como a questão pergunta a\nquantidade de ligações registradas entre 18h-19h, queremos o 𝒂𝟏𝟑. Vamos usar a fórmula do termo geral.\n\n𝑎𝑛 = 𝑎1 + (𝑛 − 1)𝑟\n\nPara n=13:\n\n𝑎13 = 𝑎1 + (13 − 1)𝑟\n\n𝑎13 = 12 + 12 ⋅ 4\n\n𝑎13 = 12 + 48\n\n𝒂𝟏𝟑 = 𝟔𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/TELEBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Texto para as próximas questões\n\nJoão acaba de assumir um cargo de assistente administrativo em uma empresa e foi designado para a tarefa\nde examinar as demandas de clientes e dar a elas o devido encaminhamento. Considerando que João ainda\nnão tem experiência com essa tarefa, seu chefe decide que passará para ele, no primeiro dia, 10 demandas,\nno segundo, 15, no terceiro, 20, e assim sucessivamente, crescendo segundo uma Progressão Aritmética até\no oitavo dia, quando então estabilizará o número de demandas diárias. Para executar sua tarefa , João leva\nsempre 5 minutos para tomar conhecimento dos detalhes de cada demanda, enquanto que a fase de\nencaminhamento (decidir o que fazer e executar os procedimentos necessários) leva 12 minutos nas\ndemandas do primeiro dia, 6 minutos nas demandas do segundo, 3 minutos nas demandas do terceiro dia,\ne assim sucessivamente, decrescendo segundo uma Progressão Geométrica até o oitavo dia, quando então\no tempo de encaminhamento se estabiliza. Com base nessa situação hipotética, julgue os itens seguinte.\n(CEBRASPE/TELEBRAS/2022) Quando estabilizar sua tarefa, João estará recebendo para exame mais de\n50 demandas de clientes por dia.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O enunciado disse que o número de demandas cresce conforme uma progressão aritmética.\n\nNo primeiro dia, como o chefe passa 10 demandas, temos que:\n\n𝑎1 = 10\n\nPerceba também que a cada dia que passa, o número de demandas cresce em 5. Sendo assim,\n\n𝑟 = 5\n\nO número de demandas cresce até o oitavo dia, quando então se estabiliza. Portanto, vamos achar o 𝑎8.\n\n𝑎8 = 𝑎1 + 7𝑟\n\n𝑎8 = 10 + 7 ⋅ 5 → 𝑎8 = 10 + 35 → 𝑎8 = 45\n\nOu seja, a demanda se estabiliza em 45, queé menor que 50 e não maior, conforme apontou o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/TELEBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "A sequência formada pelos tempos diários que João leva para examinar\ntodas as demandas de cada dia forma uma Progressão Aritmética.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Pessoal, vamos lá. Primeiramente, é interessante organizarmos as informações do enunciado numa tabela.\n\nDia Demandas\nTempo Fase de\nConhecimento\n(por demanda)\nTempo Fase de\nEncaminhamento\n(por demanda)\nTempo Total\nGasto\n(por demanda)\n1º dia 10 5 min 12 min 17 min\n2º dia 15 5 min 6 min 11 min\n3º dia 20 5 min 3 min 8 min\n4º dia 25 5 min 1,5 min 6,5 min\n\nNote que a fase de conhecimento nunca muda, é sempre 5 minutos. O tempo da fase de encaminhamento\ndiminui sempre pela metade até o 8º dia. O tempo total gasto por demandaé a soma dos tempos despendi-\ndos nessas duas fases.\n\nPara determinar o tempo total diário gasto com as demandas, basta multiplicar a quantidade de demandas\npelo tempo total gasto com cada uma.\n\nDia Demandas\nTempo Fase de\nConhecimento\n(por demanda)\nTempo Fase de\nEncaminhamento\n(por demanda)\nTempo Total\nGasto\n(por demanda)\nTempo p/ examinar\ntodas as demandas\n1º dia 10 5 min 12 min 17 min 10 ∙ 17 = 170 min\n2º dia 15 5 min 6 min 11 min 15 ∙ 11 = 165 min\n3º dia 20 5 min 3 min 8 min 20 ∙ 8 = 160 min\n4º dia 25 5 min 1,5 min 6,5 min 25 ∙ 6,5 = 162,5 min\n\nObserve que a questão foi maldosa! Quem fez apenas até o terceiro dia marcou o item como certo , já que\n(170, 165, 160) forma uma progressão aritmética de razão igual a −5.\n\nNo entanto, a partir do quarto diaé que a sequência formada pelos tempos não obedece mais a uma PA .\nSendo assim, essa sequência não forma uma PA, \"falhando\" do quarto dia em diante.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "CEBRASPE/TELEBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, relacionados a problemas aritméticos.\n\nSe, para uma progressão aritmética, a soma dos 2 primeiros termosé 100 e a soma dos 6 primeiros termos\né 276, então existirá um 𝑛 ∈ 𝑁 tal que a soma dos primeiros termos dessa progressão aritmética será\nnegativa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos por partes!\n\nSe a soma dos 2 primeiros termosé 100, podemos escrever:\n\n𝑎1 + 𝑎2 = 100 → 𝑎1 + 𝑎1 + 𝑟 = 100 → 2𝑎1 + 𝑟 = 100 (1)\n\nAdemais, se a soma dos 6 primeiros termosé 276, podemos escrever também:\n\n𝑎1 + 𝑎2 + 𝑎3 + 𝑎4 + 𝑎5 + 𝑎6 = 276\n\n𝑎1 + (𝑎1 + 𝑟) + (𝑎1 + 2𝑟) + (𝑎1 + 3𝑟) + (𝑎1 + 4𝑟) + (𝑎1 + 5𝑟) = 276\n\n6𝑎1 + 15𝑟 = 276\n\nVamos simplificar dividindo toda a equação por 3.\n\n2𝑎1 + 5𝑟 = 92 (2)\n\nPronto, temos um sistema com duas equações e duas incógnitas. Vamos resolvê-lo.\n\nDe (1), escrevemos:\n2𝑎1 = 100 − 𝑟\n\nSubstituindo em (2):\n\n(100 − 𝑟) + 5𝑟 = 92 → 4𝑟 = −8 → 𝑟 = −2\n\nPronto! Já sabemos a razão dessa PA. Agora, podemos aplicá-la em (1) e determinar o 𝑎1.\n\n2𝑎1 = 100 − (−2) → 𝑎1 = 102\n2 → 𝑎1 = 51\n\nAgora sim. Com o primeiro termo e a razão conseguimos analisar o item melhor.\n\nGalera, a questão quer saber se existe um número natural \"n\" tal que 𝑺𝒏 seja negativo.\n\n𝑆𝑛 < 0 → (𝑎1 + 𝑎𝑛)𝑛\n2 < 0\n\n[𝑎1 + 𝑎1 + (𝑛 − 1)𝑟]𝑛 < 0\n\nPara que a expressão acima seja negativa, basta que o que está entre colchetes seja negativo, pois \"n\" nunca\né negativo, já queé natural. Sendo assim,\n\n2𝑎1 + (𝑛 − 1)𝑟 < 0\n\nSubstituindo os valores de 𝑎1 e 𝑟:\n\n2 ⋅ 51 + (𝑛 − 1) ⋅ (−2) < 0 → 102 − 2𝑛 + 2 < 0 → 2𝑛 > 104 → 𝑛 > 52\n\nAssim, percebemos que para valores de \"n\" acima de 52, a soma 𝑺𝒏 será negativa. Façamos o teste!\nSeja 𝑛 = 53:\n\n𝑎53 = 𝑎1 + 52𝑟 → 𝑎53 = 51 + 52 ⋅ (−2) → 𝑎53 = 51 − 104 → 𝑎53 = −53\n\nLogo,\n\n𝑆53 = (𝑎1 + 𝑎53) ⋅ 53\n2 → 𝑆53 = (51 − 53) ⋅ 53\n2 → 𝑆53 = (−2) ⋅ 53\n2 → 𝑆53 = −53\n\nLogo, existe sim um número natural \"n\" (vários na verdade, qualquer um acima de 52) que torna a soma dos\n\"n\" primeiros termos negativa.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CEBRASPE/IBGE/2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "No desenvolvimento de uma pesquisa, Carlos, agente de pesquisas e\nmapeamento, durante 20 dias consecutivos, visitou diversos domicílios distintos, de acordo com o\nseguinte esquema:\n\n- no primeiro dia da pesquisa, Carlos visitou 12 domicílios distintos;\n- do segundo ao sétimo dia da pesquisa, Carlos visitou 9 domicílios distintos por dia;\n- do oitavo ao vigésimo dia da pesquisa, Carlos visitou 8 domicílios distintos por dia.\n\nCom base nessas informações, julgue os itens seguintes.\n\nI. Para 𝟏 ≤ 𝒏 ≤ 𝟐𝟎, denotando-se por 𝒅𝒏 a quantidade de domicílios visitados por Carlos no n-ésimo dia\nda pesquisa, tem-se que {𝒅𝟏, 𝒅𝟐, . . . , 𝒅𝟐𝟎} é uma progressão aritmética.\n\nII. Para 𝟏 ≤ 𝒏 ≤ 𝟐𝟎, denotando-se por 𝒕𝒏 a quantidade total de domicílios visitados por Carlos desde o\nprimeiro até o n-ésimo dia da pesquisa, tem-se que {𝒕𝟏, 𝒕𝟐, . . . , 𝒕𝟐𝟎} é uma progressão aritmética.\n\nIII. Noâmbito da pesquisa realizada, durante os 20 dias de sua duração, Carlos visitou 170 domicílios\ndistintos.\n\nAssinale a opção correta.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Apenas o item III está certo.",
+          "comentario": "12 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8\n\nPortanto, veja que a sequência do itemé {𝟏𝟐, 𝟗, 𝟗, 𝟗, 𝟗, 𝟗, 𝟗, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖}. Galera, essa\nsequência não está parecendo nada com uma PA, nãoé verdade? Uma progressão aritmética aumenta ou\ndiminui a uma razão constante . Obviamente, isso não acontecerá se a razão for nula, mas, nesses casos,\ntodos os termos da PA devem ser iguais, o que não ocorre na situação mostrada. Item errado.\n\nII. Para 𝟏 ≤ 𝒏 ≤ 𝟐𝟎, denotando-se por 𝒕𝒏 a quantidade total de domicílios visitados por Carlos desde o\nprimeiro até o n-ésimo dia da pesquisa, tem-se que {𝒕𝟏, 𝒕𝟐, . . . , 𝒕𝟐𝟎} é uma progressão aritmética.\n\nPara obter 𝑡𝑛, devemos sempre considerar a quantidade de domicílios já visitados.\n\nDia Domicílios\nAtendidos 𝒕𝒏\n1 12 𝟏𝟐\n2 9 12 + 9 = 𝟐𝟏\n3 9 21 + 9 = 𝟑𝟎\n4 9 30 + 9 = 𝟑𝟗\n5 9 39 + 9 = 𝟒𝟖\n6 9 48 + 9 = 𝟓𝟕\n7 9 57 + 9 = 𝟔𝟔\n8 8 66 + 8 = 𝟕𝟒\n\nObserve que até o 7º dia, a sequência descrita no itemé uma progressão aritmética de razão igual a 9. No\nentanto, a partir do oitavo dia, a sequência tem seu padrão alterado e começa a subir de 8 em 8. Sabemos\nque em uma progressão aritmética, a razãoé sempre constante, não podendo sofrer esse tipo de mudança.\nLogo, {𝑡1, 𝑡2, . . . , 𝑡20} nãoé uma Progressão Aritmética. Item errado.\n\nObs.: Caso quebrássemos a sequência em duas, {𝑡1, 𝑡2, . . . , 𝑡7} e {𝑡8, 𝑡2, . . . , 𝑡20}, daí sim elas duas seriam\nprogressões aritméticas, de razão 9 e 8, respectivamente.\n\nIII. Noâmbito da pesquisa realizada, durante os 20 dias de sua duração, Carlos visitou 170 domicílios\ndistintos.\n\nVamos voltar para a primeira tabela que desenhamos.\n\nDia 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\nDomicílios\nAtendidos 12 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8\n\nNote que o 12 aparece umaúnica vez, o 9 aparece 6 vezes e o 8 aparece 13 vezes. Assim, o total de domicílios\nvisitadosé dado por:\n\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 12 + 9 × 6 + 8 × 13\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 12 + 54 + 104\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 170"
+        },
+        {
+          "letra": "B",
+          "texto": "Apenas os itens I e II estão certos.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "Apenas os itens I e III estão certos.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "Apenas os itens II e III estão certos.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "Todos os itens estão certos.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "Primeiramente, vamos analisar as informações que o enunciado trouxe.\n\n- no primeiro dia da pesquisa, Carlos visitou 12 domicílios distintos;\n- do segundo ao sétimo dia da pesquisa, Carlos visitou 9 domicílios distintos por dia;\n- do oitavo ao vigésimo dia da pesquisa, Carlos visitou 8 domicílios distintos por dia.\n\nPodemos criar uma tabela para visualizarmos o que está acontecendo.\n\nDia 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\nDomicílios\nAtendidos 12 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8\n\nO primeiro item diz o seguinte:\n\nI. Para 𝟏 ≤ 𝒏 ≤ 𝟐𝟎, denotando-se por 𝒅𝒏 a quantidade de domicílios visitados por Carlos no n-ésimo dia\nda pesquisa, tem-se que {𝒅𝟏, 𝒅𝟐, . . . , 𝒅𝟐𝟎} é uma progressão aritmética.\n\nBasicamente, ele está \"batizando\" as quantidades de nossa tabela. Em outras palavras, temos:\n\nDia 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\n𝒅𝒏 𝒅𝟏 𝒅𝟐 𝒅𝟑 𝒅𝟒 𝒅𝟓 𝒅𝟔 𝒅𝟕 𝒅𝟖 𝒅𝟗 𝒅𝟏𝟎 𝒅𝟏𝟏 𝒅𝟏𝟐 𝒅𝟏𝟑 𝒅𝟏𝟒 𝒅𝟏𝟓 𝒅𝟏𝟔 𝒅𝟏𝟕 𝒅𝟏𝟖 𝒅𝟏𝟗 𝒅𝟐𝟎\nD.\nA. 12 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8\n\nPortanto, veja que a sequência do itemé {𝟏𝟐, 𝟗, 𝟗, 𝟗, 𝟗, 𝟗, 𝟗, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖, 𝟖}. Galera, essa\nsequência não está parecendo nada com uma PA, nãoé verdade? Uma progressão aritmética aumenta ou\ndiminui a uma razão constante . Obviamente, isso não acontecerá se a razão for nula, mas, nesses casos,\ntodos os termos da PA devem ser iguais, o que não ocorre na situação mostrada. Item errado.\n\nII. Para 𝟏 ≤ 𝒏 ≤ 𝟐𝟎, denotando-se por 𝒕𝒏 a quantidade total de domicílios visitados por Carlos desde o\nprimeiro até o n-ésimo dia da pesquisa, tem-se que {𝒕𝟏, 𝒕𝟐, . . . , 𝒕𝟐𝟎} é uma progressão aritmética.\n\nPara obter 𝑡𝑛, devemos sempre considerar a quantidade de domicílios já visitados.\n\nDia Domicílios\nAtendidos 𝒕𝒏\n1 12 𝟏𝟐\n2 9 12 + 9 = 𝟐𝟏\n3 9 21 + 9 = 𝟑𝟎\n4 9 30 + 9 = 𝟑𝟗\n5 9 39 + 9 = 𝟒𝟖\n6 9 48 + 9 = 𝟓𝟕\n7 9 57 + 9 = 𝟔𝟔\n8 8 66 + 8 = 𝟕𝟒\n\nObserve que até o 7º dia, a sequência descrita no itemé uma progressão aritmética de razão igual a 9. No\nentanto, a partir do oitavo dia, a sequência tem seu padrão alterado e começa a subir de 8 em 8. Sabemos\nque em uma progressão aritmética, a razãoé sempre constante, não podendo sofrer esse tipo de mudança.\nLogo, {𝑡1, 𝑡2, . . . , 𝑡20} nãoé uma Progressão Aritmética. Item errado.\n\nObs.: Caso quebrássemos a sequência em duas, {𝑡1, 𝑡2, . . . , 𝑡7} e {𝑡8, 𝑡2, . . . , 𝑡20}, daí sim elas duas seriam\nprogressões aritméticas, de razão 9 e 8, respectivamente.\n\nIII. Noâmbito da pesquisa realizada, durante os 20 dias de sua duração, Carlos visitou 170 domicílios\ndistintos.\n\nVamos voltar para a primeira tabela que desenhamos.\n\nDia 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20\nDomicílios\nAtendidos 12 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8\n\nNote que o 12 aparece umaúnica vez, o 9 aparece 6 vezes e o 8 aparece 13 vezes. Assim, o total de domicílios\nvisitadosé dado por:\n\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 12 + 9 × 6 + 8 × 13\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 12 + 54 + 104\n𝑇𝑜𝑡𝑎𝑙 𝑑𝑒 𝐷𝑜𝑚𝑖𝑐í𝑙𝑖𝑜𝑠 = 170",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "CEBRASPE/PRF/2021",
+      "tipo": "certo_errado",
+      "enunciado": "Em uma operação da PRF, foram fiscalizados: 20 veículos automotores até o fim\nda primeira hora; 60 veículos automotores até o fim da segunda hora; 120 veículos automotores até o fim\nda terceira hora; 200 veículos automotores até o fim da quarta hora; e 300 veículos automotores até o fim\nda quinta hora. O padrão numérico observado manteve -se até o fim da décima hora, quando, então, foi\nfinalizada a operação. Considerando essa situação hipotética, julgue o item seguinte.\n\nConsidere que {𝑞𝑛}, para n variando de 1 a 10, seja a sequência numérica formada pelas quantidades de\nveículos fiscalizados apenas no decorrer da n -ésima hora de realização da operação, ou seja, 𝑞1é a\nquantidade de veículos fiscalizados apenas no decorrer da primeira hora de realização da operação; 𝑞2é a\nquantidade de veículos fiscalizados apenas no decorrer da segunda hora de realização da operação; e assim\npor diante. Nessa situação, a sequência {𝑞𝑛}, para n variando de 1 a 10, é uma progressão aritmética.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Veículos fiscalizados:\n\n• Até o fim da 1ª hora: 20\n• Até o fim da 2ª hora: 60 (40 apenas na segunda hora)\n• Até o fim da 3ª hora: 120 (60 apenas na terceira hora)\n• Até o fim da 4ª hora: 200 (80 apenas na quarta hora)\n• Até o fim da 5ª hora: 300 (100 apenas na quinta hora)\n\nA cada hora que passa, 20 veículos são fiscalizados a mais do que na hora anterior . A sequência que o\nenunciado pedeé formada pelas quantidades de veículos fiscalizados apenas naquela hora específica. Esse\n\"apenas\" é muito importante, pois muitos alunos podem acha r que a sequência pedidaé\n{20, 60, 120, 200, 300, … }. No entanto, queremos apenas a quantidade de veículo fiscalizado naquela hora,\nresultando na seguinte sequência:\n\n{20, 40, 60, 80, 100, 120, 140, 160, 180, 200}\n\nLembre-se que uma progressão aritméticaé uma sequência em que a diferença entre dois termos\nconsecutivos será sempre uma constante (que chamamos de razão). Assim, perceba que a diferença entre\nquaisquer dois termos consecutivos da sequência acimaé 20, indicando que a sequência {𝑞𝑛} realmenteé\numa progressão aritmética conforme afirma o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "CEBRASPE/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "O protocolo de determinado tribunal associa, a cada dia, a ordem de chegada\ndos processos aos termos de uma progressão aritmética de razão 2: a cada dia, o primeiro processo que\n\nchega recebe o número 3, o segundo, o número 5, e assim sucessivamente. Se, em determinado dia, o\núltimo processo que chegou ao protocolo recebeu o número 69, então, nesse dia, foram protocolados",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "23 processos.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "33 processos.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "34 processos.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "66 processos.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "67 processos.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Temos uma PA de razão 2 , com 𝒂𝟏 = 𝟑. Com outras palavras, o enunciado disse que 𝒂𝒏 = 𝟔𝟗 e pediu 𝑛.\nLembre-se que a fórmula geral de um termo de uma progressão aritméticaé dada por:\n\n𝑎𝑛 = 𝑎1 + (𝑛 − 1) ∙ 𝑟\n\nVamos substituir as informações do enunciado.\n\n69 = 3 + (𝑛 − 1) ∙ 2\n(𝑛 − 1) = 66\n2 → 𝑛 − 1 = 33 → 𝒏 = 𝟑𝟒\n\nLogo, nesse dia, foram protocolados 34 processos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se, em uma progressão aritmética, o segundo termo for igual a −1 e o quinto\ntermo for igual a 11, então o décimo termo será igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "30.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "31.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "35.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "50.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "95.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "O enunciado nos passou que: 𝒂𝟐 = −𝟏 e 𝒂𝟓 = 𝟏𝟏. Queremos encontrar 𝒂𝟏𝟎.\n\nMais uma vez, devemos utilizar a fórmula do termo geral.\n\n𝑎𝑛 = 𝑎1 + (𝑛 − 1) ∙ 𝑟\n\nUsando 𝒂𝟐 = −𝟏 na fórmula do termo geral, ficamos com:\n\n−1 = 𝑎1 + (2 − 1) ∙ 𝑟 → 𝑎1 + 𝑟 = −1 (1)\n\nUsando 𝒂𝟓 = 𝟏𝟏 na fórmula do termo geral, ficamos com;\n\n11 = 𝑎1 + (5 − 1) ∙ 𝑟 → 𝑎1 + 4𝑟 = 11 (2)\n\nObserve as equações (1) e (2), temos duas equações e duas incógnitas , podemos resolver esse sistema.\nPara isso, vamos isolar 𝑎1 em (1) e substituir em (2).\n\n𝑎1 = −1 − 𝑟\n\n(−1 − 𝑟) + 4𝑟 = 11 → −1 + 3𝑟 = 11 → 3𝑟 = 12 → 𝒓 = 𝟒\n\nEncontramos a razão da PA! 𝑟 = 4. Devemos substituir esse valor em qualquer uma das equações para\ndeterminar 𝑎1. Assim,\n\n𝑎1 = −1 − 4 → 𝒂𝟏 = −𝟓\n\nCom 𝑎1 e 𝑟 determinados, podemos descobrir qualquer termo dessa PA. O enunciado pede 𝑎10:\n\n𝑎10 = 𝑎1 + (10 − 1) ∙ 𝑟\n𝑎10 = −5 + 9 ∙ 4\n𝑎10 = −5 + 36\n𝒂𝟏𝟎 = 𝟑𝟏",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "A tabela seguinte mostra as quantidades de livros de uma biblioteca que foram\nemprestados em cada um dos seis primeiros meses de 2017. A partir dessa tabela, julgue o próximo item.\n\nMês 1 2 3 4 5 6\nQuantidade 50 150 250 250 300 200\n\nSituação hipotética: Os livros emprestados no referido semestre foram devolvidos somente a partir de julho\nde 2017 e os números correspondentes às quantidades de livros devolvidos a cada mês formavam uma\nprogressão aritmética em que o primeiro termo era 90 e razão, 30.\n\nAssertiva: Nessa situação, mais de 200 livros foram devolvidos somente a partir de 2018.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O enunciado diz que esses livros são devolvidos a partir de julho. Ademais, a quantidade de livros devolvido\na cada mês forma uma PA de primeiro termo igual a 90 e de razão igual a 30. Observe como ficaria a tabela\ndo segundo semestre.\n\nMês 7 8 9 10 11 12\nQuantidade\nDevolvida 90 120 150 180 210 240\n\nAssim, note que a partir do mês 11 já temos mais de 200 livros devolvidos.\n\nO item está incorreto pois afirma que essa situação só ocorre a partir de 2018.\n\nObs.: Na minha opinião, essa questão tem um enunciado não muito claro e que prejudica uma análise\nobjetiva. Em uma primeira leitura, pode -se entender que o enunciado está interessado em saber quantos\nlivros vão ser devolvidos em 2018.\n\nNessa interpretação, somaríamos a quantidade de livros que foram emprestados no primeiro semestre e\nsubtrairíamos da quantidade de livros devolvidos no segundo semestre. Quando fazemos essa conta,\nobtemos que 210 livros devem ser devolvidos somente em 2018, o que tornaria o item correto.\n\nNo entanto, como o gabarito da banca foi \"item errado\", percebe-se que ela resolveu o exercício da forma\ncomo fizemos anteriormente, entendendo a assertiva como \"mais de 200 livros devolvidos (por mês)\nsomente a partir de 2018\".",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/SEDUC-AL/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Com relação a uma sequência numérica 𝒂𝟏, 𝒂𝟐, … , 𝒂𝒏, julgue o item\nsubsequente.\n\nSe a sequência estiver em progressão aritmética com razão igual a 10 e 𝑎1 = 5, então 𝑎10 > 100.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Questão para aplicarmos a fórmula do termo geral da progressão aritmética. O enunciado forneceu 𝑎1 = 5\ne 𝑟 = 10. Assim,\n\n𝑎𝑛 = 𝑎1 + (𝑛 − 1) ∙ 𝑟\n\nPara 𝒏 = 𝟏𝟎, ficamos com:\n\n𝑎10 = 5 + (10 − 1) ∙ 10\n𝑎10 = 5 + 9 ∙ 10\n\n𝑎10 = 95\n\nNote que o décimo termo dessa progressão aritméticaé igual a 95, menor que 100.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "CEBRASPE/SEDUC-AL/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Com relação a uma sequência numérica 𝒂𝟏, 𝒂𝟐, … , 𝒂𝒏, julgue o item\nsubsequente.\n\nConsidere que a sequência seja formada pelos seguintes termos, nessa ordem: 10, 12, 15, 19, 24, 30, 37.\nNesse caso, a sequência numérica 𝑏𝑗 = 𝑎𝑗+1 − 𝑎𝑗, em que 𝑗 = 1, 2, … , 6 forma uma progressão aritmética.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos organizar as informações em uma tabela.\n\n𝒂𝟏 𝒂𝟐 𝒂𝟑 𝒂𝟒 𝒂𝟓 𝒂𝟔 𝒂𝟕\n10 12 15 19 24 30 37\n\nCom esses valores, uma outra sequênciaé formada, em que cada termoé a subtração de dois termos\nconsecutivos da sequência acima (𝑎𝑗+1 − 𝑎𝑗).\n\n𝒃𝟏 𝒃𝟐 𝒃𝟑 𝒃𝟒 𝒃𝟓 𝒃𝟔\n𝒂𝟐 − 𝒂𝟏 𝒂𝟑 − 𝒂𝟐 𝒂𝟒 − 𝒂𝟑 𝒂𝟓 − 𝒂𝟒 𝒂𝟔 − 𝒂𝟓 𝒂𝟕 − 𝒂𝟔\n2 3 4 5 6 7\n\nObserve que a sequência acimaé uma progressão aritmética de razão 1. Portanto, item correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2017,
+      "fonteProva": "CEBRASPE/CBM-AL/2017",
+      "tipo": "certo_errado",
+      "enunciado": "Terminado o concurso para o cargo de soldado combatente, para o qual,\nconforme previsto em edital, havia 140 vagas, buscou-se uma forma de dar provimento aos cargos, com a\nchamada para a posse dos classificados. Devido à contingência de recursos, foi estabelecido que a\nchamada seria mensal, durante determinada quantidade de meses, e que as quantidades de aprovados\nchamados mensalmente para a posse deveriam obedecer a uma progressão aritmética de razão 2. Com\nreferência à situação hipotética apresentada, julgue o item seguinte.\n\nSe todos os classificados forem chamados mês a mês durante 7 meses, então no 4º mês serão chamados 20\ndos classificados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, o concurso teve 140 vagas . Todas os classificados tomarão posse. No entanto, mês a mês a\nquantidade de classificados chamados para a posse obedece a uma progressão aritmética de razão 2. Em\noutras palavras, todo mês eles chamam 2 pessoas a mais que no mês anterior.\n\n𝐌ê𝐬 𝟏 𝐌ê𝐬 𝟐 𝐌ê𝐬 𝟑 𝐌ê𝐬 𝟒 𝐌ê𝐬 𝟓 𝐌ê𝐬 𝟔 𝐌ê𝐬 𝟕\n𝑎1 𝑎2 𝑎3 𝑎4 𝑎5 𝑎6 𝑎7\n\nVamos usar a fórmula do termo geral: 𝒂𝒏 = 𝒂𝟏 + (𝒏 − 𝟏) ∙ 𝒓.\n\n𝐌ê𝐬 𝟏 𝐌ê𝐬 𝟐 𝐌ê𝐬 𝟑 𝐌ê𝐬 𝟒 𝐌ê𝐬 𝟓 𝐌ê𝐬 𝟔 𝐌ê𝐬 𝟕\n𝑎1 𝑎1 + 𝑟 𝑎1 + 2𝑟 𝑎1 + 3𝑟 𝑎1 + 4𝑟 𝑎1 + 5𝑟 𝑎1 + 6𝑟\n\nQuando somarmos todas essas quantidades devemos ter o total de vagas (140).\n\n𝑎1 + (𝑎1 + 𝑟) + (𝑎1 + 2𝑟) + (𝑎1 + 3𝑟) + (𝑎1 + 4𝑟) + (𝑎1 + 5𝑟) + (𝑎1 + 6𝑟) = 140\n\n7𝑎1 + 21𝑟 = 140\n\nPodemos simplificar a equação dividindo os dois lados por 7.\n\n𝒂𝟏 + 𝟑𝒓 = 𝟐𝟎\n\nSabemos a razão da PA: 𝑟 = 2.\n\n𝑎1 + 3 ∙ 2 = 20 → 𝑎1 + 6 = 20 → 𝒂𝟏 = 𝟏𝟒\n\nPronto, com o 𝒂𝟏 e 𝒓, podemos encontrar qualquer termo da progressão aritmética . O enunciado quer\nsaber a quantidade de chamados no 4º mês (𝑎4).\n\n𝑎4 = 𝑎1 + 3𝑟 → 𝑎4 = 14 + 3 ∙ 2 → 𝒂𝟒 = 𝟐𝟎\n\nPortanto, o item encontra-se correto quando afirma que 20 serão chamados no quarto mês.\n\nObs.: Se o candidato percebesse que 𝒂𝟒 = 𝒂𝟏 + 𝟑𝒓 = 𝟐𝟎, nem precisaríamos ter encontrado 𝑎1. O\nresultado já saiu pronto no meio das nossas contas (rsrs).",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S02-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Aritmética",
+      "subtopico": "Progressão Aritmética - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "CEBRASPE/PRF/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Considerando os dados apresentados no gráfico, julgue o item seguinte.\n\nOs valores associados aos anos de 2008, 2009 e 2010 estão em progressão aritmética.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos verificar os valores associados aos anos de 2009, 2009 e 2010.\n\n𝟐𝟎𝟎𝟖 𝟐𝟎𝟎𝟗 𝟐𝟎𝟏𝟎\n141 159 183\n\nObserve que a diferença entre termos consecutivos nãoé constante . Logo, essa sequência não pode ser\numa PA. Para ser uma progressão aritmética, não podemos ter um \"salto\" de 18 e outro de 24. Os dois\n\"saltos\" devem ser do mesmo valor.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2026,
+      "fonteProva": "Cebraspe/SEED-SE/2026",
+      "tipo": "multipla_escolha",
+      "enunciado": "Durante o surto de uma doença respiratória em certa cidade, observou -se\nnos registros epidemiológicos que 3 pessoas adoeceram na primeira semana, outras 9 pessoas na segunda\nsemana e outras 27 pessoas na terceira semana. Seguindo essa mesma lógica, o númer o de doentes\naumentou semanalmente, até que, na oitava semana do surto, 16% da população da cidade já havia ficado\ndoente. A partir das informações fornecidas na situação hipotética precedente, é correto inferir que a\ncidade em questão possui",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "1.574 habitantes.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "9.840 habitantes.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "20.493 habitantes.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "61.500 habitantes.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "61.506 habitantes.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Note que o número pessoas adoecidas por sema na cresce de acordo com uma progressão geométrica de\nrazão igual a 3.\n\n(3, 9, 27, … )\n\nPara descobrir quantas pessoas estavam doentes na oitava semana de surto, devemos usar a fórmula da\nsoma dos 8 primeiros termos de uma PG! Sendo assim:\n\n𝑆𝑛 = 𝑎1(𝑞𝑛 − 1)\n𝑞 − 1\n\nUsando 𝑛 = 8, 𝑎1 = 3 e 𝑞 = 3, temos:\n\n𝑆8 = 3 ⋅ (38 − 1)\n3 − 1\n\n𝑆8 = 3 ⋅ (6561 − 1)\n2\n\n𝑆8 = 9840\n\nDe acordo com o enunciado, esse número corresponde a 16% da população da cidade. Seja \"P\" a população\ndessa cidade, podemos escrever:\n\n0,16𝑃 = 9840 → 𝑃 = 9840\n0,16 → 𝑷 = 𝟔𝟏𝟓𝟎𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/PETROBRAS/2024",
+      "tipo": "certo_errado",
+      "enunciado": "A 200 km da costa do estado do Rio de Janeiro está localizada a\nplataforma P-71, que atingiu em novembro de 2021 o topo de extração deóleo do pré -sal: 150 mil barris\npor dia. A plataforma pode estocar até 1,6 milhão de barris deóleo. A comunicação entre a plataforma e\nos navios próximosé feita via rádio, cujo transmissor tem alcance máximo de 63 km. A potência do sinal\nde rádio, P, decai com a distância d, em quilômetros, de acordo com a função 𝑷(𝒅) = 𝑷𝒐𝟐−𝒅/𝟗 , sendo 𝑷𝒐\na potência de transmissão.\n\nAlém disso, um robô submarino que auxilia a plataforma experimenta, quando está dentro daágua, uma\npressão 𝒑, em atmosferas, dada pela equação 𝒑(𝒉) = 𝒌𝒉 + 𝟏, na qual ké uma constante e hé a\nprofundidade do robô, em metros. Com base nas informações precedentes, julgue o item a seguir.\n\nCaso a produção diária da plataforma P-71 aumentasse, a partir do valor de topo extraído em novembro de\n2021, de acordo com uma progressão geométrica de razão = √2, seriam necessários 4 dias para preencher\ntodo o reservatório da plataforma.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Note que o item pede para considerarmos uma PG de razão igual a √𝟐 e 𝒂𝟏 = 𝟏𝟓𝟎. 𝟎𝟎𝟎.\n\nA capacidade do reservatórioé 1,6 milhão de barris.\n\nCom outras palavras, o enunciado nos pede para checar se:\n\n𝑎1 + 𝑎2 + 𝑎3 + 𝑎4 > 1.600.000\n\nComo são apenas quatro termos da PG, não usaremos a fórmula da soma, mas calcularemos cada um.\n\n𝑆4 = 𝑎1 + 𝑎1𝑞 + 𝑎1𝑞2 + 𝑎1𝑞3\n\n𝑆4 = 𝑎1(1 + 𝑞 + 𝑞2 + 𝑞3)\n\n𝑆4 = 150.000 (1 + √2 + (√2)\n2\n+ (√2)\n3\n)\n\n𝑆4 = 150.000(1 + √2 + 2 + 2√2)\n\n𝑆4 = 150.000(3 + 3√2)\n\nNesse momento, usaremos a aproximação √2 ≅ 1,41.\n\n𝑆4 ≅ 150.000(3 + 4,23)\n\n𝑆4 ≅ 150.000 ⋅ 7,23\n\n𝑆4 ≅ 1.084.500\n\nObserve que em quatro dias teríamos pouco mais de um milhão de barris. Sendo assim, ainda muito aquém\ndo limite máximo da plataforma.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/PETROBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Considere que 𝑷(𝒕) = 𝟏𝟔𝟎 ⋅ (\n𝟑\n𝟐)\n𝒕\nexpresse a quantidade aproximada de\nmoradores de um determinado condomínio em t anos para 𝟎 ≤ 𝒕 ≤ 𝟏𝟓, em que 𝒕 = 𝟎 corresponda ao\nmomento de constituição do condomínio. Com base nessa situação hipotética, julgue o item que se segue.\n\nOs quinze primeiros termos da progressão geométrica de primeiro termo igual a 240 e terceiro termo igual\na 540 são iguais ao valor da função no 𝑃(𝑡) nos números 1,2, . . . ,15.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A questão falou de uma progressão geométrica com 𝑎1 = 240 e 𝑎3 = 540.\n\nCom esses dois valores, conseguimos determinar 𝒂𝟐 por meio da seguinte relação:\n\n𝑎2\n2 = 𝑎1 ⋅ 𝑎3 → 𝑎2\n2 = 240 ⋅ 540 → 𝑎2\n2 = 129600 → 𝑎2 = 360\n\nCom o valor de 𝑎2, é possível determinar a razão dessa PG.\n\n𝑞 = 𝑎2\n𝑎1\n→ 𝑞 = 360\n240 → 𝑞 = 3\n2\n\nSendo assim, o termo geral dessa PG pode ser escrito como:\n\n𝑎𝑛 = 𝑎1 ⋅ 𝑞𝑛−1 → 𝑎𝑛 = 240 ⋅ (3\n2)\n𝑛−1\n→ 𝑎𝑛 = 240 ⋅\n(3\n2)\n𝑛\n(3\n2)\n→ 𝒂𝒏 = 𝟏𝟔𝟎 ⋅ (𝟑\n𝟐)\n𝒏\n\nNote que a expressão do termo geralé igual a função 𝑷(𝒕). Sendo assim, os termos dessa PG serão iguais\naos valores da função no 𝑃(𝑡) quando 𝑡 = 1,2, . . . ,15.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/TELEBRAS/2022",
+      "tipo": "certo_errado",
+      "enunciado": "João acaba de assumir um cargo de assistente administrativo em uma\nempresa e foi designado para a tarefa de examinar as demandas de clientes e dar a elas o devido\nencaminhamento. Considerando que João ainda não tem experiência com essa tarefa, seu chefe de cide\nque passará para ele, no primeiro dia, 10 demandas, no segundo, 15, no terceiro, 20, e assim\nsucessivamente, crescendo segundo uma Progressão Aritmética até o oitavo dia, quando então\nestabilizará o número de demandas diárias. Para executar sua tarefa , João leva sempre 5 minutos para\n\ntomar conhecimento dos detalhes de cada demanda, enquanto que a fase de encaminhamento (decidir o\nque fazer e executar os procedimentos necessários) leva 12 minutos nas demandas do primeiro dia, 6\nminutos nas demandas do segundo, 3 minutos nas demandas do terceiro dia, e assim sucessivamente,\ndecrescendo segundo uma Progressão Geométrica até o oitavo dia, quando então o tempo de\nencaminhamento se estabiliza. Com base nessa situação hipotética, julgue o item seguinte.\n\nNo quinto dia de trabalho João já estará levando menos de 6 minutos no exame de cada demanda de cliente.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Pessoal, é superimportante perceber que o tempo gasto na fase de conhecimento não muda. É sempre 5\nminutos por demanda. Por sua vez, o tempo da fase encaminhando cai pela metade a cada dia, conforme\numa progressão geométrica de razão igual a 1/2. Com isso, podemos organizar uma tabela.\n\nDia Tempo Fase de\nConhecimento Tempo Fase de Encaminhamento Tempo Total Gasto\n(por demanda)\n1º dia 5 min 12 min 17 min\n2º dia 5 min 6 min 11 min\n3º dia 5 min 3 min 8 min\n4º dia 5 min 1,5 min 6,5 min\n5º dia 5 min 0,75 min 5,75 min\n\nCom isso, vemos queé verdade que no 5º dia o tempo gasto por demanda já será inferior a 6 minutos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2021,
+      "fonteProva": "Cebraspe/IBGE/2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "Um organismo vivo tem a capacidade de reproduzir -se dividindo -se em dois\noutros organismos semelhantes a ele. A cada segundo, cada novo organismo gerado amadurece e se\nreproduz, gerando dois outros organismos. Em certo experimento, em um instante inicial, um desses\norganismos foi isolado e passou-se a contabilizar a população 𝒑𝒏 dos organismos gerados a partir daquele\nque foi isolado, decorridos exatamente n segundos desde o instante inicial. Nessa situação, supondo -se\nque no decorrer dos 10 primeiros segundos do experimento nenhum dos organismos pereceu, tem-se que",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "𝑝10 < 400.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "400 ≤ 𝑝10 < 600.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "600 ≤ 𝑝10 < 800.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "800 ≤ 𝑝10 < 1.000.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "1.000 ≤ 𝑝10.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Imagine que nosso organismoé uma coruja. Temos o seguinte esquema.\n\nAntes de começarmos o experimento, temos uma coruja . Um segundo após o início do experimento, essa\ncoruja transforma-se em duas! Mais um segundo depois, cada uma dessas duas corujas se transformará em\nmais duas, o que fará totalizar uma população de 4 corujas.\n\nNote que a população dobra de tamanho a cada segundo! Com isso, a quantidade de indivíduos evolui\nconforme uma progressão geométrica de razão 2.\n\nSe queremos saber a população depois dos dez segundos, temos que encontrar o 𝒂𝟏𝟎 (o enunciado chama\nde 𝑝10). Assim, usando a fórmula do termo geral de uma PG.\n\n𝑝10 = 𝑝1 ∙ 𝑞9\n\nA população no primeiro segundoé 𝒑𝟏 = 𝟐 (temos das corujas no instante 𝒕 = 𝟏 𝒔). Assim,\n\n𝑝10 = 2 ∙ 29 → 𝑝10 = 210 → 𝒑𝟏𝟎 = 𝟏𝟎𝟐𝟒\n\nAssim, temos que 𝒑𝟏𝟎 ≥ 𝟏. 𝟎𝟎𝟎, conforme afirma a alternativa E.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "Cebraspe/TJ-PA/2020",
+      "tipo": "multipla_escolha",
+      "enunciado": "No dia 1º de janeiro de 2019, uma nova secretaria foi criada em certo tribunal,\na fim de receber todos os processos a serem protocolados nessa instituição. Durante o mês de janeiro de\n2019, 10 processos foram protocolados nessa secretaria; a partir de entã o, a quantidade mensal de\nprocessos protocolados na secretaria durante esse ano formou uma progressão geométrica de razão igual\na 2. Nessa situação hipotética, a quantidade de processos protocolados nessa secretaria durante os meses\nde junho e julho de 2019 foi igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "320.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "480.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "640.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "960.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "1.270.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Temos uma progressão geométrica formada pela quantidade de processos protocolados mensalmente em\num tribunal. O enunciado nos informou que 𝒂𝟏 = 𝟏𝟎 e 𝒒 = 𝟐.\n\nAlém disso, como o primeiro termo dessa PG está associado ao mês de janeiro (𝒏 = 𝟏), as quantidades de\nprocessos protocolados em junho e em julho estarão associados aosíndices 6 e 7 dessa sequência. Vamos\nencontrá-los utilizando a fórmula do termo geral da PG.\n\n𝑎𝑛 = 𝑎1 ∙ 𝑞𝑛−1\n\nEm junho, 𝑛 = 6.\n\n𝑎6 = 10 ∙ 26−1 → 𝑎6 = 10 ∙ 25 → 𝑎6 = 10 ∙ 32 → 𝒂𝟔 = 𝟑𝟐𝟎\n\nEm julho, 𝑛 = 7.\n\n𝑎7 = 10 ∙ 27−1 → 𝑎7 = 10 ∙ 26 → 𝑎6 = 10 ∙ 64 → 𝒂𝟕 = 𝟔𝟒𝟎\n\nPara saber a quantidade de processos protocolados nos dois meses, basta somarmos as quantidades.\n\n𝑺 = 𝒂𝟔 + 𝒂𝟕 = 𝟑𝟐𝟎 + 𝟔𝟒𝟎 = 𝟗𝟔𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/IFF/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "O segundo termo de uma progressão geométricaé 5 e o quinto termoé 40/27.\nPara essa progressão, a soma dos n primeiros termosé igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "(\n45\n2 ) × [1 − (\n2\n3)\n𝑛\n]",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "(\n15\n2 ) × [1 − (\n2\n3)\n𝑛\n]",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "(\n45\n2 ) × [1 − (\n2\n3)\n𝑛−1\n]",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "(\n15\n2 ) × [1 − (\n2\n3)\n𝑛−1\n]",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "(\n45\n2 ) × (\n15\n2 ) × [1 − (\n2\n3)\n𝑛\n]",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "O enunciado nos forneceu 𝑎2 e 𝑎5. Ele pergunta a soma dos n primeiros termos dessa PG. Lembre-se da\nfórmula.\n\n𝑆𝑛 = 𝑎1 ∙ (𝑞𝑛 − 1)\n𝑞 − 1\n\nPortanto, precisamos descobrir o 𝒂𝟏 e a razão 𝒒, para colocarmos na fórmula. Nesse intuito, vamos usar a\nfórmula do termo geral da PG.\n\n𝑎𝑛 = 𝑎1 ∙ 𝑞𝑛−1\n\nO enunciado disse que 𝒂𝟐 = 𝟓. Assim,\n\n5 = 𝑎1 ∙ 𝑞2−1 → 𝑎1 ∙ 𝑞 = 5 (1)\n\nAlém disso, 𝒂𝟓 =\n𝟒𝟎\n𝟐𝟕.\n\n40\n27 = 𝑎1 ∙ 𝑞5−1 → 𝑎1 ∙ 𝑞4 = 40\n27 (2)\n\nVamos dividir a equação (2) pela equação (1), membro a membro.\n\n𝑎1 ∙ 𝑞4\n𝑎1 ∙ 𝑞 =\n\n5 → 𝑞4\n𝑞 = 8\n27 → 𝑞3 = 8\n27 = 23\n33 → 𝑞 = √23\n33\n3\n→ 𝒒 = 𝟐\n𝟑\n\nPodemos substituir a razão 𝑞 na equação (1) e determinar 𝑎1.\n\n𝑎1 ∙ 2\n3 = 5 → 𝒂𝟏 = 𝟏𝟓\n𝟐\n\nPronto, agora vamos substituir 𝑎1 e 𝑞 na fórmula da soma dos n primeiros termos de uma PG.\n\n𝑆𝑛 = 𝑎1 ∙ (𝑞𝑛 − 1)\n𝑞 − 1 → 𝑆𝑛 =\n(15\n2 ) ∙ ((2\n3)\n𝑛\n− 1)\n2\n3 − 1\n→ 𝑆𝑛 =\n(15\n2 ) ∙ ((2\n3)\n𝑛\n− 1)\n− 1\n3\n\n𝑺𝒏 = (𝟒𝟓\n𝟐 ) ∙ (𝟏 − (𝟐\n𝟑)\n𝒏\n)",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre uma mesa há 9 caixas vazias. Em uma dessas caixas, será colocado um\ngrão de feijão; depois, em outra caixa, serão colocados três grãos de feijão. Prosseguindo -se\nsucessivamente, será escolhida uma caixa vazia, e nela colocada uma quantidade de grãos de feijão igual\n\n==5eb381==\nao triplo da quantidade colocada na caixa anteriormente escolhida, até que não reste caixa vazia. Nessa\nsituação, nas 9 caixas será colocada uma quantidade de grãos de feijão igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "39−1\n2",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "30 − 1",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "310−1\n2",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "310 − 1",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "38−3\n2",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "A",
+      "explicacao": "As quantidades de feijões em cada uma das caixas formam uma progressão geométrica de razão 3 . Afinal,\nsempre uma caixaé preenchida com o triplo da quantidade na caixa anteriormente escolhida.\n\nCAIXA 1 = 𝟏 grão de feijão\nCAIXA 2 = 𝟑 grãos de feijão\nCAIXA 3 = 𝟗 grãos de feijão\nCAIXA 4 = 𝟐𝟕 grãos de feijão\nCAIXA 5 = 𝟖𝟏 grãos de feijão\nCAIXA 6 = 𝟐𝟒𝟑 grãos de feijão\n...\n\nPara descobrir a quantidade nas 9 caixas, podemos usar a fórmula da soma dos n primeiros termos da PG.\n\n𝑆𝑛 = 𝑎1 ∙ (𝑞𝑛 − 1)\n𝑞 − 1\n\nSubstituindo 𝒂𝟏 = 𝟏, 𝒒 = 𝟑 e 𝒏 = 𝟗.\n\n𝑆9 = 1 ∙ (39 − 1)\n3 − 1 → 𝑺𝟗 = 𝟑𝟗 − 𝟏\n𝟐",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEDUC-AL/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Com relação a uma sequência numérica 𝒂𝟏, 𝒂𝟐, … , 𝒂𝒏, julgue o item\nsubsequente.\n\nSe a sequência for uma progressão geométrica (PG), em que 𝑎1 = 5 e 𝑎4 = 135, então a razão dessa PG será\nmaior que 4.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Temos uma progressão geométrica com 𝒂𝟏 = 𝟓 e 𝒂𝟒 = 𝟏𝟑𝟓. Devemos usar a fórmula do termo geral para\nencontrar a razão.\n\n𝑎𝑛 = 𝑎1 ∙ 𝑞𝑛−1\nUsando 𝒏 = 𝟒.\n\n𝑎4 = 𝑎1 ∙ 𝑞4−1 → 𝑎4 = 𝑎1 ∙ 𝑞3\nSubstituindo 𝑎1 = 5 e 𝑎4 = 135:\n\n135 = 5 ∙ 𝑞3 → 𝑞3 = 27 → 𝑞3 = 33 → 𝒒 = 𝟑\n\nLogo, a razão da progressão geométricaé 3. Como temos um número menor que 4, o item está incorreto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-19-S03-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_6",
+      "subtopic_id": "rlm_6",
+      "assunto": "Progressão Geométrica",
+      "subtopico": "Progressão Geométrica - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/TCE-RS/2013",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito do controle e manutenção dos 48 veículos de umórgão público,\njulgue o item seguinte.\n\nSe, em 2010, os veículos desseórgão consumiram 16.000 L de combustível e se, nos anos seguintes, o\nconsumo cresceu em progressão geométrica à razão de 10% ao ano, então, o total de combustível consumido\npor esses veículos em 2010, 2011 e 2012 foi inferior a 50.000 L.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Pessoal, apesar da questão falar em progressão geométrica, nem precisamos usar conceitos de sequências.\nBasicamente, o item afirma que a quantidade de combustível consumido aumenta 10% ao ano . Se no ano\nde 2010 foram consumidos 16.000 L, então em 2011 será consumido 16.000 + 1 .600 (10% de 16.000) =\n17.600 L.\n\nPor sua vez, 10% de 17.600é 1 .760. Assim, para obter a quantidade de combustível consumido em 2012,\ndevemos somar essa quantidade com 17.600. Ficamos com, 17.600 + 1.760 = 19.360 𝐿. Vamos organizar\ntodas essas informações em uma tabela?!\n\nAno 𝟐𝟎𝟏𝟎 𝟐𝟎𝟏𝟏 𝟐𝟎𝟏𝟐\nCombustível\nConsumido 16.000 L 17.600 L 19.360 L\n10% 1.600 L 1.760 L 1.936 L\n\nA quantidade de combustível consumida nos três anosé obtida quando somamos o que foi gasto em cada\num dos anos.\n\n𝑇𝑜𝑡𝑎𝑙 𝐶𝑜𝑛𝑠𝑢𝑚𝑖𝑑𝑜 = 16.000 + 17.600 + 19.360\n\n𝑇𝑜𝑡𝑎𝑙 𝐶𝑜𝑛𝑠𝑢𝑚𝑖𝑑𝑜 = 52.960 𝐿\n\nLogo, o total de combustível consumido não foi inferior a 50.000, tornando o item está errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_6",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.725Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_6.json"
+      }
+    }
+  ]
+}

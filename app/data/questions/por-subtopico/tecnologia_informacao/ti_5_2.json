@@ -1,0 +1,903 @@
+{
+  "topicoEditalId": "ti_5_2",
+  "disciplinaId": "tecnologia_informacao",
+  "quantidade": 19,
+  "questions": [
+    {
+      "id": "PCAL-TI-06-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2023,
+      "fonteProva": "IDECAN / Prefeitura de Maracanaú - CE - 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "No contexto da segurança da informação, a\n   inundação de SYN TCP é um tipo de praga cibernética, um tipo de ataque de negação de serviço\n   (DoS) ou de negação de serviço distribuído (DDoS) que envia um grande número de solicitações\n   SYN a um servidor para sobrecarregá-lo com conexões abertas. É um ataque de camada de rede\n   que bombardeia um servidor com solicitações de conexão sem responder às confirmações\n   correspondentes. O grande número de conexões TCP abertas consomem os recursos do servidor\n   para essencialmente bloquear o tráfego legítimo, tornando impossível abrir novas conexões\n   legítimas, dificultando o servidor de funcionar corretamente para usuários autorizados que já estão\n   conectados. Esse tipo de ataque é conhecido por SYN",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Stockading",
+          "comentario": "Errado. Stockading não é um termo reconhecido em segurança da informação relacionado a ataques de negação de serviço;"
+        },
+        {
+          "letra": "B",
+          "texto": "Spooling",
+          "comentario": "Errado. Spooling refere-se ao armazenamento temporário de dados para impressão ou processamento posterior, e não tem relação com ataques de rede;"
+        },
+        {
+          "letra": "C",
+          "texto": "Blockading",
+          "comentario": "Errado. Blockading não é o termo técnico correto para descrever o ataque baseado em excesso de conexões SYN;"
+        },
+        {
+          "letra": "D",
+          "texto": "Flooding",
+          "comentario": "Correto. O ataque é chamado de SYN Flooding. Trata-se de uma técnica de negação de serviço (DoS ou DDoS) onde o invasor envia múltiplos pacotes SYN sem completar o handshake TCP, fazendo o servidor consumir recursos com conexões incompletas, prejudicando o acesso legítimo."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Stockading não é um termo reconhecido em segurança da informação relacionado a ataques de\nnegação de serviço;\n\n(b) Errado. Spooling refere-se ao armazenamento temporário de dados para impressão ou processamento\nposterior, e não tem relação com ataques de rede;\n\n(c) Errado. Blockading não é o termo técnico correto para descrever o ataque baseado em excesso de\nconexões SYN;\n\n(d) Correto. O ataque é chamado de SYN Flooding. Trata-se de uma técnica de negação de serviço (DoS ou\nDDoS) onde o invasor envia múltiplos pacotes SYN sem completar o handshake TCP, fazendo o servidor\nconsumir recursos com conexões incompletas, prejudicando o acesso legítimo.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2024,
+      "fonteProva": "IDECAN / CAERN - 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "O site de uma banca de concurso público fica fora do ar por 6 horas\n   devido a um ataque cibernético que efetua excessivas requisições de conexão por segundo de\n   múltiplas partes do mundo, fazendo com que o servidor web seja derrubado. O ataque sofrido é\n   conhecido como",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ransomware.",
+          "comentario": "Errado. Ransomware é um tipo de malware que sequestra dados por meio de criptografia e exige pagamento de resgate. Não está relacionado a derrubar servidores por sobrecarga;"
+        },
+        {
+          "letra": "B",
+          "texto": "Vírus.",
+          "comentario": "Errado. Vírus são programas maliciosos que se replicam e podem causar diversos danos, mas não causam diretamente ataques coordenados de negação de serviço;"
+        },
+        {
+          "letra": "C",
+          "texto": "Spyware.",
+          "comentario": "Errado. Spyware é um software espião que coleta informações do usuário sem consentimento, e não provoca queda de servidores por excesso de requisições;"
+        },
+        {
+          "letra": "D",
+          "texto": "DDoS.",
+          "comentario": "Correto. DDoS (Distributed Denial of Service) é um ataque de negação de serviço distribuído, em que múltiplos dispositivos ao redor do mundo enviam requisições simultâneas para um servidor, sobrecarregando-o e tornando-o inacessível para usuários legítimos."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. Ransomware é um tipo de malware que sequestra dados por meio de criptografia e exige\npagamento de resgate. Não está relacionado a derrubar servidores por sobrecarga;\n\n(b) Errado. Vírus são programas maliciosos que se replicam e podem causar diversos danos, mas não causam\ndiretamente ataques coordenados de negação de serviço;\n\n(c) Errado. Spyware é um software espião que coleta informações do usuário sem consentimento, e não\nprovoca queda de servidores por excesso de requisições;\n\n(d) Correto. DDoS (Distributed Denial of Service) é um ataque de negação de serviço distribuído, em que\nmúltiplos dispositivos ao redor do mundo enviam requisições simultâneas para um servidor,\nsobrecarregando-o e tornando-o inacessível para usuários legítimos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2023,
+      "fonteProva": "IDECAN / Prefeitura de São Caetano do Sul - SP - 2023",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em 2021, o número de moradias com\n   acesso a internet no Brasil chegou ao patamar de 90,0% de acordo com a pesquisa por Amostras\n   de Domicílios. Isso quer dizer que estamos cada dia mais conectados à rede mundial de\n   computadores. E diante disso, muitos ataques estão acontecendo pelo mundo e no Brasil razão\n   pela qual devemos estar preparados para prevenir um ataque cibernético. Os ataques são\n   denominados de acordo com a técnica empregada, sendo assim, informe a opção que indica\n   corretamente a técnica e o objetivo a ser alcançado.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Engenharia Social é um ataque que tem como objetivo ajudar as pessoas de forma a persuadir para ganhar a confiabilidade do usuário e explicar como a internet funciona para, assim, obter informações pessoais do usuário.",
+          "comentario": "Errado. A engenharia social realmente visa enganar o usuário para obter informações, mas o enunciado minimiza o caráter malicioso da técnica. O objetivo não é \"ajudar\" ou \"explicar a internet\", e sim manipular a vítima para revelar dados confidenciais;"
+        },
+        {
+          "letra": "B",
+          "texto": "DoS (Deniel of Service) são ataques de negação de serviço que objetivam interromper um serviço ou um computador conectado a internet usando uma sobrecarga no processamento do PC (Personal Computer) ou no tráfego de dados da infraestrutura de rede.",
+          "comentario": "Correto. O DoS (Denial of Service) é um ataque que busca interromper o funcionamento de um serviço ou sistema, por meio de sobrecarga de tráfego ou processamento, tornando o serviço indisponível aos usuários legítimos;"
+        },
+        {
+          "letra": "C",
+          "texto": "Phishing é um ataque que tem como objetivo apanhar informações por meio de um sistema de ajuda eletrônica, para isso, são criadas páginas web para que sejam enviados e-mails para todos os usuários da rede.",
+          "comentario": "Errado. O phishing utiliza e-mails e páginas falsas para enganar usuários e coletar informações sensíveis, mas a descrição mistura conceitos e menciona um \"sistema de ajuda eletrônica\", o que não representa corretamente a técnica;"
+        },
+        {
+          "letra": "D",
+          "texto": "IP Spoofing o seu principal objetivo é assumir a identidade de outro computador através do envio de pacotes contendo endereços IPs verdadeiros de origem.",
+          "comentario": "Errado. O IP Spoofing usa endereços IP falsificados, e não \"verdadeiros\", justamente para mascarar a origem do pacote e se passar por outro dispositivo, enganando sistemas de segurança."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. A engenharia social realmente visa enganar o usuário para obter informações, mas o enunciado\nminimiza o caráter malicioso da técnica. O objetivo não é \"ajudar\" ou \"explicar a internet\", e sim manipular a\nvítima para revelar dados confidenciais;\n\n(b) Correto. O DoS (Denial of Service) é um ataque que busca interromper o funcionamento de um serviço\nou sistema, por meio de sobrecarga de tráfego ou processamento, tornando o serviço indisponível aos\nusuários legítimos;\n\n(c) Errado. O phishing utiliza e-mails e páginas falsas para enganar usuários e coletar informações sensíveis,\nmas a descrição mistura conceitos e menciona um \"sistema de ajuda eletrônica\", o que não representa\ncorretamente a técnica;\n\n(d) Errado. O IP Spoofing usa endereços IP falsificados, e não \"verdadeiros\", justamente para mascarar a\norigem do pacote e se passar por outro dispositivo, enganando sistemas de segurança.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2022,
+      "fonteProva": "IDECAN / PC-BA - 2022",
+      "tipo": "multipla_escolha",
+      "enunciado": "Segurança na Internet tem a ver com uma série de boas práticas que\n   adotamos para usar a rede com mais cuidado. Navegar sem o devido cuidado por sites e aplicativos\n   é similar a deixar a porta de sua casa aberta, a área fica suscetível a visitas indesejadas, que podem\n   inclusive fazer o mal, no caso, roubar dados pessoais dentre outras coisas. Levando em\n   consideração a segurança na Internet, julgue as afirmações abaixo:\n\n   I. O termo Malware se refere a programas especificamente desenvolvidos para executar ações\n   danosas em um computador (códigos maliciosos), como por exemplo roubo ou sequestro de dados,\n   bombardeio de anúncios e corrupção de sistemas.\n\n   II. Spyware é um programa capaz de capturar e armazenar as teclas digitadas pelo usuário no\n   teclado de um computador. Ele é capaz de se propagar automaticamente através de redes,\n   enviando cópias de si mesmo de computador para computador.\n\n   III. Phishing é um tipo de golpe que usa mecanismos tecnológicos, geralmente baseados em\n   mensagens, para persuadir as pessoas a entregarem ao atacante algo de seu interesse.\n\n   É CORRETO o que consta:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "na afirmativa I, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "na afirmativa II, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "na afirmativa III, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "nas afirmativas I e III, apenas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "nas afirmativas I, II e III.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(I) Correto. Malware é um termo genérico que designa qualquer software malicioso, criado com a intenção\nde causar danos, roubar dados, sequestrar informações, exibir anúncios indevidos, entre outros. Exemplos\nincluem vírus, ransomware, spyware e trojans.\n\nII. Errado. A definição mistura conceitos: um programa que captura e armazena teclas digitadas é chamado\nde keylogger, não spyware. Já a parte que diz que ele se propaga automaticamente enviando cópias de si\nmesmo se refere a um worm (verme), não a um spyware.\n\nIII. Correto. Phishing é uma técnica de engenharia social que usa mensagens falsas (como e-mails, SMS, sites\nclonados, etc) para enganar as vítimas e induzi-las a fornecer informações pessoais sensíveis, como senhas e\ndados bancários.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2022,
+      "fonteProva": "IDECAN / UFBA - 2022",
+      "tipo": "certo_errado",
+      "enunciado": "Um vírus é um pequeno programa com o objetivo de modificar um\n   computador executa as operações de forma que o usuário não tenha conhecimento. Muitos vírus\n   podem corromper programas, apagar arquivos, criptografar arquivos ou até mesmo formatar o\n   disco.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vírus são programas maliciosos capazes de modificar o funcionamento de um sistema sem o consentimento\ndo usuário. Eles geralmente são utilizados para corromper ou apagar arquivos, mas criptografar ou formatar\no disco são características típicas de vírus de computador.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2022,
+      "fonteProva": "IDECAN / UFBA - 2022",
+      "tipo": "certo_errado",
+      "enunciado": "Um spyware é um tipo de vírus que envia os dados do disco para o invasor\n   e criptografa o disco para o usuário não ter acesso a ele.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Spyware é um software espião que coleta e envia informações do usuário sem consentimento, como hábitos\nde navegação ou dados pessoais. No entanto, ele não criptografa o disco. Esse comportamento é típico de\nransomwares, não de spywares.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2021,
+      "fonteProva": "IDECAN / PC-CE - 2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "No contexto da tecnologia da informação e segurança de dados, um\n   incidente de segurança é conceituado como a ocorrência de um evento que pode causar\n   interrupções nos processos de negócio. Nesse sentido, dois termos relacionados à ocorrência dos\n   incidentes de segurança da informação são definidos a seguir:\n\n   I. É um tipo de ataque potencial a um ativo da informação, constituindo-se em um agente externo\n   que, aproveitando-se da vulnerabilidade, pode quebrar um ou mais princípios da segurança da\n   informação.É a causa potencial de um incidente indesejado, que pode resultar em um dano a um\n   sistema em uma organização.\n   II. É a chance de uma falha de segurança ocorrer, considerandose as vulnerabilidades do ativo e as\n   ameaças que venham a explorar essas vulnerabilidades.\n\n   Os termos definidos em I e II são conhecidos, respectivamente, como",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ataque e Impacto.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "Impacto e Vulnerabilidade.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "Vulnerabilidade e Ameaça.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "Ameaça e Probabilidade.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "Probabilidade e Ataque.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(I) Ameaça: qualquer agente ou condição com potencial de explorar uma vulnerabilidade e causar um\nincidente de segurança;\n(II) Probabilidade: a chance de uma ameaça explorar uma vulnerabilidade e causar um impacto negativo ao\nativo de informação.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.763Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2021,
+      "fonteProva": "IDECAN / PC-CE - 2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "Com relação à tecnologia da informação e segurança de dados, dois\n   termos no contexto da internet são definidos a seguir:\n\n   I. É o tipo de fraude por meio da qual um golpista tenta obter dados pessoais e financeiros de um\n   usuário, pela utilização combinada de meios técnicos e engenharia social. Enquanto uma das\n   formas desta fraude ocorre por meio do envio de mensagens eletrônicas que tentam se passar pela\n   comunicação oficial de uma instituição conhecida, como um banco, uma empresa ou um site\n   popular, outra procura atrair a atenção do usuário, seja por curiosidade, por caridade ou pela\n   possibilidade de obter alguma vantagem financeira.\n\n   II. É uma mensagem que possui conteúdo alarmante ou falso e que, geralmente, tem como\n   remetente, ou aponta como autora, alguma instituição, empresa importante ou órgão\n   governamental. Por meio de uma leitura minuciosa de seu conteúdo, normalmente, é possível\n   identificar informações sem sentido e tentativas de golpes, como correntes e pirâmides.\n\n   Esses termos são definidos, respectivamente, como",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "phishing e rootkit.",
+          "comentario": "Errado. Rootkit é um tipo de malware que oculta atividades maliciosas;"
+        },
+        {
+          "letra": "B",
+          "texto": "phishing e hoax.",
+          "comentario": "Correto. Os termos descritos realmente são phishing e hoax;"
+        },
+        {
+          "letra": "C",
+          "texto": "phishing e ransomware.",
+          "comentario": "Errado. Ransomware criptografa dados e exige resgate, não sendo coerente com a descrição de hoax;"
+        },
+        {
+          "letra": "D",
+          "texto": "sniffing e hoax.",
+          "comentario": "Errado. Sniffing é a interceptação de dados em redes, conceito diferente de phishing e hoax;"
+        },
+        {
+          "letra": "E",
+          "texto": "sniffing e rootkit.",
+          "comentario": "Errado. Rootkit e sniffing não se relacionam com os dois conceitos apresentados."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(I) Phishing: técnica de fraude que usa engenharia social e comunicações falsas (como e-mails) para enganar\nusuários e obter dados confidenciais;\n(II) Hoax: boato ou fraude disseminada pela internet com conteúdo falso ou alarmista, geralmente associado\na correntes ou falsas advertências.\n\n(a) Errado. Rootkit é um tipo de malware que oculta atividades maliciosas;\n(b) Correto. Os termos descritos realmente são phishing e hoax;\n(c) Errado. Ransomware criptografa dados e exige resgate, não sendo coerente com a descrição de hoax;\n(d) Errado. Sniffing é a interceptação de dados em redes, conceito diferente de phishing e hoax;\n(e) Errado. Rootkit e sniffing não se relacionam com os dois conceitos apresentados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - IDECAN",
+      "subtopico": "Malwares - IDECAN",
+      "microtopico": "",
+      "banca": "IDECAN",
+      "ano": 2021,
+      "fonteProva": "IDECAN / PEFOCE - 2021",
+      "tipo": "multipla_escolha",
+      "enunciado": "No que se refere aos aspectos da segurança da informação e da intemet\n   a serem observados em perícias, um está associado a um tipo de código malicioso que torna\n   inacessíveis os dados armazenados em um equipamento, geralmente usando criptografia, e que\n   exige pagamento de resgate para restabelecer o acesso ao usuário, geralmente feito via bitcoins.\n   Essa praga virtual pode se propagar de diversas formas, embora as mais comuns sejam: • por e-\n   mails, com o código malicioso em anexo ou que induzam o usuário a seguir um link; • explorando\n   vulnerabilidades em sistemas que não tenham recebido as devidas atualizações de segurança. Esse\n   código malicioso é conhecido por",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "hoaxing.",
+          "comentario": "Errado. Hoaxing refere-se à disseminação de boatos ou alertas falsos, e não está relacionado à criptografia de dados nem à exigência de resgate;"
+        },
+        {
+          "letra": "B",
+          "texto": "spamming.",
+          "comentario": "Errado. Spamming diz respeito ao envio massivo de mensagens não solicitadas, geralmente com fins publicitários;"
+        },
+        {
+          "letra": "C",
+          "texto": "ransomware.",
+          "comentario": "Correto. O ransomware é um código malicioso que criptografa os dados da vítima e exige pagamento para desbloqueá-los, frequentemente via criptomoedas como o bitcoin;"
+        },
+        {
+          "letra": "D",
+          "texto": "keylogger.",
+          "comentario": "Errado. Keylogger é um tipo de malware que registra as teclas digitadas pelo usuário, geralmente usado para capturar senhas;"
+        },
+        {
+          "letra": "E",
+          "texto": "sniffer.",
+          "comentario": "Errado. Sniffer é uma ferramenta usada para capturar tráfego de rede, e não tem relação com sequestro ou criptografia de dados."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Hoaxing refere-se à disseminação de boatos ou alertas falsos, e não está relacionado à criptografia\nde dados nem à exigência de resgate;\n\n(b) Errado. Spamming diz respeito ao envio massivo de mensagens não solicitadas, geralmente com fins\npublicitários;\n\n(c) Correto. O ransomware é um código malicioso que criptografa os dados da vítima e exige pagamento\npara desbloqueá-los, frequentemente via criptomoedas como o bitcoin;\n\n(d) Errado. Keylogger é um tipo de malware que registra as teclas digitadas pelo usuário, geralmente usado\npara capturar senhas;\n\n(e) Errado. Sniffer é uma ferramenta usada para capturar tráfego de rede, e não tem relação com sequestro\nou criptografia de dados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / CNPQ – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Um vírus de computador tem a capacidade de se disseminar\n   automaticamente, sem a necessidade de uma ação humana.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Os vírus de computador precisam ser executados por um usuário ou programa para se disseminarem.\nDiferentemente dos worms, que se propagam automaticamente explorando vulnerabilidades de rede, os\nvírus dependem da interação do usuário para infectar novos sistemas.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / ITAIPU BINACIONAL – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Quando instalado em uma estação de trabalho sem o\n   conhecimento e consentimento do usuário, um software de keylogger terá a função de",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "um antivírus.",
+          "comentario": "Errado. Um antivírus protege contra ameaças, enquanto o keylogger é um software malicioso que registra as teclas digitadas sem o consentimento do usuário;"
+        },
+        {
+          "letra": "B",
+          "texto": "registrar as teclas digitadas.",
+          "comentario": "Correto. O keylogger é um tipo de spyware projetado para capturar e armazenar tudo o que é digitado, incluindo senhas e dados bancários, sem o conhecimento do usuário;"
+        },
+        {
+          "letra": "C",
+          "texto": "monitorar a disponibilidade do computador.",
+          "comentario": "Errado. O keylogger não monitora a disponibilidade do computador, mas sim as entradas de teclado;"
+        },
+        {
+          "letra": "D",
+          "texto": "criptografar conexões HTTP.",
+          "comentario": "Errado. Criptografar conexões HTTP é uma função de protocolos como HTTPS e VPNs, não de um keylogger;"
+        },
+        {
+          "letra": "E",
+          "texto": "propagar-se por meio de dispositivos USB.",
+          "comentario": "Errado. Embora alguns malwares possam se propagar via USB, a principal função de um keylogger é registrar as teclas digitadas, não a propagação."
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "(a) Errado. Um antivírus protege contra ameaças, enquanto o keylogger é um software malicioso que\nregistra as teclas digitadas sem o consentimento do usuário;\n\n(b) Correto. O keylogger é um tipo de spyware projetado para capturar e armazenar tudo o que é\ndigitado, incluindo senhas e dados bancários, sem o conhecimento do usuário;\n\n(c) Errado. O keylogger não monitora a disponibilidade do computador, mas sim as entradas de teclado;\n\n(d) Errado. Criptografar conexões HTTP é uma função de protocolos como HTTPS e VPNs, não de um\nkeylogger;\n\n(e) Errado. Embora alguns malwares possam se propagar via USB, a principal função de um keylogger é\nregistrar as teclas digitadas, não a propagação.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / ITAIPU BINACIONAL – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Existe uma série de golpes e fraudes que utilizam a\n   Internet como meio de execução; uma delas tem a ação maliciosa de um golpista tentando obter\n   dados pessoais e financeiros, combinando meios técnicos e engenharia social. Esse tipo de\n   fraude é denominado",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "scan.",
+          "comentario": "Errado. Scan refere-se a varreduras de rede para identificar vulnerabilidades, mas não se trata de um golpe de engenharia social para roubo de dados;"
+        },
+        {
+          "letra": "B",
+          "texto": "DDoS.",
+          "comentario": "Errado. DDoS (Distributed Denial of Service) é um ataque que sobrecarrega servidores, impedindo o acesso a um serviço, mas não visa capturar dados pessoais;"
+        },
+        {
+          "letra": "C",
+          "texto": "phishing.",
+          "comentario": "Correto. Phishing é uma fraude que usa engenharia social para enganar usuários e obter dados confidenciais, como senhas e informações bancárias, por e-mails, sites falsos ou mensagens enganosas;"
+        },
+        {
+          "letra": "D",
+          "texto": "brute force.",
+          "comentario": "Errado. Brute force é um ataque que tenta adivinhar senhas por tentativa e erro, não envolvendo manipulação direta da vítima como no phishing;"
+        },
+        {
+          "letra": "E",
+          "texto": "defacement.",
+          "comentario": "Errado. Defacement é um ataque que modifica visualmente páginas da web, geralmente para propaganda ou vandalismo digital, sem o objetivo de roubo de dados pessoais."
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "(a) Errado. Scan refere-se a varreduras de rede para identificar vulnerabilidades, mas não se trata de um\ngolpe de engenharia social para roubo de dados;\n\n(b) Errado. DDoS (Distributed Denial of Service) é um ataque que sobrecarrega servidores, impedindo o\nacesso a um serviço, mas não visa capturar dados pessoais;\n\n(c) Correto. Phishing é uma fraude que usa engenharia social para enganar usuários e obter dados\nconfidenciais, como senhas e informações bancárias, por e-mails, sites falsos ou mensagens enganosas;\n\n(d) Errado. Brute force é um ataque que tenta adivinhar senhas por tentativa e erro, não envolvendo\nmanipulação direta da vítima como no phishing;\n\n(e) Errado. Defacement é um ataque que modifica visualmente páginas da web, geralmente para\npropaganda ou vandalismo digital, sem o objetivo de roubo de dados pessoais.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Hijacker é um tipo de malware que invade o computador e\n   criptografa os dados de forma que o usuário perde o acesso aos próprios dados.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O hijacker é um malware que sequestra configurações do navegador, alterando a página inicial,\nmecanismos de busca e exibindo anúncios indesejados. Já o malware que criptografa dados e exige\nresgate é o ransomware.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / MPE-TO – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Um tipo muito comum de malware são os chamados worms,\n   programas com capacidade de se replicar, enviando cópias do próprio worm de um computador\n   para outro computador e explorando pontos de vulnerabilidade dos sistemas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os worms são malwares que se replicam automaticamente, propagando-se pela rede sem necessidade\nde ação do usuário. Eles exploram vulnerabilidades em sistemas e podem consumir recursos,\ndegradando o desempenho da rede e dos dispositivos infectados.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / APEX – 2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Determinado software malicioso é conhecido por se propagar\n   automaticamente pela rede de computadores, explorando vulnerabilidades dos sistemas e\n   aplicativos instalados, sendo, inclusive, responsável por consumir muitos recursos, chegando\n   até a afetar o desempenho da rede. Esse é um software do tipo:",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "ransomware.",
+          "comentario": "Errado. O ransomware sequestra dados ao criptografá-los e exige um resgate, mas não se propaga automaticamente pela rede explorando vulnerabilidades;"
+        },
+        {
+          "letra": "B",
+          "texto": "vírus.",
+          "comentario": "Errado. O vírus precisa ser executado por um usuário ou programa para se espalhar, diferentemente do malware descrito, que se propaga automaticamente;"
+        },
+        {
+          "letra": "C",
+          "texto": "botnet.",
+          "comentario": "Errado. Botnet refere-se a uma rede de dispositivos infectados controlados remotamente, mas não descreve um malware que se espalha automaticamente explorando falhas;"
+        },
+        {
+          "letra": "D",
+          "texto": "worm",
+          "comentario": "Correto. O worm se propaga automaticamente pela rede, explorando vulnerabilidades em sistemas e aplicativos, podendo consumir muitos recursos e afetar o desempenho da rede."
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "(a) Errado. O ransomware sequestra dados ao criptografá-los e exige um resgate, mas não se propaga\nautomaticamente pela rede explorando vulnerabilidades;\n\n(b) Errado. O vírus precisa ser executado por um usuário ou programa para se espalhar, diferentemente\ndo malware descrito, que se propaga automaticamente;\n\n(c) Errado. Botnet refere-se a uma rede de dispositivos infectados controlados remotamente, mas não\ndescreve um malware que se espalha automaticamente explorando falhas;\n\n(d) Correto. O worm se propaga automaticamente pela rede, explorando vulnerabilidades em sistemas e\naplicativos, podendo consumir muitos recursos e afetar o desempenho da rede.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "O alerta a seguir, apresentado\n   ao se navegar em um sítio eletrônico, se refere a um vírus, uma vez que todo software malicioso\n   é um vírus que executa ações danosas e atividades maliciosas no computador.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Nem todo software malicioso é um vírus. O termo correto é malware, que engloba várias categorias, como\nworms, trojans, spyware e ransomware. O alerta indica um site que pode instalar programas maliciosos,\nmas isso não significa que seja um vírus especificamente.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "PCAL-TI-06-S02-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "Malwares - Multibancas",
+      "subtopico": "Malwares - Multibancas",
+      "microtopico": "",
+      "banca": "PREFEITURA",
+      "ano": 2024,
+      "fonteProva": "CEBRASPE / Prefeitura de Cachoeiro de Itapemirim-ES – 2024",
+      "tipo": "certo_errado",
+      "enunciado": "Em grupos de discussão e redes\n   sociais, não há preocupação com segurança, pois eles são sítios não organizacionais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A segurança da informação deve ser uma preocupação em qualquer ambiente digital, incluindo grupos\nde discussão e redes sociais. Ataques como phishing, engenharia social e vazamento de dados podem\nocorrer nesses espaços, independentemente de serem organizacionais ou não.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "ti_5_2",
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.764Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_da_informacao_crimes_ciberneticos\\ti_5_2.json"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0029",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-nocoes-de-virus",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Um vírus de computador geralmente depende de um arquivo ou programa hospedeiro e de sua execução para propagar o código malicioso.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Noções de vírus.\n\nVírus costumam inserir código em arquivos ou programas e disseminar-se quando o hospedeiro é executado. Esse comportamento os diferencia, em termos gerais, dos worms autônomos.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Noções de vírus.\n\nErro provável: confusão entre vírus e worm\n\nDica: Vírus se associa a hospedeiro; worm se propaga de forma autônoma.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_2.json",
+        "sourceSubtopicId": "1.2.1.5-nocoes-de-virus",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_2",
+        "hashQuestao": "5afa0bf7bc941ffe",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "vírus"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "confusão entre vírus e worm"
+          ],
+          "palavrasChave": [
+            "Noções de vírus",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Noções de vírus",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "fec1335f0701fca649585402cda97ff5e847db3c63e9938776bb350aef3d596d",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    },
+    {
+      "id": "q_pcal_2026_ti_0030",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "tecnologia_informacao",
+      "topicoEditalId": "ti_5_2",
+      "subtopic_id": "ti_5_2",
+      "assunto": "1.2.1.5-seguranca-da-informacao",
+      "subtopico": "1.2.1.5-nocoes-de-worms",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Worms podem explorar redes para se replicar automaticamente, sem a necessidade de anexar-se a um arquivo hospedeiro.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O item está correto à luz do conteúdo de Noções de worms.\n\nWorms são programas maliciosos autônomos capazes de se disseminar entre sistemas, frequentemente explorando vulnerabilidades ou credenciais. Sua propagação pode consumir recursos de rede.\n\nFundamento: Conteúdo programático 1.2.1.5 — Segurança da informação: Noções de worms.\n\nErro provável: exigência indevida de arquivo hospedeiro\n\nDica: Worm é autônomo e costuma explorar a rede.",
+      "status": "revisao",
+      "versao": 1,
+      "dificuldade": "2",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "origemArquivo": "ciclos_002_a_006_pc_al_100_questoes.json",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\tecnologia_informacao\\ti_5_2.json",
+        "sourceSubtopicId": "1.2.1.5-nocoes-de-worms",
+        "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+        "mappedTopicoEditalId": "ti_5_2",
+        "hashQuestao": "1ea7279affc95456",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "worms"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "exigência indevida de arquivo hospedeiro"
+          ],
+          "palavrasChave": [
+            "Noções de worms",
+            "Segurança da informação"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "trechoOrigem": "Noções de worms",
+          "referencia": "PC AL — conteúdo programático organizado"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.95,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e12925fe64d35a5944c6d1602872b0d70a3bfffad6aae5549f9adab9c43f35db",
+          "createdAt": "2026-07-16T16:25:06-03:00",
+          "updatedAt": "2026-07-16T16:25:06-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true,
+        "disciplinaCurta": "ti",
+        "organizadoEm": "2026-07-21T02:11:29.773Z"
+      }
+    }
+  ]
+}

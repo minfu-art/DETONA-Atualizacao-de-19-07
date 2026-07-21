@@ -1,0 +1,1141 @@
+{
+  "topicoEditalId": "rlm_3",
+  "disciplinaId": "raciocinio_logico_matematico",
+  "quantidade": 30,
+  "questions": [
+    {
+      "id": "PCAL-RLM-11-S01-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/CAU BR/2024",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de regra de três, julgue o item subsequente.\n\nPara se ouvir umáudio na velocidade 1,5 são necessários 20 minutos. Nessa situação, a duração original\ndesseáudioé de 25 minutos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Para determinar a duração original doáudio, vamos fazer uma regra de três simples.\n\nConsidere que \"D\" seja essa duração que estamos procurando.\n\nSe na velocidade 1,5 são necessários 20 minutos, então na velocidade 1,0 serão necessários D minutos.\n\nObserve que quanto maior a velocidade, então menor será o tempo necessário para ouvir oáudio. Logo,\ntemos grandezas inversamente proporcionais e a multiplicação que fazemosé a direta.\n\n1,0𝐷 = 1,5 × 20 → D = 30 min\n\nAssim, a duração original doáudioé de 30 minutos e não de 25.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/CAU BR/2024",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de regra de três, julgue o item subsequente.\n\nUm restaurante vende marmitas pequenas, que pesam 300 g cada, e marmitas grandes, que pesam 500 g\ncada, sendo que o preço de cada marmitaé diretamente proporcional ao seu peso. Sabendo-se que o preço\nde uma marmita grandeé R$ 28,00, conclui-se que o preço da marmita pequenaé R$ 16,80.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos fazer uma regra de três simples!\n\nSe uma marmita de 500 gé vendida por R$ 28,00, então uma marmita de 300 gé vendida por \"x\".\n1,5\n20 min\n1,0\nD min\n\nVamos esquematizar!\n\nObserve que quanto mais pesada a marmita, mais caro ela custará . Sendo assim, temos grandezas\ndiretamente proporcionais e devemos fazer a multiplicação cruzada.\n\n500𝑥 = 300 × 28 → 𝑥 = 3 ⋅ 28\n5 → 𝑥 = 16,8\n\nPortanto, a marmita de 300 g custará R$ 16,80, conforme afirma o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Joinville/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os 4 empregados de uma oficina de bicicleta trabalham, em média, 6 h\npor dia, 5 dias por semana, e consertam, em média, 30 bicicletas por semana. Para que a média de\nbicicletas consertadas por semana na oficina citada no tex to seja igual a 36, sem que o número de dias\ntrabalhados nem o número de empregados da oficina sejam alterados, o tempo acrescido à carga horária\nde cada empregado deverá",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "ser inferior a 59 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "estar entre 60 min e 64 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "ser superior a 71 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "estar entre 65 min e 67 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "estar entre 68 min e 70 min.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Como devemos relacionar apenas duas grandezas (média de bicicletas e tempo), podemos aplicar uma regra\nde três simples ! Se com uma carga horária de 6h por dia eles consertam 3 0 bicicletas por semana, então\ncom uma carga horária de \"x\" h por dia eles consertarão 36.\n\nQuanto maior a carga horária, mais bic icletas serão consertadas . Logo, são grandezas diretamente\nproporcionais e devemos fazer a multiplicação cruzada.\n\n500 g\n28,00\n300 g\nx\n6 h/d\n30\nx h/d\n\n49\n\n30𝑥 = 36 × 6 → 𝑥 = 216\n30 → 𝑥 = 7,2 h/d\n\nAssim, para que sejam consertadas 36 bicicletas por semana, a carga horária deverá aumentar para 7,2 h por\ndia (7 horas e 12 minutos ). Como a carga horária atualé de 6 horas, a nova carga horária implicaria um\naumento de 72 minutos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Joinville/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se a cantina de uma escola tiver insumos suficientes para alimentar 200\ncrianças por 90 dias, e se, após 30 dias, 40 dessas crianças forem transferidas de escola, então os insumos\nrestantes serão suficientes para alimentar as crianças que permanecerem na escola por mais",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "48 dias.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "60 dias.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "72 dias.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "75 dias.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "90 dias.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Inicialmente, temos insumos para alimentar 200 crianças por 90 dias. Após 30 dias, teremos insumos para\nalimentar 200 crianças por 60 dias. Nesse momento, 40 crianças são transferidas, resultando em 160 crianças\nna escola.\n\nSe a quantidade de insumos alimenta 200 crianças por 60 dias, então a mesma quantidade alimentará 160\ncrianças por \"x\" dias. Vamos esquematizar a regra de três!\n\nPerceba que quanto maior a quantidade de crianças, menor será o quanti dade de dias que os insumos\ndurarão. Logo, são grandezas inversamente proporcionais e devemos fazer a multiplicação direta.\n\n160𝑥 = 200 × 60 → 𝑥 = 1200\n16 → 𝒙 = 𝟕𝟓",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/FNDE/2023",
+      "tipo": "certo_errado",
+      "enunciado": "Uma equipe composta por oito especialistas ficou responsável por analisar as\nvárias demandas por recursos financeiros de determinada região brasileira. Verificou -se, por meio de\nanálise de desempenho, que essa equipe tem a capacidade de concluir a análise de 15 demandas em um\n200 c\n60 d\n160 c\nx d\n\nperíodo de 5 diasúteis, trabalhando 6 horas por dia. Considerando essas condições, julgue o item\nsubsequente.\n\nA equipeé capaz de concluir a análise de 15 demandas em 8 diasúteis, trabalhando menos de 4 horas por\ndia.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Como a quantidade de demandas e de especialistas não mudam, só estamos relacionando duas grandezas:\na jornada e o período de trabalho. Logo, uma regra de três simples resolve! Se trabalhando 6 horas por dia\nas demandas são resolvidas em 5 diasúteis, então trabalhando \"x\" elas serão resolvidas em 8 diasúteis.\n\nQuanto maior a jornada, menoré o período necessário para terminar as demandas. Com isso, as grandezas\nsão inversamente proporcionais e fazemos a multiplicação direta.\n\n8𝑥 = 6 ⋅ 5 → 8𝑥 = 30 → 𝑥 = 30\n8 → 𝒙 = 𝟑, 𝟕𝟓\n\nOpa! Com uma jornada de 3,75 horas diárias, a equipe consegue cumprir as demandas em 8 diasúteis! Logo,\nitem correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/IBAMA/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, com base em conhecimentos da matemática.\n\nConsidere que 6 bois ou 8 vacas levem 28 dias para pastarem por completo um terreno de determinadaárea.\nSendo assim, 9 bois e 2 vacas levarão exatamente 16 dias para pastarem um terreno de mesmaárea.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos lá! Perceba que 6 bois equivalem a 8 vacas , pois qualquer uma das quantidades pastam o terreno\npor completo em 28 dias. O item pergunta sobre o tempo que 9 bois e 2 vacas levarão para pastar o mesmo\nterreno. O segredoé transformar \"9 bois e 2 vacas\" em uma quantidade equivalente ou só de boi ou só de\nvaca. Vamos escolher \"vaca\". Ora, se 6 bois equivalem a 8 vacas, então 9 bois serão \"x\" vacas.\n\n6 h/d\n5 d\nx h/d\n8 d\n6 bois\n8 vacas\n9 bois\nx vacas\n\nVamos multiplicar cruzado.\n\n6𝑥 = 8 ⋅ 9 → 𝑥 = 72\n6 → 𝒙 = 𝟏𝟐\n\nCom isso, podemos concluir que 9 bois equivalem a 12 vacas. Quando o enunciado fala \"9 bois e 2 vacas\",\ntemos uma quantidade equivalente a 14 vacas. Agora, podemos fazer uma nova regra de três: se 8 vacas\nlevam 28 dias para pasta o terreno, então 14 vacas levarão \"x\" dias.\n\nMoçada, aqui temos que ter atenção: quanto maior o número de vacas, menos dias serão necessários para\nelas pastarem todo o terreno. Logo, temos duas grandezas inversamente proporcionais. Esse fato implica\nque não podemos usar a multiplicação cruzada, mas sim, a direta.\n\n14𝑥 = 8 ⋅ 28 → 𝑥 = 224\n14 → 𝒙 = 𝟏𝟔\n\nLogo, \"9 bois e 2 vacas\" ou, equivalentemente, 14 vacas, pastam o terreno em 16 dias, conforme o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2020,
+      "fonteProva": "Cebraspe/TJ-PA/2020",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção que indica, no contexto do desenho do serviço da ITIL, o valor\nda disponibilidade semanal de um serviço acordado para funcionar por 8 horas diárias, de segunda à sexta-\nfeira, mas que esteve fora do ar durante 4 horas nessa semana.",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "10,0%",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "50,0%",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "51,4%",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "64,0%",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "90,0%",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "E",
+      "explicacao": "Se o serviço deveria funcionar 8 horas diárias, de segunda à sexta-feira (5 dias), então sua disponibilidadeé\nde 40 horas semana is. No entanto, foi verificado que o sistema ficou 4 horas fora do ar . Assim, a\ndisponibilidade do serviço naquela semana foi de apenas 36 horas.\n\nCom isso, a pergunta que fazemosé: \"Se 40 horas corresponde a uma disponibilidade de 100%, então qual a\ndisponibilidade semanal quando temos apenas 36 horas de serviço?\" Devemos fazer uma regra de 3 simples.\n8 vacas\n28 dias\n14 vacas\nx dias\n\n40 ℎ𝑜𝑟𝑎𝑠 100%\n36 ℎ𝑜𝑟𝑎𝑠 𝑥\n\n40𝑥 = 3600 → 𝑥 = 3600\n40 → 𝒙 = 𝟗𝟎%",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/TJ-PR/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Conforme resolução do TJ/PR, os servidores doórgão devem cumprir a jornada\ndas 12 h às 19 h, salvo exceções devidamente autorizadas. Em determinado dia, o servidor Ivo,\ndevidamente autorizado, saiu antes do final do expediente e, no dia segui nte, ao conferir seu extrato do\nponto eletrônico, verificou que deveria repor 3,28 horas de trabalho por conta dessa saída antecipada.\nNesse caso, se, no dia em que saiu antes do final do expediente, Ivo havia iniciado sua jornada às 12 h,\nentão, nesse dia, a sua saída ocorreu às",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "15 h 28 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "15 h 32 min.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "15 h 43 min 12 s.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "15 h 44 min 52 s.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "15 h 57 min 52 s.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Note que Ivo trabalha 7 horas por dia (das 12 às 19 horas). Logo, se ele tem que repor 𝟑, 𝟐𝟖 horas de\ntrabalho, então ele só trabalhou 7,00 − 3,28 = 𝟑, 𝟕𝟐 horas no dia anterior. A pergunta que nos vem agora\né: quanto vale 3,72 horas? Veja que temos 3 horas completas + 0,72 de hora. Para encontrar quantos minutos\nsão 0,72 de hora, basta fazermos uma regra de três simples.\n1 ℎ𝑜𝑟𝑎 60 𝑚𝑖𝑛𝑢𝑡𝑜𝑠\n0,72 ℎ𝑜𝑟𝑎 𝑥 𝑚𝑖𝑛𝑢𝑡𝑜𝑠\n\n1 ∙ 𝑥 = 60 ∙ 0,72 → 𝒙 = 𝟒𝟑, 𝟐 𝒎𝒊𝒏𝒖𝒕𝒐𝒔\n\nPortanto, observe que 0,72 horas equivale a 43,2 minutos. Dessa vez, temos 43 minutos completos + 0,2 de\nminuto. Quanto vale 0,2 minutos? Para descobrir, podemos usar outra regra de três.\n\n1 𝑚𝑖𝑛𝑢𝑡𝑜 60 𝑠𝑒𝑔𝑢𝑛𝑑𝑜𝑠\n0,2 𝑚𝑖𝑛𝑢𝑡𝑜𝑠 𝑦 𝑠𝑒𝑔𝑢𝑛𝑑𝑜𝑠\n\n1 ∙ 𝑦 = 60 ∙ 0,2 → 𝒚 = 𝟏𝟐 𝒔𝒆𝒈𝒖𝒏𝒅𝒐𝒔\n\n==5eb381==\n\nAssim, chegamos finalmente ao tempo trabalhado por Ivo!\n\n3,72 ℎ𝑜𝑟𝑎𝑠 = 3 ℎ𝑜𝑟𝑎 𝑒 43,2 𝑚𝑖𝑛𝑢𝑡𝑜𝑠 = 3 ℎ𝑜𝑟𝑎𝑠, 43 𝑚𝑖𝑛𝑢𝑡𝑜𝑠 𝑒 12 𝑠𝑒𝑔𝑢𝑛𝑑𝑜𝑠\n\nSe ele entrou às 12 horas e trabalhou essa quantidade de tempo, então ele saiu às 15 horas, 43 minutos e\n12 segundos, conforme consta na alternativa C.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/EMAP/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Os operadores dos guindastes do Porto de Itaqui são todos igualmente\neficientes. Em umúnico dia, seis desses operadores, cada um deles trabalhando durante 8 horas, carregam\n12 navios. Com referência a esses operadores, julgue o item seguinte.\n\nPara carregar 18 navios em umúnico dia, seis desses operadores deverão trabalhar durante mais de 13\nhoras.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Perceba que como o número de trabalhadores não muda, podemos fazer uma regra de três simples\nenvolvendo apenas a quantidade de navios e a quantidade de horas trabalhadas.\n8 ℎ𝑜𝑟𝑎𝑠 12 𝑛𝑎𝑣𝑖𝑜𝑠\n𝑥 ℎ𝑜𝑟𝑎𝑠 18 𝑛𝑎𝑣𝑖𝑜𝑠\n12𝑥 = 8 ∙ 18 → 𝑥 = 144\n12 → 𝑥 = 12 ℎ𝑜𝑟𝑎𝑠\n\nLogo, não são necessárias mais de 13 horas para carregar os 18 navios.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "O motorista de uma empresa transportadora de produtos hospitalares deve\nviajar de São Paulo a Brasília para uma entrega de mercadorias. Sabendo que irá percorrer\naproximadamente 1.100 km, ele estimou, para controlar as despesas com a viagem, o consumo de gasolina\ndo seu veículo em 10 km/L. Para efeito de cálculos, considerou que esse consumoé constante.\nConsiderando essas informações, julgue o item que se segue.\n\nSe a referida distância de São Paulo a Brasília for calculada em jardas, admitindo-se que o valor aproximado\nde uma jarda seja 90 cm, então a distância entre essas cidades será de, aproximadamente, 1.222.222 jardas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Nessa questão devemos fazer uma conversão de unidades . Para realizar essa tarefa, uma regra de três\nsimplesé suficiente. Note que ele deu a seguinte equivalência: 1 jarda = 90 cm. Precisamos calcular quantas\njardas são 1.100 km. Um primeiro passo para isso, seria converter a equivalência do enunciado em km.\n\n1 𝑗𝑎𝑟𝑑𝑎 = 90 𝑐𝑚 = 0,9 𝑚 = 0,0009 𝑘𝑚 = 9 ∙ 10−4 𝑘𝑚\n\nFeito esse pequeno ajuste, podemos ir para a regra de três.\n1 𝑗𝑎𝑟𝑑𝑎 9 ∙ 10−4 𝑘𝑚\n𝑥 𝑗𝑎𝑟𝑑𝑎𝑠 1100 𝑘𝑚\nMultiplicando cruzado.\n\n(9 ∙ 10−4) ∙ 𝑥 = 1100 ∙ 1 → 𝑥 = 1100\n9 ∙ 10−4 → 𝑥 = 1.222.222,22 𝑗𝑎𝑟𝑑𝑎𝑠",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/FUB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "O motorista de uma empresa transportadora de produtos hospitalares deve\nviajar de São Paulo a Brasília para uma entrega de mercadorias. Sabendo que irá percorrer\naproximadamente 1.100 km, ele estimou, para controlar as despesas com a viagem, o consumo de gasolina\ndo seu veículo em 10 km/L. Para efeito de cálculos, considerou que esse consumoé constante.\nConsiderando essas informações, julgue o item que se segue.\n\nNessa viagem, o veículo consumirá 110.000 dm³ de gasolina.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Essa questão exigia um conhecimento bem pontual. Para resolvê-la, o aluno precisaria conhecer que 1 dm³\n= 1 L. Logo, quando ele fala 110.000 dm³ de gasolina, ele está falando 110.000 L. Sabendo disso, podemos\nusar o consumo e uma regra de três simples para descobrir o quanto será consumido de gasolina na viagem.\n1 𝐿 10 𝑘𝑚\n𝑥 𝐿 1100 𝑘𝑚\nMultiplicando cruzado.\n\n10𝑥 = 1 ∙ 1100 → 𝑥 = 110 𝐿\n\nPortanto, serão consumidos apenas 110 L de gasolina na viagem e não 110.000 L (dm³), como afirma o item.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/BNB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "O item a seguiré apresentada uma situação hipotética, seguida de uma\nassertiva a ser julgada, a respeito de proporcionalidade, divisão proporcional, média e porcentagem.\n\nUm digitador digita, em média, sem interrupção, 80 palavras por minuto e gasta 25 minutos para concluir\num trabalho. Nessa situação, para que o digitador conclua o mesmo trabalho em 20 minutos, sem\ninterrupção, ele terá que digitar, em média, 90 palavras por minuto.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Pessoal, se ele digita 80 palavras por minuto e gasta 25 minutos para concluir um trabalho, então o trabalho\ndele tem 𝟖𝟎 × 𝟐𝟓 = 𝟐𝟎𝟎𝟎 palavras. Para concluir o mesmo trabalho em 20 minutos, basta ele fazer:\n\n2000 𝑝𝑎𝑙𝑎𝑣𝑟𝑎𝑠\n20 𝑚𝑖𝑛𝑢𝑡𝑜𝑠 = 100 𝑝𝑎𝑙𝑎𝑣𝑟𝑎𝑠 𝑝𝑜𝑟 𝑚𝑖𝑛𝑢𝑡𝑜.\n\nO enunciado fala em 90 palavras por minuto. Logo, o item está incorreto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "Cebraspe/CBM-DF/2016",
+      "tipo": "certo_errado",
+      "enunciado": "Na investigação das causas de um incêndio, supostamente criminoso, o\nperito encontrou uma pegada com marcas de solado de tênis. Não dispondo de instrumento de medida, o\nperito posicionou uma nota de R$ 2,00 ao lado da pegada e tirou uma foto. Posteriormente, verificou que\no comprimento da nota correspondia a 55% do comprimento da pegada e que a parte mais estreita da\npegada, entre o calcanhar e o “peito do pé”, correspondia à largura da nota. Com base nessa situação, e\nconsiderando que uma nota de R$ 2,00 seja um retângulo medindo 14 cm × 6,4 cm e que, no Brasil, o\nnúmero de um calçadoé um número inteiro positivo N de modo que 67% de N mais se aproxima do\ncomprimento do solado, julgue o item seguinte.\n\nNo Brasil, o calçado que deixou a pegada referida no texto tem numeração 38.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Imagine que essaé sua nota:\n\nO enunciado diz que o comprimento da nota corresponde a 55% do comprimento da pegada . Ora, se o\ncomprimento da notaé 14 cm, podemos fazer uma rápida regra de três para encontrar o comprimento da\npegada.\n14 𝑐𝑚 55%\n𝑥 𝑐𝑚 100%\n\nMultiplicando cruzado.\n\n55% ∙ 𝑥 = 14 ∙ 100% → 𝑥 = 1400\n55 → 𝒙 = 𝟐𝟓, 𝟒𝟓 𝒄𝒎\n\nO número do calçadoé o número inteiro N tal que 67% de N se aproxima do comprimento do calçado, que\né 25,45 cm! Logo, devemos fazer:\n\n0,67𝑁 = 25,45 → 𝑁 = 25,45\n0,67 → 𝑁 ≅ 38",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "Cebraspe/FUB/2016",
+      "tipo": "certo_errado",
+      "enunciado": "Diariamente, o tempo médio gasto pelos servidores de determinado\ndepartamento para executar suas tarefasé diretamente proporcional à quantidade de tarefas executadas\ne inversamente proporcional à sua produtividade individual diária P. Com base nessas informações, julgue\no item a seguir.\n\nSe, na quarta-feira, um servidor tinha 13 tarefas de sua responsabilidade para executar e se nas 3 primeiras\nhoras de trabalho ele executou 5 dessas tarefas, então, mantendo essa produtividade, ele gastou menos de\n8 horas para concluir as 13 tarefas na quarta-feira.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Apenas dois parâmetros estão mudando: a quantidade de tarefas e o tempo. Quando temos duas grandezas,\npodemos usar uma regra de três simples. Observe que:\n5 𝑡𝑎𝑟𝑒𝑓𝑎𝑠 3 ℎ𝑜𝑟𝑎𝑠\n13 𝑡𝑎𝑟𝑒𝑓𝑎𝑠 𝑥 ℎ𝑜𝑟𝑎𝑠\n\nObserve que quanto maior o número de tarefas, maior será o número horas. Assim, estamos trabalhando\ncom grandezas diretamente proporcionais e podemos multiplicar cruzado.\n\n5 ∙ 𝑥 = 13 ∙ 3 → 𝑥 = 39\n5 → 𝑥 = 7,8 ℎ𝑜𝑟𝑎𝑠\n\nVeja que o tempo necessário para completar as 13 tarefas será de 7,8 horas. Portanto, item correto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S01-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Simples",
+      "subtopico": "Regras de Três Simples - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2013,
+      "fonteProva": "Cebraspe/PRF/2013",
+      "tipo": "certo_errado",
+      "enunciado": "Considerando que uma equipe de 30 operários, igualmente produtivos, construa\numa estrada de 10 km de extensão em 30 dias, julgue o próximo item.\n\nSe, ao iniciar a obra, a equipe designada para a empreitada receber reforço de uma segunda equipe, com 90\noperários igualmente produtivos e desempenho igual ao dos operários da equipe inicial, então a estrada será\nconcluída em menos de 1/5 do tempo inicialmente previsto.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Estamos trabalhando, primordialmente, com duas grandezas: a quantidade de operários e o tempo\nnecessário para conclusão da estrada. Note que o tamanho da estrada não muda e, por isso, não a levaremos\nem consideração. Assim, podemos utilizar uma regra de três simples para resolver o problema.\n30 𝑜𝑝𝑒𝑟á𝑟𝑖𝑜𝑠 30 𝑑𝑖𝑎𝑠\n120 𝑜𝑝𝑒𝑟á𝑟𝑖𝑜𝑠 𝑥 𝑑𝑖𝑎𝑠\n\nPerceba que uma equipe de 90 operários se juntou a equipe inicial , totalizando 120 operários . Ademais,\nnote que quanto maior o número de operários, menor será o tempo necessário para terminar a obra. Dessa\nforma, estamos lidando com grandezas inversamente proporcionais . Nessa situação, não multiplicamos\ncruzado, mas sim, diretamente.\n\n120 ∙ 𝑥 = 30 ∙ 30 → 𝑥 = 900\n120 → 𝑥 = 7,5 𝑑𝑖𝑎𝑠\n\nObserve que 7,5 dias corresponde a 1/4 do tempo previsto. Sendo 1/4 > 1/5, então o tempo necessário para\na conclusão da estrada será maior que 1/5 do tempo inicialmente previsto.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/CAU BR/2024",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de regra de três, julgue o item subsequente.\n\nEm uma empresa, uma equipe de 16 funcionários leva 9 dias para realizar uma tarefa, trabalhando 6 horas\npor dia. Em certa ocasião, alguns funcionários entraram de férias e o restante da equipe realizou a tarefa em\n12 dias, trabalhando 8 horas por dia. Nessa situação, conclui-se que 7 funcionários entraram de férias nessa\nocasião.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Questão bem típica de regra de três composta! Vamos organizar as informações em uma tabela.\n\nFuncionários Tempo (dias) Jornada (h/dia)\n16 9 6\nx 12 8\n\nAgora, vamos definir quemé inversamente ou diretamente proporcional ao número de funcionários.\n\nQuanto maior o número de funcionários , menoré o tempo para re alizar a tarefa, considerada man tida\nconstante a jornada. Sendo assim, são grandezas inversamente proporcionais.\n\nFuncionários Tempo (dias) Jornada (h/dia)\n16 9 6\nx 12 8\n\nQuanto maior o número de funcionários, menoré a jornada diária necessária para realizar a tarefa em um\ndeterminado período. Logo, também temos duas grandezas inversamente proporcionais.\n\nFuncionários Tempo (dias) Jornada (h/dia)\n16 9 6\nx 12 8\n\nAgora, vamos equacionar o problema.\n\n16\n𝑥 = 𝟏𝟐\n𝟗 ⋅ 𝟖\n𝟔 → 2\n𝑥 = 2\n9 → 𝑥 = 9\n\nCom isso, concluímos que 9 (nove) funcionários estavam trabalhando e, consequentemente, 7 (s ete)\nfuncionários estavam de férias.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Pref. Joinville/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Os 4 empregados de uma oficina de bicicleta trabalham, em média, 6 h\npor dia, 5 dias por semana, e consertam, em média, 30 bicicletas por semana. Se o dono da oficina citada\nno texto aumentar o número de empregados para 9, mas diminuir o número de horas trabalhadas por dia\npara 4 h, sem alterar o número de dias trabalhados, o número médio de bicicletas consertadas por semana\nserá",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "inferior a 43.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "superior a 56.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "superior a 44 e inferior a 47.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "superior a 48 e inferior a 51.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "superior a 52 e inferior a 55.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos relacionar o número de empregados, a jornada diária e a quantidade média de bicicletas consertadas.\n\nBicicletas Empregados Jornada (h/dia)\n30 4 6\nx 9 4\n\nQuanto maior o número de bicicl etas, maioré quantidade de empregados necessária para consertá -las,\nconsiderando uma jornada fixa. Logo, são grandezas diretamente proporcionais.\n\nBicicletas Empregados Jornada (h/dia)\n30 4 6\nx 9 4\n\nQuanto maior o número de bicicletas, maioré a jornada diária necessária para co nsertá-las, considerando\num número fixo de empregados. Logo, também são grandezas diretamente proporcionais.\n\nBicicletas Empregados Jornada (h/dia)\n30 4 6\nx 9 4\n\nAgora, vamos equacionar o problema!\n\n30\n𝑥 = 4\n9 ⋅ 6\n4 → 5\n𝑥 = 1\n9 → 𝒙 = 𝟒𝟓",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/Itaipu/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se 4 engenheiros levam 3 horas para realizar a manutenção preventiva em 2\nunidades geradoras de Itaipu, então, mantendo -se essa proporção, 3 engenheiros realizariam a\nmanutenção preventiva em 20 unidades geradoras em",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "60 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "45 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "40 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "30 horas.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "15 horas.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "Vamos organizar as informações fornecidas em uma tabela!\n\nTempo (h) Engenheiros Unidades Geradoras\n3 4 2\nx 3 20\n\nQuanto maior o tempo disponível, menoré a quantidade de engenheiros necessária para a manutenção de\num determinado número de unidades geradoras. Logo, podemos concluir que são grandezas inversamente\nproporcionais.\n\nTempo (h) Engenheiros Unidades Geradoras\n3 4 2\nx 3 20\n\nQuanto maior o tem po disponível, maioré q uantidade de unidades geradoras que passarão por\nmanutenção, considerando fixo os engenheiros. Logo, são grandezas diretamente proporcionais.\n\nTempo (h) Engenheiros Unidades Geradoras\n3 4 2\nx 3 20\n\nAgora, podemos equacionar.\n\n3\n𝑥 = 3\n4 ⋅ 2\n20 → 1\n𝑥 = 1\n40 → 𝒙 = 𝟒𝟎",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/PC PE/2024",
+      "tipo": "multipla_escolha",
+      "enunciado": "Se, em uma delegacia, 6 servidores de plantão atendem 28 pessoas em 8 horas,\nentão, para que 42 pessoas sejam atendidas em 6 horas durante um plantão nessa delegacia, a quantidade\nde servidores disponíveis deverá ser igual a",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "7.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "8.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "10.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "12.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "14.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Mais uma vez, vamos começar organizando as informações!\n\nServidores Pessoas Atendidas Tempo (h)\n6 28 8\nx 42 6\n\nQuanto maior a quantidade de servidore s, maior o número de pessoas atendidas em um determinado\ntempo. Logo, são grandezas diretamente proporcionais!\n\nServidores Pessoas Atendidas Tempo (h)\n6 28 8\nx 42 6\n\nQuanto maior a quantidade de servidores, menoré o tempo nec essário para atender uma determinada\nquantidade de pessoas. Logo, são grandezas inversamente proporcionais.\n\nServidores Pessoas Atendidas Tempo (h)\n6 28 8\nx 42 6\n\nAgora, podemos equacionar:\n\n6\n𝑥 = 28\n42 ⋅ 6\n8 → 1\n𝑥 = 7\n84 → 𝒙 = 𝟏𝟐",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/CNJ/2024",
+      "tipo": "certo_errado",
+      "enunciado": "Em determinadoórgão público, 10 servidores, trabalhando 8 horas por dia,\natendem em média 300 pessoas por semana. A idade média desses servidoresé 40 anos. Para se somar a\n\nesse efetivo de atendimento ao público, foram contratados 6 novos servidores. A partir da situação\nhipotética apresentada, julgue os itens a seguir.\n\nSe, após a contração dos 6 novos servidores, cada servidor trabalhar 5 horas por dia, a quantidade de pessoas\natendidas por semana permanecerá igual a 300.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Para resolver essa questão, utilizaremos uma regra de três composta. Observe que temos que relacionar três\ngrandezas: o número de servidores, a jornada diária e a quantidade de atendimentos por semana. Sendo\nassim, podemos preparar a seguinte tabela:\n\nAtendimentos Servidores Jornada\n300 10 8\nx 16 5\n\nAgora, vamos definir quemé diretamente ou inversamente proporcional ao número de atendimentos.\n\n- Quanto maior o número de atendimentos por semana, maioré a quantidade de servidores necessária para\nsuprir a demanda, mantida a jornada de trabalho. Sendo assim, temos aí duas grandezas diretamente\nproporcionais.\n\n- Quanto maior o número de atendimentos por semana, maioré a jornada diária necessária para suprir a\ndemanda, mantido o número de servidores. Logo, também são grandezas diretamente proporcionais.\n\nCom isso, podemos deixar nossa tabela esquematizada assim:\n\nAtendimentos Servidores Jornada\n300 10 8\nx 16 5\n\nJá com a tabela esquematizada, podemos equacionar o problema:\n\n300\n𝑥 = 10\n16 ⋅ 8\n5 → 300\n𝑥 = 1\n1 → 𝑥 = 300\n\nObserve que a quantidade de atendimentos continua a mesma! Logo, o item está correto!",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonteProva": "Cebraspe/CNJ/2024",
+      "tipo": "certo_errado",
+      "enunciado": "No gráfico precedente, é mostrada a frequência diária do número de pessoas que comparecem, na maior\nparte dos dias da semana, a uma secretaria de atendimento ao público, onde uma equipe de cinco\nservidores digitaliza 3.500 páginas de documentos em 7 horas de trabalho . A partir dessas informações,\njulgue os itens seguintes.\n\nSe um novo servidor, com a mesma eficiência dos outros cinco servidores, integrar a equipe da secretaria\npara realizar o mesmo trabalho de digitalização, então a quantidade de páginas de documentos digitalizadas\npelos seis servidores em 6 horas de trabalho aumentará menos de 25%.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Inicialmente, vamos esquematizar uma tabela com as informações repassadas pelo enunciado.\n\nPáginas Servidores Jornada\n3500 5 7\nx 6 6\n\nAgora, devemos determinar se as grandezas são diretamente ou inversamente proporcionais ao número de\npágina digitalizadas. Para isso, fazemos:\n\n- Quanto maior a quantidade de páginas digitalizadas, maioré a quantidade de servidores para realizarem\nessa demanda, mantido o tempo de trabalho. Logo, são grandezas diretamente proporcionais.\n\n- Da mesma forma, quanto maior a quantidade de páginas digitalizadas, também será necessário um\naumento na jornada de trabalho para que a demanda seja atendida, mantida a quantidade de servidores.\nLogo, também são grandezas diretamente proporcionais.\n\nCom isso, podemos finalizar nossa tabela dessa forma:\n\nPáginas Servidores Jornada\n3500 5 7\nx 6 6\n\nCom a tabela esquematizada, vamos equacionar o problema:\n\n3500\n𝑥 = 5\n6 ⋅ 7\n6 → 3500\n𝑥 = 35\n36 → 𝑥 = 3600\n\nPercebemos que, com o aumento de um servidor na equipe e a redução de uma hora na jornada, a\nquantidade de páginas digitalizadas aumenta 100. Essaé uma quantidade muito inferior a 25%.\n\n100\n3500 = 0,0285 = 2,85%",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2023,
+      "fonteProva": "Cebraspe/FNDE/2023",
+      "tipo": "certo_errado",
+      "enunciado": "Uma equipe composta por oito especialistas ficou responsável por analisar as\nvárias demandas por recursos financeiros de determinada região brasileira. Verificou -se, por meio de\nanálise de desempenho, que essa equipe tem a capacidade de concluir a análise de 15 demandas em um\nperíodo de 5 diasúteis, trabalhando 6 horas por dia. Considerando essas condições, julgue o item\nsubsequente.\n\nCaso a equipe seja acrescida de 2 especialistas que têm a mesma capacidade produtiva dos 8 integrantes\noriginais, passando a ser composta por 10 membros, e passe a trabalhar somente 4 horas por dia, então, ao\ntrabalhar durante 8 diasúteis, a equipe aumentada concluirá a análise de, pelo menos, 22 demandas.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Vamos relacionar: a quantidade de especialistas, a quantidade de demandas, o período e a jornada diária.\nSendo assim, precisamos organizar uma tabela com as informações do texto e do item.\n\nDemanda Especialistas Período Jornada\n15 8 5 6\n𝑥 10 8 4\n\nPara avaliar o item, vamos verificar se o \"x\" bate com as 22 demandas que o item fala. Sendo assim, vamos\nverificar quemé diretamente ou inversamente proporcional a \"demanda\".\n\nQuanto maior a demanda, maior a quantidade de especialistas necessária para terminar a análise no mesmo\nperíodo e com a mesma jornada. Logo, são grandezas diretamente proporcionais.\n\nDemanda Especialistas Período Jornada\n15 8 5 6\n𝑥 10 8 4\n\nQuanto maior a demanda, maioré o período necessário para terminar a análise, considerando constante a\nquantidade de especialistas e a jornada. Logo, também duas grandezas diretamente proporcionais.\n\nDemanda Especialistas Período Jornada\n15 8 5 6\n𝑥 10 8 4\n\nQuanto maior a demanda, maior a jornada necessária para terminar de analisá-la, mantidos os especialistas\ne o período. Logo, também são grandezas diretamente proporcionais.\n\nDemanda Especialistas Período Jornada\n15 8 5 6\n𝑥 10 8 4\n\nCom a tabela esquematizada, vamos equacionar.\n\n15\n𝑥 = 8\n10 ⋅ 5\n8 ⋅ 6\n4 → 15\n𝑥 = 3\n4 → 𝑥 = 20\n\nO item está errado, já que, nas condições dadas, a quantidade de demandas concluídas aumentará para 20.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/IBAMA/2022",
+      "tipo": "certo_errado",
+      "enunciado": "A respeito de conceitos de matemática financeira, julgue o item a seguir.\n\nSe, em uma fazenda, 6 macacos consomem 45 kg de frutas em 5 dias, cada um deles consumindo a mesma\nquantidade, então 14 macacos consumirão 189 kg de frutas em 9 dias.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Questão para utilizarmos uma regra de três composta! Primeiramente, note que temos três grandezas para\nrelacionarmos: o número de macacos, a massa de frutas e a quantidade de dias. Dito isso, vamos organizar\nas informações do enunciado em uma tabela.\n\nMacacos Frutas (kg) Tempo (dias)\n6 45 5\n𝑥 189 9\n\nPara avaliar o item, vamos ver se o \"x\" bate com os 14 macacos . Agora, devemos verificar se \"frutas\" e\n\"tempo\" são grandezas diretamente ou inversamente proporcionais a quantidade de macacos.\n\nQuanto maior o número de macacos, maioré a massa de frutas que irão consumir em um determinado\ntempo. Com isso, podemos concluir que são grandezas diretamente proporcionais.\n\nMacacos Frutas (kg) Tempo (dias)\n6 45 5\n𝑥 189 9\n\nQuanto maior o número de macacos, por menos dias durará uma determinada quantidade de frutas. Com\nisso, podemos concluir que são grandezas inversamente proporcionais.\n\nMacacos Frutas (kg) Tempo (dias)\n6 45 5\n𝑥 189 9\n\nCom a tabela pré-esquematizada, vamos equacionar o problema.\n\n6\n𝑥 = 45\n189 ∙ 9\n5 → 6\n𝑥 = 9\n21 → 2\n𝑥 = 1\n7 → 𝑥 = 14",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2022,
+      "fonteProva": "Cebraspe/IBAMA/2022",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, com base em conhecimentos da matemática.\n\nConsidere que 9 biólogos cataloguem asárvores de uma floresta em 8 dias, trabalhando 5 horas por dia.\nNesse caso, 15 biólogos, trabalhando 6 horas por dia, concluirão o mesmo trabalho de catalogação em 3\ndias.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Mais uma questão bem recente do Cebraspe sobre regra de três composta. Dessa vez, temos também três\ngrandezas a serem relacionadas: o número de biólogos, a jornada diária e a quantidade de dias . Com isso\nem mente, vamos organizar aquela tabela bizurada para nos ajudar a resolver o problema.\n\nBiólogos Jornada\n(horas) Tempo (dias)\n9 5 8\n𝑥 6 3\n\nConseguiremos avaliar o item, ao verificar se o \"x\" bate com os 15 biólogos. Para essa tarefa, devemos\ninicialmente definir quais grandezas são diretamente ou inversamente proporcionais a quantidade de\nbiólogos (queé nossa grandeza referência, é uma escolha).\n\nQuanto maior o número de biólogos, menoré a jornada necessária para catalogar determinada quantidade\ndeárvores. Com isso, podemos concluir que são grandezas inversamente proporcionais.\n\nBiólogos Jornada\n(horas) Tempo (dias)\n9 5 8\n𝑥 6 3\n\nQuanto maior o número de biólogos, menoré o tempo necessário para catalogar asárvores, mantida a\njornada diária. Portanto, também são grandezas inversamente proporcionais.\n\nBiólogos Jornada\n(horas) Tempo (dias)\n9 5 8\n𝑥 6 3\n\nCom a tabela pré-esquematizada, vamos equacionar o problema.\n\n9\n𝑥 = 6\n5 ∙ 3\n8 → 1\n𝑥 = 1\n20 → 𝑥 = 20\n\nOlha aí! Serão necessários 20 biólogos para fazer a catalogação dasárvores trabalhando 6 horas por dia por\n3 dias. Logo, o item encontra-se errado pois disse que era apenas 15.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2019,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2019",
+      "tipo": "multipla_escolha",
+      "enunciado": "Em uma fábrica de doces, 10 empregados igualmente eficientes, operando\n3 máquinas igualmente produtivas, produzem, em 8 horas por dia, 200 ovos de Páscoa. A demanda da\nfábrica aumentou para 425 ovos por dia. Em razão dessa demanda, a fábrica adquiriu mais uma máquina,\nigual às antigas, e contratou mais 5 empregados, tão eficientes quanto os outros 10. Nessa situação, para\natender à nova demanda, os 15 empregados, operando as 4 máquinas, deverão trabalhar durante",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "8 horas por dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "8 horas e 30 minutos por dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "8 horas e 50 minutos por dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "9 horas e 30 minutos por dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "9 horas e 50 minutos por dia.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "B",
+      "explicacao": "Pessoal, percebam queé uma questão típica de regra de três composta. Como vimos na teoria, o primeiro\npassoé organizar as informações do enunciado em uma tabela.\n\nHoras Ovos Máquinas Empregados\n8 200 3 10\n𝑥 425 4 15\n\nOk! Com a tabela criada, vamos descobrir quais são as grandezas direta ou inversamente proporcionais ao\nnúmero de horas trabalhadas.\n\nNote que se os empregadores trabalharem mais horas por dia, mais ovos serão produzidos. São, portanto,\ngrandezas diretamente proporcionais.\n\nHoras Ovos Máquinas Empregados\n8 200 3 10\n𝑥 425 4 15\n\nNote que se há mais máquinas trabalhando, então menos horas de trabalho serão necessárias para produzir\na mesma quantidade de ovos. Concorda? Sendo assim, são grandezas inversamente proporcionais.\n\nHoras Ovos Máquinas Empregados\n8 200 3 10\n𝑥 425 4 15\n\nPor fim, se há mais empregados trabalhando, também serão necessárias menos horas de trabalho. Dessa\nforma, essas duas grandezas são inversamente proporcionais.\n\nHoras Ovos Máquinas Empregados\n8 200 3 10\n𝑥 425 4 15\n\nCom essas informações em mente, vamos escrever a equação relativa ao problema.\n\n8\n𝑥 = 200\n425 ∙ 4\n3 ∙ 15\n\n49\n\nVeja que, nas grandezas inversamente proporcionais, a fração foi invertida . Agora, basta resolvermos a\nexpressão.\n\n8\n𝑥 = 200\n425 ∙ 4\n3 ∙ 15\n10 → 8\n𝑥 = 8\n17 ∙ 4\n3 ∙ 3\n2 → 1\n𝑥 = 2\n17 → 𝑥 = 8,5 ℎ𝑜𝑟𝑎𝑠\n\nMuito cuidado na hora de finalizar a questão! 8,5 horas não são 8 horas e 50 minutos! 8,5 equivale a 8 horas\n+ 0,5 de hora (queé 30 minutos!!). Logo, serão necessárias 8 horas e 30 minutos de trabalho por dia.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/EMAP/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Os operadores dos guindastes do Porto de Itaqui são todos igualmente\neficientes. Em umúnico dia, seis desses operadores, cada um deles trabalhando durante 8 horas, carregam\n12 navios. Com referência a esses operadores, julgue o item seguinte.\n\nEm um mesmo dia, 8 desses operadores, trabalhando durante 7 horas, carregam mais de 15 navios.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Opa, percebam agora que ele variou tudo ! O número de operadores também mudou! Como vamos\nrelacionar mais de dois parâmetros? Umaótima maneira de fazer issoé por meio de uma regra de três\ncomposta. Com isso em mente, vamos desenhar a tabela para nos organizar.\n\nNavios Operadores Horas\n12 6 8\n𝑥 8 7\n\nVeja que quando 6 operadore s trabalham 8 horas, eles conseguem carregar 12 navios. Aumentando o\nnúmero de operadores para 8 e diminuindo a quantidade de horas trabalhadas para 7, quantos navios são\ncarregados? Para começar a responder isso, vamos verificar quais grandezas são diretamente ou\ninversamente proporcionais a quantidade de navios carregados.\n\nVocê concorda que quanto mais operadores trabalharem, mais navios vão ser carregados? Logo, são duas\ngrandezas diretamente proporcionais.\n\nNavios Operadores Horas\n12 6 8\n𝑥 8 7\n\nDo mesmo modo, quando aumentamos o número de horas trabalhadas, também será possível carregar\nmais navios. Logo, são grandezas diretamente proporcionais.\n\nNavios Operadores Horas\n12 6 8\n𝑥 8 7\n\nAgora, basta escrevermos a equação.\n\n12\n𝑥 = 6\n8 ∙ 8\n7 → 𝒙 = 𝟏𝟒 𝒏𝒂𝒗𝒊𝒐𝒔",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/BNB/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Todos os caixas de uma agência bancária trabalham com a mesma eficiência: 3\ndesses caixas atendem 12 clientes em 10 minutos.\n\nNessa situação, 5 desses caixas atenderão 20 clientes em menos de 10 minutos.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Temos três grandezas para relacionar: número de caixas, número de clientes e tempo. Nessas situações,\nsabemos que uma abordagem eficienteé usar a famosa regra de três composta. Para isso, o primeiro passo\né separar as informações do enunciado em uma tabela.\n\nTempo Caixas Clientes\n10 min 3 12\n𝑥 5 20\n\nQuanto maioré o número de caixas , menor será o tempo para atender a mesma quantidade de clientes,\nconcorda? Logo, são grandezas inversamente proporcionais.\n\nTempo Caixas Clientes\n10 min 3 12\n𝑥 5 20\n\nAgora, veja que quanto maioré o número de clientes , maior será o tempo de atendimento , dado uma\nmesma quantidade de caixas. Logo, número de clientes e o tempo são grandezas diretamente proporcionais.\n\nTempo Caixas Clientes\n10 min 3 12\n𝑥 5 20\n\n==5eb381==\n\nCom as proporcionalidades estabelecidas, escrevemos a equação.\n\n10\n𝑥 = 5\n3 ∙ 12\n20 → 𝒙 = 𝟏𝟎 𝐦𝐢𝐧𝐮𝐭𝐨𝐬\n\nVeja que o tempo necessário será exatamente de 10 minutos, assim como nas condições anteriores. Logo,\no item está errado por dizer que levará menos de 10 minutos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEFAZ-RS/2018",
+      "tipo": "multipla_escolha",
+      "enunciado": "Dois marceneiros e dois aprendizes, cada um trabalhando durante quatro\ndias, seis horas por dia, constroem três cadeiras e uma mesa. Os marceneiros trabalham com a mesma\neficiência, mas a eficiência dos aprendizesé igual a 75% da eficiência dos marceneiros. Para construir uma\nmesa, gasta-se 50% a mais de tempo que para construir uma cadeira. Nesse caso, para construírem doze\ncadeiras e duas mesas em oito dias, dois marceneiros e quatro aprendizes com eficiências iguais às\ndaqueles citados anteriormente devem trabalhar",
+      "contextoCompartilhado": "",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "4,2 h/dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "B",
+          "texto": "6 h/dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "C",
+          "texto": "6,3 h/dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "D",
+          "texto": "7 h/dia.",
+          "comentario": ""
+        },
+        {
+          "letra": "E",
+          "texto": "7,5 h/dia.",
+          "comentario": ""
+        }
+      ],
+      "respostaCorreta": "D",
+      "explicacao": "Eita, que enunciado em galera! Muita informaçãoé jogada e temos que relacionar tudo. Vamos com calma!\nA primeira informação que levaremos em contaé o fato de que os aprendizes possuem 75% da eficiência de\num marceneiro. Logo, podemos dizer que 1 aprendiz vale 0,75 marceneiro, e, portanto, 2 aprendizes valem\n1,5 marceneiro (em termos de eficiência).\n\nAssim, quando o enunciado diz que a equipeé formada por dois marceneiros e dois aprendizes, em termos\nde eficiência, temos 3,5 marceneiros. (Estamos fazendo isso para tirar os aprendizes da jogada e diminuir o\nnúmero de parâmetros - vamos escrever apenas como se fossem marceneiros!). Tudo bem até aqui?\n\nSe a próxima equipe tem dois marceneiros e quatro aprendizes, então, em termos de eficiência, teremos o\nequivalente a 5 marceneiros (faça 4 × 0,75 = 3).\n\nVeja que o tempo para construir uma mesaé 50% maior do que aquele para construir uma cadeira. Ora, em\ntermos práticos, isso significa que ele termina uma mesa no mesmo tempo que leva para fazer uma cadeira\ne meia!\n\nSendo assim, quando o enunciado diz que foram feitas 3 cadeiras e uma mesa, então, em termos temporais,\no tempo gasto foi igual ao tempo para construir 4,5 cadeiras! Lembre -se que uma mesa equivale a 1,5\ncadeiras.\n\nPessoal, estamos fazendo isso para tirar as mesas da jogada, queremos escrever tudo como se cadeiras\nfossem! Pois, diminuindo o número de parâmetros, facilitamos a nossa vida.\n\nSe a outra equipe, com mais pessoais trabalhando vão fazer doze cadeiras e duas mesas , em termos\ntemporais, isso equivale a 15 cadeiras (pois o tempo para produzir duas mesasé o mesmo que para fazer 3\ncadeiras).\n\nE aí, moçada? Se você chegou aqui, já está de parabéns! (rsrs) É uma questão um pouco chata mesmo!\nFicamos com quatro parâmetros: número de marceneiros, horas trabalhadas por dia, dias de trabalho e\nquantidade de móveis construídos. Vamos relacioná-los por meio de uma regra de três composta.\n\nHoras p/ Dia Marceneiros Dias de trabalho Qtd. de Móveis\n6 3,5 4 4,5\n𝑥 5 8 15\n\nCom nossa tabela criada, devemos ver quais parâmetros são diretamente ou inversamente proporcionais à\nquantidade de horas trabalhadas por dia.\n\nSe aumentamos o número de marceneiros , então o número de horas necessárias de trabalho diário será\nmenor. Assim, essas são grandezas inversamente proporcionais.\n\nHoras p/ Dia Marceneiros Dias de trabalho Qtd. de Móveis\n6 3,5 4 4,5\n𝑥 5 8 15\n\nQuanto maioré o número de dias trabalhados, menor será a quantidade necessária de horas trabalhadas\npor dia. Assim, essas são grandezas inversamente proporcionais.\n\nHoras p/ Dia Marceneiros Dias de trabalho Qtd. de Móveis\n6 3,5 4 4,5\n𝑥 5 8 15\n\nPor fim, quanto maior a quantidade de móveis que temos que produzir, maior será a quantidade de horas\nnecessárias por dia. Consequentemente, são grandezas diretamente proporcionais.\n\nHoras p/ Dia Marceneiros Dias de trabalho Qtd. de Móveis\n6 3,5 4 4,5\n𝑥 5 8 15\n\nBeleza, estamos quase lá! Agora, basta escrevermos a equação, com especial atenção de inverter as frações\ndaquelas grandezas que são inversamente proporcionais.\n\n6\n𝑥 = 5\n3,5 ∙ 8\n4 ∙ 4,5\n15 → 6\n𝑥 = 180\n210 → 𝑥 = 210\n30 → 𝒙 = 𝟕 𝒉/𝒅𝒊𝒂",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2018,
+      "fonteProva": "Cebraspe/SEDF/2018",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item a seguir, relativo a números naturais, números racionais e regra\nde três.\n\nSituação hipotética: Em uma empresa de TV a cabo, 12 técnicos que trabalham no mesmo ritmo, 6 horas\npor dia, atendem toda a demanda de reparo e instalação solicitada pelos clientes diariamente. Entretanto,\ndevido a uma promoção, a demanda dobrou e a empresa passou a estipular que todos os técnicos\ntrabalhassem por 8 horas diárias.\n\nAssertiva: Nessa situação, para atender totalmente à nova demanda, serão necessários, pelo menos, 8 novos\ntécnicos que trabalhem no mesmo ritmo que os demais.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Temos três grandezas para relacionar: número de técnicos, horas de trabalho por dia e a demanda. Trata-se\nde uma questão de regra de três composta.\n\nTécnicos Demanda Horas\n12 D 6\n𝑥 2D 8\n\nVeja que não temos valores quantitativos de demanda, sabemos apenas que ela dobrou. Vamos chamar a\ndemanda de D. Se ela dobra, então ficamos com 2D. Tudo bem? Agora, devemos descobrir quais grandezas\nsão diretamente ou inversamente proporcionais ao número de técnicos.\n\nPrimeiro, note que se ocorre um aumento na demanda, mais técnicos serão necessários. Portanto, trata-se\nde duas grandezas diretamente proporcionais.\n\nTécnicos Demanda Horas\n12 D 6\n𝑥 2D 8\n\nPor fim, veja que quanto maioré o número de horas trabalhados por dia, menor será a quantidade\nnecessária de técnico. Nesse caso, temos grandezas inversamente proporcionais.\n\nTécnicos Demanda Horas\n12 D 6\n𝑥 2D 8\n\nCom esses fatos esclarecidos, podemos escrever a equação.\n\n12\n𝑥 = 𝐷\n2𝐷 ∙ 8\n6 → 𝑥 = 72\n4 → 𝒙 = 𝟏𝟖 técnicos\n\nComo 18 técnicos são necessários para atender essa demanda, devem ser contratados apenas 6 novos\ntécnicos.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    },
+    {
+      "id": "PCAL-RLM-11-S02-015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "raciocinio_logico_matematico",
+      "topicoEditalId": "rlm_3",
+      "subtopic_id": "rlm_3",
+      "assunto": "Regras de Três Composta",
+      "subtopico": "Regras de Três Composta - Cebraspe",
+      "microtopico": "",
+      "banca": "CEBRASPE",
+      "ano": 2016,
+      "fonteProva": "Cebraspe/TCE-PA/2016",
+      "tipo": "certo_errado",
+      "enunciado": "Suponha que o tribunal de contas de determinado estado disponha de 30\ndias para analisar as contas de 800 contratos firmados pela administração. Considerando que essa análise\né necessária para que a administração pública possa programar o orç amento do próximo ano e que o\nresultado da análise deve ser a aprovação ou rejeição das contas, julgue o item a seguir.\n\nSuponha que tenham sido designados 10 analistas do tribunal para analisar todos os contratos. Se cada\nanalista levar 5 dias para analisar um contrato, os 800 contratos serão analisados em 30 dias.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "Nessa questão, temos que relacionar três quantidades: o número de analistas, de contratos e de dias .\nQuando temos esse estilo de problema, em que precisamos relacionar mais de dois parâmetros, a regra de\ntrês compostaé muito bem-vinda. Para aplicá-la, precisamos desenvolver uma tabela.\n\nAnalistas Contratos Dias\n1 1 5\n10 800 x\n\nNa primeira linha, temos que 1 analista analisa 1 contrato em 5 dias. Na segunda, 10 analistas analisam 800\ncontratos em x dias . Queremos determinar a incógnita x para avaliar se os 30 dias do enunciadoé uma\ninformação correta . Ademais, devemos analisar quais das grandezas são diretamente ou inversamente\nproporcionais à quantidade de dias.\n\nSe aumentarmos o número de analistas, note que a quantidade de dias que será necessária para analisar\numa determinada quantidade de processos irá diminuir . Portanto, são grandezas inversamente\nproporcionais.\n\nAnalistas Contratos Dias\n1 1 5\n10 800 x\n\nSe aumentarmos o número de contratos a serem analisados, maior será a quantidade de dias necessária\npara analisar todos esses contratos. Assim, podemos dizer que são grandezas diretamente proporcionais.\n\nAnalistas Contratos Dias\n1 1 5\n10 800 x\n\nCom a tabela esquematizada, podemos escrever a equação.\n\n5\n𝑥 = 𝟏𝟎\n𝟏 ∙ 1\n800 → 5\n𝑥 = 1\n80 → 𝒙 = 𝟒𝟎𝟎 𝒅𝒊𝒂𝒔\n\nVeja que, na verdade, são necessários 400 dias para realizar a tarefa ! Diferente dos 30 dias do enunciado.\nPortanto, item errado.",
+      "status": "revisada",
+      "versao": 1,
+      "dificuldade": "",
+      "pegadinhaDaBanca": "",
+      "metadata": {
+        "mappedTopicoEditalId": "rlm_3",
+        "disciplinaCurta": "rlm",
+        "organizadoEm": "2026-07-21T02:11:29.722Z",
+        "origemImport": "ATUALIZACOES-DE-VISUAL\\atualizacao-20-07\\banco-organizado\\por-subtopico\\raciocinio_logico_matematico\\rlm_3.json"
+      }
+    }
+  ]
+}
