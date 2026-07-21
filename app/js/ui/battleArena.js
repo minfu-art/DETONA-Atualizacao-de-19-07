@@ -414,18 +414,27 @@ function showCritical(stage) {
   setTimeout(() => c.remove(), 900);
 }
 
+/** Personagens de reação: joinha = acerto, dedo em riste = erro */
+const BATTLE_REACT = Object.freeze({
+  correct: 'assets/ui/battle-react-correct.png?v=1',
+  wrong: 'assets/ui/battle-react-wrong.png?v=1',
+});
+
 function renderBattleFeedback(result, explanation, confidence) {
   const correct = result.correct;
   const attention = confidence === 'low';
+  const reactSrc = correct ? BATTLE_REACT.correct : BATTLE_REACT.wrong;
   return `
     <section class="battle-feedback battle-feedback--${correct ? 'correct' : 'wrong'}" aria-label="${correct ? 'Resposta correta' : 'Resposta errada'}">
       <header class="battle-feedback__header">
-        <span class="battle-feedback__mark" aria-hidden="true">${icon(correct ? 'checkCircle' : 'target')}</span>
-        <div>
+        <div class="battle-feedback__copy">
           <span>${correct ? 'Resposta correta' : 'Resposta incorreta'}</span>
-          <h2>${correct ? 'Boa leitura. Continue avançando.' : 'Transforme o erro em aprendizado.'}</h2>
+          <h2>${correct ? 'Muito bom! Continue avançando.' : 'Transforme o erro em aprendizado.'}</h2>
+          ${attention ? '<span class="battle-feedback__attention">Em dúvida</span>' : ''}
         </div>
-        ${attention ? '<span class="battle-feedback__attention">Em dúvida</span>' : ''}
+        <div class="battle-feedback__react" aria-hidden="true">
+          <img src="${reactSrc}" alt="" width="160" height="160" decoding="async" />
+        </div>
       </header>
       <div class="battle-learning">
         <span class="battle-learning__kicker">Explicação</span>
