@@ -6,7 +6,7 @@ import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/mem
 import { createBattleSession } from '../core/battle.js?v=69';
 import { SFX } from '../core/audio.js';
 import { enemyImgHtml } from './enemyAssets.js';
-import { icon, discIcon } from './icons.js?v=67';
+import { icon, discIcon, semanticIcon } from './icons.js?v=67';
 import { averageSubtopicMastery } from '../core/mastery.js';
 import { isDeveloperUser } from '../auth/authService.js';
 
@@ -87,58 +87,91 @@ export async function renderWorldMap(root, navigate, ctx) {
     });
   }
 
+  async function startQuestions(sid) {
+    const session = await createBattleSession(sid);
+    if (!session?.questions?.length) {
+      throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
+    }
+    ctx.battleSession = session;
+    closeModal();
+    navigate('battle');
+  }
+
   async function openPrep(sid) {
-    const sub = subtopics.find((s) => s.id === sid);
-    if (!sub) return;
-    const nq = counts[sid] || 0;
-    const armed = nq >= MIN_QUESTIONS_BATTLE;
-    const temp = sub.memory_temperature || computeMemoryTemperature(sub.last_studied_at);
-    const st = effectiveStars(sub);
-
-    openModal(
-      'Preparação para questões',
-      `
-        <div class="prep-enemy">${enemyImgHtml(sub.enemy_sprite, { size: 'lg' })}</div>
-        <p class="text-center prep-enemy-name">${escapeHtml(sub.name)}</p>
-        <p class="muted text-center mb-8">Desafio: ${escapeHtml(sub.enemy_name)}</p>
-        <div class="bar-label"><span>Melhor acurácia</span><span>${sub.best_accuracy || 0}%</span></div>
-        <div class="bar-track mb-8"><div class="bar-fill xp" style="width:${sub.best_accuracy || 0}%"></div></div>
-        <div class="mastery-stars-result">
-          <strong>Melhor resultado</strong>
-          ${starsHtml(st)}
-          <small>${formatStars(st)} / 5 estrelas · ${tempLabel(temp)}</small>
-        </div>
-        <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${nq}</p>
-        ${!armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
-          ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
-          : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
-      `,
-      `
-        <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
-        ${armed
-          ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
-          : developer
-            ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
-            : ''}
-      `
-    );
-
-    $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
-    $('#m-forge')?.addEventListener('click', () => { SFX.click(); closeModal(); navigate('forge'); });
-    $('#m-fight')?.addEventListener('click', async () => {
-      SFX.click();
-      try {
-        const session = await createBattleSession(sid);
-        if (!session?.questions?.length) {
-          throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
-        }
-        ctx.battleSession = session;
-        closeModal();
-        navigate('battle');
-      } catch (e) {
-        toast(e.message || 'Falha ao iniciar as questões.');
+    try {
+      const sub = subtopics.find((s) => s.id === sid);
+      if (!sub) {
+        toast('Subtópico não encontrado.');
+        return;
       }
-    });
+      const nq = counts[sid] || 0;
+      const armed = nq >= MIN_QUESTIONS_BATTLE;
+      const temp = sub.memory_temperature || computeMemoryTemperature(sub.last_studied_at);
+      const st = effectiveStars(sub);
+
+      // Com banco armado, entra direto nas questões (comportamento esperado no mapa)
+      if (armed) {
+        try {
+          toast('Carregando questões…');
+          await startQuestions(sid);
+          return;
+        } catch (e) {
+          // se falhar o atalho, mostra o modal com detalhes
+          console.warn('[map] startQuestions failed', e);
+        }
+      }
+
+      openModal(
+        'Preparação para questões',
+        `
+          <div class="prep-enemy">${enemyImgHtml(sub.enemy_sprite, { size: 'lg' })}</div>
+          <p class="text-center prep-enemy-name">${escapeHtml(sub.name)}</p>
+          <p class="muted text-center mb-8">Desafio: ${escapeHtml(sub.enemy_name)}</p>
+          <div class="bar-label"><span>Melhor acurácia</span><span>${sub.best_accuracy || 0}%</span></div>
+          <div class="bar-track mb-8"><div class="bar-fill xp" style="width:${sub.best_accuracy || 0}%"></div></div>
+          <div class="mastery-stars-result">
+            <strong>Melhor resultado</strong>
+            ${starsHtml(st)}
+            <small>${formatStars(st)} / 5 estrelas · ${tempLabel(temp)}</small>
+          </div>
+          <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${nq}</p>
+          ${!armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
+            ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
+            : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
+        `,
+        `
+          <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
+          ${armed
+            ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
+            : developer
+              ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
+              : ''}
+        `
+      );
+
+      $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
+      $('#m-forge')?.addEventListener('click', () => { SFX.click(); closeModal(); navigate('forge'); });
+      $('#m-fight')?.addEventListener('click', async () => {
+        SFX.click();
+        const btn = $('#m-fight');
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = 'Carregando questões…';
+        }
+        try {
+          await startQuestions(sid);
+        } catch (e) {
+          toast(e.message || 'Falha ao iniciar as questões.');
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = `${semanticIcon('focus', 'ico--inline')} Iniciar questões`;
+          }
+        }
+      });
+    } catch (err) {
+      console.error('[map] openPrep', err);
+      toast(err?.message || 'Não foi possível abrir este subtópico.');
+    }
   }
 
   paint();

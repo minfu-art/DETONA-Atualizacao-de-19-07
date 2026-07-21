@@ -10,7 +10,7 @@ import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/mem
 import { createBattleSession } from '../core/battle.js?v=69';
 import { SFX } from '../core/audio.js';
 import { enemyImgHtml } from './enemyAssets.js';
-import { icon, discIcon } from './icons.js?v=67';
+import { icon, discIcon, semanticIcon } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { averageSubtopicMastery } from '../core/mastery.js';
 import { isDeveloperUser } from '../auth/authService.js';
@@ -157,70 +157,91 @@ export async function renderTopicTree(root, navigate, ctx) {
     });
   });
 
-  async function openPrep(sid) {
-    const node = nodes.find((n) => n.sub.id === sid);
-    if (!node || !node.unlocked) {
-      toast('Nó bloqueado — conquiste estrelas no anterior');
-      return;
+  async function startQuestions(sid) {
+    const session = await createBattleSession(sid);
+    if (!session?.questions?.length) {
+      throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
     }
-    const sub = node.sub;
-    openModal(
-      'Preparação para questões',
-      `
-        <div class="prep-enemy">${enemyImgHtml(sub.enemy_sprite, { size: 'lg' })}</div>
-        <p class="text-center prep-enemy-name">${escapeHtml(sub.enemy_name)}</p>
-        <p class="muted text-center mb-8">${escapeHtml(sub.name)}</p>
-        <div class="mastery-stars-result">
-          <strong>Melhor resultado</strong>
-          ${starsHtml(node.stars)}
-          <small>${formatStars(node.stars)} / 5 estrelas · ${sub.best_accuracy || 0}%</small>
-        </div>
-        <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${node.nq}</p>
-        ${!node.armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
-          ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
-          : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
-        ${node.mastered ? '<p class="text-center mt-8" style="color:var(--ok)">Subtópico dominado (3★+) — continue praticando para consolidar</p>' : ''}
-      `,
-      `
-        <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
-        ${node.armed
-          ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
-          : developer
-            ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
-            : ''}
-      `
-    );
+    ctx.battleSession = session;
+    ctx.returnToTree = discId;
+    closeModal();
+    navigate('battle');
+  }
 
-    $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
-    $('#m-forge')?.addEventListener('click', () => {
-      SFX.click();
-      closeModal();
-      navigate('forge');
-    });
-    $('#m-fight')?.addEventListener('click', async () => {
-      SFX.click();
-      const btn = $('#m-fight');
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = 'Carregando questões…';
+  async function openPrep(sid) {
+    try {
+      const node = nodes.find((n) => n.sub.id === sid);
+      if (!node || !node.unlocked) {
+        toast('Nó bloqueado — conquiste estrelas no anterior');
+        return;
       }
-      try {
-        const session = await createBattleSession(sid);
-        if (!session?.questions?.length) {
-          throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
+      const sub = node.sub;
+
+      // Com banco armado, entra direto nas questões
+      if (node.armed) {
+        try {
+          toast('Carregando questões…');
+          await startQuestions(sid);
+          return;
+        } catch (e) {
+          console.warn('[tree] startQuestions failed', e);
         }
-        ctx.battleSession = session;
-        ctx.returnToTree = discId;
+      }
+
+      openModal(
+        'Preparação para questões',
+        `
+          <div class="prep-enemy">${enemyImgHtml(sub.enemy_sprite, { size: 'lg' })}</div>
+          <p class="text-center prep-enemy-name">${escapeHtml(sub.enemy_name)}</p>
+          <p class="muted text-center mb-8">${escapeHtml(sub.name)}</p>
+          <div class="mastery-stars-result">
+            <strong>Melhor resultado</strong>
+            ${starsHtml(node.stars)}
+            <small>${formatStars(node.stars)} / 5 estrelas · ${sub.best_accuracy || 0}%</small>
+          </div>
+          <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${node.nq}</p>
+          ${!node.armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
+            ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
+            : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
+          ${node.mastered ? '<p class="text-center mt-8" style="color:var(--ok)">Subtópico dominado (3★+) — continue praticando para consolidar</p>' : ''}
+        `,
+        `
+          <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
+          ${node.armed
+            ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
+            : developer
+              ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
+              : ''}
+        `
+      );
+
+      $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
+      $('#m-forge')?.addEventListener('click', () => {
+        SFX.click();
         closeModal();
-        navigate('battle');
-      } catch (e) {
-        toast(e.message || 'Falha ao iniciar as questões.');
+        navigate('forge');
+      });
+      $('#m-fight')?.addEventListener('click', async () => {
+        SFX.click();
+        const btn = $('#m-fight');
         if (btn) {
-          btn.disabled = false;
-          btn.innerHTML = `${semanticIcon('focus', 'ico--inline')} Iniciar questões`;
+          btn.disabled = true;
+          btn.textContent = 'Carregando questões…';
         }
-      }
-    });
+        try {
+          await startQuestions(sid);
+        } catch (e) {
+          toast(e.message || 'Falha ao iniciar as questões.');
+          if (btn) {
+            btn.disabled = false;
+            btn.innerHTML = `${semanticIcon('focus', 'ico--inline')} Iniciar questões`;
+          }
+        }
+      });
+    } catch (err) {
+      console.error('[tree] openPrep', err);
+      toast(err?.message || 'Não foi possível abrir este subtópico.');
+    }
   }
 }
 
