@@ -6,7 +6,7 @@ import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/mem
 import { createBattleSession } from '../core/battle.js?v=68';
 import { SFX } from '../core/audio.js';
 import { enemyImgHtml } from './enemyAssets.js';
-import { icon, semanticIcon } from './icons.js?v=66';
+import { icon, discIcon } from './icons.js?v=67';
 import { averageSubtopicMastery } from '../core/mastery.js';
 import { isDeveloperUser } from '../auth/authService.js';
 
@@ -45,7 +45,7 @@ export async function renderWorldMap(root, navigate, ctx) {
       return `
         <div class="biome ro-window ${isOpen ? 'open' : ''}" data-id="${d.id}" style="margin-bottom:10px">
           <div class="biome-header">
-            <span class="biome-header__icon" aria-hidden="true">${semanticIcon('discipline', 'ico--inline')}</span>
+            <span class="biome-header__icon" aria-hidden="true">${discIcon(d.id, 'ico--inline')}</span>
             <h3>${escapeHtml(d.name)}</h3>
             <span class="badge">${mastery}% · ${done}/${subs.length}</span>
             <span class="biome-header__chevron" aria-hidden="true">${icon(isOpen ? 'chevronDown' : 'chevronRight', 'ico--control')}</span>

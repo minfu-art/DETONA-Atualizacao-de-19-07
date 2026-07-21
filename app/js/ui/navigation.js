@@ -7,7 +7,7 @@ export const PRIMARY_NAV_ITEMS = Object.freeze([
   { screen: 'map', icon: 'book', label: 'Estudar' },
   { screen: 'edital', icon: 'clipboard', label: 'Edital' },
   { screen: 'expedition', icon: 'calendar', label: 'Plano' },
-  { screen: 'performance', icon: 'seedling', label: 'Evolução' },
+  { screen: 'performance', icon: 'chartSteps', label: 'Evolução' },
 ]);
 
 export const UTILITY_NAV_ITEMS = Object.freeze([

@@ -52,7 +52,11 @@ export const ICO = {
   calendar: painted('data', '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m8 15 2 2 5-5" opacity=".78"/>'),
   medal: painted('gold', '<circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/><path d="m12 6 .9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2L9.1 8l2-.3L12 6z" fill="currentColor" stroke="none"/>'),
   chart: painted('data', '<path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/><path d="m7 9 4-3 4 2 4-5" opacity=".7"/>'),
+  /** Gráfico em degraus (escalonado) — Evolução */
+  chartSteps: painted('data', '<path d="M3 20h18"/><path d="M5 20V15h3.5v5"/><path d="M9.5 20V11h3.5v9"/><path d="M14 20V7h3.5v13"/><path d="M18.5 20V4H21v16" opacity=".9"/><path d="M5 15h3.5M9.5 11h3.5M14 7h3.5" opacity=".55"/>'),
   sword: painted('energy', '<path d="m14.5 17.5 3 3 3-3-3-3"/><path d="m13 19-9-9 3-3 9 9"/><path d="m6 6 2-2 2 2-2 2z"/><path d="m4 14 3 3"/>'),
+  /** Espadas cruzadas — missão do dia / combate */
+  swordsCrossed: painted('energy', '<path d="M5.5 3.5 4 5l7.5 7.5 1.5-1.5L5.5 3.5z"/><path d="M4 5 2.5 6.5l1.2 1.2L6.5 5.9"/><path d="m11.5 11.5 1.5 7.5"/><path d="M18.5 3.5 20 5l-7.5 7.5-1.5-1.5L18.5 3.5z"/><path d="M20 5l1.5 1.5-1.2 1.2L17.5 5.9"/><path d="m12.5 11.5-1.5 7.5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>'),
   map: painted('data', '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/><path d="m11.5 11 1.2 1.8 2.1-3" opacity=".72"/>'),
   forge: painted('energy', '<path d="M14 6h6v4H14z"/><path d="M4 20h10"/><path d="M9 20V10l5-4"/><path d="m11 12 5 5"/>'),
   shield: painted('gold', '<path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"/><path d="M12 7v10M8 12h8" opacity=".65"/>'),
@@ -82,14 +86,72 @@ export const ICO = {
   minus: util('plasma', '<path d="M5 12h14"/>'),
   chevronDown: util('plasma', '<path d="m6 9 6 6 6-6"/>'),
   chevronRight: util('plasma', '<path d="m9 6 6 6-6 6"/>'),
+
+  /* ── Ícones por matéria do edital (distintos) ── */
+  discPort: painted('data', '<path d="M5 4h10a2 2 0 0 1 2 2v13l-3-1.5L11 19l-3-1.5L5 19V4z"/><path d="M8 8h6M8 11h5M8 14h4" opacity=".75"/>'),
+  discTi: painted('data', '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 8h4M7 11h6" opacity=".7"/>'),
+  discCiber: painted('gold', '<path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"/><path d="M9 12h6M12 9v6" opacity=".7"/>'),
+  discRlm: painted('plasma', '<path d="M4 18V6l4 3 4-5 4 5 4-3v12"/><path d="M8 14h8M10 17h4" opacity=".65"/>'),
+  discDh: painted('gold', '<path d="M12 3v18"/><path d="M5 8h5.5a2.5 2.5 0 0 1 0 5H5"/><path d="M19 8h-5.5a2.5 2.5 0 0 0 0 5H19"/><path d="M5 21h14"/>'),
+  discEtica: painted('energy', '<path d="M4 20h16"/><path d="M6 20V10l6-5 6 5v10"/><path d="M10 20v-5h4v5"/><path d="M9 12h.01M15 12h.01" opacity=".8"/>'),
+  discPenal: painted('danger', '<path d="M12 3v4M8 7h8"/><path d="M7 11h10v2H7z"/><path d="M9 13v8M15 13v8"/><path d="M10 21h4"/>'),
+  discProc: painted('data', '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3M8 10h8M8 14h8M8 18h5"/>'),
+  discConst: painted('gold', '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M10 7h5M10 11h4" opacity=".7"/>'),
+  discAdm: painted('plasma', '<path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h.01M15 12h.01M12 12h.01"/>'),
+  discLegAl: painted('energy', '<path d="M12 4c2 2 3 4 3 6a3 3 0 0 1-6 0c0-2 1-4 3-6z"/><path d="M8 14c-2 1-4 3-4 5h16c0-2-2-4-4-5"/><path d="M12 10v11"/>'),
+  discLegEsp: painted('danger', '<circle cx="12" cy="10" r="6"/><path d="M9 18v3M15 18v3M9.5 10h.01M14.5 10h.01M9.5 13.5c.7.9 1.8 1.3 2.5 1.3s1.8-.4 2.5-1.3"/>'),
+  discContab: painted('data', '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="M16 16h2v2h-2z" fill="currentColor" stroke="none"/>'),
+  discFin: painted('gold', '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c.5-1 1.5-1.5 2.5-1.5s2 .7 2 1.8c0 2.2-4 1.5-4 4 0 1.1.9 2 2 2s2-.5 2.5-1.4"/>'),
+  discEstat: painted('data', '<path d="M4 19V5M4 19h16"/><path d="M8 16v-6M12 16V8M16 16v-4M20 16v-9"/><path d="m7 10 4-3 4 2 4-4" opacity=".65"/>'),
+  discDados: painted('plasma', '<ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6"/><path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/><path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/>'),
 };
+
+/** Mapa id da disciplina → chave de ícone SVG */
+export const DISC_ICON_MAP = Object.freeze({
+  port: 'discPort',
+  ti: 'discTi',
+  ciber: 'discCiber',
+  rlm: 'discRlm',
+  dh: 'discDh',
+  etica: 'discEtica',
+  penal: 'discPenal',
+  proc: 'discProc',
+  const: 'discConst',
+  adm: 'discAdm',
+  leg_al: 'discLegAl',
+  leg_esp: 'discLegEsp',
+  contab: 'discContab',
+  fin: 'discFin',
+  estat: 'discEstat',
+  dados: 'discDados',
+});
+
+/** Inimigo visual fixo por matéria (enemy-1..16) */
+export const DISC_ENEMY_MAP = Object.freeze({
+  port: 'enemy-1',
+  ti: 'enemy-2',
+  ciber: 'enemy-3',
+  rlm: 'enemy-4',
+  dh: 'enemy-5',
+  etica: 'enemy-6',
+  penal: 'enemy-7',
+  proc: 'enemy-8',
+  const: 'enemy-9',
+  adm: 'enemy-10',
+  leg_al: 'enemy-11',
+  leg_esp: 'enemy-12',
+  contab: 'enemy-13',
+  fin: 'enemy-14',
+  estat: 'enemy-15',
+  dados: 'enemy-16',
+});
 
 export const SEMANTIC_ICONS = Object.freeze({
   study: 'book',
   review: 'refresh',
   progress: 'chart',
   plan: 'clipboard',
-  evolution: 'seedling',
+  evolution: 'chartSteps',
   discipline: 'layers',
   goal: 'target',
   fire: 'flame',
@@ -97,6 +159,7 @@ export const SEMANTIC_ICONS = Object.freeze({
   alert: 'alert',
   achievement: 'trophy',
   exam: 'flag',
+  mission: 'swordsCrossed',
 });
 
 export function icon(name, className = '') {
@@ -112,4 +175,15 @@ export function navIcon(name) {
 
 export function semanticIcon(category, className = '') {
   return icon(SEMANTIC_ICONS[category] || category, className);
+}
+
+/** Ícone SVG distinto por disciplina (id: port, ti, penal…) */
+export function discIcon(disciplineId, className = 'ico--inline') {
+  const key = DISC_ICON_MAP[disciplineId] || 'layers';
+  return icon(key, className);
+}
+
+/** Sprite de inimigo associado à matéria */
+export function discEnemySprite(disciplineId) {
+  return DISC_ENEMY_MAP[disciplineId] || 'enemy-1';
 }

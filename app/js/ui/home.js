@@ -14,8 +14,8 @@ import { createBattleSession } from '../core/battle.js?v=68';
 import {
   heroImgHtml, lifetimeXp, rankLabel, DISC_BAR_COLORS,
 } from './heroAssets.js';
-import { levelBadgeHtml } from './enemyAssets.js';
-import { icon, semanticIcon } from './icons.js?v=66';
+import { levelBadgeHtml, enemyImgHtml } from './enemyAssets.js';
+import { icon, semanticIcon, discIcon, discEnemySprite } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 import { getTodayRoutine, metaProgress, metaPreviewText, goalTypeLabel } from '../core/dailyMeta.js';
@@ -81,7 +81,7 @@ export async function renderHome(root, navigate, ctx) {
       return {
         id,
         label,
-        icon: semanticIcon('discipline', 'ico--inline'),
+        icon: discIcon(id, 'ico--inline'),
         pct: d?.pct || 0,
         color: d?.color || DISC_BAR_COLORS[i % DISC_BAR_COLORS.length],
       };
@@ -90,12 +90,15 @@ export async function renderHome(root, navigate, ctx) {
 
   const topicsGerais = mainTopics('gerais');
   const topicsEspecificos = mainTopics('especificos');
-  const topDisc = [...discBars].sort((a, b) => b.pct - a.pct)[0];
-  const missionFocus = topDisc
-    ? (KNOWLEDGE_BLOCKS.gerais.labels[topDisc.id]
-      || KNOWLEDGE_BLOCKS.especificos.labels[topDisc.id]
-      || topDisc.name)
+  // Foco do dia = matéria mais fraca (inimigo a enfrentar)
+  const focusDisc = [...discBars].sort((a, b) => a.pct - b.pct)[0];
+  const missionFocus = focusDisc
+    ? (KNOWLEDGE_BLOCKS.gerais.labels[focusDisc.id]
+      || KNOWLEDGE_BLOCKS.especificos.labels[focusDisc.id]
+      || focusDisc.name)
     : 'Revisão Geral';
+  const dailyEnemySprite = focusDisc ? discEnemySprite(focusDisc.id) : 'enemy-1';
+  const dailyEnemyDiscId = focusDisc?.id || null;
 
   // radar com labels curtos (só nomes principais)
   const shortNames = {
@@ -106,6 +109,10 @@ export async function renderHome(root, navigate, ctx) {
     ...r,
     name: shortNames[r.id] || shortLabel(r.name, 12),
   }));
+
+  const avgAccuracy = discBars.length
+    ? Math.round(discBars.reduce((s, d) => s + (Number(d.pct) || 0), 0) / discBars.length)
+    : 0;
 
   renderTodayCommandCenter(root, navigate, ctx, {
     player,
@@ -122,7 +129,14 @@ export async function renderHome(root, navigate, ctx) {
     doneToday,
     missionLeft,
     missionFocus,
+    dailyEnemySprite,
+    dailyEnemyDiscId,
+    discBars,
     reviewData,
+    cards,
+    phrase,
+    log,
+    avgAccuracy,
   });
   return;
 
@@ -208,7 +222,7 @@ export async function renderHome(root, navigate, ctx) {
           <small>Veja suas badges</small>
         </button>
         <button type="button" class="dash-qbtn" data-go="performance">
-          <span class="dash-qico dash-qico--svg">${icon('chart')}</span>
+          <span class="dash-qico dash-qico--svg">${icon('chartSteps')}</span>
           <strong>DESEMPENHO</strong>
           <small>Acompanhe tudo</small>
         </button>
@@ -413,158 +427,278 @@ export async function renderHome(root, navigate, ctx) {
 function renderTodayCommandCenter(root, navigate, ctx, data) {
   const {
     player, stage, rank, totalXp, xpNeed, xpPct, editalPct, days,
-    routine, meta, planned, doneToday, missionLeft, missionFocus, reviewData,
+    routine, meta, planned, doneToday, missionLeft, missionFocus,
+    dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
+    cards = [], phrase = '', log = null, avgAccuracy = 0,
   } = data;
-  const firstName = String(player.name || 'Estudante').trim().split(/\s+/)[0];
-  const todayLabel = new Intl.DateTimeFormat('pt-BR', {
-    weekday: 'long', day: '2-digit', month: 'long',
-  }).format(new Date());
+  const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
 
   let mission = {
     type: 'edital',
-    kicker: 'Próximo avanço',
-    title: 'Escolha o próximo ponto do edital',
-    reason: 'Sua meta e suas revisões estão em dia. Avance em um subtópico com menor domínio.',
-    label: 'Abrir edital',
     icon: 'book',
+    title: missionFocus
+      ? `Avançar no edital de ${missionFocus}`
+      : 'Escolher o próximo ponto do edital',
+    reason: 'Sua meta e revisões estão em dia. Avance no ponto com menor domínio.',
+    label: 'Começar missão',
+    amount: 10,
   };
   if (reviewData.due > 0) {
+    const fragileName = reviewData.fragile?.[0]?.name;
+    const focusLabel = missionFocus || shortLabel(fragileName, 28) || 'conteúdos críticos';
     mission = {
       type: 'review',
-      kicker: 'Prioridade de memória',
-      title: `Recupere ${reviewData.due} ${reviewData.due === 1 ? 'revisão vencida' : 'revisões vencidas'}`,
-      reason: 'Esses conteúdos estão perdendo força na memória. Revisá-los agora protege o que você já conquistou.',
-      label: 'Iniciar revisão',
-      icon: 'target',
+      icon: 'book',
+      title: `Revisar ${reviewData.due} ${reviewData.due === 1 ? 'questão' : 'questões'} de ${focusLabel}`,
+      reason: fragileName
+        ? `Você precisa reforçar “${shortLabel(fragileName, 42)}” antes que a memória esfrie.`
+        : 'Conteúdos vencidos estão perdendo força na memória. Revise agora.',
+      label: 'Começar missão',
+      amount: reviewData.due,
     };
   } else if (!meta.complete && !meta.idle && routine?.enabled !== false) {
+    const left = missionLeft > 0 ? missionLeft : (planned || 10);
     mission = {
       type: 'battle',
-      kicker: 'Missão recomendada',
-      title: missionLeft > 0 ? `Complete os ${missionLeft} restantes de hoje` : 'Cumpra sua meta de hoje',
+      icon: 'swordsCrossed',
+      title: missionFocus
+        ? `Resolver ${left} ${goalTypeLabel(routine?.goal_type) || 'questões'} de ${missionFocus}`
+        : `Completar ${left} da meta de hoje`,
       reason: missionFocus
-        ? `${missionFocus} é o foco recomendado para manter sua preparação equilibrada.`
-        : 'Esta ação mantém sua rotina ativa e produz progresso mensurável no edital.',
-      label: 'Começar agora',
-      icon: 'bolt',
+        ? `${missionFocus} é o foco mais fraco agora — pressione essa matéria hoje.`
+        : 'Cumprir a meta mantém sua sequência e gera XP real no edital.',
+      label: 'Começar missão',
+      amount: left,
     };
   } else if (reviewData.pending > 0) {
     mission = {
       type: 'review',
-      kicker: 'Consolidação',
-      title: `Conclua ${reviewData.pending} ${reviewData.pending === 1 ? 'revisão pendente' : 'revisões pendentes'}`,
-      reason: 'Sua meta diária está resolvida. Use o próximo bloco para consolidar conteúdos estudados.',
-      label: 'Revisar agora',
-      icon: 'target',
+      icon: 'refresh',
+      title: `Consolidar ${reviewData.pending} revisões pendentes`,
+      reason: 'Meta diária resolvida. Use o próximo bloco para fixar o que já estudou.',
+      label: 'Começar missão',
+      amount: reviewData.pending,
     };
   }
 
-  const countdown = days === null
-    ? { value: '—', label: 'Defina a data da prova', action: true }
+  const estMin = Math.max(8, Math.min(45, Math.round((mission.amount || 10) * 1.2)));
+  const xpReward = Math.max(40, Math.round((planned || 10) * 8));
+  const ringPct = meta.idle ? 0 : Math.min(100, Number(meta.pct) || 0);
+  const ringCirc = 2 * Math.PI * 42;
+  const ringOffset = ringCirc - (ringPct / 100) * ringCirc;
+
+  const examBlock = days === null
+    ? { value: '—', label: 'Defina a data', action: true }
     : days > 0
-      ? { value: String(days), label: days === 1 ? 'dia para a prova' : 'dias para a prova', action: false }
+      ? { value: String(days), label: days === 1 ? 'DIA PARA SUA PROVA' : 'DIAS PARA SUA PROVA', action: false }
       : days === 0
-        ? { value: 'HOJE', label: 'Dia da prova', action: false }
-        : { value: '✓', label: 'Prova realizada', action: false };
-  const reviewHint = reviewData.fragile?.length
-    ? reviewData.fragile.slice(0, 2).map((item) => escapeHtml(item.name)).join(' · ')
-    : 'Nenhum conteúdo em risco agora.';
+        ? { value: 'HOJE', label: 'DIA DA PROVA', action: false }
+        : { value: '✓', label: 'PROVA REALIZADA', action: false };
+
+  const reviewRows = (reviewData.fragile || []).slice(0, 3).map((item, i) => {
+    const tones = ['warn', 'time', 'cal'];
+    const tone = tones[i % tones.length];
+    return `
+      <button type="button" class="dj-review-row dj-review-row--${tone}" data-review-go="1">
+        <span class="dj-review-row__ico">${icon(i === 0 ? 'alert' : i === 1 ? 'focus' : 'calendar', 'ico--sm')}</span>
+        <span class="dj-review-row__name">${escapeHtml(shortLabel(item.name, 28))}</span>
+        <span class="dj-review-row__count">${item.pending || 0} ${item.pending === 1 ? 'item' : 'itens'}</span>
+        <span class="dj-review-row__chev" aria-hidden="true">${icon('chevronRight', 'ico--sm')}</span>
+      </button>`;
+  }).join('') || `
+    <div class="dj-empty-inline">
+      <span>${icon('checkCircle', 'ico--sm')}</span>
+      <p>Nenhuma revisão crítica no momento.</p>
+    </div>`;
+
+  const perfRows = [...(discBars || [])]
+    .sort((a, b) => (b.pct || 0) - (a.pct || 0))
+    .slice(0, 5)
+    .map((d) => {
+      const label = KNOWLEDGE_BLOCKS.gerais.labels[d.id]
+        || KNOWLEDGE_BLOCKS.especificos.labels[d.id]
+        || d.name;
+      const pct = Math.round(d.pct || 0);
+      return `
+        <button type="button" class="dj-perf-row" data-disc="${escapeHtml(d.id)}">
+          <span class="dj-perf-row__name">${discIcon(d.id, 'ico--sm')} ${escapeHtml(shortLabel(label, 18))}</span>
+          <span class="dj-perf-row__track"><span style="width:${pct}%"></span></span>
+          <strong>${pct}%</strong>
+        </button>`;
+    }).join('');
+
+  const recentCards = (cards || []).slice(-3).reverse();
+  const achRows = recentCards.length
+    ? recentCards.map((c) => `
+        <div class="dj-ach-row">
+          <span class="dj-ach-row__ico">${icon('medal', 'ico--sm')}</span>
+          <span class="dj-ach-row__copy">
+            <strong>${escapeHtml(shortLabel(c.title || c.name || 'Conquista', 26))}</strong>
+            <small>${escapeHtml(shortLabel(c.description || c.subtitle || stage, 32))}</small>
+          </span>
+          <em>+${Number(c.xp || c.xp_reward || 50)} XP</em>
+        </div>`)
+    : `
+      <div class="dj-ach-row">
+        <span class="dj-ach-row__ico">${icon('flame', 'ico--sm')}</span>
+        <span class="dj-ach-row__copy">
+          <strong>Sequência de ${player.streak_days || 0} dias</strong>
+          <small>Mantenha o ritmo diário</small>
+        </span>
+        <em>+${Math.min(150, 20 + (player.streak_days || 0) * 5)} XP</em>
+      </div>
+      <div class="dj-ach-row">
+        <span class="dj-ach-row__ico">${icon('target', 'ico--sm')}</span>
+        <span class="dj-ach-row__copy">
+          <strong>${doneToday} da meta de hoje</strong>
+          <small>${meta.complete ? 'Meta cumprida' : 'Continue a missão'}</small>
+        </span>
+        <em>+${log?.xp_earned || xpReward} XP</em>
+      </div>
+      <div class="dj-ach-row">
+        <span class="dj-ach-row__ico">${icon('flag', 'ico--sm')}</span>
+        <span class="dj-ach-row__copy">
+          <strong>Edital ${Number(editalPct).toFixed(0)}%</strong>
+          <small>Rank ${escapeHtml(rank)}</small>
+        </span>
+        <em>Lv ${player.level}</em>
+      </div>`;
+
+  const battlesToday = log?.domain_challenges_completed || 0;
+  const dayLabel = goalTypeLabel(routine?.goal_type) || 'questões';
 
   root.innerHTML = `
-    <div class="today-command">
-      <header class="today-welcome">
-        <div>
-          <span class="today-welcome__date">${escapeHtml(todayLabel)}</span>
-          <h1>Vamos avançar, ${escapeHtml(firstName)}.</h1>
-          <p>Uma ação bem executada hoje aproxima você da aprovação.</p>
+    <div class="dj">
+      <header class="dj-top">
+        <div class="dj-top__hello">
+          <h1>Fala, <span>${escapeHtml(firstName)}</span>!</h1>
+          <p>${escapeHtml(phrase || 'Cada passo te aproxima da aprovação.')}</p>
         </div>
-        <div class="today-welcome__streak" aria-label="Sequência de ${player.streak_days || 0} dias">
-          ${icon('flame', 'ico--sm')}
-          <span><strong>${player.streak_days || 0}</strong><small>dias de constância</small></span>
-        </div>
+        <button type="button" class="dj-exam" id="today-exam-date" aria-label="Data da prova">
+          <small>FALTAM</small>
+          <strong>${escapeHtml(examBlock.value)}</strong>
+          <span>${escapeHtml(examBlock.label)}</span>
+          <i class="dj-exam__ico" aria-hidden="true">${icon('calendar', 'ico--sm')}</i>
+        </button>
       </header>
 
-      <section class="today-mission today-mission--${mission.type}" aria-labelledby="today-mission-title">
-        <div class="today-mission__energy" aria-hidden="true"></div>
-        <div class="today-mission__icon" aria-hidden="true">${icon(mission.icon, 'ico--lg')}</div>
-        <div class="today-mission__content">
-          <span class="today-kicker">${escapeHtml(mission.kicker)}</span>
-          <h2 id="today-mission-title">${escapeHtml(mission.title)}</h2>
-          <div class="today-mission__reason">
-            <strong>Por que agora?</strong>
-            <p>${escapeHtml(mission.reason)}</p>
-          </div>
-          <div class="today-mission__actions">
-            <button type="button" class="today-primary" id="today-primary">${escapeHtml(mission.label)} ${icon('bolt', 'ico--sm')}</button>
-            <button type="button" class="today-secondary" id="today-plan">Ver plano do dia</button>
-          </div>
+      <div class="dj-hud" aria-label="Status do guerreiro">
+        <div class="dj-hud__pill dj-hud__pill--fire">
+          <span class="dj-hud__ico">${icon('flame')}</span>
+          <div><small>Sequência</small><strong>${player.streak_days || 0} <em>dias</em></strong></div>
         </div>
-        <div class="today-mission__snapshot" aria-label="Resumo da missão">
-          <span><small>Meta de hoje</small><strong>${meta.idle ? 'Folga' : `${doneToday}/${planned || 0}`}</strong></span>
-          <span><small>Revisões vencidas</small><strong>${reviewData.due}</strong></span>
-          <span><small>Edital concluído</small><strong>${Number(editalPct).toFixed(1)}%</strong></span>
+        <div class="dj-hud__pill dj-hud__pill--xp">
+          <span class="dj-hud__ico">${icon('gem')}</span>
+          <div><small>XP total</small><strong>${formatNum(totalXp)}</strong></div>
+        </div>
+        <div class="dj-hud__pill dj-hud__pill--lv">
+          <span class="dj-hud__ico dj-hud__ico--lv">${player.level}</span>
+          <div><small>Nível</small><strong>${player.level}</strong></div>
+        </div>
+      </div>
+
+      <section class="dj-mission dj-mission--${mission.type}" aria-labelledby="today-mission-title">
+        <div class="dj-mission__fx" aria-hidden="true"></div>
+        <div class="dj-mission__body">
+          <span class="dj-kicker">Sua próxima missão</span>
+          <div class="dj-mission__title-row">
+            <span class="dj-mission__badge" aria-hidden="true">${icon(mission.icon, 'ico--lg')}</span>
+            <h2 id="today-mission-title">${escapeHtml(mission.title)}</h2>
+          </div>
+          <p class="dj-mission__reason">${escapeHtml(mission.reason)}</p>
+          <div class="dj-mission__meta">
+            <span>${icon('focus', 'ico--sm')} Duração estimada <strong>${estMin} minutos</strong></span>
+            ${dailyEnemyDiscId ? `<span class="dj-mission__enemy-tag">${discIcon(dailyEnemyDiscId, 'ico--sm')} ${escapeHtml(missionFocus || '')}</span>` : ''}
+          </div>
+          <button type="button" class="dj-cta" id="today-primary">
+            Começar missão ${icon('bolt', 'ico--sm')}
+          </button>
+        </div>
+        <div class="dj-mission__art" aria-hidden="true">
+          <div class="dj-mission__orb"></div>
+          ${heroImgHtml({ className: 'hero-img dj-mission__hero', level: player.level, sprite: player.avatar_sprite })}
+          <div class="dj-mission__foe">
+            ${enemyImgHtml(dailyEnemySprite || 'enemy-1', { className: 'enemy-img dj-mission__enemy', size: 'sm' })}
+          </div>
         </div>
       </section>
 
-      <div class="today-grid">
-        <section class="today-card today-card--progress" aria-labelledby="today-progress-title">
-          <div class="today-card__head">
-            <span class="today-card__icon">${icon('target')}</span>
-            <div><small>Progresso do dia</small><h2 id="today-progress-title">Meta diária</h2></div>
-            <strong class="today-card__value">${meta.idle ? 'Folga' : `${meta.pct}%`}</strong>
+      <div class="dj-split">
+        <section class="dj-card dj-card--reviews" aria-labelledby="dj-reviews-title">
+          <div class="dj-card__head">
+            <span class="dj-card__ico">${icon('layers')}</span>
+            <h2 id="dj-reviews-title">Revisões pendentes</h2>
+            <strong class="dj-card__badge">${reviewData.pending || 0}</strong>
           </div>
-          <div class="today-progress" role="progressbar" aria-label="Progresso da meta diária" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${meta.pct}"><span style="width:${meta.pct}%"></span></div>
-          <p>${meta.complete ? 'Meta concluída. O compromisso de hoje está cumprido.' : missionLeft > 0 ? `Faltam ${missionLeft} para concluir o objetivo de hoje.` : 'Comece pelo primeiro bloco planejado.'}</p>
-          <button type="button" class="today-card__link" id="today-routine">Ajustar plano</button>
+          <div class="dj-review-list">${reviewRows}</div>
+          <button type="button" class="dj-link" id="today-review">Ver todas ${icon('chevronRight', 'ico--sm')}</button>
         </section>
 
-        <section class="today-card today-card--reviews" aria-labelledby="today-reviews-title">
-          <div class="today-card__head">
-            <span class="today-card__icon">${icon('question')}</span>
-            <div><small>Memória</small><h2 id="today-reviews-title">Revisões</h2></div>
-            <strong class="today-card__value ${reviewData.due ? 'is-alert' : ''}">${reviewData.pending}</strong>
+        <section class="dj-card dj-card--goal" aria-labelledby="dj-goal-title">
+          <div class="dj-card__head">
+            <span class="dj-card__ico">${icon('target')}</span>
+            <h2 id="dj-goal-title">Meta diária</h2>
           </div>
-          <div class="today-review-stats">
-            <span><strong>${reviewData.due}</strong><small>vencidas</small></span>
-            <span><strong>${reviewData.atRisk}</strong><small>em risco</small></span>
+          <div class="dj-ring-wrap">
+            <svg class="dj-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="dj-ring__bg" cx="50" cy="50" r="42"/>
+              <circle class="dj-ring__fg" cx="50" cy="50" r="42"
+                stroke-dasharray="${ringCirc.toFixed(2)}"
+                stroke-dashoffset="${ringOffset.toFixed(2)}"/>
+            </svg>
+            <div class="dj-ring__center">
+              <strong>${meta.idle ? '—' : `${ringPct}%`}</strong>
+            </div>
           </div>
-          <p>${reviewHint}</p>
-          <button type="button" class="today-card__link" id="today-review" ${reviewData.pending ? '' : 'disabled'}>Abrir revisões</button>
-        </section>
-
-        <section class="today-card today-card--deadline" aria-labelledby="today-deadline-title">
-          <div class="today-card__head">
-            <span class="today-card__icon">${icon('calendar')}</span>
-            <div><small>Contagem regressiva</small><h2 id="today-deadline-title">Prova</h2></div>
+          <div class="dj-goal-copy">
+            <strong>${meta.idle ? 'Folga' : `${doneToday} / ${planned || 0}`}</strong>
+            <small>${meta.idle ? 'Sem meta hoje' : `${dayLabel} concluídas`}</small>
+            <em>+${xpReward} XP</em>
           </div>
-          <div class="today-countdown"><strong>${escapeHtml(countdown.value)}</strong><span>${escapeHtml(countdown.label)}</span></div>
-          <p>Constância atual: <strong>${player.streak_days || 0} dias</strong>. Continue construindo vantagem.</p>
-          ${countdown.action ? '<button type="button" class="today-card__link" id="today-exam-date">Definir data</button>' : ''}
+          <button type="button" class="dj-link" id="today-routine">Ver minhas metas ${icon('chevronRight', 'ico--sm')}</button>
         </section>
       </div>
 
-      <section class="today-evolution" aria-labelledby="today-evolution-title">
-        <div class="today-evolution__avatar" aria-hidden="true">
-          ${heroImgHtml({ className: 'hero-img today-evolution__image', level: player.level, sprite: player.avatar_sprite })}
+      <section class="dj-card dj-card--day" aria-labelledby="dj-day-title">
+        <div class="dj-card__head">
+          <span class="dj-card__ico">${icon('flag')}</span>
+          <h2 id="dj-day-title">Progresso do dia</h2>
+          <strong class="dj-card__badge dj-card__badge--soft">${ringPct}%</strong>
         </div>
-        <div class="today-evolution__content">
-          <span class="today-kicker">Sua evolução</span>
-          <h2 id="today-evolution-title">${escapeHtml(stage)} · Rank ${escapeHtml(rank)}</h2>
-          <p>Seu progresso nasce do estudo concluído, não de ações aleatórias.</p>
-          <div class="today-evolution__metrics">
-            <span><small>Nível</small><strong>${player.level}</strong></span>
-            <span><small>XP total</small><strong>${formatNum(totalXp)}</strong></span>
-            <span><small>Edital</small><strong>${Number(editalPct).toFixed(1)}%</strong></span>
-          </div>
-          <div class="today-xp"><div><span>Próximo nível</span><strong>${player.xp}/${xpNeed} XP</strong></div><div class="today-progress"><span style="width:${xpPct}%"></span></div></div>
-          <button type="button" class="today-card__link" id="today-performance">Ver evolução completa</button>
+        <div class="dj-day-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${ringPct}">
+          <span style="width:${ringPct}%"></span>
+          <i style="left:${ringPct}%"></i>
+        </div>
+        <div class="dj-day-scale" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+        <div class="dj-day-stats">
+          <div><small>${icon('focus', 'ico--sm')} Batalhas</small><strong>${battlesToday}</strong></div>
+          <div><small>${icon('question', 'ico--sm')} Feitas</small><strong>${doneToday}</strong></div>
+          <div><small>${icon('chartSteps', 'ico--sm')} Domínio médio</small><strong>${avgAccuracy}%</strong></div>
         </div>
       </section>
+
+      <div class="dj-split dj-split--bottom">
+        <section class="dj-card dj-card--perf" aria-labelledby="dj-perf-title">
+          <div class="dj-card__head">
+            <span class="dj-card__ico">${icon('chartSteps')}</span>
+            <h2 id="dj-perf-title">Desempenho geral</h2>
+          </div>
+          <div class="dj-perf-list">${perfRows || '<p class="dj-empty-inline">Sem dados ainda.</p>'}</div>
+          <button type="button" class="dj-link" id="today-performance">Ver desempenho completo ${icon('chevronRight', 'ico--sm')}</button>
+        </section>
+
+        <section class="dj-card dj-card--ach" aria-labelledby="dj-ach-title">
+          <div class="dj-card__head">
+            <span class="dj-card__ico">${icon('trophy')}</span>
+            <h2 id="dj-ach-title">Conquistas recentes</h2>
+          </div>
+          <div class="dj-ach-list">${achRows}</div>
+          <button type="button" class="dj-link" id="today-achievements">Ver todas as conquistas ${icon('chevronRight', 'ico--sm')}</button>
+        </section>
+      </div>
     </div>`;
 
   mountPageContainer(root, { variant: 'today' });
-
-  $('#today-review', root)?.removeAttribute('disabled');
 
   const startReview = async () => {
     try {
@@ -574,6 +708,7 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
   };
   const startBattle = async () => {
     try {
+      if (dailyEnemyDiscId) ctx.disciplineId = dailyEnemyDiscId;
       ctx.battleSession = await createBattleSession(null, { daily: true, endgame: !!player.endgame_mode });
       navigate('battle');
     } catch (error) { toast(error.message || 'Ainda não há questões disponíveis para esta missão.'); }
@@ -583,13 +718,28 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
     SFX.click();
     if (mission.type === 'review') startReview();
     else if (mission.type === 'battle') startBattle();
-    else navigate('edital');
+    else {
+      if (dailyEnemyDiscId) {
+        ctx.disciplineId = dailyEnemyDiscId;
+        navigate('topicTree');
+      } else navigate('edital');
+    }
   });
   $('#today-review', root)?.addEventListener('click', () => { SFX.click(); startReview(); });
-  $('#today-plan', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
+  root.querySelectorAll('[data-review-go]').forEach((btn) => {
+    btn.addEventListener('click', () => { SFX.click(); startReview(); });
+  });
   $('#today-routine', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
   $('#today-performance', root)?.addEventListener('click', () => { SFX.click(); navigate('performance'); });
+  $('#today-achievements', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
+  root.querySelectorAll('.dj-perf-row[data-disc]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      SFX.click();
+      ctx.disciplineId = btn.getAttribute('data-disc');
+      navigate('topicTree');
+    });
+  });
 
   if (player._pending_celebration && !player.celebration_shown) {
     setTimeout(() => navigate('celebration'), 0);

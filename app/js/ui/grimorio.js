@@ -12,7 +12,7 @@ import { SFX } from '../core/audio.js';
 import { tempLabel, computeMemoryTemperature } from '../core/memory.js';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 import { progressBar } from './components.js';
-import { icon, semanticIcon } from './icons.js?v=66';
+import { icon, semanticIcon, discIcon } from './icons.js?v=67';
 import { getContestById } from '../contest/contestCatalog.js';
 import { getActiveContestId } from '../contest/activeContest.js';
 import {
@@ -250,7 +250,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
           <div class="ev-breadcrumb">
             <button type="button" class="ev-back btn btn-ghost" data-nav="disciplines" aria-label="Voltar para disciplinas">← Edital</button>
             <span class="ev-crumb-sep" aria-hidden="true">/</span>
-            <strong>${semanticIcon('discipline', 'ico--inline')} ${escapeHtml(d.name)}</strong>
+            <strong>${discIcon(d.id, 'ico--inline')} ${escapeHtml(d.name)}</strong>
           </div>
           <div class="ev-disc-summary">
             <div><small>Progresso</small><strong>${activeDiscCard.pct}%</strong></div>
@@ -329,7 +329,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
         <button type="button" class="ev-topic__trigger" data-toggle-disc="${d.id}"
           aria-expanded="${open}" aria-controls="${panelId}">
           <div class="ev-topic__main">
-            <span class="ev-topic__icon" aria-hidden="true">${semanticIcon('discipline')}</span>
+            <span class="ev-topic__icon" aria-hidden="true">${discIcon(d.id)}</span>
             <div class="ev-topic__copy">
               <strong>${escapeHtml(d.name)}</strong>
               <span>${card.complete}/${card.total} subtópicos concluídos</span>
@@ -402,7 +402,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
       <article class="ev-dcard" data-open-disc="${d.id}">
         <button type="button" class="ev-dcard__btn" data-open-disc="${d.id}" aria-label="Abrir ${escapeHtml(d.name)}">
           <div class="ev-dcard__top">
-            <strong class="ev-dcard__name">${semanticIcon('discipline', 'ico--inline')} ${escapeHtml(d.name)}</strong>
+            <strong class="ev-dcard__name">${discIcon(d.id, 'ico--inline')} ${escapeHtml(d.name)}</strong>
             <span class="ev-dcard__pct">${card.pct}%</span>
           </div>
           <div class="ev-mini-bar" role="progressbar" aria-valuenow="${card.pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso ${card.pct}%">

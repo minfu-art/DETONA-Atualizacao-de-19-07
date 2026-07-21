@@ -10,7 +10,7 @@ import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/mem
 import { createBattleSession } from '../core/battle.js?v=68';
 import { SFX } from '../core/audio.js';
 import { enemyImgHtml } from './enemyAssets.js';
-import { icon, semanticIcon } from './icons.js?v=66';
+import { icon, discIcon } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { averageSubtopicMastery } from '../core/mastery.js';
 import { isDeveloperUser } from '../auth/authService.js';
@@ -79,7 +79,7 @@ export async function renderTopicTree(root, navigate, ctx) {
   root.innerHTML = `
     <div class="tree-screen">
       <div class="ro-window mb-8">
-        <div class="ro-title">${semanticIcon('discipline', 'ico--inline')} ${escapeHtml(title)}</div>
+        <div class="ro-title">${discIcon(discId, 'ico--inline')} ${escapeHtml(title)}</div>
         <div class="ro-body">
           <p class="muted mb-8">${escapeHtml(discipline.biome || discipline.name)} · avance na trilha conquistando estrelas</p>
           <div class="tree-stats">

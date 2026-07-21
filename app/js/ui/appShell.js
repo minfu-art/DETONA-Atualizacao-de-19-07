@@ -59,7 +59,7 @@ export function initAppShell(navigate, { onLogout } = {}) {
 
   sidebar.innerHTML = `
     <div class="app-sidebar__brand" aria-label="Detona Concursos">
-      <span class="app-sidebar__mark">DC</span>
+      <img class="app-sidebar__mark" src="assets/icons/icon-192.png" alt="" width="42" height="42" decoding="async">
       <span class="app-sidebar__brand-copy"><strong>DETONA</strong><small>CONCURSOS</small></span>
     </div>
     <nav class="app-sidebar__nav" aria-label="Navegação principal">

@@ -2820,7 +2820,7 @@ body {
 .saas-auth__story { position: relative; overflow: hidden; padding: clamp(32px, 6vw, 80px); display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(circle at 20% 80%, rgba(56,189,248,.2), transparent 36%), radial-gradient(circle at 75% 20%, rgba(124,106,245,.28), transparent 40%), linear-gradient(145deg,#080b1c,#0b1230); }
 .saas-auth__story::after { content:''; position:absolute; inset:0; pointer-events:none; opacity:.17; background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,transparent,#000,transparent); }
 .saas-brand { display:flex; align-items:center; gap:12px; position:relative; z-index:1; }
-.saas-brand>span { width:44px; height:44px; display:grid; place-items:center; border-radius:13px; color:white; font:800 14px var(--display); background:linear-gradient(145deg,var(--neon),#4f46e5); box-shadow:0 10px 30px rgba(124,106,245,.35); }
+.saas-brand>span,.saas-brand__mark { width:44px; height:44px; display:grid; place-items:center; border-radius:13px; color:white; font:800 14px var(--display); background:linear-gradient(145deg,var(--neon),#4f46e5); box-shadow:0 10px 30px rgba(124,106,245,.35); object-fit:cover; flex:0 0 auto; }
 .saas-brand strong { font:700 15px var(--display); letter-spacing:.08em; }
 .saas-brand em { color:var(--neon-hi); font-style:normal; }
 .saas-auth__headline { position:relative; z-index:1; max-width:720px; margin:70px 0; }
@@ -2958,16 +2958,15 @@ svg {
   }
 
   .app-sidebar__mark {
-    display: grid;
+    display: block;
     width: 42px;
     height: 42px;
-    place-items: center;
+    object-fit: cover;
     border: 1px solid rgba(255, 209, 102, .55);
     border-radius: 13px;
-    color: var(--gold, #ffd166);
     background: rgba(255, 209, 102, .08);
-    font-family: Sora, sans-serif;
-    font-weight: 800;
+    box-shadow: 0 0 16px rgba(251, 146, 60, .18);
+    flex: 0 0 auto;
   }
 
   .app-sidebar__brand-copy,

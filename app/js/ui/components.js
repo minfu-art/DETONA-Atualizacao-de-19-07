@@ -65,7 +65,7 @@ export function actionCard({ title, description = '', icon = '', action = '', to
 }
 
 export function characterPanel({ image, name = '', role = '', content = '' } = {}) {
-  return `<section class="ds-character-panel">${image ? `<img src="${escapeHtml(image)}" alt="" loading="lazy" decoding="async">` : '<span class="ds-character-panel__placeholder" aria-hidden="true">DC</span>'}<div>${name ? `<strong>${escapeHtml(name)}</strong>` : ''}${role ? `<small>${escapeHtml(role)}</small>` : ''}${content}</div></section>`;
+  return `<section class="ds-character-panel">${image ? `<img src="${escapeHtml(image)}" alt="" loading="lazy" decoding="async">` : '<img class="ds-character-panel__placeholder" src="assets/icons/icon-192.png" alt="" width="96" height="96" loading="lazy" decoding="async" aria-hidden="true">'}<div>${name ? `<strong>${escapeHtml(name)}</strong>` : ''}${role ? `<small>${escapeHtml(role)}</small>` : ''}${content}</div></section>`;
 }
 
 export function enemyPanel({ image, name = 'Desafio do edital', progress = 0, detail = '' } = {}) {

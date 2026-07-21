@@ -32,7 +32,7 @@ export function renderLibrary(root, { user, items, onOpen, onPurchase, onLogout 
   root.innerHTML = `
     <div class="library-page">
       <header class="library-header">
-        <div class="saas-brand"><span>DC</span><strong>DETONA <em>CONCURSOS</em></strong></div>
+        <div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div>
         <div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div>
       </header>
       <section class="library-hero">
