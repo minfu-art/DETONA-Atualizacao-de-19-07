@@ -1,8 +1,7 @@
 import { performanceService } from '../services/performanceService.js';
-import { enemyImgHtml } from './enemyAssets.js';
-import { ICO } from './icons.js?v=66';
+import { ICO } from './icons.js?v=67';
 import { escapeHtml } from './helpers.js';
-import { emptyState, progressBar, statusBadge } from './components.js';
+import { emptyState } from './components.js';
 
 const PERIOD_OPTIONS = Object.freeze([
   ['7d', '7 dias'],
@@ -59,35 +58,47 @@ function compactHeader(contest, period) {
   </header>`;
 }
 
-function progressCard(data) {
+const EVOLUTION_HERO = 'assets/ui/hero-evolution-dynamic.png?v=1';
+
+/** Caixa unificada: domínio do edital no topo + progresso geral + conteúdo restante + herói à esquerda */
+function masteryHeroCard(data) {
+  const edital = Number(data.progress.edital) || 0;
+  const remaining = Number(data.progress.remaining) || Math.max(0, 100 - edital);
   const topicsDetail = data.progress.totalTopics
     ? `${data.progress.completedTopics} concluídos · ${data.progress.remainingTopics} restantes`
-    : 'Tópicos ainda não disponíveis';
-  return `<section class="performance-progress-card" aria-labelledby="performance-progress-title">
-    <div class="performance-card-heading">
-      <div><span>Progresso geral</span><h2 id="performance-progress-title">Edital dominado</h2></div>
-      ${statusBadge('Dados reais', 'info')}
-    </div>
-    <strong class="performance-progress-value">${data.progress.edital.toFixed(0)}%</strong>
-    ${progressBar({ value: data.progress.edital, label: 'Progresso geral do edital', tone: 'plasma', detail: `${data.progress.edital.toFixed(1)}%` })}
-    <p>${escapeHtml(topicsDetail)}</p>
-  </section>`;
-}
-
-function monsterCard(data) {
-  const resistance = data.progress.remaining;
-  const defeated = resistance <= 0;
-  return `<section class="performance-monster-card${defeated ? ' is-defeated' : ''}" aria-labelledby="performance-monster-title">
-    <div class="performance-monster-copy">
-      <span>Desafio do edital</span>
-      <h2 id="performance-monster-title">${defeated ? 'Edital dominado' : 'Conteúdo restante'}</h2>
-      <strong>${resistance.toFixed(0)}%</strong>
-      <div class="performance-monster-hp" role="progressbar" aria-label="Percentual restante do edital" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${resistance}">
-        <span style="--monster-resistance:${resistance}%"></span>
+    : 'Tópicos do edital';
+  const defeated = remaining <= 0;
+  return `<section class="ev-mastery-card${defeated ? ' is-defeated' : ''}" aria-labelledby="performance-progress-title">
+    <div class="ev-mastery-card__bar-top" aria-label="Domínio do edital">
+      <div class="ev-mastery-card__bar-meta">
+        <span>Domínio do edital</span>
+        <strong>${edital.toFixed(1)}%</strong>
       </div>
-      <small>Representação visual: 100% menos o progresso real do edital.</small>
+      <div class="ev-mastery-card__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(edital)}" aria-label="Domínio do edital">
+        <span style="width:${Math.min(100, edital)}%"></span>
+      </div>
     </div>
-    <div class="performance-monster-art" aria-hidden="true">${enemyImgHtml('enemy-16', { className: 'performance-monster-image', size: 'lg' })}</div>
+    <div class="ev-mastery-card__body">
+      <div class="ev-mastery-card__hero" aria-hidden="true">
+        <img src="${EVOLUTION_HERO}" alt="" class="ev-mastery-card__hero-img" width="420" height="560" decoding="async" />
+      </div>
+      <div class="ev-mastery-card__stats">
+        <div class="ev-mastery-stat ev-mastery-stat--progress">
+          <small>Progresso geral</small>
+          <h2 id="performance-progress-title">Edital dominado</h2>
+          <strong>${edital.toFixed(0)}%</strong>
+          <p>${escapeHtml(topicsDetail)}</p>
+        </div>
+        <div class="ev-mastery-stat ev-mastery-stat--rest">
+          <small>Conteúdo restante</small>
+          <h2 id="performance-monster-title">${defeated ? 'Edital dominado' : 'Ainda pela frente'}</h2>
+          <strong>${remaining.toFixed(0)}%</strong>
+          <div class="ev-mastery-stat__hp" role="progressbar" aria-label="Conteúdo restante" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(remaining)}">
+            <span style="width:${Math.min(100, remaining)}%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>`;
 }
 
@@ -117,15 +128,15 @@ function disciplineRows(rows, mode = 'edital') {
   return ordered.map((discipline) => {
     const tone = performanceTone(discipline.accuracy);
     const value = discipline.accuracy ?? 0;
-    const percent = discipline.accuracy == null ? 'Sem respostas' : `${discipline.accuracy}%`;
-    return `<li class="performance-discipline performance-discipline--${tone}">
+    const percent = discipline.accuracy == null ? '—' : `${discipline.accuracy}%`;
+    return `<li class="performance-discipline performance-discipline--${tone} ev-disc-box">
       <div class="performance-discipline__title">
         <strong>${escapeHtml(discipline.name)}</strong>
         <span>${escapeHtml(percent)}</span>
       </div>
       <div class="performance-discipline__bar" role="progressbar" aria-label="Taxa de acertos em ${escapeHtml(discipline.name)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${value}"><span style="--discipline-value:${value}%"></span></div>
       <div class="performance-discipline__details">
-        <span>${discipline.answered} respondidas</span>
+        <span>${discipline.answered} resp.</span>
         <span>${discipline.errors} erros</span>
         <strong>${escapeHtml(discipline.classification)}</strong>
       </div>
@@ -136,11 +147,11 @@ function disciplineRows(rows, mode = 'edital') {
 function disciplinesCard(data) {
   return `<section class="performance-panel performance-disciplines" aria-labelledby="performance-disciplines-title">
     <div class="performance-section-heading">
-      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Acertos e pontos de atenção</h2></div>
+      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Caixas de domínio</h2></div>
       <label class="performance-sort"><span>Ordenar</span><select id="performance-discipline-sort"><option value="edital">Ordem do edital</option><option value="lowest">Menor desempenho</option><option value="highest">Maior desempenho</option></select></label>
     </div>
     ${data.disciplines.length
-      ? `<ol id="performance-discipline-list">${disciplineRows(data.disciplines)}</ol>`
+      ? `<ol id="performance-discipline-list" class="ev-disc-grid">${disciplineRows(data.disciplines)}</ol>`
       : emptyState({ title: 'Sem disciplinas avaliadas', description: 'As disciplinas aparecerão quando este concurso possuir conteúdo disponível.' })}
   </section>`;
 }
@@ -228,11 +239,11 @@ function page(data, contest) {
   const contestRole = contest?.role || contest?.cargo || '';
   return `${compactHeader(contest, data.period)}
     <header class="performance-desktop-header">
-      <div><span>Inteligência de estudo</span><h1>Desempenho</h1><p>${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
+      <div><span>Inteligência de estudo</span><h1>Evolução</h1><p>${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
       <div>${periodFilter(data.period, 'performance-period-desktop')}<button type="button" class="performance-avatar" id="performance-profile-desktop" aria-label="Abrir meu perfil">${ICO.user?.() || 'P'}<span>Meu perfil</span></button></div>
     </header>
     <main class="performance-dashboard">
-      <div class="performance-top-grid">${progressCard(data)}${monsterCard(data)}${overviewCards(data)}</div>
+      <div class="performance-top-grid performance-top-grid--mastery">${masteryHeroCard(data)}${overviewCards(data)}</div>
       <div class="performance-middle-grid">${disciplinesCard(data)}${reviewsCard(data)}</div>
       <div class="performance-bottom-grid">${timeCard(data)}${evolutionCard(data)}</div>
       ${summaryCard(data)}
