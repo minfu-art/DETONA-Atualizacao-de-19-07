@@ -1,0 +1,171 @@
+{
+  "A_received": 20,
+  "C_converted": 20,
+  "D_duplicates": 0,
+  "E_unmapped": 0,
+  "byTopicoEditalId": {
+    "port_1": 2,
+    "port_2": 2,
+    "port_3": 1,
+    "port_4_1": 5,
+    "port_6_2": 1,
+    "port_4_2": 2,
+    "port_5_3": 3,
+    "port_5_1": 1,
+    "port_5_2": 2,
+    "port_5_4": 1
+  },
+  "existingBankCountBefore": 991,
+  "readyFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\imports\\questions\\pcal-lingua-portuguesa-ciclo-001-ready.json",
+  "noXpOnImport": true,
+  "noReplaceExisting": true,
+  "stats": {
+    "received": 20,
+    "converted": 20
+  },
+  "rows": [
+    {
+      "id": "q_pcal_2026_lp_0001",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0002",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0003",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0004",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0005",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0006",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0007",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0008",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0009",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0010",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0011",
+      "sourceSubtopicId": "1.1.4.6-outros-elementos-de-sequenciacao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0012",
+      "sourceSubtopicId": "1.1.4.7-emprego-de-tempos-verbais",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0013",
+      "sourceSubtopicId": "1.1.4.8-emprego-de-modos-verbais",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0014",
+      "sourceSubtopicId": "1.1.5.1-dominio-da-estrutura-morfossintatica-do-periodo",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0015",
+      "sourceSubtopicId": "1.1.5.2-emprego-das-classes-de-palavras",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0016",
+      "sourceSubtopicId": "1.1.5.3-coordenacao-entre-oracoes",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0017",
+      "sourceSubtopicId": "1.1.5.4-coordenacao-entre-termos-da-oracao",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0018",
+      "sourceSubtopicId": "1.1.5.5-subordinacao-entre-oracoes",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0019",
+      "sourceSubtopicId": "1.1.5.6-subordinacao-entre-termos-da-oracao",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0020",
+      "sourceSubtopicId": "1.1.5.7-emprego-dos-sinais-de-pontuacao",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    }
+  ],
+  "imported": 20,
+  "bankCountAfter": 1011,
+  "bankCountBefore": 991
+}

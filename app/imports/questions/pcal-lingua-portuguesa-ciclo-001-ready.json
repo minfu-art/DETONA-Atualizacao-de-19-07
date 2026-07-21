@@ -1,0 +1,1692 @@
+{
+  "schemaVersion": 1,
+  "name": "pcal-lingua-portuguesa-ciclo-001-ready",
+  "generatedAt": "2026-07-16T19:24:15.487170+00:00",
+  "statusDefault": "revisao",
+  "quantity": 20,
+  "questions": [
+    {
+      "id": "q_pcal_2026_lp_0001",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.1-compreensao-interpretacao-de-textos",
+      "subtopico": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Leia o trecho a seguir.\n\n\"A biblioteca encerraria o atendimento às 18 horas. Às 17h50, Marina devolveu os livros que havia tomado emprestados e deixou o local.\"\n\nCom base nas informações expressas no trecho, é correto afirmar que Marina devolveu os livros antes do encerramento do atendimento.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O horário da devolução foi anterior ao horário de encerramento.\n\nO texto informa que a biblioteca encerraria o atendimento às 18 horas e que Marina devolveu os livros às 17h50. Como 17h50 antecede 18h, a afirmação está diretamente comprovada pelo texto, sem necessidade de inferência externa.\n\nFundamento: Compreensão literal de informações temporais expressamente apresentadas no texto.\n\nErro provável: Confundir compreensão literal com interpretação subjetiva ou ignorar a relação entre os horários.\n\nDica: Em questões de compreensão, localize no texto a informação que confirma ou nega exatamente o item.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_1",
+      "subtopic_id": "port_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "Leia o trecho a seguir.\n\n\"A biblioteca encerraria o atendimento às 18 horas. Às 17h50, Marina devolveu os livros que havia tomado emprestados e deixou o local.\"\n\nCom base nas informações expressas no trecho, é correto afirmar que Marina devolveu os livros antes do encerramento do atendimento.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "O horário da devolução foi anterior ao horário de encerramento.\n\nO texto informa que a biblioteca encerraria o atendimento às 18 horas e que Marina devolveu os livros às 17h50. Como 17h50 antecede 18h, a afirmação está diretamente comprovada pelo texto, sem necessidade de inferência externa.\n\nFundamento: Compreensão literal de informações temporais expressamente apresentadas no texto.\n\nErro provável: Confundir compreensão literal com interpretação subjetiva ou ignorar a relação entre os horários.\n\nDica: Em questões de compreensão, localize no texto a informação que confirma ou nega exatamente o item.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+        "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+        "mappedTopicoEditalId": "port_1",
+        "hashQuestao": "3e56fa3627304444",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "localização de informação explícita",
+            "comparação temporal"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [
+            "desatenção a horários"
+          ],
+          "palavrasChave": [
+            "compreensão textual",
+            "informação explícita",
+            "horário"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Compreensão de textos de gêneros variados"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "609d4c2c67e0476c9646fb95e2fcdf17045c3c2dec297d7cc22800f0449d65a4",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0002",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.1-compreensao-interpretacao-de-textos",
+      "subtopico": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Leia o trecho a seguir.\n\n\"Os resultados melhoraram, mas ainda há um longo caminho a percorrer\", afirmou a coordenadora ao comentar o desempenho da equipe.\n\nInfere-se do trecho que, embora reconheça avanços, a coordenadora considera que o desempenho da equipe ainda não atingiu o nível desejado.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A coordenadora reconhece melhora, mas indica que ainda existem resultados a alcançar.\n\nA conjunção \"mas\" introduz uma ressalva ao reconhecimento inicial de melhora. A expressão \"ainda há um longo caminho a percorrer\" permite inferir que os resultados permanecem aquém do patamar considerado satisfatório.\n\nFundamento: Inferência textual baseada na relação adversativa e no sentido contextual da expressão empregada.\n\nErro provável: Considerar apenas a primeira oração e ignorar a ressalva introduzida por 'mas'.\n\nDica: Na interpretação, observe palavras que limitam ou corrigem uma ideia anterior, como 'mas', 'porém' e 'entretanto'.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_1",
+      "subtopic_id": "port_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "Leia o trecho a seguir.\n\n\"Os resultados melhoraram, mas ainda há um longo caminho a percorrer\", afirmou a coordenadora ao comentar o desempenho da equipe.\n\nInfere-se do trecho que, embora reconheça avanços, a coordenadora considera que o desempenho da equipe ainda não atingiu o nível desejado.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "A coordenadora reconhece melhora, mas indica que ainda existem resultados a alcançar.\n\nA conjunção \"mas\" introduz uma ressalva ao reconhecimento inicial de melhora. A expressão \"ainda há um longo caminho a percorrer\" permite inferir que os resultados permanecem aquém do patamar considerado satisfatório.\n\nFundamento: Inferência textual baseada na relação adversativa e no sentido contextual da expressão empregada.\n\nErro provável: Considerar apenas a primeira oração e ignorar a ressalva introduzida por 'mas'.\n\nDica: Na interpretação, observe palavras que limitam ou corrigem uma ideia anterior, como 'mas', 'porém' e 'entretanto'.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+        "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+        "mappedTopicoEditalId": "port_1",
+        "hashQuestao": "4d7ea59611723c2d",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "inferência",
+            "interpretação contextual"
+          ],
+          "nivelCognitivo": "interpretacao",
+          "pegadinhas": [
+            "leitura parcial do período"
+          ],
+          "palavrasChave": [
+            "inferência",
+            "adversidade",
+            "sentido implícito"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Interpretação de textos de gêneros variados"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "727c6df3c7d777f8a4c4ba5295317d0bcdd106d53e359b3a4e3007fdf17f8bdb",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0003",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.2-tipos-e-generos-textuais",
+      "subtopico": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Considere o trecho: \"Misture os ingredientes, despeje a massa em uma forma untada e leve-a ao forno por trinta minutos.\"\n\nNesse trecho, predomina a tipologia descritiva, pois são apresentadas características dos ingredientes e da forma utilizada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O trecho é predominantemente injuntivo, não descritivo.\n\nA sequência apresenta instruções ao leitor por meio de verbos no imperativo: \"misture\", \"despeje\" e \"leve\". Essa organização caracteriza a tipologia injuntiva ou instrucional, cuja finalidade é orientar a realização de uma ação.\n\nFundamento: Tipologia injuntiva: predominância de comandos, instruções e orientações ao destinatário.\n\nErro provável: Confundir a presença de substantivos concretos com predominância descritiva.\n\nDica: Verbos que ordenam ou orientam ações costumam indicar texto injuntivo.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_2",
+      "subtopic_id": "port_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "Considere o trecho: \"Misture os ingredientes, despeje a massa em uma forma untada e leve-a ao forno por trinta minutos.\"\n\nNesse trecho, predomina a tipologia descritiva, pois são apresentadas características dos ingredientes e da forma utilizada.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": false,
+      "explanation": "O trecho é predominantemente injuntivo, não descritivo.\n\nA sequência apresenta instruções ao leitor por meio de verbos no imperativo: \"misture\", \"despeje\" e \"leve\". Essa organização caracteriza a tipologia injuntiva ou instrucional, cuja finalidade é orientar a realização de uma ação.\n\nFundamento: Tipologia injuntiva: predominância de comandos, instruções e orientações ao destinatário.\n\nErro provável: Confundir a presença de substantivos concretos com predominância descritiva.\n\nDica: Verbos que ordenam ou orientam ações costumam indicar texto injuntivo.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+        "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+        "mappedTopicoEditalId": "port_2",
+        "hashQuestao": "2a5a558abb1f341f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "identificação de tipologia textual"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [
+            "confusão entre descrição e instrução"
+          ],
+          "palavrasChave": [
+            "tipologia injuntiva",
+            "imperativo",
+            "instrução"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Reconhecimento de tipos textuais"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "eeef403894b704382c10fbaf77c0f41b790ac5e636b4d22fafac397973ba1fd0",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0004",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.2-tipos-e-generos-textuais",
+      "subtopico": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Considere o texto: \"Senhor usuário, informamos que o sistema ficará indisponível das 22 horas de sábado às 2 horas de domingo para manutenção programada.\"\n\nPelas características comunicativas apresentadas, o texto pertence ao gênero editorial, pois expressa a opinião institucional do responsável pelo sistema.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "O texto é um aviso ou comunicado, e não um editorial.\n\nO objetivo do texto é informar diretamente o usuário sobre uma indisponibilidade programada. Não há defesa de tese, análise de tema público ou argumentação institucional, características típicas do editorial.\n\nFundamento: Reconhecimento do gênero pela finalidade comunicativa, pelo destinatário e pela estrutura do texto.\n\nErro provável: Associar qualquer mensagem institucional ao gênero editorial.\n\nDica: Para reconhecer o gênero, pergunte: quem fala, para quem, com qual objetivo e em qual situação?",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_2",
+      "subtopic_id": "port_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "Considere o texto: \"Senhor usuário, informamos que o sistema ficará indisponível das 22 horas de sábado às 2 horas de domingo para manutenção programada.\"\n\nPelas características comunicativas apresentadas, o texto pertence ao gênero editorial, pois expressa a opinião institucional do responsável pelo sistema.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": false,
+      "explanation": "O texto é um aviso ou comunicado, e não um editorial.\n\nO objetivo do texto é informar diretamente o usuário sobre uma indisponibilidade programada. Não há defesa de tese, análise de tema público ou argumentação institucional, características típicas do editorial.\n\nFundamento: Reconhecimento do gênero pela finalidade comunicativa, pelo destinatário e pela estrutura do texto.\n\nErro provável: Associar qualquer mensagem institucional ao gênero editorial.\n\nDica: Para reconhecer o gênero, pergunte: quem fala, para quem, com qual objetivo e em qual situação?",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+        "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+        "mappedTopicoEditalId": "port_2",
+        "hashQuestao": "657cab8d7bbedcf6",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "identificação de gênero textual",
+            "análise da finalidade comunicativa"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre comunicado e editorial"
+          ],
+          "palavrasChave": [
+            "gênero textual",
+            "comunicado",
+            "editorial"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Reconhecimento de gêneros textuais"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "07bc02e644d7ae1c9d72c27fd3359267094f79fbe0d7f7f46331ca0e947e70ef",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0005",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.3-ortografia",
+      "subtopico": "1.1.3.1-dominio-da-ortografia-oficial",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "As palavras “exceção”, “privilégio” e “empecilho” estão grafadas de acordo com a ortografia oficial da língua portuguesa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "As três palavras estão corretamente grafadas.\n\nA grafia correta é “exceção”, com XC e Ç; “privilégio”, com I na primeira sílaba e acento agudo; e “empecilho”, com E inicial e C antes de I.\n\nFundamento: Normas ortográficas vigentes da língua portuguesa.\n\nErro provável: Registrar formas não padrão, como 'excessão', 'previlégio' ou 'impecilho'.\n\nDica: Memorize grafias frequentemente cobradas por contraste com os erros mais comuns.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_3",
+      "subtopic_id": "port_3",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "As palavras “exceção”, “privilégio” e “empecilho” estão grafadas de acordo com a ortografia oficial da língua portuguesa.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "As três palavras estão corretamente grafadas.\n\nA grafia correta é “exceção”, com XC e Ç; “privilégio”, com I na primeira sílaba e acento agudo; e “empecilho”, com E inicial e C antes de I.\n\nFundamento: Normas ortográficas vigentes da língua portuguesa.\n\nErro provável: Registrar formas não padrão, como 'excessão', 'previlégio' ou 'impecilho'.\n\nDica: Memorize grafias frequentemente cobradas por contraste com os erros mais comuns.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+        "sourceTopicId": "1.1.3-ortografia",
+        "mappedTopicoEditalId": "port_3",
+        "hashQuestao": "f5f7c8bbf4eef2d6",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "reconhecimento ortográfico"
+          ],
+          "nivelCognitivo": "memorizacao",
+          "pegadinhas": [
+            "formas gráficas recorrentes em erros"
+          ],
+          "palavrasChave": [
+            "ortografia",
+            "exceção",
+            "privilégio",
+            "empecilho"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Domínio da ortografia oficial"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "e8d208cff8a49e81b32392ffa85cfd73f314227197397905cb345019e5505b12",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0006",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"João adquiriu um romance histórico. A obra será utilizada em sua pesquisa\", o emprego da expressão \"A obra\" contribui para a coesão textual ao retomar o referente \"um romance histórico\".",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A expressão 'A obra' retoma o referente anterior e estabelece coesão.\n\nA expressão nominal \"A obra\" funciona como forma de retomada lexical de \"um romance histórico\". Esse recurso evita a repetição literal e mantém a continuidade referencial entre as orações.\n\nFundamento: Coesão referencial por substituição lexical de um referente já introduzido no texto.\n\nErro provável: Achar que somente pronomes podem realizar retomadas coesivas.\n\nDica: A coesão pode ocorrer por pronomes, sinônimos, expressões equivalentes e repetição controlada.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_1",
+      "subtopic_id": "port_4_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "No período \"João adquiriu um romance histórico. A obra será utilizada em sua pesquisa\", o emprego da expressão \"A obra\" contribui para a coesão textual ao retomar o referente \"um romance histórico\".",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "A expressão 'A obra' retoma o referente anterior e estabelece coesão.\n\nA expressão nominal \"A obra\" funciona como forma de retomada lexical de \"um romance histórico\". Esse recurso evita a repetição literal e mantém a continuidade referencial entre as orações.\n\nFundamento: Coesão referencial por substituição lexical de um referente já introduzido no texto.\n\nErro provável: Achar que somente pronomes podem realizar retomadas coesivas.\n\nDica: A coesão pode ocorrer por pronomes, sinônimos, expressões equivalentes e repetição controlada.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_1",
+        "hashQuestao": "f58ac30ae92ef89d",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "análise de coesão referencial"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "restrição indevida da coesão ao uso de pronomes"
+          ],
+          "palavrasChave": [
+            "coesão",
+            "retomada lexical",
+            "referente"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Domínio dos mecanismos de coesão textual"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1bc11bd22902695a065a95965115a2392f25e300139df69b75515403ab2814c0",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0007",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"Ana entregou o relatório a Beatriz, que o encaminhou à diretoria\", o pronome relativo \"que\" retoma \"Beatriz\", enquanto o pronome \"o\" retoma \"o relatório\".",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os dois pronomes retomam referentes distintos e corretamente identificados.\n\nO pronome relativo \"que\" tem como antecedente imediato o nome \"Beatriz\" e exerce função sintática na oração subordinada. O pronome oblíquo \"o\" substitui a expressão \"o relatório\".\n\nFundamento: Referenciação anafórica realizada por pronome relativo e pronome pessoal oblíquo.\n\nErro provável: Atribuir ao pronome 'que' o antecedente 'relatório' apenas por proximidade sem analisar a estrutura.\n\nDica: Identifique o antecedente e verifique qual termo faz sentido como participante da ação expressa pelo verbo.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_1",
+      "subtopic_id": "port_4_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "No período \"Ana entregou o relatório a Beatriz, que o encaminhou à diretoria\", o pronome relativo \"que\" retoma \"Beatriz\", enquanto o pronome \"o\" retoma \"o relatório\".",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "Os dois pronomes retomam referentes distintos e corretamente identificados.\n\nO pronome relativo \"que\" tem como antecedente imediato o nome \"Beatriz\" e exerce função sintática na oração subordinada. O pronome oblíquo \"o\" substitui a expressão \"o relatório\".\n\nFundamento: Referenciação anafórica realizada por pronome relativo e pronome pessoal oblíquo.\n\nErro provável: Atribuir ao pronome 'que' o antecedente 'relatório' apenas por proximidade sem analisar a estrutura.\n\nDica: Identifique o antecedente e verifique qual termo faz sentido como participante da ação expressa pelo verbo.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_1",
+        "hashQuestao": "cfd5ee8753c81d1f",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "identificação de referentes pronominais"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "troca de antecedente"
+          ],
+          "palavrasChave": [
+            "referenciação",
+            "pronome relativo",
+            "anáfora"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de elementos de referenciação"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "a4a2b715db68f1f5142a2b538d09299b4bf70fcdbf1c3275b4f828832fda50d2",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0008",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"O candidato conhecia a matéria; porém, não conseguiu resolver a questão\", a substituição de \"porém\" por \"portanto\" preservaria a relação de sentido estabelecida entre as orações.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A troca alteraria uma relação adversativa para uma relação conclusiva.\n\n\"Porém\" introduz oposição ou contraste: conhecer a matéria não produziu o resultado esperado. \"Portanto\" introduziria conclusão ou consequência, criando uma relação lógica diferente e inadequada ao contexto.\n\nFundamento: Substituição de conectores somente preserva o sentido quando se mantém a mesma relação semântica.\n\nErro provável: Tratar todos os conectores como elementos apenas formais e intercambiáveis.\n\nDica: Antes de substituir um conector, nomeie a relação: oposição, causa, conclusão, condição, explicação etc.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_6_2",
+      "subtopic_id": "port_6_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "No período \"O candidato conhecia a matéria; porém, não conseguiu resolver a questão\", a substituição de \"porém\" por \"portanto\" preservaria a relação de sentido estabelecida entre as orações.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": false,
+      "explanation": "A troca alteraria uma relação adversativa para uma relação conclusiva.\n\n\"Porém\" introduz oposição ou contraste: conhecer a matéria não produziu o resultado esperado. \"Portanto\" introduziria conclusão ou consequência, criando uma relação lógica diferente e inadequada ao contexto.\n\nFundamento: Substituição de conectores somente preserva o sentido quando se mantém a mesma relação semântica.\n\nErro provável: Tratar todos os conectores como elementos apenas formais e intercambiáveis.\n\nDica: Antes de substituir um conector, nomeie a relação: oposição, causa, conclusão, condição, explicação etc.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_6_2",
+        "hashQuestao": "d91e317153a7db89",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "substituição coesiva",
+            "relações semânticas"
+          ],
+          "nivelCognitivo": "aplicacao",
+          "pegadinhas": [
+            "troca entre adversidade e conclusão"
+          ],
+          "palavrasChave": [
+            "substituição",
+            "porém",
+            "portanto"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de elementos de substituição"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "7f58f0f535ed15c5e69b37f8f7c3a6a37602654be08c7128ed14462e579a7b91",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0009",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "A repetição de uma palavra em um texto constitui, em qualquer contexto, falha de coesão e deve ser obrigatoriamente eliminada.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "E",
+      "explicacao": "A repetição pode exercer função coesiva, enfática ou temática.\n\nEmbora repetições desnecessárias possam prejudicar o estilo, a repetição lexical também pode manter o tópico, garantir clareza, produzir ênfase ou estabelecer paralelismo. Portanto, não é correto considerá-la sempre uma falha.\n\nFundamento: A repetição lexical é um mecanismo possível de coesão e pode ter função discursiva legítima.\n\nErro provável: Aplicar de forma absoluta a recomendação estilística de evitar repetições.\n\nDica: Avalie a função da repetição no contexto; não a classifique automaticamente como erro.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_1",
+      "subtopic_id": "port_4_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "A repetição de uma palavra em um texto constitui, em qualquer contexto, falha de coesão e deve ser obrigatoriamente eliminada.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": false,
+      "explanation": "A repetição pode exercer função coesiva, enfática ou temática.\n\nEmbora repetições desnecessárias possam prejudicar o estilo, a repetição lexical também pode manter o tópico, garantir clareza, produzir ênfase ou estabelecer paralelismo. Portanto, não é correto considerá-la sempre uma falha.\n\nFundamento: A repetição lexical é um mecanismo possível de coesão e pode ter função discursiva legítima.\n\nErro provável: Aplicar de forma absoluta a recomendação estilística de evitar repetições.\n\nDica: Avalie a função da repetição no contexto; não a classifique automaticamente como erro.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_1",
+        "hashQuestao": "e5895f72ddfec95c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "avaliação de recurso coesivo"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "generalização absoluta"
+          ],
+          "palavrasChave": [
+            "repetição lexical",
+            "coesão",
+            "ênfase"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de elementos de repetição"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "f92fa0b444fdff457fe23ee81bfd177f8c057c5c135214e008dfed841ee9086f",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0010",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.5-emprego-de-conectores",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"O servidor apresentou todos os documentos; portanto, o cadastro foi concluído\", o conector \"portanto\" introduz uma conclusão decorrente da informação anterior.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O conector 'portanto' estabelece relação conclusiva.\n\nA segunda oração apresenta o resultado lógico associado à entrega dos documentos. Nesse contexto, \"portanto\" funciona como conjunção coordenativa conclusiva.\n\nFundamento: Relação semântica conclusiva estabelecida por conector coordenativo.\n\nErro provável: Confundir conclusão com explicação ou oposição.\n\nDica: Conectores como 'logo', 'portanto' e 'assim' normalmente introduzem conclusão.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_1",
+      "subtopic_id": "port_4_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "No período \"O servidor apresentou todos os documentos; portanto, o cadastro foi concluído\", o conector \"portanto\" introduz uma conclusão decorrente da informação anterior.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "O conector 'portanto' estabelece relação conclusiva.\n\nA segunda oração apresenta o resultado lógico associado à entrega dos documentos. Nesse contexto, \"portanto\" funciona como conjunção coordenativa conclusiva.\n\nFundamento: Relação semântica conclusiva estabelecida por conector coordenativo.\n\nErro provável: Confundir conclusão com explicação ou oposição.\n\nDica: Conectores como 'logo', 'portanto' e 'assim' normalmente introduzem conclusão.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_1",
+        "hashQuestao": "49ee6b34ce10f4c2",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "identificação de relação lógica"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [],
+          "palavrasChave": [
+            "conector",
+            "conclusão",
+            "portanto"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de conectores"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "8828eef71100766c62066f88993ed1d52927077b63e5b2804c7b8acfdeda4303",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0011",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.6-outros-elementos-de-sequenciacao-textual",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No trecho \"Primeiramente, serão conferidos os documentos; em seguida, ocorrerá a entrevista; por fim, será divulgado o resultado\", as expressões destacadas organizam temporalmente as etapas do procedimento.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os marcadores ordenam a progressão temporal das etapas.\n\n\"Primeiramente\", \"em seguida\" e \"por fim\" são organizadores textuais que indicam a ordem de realização das ações. Eles contribuem para a progressão e a clareza do texto.\n\nFundamento: Sequenciação textual por marcadores de ordenação temporal.\n\nErro provável: Analisar os marcadores isoladamente e não perceber sua função na progressão do texto.\n\nDica: Procure expressões que indiquem começo, continuidade e encerramento de uma sequência.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_1",
+      "subtopic_id": "port_4_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "No trecho \"Primeiramente, serão conferidos os documentos; em seguida, ocorrerá a entrevista; por fim, será divulgado o resultado\", as expressões destacadas organizam temporalmente as etapas do procedimento.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "Os marcadores ordenam a progressão temporal das etapas.\n\n\"Primeiramente\", \"em seguida\" e \"por fim\" são organizadores textuais que indicam a ordem de realização das ações. Eles contribuem para a progressão e a clareza do texto.\n\nFundamento: Sequenciação textual por marcadores de ordenação temporal.\n\nErro provável: Analisar os marcadores isoladamente e não perceber sua função na progressão do texto.\n\nDica: Procure expressões que indiquem começo, continuidade e encerramento de uma sequência.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.6-outros-elementos-de-sequenciacao-textual",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_1",
+        "hashQuestao": "d3d86d20187ccc06",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "identificação de progressão textual"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [],
+          "palavrasChave": [
+            "sequenciação",
+            "ordem temporal",
+            "progressão"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de outros elementos de sequenciação textual"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "28475b2b0b250255822ad1a02be5e6e427111f30f1cf8c891928258ff3ed1df3",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0012",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.7-emprego-de-tempos-verbais",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na oração \"Quando ele chegar, iniciaremos a reunião\", as formas verbais \"chegar\" e \"iniciaremos\" situam as duas ações em um momento posterior ao da enunciação.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "As duas formas projetam as ações para o futuro.\n\n\"Chegar\" está no futuro do subjuntivo e indica uma ação futura tomada como condição temporal. \"Iniciaremos\" está no futuro do presente do indicativo e expressa a ação que ocorrerá depois.\n\nFundamento: Correlação entre futuro do subjuntivo e futuro do presente em oração temporal.\n\nErro provável: Confundir a forma 'chegar' com infinitivo por terem a mesma aparência gráfica.\n\nDica: Depois de 'quando', em referência futura, é comum ocorrer o futuro do subjuntivo.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_2",
+      "subtopic_id": "port_4_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "Na oração \"Quando ele chegar, iniciaremos a reunião\", as formas verbais \"chegar\" e \"iniciaremos\" situam as duas ações em um momento posterior ao da enunciação.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "As duas formas projetam as ações para o futuro.\n\n\"Chegar\" está no futuro do subjuntivo e indica uma ação futura tomada como condição temporal. \"Iniciaremos\" está no futuro do presente do indicativo e expressa a ação que ocorrerá depois.\n\nFundamento: Correlação entre futuro do subjuntivo e futuro do presente em oração temporal.\n\nErro provável: Confundir a forma 'chegar' com infinitivo por terem a mesma aparência gráfica.\n\nDica: Depois de 'quando', em referência futura, é comum ocorrer o futuro do subjuntivo.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.7-emprego-de-tempos-verbais",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_2",
+        "hashQuestao": "9506aa0ce1d3a0bc",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "identificação de tempos verbais",
+            "correlação temporal"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "homonímia entre infinitivo e futuro do subjuntivo"
+          ],
+          "palavrasChave": [
+            "tempo verbal",
+            "futuro do subjuntivo",
+            "futuro do presente"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de tempos verbais"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "7cf7f98fd5df97f928a12b95b7cd95b406b8e81a7dcfadfcd457ebaf77e442a9",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0013",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.4-coesao-textual",
+      "subtopico": "1.1.4.8-emprego-de-modos-verbais",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na oração \"Talvez o candidato compareça à entrevista\", o emprego da forma verbal \"compareça\" no modo subjuntivo é compatível com a ideia de possibilidade expressa pelo advérbio \"talvez\".",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O subjuntivo expressa possibilidade ou incerteza.\n\nO advérbio \"talvez\" introduz uma situação não confirmada. Por isso, o presente do subjuntivo \"compareça\" é adequado para representar hipótese, dúvida ou possibilidade.\n\nFundamento: Emprego do modo subjuntivo em contextos de incerteza, hipótese ou possibilidade.\n\nErro provável: Associar o presente do subjuntivo somente a fatos futuros.\n\nDica: Indicativo tende à certeza; subjuntivo tende à hipótese, possibilidade, desejo ou dúvida.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_4_2",
+      "subtopic_id": "port_4_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "Na oração \"Talvez o candidato compareça à entrevista\", o emprego da forma verbal \"compareça\" no modo subjuntivo é compatível com a ideia de possibilidade expressa pelo advérbio \"talvez\".",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "O subjuntivo expressa possibilidade ou incerteza.\n\nO advérbio \"talvez\" introduz uma situação não confirmada. Por isso, o presente do subjuntivo \"compareça\" é adequado para representar hipótese, dúvida ou possibilidade.\n\nFundamento: Emprego do modo subjuntivo em contextos de incerteza, hipótese ou possibilidade.\n\nErro provável: Associar o presente do subjuntivo somente a fatos futuros.\n\nDica: Indicativo tende à certeza; subjuntivo tende à hipótese, possibilidade, desejo ou dúvida.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.4.8-emprego-de-modos-verbais",
+        "sourceTopicId": "1.1.4-coesao-textual",
+        "mappedTopicoEditalId": "port_4_2",
+        "hashQuestao": "230880d24f47024c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "identificação de modo verbal"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [],
+          "palavrasChave": [
+            "modo verbal",
+            "subjuntivo",
+            "possibilidade"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego de modos verbais"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "1b0c4a0b4b1c7fb5d5cf6d51a446cd40aff2234d175e8417428518ecd590efde",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0014",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.1-dominio-da-estrutura-morfossintatica-do-periodo",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"Os candidatos entregaram os documentos ao fiscal\", o sintagma \"Os candidatos\" exerce a função de sujeito, \"os documentos\" exerce a função de objeto direto e \"ao fiscal\" exerce a função de objeto indireto.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A análise sintática apresentada corresponde à regência do verbo 'entregar'.\n\nO verbo \"entregar\" admite, no contexto, complemento sem preposição para a coisa entregue (\"os documentos\") e complemento introduzido pela preposição \"a\" para o destinatário (\"ao fiscal\"). \"Os candidatos\" é o termo que pratica a ação.\n\nFundamento: Estrutura sintática de verbo transitivo direto e indireto.\n\nErro provável: Classificar 'ao fiscal' como adjunto adverbial apenas por indicar uma pessoa de destino.\n\nDica: Pergunte ao verbo: quem entrega? entrega o quê? entrega a quem?",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_3",
+      "subtopic_id": "port_5_3",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "No período \"Os candidatos entregaram os documentos ao fiscal\", o sintagma \"Os candidatos\" exerce a função de sujeito, \"os documentos\" exerce a função de objeto direto e \"ao fiscal\" exerce a função de objeto indireto.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "A análise sintática apresentada corresponde à regência do verbo 'entregar'.\n\nO verbo \"entregar\" admite, no contexto, complemento sem preposição para a coisa entregue (\"os documentos\") e complemento introduzido pela preposição \"a\" para o destinatário (\"ao fiscal\"). \"Os candidatos\" é o termo que pratica a ação.\n\nFundamento: Estrutura sintática de verbo transitivo direto e indireto.\n\nErro provável: Classificar 'ao fiscal' como adjunto adverbial apenas por indicar uma pessoa de destino.\n\nDica: Pergunte ao verbo: quem entrega? entrega o quê? entrega a quem?",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.1-dominio-da-estrutura-morfossintatica-do-periodo",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_3",
+        "hashQuestao": "cfdfe7e05c654af0",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "análise sintática",
+            "identificação de complementos verbais"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre objeto indireto e adjunto adverbial"
+          ],
+          "palavrasChave": [
+            "morfossintaxe",
+            "objeto direto",
+            "objeto indireto"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Domínio da estrutura morfossintática do período"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "11d653982242af4847ac2e98a81f7d28e8bfa5bda66662a653ff3c3ddd76045a",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0015",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.2-emprego-das-classes-de-palavras",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na oração \"A servidora respondeu rapidamente\", a palavra \"rapidamente\" pertence à classe dos advérbios e modifica o sentido do verbo “respondeu”.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Rapidamente é advérbio de modo e modifica o verbo.\n\nA palavra \"rapidamente\" indica o modo como a ação de responder foi realizada. Por isso, funciona como advérbio de modo ligado ao verbo.\n\nFundamento: Advérbios podem modificar verbos, adjetivos, outros advérbios ou toda a oração.\n\nErro provável: Classificar a palavra como adjetivo apenas por derivar do adjetivo 'rápido'.\n\nDica: Adjetivo caracteriza substantivo; advérbio normalmente modifica verbo, adjetivo ou advérbio.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_1",
+      "subtopic_id": "port_5_1",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "Na oração \"A servidora respondeu rapidamente\", a palavra \"rapidamente\" pertence à classe dos advérbios e modifica o sentido do verbo “respondeu”.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "Rapidamente é advérbio de modo e modifica o verbo.\n\nA palavra \"rapidamente\" indica o modo como a ação de responder foi realizada. Por isso, funciona como advérbio de modo ligado ao verbo.\n\nFundamento: Advérbios podem modificar verbos, adjetivos, outros advérbios ou toda a oração.\n\nErro provável: Classificar a palavra como adjetivo apenas por derivar do adjetivo 'rápido'.\n\nDica: Adjetivo caracteriza substantivo; advérbio normalmente modifica verbo, adjetivo ou advérbio.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.2-emprego-das-classes-de-palavras",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_1",
+        "hashQuestao": "da71af49631d9aeb",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "classificação morfológica"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [
+            "confusão entre adjetivo e advérbio"
+          ],
+          "palavrasChave": [
+            "classes de palavras",
+            "advérbio",
+            "modo"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego das classes de palavras"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "a0b26d28a3f3ce06c0793c231fca881080ed8d55628ed01f99c69c58097db973",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0016",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.3-coordenacao-entre-oracoes",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"O candidato estudou bastante, mas não alcançou a pontuação mínima\", a oração introduzida por \"mas\" é coordenada sindética adversativa.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A conjunção 'mas' estabelece oposição entre orações coordenadas.\n\nAs orações são sintaticamente independentes e estão ligadas pela conjunção adversativa \"mas\", que introduz contraste entre o esforço realizado e o resultado obtido.\n\nFundamento: Coordenação sindética adversativa introduzida por conjunção de oposição.\n\nErro provável: Confundir a relação adversativa com concessão subordinativa.\n\nDica: Se as orações são independentes e ligadas por 'mas', há coordenação adversativa.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_2",
+      "subtopic_id": "port_5_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "1",
+      "format": "certo_errado",
+      "statement": "No período \"O candidato estudou bastante, mas não alcançou a pontuação mínima\", a oração introduzida por \"mas\" é coordenada sindética adversativa.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "A conjunção 'mas' estabelece oposição entre orações coordenadas.\n\nAs orações são sintaticamente independentes e estão ligadas pela conjunção adversativa \"mas\", que introduz contraste entre o esforço realizado e o resultado obtido.\n\nFundamento: Coordenação sindética adversativa introduzida por conjunção de oposição.\n\nErro provável: Confundir a relação adversativa com concessão subordinativa.\n\nDica: Se as orações são independentes e ligadas por 'mas', há coordenação adversativa.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.3-coordenacao-entre-oracoes",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_2",
+        "hashQuestao": "24c7dc7a59809534",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 1,
+          "habilidades": [
+            "classificação de oração coordenada"
+          ],
+          "nivelCognitivo": "compreensao",
+          "pegadinhas": [
+            "confusão entre adversidade e concessão"
+          ],
+          "palavrasChave": [
+            "coordenação",
+            "oração adversativa",
+            "mas"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Relações de coordenação entre orações"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "633021baa16ee131cfdd5bbb711c448b012bda498be69bc0cf921858b0792ecf",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0017",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.4-coordenacao-entre-termos-da-oracao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na oração \"O servidor analisou contratos e relatórios\", os termos \"contratos\" e \"relatórios\" são objetos diretos coordenados entre si.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "Os dois substantivos exercem a mesma função sintática e estão coordenados.\n\nAmbos completam diretamente o sentido do verbo transitivo direto \"analisou\" e estão ligados pela conjunção aditiva \"e\". Portanto, são núcleos de objetos diretos coordenados.\n\nFundamento: Coordenação entre termos de mesma função sintática.\n\nErro provável: Achar que coordenação ocorre somente entre orações completas.\n\nDica: Termos coordenados exercem a mesma função em relação ao mesmo elemento da oração.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_2",
+      "subtopic_id": "port_5_2",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "2",
+      "format": "certo_errado",
+      "statement": "Na oração \"O servidor analisou contratos e relatórios\", os termos \"contratos\" e \"relatórios\" são objetos diretos coordenados entre si.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "Os dois substantivos exercem a mesma função sintática e estão coordenados.\n\nAmbos completam diretamente o sentido do verbo transitivo direto \"analisou\" e estão ligados pela conjunção aditiva \"e\". Portanto, são núcleos de objetos diretos coordenados.\n\nFundamento: Coordenação entre termos de mesma função sintática.\n\nErro provável: Achar que coordenação ocorre somente entre orações completas.\n\nDica: Termos coordenados exercem a mesma função em relação ao mesmo elemento da oração.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.4-coordenacao-entre-termos-da-oracao",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_2",
+        "hashQuestao": "1e4788edeebeed9c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 2,
+          "habilidades": [
+            "análise sintática",
+            "coordenação de termos"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "restrição da coordenação a orações"
+          ],
+          "palavrasChave": [
+            "coordenação",
+            "termos",
+            "objeto direto"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Relações de coordenação entre termos da oração"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "f78424d4bf2f7f189a92b5d2ab1dcfd41def04bca939075e2771d491295848c7",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0018",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.5-subordinacao-entre-oracoes",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"É necessário que todos compareçam\", a oração \"que todos compareçam\" exerce função de sujeito da oração principal e classifica-se como oração subordinada substantiva subjetiva.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "A oração subordinada funciona como sujeito de 'é necessário'.\n\nA estrutura \"é necessário\" não apresenta sujeito expresso fora da oração iniciada por \"que\". Perguntando-se \"o que é necessário?\", obtém-se \"que todos compareçam\". Por isso, a oração é subordinada substantiva subjetiva.\n\nFundamento: Oração subordinada substantiva que exerce função sintática de sujeito.\n\nErro provável: Classificar a oração como objetiva direta por responder a uma pergunta feita ao predicado.\n\nDica: Em construções como 'é necessário que...', a oração iniciada por 'que' costuma funcionar como sujeito.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_3",
+      "subtopic_id": "port_5_3",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "3",
+      "format": "certo_errado",
+      "statement": "No período \"É necessário que todos compareçam\", a oração \"que todos compareçam\" exerce função de sujeito da oração principal e classifica-se como oração subordinada substantiva subjetiva.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "A oração subordinada funciona como sujeito de 'é necessário'.\n\nA estrutura \"é necessário\" não apresenta sujeito expresso fora da oração iniciada por \"que\". Perguntando-se \"o que é necessário?\", obtém-se \"que todos compareçam\". Por isso, a oração é subordinada substantiva subjetiva.\n\nFundamento: Oração subordinada substantiva que exerce função sintática de sujeito.\n\nErro provável: Classificar a oração como objetiva direta por responder a uma pergunta feita ao predicado.\n\nDica: Em construções como 'é necessário que...', a oração iniciada por 'que' costuma funcionar como sujeito.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.5-subordinacao-entre-oracoes",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_3",
+        "hashQuestao": "59c36fe195170f3c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "classificação de oração subordinada"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão entre subjetiva e objetiva direta"
+          ],
+          "palavrasChave": [
+            "subordinação",
+            "oração substantiva",
+            "subjetiva"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Relações de subordinação entre orações"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "5f22b255eb3d7444a7bef4c03684cda15b213d7823693db1737575e9903cec4e",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0019",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.6-subordinacao-entre-termos-da-oracao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "Na oração \"A equipe tem necessidade de apoio técnico\", o termo \"de apoio técnico\" subordina-se ao substantivo abstrato \"necessidade\" e exerce a função de complemento nominal.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "O termo preposicionado completa o sentido do substantivo abstrato.\n\nA expressão \"de apoio técnico\" completa o significado de \"necessidade\", substantivo abstrato que exige especificação de seu conteúdo. Não indica posse, agente ou característica acessória, mas o objeto da necessidade.\n\nFundamento: Complemento nominal ligado por preposição a substantivo abstrato de sentido incompleto.\n\nErro provável: Classificar qualquer termo ligado a substantivo como adjunto adnominal.\n\nDica: O complemento nominal completa o sentido de nome abstrato e normalmente recebe a ideia expressa por esse nome.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_3",
+      "subtopic_id": "port_5_3",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "3",
+      "format": "certo_errado",
+      "statement": "Na oração \"A equipe tem necessidade de apoio técnico\", o termo \"de apoio técnico\" subordina-se ao substantivo abstrato \"necessidade\" e exerce a função de complemento nominal.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "O termo preposicionado completa o sentido do substantivo abstrato.\n\nA expressão \"de apoio técnico\" completa o significado de \"necessidade\", substantivo abstrato que exige especificação de seu conteúdo. Não indica posse, agente ou característica acessória, mas o objeto da necessidade.\n\nFundamento: Complemento nominal ligado por preposição a substantivo abstrato de sentido incompleto.\n\nErro provável: Classificar qualquer termo ligado a substantivo como adjunto adnominal.\n\nDica: O complemento nominal completa o sentido de nome abstrato e normalmente recebe a ideia expressa por esse nome.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.6-subordinacao-entre-termos-da-oracao",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_3",
+        "hashQuestao": "af066729eb187c9c",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "distinção entre complemento nominal e adjunto adnominal"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "confusão com adjunto adnominal"
+          ],
+          "palavrasChave": [
+            "subordinação de termos",
+            "complemento nominal",
+            "substantivo abstrato"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Relações de subordinação entre termos da oração"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "6bc901e03bfb7b3af13c50ae81a7845a7c5f1591b3eb9ad7e9b7c819286a5e9b",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    },
+    {
+      "id": "q_pcal_2026_lp_0020",
+      "concursoId": "pc_al_2026",
+      "cargoId": "agente_policia",
+      "disciplinaId": "lingua_portuguesa",
+      "assunto": "1.1.5-estrutura-morfossintatica",
+      "subtopico": "1.1.5.7-emprego-dos-sinais-de-pontuacao",
+      "banca": "CEBRASPE",
+      "ano": null,
+      "fonteProva": "PC AL — conteúdo programático organizado",
+      "tipo": "certo_errado",
+      "enunciado": "No período \"Os candidatos, que chegaram cedo, entraram primeiro\", a retirada das vírgulas transformaria a oração adjetiva explicativa em restritiva e poderia alterar o sentido original.",
+      "contextoCompartilhado": "",
+      "alternativas": [],
+      "respostaCorreta": "C",
+      "explicacao": "As vírgulas distinguem oração adjetiva explicativa de oração adjetiva restritiva.\n\nCom vírgulas, a oração sugere que todos os candidatos chegaram cedo e acrescenta uma explicação. Sem vírgulas, a oração restringiria o grupo: apenas os candidatos que chegaram cedo teriam entrado primeiro. Assim, a alteração de pontuação pode modificar o alcance semântico.\n\nFundamento: Pontuação de orações subordinadas adjetivas explicativas e restritivas.\n\nErro provável: Considerar as vírgulas opcionais sem observar a mudança de sentido.\n\nDica: Oração adjetiva explicativa vem isolada por vírgulas; a restritiva, em regra, não.",
+      "status": "revisao",
+      "situacao": "revisao",
+      "versao": 1,
+      "topicoEditalId": "port_5_4",
+      "subtopic_id": "port_5_4",
+      "fonte": "Ciclo 001 · Texto colado(6).txt",
+      "dificuldade": "3",
+      "format": "certo_errado",
+      "statement": "No período \"Os candidatos, que chegaram cedo, entraram primeiro\", a retirada das vírgulas transformaria a oração adjetiva explicativa em restritiva e poderia alterar o sentido original.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": true,
+      "explanation": "As vírgulas distinguem oração adjetiva explicativa de oração adjetiva restritiva.\n\nCom vírgulas, a oração sugere que todos os candidatos chegaram cedo e acrescenta uma explicação. Sem vírgulas, a oração restringiria o grupo: apenas os candidatos que chegaram cedo teriam entrado primeiro. Assim, a alteração de pontuação pode modificar o alcance semântico.\n\nFundamento: Pontuação de orações subordinadas adjetivas explicativas e restritivas.\n\nErro provável: Considerar as vírgulas opcionais sem observar a mudança de sentido.\n\nDica: Oração adjetiva explicativa vem isolada por vírgulas; a restritiva, em regra, não.",
+      "is_user_created": false,
+      "created_at": "2026-07-16T19:24:15Z",
+      "createdAt": "2026-07-16T19:24:15Z",
+      "updatedAt": "2026-07-16T19:24:15Z",
+      "metadata": {
+        "origemArquivo": "ciclo_001_pc_al_lingua_portuguesa_20_questoes.json",
+        "origemImport": "pcal-lingua-portuguesa-ciclo-001",
+        "sourceSubtopicId": "1.1.5.7-emprego-dos-sinais-de-pontuacao",
+        "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+        "mappedTopicoEditalId": "port_5_4",
+        "hashQuestao": "e4af3b661957dad9",
+        "revisado": false,
+        "statusImportacao": "revisao",
+        "classificacao": {
+          "dificuldade": 3,
+          "habilidades": [
+            "análise de pontuação",
+            "interpretação sintática"
+          ],
+          "nivelCognitivo": "analise",
+          "pegadinhas": [
+            "suposta facultatividade das vírgulas"
+          ],
+          "palavrasChave": [
+            "pontuação",
+            "oração adjetiva",
+            "vírgula"
+          ]
+        },
+        "fonteDetalhe": {
+          "tipo": "edital",
+          "arquivo": "Texto colado(6).txt",
+          "paginaInicial": null,
+          "paginaFinal": null,
+          "referencia": "PC AL — conteúdo programático organizado",
+          "trechoOrigem": "Emprego dos sinais de pontuação"
+        },
+        "controle": {
+          "status": "pendente_revisao",
+          "criadaPor": "ia",
+          "confiancaIA": 0.96,
+          "revisadaPorHumano": false,
+          "versao": 1,
+          "hashConteudo": "7981fe45141bec4be4f116d6ca4b6069d7934e5da317d17e7da6dc40a8bc6391",
+          "createdAt": "2026-07-16T16:14:53-03:00",
+          "updatedAt": "2026-07-16T16:14:53-03:00"
+        },
+        "cargoIds": [
+          "agente",
+          "escrivao"
+        ],
+        "noXpOnImport": true
+      }
+    }
+  ]
+}

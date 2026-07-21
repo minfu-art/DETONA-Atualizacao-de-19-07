@@ -1,0 +1,283 @@
+{
+  "versao": 1,
+  "geradoEm": "2026-07-17T01:28:33.658Z",
+  "disciplinas": [
+    {
+      "id": "analise_de_dados",
+      "arquivo": "./data/questions/analise_de_dados.json",
+      "quantidade": 754,
+      "porTipo": {
+        "multipla_escolha": 232,
+        "certo_errado": 522
+      },
+      "porBanca": {
+        "CEBRASPE": 583,
+        "FGV": 40,
+        "CESGRANRIO": 14,
+        "QUADRIX": 15,
+        "CONSULPLAN": 10,
+        "FAURGS": 2,
+        "FEPESE": 3,
+        "COVEST": 2,
+        "CCV": 1,
+        "FCC": 22,
+        "VUNESP": 14,
+        "IBFC": 3,
+        "ESPP": 1,
+        "AOCP": 12,
+        "LEGALLE": 1,
+        "MS (SARMENTO": 1,
+        "IBADE": 2,
+        "AVANÇASP": 1,
+        "UFMG": 1,
+        "FUNDATEC": 8,
+        "IADES": 2,
+        "IDECAN": 7,
+        "FUNCERN": 1,
+        "IBEST": 1,
+        "FGPC": 1,
+        "COGEPE FIOCRUZ": 1,
+        "COGEPE": 1,
+        "COCP": 1,
+        "IFSP": 1,
+        "OBJETIVA": 1,
+        "UFMT": 1
+      },
+      "hash": "bedd17fb8faa134574cb624a2c2b42e6340b67a4e296934d9cc319ebab896a75",
+      "versao": 1
+    },
+    {
+      "id": "contabilidade",
+      "arquivo": "./data/questions/contabilidade.json",
+      "quantidade": 568,
+      "porTipo": {
+        "certo_errado": 448,
+        "multipla_escolha": 120
+      },
+      "porBanca": {
+        "CEBRASPE": 522,
+        "FGV": 22,
+        "FUNDATEC": 17,
+        "VUNESP": 3,
+        "CONSULPLAN": 1,
+        "FEPESE": 1,
+        "FCC": 2
+      },
+      "hash": "919f13677a13a96a283350ada6aa489577b621b3027e644b2d9dd96d195954ea",
+      "versao": 1
+    },
+    {
+      "id": "direitos_humanos",
+      "arquivo": "./data/questions/direitos_humanos.json",
+      "quantidade": 264,
+      "porTipo": {
+        "certo_errado": 201,
+        "multipla_escolha": 63
+      },
+      "porBanca": {
+        "CEBRASPE": 264
+      },
+      "hash": "cae18de4e7085084060a782dc949422f71d6d7cad2ad5adaf58d94fcd9f471f1",
+      "versao": 1
+    },
+    {
+      "id": "direito_constitucional",
+      "arquivo": "./data/questions/direito_constitucional.json",
+      "quantidade": 309,
+      "porTipo": {
+        "multipla_escolha": 98,
+        "certo_errado": 211
+      },
+      "porBanca": {
+        "CEBRASPE": 309
+      },
+      "hash": "29c8647c1b5eb8599a5610329d2fd9759a32f29fa9cbc9d13582776e3b2903db",
+      "versao": 1
+    },
+    {
+      "id": "direito_penal",
+      "arquivo": "./data/questions/direito_penal.json",
+      "quantidade": 1087,
+      "porTipo": {
+        "certo_errado": 770,
+        "multipla_escolha": 317
+      },
+      "porBanca": {
+        "2021": 20,
+        "CEBRASPE": 870,
+        "FGV": 36,
+        "FCC": 61,
+        "VUNESP": 55,
+        "MPE-RS": 1,
+        "CESPE/UnB": 1,
+        "CESPE/UNB": 1,
+        "FGV/2022/PCERJ/INVESTIGADOR": 1,
+        "FGV/2021/PCRN": 2,
+        "FGV/2022/TJAP/JUIZ": 1,
+        "FGV/2022/MPE": 1,
+        "FGV/2021/PCERJ/PERITO": 2,
+        "FGV/2021/TJSC": 1,
+        "FGV/2018/AL": 1,
+        "FGV/2018/TJSC": 1,
+        "FGV/2021/TJRO": 1,
+        "FGV/2018/TJAL": 1,
+        "CESPE/2020/MPCE": 1,
+        "CESPE/2020/MPCE/PROMOTOR": 1,
+        "FGV/2021/PCRN/DELEGADO": 1,
+        "VUNESP/2019/PREF. DE CERQUILHO": 2,
+        "VUNESP/2019/PREF. DE CAMPINAS": 1,
+        "CESPE / 2020 / MPCE / ANALISTA": 1,
+        "CESPE / 2019 / TJAM / AJAJ": 1,
+        "CESPE/2022/TCE": 1,
+        "MPE": 1,
+        "2021/INÉDITA/ELABORADA PELO PROF. RENAN ARAUJO": 20
+      },
+      "hash": "ab9245b6e94375824b68a3a32f0047eb56de50848d987a1a84227f0cfbe99596",
+      "versao": 1
+    },
+    {
+      "id": "estatistica",
+      "arquivo": "./data/questions/estatistica.json",
+      "quantidade": 316,
+      "porTipo": {
+        "certo_errado": 258,
+        "multipla_escolha": 58
+      },
+      "porBanca": {
+        "CEBRASPE": 316
+      },
+      "hash": "117f00bae080646962836f3672738b5776157c8f33f1c76512200bd2840be868",
+      "versao": 1
+    },
+    {
+      "id": "legislacao_estadual_estatutos_de_alagoas",
+      "arquivo": "./data/questions/legislacao_estadual_estatutos_de_alagoas.json",
+      "quantidade": 127,
+      "porTipo": {
+        "multipla_escolha": 91,
+        "certo_errado": 36
+      },
+      "porBanca": {
+        "ESTRATÉGIA": 26,
+        "FCC": 81,
+        "CEBRASPE": 14,
+        "COPEVE": 4,
+        "FGV": 2
+      },
+      "hash": "9c4881ab2df9bf601781cb5879976c3dfebbaa5931d9da8ce01106168872ebe6",
+      "versao": 1
+    },
+    {
+      "id": "lingua_portuguesa",
+      "arquivo": "./data/questions/lingua_portuguesa.json",
+      "quantidade": 1159,
+      "porTipo": {
+        "multipla_escolha": 173,
+        "certo_errado": 986
+      },
+      "porBanca": {
+        "": 43,
+        "CEBRASPE": 1116
+      },
+      "hash": "2a8bda43fff9d37a27701d6e591c054c488c4deb596d55af2036119f4e3d7ca0",
+      "versao": 1
+    },
+    {
+      "id": "raciocinio_logico_matematico",
+      "arquivo": "./data/questions/raciocinio_logico_matematico.json",
+      "quantidade": 662,
+      "porTipo": {
+        "certo_errado": 492,
+        "multipla_escolha": 170
+      },
+      "porBanca": {
+        "CEBRASPE": 662
+      },
+      "hash": "32b44f605ee06d8dcce8e2396d0c8a7c8e64a34d73bf728cb73555bc683e43e0",
+      "versao": 1
+    },
+    {
+      "id": "tecnologia_da_informacao_crimes_ciberneticos",
+      "arquivo": "./data/questions/tecnologia_da_informacao_crimes_ciberneticos.json",
+      "quantidade": 477,
+      "porTipo": {
+        "multipla_escolha": 300,
+        "certo_errado": 177
+      },
+      "porBanca": {
+        "IDECAN": 14,
+        "PREFEITURA": 69,
+        "CEBRASPE": 156,
+        "FGV": 39,
+        "FCC": 21,
+        "CESGRANRIO": 38,
+        "VUNESP": 21,
+        "CONSULPLAN": 5,
+        "AOCP": 11,
+        "IADES": 9,
+        "QUADRIX": 18,
+        "IBFC": 12,
+        "INSTITUTO CONSULPLAN": 1,
+        "FADESP": 1,
+        "FUNDATEC": 4,
+        "IDHTEC": 1,
+        "FEPESE": 5,
+        "CONTEMAX": 1,
+        "CEPS-UFPA": 1,
+        "IDIB": 1,
+        "IESES": 2,
+        "COPEVE": 3,
+        "FUMARC": 2,
+        "INQC": 2,
+        "COSEAC": 2,
+        "INAZ DO PARÁ": 1,
+        "COPESE": 2,
+        "IF-RS": 1,
+        "CETRO": 1,
+        "IFRN": 1,
+        "FPM CONCURSOS": 1,
+        "FUNPAR": 1,
+        "EXATUS": 1,
+        "UFG": 4,
+        "BIO-RIO": 1,
+        "UNESC": 1,
+        "UNESPAR": 1,
+        "FUVEST": 1,
+        "INSTITUTO ACCESS": 1,
+        "MS CONCURSOS": 1,
+        "FURB": 1,
+        "FIOCRUZ": 1,
+        "LEGALLE": 1,
+        "TRF": 1,
+        "MPDFT": 2,
+        "CCC IFCE": 1,
+        "PROGPE UFSCAR": 1,
+        "CRS (PM MG": 2,
+        "DIRENS AERONÁUTICA": 2,
+        "IBADE": 1,
+        "COMPERVE (UFRN": 1,
+        "DEPSEC UNIFAP": 1,
+        "COMPEC UFAM": 1,
+        "VERBENA": 1,
+        "MARINHA": 1,
+        "DIRPS UFU": 1
+      },
+      "hash": "73e8005f23c3bf524cf69692abaa781b22da1c7a2b0f265c43fbebdff3f54764",
+      "versao": 1
+    },
+    {
+      "id": "dh",
+      "arquivo": "./data/questions/dh.json",
+      "quantidade": 25,
+      "porTipo": {
+        "certo_errado": 25
+      },
+      "porBanca": {
+        "CEBRASPE": 25
+      },
+      "hash": "d0ce7042adc01290d54fff5b26ac764e42e6ad1b9f9b3dccb444d155a1257f28",
+      "versao": 1
+    }
+  ],
+  "quantidade": 5748
+}

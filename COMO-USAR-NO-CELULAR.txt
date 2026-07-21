@@ -1,0 +1,50 @@
+================================================================================
+  DETONA CONCURSOS — Compatível com CELULAR? SIM
+================================================================================
+
+O app foi feito mobile-first (tela estreita, botões grandes, nav inferior).
+Funciona em:
+  • Android (Chrome, Edge, Samsung Internet)
+  • iPhone / iPad (Safari)
+  • Desktop (Chrome, Edge, Firefox)
+
+--------------------------------------------------------------------------------
+OPÇÃO A — Mesma Wi-Fi do seu PC (rápido, grátis)
+--------------------------------------------------------------------------------
+1. No PC, abra:  SERVIR-CELULAR.bat
+2. Anote o endereço que aparece, por exemplo:
+      http://192.168.0.15:8765/
+3. No celular (mesma Wi-Fi), abra o Chrome/Safari e digite esse endereço
+4. Para instalar como app:
+   Android Chrome → menu ⋮ → "Instalar app" ou "Adicionar à tela inicial"
+   iPhone Safari  → Compartilhar → "Adicionar à Tela de Início"
+
+Depois de instalado e aberto 1 vez, funciona offline no celular (PWA).
+
+--------------------------------------------------------------------------------
+OPÇÃO B — Link na internet (melhor para compradores)
+--------------------------------------------------------------------------------
+Publique a pasta do app em um host gratuito e envie o link:
+
+  • Netlify Drop (arrastar pasta) — https://app.netlify.com/drop
+  • Cloudflare Pages
+  • GitHub Pages
+  • Vercel
+
+O comprador abre o link no celular e instala na tela inicial.
+Progresso fica no aparelho dele (IndexedDB) + backup Kafra.
+
+--------------------------------------------------------------------------------
+OPÇÃO C — Só no PC
+--------------------------------------------------------------------------------
+INICIAR-APP.bat ou o instalável Windows já criado.
+
+--------------------------------------------------------------------------------
+DICAS
+--------------------------------------------------------------------------------
+• Use o celular na VERTICAL (portrait)
+• Faça backup: Perfil → Salvar Progresso na Kafra
+• Se o celular não abrir: desative “isolamento de AP” no roteador
+  ou use dados móveis no PC com hotspot do celular
+
+================================================================================

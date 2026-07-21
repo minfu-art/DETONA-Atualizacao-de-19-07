@@ -1,0 +1,16 @@
+{
+  "geradoEm": "2026-07-17T00:39:19.698Z",
+  "origem": "C:\\Users\\wwwmi\\Documents\\DETONA-CONCURSOS-WORK\\app\\imports\\entrada-exemplo",
+  "saida": "C:\\Users\\wwwmi\\Documents\\DETONA-CONCURSOS-WORK\\app\\imports\\questions\\DETONA_BANCO_LINGUA_PORTUGUESA_AUTO.xlsx",
+  "disciplina": "Língua Portuguesa",
+  "totalLidas": 6,
+  "questoesGravadas": 6,
+  "erros": [],
+  "status": "REVISADA",
+  "proximosPassos": [
+    "Revise a planilha (aba QUESTOES / COMENTARIOS).",
+    "Garanta status_extracao = REVISADA para entrar no app.",
+    "Rode: node scripts/importQuestionBanks.mjs",
+    "Ou com rascunhos: node scripts/importQuestionBanks.mjs --include-extraida"
+  ]
+}

@@ -1,0 +1,79 @@
+DETONA CONCURSOS — Como automatizar o banco de questões
+=======================================================
+
+A) EXTRAIR DE PDF DE APOSTILA (recomendado)
+-------------------------------------------
+Duplo clique:
+  EXTRAIR-PDF-APOSTILA.bat
+
+Ou na pasta app:
+
+  node scripts/extrairPdfApostila.mjs --pdf "C:\caminho\curso-aula-00.pdf" --disciplina "Direito Penal"
+
+  # pasta inteira de aulas:
+  node scripts/extrairPdfApostila.mjs --dir "C:\CURSOS\D. Penal" --disciplina "Direito Penal"
+
+  # só um intervalo de páginas:
+  node scripts/extrairPdfApostila.mjs --pdf aula.pdf --disciplina "Direito Penal" --paginas 38-59
+
+  # seções: comentados (padrão) | praticar | lista | auto | todas
+  node scripts/extrairPdfApostila.mjs --pdf aula.pdf --disciplina "Direito Penal" --secao comentados
+
+Requisitos: Python 3.12 + pypdf
+  py -3.12 -m pip install pypdf
+
+O parser lê seções no padrão Estratégia:
+  EXERCÍCIOS COMENTADOS  → enunciado + comentário + GABARITO
+  EXERCÍCIOS PARA PRATICAR → sem gabarito (use --keep-sem-gabarito)
+
+B) IMPORTAR JSON / CSV / TXT
+----------------------------
+  node scripts/criarBancoQuestoes.mjs --from=arquivo.json --disciplina "Língua Portuguesa"
+  CRIAR-BANCO-QUESTOES.bat
+
+C) CARREGAR NO APP DETONA
+-------------------------
+  node scripts/importQuestionBanks.mjs
+
+Excel gerado em:
+  imports/questions/DETONA_BANCO_*.xlsx
+
+Abas: RESUMO | QUESTOES | COMENTARIOS | PENDENCIAS | DUPLICATAS | CONTROLE_EXTRACAO | DICIONARIO
+
+STATUS
+------
+REVISADA  = entra no app na importação normal
+EXTRAIDA  = rascunho (só com --include-extraida)
+REJEITADA = ignorada
+
+FORMATO TXT (certo/errado)
+--------------------------
+1. Enunciado da questão aqui.
+
+Gabarito: Certo
+Comentário: Explicação opcional.
+
+FORMATO TXT (múltipla escolha)
+------------------------------
+QUESTÃO 1
+Enunciado...
+
+A) alternativa
+B) alternativa
+C) alternativa
+D) alternativa
+E) alternativa
+
+Gabarito: B
+Comentário: Explicação.
+
+FORMATO JSON (mínimo)
+---------------------
+[
+  {
+    "enunciado": "...",
+    "tipo": "certo_errado",
+    "respostaCorreta": "C",
+    "explicacao": "..."
+  }
+]

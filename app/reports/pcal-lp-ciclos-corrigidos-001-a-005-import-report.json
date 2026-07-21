@@ -1,0 +1,727 @@
+{
+  "received": 100,
+  "converted": 100,
+  "unmapped": 0,
+  "duplicates": 0,
+  "byTopicoEditalId": {
+    "port_1": 20,
+    "port_2": 20,
+    "port_3": 10,
+    "port_4_1": 40,
+    "port_6_2": 10
+  },
+  "existingBankCountBefore": 1026,
+  "stats": {
+    "received": 100,
+    "converted": 100
+  },
+  "rows": [
+    {
+      "id": "q_pcal_2026_lp_corr_0001",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0002",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0003",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0004",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0005",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0006",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0007",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0008",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0009",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0010",
+      "sourceSubtopicId": "1.1.1.1-compreensao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0011",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0012",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0013",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0014",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0015",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0016",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0017",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0018",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0019",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0020",
+      "sourceSubtopicId": "1.1.1.2-interpretacao-de-textos-de-generos-variados",
+      "sourceTopicId": "1.1.1-compreensao-interpretacao-de-textos",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0021",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0022",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0023",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0024",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0025",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0026",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0027",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0028",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0029",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0030",
+      "sourceSubtopicId": "1.1.2.1-reconhecimento-de-tipos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0031",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0032",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0033",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0034",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0035",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0036",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0037",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0038",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0039",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0040",
+      "sourceSubtopicId": "1.1.2.2-reconhecimento-de-generos-textuais",
+      "sourceTopicId": "1.1.2-tipos-e-generos-textuais",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0041",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0042",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0043",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0044",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0045",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0046",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0047",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0048",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0049",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0050",
+      "sourceSubtopicId": "1.1.3.1-dominio-da-ortografia-oficial",
+      "sourceTopicId": "1.1.3-ortografia",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0051",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0052",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0053",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0054",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0055",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0056",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0057",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0058",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0059",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0060",
+      "sourceSubtopicId": "1.1.4.1-dominio-dos-mecanismos-de-coesao-textual",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0061",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0062",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0063",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0064",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0065",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0066",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0067",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0068",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0069",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0070",
+      "sourceSubtopicId": "1.1.4.2-emprego-de-elementos-de-referenciacao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0071",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0072",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0073",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0074",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0075",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0076",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0077",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0078",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0079",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0080",
+      "sourceSubtopicId": "1.1.4.3-emprego-de-elementos-de-substituicao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0081",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0082",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0083",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0084",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0085",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0086",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0087",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0088",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0089",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0090",
+      "sourceSubtopicId": "1.1.4.4-emprego-de-elementos-de-repeticao",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0091",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0092",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0093",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0094",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0095",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0096",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0097",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0098",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0099",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_corr_0100",
+      "sourceSubtopicId": "1.1.4.5-emprego-de-conectores",
+      "sourceTopicId": "1.1.4-coesao-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    }
+  ],
+  "readyFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\imports\\questions\\pcal-lp-ciclos-corrigidos-001-a-005-ready.json",
+  "noXpOnImport": true,
+  "noReplaceExisting": true,
+  "imported": 100,
+  "bankCountAfter": 1126,
+  "bankCountBefore": 1026,
+  "indexTotal": 1306
+}

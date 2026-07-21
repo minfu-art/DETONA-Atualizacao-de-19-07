@@ -1,0 +1,78 @@
+================================================================================
+  DETONA CONCURSOS — PC/AL 2026
+  Motor de Estudos RPG Offline (Agente e Escrivão de Polícia)
+================================================================================
+
+Obrigado por adquirir o DETONA CONCURSOS!
+
+--------------------------------------------------------------------------------
+REQUISITOS
+--------------------------------------------------------------------------------
+• Windows 10 ou Windows 11
+• Navegador moderno (Google Chrome, Microsoft Edge ou Firefox)
+• NÃO precisa de internet após a primeira abertura (app offline / PWA)
+• NÃO precisa instalar Node.js, Python ou outros programas
+
+--------------------------------------------------------------------------------
+INSTALAÇÃO (recomendado)
+--------------------------------------------------------------------------------
+1. Extraia este ZIP em qualquer pasta (ex.: Área de Trabalho)
+2. Clique duas vezes em:  INSTALAR.bat
+3. Aguarde a mensagem de sucesso
+4. Use o atalho "DETONA CONCURSOS" na Área de Trabalho ou no Menu Iniciar
+
+--------------------------------------------------------------------------------
+USO RÁPIDO (sem instalar)
+--------------------------------------------------------------------------------
+1. Abra a pasta "app"
+2. Clique duas vezes em:  INICIAR-APP.bat
+3. O navegador abrirá em http://localhost:8765/
+4. Para fechar: feche a janela preta do servidor (ou Ctrl+C nela)
+
+--------------------------------------------------------------------------------
+PRIMEIRO USO
+--------------------------------------------------------------------------------
+1. Crie seu personagem (nome + data da prova)
+2. Na Home, toque em um tópico do EDITAL (ex.: Português, Constitucional)
+3. Avance na árvore de subtópicos conquistando ESTRELAS em batalhas
+4. Cadastre/importe mais questões em: Questões (Forja)
+5. Configure metas em: Metas / Planejamento
+6. Faça backup em: Perfil → Salvar Progresso na Kafra (.rpgsave)
+
+--------------------------------------------------------------------------------
+BACKUP (Kafra) — IMPORTANTE
+--------------------------------------------------------------------------------
+Seu progresso fica no navegador (IndexedDB).
+Sempre use "Salvar Progresso na Kafra" no Perfil antes de formatar o PC
+ou trocar de navegador. Guarde o arquivo .rpgsave em local seguro.
+
+--------------------------------------------------------------------------------
+DESINSTALAR
+--------------------------------------------------------------------------------
+Execute DESINSTALAR.bat (remove atalhos e a pasta de instalação).
+O progresso no navegador NÃO é apagado automaticamente.
+Para zerar progresso: limpe os dados do site no navegador ou use
+ferramentas do app / restaure um .rpgsave antigo.
+
+--------------------------------------------------------------------------------
+SUPORTE
+--------------------------------------------------------------------------------
+Produto: DETONA CONCURSOS — Edição PC/AL 2026
+Conteúdo: programática do edital + banco de questões incluso
+Licença: uso pessoal do comprador (não revenda o ZIP sem autorização)
+
+================================================================================
+© DETONA CONCURSOS — Versão 1.0
+================================================================================
+
+--------------------------------------------------------------------------------
+CELULAR (Android / iPhone)
+--------------------------------------------------------------------------------
+Sim, o app e compativel com celular (layout mobile + PWA).
+
+Forma rapida (mesma Wi-Fi):
+1. No PC, execute SERVIR-CELULAR.bat (na pasta do pacote ou em app\)
+2. Abra no celular o endereco http://IP-DO-PC:PORTA mostrado na tela
+3. Chrome/Safari -> Adicionar a tela inicial
+
+Guia completo: COMO-USAR-NO-CELULAR.txt

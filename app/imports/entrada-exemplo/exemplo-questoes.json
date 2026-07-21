@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "name": "exemplo-banco-detona",
+  "questions": [
+    {
+      "id": "EX-LP-0001",
+      "disciplina": "Língua Portuguesa",
+      "assunto": "Ortografia",
+      "subtopico": "Uso do hífen",
+      "banca": "CEBRASPE",
+      "ano": 2025,
+      "fonte": "Exemplo DETONA",
+      "tipo": "certo_errado",
+      "enunciado": "Julgue o item: a forma \"anti-inflamatório\" está escrita de acordo com o Vocabulário Ortográfico da Língua Portuguesa.",
+      "respostaCorreta": "C",
+      "explicacao": "Correto. Mantém-se o hífen quando o prefixo termina com vogal e o segundo elemento começa com a mesma vogal."
+    },
+    {
+      "id": "EX-LP-0002",
+      "disciplina": "Língua Portuguesa",
+      "assunto": "Classes de palavras",
+      "subtopico": "Pronomes",
+      "banca": "CEBRASPE",
+      "ano": 2024,
+      "fonte": "Exemplo DETONA",
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a alternativa em que o pronome está empregado corretamente.",
+      "alternativas": [
+        { "letra": "A", "texto": "Houveram muitos problemas na reunião." },
+        { "letra": "B", "texto": "Fazem dois anos que ela saiu." },
+        { "letra": "C", "texto": "Informaram-me sobre a decisão." },
+        { "letra": "D", "texto": "Havia de se fazerem as correções." },
+        { "letra": "E", "texto": "Devem haver soluções." }
+      ],
+      "respostaCorreta": "C",
+      "explicacao": "A alternativa C está correta: o pronome oblíquo \"me\" está bem posicionado (ênclise após forma verbal)."
+    }
+  ]
+}

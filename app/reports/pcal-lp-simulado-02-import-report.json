@@ -1,0 +1,608 @@
+{
+  "A_received": 76,
+  "B_compatibleAfterMapping": 76,
+  "C_converted": 76,
+  "D_duplicates": 0,
+  "E_unmappedOrMissingSubtopic": 0,
+  "F_requiresReview": 76,
+  "G_bankFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\data\\questions\\lingua_portuguesa.json",
+  "subtopicMapUsed": {
+    "regencia-verbal": "port_5_6",
+    "funcao-sintatica-pronomes": "port_5_8",
+    "pronomes-relativos": "port_5_8",
+    "periodo-simples-composto": "port_5_3",
+    "sujeito-predicado": "port_5_3",
+    "ordem-direta-inversa": "port_5_3",
+    "coordenacao": "port_5_2",
+    "oracoes-adjetivas": "port_5_3",
+    "oracoes-adverbiais": "port_5_3",
+    "oracoes-reduzidas": "port_5_3",
+    "conjuncoes": "port_4_1",
+    "proclise-enclise-mesoclise": "port_5_8",
+    "sinonimos": "port_6_1",
+    "figuras-de-linguagem": "port_6_1",
+    "figuras-de-som": "port_6_1",
+    "sentido-ambiguidade": "port_6_1",
+    "estrangeirismos": "port_6_1",
+    "uso-da-virgula": "port_5_4",
+    "tipos-textuais": "port_2",
+    "discurso-direto-indireto": "port_2",
+    "verbos-dicendi": "port_4_2",
+    "formal-informal": "port_6_4",
+    "funcoes-linguagem": "port_2",
+    "oralidade": "port_2",
+    "digrafos": "port_3"
+  },
+  "topicMapUsed": {
+    "sintaxe": "port_5_3",
+    "semantica": "port_6_1",
+    "colocacao-pronominal": "port_5_8",
+    "linguagem": "port_2",
+    "reescrita-de-frases": "port_6_4",
+    "tipologia-textual": "port_2",
+    "fonetica": "port_3",
+    "frase-oracao-periodo": "port_5_3",
+    "tipos-de-discurso": "port_2",
+    "relacao-coordenacao-subordinacao": "port_5_2",
+    "pontuacao": "port_5_4"
+  },
+  "byTopicoEditalId": {
+    "port_5_6": 11,
+    "port_5_8": 18,
+    "port_6_1": 11,
+    "port_6_4": 2,
+    "port_2": 7,
+    "port_3": 1,
+    "port_5_3": 8,
+    "port_4_2": 1,
+    "port_5_2": 1,
+    "port_4_1": 1,
+    "port_5_4": 15
+  },
+  "existingBankCountBefore": 915,
+  "readyFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\imports\\questions\\pcal-lingua-portuguesa-simulado-02-ready.json",
+  "noStudentProgressTouch": true,
+  "noXpOnImport": true,
+  "noReplaceExisting": true,
+  "stats": {
+    "received": 76,
+    "converted": 76
+  },
+  "rows": [
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p04-q001",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p04-q002",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p04-q003",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p04-q004",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p04-q005",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q006",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q007",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q008",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q009",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q010",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q011",
+      "sourceSubtopicId": "pronomes-relativos",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p05-q012",
+      "sourceSubtopicId": "pronomes-relativos",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p06-q013",
+      "sourceSubtopicId": "regencia-verbal",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p06-q014",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p06-q015",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p07-q016",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p07-q017",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p07-q018",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p08-q019",
+      "sourceSubtopicId": "sinonimos",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p08-q020",
+      "sourceSubtopicId": "figuras-de-linguagem",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p08-q021",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p08-q022",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p10-q023",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p10-q024",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p10-q025",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p11-q026",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p12-q027",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p12-q028",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p13-q029",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p14-q030",
+      "sourceSubtopicId": "funcao-sintatica-pronomes",
+      "sourceTopicId": "sintaxe",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p14-q031",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p14-q032",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p15-q033",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p15-q034",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p15-q035",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p15-q036",
+      "sourceSubtopicId": "proclise-enclise-mesoclise",
+      "sourceTopicId": "colocacao-pronominal",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p16-q037",
+      "sourceSubtopicId": "formal-informal",
+      "sourceTopicId": "linguagem",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p16-q038",
+      "sourceSubtopicId": "estrangeirismos",
+      "sourceTopicId": "linguagem",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p17-q039",
+      "sourceSubtopicId": "formal-informal",
+      "sourceTopicId": "linguagem",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p17-q040",
+      "sourceSubtopicId": "figuras-de-linguagem",
+      "sourceTopicId": "semantica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p18-q041",
+      "sourceSubtopicId": "sentido-ambiguidade",
+      "sourceTopicId": "reescrita-de-frases",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p18-q042",
+      "sourceSubtopicId": "funcoes-linguagem",
+      "sourceTopicId": "tipologia-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p19-q043",
+      "sourceSubtopicId": "oralidade",
+      "sourceTopicId": "linguagem",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p19-q044",
+      "sourceSubtopicId": "tipos-textuais",
+      "sourceTopicId": "tipologia-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p20-q045",
+      "sourceSubtopicId": "tipos-textuais",
+      "sourceTopicId": "tipologia-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p20-q046",
+      "sourceSubtopicId": "tipos-textuais",
+      "sourceTopicId": "tipologia-textual",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p21-q047",
+      "sourceSubtopicId": "digrafos",
+      "sourceTopicId": "fonetica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p21-q048",
+      "sourceSubtopicId": "figuras-de-som",
+      "sourceTopicId": "fonetica",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p21-q049",
+      "sourceSubtopicId": "periodo-simples-composto",
+      "sourceTopicId": "frase-oracao-periodo",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p22-q050",
+      "sourceSubtopicId": "sujeito-predicado",
+      "sourceTopicId": "frase-oracao-periodo",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p22-q051",
+      "sourceSubtopicId": "ordem-direta-inversa",
+      "sourceTopicId": "frase-oracao-periodo",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p23-q052",
+      "sourceSubtopicId": "discurso-direto-indireto",
+      "sourceTopicId": "tipos-de-discurso",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p23-q053",
+      "sourceSubtopicId": "verbos-dicendi",
+      "sourceTopicId": "tipos-de-discurso",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p24-q054",
+      "sourceSubtopicId": "discurso-direto-indireto",
+      "sourceTopicId": "tipos-de-discurso",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p25-q055",
+      "sourceSubtopicId": "coordenacao",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_2"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p26-q056",
+      "sourceSubtopicId": "oracoes-adjetivas",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p27-q057",
+      "sourceSubtopicId": "oracoes-adverbiais",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p27-q058",
+      "sourceSubtopicId": "oracoes-reduzidas",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p28-q059",
+      "sourceSubtopicId": "conjuncoes",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_4_1"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p29-q060",
+      "sourceSubtopicId": "oracoes-reduzidas",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p29-q061",
+      "sourceSubtopicId": "oracoes-adverbiais",
+      "sourceTopicId": "relacao-coordenacao-subordinacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_3"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q062",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q063",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q064",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q065",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q066",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q067",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p30-q068",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q069",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q070",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q071",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q072",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q073",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q074",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q075",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-02-p31-q076",
+      "sourceSubtopicId": "uso-da-virgula",
+      "sourceTopicId": "pontuacao",
+      "action": "convert",
+      "mappedTopicoEditalId": "port_5_4"
+    }
+  ],
+  "imported": 76,
+  "bankCountAfter": 991,
+  "bankCountBefore": 915
+}

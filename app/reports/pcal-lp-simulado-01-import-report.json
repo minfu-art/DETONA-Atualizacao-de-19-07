@@ -1,0 +1,249 @@
+{
+  "A_received": 29,
+  "B_compatibleAfterMapping": 0,
+  "C_converted": 0,
+  "D_duplicates": 29,
+  "E_unmappedOrMissingSubtopic": 0,
+  "F_requiresReview": 0,
+  "G_bankFile": "(not modified yet)",
+  "userRequestedIdsExistInEdital": {
+    "lingua-portuguesa": true,
+    "ortografia-acentuacao-crase": false,
+    "classes-de-palavras": false,
+    "estrutura-formacao-palavras": false,
+    "grafia-correta": false,
+    "uso-da-crase": false,
+    "acentuacao-grafica": false,
+    "pronomes": false,
+    "processos-derivacionais": false,
+    "artigo-preposicao": false,
+    "adverbio-adjetivo": false,
+    "flexao-nominal": false,
+    "adverbio": false,
+    "preposicao": false
+  },
+  "allRequestedIdsMissingFromEdital": false,
+  "subtopicMapUsed": {
+    "grafia-correta": "port_3",
+    "acentuacao-grafica": "port_3",
+    "uso-da-crase": "port_5_7",
+    "pronomes": "port_5_8",
+    "processos-derivacionais": "port_6_1",
+    "artigo-preposicao": "port_5_1",
+    "adverbio-adjetivo": "port_5_1",
+    "flexao-nominal": "port_5_1",
+    "adverbio": "port_5_1",
+    "preposicao": "port_5_1"
+  },
+  "compatibleFields": {
+    "id": "id",
+    "questionText": "enunciado / statement",
+    "explanation": "explicacao / explanation",
+    "correctAnswer": "respostaCorreta / correct_answer",
+    "alternatives": "alternativas / options",
+    "type": "tipo / format",
+    "board": "banca",
+    "year": "ano",
+    "agency/exam/sourceFile": "fonteProva / fonte / metadata",
+    "subjectId": "disciplinaId (after rename)",
+    "subtopicId": "topicoEditalId (after map to port_*)",
+    "status": "status / situacao"
+  },
+  "renameConvert": [
+    "questionText → enunciado",
+    "explanation → explicacao",
+    "type:true_false → tipo:certo_errado + resposta C/E + options Certo/Errado",
+    "type:multiple_choice → tipo:multipla_escolha + alternativas[{letra,texto}]",
+    "correctAnswer true/false → C/E",
+    "subjectId lingua-portuguesa → disciplinaId lingua_portuguesa",
+    "subtopicId slug → topicoEditalId port_* via SUBTOPIC_MAP",
+    "board CESPE → CEBRASPE",
+    "status needs_review → revisao",
+    "source* → metadata"
+  ],
+  "existingBankCountBefore": 915,
+  "readyFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\imports\\questions\\pcal-lingua-portuguesa-simulado-01-ready.json",
+  "noStudentProgressTouch": true,
+  "noXpOnImport": true,
+  "noReplaceExisting": true,
+  "stats": {
+    "received": 29,
+    "dup_id_existing": 29
+  },
+  "rows": [
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p03-q001",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p03-q002",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p03-q003",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p03-q004",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p04-q005",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p04-q006",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p04-q007",
+      "sourceSubtopicId": "acentuacao-grafica",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p05-q008",
+      "sourceSubtopicId": "pronomes",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p05-q009",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p05-q010",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p06-q011",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p06-q012",
+      "sourceSubtopicId": "grafia-correta",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p06-q013",
+      "sourceSubtopicId": "acentuacao-grafica",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p06-q014",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p07-q015",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p07-q016",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p07-q017",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p07-q018",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p08-q019",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p08-q020",
+      "sourceSubtopicId": "uso-da-crase",
+      "sourceTopicId": "ortografia-acentuacao-crase",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p08-q021",
+      "sourceSubtopicId": "processos-derivacionais",
+      "sourceTopicId": "estrutura-formacao-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p09-q022",
+      "sourceSubtopicId": "processos-derivacionais",
+      "sourceTopicId": "estrutura-formacao-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p09-q023",
+      "sourceSubtopicId": "processos-derivacionais",
+      "sourceTopicId": "estrutura-formacao-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p09-q024",
+      "sourceSubtopicId": "artigo-preposicao",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p09-q025",
+      "sourceSubtopicId": "adverbio-adjetivo",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p09-q026",
+      "sourceSubtopicId": "flexao-nominal",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p10-q027",
+      "sourceSubtopicId": "adverbio",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p11-q028",
+      "sourceSubtopicId": "preposicao",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    },
+    {
+      "id": "pcal-lingua-portuguesa-simulado-01-p11-q029",
+      "sourceSubtopicId": "preposicao",
+      "sourceTopicId": "classes-de-palavras",
+      "action": "skip_dup_id_existing"
+    }
+  ]
+}

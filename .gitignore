@@ -1,0 +1,82 @@
+# Node.js e cobertura
+node_modules/
+coverage/
+.nyc_output/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variáveis e configurações locais
+.env
+.env.*
+!.env.example
+*.local
+
+# Arquivos temporários e caches
+.cache/
+.tmp/
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Editores e IDEs
+.idea/
+.vscode/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Backups locais
+backups/
+.backup/
+*.bak
+*.backup
+*.old
+*.orig
+*.rpgsave
+
+# Pacotes e instaladores gerados
+dist/
+build/
+release/
+releases/
+artifacts/
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.exe
+*.msi
+*.msix
+*.appx
+*.appxbundle
+
+# Trabalho temporario de planilhas
+.sheet-work/
+
+
+.vercel
+app/.vercel
+
+
+*.backup.png
+
+
+.vercel-old-detona-concursos/
+app/.vercel-old-detona-concursos/
+

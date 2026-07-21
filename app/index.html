@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#090c18" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Detona" />
+  <meta name="application-name" content="Detona Concursos" />
+  <meta name="description" content="DETONA CONCURSOS — sua plataforma de preparacao para concursos, online e offline. Instale no celular ou PC." />
+  <title>DETONA CONCURSOS — Sua biblioteca de aprovacao</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css?v=74" />
+  <link rel="stylesheet" href="css/design-system.css?v=74" />
+</head>
+<body>
+  <div class="app-bg" aria-hidden="true">
+    <div class="app-bg__glow app-bg__glow--a"></div>
+    <div class="app-bg__glow app-bg__glow--b"></div>
+    <div class="app-bg__grid"></div>
+  </div>
+
+  <div id="app" class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Navegação do aplicativo"></aside>
+    <div class="app-shell__main">
+      <header class="app-topbar" id="app-topbar" aria-label="Resumo do estudante"></header>
+      <div class="app-content">
+        <main id="screen" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação principal">
+      <button type="button" class="nav-item active" data-screen="home" aria-label="Hoje">
+        <span class="nav-ico" data-ico="home"></span>
+        <span>Hoje</span>
+      </button>
+      <button type="button" class="nav-item" data-screen="map" aria-label="Estudar">
+        <span class="nav-ico" data-ico="book"></span>
+        <span>Estudar</span>
+      </button>
+      <button type="button" class="nav-item" data-screen="edital" aria-label="Edital verticalizado">
+        <span class="nav-ico" data-ico="clipboard"></span>
+        <span>Edital</span>
+      </button>
+      <button type="button" class="nav-item" data-screen="expedition" aria-label="Plano">
+        <span class="nav-ico" data-ico="calendar"></span>
+        <span>Plano</span>
+      </button>
+      <button type="button" class="nav-item" data-screen="performance" aria-label="Evolução">
+        <span class="nav-ico" data-ico="seedling"></span>
+        <span>Evolução</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="js/app.js?v=74"></script>
+</body>
+</html>

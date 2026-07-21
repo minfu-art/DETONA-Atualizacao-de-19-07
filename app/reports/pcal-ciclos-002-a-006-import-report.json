@@ -1,0 +1,834 @@
+{
+  "received": 100,
+  "converted": 100,
+  "byDisciplina": {
+    "lingua_portuguesa": 15,
+    "tecnologia_informacao": 59,
+    "seguranca_cibernetica": 26
+  },
+  "unmapped": 0,
+  "duplicates": 0,
+  "stats": {
+    "received": 100,
+    "converted": 100,
+    "converted_lingua_portuguesa": 15,
+    "converted_tecnologia_informacao": 59,
+    "converted_seguranca_cibernetica": 26
+  },
+  "rows": [
+    {
+      "id": "q_pcal_2026_lp_0021",
+      "sourceSubtopicId": "1.1.5-concordancia-verbal",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_5"
+    },
+    {
+      "id": "q_pcal_2026_lp_0022",
+      "sourceSubtopicId": "1.1.5-concordancia-nominal",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_5"
+    },
+    {
+      "id": "q_pcal_2026_lp_0023",
+      "sourceSubtopicId": "1.1.5-regencia-verbal",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "q_pcal_2026_lp_0024",
+      "sourceSubtopicId": "1.1.5-regencia-nominal",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_6"
+    },
+    {
+      "id": "q_pcal_2026_lp_0025",
+      "sourceSubtopicId": "1.1.5-emprego-do-sinal-indicativo-de-crase",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_7"
+    },
+    {
+      "id": "q_pcal_2026_lp_0026",
+      "sourceSubtopicId": "1.1.5-colocacao-dos-pronomes-atonos",
+      "sourceTopicId": "1.1.5-estrutura-morfossintatica",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_5_8"
+    },
+    {
+      "id": "q_pcal_2026_lp_0027",
+      "sourceSubtopicId": "1.1.6-reescrita-de-frases",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "q_pcal_2026_lp_0028",
+      "sourceSubtopicId": "1.1.6-reescrita-de-paragrafos",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "q_pcal_2026_lp_0029",
+      "sourceSubtopicId": "1.1.6-significacao-das-palavras",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_1"
+    },
+    {
+      "id": "q_pcal_2026_lp_0030",
+      "sourceSubtopicId": "1.1.6-substituicao-de-palavras",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0031",
+      "sourceSubtopicId": "1.1.6-substituicao-de-trechos-de-texto",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_2"
+    },
+    {
+      "id": "q_pcal_2026_lp_0032",
+      "sourceSubtopicId": "1.1.6-reorganizacao-da-estrutura-de-oracoes",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0033",
+      "sourceSubtopicId": "1.1.6-reorganizacao-da-estrutura-de-periodos",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_3"
+    },
+    {
+      "id": "q_pcal_2026_lp_0034",
+      "sourceSubtopicId": "1.1.6-reescrita-de-textos-de-diferentes-generos",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "q_pcal_2026_lp_0035",
+      "sourceSubtopicId": "1.1.6-reescrita-de-textos-em-diferentes-niveis-de-formalidade",
+      "sourceTopicId": "1.1.6-reescrita-de-frases-e-paragrafos",
+      "action": "convert",
+      "disciplinaId": "lingua_portuguesa",
+      "mappedTopicoEditalId": "port_6_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0001",
+      "sourceSubtopicId": "1.2.1.1-nocoes-de-sistema-operacional",
+      "sourceTopicId": "1.2.1.1-sistemas-operacionais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0002",
+      "sourceSubtopicId": "1.2.1.1-ambiente-linux",
+      "sourceTopicId": "1.2.1.1-sistemas-operacionais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0003",
+      "sourceSubtopicId": "1.2.1.1-ambiente-windows",
+      "sourceTopicId": "1.2.1.1-sistemas-operacionais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0004",
+      "sourceSubtopicId": "1.2.1.2-edicao-de-textos",
+      "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0005",
+      "sourceSubtopicId": "1.2.1.2-edicao-de-planilhas",
+      "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0006",
+      "sourceSubtopicId": "1.2.1.2-edicao-de-apresentacoes",
+      "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0007",
+      "sourceSubtopicId": "1.2.1.2-pacote-microsoft-office",
+      "sourceTopicId": "1.2.1.2-aplicativos-de-escritorio",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0008",
+      "sourceSubtopicId": "1.2.1.3-conceitos-basicos-de-redes-de-computadores",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0009",
+      "sourceSubtopicId": "1.2.1.3-ferramentas-de-internet-e-intranet",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0010",
+      "sourceSubtopicId": "1.2.1.3-aplicativos-de-internet-e-intranet",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0011",
+      "sourceSubtopicId": "1.2.1.3-procedimentos-de-internet-e-intranet",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0012",
+      "sourceSubtopicId": "1.2.1.3-microsoft-edge",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0013",
+      "sourceSubtopicId": "1.2.1.3-google-chrome",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0014",
+      "sourceSubtopicId": "1.2.1.3-microsoft-outlook",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0015",
+      "sourceSubtopicId": "1.2.1.3-sitios-de-busca-na-internet",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0016",
+      "sourceSubtopicId": "1.2.1.3-sitios-de-pesquisa-na-internet",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0017",
+      "sourceSubtopicId": "1.2.1.3-grupos-de-discussao",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0018",
+      "sourceSubtopicId": "1.2.1.3-computacao-em-nuvem",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_5"
+    },
+    {
+      "id": "q_pcal_2026_ti_0019",
+      "sourceSubtopicId": "1.2.1.3-cloud-computing",
+      "sourceTopicId": "1.2.1.3-redes-de-computadores",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_3_5"
+    },
+    {
+      "id": "q_pcal_2026_ti_0020",
+      "sourceSubtopicId": "1.2.1.4-organizacao-de-informacoes",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0021",
+      "sourceSubtopicId": "1.2.1.4-gerenciamento-de-informacoes",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0022",
+      "sourceSubtopicId": "1.2.1.4-organizacao-de-arquivos",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0023",
+      "sourceSubtopicId": "1.2.1.4-gerenciamento-de-arquivos",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0024",
+      "sourceSubtopicId": "1.2.1.4-organizacao-de-pastas",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0025",
+      "sourceSubtopicId": "1.2.1.4-gerenciamento-de-pastas",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0026",
+      "sourceSubtopicId": "1.2.1.4-organizacao-de-programas",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0027",
+      "sourceSubtopicId": "1.2.1.4-gerenciamento-de-programas",
+      "sourceTopicId": "1.2.1.4-organizacao-e-gerenciamento-de-informacoes",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0028",
+      "sourceSubtopicId": "1.2.1.5-procedimentos-de-seguranca",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0029",
+      "sourceSubtopicId": "1.2.1.5-nocoes-de-virus",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0030",
+      "sourceSubtopicId": "1.2.1.5-nocoes-de-worms",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0031",
+      "sourceSubtopicId": "1.2.1.5-nocoes-de-outras-pragas-virtuais",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0032",
+      "sourceSubtopicId": "1.2.1.5-aplicativos-antivirus",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0033",
+      "sourceSubtopicId": "1.2.1.5-firewall",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0034",
+      "sourceSubtopicId": "1.2.1.5-aplicativos-anti-spyware",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0035",
+      "sourceSubtopicId": "1.2.1.5-procedimentos-de-backup",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0036",
+      "sourceSubtopicId": "1.2.1.5-armazenamento-de-dados-na-nuvem",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0037",
+      "sourceSubtopicId": "1.2.1.5-cloud-storage",
+      "sourceTopicId": "1.2.1.5-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_5_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0038",
+      "sourceSubtopicId": "1.2.1.6-organizacao-de-arquivos",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0039",
+      "sourceSubtopicId": "1.2.1.6-metodos-de-acesso",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0040",
+      "sourceSubtopicId": "1.2.1.6-abstracao-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0041",
+      "sourceSubtopicId": "1.2.1.6-modelos-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0042",
+      "sourceSubtopicId": "1.2.1.6-sistemas-gerenciadores-de-banco-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0043",
+      "sourceSubtopicId": "1.2.1.6-linguagens-de-definicao-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0044",
+      "sourceSubtopicId": "1.2.1.6-linguagens-de-manipulacao-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0045",
+      "sourceSubtopicId": "1.2.1.6-sql",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0046",
+      "sourceSubtopicId": "1.2.1.6-controle-de-protecao",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0047",
+      "sourceSubtopicId": "1.2.1.6-seguranca-de-banco-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0048",
+      "sourceSubtopicId": "1.2.1.6-integridade-de-banco-de-dados",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0049",
+      "sourceSubtopicId": "1.2.1.6-bancos-de-dados-distribuidos",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0050",
+      "sourceSubtopicId": "1.2.1.6-bancos-de-dados-orientados-a-objetos",
+      "sourceTopicId": "1.2.1.6-banco-de-dados",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_6_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0051",
+      "sourceSubtopicId": "1.2.1.7-lei-n-13-709-2018",
+      "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_7"
+    },
+    {
+      "id": "q_pcal_2026_ti_0052",
+      "sourceSubtopicId": "1.2.1.7-lei-geral-de-protecao-de-dados-pessoais",
+      "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_7"
+    },
+    {
+      "id": "q_pcal_2026_ti_0053",
+      "sourceSubtopicId": "1.2.1.7-lgpd",
+      "sourceTopicId": "1.2.1.7-protecao-de-dados-pessoais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_7"
+    },
+    {
+      "id": "q_pcal_2026_ti_0054",
+      "sourceSubtopicId": "1.2.1.8-conceitos-de-servicos-publicos-digitais",
+      "sourceTopicId": "1.2.1.8-servicos-publicos-digitais",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_8"
+    },
+    {
+      "id": "q_pcal_2026_ti_0055",
+      "sourceSubtopicId": "1.2.1.9-conceitos-de-inteligencia-artificial",
+      "sourceTopicId": "1.2.1.9-inteligencia-artificial",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_9"
+    },
+    {
+      "id": "q_pcal_2026_ti_0056",
+      "sourceSubtopicId": "1.2.1.10-java",
+      "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_10"
+    },
+    {
+      "id": "q_pcal_2026_ti_0057",
+      "sourceSubtopicId": "1.2.1.10-python",
+      "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_10"
+    },
+    {
+      "id": "q_pcal_2026_ti_0058",
+      "sourceSubtopicId": "1.2.1.10-apex",
+      "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_10"
+    },
+    {
+      "id": "q_pcal_2026_ti_0059",
+      "sourceSubtopicId": "1.2.1.10-c",
+      "sourceTopicId": "1.2.1.10-linguagens-de-programacao",
+      "action": "convert",
+      "disciplinaId": "tecnologia_informacao",
+      "mappedTopicoEditalId": "ti_10"
+    },
+    {
+      "id": "q_pcal_2026_ti_0060",
+      "sourceSubtopicId": "1.2.2.1-confidencialidade",
+      "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0061",
+      "sourceSubtopicId": "1.2.2.1-integridade",
+      "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0062",
+      "sourceSubtopicId": "1.2.2.1-disponibilidade",
+      "sourceTopicId": "1.2.2.1-fundamentos-de-seguranca-da-informacao",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_1"
+    },
+    {
+      "id": "q_pcal_2026_ti_0063",
+      "sourceSubtopicId": "1.2.2.2-avaliacao-de-riscos",
+      "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0064",
+      "sourceSubtopicId": "1.2.2.2-politicas-de-seguranca",
+      "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0065",
+      "sourceSubtopicId": "1.2.2.2-conformidade-com-normas",
+      "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0066",
+      "sourceSubtopicId": "1.2.2.2-conformidade-com-regulamentacoes",
+      "sourceTopicId": "1.2.2.2-gestao-de-riscos-e-conformidade",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_2"
+    },
+    {
+      "id": "q_pcal_2026_ti_0067",
+      "sourceSubtopicId": "1.2.2.3-firewalls",
+      "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0068",
+      "sourceSubtopicId": "1.2.2.3-sistemas-de-deteccao-de-intrusao-ids",
+      "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0069",
+      "sourceSubtopicId": "1.2.2.3-sistemas-de-prevencao-de-intrusao-ips",
+      "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0070",
+      "sourceSubtopicId": "1.2.2.3-redes-privadas-virtuais-vpn",
+      "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0071",
+      "sourceSubtopicId": "1.2.2.3-segmentacao-de-rede",
+      "sourceTopicId": "1.2.2.3-seguranca-de-rede",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_3"
+    },
+    {
+      "id": "q_pcal_2026_ti_0072",
+      "sourceSubtopicId": "1.2.2.4-tecnicas-de-criptografia",
+      "sourceTopicId": "1.2.2.4-criptografia",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0073",
+      "sourceSubtopicId": "1.2.2.4-principais-ferramentas-de-criptografia",
+      "sourceTopicId": "1.2.2.4-criptografia",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_4"
+    },
+    {
+      "id": "q_pcal_2026_ti_0074",
+      "sourceSubtopicId": "1.2.2.5-praticas-de-seguranca-para-ambientes-de-nuvem",
+      "sourceTopicId": "1.2.2.5-seguranca-em-nuvem",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_5"
+    },
+    {
+      "id": "q_pcal_2026_ti_0075",
+      "sourceSubtopicId": "1.2.2.6-autenticacao",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0076",
+      "sourceSubtopicId": "1.2.2.6-autorizacao",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0077",
+      "sourceSubtopicId": "1.2.2.6-single-sign-on-sso",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0078",
+      "sourceSubtopicId": "1.2.2.6-security-assertion-markup-language-saml",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0079",
+      "sourceSubtopicId": "1.2.2.6-oauth-2",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0080",
+      "sourceSubtopicId": "1.2.2.6-openid-connect",
+      "sourceTopicId": "1.2.2.6-gestao-de-identidades-e-acessos",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_6"
+    },
+    {
+      "id": "q_pcal_2026_ti_0081",
+      "sourceSubtopicId": "1.2.2.7-principais-tipos-de-ataques-ciberneticos",
+      "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_7"
+    },
+    {
+      "id": "q_pcal_2026_ti_0082",
+      "sourceSubtopicId": "1.2.2.7-principais-vulnerabilidades",
+      "sourceTopicId": "1.2.2.7-ataques-e-vulnerabilidades",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_7"
+    },
+    {
+      "id": "q_pcal_2026_ti_0083",
+      "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-aplicacoes-web",
+      "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_8"
+    },
+    {
+      "id": "q_pcal_2026_ti_0084",
+      "sourceSubtopicId": "1.2.2.8-testes-de-seguranca-para-aplicacoes-web",
+      "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_8"
+    },
+    {
+      "id": "q_pcal_2026_ti_0085",
+      "sourceSubtopicId": "1.2.2.8-controles-de-seguranca-para-web-services",
+      "sourceTopicId": "1.2.2.8-seguranca-de-aplicacoes",
+      "action": "convert",
+      "disciplinaId": "seguranca_cibernetica",
+      "mappedTopicoEditalId": "ciber_8"
+    }
+  ],
+  "readyFile": "C:\\Users\\wwwmi\\OneDrive\\Documentos\\DETONA CONCURSOS\\.phase6-grok-work\\app\\imports\\questions\\pcal-ciclos-002-a-006-ready.json",
+  "noXpOnImport": true,
+  "noReplaceExisting": true,
+  "countsBefore": {
+    "lingua_portuguesa": 1011,
+    "tecnologia_informacao": 0,
+    "seguranca_cibernetica": 0
+  },
+  "countsAfter": {
+    "lingua_portuguesa": 1026,
+    "tecnologia_informacao": 59,
+    "seguranca_cibernetica": 26
+  },
+  "indexTotal": 1206
+}

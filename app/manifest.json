@@ -1,0 +1,58 @@
+{
+  "id": "./",
+  "name": "DETONA CONCURSOS",
+  "short_name": "Detona",
+  "description": "Plataforma de preparação para concursos — jornadas por edital, batalhas e revisão inteligente. Instale no celular ou PC.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#05070f",
+  "theme_color": "#090c18",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["education", "games", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Abrir jornada",
+      "short_name": "Estudar",
+      "description": "Ir direto para o início da jornada",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

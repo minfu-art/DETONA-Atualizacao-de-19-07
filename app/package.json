@@ -1,0 +1,20 @@
+{
+  "name": "detona-concursos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "validate:questions": "node scripts/validate-questions.js",
+    "sanitize:questions": "node scripts/sanitize-question-sources.js",
+    "banco:criar": "node scripts/criarBancoQuestoes.mjs",
+    "banco:template": "node scripts/criarBancoQuestoes.mjs --template --disciplina \"Língua Portuguesa\"",
+    "banco:exemplo": "node scripts/criarBancoQuestoes.mjs --from=imports/entrada-exemplo --disciplina \"Língua Portuguesa\" --status=REVISADA",
+    "banco:pdf": "node scripts/extrairPdfApostila.mjs",
+    "banco:importar-app": "node scripts/importQuestionBanks.mjs"
+  },
+  "devDependencies": {
+    "exceljs": "^4.4.0",
+    "pdfjs-dist": "^6.1.200"
+  }
+}

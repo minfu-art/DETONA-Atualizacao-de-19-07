@@ -1,0 +1,261 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="948" viewBox="0 0 900 948"><rect width="100%" height="100%" fill="#03040b"/><defs><radialGradient id="preview-bg"><stop stop-color="#251245"/><stop offset="1" stop-color="#03040b"/></radialGradient></defs><rect width="100%" height="100%" fill="url(#preview-bg)" opacity=".7"/><g><rect x="8" y="8" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="132" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">home</text><svg class="ico ico--rpg ico--plasma" viewBox="-2 -2 28 28" x="42" y="18" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-plasma-1-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#c084fc"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+      <linearGradient id="detona-ico-plasma-1-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-plasma-1-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-plasma-1-plate)" stroke="url(#detona-ico-plasma-1-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#c084fc" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#fb923c" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-plasma-1-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-plasma-1-glow)"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z"/></g>
+  </svg></g><g><rect x="188" y="8" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="270" y="132" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">book</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="222" y="18" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-2-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-2-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-2-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-2-plate)" stroke="url(#detona-ico-data-2-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-2-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-2-glow)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 6h7M9 10h5" opacity=".72"/></g>
+  </svg></g><g><rect x="368" y="8" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="450" y="132" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">question</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="402" y="18" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-3-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-3-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-3-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-3-plate)" stroke="url(#detona-ico-data-3-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-3-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-3-glow)"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 1 1 4.4 2.7c-.8.4-1.5 1-1.5 2.3"/><circle cx="12" cy="17" r=".7" fill="url(#detona-ico-data-3-main)" stroke="none"/></g>
+  </svg></g><g><rect x="548" y="8" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="630" y="132" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">trophy</text><svg class="ico ico--rpg ico--gold" viewBox="-2 -2 28 28" x="582" y="18" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-gold-4-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1a8"/><stop offset=".52" stop-color="#f59e0b"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-gold-4-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-gold-4-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-gold-4-plate)" stroke="url(#detona-ico-gold-4-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fff1a8" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-gold-4-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-gold-4-glow)"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H5a3 3 0 0 0 3 3M17 6h2a3 3 0 0 1-3 3"/></g>
+  </svg></g><g><rect x="728" y="8" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="810" y="132" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">user</text><svg class="ico ico--rpg ico--plasma" viewBox="-2 -2 28 28" x="762" y="18" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-plasma-5-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#c084fc"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+      <linearGradient id="detona-ico-plasma-5-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-plasma-5-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-plasma-5-plate)" stroke="url(#detona-ico-plasma-5-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#c084fc" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#fb923c" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-plasma-5-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-plasma-5-glow)"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></g>
+  </svg></g><g><rect x="8" y="166" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="290" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">flame</text><svg class="ico ico--rpg ico--energy" viewBox="-2 -2 28 28" x="42" y="176" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-energy-6-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fbbf24"/><stop offset=".52" stop-color="#f97316"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-energy-6-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-energy-6-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-energy-6-plate)" stroke="url(#detona-ico-energy-6-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fbbf24" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-energy-6-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-energy-6-glow)"><path d="M12 3c2 3 1 5 1 5s3-1 4 3a6 6 0 1 1-11.5 2C7 9 9 7 12 3z"/><path d="M12 11c1.2 1.4 2 2.6 1.7 4.1-.2 1.4-1.1 2.4-2.3 2.8" opacity=".72"/></g>
+  </svg></g><g><rect x="188" y="166" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="270" y="290" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">bolt</text><svg class="ico ico--rpg ico--energy" viewBox="-2 -2 28 28" x="222" y="176" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-energy-7-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fbbf24"/><stop offset=".52" stop-color="#f97316"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-energy-7-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-energy-7-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-energy-7-plate)" stroke="url(#detona-ico-energy-7-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fbbf24" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-energy-7-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-energy-7-glow)"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="url(#detona-ico-energy-7-main)" stroke="none"/></g>
+  </svg></g><g><rect x="368" y="166" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="450" y="290" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">gem</text><svg class="ico ico--rpg ico--plasma" viewBox="-2 -2 28 28" x="402" y="176" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-plasma-8-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#c084fc"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+      <linearGradient id="detona-ico-plasma-8-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-plasma-8-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-plasma-8-plate)" stroke="url(#detona-ico-plasma-8-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#c084fc" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#fb923c" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-plasma-8-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-plasma-8-glow)"><path d="M6 3h12l4 7-10 11L2 10 6 3z"/><path d="M2 10h20M8.5 3 12 10l3.5-7"/></g>
+  </svg></g><g><rect x="548" y="166" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="630" y="290" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">target</text><svg class="ico ico--rpg ico--danger" viewBox="-2 -2 28 28" x="582" y="176" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-danger-9-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fb7185"/><stop offset=".52" stop-color="#dc2626"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+      <linearGradient id="detona-ico-danger-9-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-danger-9-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-danger-9-plate)" stroke="url(#detona-ico-danger-9-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fb7185" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#f97316" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-danger-9-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-danger-9-glow)"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.7" fill="url(#detona-ico-danger-9-main)" stroke="none"/></g>
+  </svg></g><g><rect x="728" y="166" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="810" y="290" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">calendar</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="762" y="176" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-10-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-10-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-10-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-10-plate)" stroke="url(#detona-ico-data-10-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-10-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-10-glow)"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m8 15 2 2 5-5" opacity=".78"/></g>
+  </svg></g><g><rect x="8" y="324" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="448" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">medal</text><svg class="ico ico--rpg ico--gold" viewBox="-2 -2 28 28" x="42" y="334" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-gold-11-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1a8"/><stop offset=".52" stop-color="#f59e0b"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-gold-11-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-gold-11-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-gold-11-plate)" stroke="url(#detona-ico-gold-11-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fff1a8" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-gold-11-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-gold-11-glow)"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/><path d="m12 6 .9 1.8 2 .3-1.5 1.4.4 2-1.8-1-1.8 1 .4-2L9.1 8l2-.3L12 6z" fill="url(#detona-ico-gold-11-main)" stroke="none"/></g>
+  </svg></g><g><rect x="188" y="324" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="270" y="448" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">chart</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="222" y="334" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-12-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-12-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-12-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-12-plate)" stroke="url(#detona-ico-data-12-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-12-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-12-glow)"><path d="M4 19V5M4 19h16"/><path d="M8 16v-5M12 16V8M16 16v-3"/><path d="m7 9 4-3 4 2 4-5" opacity=".7"/></g>
+  </svg></g><g><rect x="368" y="324" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="450" y="448" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">sword</text><svg class="ico ico--rpg ico--energy" viewBox="-2 -2 28 28" x="402" y="334" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-energy-13-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fbbf24"/><stop offset=".52" stop-color="#f97316"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-energy-13-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-energy-13-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-energy-13-plate)" stroke="url(#detona-ico-energy-13-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fbbf24" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-energy-13-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-energy-13-glow)"><path d="m14.5 17.5 3 3 3-3-3-3"/><path d="m13 19-9-9 3-3 9 9"/><path d="m6 6 2-2 2 2-2 2z"/><path d="m4 14 3 3"/></g>
+  </svg></g><g><rect x="548" y="324" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="630" y="448" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">map</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="582" y="334" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-14-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-14-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-14-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-14-plate)" stroke="url(#detona-ico-data-14-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-14-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-14-glow)"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/><path d="m11.5 11 1.2 1.8 2.1-3" opacity=".72"/></g>
+  </svg></g><g><rect x="728" y="324" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="810" y="448" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">forge</text><svg class="ico ico--rpg ico--energy" viewBox="-2 -2 28 28" x="762" y="334" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-energy-15-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fbbf24"/><stop offset=".52" stop-color="#f97316"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-energy-15-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-energy-15-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-energy-15-plate)" stroke="url(#detona-ico-energy-15-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fbbf24" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-energy-15-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-energy-15-glow)"><path d="M14 6h6v4H14z"/><path d="M4 20h10"/><path d="M9 20V10l5-4"/><path d="m11 12 5 5"/></g>
+  </svg></g><g><rect x="8" y="482" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="606" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">shield</text><svg class="ico ico--rpg ico--gold" viewBox="-2 -2 28 28" x="42" y="492" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-gold-16-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1a8"/><stop offset=".52" stop-color="#f59e0b"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-gold-16-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-gold-16-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-gold-16-plate)" stroke="url(#detona-ico-gold-16-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fff1a8" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-gold-16-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-gold-16-glow)"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"/><path d="M12 7v10M8 12h8" opacity=".65"/></g>
+  </svg></g><g><rect x="188" y="482" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="270" y="606" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">star</text><svg class="ico ico--rpg ico--gold" viewBox="-2 -2 28 28" x="222" y="492" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-gold-17-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1a8"/><stop offset=".52" stop-color="#f59e0b"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-gold-17-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-gold-17-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-gold-17-plate)" stroke="url(#detona-ico-gold-17-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fff1a8" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-gold-17-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-gold-17-glow)"><path d="m12 2 2.9 6.3L22 9.3l-5 4.8 1.3 7L12 17.8 5.7 21l1.3-7-5-4.8 7.1-1L12 2z" fill="url(#detona-ico-gold-17-main)" stroke="none"/></g>
+  </svg></g><g><rect x="368" y="482" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="450" y="606" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">menu</text><svg class="ico ico--rpg ico--plasma" viewBox="-2 -2 28 28" x="402" y="492" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-plasma-18-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#c084fc"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+      <linearGradient id="detona-ico-plasma-18-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-plasma-18-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-plasma-18-plate)" stroke="url(#detona-ico-plasma-18-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#c084fc" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#fb923c" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-plasma-18-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-plasma-18-glow)"><path d="M5 7h14M5 12h14M5 17h14"/><path d="M3 7h.01M3 12h.01M3 17h.01"/></g>
+  </svg></g><g><rect x="548" y="482" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="630" y="606" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">chest</text><svg class="ico ico--rpg ico--gold" viewBox="-2 -2 28 28" x="582" y="492" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-gold-19-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fff1a8"/><stop offset=".52" stop-color="#f59e0b"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-gold-19-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-gold-19-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-gold-19-plate)" stroke="url(#detona-ico-gold-19-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fff1a8" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-gold-19-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-gold-19-glow)"><rect x="3" y="9" width="18" height="11" rx="2"/><path d="M3 13h18M12 13v7M8 9V7a4 4 0 0 1 8 0v2"/><path d="M10.5 15h3v2.5h-3z" fill="url(#detona-ico-gold-19-main)" stroke="none"/></g>
+  </svg></g><g><rect x="728" y="482" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="810" y="606" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">skull</text><svg class="ico ico--rpg ico--danger" viewBox="-2 -2 28 28" x="762" y="492" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-danger-20-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fb7185"/><stop offset=".52" stop-color="#dc2626"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+      <linearGradient id="detona-ico-danger-20-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-danger-20-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-danger-20-plate)" stroke="url(#detona-ico-danger-20-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fb7185" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#f97316" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-danger-20-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-danger-20-glow)"><circle cx="12" cy="10" r="7"/><path d="M9 18v3M15 18v3M9 10h.01M15 10h.01M9.5 14c.8 1 2 1.5 2.5 1.5s1.7-.5 2.5-1.5"/></g>
+  </svg></g><g><rect x="8" y="640" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="764" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">homeFill</text><svg class="ico ico--rpg ico--plasma" viewBox="-2 -2 28 28" x="42" y="650" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-plasma-21-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#c084fc"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+      <linearGradient id="detona-ico-plasma-21-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-plasma-21-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-plasma-21-plate)" stroke="url(#detona-ico-plasma-21-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#c084fc" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#fb923c" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-plasma-21-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-plasma-21-glow)"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z" fill="url(#detona-ico-plasma-21-main)" stroke="none"/></g>
+  </svg></g><g><rect x="188" y="640" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="270" y="764" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">checkCircle</text><svg class="ico ico--rpg ico--nature" viewBox="-2 -2 28 28" x="222" y="650" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-nature-22-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#86efac"/><stop offset=".52" stop-color="#16a34a"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+      <linearGradient id="detona-ico-nature-22-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-nature-22-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-nature-22-plate)" stroke="url(#detona-ico-nature-22-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#86efac" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#67e8f9" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-nature-22-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-nature-22-glow)"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></g>
+  </svg></g><g><rect x="368" y="640" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="450" y="764" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">shieldCheck</text><svg class="ico ico--rpg ico--nature" viewBox="-2 -2 28 28" x="402" y="650" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-nature-23-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#86efac"/><stop offset=".52" stop-color="#16a34a"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+      <linearGradient id="detona-ico-nature-23-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-nature-23-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-nature-23-plate)" stroke="url(#detona-ico-nature-23-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#86efac" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#67e8f9" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-nature-23-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-nature-23-glow)"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"/><path d="m9 12 2 2 4-4"/></g>
+  </svg></g><g><rect x="548" y="640" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="630" y="764" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">clipboard</text><svg class="ico ico--rpg ico--data" viewBox="-2 -2 28 28" x="582" y="650" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-data-24-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#67e8f9"/><stop offset=".52" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+      <linearGradient id="detona-ico-data-24-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-data-24-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-data-24-plate)" stroke="url(#detona-ico-data-24-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#67e8f9" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#a855f7" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-data-24-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-data-24-glow)"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h4"/></g>
+  </svg></g><g><rect x="728" y="640" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="810" y="764" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">seedling</text><svg class="ico ico--rpg ico--nature" viewBox="-2 -2 28 28" x="762" y="650" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-nature-25-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#86efac"/><stop offset=".52" stop-color="#16a34a"/><stop offset="1" stop-color="#67e8f9"/></linearGradient>
+      <linearGradient id="detona-ico-nature-25-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-nature-25-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-nature-25-plate)" stroke="url(#detona-ico-nature-25-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#86efac" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#67e8f9" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-nature-25-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-nature-25-glow)"><path d="M12 22V12"/><path d="M12 12c-3-1-6-4-5-8 4 0 6 3 6 6"/><path d="M12 12c3-1 6-4 5-8-4 0-6 3-6 6"/></g>
+  </svg></g><g><rect x="8" y="798" width="164" height="142" rx="18" fill="#090b18" stroke="#39265f"/><text x="90" y="922" text-anchor="middle" fill="#d7c8ff" font-family="Arial, sans-serif" font-size="13">logout</text><svg class="ico ico--rpg ico--danger" viewBox="-2 -2 28 28" x="42" y="808" width="96" height="96" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="detona-ico-danger-26-main" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#fb7185"/><stop offset=".52" stop-color="#dc2626"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+      <linearGradient id="detona-ico-danger-26-plate" x1="1" y1="0" x2="23" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#17112d"/><stop offset=".55" stop-color="#090b18"/><stop offset="1" stop-color="#050611"/></linearGradient>
+      <filter id="detona-ico-danger-26-glow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation=".55" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect class="ico__plate" x="-1" y="-1" width="26" height="26" rx="7" fill="url(#detona-ico-danger-26-plate)" stroke="url(#detona-ico-danger-26-main)" stroke-width=".85"/>
+    <path class="ico__bevel" d="M5 1h14.2c2 0 3.8 1 4.8 2.6" stroke="#fb7185" stroke-width=".55" stroke-linecap="round" opacity=".65"/>
+    <path class="ico__shard" d="m20.7 3.5.8 1.3-.8 1.3-.8-1.3.8-1.3ZM2.8 18.3l.7 1.1-.7 1.1-.7-1.1.7-1.1Z" fill="#f97316" opacity=".9"/>
+    <g class="ico__glyph" stroke="url(#detona-ico-danger-26-main)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" filter="url(#detona-ico-danger-26-glow)"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5"/><path d="m15 8 4 4-4 4M8 12h11"/></g>
+  </svg></g></svg>
