@@ -416,8 +416,8 @@ function showCritical(stage) {
 
 /** Personagens de reação: joinha = acerto, dedo em riste = erro */
 const BATTLE_REACT = Object.freeze({
-  correct: 'assets/ui/battle-react-correct.png?v=1',
-  wrong: 'assets/ui/battle-react-wrong.png?v=1',
+  correct: 'assets/ui/battle-react-correct.png?v=2',
+  wrong: 'assets/ui/battle-react-wrong.png?v=2',
 });
 
 function renderBattleFeedback(result, explanation, confidence) {
