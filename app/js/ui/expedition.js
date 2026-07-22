@@ -856,7 +856,7 @@ export async function renderExpedition(root, navigate, ctx) {
       <div class="plan-modal">
         <p class="muted mb-8">Escolha o tipo e o horário. O app sugere duração com base no seu perfil.</p>
         <div class="plan-type-row" role="group" aria-label="Tipo de bloco">
-          <button type="button" class="plan-type-btn fam-estudo is-selected" data-fam="estudo">📚 Estudo<small>Edital / questões</small></button>
+          <button type="button" class="plan-type-btn fam-estudo is-selected" data-fam="estudo">${semanticIcon('study', 'ico--inline')} Estudo<small>Edital / questões</small></button>
           <button type="button" class="plan-type-btn fam-trabalho" data-fam="trabalho">💼 Trabalho<small>Expediente / afazeres</small></button>
           <button type="button" class="plan-type-btn fam-descanso" data-fam="descanso">🌙 Descanso<small>Pausa / lazer</small></button>
         </div>

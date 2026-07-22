@@ -1,8 +1,9 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v74-login-showcase';
+const CACHE = 'detona-v75-p0-foundation';
 const ASSETS = [
   './',
   './index.html',
+  './env.runtime.js',
   './css/main.css',
   './css/design-system.css',
   './manifest.json',
@@ -36,6 +37,10 @@ const ASSETS = [
   './js/core/questionSchema.js',
   './js/core/questionSelection.js',
   './js/config/questionSourceConfig.js',
+  './js/config/env.js',
+  './js/config/appEnvironment.js',
+  './js/config/cloudConfig.js',
+  './js/config/subtopicAliases.js',
   './js/repositories/questionRepository.js',
   './js/services/questionService.js',
   './js/core/reviewQueue.js',
@@ -45,6 +50,7 @@ const ASSETS = [
   './js/auth/activeUser.js',
   './js/auth/authDb.js',
   './js/auth/authService.js',
+  './js/auth/cloudAuthService.js',
   './js/auth/passwordHasher.js',
   './js/auth/sessionService.js',
   './js/contest/activeContest.js',
@@ -52,6 +58,12 @@ const ASSETS = [
   './js/repositories/entitlementRepository.js',
   './js/repositories/progressRepository.js',
   './js/repositories/userRepository.js',
+  './js/supabase/client.js',
+  './js/supabase/authAdapter.js',
+  './js/supabase/entitlementRepository.js',
+  './js/supabase/hybridProgressAdapter.js',
+  './js/supabase/progressCloud.js',
+  './js/supabase/syncService.js',
   './js/services/appServices.js',
   './js/services/legacyDataMigrationService.js',
   './js/services/contestDataMigrationService.js',
@@ -72,11 +84,12 @@ const ASSETS = [
   './data/questions/direito_constitucional.json',
   './data/questions/direito_penal.json',
   './data/questions/estatistica.json',
+  './data/questions/etica.json',
   './data/questions/legislacao_estadual_estatutos_de_alagoas.json',
   './data/questions/lingua_portuguesa.json',
   './data/questions/raciocinio_logico_matematico.json',
-  './data/questions/tecnologia_da_informacao_crimes_ciberneticos.json',
-  './data/questions/dh.json',
+  './data/questions/seguranca_cibernetica.json',
+  './data/questions/tecnologia_informacao.json',
   './data/questions/curated/detona_ineditas_pacto_sao_jose.json',
   './data/questions/curated/detona_ineditas_analise_de_dados.json',
   './data/questions/curated/detona_piloto_25_xlsx.json',
@@ -149,7 +162,17 @@ const ASSETS = [
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then((cache) => Promise.all(ASSETS.map(async (asset) => {
+        try {
+          await cache.add(asset);
+        } catch (error) {
+          // A CI garante que os caminhos existem. Em runtime, uma falha de rede
+          // isolada não deve impedir que os demais assets fiquem disponíveis.
+          console.warn('[sw] asset não armazenado no pré-cache', asset, error);
+        }
+      })))
+      .then(() => self.skipWaiting())
   );
 });
 

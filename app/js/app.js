@@ -32,6 +32,7 @@ import { primaryScreenFor } from './ui/navigation.js?v=70';
 import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
+import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 
 const ctx = {
   battleSession: null,
@@ -260,6 +261,9 @@ async function initializeAuthenticatedApp() {
 
 async function init() {
   try {
+    if (isLocalDevelopment()) {
+      console.warn(`[DETONA] ${environmentLabel()}: autenticação e checkout demonstrativos podem estar ativos.`);
+    }
     // PWA + botão Instalar (celular, tablet e PC)
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});

@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "test:root": "node --test test/*.test.js",
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs"
   }
 }

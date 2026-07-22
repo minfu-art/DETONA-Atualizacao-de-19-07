@@ -1,16 +1,22 @@
 import { CONTEST_CATALOG, getContestById } from '../contest/contestCatalog.js';
 import { EntitlementRepository } from '../repositories/entitlementRepository.js';
 import { CheckoutService } from './checkoutService.js';
+import { isLocalDevelopment } from '../config/appEnvironment.js';
 
 export class LibraryService {
-  constructor({ entitlements = new EntitlementRepository(), checkout = new CheckoutService(), summaries = null, now = () => new Date() } = {}) {
+  constructor({
+    entitlements = new EntitlementRepository(), checkout = new CheckoutService(), summaries = null,
+    now = () => new Date(), allowLocalGrants = isLocalDevelopment,
+  } = {}) {
     this.entitlements = entitlements;
     this.checkout = checkout;
     this.summaries = summaries;
     this.now = now;
+    this.allowLocalGrants = allowLocalGrants;
   }
 
   async ensureLegacyEntitlements(user) {
+    if (!this.allowLocalGrants()) return;
     const modules = user?.enabledModules || ['pc_al_2026'];
     for (const contestId of modules) {
       if (!getContestById(contestId) || await this.entitlements.find(user.id, contestId)) continue;
@@ -38,6 +44,9 @@ export class LibraryService {
     const existing = await this.entitlements.find(user.id, contestId);
     if (existing?.status === 'active') return existing;
     const purchase = await this.checkout.purchase({ userId: user.id, contest });
+    if (!this.allowLocalGrants()) {
+      return { ...purchase, entitlementPending: true };
+    }
     const entitlement = this.#entitlement(user.id, contestId, 'purchase_demo');
     entitlement.purchaseId = purchase.id;
     await this.entitlements.save(entitlement);

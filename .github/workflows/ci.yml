@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefix app
+
+      - name: Check committed secrets and env files
+        run: npm run check:secrets
+
+      - name: Check JavaScript syntax
+        run: npm run check:syntax
+
+      - name: Test app
+        run: npm test --prefix app
+
+      - name: Test root contracts
+        run: npm run test:root
+
+      - name: Validate published questions
+        run: npm run validate:published-questions --prefix app
+
+      - name: Validate PWA assets
+        run: npm run validate:pwa --prefix app
+
+      - name: Audit high-severity dependencies
+        run: npm audit --prefix app --audit-level=high

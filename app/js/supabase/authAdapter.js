@@ -66,29 +66,16 @@ export class SupabaseAuthAdapter {
     const client = await this.#client();
     const existing = await this.#fetchProfile(authUser.id);
     if (existing) {
-      await client
-        .from('profiles')
-        .update({
-          last_access_at: new Date().toISOString(),
-          ...(name ? { name: String(name).trim() } : {}),
-        })
-        .eq('id', authUser.id);
+      if (name) {
+        const { error } = await client
+          .from('profiles')
+          .update({ name: String(name).trim() })
+          .eq('id', authUser.id);
+        if (error) throw error;
+      }
       return this.#fetchProfile(authUser.id);
     }
-
-    const row = {
-      id: authUser.id,
-      name: String(name || authUser.user_metadata?.name || authUser.email?.split('@')[0] || 'Aluno').trim(),
-      email: authUser.email || '',
-      role: USER_ROLES.STUDENT,
-      enabled_modules: DEFAULT_MODULES,
-      preferences: DEFAULT_PREFERENCES,
-      created_at: new Date().toISOString(),
-      last_access_at: new Date().toISOString(),
-    };
-    const { error } = await client.from('profiles').upsert(row);
-    if (error) throw error;
-    return row;
+    throw new Error('Perfil remoto não foi materializado pelo backend. Contate o suporte.');
   }
 
   async #activate(authUser, profile) {
@@ -168,11 +155,14 @@ export class SupabaseAuthAdapter {
   }
 
   async updateProfileFields(userId, fields) {
+    const allowed = {};
+    if (Object.hasOwn(fields || {}, 'name')) allowed.name = String(fields.name || '').trim();
+    if (Object.hasOwn(fields || {}, 'preferences')) allowed.preferences = fields.preferences;
+    if (!Object.keys(allowed).length) {
+      throw new Error('Nenhum campo de perfil permitido para atualização.');
+    }
     const client = await this.#client();
-    const { error } = await client.from('profiles').update({
-      ...fields,
-      last_access_at: new Date().toISOString(),
-    }).eq('id', userId);
+    const { error } = await client.from('profiles').update(allowed).eq('id', userId);
     if (error) throw error;
   }
 }

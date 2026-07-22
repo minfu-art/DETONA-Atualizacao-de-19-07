@@ -7,6 +7,7 @@
  */
 
 import { ENV } from './env.js';
+import { isLocalDevelopment, requiresRemoteBackend } from './appEnvironment.js';
 
 export const CLOUD_MODES = Object.freeze({
   /** Só IndexedDB + auth local (padrão atual). */
@@ -20,7 +21,10 @@ const STORAGE_URL_KEY = 'detona.supabaseUrl';
 const STORAGE_KEY_KEY = 'detona.supabaseAnonKey';
 
 export function getCloudMode() {
-  const override = globalThis?.localStorage?.getItem?.(STORAGE_MODE_KEY);
+  if (requiresRemoteBackend()) return CLOUD_MODES.HYBRID;
+  const override = isLocalDevelopment()
+    ? globalThis?.localStorage?.getItem?.(STORAGE_MODE_KEY)
+    : null;
   if (override && Object.values(CLOUD_MODES).includes(override)) return override;
   const fromEnv = ENV.CLOUD_MODE;
   if (fromEnv && Object.values(CLOUD_MODES).includes(fromEnv)) return fromEnv;
@@ -31,13 +35,16 @@ export function setCloudMode(mode) {
   if (!Object.values(CLOUD_MODES).includes(mode)) {
     throw new TypeError(`Modo de nuvem inválido: ${mode}`);
   }
+  if (!isLocalDevelopment()) {
+    throw new Error('O modo de nuvem não pode ser alterado pelo navegador neste ambiente.');
+  }
   globalThis?.localStorage?.setItem?.(STORAGE_MODE_KEY, mode);
   return mode;
 }
 
 export function getSupabaseUrl() {
   return (
-    globalThis?.localStorage?.getItem?.(STORAGE_URL_KEY)
+    (isLocalDevelopment() ? globalThis?.localStorage?.getItem?.(STORAGE_URL_KEY) : '')
     || ENV.SUPABASE_URL
     || ''
   ).trim();
@@ -45,7 +52,7 @@ export function getSupabaseUrl() {
 
 export function getSupabaseAnonKey() {
   return (
-    globalThis?.localStorage?.getItem?.(STORAGE_KEY_KEY)
+    (isLocalDevelopment() ? globalThis?.localStorage?.getItem?.(STORAGE_KEY_KEY) : '')
     || ENV.SUPABASE_ANON_KEY
     || ''
   ).trim();
@@ -61,6 +68,13 @@ export function hasSupabaseCredentials() {
 /** Nuvem ativa de fato: modo hybrid + credenciais. */
 export function isCloudEnabled() {
   return getCloudMode() === CLOUD_MODES.HYBRID && hasSupabaseCredentials();
+}
+
+export function assertCloudReadyForEnvironment() {
+  if (requiresRemoteBackend() && !hasSupabaseCredentials()) {
+    throw new Error('Configuração segura incompleta: Supabase é obrigatório neste ambiente.');
+  }
+  return true;
 }
 
 export function getCloudConfig() {

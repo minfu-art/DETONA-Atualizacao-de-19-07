@@ -130,7 +130,7 @@ test('desempenho possui rota e serviço próprios derivados apenas de dados reai
   for (const store of ['player', 'disciplines', 'subtopics', 'verticalized', 'reviewQueue', 'routineBlocks', 'studySessions']) {
     assert.match(service, new RegExp(`STORES\\.${store}`));
   }
-  assert.match(performance, /Desafio do edital/);
+  assert.match(performance, /Domínio do edital/);
   assert.doesNotMatch(performance + service, /ranking|moeda|checkout|applyXp/i);
 });
 
@@ -178,7 +178,7 @@ test('mapa inicia na visão geral sem abrir Português automaticamente', async (
   assert.doesNotMatch(source, /let openId = disciplines\[0\]/);
   assert.match(source, /Escolha uma disciplina para abrir sua trilha/);
   assert.match(source, /<h3>\$\{escapeHtml\(d\.name\)\}<\/h3>/);
-  assert.match(source, /semanticIcon\('discipline'/);
+  assert.match(source, /discIcon\(d\.id/);
   assert.doesNotMatch(source, /\$\{d\.biome \|\| d\.name\}|\$\{d\.icon\}/);
 });
 
@@ -195,11 +195,11 @@ test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáv
   const source = await readFile(homeUrl, 'utf8');
   const css = await readFile(cssUrl, 'utf8');
   assert.match(source, /renderTodayCommandCenter/);
-  assert.match(source, /Por que agora\?/);
-  assert.match(source, /Revisões vencidas/);
+  assert.match(source, /Sua próxima missão/);
+  assert.match(source, /Revisões pendentes/);
   assert.match(source, /Progresso do dia/);
-  assert.match(source, /Contagem regressiva/);
-  assert.match(source, /Sua evolução/);
+  assert.match(source, /FALTAM/);
+  assert.match(source, /Conquistas recentes/);
   assert.match(css, /today-mission/);
   assert.match(css, /today-grid/);
   assert.match(css, /today-evolution/);
@@ -258,5 +258,5 @@ test('review presents a strategic plan without changing the queue engine', async
     assert.match(css, new RegExp(marker));
   }
   assert.match(ui, /review-empty__signals/);
-  assert.match(home, /today-review.*removeAttribute\('disabled'\)/s);
+  assert.match(home, /today-review.*addEventListener\('click'.*startReview\(\)/s);
 });

@@ -135,12 +135,13 @@ test('rota protegida, navegação principal e retorno ao perfil permanecem expl�
   assert.match(app, /performance:\s*renderPerformance/);
   assert.match(app, /if \(!canAccessInternalRoute\(authService\)\)/);
   assert.match(app, /if \(!getActiveContestId\(\)\)/);
-  assert.match(navigation, /screen: 'performance'.+icon: 'seedling'.+label: 'Evolução'/);
+  assert.match(navigation, /screen: 'performance'.+icon: 'chartSteps'.+label: 'Evolução'/);
   assert.doesNotMatch(navigation, /screen: 'profile'/);
   assert.match(shell, /data-shell-screen="profile"[^>]*>.*Meu perfil/s);
   assert.equal((html.match(/class="nav-item/g) || []).length, 5);
   assert.match(html, /data-screen="performance"[\s\S]*Evolução/);
   assert.doesNotMatch(html, /data-screen="profile"/);
-  assert.match(performance, /performance-profile[^\n]*navigate\('profile'\)/s);
+  assert.match(performance, /performance-profile/);
+  assert.match(performance, /querySelector\('#performance-profile'\).*navigate\('profile'\)/);
   assert.doesNotMatch(performance, /applyXp|ranking|checkout|moeda/i);
 });
