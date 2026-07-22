@@ -43,32 +43,10 @@ export function renderLibrary(root, { user, items, onOpen, onPurchase, onLogout 
       <section class="library-section library-section--catalog" aria-labelledby="catalog-title"><div class="library-section__title"><div><span class="saas-kicker">Catalogo DETONA</span><h2 id="catalog-title">Expanda sua preparacao</h2></div><p>Checkout demonstrativo nesta fase; nenhum valor real sera cobrado.</p></div><div class="contest-grid">${catalog.map(contestCard).join('') || emptyState({ title: 'Biblioteca completa', description: 'Todos os modulos disponiveis ja pertencem a sua conta.' })}</div></section>
     </div>`;
   root.querySelector('#library-logout').addEventListener('click', onLogout);
-  root.querySelectorAll('[data-open-contest]').forEach((button) => button.addEventListener('click', async () => {
-    await openContestFromLibrary(button, onOpen);
-  }));
+  root.querySelectorAll('[data-open-contest]').forEach((button) => button.addEventListener('click', () => onOpen(button.dataset.openContest)));
   root.querySelectorAll('[data-buy-contest]').forEach((button) => button.addEventListener('click', async () => {
     button.disabled = true;
     button.textContent = 'Adicionando...';
     try { await onPurchase(button.dataset.buyContest); } catch (error) { button.disabled = false; button.textContent = error.message || 'Tentar novamente'; }
   }));
-}
-
-export async function openContestFromLibrary(button, onOpen) {
-  if (button.disabled) return false;
-
-  const originalLabel = button.textContent;
-  button.disabled = true;
-  button.setAttribute('aria-busy', 'true');
-  button.textContent = 'Abrindo...';
-
-  try {
-    await onOpen(button.dataset.openContest);
-    return true;
-  } catch (error) {
-    console.error('[library] contest open failed', error?.message || error);
-    button.disabled = false;
-    button.removeAttribute('aria-busy');
-    button.textContent = originalLabel;
-    return false;
-  }
 }

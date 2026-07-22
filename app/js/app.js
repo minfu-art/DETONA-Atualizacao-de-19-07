@@ -172,58 +172,42 @@ async function openContest(contestId) {
   const contest = getContestById(contestId);
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
   setActiveContestId(contestId);
-  let player;
-  try {
-    await contestDataMigrationService.ensureCompatibility(user.id, contestId);
-    await openDB();
-    // Nuvem híbrida: pull antes do seed para não sobrescrever progresso remoto com seed vazio
-    if (isCloudEnabled()) {
-      try {
-        await syncOnContestOpen(user.id, contestId);
-      } catch (err) {
-        console.warn('[cloud] sync on open failed', err?.message || err);
-      }
-    }
-    await ensureSeed();
-    await recalculateEditalSSOT();
-    // Push inicial uma vez (local → nuvem) quando ainda não houve push
-    if (isCloudEnabled()) {
-      try {
-        const last = await progressRepository.getMeta('cloud_last_push_at');
-        if (!last) {
-          const result = await pushAllLocalProgress(user.id, contestId);
-          if (result?.pushed > 0) {
-            await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
-          }
-        }
-      } catch (err) {
-        console.warn('[cloud] initial push failed', err?.message || err);
-      }
-    }
-    player = await getPlayer();
-    setMuted(player?.sound_enabled === false);
-  } catch (error) {
-    clearActiveContestId();
-    ctx.contest = null;
-    document.getElementById('app')?.classList.add('app-shell--library');
-    throw error;
-  }
-
   ctx.contest = contest;
   document.getElementById('app')?.classList.remove('app-shell--library');
-  try {
-    if (!player?.onboarded) {
-      document.getElementById('bottom-nav')?.classList.add('hidden');
-      await navigate('onboarding');
-    } else {
-      document.getElementById('bottom-nav')?.classList.remove('hidden');
-      await navigate('home');
+  await contestDataMigrationService.ensureCompatibility(user.id, contestId);
+  await openDB();
+  // Nuvem híbrida: pull antes do seed para não sobrescrever progresso remoto com seed vazio
+  if (isCloudEnabled()) {
+    try {
+      await syncOnContestOpen(user.id, contestId);
+    } catch (err) {
+      console.warn('[cloud] sync on open failed', err?.message || err);
     }
-  } catch (error) {
-    clearActiveContestId();
-    ctx.contest = null;
-    await showLibrary();
-    throw error;
+  }
+  await ensureSeed();
+  await recalculateEditalSSOT();
+  // Push inicial uma vez (local → nuvem) quando ainda não houve push
+  if (isCloudEnabled()) {
+    try {
+      const last = await progressRepository.getMeta('cloud_last_push_at');
+      if (!last) {
+        const result = await pushAllLocalProgress(user.id, contestId);
+        if (result?.pushed > 0) {
+          await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
+        }
+      }
+    } catch (err) {
+      console.warn('[cloud] initial push failed', err?.message || err);
+    }
+  }
+  const player = await getPlayer();
+  setMuted(player?.sound_enabled === false);
+  if (!player?.onboarded) {
+    document.getElementById('bottom-nav')?.classList.add('hidden');
+    await navigate('onboarding');
+  } else {
+    document.getElementById('bottom-nav')?.classList.remove('hidden');
+    await navigate('home');
   }
 }
 
@@ -266,12 +250,7 @@ async function initializeAuthenticatedApp() {
     const canRestore = contest?.contentStatus === 'ready'
       && await libraryService.canAccess(user.id, activeContestId);
     if (canRestore) {
-      try {
-        await openContest(activeContestId);
-      } catch (error) {
-        console.warn('[contest] automatic open failed', error?.message || error);
-        await showLibrary();
-      }
+      await openContest(activeContestId);
       return;
     }
     clearActiveContestId();
