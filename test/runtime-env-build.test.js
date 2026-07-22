@@ -16,6 +16,7 @@ import vm from 'node:vm';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sourceScript = join(root, 'app', 'scripts', 'generate-runtime-env.mjs');
 const versionedRuntime = join(root, 'app', 'env.runtime.js');
+const vercelIgnore = join(root, 'app', '.vercelignore');
 const fakeUrl = 'https://staging-example.supabase.co';
 const fakePublicKey = 'test-public-anon-key-not-a-secret';
 
@@ -108,4 +109,11 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
   });
+});
+
+test('Vercel inclui o gerador no pacote de build', () => {
+  const source = readFileSync(vercelIgnore, 'utf8');
+  assert.doesNotMatch(source, /^scripts\/$/m);
+  assert.match(source, /^scripts\/\*$/m);
+  assert.match(source, /^!scripts\/generate-runtime-env\.mjs$/m);
 });

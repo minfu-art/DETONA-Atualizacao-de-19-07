@@ -1,6 +1,7 @@
 imports/
 reports/
-scripts/
+scripts/*
+!scripts/generate-runtime-env.mjs
 tests/
 serve.ps1
 INICIAR-APP.bat
