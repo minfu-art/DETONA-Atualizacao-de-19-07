@@ -230,6 +230,33 @@ test('batalhas válidas preservam melhor domínio e calculam histórico completo
   assert.equal(subtopic.attempts_count, 3);
 });
 
+test('finalização concede XP separado do LV e registra tempo na disciplina', async () => {
+  const repository = memoryRepository();
+  repository.rows[STORES.player][0] = {
+    ...repository.rows[STORES.player][0],
+    level: 40,
+    mastery_pct: 40,
+    xp_level: 1,
+    xp: 0,
+  };
+  const value = session({ id: 'xp-time-battle', correct: 5 });
+  value.startedAt = '2026-07-23T11:40:00.000Z';
+  value.activeSeconds = 1200;
+
+  const summary = await finalizeBattle(value, dependencies(repository).options);
+  const player = repository.rows[STORES.player][0];
+  const activity = repository.rows[STORES.studySessions][0];
+
+  assert.equal(summary.xpEarned, 105);
+  assert.equal(player.level, 40);
+  assert.equal(player.xp_level, 2);
+  assert.equal(player.xp, 5);
+  assert.equal(activity.durationSeconds, 1200);
+  assert.equal(activity.subjectId, 'disc-1');
+  assert.equal(activity.subtopicId, 'sub-1');
+  assert.equal(summary.activityMinutes, 20);
+});
+
 test('battleId repetido é bloqueado após reload sem duplicar efeitos', async () => {
   const repository = memoryRepository();
   const deps = dependencies(repository);
@@ -396,6 +423,24 @@ test('SSOT usa o repositório para todas as gravações acadêmicas', async () =
     assert.ok(stores.has(store), `gravação ausente em ${store}`);
     assert.equal(repository.rows[store][0].updated_at, updatedAt);
   }
+});
+
+test('SSOT não reenvia centenas de registros quando nada acadêmico mudou', async () => {
+  const repository = memoryRepository();
+  await recalculateEditalSSOT(repository, { updatedAt: '2026-07-23T12:00:00.000Z' });
+  repository.writes.length = 0;
+
+  const result = await recalculateEditalSSOT(repository, {
+    updatedAt: '2026-07-23T12:05:00.000Z',
+  });
+
+  assert.deepEqual(result.writes, {
+    player: 0,
+    subtopics: 0,
+    verticalized: 0,
+    disciplines: 0,
+  });
+  assert.equal(repository.writes.length, 0);
 });
 
 test('battle.js não grava progresso diretamente no IndexedDB', async () => {

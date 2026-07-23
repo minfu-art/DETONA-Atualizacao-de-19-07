@@ -74,6 +74,36 @@ test('agrega respostas, acertos, erros, tempo e disciplinas sem números fictíc
   assert.equal(result.disciplines[1].classification, 'Atenção');
 });
 
+test('tempo de batalha entra no total e na disciplina correta sem duplicar blocos', async () => {
+  const rows = dataset({
+    studySessions: [{
+      id: 'academic_battle:b1',
+      type: 'battle',
+      status: 'completed',
+      valid: true,
+      blockId: null,
+      date: '2026-07-16',
+      subjectId: 'port',
+      subtopicId: 'port-1',
+      durationSeconds: 1200,
+      endedAt: '2026-07-16T20:20:00Z',
+    }],
+  });
+  const service = new PerformanceService({
+    repository: repositoryFor(rows),
+    now: () => new Date('2026-07-17T12:00:00Z'),
+  });
+  const result = await service.getDashboard({ period: '30d' });
+
+  assert.equal(result.time.totalMinutes, 80);
+  assert.equal(result.time.source, 'routineBlocks+academicActivities');
+  assert.deepEqual(result.time.byDiscipline.map(({ id, minutes }) => ({ id, minutes })), [
+    { id: 'port', minutes: 60 },
+    { id: 'const', minutes: 20 },
+  ]);
+  assert.equal(result.disciplines.find((item) => item.id === 'port').minutes, 60);
+});
+
 test('estado vazio preserva zeros e não simula evolução, acurácia ou tempo', async () => {
   const empty = dataset({
     player: [{ id: 'player', edital_completion_pct: 0 }], disciplines: [], subtopics: [],

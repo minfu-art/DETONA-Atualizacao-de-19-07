@@ -102,6 +102,8 @@ function minutesByDiscipline(blocks, cutoff) {
     if (!inPeriod(block.date || block.completedAt, cutoff)) continue;
     const minutes = Number(block.actualMinutes) || 0;
     const did = block.subjectId || block.disciplineId || null;
+    const sid = block.subtopicId || block.topicId || null;
+    if (sid) continue;
     if (!minutes || !did) continue;
     map.set(did, (map.get(did) || 0) + minutes);
   }
@@ -143,7 +145,7 @@ function disciplinePerformance(disciplines, subtopics, cutoff, blocks = []) {
       const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
       const subRows = subtopicPerformanceRows(related, cutoff, subMinutes);
       const minutesFromSubs = subRows.reduce((sum, row) => sum + (row.minutes || 0), 0);
-      const minutes = minutesFromSubs || discMinutes.get(discipline.id) || 0;
+      const minutes = minutesFromSubs + (discMinutes.get(discipline.id) || 0);
       return {
         id: discipline.id,
         name: discipline.name,
@@ -163,22 +165,43 @@ function disciplinePerformance(disciplines, subtopics, cutoff, blocks = []) {
 }
 
 function actualMinutesFromSession(session) {
-  const elapsedSeconds = Math.max(0, Number(session.elapsedSeconds) || 0);
-  return Math.round(elapsedSeconds / 60);
+  const elapsedSeconds = Math.max(
+    0,
+    Number(session.durationSeconds ?? session.elapsedSeconds) || 0,
+  );
+  if (!elapsedSeconds) return 0;
+  return Math.max(1, Math.round(elapsedSeconds / 60));
+}
+
+function standaloneSessionTimeRecords(sessions, cutoff) {
+  return (sessions || [])
+    .filter((session) => (
+      !session.blockId
+      && ['completed', 'aborted'].includes(session.status)
+      && session.valid !== false
+      && inPeriod(session.date || session.endedAt || session.finishedAt, cutoff)
+    ))
+    .map((session) => ({
+      ...session,
+      date: session.date || String(session.endedAt || session.finishedAt || '').slice(0, 10),
+      actualMinutes: actualMinutesFromSession(session),
+      subjectId: session.subjectId || session.disciplineId || null,
+      subtopicId: session.subtopicId || null,
+    }))
+    .filter((session) => session.actualMinutes > 0);
 }
 
 function studyTime({ blocks, sessions, dailyStates, disciplines, cutoff }) {
   const completedBlocks = blocks.filter((block) => inPeriod(block.date || block.completedAt, cutoff));
+  const sessionRecords = standaloneSessionTimeRecords(sessions, cutoff);
   const blockMinutes = completedBlocks.reduce((sum, block) => sum + (Number(block.actualMinutes) || 0), 0);
-  let source = 'routineBlocks';
-  let totalMinutes = blockMinutes;
-
-  if (!totalMinutes) {
-    totalMinutes = sessions
-      .filter((session) => ['completed', 'aborted'].includes(session.status) && inPeriod(session.date || session.endedAt, cutoff))
-      .reduce((sum, session) => sum + actualMinutesFromSession(session), 0);
-    source = 'studySessions';
-  }
+  const sessionMinutes = sessionRecords.reduce((sum, session) => sum + session.actualMinutes, 0);
+  let totalMinutes = blockMinutes + sessionMinutes;
+  let source = blockMinutes && sessionMinutes
+    ? 'routineBlocks+academicActivities'
+    : sessionMinutes
+      ? 'academicActivities'
+      : 'routineBlocks';
   if (!totalMinutes) {
     totalMinutes = dailyStates
       .filter((state) => inPeriod(state.date, cutoff))
@@ -188,17 +211,19 @@ function studyTime({ blocks, sessions, dailyStates, disciplines, cutoff }) {
 
   const disciplineMap = new Map(disciplines.map((discipline) => [discipline.id, discipline.name]));
   const grouped = new Map();
-  for (const block of completedBlocks) {
-    const minutes = Number(block.actualMinutes) || 0;
-    if (!minutes || !block.subjectId) continue;
-    grouped.set(block.subjectId, (grouped.get(block.subjectId) || 0) + minutes);
+  for (const record of [...completedBlocks, ...sessionRecords]) {
+    const minutes = Number(record.actualMinutes) || 0;
+    const disciplineId = record.subjectId || record.disciplineId;
+    if (!minutes || !disciplineId) continue;
+    grouped.set(disciplineId, (grouped.get(disciplineId) || 0) + minutes);
   }
+  const distributedMinutes = [...grouped.values()].reduce((sum, minutes) => sum + minutes, 0);
   const byDiscipline = [...grouped.entries()]
     .map(([id, minutes]) => ({
       id,
       name: disciplineMap.get(id) || 'Outros estudos',
       minutes,
-      percentage: blockMinutes ? Math.round((minutes / blockMinutes) * 100) : 0,
+      percentage: distributedMinutes ? Math.round((minutes / distributedMinutes) * 100) : 0,
     }))
     .sort((a, b) => b.minutes - a.minutes);
 
@@ -277,7 +302,11 @@ export class PerformanceService {
     const allTotals = questionTotals(subtopics, null);
     const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
     const edital = clampPercent(player?.edital_completion_pct);
-    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, blocks);
+    const timeRecords = [
+      ...blocks,
+      ...standaloneSessionTimeRecords(sessions, cutoff),
+    ];
+    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, timeRecords);
     const completedTopics = verticalized.filter((item) => item.theory_status === 'concluido').length;
     const time = studyTime({ blocks, sessions, dailyStates, disciplines, cutoff });
     const reviews = reviewMetrics(verticalized, reviewQueue, cutoff, this.now());

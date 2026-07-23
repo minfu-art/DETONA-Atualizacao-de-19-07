@@ -22,11 +22,24 @@ test('onboarding cria o jogador padrão quando a conta nova ainda não possui pl
   assert.equal(player.avatar_sprite, 'male');
 });
 
+test('onboarding preserva avatar e data já salvos quando o jogador é restaurado', () => {
+  const saved = {
+    id: 'player_1',
+    name: 'Min Fu',
+    avatar_sprite: 'female',
+    exam_date: '2026-12-20',
+    onboarded: true,
+  };
+  assert.equal(playerForOnboarding(saved), saved);
+});
+
 test('onboarding exibe o jogador sem campo de nome e conclui na home', async () => {
   const source = await readFile(new URL('../app/js/ui/onboarding.js', import.meta.url), 'utf8');
 
   assert.match(source, /renderOnboarding\(root, navigate, ctx\)/);
   assert.match(source, /playerForOnboarding\(await getPlayer\(\)\)/);
+  assert.match(source, /player\.avatar_sprite === 'female'/);
+  assert.match(source, /player\.exam_date \|\| EXAM_META\.default_exam_date/);
   assert.match(source, /Jogador: \$\{escapeHtml\(name\)\}/);
   assert.doesNotMatch(source, /Nome do Aventureiro|id="ob-name"/);
   assert.match(source, /player\.name = name;[\s\S]*player\.avatar_sprite = gender;[\s\S]*player\.exam_date = examDate;[\s\S]*player\.onboarded = true;[\s\S]*await progressRepository\.put\(STORES\.player, player\);[\s\S]*await navigate\('home'\);/);

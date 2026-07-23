@@ -4,10 +4,11 @@
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { flushOutbox, pullAndMergeProgress } from './hybridProgressAdapter.js';
 import { progressCloud, SYNC_COLLECTIONS } from './progressCloud.js';
+import { shouldSyncCloudRecord } from './collectionKeys.js';
 import * as localDb from '../core/db.js';
 
 let lastSyncAt = null;
-let syncing = false;
+let activeSync = null;
 
 export function getLastSyncAt() {
   return lastSyncAt;
@@ -20,9 +21,8 @@ export async function syncOnContestOpen(userId, contestId) {
   if (!isCloudEnabled() || !userId || !contestId) {
     return { skipped: true };
   }
-  if (syncing) return { skipped: true, reason: 'busy' };
-  syncing = true;
-  try {
+  if (activeSync) return activeSync;
+  activeSync = (async () => {
     const pull = await pullAndMergeProgress(userId, contestId);
     const outbox = await flushOutbox();
     lastSyncAt = new Date().toISOString();
@@ -32,8 +32,11 @@ export async function syncOnContestOpen(userId, contestId) {
       /* meta opcional se store ainda não aberto */
     }
     return { pull, outbox, at: lastSyncAt };
+  })();
+  try {
+    return await activeSync;
   } finally {
-    syncing = false;
+    activeSync = null;
   }
 }
 
@@ -44,7 +47,8 @@ export async function pushAllLocalProgress(userId, contestId) {
   if (!isCloudEnabled()) return { skipped: true };
   let total = 0;
   for (const collection of SYNC_COLLECTIONS) {
-    const rows = await localDb.getAll(collection, userId, contestId);
+    const localRows = await localDb.getAll(collection, userId, contestId);
+    const rows = localRows.filter((value) => shouldSyncCloudRecord(collection, value));
     if (!rows.length) continue;
     // não sobe catálogo enorme de questões se forem do seed/import
     // (sobe todas as da store; questões oficiais costumam estar só em JSON, não no IDB)

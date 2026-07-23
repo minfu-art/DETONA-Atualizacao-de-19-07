@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v75-p0-foundation';
+const CACHE = 'detona-v76-academic-stability';
 const ASSETS = [
   './',
   './index.html',
@@ -19,6 +19,7 @@ const ASSETS = [
   './js/core/routine/routineFocus.js',
   './js/core/routine/routineCalendar.js',
   './js/services/routineService.js',
+  './js/services/academicProgressService.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',
   './assets/icons/icon-512.png',
@@ -107,7 +108,7 @@ const ASSETS = [
   './js/ui/appShell.js',
   './js/ui/appShell.js?v=70',
   './js/ui/onboarding.js',
-  './js/ui/onboarding.js?v=69',
+  './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',

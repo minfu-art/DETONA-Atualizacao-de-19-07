@@ -11,6 +11,11 @@ import {
   CHALLENGE_QUESTION_COUNT, selectIntelligentQuestions, selectionHistoryFromSubtopic,
 } from './questionSelection.js';
 import { recordBattleReviewEvents } from '../services/reviewService.js';
+import {
+  battleXpBreakdown,
+  grantBattleXp,
+  recordBattleActivity,
+} from '../services/academicProgressService.js';
 import { questionService } from '../services/questionService.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 
@@ -22,13 +27,33 @@ const BATTLE_FINALIZATION_STEPS = Object.freeze([
   'card',
   'dailyLog',
   'player',
+  'xp',
+  'activity',
   'ssot',
 ]);
+
+const MAX_ACTIVE_QUESTION_GAP_SECONDS = 10 * 60;
 
 function createBattleId() {
   if (globalThis.crypto?.randomUUID) return `bat_${globalThis.crypto.randomUUID()}`;
   battleIdSequence += 1;
   return `bat_${Date.now()}_${battleIdSequence}`;
+}
+
+export function trackBattleActivity(session, at = new Date()) {
+  if (!session || typeof session !== 'object') return 0;
+  const current = at instanceof Date ? at : new Date(at);
+  const currentMs = current.getTime();
+  const previousMs = Date.parse(session.lastActiveAt || session.startedAt || '');
+  if (Number.isFinite(currentMs) && Number.isFinite(previousMs) && currentMs >= previousMs) {
+    const elapsed = Math.min(
+      MAX_ACTIVE_QUESTION_GAP_SECONDS,
+      Math.max(0, Math.round((currentMs - previousMs) / 1000)),
+    );
+    session.activeSeconds = Math.max(0, Number(session.activeSeconds) || 0) + elapsed;
+  }
+  if (Number.isFinite(currentMs)) session.lastActiveAt = current.toISOString();
+  return Math.max(0, Number(session.activeSeconds) || 0);
 }
 
 function battleValidationError(code, message) {
@@ -228,6 +253,7 @@ export async function createBattleSession(subtopicId, opts = {}) {
     throw new Error(`O desafio precisa de exatamente ${CHALLENGE_QUESTION_COUNT} questões válidas do mesmo subtópico.`);
   }
 
+  const startedAt = new Date().toISOString();
   return {
     id: createBattleId(),
     subtopic_id: subtopicId,
@@ -243,6 +269,9 @@ export async function createBattleSession(subtopicId, opts = {}) {
     playerHp: 100,
     finished: false,
     results: [],
+    startedAt,
+    lastActiveAt: startedAt,
+    activeSeconds: 0,
   };
 }
 
@@ -273,6 +302,7 @@ async function pickDailyQuestions(endgame = false) {
 export function answerQuestion(session, userAnswer, options = {}) {
   const question = session.questions[session.index];
   if (!question || session.finished) return null;
+  trackBattleActivity(session, options.now || new Date());
 
   let correct = false;
   if (question.format === 'certo_errado') {
@@ -463,12 +493,20 @@ export async function finalizeBattle(session, {
       }
       const processedBattleIds = [...new Set(log.processed_battle_ids || [])];
       if (!processedBattleIds.includes(validated.battleId)) {
+        const previousStatus = log.status;
         if (log.planned_amount == null || log.planned_amount === 0) {
           log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
         }
         log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
         if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
         else if (log.completed_amount > 0) log.status = 'parcial';
+        if (
+          previousStatus !== 'cumprido'
+          && log.status === 'cumprido'
+          && log.meta_bonus_granted !== true
+        ) {
+          log.daily_goal_completed_by_battle_id = validated.battleId;
+        }
         log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
         log.processed_battle_ids = [...processedBattleIds, validated.battleId];
         log.updated_at = attemptedAt;
@@ -485,6 +523,56 @@ export async function finalizeBattle(session, {
       player.updated_at = attemptedAt;
       await repository.put(STORES.player, player);
       await persistBattleJournal(repository, journal, now, { step: 'player' });
+    }
+
+    const latestLog = await repository.getById(STORES.dailyLogs, today);
+    const dailyGoalCompleted = latestLog?.daily_goal_completed_by_battle_id === validated.battleId;
+    const xpBreakdown = battleXpBreakdown({
+      correct: session.correct,
+      maxCombo: session.maxCombo,
+      dailyGoalCompleted,
+    });
+    if (!journal.steps.xp) {
+      const xpResult = await grantBattleXp({
+        battleId: validated.battleId,
+        correct: session.correct,
+        maxCombo: session.maxCombo,
+        dailyGoalCompleted,
+        occurredAt: attemptedAt,
+      }, { repository });
+      player = xpResult.player || player;
+      if (latestLog && dailyGoalCompleted && latestLog.meta_bonus_granted !== true) {
+        latestLog.meta_bonus_granted = true;
+        latestLog.xp_earned = (Number(latestLog.xp_earned) || 0) + xpBreakdown.total;
+        latestLog.processed_xp_event_ids = [
+          ...new Set([...(latestLog.processed_xp_event_ids || []), `battle:${validated.battleId}`]),
+        ];
+        latestLog.updated_at = attemptedAt;
+        await repository.put(STORES.dailyLogs, latestLog);
+      } else if (latestLog && !(latestLog.processed_xp_event_ids || []).includes(`battle:${validated.battleId}`)) {
+        latestLog.xp_earned = (Number(latestLog.xp_earned) || 0) + xpBreakdown.total;
+        latestLog.processed_xp_event_ids = [
+          ...new Set([...(latestLog.processed_xp_event_ids || []), `battle:${validated.battleId}`]),
+        ];
+        latestLog.updated_at = attemptedAt;
+        await repository.put(STORES.dailyLogs, latestLog);
+      }
+      await persistBattleJournal(repository, journal, now, { step: 'xp' });
+    }
+
+    let activity = null;
+    if (!journal.steps.activity) {
+      activity = await recordBattleActivity({
+        battleId: validated.battleId,
+        disciplineId: updatedSubtopic.discipline_id,
+        subtopicId: updatedSubtopic.id,
+        startedAt: session.startedAt || journal.started_at,
+        finishedAt: attemptedAt,
+        activeSeconds: session.activeSeconds,
+      }, { repository });
+      await persistBattleJournal(repository, journal, now, { step: 'activity' });
+    } else {
+      activity = await repository.getById(STORES.studySessions, `academic_battle:${validated.battleId}`);
     }
 
     let ssot = { player };
@@ -515,6 +603,10 @@ export async function finalizeBattle(session, {
       attempts: updatedSubtopic.attempts_count,
       reviewAdded,
       newCard,
+      xpEarned: xpBreakdown.total,
+      xpBreakdown,
+      activity,
+      activityMinutes: Math.round((Number(activity?.durationSeconds) || 0) / 60),
       player: ssot.player || player,
     };
   } finally {

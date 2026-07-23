@@ -18,10 +18,10 @@ export function playerForOnboarding(player) {
 }
 
 export async function renderOnboarding(root, navigate, ctx) {
-  let gender = 'male';
   const player = playerForOnboarding(await getPlayer());
+  let gender = player.avatar_sprite === 'female' ? 'female' : 'male';
   const name = playerNameForOnboarding(ctx, player);
-  let examDate = EXAM_META.default_exam_date;
+  let examDate = player.exam_date || EXAM_META.default_exam_date;
 
   function previewHero(sprite) {
     return heroImgHtml({ className: 'hero-img hero-img--onboard', level: 1, sprite });
@@ -30,7 +30,7 @@ export async function renderOnboarding(root, navigate, ctx) {
   root.innerHTML = `
     <div class="onboard">
       <div class="onboard-hero" id="ob-hero-preview">
-        ${previewHero('male')}
+        ${previewHero(gender)}
       </div>
       <h1>DETONA<br>CONCURSOS</h1>
       <p class="sub">${EXAM_META.name}<br>${EXAM_META.cargo}</p>
@@ -42,11 +42,11 @@ export async function renderOnboarding(root, navigate, ctx) {
           <div class="field">
             <label>Avatar (Sprite)</label>
             <div class="avatar-pick">
-              <div class="avatar-opt selected" data-g="male" role="button" tabindex="0" aria-pressed="true">
+              <div class="avatar-opt ${gender === 'male' ? 'selected' : ''}" data-g="male" role="button" tabindex="0" aria-pressed="${gender === 'male'}">
                 <img class="hero-thumb" src="${HERO_SRC}" alt="Masculino" />
                 <div class="muted">Guerreiro</div>
               </div>
-              <div class="avatar-opt" data-g="female" role="button" tabindex="0" aria-pressed="false">
+              <div class="avatar-opt ${gender === 'female' ? 'selected' : ''}" data-g="female" role="button" tabindex="0" aria-pressed="${gender === 'female'}">
                 <img class="hero-thumb" src="${HERO_SRC_FEMALE}" alt="Feminino" />
                 <div class="muted">Guerreira</div>
               </div>

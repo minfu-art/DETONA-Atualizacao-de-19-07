@@ -103,11 +103,17 @@ export function comboBonus(streak) {
 
 export const XP = {
   CORRECT_ANSWER: 10,
+  OFFICIAL_BATTLE_COMPLETED: 25,
+  REVIEW_COMPLETED: 20,
+  DAILY_GOAL_COMPLETED: 150,
+  FOCUS_15_MIN: 20,
+  FOCUS_30_MIN: 45,
+  FOCUS_60_MIN: 100,
   DAILY_BATTLE: 150,
   /** Meta diária de estudo cumprida (HUD / DailyLog) */
-  DAILY_META: 30,
+  DAILY_META: 150,
   /** Compat: mesmo bônus da meta diária */
-  DAILY_ROUTINE: 30,
+  DAILY_ROUTINE: 150,
   /** Todos os hábitos de bem-estar do dia */
   WELLBEING_DAY: 10,
 };

@@ -8,6 +8,7 @@
 import * as localDb from '../core/db.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { progressCloud, recordKeyFor, SYNC_COLLECTIONS } from './progressCloud.js';
+import { shouldSyncCloudRecord } from './collectionKeys.js';
 
 const OUTBOX_STORAGE = 'detona.sync.outbox';
 
@@ -66,7 +67,7 @@ export function createHybridProgressAdapter({
     },
     async put(store, value, userId, contestId) {
       const result = await local.put(store, value, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
+      if (cloudEnabled() && shouldSyncCloudRecord(store, value)) {
         const op = {
           op: 'upsert',
           userId,
@@ -87,17 +88,18 @@ export function createHybridProgressAdapter({
     },
     async putMany(store, values, userId, contestId) {
       const result = await local.putMany(store, values, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store) && values?.length) {
+      const syncableValues = (values || []).filter((value) => shouldSyncCloudRecord(store, value));
+      if (cloudEnabled() && syncableValues.length) {
         if (!online()) {
-          for (const value of values) {
+          for (const value of syncableValues) {
             enqueue({ op: 'upsert', userId, contestId, collection: store, value });
           }
         } else {
-          const operations = values.map((value) => ({
+          const operations = syncableValues.map((value) => ({
             op: 'upsert', userId, contestId, collection: store, value,
           }));
           await cloudWriteSafe(
-            () => cloud.upsertMany(userId, contestId, store, values),
+            () => cloud.upsertMany(userId, contestId, store, syncableValues),
             () => operations.forEach(enqueue),
           );
         }
