@@ -38,7 +38,7 @@ const official = {
 
 test('Home possui conselho automático quando não existe aviso', () => {
   assert.match(homeSource, /officialAnnouncement\s*\?\s*officialMentorHtml[\s\S]*:\s*automaticMentorHtml/);
-  assert.match(automaticMentorHtml(player, automatic), /CONSELHO DO SEU AVATAR/);
+  assert.match(automaticMentorHtml(player, automatic), /CONSELHO DO MENTOR/);
 });
 
 test('falha no carregamento do Supabase registra aviso técnico e preserva conselho automático', () => {
@@ -46,27 +46,37 @@ test('falha no carregamento do Supabase registra aviso técnico e preserva conse
   assert.doesNotMatch(homeSource, /toast\([^)]*avisos indisponíveis/);
 });
 
-test('avatar masculino respeita o sprite e o nível acadêmico', () => {
+test('personagem masculino usa a arte dedicada do Mentor', () => {
   const html = automaticMentorHtml({ level: 37, avatar_sprite: 'male' }, automatic);
-  assert.match(html, /data-hero-sprite="male"/);
-  assert.match(html, /data-hero-level="37"/);
-  assert.match(html, /tier-30-39\.png/);
+  assert.match(html, /assets\/mentor\/mentor\.png\?v1/);
+  assert.match(html, /data-mentor-variant="male"/);
+  assert.match(html, /CONSELHO DO MENTOR/);
 });
 
-test('avatar feminino usa a cadeia feminina sem duplicar imagem', () => {
+test('personagem feminino usa a arte dedicada da Mentora sem duplicar imagem', () => {
   const html = automaticMentorHtml({ level: 74, avatar_sprite: 'female' }, automatic);
-  assert.match(html, /data-hero-sprite="female"/);
-  assert.match(html, /data-hero-level="74"/);
-  assert.match(html, /female\/tier-70-89\.png/);
-  assert.equal((html.match(/<img /g) || []).length, 1);
+  assert.match(html, /assets\/mentor\/mentora\.png\?v1/);
+  assert.match(html, /data-mentor-variant="female"/);
+  assert.match(html, /CONSELHO DA MENTORA/);
+  assert.equal((html.match(/<img\b/g) || []).length, 1);
 });
 
 test('aviso oficial urgente substitui visualmente o conselho e mostra indicador novo', () => {
   const html = officialMentorHtml(player, official);
   assert.match(html, /dj-mentor--official/);
   assert.match(html, /dj-mentor--urgent/);
-  assert.match(html, /AVISO OFICIAL/);
+  assert.match(html, /AVISO OFICIAL DO MENTOR/);
   assert.match(html, />NOVO</);
+  assert.match(html, />Ver mais</);
+});
+
+test('aviso da Mentora abre a mensagem completa pelo botão Ver mais', () => {
+  const html = officialMentorHtml({ level: 12, avatar_sprite: 'female' }, official);
+  assert.match(html, /AVISO OFICIAL DA MENTORA/);
+  assert.match(html, /aria-haspopup="dialog"/);
+  assert.match(html, /aria-label="Ver mensagem completa de Mentora"/);
+  assert.match(html, />Ver mais</);
+  assert.match(homeSource, /openAnnouncementModal\(officialAnnouncement/);
 });
 
 test('aviso fixado já lido continua renderizável sem indicador novo', () => {

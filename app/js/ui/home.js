@@ -440,16 +440,45 @@ const ANNOUNCEMENT_CATEGORY_LABELS = Object.freeze({
   official_notice: 'Comunicado oficial',
 });
 
+const MENTOR_ART_VERSION = 'v1';
+
+function mentorIdentity(player) {
+  const isFemale = player?.avatar_sprite === 'female';
+  return isFemale
+    ? {
+      name: 'Mentora',
+      counselLabel: 'CONSELHO DA MENTORA',
+      officialLabel: 'AVISO OFICIAL DA MENTORA',
+      src: `assets/mentor/mentora.png?${MENTOR_ART_VERSION}`,
+      variant: 'female',
+    }
+    : {
+      name: 'Mentor',
+      counselLabel: 'CONSELHO DO MENTOR',
+      officialLabel: 'AVISO OFICIAL DO MENTOR',
+      src: `assets/mentor/mentor.png?${MENTOR_ART_VERSION}`,
+      variant: 'male',
+    };
+}
+
 function mentorPortraitHtml(player) {
+  const mentor = mentorIdentity(player);
   return `
     <div class="dj-mentor__character" aria-hidden="true">
       <div class="dj-mentor__portrait">
-        ${heroImgHtml({ level: player.level, sprite: player.avatar_sprite })}
+        <img
+          src="${mentor.src}"
+          alt=""
+          class="dj-mentor__portrait-image"
+          draggable="false"
+          data-mentor-variant="${mentor.variant}"
+        />
       </div>
     </div>`;
 }
 
 export function automaticMentorHtml(player, mentor) {
+  const identity = mentorIdentity(player);
   const action = mentor.actionType !== 'none' && mentor.actionLabel
     ? `<button type="button" class="dj-mentor__action" id="mentor-action">${escapeHtml(mentor.actionLabel)}</button>`
     : '';
@@ -457,7 +486,7 @@ export function automaticMentorHtml(player, mentor) {
     <section class="dj-mentor dj-mentor--automatic dj-mentor--${escapeHtml(mentor.priority)}" aria-labelledby="dj-mentor-title">
       ${mentorPortraitHtml(player)}
       <div class="dj-mentor__bubble">
-        <span class="dj-mentor__eyebrow">CONSELHO DO SEU AVATAR · ${escapeHtml(mentor.category)}</span>
+        <span class="dj-mentor__eyebrow">${identity.counselLabel} · ${escapeHtml(mentor.category)}</span>
         <h2 class="dj-mentor__title" id="dj-mentor-title">${escapeHtml(mentor.title)}</h2>
         <p class="dj-mentor__message">${escapeHtml(mentor.message)}</p>
         ${action}
@@ -468,18 +497,19 @@ export function automaticMentorHtml(player, mentor) {
 export function officialMentorHtml(player, announcement) {
   const isNew = !announcement.read?.read_at;
   const category = ANNOUNCEMENT_CATEGORY_LABELS[announcement.category] || announcement.category;
+  const identity = mentorIdentity(player);
   return `
     <section class="dj-mentor dj-mentor--official dj-mentor--${escapeHtml(announcement.priority)}" aria-labelledby="dj-mentor-title">
       ${mentorPortraitHtml(player)}
       <div class="dj-mentor__bubble">
         <div class="dj-mentor__meta">
-          <span class="dj-mentor__eyebrow">AVISO OFICIAL · ${escapeHtml(category)}</span>
+          <span class="dj-mentor__eyebrow">${identity.officialLabel} · ${escapeHtml(category)}</span>
           <span class="dj-mentor__priority">Prioridade ${escapeHtml(announcement.priority)}</span>
           ${isNew ? '<span class="dj-mentor__new" id="mentor-new-indicator">NOVO</span>' : ''}
         </div>
         <h2 class="dj-mentor__title" id="dj-mentor-title">${escapeHtml(announcement.title)}</h2>
         <p class="dj-mentor__message">${escapeHtml(announcement.summary)}</p>
-        <button type="button" class="dj-mentor__action" id="mentor-read-announcement" aria-haspopup="dialog">Ler aviso</button>
+        <button type="button" class="dj-mentor__action" id="mentor-read-announcement" aria-haspopup="dialog" aria-label="Ver mensagem completa de ${escapeHtml(identity.name)}">Ver mais</button>
       </div>
     </section>`;
 }

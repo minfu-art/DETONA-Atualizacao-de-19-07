@@ -140,6 +140,8 @@ const ASSETS = [
   './assets/hero/tiers/female/tier-70-89.png',
   './assets/hero/tiers/female/tier-90-99.png',
   './assets/hero/tiers/female/tier-100.png',
+  './assets/mentor/mentor.png',
+  './assets/mentor/mentora.png',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

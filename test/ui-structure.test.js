@@ -201,7 +201,7 @@ test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáv
   assert.match(source, /Revisões pendentes/);
   assert.match(source, /Progresso do dia/);
   assert.match(source, /FALTAM/);
-  assert.match(source, /CONSELHO DO SEU AVATAR/);
+  assert.match(source, /CONSELHO DO MENTOR/);
   assert.match(source, /AVISO OFICIAL/);
   assert.doesNotMatch(source, /Conquistas recentes/);
   assert.match(dashboardCss, /\.dj-mentor/);

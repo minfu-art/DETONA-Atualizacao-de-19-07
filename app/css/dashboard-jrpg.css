@@ -865,15 +865,18 @@
   inset: 0;
   overflow: hidden;
 }
-.dj-mentor__portrait .hero-img {
+.dj-mentor__portrait-image {
   position: absolute;
   z-index: 1;
-  width: 130%;
+  width: auto;
+  min-width: 100%;
+  max-width: none;
   height: 132%;
-  left: -15%;
-  bottom: -34%;
-  object-fit: contain;
+  left: 50%;
+  bottom: -30%;
+  object-fit: cover;
   object-position: center bottom;
+  transform: translateX(-50%);
 }
 .dj-mentor__bubble {
   position: relative;
@@ -1003,11 +1006,9 @@
   .dj-mentor__character {
     min-height: 154px;
   }
-  .dj-mentor__portrait .hero-img {
-    width: 155%;
-    height: 118%;
-    left: -28%;
-    bottom: -24%;
+  .dj-mentor__portrait-image {
+    height: 150%;
+    bottom: -42%;
   }
   .dj-mentor__bubble {
     margin: 10px 10px 10px 0;
