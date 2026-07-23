@@ -35,6 +35,8 @@ import {
   automaticMentorHtml,
   officialMentorHtml,
 } from './mentorCommunication.js';
+import { refreshEmblems } from '../services/emblemService.js';
+import { emblemArt } from './emblems/emblemArt.js';
 
 export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
@@ -71,6 +73,7 @@ export async function renderHome(root, navigate, ctx) {
   const xpPct = Math.min(100, Math.round(((player.xp || 0) / xpNeed) * 100));
   const editalPct = player.edital_completion_pct || 0;
   const days = daysUntilExam(player.exam_date);
+  const emblemState = await refreshEmblems({ daysUntilExam: days ?? 120 });
   const stage = getTitle(player.level);
   const phrase = randomPhrase(!!player.endgame_mode);
   const rank = rankLabel(player.level, editalPct);
@@ -152,6 +155,7 @@ export async function renderHome(root, navigate, ctx) {
     log,
     avgAccuracy,
     wbState,
+    emblemState,
   });
   return;
 
@@ -512,9 +516,18 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     player, stage, rank, totalXp, xpNeed, xpPct, editalPct, days,
     routine, meta, planned, doneToday, missionLeft, missionFocus,
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
-    phrase = '', log = null, avgAccuracy = 0, wbState = null,
+    phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
   } = data;
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
+  const earnedEmblems = (emblemState?.emblems || [])
+    .filter((emblem) => emblem.earned)
+    .sort((a, b) => String(b.unlocked_at).localeCompare(String(a.unlocked_at)) || b.rarity - a.rarity);
+  const hudEmblems = earnedEmblems.slice(0, 4);
+  const hiddenEmblems = Math.max(0, earnedEmblems.length - hudEmblems.length);
+  const emblemHud = hudEmblems.length
+    ? hudEmblems.map((emblem) => emblemArt(emblem, { className: 'emblem-art--hud' })).join('')
+    : (emblemState?.emblems || []).slice(0, 4)
+      .map((emblem) => emblemArt(emblem, { locked: true, className: 'emblem-art--hud' })).join('');
 
   let mission = {
     type: 'edital',
@@ -669,6 +682,14 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           <span class="dj-hud__ico">${icon('flame')}</span>
           <div><small>Sequência</small><strong>${player.streak_days || 0} <em>dias</em></strong></div>
         </div>
+        <div class="dj-hud__pill dj-hud__pill--emblems">
+          <div class="dj-hud__emblems" aria-label="${earnedEmblems.length} de ${emblemState?.emblems?.length || 0} emblemas conquistados">
+            ${emblemHud}${hiddenEmblems ? `<span class="dj-hud__more">+${hiddenEmblems}</span>` : ''}
+          </div>
+          <div><small>Emblemas</small><strong>${earnedEmblems.length}<em>/${emblemState?.emblems?.length || 0}</em></strong>
+            <button type="button" class="dj-hud__link" id="today-emblems">Ver todos</button>
+          </div>
+        </div>
         <div class="dj-hud__pill dj-hud__pill--xp">
           <span class="dj-hud__ico">${icon('gem')}</span>
           <div><small>XP total</small><strong>${formatNum(totalXp)}</strong></div>
@@ -821,6 +842,11 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   });
   $('#today-routine', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
+  $('#today-emblems', root)?.addEventListener('click', () => {
+    SFX.click();
+    ctx.profileSection = 'emblems';
+    navigate('profile');
+  });
   $('#today-wellbeing', root)?.addEventListener('click', () => { SFX.click(); navigate('wellbeing'); });
   $('#mentor-action', root)?.addEventListener('click', () => {
     SFX.click();

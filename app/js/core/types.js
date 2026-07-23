@@ -36,6 +36,7 @@
  * @property {number} xp_next_level
  * @property {string} exam_date ISO date
  * @property {number} streak_days
+ * @property {number} best_streak maior sequência já alcançada
  * @property {number} edital_completion_pct SSOT 0-100
  * @property {string|null} last_study_date YYYY-MM-DD
  * @property {boolean} celebration_shown

@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v77-mastery-calculations';
+const CACHE = 'detona-v78-emblem-system';
 const ASSETS = [
   './',
   './index.html',
@@ -20,6 +20,7 @@ const ASSETS = [
   './js/core/routine/routineCalendar.js',
   './js/services/routineService.js',
   './js/services/academicProgressService.js',
+  './js/services/emblemService.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',
   './assets/icons/icon-512.png',
@@ -75,6 +76,7 @@ const ASSETS = [
   './js/services/reviewService.js',
   './js/services/performanceService.js',
   './js/data/editalSeed.js',
+  './js/data/emblemCatalog.js',
   './js/data/phrases.js',
   './js/data/questions_pc_al_port.json',
   './js/data/questions_pc_al_lote.json',
@@ -110,6 +112,7 @@ const ASSETS = [
   './js/ui/onboarding.js',
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
+  './js/ui/emblems/emblemArt.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',
   './js/ui/battleArena.js',

@@ -221,6 +221,7 @@ export function applyStudyStreak(player, today, yesterday) {
     }
     player.last_study_date = today;
   }
+  player.best_streak = Math.max(Number(player.best_streak) || 0, Number(player.streak_days) || 0);
   return player;
 }
 

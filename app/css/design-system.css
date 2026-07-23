@@ -1973,3 +1973,26 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 }
 @media (max-width:360px) { .detona-login-card .saas-auth__story { height:310px; } .auth-logo-lockup { transform:translateX(-50%) scale(.82); transform-origin:top center; } .detona-login-card .auth-character { width:285px; height:255px; } }
 @media (prefers-reduced-motion:reduce) { .detona-login-card .rpg-energy { animation:none !important; } }
+
+/* Emblemas: arte vetorial nativa e galeria de conquistas */
+.emblem-art { display:inline-grid; flex:0 0 auto; width:52px; height:52px; filter:drop-shadow(0 0 8px rgba(34,211,238,.2)); }
+.emblem-art svg { width:100%; height:100%; }
+.emblem-art__shield { fill:#11152b; stroke:rgba(251,191,36,.58); stroke-width:1.5; }
+.emblem-art__glyph { fill:none; }
+.emblem-art.is-locked { filter:grayscale(1); opacity:.48; }
+.emblem-art.is-locked .emblem-art__shield { fill:#151827; stroke:#69708c; }
+.emblem-art--hud { width:27px; height:27px; }
+.emblem-gallery { display:grid; gap:20px; }
+.emblem-category>h3 { margin:0; color:#f8fafc; font:800 16px var(--display); }
+.emblem-category>p { margin:3px 0 10px; color:var(--ds-text-3); font-size:12px; }
+.emblem-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; }
+.emblem-card { display:flex; gap:12px; min-width:0; padding:12px; border:1px solid rgba(139,92,246,.25); border-radius:14px; background:rgba(9,12,26,.72); }
+.emblem-card.is-earned { border-color:rgba(251,191,36,.42); box-shadow:inset 0 0 22px rgba(124,58,237,.1); }
+.emblem-card__copy { display:flex; flex:1; min-width:0; flex-direction:column; gap:4px; }
+.emblem-card__copy strong { color:#f8fafc; font-size:13px; }
+.emblem-card__copy span,.emblem-card__copy small,.emblem-card__copy time { color:var(--ds-text-3); font-size:10px; line-height:1.35; }
+.emblem-card__copy .emblem-card__category { color:#67e8f9; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.emblem-card__copy time { color:#fbbf24; }
+.emblem-progress { height:6px; overflow:hidden; border-radius:999px; background:#202640; }
+.emblem-progress>span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#22d3ee,#a855f7,#f59e0b); }
+@media (max-width:480px) { .emblem-grid { grid-template-columns:1fr; } .emblem-card { padding:10px; } }

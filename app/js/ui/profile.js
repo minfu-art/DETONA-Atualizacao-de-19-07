@@ -3,7 +3,7 @@ import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 import { getRadarStats } from '../core/ssot.js';
-import { getStage, xpForNextLevel } from '../core/progression.js';
+import { daysUntilExam, getStage, xpForNextLevel } from '../core/progression.js';
 import { saveToKafra, loadFromKafra } from '../core/kafra.js';
 import { setMuted, SFX } from '../core/audio.js';
 import { EXAM_META } from '../data/editalSeed.js';
@@ -12,12 +12,16 @@ import { EVOLUTION_STAGES } from '../core/progression.js';
 import { mountPageContainer, sectionHeader, statsPanel } from './appShell.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import { semanticIcon } from './icons.js?v=66';
+import { EMBLEM_CATEGORIES } from '../data/emblemCatalog.js';
+import { refreshEmblems } from '../services/emblemService.js';
+import { emblemArt } from './emblems/emblemArt.js';
 
 export async function renderProfile(root, navigate, ctx) {
   const player = await getPlayer();
-  const [cards, radar] = await Promise.all([
+  const [cards, radar, emblemState] = await Promise.all([
     progressRepository.getAll(STORES.mvpCards),
     getRadarStats(),
+    refreshEmblems({ daysUntilExam: daysUntilExam(player.exam_date) ?? 120 }),
   ]);
   const stage = getStage(player.level);
   const weak = [...radar].sort((a, b) => a.proficiency - b.proficiency).slice(0, 3);
@@ -81,6 +85,39 @@ export async function renderProfile(root, navigate, ctx) {
         <p class="muted mb-8"><strong style="color:var(--ok)">Top</strong>: ${strong.map((s) => s.icon + ' ' + s.proficiency + '%').join(' · ')}</p>
         <p class="muted"><strong style="color:var(--danger)">Foco</strong>: ${weak.map((s) => s.icon + ' ' + s.proficiency + '%').join(' · ')}</p>
         <div class="radar-wrap mt-12"><canvas id="prof-radar"></canvas></div>
+      </div>
+    </div>
+
+    <div class="ro-window mb-8">
+      <div class="ro-title">Emblemas</div>
+      <div class="ro-body" id="profile-emblems">
+        <p class="muted mb-8">${emblemState.emblems.filter((emblem) => emblem.earned).length} de ${emblemState.emblems.length} conquistados</p>
+        <div class="emblem-gallery">
+          ${EMBLEM_CATEGORIES.map((category) => `
+            <section class="emblem-category" aria-labelledby="emblem-category-${category.id}">
+              <h3 id="emblem-category-${category.id}">${escapeHtml(category.name)}</h3>
+              <p>${escapeHtml(category.description)}</p>
+              <div class="emblem-grid">
+                ${emblemState.emblems.filter((emblem) => emblem.category === category.id).map((emblem) => `
+                  <article class="emblem-card ${emblem.earned ? 'is-earned' : 'is-locked'}">
+                    ${emblemArt(emblem, { locked: !emblem.earned })}
+                    <div class="emblem-card__copy">
+                      <small class="emblem-card__category">${escapeHtml(category.name)}</small>
+                      <strong>${escapeHtml(emblem.name)}</strong>
+                      <span>${escapeHtml(emblem.description)}</span>
+                      <small>${escapeHtml(emblem.criterion)}</small>
+                      ${emblem.earned
+                        ? `<time datetime="${escapeHtml(emblem.unlocked_at)}">Conquistado em ${new Date(emblem.unlocked_at).toLocaleDateString('pt-BR')}</time>`
+                        : `<div class="emblem-progress" aria-label="${emblem.current} de ${emblem.threshold}">
+                            <span style="width:${emblem.progress}%"></span>
+                          </div><small>${emblem.current} / ${emblem.threshold}</small>`}
+                    </div>
+                  </article>
+                `).join('')}
+              </div>
+            </section>
+          `).join('')}
+        </div>
       </div>
     </div>
 
@@ -160,6 +197,12 @@ export async function renderProfile(root, navigate, ctx) {
   requestAnimationFrame(() => drawRadar($('#prof-radar', root), radar));
 
   bindInstallButtons(root);
+  if (ctx.profileSection === 'emblems') {
+    requestAnimationFrame(() => {
+      $('#profile-emblems', root)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      ctx.profileSection = null;
+    });
+  }
 
   $('#pf-library', root)?.addEventListener('click', () => navigate('library'));
 
