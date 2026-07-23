@@ -8,6 +8,8 @@ import {
 } from '../app/js/core/battle.js';
 import { recalculateEditalSSOT } from '../app/js/core/ssot.js';
 import { STORES } from '../app/js/core/types.js';
+import { setActiveContestId } from '../app/js/contest/activeContest.js';
+import { recordBattleReviewEvents } from '../app/js/services/reviewService.js';
 import { createHybridProgressAdapter } from '../app/js/supabase/hybridProgressAdapter.js';
 
 function session({
@@ -65,6 +67,7 @@ function memoryRepository(overrides = {}) {
     [STORES.dailyLogs]: [],
     [STORES.mvpCards]: [],
     [STORES.reviewQueue]: [],
+    [STORES.meta]: [],
     ...overrides,
   };
   const writes = [];
@@ -72,6 +75,7 @@ function memoryRepository(overrides = {}) {
     if (store === STORES.dailyLogs) return value.date;
     if (store === STORES.reviewQueue) return value.questionId;
     if (store === STORES.routines) return value.day_of_week;
+    if (store === STORES.meta) return value.key;
     return value.id;
   };
   return {
@@ -268,6 +272,119 @@ test('dois cliques simultâneos são bloqueados em memória', async () => {
   release();
   await first;
   assert.equal(repository.rows[STORES.subtopics][0].attempts_count, 1);
+});
+
+test('journal retoma finalização parcial sem duplicar efeitos', async () => {
+  setActiveContestId('pc_al_2026');
+  const repository = memoryRepository();
+  const originalPut = repository.put.bind(repository);
+  let reviewWrites = 0;
+  let failReviewOnce = true;
+  let ssotCalls = 0;
+  repository.put = async (store, value) => {
+    if (store === STORES.reviewQueue) {
+      reviewWrites += 1;
+      if (failReviewOnce && reviewWrites === 2) {
+        failReviewOnce = false;
+        throw new Error('review unavailable');
+      }
+    }
+    return originalPut(store, value);
+  };
+  const options = {
+    repository,
+    now: () => new Date('2026-07-23T12:00:00.000Z'),
+    reviewRecorder: recordBattleReviewEvents,
+    recalculate: async (repo) => {
+      ssotCalls += 1;
+      return { player: (await repo.getAll(STORES.player))[0] };
+    },
+  };
+  const value = session({ id: 'resumable-battle', correct: 5 });
+  const journalKey = 'battle_finalization:resumable-battle';
+
+  await assert.rejects(finalizeBattle(value, options), /review unavailable/);
+  let journal = await repository.getById(STORES.meta, journalKey);
+  assert.equal(journal.status, 'processing');
+  assert.equal(journal.steps.mastery, true);
+  assert.equal(journal.steps.review, false);
+  assert.equal(repository.rows[STORES.subtopics][0].attempts_count, 1);
+  assert.equal(repository.rows[STORES.dailyLogs].length, 0);
+
+  await finalizeBattle(structuredClone(value), options);
+  journal = await repository.getById(STORES.meta, journalKey);
+  const subtopic = repository.rows[STORES.subtopics][0];
+  const log = repository.rows[STORES.dailyLogs][0];
+  const player = repository.rows[STORES.player][0];
+  assert.equal(subtopic.attempts_count, 1);
+  assert.equal(subtopic.attempt_history.length, 1);
+  assert.equal(repository.rows[STORES.reviewQueue].length, 5);
+  assert.ok(repository.rows[STORES.reviewQueue].every((item) => (
+    item.reviewHistory.length === 1
+    && item.processed_battle_ids.includes('resumable-battle')
+  )));
+  assert.equal(log.completed_amount, 10);
+  assert.equal(log.domain_challenges_completed, 1);
+  assert.deepEqual(log.processed_battle_ids, ['resumable-battle']);
+  assert.equal(player.streak_days, 1);
+  assert.equal(player.last_study_date, '2026-07-23');
+  assert.equal(ssotCalls, 1);
+  assert.equal(journal.status, 'completed');
+  assert.ok(Object.values(journal.steps).every(Boolean));
+  assert.equal(journal.completed_at, '2026-07-23T12:00:00.000Z');
+
+  await assert.rejects(
+    finalizeBattle(structuredClone(value), options),
+    { code: 'BATTLE_ALREADY_FINALIZED' },
+  );
+  assert.equal(repository.rows[STORES.subtopics][0].attempts_count, 1);
+  assert.equal(repository.rows[STORES.dailyLogs][0].completed_amount, 10);
+  assert.equal(repository.rows[STORES.player][0].streak_days, 1);
+  assert.equal(ssotCalls, 1);
+});
+
+test('retry após falha no checkpoint do player não duplica streak', async () => {
+  const repository = memoryRepository();
+  const originalPut = repository.put.bind(repository);
+  const journalKey = 'battle_finalization:player-checkpoint';
+  let failPlayerCheckpoint = true;
+  let ssotCalls = 0;
+  repository.put = async (store, value) => {
+    if (
+      failPlayerCheckpoint
+      && store === STORES.meta
+      && value.key === journalKey
+      && value.steps?.player === true
+      && value.steps?.ssot === false
+    ) {
+      failPlayerCheckpoint = false;
+      throw new Error('journal checkpoint unavailable');
+    }
+    return originalPut(store, value);
+  };
+  const options = {
+    ...dependencies(repository).options,
+    recalculate: async (repo) => {
+      ssotCalls += 1;
+      return { player: (await repo.getAll(STORES.player))[0] };
+    },
+  };
+  const value = session({ id: 'player-checkpoint', correct: 5 });
+
+  await assert.rejects(finalizeBattle(value, options), /journal checkpoint unavailable/);
+  let journal = await repository.getById(STORES.meta, journalKey);
+  assert.equal(journal.status, 'processing');
+  assert.equal(journal.steps.dailyLog, true);
+  assert.equal(journal.steps.player, false);
+  assert.equal(repository.rows[STORES.player][0].streak_days, 1);
+
+  await finalizeBattle(structuredClone(value), options);
+  journal = await repository.getById(STORES.meta, journalKey);
+  assert.equal(repository.rows[STORES.player][0].streak_days, 1);
+  assert.equal(repository.rows[STORES.dailyLogs][0].completed_amount, 10);
+  assert.equal(repository.rows[STORES.dailyLogs][0].domain_challenges_completed, 1);
+  assert.equal(ssotCalls, 1);
+  assert.equal(journal.status, 'completed');
 });
 
 test('SSOT usa o repositório para todas as gravações acadêmicas', async () => {

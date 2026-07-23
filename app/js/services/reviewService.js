@@ -44,16 +44,20 @@ export async function recordBattleReviewEvents(
   const domainDropped = previousAttemptPercentage != null
     && ((session.correct / session.questions.length) * 100) < Number(previousAttemptPercentage);
   let added = 0;
+  const battleId = String(session?.id || '').trim();
   for (const result of session.results) {
     const question = session.questions.find((item) => item.id === result.questionId);
     if (!question) continue;
     const shouldQueue = !result.correct || result.confidence === 'low' || domainDropped;
     if (!shouldQueue) continue;
     const existing = await repository.getById(STORES.reviewQueue, question.id);
+    const processedBattleIds = [...new Set(existing?.processed_battle_ids || [])];
+    if (battleId && processedBattleIds.includes(battleId)) continue;
     const reason = !result.correct ? 'incorrect' : result.confidence === 'low' ? 'low_confidence' : 'domain_drop';
     const item = applyReviewEvent(existing, questionInput(question, subtopic), {
       now, correct: false, reason, subtopicMastery: subtopic.best_accuracy || 0,
     });
+    if (battleId) item.processed_battle_ids = [...processedBattleIds, battleId];
     item.updated_at = now.toISOString();
     await repository.put(STORES.reviewQueue, item);
     if (!existing) added += 1;

@@ -16,6 +16,14 @@ import { progressRepository } from '../repositories/progressRepository.js';
 
 const finalizingBattleIds = new Set();
 let battleIdSequence = 0;
+const BATTLE_FINALIZATION_STEPS = Object.freeze([
+  'mastery',
+  'review',
+  'card',
+  'dailyLog',
+  'player',
+  'ssot',
+]);
 
 function createBattleId() {
   if (globalThis.crypto?.randomUUID) return `bat_${globalThis.crypto.randomUUID()}`;
@@ -27,6 +35,55 @@ function battleValidationError(code, message) {
   const error = new Error(message);
   error.code = code;
   return error;
+}
+
+function battleJournalKey(battleId) {
+  return `battle_finalization:${battleId}`;
+}
+
+function normalizeBattleJournal(value, { battleId, subtopicId, startedAt }) {
+  const source = value && typeof value === 'object' ? value : {};
+  const steps = Object.fromEntries(BATTLE_FINALIZATION_STEPS.map((step) => [
+    step,
+    source.steps?.[step] === true,
+  ]));
+  return {
+    key: battleJournalKey(battleId),
+    battleId,
+    subtopicId,
+    status: source.status === 'completed' ? 'completed' : 'processing',
+    steps,
+    started_at: source.started_at || startedAt,
+    updated_at: source.updated_at || startedAt,
+    completed_at: source.completed_at || null,
+  };
+}
+
+async function persistBattleJournal(repository, journal, now, {
+  completed = false,
+  step = null,
+} = {}) {
+  if (step) journal.steps[step] = true;
+  journal.updated_at = now().toISOString();
+  if (completed) {
+    journal.status = 'completed';
+    journal.completed_at = journal.updated_at;
+  }
+  await repository.put(STORES.meta, structuredClone(journal));
+}
+
+function findBattleAttempt(subtopic, battleId) {
+  const histories = [
+    subtopic?.attempt_history,
+    subtopic?.historicoTentativas,
+    subtopic?.historico,
+  ];
+  for (const history of histories) {
+    if (!Array.isArray(history)) continue;
+    const index = history.findIndex((entry) => String(entry?.battleId || '') === battleId);
+    if (index >= 0) return { entry: history[index], history, index };
+  }
+  return null;
 }
 
 export function validateOfficialBattleSession(session) {
@@ -274,49 +331,89 @@ export async function finalizeBattle(session, {
   try {
     const total = CHALLENGE_QUESTION_COUNT;
     const newResult = (session.correct / total) * 100;
+    const journalKey = battleJournalKey(validated.battleId);
+    const startedAt = now().toISOString();
+    const storedJournal = await repository.getById(STORES.meta, journalKey);
+    const journal = normalizeBattleJournal(storedJournal, {
+      battleId: validated.battleId,
+      subtopicId: validated.subtopicId,
+      startedAt,
+    });
+    if (journal.status === 'completed') {
+      throw battleValidationError('BATTLE_ALREADY_FINALIZED', 'Esta batalha já foi finalizada.');
+    }
+    if (!storedJournal) await repository.put(STORES.meta, structuredClone(journal));
+
     const [players, allSubtopics] = await Promise.all([
       repository.getAll(STORES.player),
       repository.getAll(STORES.subtopics),
     ]);
     let player = players[0];
-    const subtopic = allSubtopics.find((item) => item.id === validated.subtopicId);
+    let subtopic = allSubtopics.find((item) => item.id === validated.subtopicId);
     if (!player || !subtopic) throw new Error('Contexto de domínio não encontrado.');
-    if (hasOfficialBattleAttempt(subtopic, validated.battleId)) {
-      throw battleValidationError('BATTLE_ALREADY_FINALIZED', 'Esta batalha já foi finalizada.');
-    }
 
-    const finalizedAt = now();
+    const finalizedAt = new Date(journal.started_at);
     const attemptedAt = finalizedAt.toISOString();
     const previousBest = subtopicMastery(subtopic);
-    const previousAttemptPercentage = subtopic.last_attempt_percentage;
-    const previousStars = starsFromAccuracy(previousBest);
+    let previousAttemptPercentage = subtopic.last_attempt_percentage;
     const disciplineBefore = disciplineMastery(allSubtopics, subtopic.discipline_id);
     const globalBefore = globalMastery(allSubtopics);
     const reviewBefore = new Set(subtopic.review_question_ids || subtopic.questoesRevisao || []);
-    const masteryResult = applyOfficialMasteryAttempt(subtopic, {
-      battleId: validated.battleId,
-      correct: session.correct,
-      total,
-      attemptedAt,
-      questionIds: validated.questionIds,
-      results: session.results,
-    });
-    if (!masteryResult.official) throw new Error('Simulado incompleto: o domínio não foi alterado.');
-    if (masteryResult.duplicate) {
-      throw battleValidationError('BATTLE_ALREADY_FINALIZED', 'Esta batalha já foi finalizada.');
+    let masteryResult = {
+      subtopic,
+      official: true,
+      improved: false,
+      mastery: subtopicMastery(subtopic),
+      duplicate: hasOfficialBattleAttempt(subtopic, validated.battleId),
+    };
+    let storedAttempt = findBattleAttempt(subtopic, validated.battleId);
+    let masteryAppliedNow = false;
+
+    if (!journal.steps.mastery && storedAttempt) {
+      journal.steps.mastery = true;
+      await persistBattleJournal(repository, journal, now, { step: 'mastery' });
+    } else if (!journal.steps.mastery) {
+      masteryResult = applyOfficialMasteryAttempt(subtopic, {
+        battleId: validated.battleId,
+        correct: session.correct,
+        total,
+        attemptedAt,
+        questionIds: validated.questionIds,
+        results: session.results,
+      });
+      if (!masteryResult.official) throw new Error('Simulado incompleto: o domínio não foi alterado.');
+      const masteredSubtopic = masteryResult.subtopic;
+      masteredSubtopic.memory_temperature = computeMemoryTemperature(masteredSubtopic.last_studied_at);
+      masteredSubtopic.updated_at = attemptedAt;
+      await repository.put(STORES.subtopics, masteredSubtopic);
+      await persistBattleJournal(repository, journal, now, { step: 'mastery' });
+      subtopic = masteredSubtopic;
+      storedAttempt = findBattleAttempt(subtopic, validated.battleId);
+      masteryAppliedNow = true;
+    } else if (!storedAttempt) {
+      throw new Error('BATTLE_MASTERY_STATE_MISSING');
     }
 
-    const updatedSubtopic = masteryResult.subtopic;
-    updatedSubtopic.memory_temperature = computeMemoryTemperature(updatedSubtopic.last_studied_at);
-    updatedSubtopic.updated_at = attemptedAt;
-    await repository.put(STORES.subtopics, updatedSubtopic);
-    const queueAdded = await reviewRecorder(
-      session,
-      updatedSubtopic,
-      previousAttemptPercentage,
-      new Date(attemptedAt),
-      repository,
-    );
+    const updatedSubtopic = subtopic;
+    if (!masteryAppliedNow) {
+      if (storedAttempt?.index > 0) {
+        previousAttemptPercentage = storedAttempt.history[storedAttempt.index - 1]?.percentage ?? null;
+      } else if (storedAttempt) {
+        previousAttemptPercentage = null;
+      }
+    }
+    let queueAdded = 0;
+    if (!journal.steps.review) {
+      queueAdded = await reviewRecorder(
+        session,
+        updatedSubtopic,
+        previousAttemptPercentage,
+        new Date(attemptedAt),
+        repository,
+      );
+      await persistBattleJournal(repository, journal, now, { step: 'review' });
+    }
+
     const updatedSubtopics = allSubtopics.map((item) => item.id === updatedSubtopic.id ? updatedSubtopic : item);
     const disciplineAfter = disciplineMastery(updatedSubtopics, updatedSubtopic.discipline_id);
     const globalAfter = globalMastery(updatedSubtopics);
@@ -324,9 +421,10 @@ export async function finalizeBattle(session, {
     const stars = starsFromAccuracy(updatedSubtopic.best_accuracy);
 
     let newCard = null;
-    if (stars === 5 && previousStars < 5) {
+    if (!journal.steps.card && stars === 5 && updatedSubtopic.best_result_at === storedAttempt?.entry?.attemptedAt) {
       const existing = await repository.getAll(STORES.mvpCards);
-      if (!existing.find((card) => card.subtopic_id === updatedSubtopic.id)) {
+      newCard = existing.find((card) => card.subtopic_id === updatedSubtopic.id) || null;
+      if (!newCard) {
         newCard = {
           id: `card_${updatedSubtopic.id}`,
           subtopic_id: updatedSubtopic.id,
@@ -338,42 +436,65 @@ export async function finalizeBattle(session, {
         await repository.put(STORES.mvpCards, newCard);
       }
     }
-    player.total_stars = updatedSubtopics.reduce((sum, item) => sum + (item.stars || 0), 0);
+    if (!journal.steps.card) {
+      await persistBattleJournal(repository, journal, now, { step: 'card' });
+    }
 
     const today = attemptedAt.slice(0, 10);
     const yesterdayDate = new Date(finalizedAt);
     yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
     const yesterday = yesterdayDate.toISOString().slice(0, 10);
-    applyStudyStreak(player, today, yesterday);
-
-    const routines = await repository.getAll(STORES.routines);
-    const routine = routines.find((item) => item.day_of_week === finalizedAt.getDay()) || {
-      goal_type: 'questoes', goal_amount: 30, enabled: true,
-    };
-    let log = await repository.getById(STORES.dailyLogs, today);
-    if (!log) {
-      log = {
-        date: today,
-        planned_amount: routine.enabled === false ? 0 : (routine.goal_amount || 30),
-        completed_amount: 0,
-        status: 'pendente',
-        xp_earned: 0,
-        domain_challenges_completed: 0,
+    if (!journal.steps.dailyLog) {
+      const routines = await repository.getAll(STORES.routines);
+      const routine = routines.find((item) => item.day_of_week === finalizedAt.getDay()) || {
+        goal_type: 'questoes', goal_amount: 30, enabled: true,
       };
+      let log = await repository.getById(STORES.dailyLogs, today);
+      if (!log) {
+        log = {
+          date: today,
+          planned_amount: routine.enabled === false ? 0 : (routine.goal_amount || 30),
+          completed_amount: 0,
+          status: 'pendente',
+          xp_earned: 0,
+          domain_challenges_completed: 0,
+          processed_battle_ids: [],
+        };
+      }
+      const processedBattleIds = [...new Set(log.processed_battle_ids || [])];
+      if (!processedBattleIds.includes(validated.battleId)) {
+        if (log.planned_amount == null || log.planned_amount === 0) {
+          log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
+        }
+        log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
+        if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
+        else if (log.completed_amount > 0) log.status = 'parcial';
+        log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
+        log.processed_battle_ids = [...processedBattleIds, validated.battleId];
+        log.updated_at = attemptedAt;
+        await repository.put(STORES.dailyLogs, log);
+      }
+      await persistBattleJournal(repository, journal, now, { step: 'dailyLog' });
     }
-    if (log.planned_amount == null || log.planned_amount === 0) {
-      log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
-    }
-    log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
-    if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
-    else if (log.completed_amount > 0) log.status = 'parcial';
-    log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
-    log.updated_at = attemptedAt;
-    player.updated_at = attemptedAt;
-    await repository.put(STORES.dailyLogs, log);
-    await repository.put(STORES.player, player);
 
-    const ssot = await recalculate(repository, { updatedAt: attemptedAt });
+    if (!journal.steps.player) {
+      player = (await repository.getAll(STORES.player))[0];
+      const latestSubtopics = await repository.getAll(STORES.subtopics);
+      player.total_stars = latestSubtopics.reduce((sum, item) => sum + (item.stars || 0), 0);
+      applyStudyStreak(player, today, yesterday);
+      player.updated_at = attemptedAt;
+      await repository.put(STORES.player, player);
+      await persistBattleJournal(repository, journal, now, { step: 'player' });
+    }
+
+    let ssot = { player };
+    if (!journal.steps.ssot) {
+      ssot = await recalculate(repository, { updatedAt: attemptedAt });
+      await persistBattleJournal(repository, journal, now, { step: 'ssot', completed: true });
+    } else if (journal.status !== 'completed') {
+      await persistBattleJournal(repository, journal, now, { completed: true });
+    }
+
     return {
       accuracy: newResult,
       newResult,
