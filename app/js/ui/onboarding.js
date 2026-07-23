@@ -1,5 +1,5 @@
-import { $, escapeHtml } from './helpers.js';
-import { EXAM_META } from '../data/editalSeed.js';
+import { $, escapeHtml, toast } from './helpers.js';
+import { EXAM_META, defaultPlayer } from '../data/editalSeed.js';
 import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
@@ -13,9 +13,13 @@ export function playerNameForOnboarding(ctx, player) {
   return (ctx?.user?.name || player?.name || '').trim();
 }
 
+export function playerForOnboarding(player) {
+  return player || defaultPlayer();
+}
+
 export async function renderOnboarding(root, navigate, ctx) {
   let gender = 'male';
-  const player = await getPlayer();
+  const player = playerForOnboarding(await getPlayer());
   const name = playerNameForOnboarding(ctx, player);
   let examDate = EXAM_META.default_exam_date;
 
@@ -84,15 +88,26 @@ export async function renderOnboarding(root, navigate, ctx) {
     });
   });
 
-  $('#ob-start', root).addEventListener('click', async () => {
+  const startButton = $('#ob-start', root);
+  startButton.addEventListener('click', async () => {
+    if (startButton.disabled) return;
     SFX.click();
-    examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
-    player.name = name;
-    player.avatar_sprite = gender;
-    player.exam_date = examDate;
-    player.onboarded = true;
-    await progressRepository.put(STORES.player, player);
-    SFX.levelUp();
-    await navigate('home');
+    startButton.disabled = true;
+    startButton.textContent = 'Salvando preparação...';
+    try {
+      examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
+      player.name = name;
+      player.avatar_sprite = gender;
+      player.exam_date = examDate;
+      player.onboarded = true;
+      await progressRepository.put(STORES.player, player);
+      SFX.levelUp();
+      await navigate('home');
+    } catch (error) {
+      console.error('[onboarding] falha ao salvar preparação', error);
+      startButton.disabled = false;
+      startButton.textContent = 'Começar preparação';
+      toast('Não foi possível salvar sua preparação. Tente novamente.');
+    }
   });
 }

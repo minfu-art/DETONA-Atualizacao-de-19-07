@@ -107,6 +107,7 @@ const ASSETS = [
   './js/ui/appShell.js',
   './js/ui/appShell.js?v=70',
   './js/ui/onboarding.js',
+  './js/ui/onboarding.js?v=69',
   './js/ui/home.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',

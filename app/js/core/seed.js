@@ -52,7 +52,14 @@ export async function ensureSeed() {
   }
 
   const players = await getAll(STORES.player);
-  return players[0] || null;
+  if (players[0]) return players[0];
+
+  // Uma sincronização antiga pode restaurar a flag `seeded` sem o registro
+  // principal do jogador. Repara somente esse registro obrigatório para que
+  // uma conta nova consiga concluir o onboarding.
+  const player = defaultPlayer();
+  await put(STORES.player, player);
+  return player;
 }
 
 export async function getPlayer() {
