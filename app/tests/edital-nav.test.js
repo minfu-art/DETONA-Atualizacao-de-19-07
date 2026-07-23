@@ -54,6 +54,46 @@ test('tela principal agrega apenas disciplinas (não lista subtópicos como raiz
   assert.ok(cards.every((c) => c.discipline && c.pct != null));
 });
 
+test('domínio da disciplina inclui subtópicos zerados e precisão usa somente respostas', () => {
+  const entries = [
+    { accuracy: 100, answered: 10, correct: 10, wrong: 0 },
+    { accuracy: 40, answered: 10, correct: 4, wrong: 6 },
+    ...Array.from({ length: 8 }, () => ({ accuracy: 0, answered: 0, correct: 0, wrong: 0 })),
+  ].map((entry, index) => ({
+    ...entry,
+    disciplineId: 'port',
+    spheres: { complete: false, stars: entry.accuracy / 20 },
+    overdue: false,
+    item: { id: `v${index}`, title: `Subtópico ${index}` },
+  }));
+  const [card] = buildDisciplineCards([{ id: 'port', name: 'Língua Portuguesa' }], entries);
+
+  assert.equal(card.masteryPct, 14);
+  assert.equal(card.pct, 14);
+  assert.equal(card.accuracyPct, 70);
+  assert.equal(card.completionPct, 0);
+});
+
+test('domínio do grupo não descarta subtópicos ainda não estudados', () => {
+  const entries = [
+    { accuracy: 100, answered: 10, correct: 10, wrong: 0, stars: 5 },
+    { accuracy: 40, answered: 10, correct: 4, wrong: 6, stars: 2 },
+    { accuracy: 0, answered: 0, correct: 0, wrong: 0, stars: 0 },
+    { accuracy: 0, answered: 0, correct: 0, wrong: 0, stars: 0 },
+  ].map((entry, index) => ({
+    ...entry,
+    item: { id: `v${index}`, edital_numbering: `1.6.${index + 1}`, title: `Tópico ${index + 1}` },
+    spheres: { complete: false, stars: entry.stars },
+    progress: entry.answered ? 33 : 0,
+    overdue: false,
+  }));
+  const [group] = groupByNumberingPrefix(entries);
+
+  assert.equal(group.mastery, 35);
+  assert.equal(group.accuracy, 70);
+  assert.equal(group.progress, 17);
+});
+
 test('edital apresenta tópicos expansíveis e estatísticas reais por subtópico', async () => {
   const source = await readFile(path.join(rootDir, 'js/ui/grimorio.js'), 'utf8');
   assert.match(source, /data-toggle-disc/);
@@ -64,6 +104,9 @@ test('edital apresenta tópicos expansíveis e estatísticas reais por subtópic
   assert.match(source, /Memória/);
   assert.match(source, /renderTopicGroup/);
   assert.match(source, /ev-mastery--/);
+  assert.match(source, /Domínio da disciplina/);
+  assert.match(source, /Precisão nas respostas/);
+  assert.match(source, /group\.mastery/);
 });
 
 test('painel separa forças, fragilidades e pendências sem alterar domínio oficial', () => {

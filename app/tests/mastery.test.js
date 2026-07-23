@@ -40,6 +40,15 @@ test('barra da disciplina usa média dos seus subtópicos', () => {
   assert.equal(disciplineMastery(subs, 'port'), 45);
 });
 
+test('um subtópico em 100 e outro em 40 são diluídos por todos os subtópicos da disciplina', () => {
+  const subs = [
+    { discipline_id: 'port', best_accuracy: 100 },
+    { discipline_id: 'port', best_accuracy: 40 },
+    ...Array.from({ length: 8 }, () => ({ discipline_id: 'port', best_accuracy: 0 })),
+  ];
+  assert.equal(disciplineMastery(subs, 'port'), 14);
+});
+
 test('nível global pesa subtópicos diretamente, não disciplinas', () => {
   const subs = [...Array(20).fill(0).map(() => ({ discipline_id: 'port', best_accuracy: 100 })), ...Array(5).fill(0).map(() => ({ discipline_id: 'info', best_accuracy: 0 }))];
   assert.equal(globalMastery(subs), 80);

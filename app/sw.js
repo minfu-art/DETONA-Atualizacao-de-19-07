@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v76-academic-stability';
+const CACHE = 'detona-v77-mastery-calculations';
 const ASSETS = [
   './',
   './index.html',
