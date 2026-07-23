@@ -1,4 +1,4 @@
-import { $ } from './helpers.js';
+import { $, escapeHtml } from './helpers.js';
 import { EXAM_META } from '../data/editalSeed.js';
 import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
@@ -9,9 +9,14 @@ import { heroImgHtml, HERO_SRC, HERO_SRC_FEMALE } from './heroAssets.js';
 /**
  * @param {(screen: string) => void} navigate
  */
-export async function renderOnboarding(root, navigate) {
+export function playerNameForOnboarding(ctx, player) {
+  return (ctx?.user?.name || player?.name || '').trim();
+}
+
+export async function renderOnboarding(root, navigate, ctx) {
   let gender = 'male';
-  let name = '';
+  const player = await getPlayer();
+  const name = playerNameForOnboarding(ctx, player);
   let examDate = EXAM_META.default_exam_date;
 
   function previewHero(sprite) {
@@ -29,10 +34,7 @@ export async function renderOnboarding(root, navigate) {
       <div class="ro-window">
         <div class="ro-title">Criação de Personagem</div>
         <div class="ro-body">
-          <div class="field">
-            <label>Nome do Aventureiro</label>
-            <input type="text" id="ob-name" maxlength="24" placeholder="Ex: Agente Silva" />
-          </div>
+          <div class="field"><strong>Jogador: ${escapeHtml(name)}</strong></div>
           <div class="field">
             <label>Avatar (Sprite)</label>
             <div class="avatar-pick">
@@ -84,19 +86,13 @@ export async function renderOnboarding(root, navigate) {
 
   $('#ob-start', root).addEventListener('click', async () => {
     SFX.click();
-    name = ($('#ob-name', root).value || '').trim();
     examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
-    if (!name || name.length < 2) {
-      $('#ob-name', root).focus();
-      return;
-    }
-    const player = await getPlayer();
     player.name = name;
     player.avatar_sprite = gender;
     player.exam_date = examDate;
     player.onboarded = true;
     await progressRepository.put(STORES.player, player);
     SFX.levelUp();
-    navigate('home');
+    await navigate('home');
   });
 }
