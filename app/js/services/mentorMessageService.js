@@ -20,6 +20,16 @@ function message(date, category, values) {
   });
 }
 
+function localDayNumber(value) {
+  if (!value) return null;
+  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const date = match
+    ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]))
+    : new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  return Math.floor(new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime() / 86400000);
+}
+
 export function getMentorMessage(input = {}) {
   const {
     player = {},
@@ -30,16 +40,18 @@ export function getMentorMessage(input = {}) {
     daysUntilExam = null,
     missionFocus = null,
     missionLeft = 0,
+    lastStudyDate = player.last_study_date || null,
+    studiedToday = false,
     currentDate = new Date(),
   } = input;
 
   if (Number(reviewData.due) > 0) {
     const due = Number(reviewData.due);
-    return message(currentDate, 'review', {
+    return message(currentDate, 'review_due', {
       title: 'Reforce antes de avançar',
       message: `Você tem ${due} ${due === 1 ? 'revisão vencida' : 'revisões vencidas'}. Recupere esses conteúdos antes que a memória perca força.`,
       actionLabel: 'Abrir revisão',
-      actionType: 'internal_route',
+      actionType: 'review',
       actionValue: 'review',
       priority: 'high',
     });
@@ -53,12 +65,30 @@ export function getMentorMessage(input = {}) {
     && Number(daysUntilExam) <= 30
   ) {
     const days = Number(daysUntilExam);
-    return message(currentDate, 'exam', {
+    return message(currentDate, 'exam_near', {
       title: 'Entramos na reta final',
       message: `Faltam ${days} ${days === 1 ? 'dia' : 'dias'} para a prova. Priorize revisões e os subtópicos de menor domínio.`,
       actionLabel: 'Ver desempenho',
-      actionType: 'internal_route',
+      actionType: 'performance',
       actionValue: 'performance',
+      priority: 'high',
+    });
+  }
+
+  const todayNumber = localDayNumber(localDateKey(currentDate));
+  const lastStudyNumber = localDayNumber(lastStudyDate);
+  if (
+    lastStudyNumber !== null
+    && todayNumber !== null
+    && !studiedToday
+    && todayNumber - lastStudyNumber >= 2
+  ) {
+    return message(currentDate, 'return_after_absence', {
+      title: 'Retome o controle',
+      message: 'Uma pausa não destrói sua jornada. Complete uma missão curta hoje e reconstrua o ritmo.',
+      actionLabel: 'COMEÇAR MISSÃO',
+      actionType: 'start_daily_mission',
+      actionValue: null,
       priority: 'high',
     });
   }
@@ -81,7 +111,7 @@ export function getMentorMessage(input = {}) {
       title: 'Prepare o corpo e a mente',
       message: 'Água por perto, notificações desligadas e um bloco curto de foco. Facilite o primeiro passo.',
       actionLabel: 'Abrir preparação',
-      actionType: 'internal_route',
+      actionType: 'wellbeing',
       actionValue: 'wellbeing',
     });
   }
@@ -104,12 +134,12 @@ export function getMentorMessage(input = {}) {
       title: `Seu alvo agora é ${focusName}`,
       message: 'Esse é o ponto com menor domínio. Uma missão concentrada aqui gera mais avanço do que estudar sem direção.',
       actionLabel: 'Abrir disciplina',
-      actionType: 'open_weak_discipline',
+      actionType: 'weak_discipline',
       actionValue: focusId,
     });
   }
 
-  return message(currentDate, 'consistency', {
+  return message(currentDate, 'default', {
     title: 'Constância vence intensidade',
     message: 'Você não precisa terminar o edital hoje. Precisa cumprir o compromisso de hoje.',
   });

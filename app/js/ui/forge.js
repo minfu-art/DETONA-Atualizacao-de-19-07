@@ -12,6 +12,14 @@ import {
   announcementService,
   validateAnnouncementInput,
 } from '../services/announcementService.js';
+import {
+  ANNOUNCEMENT_CATEGORY_LABELS,
+  officialMentorHtml,
+} from './mentorCommunication.js';
+import {
+  ANNOUNCEMENT_TEMPLATES,
+  announcementFromTemplate,
+} from '../data/announcementTemplates.js';
 
 /**
  * Banco de questões — ingestão e gestão editorial
@@ -289,15 +297,6 @@ function renderPanel(body, disciplines, subtopics, counts, filterDisc, setFilter
   $('#p-filter', body).addEventListener('change', (e) => setFilter(e.target.value));
 }
 
-const ANNOUNCEMENT_CATEGORY_LABELS = Object.freeze({
-  event: 'Evento',
-  update: 'Atualização',
-  maintenance: 'Manutenção',
-  focus: 'Foco',
-  study_tip: 'Dica de estudo',
-  official_notice: 'Comunicado oficial',
-});
-
 function announcementState(item, now = new Date()) {
   if (item.archived_at) return 'Arquivado';
   if (!item.is_published) return 'Rascunho';
@@ -307,22 +306,54 @@ function announcementState(item, now = new Date()) {
 }
 
 function announcementPreview(item) {
-  const suggestions = Array.isArray(item.suggestions) ? item.suggestions : [];
-  openModal(
-    item.title || 'Prévia do aviso',
-    `
-      <p><strong>${escapeHtml(item.summary)}</strong></p>
-      <p style="white-space:pre-wrap">${escapeHtml(item.body)}</p>
-      ${suggestions.length ? `
-        <ul>${suggestions.map((suggestion) => `<li>${escapeHtml(suggestion)}</li>`).join('')}</ul>
-      ` : ''}
-      ${item.cta_type !== 'none' && item.cta_label
-    ? `<p><span class="btn btn-secondary">${escapeHtml(item.cta_label)}</span></p>`
-    : ''}
-    `,
+  const modal = openModal(
+    `Prévia: ${item.title || 'aviso'}`,
+    `<div class="mentor-admin-preview">
+      <div class="mentor-admin-preview__controls" role="group" aria-label="Opções da prévia">
+        <label>Avatar
+          <select id="mentor-preview-avatar">
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+          </select>
+        </label>
+        <label>Visualização
+          <select id="mentor-preview-viewport">
+            <option value="desktop">Desktop</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </label>
+      </div>
+      <div id="mentor-preview-card" class="mentor-admin-preview__canvas"></div>
+      <small>A escolha do avatar serve apenas para esta prévia e não será salva.</small>
+    </div>`,
     '<button type="button" class="btn btn-primary" data-modal-close>Fechar</button>',
   );
-  $('[data-modal-close]')?.addEventListener('click', closeModal);
+  const paint = () => {
+    const avatar = $('#mentor-preview-avatar', modal)?.value || 'male';
+    const viewport = $('#mentor-preview-viewport', modal)?.value || 'desktop';
+    const canvas = $('#mentor-preview-card', modal);
+    canvas.classList.toggle('is-mobile', viewport === 'mobile');
+    canvas.innerHTML = officialMentorHtml(
+      { avatar_sprite: avatar },
+      { ...item, read: null },
+      { preview: true },
+    );
+  };
+  $('#mentor-preview-avatar', modal)?.addEventListener('change', paint);
+  $('#mentor-preview-viewport', modal)?.addEventListener('change', paint);
+  $('[data-modal-close]', modal)?.addEventListener('click', closeModal);
+  paint();
+}
+
+function adminDate(value) {
+  if (!value) return '—';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '—';
+  return date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+}
+
+function audienceLabel(item) {
+  return item.audience_type === 'contest' ? `Concurso ${item.contest_id || '—'}` : 'Global';
 }
 
 function announcementFormMarkup(item = {}) {
@@ -433,7 +464,20 @@ async function renderAnnouncements(body, editing = null) {
 
   body.innerHTML = `
     <section aria-labelledby="announcements-editor-title">
-      <h3 id="announcements-editor-title">${editing ? 'Editar aviso' : 'Criar aviso'}</h3>
+      <h3 id="announcements-editor-title">${editing?.id ? 'Editar aviso' : 'Criar aviso'}</h3>
+      <div class="field announcement-template-picker">
+        <label for="an-template">Modelo rápido</label>
+        <div class="row gap-8">
+          <select id="an-template">
+            <option value="">Selecione um modelo</option>
+            ${Object.entries(ANNOUNCEMENT_TEMPLATES).map(([id, template]) => (
+              `<option value="${escapeAttr(id)}">${escapeHtml(template.label)}</option>`
+            )).join('')}
+          </select>
+          <button type="button" class="btn btn-secondary" id="an-apply-template">Usar modelo</button>
+        </div>
+        <small>O modelo apenas preenche o formulário. Nada será publicado automaticamente.</small>
+      </div>
       ${announcementFormMarkup(editing || {})}
     </section>
     <section class="mt-12" aria-labelledby="announcements-list-title">
@@ -443,7 +487,9 @@ async function renderAnnouncements(body, editing = null) {
           <article class="list-item" data-announcement-id="${escapeAttr(item.id)}">
             <div class="meta">
               <strong>${escapeHtml(item.title)}</strong>
-              <small>${escapeHtml(ANNOUNCEMENT_CATEGORY_LABELS[item.category] || item.category)} · ${escapeHtml(announcementState(item))} · ${escapeHtml(item.priority)}</small>
+              <small>${escapeHtml(ANNOUNCEMENT_CATEGORY_LABELS[item.category] || 'COMUNICADO')} · ${escapeHtml(audienceLabel(item))} · ${escapeHtml(item.priority)}</small>
+              <small>Status: ${escapeHtml(announcementState(item))} · Início: ${escapeHtml(adminDate(item.starts_at))} · Fim: ${escapeHtml(adminDate(item.ends_at))}</small>
+              <small>Publicado em: ${escapeHtml(adminDate(item.published_at))}</small>
               <small>${escapeHtml(item.summary)}</small>
             </div>
             <div class="row gap-8" style="flex-wrap:wrap">
@@ -470,6 +516,14 @@ async function renderAnnouncements(body, editing = null) {
   syncCta();
   $('#an-audience', body).addEventListener('change', syncAudience);
   $('#an-cta-type', body).addEventListener('change', syncCta);
+  $('#an-apply-template', body).addEventListener('click', () => {
+    const template = announcementFromTemplate($('#an-template', body).value);
+    if (!template) {
+      toast('Selecione um modelo.');
+      return;
+    }
+    renderAnnouncements(body, template);
+  });
 
   async function persist({ publish = false } = {}) {
     const saveButton = publish ? $('#an-publish', body) : $('#an-save', body);

@@ -22,9 +22,9 @@ test('revisão vencida possui a maior prioridade automática', () => {
     daysUntilExam: 10,
     meta: { complete: false, idle: false },
   });
-  assert.equal(result.category, 'review');
+  assert.equal(result.category, 'review_due');
   assert.equal(result.priority, 'high');
-  assert.equal(result.actionValue, 'review');
+  assert.equal(result.actionType, 'review');
   assert.match(result.message, /3 revisões vencidas/);
 });
 
@@ -35,8 +35,8 @@ test('prova próxima possui prioridade sobre meta diária comum', () => {
     meta: { complete: false, idle: false },
     missionLeft: 12,
   });
-  assert.equal(result.category, 'exam');
-  assert.equal(result.actionValue, 'performance');
+  assert.equal(result.category, 'exam_near');
+  assert.equal(result.actionType, 'performance');
   assert.match(result.message, /20 dias/);
 });
 
@@ -73,7 +73,7 @@ test('disciplina fraca gera ação para abrir a árvore correspondente', () => {
     missionFocus: { id: 'portugues', name: 'Língua Portuguesa' },
   });
   assert.equal(result.category, 'weak_discipline');
-  assert.equal(result.actionType, 'open_weak_discipline');
+  assert.equal(result.actionType, 'weak_discipline');
   assert.equal(result.actionValue, 'portugues');
   assert.match(result.title, /Língua Portuguesa/);
 });
@@ -86,7 +86,31 @@ test('mesmo estado no mesmo dia produz exatamente a mesma mensagem e id', () => 
 
 test('mensagem padrão não depende de aleatoriedade', () => {
   const result = getMentorMessage(BASE);
-  assert.equal(result.category, 'consistency');
+  assert.equal(result.category, 'default');
   assert.equal(result.actionType, 'none');
   assert.match(result.title, /Constância vence intensidade/);
+});
+
+test('retorno após ausência aparece antes da meta diária incompleta', () => {
+  const result = getMentorMessage({
+    ...BASE,
+    currentDate: '2026-07-23',
+    lastStudyDate: '2026-07-20',
+    studiedToday: false,
+    meta: { complete: false, idle: false },
+  });
+  assert.equal(result.category, 'return_after_absence');
+  assert.equal(result.title, 'Retome o controle');
+  assert.equal(result.actionType, 'start_daily_mission');
+  assert.match(result.message, /Uma pausa não destrói sua jornada/);
+});
+
+test('retorno após ausência não aparece para quem já estudou hoje', () => {
+  const result = getMentorMessage({
+    ...BASE,
+    currentDate: '2026-07-23',
+    lastStudyDate: '2026-07-20',
+    studiedToday: true,
+  });
+  assert.notEqual(result.category, 'return_after_absence');
 });

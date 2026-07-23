@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   AnnouncementService,
+  canDismissAnnouncement,
   validateAnnouncementInput,
 } from '../app/js/services/announcementService.js';
 
@@ -144,6 +145,31 @@ test('aviso lido deixa de ser considerado novo na prioridade da Home', async () 
     announcement({ id: 'unread', read: null }),
   ];
   assert.equal((await service.getCurrentHomeAnnouncement({})).id, 'unread');
+});
+
+test('evento novo aparece antes de aviso fixado comum e de conselho automático', async () => {
+  const service = new AnnouncementService();
+  service.listActiveAnnouncements = async () => [
+    announcement({ id: 'fixed', is_pinned: true, read: { read_at: NOW.toISOString() } }),
+    announcement({ id: 'event', category: 'event', read: null }),
+  ];
+  assert.equal((await service.getCurrentHomeAnnouncement({})).id, 'event');
+});
+
+test('aviso administrativo não lido precede mensagem motivacional administrativa', async () => {
+  const service = new AnnouncementService();
+  service.listActiveAnnouncements = async () => [
+    announcement({ id: 'focus', category: 'focus', read: null }),
+    announcement({ id: 'update', category: 'update', read: null }),
+  ];
+  assert.equal((await service.getCurrentHomeAnnouncement({})).id, 'update');
+});
+
+test('regras de dispensa protegem urgente, fixado e manutenção crítica', () => {
+  assert.equal(canDismissAnnouncement(announcement({ priority: 'urgent' })), false);
+  assert.equal(canDismissAnnouncement(announcement({ is_pinned: true })), false);
+  assert.equal(canDismissAnnouncement(announcement({ category: 'maintenance', priority: 'high' })), false);
+  assert.equal(canDismissAnnouncement(announcement({ category: 'focus', priority: 'normal' })), true);
 });
 
 test('aceita URL HTTPS e rota interna permitida', () => {

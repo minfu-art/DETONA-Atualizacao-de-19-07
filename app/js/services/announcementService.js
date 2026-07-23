@@ -122,6 +122,15 @@ function compareAnnouncements(a, b) {
   return new Date(b.published_at || b.created_at || 0) - new Date(a.published_at || a.created_at || 0);
 }
 
+const MOTIVATIONAL_CATEGORIES = new Set(['focus', 'study_tip']);
+
+export function canDismissAnnouncement(announcement) {
+  if (!announcement) return false;
+  if (announcement.is_pinned || announcement.priority === 'urgent') return false;
+  if (announcement.category === 'maintenance' && announcement.priority === 'high') return false;
+  return true;
+}
+
 function assertResult(result, fallback) {
   if (result?.error) throw new Error(result.error.message || fallback);
   return result?.data ?? null;
@@ -179,11 +188,14 @@ export class AnnouncementService {
   async getCurrentHomeAnnouncement(params) {
     const rows = await this.listActiveAnnouncements(params);
     return rows.find((row) => row.priority === 'urgent' && row.is_pinned)
-      || rows.find((row) => row.is_pinned)
       || rows.find((row) => row.priority === 'urgent' && !row.read?.read_at)
+      || rows.find((row) => row.category === 'event' && !row.read?.read_at)
+      || rows.find((row) => row.is_pinned)
+      || rows.find((row) => !MOTIVATIONAL_CATEGORIES.has(row.category) && !row.read?.read_at)
+      || rows.find((row) => MOTIVATIONAL_CATEGORIES.has(row.category) && !row.read?.read_at)
       || rows
-        .filter((row) => !row.read?.read_at)
-        .sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0))[0]
+        .filter((row) => row.is_pinned)
+        .sort(compareAnnouncements)[0]
       || null;
   }
 

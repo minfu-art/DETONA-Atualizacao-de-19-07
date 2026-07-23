@@ -27,8 +27,16 @@ import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import {
   ANNOUNCEMENT_ROUTES,
   announcementService,
+  canDismissAnnouncement,
 } from '../services/announcementService.js';
 import { getMentorMessage } from '../services/mentorMessageService.js';
+import {
+  announcementModalDetailsHtml,
+  automaticMentorHtml,
+  officialMentorHtml,
+} from './mentorCommunication.js';
+
+export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
 export async function renderHome(root, navigate, ctx) {
   const player = await getPlayer();
@@ -431,89 +439,6 @@ export async function renderHome(root, navigate, ctx) {
   }
 }
 
-const ANNOUNCEMENT_CATEGORY_LABELS = Object.freeze({
-  event: 'Evento',
-  update: 'Atualização',
-  maintenance: 'Manutenção',
-  focus: 'Foco',
-  study_tip: 'Dica de estudo',
-  official_notice: 'Comunicado oficial',
-});
-
-const MENTOR_ART_VERSION = 'v1';
-
-function mentorIdentity(player) {
-  const isFemale = player?.avatar_sprite === 'female';
-  return isFemale
-    ? {
-      name: 'Mentora',
-      counselLabel: 'CONSELHO DA MENTORA',
-      officialLabel: 'AVISO OFICIAL DA MENTORA',
-      src: `assets/mentor/mentora.png?${MENTOR_ART_VERSION}`,
-      variant: 'female',
-    }
-    : {
-      name: 'Mentor',
-      counselLabel: 'CONSELHO DO MENTOR',
-      officialLabel: 'AVISO OFICIAL DO MENTOR',
-      src: `assets/mentor/mentor.png?${MENTOR_ART_VERSION}`,
-      variant: 'male',
-    };
-}
-
-function mentorPortraitHtml(player) {
-  const mentor = mentorIdentity(player);
-  return `
-    <div class="dj-mentor__character" aria-hidden="true">
-      <div class="dj-mentor__portrait">
-        <img
-          src="${mentor.src}"
-          alt=""
-          class="dj-mentor__portrait-image"
-          draggable="false"
-          data-mentor-variant="${mentor.variant}"
-        />
-      </div>
-    </div>`;
-}
-
-export function automaticMentorHtml(player, mentor) {
-  const identity = mentorIdentity(player);
-  const action = mentor.actionType !== 'none' && mentor.actionLabel
-    ? `<button type="button" class="dj-mentor__action" id="mentor-action">${escapeHtml(mentor.actionLabel)}</button>`
-    : '';
-  return `
-    <section class="dj-mentor dj-mentor--automatic dj-mentor--${escapeHtml(mentor.priority)}" aria-labelledby="dj-mentor-title">
-      ${mentorPortraitHtml(player)}
-      <div class="dj-mentor__bubble">
-        <span class="dj-mentor__eyebrow">${identity.counselLabel} · ${escapeHtml(mentor.category)}</span>
-        <h2 class="dj-mentor__title" id="dj-mentor-title">${escapeHtml(mentor.title)}</h2>
-        <p class="dj-mentor__message">${escapeHtml(mentor.message)}</p>
-        ${action}
-      </div>
-    </section>`;
-}
-
-export function officialMentorHtml(player, announcement) {
-  const isNew = !announcement.read?.read_at;
-  const category = ANNOUNCEMENT_CATEGORY_LABELS[announcement.category] || announcement.category;
-  const identity = mentorIdentity(player);
-  return `
-    <section class="dj-mentor dj-mentor--official dj-mentor--${escapeHtml(announcement.priority)}" aria-labelledby="dj-mentor-title">
-      ${mentorPortraitHtml(player)}
-      <div class="dj-mentor__bubble">
-        <div class="dj-mentor__meta">
-          <span class="dj-mentor__eyebrow">${identity.officialLabel} · ${escapeHtml(category)}</span>
-          <span class="dj-mentor__priority">Prioridade ${escapeHtml(announcement.priority)}</span>
-          ${isNew ? '<span class="dj-mentor__new" id="mentor-new-indicator">NOVO</span>' : ''}
-        </div>
-        <h2 class="dj-mentor__title" id="dj-mentor-title">${escapeHtml(announcement.title)}</h2>
-        <p class="dj-mentor__message">${escapeHtml(announcement.summary)}</p>
-        <button type="button" class="dj-mentor__action" id="mentor-read-announcement" aria-haspopup="dialog" aria-label="Ver mensagem completa de ${escapeHtml(identity.name)}">Ver mais</button>
-      </div>
-    </section>`;
-}
-
 function safeHttpsUrl(value) {
   try {
     const url = new URL(value);
@@ -523,25 +448,14 @@ function safeHttpsUrl(value) {
   }
 }
 
-function announcementPeriod(announcement) {
-  const start = announcement.starts_at
-    ? new Date(announcement.starts_at).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
-    : null;
-  const end = announcement.ends_at
-    ? new Date(announcement.ends_at).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })
-    : null;
-  if (!start && !end) return '';
-  return `<p class="dj-announcement-modal__period"><strong>Período:</strong> ${escapeHtml(start || '—')}${end ? ` até ${escapeHtml(end)}` : ''}</p>`;
-}
-
 export function openAnnouncementModal(announcement, {
+  player = {},
   userId,
   navigate,
   onRead = () => {},
+  onDismiss = () => {},
 } = {}) {
   if (!announcement) return null;
-  const category = ANNOUNCEMENT_CATEGORY_LABELS[announcement.category] || announcement.category;
-  const suggestions = Array.isArray(announcement.suggestions) ? announcement.suggestions.slice(0, 5) : [];
   const internalRoute = announcement.cta_type === 'internal_route'
     && ANNOUNCEMENT_ROUTES.includes(announcement.cta_value)
     ? announcement.cta_value
@@ -549,39 +463,42 @@ export function openAnnouncementModal(announcement, {
   const externalUrl = announcement.cta_type === 'external_url'
     ? safeHttpsUrl(announcement.cta_value)
     : null;
-  const body = `
-    <div class="dj-announcement-modal">
-      <div class="dj-announcement-modal__badges">
-        <span>AVISO OFICIAL · ${escapeHtml(category)}</span>
-        <span>Prioridade ${escapeHtml(announcement.priority)}</span>
-      </div>
-      <p class="dj-announcement-modal__body">${escapeHtml(announcement.body)}</p>
-      ${suggestions.length ? `
-        <div class="dj-announcement-modal__suggestions">
-          <strong>Sugestões</strong>
-          <ul>${suggestions.map((suggestion) => `<li>${escapeHtml(suggestion)}</li>`).join('')}</ul>
-        </div>` : ''}
-      ${announcementPeriod(announcement)}
-    </div>`;
+  const body = announcementModalDetailsHtml(player, announcement);
   const cta = internalRoute
     ? `<button type="button" class="btn btn-primary" id="announcement-cta">${escapeHtml(announcement.cta_label || 'Abrir')}</button>`
     : externalUrl
       ? `<a class="btn btn-primary" id="announcement-external-cta" href="${escapeHtml(externalUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(announcement.cta_label || 'Abrir')}</a>`
       : '';
+  const dismiss = canDismissAnnouncement(announcement)
+    ? '<button type="button" class="btn" id="announcement-dismiss">Não mostrar novamente</button>'
+    : '';
   const modal = openModal(
     announcement.title,
     body,
-    `<button type="button" class="btn btn-secondary" id="announcement-close">Fechar</button>${cta}`,
+    `<button type="button" class="btn btn-secondary" id="announcement-close">Fechar</button>${dismiss}${cta}`,
   );
   $('#announcement-close', modal)?.addEventListener('click', closeModal);
   $('#announcement-cta', modal)?.addEventListener('click', () => {
     closeModal();
     navigate?.(internalRoute);
   });
+  let readPromise = Promise.resolve();
+  $('#announcement-dismiss', modal)?.addEventListener('click', async () => {
+    if (!userId || !globalThis.confirm('Não mostrar esta mensagem novamente?')) return;
+    try {
+      await readPromise;
+      await announcementService.dismissAnnouncement(userId, announcement.id);
+      closeModal();
+      await onDismiss();
+    } catch (error) {
+      console.warn('[home] falha ao dispensar aviso', error?.message || error);
+      toast('Não foi possível dispensar a mensagem agora.');
+    }
+  });
 
   if (userId) {
     if (!announcement.read?.read_at) onRead();
-    announcementService.markAnnouncementRead(userId, announcement.id)
+    readPromise = announcementService.markAnnouncementRead(userId, announcement.id)
       .then((read) => {
         announcement.read = read;
       })
@@ -711,6 +628,10 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     daysUntilExam: days,
     missionFocus: dailyEnemyDiscId ? { id: dailyEnemyDiscId, name: missionFocus } : null,
     missionLeft,
+    lastStudyDate: player.last_study_date,
+    studiedToday: player.last_study_date === todayStr()
+      || Number(log?.completed_amount) > 0
+      || Number(log?.domain_challenges_completed) > 0,
     currentDate: todayStr(),
   });
   let officialAnnouncement = null;
@@ -903,18 +824,22 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   $('#today-wellbeing', root)?.addEventListener('click', () => { SFX.click(); navigate('wellbeing'); });
   $('#mentor-action', root)?.addEventListener('click', () => {
     SFX.click();
-    if (automaticMentor.actionType === 'internal_route') navigate(automaticMentor.actionValue);
-    else if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();
-    else if (automaticMentor.actionType === 'open_weak_discipline') {
+    if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();
+    else if (automaticMentor.actionType === 'review') navigate('review');
+    else if (automaticMentor.actionType === 'performance') navigate('performance');
+    else if (automaticMentor.actionType === 'wellbeing') navigate('wellbeing');
+    else if (automaticMentor.actionType === 'weak_discipline') {
       ctx.disciplineId = automaticMentor.actionValue || dailyEnemyDiscId;
       navigate('topicTree');
     }
   });
   $('#mentor-read-announcement', root)?.addEventListener('click', () => {
     openAnnouncementModal(officialAnnouncement, {
+      player,
       userId: ctx.user?.id,
       navigate,
       onRead: () => $('#mentor-new-indicator', root)?.remove(),
+      onDismiss: () => renderHome(root, navigate, ctx),
     });
   });
   root.querySelectorAll('[data-prep-habit]').forEach((btn) => {

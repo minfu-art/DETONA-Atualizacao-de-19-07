@@ -3,12 +3,15 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import {
+  announcementModalDetailsHtml,
   automaticMentorHtml,
+  eventContextText,
   officialMentorHtml,
-} from '../app/js/ui/home.js';
+} from '../app/js/ui/mentorCommunication.js';
 import { getMentorMessage } from '../app/js/services/mentorMessageService.js';
 
 const homeSource = readFileSync(new URL('../app/js/ui/home.js', import.meta.url), 'utf8');
+const communicationSource = readFileSync(new URL('../app/js/ui/mentorCommunication.js', import.meta.url), 'utf8');
 const helperSource = readFileSync(new URL('../app/js/ui/helpers.js', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../app/css/dashboard-jrpg.css', import.meta.url), 'utf8');
 const profileSource = readFileSync(new URL('../app/js/ui/profile.js', import.meta.url), 'utf8');
@@ -38,7 +41,7 @@ const official = {
 
 test('Home possui conselho automático quando não existe aviso', () => {
   assert.match(homeSource, /officialAnnouncement\s*\?\s*officialMentorHtml[\s\S]*:\s*automaticMentorHtml/);
-  assert.match(automaticMentorHtml(player, automatic), /CONSELHO DO MENTOR/);
+  assert.match(automaticMentorHtml(player, automatic), /CONSELHO DO SEU AVATAR/);
 });
 
 test('falha no carregamento do Supabase registra aviso técnico e preserva conselho automático', () => {
@@ -50,14 +53,14 @@ test('personagem masculino usa a arte dedicada do Mentor', () => {
   const html = automaticMentorHtml({ level: 37, avatar_sprite: 'male' }, automatic);
   assert.match(html, /assets\/mentor\/mentor\.png\?v1/);
   assert.match(html, /data-mentor-variant="male"/);
-  assert.match(html, /CONSELHO DO MENTOR/);
+  assert.match(html, /CONSELHO DO SEU AVATAR/);
 });
 
 test('personagem feminino usa a arte dedicada da Mentora sem duplicar imagem', () => {
   const html = automaticMentorHtml({ level: 74, avatar_sprite: 'female' }, automatic);
   assert.match(html, /assets\/mentor\/mentora\.png\?v1/);
   assert.match(html, /data-mentor-variant="female"/);
-  assert.match(html, /CONSELHO DA MENTORA/);
+  assert.match(html, /CONSELHO DO SEU AVATAR/);
   assert.equal((html.match(/<img\b/g) || []).length, 1);
 });
 
@@ -65,16 +68,17 @@ test('aviso oficial urgente substitui visualmente o conselho e mostra indicador 
   const html = officialMentorHtml(player, official);
   assert.match(html, /dj-mentor--official/);
   assert.match(html, /dj-mentor--urgent/);
-  assert.match(html, /AVISO OFICIAL DO MENTOR/);
+  assert.match(html, /AVISO OFICIAL/);
+  assert.match(html, /URGENTE/);
   assert.match(html, />NOVO</);
   assert.match(html, />Ver mais</);
 });
 
 test('aviso da Mentora abre a mensagem completa pelo botão Ver mais', () => {
   const html = officialMentorHtml({ level: 12, avatar_sprite: 'female' }, official);
-  assert.match(html, /AVISO OFICIAL DA MENTORA/);
+  assert.match(html, /AVISO OFICIAL/);
   assert.match(html, /aria-haspopup="dialog"/);
-  assert.match(html, /aria-label="Ver mensagem completa de Mentora"/);
+  assert.match(html, /aria-label="Ver mensagem completa"/);
   assert.match(html, />Ver mais</);
   assert.match(homeSource, /openAnnouncementModal\(officialAnnouncement/);
 });
@@ -101,8 +105,8 @@ test('conteúdo HTML recebido é escapado no cartão', () => {
 
 test('modal marca aviso como lido e escapa corpo e sugestões', () => {
   assert.match(homeSource, /announcementService\.markAnnouncementRead\(userId, announcement\.id\)/);
-  assert.match(homeSource, /suggestions\.map\(\(suggestion\) => `<li>\$\{escapeHtml\(suggestion\)\}<\/li>`\)/);
-  assert.match(homeSource, /escapeHtml\(announcement\.body\)/);
+  assert.match(communicationSource, /suggestions\.map\(\(suggestion\) => `<li>\$\{escapeHtml\(suggestion\)\}<\/li>`\)/);
+  assert.match(communicationSource, /escapeHtml\(announcement\.body\)/);
 });
 
 test('CTA interno aceita somente rotas permitidas e navega após fechar', () => {
@@ -129,6 +133,47 @@ test('ação automática reutiliza a função da missão principal', () => {
   assert.match(homeSource, /actionType === 'start_daily_mission'\) startPrimaryMission\(\)/);
 });
 
+test('categorias administrativas recebem nomes humanos sem expor identificadores técnicos', () => {
+  const focus = officialMentorHtml(player, { ...official, category: 'focus', priority: 'normal' });
+  const tip = officialMentorHtml(player, { ...official, category: 'study_tip', priority: 'normal' });
+  assert.match(focus, /MENSAGEM DO DETONA/);
+  assert.match(tip, /DICA DE ESTUDO/);
+  assert.doesNotMatch(focus, />focus</);
+  assert.doesNotMatch(tip, />study_tip</);
+});
+
+test('evento e simulado usam category event e exibem contexto calculado', () => {
+  const event = {
+    ...official,
+    category: 'event',
+    title: 'Simulado PC/AL',
+    starts_at: '2026-07-24T12:00:00.000Z',
+    ends_at: '2026-07-25T12:00:00.000Z',
+  };
+  const now = new Date('2026-07-23T12:00:00.000Z');
+  assert.match(officialMentorHtml(player, event, { now }), /SIMULADO/);
+  assert.match(eventContextText(event, now), /Amanhã/);
+});
+
+test('modal mostra conteúdo completo, avatar, recomendações e escapa HTML', () => {
+  const html = announcementModalDetailsHtml(player, {
+    ...official,
+    body: '<script>alert(1)</script> Corpo completo',
+    suggestions: ['<img src=x>', 'Revise com calma'],
+  });
+  assert.match(html, /Corpo completo/);
+  assert.match(html, /dj-announcement-modal__avatar/);
+  assert.match(html, /Recomendações/);
+  assert.doesNotMatch(html, /<script>|<img src=x>/);
+  assert.match(html, /&lt;script&gt;/);
+});
+
+test('dispensa só é oferecida quando permitida e atualiza a Home', () => {
+  assert.match(homeSource, /canDismissAnnouncement\(announcement\)/);
+  assert.match(homeSource, /announcementService\.dismissAnnouncement\(userId, announcement\.id\)/);
+  assert.match(homeSource, /onDismiss:\s*\(\) => renderHome\(root, navigate, ctx\)/);
+});
+
 test('nova caixa não possui XP fictício nem conteúdo de conquistas', () => {
   const html = automaticMentorHtml(player, automatic);
   assert.doesNotMatch(html, /\bXP\b|\+\d+/);
@@ -143,5 +188,6 @@ test('conquistas continuam disponíveis no Perfil', () => {
 test('layout móvel limita texto e impede overflow horizontal', () => {
   assert.match(css, /\.dj-mentor[\s\S]*overflow:\s*hidden/);
   assert.match(css, /@media \(max-width: 620px\)[\s\S]*\.dj-mentor__message[\s\S]*-webkit-line-clamp:\s*4/);
+  assert.match(css, /grid-template-columns:\s*clamp\(105px,\s*30vw,\s*135px\)/);
   assert.match(css, /\.dj-mentor__message[\s\S]*overflow-wrap:\s*anywhere/);
 });
