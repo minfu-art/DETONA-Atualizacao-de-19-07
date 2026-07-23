@@ -7,7 +7,7 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=68';
-import { renderHome } from './ui/home.js?v=71';
+import { renderHome } from './ui/home.js?v=72';
 import { renderForge } from './ui/forge.js?v=71';
 import { renderWorldMap } from './ui/worldMap.js?v=73';
 import { renderBattle } from './ui/battleArena.js?v=73';

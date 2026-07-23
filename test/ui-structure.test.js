@@ -5,6 +5,7 @@ import { readFile, readdir } from 'node:fs/promises';
 const uiRoot = new URL('../app/js/ui/', import.meta.url);
 const cssUrl = new URL('../app/css/design-system.css', import.meta.url);
 const mainCssUrl = new URL('../app/css/main.css', import.meta.url);
+const dashboardCssUrl = new URL('../app/css/dashboard-jrpg.css', import.meta.url);
 const appUrl = new URL('../app/js/app.js', import.meta.url);
 const indexUrl = new URL('../app/index.html', import.meta.url);
 const battleUiUrl = new URL('../app/js/ui/battleArena.js', import.meta.url);
@@ -194,12 +195,16 @@ test('personagem possui animação de repouso na tela inicial e na batalha', asy
 test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáveis', async () => {
   const source = await readFile(homeUrl, 'utf8');
   const css = await readFile(cssUrl, 'utf8');
+  const dashboardCss = await readFile(dashboardCssUrl, 'utf8');
   assert.match(source, /renderTodayCommandCenter/);
   assert.match(source, /Sua próxima missão/);
   assert.match(source, /Revisões pendentes/);
   assert.match(source, /Progresso do dia/);
   assert.match(source, /FALTAM/);
-  assert.match(source, /Conquistas recentes/);
+  assert.match(source, /CONSELHO DO SEU AVATAR/);
+  assert.match(source, /AVISO OFICIAL/);
+  assert.doesNotMatch(source, /Conquistas recentes/);
+  assert.match(dashboardCss, /\.dj-mentor/);
   assert.match(css, /today-mission/);
   assert.match(css, /today-grid/);
   assert.match(css, /today-evolution/);
