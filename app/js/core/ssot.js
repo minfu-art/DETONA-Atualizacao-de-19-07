@@ -9,11 +9,12 @@
  * edital_completion_pct = (itens_completos / total_itens) * 100
  * Este valor é gravado em Player.edital_completion_pct e alimenta Home + trava Nv 91.
  */
-import { STORES, getAll, getById, put, putMany } from './db.js';
+import { STORES, getAll } from './db.js';
 import { computeMemoryTemperature, effectiveStars } from './memory.js';
 import { isQuestionEligible } from './questionSchema.js';
 import { applyGlobalMasteryToPlayer, averageSubtopicMastery, migrateSubtopicMastery } from './mastery.js';
 import { questionService } from '../services/questionService.js';
+import { progressRepository } from '../repositories/progressRepository.js';
 
 /**
  * Esferas de maestria de um item (derivado do estado atual).
@@ -43,12 +44,12 @@ export function calculateEditalCompletionPercentage(completeCount, totalItems) {
  * Também sincroniza questions_done / accuracy e memory_temperature.
  * @returns {Promise<{ pct: number, complete: number, total: number, player: object }>}
  */
-export async function recalculateEditalSSOT() {
+export async function recalculateEditalSSOT(repository = progressRepository, { updatedAt = new Date().toISOString() } = {}) {
   const [items, subtopics, playerList, disciplines] = await Promise.all([
-    getAll(STORES.verticalized),
-    getAll(STORES.subtopics),
-    getAll(STORES.player),
-    getAll(STORES.disciplines),
+    repository.getAll(STORES.verticalized),
+    repository.getAll(STORES.subtopics),
+    repository.getAll(STORES.player),
+    repository.getAll(STORES.disciplines),
   ]);
 
   const currentPlayer = playerList[0];
@@ -57,6 +58,7 @@ export async function recalculateEditalSSOT() {
   const normalizedSubs = subtopics.map((subtopic) => {
     const migrated = migrateSubtopicMastery(subtopic);
     migrated.memory_temperature = computeMemoryTemperature(migrated.last_studied_at);
+    migrated.updated_at = updatedAt;
     return migrated;
   });
   const subMap = Object.fromEntries(normalizedSubs.map((s) => [s.id, s]));
@@ -72,6 +74,7 @@ export async function recalculateEditalSSOT() {
         item.accuracy = newAccuracy;
       }
     }
+    item.updated_at = updatedAt;
     const spheres = getMasterySpheres(item, sub);
     if (spheres.complete) completeCount += 1;
   }
@@ -82,11 +85,18 @@ export async function recalculateEditalSSOT() {
   const discUpdates = disciplines.map((d) => {
     const subs = normalizedSubs.filter((s) => s.discipline_id === d.id);
     const done = subs.filter((s) => effectiveStars(s) >= 3).length;
-    return { ...d, total_subtopics: subs.length, completed_subtopics: done, mastery_pct: averageSubtopicMastery(subs) };
+    return {
+      ...d,
+      total_subtopics: subs.length,
+      completed_subtopics: done,
+      mastery_pct: averageSubtopicMastery(subs),
+      updated_at: updatedAt,
+    };
   });
 
   const player = applyGlobalMasteryToPlayer(currentPlayer, normalizedSubs);
   player.edital_completion_pct = pct;
+  player.updated_at = updatedAt;
   if (pct >= 100 && !player.celebration_shown) {
     // flag de disparo da celebração (UI consome)
     player._pending_celebration = true;
@@ -95,10 +105,10 @@ export async function recalculateEditalSSOT() {
     player.endgame_mode = true;
   }
 
-  await put(STORES.player, player);
-  if (normalizedSubs.length) await putMany(STORES.subtopics, normalizedSubs);
-  if (items.length) await putMany(STORES.verticalized, items);
-  if (discUpdates.length) await putMany(STORES.disciplines, discUpdates);
+  await repository.put(STORES.player, player);
+  if (normalizedSubs.length) await repository.putMany(STORES.subtopics, normalizedSubs);
+  if (items.length) await repository.putMany(STORES.verticalized, items);
+  if (discUpdates.length) await repository.putMany(STORES.disciplines, discUpdates);
 
   return { pct, complete: completeCount, total: items.length, player };
 }

@@ -5,6 +5,7 @@ import {
   migrateLegacyReviewItems, selectReviewItems,
 } from '../core/reviewQueue.js';
 import { questionService } from './questionService.js';
+import { progressRepository } from '../repositories/progressRepository.js';
 
 const MIGRATION_KEY = 'intelligent_review_migration_v1';
 
@@ -33,7 +34,13 @@ function questionInput(question, subtopic) {
   };
 }
 
-export async function recordBattleReviewEvents(session, subtopic, previousAttemptPercentage = null, now = new Date()) {
+export async function recordBattleReviewEvents(
+  session,
+  subtopic,
+  previousAttemptPercentage = null,
+  now = new Date(),
+  repository = progressRepository,
+) {
   const domainDropped = previousAttemptPercentage != null
     && ((session.correct / session.questions.length) * 100) < Number(previousAttemptPercentage);
   let added = 0;
@@ -42,12 +49,13 @@ export async function recordBattleReviewEvents(session, subtopic, previousAttemp
     if (!question) continue;
     const shouldQueue = !result.correct || result.confidence === 'low' || domainDropped;
     if (!shouldQueue) continue;
-    const existing = await getById(STORES.reviewQueue, question.id);
+    const existing = await repository.getById(STORES.reviewQueue, question.id);
     const reason = !result.correct ? 'incorrect' : result.confidence === 'low' ? 'low_confidence' : 'domain_drop';
     const item = applyReviewEvent(existing, questionInput(question, subtopic), {
       now, correct: false, reason, subtopicMastery: subtopic.best_accuracy || 0,
     });
-    await put(STORES.reviewQueue, item);
+    item.updated_at = now.toISOString();
+    await repository.put(STORES.reviewQueue, item);
     if (!existing) added += 1;
   }
   return added;

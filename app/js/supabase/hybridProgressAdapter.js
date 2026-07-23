@@ -39,16 +39,14 @@ function enqueueOutbox(entry) {
   writeOutbox(list);
 }
 
-async function cloudWriteSafe(fn) {
-  if (!isCloudEnabled()) return;
-  if (!isOnline()) {
-    // caller already enqueued when needed
-    return;
-  }
+async function cloudWriteSafe(fn, onFailure) {
   try {
     await fn();
+    return true;
   } catch (err) {
     console.warn('[hybrid] cloud write failed', err?.message || err);
+    onFailure?.();
+    return false;
   }
 }
 
@@ -56,6 +54,8 @@ export function createHybridProgressAdapter({
   local = localDb,
   cloud = progressCloud,
   cloudEnabled = isCloudEnabled,
+  online = isOnline,
+  enqueue = enqueueOutbox,
 } = {}) {
   return {
     getAll(store, userId, contestId) {
@@ -74,10 +74,13 @@ export function createHybridProgressAdapter({
           collection: store,
           value,
         };
-        if (!isOnline()) {
-          enqueueOutbox(op);
+        if (!online()) {
+          enqueue(op);
         } else {
-          await cloudWriteSafe(() => cloud.upsertRecord(userId, contestId, store, value));
+          await cloudWriteSafe(
+            () => cloud.upsertRecord(userId, contestId, store, value),
+            () => enqueue(op),
+          );
         }
       }
       return result;
@@ -85,12 +88,18 @@ export function createHybridProgressAdapter({
     async putMany(store, values, userId, contestId) {
       const result = await local.putMany(store, values, userId, contestId);
       if (cloudEnabled() && SYNC_COLLECTIONS.includes(store) && values?.length) {
-        if (!isOnline()) {
+        if (!online()) {
           for (const value of values) {
-            enqueueOutbox({ op: 'upsert', userId, contestId, collection: store, value });
+            enqueue({ op: 'upsert', userId, contestId, collection: store, value });
           }
         } else {
-          await cloudWriteSafe(() => cloud.upsertMany(userId, contestId, store, values));
+          const operations = values.map((value) => ({
+            op: 'upsert', userId, contestId, collection: store, value,
+          }));
+          await cloudWriteSafe(
+            () => cloud.upsertMany(userId, contestId, store, values),
+            () => operations.forEach(enqueue),
+          );
         }
       }
       return result;
@@ -99,16 +108,22 @@ export function createHybridProgressAdapter({
       await local.remove(store, id, userId, contestId);
       if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
         const op = { op: 'delete', userId, contestId, collection: store, recordKey: String(id) };
-        if (!isOnline()) enqueueOutbox(op);
-        else await cloudWriteSafe(() => cloud.deleteRecord(userId, contestId, store, id));
+        if (!online()) enqueue(op);
+        else await cloudWriteSafe(
+          () => cloud.deleteRecord(userId, contestId, store, id),
+          () => enqueue(op),
+        );
       }
     },
     async clearStore(store, userId, contestId) {
       await local.clearStore(store, userId, contestId);
       if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
         const op = { op: 'clear', userId, contestId, collection: store };
-        if (!isOnline()) enqueueOutbox(op);
-        else await cloudWriteSafe(() => cloud.clearCollection(userId, contestId, store));
+        if (!online()) enqueue(op);
+        else await cloudWriteSafe(
+          () => cloud.clearCollection(userId, contestId, store),
+          () => enqueue(op),
+        );
       }
     },
     getByIndex(store, indexName, value, userId, contestId) {

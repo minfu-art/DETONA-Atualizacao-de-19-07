@@ -1,17 +1,93 @@
-import { STORES, getById, getByIndex, put, getAll } from './db.js';
+import { STORES } from './types.js';
 import { starsFromAccuracy, rarityFromStars } from './progression.js';
 import { computeMemoryTemperature } from './memory.js';
 import { recalculateEditalSSOT, MIN_QUESTIONS_BATTLE, getQuestionCounts } from './ssot.js';
 import { isQuestionEligible } from './questionSchema.js';
 import {
   applyOfficialMasteryAttempt, disciplineMastery, globalMastery,
-  levelFromMastery, subtopicMastery,
+  hasOfficialBattleAttempt, levelFromMastery, subtopicMastery,
 } from './mastery.js';
 import {
   CHALLENGE_QUESTION_COUNT, selectIntelligentQuestions, selectionHistoryFromSubtopic,
 } from './questionSelection.js';
 import { recordBattleReviewEvents } from '../services/reviewService.js';
 import { questionService } from '../services/questionService.js';
+import { progressRepository } from '../repositories/progressRepository.js';
+
+const finalizingBattleIds = new Set();
+let battleIdSequence = 0;
+
+function createBattleId() {
+  if (globalThis.crypto?.randomUUID) return `bat_${globalThis.crypto.randomUUID()}`;
+  battleIdSequence += 1;
+  return `bat_${Date.now()}_${battleIdSequence}`;
+}
+
+function battleValidationError(code, message) {
+  const error = new Error(message);
+  error.code = code;
+  return error;
+}
+
+export function validateOfficialBattleSession(session) {
+  if (!session || typeof session !== 'object') {
+    throw battleValidationError('BATTLE_SESSION_REQUIRED', 'A sessão da batalha é obrigatória.');
+  }
+  const battleId = typeof session.id === 'string' ? session.id.trim() : '';
+  if (!battleId) {
+    throw battleValidationError('BATTLE_ID_REQUIRED', 'A batalha precisa de um identificador válido.');
+  }
+  if (session.finished !== true) {
+    throw battleValidationError('BATTLE_NOT_FINISHED', 'A batalha ainda não foi concluída.');
+  }
+  if (!Array.isArray(session.questions) || session.questions.length !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_QUESTIONS_INVALID', 'A batalha oficial precisa conter exatamente 10 questões.');
+  }
+  if (!Number.isInteger(session.answered) || session.answered !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_ANSWERS_INVALID', 'A batalha oficial precisa ter exatamente 10 respostas.');
+  }
+  if (!Array.isArray(session.results) || session.results.length !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_RESULTS_INVALID', 'A batalha oficial precisa ter exatamente 10 resultados.');
+  }
+  const subtopicId = String(session.subtopic_id || '').trim();
+  if (!subtopicId) {
+    throw battleValidationError('BATTLE_SUBTOPIC_REQUIRED', 'A batalha precisa estar vinculada a um subtópico.');
+  }
+  const questionIds = session.questions.map((question) => String(question?.id || '').trim());
+  if (questionIds.some((id) => !id) || new Set(questionIds).size !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_DUPLICATE_QUESTION', 'A batalha oficial precisa ter 10 questões únicas.');
+  }
+  if (session.questions.some((question) => (
+    String(question?.subtopic_id || question?.topicoEditalId || '').trim() !== subtopicId
+  ))) {
+    throw battleValidationError('BATTLE_MIXED_SUBTOPICS', 'Todas as questões devem pertencer ao subtópico da batalha.');
+  }
+  const allowedQuestionIds = new Set(questionIds);
+  const resultQuestionIds = session.results.map((result) => String(result?.questionId || '').trim());
+  if (resultQuestionIds.some((id) => !allowedQuestionIds.has(id))) {
+    throw battleValidationError('BATTLE_EXTERNAL_RESULT', 'Existe resultado de uma questão que não pertence à batalha.');
+  }
+  if (new Set(resultQuestionIds).size !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_DUPLICATE_RESULT', 'Existe resultado duplicado para a mesma questão.');
+  }
+  if (session.results.some((result) => typeof result?.correct !== 'boolean')) {
+    throw battleValidationError('BATTLE_RESULT_INVALID', 'Todos os resultados precisam informar se a resposta está correta.');
+  }
+  if (!Number.isInteger(session.correct) || session.correct < 0 || session.correct > CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_CORRECT_INVALID', 'A quantidade de acertos da batalha é inválida.');
+  }
+  const actualCorrect = session.results.filter((result) => result.correct === true).length;
+  if (session.correct !== actualCorrect) {
+    throw battleValidationError('BATTLE_CORRECT_MISMATCH', 'A quantidade de acertos não corresponde aos resultados.');
+  }
+  return {
+    battleId,
+    subtopicId,
+    questionIds,
+    correctIds: session.results.filter((result) => result.correct).map((result) => String(result.questionId)),
+    incorrectIds: session.results.filter((result) => !result.correct).map((result) => String(result.questionId)),
+  };
+}
 
 /** Pool de batalha: nunca usa questões DEMO (mesmo se restarem no store legado). */
 async function loadBattlePool(subtopicId) {
@@ -72,7 +148,7 @@ export async function canStartBattle(subtopicId) {
 }
 
 export async function createBattleSession(subtopicId, opts = {}) {
-  let subtopic = opts.daily ? null : await getById(STORES.subtopics, subtopicId);
+  let subtopic = opts.daily ? null : await progressRepository.getById(STORES.subtopics, subtopicId);
   if (!subtopic && !opts.daily) throw new Error('Subtópico não encontrado');
 
   let questions = [];
@@ -96,7 +172,7 @@ export async function createBattleSession(subtopicId, opts = {}) {
   }
 
   return {
-    id: `bat_${Date.now()}`,
+    id: createBattleId(),
     subtopic_id: subtopicId,
     subtopic,
     mode: opts.daily ? 'daily' : 'subtopic',
@@ -114,7 +190,7 @@ export async function createBattleSession(subtopicId, opts = {}) {
 }
 
 async function pickDailyQuestions(endgame = false) {
-  const subtopics = await getAll(STORES.subtopics);
+  const subtopics = await progressRepository.getAll(STORES.subtopics);
   const counts = await getQuestionCounts();
   const armed = subtopics.filter((subtopic) => (counts[subtopic.id] || 0) >= CHALLENGE_QUESTION_COUNT);
   const score = (subtopic) => {
@@ -183,107 +259,144 @@ export function answerQuestion(session, userAnswer, options = {}) {
   };
 }
 
-export async function finalizeBattle(session) {
-  const total = session.questions.length;
-  if (total !== CHALLENGE_QUESTION_COUNT) throw new Error('Desafio oficial precisa conter exatamente 10 questões.');
-  const newResult = (session.correct / total) * 100;
-  const [players, allSubtopics] = await Promise.all([getAll(STORES.player), getAll(STORES.subtopics)]);
-  let player = players[0];
-  const subtopic = allSubtopics.find((item) => item.id === session.subtopic_id);
-  if (!player || !subtopic) throw new Error('Contexto de domínio não encontrado.');
+export async function finalizeBattle(session, {
+  repository = progressRepository,
+  reviewRecorder = recordBattleReviewEvents,
+  recalculate = recalculateEditalSSOT,
+  now = () => new Date(),
+} = {}) {
+  const validated = validateOfficialBattleSession(session);
+  if (finalizingBattleIds.has(validated.battleId)) {
+    throw battleValidationError('BATTLE_FINALIZATION_IN_PROGRESS', 'Esta batalha já está sendo finalizada.');
+  }
+  finalizingBattleIds.add(validated.battleId);
 
-  const attemptedAt = new Date().toISOString();
-  const previousBest = subtopicMastery(subtopic);
-  const previousAttemptPercentage = subtopic.last_attempt_percentage;
-  const previousStars = starsFromAccuracy(previousBest);
-  const disciplineBefore = disciplineMastery(allSubtopics, subtopic.discipline_id);
-  const globalBefore = globalMastery(allSubtopics);
-  const reviewBefore = new Set(subtopic.review_question_ids || subtopic.questoesRevisao || []);
-  const masteryResult = applyOfficialMasteryAttempt(subtopic, {
-    correct: session.correct,
-    total,
-    attemptedAt,
-    questionIds: session.questions.map((question) => question.id),
-    results: session.results,
-  });
-  if (!masteryResult.official) throw new Error('Simulado incompleto: o domínio não foi alterado.');
-
-  const updatedSubtopic = masteryResult.subtopic;
-  updatedSubtopic.memory_temperature = computeMemoryTemperature(updatedSubtopic.last_studied_at);
-  await put(STORES.subtopics, updatedSubtopic);
-  const queueAdded = await recordBattleReviewEvents(session, updatedSubtopic, previousAttemptPercentage, new Date(attemptedAt));
-  const updatedSubtopics = allSubtopics.map((item) => item.id === updatedSubtopic.id ? updatedSubtopic : item);
-  const disciplineAfter = disciplineMastery(updatedSubtopics, updatedSubtopic.discipline_id);
-  const globalAfter = globalMastery(updatedSubtopics);
-  const reviewAdded = Math.max(queueAdded, (updatedSubtopic.review_question_ids || []).filter((id) => !reviewBefore.has(id)).length);
-  const stars = starsFromAccuracy(updatedSubtopic.best_accuracy);
-
-  let newCard = null;
-  if (stars === 5 && previousStars < 5) {
-    const existing = await getAll(STORES.mvpCards);
-    if (!existing.find((card) => card.subtopic_id === updatedSubtopic.id)) {
-      newCard = {
-        id: `card_${updatedSubtopic.id}`,
-        subtopic_id: updatedSubtopic.id,
-        enemy_name: updatedSubtopic.enemy_name,
-        date_earned: attemptedAt,
-        rarity: rarityFromStars(5),
-      };
-      await put(STORES.mvpCards, newCard);
+  try {
+    const total = CHALLENGE_QUESTION_COUNT;
+    const newResult = (session.correct / total) * 100;
+    const [players, allSubtopics] = await Promise.all([
+      repository.getAll(STORES.player),
+      repository.getAll(STORES.subtopics),
+    ]);
+    let player = players[0];
+    const subtopic = allSubtopics.find((item) => item.id === validated.subtopicId);
+    if (!player || !subtopic) throw new Error('Contexto de domínio não encontrado.');
+    if (hasOfficialBattleAttempt(subtopic, validated.battleId)) {
+      throw battleValidationError('BATTLE_ALREADY_FINALIZED', 'Esta batalha já foi finalizada.');
     }
-  }
-  player.total_stars = updatedSubtopics.reduce((sum, item) => sum + (item.stars || 0), 0);
 
-  const today = attemptedAt.slice(0, 10);
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-  applyStudyStreak(player, today, yesterday);
+    const finalizedAt = now();
+    const attemptedAt = finalizedAt.toISOString();
+    const previousBest = subtopicMastery(subtopic);
+    const previousAttemptPercentage = subtopic.last_attempt_percentage;
+    const previousStars = starsFromAccuracy(previousBest);
+    const disciplineBefore = disciplineMastery(allSubtopics, subtopic.discipline_id);
+    const globalBefore = globalMastery(allSubtopics);
+    const reviewBefore = new Set(subtopic.review_question_ids || subtopic.questoesRevisao || []);
+    const masteryResult = applyOfficialMasteryAttempt(subtopic, {
+      battleId: validated.battleId,
+      correct: session.correct,
+      total,
+      attemptedAt,
+      questionIds: validated.questionIds,
+      results: session.results,
+    });
+    if (!masteryResult.official) throw new Error('Simulado incompleto: o domínio não foi alterado.');
+    if (masteryResult.duplicate) {
+      throw battleValidationError('BATTLE_ALREADY_FINALIZED', 'Esta batalha já foi finalizada.');
+    }
 
-  const routines = await getAll(STORES.routines);
-  const routine = routines.find((item) => item.day_of_week === new Date().getDay()) || {
-    goal_type: 'questoes', goal_amount: 30, enabled: true,
-  };
-  let log = await getById(STORES.dailyLogs, today);
-  if (!log) {
-    log = {
-      date: today,
-      planned_amount: routine.enabled === false ? 0 : (routine.goal_amount || 30),
-      completed_amount: 0,
-      status: 'pendente',
-      xp_earned: 0,
-      domain_challenges_completed: 0,
+    const updatedSubtopic = masteryResult.subtopic;
+    updatedSubtopic.memory_temperature = computeMemoryTemperature(updatedSubtopic.last_studied_at);
+    updatedSubtopic.updated_at = attemptedAt;
+    await repository.put(STORES.subtopics, updatedSubtopic);
+    const queueAdded = await reviewRecorder(
+      session,
+      updatedSubtopic,
+      previousAttemptPercentage,
+      new Date(attemptedAt),
+      repository,
+    );
+    const updatedSubtopics = allSubtopics.map((item) => item.id === updatedSubtopic.id ? updatedSubtopic : item);
+    const disciplineAfter = disciplineMastery(updatedSubtopics, updatedSubtopic.discipline_id);
+    const globalAfter = globalMastery(updatedSubtopics);
+    const reviewAdded = Math.max(queueAdded, (updatedSubtopic.review_question_ids || []).filter((id) => !reviewBefore.has(id)).length);
+    const stars = starsFromAccuracy(updatedSubtopic.best_accuracy);
+
+    let newCard = null;
+    if (stars === 5 && previousStars < 5) {
+      const existing = await repository.getAll(STORES.mvpCards);
+      if (!existing.find((card) => card.subtopic_id === updatedSubtopic.id)) {
+        newCard = {
+          id: `card_${updatedSubtopic.id}`,
+          subtopic_id: updatedSubtopic.id,
+          enemy_name: updatedSubtopic.enemy_name,
+          date_earned: attemptedAt,
+          rarity: rarityFromStars(5),
+          updated_at: attemptedAt,
+        };
+        await repository.put(STORES.mvpCards, newCard);
+      }
+    }
+    player.total_stars = updatedSubtopics.reduce((sum, item) => sum + (item.stars || 0), 0);
+
+    const today = attemptedAt.slice(0, 10);
+    const yesterdayDate = new Date(finalizedAt);
+    yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
+    const yesterday = yesterdayDate.toISOString().slice(0, 10);
+    applyStudyStreak(player, today, yesterday);
+
+    const routines = await repository.getAll(STORES.routines);
+    const routine = routines.find((item) => item.day_of_week === finalizedAt.getDay()) || {
+      goal_type: 'questoes', goal_amount: 30, enabled: true,
     };
-  }
-  if (log.planned_amount == null || log.planned_amount === 0) {
-    log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
-  }
-  log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
-  if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
-  else if (log.completed_amount > 0) log.status = 'parcial';
-  log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
-  await put(STORES.dailyLogs, log);
-  await put(STORES.player, player);
+    let log = await repository.getById(STORES.dailyLogs, today);
+    if (!log) {
+      log = {
+        date: today,
+        planned_amount: routine.enabled === false ? 0 : (routine.goal_amount || 30),
+        completed_amount: 0,
+        status: 'pendente',
+        xp_earned: 0,
+        domain_challenges_completed: 0,
+      };
+    }
+    if (log.planned_amount == null || log.planned_amount === 0) {
+      log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
+    }
+    log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
+    if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
+    else if (log.completed_amount > 0) log.status = 'parcial';
+    log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
+    log.updated_at = attemptedAt;
+    player.updated_at = attemptedAt;
+    await repository.put(STORES.dailyLogs, log);
+    await repository.put(STORES.player, player);
 
-  const ssot = await recalculateEditalSSOT();
-  return {
-    accuracy: newResult,
-    newResult,
-    previousBest,
-    mastery: subtopicMastery(updatedSubtopic),
-    improved: masteryResult.improved,
-    stars,
-    resultStars: starsFromAccuracy(newResult),
-    correct: session.correct,
-    total,
-    maxCombo: session.maxCombo,
-    disciplineBefore,
-    disciplineAfter,
-    disciplineImpact: disciplineAfter - disciplineBefore,
-    levelBefore: levelFromMastery(globalBefore),
-    levelAfter: levelFromMastery(globalAfter),
-    levelImpact: levelFromMastery(globalAfter) - levelFromMastery(globalBefore),
-    attempts: updatedSubtopic.attempts_count,
-    reviewAdded,
-    newCard,
-    player: ssot.player || player,
-  };
+    const ssot = await recalculate(repository, { updatedAt: attemptedAt });
+    return {
+      accuracy: newResult,
+      newResult,
+      previousBest,
+      mastery: subtopicMastery(updatedSubtopic),
+      improved: masteryResult.improved,
+      stars,
+      resultStars: starsFromAccuracy(newResult),
+      correct: session.correct,
+      total,
+      maxCombo: session.maxCombo,
+      disciplineBefore,
+      disciplineAfter,
+      disciplineImpact: disciplineAfter - disciplineBefore,
+      levelBefore: levelFromMastery(globalBefore),
+      levelAfter: levelFromMastery(globalAfter),
+      levelImpact: levelFromMastery(globalAfter) - levelFromMastery(globalBefore),
+      attempts: updatedSubtopic.attempts_count,
+      reviewAdded,
+      newCard,
+      player: ssot.player || player,
+    };
+  } finally {
+    finalizingBattleIds.delete(validated.battleId);
+  }
 }

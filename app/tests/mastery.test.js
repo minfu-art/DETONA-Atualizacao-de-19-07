@@ -120,7 +120,7 @@ test('tentativa inferior não reduz as estrelas do melhor resultado', () => {
 
 test('batalha diaria nao consulta subtopico sem chave', async () => {
   const source = await readFile(new URL('../js/core/battle.js', import.meta.url), 'utf8');
-  assert.match(source, /let subtopic = opts\.daily \? null : await getById\(STORES\.subtopics, subtopicId\)/);
+  assert.match(source, /let subtopic = opts\.daily \? null : await progressRepository\.getById\(STORES\.subtopics, subtopicId\)/);
 });
 
 test('resultado inferior preserva domínio legado mesmo sem total histórico', () => {
