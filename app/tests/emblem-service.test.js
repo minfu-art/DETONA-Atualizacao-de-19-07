@@ -173,8 +173,8 @@ test('interface contém HUD de quatro blocos e galeria de insígnias premium', a
   assert.match(profile, /insignia-line__track/);
   assert.match(art, /assets\/insignias/);
   assert.doesNotMatch(art, /<svg|emoji|lucide|font-awesome/i);
-  assert.match(css, /repeat\(4, minmax\(0, 1fr\)\)/);
-  assert.match(css, /repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(css, /minmax\(260px,\s*1\.56fr\)/);
+  assert.match(css, /grid-template-areas:\s*"emblems emblems emblems"\s*"fire xp level"/);
 });
 
 test('marco de constância conquistado continua visível quando a prova se aproxima', async () => {
@@ -263,8 +263,10 @@ test('layout mobile quebra o HUD sem scroll horizontal', async () => {
     readFile(new URL('../css/design-system.css', import.meta.url), 'utf8'),
     readFile(new URL('../css/main.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(dashboard, /grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
-  assert.match(dashboard, /\.dj-hud__pill--emblems\s*\{\s*flex-direction:column/);
+  assert.match(dashboard, /grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(dashboard, /grid-template-areas:\s*"emblems emblems emblems"\s*"fire xp level"/);
+  assert.match(dashboard, /\.dj-hud__pill--emblems\s*\{[^}]*grid-area:\s*emblems/);
+  assert.match(dashboard, /\.dj-hud__pill:not\(\.dj-hud__pill--emblems\)/);
   assert.match(design, /grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
   assert.match(main, /overflow-x:\s*hidden/);
 });
