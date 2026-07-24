@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v78-emblem-system';
+const CACHE = 'detona-v79-premium-insignias';
 const ASSETS = [
   './',
   './index.html',
@@ -77,6 +77,7 @@ const ASSETS = [
   './js/services/performanceService.js',
   './js/data/editalSeed.js',
   './js/data/emblemCatalog.js',
+  './js/data/insigniaCatalog.js',
   './js/data/phrases.js',
   './js/data/questions_pc_al_port.json',
   './js/data/questions_pc_al_lote.json',
@@ -165,6 +166,36 @@ const ASSETS = [
   './assets/enemies/enemy-15.png',
   './assets/enemies/enemy-16.png',
   './assets/ui/level-badge.png',
+  './assets/insignias/journey-tier-01.webp',
+  './assets/insignias/journey-tier-02.webp',
+  './assets/insignias/journey-tier-03.webp',
+  './assets/insignias/journey-tier-04.webp',
+  './assets/insignias/journey-tier-05.webp',
+  './assets/insignias/consistency-tier-01.webp',
+  './assets/insignias/consistency-tier-02.webp',
+  './assets/insignias/consistency-tier-03.webp',
+  './assets/insignias/consistency-tier-04.webp',
+  './assets/insignias/consistency-tier-05.webp',
+  './assets/insignias/consistency-tier-06.webp',
+  './assets/insignias/missions-tier-01.webp',
+  './assets/insignias/missions-tier-02.webp',
+  './assets/insignias/missions-tier-03.webp',
+  './assets/insignias/missions-tier-04.webp',
+  './assets/insignias/missions-tier-05.webp',
+  './assets/insignias/missions-tier-06.webp',
+  './assets/insignias/missions-tier-07.webp',
+  './assets/insignias/focus-tier-01.webp',
+  './assets/insignias/focus-tier-02.webp',
+  './assets/insignias/focus-tier-03.webp',
+  './assets/insignias/focus-tier-04.webp',
+  './assets/insignias/focus-tier-05.webp',
+  './assets/insignias/focus-tier-06.webp',
+  './assets/insignias/domain-tier-01.webp',
+  './assets/insignias/domain-tier-02.webp',
+  './assets/insignias/domain-tier-03.webp',
+  './assets/insignias/domain-tier-04.webp',
+  './assets/insignias/domain-tier-05.webp',
+  './assets/insignias/domain-tier-06.webp',
 ];
 
 self.addEventListener('install', (e) => {

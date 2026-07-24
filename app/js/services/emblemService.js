@@ -2,9 +2,17 @@ import { STORES } from '../core/types.js';
 import { getMasterySpheres } from '../core/ssot.js';
 import { migrateSubtopicMastery } from '../core/mastery.js';
 import { buildEmblemCatalog } from '../data/emblemCatalog.js';
+import { INSIGNIA_CATEGORIES, getCurrentInsigniaProgress } from '../data/insigniaCatalog.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 
 export const EARNED_EMBLEMS_KEY = 'earned_emblems_v1';
+
+export function lifetimeXpFromPlayer(player = {}) {
+  const level = Math.max(1, Number(player.xp_level) || 1);
+  let total = Number(player.xp) || 0;
+  for (let current = 1; current < level; current += 1) total += current * 100;
+  return total;
+}
 
 function unique(values) {
   return new Set(values.filter(Boolean)).size;
@@ -46,6 +54,7 @@ export function collectEmblemMetrics({
     && verticalized.every((item) => getMasterySpheres(item, subtopicMap[item.subtopic_id]).complete);
 
   return {
+    journey: lifetimeXpFromPlayer(player),
     missions: completedOfficialBattles(normalizedSubtopics, metaRows),
     focus: fulfilledDates,
     consistency: Math.max(Number(player.best_streak) || 0, Number(player.streak_days) || 0),
@@ -133,11 +142,22 @@ export async function refreshEmblems({
     ...unlockableCatalog,
     ...buildEmblemCatalog(120).filter((emblem) => earnedIds.has(emblem.id) && !visibleIds.has(emblem.id)),
   ];
+  const insignias = INSIGNIA_CATEGORIES.map((category) => {
+    const progress = getCurrentInsigniaProgress(category.id, metrics, { daysUntilExam });
+    return {
+      ...progress,
+      name: category.name,
+      description: category.description,
+      currentInsignia: { ...progress.currentInsignia, categoryName: category.name },
+      tiers: progress.tiers.map((tier) => ({ ...tier, categoryName: category.name })),
+    };
+  });
   return {
     catalog,
     metrics,
     state: result.state,
     unlocked: result.unlocked,
     emblems: decorateEmblems(catalog, result.state, metrics),
+    insignias,
   };
 }

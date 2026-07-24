@@ -519,15 +519,12 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
   } = data;
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
-  const earnedEmblems = (emblemState?.emblems || [])
-    .filter((emblem) => emblem.earned)
-    .sort((a, b) => String(b.unlocked_at).localeCompare(String(a.unlocked_at)) || b.rarity - a.rarity);
-  const hudEmblems = earnedEmblems.slice(0, 4);
-  const hiddenEmblems = Math.max(0, earnedEmblems.length - hudEmblems.length);
-  const emblemHud = hudEmblems.length
-    ? hudEmblems.map((emblem) => emblemArt(emblem, { className: 'emblem-art--hud' })).join('')
-    : (emblemState?.emblems || []).slice(0, 4)
-      .map((emblem) => emblemArt(emblem, { locked: true, className: 'emblem-art--hud' })).join('');
+  const hudInsignias = (emblemState?.insignias || []).slice(0, 5);
+  const insigniaHud = hudInsignias.map((progress) => emblemArt(progress.currentInsignia, {
+    className: 'insignia-art--hud',
+    size: 'small',
+    state: 'current',
+  })).join('');
 
   let mission = {
     type: 'edital',
@@ -683,11 +680,11 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           <div><small>Sequência</small><strong>${player.streak_days || 0} <em>dias</em></strong></div>
         </div>
         <div class="dj-hud__pill dj-hud__pill--emblems">
-          <div class="dj-hud__emblems" aria-label="${earnedEmblems.length} de ${emblemState?.emblems?.length || 0} emblemas conquistados">
-            ${emblemHud}${hiddenEmblems ? `<span class="dj-hud__more">+${hiddenEmblems}</span>` : ''}
+          <div class="dj-hud__emblems" aria-label="Cinco linhas de insígnias evolutivas">
+            ${insigniaHud}
           </div>
-          <div><small>Emblemas</small><strong>${earnedEmblems.length}<em>/${emblemState?.emblems?.length || 0}</em></strong>
-            <button type="button" class="dj-hud__link" id="today-emblems">Ver todos</button>
+          <div class="dj-hud__insignia-copy"><small>Insígnias</small>
+            <button type="button" class="dj-hud__link" id="today-emblems">Ver galeria</button>
           </div>
         </div>
         <div class="dj-hud__pill dj-hud__pill--xp">

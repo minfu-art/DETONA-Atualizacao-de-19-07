@@ -144,9 +144,10 @@
 .dj-hud__pill--emblems { border-color: rgba(34, 211, 238, 0.28); }
 .dj-hud__pill--xp { border-color: rgba(168, 85, 247, 0.28); }
 .dj-hud__pill--lv { border-color: rgba(251, 191, 36, 0.22); }
-.dj-hud__emblems { display:flex; align-items:center; min-width:44px; }
-.dj-hud__emblems .emblem-art { margin-right:-10px; }
-.dj-hud__more { margin-left:12px; color:#fbbf24; font-size:10px; font-weight:850; }
+.dj-hud__pill--emblems { gap:4px; padding-inline:8px; }
+.dj-hud__emblems { display:flex; flex:1 1 auto; align-items:center; justify-content:center; min-width:0; }
+.dj-hud__emblems .insignia-art { margin-inline:-3px; }
+.dj-hud__insignia-copy { flex:0 0 auto; min-width:42px; }
 .dj-hud__link {
   display:block; margin-top:3px; padding:0; border:0; background:none;
   color:#67e8f9; font-size:9px; font-weight:800; cursor:pointer;
@@ -747,6 +748,9 @@
     font-size: 7px;
   }
   .dj-hud { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dj-hud__pill--emblems { flex-direction:column; align-items:stretch; gap:1px; }
+  .dj-hud__pill--emblems .insignia-art--hud { width:30px; height:30px; }
+  .dj-hud__insignia-copy { display:flex; align-items:center; justify-content:space-between; width:100%; }
 }
 
 @media (max-width: 380px) {

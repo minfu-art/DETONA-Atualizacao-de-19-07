@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import { applyStudyStreak } from '../js/core/battle.js';
 import {
   buildEmblemCatalog,
@@ -13,6 +13,13 @@ import {
   normalizeEarnedState,
   refreshEmblems,
 } from '../js/services/emblemService.js';
+import {
+  buildInsigniaTiers,
+  getCurrentInsigniaProgress,
+  getJourneyInsigniaTier,
+  INSIGNIA_CATEGORIES,
+} from '../js/data/insigniaCatalog.js';
+import { emblemArt } from '../js/ui/emblems/emblemArt.js';
 
 test('1. catálogo tem as quatro categorias obrigatórias', () => {
   assert.deepEqual([...new Set(buildEmblemCatalog(120).map((item) => item.category))],
@@ -153,7 +160,7 @@ test('18. refresh persiste earned_emblems_v1 pelo repositório', async () => {
   assert.equal(saved.value.version, 1);
 });
 
-test('interface contém HUD de quatro blocos, galeria e SVG nativo', async () => {
+test('interface contém HUD de quatro blocos e galeria de insígnias premium', async () => {
   const [home, profile, art, css] = await Promise.all([
     readFile(new URL('../js/ui/home.js', import.meta.url), 'utf8'),
     readFile(new URL('../js/ui/profile.js', import.meta.url), 'utf8'),
@@ -161,8 +168,11 @@ test('interface contém HUD de quatro blocos, galeria e SVG nativo', async () =>
     readFile(new URL('../css/dashboard-jrpg.css', import.meta.url), 'utf8'),
   ]);
   assert.match(home, /today-emblems/);
+  assert.match(home, /hudInsignias/);
   assert.match(profile, /profile-emblems/);
-  assert.match(art, /<svg viewBox=/);
+  assert.match(profile, /insignia-line__track/);
+  assert.match(art, /assets\/insignias/);
+  assert.doesNotMatch(art, /<svg|emoji|lucide|font-awesome/i);
   assert.match(css, /repeat\(4, minmax\(0, 1fr\)\)/);
   assert.match(css, /repeat\(2, minmax\(0, 1fr\)\)/);
 });
@@ -178,4 +188,83 @@ test('marco de constância conquistado continua visível quando a prova se aprox
   };
   const result = await refreshEmblems({ repository, daysUntilExam: 45 });
   assert.equal(result.emblems.find((emblem) => emblem.id === 'consistency_60')?.earned, true);
+});
+
+test('Home recebe exatamente as cinco linhas principais de insígnias', async () => {
+  const repository = {
+    getAll: async (store) => store === 'player' ? [{ xp_level: 1, xp: 0 }] : [],
+    getMeta: async () => null,
+    setMeta: async () => {},
+  };
+  const result = await refreshEmblems({ repository, daysUntilExam: 120 });
+  assert.deepEqual(result.insignias.map((item) => item.category),
+    ['journey', 'consistency', 'missions', 'focus', 'domain']);
+});
+
+test('cada categoria possui a quantidade correta de tiers visuais', () => {
+  assert.equal(INSIGNIA_CATEGORIES.length, 5);
+  assert.equal(buildInsigniaTiers('journey', { daysUntilExam: 120 }).length, 5);
+  assert.equal(buildInsigniaTiers('consistency', { daysUntilExam: 120 }).length, 6);
+  assert.equal(buildInsigniaTiers('missions').length, 7);
+  assert.equal(buildInsigniaTiers('focus').length, 6);
+  assert.equal(buildInsigniaTiers('domain').length, 6);
+});
+
+test('Jornada evolui pelas faixas de XP total', () => {
+  assert.equal(getJourneyInsigniaTier(0), 1);
+  assert.equal(getJourneyInsigniaTier(500), 2);
+  assert.equal(getJourneyInsigniaTier(2000), 3);
+  assert.equal(getJourneyInsigniaTier(5000), 4);
+  assert.equal(getJourneyInsigniaTier(10000), 5);
+});
+
+test('troca de tier altera a arte atual exibida', () => {
+  const before = getCurrentInsigniaProgress('missions', { missions: 9 });
+  const after = getCurrentInsigniaProgress('missions', { missions: 10 });
+  assert.equal(before.currentTier, 1);
+  assert.equal(after.currentTier, 2);
+  assert.notEqual(before.currentInsignia.asset, after.currentInsignia.asset);
+});
+
+test('galeria classifica tiers como earned, current e locked', () => {
+  const progress = getCurrentInsigniaProgress('missions', { missions: 50 });
+  assert.deepEqual(progress.tiers.slice(0, 5).map((tier) => tier.state),
+    ['earned', 'earned', 'earned', 'current', 'locked']);
+});
+
+test('Edital Detonado permanece bloqueado sem domínio final', () => {
+  const blocked = getCurrentInsigniaProgress('domain', { domain: 50, domainAll: 0 });
+  const complete = getCurrentInsigniaProgress('domain', { domain: 50, domainAll: 1 });
+  assert.equal(blocked.currentTier, 5);
+  assert.equal(complete.currentTier, 6);
+});
+
+test('renderer oferece small, medium e large com rótulo acessível', () => {
+  const tier = buildInsigniaTiers('focus')[3];
+  for (const size of ['small', 'medium', 'large']) {
+    const html = emblemArt(tier, { size, state: 'current' });
+    assert.match(html, new RegExp(`insignia-art--${size}`));
+    assert.match(html, /role="img"/);
+    assert.match(html, /aria-label="focus: Disciplina Forjada, estágio 4"/);
+  }
+});
+
+test('todos os 30 assets WebP evolutivos existem no projeto', async () => {
+  for (const category of INSIGNIA_CATEGORIES) {
+    for (const tier of buildInsigniaTiers(category.id, { daysUntilExam: 120 })) {
+      await access(new URL(`../${tier.asset}`, import.meta.url));
+    }
+  }
+});
+
+test('layout mobile quebra o HUD sem scroll horizontal', async () => {
+  const [dashboard, design, main] = await Promise.all([
+    readFile(new URL('../css/dashboard-jrpg.css', import.meta.url), 'utf8'),
+    readFile(new URL('../css/design-system.css', import.meta.url), 'utf8'),
+    readFile(new URL('../css/main.css', import.meta.url), 'utf8'),
+  ]);
+  assert.match(dashboard, /grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(dashboard, /\.dj-hud__pill--emblems\s*\{\s*flex-direction:column/);
+  assert.match(design, /grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+  assert.match(main, /overflow-x:\s*hidden/);
 });
