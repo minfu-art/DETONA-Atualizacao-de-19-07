@@ -2,7 +2,7 @@
  * Variáveis de ambiente do app (sem bundler).
  *
  * Produção (Vercel): preencha aqui ou injete window.__DETONA_ENV__ no index
- * antes do module principal. Nunca commite a service_role key.
+ * antes do módulo principal. Nunca inclua credenciais administrativas no cliente.
  *
  * localStorage overrides: detona.supabaseUrl, detona.supabaseAnonKey, detona.cloudMode
  */

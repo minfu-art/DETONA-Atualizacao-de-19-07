@@ -56,10 +56,11 @@ test('prévia usa o mesmo cartão, permite avatar e viewport sem persistir a esc
 });
 
 test('histórico mostra metadados administrativos sem identificar alunos', () => {
+  const announcementSection = source.slice(source.indexOf('function announcementState'));
   for (const field of ['Status:', 'Início:', 'Fim:', 'Publicado em:']) {
-    assert.match(source, new RegExp(field));
+    assert.match(announcementSection, new RegExp(field));
   }
-  assert.doesNotMatch(source, /student.*email|user.*email/i);
+  assert.doesNotMatch(announcementSection, /student.*email|user.*email/i);
 });
 
 test('painel valida o formulário antes de persistir', () => {

@@ -20,6 +20,10 @@ import {
   ANNOUNCEMENT_TEMPLATES,
   announcementFromTemplate,
 } from '../data/announcementTemplates.js';
+import {
+  ADMIN_CONTEST_ID,
+  adminAccessService,
+} from '../services/adminAccessService.js';
 
 /**
  * Banco de questões — ingestão e gestão editorial
@@ -58,6 +62,7 @@ export async function renderForge(root, navigate, ctx = {}) {
             <button type="button" class="tab ${tab === 'import' ? 'active' : ''}" data-t="import">Importar</button>
             <button type="button" class="tab ${tab === 'panel' ? 'active' : ''}" data-t="panel">Banco atual</button>
             <button type="button" class="tab ${tab === 'announcements' ? 'active' : ''}" data-t="announcements">Avisos</button>
+            <button type="button" class="tab ${tab === 'access' ? 'active' : ''}" data-t="access">Alunos e acessos</button>
           </div>
           <div id="forge-body"></div>
         </div>
@@ -76,6 +81,7 @@ export async function renderForge(root, navigate, ctx = {}) {
     if (tab === 'manual') renderManual(body, disciplines, subtopics);
     else if (tab === 'import') renderImport(body, subtopics);
     else if (tab === 'announcements') await renderAnnouncements(body);
+    else if (tab === 'access') await renderAdminAccess(body, ctx);
     else renderPanel(body, disciplines, subtopics, counts, filterDisc, (fd) => {
       filterDisc = fd;
       paint();
@@ -83,6 +89,183 @@ export async function renderForge(root, navigate, ctx = {}) {
   }
 
   await paint();
+}
+
+export function adminAccessState(entitlement) {
+  if (entitlement?.status === 'active') {
+    return { label: 'Ativo', className: 'ok', action: 'revoke', actionLabel: 'Revogar' };
+  }
+  if (entitlement?.status === 'revoked') {
+    return { label: 'Revogado', className: 'warn', action: 'reactivate', actionLabel: 'Reativar' };
+  }
+  return { label: 'Sem acesso', className: 'muted', action: 'grant', actionLabel: 'Conceder' };
+}
+
+function adminAccessDate(value) {
+  if (!value) return '—';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '—';
+  return new Intl.DateTimeFormat('pt-BR', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  }).format(date);
+}
+
+function adminUserCard(user) {
+  const state = adminAccessState(user.entitlement);
+  return `
+    <article class="admin-access-card" data-admin-user="${escapeAttr(user.userId)}">
+      <div class="admin-access-card__identity">
+        <strong>${escapeHtml(user.name || 'Aluno sem nome')}</strong>
+        <span>${escapeHtml(user.email || 'E-mail indisponível')}</span>
+      </div>
+      <div class="admin-access-card__status">
+        <span class="badge ${state.className}">${state.label}</span>
+        <small>Concedido em: ${escapeHtml(adminAccessDate(user.entitlement?.grantedAt))}</small>
+      </div>
+      <button
+        type="button"
+        class="btn ${state.action === 'revoke' ? 'btn-secondary' : 'btn-primary'} admin-access-card__action"
+        data-access-action="${state.action}"
+        aria-label="${state.actionLabel} acesso de ${escapeAttr(user.name || 'aluno')} ao PC/AL"
+      >${state.actionLabel}</button>
+    </article>
+  `;
+}
+
+function confirmAccessRevocation(user) {
+  return new Promise((resolve) => {
+    const modal = openModal(
+      'Revogar acesso ao PC/AL',
+      `<p>Confirma a revogação do acesso de <strong>${escapeHtml(user.name || 'este aluno')}</strong>?</p>
+       <p class="muted mt-8">O progresso acadêmico será preservado e reaparecerá se o acesso for reativado.</p>`,
+      `<button type="button" class="btn btn-secondary" id="admin-revoke-cancel">Cancelar</button>
+       <button type="button" class="btn btn-primary" id="admin-revoke-confirm">Confirmar revogação</button>`,
+    );
+    let settled = false;
+    let onEscape = null;
+    const finish = (value) => {
+      if (settled) return;
+      settled = true;
+      if (onEscape) document.removeEventListener('keydown', onEscape);
+      closeModal();
+      resolve(value);
+    };
+    $('#admin-revoke-cancel', modal)?.addEventListener('click', () => finish(false));
+    $('#admin-revoke-confirm', modal)?.addEventListener('click', () => finish(true));
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) finish(false);
+    });
+    onEscape = (event) => {
+      if (event.key !== 'Escape') return;
+      finish(false);
+    };
+    document.addEventListener('keydown', onEscape);
+  });
+}
+
+export async function renderAdminAccess(body, ctx = {}) {
+  if (!isDeveloperUser(ctx.user)) {
+    body.innerHTML = '<p class="muted" role="alert">Área restrita à equipe autorizada.</p>';
+    return;
+  }
+
+  let page = 1;
+  const pageSize = 20;
+  let search = '';
+
+  body.innerHTML = `
+    <section class="admin-access" aria-labelledby="admin-access-title">
+      <div class="admin-access__header">
+        <div>
+          <h3 id="admin-access-title">Alunos e acessos</h3>
+          <p class="muted">Gerencie somente o acesso ao concurso PC/AL. Nenhum progresso é removido.</p>
+        </div>
+        <form id="admin-access-search" class="admin-access__search" role="search">
+          <label class="sr-only" for="admin-access-query">Pesquisar por nome ou e-mail</label>
+          <input id="admin-access-query" type="search" maxlength="100" placeholder="Nome ou e-mail" autocomplete="off" />
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </form>
+      </div>
+      <div id="admin-access-feedback" class="muted" role="status" aria-live="polite"></div>
+      <div id="admin-access-list" class="admin-access__list"></div>
+      <nav id="admin-access-pagination" class="admin-access__pagination" aria-label="Paginação de alunos"></nav>
+    </section>
+  `;
+
+  const list = $('#admin-access-list', body);
+  const feedback = $('#admin-access-feedback', body);
+  const pagination = $('#admin-access-pagination', body);
+
+  async function loadUsers() {
+    feedback.textContent = 'Carregando alunos...';
+    feedback.setAttribute('role', 'status');
+    list.innerHTML = '';
+    pagination.innerHTML = '';
+    try {
+      const result = await adminAccessService.listUsers({ search, page, pageSize });
+      const users = Array.isArray(result?.users) ? result.users : [];
+      const total = Number(result?.total || 0);
+      feedback.textContent = users.length
+        ? `${total} aluno${total === 1 ? '' : 's'} encontrado${total === 1 ? '' : 's'}.`
+        : 'Nenhum aluno encontrado.';
+      list.innerHTML = users.map(adminUserCard).join('');
+
+      const pages = Math.max(1, Math.ceil(total / pageSize));
+      pagination.innerHTML = `
+        <button type="button" class="btn btn-secondary" id="admin-page-prev" ${page <= 1 ? 'disabled' : ''} aria-label="Página anterior">Anterior</button>
+        <span>Página ${page} de ${pages}</span>
+        <button type="button" class="btn btn-secondary" id="admin-page-next" ${page >= pages ? 'disabled' : ''} aria-label="Próxima página">Próxima</button>
+      `;
+      $('#admin-page-prev', pagination)?.addEventListener('click', () => {
+        page -= 1;
+        loadUsers();
+      });
+      $('#admin-page-next', pagination)?.addEventListener('click', () => {
+        page += 1;
+        loadUsers();
+      });
+
+      list.querySelectorAll('[data-admin-user]').forEach((card) => {
+        const user = users.find((item) => item.userId === card.dataset.adminUser);
+        const button = $('[data-access-action]', card);
+        if (!user || !button) return;
+        button.addEventListener('click', async () => {
+          const action = button.dataset.accessAction;
+          if (action === 'revoke' && !(await confirmAccessRevocation(user))) return;
+          button.disabled = true;
+          feedback.textContent = 'Atualizando acesso...';
+          try {
+            if (action === 'grant') {
+              await adminAccessService.grantAccess(user.userId, ADMIN_CONTEST_ID);
+            } else if (action === 'reactivate') {
+              await adminAccessService.reactivateAccess(user.userId, ADMIN_CONTEST_ID);
+            } else {
+              await adminAccessService.revokeAccess(user.userId, ADMIN_CONTEST_ID);
+            }
+            toast('Acesso atualizado com segurança.');
+            await loadUsers();
+          } catch (error) {
+            feedback.textContent = error?.message || 'Não foi possível atualizar o acesso.';
+            feedback.setAttribute('role', 'alert');
+            button.disabled = false;
+          }
+        });
+      });
+    } catch (error) {
+      feedback.textContent = error?.message || 'Não foi possível carregar os alunos.';
+      feedback.setAttribute('role', 'alert');
+    }
+  }
+
+  $('#admin-access-search', body)?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    search = $('#admin-access-query', body)?.value?.trim() || '';
+    page = 1;
+    loadUsers();
+  });
+
+  await loadUsers();
 }
 
 function renderManual(body, disciplines, subtopics) {

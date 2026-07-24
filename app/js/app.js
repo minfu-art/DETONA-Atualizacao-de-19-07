@@ -8,7 +8,7 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=79';
-import { renderForge } from './ui/forge.js?v=71';
+import { renderForge } from './ui/forge.js?v=72';
 import { renderWorldMap } from './ui/worldMap.js?v=73';
 import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';

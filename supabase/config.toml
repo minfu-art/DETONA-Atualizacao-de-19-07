@@ -4,6 +4,11 @@
 # working directory name when running `supabase init`.
 project_id = "DETONA-Atualizacao-de-19-07"
 
+[functions.admin-access]
+# A função valida explicitamente o JWT e a role do profile para produzir
+# respostas 401/403 previsíveis sem confiar em dados enviados pelo cliente.
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.
