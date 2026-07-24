@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v81-academic-progress';
+const CACHE = 'detona-v82-user-isolation';
 const ASSETS = [
   './',
   './index.html',
@@ -53,6 +53,7 @@ const ASSETS = [
   './js/core/dailyMeta.js',
   './js/core/wellbeing.js',
   './js/auth/activeUser.js',
+  './js/auth/academicSessionContext.js',
   './js/auth/authDb.js',
   './js/auth/authService.js',
   './js/auth/cloudAuthService.js',

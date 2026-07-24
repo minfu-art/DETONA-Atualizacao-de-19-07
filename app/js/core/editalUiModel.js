@@ -189,27 +189,33 @@ export function buildEditalInsights(enriched = []) {
   };
 }
 
-export function storageKey(contestId, name) {
-  return `detona.edital.${name}.${contestId || 'default'}`;
+export function storageKey(contestId, name, userId = null) {
+  const scope = userId ? `${encodeURIComponent(userId)}.${contestId || 'default'}` : (contestId || 'default');
+  return `detona.edital.${name}.${scope}`;
 }
 
-export function loadNavState(contestId, storage = globalThis.localStorage) {
+export function loadNavState(contestId, storage = globalThis.localStorage, userId = null) {
   try {
     return {
-      lastDisciplineId: storage?.getItem?.(storageKey(contestId, 'lastDisc')) || null,
-      lastSubtopicId: storage?.getItem?.(storageKey(contestId, 'lastSub')) || null,
-      sort: storage?.getItem?.(storageKey(contestId, 'sort')) || 'nome',
+      lastDisciplineId: storage?.getItem?.(storageKey(contestId, 'lastDisc', userId)) || null,
+      lastSubtopicId: storage?.getItem?.(storageKey(contestId, 'lastSub', userId)) || null,
+      sort: storage?.getItem?.(storageKey(contestId, 'sort', userId)) || 'nome',
     };
   } catch {
     return { lastDisciplineId: null, lastSubtopicId: null, sort: 'nome' };
   }
 }
 
-export function saveNavState(contestId, { lastDisciplineId, lastSubtopicId, sort }, storage = globalThis.localStorage) {
+export function saveNavState(
+  contestId,
+  { lastDisciplineId, lastSubtopicId, sort },
+  storage = globalThis.localStorage,
+  userId = null,
+) {
   try {
-    if (lastDisciplineId != null) storage?.setItem?.(storageKey(contestId, 'lastDisc'), lastDisciplineId);
-    if (lastSubtopicId != null) storage?.setItem?.(storageKey(contestId, 'lastSub'), lastSubtopicId);
-    if (sort != null) storage?.setItem?.(storageKey(contestId, 'sort'), sort);
+    if (lastDisciplineId != null) storage?.setItem?.(storageKey(contestId, 'lastDisc', userId), lastDisciplineId);
+    if (lastSubtopicId != null) storage?.setItem?.(storageKey(contestId, 'lastSub', userId), lastSubtopicId);
+    if (sort != null) storage?.setItem?.(storageKey(contestId, 'sort', userId), sort);
   } catch { /* ignore */ }
 }
 

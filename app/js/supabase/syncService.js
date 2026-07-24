@@ -6,9 +6,11 @@ import { flushOutbox, pullAndMergeProgress } from './hybridProgressAdapter.js';
 import { progressCloud, SYNC_COLLECTIONS } from './progressCloud.js';
 import { shouldSyncCloudRecord } from './collectionKeys.js';
 import * as localDb from '../core/db.js';
+import { getActiveUserId } from '../auth/activeUser.js';
+import { getActiveContestId } from '../contest/activeContest.js';
 
 let lastSyncAt = null;
-let activeSync = null;
+const activeSyncs = new Map();
 
 export function getLastSyncAt() {
   return lastSyncAt;
@@ -21,10 +23,11 @@ export async function syncOnContestOpen(userId, contestId) {
   if (!isCloudEnabled() || !userId || !contestId) {
     return { skipped: true };
   }
-  if (activeSync) return activeSync;
-  activeSync = (async () => {
+  const scopeKey = `${userId}\u0000${contestId}`;
+  if (activeSyncs.has(scopeKey)) return activeSyncs.get(scopeKey);
+  const syncPromise = (async () => {
     const pull = await pullAndMergeProgress(userId, contestId);
-    const outbox = await flushOutbox();
+    const outbox = await flushOutbox({ userId, contestId });
     lastSyncAt = new Date().toISOString();
     try {
       await localDb.setMeta('cloud_last_sync_at', lastSyncAt, userId, contestId);
@@ -33,10 +36,11 @@ export async function syncOnContestOpen(userId, contestId) {
     }
     return { pull, outbox, at: lastSyncAt };
   })();
+  activeSyncs.set(scopeKey, syncPromise);
   try {
-    return await activeSync;
+    return await syncPromise;
   } finally {
-    activeSync = null;
+    if (activeSyncs.get(scopeKey) === syncPromise) activeSyncs.delete(scopeKey);
   }
 }
 
@@ -62,7 +66,9 @@ export async function pushAllLocalProgress(userId, contestId) {
 export function bindOnlineFlush() {
   if (typeof window === 'undefined') return () => {};
   const handler = () => {
-    flushOutbox().catch(() => {});
+    const userId = getActiveUserId();
+    const contestId = getActiveContestId();
+    if (userId && contestId) flushOutbox({ userId, contestId }).catch(() => {});
   };
   window.addEventListener('online', handler);
   return () => window.removeEventListener('online', handler);

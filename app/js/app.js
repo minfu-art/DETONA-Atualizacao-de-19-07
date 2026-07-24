@@ -33,6 +33,7 @@ import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
+import { resetAcademicSessionContext } from './auth/academicSessionContext.js';
 
 const ctx = {
   battleSession: null,
@@ -214,8 +215,7 @@ async function openContest(contestId) {
 async function logout() {
   await authService.logout();
   clearActiveContestId();
-  ctx.user = null;
-  ctx.screen = 'auth';
+  resetAcademicSessionContext(ctx);
   showAuth();
 }
 
@@ -223,7 +223,11 @@ ctx.logout = logout;
 ctx.openContest = openContest;
 
 async function initializeAuthenticatedApp() {
-  ctx.user = authService.getCurrentUser();
+  const authenticatedUser = authService.getCurrentUser();
+  if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
+    resetAcademicSessionContext(ctx);
+  }
+  ctx.user = authenticatedUser;
   document.getElementById('app')?.classList.remove('app-shell--auth');
   injectNavIcons();
 

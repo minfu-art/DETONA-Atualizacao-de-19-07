@@ -59,7 +59,8 @@ function statusGlyph(status) {
 
 export async function renderGrimorio(root, navigate, ctx = {}) {
   const contestId = getActiveContestId() || 'default';
-  const navState = loadNavState(contestId);
+  const userId = ctx.user?.id || null;
+  const navState = loadNavState(contestId, globalThis.localStorage, userId);
 
   /** @type {'disciplines'|'discipline'|'subtopic'} */
   let view = 'disciplines';
@@ -78,7 +79,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
       lastDisciplineId: activeDisciplineId || '',
       lastSubtopicId: activeSubtopicId || '',
       sort,
-    });
+    }, globalThis.localStorage, userId);
   };
 
   async function paint() {

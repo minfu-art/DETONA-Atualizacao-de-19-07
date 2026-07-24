@@ -144,14 +144,28 @@ export function createHybridProgressAdapter({
 /**
  * Reenvia operações enfileiradas offline.
  */
-export async function flushOutbox({ cloud = progressCloud } = {}) {
-  if (!isCloudEnabled() || !isOnline()) return { flushed: 0 };
-  const list = readOutbox();
+export async function flushOutbox({
+  cloud = progressCloud,
+  userId = null,
+  contestId = null,
+  read = readOutbox,
+  write = writeOutbox,
+  cloudEnabled = isCloudEnabled,
+  online = isOnline,
+} = {}) {
+  if (!cloudEnabled() || !online()) return { flushed: 0 };
+  const list = read();
   if (!list.length) return { flushed: 0 };
 
   const remaining = [];
   let flushed = 0;
   for (const entry of list) {
+    const matchesActiveScope = (!userId || entry.userId === userId)
+      && (!contestId || entry.contestId === contestId);
+    if (!matchesActiveScope) {
+      remaining.push(entry);
+      continue;
+    }
     try {
       if (entry.op === 'upsert') {
         await cloud.upsertRecord(entry.userId, entry.contestId, entry.collection, entry.value);
@@ -165,7 +179,7 @@ export async function flushOutbox({ cloud = progressCloud } = {}) {
       remaining.push(entry);
     }
   }
-  writeOutbox(remaining);
+  write(remaining);
   return { flushed, remaining: remaining.length };
 }
 
@@ -176,8 +190,9 @@ export async function flushOutbox({ cloud = progressCloud } = {}) {
 export async function pullAndMergeProgress(userId, contestId, {
   local = localDb,
   cloud = progressCloud,
+  cloudEnabled = isCloudEnabled,
 } = {}) {
-  if (!isCloudEnabled()) return { merged: 0, mode: 'off' };
+  if (!cloudEnabled()) return { merged: 0, mode: 'off' };
 
   const remote = await cloud.pullCollections(userId, contestId);
   let merged = 0;
