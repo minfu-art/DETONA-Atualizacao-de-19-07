@@ -5,9 +5,10 @@
 project_id = "DETONA-Atualizacao-de-19-07"
 
 [functions.admin-access]
-# A função valida explicitamente o JWT e a role do profile para produzir
-# respostas 401/403 previsíveis sem confiar em dados enviados pelo cliente.
-verify_jwt = false
+# A plataforma valida o JWT antes de executar a função. Como defesa em profundidade,
+# a função também valida a identidade e exige profiles.role = "developer".
+# Este endpoint administrativo não é um webhook público.
+verify_jwt = true
 
 [api]
 enabled = true

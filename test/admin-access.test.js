@@ -370,7 +370,7 @@ test('Edge Function valida JWT e role pelo profile sem confiar no payload', () =
   assert.match(functionSource, /auth\.getUser\(token\)/);
   assert.match(functionSource, /\.from\('profiles'\)[\s\S]*\.select\('id,role'\)/);
   assert.doesNotMatch(functionSource, /input\.role|payload\.role|body\.role/);
-  assert.match(supabaseConfig, /\[functions\.admin-access\][\s\S]*verify_jwt = false/);
+  assert.match(supabaseConfig, /\[functions\.admin-access\][\s\S]*verify_jwt = true/);
 });
 
 test('migration mantém auditoria inacessível ao frontend', () => {
