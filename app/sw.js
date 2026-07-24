@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v79-premium-insignias';
+const CACHE = 'detona-v80-responsive-insignias';
 const ASSETS = [
   './',
   './index.html',
