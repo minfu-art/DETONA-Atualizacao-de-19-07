@@ -18,6 +18,10 @@ import {
 } from '../services/academicProgressService.js';
 import { questionService } from '../services/questionService.js';
 import { progressRepository } from '../repositories/progressRepository.js';
+import { applyDailyGoalActivity } from '../services/dailyGoalService.js';
+import { applyValidStudyDay } from '../services/studyStreakService.js';
+import { refreshEmblems } from '../services/emblemService.js';
+import { localDateKey } from './localDate.js';
 
 const finalizingBattleIds = new Set();
 let battleIdSequence = 0;
@@ -29,6 +33,7 @@ const BATTLE_FINALIZATION_STEPS = Object.freeze([
   'player',
   'xp',
   'activity',
+  'emblems',
   'ssot',
 ]);
 
@@ -203,23 +208,12 @@ function prioritizeUnseenDetonaQuestion(selected, pool, history = {}) {
 
 export function applyStudyStreak(player, today, yesterday) {
   if (player.last_study_date !== today) {
-    if (player.last_study_date === yesterday) {
-      if (player.streak_embers) {
-        player.rescue_missions_pending = Math.max(0, (player.rescue_missions_pending || 1) - 1);
-        if (player.rescue_missions_pending === 0) {
-          player.streak_embers = false;
-          player.streak_days = (player.streak_days || 0) + 1;
-        }
-      } else {
-        player.streak_days = (player.streak_days || 0) + 1;
-      }
-    } else if (player.last_study_date && player.last_study_date < yesterday) {
-      player.streak_embers = true;
-      player.rescue_missions_pending = 1;
-    } else if (!player.last_study_date) {
-      player.streak_days = 1;
-    }
+    player.streak_days = player.last_study_date === yesterday
+      ? Math.max(0, Number(player.streak_days) || 0) + 1
+      : 1;
     player.last_study_date = today;
+    player.streak_embers = false;
+    player.rescue_missions_pending = 0;
   }
   player.best_streak = Math.max(Number(player.best_streak) || 0, Number(player.streak_days) || 0);
   return player;
@@ -471,86 +465,55 @@ export async function finalizeBattle(session, {
       await persistBattleJournal(repository, journal, now, { step: 'card' });
     }
 
-    const today = attemptedAt.slice(0, 10);
-    const yesterdayDate = new Date(finalizedAt);
-    yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
-    const yesterday = yesterdayDate.toISOString().slice(0, 10);
+    const today = localDateKey(finalizedAt);
+    let dailyGoalResult = null;
     if (!journal.steps.dailyLog) {
-      const routines = await repository.getAll(STORES.routines);
-      const routine = routines.find((item) => item.day_of_week === finalizedAt.getDay()) || {
-        goal_type: 'questoes', goal_amount: 30, enabled: true,
-      };
-      let log = await repository.getById(STORES.dailyLogs, today);
-      if (!log) {
-        log = {
-          date: today,
-          planned_amount: routine.enabled === false ? 0 : (routine.goal_amount || 30),
-          completed_amount: 0,
-          status: 'pendente',
-          xp_earned: 0,
-          domain_challenges_completed: 0,
-          processed_battle_ids: [],
-        };
-      }
-      const processedBattleIds = [...new Set(log.processed_battle_ids || [])];
-      if (!processedBattleIds.includes(validated.battleId)) {
-        const previousStatus = log.status;
-        if (log.planned_amount == null || log.planned_amount === 0) {
-          log.planned_amount = routine.enabled === false ? 0 : (routine.goal_amount || 30);
-        }
-        log.completed_amount += routine.goal_type === 'batalhas' ? 1 : session.answered;
-        if (log.planned_amount > 0 && log.completed_amount >= log.planned_amount) log.status = 'cumprido';
-        else if (log.completed_amount > 0) log.status = 'parcial';
-        if (
-          previousStatus !== 'cumprido'
-          && log.status === 'cumprido'
-          && log.meta_bonus_granted !== true
-        ) {
-          log.daily_goal_completed_by_battle_id = validated.battleId;
-        }
-        log.domain_challenges_completed = (log.domain_challenges_completed || 0) + 1;
-        log.processed_battle_ids = [...processedBattleIds, validated.battleId];
-        log.updated_at = attemptedAt;
-        await repository.put(STORES.dailyLogs, log);
-      }
+      dailyGoalResult = await applyDailyGoalActivity({
+        eventId: `battle:${validated.battleId}`,
+        type: 'battle',
+        questionCount: session.answered,
+        battleCount: 1,
+        activeMinutes: Math.floor(Math.max(0, Number(session.activeSeconds) || 0) / 60),
+        occurredAt: finalizedAt,
+      }, { repository });
       await persistBattleJournal(repository, journal, now, { step: 'dailyLog' });
+    } else {
+      const log = await repository.getById(STORES.dailyLogs, today);
+      dailyGoalResult = { log, completedNow: false, bonus: { granted: false } };
     }
 
     if (!journal.steps.player) {
       player = (await repository.getAll(STORES.player))[0];
       const latestSubtopics = await repository.getAll(STORES.subtopics);
       player.total_stars = latestSubtopics.reduce((sum, item) => sum + (item.stars || 0), 0);
-      applyStudyStreak(player, today, yesterday);
       player.updated_at = attemptedAt;
       await repository.put(STORES.player, player);
+      const streakResult = await applyValidStudyDay({
+        eventId: `battle:${validated.battleId}`,
+        occurredAt: finalizedAt,
+        valid: session.answered > 0,
+        source: 'official_battle',
+      }, { repository });
+      player = streakResult.player || player;
       await persistBattleJournal(repository, journal, now, { step: 'player' });
     }
 
     const latestLog = await repository.getById(STORES.dailyLogs, today);
-    const dailyGoalCompleted = latestLog?.daily_goal_completed_by_battle_id === validated.battleId;
     const xpBreakdown = battleXpBreakdown({
       correct: session.correct,
       maxCombo: session.maxCombo,
-      dailyGoalCompleted,
+      dailyGoalCompleted: false,
     });
     if (!journal.steps.xp) {
       const xpResult = await grantBattleXp({
         battleId: validated.battleId,
         correct: session.correct,
         maxCombo: session.maxCombo,
-        dailyGoalCompleted,
+        dailyGoalCompleted: false,
         occurredAt: attemptedAt,
       }, { repository });
       player = xpResult.player || player;
-      if (latestLog && dailyGoalCompleted && latestLog.meta_bonus_granted !== true) {
-        latestLog.meta_bonus_granted = true;
-        latestLog.xp_earned = (Number(latestLog.xp_earned) || 0) + xpBreakdown.total;
-        latestLog.processed_xp_event_ids = [
-          ...new Set([...(latestLog.processed_xp_event_ids || []), `battle:${validated.battleId}`]),
-        ];
-        latestLog.updated_at = attemptedAt;
-        await repository.put(STORES.dailyLogs, latestLog);
-      } else if (latestLog && !(latestLog.processed_xp_event_ids || []).includes(`battle:${validated.battleId}`)) {
+      if (latestLog && !(latestLog.processed_xp_event_ids || []).includes(`battle:${validated.battleId}`)) {
         latestLog.xp_earned = (Number(latestLog.xp_earned) || 0) + xpBreakdown.total;
         latestLog.processed_xp_event_ids = [
           ...new Set([...(latestLog.processed_xp_event_ids || []), `battle:${validated.battleId}`]),
@@ -574,6 +537,13 @@ export async function finalizeBattle(session, {
       await persistBattleJournal(repository, journal, now, { step: 'activity' });
     } else {
       activity = await repository.getById(STORES.studySessions, `academic_battle:${validated.battleId}`);
+    }
+
+    let newInsignias = [];
+    if (!journal.steps.emblems) {
+      const emblemResult = await refreshEmblems({ repository });
+      newInsignias = emblemResult.unlocked || [];
+      await persistBattleJournal(repository, journal, now, { step: 'emblems' });
     }
 
     let ssot = { player };
@@ -606,6 +576,8 @@ export async function finalizeBattle(session, {
       newCard,
       xpEarned: xpBreakdown.total,
       xpBreakdown,
+      dailyGoal: dailyGoalResult,
+      newInsignias,
       activity,
       activityMinutes: Math.round((Number(activity?.durationSeconds) || 0) / 60),
       player: ssot.player || player,

@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v80-responsive-insignias';
+const CACHE = 'detona-v81-academic-progress';
 const ASSETS = [
   './',
   './index.html',
@@ -20,7 +20,10 @@ const ASSETS = [
   './js/core/routine/routineCalendar.js',
   './js/services/routineService.js',
   './js/services/academicProgressService.js',
+  './js/services/dailyGoalService.js',
+  './js/services/studyStreakService.js',
   './js/services/emblemService.js',
+  './js/core/localDate.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',
   './assets/icons/icon-512.png',

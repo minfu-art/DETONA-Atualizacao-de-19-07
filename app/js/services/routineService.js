@@ -44,6 +44,10 @@ import {
 } from '../core/routine/routineConsistency.js';
 import { computeWeekMetrics, buildLocalSuggestions, loadAdjustmentAdvice, applyLoadPercent } from '../core/routine/routineMetrics.js';
 import { createFocusController } from '../core/routine/routineFocus.js';
+import { applyDailyGoalActivity } from './dailyGoalService.js';
+import { applyValidStudyDay } from './studyStreakService.js';
+import { focusXpForMinutes, grantXpEvent } from './academicProgressService.js';
+import { refreshEmblems } from './emblemService.js';
 import {
   weekDatesFrom as calendarWeekDates,
   shiftWeek,
@@ -219,7 +223,12 @@ export class RoutineService {
     return next;
   }
 
-  async completeBlock(blockId, { actualMinutes = null, partial = false, skipReason = null } = {}) {
+  async completeBlock(blockId, {
+    actualMinutes = null,
+    partial = false,
+    skipReason = null,
+    skipAcademicActivity = false,
+  } = {}) {
     const block = await this.repository.getById(STORES.routineBlocks, blockId);
     if (!block) throw new Error('Bloco não encontrado.');
     const minutes = actualMinutes == null ? (block.actualMinutes || 0) : Math.max(0, Number(actualMinutes) || 0);
@@ -233,6 +242,24 @@ export class RoutineService {
     });
     await this.repository.put(STORES.routineBlocks, next);
     await this.refreshDailyState(block.date);
+    if (!skipAcademicActivity && next.status === 'completed' && minutes > 0) {
+      const eventId = `block:${next.id}:${next.date}`;
+      await applyDailyGoalActivity({
+        eventId,
+        type: 'block',
+        questionCount: 0,
+        battleCount: 0,
+        activeMinutes: minutes,
+        occurredAt: next.completedAt,
+      }, { repository: this.repository });
+      await applyValidStudyDay({
+        eventId,
+        occurredAt: next.completedAt,
+        valid: true,
+        source: 'routine_block',
+      }, { repository: this.repository });
+      await refreshEmblems({ repository: this.repository });
+    }
     return next;
   }
 
@@ -441,27 +468,6 @@ export class RoutineService {
     });
     await this.repository.put(STORES.routineDailyStates, state);
 
-    // sincroniza dailyLog legado sem XP de rotina
-    try {
-      let log = await this.repository.getById(STORES.dailyLogs, date);
-      if (!log) {
-        log = {
-          date,
-          planned_amount: profile.dailyQuestionsGoal || 30,
-          completed_amount: answeredQuestions,
-          status: minGoalMet ? 'cumprido' : 'pendente',
-          xp_earned: 0,
-          meta_bonus_granted: false,
-        };
-      } else {
-        log = {
-          ...log,
-          status: minGoalMet ? 'cumprido' : (log.completed_amount > 0 ? 'parcial' : log.status),
-        };
-      }
-      await this.repository.put(STORES.dailyLogs, log);
-    } catch { /* ignore */ }
-
     return state;
   }
 
@@ -511,15 +517,57 @@ export class RoutineService {
   async recordSessionResult(session, actualMinutes, { blockId = null, partial = false } = {}) {
     session.userId = this.userId();
     session.contestId = this.contestId();
-    await this.repository.put(STORES.studySessions, session);
-    const profile = await this.ensureProfile();
-    profile.consistency = {
-      ...profile.consistency,
-      sessionsCompleted: (profile.consistency.sessionsCompleted || 0) + (session.status === 'completed' ? 1 : 0),
+    const eventId = `focus:${session.id}`;
+    const journalKey = `focus_finalization:${session.id}`;
+    const stored = await this.repository.getById(STORES.meta, journalKey);
+    const steps = {
+      session: stored?.steps?.session === true,
+      profile: stored?.steps?.profile === true,
+      block: stored?.steps?.block === true,
+      dailyGoal: stored?.steps?.dailyGoal === true,
+      streak: stored?.steps?.streak === true,
+      xp: stored?.steps?.xp === true,
+      emblems: stored?.steps?.emblems === true,
     };
-    await this.repository.put(STORES.routineProfiles, profile);
+    const journal = {
+      key: journalKey,
+      eventId,
+      status: stored?.status === 'completed' ? 'completed' : 'processing',
+      steps,
+      started_at: stored?.started_at || session.startedAt || nowIso(),
+      updated_at: nowIso(),
+      completed_at: stored?.completed_at || null,
+    };
+    if (journal.status === 'completed') return session;
+    if (!stored) await this.repository.put(STORES.meta, structuredClone(journal));
+    const checkpoint = async (step, completed = false) => {
+      journal.steps[step] = true;
+      journal.updated_at = nowIso();
+      if (completed) {
+        journal.status = 'completed';
+        journal.completed_at = journal.updated_at;
+      }
+      await this.repository.put(STORES.meta, structuredClone(journal));
+    };
 
-    if (blockId) {
+    if (!journal.steps.session) {
+      await this.repository.put(STORES.studySessions, session);
+      await checkpoint('session');
+    }
+    if (!journal.steps.profile) {
+      const profile = await this.ensureProfile();
+      const processed = [...new Set(profile.consistency?.processedSessionIds || [])];
+      profile.consistency = {
+        ...profile.consistency,
+        sessionsCompleted: (profile.consistency?.sessionsCompleted || 0)
+          + (session.status === 'completed' && !processed.includes(session.id) ? 1 : 0),
+        processedSessionIds: [...processed, session.id].slice(-1000),
+      };
+      await this.repository.put(STORES.routineProfiles, profile);
+      await checkpoint('profile');
+    }
+
+    if (!journal.steps.block && blockId) {
       const block = await this.repository.getById(STORES.routineBlocks, blockId);
       if (block) {
         const minutes = validSessionMinutes(session.elapsedSeconds, {
@@ -529,10 +577,57 @@ export class RoutineService {
         await this.completeBlock(blockId, {
           actualMinutes: minutes || actualMinutes || 0,
           partial: partial || session.status === 'aborted',
+          skipAcademicActivity: true,
         });
       }
-    } else {
+      await checkpoint('block');
+    } else if (!journal.steps.block) {
       await this.refreshDailyState(session.date || dateKey());
+      await checkpoint('block');
+    }
+
+    const minutes = validSessionMinutes(session.elapsedSeconds, {
+      completed: session.status === 'completed',
+      aborted: session.status === 'aborted',
+    });
+    const valid = session.status === 'completed' && minutes > 0;
+    const finishedAt = session.finishedAt || session.endedAt || nowIso();
+    if (!journal.steps.dailyGoal) {
+      session.dailyGoal = await applyDailyGoalActivity({
+        eventId,
+        type: 'focus',
+        questionCount: 0,
+        battleCount: 0,
+        activeMinutes: valid ? minutes : 0,
+        occurredAt: finishedAt,
+      }, { repository: this.repository });
+      await checkpoint('dailyGoal');
+    }
+    if (!journal.steps.streak) {
+      session.streak = await applyValidStudyDay({
+        eventId,
+        occurredAt: finishedAt,
+        valid,
+        source: 'focus_session',
+      }, { repository: this.repository });
+      await checkpoint('streak');
+    }
+    if (!journal.steps.xp) {
+      const amount = valid ? focusXpForMinutes(minutes) : 0;
+      if (amount > 0) {
+        session.xp = await grantXpEvent({
+          eventId,
+          type: 'focus_completed',
+          amount,
+          occurredAt: finishedAt,
+        }, { repository: this.repository });
+      }
+      await checkpoint('xp');
+    }
+    if (!journal.steps.emblems) {
+      const emblems = await refreshEmblems({ repository: this.repository });
+      session.newInsignias = emblems.unlocked || [];
+      await checkpoint('emblems', true);
     }
     return session;
   }
@@ -795,9 +890,9 @@ export class RoutineService {
     return moduleTargetForActivity(block?.activityType);
   }
 
-  /** Garante que rotina não altera domínio/estrelas — helper de teste/documentação */
+  /** Foco válido concede XP próprio, sem alterar domínio, estrelas ou LV acadêmico. */
   static academicSideEffects() {
-    return { grantsXp: false, changesMastery: false, changesStars: false, changesLevel: false };
+    return { grantsXp: true, changesMastery: false, changesStars: false, changesLevel: false };
   }
 }
 

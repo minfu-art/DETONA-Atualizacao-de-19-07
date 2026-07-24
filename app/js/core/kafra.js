@@ -4,6 +4,7 @@
  * Offline-first: tudo no cliente.
  */
 import { exportFullSnapshot, importFullSnapshot } from './db.js';
+import { localDateKey } from './localDate.js';
 
 const KAFRA_KEY = 'DETONA_KAFRA_RO_v1';
 
@@ -46,7 +47,7 @@ export async function saveToKafra() {
   const blob = new Blob([payload], { type: 'application/octet-stream' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  const date = new Date().toISOString().slice(0, 10);
+  const date = localDateKey();
   a.href = url;
   a.download = `detona_concursos_${date}.rpgsave`;
   a.click();

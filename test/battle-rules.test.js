@@ -82,19 +82,21 @@ test('estudo em dia consecutivo incrementa a sequência', () => {
   assert.equal(result.streak_embers, false);
 });
 
-test('dia perdido transforma a sequência em brasas', () => {
+test('dia perdido reinicia a sequência atual e preserva o recorde', () => {
   const result = applyStudyStreak(player({
     streak_days: 4,
+    best_streak: 7,
     last_study_date: '2026-07-10',
   }), '2026-07-13', '2026-07-12');
 
-  assert.equal(result.streak_days, 4);
-  assert.equal(result.streak_embers, true);
-  assert.equal(result.rescue_missions_pending, 1);
+  assert.equal(result.streak_days, 1);
+  assert.equal(result.best_streak, 7);
+  assert.equal(result.streak_embers, false);
+  assert.equal(result.rescue_missions_pending, 0);
   assert.equal(result.last_study_date, '2026-07-13');
 });
 
-test('missão de resgate concluída no dia seguinte restaura a sequência', () => {
+test('dia consecutivo elimina estado legado de brasas sem duplicar sequência', () => {
   const result = applyStudyStreak(player({
     streak_days: 4,
     last_study_date: '2026-07-12',

@@ -1,6 +1,7 @@
 import { STORES } from '../core/types.js';
 import { applyXp, comboBonus } from '../core/progression.js';
 import { progressRepository } from '../repositories/progressRepository.js';
+import { localDateKey } from '../core/localDate.js';
 
 export const XP_REWARDS = Object.freeze({
   CORRECT_ANSWER: 10,
@@ -120,7 +121,7 @@ export function battleActivityRecord({
   activeSeconds,
 }) {
   const seconds = Math.max(0, Math.min(6 * 60 * 60, Math.round(Number(activeSeconds) || 0)));
-  const date = String(finishedAt || startedAt || new Date().toISOString()).slice(0, 10);
+  const date = localDateKey(finishedAt || startedAt || new Date());
   return {
     id: `academic_battle:${battleId}`,
     type: 'battle',

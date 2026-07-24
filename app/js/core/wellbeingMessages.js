@@ -129,7 +129,7 @@ export function pickMessage(pool, seed = Date.now()) {
 /** Mensagem do dia por horário local (sem backend). */
 export function messageForNow(date = new Date()) {
   const h = date.getHours();
-  const daySeed = Number(date.toISOString().slice(0, 10).replace(/-/g, ''));
+  const daySeed = Number(localDateKey(date).replace(/-/g, ''));
   if (h < 6) return pickMessage(DAY_MESSAGES.encerramento, daySeed + h);
   if (h < 12) return pickMessage(DAY_MESSAGES.inicio, daySeed + h);
   if (h < 18) return pickMessage(DAY_MESSAGES.constancia, daySeed + h);
@@ -152,3 +152,4 @@ export function progressHumanLabel(done, total) {
   if (done === 1) return 'Você já deu o primeiro passo de preparação';
   return `Você já concluiu ${done} práticas de preparação`;
 }
+import { localDateKey } from './localDate.js';

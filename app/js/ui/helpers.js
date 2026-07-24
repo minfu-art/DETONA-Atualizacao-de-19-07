@@ -1,5 +1,6 @@
 /** Helpers de UI compartilhados */
 import { icon } from './icons.js?v=66';
+import { localDateKey } from '../core/localDate.js';
 
 export function $(sel, root = document) {
   return root.querySelector(sel);
@@ -66,7 +67,7 @@ export function formatDate(iso) {
 }
 
 export function todayStr() {
-  return new Date().toISOString().slice(0, 10);
+  return localDateKey();
 }
 
 export function escapeHtml(s) {

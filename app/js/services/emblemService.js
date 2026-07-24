@@ -116,13 +116,22 @@ export async function refreshEmblems({
   daysUntilExam = 120,
   now = () => new Date(),
 } = {}) {
+  const readMeta = repository.getMeta
+    ? (key) => repository.getMeta(key)
+    : async (key) => {
+      const row = await repository.getById(STORES.meta, key);
+      return row?.value ?? row ?? null;
+    };
+  const writeMeta = repository.setMeta
+    ? (key, value) => repository.setMeta(key, value)
+    : (key, value) => repository.put(STORES.meta, { key, value });
   const [players, subtopics, verticalized, dailyLogs, metaRows, stored] = await Promise.all([
     repository.getAll(STORES.player),
     repository.getAll(STORES.subtopics),
     repository.getAll(STORES.verticalized),
     repository.getAll(STORES.dailyLogs),
     repository.getAll(STORES.meta),
-    repository.getMeta(EARNED_EMBLEMS_KEY),
+    readMeta(EARNED_EMBLEMS_KEY),
   ]);
   const unlockableCatalog = buildEmblemCatalog(daysUntilExam);
   const metrics = collectEmblemMetrics({
@@ -134,7 +143,7 @@ export async function refreshEmblems({
   });
   const previous = normalizeEarnedState(stored);
   const result = evaluateEmblems(unlockableCatalog, metrics, previous, now().toISOString());
-  if (result.unlocked.length) await repository.setMeta(EARNED_EMBLEMS_KEY, result.state);
+  if (result.unlocked.length) await writeMeta(EARNED_EMBLEMS_KEY, result.state);
   const visibleIds = new Set(unlockableCatalog.map((emblem) => emblem.id));
   const earnedIds = new Set(result.state.items.map((item) => item.id));
   // Um marco de constância já conquistado continua visível mesmo quando a prova se aproxima.
