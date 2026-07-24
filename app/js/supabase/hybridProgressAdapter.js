@@ -8,6 +8,7 @@
 import * as localDb from '../core/db.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { progressCloud, recordKeyFor, SYNC_COLLECTIONS } from './progressCloud.js';
+import { shouldSyncCloudRecord } from './collectionKeys.js';
 
 const OUTBOX_STORAGE = 'detona.sync.outbox';
 
@@ -39,16 +40,14 @@ function enqueueOutbox(entry) {
   writeOutbox(list);
 }
 
-async function cloudWriteSafe(fn) {
-  if (!isCloudEnabled()) return;
-  if (!isOnline()) {
-    // caller already enqueued when needed
-    return;
-  }
+async function cloudWriteSafe(fn, onFailure) {
   try {
     await fn();
+    return true;
   } catch (err) {
     console.warn('[hybrid] cloud write failed', err?.message || err);
+    onFailure?.();
+    return false;
   }
 }
 
@@ -56,6 +55,8 @@ export function createHybridProgressAdapter({
   local = localDb,
   cloud = progressCloud,
   cloudEnabled = isCloudEnabled,
+  online = isOnline,
+  enqueue = enqueueOutbox,
 } = {}) {
   return {
     getAll(store, userId, contestId) {
@@ -66,7 +67,7 @@ export function createHybridProgressAdapter({
     },
     async put(store, value, userId, contestId) {
       const result = await local.put(store, value, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
+      if (cloudEnabled() && shouldSyncCloudRecord(store, value)) {
         const op = {
           op: 'upsert',
           userId,
@@ -74,23 +75,33 @@ export function createHybridProgressAdapter({
           collection: store,
           value,
         };
-        if (!isOnline()) {
-          enqueueOutbox(op);
+        if (!online()) {
+          enqueue(op);
         } else {
-          await cloudWriteSafe(() => cloud.upsertRecord(userId, contestId, store, value));
+          await cloudWriteSafe(
+            () => cloud.upsertRecord(userId, contestId, store, value),
+            () => enqueue(op),
+          );
         }
       }
       return result;
     },
     async putMany(store, values, userId, contestId) {
       const result = await local.putMany(store, values, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store) && values?.length) {
-        if (!isOnline()) {
-          for (const value of values) {
-            enqueueOutbox({ op: 'upsert', userId, contestId, collection: store, value });
+      const syncableValues = (values || []).filter((value) => shouldSyncCloudRecord(store, value));
+      if (cloudEnabled() && syncableValues.length) {
+        if (!online()) {
+          for (const value of syncableValues) {
+            enqueue({ op: 'upsert', userId, contestId, collection: store, value });
           }
         } else {
-          await cloudWriteSafe(() => cloud.upsertMany(userId, contestId, store, values));
+          const operations = syncableValues.map((value) => ({
+            op: 'upsert', userId, contestId, collection: store, value,
+          }));
+          await cloudWriteSafe(
+            () => cloud.upsertMany(userId, contestId, store, syncableValues),
+            () => operations.forEach(enqueue),
+          );
         }
       }
       return result;
@@ -99,16 +110,22 @@ export function createHybridProgressAdapter({
       await local.remove(store, id, userId, contestId);
       if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
         const op = { op: 'delete', userId, contestId, collection: store, recordKey: String(id) };
-        if (!isOnline()) enqueueOutbox(op);
-        else await cloudWriteSafe(() => cloud.deleteRecord(userId, contestId, store, id));
+        if (!online()) enqueue(op);
+        else await cloudWriteSafe(
+          () => cloud.deleteRecord(userId, contestId, store, id),
+          () => enqueue(op),
+        );
       }
     },
     async clearStore(store, userId, contestId) {
       await local.clearStore(store, userId, contestId);
       if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
         const op = { op: 'clear', userId, contestId, collection: store };
-        if (!isOnline()) enqueueOutbox(op);
-        else await cloudWriteSafe(() => cloud.clearCollection(userId, contestId, store));
+        if (!online()) enqueue(op);
+        else await cloudWriteSafe(
+          () => cloud.clearCollection(userId, contestId, store),
+          () => enqueue(op),
+        );
       }
     },
     getByIndex(store, indexName, value, userId, contestId) {
@@ -127,14 +144,28 @@ export function createHybridProgressAdapter({
 /**
  * Reenvia operações enfileiradas offline.
  */
-export async function flushOutbox({ cloud = progressCloud } = {}) {
-  if (!isCloudEnabled() || !isOnline()) return { flushed: 0 };
-  const list = readOutbox();
+export async function flushOutbox({
+  cloud = progressCloud,
+  userId = null,
+  contestId = null,
+  read = readOutbox,
+  write = writeOutbox,
+  cloudEnabled = isCloudEnabled,
+  online = isOnline,
+} = {}) {
+  if (!cloudEnabled() || !online()) return { flushed: 0 };
+  const list = read();
   if (!list.length) return { flushed: 0 };
 
   const remaining = [];
   let flushed = 0;
   for (const entry of list) {
+    const matchesActiveScope = (!userId || entry.userId === userId)
+      && (!contestId || entry.contestId === contestId);
+    if (!matchesActiveScope) {
+      remaining.push(entry);
+      continue;
+    }
     try {
       if (entry.op === 'upsert') {
         await cloud.upsertRecord(entry.userId, entry.contestId, entry.collection, entry.value);
@@ -148,7 +179,7 @@ export async function flushOutbox({ cloud = progressCloud } = {}) {
       remaining.push(entry);
     }
   }
-  writeOutbox(remaining);
+  write(remaining);
   return { flushed, remaining: remaining.length };
 }
 
@@ -159,8 +190,9 @@ export async function flushOutbox({ cloud = progressCloud } = {}) {
 export async function pullAndMergeProgress(userId, contestId, {
   local = localDb,
   cloud = progressCloud,
+  cloudEnabled = isCloudEnabled,
 } = {}) {
-  if (!isCloudEnabled()) return { merged: 0, mode: 'off' };
+  if (!cloudEnabled()) return { merged: 0, mode: 'off' };
 
   const remote = await cloud.pullCollections(userId, contestId);
   let merged = 0;

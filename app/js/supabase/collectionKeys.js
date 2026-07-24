@@ -49,6 +49,16 @@ export const SYNC_COLLECTIONS = Object.freeze([
   'questions',
 ]);
 
+/**
+ * O catálogo oficial de questões é versionado em JSON e nunca deve trafegar
+ * como progresso do aluno. Somente questões criadas na Forja pertencem à
+ * sincronização híbrida.
+ */
+export function shouldSyncCloudRecord(collection, value) {
+  if (collection !== 'questions') return SYNC_COLLECTIONS.includes(collection);
+  return value?.is_user_created === true;
+}
+
 export function recordKeyFor(collection, value) {
   const keyField = COLLECTION_KEYS[collection];
   if (!keyField || value == null) return null;

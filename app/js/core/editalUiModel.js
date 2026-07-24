@@ -138,9 +138,13 @@ export function buildDisciplineCards(disciplines, enrichedAll, discMap) {
       const answered = list.reduce((s, e) => s + (e.answered || 0), 0);
       const correct = list.reduce((s, e) => s + (e.correct || 0), 0);
       const wrong = list.reduce((s, e) => s + (e.wrong || 0), 0);
-      const accuracySum = list.reduce((s, e) => s + (e.accuracy || 0), 0);
-      const avgAccuracy = list.length ? Math.round(accuracySum / list.length) : 0;
-      const pct = Math.round((complete / list.length) * 1000) / 10;
+      // Domínio dá o mesmo peso a todos os subtópicos, inclusive aos ainda
+      // não estudados (que valem zero). Precisão considera somente respostas.
+      const masteryPct = list.length
+        ? Math.round((list.reduce((s, e) => s + (e.accuracy || 0), 0) / list.length) * 10) / 10
+        : 0;
+      const accuracyPct = answered ? Math.round((correct / answered) * 1000) / 10 : 0;
+      const completionPct = Math.round((complete / list.length) * 1000) / 10;
       return {
         discipline: d,
         total: list.length,
@@ -149,8 +153,13 @@ export function buildDisciplineCards(disciplines, enrichedAll, discMap) {
         answered,
         correct,
         wrong,
-        avgAccuracy,
-        pct,
+        masteryPct,
+        accuracyPct,
+        completionPct,
+        // Compatibilidade dos componentes existentes: pct é domínio e
+        // avgAccuracy é a precisão ponderada pelas respostas.
+        pct: masteryPct,
+        avgAccuracy: accuracyPct,
         items: list,
       };
     })
@@ -180,27 +189,33 @@ export function buildEditalInsights(enriched = []) {
   };
 }
 
-export function storageKey(contestId, name) {
-  return `detona.edital.${name}.${contestId || 'default'}`;
+export function storageKey(contestId, name, userId = null) {
+  const scope = userId ? `${encodeURIComponent(userId)}.${contestId || 'default'}` : (contestId || 'default');
+  return `detona.edital.${name}.${scope}`;
 }
 
-export function loadNavState(contestId, storage = globalThis.localStorage) {
+export function loadNavState(contestId, storage = globalThis.localStorage, userId = null) {
   try {
     return {
-      lastDisciplineId: storage?.getItem?.(storageKey(contestId, 'lastDisc')) || null,
-      lastSubtopicId: storage?.getItem?.(storageKey(contestId, 'lastSub')) || null,
-      sort: storage?.getItem?.(storageKey(contestId, 'sort')) || 'nome',
+      lastDisciplineId: storage?.getItem?.(storageKey(contestId, 'lastDisc', userId)) || null,
+      lastSubtopicId: storage?.getItem?.(storageKey(contestId, 'lastSub', userId)) || null,
+      sort: storage?.getItem?.(storageKey(contestId, 'sort', userId)) || 'nome',
     };
   } catch {
     return { lastDisciplineId: null, lastSubtopicId: null, sort: 'nome' };
   }
 }
 
-export function saveNavState(contestId, { lastDisciplineId, lastSubtopicId, sort }, storage = globalThis.localStorage) {
+export function saveNavState(
+  contestId,
+  { lastDisciplineId, lastSubtopicId, sort },
+  storage = globalThis.localStorage,
+  userId = null,
+) {
   try {
-    if (lastDisciplineId != null) storage?.setItem?.(storageKey(contestId, 'lastDisc'), lastDisciplineId);
-    if (lastSubtopicId != null) storage?.setItem?.(storageKey(contestId, 'lastSub'), lastSubtopicId);
-    if (sort != null) storage?.setItem?.(storageKey(contestId, 'sort'), sort);
+    if (lastDisciplineId != null) storage?.setItem?.(storageKey(contestId, 'lastDisc', userId), lastDisciplineId);
+    if (lastSubtopicId != null) storage?.setItem?.(storageKey(contestId, 'lastSub', userId), lastSubtopicId);
+    if (sort != null) storage?.setItem?.(storageKey(contestId, 'sort', userId), sort);
   } catch { /* ignore */ }
 }
 
@@ -226,12 +241,20 @@ export function groupByNumberingPrefix(enrichedList) {
         ? items[0].item.title
         : sharedStem || `Tópico ${prefix.split('.').at(-1)}`;
     const complete = items.filter((entry) => entry.spheres.complete).length;
-    const attempted = items.filter((entry) => entry.answered > 0);
     const progress = items.length ? Math.round(items.reduce((sum, entry) => sum + entry.progress, 0) / items.length) : 0;
-    const accuracy = attempted.length ? Math.round(attempted.reduce((sum, entry) => sum + entry.accuracy, 0) / attempted.length) : 0;
-    const stars = items.length ? Math.round(items.reduce((sum, entry) => sum + (entry.spheres.stars || 0), 0) / items.length) : 0;
+    const mastery = items.length
+      ? Math.round((items.reduce((sum, entry) => sum + (entry.accuracy || 0), 0) / items.length) * 10) / 10
+      : 0;
+    const answered = items.reduce((sum, entry) => sum + (entry.answered || 0), 0);
+    const correct = items.reduce((sum, entry) => sum + (entry.correct || 0), 0);
+    const wrong = items.reduce((sum, entry) => sum + (entry.wrong || 0), 0);
+    const accuracy = answered ? Math.round((correct / answered) * 1000) / 10 : 0;
+    const stars = items.length
+      ? Math.round((items.reduce((sum, entry) => sum + (entry.spheres.stars || 0), 0) / items.length) * 2) / 2
+      : 0;
     return {
-      prefix, title, items, complete, total: items.length, progress, accuracy, stars,
+      prefix, title, items, complete, total: items.length, progress, mastery, accuracy, stars,
+      answered, correct, wrong,
       pending: items.length - complete,
       overdue: items.filter((entry) => entry.overdue && !entry.spheres.complete).length,
     };

@@ -3,7 +3,7 @@ import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 import { getRadarStats } from '../core/ssot.js';
-import { getStage, xpForNextLevel } from '../core/progression.js';
+import { daysUntilExam, getStage, xpForNextLevel } from '../core/progression.js';
 import { saveToKafra, loadFromKafra } from '../core/kafra.js';
 import { setMuted, SFX } from '../core/audio.js';
 import { EXAM_META } from '../data/editalSeed.js';
@@ -12,12 +12,28 @@ import { EVOLUTION_STAGES } from '../core/progression.js';
 import { mountPageContainer, sectionHeader, statsPanel } from './appShell.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import { semanticIcon } from './icons.js?v=66';
+import { refreshEmblems } from '../services/emblemService.js';
+import { emblemArt } from './emblems/emblemArt.js';
+
+function insigniaProgressPct(progress) {
+  const value = Number(progress.progressValue) || 0;
+  const next = progress.nextThreshold;
+  if (next === null) return 100;
+  if (next === 'all') return progress.currentInsignia.achieved ? 100 : 0;
+  const start = progress.currentInsignia.achieved
+    ? Number(progress.currentInsignia.threshold) || 0
+    : 0;
+  return Math.max(0, Math.min(100, Math.round(
+    ((value - start) / Math.max(1, Number(next) - start)) * 100,
+  )));
+}
 
 export async function renderProfile(root, navigate, ctx) {
   const player = await getPlayer();
-  const [cards, radar] = await Promise.all([
+  const [cards, radar, emblemState] = await Promise.all([
     progressRepository.getAll(STORES.mvpCards),
     getRadarStats(),
+    refreshEmblems({ daysUntilExam: daysUntilExam(player.exam_date) ?? 120 }),
   ]);
   const stage = getStage(player.level);
   const weak = [...radar].sort((a, b) => a.proficiency - b.proficiency).slice(0, 3);
@@ -81,6 +97,47 @@ export async function renderProfile(root, navigate, ctx) {
         <p class="muted mb-8"><strong style="color:var(--ok)">Top</strong>: ${strong.map((s) => s.icon + ' ' + s.proficiency + '%').join(' · ')}</p>
         <p class="muted"><strong style="color:var(--danger)">Foco</strong>: ${weak.map((s) => s.icon + ' ' + s.proficiency + '%').join(' · ')}</p>
         <div class="radar-wrap mt-12"><canvas id="prof-radar"></canvas></div>
+      </div>
+    </div>
+
+    <div class="ro-window mb-8">
+      <div class="ro-title">Galeria de Insígnias</div>
+      <div class="ro-body" id="profile-emblems">
+        <p class="muted mb-8">Sua evolução em cinco linhas: jornada, constância, missões, foco e domínio.</p>
+        <div class="insignia-gallery">
+          ${emblemState.insignias.map((progress) => `
+            <section class="insignia-line" aria-labelledby="insignia-category-${progress.category}">
+              <div class="insignia-line__current">
+                ${emblemArt(progress.currentInsignia, { size: 'large', state: 'current' })}
+                <div>
+                  <small>${escapeHtml(progress.name)}</small>
+                  <h3 id="insignia-category-${progress.category}">${escapeHtml(progress.currentInsignia.name)}</h3>
+                  <p>${escapeHtml(progress.currentInsignia.description)}</p>
+                  <strong>Estágio ${progress.currentTier}/${progress.tiers.length}</strong>
+                </div>
+              </div>
+              <div class="insignia-line__track" aria-label="Linha de evolução de ${escapeHtml(progress.name)}">
+                ${progress.tiers.map((tier) => `
+                  <article class="insignia-tier is-${tier.state}" aria-current="${tier.state === 'current' ? 'step' : 'false'}">
+                    ${emblemArt(tier, { size: 'medium', state: tier.state })}
+                    <span>${escapeHtml(tier.name)}</span>
+                    <small>${escapeHtml(tier.criterion)}</small>
+                  </article>
+                `).join('')}
+              </div>
+              <div class="insignia-line__progress">
+                <div class="emblem-progress" aria-label="Progresso atual ${insigniaProgressPct(progress)}%">
+                  <span style="width:${insigniaProgressPct(progress)}%"></span>
+                </div>
+                <small>${progress.nextThreshold === null
+                  ? 'Linha concluída'
+                  : progress.nextThreshold === 'all'
+                    ? 'Próximo: completar todo o edital'
+                    : `${Number(progress.progressValue).toLocaleString('pt-BR')} / ${Number(progress.nextThreshold).toLocaleString('pt-BR')}`}</small>
+              </div>
+            </section>
+          `).join('')}
+        </div>
       </div>
     </div>
 
@@ -160,6 +217,12 @@ export async function renderProfile(root, navigate, ctx) {
   requestAnimationFrame(() => drawRadar($('#prof-radar', root), radar));
 
   bindInstallButtons(root);
+  if (ctx.profileSection === 'emblems') {
+    requestAnimationFrame(() => {
+      $('#profile-emblems', root)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      ctx.profileSection = null;
+    });
+  }
 
   $('#pf-library', root)?.addEventListener('click', () => navigate('library'));
 

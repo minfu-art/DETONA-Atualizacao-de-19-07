@@ -1,5 +1,5 @@
-import { $ } from './helpers.js';
-import { EXAM_META } from '../data/editalSeed.js';
+import { $, escapeHtml, toast } from './helpers.js';
+import { EXAM_META, defaultPlayer } from '../data/editalSeed.js';
 import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
@@ -9,10 +9,19 @@ import { heroImgHtml, HERO_SRC, HERO_SRC_FEMALE } from './heroAssets.js';
 /**
  * @param {(screen: string) => void} navigate
  */
-export async function renderOnboarding(root, navigate) {
-  let gender = 'male';
-  let name = '';
-  let examDate = EXAM_META.default_exam_date;
+export function playerNameForOnboarding(ctx, player) {
+  return (ctx?.user?.name || player?.name || '').trim();
+}
+
+export function playerForOnboarding(player) {
+  return player || defaultPlayer();
+}
+
+export async function renderOnboarding(root, navigate, ctx) {
+  const player = playerForOnboarding(await getPlayer());
+  let gender = player.avatar_sprite === 'female' ? 'female' : 'male';
+  const name = playerNameForOnboarding(ctx, player);
+  let examDate = player.exam_date || EXAM_META.default_exam_date;
 
   function previewHero(sprite) {
     return heroImgHtml({ className: 'hero-img hero-img--onboard', level: 1, sprite });
@@ -21,7 +30,7 @@ export async function renderOnboarding(root, navigate) {
   root.innerHTML = `
     <div class="onboard">
       <div class="onboard-hero" id="ob-hero-preview">
-        ${previewHero('male')}
+        ${previewHero(gender)}
       </div>
       <h1>DETONA<br>CONCURSOS</h1>
       <p class="sub">${EXAM_META.name}<br>${EXAM_META.cargo}</p>
@@ -29,18 +38,15 @@ export async function renderOnboarding(root, navigate) {
       <div class="ro-window">
         <div class="ro-title">Criação de Personagem</div>
         <div class="ro-body">
-          <div class="field">
-            <label>Nome do Aventureiro</label>
-            <input type="text" id="ob-name" maxlength="24" placeholder="Ex: Agente Silva" />
-          </div>
+          <div class="field"><strong>Jogador: ${escapeHtml(name)}</strong></div>
           <div class="field">
             <label>Avatar (Sprite)</label>
             <div class="avatar-pick">
-              <div class="avatar-opt selected" data-g="male" role="button" tabindex="0" aria-pressed="true">
+              <div class="avatar-opt ${gender === 'male' ? 'selected' : ''}" data-g="male" role="button" tabindex="0" aria-pressed="${gender === 'male'}">
                 <img class="hero-thumb" src="${HERO_SRC}" alt="Masculino" />
                 <div class="muted">Guerreiro</div>
               </div>
-              <div class="avatar-opt" data-g="female" role="button" tabindex="0" aria-pressed="false">
+              <div class="avatar-opt ${gender === 'female' ? 'selected' : ''}" data-g="female" role="button" tabindex="0" aria-pressed="${gender === 'female'}">
                 <img class="hero-thumb" src="${HERO_SRC_FEMALE}" alt="Feminino" />
                 <div class="muted">Guerreira</div>
               </div>
@@ -82,21 +88,26 @@ export async function renderOnboarding(root, navigate) {
     });
   });
 
-  $('#ob-start', root).addEventListener('click', async () => {
+  const startButton = $('#ob-start', root);
+  startButton.addEventListener('click', async () => {
+    if (startButton.disabled) return;
     SFX.click();
-    name = ($('#ob-name', root).value || '').trim();
-    examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
-    if (!name || name.length < 2) {
-      $('#ob-name', root).focus();
-      return;
+    startButton.disabled = true;
+    startButton.textContent = 'Salvando preparação...';
+    try {
+      examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
+      player.name = name;
+      player.avatar_sprite = gender;
+      player.exam_date = examDate;
+      player.onboarded = true;
+      await progressRepository.put(STORES.player, player);
+      SFX.levelUp();
+      await navigate('home');
+    } catch (error) {
+      console.error('[onboarding] falha ao salvar preparação', error);
+      startButton.disabled = false;
+      startButton.textContent = 'Começar preparação';
+      toast('Não foi possível salvar sua preparação. Tente novamente.');
     }
-    const player = await getPlayer();
-    player.name = name;
-    player.avatar_sprite = gender;
-    player.exam_date = examDate;
-    player.onboarded = true;
-    await progressRepository.put(STORES.player, player);
-    SFX.levelUp();
-    navigate('home');
   });
 }

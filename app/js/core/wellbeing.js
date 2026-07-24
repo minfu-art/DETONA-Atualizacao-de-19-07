@@ -5,9 +5,10 @@
  */
 import { STORES, getAll, getById, put, putMany, getMeta, setMeta } from './db.js';
 import { defaultWellbeingHabits } from '../data/editalSeed.js';
+import { localDateKey } from './localDate.js';
 
 function todayStr() {
-  return new Date().toISOString().slice(0, 10);
+  return localDateKey();
 }
 
 /** Vigor por dia completo (constância) — NÃO é XP. */

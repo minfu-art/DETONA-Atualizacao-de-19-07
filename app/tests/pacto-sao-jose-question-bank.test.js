@@ -33,9 +33,14 @@ test('questões do Pacto estão comentadas, revisadas e vinculadas à base legal
 });
 
 test('índice e relatório registram o novo banco de Direitos Humanos', async () => {
-  const [index, report] = await Promise.all([readJson(indexPath), readJson(reportPath)]);
+  const [index, report, curated, published] = await Promise.all([
+    readJson(indexPath), readJson(reportPath), readJson(bankPath),
+    readJson(path.join(appRoot, 'data/questions/direitos_humanos.json')),
+  ]);
   assert.equal(index.quantidade, index.disciplinas.reduce((total, item) => total + item.quantidade, 0));
-  assert.equal(index.disciplinas.find((item) => item.id === 'dh')?.quantidade, 25);
+  assert.equal(index.disciplinas.find((item) => item.id === 'direitos_humanos')?.quantidade, published.length);
+  const publishedIds = new Set(published.map((question) => question.id));
+  assert.equal(curated.every((question) => publishedIds.has(question.id)), true);
   assert.equal(report.questoesAdicionadas, 25);
   assert.deepEqual(report.porGabarito, { C: 13, E: 12 });
   assert.deepEqual(report.sobreposicoesComBancoAnterior, []);

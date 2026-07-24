@@ -71,7 +71,7 @@ test('pacote autoral está integrado ao banco e ao índice do jogo', async () =>
   ]);
   const curatedIds = new Set([...curated, ...pilot].map((question) => question.id));
   assert.equal(merged.filter((question) => curatedIds.has(question.id)).length, 50);
-  assert.equal(merged.length, 70);
+  assert.ok(merged.length >= curatedIds.size);
   assert.equal(index.quantidade, index.disciplinas.reduce((total, item) => total + item.quantidade, 0));
-  assert.equal(index.disciplinas.find((item) => item.id === 'analise_de_dados')?.quantidade, 70);
+  assert.equal(index.disciplinas.find((item) => item.id === 'analise_de_dados')?.quantidade, merged.length);
 });

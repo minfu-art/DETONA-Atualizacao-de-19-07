@@ -6,19 +6,19 @@ import { openDB } from './core/db.js';
 import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
-import { renderOnboarding } from './ui/onboarding.js?v=68';
-import { renderHome } from './ui/home.js?v=71';
-import { renderForge } from './ui/forge.js?v=71';
+import { renderOnboarding } from './ui/onboarding.js?v=70';
+import { renderHome } from './ui/home.js?v=79';
+import { renderForge } from './ui/forge.js?v=72';
 import { renderWorldMap } from './ui/worldMap.js?v=73';
-import { renderBattle } from './ui/battleArena.js?v=73';
-import { renderGrimorio } from './ui/grimorio.js?v=68';
+import { renderBattle } from './ui/battleArena.js?v=74';
+import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=73';
 import { renderExpedition } from './ui/expedition.js?v=72';
 import { renderWellbeing } from './ui/wellbeingUI.js?v=68';
-import { renderProfile } from './ui/profile.js?v=68';
+import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=69';
-import { renderReview } from './ui/review.js?v=71';
+import { renderReview } from './ui/review.js?v=82';
 import { ICO } from './ui/icons.js?v=66';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=70';
 import { renderAuth } from './ui/auth.js?v=74';
@@ -32,6 +32,8 @@ import { primaryScreenFor } from './ui/navigation.js?v=70';
 import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
+import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
+import { resetAcademicSessionContext } from './auth/academicSessionContext.js';
 
 const ctx = {
   battleSession: null,
@@ -213,8 +215,7 @@ async function openContest(contestId) {
 async function logout() {
   await authService.logout();
   clearActiveContestId();
-  ctx.user = null;
-  ctx.screen = 'auth';
+  resetAcademicSessionContext(ctx);
   showAuth();
 }
 
@@ -222,7 +223,11 @@ ctx.logout = logout;
 ctx.openContest = openContest;
 
 async function initializeAuthenticatedApp() {
-  ctx.user = authService.getCurrentUser();
+  const authenticatedUser = authService.getCurrentUser();
+  if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
+    resetAcademicSessionContext(ctx);
+  }
+  ctx.user = authenticatedUser;
   document.getElementById('app')?.classList.remove('app-shell--auth');
   injectNavIcons();
 
@@ -260,6 +265,9 @@ async function initializeAuthenticatedApp() {
 
 async function init() {
   try {
+    if (isLocalDevelopment()) {
+      console.warn(`[DETONA] ${environmentLabel()}: autenticação e checkout demonstrativos podem estar ativos.`);
+    }
     // PWA + botão Instalar (celular, tablet e PC)
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});

@@ -1,8 +1,9 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v74-login-showcase';
+const CACHE = 'detona-v82-user-isolation';
 const ASSETS = [
   './',
   './index.html',
+  './env.runtime.js',
   './css/main.css',
   './css/design-system.css',
   './manifest.json',
@@ -18,6 +19,11 @@ const ASSETS = [
   './js/core/routine/routineFocus.js',
   './js/core/routine/routineCalendar.js',
   './js/services/routineService.js',
+  './js/services/academicProgressService.js',
+  './js/services/dailyGoalService.js',
+  './js/services/studyStreakService.js',
+  './js/services/emblemService.js',
+  './js/core/localDate.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',
   './assets/icons/icon-512.png',
@@ -36,6 +42,10 @@ const ASSETS = [
   './js/core/questionSchema.js',
   './js/core/questionSelection.js',
   './js/config/questionSourceConfig.js',
+  './js/config/env.js',
+  './js/config/appEnvironment.js',
+  './js/config/cloudConfig.js',
+  './js/config/subtopicAliases.js',
   './js/repositories/questionRepository.js',
   './js/services/questionService.js',
   './js/core/reviewQueue.js',
@@ -43,8 +53,10 @@ const ASSETS = [
   './js/core/dailyMeta.js',
   './js/core/wellbeing.js',
   './js/auth/activeUser.js',
+  './js/auth/academicSessionContext.js',
   './js/auth/authDb.js',
   './js/auth/authService.js',
+  './js/auth/cloudAuthService.js',
   './js/auth/passwordHasher.js',
   './js/auth/sessionService.js',
   './js/contest/activeContest.js',
@@ -52,6 +64,12 @@ const ASSETS = [
   './js/repositories/entitlementRepository.js',
   './js/repositories/progressRepository.js',
   './js/repositories/userRepository.js',
+  './js/supabase/client.js',
+  './js/supabase/authAdapter.js',
+  './js/supabase/entitlementRepository.js',
+  './js/supabase/hybridProgressAdapter.js',
+  './js/supabase/progressCloud.js',
+  './js/supabase/syncService.js',
   './js/services/appServices.js',
   './js/services/legacyDataMigrationService.js',
   './js/services/contestDataMigrationService.js',
@@ -62,6 +80,8 @@ const ASSETS = [
   './js/services/reviewService.js',
   './js/services/performanceService.js',
   './js/data/editalSeed.js',
+  './js/data/emblemCatalog.js',
+  './js/data/insigniaCatalog.js',
   './js/data/phrases.js',
   './js/data/questions_pc_al_port.json',
   './js/data/questions_pc_al_lote.json',
@@ -72,11 +92,12 @@ const ASSETS = [
   './data/questions/direito_constitucional.json',
   './data/questions/direito_penal.json',
   './data/questions/estatistica.json',
+  './data/questions/etica.json',
   './data/questions/legislacao_estadual_estatutos_de_alagoas.json',
   './data/questions/lingua_portuguesa.json',
   './data/questions/raciocinio_logico_matematico.json',
-  './data/questions/tecnologia_da_informacao_crimes_ciberneticos.json',
-  './data/questions/dh.json',
+  './data/questions/seguranca_cibernetica.json',
+  './data/questions/tecnologia_informacao.json',
   './data/questions/curated/detona_ineditas_pacto_sao_jose.json',
   './data/questions/curated/detona_ineditas_analise_de_dados.json',
   './data/questions/curated/detona_piloto_25_xlsx.json',
@@ -94,7 +115,9 @@ const ASSETS = [
   './js/ui/appShell.js',
   './js/ui/appShell.js?v=70',
   './js/ui/onboarding.js',
+  './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
+  './js/ui/emblems/emblemArt.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',
   './js/ui/battleArena.js',
@@ -127,6 +150,8 @@ const ASSETS = [
   './assets/hero/tiers/female/tier-70-89.png',
   './assets/hero/tiers/female/tier-90-99.png',
   './assets/hero/tiers/female/tier-100.png',
+  './assets/mentor/mentor.png',
+  './assets/mentor/mentora.png',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',
@@ -145,11 +170,51 @@ const ASSETS = [
   './assets/enemies/enemy-15.png',
   './assets/enemies/enemy-16.png',
   './assets/ui/level-badge.png',
+  './assets/insignias/journey-tier-01.webp',
+  './assets/insignias/journey-tier-02.webp',
+  './assets/insignias/journey-tier-03.webp',
+  './assets/insignias/journey-tier-04.webp',
+  './assets/insignias/journey-tier-05.webp',
+  './assets/insignias/consistency-tier-01.webp',
+  './assets/insignias/consistency-tier-02.webp',
+  './assets/insignias/consistency-tier-03.webp',
+  './assets/insignias/consistency-tier-04.webp',
+  './assets/insignias/consistency-tier-05.webp',
+  './assets/insignias/consistency-tier-06.webp',
+  './assets/insignias/missions-tier-01.webp',
+  './assets/insignias/missions-tier-02.webp',
+  './assets/insignias/missions-tier-03.webp',
+  './assets/insignias/missions-tier-04.webp',
+  './assets/insignias/missions-tier-05.webp',
+  './assets/insignias/missions-tier-06.webp',
+  './assets/insignias/missions-tier-07.webp',
+  './assets/insignias/focus-tier-01.webp',
+  './assets/insignias/focus-tier-02.webp',
+  './assets/insignias/focus-tier-03.webp',
+  './assets/insignias/focus-tier-04.webp',
+  './assets/insignias/focus-tier-05.webp',
+  './assets/insignias/focus-tier-06.webp',
+  './assets/insignias/domain-tier-01.webp',
+  './assets/insignias/domain-tier-02.webp',
+  './assets/insignias/domain-tier-03.webp',
+  './assets/insignias/domain-tier-04.webp',
+  './assets/insignias/domain-tier-05.webp',
+  './assets/insignias/domain-tier-06.webp',
 ];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE)
+      .then((cache) => Promise.all(ASSETS.map(async (asset) => {
+        try {
+          await cache.add(asset);
+        } catch (error) {
+          // A CI garante que os caminhos existem. Em runtime, uma falha de rede
+          // isolada não deve impedir que os demais assets fiquem disponíveis.
+          console.warn('[sw] asset não armazenado no pré-cache', asset, error);
+        }
+      })))
+      .then(() => self.skipWaiting())
   );
 });
 

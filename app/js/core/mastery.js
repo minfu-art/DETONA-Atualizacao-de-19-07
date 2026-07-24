@@ -22,6 +22,36 @@ function bestHistory(...values) {
     || values.find((value) => value && typeof value === 'object' && !Array.isArray(value)) || {};
 }
 
+export function subtopicHistoricalStats(questionHistory = {}) {
+  const history = normalizeQuestionHistory(questionHistory);
+  const entries = Object.values(history);
+  const answersTotal = entries.reduce((sum, entry) => sum + entry.attempts, 0);
+  const correctTotal = entries.reduce((sum, entry) => sum + entry.correctCount, 0);
+  const incorrectTotal = entries.reduce((sum, entry) => sum + entry.incorrectCount, 0);
+  const uniqueQuestionsAnswered = Object.keys(history).length;
+  return {
+    answers_total: answersTotal,
+    correct_total: correctTotal,
+    incorrect_total: incorrectTotal,
+    unique_questions_answered: uniqueQuestionsAnswered,
+    repeated_answers: Math.max(0, answersTotal - uniqueQuestionsAnswered),
+    historical_accuracy: answersTotal > 0 ? (correctTotal / answersTotal) * 100 : 0,
+  };
+}
+
+export function hasOfficialBattleAttempt(subtopic = {}, battleId) {
+  const id = String(battleId || '').trim();
+  if (!id) return false;
+  const histories = [
+    subtopic.attempt_history,
+    subtopic.historicoTentativas,
+    subtopic.historico,
+  ];
+  return histories.some((history) => (
+    Array.isArray(history) && history.some((entry) => String(entry?.battleId || '').trim() === id)
+  ));
+}
+
 export function clampMastery(value) {
   const numeric = Number(value);
   if (!Number.isFinite(numeric)) return 0;
@@ -93,6 +123,7 @@ export function migrateSubtopicMastery(subtopic = {}) {
   const correctIds = uniqueIds(firstArray(next.questoesAcertadas, next.correct_question_ids));
   const reviewIds = uniqueIds(firstArray(next.questoesRevisao, next.review_question_ids, incorrectIds));
   const questionHistory = normalizeQuestionHistory(bestHistory(next.historicoQuestoes, next.question_history));
+  const historicalStats = subtopicHistoricalStats(questionHistory);
   if (attempts > 0 && !firstAttemptAt) review.add('data da primeira tentativa histórica indisponível');
   if (attempts > 0 && !bestResultAt) review.add('data do melhor resultado histórico indisponível');
 
@@ -115,6 +146,7 @@ export function migrateSubtopicMastery(subtopic = {}) {
     correct_question_ids: correctIds, questoesAcertadas: [...correctIds],
     review_question_ids: reviewIds, questoesRevisao: [...reviewIds],
     question_history: questionHistory, historicoQuestoes: { ...questionHistory },
+    ...historicalStats,
     mastery_migration_review: [...review],
   });
   return next;
@@ -123,6 +155,16 @@ export function migrateSubtopicMastery(subtopic = {}) {
 export function applyOfficialMasteryAttempt(subtopic, attempt) {
   const mastery = masteryFromAttempt(attempt.correct, attempt.total);
   if (mastery == null) return { subtopic: { ...subtopic }, official: false, improved: false, mastery: null };
+  const battleId = String(attempt.battleId || '').trim() || null;
+  if (battleId && hasOfficialBattleAttempt(subtopic, battleId)) {
+    return {
+      subtopic: { ...subtopic },
+      official: true,
+      improved: false,
+      mastery: subtopicMastery(subtopic),
+      duplicate: true,
+    };
+  }
   const next = migrateSubtopicMastery(subtopic);
   const attemptedAt = attempt.attemptedAt || new Date().toISOString();
   const questionIds = [...new Set(attempt.questionIds || [])];
@@ -134,7 +176,23 @@ export function applyOfficialMasteryAttempt(subtopic, attempt) {
   const results = Array.isArray(attempt.results) ? attempt.results : [];
   const correctIds = uniqueIds(results.filter((result) => result.correct).map((result) => result.questionId));
   const incorrectIds = uniqueIds(results.filter((result) => !result.correct).map((result) => result.questionId));
-  const historyEntry = { attemptedAt, correct: attempt.correct, total: attempt.total, percentage: mastery, questionIds, correctIds, incorrectIds };
+  const answers = results.map((result) => ({
+    questionId: String(result.questionId),
+    userAnswer: result.userAnswer,
+    correct: result.correct === true,
+    confidence: result.confidence ?? null,
+  }));
+  const historyEntry = {
+    battleId,
+    attemptedAt,
+    correct: attempt.correct,
+    total: attempt.total,
+    percentage: mastery,
+    questionIds,
+    correctIds,
+    incorrectIds,
+    answers,
+  };
 
   next.attempts_count = attempts; next.tentativas = attempts;
   next.first_attempt_at ||= attemptedAt; next.primeiraTentativaEm = next.first_attempt_at;
@@ -166,6 +224,7 @@ export function applyOfficialMasteryAttempt(subtopic, attempt) {
     };
   }
   next.question_history = questionHistory; next.historicoQuestoes = { ...questionHistory };
+  Object.assign(next, subtopicHistoricalStats(questionHistory));
   if (replaceBest) {
     next.best_accuracy = mastery; next.melhorPercentual = mastery;
     next.best_correct_answers = attempt.correct; next.melhorAcertos = attempt.correct;
@@ -176,7 +235,8 @@ export function applyOfficialMasteryAttempt(subtopic, attempt) {
     next.best_accuracy = previousBest; next.melhorPercentual = previousBest;
   }
   next.stars = starsFromAccuracy(next.best_accuracy);
-  return { subtopic: next, official: true, improved, mastery };
+  next.updated_at = attemptedAt;
+  return { subtopic: next, official: true, improved, mastery, duplicate: false };
 }
 
 export function applyGlobalMasteryToPlayer(player, subtopics) {

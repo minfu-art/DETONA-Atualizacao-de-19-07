@@ -2,9 +2,10 @@
  * Meta diária de estudo — SSOT via DailyLog + StudyRoutine
  */
 import { STORES, getAll, getById } from './db.js';
+import { localDateKey } from './localDate.js';
 
 function todayStr() {
-  return new Date().toISOString().slice(0, 10);
+  return localDateKey();
 }
 
 export function goalTypeLabel(type) {
@@ -78,7 +79,7 @@ export function currentWeekDates() {
   for (let i = 0; i < 7; i++) {
     const d = new Date(start);
     d.setDate(start.getDate() + i);
-    days.push(d.toISOString().slice(0, 10));
+    days.push(localDateKey(d));
   }
   return days;
 }

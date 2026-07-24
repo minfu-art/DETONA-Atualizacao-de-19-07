@@ -27,7 +27,7 @@ import {
   saveNavState,
   groupByNumberingPrefix,
   buildEditalInsights,
-} from '../core/editalUiModel.js?v=68';
+} from '../core/editalUiModel.js?v=69';
 
 // nextReviewHint is defined in grimorio for formatDate coupling
 function nextReviewHint(item) {
@@ -59,7 +59,8 @@ function statusGlyph(status) {
 
 export async function renderGrimorio(root, navigate, ctx = {}) {
   const contestId = getActiveContestId() || 'default';
-  const navState = loadNavState(contestId);
+  const userId = ctx.user?.id || null;
+  const navState = loadNavState(contestId, globalThis.localStorage, userId);
 
   /** @type {'disciplines'|'discipline'|'subtopic'} */
   let view = 'disciplines';
@@ -78,7 +79,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
       lastDisciplineId: activeDisciplineId || '',
       lastSubtopicId: activeSubtopicId || '',
       sort,
-    });
+    }, globalThis.localStorage, userId);
   };
 
   async function paint() {
@@ -253,17 +254,17 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
             <strong>${discIcon(d.id, 'ico--inline')} ${escapeHtml(d.name)}</strong>
           </div>
           <div class="ev-disc-summary">
-            <div><small>Progresso</small><strong>${activeDiscCard.pct}%</strong></div>
+            <div><small>Domínio da disciplina</small><strong>${activeDiscCard.masteryPct}%</strong></div>
             <div><small>Concluídos</small><strong>${activeDiscCard.complete}/${activeDiscCard.total}</strong></div>
             <div><small>Respondidas</small><strong>${activeDiscCard.answered}</strong></div>
-            <div><small>Acerto médio</small><strong>${activeDiscCard.avgAccuracy}%</strong></div>
+            <div><small>Precisão nas respostas</small><strong>${activeDiscCard.accuracyPct}%</strong></div>
             ${activeDiscCard.overdue ? `<div class="is-warn"><small>Atrasados</small><strong>${activeDiscCard.overdue}</strong></div>` : ''}
           </div>
           ${progressBar({
-            value: activeDiscCard.pct,
-            label: `Progresso de ${d.name}`,
-            detail: `${activeDiscCard.pct}%`,
-            tone: activeDiscCard.pct >= 70 ? 'success' : 'plasma',
+            value: activeDiscCard.masteryPct,
+            label: `Domínio de ${d.name}`,
+            detail: `${activeDiscCard.masteryPct}%`,
+            tone: activeDiscCard.masteryPct >= 70 ? 'success' : 'plasma',
           })}
           <div class="ev-sub-list">
             ${discSubtopics.length
@@ -334,16 +335,17 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
               <strong>${escapeHtml(d.name)}</strong>
               <span>${card.complete}/${card.total} subtópicos concluídos</span>
             </div>
-            <strong class="ev-topic__pct">${card.pct}%</strong>
+            <strong class="ev-topic__pct">${card.masteryPct}% domínio</strong>
             <span class="ev-topic__chevron" aria-hidden="true">${icon(open ? 'minus' : 'plus', 'ico--control')}</span>
           </div>
-          <div class="ev-topic__bar" role="progressbar" aria-label="Progresso de ${escapeHtml(d.name)}"
-            aria-valuemin="0" aria-valuemax="100" aria-valuenow="${card.pct}"><span style="width:${card.pct}%"></span></div>
+          <div class="ev-topic__bar" role="progressbar" aria-label="Domínio de ${escapeHtml(d.name)}"
+            aria-valuemin="0" aria-valuemax="100" aria-valuenow="${card.masteryPct}"><span style="width:${card.masteryPct}%"></span></div>
           <div class="ev-topic__stats" aria-label="Estatísticas do tópico">
             <span><small>Respondidas</small><strong>${card.answered}</strong></span>
             <span><small>Acertos</small><strong class="is-correct">${card.correct}</strong></span>
             <span><small>Erros</small><strong class="is-wrong">${card.wrong}</strong></span>
-            <span><small>Taxa de acerto</small><strong>${card.avgAccuracy}%</strong></span>
+            <span><small>Precisão nas respostas</small><strong>${card.accuracyPct}%</strong></span>
+            <span><small>Etapas concluídas</small><strong>${card.completionPct}%</strong></span>
             ${card.overdue ? `<span><small>Revisões atrasadas</small><strong class="is-warn">${card.overdue}</strong></span>` : ''}
           </div>
         </button>
@@ -364,7 +366,7 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
     const open = collapsedGroups[key] === false;
     const state = group.complete === group.total
       ? { label: 'Dominado', tone: 'strong' }
-      : group.overdue > 0 || (group.accuracy > 0 && group.accuracy < 60)
+      : group.overdue > 0 || (group.mastery > 0 && group.mastery < 60)
         ? { label: 'Atenção', tone: 'weak' }
         : group.progress > 0
           ? { label: 'Em evolução', tone: 'progress' }
@@ -381,12 +383,13 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
             <span class="ev-mastery ev-mastery--${state.tone}">${state.label}</span>
             <span class="ev-topic-group__stars" aria-label="${group.stars} de 5 estrelas">${starsHtml(group.stars)}</span>
           </div>
-          <strong class="ev-topic-group__pct">${group.progress}%</strong>
+          <strong class="ev-topic-group__pct">${group.progress}% etapas</strong>
           <span class="ev-topic-group__chevron" aria-hidden="true">${icon(open ? 'minus' : 'plus', 'ico--control')}</span>
         </button>
         <div class="ev-topic-group__bar" aria-hidden="true"><span style="width:${group.progress}%"></span></div>
         <div class="ev-topic-group__metrics">
-          <span><small>Domínio</small><strong>${group.accuracy}%</strong></span>
+          <span><small>Domínio</small><strong>${group.mastery}%</strong></span>
+          <span><small>Precisão</small><strong>${group.accuracy}%</strong></span>
           <span><small>Pendentes</small><strong>${group.pending}</strong></span>
           ${group.overdue ? `<span><small>Atrasados</small><strong class="is-warn">${group.overdue}</strong></span>` : ''}
         </div>
@@ -403,15 +406,15 @@ export async function renderGrimorio(root, navigate, ctx = {}) {
         <button type="button" class="ev-dcard__btn" data-open-disc="${d.id}" aria-label="Abrir ${escapeHtml(d.name)}">
           <div class="ev-dcard__top">
             <strong class="ev-dcard__name">${discIcon(d.id, 'ico--inline')} ${escapeHtml(d.name)}</strong>
-            <span class="ev-dcard__pct">${card.pct}%</span>
+            <span class="ev-dcard__pct">${card.masteryPct}% domínio</span>
           </div>
-          <div class="ev-mini-bar" role="progressbar" aria-valuenow="${card.pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso ${card.pct}%">
-            <span style="width:${card.pct}%"></span>
+          <div class="ev-mini-bar" role="progressbar" aria-valuenow="${card.masteryPct}" aria-valuemin="0" aria-valuemax="100" aria-label="Domínio ${card.masteryPct}%">
+            <span style="width:${card.masteryPct}%"></span>
           </div>
           <div class="ev-dcard__meta">
             <span>${card.complete}/${card.total} subtópicos</span>
             <span>${card.answered} resp.</span>
-            <span>Acerto ${card.avgAccuracy}%</span>
+            <span>Precisão ${card.accuracyPct}%</span>
             ${card.overdue ? `<span class="ev-disc__late">${card.overdue} atras.</span>` : ''}
           </div>
           <span class="ev-dcard__cta">Ver subtópicos ›</span>

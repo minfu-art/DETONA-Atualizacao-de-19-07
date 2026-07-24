@@ -9,11 +9,12 @@
  * edital_completion_pct = (itens_completos / total_itens) * 100
  * Este valor é gravado em Player.edital_completion_pct e alimenta Home + trava Nv 91.
  */
-import { STORES, getAll, getById, put, putMany } from './db.js';
+import { STORES, getAll } from './db.js';
 import { computeMemoryTemperature, effectiveStars } from './memory.js';
 import { isQuestionEligible } from './questionSchema.js';
 import { applyGlobalMasteryToPlayer, averageSubtopicMastery, migrateSubtopicMastery } from './mastery.js';
 import { questionService } from '../services/questionService.js';
+import { progressRepository } from '../repositories/progressRepository.js';
 
 /**
  * Esferas de maestria de um item (derivado do estado atual).
@@ -38,51 +39,85 @@ export function calculateEditalCompletionPercentage(completeCount, totalItems) {
   return Math.round((completeCount / total) * 10000) / 100;
 }
 
+function canonicalRecord(value, key = '') {
+  if (Array.isArray(value)) return value.map((item) => canonicalRecord(item));
+  if (!value || typeof value !== 'object') return value;
+  return Object.fromEntries(Object.keys(value)
+    .filter((entryKey) => !(entryKey === 'updated_at' && key === ''))
+    .sort()
+    .map((entryKey) => [entryKey, canonicalRecord(value[entryKey], entryKey)]));
+}
+
+export function academicRecordChanged(current, next) {
+  return JSON.stringify(canonicalRecord(current)) !== JSON.stringify(canonicalRecord(next));
+}
+
 /**
  * Recalcula edital_completion_pct a partir de verticalized + subtopics.
  * Também sincroniza questions_done / accuracy e memory_temperature.
  * @returns {Promise<{ pct: number, complete: number, total: number, player: object }>}
  */
-export async function recalculateEditalSSOT() {
+export async function recalculateEditalSSOT(repository = progressRepository, { updatedAt = new Date().toISOString() } = {}) {
   const [items, subtopics, playerList, disciplines] = await Promise.all([
-    getAll(STORES.verticalized),
-    getAll(STORES.subtopics),
-    getAll(STORES.player),
-    getAll(STORES.disciplines),
+    repository.getAll(STORES.verticalized),
+    repository.getAll(STORES.subtopics),
+    repository.getAll(STORES.player),
+    repository.getAll(STORES.disciplines),
   ]);
 
   const currentPlayer = playerList[0];
   if (!currentPlayer) return { pct: 0, complete: 0, total: 0, player: null };
 
+  const subtopicUpdates = [];
   const normalizedSubs = subtopics.map((subtopic) => {
     const migrated = migrateSubtopicMastery(subtopic);
     migrated.memory_temperature = computeMemoryTemperature(migrated.last_studied_at);
+    if (academicRecordChanged(subtopic, migrated)) {
+      migrated.updated_at = updatedAt;
+      subtopicUpdates.push(migrated);
+    }
     return migrated;
   });
   const subMap = Object.fromEntries(normalizedSubs.map((s) => [s.id, s]));
   let completeCount = 0;
 
-  for (const item of items) {
+  const itemUpdates = [];
+  const normalizedItems = items.map((item) => {
+    const next = { ...item };
     const sub = subMap[item.subtopic_id];
     if (sub) {
       const newQuestionsDone = (sub.attempts_count || 0) > 0;
       const newAccuracy = sub.best_accuracy || 0;
-      if (item.questions_done !== newQuestionsDone || item.accuracy !== newAccuracy) {
-        item.questions_done = newQuestionsDone;
-        item.accuracy = newAccuracy;
-      }
+      next.questions_done = newQuestionsDone;
+      next.accuracy = newAccuracy;
     }
-    const spheres = getMasterySpheres(item, sub);
+    const spheres = getMasterySpheres(next, sub);
     if (spheres.complete) completeCount += 1;
-  }
+    if (academicRecordChanged(item, next)) {
+      next.updated_at = updatedAt;
+      itemUpdates.push(next);
+    }
+    return next;
+  });
 
-  const pct = calculateEditalCompletionPercentage(completeCount, items.length);
+  const pct = calculateEditalCompletionPercentage(completeCount, normalizedItems.length);
 
   // Disciplinas: completed_subtopics = subtópicos com 3+ estrelas efetivas
-  const discUpdates = disciplines.map((d) => {
+  const discUpdates = [];
+  const normalizedDisciplines = disciplines.map((d) => {
     const subs = normalizedSubs.filter((s) => s.discipline_id === d.id);
     const done = subs.filter((s) => effectiveStars(s) >= 3).length;
-    return { ...d, total_subtopics: subs.length, completed_subtopics: done, mastery_pct: averageSubtopicMastery(subs) };
+    const next = {
+      ...d,
+      total_subtopics: subs.length,
+      completed_subtopics: done,
+      mastery_pct: averageSubtopicMastery(subs),
+    };
+    if (academicRecordChanged(d, next)) {
+      next.updated_at = updatedAt;
+      discUpdates.push(next);
+    }
+    return next;
   });
 
   const player = applyGlobalMasteryToPlayer(currentPlayer, normalizedSubs);
@@ -95,12 +130,27 @@ export async function recalculateEditalSSOT() {
     player.endgame_mode = true;
   }
 
-  await put(STORES.player, player);
-  if (normalizedSubs.length) await putMany(STORES.subtopics, normalizedSubs);
-  if (items.length) await putMany(STORES.verticalized, items);
-  if (discUpdates.length) await putMany(STORES.disciplines, discUpdates);
+  if (academicRecordChanged(currentPlayer, player)) {
+    player.updated_at = updatedAt;
+    await repository.put(STORES.player, player);
+  }
+  if (subtopicUpdates.length) await repository.putMany(STORES.subtopics, subtopicUpdates);
+  if (itemUpdates.length) await repository.putMany(STORES.verticalized, itemUpdates);
+  if (discUpdates.length) await repository.putMany(STORES.disciplines, discUpdates);
 
-  return { pct, complete: completeCount, total: items.length, player };
+  return {
+    pct,
+    complete: completeCount,
+    total: normalizedItems.length,
+    player,
+    writes: {
+      player: academicRecordChanged(currentPlayer, player) ? 1 : 0,
+      subtopics: subtopicUpdates.length,
+      verticalized: itemUpdates.length,
+      disciplines: discUpdates.length,
+    },
+    disciplines: normalizedDisciplines,
+  };
 }
 
 /**

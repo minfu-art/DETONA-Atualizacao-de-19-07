@@ -8,15 +8,28 @@ import { ProgressRepository } from '../repositories/progressRepository.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { hybridProgressAdapter } from '../supabase/hybridProgressAdapter.js';
 import * as localDb from '../core/db.js';
+import { isLocalDevelopment, requiresRemoteBackend } from '../config/appEnvironment.js';
+import { SupabaseEntitlementRepository } from '../supabase/entitlementRepository.js';
+import { CheckoutService, CheckoutUnavailableGateway, LocalDemoCheckoutGateway } from './checkoutService.js';
 
 const localAuth = new AuthService({
-  migrationService: new LegacyDataMigrationService(),
+  migrationService: isLocalDevelopment() ? new LegacyDataMigrationService() : null,
 });
 
 /** Auth: Supabase em CLOUD_MODE=hybrid; caso contrário IndexedDB local. */
 export const authService = new CloudAwareAuthService({ localAuth });
 
-export const libraryService = new LibraryService({ summaries: new ContestSummaryService() });
+const commercialMode = requiresRemoteBackend();
+const entitlementRepository = commercialMode ? new SupabaseEntitlementRepository() : undefined;
+const checkout = new CheckoutService({
+  gateway: commercialMode ? new CheckoutUnavailableGateway() : new LocalDemoCheckoutGateway(),
+});
+
+export const libraryService = new LibraryService({
+  ...(entitlementRepository ? { entitlements: entitlementRepository } : {}),
+  checkout,
+  summaries: new ContestSummaryService(),
+});
 export const contestDataMigrationService = new ContestDataMigrationService();
 
 /**

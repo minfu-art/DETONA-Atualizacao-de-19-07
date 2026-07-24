@@ -2,7 +2,12 @@
  * Camada de leitura/escrita do progresso no Supabase (tabela progress_records + espelhos tipados).
  */
 import { getSupabaseClient } from './client.js';
-import { COLLECTION_KEYS, recordKeyFor, SYNC_COLLECTIONS } from './collectionKeys.js';
+import {
+  COLLECTION_KEYS,
+  recordKeyFor,
+  shouldSyncCloudRecord,
+  SYNC_COLLECTIONS,
+} from './collectionKeys.js';
 
 function requireClient(client) {
   if (!client) throw new Error('SUPABASE_UNAVAILABLE');
@@ -120,7 +125,7 @@ export class ProgressCloud {
   }
 
   async upsertRecord(userId, contestId, collection, value, updatedAt = new Date().toISOString()) {
-    if (!SYNC_COLLECTIONS.includes(collection)) return null;
+    if (!shouldSyncCloudRecord(collection, value)) return null;
     const recordKey = recordKeyFor(collection, value);
     if (!recordKey) return null;
 
@@ -151,12 +156,13 @@ export class ProgressCloud {
   }
 
   async upsertMany(userId, contestId, collection, values) {
-    if (!values?.length) return [];
+    const syncable = (values || []).filter((value) => shouldSyncCloudRecord(collection, value));
+    if (!syncable.length) return [];
     const results = [];
     // lotes de 50 para não estourar payload
     const chunkSize = 50;
-    for (let i = 0; i < values.length; i += chunkSize) {
-      const chunk = values.slice(i, i + chunkSize);
+    for (let i = 0; i < syncable.length; i += chunkSize) {
+      const chunk = syncable.slice(i, i + chunkSize);
       await Promise.all(
         chunk.map(async (value) => {
           results.push(await this.upsertRecord(userId, contestId, collection, value));
@@ -209,7 +215,11 @@ export class ProgressCloud {
    * Baixa todos os registros de um concurso (ou de uma coleção).
    * @returns {Promise<Array<{collection:string,record_key:string,payload:object,updated_at:string}>>}
    */
-  async pullAll(userId, contestId, { collection = null, since = null } = {}) {
+  async pullAll(userId, contestId, {
+    collection = null,
+    since = null,
+    userCreatedQuestionsOnly = false,
+  } = {}) {
     const client = requireClient(await this.getClient());
     let query = client
       .from('progress_records')
@@ -218,6 +228,10 @@ export class ProgressCloud {
       .eq('contest_id', contestId);
 
     if (collection) query = query.eq('collection', collection);
+    else query = query.neq('collection', 'questions');
+    if (userCreatedQuestionsOnly) {
+      query = query.filter('payload->>is_user_created', 'eq', 'true');
+    }
     if (since) query = query.gt('updated_at', since);
 
     const { data, error } = await query;
@@ -227,7 +241,15 @@ export class ProgressCloud {
 
   /** Agrupa pull em mapa collection → rows[] (payloads). */
   async pullCollections(userId, contestId, options = {}) {
-    const rows = await this.pullAll(userId, contestId, options);
+    const [progressRows, userQuestionRows] = await Promise.all([
+      this.pullAll(userId, contestId, options),
+      this.pullAll(userId, contestId, {
+        ...options,
+        collection: 'questions',
+        userCreatedQuestionsOnly: true,
+      }),
+    ]);
+    const rows = [...progressRows, ...userQuestionRows];
     const map = Object.create(null);
     for (const name of SYNC_COLLECTIONS) map[name] = [];
     for (const row of rows) {

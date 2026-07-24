@@ -5,6 +5,7 @@ import { readFile, readdir } from 'node:fs/promises';
 const uiRoot = new URL('../app/js/ui/', import.meta.url);
 const cssUrl = new URL('../app/css/design-system.css', import.meta.url);
 const mainCssUrl = new URL('../app/css/main.css', import.meta.url);
+const dashboardCssUrl = new URL('../app/css/dashboard-jrpg.css', import.meta.url);
 const appUrl = new URL('../app/js/app.js', import.meta.url);
 const indexUrl = new URL('../app/index.html', import.meta.url);
 const battleUiUrl = new URL('../app/js/ui/battleArena.js', import.meta.url);
@@ -130,7 +131,7 @@ test('desempenho possui rota e serviço próprios derivados apenas de dados reai
   for (const store of ['player', 'disciplines', 'subtopics', 'verticalized', 'reviewQueue', 'routineBlocks', 'studySessions']) {
     assert.match(service, new RegExp(`STORES\\.${store}`));
   }
-  assert.match(performance, /Desafio do edital/);
+  assert.match(performance, /Domínio do edital/);
   assert.doesNotMatch(performance + service, /ranking|moeda|checkout|applyXp/i);
 });
 
@@ -178,7 +179,7 @@ test('mapa inicia na visão geral sem abrir Português automaticamente', async (
   assert.doesNotMatch(source, /let openId = disciplines\[0\]/);
   assert.match(source, /Escolha uma disciplina para abrir sua trilha/);
   assert.match(source, /<h3>\$\{escapeHtml\(d\.name\)\}<\/h3>/);
-  assert.match(source, /semanticIcon\('discipline'/);
+  assert.match(source, /discIcon\(d\.id/);
   assert.doesNotMatch(source, /\$\{d\.biome \|\| d\.name\}|\$\{d\.icon\}/);
 });
 
@@ -194,25 +195,31 @@ test('personagem possui animação de repouso na tela inicial e na batalha', asy
 test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáveis', async () => {
   const source = await readFile(homeUrl, 'utf8');
   const css = await readFile(cssUrl, 'utf8');
+  const dashboardCss = await readFile(dashboardCssUrl, 'utf8');
   assert.match(source, /renderTodayCommandCenter/);
-  assert.match(source, /Por que agora\?/);
-  assert.match(source, /Revisões vencidas/);
+  assert.match(source, /Sua próxima missão/);
+  assert.match(source, /Revisões pendentes/);
   assert.match(source, /Progresso do dia/);
-  assert.match(source, /Contagem regressiva/);
-  assert.match(source, /Sua evolução/);
+  assert.match(source, /FALTAM/);
+  assert.match(source, /mentorCommunication/);
+  assert.match(source, /officialMentorHtml/);
+  assert.doesNotMatch(source, /Conquistas recentes/);
+  assert.match(dashboardCss, /\.dj-mentor/);
   assert.match(css, /today-mission/);
   assert.match(css, /today-grid/);
   assert.match(css, /today-evolution/);
 });
 
-test('resultado do desafio comunica domínio e não recompensa XP', async () => {
+test('resultado do desafio comunica domínio e XP sem misturar LV acadêmico', async () => {
   const [ui, core] = await Promise.all([readFile(battleUiUrl, 'utf8'), readFile(battleCoreUrl, 'utf8')]);
   for (const label of [
     'Melhor resultado anterior', 'Novo resultado', 'Domínio atualizado', 'Barra da disciplina',
     'LV global', 'Quantidade de tentativas', 'Questões adicionadas à revisão',
   ]) assert.match(ui, new RegExp(label));
-  assert.doesNotMatch(ui, /summary\.xp|\+\$\{[^}]*\} XP/);
-  assert.doesNotMatch(core, /applyXp|CORRECT_ANSWER|DAILY_BATTLE|battleCloseBonus/);
+  assert.match(ui, /XP da jornada/);
+  assert.match(ui, /summary\.xpEarned/);
+  assert.match(core, /grantBattleXp/);
+  assert.doesNotMatch(core, /player\.level\s*[+*/-]?=/);
 });
 
 test('fundo da arena resolve a partir da folha de estilos', async () => {
@@ -258,5 +265,5 @@ test('review presents a strategic plan without changing the queue engine', async
     assert.match(css, new RegExp(marker));
   }
   assert.match(ui, /review-empty__signals/);
-  assert.match(home, /today-review.*removeAttribute\('disabled'\)/s);
+  assert.match(home, /today-review.*addEventListener\('click'.*startReview\(\)/s);
 });

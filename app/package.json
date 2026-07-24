@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
+    "build:env": "node scripts/generate-runtime-env.mjs",
     "validate:questions": "node scripts/validate-questions.js",
+    "validate:published-questions": "node scripts/validatePublishedQuestions.mjs",
+    "validate:pwa": "node scripts/validate-pwa-assets.js",
     "sanitize:questions": "node scripts/sanitize-question-sources.js",
     "banco:criar": "node scripts/criarBancoQuestoes.mjs",
     "banco:template": "node scripts/criarBancoQuestoes.mjs --template --disciplina \"Língua Portuguesa\"",

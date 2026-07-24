@@ -2,7 +2,9 @@
  * Dashboard Home — identidade artística da mockup JRPG
  * Layout: top HUD · herói + radar · atalhos · edital · status/missão · assuntos
  */
-import { $, editalBarClass, toast, todayStr, escapeHtml } from './helpers.js';
+import {
+  $, closeModal, editalBarClass, toast, todayStr, escapeHtml, openModal,
+} from './helpers.js';
 import { getPlayer } from '../core/seed.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
@@ -22,6 +24,21 @@ import { getTodayRoutine, metaProgress, metaPreviewText, goalTypeLabel } from '.
 import { ensureWellbeingHabits, getTodayWellbeingState, toggleHabit } from '../core/wellbeing.js';
 import { createReviewSession, getReviewDashboardData } from '../services/reviewService.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
+import {
+  ANNOUNCEMENT_ROUTES,
+  announcementService,
+  canDismissAnnouncement,
+} from '../services/announcementService.js';
+import { getMentorMessage } from '../services/mentorMessageService.js';
+import {
+  announcementModalDetailsHtml,
+  automaticMentorHtml,
+  officialMentorHtml,
+} from './mentorCommunication.js';
+import { refreshEmblems } from '../services/emblemService.js';
+import { emblemArt } from './emblems/emblemArt.js';
+
+export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
 export async function renderHome(root, navigate, ctx) {
   const player = await getPlayer();
@@ -56,6 +73,7 @@ export async function renderHome(root, navigate, ctx) {
   const xpPct = Math.min(100, Math.round(((player.xp || 0) / xpNeed) * 100));
   const editalPct = player.edital_completion_pct || 0;
   const days = daysUntilExam(player.exam_date);
+  const emblemState = await refreshEmblems({ daysUntilExam: days ?? 120 });
   const stage = getTitle(player.level);
   const phrase = randomPhrase(!!player.endgame_mode);
   const rank = rankLabel(player.level, editalPct);
@@ -114,7 +132,7 @@ export async function renderHome(root, navigate, ctx) {
     ? Math.round(discBars.reduce((s, d) => s + (Number(d.pct) || 0), 0) / discBars.length)
     : 0;
 
-  renderTodayCommandCenter(root, navigate, ctx, {
+  await renderTodayCommandCenter(root, navigate, ctx, {
     player,
     stage,
     rank,
@@ -133,11 +151,11 @@ export async function renderHome(root, navigate, ctx) {
     dailyEnemyDiscId,
     discBars,
     reviewData,
-    cards,
     phrase,
     log,
     avgAccuracy,
     wbState,
+    emblemState,
   });
   return;
 
@@ -425,14 +443,88 @@ export async function renderHome(root, navigate, ctx) {
   }
 }
 
-function renderTodayCommandCenter(root, navigate, ctx, data) {
+function safeHttpsUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+export function openAnnouncementModal(announcement, {
+  player = {},
+  userId,
+  navigate,
+  onRead = () => {},
+  onDismiss = () => {},
+} = {}) {
+  if (!announcement) return null;
+  const internalRoute = announcement.cta_type === 'internal_route'
+    && ANNOUNCEMENT_ROUTES.includes(announcement.cta_value)
+    ? announcement.cta_value
+    : null;
+  const externalUrl = announcement.cta_type === 'external_url'
+    ? safeHttpsUrl(announcement.cta_value)
+    : null;
+  const body = announcementModalDetailsHtml(player, announcement);
+  const cta = internalRoute
+    ? `<button type="button" class="btn btn-primary" id="announcement-cta">${escapeHtml(announcement.cta_label || 'Abrir')}</button>`
+    : externalUrl
+      ? `<a class="btn btn-primary" id="announcement-external-cta" href="${escapeHtml(externalUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(announcement.cta_label || 'Abrir')}</a>`
+      : '';
+  const dismiss = canDismissAnnouncement(announcement)
+    ? '<button type="button" class="btn" id="announcement-dismiss">Não mostrar novamente</button>'
+    : '';
+  const modal = openModal(
+    announcement.title,
+    body,
+    `<button type="button" class="btn btn-secondary" id="announcement-close">Fechar</button>${dismiss}${cta}`,
+  );
+  $('#announcement-close', modal)?.addEventListener('click', closeModal);
+  $('#announcement-cta', modal)?.addEventListener('click', () => {
+    closeModal();
+    navigate?.(internalRoute);
+  });
+  let readPromise = Promise.resolve();
+  $('#announcement-dismiss', modal)?.addEventListener('click', async () => {
+    if (!userId || !globalThis.confirm('Não mostrar esta mensagem novamente?')) return;
+    try {
+      await readPromise;
+      await announcementService.dismissAnnouncement(userId, announcement.id);
+      closeModal();
+      await onDismiss();
+    } catch (error) {
+      console.warn('[home] falha ao dispensar aviso', error?.message || error);
+      toast('Não foi possível dispensar a mensagem agora.');
+    }
+  });
+
+  if (userId) {
+    if (!announcement.read?.read_at) onRead();
+    readPromise = announcementService.markAnnouncementRead(userId, announcement.id)
+      .then((read) => {
+        announcement.read = read;
+      })
+      .catch((error) => console.warn('[home] falha ao registrar leitura do aviso', error?.message || error));
+  }
+  return modal;
+}
+
+async function renderTodayCommandCenter(root, navigate, ctx, data) {
   const {
     player, stage, rank, totalXp, xpNeed, xpPct, editalPct, days,
     routine, meta, planned, doneToday, missionLeft, missionFocus,
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
-    cards = [], phrase = '', log = null, avgAccuracy = 0, wbState = null,
+    phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
   } = data;
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
+  const hudInsignias = (emblemState?.insignias || []).slice(0, 5);
+  const insigniaHud = hudInsignias.map((progress) => emblemArt(progress.currentInsignia, {
+    className: 'insignia-art--hud',
+    size: 'small',
+    state: 'current',
+  })).join('');
 
   let mission = {
     type: 'edital',
@@ -512,43 +604,6 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
       <p>Nenhuma revisão crítica no momento.</p>
     </div>`;
 
-  const recentCards = (cards || []).slice(-3).reverse();
-  const achRows = recentCards.length
-    ? recentCards.map((c) => `
-        <div class="dj-ach-row">
-          <span class="dj-ach-row__ico">${icon('medal', 'ico--sm')}</span>
-          <span class="dj-ach-row__copy">
-            <strong>${escapeHtml(shortLabel(c.title || c.name || 'Conquista', 26))}</strong>
-            <small>${escapeHtml(shortLabel(c.description || c.subtitle || stage, 32))}</small>
-          </span>
-          <em>+${Number(c.xp || c.xp_reward || 50)} XP</em>
-        </div>`)
-    : `
-      <div class="dj-ach-row">
-        <span class="dj-ach-row__ico">${icon('flame', 'ico--sm')}</span>
-        <span class="dj-ach-row__copy">
-          <strong>Sequência de ${player.streak_days || 0} dias</strong>
-          <small>Mantenha o ritmo diário</small>
-        </span>
-        <em>+${Math.min(150, 20 + (player.streak_days || 0) * 5)} XP</em>
-      </div>
-      <div class="dj-ach-row">
-        <span class="dj-ach-row__ico">${icon('target', 'ico--sm')}</span>
-        <span class="dj-ach-row__copy">
-          <strong>${doneToday} da meta de hoje</strong>
-          <small>${meta.complete ? 'Meta cumprida' : 'Continue a missão'}</small>
-        </span>
-        <em>+${log?.xp_earned || xpReward} XP</em>
-      </div>
-      <div class="dj-ach-row">
-        <span class="dj-ach-row__ico">${icon('flag', 'ico--sm')}</span>
-        <span class="dj-ach-row__copy">
-          <strong>Edital ${Number(editalPct).toFixed(0)}%</strong>
-          <small>Rank ${escapeHtml(rank)}</small>
-        </span>
-        <em>Lv ${player.level}</em>
-      </div>`;
-
   const battlesToday = log?.domain_challenges_completed || 0;
   const dayLabel = goalTypeLabel(routine?.goal_type) || 'questões';
 
@@ -574,6 +629,36 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
     </button>
   `).join('');
 
+  const automaticMentor = getMentorMessage({
+    player,
+    meta,
+    routine,
+    reviewData,
+    wellbeingState: wbState,
+    daysUntilExam: days,
+    missionFocus: dailyEnemyDiscId ? { id: dailyEnemyDiscId, name: missionFocus } : null,
+    missionLeft,
+    lastStudyDate: player.last_study_date,
+    studiedToday: player.last_study_date === todayStr()
+      || Number(log?.completed_amount) > 0
+      || Number(log?.domain_challenges_completed) > 0,
+    currentDate: todayStr(),
+  });
+  let officialAnnouncement = null;
+  try {
+    if (ctx.user?.id && ctx.contest?.id) {
+      officialAnnouncement = await announcementService.getCurrentHomeAnnouncement({
+        userId: ctx.user.id,
+        contestId: ctx.contest.id,
+      });
+    }
+  } catch (error) {
+    console.warn('[home] avisos indisponíveis; usando conselho automático', error?.message || error);
+  }
+  const mentorHtml = officialAnnouncement
+    ? officialMentorHtml(player, officialAnnouncement)
+    : automaticMentorHtml(player, automaticMentor);
+
   root.innerHTML = `
     <div class="dj">
       <header class="dj-top">
@@ -593,6 +678,14 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         <div class="dj-hud__pill dj-hud__pill--fire">
           <span class="dj-hud__ico">${icon('flame')}</span>
           <div><small>Sequência</small><strong>${player.streak_days || 0} <em>dias</em></strong></div>
+        </div>
+        <div class="dj-hud__pill dj-hud__pill--emblems">
+          <div class="dj-hud__emblems" aria-label="Cinco linhas de insígnias evolutivas">
+            ${insigniaHud}
+          </div>
+          <div class="dj-hud__insignia-copy"><small>Insígnias</small>
+            <button type="button" class="dj-hud__link" id="today-emblems">Ver galeria</button>
+          </div>
         </div>
         <div class="dj-hud__pill dj-hud__pill--xp">
           <span class="dj-hud__ico">${icon('gem')}</span>
@@ -709,14 +802,7 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
       </section>
 
-      <section class="dj-card dj-card--ach" aria-labelledby="dj-ach-title">
-        <div class="dj-card__head">
-          <span class="dj-card__ico">${icon('trophy')}</span>
-          <h2 id="dj-ach-title">Conquistas recentes</h2>
-        </div>
-        <div class="dj-ach-list">${achRows}</div>
-        <button type="button" class="dj-link" id="today-achievements">Ver todas as conquistas ${icon('chevronRight', 'ico--sm')}</button>
-      </section>
+      ${mentorHtml}
     </div>`;
 
   mountPageContainer(root, { variant: 'today' });
@@ -735,7 +821,7 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
     } catch (error) { toast(error.message || 'Ainda não há questões disponíveis para esta missão.'); }
   };
 
-  $('#today-primary', root)?.addEventListener('click', () => {
+  const startPrimaryMission = () => {
     SFX.click();
     if (mission.type === 'review') startReview();
     else if (mission.type === 'battle') startBattle();
@@ -745,15 +831,40 @@ function renderTodayCommandCenter(root, navigate, ctx, data) {
         navigate('topicTree');
       } else navigate('edital');
     }
-  });
+  };
+  $('#today-primary', root)?.addEventListener('click', startPrimaryMission);
   $('#today-review', root)?.addEventListener('click', () => { SFX.click(); startReview(); });
   root.querySelectorAll('[data-review-go]').forEach((btn) => {
     btn.addEventListener('click', () => { SFX.click(); startReview(); });
   });
   $('#today-routine', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
-  $('#today-achievements', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
+  $('#today-emblems', root)?.addEventListener('click', () => {
+    SFX.click();
+    ctx.profileSection = 'emblems';
+    navigate('profile');
+  });
   $('#today-wellbeing', root)?.addEventListener('click', () => { SFX.click(); navigate('wellbeing'); });
+  $('#mentor-action', root)?.addEventListener('click', () => {
+    SFX.click();
+    if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();
+    else if (automaticMentor.actionType === 'review') navigate('review');
+    else if (automaticMentor.actionType === 'performance') navigate('performance');
+    else if (automaticMentor.actionType === 'wellbeing') navigate('wellbeing');
+    else if (automaticMentor.actionType === 'weak_discipline') {
+      ctx.disciplineId = automaticMentor.actionValue || dailyEnemyDiscId;
+      navigate('topicTree');
+    }
+  });
+  $('#mentor-read-announcement', root)?.addEventListener('click', () => {
+    openAnnouncementModal(officialAnnouncement, {
+      player,
+      userId: ctx.user?.id,
+      navigate,
+      onRead: () => $('#mentor-new-indicator', root)?.remove(),
+      onDismiss: () => renderHome(root, navigate, ctx),
+    });
+  });
   root.querySelectorAll('[data-prep-habit]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       SFX.click();

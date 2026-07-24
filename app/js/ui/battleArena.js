@@ -1,5 +1,5 @@
 import { $, starsHtml, formatStars, escapeHtml, escapeAttr } from './helpers.js';
-import { answerQuestion, finalizeBattle } from '../core/battle.js?v=69';
+import { answerQuestion, finalizeBattle } from '../core/battle.js?v=70';
 import { SFX } from '../core/audio.js';
 import { getPlayer } from '../core/seed.js';
 import { heroImgHtml } from './heroAssets.js';
@@ -340,6 +340,8 @@ export async function renderBattle(root, navigate, ctx) {
             <li>LV global: ${summary.levelBefore} → <strong>${summary.levelAfter}</strong> (${formatDelta(summary.levelImpact, false)})</li>
             <li>Quantidade de tentativas: <strong>${summary.attempts}</strong></li>
             <li>Questões adicionadas à revisão: <strong>${summary.reviewAdded}</strong></li>
+            <li>XP da jornada: <strong>+${summary.xpEarned} XP</strong></li>
+            ${summary.activity?.valid ? `<li>Tempo registrado na disciplina: <strong>${summary.activityMinutes || 1} min</strong></li>` : ''}
           </ul>
           ${summary.newCard ? `
             <div class="mvp-card mb-8" style="margin:0 auto;max-width:200px">

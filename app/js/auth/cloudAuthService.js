@@ -6,25 +6,38 @@ import { AuthService, canAccessDeveloperRoute, canAccessInternalRoute, isDevelop
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { supabaseAuthAdapter } from '../supabase/authAdapter.js';
 import { clearActiveUserId } from './activeUser.js';
+import { isLocalDevelopment, requiresRemoteBackend } from '../config/appEnvironment.js';
+import { assertCloudReadyForEnvironment } from '../config/cloudConfig.js';
 
 export class CloudAwareAuthService {
   constructor({
     localAuth = new AuthService(),
     cloudAuth = supabaseAuthAdapter,
     cloudEnabled = isCloudEnabled,
+    localFallbackAllowed = isLocalDevelopment,
+    cloudRequired = requiresRemoteBackend,
   } = {}) {
     this.localAuth = localAuth;
     this.cloudAuth = cloudAuth;
     this.cloudEnabled = cloudEnabled;
+    this.localFallbackAllowed = localFallbackAllowed;
+    this.cloudRequired = cloudRequired;
     this.currentUser = null;
-    this.mode = 'local';
+    this.mode = this.localFallbackAllowed() ? 'local' : 'none';
   }
 
   #useCloud() {
     return this.cloudEnabled() && this.cloudAuth?.isAvailable?.() !== false;
   }
 
+  #assertAuthAvailable() {
+    if (!this.cloudRequired()) return;
+    assertCloudReadyForEnvironment();
+    if (!this.#useCloud()) throw new Error('Autenticação remota indisponível neste ambiente.');
+  }
+
   async register(input) {
+    this.#assertAuthAvailable();
     if (this.#useCloud()) {
       const user = await this.cloudAuth.register(input);
       this.currentUser = user?.pendingEmailConfirmation ? null : user;
@@ -39,6 +52,7 @@ export class CloudAwareAuthService {
       }
       return this.currentUser;
     }
+    if (!this.localFallbackAllowed()) throw new Error('Autenticação local bloqueada neste ambiente.');
     const user = await this.localAuth.register(input);
     this.currentUser = user;
     this.mode = 'local';
@@ -46,12 +60,14 @@ export class CloudAwareAuthService {
   }
 
   async login(input) {
+    this.#assertAuthAvailable();
     if (this.#useCloud()) {
       const user = await this.cloudAuth.login(input);
       this.currentUser = user;
       this.mode = 'cloud';
       return user;
     }
+    if (!this.localFallbackAllowed()) throw new Error('Autenticação local bloqueada neste ambiente.');
     const user = await this.localAuth.login(input);
     this.currentUser = user;
     this.mode = 'local';
@@ -59,6 +75,7 @@ export class CloudAwareAuthService {
   }
 
   async restoreSession() {
+    this.#assertAuthAvailable();
     if (this.#useCloud()) {
       try {
         const user = await this.cloudAuth.restoreSession();
@@ -69,9 +86,11 @@ export class CloudAwareAuthService {
         }
       } catch (err) {
         console.warn('[auth] restore cloud session failed', err?.message || err);
+        if (!this.localFallbackAllowed()) throw err;
       }
       // se hybrid mas sem sessão cloud, tenta local (migração)
     }
+    if (!this.localFallbackAllowed()) return null;
     const user = await this.localAuth.restoreSession();
     this.currentUser = user;
     this.mode = user ? 'local' : 'none';
@@ -86,17 +105,21 @@ export class CloudAwareAuthService {
         clearActiveUserId();
       }
     }
-    try {
-      await this.localAuth.logout();
-    } catch {
-      clearActiveUserId();
+    if (this.localFallbackAllowed()) {
+      try {
+        await this.localAuth.logout();
+      } catch {
+        clearActiveUserId();
+      }
     }
     this.currentUser = null;
     this.mode = 'none';
   }
 
   getCurrentUser() {
-    return this.currentUser || this.localAuth.getCurrentUser?.() || null;
+    return this.currentUser
+      || (this.localFallbackAllowed() ? this.localAuth.getCurrentUser?.() : null)
+      || null;
   }
 
   isAuthenticated() {

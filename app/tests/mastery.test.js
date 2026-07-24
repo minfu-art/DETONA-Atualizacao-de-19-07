@@ -40,6 +40,15 @@ test('barra da disciplina usa média dos seus subtópicos', () => {
   assert.equal(disciplineMastery(subs, 'port'), 45);
 });
 
+test('um subtópico em 100 e outro em 40 são diluídos por todos os subtópicos da disciplina', () => {
+  const subs = [
+    { discipline_id: 'port', best_accuracy: 100 },
+    { discipline_id: 'port', best_accuracy: 40 },
+    ...Array.from({ length: 8 }, () => ({ discipline_id: 'port', best_accuracy: 0 })),
+  ];
+  assert.equal(disciplineMastery(subs, 'port'), 14);
+});
+
 test('nível global pesa subtópicos diretamente, não disciplinas', () => {
   const subs = [...Array(20).fill(0).map(() => ({ discipline_id: 'port', best_accuracy: 100 })), ...Array(5).fill(0).map(() => ({ discipline_id: 'info', best_accuracy: 0 }))];
   assert.equal(globalMastery(subs), 80);
@@ -120,7 +129,7 @@ test('tentativa inferior não reduz as estrelas do melhor resultado', () => {
 
 test('batalha diaria nao consulta subtopico sem chave', async () => {
   const source = await readFile(new URL('../js/core/battle.js', import.meta.url), 'utf8');
-  assert.match(source, /let subtopic = opts\.daily \? null : await getById\(STORES\.subtopics, subtopicId\)/);
+  assert.match(source, /let subtopic = opts\.daily \? null : await progressRepository\.getById\(STORES\.subtopics, subtopicId\)/);
 });
 
 test('resultado inferior preserva domínio legado mesmo sem total histórico', () => {

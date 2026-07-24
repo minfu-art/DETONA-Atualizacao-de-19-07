@@ -345,9 +345,9 @@ test('32 integração com fila: bloco revisao_fila aponta módulo review', async
   assert.equal(moduleTargetForActivity('questoes'), 'map');
 });
 
-test('33-35 rotina não concede XP / domínio / estrelas', () => {
+test('33-35 foco válido concede XP próprio sem alterar domínio, estrelas ou LV', () => {
   const effects = RoutineService.academicSideEffects();
-  assert.equal(effects.grantsXp, false);
+  assert.equal(effects.grantsXp, true);
   assert.equal(effects.changesMastery, false);
   assert.equal(effects.changesStars, false);
   assert.equal(effects.changesLevel, false);
@@ -480,7 +480,7 @@ test('serviço: fluxo criar, parcial, reagendar e fechar dia', async () => {
   assert.equal(fin.actualMinutes, 10);
   const close = await svc.closeDay(today);
   assert.ok(close.state);
-  assert.equal(RoutineService.academicSideEffects().grantsXp, false);
+  assert.equal(RoutineService.academicSideEffects().grantsXp, true);
 });
 
 test('alertas de planejamento são sugestões', () => {

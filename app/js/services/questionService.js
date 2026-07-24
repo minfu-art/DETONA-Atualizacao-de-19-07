@@ -1,5 +1,6 @@
 import { normalizeQuestion } from '../core/questionSchema.js';
 import { questionRepository } from '../repositories/questionRepository.js';
+import { resolveSubtopicAlias } from '../config/subtopicAliases.js';
 
 const DISCIPLINE_MAP = Object.freeze({
   analise_de_dados: 'dados', estatistica: 'estat', contabilidade: 'contab', contabilidade_geral: 'contab',
@@ -20,7 +21,9 @@ function legacyDisciplineId(question) {
 }
 
 export function resolveLegacySubtopicId(question) {
-  if (question.subtopic_id || question.topicoEditalId) return question.subtopic_id || question.topicoEditalId;
+  if (question.subtopic_id || question.topicoEditalId) {
+    return resolveSubtopicAlias(question.subtopic_id || question.topicoEditalId);
+  }
   const discipline = legacyDisciplineId(question);
   const subject = `${question.assunto || ''} ${question.subtopico || ''}`.toLocaleLowerCase('pt-BR');
   if (discipline === 'dados') {

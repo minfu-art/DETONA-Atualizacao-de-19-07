@@ -2,6 +2,7 @@
  * Rotina Inteligente V2 — schema, defaults e normalização (puro, sem I/O).
  * Schema version: 1
  */
+import { localDateKey } from '../localDate.js';
 
 export const ROUTINE_SCHEMA_VERSION = 2;
 
@@ -50,11 +51,7 @@ export function nowIso() {
 }
 
 export function dateKey(d = new Date()) {
-  if (typeof d === 'string') return d.slice(0, 10);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  return localDateKey(d);
 }
 
 export function makeId(prefix = 'rt') {
