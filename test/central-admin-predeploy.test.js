@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
@@ -8,8 +9,6 @@ import { validateEditorialRequest } from '../supabase/functions/admin-editorial/
 import { validateMediaRequest } from '../supabase/functions/admin-media/core.js';
 import { validateSiteRequest } from '../supabase/functions/admin-site/core.js';
 import { validateSettingsRequest } from '../supabase/functions/admin-settings/core.js';
-
-const INITIAL_HEAD = '32e05fc7bd8b9027c98e62deab7a20c4fbff8bb3';
 
 async function source(relative) {
   return readFile(new URL(relative, import.meta.url), 'utf8');
@@ -26,21 +25,19 @@ test('migration 010 faz bootstrap idempotente dos três concursos e cria a FK pr
   assert.doesNotMatch(sql, /\bdelete\s+from\b|\bdrop\s+table\b/i);
 });
 
-test('migrations 001 a 006 permanecem byte a byte inalteradas', () => {
-  const paths = Array.from({ length: 6 }, (_, index) =>
-    `supabase/migrations/00${index + 1}_${[
-      'detona_schema',
-      'security_hardening',
-      'explicit_data_api_access',
-      'fix_function_search_path',
-      'administrative_announcements',
-      'admin_access_audit',
-    ][index]}.sql`);
-  const diff = execFileSync('git', ['diff', INITIAL_HEAD, '--', ...paths], {
-    cwd: new URL('..', import.meta.url),
-    encoding: 'utf8',
-  });
-  assert.equal(diff, '');
+test('migrations 001 a 006 permanecem byte a byte inalteradas', async () => {
+  const expectedHashes = {
+    '001_detona_schema.sql': '630b6559d64ac584ca0951e25628dd48c131856b6124cb97b8f762ca05ab7e61',
+    '002_security_hardening.sql': '8cffc50bdeeb7a68a1e7ceacaa1bef6d9f5069f31bb944fe7bbfb0fe6b5dd3c6',
+    '003_explicit_data_api_access.sql': 'c8bda05a0322cf5327f2658fef078ba3b4ea2f797f723addf1a65be3357ecef7',
+    '004_fix_function_search_path.sql': '9ecc46dc22d9b27ff91a64ab23256b354054647c3f81a07716831126eabfbca6',
+    '005_administrative_announcements.sql': 'e99ab25af79daca8abed53a19c0b227792e472a0d0019142167390048fa652ef',
+    '006_admin_access_audit.sql': 'de60d88d00558ece5fd6a5fd8868d1d103006dda4f97505829786d38680296dc',
+  };
+  for (const [name, expected] of Object.entries(expectedHashes)) {
+    const contents = await readFile(new URL(`../supabase/migrations/${name}`, import.meta.url));
+    assert.equal(createHash('sha256').update(contents).digest('hex'), expected, name);
+  }
 });
 
 test('núcleos das cinco funções rejeitam search maliciosa e campos inesperados', () => {
