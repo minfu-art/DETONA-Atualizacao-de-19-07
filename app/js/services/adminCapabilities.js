@@ -14,6 +14,14 @@ export const NO_CAPABILITIES = Object.freeze({
   archive: false,
 });
 
+export const OPERATIONAL_CAPABILITIES = Object.freeze({
+  read: true,
+  create: true,
+  update: true,
+  publish: true,
+  archive: true,
+});
+
 export function normalizeAdminCapabilities(value, fallback = NO_CAPABILITIES) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return { ...fallback };
   return Object.fromEntries(Object.keys(NO_CAPABILITIES).map((key) => [key, value[key] === true]));

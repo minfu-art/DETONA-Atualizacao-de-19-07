@@ -3,22 +3,14 @@ import { escapeHtml } from '../ui/helpers.js';
 export const ADMIN_NAV_ITEMS = Object.freeze([
   ['overview', 'Visão geral'],
   ['contests', 'Concursos'],
-  ['curriculum', 'Editais e conteúdos'],
-  ['questions', 'Banco de questões'],
-  ['media', 'Avatares e mídia'],
   ['students', 'Alunos e acessos'],
   ['messages', 'Mensagens'],
-  ['landing', 'Landing pages'],
-  ['commercial', 'Comercial'],
-  ['analytics', 'Analytics'],
   ['settings', 'Configurações'],
   ['audit', 'Auditoria'],
 ]);
 
 const ICONS = Object.freeze({
-  overview: '◫', contests: '◆', curriculum: '≡', questions: '?', media: '◉',
-  students: '♙', messages: '✦', landing: '▱', commercial: '$', analytics: '⌁',
-  settings: '⚙', audit: '✓',
+  overview: '◫', contests: '◆', students: '♙', messages: '✦', settings: '⚙', audit: '✓',
 });
 
 export function mountAdminShell({ ctx, navigate, onLogout }) {

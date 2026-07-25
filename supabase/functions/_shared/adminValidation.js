@@ -63,3 +63,7 @@ export function safeHttpsUrl(value, label = 'url', { optional = false } = {}) {
 export const READ_ONLY_CAPABILITIES = Object.freeze({
   read: true, create: false, update: false, publish: false, archive: false,
 });
+
+export const OPERATIONAL_CAPABILITIES = Object.freeze({
+  read: true, create: true, update: true, publish: true, archive: true,
+});
