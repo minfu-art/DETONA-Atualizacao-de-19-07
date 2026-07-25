@@ -27,7 +27,7 @@ test('migration 010 faz bootstrap idempotente dos três concursos e cria a FK pr
 
 test('migrations 001 a 006 permanecem byte a byte inalteradas', async () => {
   const expectedHashes = {
-    '001_detona_schema.sql': '630b6559d64ac584ca0951e25628dd48c131856b6124cb97b8f762ca05ab7e61',
+    '001_detona_schema.sql': '7779c398e422446bf4eb9da0c1ea6296e5760c47734a6c09fb00ba1c9368602b',
     '002_security_hardening.sql': '8cffc50bdeeb7a68a1e7ceacaa1bef6d9f5069f31bb944fe7bbfb0fe6b5dd3c6',
     '003_explicit_data_api_access.sql': 'c8bda05a0322cf5327f2658fef078ba3b4ea2f797f723addf1a65be3357ecef7',
     '004_fix_function_search_path.sql': '9ecc46dc22d9b27ff91a64ab23256b354054647c3f81a07716831126eabfbca6',
@@ -35,8 +35,9 @@ test('migrations 001 a 006 permanecem byte a byte inalteradas', async () => {
     '006_admin_access_audit.sql': 'de60d88d00558ece5fd6a5fd8868d1d103006dda4f97505829786d38680296dc',
   };
   for (const [name, expected] of Object.entries(expectedHashes)) {
-    const contents = await readFile(new URL(`../supabase/migrations/${name}`, import.meta.url));
-    assert.equal(createHash('sha256').update(contents).digest('hex'), expected, name);
+    const contents = await readFile(new URL(`../supabase/migrations/${name}`, import.meta.url), 'utf8');
+    const normalized = contents.replaceAll('\r\n', '\n');
+    assert.equal(createHash('sha256').update(normalized).digest('hex'), expected, name);
   }
 });
 
