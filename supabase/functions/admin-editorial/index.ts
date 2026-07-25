@@ -16,12 +16,6 @@ async function audit(admin: any, actorId: string, contestId: string, action: str
   if (error) throw error;
 }
 
-async function hashJson(value: unknown) {
-  const bytes = new TextEncoder().encode(JSON.stringify(value));
-  const digest = await crypto.subtle.digest('SHA-256', bytes);
-  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
-}
-
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
   if (request.method === 'OPTIONS') return origins.has(origin) ? respond(204, {}, origin) : respond(403, { error: 'origin_not_allowed' });
@@ -112,35 +106,15 @@ Deno.serve(async (request) => {
       return respond(200, { questions: data }, origin);
     }
     if (action === 'generate_snapshot') {
-      const { data: questions, error: questionError } = await admin.from('editorial_questions').select('payload')
-        .eq('contest_id', body.contestId).eq('status', 'approved').order('source_question_id');
-      if (questionError) throw questionError;
-      if (!questions.length) return respond(409, { error: 'approved_questions_required' }, origin);
-      const contentHash = await hashJson(questions.map(({ payload }: { payload: unknown }) => payload));
-      const { data, error } = await admin.from('question_publication_versions').insert({
-        contest_id: body.contestId,
-        version: body.version,
-        item_count: questions.length,
-        content_hash: contentHash,
-        storage_path: `database://${body.contestId}/${body.version}`,
-        status: 'generated',
-      }).select('*').single();
+      const { data, error } = await admin.rpc('admin_generate_question_snapshot', {
+        target_contest_id: body.contestId,
+        snapshot_version: body.version,
+        actor_id: userData.user.id,
+      });
       if (error) throw error;
-      await audit(admin, userData.user.id, body.contestId, action, data.id, { item_count: questions.length, content_hash: contentHash });
       return respond(201, { version: data }, origin);
     }
-    const status = action === 'publish_snapshot' ? 'published' : 'rolled_back';
-    const timestamp = action === 'publish_snapshot' ? { published_at: new Date().toISOString(), published_by: userData.user.id } : { rolled_back_at: new Date().toISOString() };
-    const { data, error } = await admin.from('question_publication_versions').update({ status, ...timestamp })
-      .eq('id', body.versionId).eq('contest_id', body.contestId).select('*').single();
-    if (error) throw error;
-    if (action === 'publish_snapshot') {
-      const { error: questionError } = await admin.from('editorial_questions').update({ status: 'published' })
-        .eq('contest_id', body.contestId).eq('status', 'approved');
-      if (questionError) throw questionError;
-    }
-    await audit(admin, userData.user.id, body.contestId, action, body.versionId);
-    return respond(200, { version: data }, origin);
+    return respond(409, { error: 'snapshot_publication_managed_by_content_package' }, origin);
   } catch (error) {
     return respond(400, { error: error instanceof Error ? error.message : 'invalid_request' }, origin);
   }

@@ -10,7 +10,8 @@ import {
 export const CONTEST_VISUAL_TYPES = Object.freeze(['battle_avatar', 'success', 'error', 'attention', 'cover']);
 export const MEDIA_ACTIONS = Object.freeze([
   'list_collections', 'list_contest_assets', 'create_signed_upload', 'register_asset',
-  'remove_draft_asset', 'save_contest_visual', 'publish_contest_visual',
+  'cancel_pending_upload', 'cleanup_expired_uploads', 'remove_draft_asset',
+  'save_contest_visual', 'publish_contest_visual',
   'create_collection', 'save_stage', 'publish_collection',
 ]);
 
@@ -102,6 +103,18 @@ export function validateMediaRequest(input) {
         requireTransparency: asset.requireTransparency !== false,
       },
     };
+  }
+  if (action === 'cancel_pending_upload') {
+    assertExactKeys(body, ['action', 'contestId', 'storagePath'], ['contestId', 'storagePath']);
+    return {
+      action,
+      contestId: safeId(body.contestId, 'contest_id'),
+      storagePath: safeStoragePath(body.storagePath),
+    };
+  }
+  if (action === 'cleanup_expired_uploads') {
+    assertExactKeys(body, ['action', 'contestId'], ['contestId']);
+    return { action, contestId: safeId(body.contestId, 'contest_id') };
   }
   if (action === 'remove_draft_asset') {
     assertExactKeys(body, ['action', 'contestId', 'assetId'], ['contestId', 'assetId']);

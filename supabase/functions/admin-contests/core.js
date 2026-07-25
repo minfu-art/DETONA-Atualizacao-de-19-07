@@ -26,6 +26,22 @@ export function assertAdminContestAction(action) {
 
 export { OPERATIONAL_CAPABILITIES };
 
+export function buildPackageHashInput({
+  metadata,
+  curriculum,
+  questionsVersionId,
+  questionsHash,
+  visualConfig,
+}) {
+  return {
+    metadata,
+    curriculum_snapshot: curriculum,
+    questions_version_id: questionsVersionId,
+    questions_hash: questionsHash,
+    visual_config: visualConfig,
+  };
+}
+
 function rejectMarkup(value, label) {
   if (/<\/?[a-z][^>]*>/i.test(String(value || ''))) throw new Error(`${label}_html_not_allowed`);
   return value;

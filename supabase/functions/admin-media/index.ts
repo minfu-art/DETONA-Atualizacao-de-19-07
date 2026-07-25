@@ -1,6 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { OPERATIONAL_CAPABILITIES } from '../_shared/adminValidation.js';
-import { CONTEST_VISUAL_TYPES, inspectImageBytes, validateMediaRequest } from './core.js';
+import { inspectImageBytes, validateMediaRequest } from './core.js';
 
 const BUCKET = 'admin-media';
 const origins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((value) => value.trim()).filter(Boolean));
@@ -61,16 +61,36 @@ Deno.serve(async (request) => {
       const path = `${body.contestId}/${crypto.randomUUID()}.${body.file.extension}`;
       const { data, error } = await admin.storage.from(BUCKET).createSignedUploadUrl(path);
       if (error) throw error;
+      const { data: session, error: sessionError } = await admin.from('media_upload_sessions').insert({
+        contest_id: body.contestId,
+        storage_path: path,
+        mime_type: body.file.mimeType,
+        byte_size: body.file.size,
+        created_by: auth.user.id,
+      }).select('id,expires_at').single();
+      if (sessionError) throw sessionError;
       await audit(admin, auth.user.id, body.contestId, action, path, { mime_type: body.file.mimeType, byte_size: body.file.size });
-      return response(200, { bucket: BUCKET, path: data.path, token: data.token }, origin);
+      return response(200, {
+        bucket: BUCKET,
+        path: data.path,
+        token: data.token,
+        uploadSessionId: session.id,
+        expiresAt: session.expires_at,
+      }, origin);
     }
     if (action === 'register_asset') {
       if (!body.asset.storagePath.startsWith(`${body.contestId}/`)) return response(403, { error: 'asset_contest_mismatch' }, origin);
+      const { data: uploadSession, error: sessionError } = await admin.from('media_upload_sessions')
+        .select('id,mime_type,byte_size').eq('contest_id', body.contestId).eq('storage_path', body.asset.storagePath)
+        .eq('status', 'pending').gt('expires_at', new Date().toISOString()).single();
+      if (sessionError) return response(410, { error: 'upload_session_expired_or_missing' }, origin);
       const extension = body.asset.storagePath.split('.').pop();
       const mimeType = extension === 'png' ? 'image/png' : 'image/webp';
+      if (mimeType !== uploadSession.mime_type) return response(422, { error: 'upload_mime_mismatch' }, origin);
       const { data: blob, error: downloadError } = await admin.storage.from(BUCKET).download(body.asset.storagePath);
       if (downloadError) throw downloadError;
       const bytes = new Uint8Array(await blob.arrayBuffer());
+      if (bytes.length !== Number(uploadSession.byte_size)) return response(422, { error: 'upload_size_mismatch' }, origin);
       const inspected = inspectImageBytes(bytes, mimeType);
       if (inspected.width > 8192 || inspected.height > 8192 || inspected.width * inspected.height > 16_777_216) {
         return response(422, { error: 'dimensions_invalid' }, origin);
@@ -90,8 +110,45 @@ Deno.serve(async (request) => {
         created_by: auth.user.id,
       }).select('*').single();
       if (error) throw error;
+      const { error: completeError } = await admin.from('media_upload_sessions').update({
+        status: 'registered',
+        completed_at: new Date().toISOString(),
+      }).eq('id', uploadSession.id).eq('status', 'pending');
+      if (completeError) throw completeError;
       await audit(admin, auth.user.id, body.contestId, action, data.id, { asset_type: body.asset.assetType, content_hash: data.content_hash });
       return response(201, { asset: { ...data, asset_type: body.asset.assetType } }, origin);
+    }
+    if (action === 'cancel_pending_upload') {
+      if (!body.storagePath.startsWith(`${body.contestId}/`)) return response(403, { error: 'asset_contest_mismatch' }, origin);
+      const { data: session, error: sessionError } = await admin.from('media_upload_sessions').select('id')
+        .eq('contest_id', body.contestId).eq('storage_path', body.storagePath).eq('status', 'pending').single();
+      if (sessionError) return response(404, { error: 'pending_upload_not_found' }, origin);
+      const { error: storageError } = await admin.storage.from(BUCKET).remove([body.storagePath]);
+      if (storageError) throw storageError;
+      const { error: cancelError } = await admin.from('media_upload_sessions').update({
+        status: 'cancelled',
+        completed_at: new Date().toISOString(),
+      }).eq('id', session.id).eq('status', 'pending');
+      if (cancelError) throw cancelError;
+      await audit(admin, auth.user.id, body.contestId, action, session.id);
+      return response(200, { cancelled: true }, origin);
+    }
+    if (action === 'cleanup_expired_uploads') {
+      const { data: sessions, error: sessionError } = await admin.from('media_upload_sessions').select('id,storage_path')
+        .eq('contest_id', body.contestId).eq('status', 'pending').lte('expires_at', new Date().toISOString());
+      if (sessionError) throw sessionError;
+      const paths = sessions.map(({ storage_path }: { storage_path: string }) => storage_path);
+      if (paths.length) {
+        const { error: storageError } = await admin.storage.from(BUCKET).remove(paths);
+        if (storageError) throw storageError;
+        const { error: expireError } = await admin.from('media_upload_sessions').update({
+          status: 'expired',
+          completed_at: new Date().toISOString(),
+        }).in('id', sessions.map(({ id }: { id: string }) => id)).eq('status', 'pending');
+        if (expireError) throw expireError;
+      }
+      await audit(admin, auth.user.id, body.contestId, action, body.contestId, { count: paths.length });
+      return response(200, { removed: paths.length }, origin);
     }
     if (action === 'remove_draft_asset') {
       const { data: asset, error } = await admin.from('media_assets').update({ status: 'archived' })
@@ -102,26 +159,13 @@ Deno.serve(async (request) => {
       return response(200, { removed: true }, origin);
     }
     if (action === 'save_contest_visual' || action === 'publish_contest_visual') {
-      const ids = Object.values(body.visual).filter(Boolean);
-      if (ids.length) {
-        const { data: assets, error } = await admin.from('media_assets').select('id').eq('contest_id', body.contestId).in('id', ids);
-        if (error || assets.length !== new Set(ids).size) return response(422, { error: 'visual_asset_contest_mismatch' }, origin);
-      }
-      const payload = {
-        battle_avatar_asset_id: body.visual.battle_avatar,
-        success_asset_id: body.visual.success,
-        error_asset_id: body.visual.error,
-        attention_asset_id: body.visual.attention,
-        cover_media_asset_id: body.visual.cover,
-        visual_status: action === 'publish_contest_visual' ? 'published' : 'draft',
-      };
-      const { data, error } = await admin.from('admin_contests').update(payload).eq('id', body.contestId).select('*').single();
+      const { data, error } = await admin.rpc('admin_save_contest_visual', {
+        target_contest_id: body.contestId,
+        target_visual: body.visual,
+        publish_visual: action === 'publish_contest_visual',
+        actor_id: auth.user.id,
+      });
       if (error) throw error;
-      if (action === 'publish_contest_visual' && ids.length) {
-        const { error: publishError } = await admin.from('media_assets').update({ status: 'published', published_at: new Date().toISOString() }).in('id', ids);
-        if (publishError) throw publishError;
-      }
-      await audit(admin, auth.user.id, body.contestId, action, body.contestId, { configured_types: CONTEST_VISUAL_TYPES.filter((key) => body.visual[key]) });
       return response(200, { contest: data }, origin);
     }
     return response(409, { error: 'legacy_media_action_not_enabled' }, origin);

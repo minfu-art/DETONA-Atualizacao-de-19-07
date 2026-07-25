@@ -39,9 +39,17 @@ Deno.serve(async (request) => {
       if (body.contestId === 'pc_al_2026') return respond(200, { legacyStatic: true, contestId: body.contestId }, origin);
       return respond(404, { error: 'published_package_not_found' }, origin);
     }
-    const { data: questions, error: questionError } = await admin.from('editorial_questions').select('payload')
-      .eq('contest_id', body.contestId).eq('status', 'published').order('source_question_id');
+    const [{ data: questionVersion, error: versionError }, { data: questionItems, error: questionError }] = await Promise.all([
+      admin.from('question_publication_versions').select('id,contest_id,content_hash,item_count,status')
+        .eq('id', contentPackage.questions_version_id).eq('contest_id', body.contestId).eq('status', 'published').single(),
+      admin.from('question_publication_items').select('payload,order_index')
+        .eq('version_id', contentPackage.questions_version_id).eq('contest_id', body.contestId).order('order_index'),
+    ]);
+    if (versionError) throw versionError;
     if (questionError) throw questionError;
+    if (!questionItems?.length || questionItems.length !== questionVersion.item_count) {
+      throw new Error('published_question_snapshot_invalid');
+    }
     const assetIds = Object.values(contentPackage.visual_config || {}).filter(Boolean);
     const { data: assets, error: assetError } = assetIds.length
       ? await admin.from('media_assets').select('id,storage_path').eq('contest_id', body.contestId).in('id', assetIds)
@@ -64,7 +72,9 @@ Deno.serve(async (request) => {
         version: contentPackage.version,
         metadata: contentPackage.metadata,
         curriculum: contentPackage.curriculum_snapshot,
-        questions: questions.map(({ payload }: { payload: unknown }) => payload),
+        questions: questionItems.map(({ payload }: { payload: unknown }) => payload),
+        questionsVersionId: questionVersion.id,
+        questionsHash: questionVersion.content_hash,
         visualConfig,
         contentHash: contentPackage.content_hash,
       },

@@ -102,14 +102,29 @@ export class AdminAvatarService {
       contestId,
       file: { name: file.name, mimeType: file.type, size: file.size },
     });
-    const { error: uploadError } = await client.storage.from(signed.bucket)
-      .uploadToSignedUrl(signed.path, signed.token, file, { contentType: file.type });
-    if (uploadError) throw new Error('Falha no upload assinado.');
-    const { data } = await this.#invoke('register_asset', {
-      contestId,
-      asset: { storagePath: signed.path, assetType, requireTransparency },
-    });
-    return data.asset;
+    try {
+      const { error: uploadError } = await client.storage.from(signed.bucket)
+        .uploadToSignedUrl(signed.path, signed.token, file, { contentType: file.type });
+      if (uploadError) throw new Error('Falha no upload assinado.');
+      const { data } = await this.#invoke('register_asset', {
+        contestId,
+        asset: { storagePath: signed.path, assetType, requireTransparency },
+      });
+      return data.asset;
+    } catch (error) {
+      await this.cancelPendingUpload(contestId, signed.path).catch(() => {});
+      throw error;
+    }
+  }
+
+  async cancelPendingUpload(contestId, storagePath) {
+    const { data } = await this.#invoke('cancel_pending_upload', { contestId, storagePath });
+    return data;
+  }
+
+  async cleanupExpiredUploads(contestId) {
+    const { data } = await this.#invoke('cleanup_expired_uploads', { contestId });
+    return data;
   }
 
   async removeDraftAsset(contestId, assetId) {
