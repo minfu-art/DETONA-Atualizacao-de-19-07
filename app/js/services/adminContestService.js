@@ -4,6 +4,43 @@ import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities 
 
 export const CONTENT_STATUSES = Object.freeze(['draft', 'preparing', 'ready', 'archived']);
 export const SALES_STATUSES = Object.freeze(['unavailable', 'coming_soon', 'available', 'suspended']);
+export const COURSE_FACTORY_UNAVAILABLE_MESSAGE = 'Fábrica de Concursos indisponível neste ambiente. O backend administrativo ainda não foi ativado.';
+
+const ADMIN_ERROR_MESSAGES = Object.freeze({
+  function_unavailable: 'A função administrativa ainda não foi publicada no staging.',
+  cors: 'Este endereço de Preview ainda não está autorizado no backend.',
+  invalid_session: 'Sua sessão expirou. Entre novamente.',
+  developer_required: 'Esta conta não possui permissão de administrador.',
+  schema_unavailable: 'A estrutura da Fábrica de Concursos ainda não foi aplicada no staging.',
+  duplicate: 'ID, código ou slug já cadastrado.',
+});
+
+export function mapAdminContestError(error, data = null) {
+  const code = String(data?.error || error?.code || '').toLowerCase();
+  const name = String(error?.name || '').toLowerCase();
+  const message = String(error?.message || '').toLowerCase();
+  const status = Number(error?.context?.status || error?.status || 0);
+  const combined = `${code} ${name} ${message}`;
+  if (code === 'contest_id_code_or_slug_exists' || status === 409 || /duplicate|already exists|23505/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.duplicate;
+  }
+  if (code === 'invalid_session' || status === 401 || /invalid[_ ]session|jwt.*(?:expired|invalid)/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.invalid_session;
+  }
+  if (code === 'developer_required' || status === 403 && /developer|permission|forbidden/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.developer_required;
+  }
+  if (code === 'origin_not_allowed' || /cors|origin_not_allowed/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.cors;
+  }
+  if (/relation .* does not exist|schema cache|rpc.*not found|pgrst20[245]|42p01|42883/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.schema_unavailable;
+  }
+  if (status === 404 || /function.*not found|functionshttperror.*404|failed to send a request to the edge function/.test(combined)) {
+    return ADMIN_ERROR_MESSAGES.function_unavailable;
+  }
+  return 'Módulo de concursos indisponível. Tente novamente em instantes.';
+}
 
 export function slugifyContest(value) {
   return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -84,6 +121,16 @@ export function validateAdminContest(input = {}) {
 export class AdminContestService {
   constructor({ getClient = getSupabaseClient } = {}) {
     this.getClient = getClient;
+    this.capabilities = { ...READ_ONLY_CAPABILITIES };
+  }
+
+  #setCapabilities(capabilities) {
+    this.capabilities = normalizeAdminCapabilities(capabilities, READ_ONLY_CAPABILITIES);
+    return this.capabilities;
+  }
+
+  #requireCapability(capability, capabilities = this.capabilities) {
+    if (capabilities?.[capability] !== true) throw new Error(COURSE_FACTORY_UNAVAILABLE_MESSAGE);
   }
 
   async #invoke(action, payload = {}) {
@@ -91,8 +138,7 @@ export class AdminContestService {
     if (!client) throw new Error('Backend administrativo indisponível.');
     const { data, error } = await client.functions.invoke('admin-contests', { body: { action, ...payload } });
     if (error || data?.error) {
-      if (data?.error === 'contest_id_code_or_slug_exists') throw new Error('ID, código ou slug já cadastrado.');
-      throw new Error(data?.error || error?.message || 'Módulo de concursos indisponível.');
+      throw new Error(mapAdminContestError(error, data));
     }
     return data;
   }
@@ -105,7 +151,7 @@ export class AdminContestService {
       return {
         rows,
         source: 'static_catalog',
-        capabilities: { ...READ_ONLY_CAPABILITIES },
+        capabilities: this.#setCapabilities(READ_ONLY_CAPABILITIES),
         writable: false,
         bootstrapRequired,
       };
@@ -114,7 +160,7 @@ export class AdminContestService {
       const result = await this.#invoke('list_contests', { search });
       const rows = Array.isArray(result.contests) ? result.contests : [];
       if (!rows.length) return fallback(true);
-      const capabilities = normalizeAdminCapabilities(result.capabilities, READ_ONLY_CAPABILITIES);
+      const capabilities = this.#setCapabilities(result.capabilities);
       return { rows, source: 'administrative_table', capabilities, writable: hasWriteCapability(capabilities), bootstrapRequired: false };
     } catch {
       return fallback(false);
@@ -126,22 +172,30 @@ export class AdminContestService {
     return this.#invoke('get_contest', { contestId });
   }
 
-  async createContest(input) {
+  async createContest(input, { capabilities = this.capabilities } = {}) {
+    this.#requireCapability('create', capabilities);
     return this.#invoke('create_contest', { contest: validateAdminContest(input) });
   }
 
-  async updateContest(input) {
+  async updateContest(input, { capabilities = this.capabilities } = {}) {
+    this.#requireCapability('update', capabilities);
     return this.#invoke('update_contest', { contest: validateAdminContest(input) });
   }
 
-  async saveContest(input) {
+  async saveContest(input, { capabilities = this.capabilities } = {}) {
+    if (capabilities?.create !== true && capabilities?.update !== true) {
+      throw new Error(COURSE_FACTORY_UNAVAILABLE_MESSAGE);
+    }
     const contest = validateAdminContest(input);
     const existing = await this.getContest(contest.id).catch(() => null);
-    return existing ? this.updateContest(contest) : this.createContest(contest);
+    return existing
+      ? this.updateContest(contest, { capabilities })
+      : this.createContest(contest, { capabilities });
   }
 
-  async transitionContest(contestId, action) {
+  async transitionContest(contestId, action, { capabilities = this.capabilities } = {}) {
     if (!['publish', 'suspend', 'archive'].includes(action)) throw new Error('Ação inválida.');
+    this.#requireCapability(action === 'archive' ? 'archive' : action === 'publish' ? 'publish' : 'update', capabilities);
     return this.#invoke(action, { contestId });
   }
 }

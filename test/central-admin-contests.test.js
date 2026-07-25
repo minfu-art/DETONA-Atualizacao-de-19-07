@@ -2,7 +2,12 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-import { AdminContestService, validateAdminContest } from '../app/js/services/adminContestService.js';
+import {
+  AdminContestService,
+  COURSE_FACTORY_UNAVAILABLE_MESSAGE,
+  mapAdminContestError,
+  validateAdminContest,
+} from '../app/js/services/adminContestService.js';
 import { AdminCurriculumService, validateCurriculumNode } from '../app/js/services/adminCurriculumService.js';
 import {
   assertAdminContestAction,
@@ -54,11 +59,15 @@ test('catálogo administrativo populado substitui fallback sem inventar escrita'
   assert.equal(result.writable, false);
 });
 
-test('capabilities somente-leitura bloqueiam escrita e resposta 409 não vira sucesso', async () => {
+test('capabilities somente-leitura bloqueiam escrita antes da requisição', async () => {
   assert.equal(hasWriteCapability(READ_ONLY_CAPABILITIES), false);
+  let invocations = 0;
   const client = {
     functions: {
-      invoke: async () => ({ data: { error: 'mutation_not_enabled' }, error: null }),
+      invoke: async () => {
+        invocations += 1;
+        return { data: { error: 'mutation_not_enabled' }, error: null };
+      },
     },
   };
   const service = new AdminContestService({ getClient: async () => client });
@@ -69,7 +78,8 @@ test('capabilities somente-leitura bloqueiam escrita e resposta 409 não vira su
     name: 'Policia Civil de Alagoas',
     role: 'Agente e Escrivao',
     description: 'Descrição.',
-  }), /mutation_not_enabled/);
+  }), new RegExp(COURSE_FACTORY_UNAVAILABLE_MESSAGE));
+  assert.equal(invocations, 0);
 });
 
 test('serviço de currículo exige contestId explícito', async () => {
@@ -109,4 +119,39 @@ test('migration administrativa mantém tabelas fora da Data API', async () => {
   }
   assert.doesNotMatch(sql, /grant\s+(?:select|insert|update|delete).*\bauthenticated\b/i);
   assert.match(sql, /grant select, insert, update, delete on table public\.admin_contests to service_role/i);
+});
+
+test('modo somente leitura bloqueia create, update, publish e archive antes da Edge Function', async () => {
+  let invocations = 0;
+  const service = new AdminContestService({
+    getClient: async () => ({
+      functions: { invoke: async () => { invocations += 1; return { data: {}, error: null }; } },
+    }),
+  });
+  await assert.rejects(() => service.createContest({}), new RegExp(COURSE_FACTORY_UNAVAILABLE_MESSAGE));
+  await assert.rejects(() => service.updateContest({}), new RegExp(COURSE_FACTORY_UNAVAILABLE_MESSAGE));
+  await assert.rejects(() => service.transitionContest('pc_al_2026', 'publish'), new RegExp(COURSE_FACTORY_UNAVAILABLE_MESSAGE));
+  await assert.rejects(() => service.transitionContest('pc_al_2026', 'archive'), new RegExp(COURSE_FACTORY_UNAVAILABLE_MESSAGE));
+  assert.equal(invocations, 0);
+});
+
+test('mensagens administrativas traduzem falhas sem expor detalhes técnicos', () => {
+  assert.equal(
+    mapAdminContestError({ message: 'Failed to send a request to the Edge Function' }),
+    'A função administrativa ainda não foi publicada no staging.',
+  );
+  assert.equal(mapAdminContestError(null, { error: 'origin_not_allowed' }), 'Este endereço de Preview ainda não está autorizado no backend.');
+  assert.equal(mapAdminContestError(null, { error: 'invalid_session' }), 'Sua sessão expirou. Entre novamente.');
+  assert.equal(mapAdminContestError(null, { error: 'developer_required' }), 'Esta conta não possui permissão de administrador.');
+  assert.equal(mapAdminContestError({ code: '42P01', message: 'relation missing' }), 'A estrutura da Fábrica de Concursos ainda não foi aplicada no staging.');
+  assert.equal(mapAdminContestError(null, { error: 'contest_id_code_or_slug_exists' }), 'ID, código ou slug já cadastrado.');
+});
+
+test('tela da fábrica respeita capabilities e mantém guarda no submit', async () => {
+  const screen = await readFile(new URL('../app/js/admin/adminContestsScreen.js', import.meta.url), 'utf8');
+  assert.match(screen, /capabilities\.create === true/);
+  assert.match(screen, /contest\.id \? 'update' : 'create'/);
+  assert.match(screen, /capabilities\[requiredCapability\] !== true/);
+  assert.match(screen, /fieldset \$\{writeEnabled \? '' : 'disabled'\}/);
+  assert.match(screen, /COURSE_FACTORY_UNAVAILABLE_MESSAGE/);
 });

@@ -1,5 +1,6 @@
 import {
   adminContestService,
+  COURSE_FACTORY_UNAVAILABLE_MESSAGE,
   suggestContestIdentity,
   validateAdminContest,
 } from '../services/adminContestService.js';
@@ -14,12 +15,16 @@ export const CONTEST_WORKSPACE_TABS = Object.freeze([
   ['publication', 'Publicação'],
 ]);
 
-function contestForm(contest = {}) {
+function contestForm(contest = {}, capabilities = {}) {
   const value = (key, fallback = '') => escapeHtml(contest[key] ?? fallback);
+  const requiredCapability = contest.id ? 'update' : 'create';
+  const writeEnabled = capabilities?.[requiredCapability] === true;
   return `
     <form id="admin-contest-form" class="admin-panel admin-form">
       <span class="admin-panel__eyebrow">${contest.id ? 'Configuração geral' : 'Novo concurso'}</span>
       <h2>${contest.id ? 'Dados do concurso' : 'Criar concurso em rascunho'}</h2>
+      ${writeEnabled ? '' : `<div class="admin-prepared">${COURSE_FACTORY_UNAVAILABLE_MESSAGE}</div>`}
+      <fieldset ${writeEnabled ? '' : 'disabled'} data-required-capability="${requiredCapability}">
       <div class="admin-form__row">
         <label>Código<input name="code" maxlength="30" value="${value('code')}" required></label>
         <label>Data da prova<input name="exam_date" type="date" value="${value('exam_date')}"></label>
@@ -52,9 +57,10 @@ function contestForm(contest = {}) {
         </select></label>
       </div>
       <div class="admin-form__actions">
-        <button class="admin-button" type="submit">${contest.id ? 'Salvar alterações' : 'Criar rascunho'}</button>
-        ${contest.id ? '<button class="admin-button admin-button--secondary" type="button" id="admin-new-contest">Novo concurso</button>' : ''}
+        <button class="admin-button" type="submit" ${writeEnabled ? '' : 'disabled'}>${contest.id ? 'Salvar alterações' : 'Criar rascunho'}</button>
+        ${contest.id && capabilities?.create === true ? '<button class="admin-button admin-button--secondary" type="button" id="admin-new-contest">Novo concurso</button>' : ''}
       </div>
+      </fieldset>
       <div id="admin-contest-feedback" role="status" aria-live="polite"></div>
     </form>`;
 }
@@ -65,13 +71,14 @@ function serialize(form) {
 
 export async function renderAdminContestsScreen(root, ctx) {
   const catalog = await adminContestService.listContests();
+  const capabilities = catalog.capabilities || {};
   const selected = catalog.rows.find(({ id }) => id === ctx.adminSelectedContestId) || null;
   let detail = null;
   if (selected && catalog.writable) detail = await adminContestService.getContest(selected.id).catch(() => null);
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica de concursos</span><h1>Workspace operacional</h1>
       <p>Configure um concurso, importe o conteúdo e publique versões sem misturar jornadas.</p></div>
-      <button class="admin-button" type="button" id="admin-create-contest">+ Novo concurso</button>
+      ${capabilities.create === true ? '<button class="admin-button" type="button" id="admin-create-contest">+ Novo concurso</button>' : ''}
     </header>
     ${selected ? `
       <section class="admin-workspace-header" style="--contest-color:${escapeHtml(selected.color)};--contest-accent:${escapeHtml(selected.accent)}">
@@ -85,7 +92,7 @@ export async function renderAdminContestsScreen(root, ctx) {
         ${CONTEST_WORKSPACE_TABS.map(([screen, label]) => `<button type="button" data-workspace-screen="${screen}" class="${screen === 'contests' ? 'active' : ''}">${label}</button>`).join('')}
       </nav>` : ''}
     <section class="admin-grid admin-grid--2">
-      <div id="admin-contest-editor">${contestForm(selected || {})}</div>
+      <div id="admin-contest-editor">${contestForm(selected || {}, capabilities)}</div>
       <aside class="admin-panel">
         <span class="admin-panel__eyebrow">Portfólio</span><h2>Concursos cadastrados</h2>
         <div class="admin-contest-list">${catalog.rows.map((contest) => `
@@ -93,12 +100,12 @@ export async function renderAdminContestsScreen(root, ctx) {
             <span style="background:${escapeHtml(contest.color)}">${escapeHtml(contest.icon)}</span>
             <strong>${escapeHtml(contest.code)}</strong><small>${escapeHtml(contest.name)}</small>
           </button>`).join('')}</div>
-        ${catalog.writable ? '' : '<div class="admin-prepared">Backend operacional ainda não aplicado no staging; o catálogo está em modo seguro de leitura.</div>'}
+        ${catalog.writable ? '' : `<div class="admin-prepared">${COURSE_FACTORY_UNAVAILABLE_MESSAGE}</div>`}
       </aside>
     </section>`;
 
   const mountForm = (contest = {}) => {
-    root.querySelector('#admin-contest-editor').innerHTML = contestForm(contest);
+    root.querySelector('#admin-contest-editor').innerHTML = contestForm(contest, capabilities);
     const form = root.querySelector('#admin-contest-form');
     const code = form.elements.code;
     const name = form.elements.name;
@@ -114,11 +121,16 @@ export async function renderAdminContestsScreen(root, ctx) {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       const feedback = form.querySelector('#admin-contest-feedback');
+      const requiredCapability = contest.id ? 'update' : 'create';
+      if (capabilities[requiredCapability] !== true) {
+        feedback.innerHTML = `<div class="admin-validation admin-validation--error">${COURSE_FACTORY_UNAVAILABLE_MESSAGE}</div>`;
+        return;
+      }
       try {
         const payload = validateAdminContest(serialize(form));
         const result = contest.id
-          ? await adminContestService.updateContest(payload)
-          : await adminContestService.createContest(payload);
+          ? await adminContestService.updateContest(payload, { capabilities })
+          : await adminContestService.createContest(payload, { capabilities });
         feedback.innerHTML = `<div class="admin-validation admin-validation--ok">Concurso ${escapeHtml(result.contest.code)} salvo em rascunho com auditoria.</div>`;
         const refreshed = await adminContestService.listContests();
         ctx.setAvailableContests(refreshed.rows);
