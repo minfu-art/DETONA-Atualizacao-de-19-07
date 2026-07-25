@@ -10,6 +10,21 @@ project_id = "DETONA-Atualizacao-de-19-07"
 # Este endpoint administrativo não é um webhook público.
 verify_jwt = true
 
+[functions.admin-contests]
+verify_jwt = true
+
+[functions.admin-editorial]
+verify_jwt = true
+
+[functions.admin-media]
+verify_jwt = true
+
+[functions.admin-site]
+verify_jwt = true
+
+[functions.admin-settings]
+verify_jwt = true
+
 [api]
 enabled = true
 # Port to use for the API URL.

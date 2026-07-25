@@ -1,4 +1,5 @@
-import { ADMIN_CONTEST_ID, adminAccessService } from '../services/adminAccessService.js';
+import { ADMIN_CONTEST_ID } from '../services/adminAccessService.js';
+import { adminStudentService } from '../services/adminStudentService.js';
 import { escapeAttr, escapeHtml } from '../ui/helpers.js';
 
 function stateFor(entitlement) {
@@ -34,7 +35,7 @@ export async function renderAdminAccessScreen(root, ctx) {
   async function load() {
     feedback.textContent = 'Carregando alunos…';
     list.innerHTML = '';
-    const result = await adminAccessService.listUsers({ search, page, pageSize });
+    const result = await adminStudentService.listUsers(ctx.adminSelectedContestId, { search, page, pageSize });
     const users = result?.users || [];
     const total = Number(result?.total || 0);
     feedback.textContent = `${total} aluno${total === 1 ? '' : 's'} encontrado${total === 1 ? '' : 's'}.`;
@@ -58,9 +59,9 @@ export async function renderAdminAccessScreen(root, ctx) {
         button.disabled = true;
         feedback.textContent = 'Atualizando acesso…';
         try {
-          if (button.dataset.action === 'grant') await adminAccessService.grantAccess(row.dataset.userId, ctx.adminSelectedContestId);
-          else if (button.dataset.action === 'reactivate') await adminAccessService.reactivateAccess(row.dataset.userId, ctx.adminSelectedContestId);
-          else await adminAccessService.revokeAccess(row.dataset.userId, ctx.adminSelectedContestId);
+          if (button.dataset.action === 'grant') await adminStudentService.grant(ctx.adminSelectedContestId, row.dataset.userId);
+          else if (button.dataset.action === 'reactivate') await adminStudentService.reactivate(ctx.adminSelectedContestId, row.dataset.userId);
+          else await adminStudentService.revoke(ctx.adminSelectedContestId, row.dataset.userId);
           await load();
         } catch (error) {
           feedback.textContent = error.message || 'Falha ao atualizar acesso.';

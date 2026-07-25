@@ -11,6 +11,9 @@ import { renderAdminPreparedScreen } from './adminPreparedScreen.js';
 import { renderAdminContestsScreen } from './adminContestsScreen.js';
 import { renderAdminCurriculumScreen } from './adminCurriculumScreen.js';
 import { renderAdminQuestionsScreen } from './adminQuestionsScreen.js';
+import { renderAdminMediaScreen } from './adminMediaScreen.js';
+import { renderAdminLandingScreen } from './adminLandingScreen.js';
+import { renderAdminSettingsScreen } from './adminSettingsScreen.js';
 
 const ROUTES = Object.freeze({
   overview: renderAdminDashboard,
@@ -19,6 +22,9 @@ const ROUTES = Object.freeze({
   contests: renderAdminContestsScreen,
   curriculum: renderAdminCurriculumScreen,
   questions: renderAdminQuestionsScreen,
+  media: renderAdminMediaScreen,
+  landing: renderAdminLandingScreen,
+  settings: renderAdminSettingsScreen,
 });
 
 let shellMounted = false;

@@ -22,6 +22,8 @@ const topicTreeUrl = new URL('../app/js/ui/topicTree.js', import.meta.url);
 const performanceUrl = new URL('../app/js/ui/performance.js', import.meta.url);
 const performanceServiceUrl = new URL('../app/js/services/performanceService.js', import.meta.url);
 const navigationUrl = new URL('../app/js/ui/navigation.js', import.meta.url);
+const adminAppUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
+const adminHtmlUrl = new URL('../app/admin.html', import.meta.url);
 
 test('navegação principal usa um único vocabulário sem renomear rotas internas', async () => {
   const [navigation, shell, html, app] = await Promise.all([
@@ -113,12 +115,15 @@ test('autenticacao remove o recuo da sidebar e troca para coluna unica antes de 
   assert.doesNotMatch(html, /user-scalable=no|maximum-scale=/);
 });
 
-test('rotas continuam protegidas por autenticacao, concurso e entitlement', async () => {
-  const source = await readFile(appUrl, 'utf8');
+test('rotas academicas continuam protegidas e developer e separado antes da jornada', async () => {
+  const [source, admin] = await Promise.all([readFile(appUrl, 'utf8'), readFile(adminAppUrl, 'utf8')]);
   assert.match(source, /canAccessInternalRoute\(authService\)/);
   assert.match(source, /getActiveContestId\(\)/);
   assert.match(source, /libraryService\.canAccess/);
-  assert.match(source, /screen === 'forge' && !canAccessDeveloperRoute\(authService\)/);
+  assert.match(source, /isDeveloperUser\(authenticatedUser\)/);
+  assert.match(source, /redirectForRole\(authenticatedUser\)/);
+  assert.match(admin, /isDeveloperUser\(authService\.getCurrentUser\(\)\)/);
+  assert.doesNotMatch(admin, /getActiveContestId|libraryService\.canAccess|progressRepository/);
 });
 
 test('desempenho possui rota e serviço próprios derivados apenas de dados reais existentes', async () => {
@@ -155,22 +160,20 @@ test('edital verticalizado mostra taxa de acerto e permite enfrentar subtópico'
   assert.doesNotMatch(source, /\$\{questionCount\}\/\$\{MIN_QUESTIONS_BATTLE\} questões mínimas/);
 });
 
-test('forja e atalhos editoriais ficam restritos ao desenvolvedor', async () => {
-  const [forge, shell, html, map, tree] = await Promise.all([
-    readFile(forgeUrl, 'utf8'),
+test('administracao sai do shell academico e usa aplicacao developer independente', async () => {
+  const [shell, html, tree, adminHtml, adminApp] = await Promise.all([
     readFile(shellUrl, 'utf8'),
     readFile(indexUrl, 'utf8'),
-    readFile(worldMapUrl, 'utf8'),
     readFile(topicTreeUrl, 'utf8'),
+    readFile(adminHtmlUrl, 'utf8'),
+    readFile(adminAppUrl, 'utf8'),
   ]);
-  assert.match(forge, /isDeveloperUser\(ctx\.user\)/);
-  assert.match(shell, /data-developer-only/);
   assert.doesNotMatch(html, /data-screen="forge"/);
-  assert.match(shell, /DEVELOPER_ITEM = \{ screen: 'forge', icon: 'question', label: 'Banco de questões' \}/);
-  for (const source of [map, tree]) {
-    assert.match(source, /isDeveloperUser\(ctx\?\.user\)/);
-    assert.match(source, /Conteúdo em preparação/);
-  }
+  assert.doesNotMatch(shell, /data-developer-only|DEVELOPER_ITEM|screen:\s*'forge'/);
+  assert.doesNotMatch(tree, /m-forge|navigate\('forge'\)/);
+  assert.match(tree, /Conteúdo em preparação/);
+  assert.match(adminHtml, /js\/admin\/adminApp\.js/);
+  assert.match(adminApp, /developer|renderAdminAccessScreen|renderAdminMessagesScreen/);
 });
 
 test('mapa inicia na visão geral sem abrir Português automaticamente', async () => {

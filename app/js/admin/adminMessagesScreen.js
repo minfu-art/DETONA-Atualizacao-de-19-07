@@ -1,12 +1,12 @@
 import {
   ANNOUNCEMENT_CATEGORIES,
-  announcementService,
   validateAnnouncementInput,
 } from '../services/announcementService.js';
+import { adminMessageService } from '../services/adminMessageService.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 export async function renderAdminMessagesScreen(root, ctx) {
-  const rows = await announcementService.listAdminAnnouncements();
+  const rows = await adminMessageService.list(ctx.adminSelectedContestId);
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Comunicação oficial</span><h1>Mensagens</h1>
       <p>Crie avisos globais ou direcionados ao concurso administrativo selecionado.</p></div></header>
@@ -52,8 +52,8 @@ export async function renderAdminMessagesScreen(root, ctx) {
         suggestions: [], cta_type: 'none', starts_at: new Date().toISOString(),
         is_pinned: Boolean(form.get('pinned')),
       });
-      const saved = await announcementService.createAnnouncement(payload);
-      if (publish) await announcementService.publishAnnouncement(saved.id);
+      const saved = await adminMessageService.create(ctx.adminSelectedContestId, payload);
+      if (publish) await adminMessageService.publish(ctx.adminSelectedContestId, saved.id);
       await renderAdminMessagesScreen(root, ctx);
     } catch (error) {
       feedback.textContent = error.message || 'Falha ao salvar mensagem.';
@@ -61,7 +61,7 @@ export async function renderAdminMessagesScreen(root, ctx) {
   });
   root.querySelectorAll('[data-archive]').forEach((button) => {
     button.addEventListener('click', async () => {
-      await announcementService.archiveAnnouncement(button.dataset.archive);
+      await adminMessageService.archive(ctx.adminSelectedContestId, button.dataset.archive);
       await renderAdminMessagesScreen(root, ctx);
     });
   });
