@@ -13,7 +13,6 @@ import { enemyImgHtml } from './enemyAssets.js';
 import { icon, discIcon, semanticIcon } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { averageSubtopicMastery } from '../core/mastery.js';
-import { isDeveloperUser } from '../auth/authService.js';
 
 /** Estrelas mínimas no nó anterior para desbloquear o próximo */
 const STARS_TO_UNLOCK_NEXT = 1;
@@ -32,7 +31,6 @@ function shortLabel(id) {
  * @param {{ disciplineId?: string, battleSession?: any }} ctx
  */
 export async function renderTopicTree(root, navigate, ctx) {
-  const developer = isDeveloperUser(ctx?.user);
   const discId = ctx.disciplineId;
   if (!discId) {
     navigate('home');
@@ -200,27 +198,18 @@ export async function renderTopicTree(root, navigate, ctx) {
             <small>${formatStars(node.stars)} / 5 estrelas · ${sub.best_accuracy || 0}%</small>
           </div>
           <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${node.nq}</p>
-          ${!node.armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
-            ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
-            : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
+          ${!node.armed ? '<p class="text-center mt-8" style="color:var(--warn)">Conteúdo em preparação — novas questões serão liberadas pela equipe.</p>' : ''}
           ${node.mastered ? '<p class="text-center mt-8" style="color:var(--ok)">Subtópico dominado (3★+) — continue praticando para consolidar</p>' : ''}
         `,
         `
           <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
           ${node.armed
             ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
-            : developer
-              ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
-              : ''}
+            : ''}
         `
       );
 
       $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
-      $('#m-forge')?.addEventListener('click', () => {
-        SFX.click();
-        closeModal();
-        navigate('forge');
-      });
       $('#m-fight')?.addEventListener('click', async () => {
         SFX.click();
         const btn = $('#m-fight');

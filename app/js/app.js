@@ -8,7 +8,6 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=79';
-import { renderForge } from './ui/forge.js?v=72';
 import { renderWorldMap } from './ui/worldMap.js?v=73';
 import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
@@ -24,7 +23,8 @@ import { initAppShell, updateAppShell } from './ui/appShell.js?v=70';
 import { renderAuth } from './ui/auth.js?v=74';
 import { renderLibrary } from './ui/library.js';
 import { authService, libraryService, contestDataMigrationService } from './services/appServices.js';
-import { canAccessDeveloperRoute, canAccessInternalRoute } from './auth/authService.js';
+import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
+import { redirectForRole } from './auth/roleRouting.js';
 import { clearActiveContestId, getActiveContestId, setActiveContestId } from './contest/activeContest.js';
 import { getContestById } from './contest/contestCatalog.js';
 import { skeleton } from './ui/components.js';
@@ -64,7 +64,6 @@ const ROUTES = {
   home: renderHome,
   map: renderWorldMap,
   battle: renderBattle,
-  forge: renderForge,
   performance: renderPerformance,
   grimorio: renderPerformance,
   edital: renderGrimorio,
@@ -94,9 +93,6 @@ async function navigate(screen) {
   if (!(await libraryService.canAccess(authService.getCurrentUser().id, getActiveContestId()))) {
     await showLibrary();
     return;
-  }
-  if (screen === 'forge' && !canAccessDeveloperRoute(authService)) {
-    screen = 'home';
   }
   ctx.screen = screen;
   const root = document.getElementById('screen');
@@ -224,6 +220,10 @@ ctx.openContest = openContest;
 
 async function initializeAuthenticatedApp() {
   const authenticatedUser = authService.getCurrentUser();
+  if (isDeveloperUser(authenticatedUser)) {
+    redirectForRole(authenticatedUser);
+    return;
+  }
   if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
     resetAcademicSessionContext(ctx);
   }

@@ -1,10 +1,8 @@
 import { ICO } from './icons.js?v=66';
 import { escapeHtml } from './helpers.js';
-import { isDeveloperUser } from '../auth/authService.js';
 import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=72';
 
 const LIBRARY_ITEM = { screen: 'library', icon: 'book', label: 'Biblioteca' };
-const DEVELOPER_ITEM = { screen: 'forge', icon: 'question', label: 'Banco de questões' };
 
 function icon(name) {
   return ICO[name]?.() || '';
@@ -48,8 +46,7 @@ export function desktopGrid(content, { columns = 2, className = '' } = {}) {
 }
 
 function menuButton({ screen, icon: iconName, label }) {
-  const developerOnly = screen === 'forge' ? ' data-developer-only="true"' : '';
-  return `<button type="button" class="app-sidebar__item" data-shell-screen="${screen}"${developerOnly} aria-label="${label}" title="${label}"><span class="app-sidebar__icon" aria-hidden="true">${icon(iconName)}</span><span class="app-sidebar__label">${label}</span></button>`;
+  return `<button type="button" class="app-sidebar__item" data-shell-screen="${screen}" aria-label="${label}" title="${label}"><span class="app-sidebar__icon" aria-hidden="true">${icon(iconName)}</span><span class="app-sidebar__label">${label}</span></button>`;
 }
 
 export function initAppShell(navigate, { onLogout } = {}) {
@@ -66,7 +63,6 @@ export function initAppShell(navigate, { onLogout } = {}) {
       ${menuButton(LIBRARY_ITEM)}
       <span class="app-sidebar__section">Jornada ativa</span>
       ${PRIMARY_NAV_ITEMS.map(menuButton).join('')}
-      ${menuButton(DEVELOPER_ITEM)}
       ${UTILITY_NAV_ITEMS.length ? `<span class="app-sidebar__section">Conta e equilíbrio</span>${UTILITY_NAV_ITEMS.map(menuButton).join('')}` : ''}
     </nav>
     <button type="button" class="app-sidebar__account" data-shell-screen="profile" aria-label="Abrir meu perfil">${icon('user')}<span>Meu perfil</span></button>
@@ -99,12 +95,6 @@ export function updateAppShell({ screen, player, contest, user }) {
   const immersive = screen === 'onboarding' || screen === 'celebration';
   app?.classList.toggle('app-shell--immersive', immersive);
   if (root) root.dataset.screen = screen;
-
-  const developer = isDeveloperUser(user);
-  document.querySelectorAll('[data-developer-only="true"]').forEach((item) => {
-    item.hidden = !developer;
-    item.setAttribute('aria-hidden', developer ? 'false' : 'true');
-  });
 
   document.querySelectorAll('[data-shell-screen]').forEach((item) => {
     const active = item.dataset.shellScreen === primaryScreenFor(screen);
