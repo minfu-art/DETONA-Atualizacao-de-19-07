@@ -8,11 +8,15 @@ import { renderAdminDashboard } from './adminDashboard.js';
 import { renderAdminAccessScreen } from './adminAccessScreen.js';
 import { renderAdminMessagesScreen } from './adminMessagesScreen.js';
 import { renderAdminPreparedScreen } from './adminPreparedScreen.js';
+import { renderAdminContestsScreen } from './adminContestsScreen.js';
+import { renderAdminCurriculumScreen } from './adminCurriculumScreen.js';
 
 const ROUTES = Object.freeze({
   overview: renderAdminDashboard,
   students: renderAdminAccessScreen,
   messages: renderAdminMessagesScreen,
+  contests: renderAdminContestsScreen,
+  curriculum: renderAdminCurriculumScreen,
 });
 
 let shellMounted = false;

@@ -79,6 +79,12 @@
 .admin-message-list article > span { color: var(--admin-orange); font-size: .72rem; text-transform: uppercase; }
 .admin-message-list p, .admin-message-list small { margin: 0; color: var(--admin-muted); }
 .admin-message-list button { justify-self: start; padding: 6px 10px; margin-top: 5px; background: #26304e; }
+.admin-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; margin-top: 16px; }
+.admin-contest-card__code { color: var(--admin-orange); font-weight: 800; letter-spacing: .12em; }
+.admin-contest-card h2 { margin: 8px 0 3px; }
+.admin-contest-card p, .admin-contest-card small { color: var(--admin-muted); }
+.admin-contest-card dl div { display: flex; justify-content: space-between; border-top: 1px solid var(--admin-line); padding: 8px 0; }
+.admin-contest-card dd { margin: 0; }
 .admin-menu-toggle { display: none; }
 .admin-auth .saas-auth { min-height: 100vh; }
 
@@ -98,6 +104,7 @@
   .admin-contest-selector select { width: 100%; min-width: 0; max-width: 100%; }
   .admin-content { padding: 22px 14px 90px; }
   .admin-grid--2, .admin-form__row { grid-template-columns: 1fr; }
+  .admin-card-grid { grid-template-columns: 1fr; }
   .admin-table thead { display: none; }
   .admin-table, .admin-table tbody, .admin-table tr, .admin-table td { display: block; }
   .admin-table tr { padding: 10px; border-bottom: 1px solid var(--admin-line); }
