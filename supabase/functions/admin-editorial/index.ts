@@ -1,7 +1,12 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { OPERATIONAL_CAPABILITIES } from '../_shared/adminValidation.js';
 import { createAllowedOrigins, handleCorsPreflight, jsonResponse } from '../_shared/cors.js';
-import { assertEditorialTransition, validateEditorialRequest } from './core.js';
+import {
+  assertEditorialTransition,
+  sanitizedEditorialErrorCode,
+  validateEditorialRequest,
+  validateRemoteEditorialBatch,
+} from './core.js';
 
 const origins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
 const respond = (status: number, payload: unknown, origin = '') => (
@@ -13,7 +18,43 @@ async function audit(admin: any, actorId: string, contestId: string, action: str
     actor_user_id: actorId, contest_id: contestId, module: 'editorial',
     action, target_type: 'question_content', target_id: targetId, metadata,
   });
-  if (error) throw error;
+  if (error) throw new Error('audit_failure');
+}
+
+const questionId = (question: Record<string, unknown>) => (
+  String(question.id || question.question_id || '').trim()
+);
+
+const questionSubtopicId = (question: Record<string, unknown>) => (
+  String(question.subtopic_id || question.topicoEditalId || '').trim()
+);
+
+async function validateBatch(admin: any, contestId: string, questions: Record<string, unknown>[]) {
+  const questionIds = [...new Set(questions.map(questionId).filter(Boolean))];
+  const subtopicIds = [...new Set(questions.map(questionSubtopicId).filter(Boolean))];
+  const contestQuery = admin.from('admin_contests').select('id').eq('id', contestId).maybeSingle();
+  const curriculumQuery = subtopicIds.length
+    ? admin.from('admin_curriculum_nodes').select('source_id,contest_id,type').in('source_id', subtopicIds).eq('type', 'subtopic')
+    : Promise.resolve({ data: [], error: null });
+  const existingQuery = questionIds.length
+    ? admin.from('editorial_questions').select('source_question_id,contest_id')
+      .eq('contest_id', contestId).in('source_question_id', questionIds)
+    : Promise.resolve({ data: [], error: null });
+  const [contestResult, curriculumResult, existingResult] = await Promise.all([
+    contestQuery,
+    curriculumQuery,
+    existingQuery,
+  ]);
+  if (contestResult.error) throw contestResult.error;
+  if (curriculumResult.error) throw curriculumResult.error;
+  if (existingResult.error) throw existingResult.error;
+  return validateRemoteEditorialBatch({
+    contestId,
+    questions,
+    contestExists: Boolean(contestResult.data),
+    curriculumNodes: curriculumResult.data || [],
+    existingQuestions: existingResult.data || [],
+  });
 }
 
 Deno.serve(async (request) => {
@@ -52,8 +93,10 @@ Deno.serve(async (request) => {
       if (error) throw error;
       return respond(200, { batches: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
-    if (action === 'validate_batch') {
-      return respond(200, { valid: true, count: body.questions.length }, origin);
+    if (action === 'validate_batch' || action === 'import_draft') {
+      const validation = await validateBatch(admin, body.contestId, body.questions);
+      if (action === 'validate_batch') return respond(200, validation, origin);
+      if (!validation.valid) return respond(422, { error: 'questions_invalid', ...validation }, origin);
     }
     if (action === 'import_draft') {
       const { data: batchId, error } = await admin.rpc('admin_import_question_draft', {
@@ -63,7 +106,6 @@ Deno.serve(async (request) => {
         actor_id: userData.user.id,
       });
       if (error) throw error;
-      await audit(admin, userData.user.id, body.contestId, action, batchId, { item_count: body.questions.length });
       return respond(201, { batchId, imported: body.questions.length }, origin);
     }
     if (action === 'update_draft') {
@@ -118,6 +160,6 @@ Deno.serve(async (request) => {
     }
     return respond(409, { error: 'snapshot_publication_managed_by_content_package' }, origin);
   } catch (error) {
-    return respond(400, { error: error instanceof Error ? error.message : 'invalid_request' }, origin);
+    return respond(400, { error: sanitizedEditorialErrorCode(error) }, origin);
   }
 });

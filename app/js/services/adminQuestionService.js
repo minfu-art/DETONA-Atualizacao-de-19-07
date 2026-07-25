@@ -3,6 +3,57 @@ import { getSupabaseClient } from '../supabase/client.js';
 
 export const EDITORIAL_STATUSES = Object.freeze(['draft', 'technical_review', 'approved', 'published', 'archived']);
 
+const EDITORIAL_ERROR_MESSAGES = Object.freeze({
+  question_subtopic_not_found: 'O subtópico informado não foi encontrado no currículo deste concurso.',
+  question_subtopic_wrong_contest: 'O subtópico informado pertence a outro concurso.',
+  question_id_exists: 'Uma ou mais questões deste lote já foram importadas.',
+  question_id_duplicate: 'O lote possui IDs de questão repetidos.',
+  question_id_missing: 'Uma ou mais questões estão sem ID.',
+  question_contest_mismatch: 'Uma ou mais questões pertencem a outro concurso.',
+  question_subtopic_missing: 'Uma ou mais questões estão sem subtópico.',
+  question_statement_missing: 'Uma ou mais questões estão sem enunciado.',
+  question_explanation_missing: 'Uma ou mais questões estão sem explicação.',
+  question_answer_invalid: 'Uma ou mais questões estão sem gabarito válido.',
+  contest_not_found: 'O concurso selecionado não foi encontrado.',
+  developer_required: 'Esta operação exige um perfil de desenvolvedor.',
+  invalid_session: 'Sua sessão expirou. Entre novamente.',
+  questions_invalid: 'O lote contém questões inválidas. Corrija os itens indicados e valide novamente.',
+  payload_too_large: 'O lote excede o limite de tamanho permitido.',
+  audit_failure: 'A importação não foi concluída porque o registro de auditoria falhou.',
+  question_import_database_error: 'A importação precisa de uma correção segura do banco antes de continuar.',
+  origin_not_allowed: 'Este endereço de Preview não está autorizado no ambiente de homologação.',
+});
+
+export function normalizeEditorialErrorCode(value) {
+  const code = String(value?.code || value?.error || value?.message || value || '').trim();
+  const normalized = code.toLowerCase();
+  if (EDITORIAL_ERROR_MESSAGES[code]) return code;
+  if (code === '23505' || /duplicate key|already exists/.test(normalized)) return 'question_id_exists';
+  if (code === '42702' || /column reference.+ambiguous/.test(normalized)) return 'question_import_database_error';
+  if (/audit/.test(normalized)) return 'audit_failure';
+  return '';
+}
+
+export async function extractEditorialErrorCode(error, data) {
+  const direct = normalizeEditorialErrorCode(data) || normalizeEditorialErrorCode(error);
+  if (direct) return direct;
+  const context = error?.context;
+  if (context && typeof context.clone === 'function') {
+    try {
+      const payload = await context.clone().json();
+      return normalizeEditorialErrorCode(payload);
+    } catch {
+      return '';
+    }
+  }
+  return '';
+}
+
+export async function editorialErrorMessage(error, data) {
+  const code = await extractEditorialErrorCode(error, data);
+  return EDITORIAL_ERROR_MESSAGES[code] || 'Operação editorial indisponível. Tente novamente.';
+}
+
 export function parseQuestionItems(raw) {
   const payload = typeof raw === 'string' ? JSON.parse(raw) : raw;
   const items = Array.isArray(payload) ? payload : payload?.questions || payload?.questoes || payload?.items;
@@ -77,7 +128,7 @@ export class AdminQuestionService {
     const client = await this.getClient();
     if (!client) throw new Error('Backend editorial indisponível.');
     const { data, error } = await client.functions.invoke('admin-editorial', { body: { action, ...payload } });
-    if (error || data?.error) throw new Error(data?.error || error?.message || 'Operação editorial indisponível.');
+    if (error || data?.error) throw new Error(await editorialErrorMessage(error, data));
     return data;
   }
 
@@ -103,9 +154,22 @@ export class AdminQuestionService {
     return this.#invoke('list_batches', { contestId });
   }
 
+  async validateBatch(contestId, questions) {
+    return this.#invoke('validate_batch', { contestId, questions });
+  }
+
   async importDraft(contestId, batch, options = {}) {
     const validation = validateEditorialBatch(batch, { contestId, knownIds: options.knownIds, knownSubtopicIds: options.knownSubtopicIds });
     if (!validation.valid) return validation;
+    const remoteValidation = await this.validateBatch(contestId, validation.questions);
+    if (!remoteValidation.valid) {
+      return {
+        ...validation,
+        ...remoteValidation,
+        total: validation.total,
+        questions: validation.questions,
+      };
+    }
     const result = await this.#invoke('import_draft', {
       contestId,
       batchName: options.batchName || `Importação ${new Date().toISOString()}`,

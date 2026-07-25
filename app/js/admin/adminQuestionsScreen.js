@@ -62,20 +62,52 @@ export async function renderAdminQuestionsScreen(root, ctx) {
   const output = root.querySelector('#admin-question-validation');
   const importButton = root.querySelector('#question-import');
   let validation = null;
+  let loadedQuestions = [];
+
+  const validationMessage = (item) => {
+    if (typeof item === 'string') return item;
+    const prefix = item.index ? `#${item.index}: ` : '';
+    return `${prefix}${item.message || item.code || 'Item inválido.'}`;
+  };
+
+  const renderValidation = (result) => {
+    const errors = result?.errors || [];
+    const warnings = result?.warnings || [];
+    const total = result?.total ?? result?.count ?? loadedQuestions.length;
+    output.innerHTML = result?.valid
+      ? `<div class="admin-validation admin-validation--ok"><strong>${total} questões válidas.</strong>${warnings.map((warning) => `<small>${escapeHtml(validationMessage(warning))}</small>`).join('')}</div>`
+      : `<div class="admin-validation admin-validation--error"><strong>${errors.length} erro(s).</strong>${errors.slice(0, 30).map((error) => `<small>${escapeHtml(validationMessage(error))}</small>`).join('')}</div>`;
+  };
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    importButton.disabled = true;
     try {
       const fileItems = await readFiles([...form.elements.files.files]);
       const pasted = form.elements.payload.value.trim() ? parseQuestionItems(form.elements.payload.value) : [];
-      validation = validateEditorialBatch([...fileItems, ...pasted], {
+      if (fileItems.length || pasted.length) loadedQuestions = [...fileItems, ...pasted];
+      if (!loadedQuestions.length) throw new Error('Selecione um arquivo JSON ou cole um lote antes de validar.');
+      const localValidation = validateEditorialBatch(loadedQuestions, {
         contestId: ctx.adminSelectedContestId,
         knownSubtopicIds: subtopicIds,
         knownIds: questionList.questions.map((question) => question.source_question_id),
       });
+      if (!localValidation.valid) {
+        validation = localValidation;
+        renderValidation(validation);
+        return;
+      }
+      const remoteValidation = await adminQuestionService.validateBatch(
+        ctx.adminSelectedContestId,
+        localValidation.questions,
+      );
+      validation = {
+        ...localValidation,
+        ...remoteValidation,
+        total: localValidation.total,
+        questions: localValidation.questions,
+      };
       importButton.disabled = !validation.valid;
-      output.innerHTML = validation.valid
-        ? `<div class="admin-validation admin-validation--ok"><strong>${validation.total} questões válidas.</strong>${validation.warnings.map((warning) => `<small>${escapeHtml(warning)}</small>`).join('')}</div>`
-        : `<div class="admin-validation admin-validation--error"><strong>${validation.errors.length} erro(s).</strong>${validation.errors.slice(0, 30).map((error) => `<small>${escapeHtml(error)}</small>`).join('')}</div>`;
+      renderValidation(validation);
     } catch (error) {
       validation = null;
       importButton.disabled = true;
@@ -89,9 +121,16 @@ export async function renderAdminQuestionsScreen(root, ctx) {
         batchName: form.elements.batchName.value,
         knownSubtopicIds: subtopicIds,
       });
+      if (!result.valid) {
+        validation = result;
+        importButton.disabled = true;
+        renderValidation(result);
+        return;
+      }
       output.innerHTML = `<div class="admin-validation admin-validation--ok">Lote ${escapeHtml(result.batchId)} importado com ${result.imported} questões.</div>`;
       await renderAdminQuestionsScreen(root, ctx);
     } catch (error) {
+      importButton.disabled = true;
       output.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
     }
   });
