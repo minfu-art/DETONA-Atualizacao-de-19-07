@@ -1,5 +1,6 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v82-user-isolation';
+const CACHE = 'detona-v83-dynamic-contests';
+const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
   './index.html',
@@ -61,6 +62,7 @@ const ASSETS = [
   './js/auth/sessionService.js',
   './js/contest/activeContest.js',
   './js/contest/contestCatalog.js',
+  './js/contest/contestRuntime.js',
   './js/repositories/entitlementRepository.js',
   './js/repositories/progressRepository.js',
   './js/repositories/userRepository.js',
@@ -75,6 +77,8 @@ const ASSETS = [
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
   './js/services/libraryService.js',
+  './js/services/contestCatalogService.js',
+  './js/services/contestContentService.js',
   './js/services/contestSummaryService.js',
   './js/services/questionExplanationService.js',
   './js/services/reviewService.js',
@@ -221,7 +225,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+      Promise.all(keys.filter((key) => key !== CACHE && !key.startsWith(CONTENT_CACHE_PREFIX)).map((key) => caches.delete(key)))
     ).then(() => self.clients.claim())
   );
 });

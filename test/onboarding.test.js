@@ -39,7 +39,8 @@ test('onboarding exibe o jogador sem campo de nome e conclui na home', async () 
   assert.match(source, /renderOnboarding\(root, navigate, ctx\)/);
   assert.match(source, /playerForOnboarding\(await getPlayer\(\)\)/);
   assert.match(source, /player\.avatar_sprite === 'female'/);
-  assert.match(source, /player\.exam_date \|\| EXAM_META\.default_exam_date/);
+  assert.match(source, /ctx\?\.contest\?\.examDate \|\| EXAM_META\.default_exam_date/);
+  assert.match(source, /player\.exam_date \|\| defaultExamDate/);
   assert.match(source, /Jogador: \$\{escapeHtml\(name\)\}/);
   assert.doesNotMatch(source, /Nome do Aventureiro|id="ob-name"/);
   assert.match(source, /player\.name = name;[\s\S]*player\.avatar_sprite = gender;[\s\S]*player\.exam_date = examDate;[\s\S]*player\.onboarded = true;[\s\S]*await progressRepository\.put\(STORES\.player, player\);[\s\S]*await navigate\('home'\);/);

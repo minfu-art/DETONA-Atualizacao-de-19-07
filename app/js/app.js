@@ -22,11 +22,11 @@ import { ICO } from './ui/icons.js?v=66';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=70';
 import { renderAuth } from './ui/auth.js?v=74';
 import { renderLibrary } from './ui/library.js';
-import { authService, libraryService, contestDataMigrationService } from './services/appServices.js';
+import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';
 import { clearActiveContestId, getActiveContestId, setActiveContestId } from './contest/activeContest.js';
-import { getContestById } from './contest/contestCatalog.js';
+import { clearActiveContestContent, setActiveContestContent } from './contest/contestRuntime.js';
 import { skeleton } from './ui/components.js';
 import { primaryScreenFor } from './ui/navigation.js?v=70';
 import { isCloudEnabled } from './config/cloudConfig.js';
@@ -46,6 +46,7 @@ const ctx = {
   contest: null,
   openContest: null,
   user: null,
+  contentPackage: null,
 };
 
 let shellInitialized = false;
@@ -138,7 +139,9 @@ function showAuth() {
 
 async function showLibrary() {
   clearActiveContestId();
+  clearActiveContestContent();
   ctx.contest = null;
+  ctx.contentPackage = null;
   ctx.screen = 'library';
   const app = document.getElementById('app');
   app?.classList.remove('app-shell--auth');
@@ -166,10 +169,15 @@ async function showLibrary() {
 async function openContest(contestId) {
   const user = authService.getCurrentUser();
   if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
-  const contest = getContestById(contestId);
+  const contest = await libraryService.getContest(contestId, { refresh: true });
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
+  const loadedContent = await contestContentService.load(user.id, contestId);
+  const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
+  if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
   setActiveContestId(contestId);
+  setActiveContestContent(contentPackage);
   ctx.contest = contest;
+  ctx.contentPackage = contentPackage;
   document.getElementById('app')?.classList.remove('app-shell--library');
   await contestDataMigrationService.ensureCompatibility(user.id, contestId);
   await openDB();
@@ -181,7 +189,7 @@ async function openContest(contestId) {
       console.warn('[cloud] sync on open failed', err?.message || err);
     }
   }
-  await ensureSeed();
+  await ensureSeed({ contentPackage });
   await recalculateEditalSSOT();
   // Push inicial uma vez (local → nuvem) quando ainda não houve push
   if (isCloudEnabled()) {
@@ -211,6 +219,7 @@ async function openContest(contestId) {
 async function logout() {
   await authService.logout();
   clearActiveContestId();
+  clearActiveContestContent();
   resetAcademicSessionContext(ctx);
   showAuth();
 }
@@ -249,7 +258,7 @@ async function initializeAuthenticatedApp() {
     if (readyJourneys.length === 1) activeContestId = readyJourneys[0].contest.id;
   }
   if (activeContestId) {
-    const contest = getContestById(activeContestId);
+    const contest = await libraryService.getContest(activeContestId);
     const user = authService.getCurrentUser();
     const canRestore = contest?.contentStatus === 'ready'
       && await libraryService.canAccess(user.id, activeContestId);

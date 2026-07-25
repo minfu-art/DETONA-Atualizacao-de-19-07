@@ -25,6 +25,9 @@ verify_jwt = true
 [functions.admin-settings]
 verify_jwt = true
 
+[functions.student-content]
+verify_jwt = true
+
 [api]
 enabled = true
 # Port to use for the API URL.

@@ -1,0 +1,75 @@
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { normalizeCatalogContest, validateStudentContentRequest } from './core.js';
+
+const allowedOrigins = new Set((Deno.env.get('STUDENT_ALLOWED_ORIGINS') || Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '')
+  .split(',').map((value) => value.trim()).filter(Boolean));
+const respond = (status: number, payload: unknown, origin = '') => new Response(JSON.stringify(payload), {
+  status,
+  headers: { 'content-type': 'application/json', 'access-control-allow-origin': allowedOrigins.has(origin) ? origin : '', vary: 'Origin' },
+});
+
+Deno.serve(async (request) => {
+  const origin = request.headers.get('origin') || '';
+  if (request.method === 'OPTIONS') return allowedOrigins.has(origin) ? respond(204, {}, origin) : respond(403, { error: 'origin_not_allowed' });
+  try {
+    if (!allowedOrigins.has(origin) || request.method !== 'POST') return respond(403, { error: 'request_not_allowed' }, origin);
+    const authorization = request.headers.get('authorization') || '';
+    if (!authorization.startsWith('Bearer ')) return respond(401, { error: 'invalid_session' }, origin);
+    const url = Deno.env.get('SUPABASE_URL')!;
+    const identity = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: authorization } } });
+    const admin = createClient(url, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
+    const { data: auth, error: authError } = await identity.auth.getUser();
+    if (authError || !auth.user) return respond(401, { error: 'invalid_session' }, origin);
+    const body = validateStudentContentRequest(await request.json());
+    if (body.action === 'list_catalog') {
+      const { data, error } = await admin.from('admin_contests').select('*')
+        .neq('content_status', 'archived')
+        .in('sales_status', ['available', 'coming_soon'])
+        .order('created_at');
+      if (error) throw error;
+      return respond(200, { contests: data.map(normalizeCatalogContest) }, origin);
+    }
+    const { data: entitlement } = await admin.from('contest_entitlements').select('status')
+      .eq('user_id', auth.user.id).eq('contest_id', body.contestId).eq('status', 'active').maybeSingle();
+    if (!entitlement) return respond(403, { error: 'entitlement_required' }, origin);
+    const { data: contentPackage, error: packageError } = await admin.from('contest_content_packages').select('*')
+      .eq('contest_id', body.contestId).eq('status', 'published').maybeSingle();
+    if (packageError) throw packageError;
+    if (!contentPackage) {
+      if (body.contestId === 'pc_al_2026') return respond(200, { legacyStatic: true, contestId: body.contestId }, origin);
+      return respond(404, { error: 'published_package_not_found' }, origin);
+    }
+    const { data: questions, error: questionError } = await admin.from('editorial_questions').select('payload')
+      .eq('contest_id', body.contestId).eq('status', 'published').order('source_question_id');
+    if (questionError) throw questionError;
+    const assetIds = Object.values(contentPackage.visual_config || {}).filter(Boolean);
+    const { data: assets, error: assetError } = assetIds.length
+      ? await admin.from('media_assets').select('id,storage_path').eq('contest_id', body.contestId).in('id', assetIds)
+      : { data: [], error: null };
+    if (assetError) throw assetError;
+    const { data: signed, error: signedError } = assets.length
+      ? await admin.storage.from('admin-media').createSignedUrls(assets.map(({ storage_path }: { storage_path: string }) => storage_path), 3600)
+      : { data: [], error: null };
+    if (signedError) throw signedError;
+    const urlByPath = new Map((signed || []).map((item: { path: string; signedUrl: string }) => [item.path, item.signedUrl]));
+    const pathById = new Map(assets.map((item: { id: string; storage_path: string }) => [item.id, item.storage_path]));
+    const visualConfig = Object.fromEntries(Object.entries(contentPackage.visual_config || {}).map(([key, id]) => {
+      const path = pathById.get(String(id));
+      return [key, path ? urlByPath.get(path) || null : null];
+    }));
+    return respond(200, {
+      package: {
+        id: contentPackage.id,
+        contestId: contentPackage.contest_id,
+        version: contentPackage.version,
+        metadata: contentPackage.metadata,
+        curriculum: contentPackage.curriculum_snapshot,
+        questions: questions.map(({ payload }: { payload: unknown }) => payload),
+        visualConfig,
+        contentHash: contentPackage.content_hash,
+      },
+    }, origin);
+  } catch (error) {
+    return respond(400, { error: error instanceof Error ? error.message : 'invalid_request' }, origin);
+  }
+});

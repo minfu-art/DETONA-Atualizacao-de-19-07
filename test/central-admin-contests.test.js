@@ -69,7 +69,7 @@ test('capabilities somente-leitura bloqueiam escrita e resposta 409 não vira su
     name: 'Policia Civil de Alagoas',
     role: 'Agente e Escrivao',
     description: 'Descrição.',
-  }), /ainda não publicado/);
+  }), /mutation_not_enabled/);
 });
 
 test('serviço de currículo exige contestId explícito', async () => {

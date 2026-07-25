@@ -106,8 +106,17 @@ export async function renderHome(root, navigate, ctx) {
     });
   }
 
-  const topicsGerais = mainTopics('gerais');
-  const topicsEspecificos = mainTopics('especificos');
+  const dynamicTopics = ctx.contentPackage
+    ? discBars.map((discipline, index) => ({
+      id: discipline.id,
+      label: discipline.name,
+      icon: discIcon(discipline.id, 'ico--inline'),
+      pct: discipline.pct,
+      color: discipline.color || DISC_BAR_COLORS[index % DISC_BAR_COLORS.length],
+    }))
+    : null;
+  const topicsGerais = dynamicTopics || mainTopics('gerais');
+  const topicsEspecificos = dynamicTopics ? [] : mainTopics('especificos');
   // Foco do dia = matéria mais fraca (inimigo a enfrentar)
   const focusDisc = [...discBars].sort((a, b) => a.pct - b.pct)[0];
   const missionFocus = focusDisc
@@ -518,6 +527,10 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
     phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
   } = data;
+  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
+  const missionHero = customHero
+    ? `<img class="hero-img dj-mission__hero" src="${escapeHtml(customHero)}" alt="Avatar do concurso">`
+    : heroImgHtml({ className: 'hero-img dj-mission__hero', level: player.level, sprite: player.avatar_sprite });
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
   const hudInsignias = (emblemState?.insignias || []).slice(0, 5);
   const insigniaHud = hudInsignias.map((progress) => emblemArt(progress.currentInsignia, {
@@ -716,7 +729,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
         <div class="dj-mission__art" aria-hidden="true">
           <div class="dj-mission__orb"></div>
-          ${heroImgHtml({ className: 'hero-img dj-mission__hero', level: player.level, sprite: player.avatar_sprite })}
+          ${missionHero}
           <div class="dj-mission__foe">
             ${enemyImgHtml(dailyEnemySprite || 'enemy-1', { className: 'enemy-img dj-mission__enemy', size: 'sm' })}
           </div>

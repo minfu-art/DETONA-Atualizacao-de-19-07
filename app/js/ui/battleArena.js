@@ -24,6 +24,10 @@ export async function renderBattle(root, navigate, ctx) {
   }
 
   const player = await getPlayer();
+  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
+  const battleHero = (className) => customHero
+    ? `<img src="${escapeAttr(customHero)}" alt="Avatar do concurso" class="${className}" draggable="false">`
+    : heroImgHtml({ className, level: player.level, sprite: player.avatar_sprite });
   let locked = false;
 
   function paintQuestion() {
@@ -58,7 +62,7 @@ export async function renderBattle(root, navigate, ctx) {
           <div class="arena-row">
             <div class="fighter fighter--hero" id="hero">
               <div class="fighter-glow fighter-glow--hero"></div>
-              ${heroImgHtml({ className: 'hero-img hero-img--battle', level: player.level, sprite: player.avatar_sprite })}
+              ${battleHero('hero-img hero-img--battle')}
               <div class="fighter-tag">${escapeHtml(player.name || 'Você')}</div>
               <div class="bar-track fighter-mini-hp" role="progressbar" aria-label="Foco visual da sessão" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${session.playerHp}">
                 <div class="bar-fill xp" style="width:${session.playerHp}%"></div>
@@ -133,7 +137,7 @@ export async function renderBattle(root, navigate, ctx) {
         <section class="battle-duel" id="stage" style="--arena-bg:url('${BATTLE_BG}')" aria-label="Contexto da missão">
           <div class="battle-duel__bg" aria-hidden="true"></div>
           <div class="battle-duel__fighter battle-duel__fighter--hero" id="hero">
-            ${heroImgHtml({ className: 'hero-img battle-duel__image', level: player.level, sprite: player.avatar_sprite })}
+            ${battleHero('hero-img battle-duel__image')}
             <span>${escapeHtml(player.name || 'Você')}</span>
           </div>
           <div class="battle-duel__center">

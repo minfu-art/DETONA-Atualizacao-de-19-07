@@ -78,15 +78,9 @@ test('núcleos limitam paginação, mídia, HTML, URLs e configurações', () =>
       action: 'register_asset',
       contestId: 'pc_al_2026',
       asset: {
-        stageId: '452d919a-8812-4fce-8eeb-13c5834b1760',
         storagePath: '../secret.png',
-        name: 'secret.png',
-        mimeType: 'image/png',
-        size: 100,
-        width: 10,
-        height: 10,
-        hasTransparency: true,
-        assetType: 'portrait',
+        assetType: 'battle_avatar',
+        requireTransparency: true,
       },
     }),
     /invalid_storage_path/,
@@ -113,19 +107,18 @@ test('núcleos limitam paginação, mídia, HTML, URLs e configurações', () =>
   );
 });
 
-test('interfaces em modo leitura não apresentam ações administrativas falsas', async () => {
-  const files = [
-    '../app/js/admin/adminContestsScreen.js',
-    '../app/js/admin/adminCurriculumScreen.js',
-    '../app/js/admin/adminQuestionsScreen.js',
-    '../app/js/admin/adminMediaScreen.js',
-    '../app/js/admin/adminLandingScreen.js',
-    '../app/js/admin/adminSettingsScreen.js',
-  ];
-  for (const file of files) {
+test('interfaces operacionais chamam serviços protegidos e não simulam gravações locais', async () => {
+  const expectations = new Map([
+    ['../app/js/admin/adminContestsScreen.js', /adminContestService\.(?:createContest|updateContest)/],
+    ['../app/js/admin/adminCurriculumScreen.js', /adminCurriculumService\.importDraft/],
+    ['../app/js/admin/adminQuestionsScreen.js', /adminQuestionService\.importDraft/],
+    ['../app/js/admin/adminMediaScreen.js', /adminAvatarService\.uploadContestAsset/],
+    ['../app/js/admin/adminPublicationScreen.js', /adminPublicationService\.publish/],
+  ]);
+  for (const [file, expected] of expectations) {
     const text = await source(file);
-    assert.match(text, /Consulta homologada; escrita ainda bloqueada\./);
-    assert.doesNotMatch(text, /<button[^>]*>\s*(?:Editar|Criar|Publicar|Arquivar)\b/i);
+    assert.match(text, expected);
+    assert.doesNotMatch(text, /localStorage\.(?:setItem|removeItem)/);
   }
 });
 

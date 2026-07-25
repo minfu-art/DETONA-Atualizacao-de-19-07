@@ -222,6 +222,8 @@ Deno.serve(async (request) => {
         admin.from('admin_contests').update({ content_status: 'ready', published_at: publishedAt }).eq('id', body.contestId),
         admin.from('question_publication_versions').update({ status: 'published', published_at: publishedAt, published_by: userData.user.id })
           .eq('id', data.questions_version_id),
+        admin.from('editorial_questions').update({ status: 'published' })
+          .eq('contest_id', body.contestId).eq('status', 'approved'),
       ]);
       await audit(admin, userData.user.id, {
         contestId: body.contestId, action, targetType: 'content_package', targetId: data.id,

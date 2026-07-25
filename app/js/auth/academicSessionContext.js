@@ -6,6 +6,7 @@ const RESET_FIELDS = Object.freeze({
   returnToTree: null,
   profileSection: null,
   contest: null,
+  contentPackage: null,
   user: null,
   screen: 'auth',
 });

@@ -21,9 +21,14 @@ export async function renderOnboarding(root, navigate, ctx) {
   const player = playerForOnboarding(await getPlayer());
   let gender = player.avatar_sprite === 'female' ? 'female' : 'male';
   const name = playerNameForOnboarding(ctx, player);
-  let examDate = player.exam_date || EXAM_META.default_exam_date;
+  const contestName = ctx?.contest?.name || EXAM_META.name;
+  const contestRole = ctx?.contest?.role || EXAM_META.cargo;
+  const defaultExamDate = ctx?.contest?.examDate || EXAM_META.default_exam_date;
+  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
+  let examDate = player.exam_date || defaultExamDate;
 
   function previewHero(sprite) {
+    if (customHero) return `<img class="hero-img hero-img--onboard" src="${escapeHtml(customHero)}" alt="Avatar do concurso">`;
     return heroImgHtml({ className: 'hero-img hero-img--onboard', level: 1, sprite });
   }
 
@@ -33,7 +38,7 @@ export async function renderOnboarding(root, navigate, ctx) {
         ${previewHero(gender)}
       </div>
       <h1>DETONA<br>CONCURSOS</h1>
-      <p class="sub">${EXAM_META.name}<br>${EXAM_META.cargo}</p>
+      <p class="sub">${escapeHtml(contestName)}<br>${escapeHtml(contestRole)}</p>
 
       <div class="ro-window">
         <div class="ro-title">Criação de Personagem</div>
@@ -95,7 +100,7 @@ export async function renderOnboarding(root, navigate, ctx) {
     startButton.disabled = true;
     startButton.textContent = 'Salvando preparação...';
     try {
-      examDate = $('#ob-date', root).value || EXAM_META.default_exam_date;
+      examDate = $('#ob-date', root).value || defaultExamDate;
       player.name = name;
       player.avatar_sprite = gender;
       player.exam_date = examDate;

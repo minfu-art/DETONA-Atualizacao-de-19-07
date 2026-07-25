@@ -1,6 +1,7 @@
 import { STORES, getAll } from '../core/db.js';
 import { getQuestionSourceMode, QUESTION_INDEX_URL, QUESTION_SOURCE_MODES } from '../config/questionSourceConfig.js';
 import { isDemoQuestion } from '../core/questionSchema.js';
+import { isDynamicContestContent } from '../contest/contestRuntime.js';
 
 const clone = (value) => value == null ? value : structuredClone(value);
 const textKey = (value) => String(value ?? '').trim().toLocaleLowerCase('pt-BR');
@@ -44,7 +45,8 @@ export function createQuestionRepository({
   }
 
   async function listar(filtros = {}) {
-    const mode = filtros.mode || modeLoader();
+    const dynamic = isDynamicContestContent();
+    const mode = dynamic ? QUESTION_SOURCE_MODES.LEGACY : (filtros.mode || modeLoader());
     const legacy = mode === QUESTION_SOURCE_MODES.JSON ? [] : (await legacyLoader()).filter((item) => item.questionSource !== 'json');
     const json = mode === QUESTION_SOURCE_MODES.LEGACY ? [] : await jsonQuestions();
     const unique = new Map();

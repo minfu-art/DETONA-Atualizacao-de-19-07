@@ -11,6 +11,7 @@ import * as localDb from '../core/db.js';
 import { isLocalDevelopment, requiresRemoteBackend } from '../config/appEnvironment.js';
 import { SupabaseEntitlementRepository } from '../supabase/entitlementRepository.js';
 import { CheckoutService, CheckoutUnavailableGateway, LocalDemoCheckoutGateway } from './checkoutService.js';
+import { contestContentService } from './contestContentService.js';
 
 const localAuth = new AuthService({
   migrationService: isLocalDevelopment() ? new LegacyDataMigrationService() : null,
@@ -31,6 +32,7 @@ export const libraryService = new LibraryService({
   summaries: new ContestSummaryService(),
 });
 export const contestDataMigrationService = new ContestDataMigrationService();
+export { contestContentService };
 
 /**
  * ProgressRepository com adapter híbrido quando a nuvem está ativa.
