@@ -101,6 +101,9 @@
 .admin-contest-list button.active { border-color: var(--admin-violet); }
 .admin-contest-list button > span { grid-row: 1 / 3; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 9px; font-weight: 800; }
 .admin-contest-list small { color: var(--admin-muted); }
+.admin-curriculum-tree { max-height: 620px; overflow: auto; display: grid; gap: 4px; }
+.admin-curriculum-tree > div { display: grid; grid-template-columns: 80px 1fr auto; gap: 8px; align-items: center; margin-left: calc(var(--depth) * 12px); padding: 8px; border-left: 2px solid var(--admin-line); background: #090e20; }
+.admin-curriculum-tree span, .admin-curriculum-tree small { color: var(--admin-muted); font-size: .72rem; }
 .admin-metric__text { font-size: 1.05rem !important; }
 .admin-steps { display: grid; gap: 8px; padding: 0; list-style: none; counter-reset: steps; }
 .admin-steps li { counter-increment: steps; border: 1px solid var(--admin-line); border-radius: 9px; padding: 10px; color: var(--admin-muted); }

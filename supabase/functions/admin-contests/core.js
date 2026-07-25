@@ -13,7 +13,8 @@ import {
 export const ADMIN_CONTEST_ACTIONS = Object.freeze([
   'list_contests', 'get_contest', 'create_contest', 'update_contest',
   'publish', 'suspend', 'archive', 'list_curriculum', 'save_curriculum_node',
-  'reorder_curriculum', 'list_audit',
+  'reorder_curriculum', 'list_audit', 'validate_curriculum_import',
+  'import_curriculum_draft', 'get_curriculum_tree', 'replace_curriculum_draft',
 ]);
 
 export function assertAdminContestAction(action) {
@@ -72,7 +73,7 @@ export function validateAdminContestRequest(input) {
     assertExactKeys(body, ['action', 'search']);
     return { action, search: safeSearch(body.search) };
   }
-  if (action === 'get_contest' || action === 'list_curriculum') {
+  if (action === 'get_contest' || action === 'list_curriculum' || action === 'get_curriculum_tree') {
     assertExactKeys(body, ['action', 'contestId'], ['contestId']);
     return { action, contestId: safeId(body.contestId, 'contest_id') };
   }
@@ -87,6 +88,35 @@ export function validateAdminContestRequest(input) {
   if (action === 'create_contest' || action === 'update_contest') {
     assertExactKeys(body, ['action', 'contest'], ['contest']);
     return { action, contest: validateContestRecord(body.contest) };
+  }
+  if (action === 'validate_curriculum_import' || action === 'import_curriculum_draft' || action === 'replace_curriculum_draft') {
+    assertExactKeys(body, ['action', 'contestId', 'schemaVersion', 'nodes'], ['contestId', 'schemaVersion', 'nodes']);
+    if (body.schemaVersion !== 1 || !Array.isArray(body.nodes) || !body.nodes.length || body.nodes.length > 10_000) {
+      throw new Error('curriculum_import_invalid');
+    }
+    const ids = new Set();
+    const nodes = body.nodes.map((raw) => {
+      const node = assertExactKeys(raw, [
+        'source_id', 'parent_source_id', 'type', 'name', 'description', 'order_index',
+      ], ['source_id', 'parent_source_id', 'type', 'name', 'order_index']);
+      const sourceId = safeId(node.source_id, 'source_id');
+      if (ids.has(sourceId)) throw new Error('curriculum_source_id_duplicate');
+      ids.add(sourceId);
+      const orderIndex = Number(node.order_index);
+      if (!Number.isInteger(orderIndex) || orderIndex < 0 || orderIndex > 100_000) throw new Error('order_index_invalid');
+      return {
+        source_id: sourceId,
+        parent_source_id: node.parent_source_id ? safeId(node.parent_source_id, 'parent_source_id') : null,
+        type: safeEnum(node.type, ['role', 'discipline', 'topic', 'subtopic'], 'type'),
+        name: safeText(rejectMarkup(node.name, 'name'), 'name', 240),
+        description: node.description ? safeText(rejectMarkup(node.description, 'description'), 'description', 1000) : null,
+        order_index: orderIndex,
+      };
+    });
+    for (const node of nodes) {
+      if (node.parent_source_id && !ids.has(node.parent_source_id)) throw new Error('curriculum_parent_missing');
+    }
+    return { action, contestId: safeId(body.contestId, 'contest_id'), schemaVersion: 1, nodes };
   }
   if (action === 'save_curriculum_node') {
     assertExactKeys(body, ['action', 'contestId', 'node'], ['contestId', 'node']);

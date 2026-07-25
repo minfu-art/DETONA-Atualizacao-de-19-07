@@ -72,11 +72,37 @@ Deno.serve(async (request) => {
         capabilities: OPERATIONAL_CAPABILITIES,
       }, origin);
     }
-    if (action === 'list_curriculum') {
+    if (action === 'list_curriculum' || action === 'get_curriculum_tree') {
       const { data, error } = await admin.from('admin_curriculum_nodes').select('*')
         .eq('contest_id', body.contestId).order('order_index');
       if (error) throw error;
       return json(200, { nodes: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+    }
+    if (action === 'validate_curriculum_import') {
+      return json(200, {
+        valid: true,
+        count: body.nodes.length,
+        counts: body.nodes.reduce((result: Record<string, number>, node: { type: string }) => {
+          result[node.type] = (result[node.type] || 0) + 1;
+          return result;
+        }, {}),
+      }, origin);
+    }
+    if (action === 'import_curriculum_draft' || action === 'replace_curriculum_draft') {
+      const { data, error } = await admin.rpc('admin_replace_curriculum_draft', {
+        target_contest_id: body.contestId,
+        imported_nodes: body.nodes,
+        allow_replace: action === 'replace_curriculum_draft',
+      });
+      if (error) throw error;
+      await audit(admin, userData.user.id, {
+        contestId: body.contestId,
+        action,
+        targetType: 'curriculum',
+        targetId: body.contestId,
+        metadata: { schema_version: body.schemaVersion, node_count: body.nodes.length },
+      });
+      return json(200, { imported: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
     if (action === 'list_audit') {
       const from = (body.page - 1) * body.pageSize;

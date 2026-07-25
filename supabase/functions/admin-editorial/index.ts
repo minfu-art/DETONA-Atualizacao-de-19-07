@@ -1,23 +1,37 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { READ_ONLY_CAPABILITIES } from '../_shared/adminValidation.js';
-import { validateEditorialRequest } from './core.js';
+import { OPERATIONAL_CAPABILITIES } from '../_shared/adminValidation.js';
+import { assertEditorialTransition, validateEditorialRequest } from './core.js';
 
-const origins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((v) => v.trim()).filter(Boolean));
+const origins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((value) => value.trim()).filter(Boolean));
 const respond = (status: number, payload: unknown, origin = '') => new Response(JSON.stringify(payload), {
   status,
   headers: { 'content-type': 'application/json', 'access-control-allow-origin': origins.has(origin) ? origin : '', vary: 'Origin' },
 });
+
+async function audit(admin: any, actorId: string, contestId: string, action: string, targetId: string, metadata = {}) {
+  const { error } = await admin.from('admin_audit_log').insert({
+    actor_user_id: actorId, contest_id: contestId, module: 'editorial',
+    action, target_type: 'question_content', target_id: targetId, metadata,
+  });
+  if (error) throw error;
+}
+
+async function hashJson(value: unknown) {
+  const bytes = new TextEncoder().encode(JSON.stringify(value));
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
 
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
   if (request.method === 'OPTIONS') return origins.has(origin) ? respond(204, {}, origin) : respond(403, { error: 'origin_not_allowed' });
   try {
     if (!origins.has(origin) || request.method !== 'POST') return respond(403, { error: 'request_not_allowed' }, origin);
-    const auth = request.headers.get('authorization') || '';
-    if (!auth.startsWith('Bearer ')) return respond(401, { error: 'invalid_session' }, origin);
+    const authorization = request.headers.get('authorization') || '';
+    if (!authorization.startsWith('Bearer ')) return respond(401, { error: 'invalid_session' }, origin);
     if (Number(request.headers.get('content-length') || 0) > 2_100_000) return respond(413, { error: 'payload_too_large' }, origin);
     const url = Deno.env.get('SUPABASE_URL')!;
-    const identity = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: auth } } });
+    const identity = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: authorization } } });
     const admin = createClient(url, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
     const { data: userData } = await identity.auth.getUser();
     if (!userData.user) return respond(401, { error: 'invalid_session' }, origin);
@@ -25,19 +39,109 @@ Deno.serve(async (request) => {
     if (profile?.role !== 'developer') return respond(403, { error: 'developer_required' }, origin);
     const body = validateEditorialRequest(await request.json());
     const { action } = body;
+
     if (action === 'list_questions') {
       const from = (body.page - 1) * body.pageSize;
-      let query = admin.from('editorial_questions').select('id,contest_id,status,difficulty,created_at')
-        .eq('contest_id', body.contestId).range(from, from + body.pageSize - 1);
+      let query = admin.from('editorial_questions')
+        .select('id,source_question_id,contest_id,status,difficulty,statement,explanation,curriculum_node_id,batch_id,version,created_at')
+        .eq('contest_id', body.contestId).order('created_at', { ascending: false }).range(from, from + body.pageSize - 1);
       if (body.status) query = query.eq('status', body.status);
-      if (body.search) query = query.ilike('id', `%${body.search}%`);
+      if (body.search) query = query.or(`source_question_id.ilike.%${body.search}%,statement.ilike.%${body.search}%`);
       const { data, error } = await query;
       if (error) throw error;
-      return respond(200, { questions: data, capabilities: READ_ONLY_CAPABILITIES }, origin);
+      return respond(200, { questions: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
-    // Mutações serão habilitadas após a validação operacional do schema e Storage.
-    return respond(409, { error: 'mutation_not_enabled' }, origin);
-  } catch {
-    return respond(400, { error: 'invalid_request' }, origin);
+    if (action === 'list_batches') {
+      const { data, error } = await admin.from('question_batches').select('*').eq('contest_id', body.contestId).order('created_at', { ascending: false });
+      if (error) throw error;
+      return respond(200, { batches: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+    }
+    if (action === 'validate_batch') {
+      return respond(200, { valid: true, count: body.questions.length }, origin);
+    }
+    if (action === 'import_draft') {
+      const { data: batchId, error } = await admin.rpc('admin_import_question_draft', {
+        target_contest_id: body.contestId,
+        batch_name: body.batchName,
+        imported_questions: body.questions,
+        actor_id: userData.user.id,
+      });
+      if (error) throw error;
+      await audit(admin, userData.user.id, body.contestId, action, batchId, { item_count: body.questions.length });
+      return respond(201, { batchId, imported: body.questions.length }, origin);
+    }
+    if (action === 'update_draft') {
+      const { data: node, error: nodeError } = await admin.from('admin_curriculum_nodes').select('id')
+        .eq('contest_id', body.contestId).eq('source_id', body.question.subtopic_id).eq('type', 'subtopic').single();
+      if (nodeError) throw nodeError;
+      const sourceId = body.question.id;
+      const { data, error } = await admin.from('editorial_questions').update({
+        statement: body.question.statement,
+        options: body.question.options || [],
+        correct_answer: body.question.correct_answer,
+        explanation: body.question.explanation,
+        difficulty: body.question.difficulty || null,
+        source: body.question.source || null,
+        is_trick: body.question.is_trick === true,
+        curriculum_node_id: node.id,
+        payload: body.question,
+        version: 2,
+      }).eq('contest_id', body.contestId).eq('source_question_id', sourceId).eq('status', 'draft').select('*').single();
+      if (error) throw error;
+      await audit(admin, userData.user.id, body.contestId, action, sourceId);
+      return respond(200, { question: data }, origin);
+    }
+    if (action === 'delete_draft') {
+      const { data, error } = await admin.from('editorial_questions').delete().eq('contest_id', body.contestId)
+        .in('source_question_id', body.questionIds).eq('status', 'draft').select('source_question_id');
+      if (error) throw error;
+      await audit(admin, userData.user.id, body.contestId, action, body.contestId, { count: data.length });
+      return respond(200, { deleted: data.length }, origin);
+    }
+    if (action === 'transition') {
+      const { data: rows, error: readError } = await admin.from('editorial_questions').select('source_question_id,status')
+        .eq('contest_id', body.contestId).in('source_question_id', body.questionIds);
+      if (readError) throw readError;
+      rows.forEach((row: { status: string }) => assertEditorialTransition(row.status, body.status));
+      const { data, error } = await admin.from('editorial_questions').update({
+        status: body.status,
+        reviewer_id: ['technical_review', 'approved'].includes(body.status) ? userData.user.id : null,
+      }).eq('contest_id', body.contestId).in('source_question_id', body.questionIds).select('source_question_id,status');
+      if (error) throw error;
+      await audit(admin, userData.user.id, body.contestId, action, body.contestId, { count: data.length, status: body.status });
+      return respond(200, { questions: data }, origin);
+    }
+    if (action === 'generate_snapshot') {
+      const { data: questions, error: questionError } = await admin.from('editorial_questions').select('payload')
+        .eq('contest_id', body.contestId).eq('status', 'approved').order('source_question_id');
+      if (questionError) throw questionError;
+      if (!questions.length) return respond(409, { error: 'approved_questions_required' }, origin);
+      const contentHash = await hashJson(questions.map(({ payload }: { payload: unknown }) => payload));
+      const { data, error } = await admin.from('question_publication_versions').insert({
+        contest_id: body.contestId,
+        version: body.version,
+        item_count: questions.length,
+        content_hash: contentHash,
+        storage_path: `database://${body.contestId}/${body.version}`,
+        status: 'generated',
+      }).select('*').single();
+      if (error) throw error;
+      await audit(admin, userData.user.id, body.contestId, action, data.id, { item_count: questions.length, content_hash: contentHash });
+      return respond(201, { version: data }, origin);
+    }
+    const status = action === 'publish_snapshot' ? 'published' : 'rolled_back';
+    const timestamp = action === 'publish_snapshot' ? { published_at: new Date().toISOString(), published_by: userData.user.id } : { rolled_back_at: new Date().toISOString() };
+    const { data, error } = await admin.from('question_publication_versions').update({ status, ...timestamp })
+      .eq('id', body.versionId).eq('contest_id', body.contestId).select('*').single();
+    if (error) throw error;
+    if (action === 'publish_snapshot') {
+      const { error: questionError } = await admin.from('editorial_questions').update({ status: 'published' })
+        .eq('contest_id', body.contestId).eq('status', 'approved');
+      if (questionError) throw questionError;
+    }
+    await audit(admin, userData.user.id, body.contestId, action, body.versionId);
+    return respond(200, { version: data }, origin);
+  } catch (error) {
+    return respond(400, { error: error instanceof Error ? error.message : 'invalid_request' }, origin);
   }
 });
