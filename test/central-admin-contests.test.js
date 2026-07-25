@@ -7,7 +7,9 @@ import { AdminCurriculumService, validateCurriculumNode } from '../app/js/servic
 import {
   assertAdminContestAction,
   sanitizedAuditMetadata,
+  validateAdminContestRequest,
 } from '../supabase/functions/admin-contests/core.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability } from '../app/js/services/adminCapabilities.js';
 
 test('catálogo administrativo usa fallback sem alterar catálogo acadêmico', async () => {
   const service = new AdminContestService({ getClient: async () => null });
@@ -15,6 +17,59 @@ test('catálogo administrativo usa fallback sem alterar catálogo acadêmico', a
   assert.equal(result.source, 'static_catalog');
   assert.equal(result.writable, false);
   assert.equal(result.rows[0].id, 'pc_al_2026');
+});
+
+test('catálogo vazio mantém fallback e sinaliza bootstrap', async () => {
+  const client = {
+    functions: {
+      invoke: async () => ({
+        data: { contests: [], capabilities: READ_ONLY_CAPABILITIES },
+        error: null,
+      }),
+    },
+  };
+  const service = new AdminContestService({ getClient: async () => client });
+  const result = await service.listContests();
+  assert.equal(result.source, 'static_catalog');
+  assert.equal(result.bootstrapRequired, true);
+  assert.equal(result.writable, false);
+  assert.equal(result.rows.length, 3);
+});
+
+test('catálogo administrativo populado substitui fallback sem inventar escrita', async () => {
+  const rows = [{ id: 'novo_concurso_2027', name: 'Novo concurso' }];
+  const client = {
+    functions: {
+      invoke: async () => ({
+        data: { contests: rows, capabilities: READ_ONLY_CAPABILITIES },
+        error: null,
+      }),
+    },
+  };
+  const service = new AdminContestService({ getClient: async () => client });
+  const result = await service.listContests();
+  assert.deepEqual(result.rows, rows);
+  assert.equal(result.source, 'administrative_table');
+  assert.equal(result.bootstrapRequired, false);
+  assert.equal(result.writable, false);
+});
+
+test('capabilities somente-leitura bloqueiam escrita e resposta 409 não vira sucesso', async () => {
+  assert.equal(hasWriteCapability(READ_ONLY_CAPABILITIES), false);
+  const client = {
+    functions: {
+      invoke: async () => ({ data: { error: 'mutation_not_enabled' }, error: null }),
+    },
+  };
+  const service = new AdminContestService({ getClient: async () => client });
+  await assert.rejects(() => service.saveContest({
+    id: 'pc_al_2026',
+    code: 'PC AL',
+    slug: 'pc-al-2026',
+    name: 'Policia Civil de Alagoas',
+    role: 'Agente e Escrivao',
+    description: 'Descrição.',
+  }), /ainda não publicado/);
 });
 
 test('serviço de currículo exige contestId explícito', async () => {
@@ -36,6 +91,14 @@ test('Edge Function usa allowlist de ações e sanitiza auditoria', () => {
   assert.equal(assertAdminContestAction('list_contests'), 'list_contests');
   assert.throws(() => assertAdminContestAction('delete_everything'), /not_allowed/);
   assert.deepEqual(sanitizedAuditMetadata({ status: 'ok', password: 'x', jwtToken: 'y' }), { status: 'ok' });
+  assert.throws(
+    () => validateAdminContestRequest({ action: 'list_contests', search: 'x),id.eq.secret' }),
+    /search_invalid/,
+  );
+  assert.throws(
+    () => validateAdminContestRequest({ action: 'list_contests', search: '', unexpected: true }),
+    /unexpected_field/,
+  );
 });
 
 test('migration administrativa mantém tabelas fora da Data API', async () => {

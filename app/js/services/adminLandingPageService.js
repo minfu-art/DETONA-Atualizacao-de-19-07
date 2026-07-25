@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '../supabase/client.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const LANDING_BLOCK_TYPES = Object.freeze([
   'hero', 'benefits', 'method', 'features', 'demo', 'testimonials',
@@ -29,12 +30,13 @@ export class AdminLandingPageService {
   async list(contestId) {
     if (!contestId) throw new Error('contestId é obrigatório.');
     const client = await this.getClient();
-    if (!client) return { rows: [], writable: false };
+    if (!client) return { rows: [], capabilities: { ...READ_ONLY_CAPABILITIES }, writable: false };
     const { data, error } = await client.functions.invoke('admin-site', {
       body: { action: 'list_pages', contestId },
     });
-    if (error || data?.error) return { rows: [], writable: false };
-    return { rows: data.pages || [], writable: true };
+    if (error || data?.error) return { rows: [], capabilities: { ...READ_ONLY_CAPABILITIES }, writable: false };
+    const capabilities = normalizeAdminCapabilities(data.capabilities, READ_ONLY_CAPABILITIES);
+    return { rows: data.pages || [], capabilities, writable: hasWriteCapability(capabilities) };
   }
 }
 

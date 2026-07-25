@@ -33,8 +33,16 @@ test('adminSelectedContestId é isolado e validado', () => {
     removeItem: (key) => data.delete(key),
   };
   const ctx = new AdminContext({ storage });
-  assert.equal(ctx.restoreContest(), 'pc_al_2026');
+  const contests = [
+    { id: 'pc_al_2026' },
+    { id: 'pf_2026' },
+    { id: 'prf_2026' },
+    { id: 'novo_concurso_2027' },
+  ];
+  assert.equal(ctx.restoreContest(contests), 'pc_al_2026');
   assert.equal(ctx.selectContest('pf_2026'), 'pf_2026');
+  assert.equal(ctx.selectContest('prf_2026'), 'prf_2026');
+  assert.equal(ctx.selectContest('novo_concurso_2027'), 'novo_concurso_2027');
   assert.throws(() => ctx.selectContest('invalid'), /inválido/);
   assert.equal(data.has('detona.activeContestId'), false);
 });

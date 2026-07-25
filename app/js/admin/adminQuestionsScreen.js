@@ -25,7 +25,7 @@ export async function renderAdminQuestionsScreen(root, ctx) {
           <li class="is-active">Validar lote</li><li>Importar como rascunho</li>
           <li>Enviar para revisão</li><li>Aprovar</li><li>Gerar snapshot</li><li>Publicar versão</li>
         </ol>
-        <div class="admin-prepared">As tabelas e a Edge Function estão preparadas localmente. Importação e publicação permanecem fechadas até a migration ser revisada e aplicada no staging.</div>
+        <div class="admin-prepared">Consulta homologada; escrita ainda bloqueada. As tabelas e a Edge Function estão preparadas localmente.</div>
       </article>
     </section>`;
   const form = root.querySelector('#admin-question-validator');

@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '../supabase/client.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const ADMIN_SETTING_DEFINITIONS = Object.freeze({
   platform_name: { type: 'string', defaultValue: 'DETONA CONCURSOS' },
@@ -40,12 +41,16 @@ export class AdminSettingsService {
       const { data, error } = await client.functions.invoke('admin-settings', {
         body: { action: 'list_settings', contestId },
       });
-      if (!error && !data?.error) return { rows: data.settings || [], writable: true };
+      if (!error && !data?.error) {
+        const capabilities = normalizeAdminCapabilities(data.capabilities, READ_ONLY_CAPABILITIES);
+        return { rows: data.settings || [], capabilities, writable: hasWriteCapability(capabilities) };
+      }
     }
     return {
       rows: Object.entries(ADMIN_SETTING_DEFINITIONS).map(([key, definition]) => ({
         key, type: definition.type, value: definition.defaultValue, source: 'typed_default',
       })),
+      capabilities: { ...READ_ONLY_CAPABILITIES },
       writable: false,
     };
   }

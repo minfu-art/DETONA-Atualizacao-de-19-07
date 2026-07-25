@@ -1,22 +1,28 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { assertSiteAction } from './core.js';
+import { READ_ONLY_CAPABILITIES } from '../_shared/adminValidation.js';
+import { validateSiteRequest } from './core.js';
 const origins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((v) => v.trim()).filter(Boolean));
 const reply = (status: number, body: unknown, origin = '') => new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json', 'access-control-allow-origin': origins.has(origin) ? origin : '', vary: 'Origin' } });
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
   if (request.method === 'OPTIONS') return origins.has(origin) ? reply(204, {}, origin) : reply(403, { error: 'origin_not_allowed' });
   try {
-    if (!origins.has(origin)) return reply(403, { error: 'origin_not_allowed' }, origin);
+    if (!origins.has(origin) || request.method !== 'POST') return reply(403, { error: 'request_not_allowed' }, origin);
+    const authorization = request.headers.get('authorization') || '';
+    if (!authorization.startsWith('Bearer ')) return reply(401, { error: 'invalid_session' }, origin);
+    if (Number(request.headers.get('content-length') || 0) > 100_000) return reply(413, { error: 'payload_too_large' }, origin);
     const url = Deno.env.get('SUPABASE_URL')!;
-    const identity = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: request.headers.get('authorization') || '' } } });
+    const identity = createClient(url, Deno.env.get('SUPABASE_ANON_KEY')!, { global: { headers: { Authorization: authorization } } });
     const admin = createClient(url, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!, { auth: { persistSession: false } });
     const { data: auth } = await identity.auth.getUser();
     const { data: profile } = auth.user ? await admin.from('profiles').select('role').eq('id', auth.user.id).maybeSingle() : { data: null };
     if (profile?.role !== 'developer') return reply(403, { error: 'developer_required' }, origin);
-    const body = await request.json(); const action = assertSiteAction(body.action);
+    const body = validateSiteRequest(await request.json()); const { action } = body;
     if (action === 'list_pages') {
-      const { data, error } = await admin.from('landing_pages').select('*').eq('contest_id', body.contestId);
-      if (error) throw error; return reply(200, { pages: data }, origin);
+      const from = (body.page - 1) * body.pageSize;
+      const { data, error } = await admin.from('landing_pages').select('*').eq('contest_id', body.contestId)
+        .range(from, from + body.pageSize - 1);
+      if (error) throw error; return reply(200, { pages: data, capabilities: READ_ONLY_CAPABILITIES }, origin);
     }
     return reply(409, { error: 'mutation_not_enabled' }, origin);
   } catch { return reply(400, { error: 'invalid_request' }, origin); }

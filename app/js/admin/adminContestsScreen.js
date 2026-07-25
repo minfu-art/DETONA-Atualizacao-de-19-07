@@ -15,14 +15,16 @@ export async function renderAdminContestsScreen(root) {
   async function load(search = '') {
     const data = await adminContestService.listContests({ search });
     result.innerHTML = `
-      ${data.writable ? '' : '<div class="admin-prepared">Catálogo administrativo ainda não publicado. Exibindo fallback somente-leitura; o catálogo acadêmico não foi alterado.</div>'}
+      ${data.writable ? '' : `<div class="admin-prepared">${data.bootstrapRequired
+        ? 'Bootstrap necessário: tabela administrativa vazia. Exibindo fallback estático.'
+        : 'Consulta homologada; escrita ainda bloqueada.'}</div>`}
       <div class="admin-card-grid">${data.rows.map((contest) => `
         <article class="admin-panel admin-contest-card">
           <span class="admin-contest-card__code">${escapeHtml(contest.code)}</span>
           <h2>${escapeHtml(contest.name)}</h2><p>${escapeHtml(contest.role)}</p>
           <dl><div><dt>Conteúdo</dt><dd>${escapeHtml(contest.content_status)}</dd></div>
           <div><dt>Comercial</dt><dd>${escapeHtml(contest.sales_status)}</dd></div></dl>
-          ${data.writable ? '<button type="button" class="admin-button">Editar</button>' : '<small>Preparado para a próxima fase</small>'}
+          ${data.capabilities.update ? '<small>Edição habilitada pelo backend.</small>' : '<small>Consulta homologada; escrita ainda bloqueada.</small>'}
         </article>`).join('') || '<div class="admin-prepared">Nenhum concurso encontrado.</div>'}</div>`;
   }
   form.addEventListener('submit', (event) => {

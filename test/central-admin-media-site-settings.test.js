@@ -11,10 +11,40 @@ import {
 import { safeStoragePath } from '../supabase/functions/admin-media/core.js';
 import { containsUnsafeMarkup } from '../supabase/functions/admin-site/core.js';
 
-test('validador de mídia limita tipo, tamanho e nome', () => {
-  assert.deepEqual(validateMediaFile({ name: 'avatar-01.webp', type: 'image/webp', size: 1024 }).valid, true);
-  assert.throws(() => validateMediaFile({ name: '../avatar.png', type: 'image/png', size: 1024 }), /inseguro/);
-  assert.throws(() => validateMediaFile({ name: 'avatar.jpg', type: 'image/jpeg', size: 1024 }), /PNG ou WebP/);
+test('validador de mídia inspeciona dimensões e transparência reais', async () => {
+  const file = { name: 'avatar-01.webp', type: 'image/webp', size: 1024 };
+  const transparent = await validateMediaFile(file, {
+    requireTransparency: true,
+    decodeImage: async () => ({
+      width: 2,
+      height: 1,
+      pixels: new Uint8ClampedArray([10, 20, 30, 255, 40, 50, 60, 0]),
+    }),
+  });
+  assert.deepEqual(transparent, {
+    ...file,
+    width: 2,
+    height: 1,
+    hasTransparency: true,
+    valid: true,
+  });
+  await assert.rejects(
+    () => validateMediaFile(file, {
+      requireTransparency: true,
+      decodeImage: async () => {
+        const pixels = new Uint8ClampedArray(10 * 10 * 4);
+        pixels.fill(255);
+        return { width: 10, height: 10, pixels };
+      },
+    }),
+    /transparência real/,
+  );
+  await assert.rejects(
+    () => validateMediaFile(file, { decodeImage: async () => { throw new Error('decode'); } }),
+    /não decodificável/,
+  );
+  await assert.rejects(() => validateMediaFile({ name: '../avatar.png', type: 'image/png', size: 1024 }), /inseguro/);
+  await assert.rejects(() => validateMediaFile({ name: 'avatar.jpg', type: 'image/jpeg', size: 1024 }), /PNG ou WebP/);
   assert.equal(safeStoragePath('avatars/pc-al/avatar-01.webp'), 'avatars/pc-al/avatar-01.webp');
   assert.throws(() => safeStoragePath('../secret.png'), /invalid/);
 });

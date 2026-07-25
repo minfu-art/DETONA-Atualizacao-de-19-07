@@ -1,5 +1,6 @@
 import { CONTEST_CATALOG } from '../contest/contestCatalog.js';
 import { getSupabaseClient } from '../supabase/client.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const CONTENT_STATUSES = Object.freeze(['draft', 'preparing', 'ready', 'archived']);
 export const SALES_STATUSES = Object.freeze(['unavailable', 'coming_soon', 'available', 'suspended']);
@@ -70,14 +71,32 @@ export class AdminContestService {
   }
 
   async listContests({ search = '' } = {}) {
-    try {
-      const result = await this.#invoke('list_contests', { search });
-      return { rows: result.contests || [], source: 'administrative_table', writable: true };
-    } catch {
+    const fallback = (bootstrapRequired = false) => {
       const needle = String(search).trim().toLocaleLowerCase('pt-BR');
       const rows = CONTEST_CATALOG.map(staticContest).filter((contest) =>
         !needle || `${contest.code} ${contest.name} ${contest.role}`.toLocaleLowerCase('pt-BR').includes(needle));
-      return { rows, source: 'static_catalog', writable: false };
+      return {
+        rows,
+        source: 'static_catalog',
+        capabilities: { ...READ_ONLY_CAPABILITIES },
+        writable: false,
+        bootstrapRequired,
+      };
+    };
+    try {
+      const result = await this.#invoke('list_contests', { search });
+      const rows = Array.isArray(result.contests) ? result.contests : [];
+      if (!rows.length) return fallback(true);
+      const capabilities = normalizeAdminCapabilities(result.capabilities, READ_ONLY_CAPABILITIES);
+      return {
+        rows,
+        source: 'administrative_table',
+        capabilities,
+        writable: hasWriteCapability(capabilities),
+        bootstrapRequired: false,
+      };
+    } catch {
+      return fallback(false);
     }
   }
 

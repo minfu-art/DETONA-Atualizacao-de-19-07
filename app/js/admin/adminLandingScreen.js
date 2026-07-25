@@ -16,7 +16,7 @@ export async function renderAdminLandingScreen(root, ctx) {
       </form>
       <article class="admin-panel"><h2>Páginas cadastradas</h2>
         ${data.writable ? `<p>${data.rows.length} página(s) encontrada(s).</p>` :
-          '<div class="admin-prepared">Histórico, ordenação e publicação controlada estão preparados para a próxima fase. A landing page pública não foi alterada.</div>'}
+          '<div class="admin-prepared">Consulta homologada; escrita ainda bloqueada. A landing page pública não foi alterada.</div>'}
       </article>
     </section>`;
   root.querySelector('#admin-block-preview').addEventListener('submit', (event) => {

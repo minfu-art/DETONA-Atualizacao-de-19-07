@@ -1,4 +1,4 @@
-import { adminAvatarService, validateMediaFile } from '../services/adminAvatarService.js';
+import { adminAvatarService, precheckMediaFile, validateMediaFile } from '../services/adminAvatarService.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 export async function renderAdminMediaScreen(root, ctx) {
@@ -16,16 +16,19 @@ export async function renderAdminMediaScreen(root, ctx) {
       </form>
       <article class="admin-panel"><h2>Coleções</h2>
         ${data.writable ? `<p>${data.rows.length} coleção(ões) cadastrada(s).</p>` :
-          '<div class="admin-prepared">Estrutura preparada para a próxima fase. Nenhum upload será simulado antes da migration e do bucket serem aprovados.</div>'}
+          '<div class="admin-prepared">Consulta homologada; escrita ainda bloqueada. Nenhum upload será simulado antes da migration e do bucket serem aprovados.</div>'}
       </article>
     </section>`;
-  root.querySelector('#admin-media-validator').addEventListener('submit', (event) => {
+  root.querySelector('#admin-media-validator').addEventListener('submit', async (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const output = root.querySelector('#admin-media-result');
     try {
-      const result = validateMediaFile(form.get('asset'), { requireTransparency: Boolean(form.get('transparency')) });
-      output.innerHTML = `<div class="admin-validation admin-validation--ok">${escapeHtml(result.name)} · ${(result.size / 1024).toFixed(1)} KB · válido</div>`;
+      precheckMediaFile(form.get('asset'));
+      output.innerHTML = '<div class="admin-prepared">Precheck local aprovado. Inspecionando dimensões e transparência…</div>';
+      const result = await validateMediaFile(form.get('asset'), { requireTransparency: Boolean(form.get('transparency')) });
+      output.innerHTML = `<div class="admin-validation admin-validation--ok">${escapeHtml(result.name)} · ${(result.size / 1024).toFixed(1)} KB · ${result.width}×${result.height}px · ${result.hasTransparency ? 'com transparência' : 'opaca'}.</div>
+        <small>Validação visual local concluída. Upload remoto ainda bloqueado; o backend deverá validar novamente.</small>`;
     } catch (error) {
       output.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
     }

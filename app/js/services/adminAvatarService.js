@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '../supabase/client.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const AVATAR_ASSET_TYPES = Object.freeze([
   'portrait', 'full_body', 'chibi_head', 'success', 'error', 'attention',
@@ -6,16 +7,75 @@ export const AVATAR_ASSET_TYPES = Object.freeze([
 ]);
 const ALLOWED_MIME = new Set(['image/png', 'image/webp']);
 const MAX_BYTES = 8 * 1024 * 1024;
+const MAX_DIMENSION = 8192;
+const MAX_PIXELS = 16_777_216;
 
-export function validateMediaFile(file, { requireTransparency = false } = {}) {
+export function precheckMediaFile(file) {
   if (!file) throw new Error('Selecione um arquivo.');
   if (!ALLOWED_MIME.has(file.type)) throw new Error('Use PNG ou WebP.');
   if (!file.size || file.size > MAX_BYTES) throw new Error('O arquivo deve ter no máximo 8 MB.');
   if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(file.name)) throw new Error('Nome de arquivo inseguro.');
-  if (requireTransparency && file.type !== 'image/png' && file.type !== 'image/webp') {
-    throw new Error('Este ativo exige transparência.');
+  const extension = file.name.split('.').pop()?.toLowerCase();
+  if ((file.type === 'image/png' && extension !== 'png')
+    || (file.type === 'image/webp' && extension !== 'webp')) throw new Error('Extensão incompatível com o MIME.');
+  return { name: file.name, type: file.type, size: file.size };
+}
+
+export function detectTransparency(pixelData) {
+  if (!pixelData || pixelData.length % 4 !== 0) throw new Error('Pixels inválidos.');
+  for (let index = 3; index < pixelData.length; index += 4) {
+    if (pixelData[index] < 255) return true;
   }
-  return { name: file.name, type: file.type, size: file.size, valid: true };
+  return false;
+}
+
+async function decodeImageInBrowser(file) {
+  if (typeof globalThis.createImageBitmap !== 'function') throw new Error('Decodificador de imagem indisponível.');
+  const bitmap = await globalThis.createImageBitmap(file);
+  try {
+    if (bitmap.width < 1 || bitmap.height < 1
+      || bitmap.width > MAX_DIMENSION || bitmap.height > MAX_DIMENSION
+      || bitmap.width * bitmap.height > MAX_PIXELS) throw new Error('Dimensões de imagem inválidas.');
+    const canvas = typeof globalThis.OffscreenCanvas === 'function'
+      ? new globalThis.OffscreenCanvas(bitmap.width, bitmap.height)
+      : globalThis.document?.createElement?.('canvas');
+    if (!canvas) throw new Error('Canvas indisponível.');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+    if (!context) throw new Error('Imagem não pôde ser inspecionada.');
+    context.drawImage(bitmap, 0, 0);
+    return {
+      width: bitmap.width,
+      height: bitmap.height,
+      pixels: context.getImageData(0, 0, bitmap.width, bitmap.height).data,
+    };
+  } finally {
+    bitmap.close?.();
+  }
+}
+
+export async function validateMediaFile(file, {
+  requireTransparency = false,
+  decodeImage = decodeImageInBrowser,
+} = {}) {
+  const precheck = precheckMediaFile(file);
+  let decoded;
+  try {
+    decoded = await decodeImage(file);
+  } catch {
+    throw new Error('Arquivo de imagem inválido ou não decodificável.');
+  }
+  const width = Number(decoded?.width);
+  const height = Number(decoded?.height);
+  if (!Number.isInteger(width) || width <= 0 || !Number.isInteger(height) || height <= 0) {
+    throw new Error('Dimensões de imagem inválidas.');
+  }
+  if (width > MAX_DIMENSION || height > MAX_DIMENSION || width * height > MAX_PIXELS
+    || decoded.pixels?.length !== width * height * 4) throw new Error('Dimensões de imagem inválidas.');
+  const hasTransparency = detectTransparency(decoded.pixels);
+  if (requireTransparency && !hasTransparency) throw new Error('A imagem precisa possuir transparência real.');
+  return { ...precheck, width, height, hasTransparency, valid: true };
 }
 
 export class AdminAvatarService {
@@ -26,12 +86,13 @@ export class AdminAvatarService {
   async listCollections(contestId) {
     if (!contestId) throw new Error('contestId é obrigatório.');
     const client = await this.getClient();
-    if (!client) return { rows: [], writable: false };
+    if (!client) return { rows: [], capabilities: { ...READ_ONLY_CAPABILITIES }, writable: false };
     const { data, error } = await client.functions.invoke('admin-media', {
       body: { action: 'list_collections', contestId },
     });
-    if (error || data?.error) return { rows: [], writable: false };
-    return { rows: data.collections || [], writable: true };
+    if (error || data?.error) return { rows: [], capabilities: { ...READ_ONLY_CAPABILITIES }, writable: false };
+    const capabilities = normalizeAdminCapabilities(data.capabilities, READ_ONLY_CAPABILITIES);
+    return { rows: data.collections || [], capabilities, writable: hasWriteCapability(capabilities) };
   }
 }
 

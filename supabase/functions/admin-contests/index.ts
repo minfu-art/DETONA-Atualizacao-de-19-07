@@ -1,5 +1,9 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { assertAdminContestAction, sanitizedAuditMetadata } from './core.js';
+import {
+  READ_ONLY_CAPABILITIES,
+  sanitizedAuditMetadata,
+  validateAdminContestRequest,
+} from './core.js';
 
 const allowedOrigins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((v) => v.trim()).filter(Boolean));
 const json = (status: number, payload: unknown, origin = '') => new Response(JSON.stringify(payload), {
@@ -18,6 +22,7 @@ Deno.serve(async (request) => {
   try {
     const authorization = request.headers.get('authorization') || '';
     if (!authorization.startsWith('Bearer ')) return json(401, { error: 'invalid_session' }, origin);
+    if (Number(request.headers.get('content-length') || 0) > 100_000) return json(413, { error: 'payload_too_large' }, origin);
     const url = Deno.env.get('SUPABASE_URL')!;
     const anon = Deno.env.get('SUPABASE_ANON_KEY')!;
     const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -27,25 +32,28 @@ Deno.serve(async (request) => {
     if (userError || !userData.user) return json(401, { error: 'invalid_session' }, origin);
     const { data: profile } = await admin.from('profiles').select('role').eq('id', userData.user.id).maybeSingle();
     if (profile?.role !== 'developer') return json(403, { error: 'developer_required' }, origin);
-    const body = await request.json();
-    const action = assertAdminContestAction(body.action);
+    const body = validateAdminContestRequest(await request.json());
+    const { action } = body;
 
     if (action === 'list_contests') {
       let query = admin.from('admin_contests').select('*').order('created_at');
-      if (body.search) query = query.or(`code.ilike.%${String(body.search).slice(0, 100)}%,name.ilike.%${String(body.search).slice(0, 100)}%`);
+      if (body.search) query = query.or(`code.ilike.%${body.search}%,name.ilike.%${body.search}%`);
       const { data, error } = await query;
       if (error) throw error;
-      return json(200, { contests: data }, origin);
+      return json(200, { contests: data, capabilities: READ_ONLY_CAPABILITIES }, origin);
     }
     if (action === 'list_curriculum') {
       const { data, error } = await admin.from('admin_curriculum_nodes').select('*').eq('contest_id', body.contestId).order('order_index');
       if (error) throw error;
-      return json(200, { nodes: data }, origin);
+      return json(200, { nodes: data, capabilities: READ_ONLY_CAPABILITIES }, origin);
     }
     if (action === 'list_audit') {
-      const { data, error } = await admin.from('admin_audit_log').select('*').order('created_at', { ascending: false }).limit(100);
+      const from = (body.page - 1) * body.pageSize;
+      let query = admin.from('admin_audit_log').select('*').order('created_at', { ascending: false }).range(from, from + body.pageSize - 1);
+      if (body.contestId) query = query.eq('contest_id', body.contestId);
+      const { data, error } = await query;
       if (error) throw error;
-      return json(200, { rows: data }, origin);
+      return json(200, { rows: data, capabilities: READ_ONLY_CAPABILITIES }, origin);
     }
     // Mutações ficam fechadas até validação operacional da migration no staging.
     await admin.from('admin_audit_log').insert({

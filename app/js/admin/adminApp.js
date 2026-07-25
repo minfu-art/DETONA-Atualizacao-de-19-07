@@ -14,6 +14,7 @@ import { renderAdminQuestionsScreen } from './adminQuestionsScreen.js';
 import { renderAdminMediaScreen } from './adminMediaScreen.js';
 import { renderAdminLandingScreen } from './adminLandingScreen.js';
 import { renderAdminSettingsScreen } from './adminSettingsScreen.js';
+import { adminContestService } from '../services/adminContestService.js';
 
 const ROUTES = Object.freeze({
   overview: renderAdminDashboard,
@@ -79,7 +80,8 @@ async function initializeAuthenticatedAdmin() {
     return;
   }
   adminContext.user = user;
-  adminContext.restoreContest();
+  const catalog = await adminContestService.listContests();
+  adminContext.restoreContest(catalog.rows);
   document.getElementById('admin-auth').hidden = true;
   document.getElementById('admin-app').hidden = false;
   if (!shellMounted) {

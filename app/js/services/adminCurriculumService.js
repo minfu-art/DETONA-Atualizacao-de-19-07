@@ -1,5 +1,6 @@
 import { DISCIPLINE_DEFS } from '../data/editalSeed.js';
 import { getSupabaseClient } from '../supabase/client.js';
+import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const CURRICULUM_NODE_TYPES = Object.freeze(['role', 'discipline', 'topic', 'subtopic']);
 export const CURRICULUM_STATUSES = Object.freeze(['draft', 'active', 'inactive', 'archived']);
@@ -56,9 +57,20 @@ export class AdminCurriculumService {
     if (!contestId) throw new Error('contestId é obrigatório.');
     try {
       const result = await this.#invoke('list_curriculum', { contestId });
-      return { rows: result.nodes || [], source: 'administrative_table', writable: true };
+      const capabilities = normalizeAdminCapabilities(result.capabilities, READ_ONLY_CAPABILITIES);
+      return {
+        rows: result.nodes || [],
+        source: 'administrative_table',
+        capabilities,
+        writable: hasWriteCapability(capabilities),
+      };
     } catch {
-      return { rows: staticNodes(contestId), source: 'static_edital', writable: false };
+      return {
+        rows: staticNodes(contestId),
+        source: 'static_edital',
+        capabilities: { ...READ_ONLY_CAPABILITIES },
+        writable: false,
+      };
     }
   }
 

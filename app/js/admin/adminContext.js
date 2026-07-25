@@ -1,5 +1,3 @@
-import { CONTEST_CATALOG } from '../contest/contestCatalog.js';
-
 const STORAGE_KEY = 'detona.admin.selectedContestId';
 
 export class AdminContext {
@@ -8,18 +6,33 @@ export class AdminContext {
     this.screen = 'overview';
     this.user = null;
     this.adminSelectedContestId = null;
+    this.availableContests = [];
   }
 
-  restoreContest() {
+  setAvailableContests(contests) {
+    if (!Array.isArray(contests)) throw new Error('Lista de concursos inválida.');
+    const ids = new Set();
+    this.availableContests = contests.map((contest) => {
+      const id = String(contest?.id || '').trim();
+      if (!id || ids.has(id)) throw new Error('Concurso administrativo inválido.');
+      ids.add(id);
+      return { ...contest, id };
+    });
+    return this.availableContests;
+  }
+
+  restoreContest(contests = this.availableContests) {
+    this.setAvailableContests(contests);
     const saved = this.storage?.getItem?.(STORAGE_KEY);
-    this.adminSelectedContestId = CONTEST_CATALOG.some(({ id }) => id === saved)
+    this.adminSelectedContestId = this.availableContests.some(({ id }) => id === saved)
       ? saved
-      : CONTEST_CATALOG[0]?.id || null;
+      : this.availableContests[0]?.id || null;
+    if (this.adminSelectedContestId) this.storage?.setItem?.(STORAGE_KEY, this.adminSelectedContestId);
     return this.adminSelectedContestId;
   }
 
   selectContest(contestId) {
-    if (!CONTEST_CATALOG.some(({ id }) => id === contestId)) {
+    if (!this.availableContests.some(({ id }) => id === contestId)) {
       throw new Error('Concurso administrativo inválido.');
     }
     this.adminSelectedContestId = contestId;
@@ -32,6 +45,7 @@ export class AdminContext {
     this.screen = 'overview';
     this.user = null;
     this.adminSelectedContestId = null;
+    this.availableContests = [];
   }
 }
 

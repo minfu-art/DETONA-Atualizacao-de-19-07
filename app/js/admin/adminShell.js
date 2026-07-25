@@ -1,4 +1,3 @@
-import { CONTEST_CATALOG } from '../contest/contestCatalog.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 export const ADMIN_NAV_ITEMS = Object.freeze([
@@ -48,8 +47,8 @@ export function mountAdminShell({ ctx, navigate, onLogout }) {
     <label class="admin-contest-selector">
       <span>Concurso administrativo</span>
       <select id="admin-contest-select" aria-label="Selecionar concurso administrativo">
-        ${CONTEST_CATALOG.map((contest) => `
-          <option value="${contest.id}" ${contest.id === ctx.adminSelectedContestId ? 'selected' : ''}>
+        ${ctx.availableContests.map((contest) => `
+          <option value="${escapeHtml(contest.id)}" ${contest.id === ctx.adminSelectedContestId ? 'selected' : ''}>
             ${escapeHtml(contest.code)} — ${escapeHtml(contest.name)}
           </option>`).join('')}
       </select>
