@@ -85,6 +85,15 @@
 .admin-contest-card p, .admin-contest-card small { color: var(--admin-muted); }
 .admin-contest-card dl div { display: flex; justify-content: space-between; border-top: 1px solid var(--admin-line); padding: 8px 0; }
 .admin-contest-card dd { margin: 0; }
+.admin-metric__text { font-size: 1.05rem !important; }
+.admin-steps { display: grid; gap: 8px; padding: 0; list-style: none; counter-reset: steps; }
+.admin-steps li { counter-increment: steps; border: 1px solid var(--admin-line); border-radius: 9px; padding: 10px; color: var(--admin-muted); }
+.admin-steps li::before { content: counter(steps); display: inline-grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: #27304c; margin-right: 9px; }
+.admin-steps li.is-active { color: white; border-color: #6e4bb0; }
+.admin-validation { display: grid; gap: 4px; border-radius: 9px; padding: 12px; }
+.admin-validation small { display: block; }
+.admin-validation--ok { background: #10382b; color: #8cf3c7; }
+.admin-validation--error { background: #3b1d24; color: #ffc1cb; }
 .admin-menu-toggle { display: none; }
 .admin-auth .saas-auth { min-height: 100vh; }
 
