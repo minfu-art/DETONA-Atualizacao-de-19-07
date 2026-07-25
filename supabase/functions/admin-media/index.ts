@@ -1,13 +1,13 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { OPERATIONAL_CAPABILITIES } from '../_shared/adminValidation.js';
+import { createAllowedOrigins, handleCorsPreflight, jsonResponse } from '../_shared/cors.js';
 import { inspectImageBytes, validateMediaRequest } from './core.js';
 
 const BUCKET = 'admin-media';
-const origins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((value) => value.trim()).filter(Boolean));
-const response = (status: number, body: unknown, origin = '') => new Response(JSON.stringify(body), {
-  status,
-  headers: { 'content-type': 'application/json', 'access-control-allow-origin': origins.has(origin) ? origin : '', vary: 'Origin' },
-});
+const origins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
+const response = (status: number, body: unknown, origin = '') => (
+  jsonResponse(status, body, origin, origins)
+);
 
 async function sha256(bytes: Uint8Array) {
   const digest = await crypto.subtle.digest('SHA-256', bytes);
@@ -24,9 +24,11 @@ async function audit(admin: any, actorId: string, contestId: string, action: str
 
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
-  if (request.method === 'OPTIONS') return origins.has(origin) ? response(204, {}, origin) : response(403, { error: 'origin_not_allowed' });
+  const preflight = handleCorsPreflight(request, origins);
+  if (preflight) return preflight;
   try {
-    if (!origins.has(origin) || request.method !== 'POST') return response(403, { error: 'request_not_allowed' }, origin);
+    if (!origins.has(origin)) return response(403, { error: 'origin_not_allowed' });
+    if (request.method !== 'POST') return response(403, { error: 'request_not_allowed' }, origin);
     const authorization = request.headers.get('authorization') || '';
     if (!authorization.startsWith('Bearer ')) return response(401, { error: 'invalid_session' }, origin);
     if (Number(request.headers.get('content-length') || 0) > 100_000) return response(413, { error: 'payload_too_large' }, origin);

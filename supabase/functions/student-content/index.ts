@@ -1,18 +1,21 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createAllowedOrigins, handleCorsPreflight, jsonResponse } from '../_shared/cors.js';
 import { normalizeCatalogContest, validateStudentContentRequest } from './core.js';
 
-const allowedOrigins = new Set((Deno.env.get('STUDENT_ALLOWED_ORIGINS') || Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '')
-  .split(',').map((value) => value.trim()).filter(Boolean));
-const respond = (status: number, payload: unknown, origin = '') => new Response(JSON.stringify(payload), {
-  status,
-  headers: { 'content-type': 'application/json', 'access-control-allow-origin': allowedOrigins.has(origin) ? origin : '', vary: 'Origin' },
-});
+const allowedOrigins = createAllowedOrigins(
+  Deno.env.get('STUDENT_ALLOWED_ORIGINS') || Deno.env.get('ADMIN_ALLOWED_ORIGINS'),
+);
+const respond = (status: number, payload: unknown, origin = '') => (
+  jsonResponse(status, payload, origin, allowedOrigins)
+);
 
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
-  if (request.method === 'OPTIONS') return allowedOrigins.has(origin) ? respond(204, {}, origin) : respond(403, { error: 'origin_not_allowed' });
+  const preflight = handleCorsPreflight(request, allowedOrigins);
+  if (preflight) return preflight;
   try {
-    if (!allowedOrigins.has(origin) || request.method !== 'POST') return respond(403, { error: 'request_not_allowed' }, origin);
+    if (!allowedOrigins.has(origin)) return respond(403, { error: 'origin_not_allowed' });
+    if (request.method !== 'POST') return respond(403, { error: 'request_not_allowed' }, origin);
     const authorization = request.headers.get('authorization') || '';
     if (!authorization.startsWith('Bearer ')) return respond(401, { error: 'invalid_session' }, origin);
     const url = Deno.env.get('SUPABASE_URL')!;

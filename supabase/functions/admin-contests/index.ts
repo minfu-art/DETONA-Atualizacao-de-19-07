@@ -5,16 +5,16 @@ import {
   sanitizedAuditMetadata,
   validateAdminContestRequest,
 } from './core.js';
+import {
+  createAllowedOrigins,
+  handleCorsPreflight,
+  jsonResponse,
+} from '../_shared/cors.js';
 
-const allowedOrigins = new Set((Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '').split(',').map((value) => value.trim()).filter(Boolean));
-const json = (status: number, payload: unknown, origin = '') => new Response(JSON.stringify(payload), {
-  status,
-  headers: {
-    'content-type': 'application/json',
-    'access-control-allow-origin': allowedOrigins.has(origin) ? origin : '',
-    vary: 'Origin',
-  },
-});
+const allowedOrigins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
+const json = (status: number, payload: unknown, origin = '') => (
+  jsonResponse(status, payload, origin, allowedOrigins)
+);
 
 async function audit(admin: any, actorId: string, record: {
   contestId?: string | null;
@@ -74,8 +74,10 @@ async function publicationInputs(admin: any, contestId: string) {
 
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
-  if (request.method === 'OPTIONS') return allowedOrigins.has(origin) ? json(204, {}, origin) : json(403, { error: 'origin_not_allowed' });
-  if (request.method !== 'POST' || !allowedOrigins.has(origin)) return json(403, { error: 'request_not_allowed' });
+  const preflight = handleCorsPreflight(request, allowedOrigins);
+  if (preflight) return preflight;
+  if (!allowedOrigins.has(origin)) return json(403, { error: 'origin_not_allowed' });
+  if (request.method !== 'POST') return json(403, { error: 'request_not_allowed' }, origin);
   try {
     const authorization = request.headers.get('authorization') || '';
     if (!authorization.startsWith('Bearer ')) return json(401, { error: 'invalid_session' }, origin);
