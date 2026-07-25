@@ -114,6 +114,8 @@
 .admin-media-library article { display: grid; gap: 5px; padding: 9px; border: 1px solid var(--admin-line); border-radius: 9px; }
 .admin-media-library img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #070b18; }
 .admin-media-library button { border: 0; color: #ffc1cb; background: #3b1d24; border-radius: 7px; padding: 7px; cursor: pointer; }
+.admin-json-preview { display: none; max-height: 440px; overflow: auto; margin-top: 14px; padding: 14px; border: 1px solid var(--admin-line); border-radius: 10px; background: #050814; color: #c9d1ee; font: .75rem/1.5 ui-monospace, monospace; white-space: pre-wrap; word-break: break-word; }
+.admin-json-preview:not(:empty) { display: block; }
 .admin-metric__text { font-size: 1.05rem !important; }
 .admin-steps { display: grid; gap: 8px; padding: 0; list-style: none; counter-reset: steps; }
 .admin-steps li { counter-increment: steps; border: 1px solid var(--admin-line); border-radius: 9px; padding: 10px; color: var(--admin-muted); }

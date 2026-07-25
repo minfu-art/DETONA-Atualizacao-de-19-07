@@ -15,6 +15,8 @@ export const ADMIN_CONTEST_ACTIONS = Object.freeze([
   'publish', 'suspend', 'archive', 'list_curriculum', 'save_curriculum_node',
   'reorder_curriculum', 'list_audit', 'validate_curriculum_import',
   'import_curriculum_draft', 'get_curriculum_tree', 'replace_curriculum_draft',
+  'validate_publication', 'list_content_packages', 'generate_content_package',
+  'preview_content_package', 'publish_content_package', 'rollback_content_package',
 ]);
 
 export function assertAdminContestAction(action) {
@@ -73,7 +75,7 @@ export function validateAdminContestRequest(input) {
     assertExactKeys(body, ['action', 'search']);
     return { action, search: safeSearch(body.search) };
   }
-  if (action === 'get_contest' || action === 'list_curriculum' || action === 'get_curriculum_tree') {
+  if (['get_contest', 'list_curriculum', 'get_curriculum_tree', 'validate_publication', 'list_content_packages'].includes(action)) {
     assertExactKeys(body, ['action', 'contestId'], ['contestId']);
     return { action, contestId: safeId(body.contestId, 'contest_id') };
   }
@@ -117,6 +119,31 @@ export function validateAdminContestRequest(input) {
       if (node.parent_source_id && !ids.has(node.parent_source_id)) throw new Error('curriculum_parent_missing');
     }
     return { action, contestId: safeId(body.contestId, 'contest_id'), schemaVersion: 1, nodes };
+  }
+  if (action === 'generate_content_package') {
+    assertExactKeys(body, ['action', 'contestId', 'version'], ['contestId', 'version']);
+    return {
+      action,
+      contestId: safeId(body.contestId, 'contest_id'),
+      version: safeText(body.version, 'version', 80),
+    };
+  }
+  if (action === 'preview_content_package' || action === 'rollback_content_package') {
+    assertExactKeys(body, ['action', 'contestId', 'packageId'], ['contestId', 'packageId']);
+    return {
+      action,
+      contestId: safeId(body.contestId, 'contest_id'),
+      packageId: safeUuid(body.packageId, 'package_id'),
+    };
+  }
+  if (action === 'publish_content_package') {
+    assertExactKeys(body, ['action', 'contestId', 'packageId', 'confirmation'], ['contestId', 'packageId', 'confirmation']);
+    return {
+      action,
+      contestId: safeId(body.contestId, 'contest_id'),
+      packageId: safeUuid(body.packageId, 'package_id'),
+      confirmation: safeText(body.confirmation, 'confirmation', 80),
+    };
   }
   if (action === 'save_curriculum_node') {
     assertExactKeys(body, ['action', 'contestId', 'node'], ['contestId', 'node']);

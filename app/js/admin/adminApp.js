@@ -14,6 +14,7 @@ import { renderAdminQuestionsScreen } from './adminQuestionsScreen.js';
 import { renderAdminMediaScreen } from './adminMediaScreen.js';
 import { renderAdminLandingScreen } from './adminLandingScreen.js';
 import { renderAdminSettingsScreen } from './adminSettingsScreen.js';
+import { renderAdminPublicationScreen } from './adminPublicationScreen.js';
 import { adminContestService } from '../services/adminContestService.js';
 
 const ROUTES = Object.freeze({
@@ -26,6 +27,7 @@ const ROUTES = Object.freeze({
   media: renderAdminMediaScreen,
   landing: renderAdminLandingScreen,
   settings: renderAdminSettingsScreen,
+  publication: renderAdminPublicationScreen,
 });
 
 let shellMounted = false;

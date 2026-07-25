@@ -34,6 +34,36 @@ async function audit(admin: any, actorId: string, record: {
   if (error) throw error;
 }
 
+async function hashJson(value: unknown) {
+  const bytes = new TextEncoder().encode(JSON.stringify(value));
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function publicationInputs(admin: any, contestId: string) {
+  const [contestResult, curriculumResult, questionResult] = await Promise.all([
+    admin.from('admin_contests').select('*').eq('id', contestId).single(),
+    admin.from('admin_curriculum_nodes').select('id,source_id,parent_id,type,name,description,order_index,status')
+      .eq('contest_id', contestId).order('order_index'),
+    admin.from('question_publication_versions').select('*').eq('contest_id', contestId)
+      .in('status', ['generated', 'published']).order('created_at', { ascending: false }).limit(1).maybeSingle(),
+  ]);
+  if (contestResult.error) throw contestResult.error;
+  if (curriculumResult.error) throw curriculumResult.error;
+  if (questionResult.error) throw questionResult.error;
+  const contest = contestResult.data;
+  const curriculum = curriculumResult.data || [];
+  const questions = questionResult.data;
+  const checklist = {
+    general: Boolean(contest.name && contest.role && contest.description && contest.slug),
+    curriculum: curriculum.some((node: { type: string }) => node.type === 'subtopic'),
+    questions: Boolean(questions?.item_count > 0),
+    appearance: Boolean(contest.battle_avatar_asset_id),
+    version: Boolean(questions?.version),
+  };
+  return { contest, curriculum, questions, checklist, ready: Object.values(checklist).every(Boolean) };
+}
+
 Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
   if (request.method === 'OPTIONS') return allowedOrigins.has(origin) ? json(204, {}, origin) : json(403, { error: 'origin_not_allowed' });
@@ -112,6 +142,108 @@ Deno.serve(async (request) => {
       const { data, error } = await query;
       if (error) throw error;
       return json(200, { rows: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+    }
+    if (action === 'validate_publication') {
+      const inputs = await publicationInputs(admin, body.contestId);
+      return json(200, { ready: inputs.ready, checklist: inputs.checklist }, origin);
+    }
+    if (action === 'list_content_packages') {
+      const { data, error } = await admin.from('contest_content_packages').select('id,contest_id,version,content_hash,status,created_at,published_at')
+        .eq('contest_id', body.contestId).order('created_at', { ascending: false });
+      if (error) throw error;
+      return json(200, { packages: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+    }
+    if (action === 'generate_content_package') {
+      const inputs = await publicationInputs(admin, body.contestId);
+      if (!inputs.ready) return json(409, { error: 'publication_checklist_incomplete', checklist: inputs.checklist }, origin);
+      const metadata = {
+        id: inputs.contest.id,
+        code: inputs.contest.code,
+        slug: inputs.contest.slug,
+        name: inputs.contest.name,
+        role: inputs.contest.role,
+        description: inputs.contest.description,
+        exam_date: inputs.contest.exam_date,
+        price_cents: inputs.contest.price_cents,
+        currency: inputs.contest.currency,
+        color: inputs.contest.color,
+        accent: inputs.contest.accent,
+        icon: inputs.contest.icon,
+        sales_status: inputs.contest.sales_status,
+      };
+      const visualConfig = {
+        battle_avatar: inputs.contest.battle_avatar_asset_id,
+        success: inputs.contest.success_asset_id,
+        error: inputs.contest.error_asset_id,
+        attention: inputs.contest.attention_asset_id,
+        cover: inputs.contest.cover_media_asset_id,
+      };
+      const content = { metadata, curriculum: inputs.curriculum, questionsVersionId: inputs.questions.id, visualConfig };
+      const contentHash = await hashJson(content);
+      const { data, error } = await admin.from('contest_content_packages').insert({
+        contest_id: body.contestId,
+        version: body.version,
+        metadata,
+        curriculum_snapshot: inputs.curriculum,
+        questions_version_id: inputs.questions.id,
+        visual_config: visualConfig,
+        content_hash: contentHash,
+        status: 'generated',
+        created_by: userData.user.id,
+      }).select('*').single();
+      if (error?.code === '23505') return json(409, { error: 'package_version_or_content_exists' }, origin);
+      if (error) throw error;
+      await audit(admin, userData.user.id, {
+        contestId: body.contestId, action, targetType: 'content_package', targetId: data.id,
+        metadata: { version: data.version, content_hash: contentHash },
+      });
+      return json(201, { package: data }, origin);
+    }
+    if (action === 'preview_content_package') {
+      const { data, error } = await admin.from('contest_content_packages').select('*')
+        .eq('id', body.packageId).eq('contest_id', body.contestId).single();
+      if (error) throw error;
+      return json(200, { package: data }, origin);
+    }
+    if (action === 'publish_content_package') {
+      const { data: contest, error: contestError } = await admin.from('admin_contests').select('code').eq('id', body.contestId).single();
+      if (contestError) throw contestError;
+      if (body.confirmation !== contest.code) return json(422, { error: 'publication_confirmation_invalid' }, origin);
+      const inputs = await publicationInputs(admin, body.contestId);
+      if (!inputs.ready) return json(409, { error: 'publication_checklist_incomplete', checklist: inputs.checklist }, origin);
+      const { error: archiveError } = await admin.from('contest_content_packages').update({ status: 'archived' })
+        .eq('contest_id', body.contestId).eq('status', 'published');
+      if (archiveError) throw archiveError;
+      const publishedAt = new Date().toISOString();
+      const { data, error } = await admin.from('contest_content_packages').update({ status: 'published', published_at: publishedAt })
+        .eq('id', body.packageId).eq('contest_id', body.contestId).eq('status', 'generated').select('*').single();
+      if (error) throw error;
+      await Promise.all([
+        admin.from('admin_contests').update({ content_status: 'ready', published_at: publishedAt }).eq('id', body.contestId),
+        admin.from('question_publication_versions').update({ status: 'published', published_at: publishedAt, published_by: userData.user.id })
+          .eq('id', data.questions_version_id),
+      ]);
+      await audit(admin, userData.user.id, {
+        contestId: body.contestId, action, targetType: 'content_package', targetId: data.id,
+        metadata: { version: data.version, content_hash: data.content_hash },
+      });
+      return json(200, { package: data }, origin);
+    }
+    if (action === 'rollback_content_package') {
+      const { data: target, error: targetError } = await admin.from('contest_content_packages').select('*')
+        .eq('id', body.packageId).eq('contest_id', body.contestId).in('status', ['archived', 'rolled_back']).single();
+      if (targetError) throw targetError;
+      const { error: rollbackError } = await admin.from('contest_content_packages').update({ status: 'rolled_back' })
+        .eq('contest_id', body.contestId).eq('status', 'published');
+      if (rollbackError) throw rollbackError;
+      const { data, error } = await admin.from('contest_content_packages').update({ status: 'published', published_at: new Date().toISOString() })
+        .eq('id', target.id).select('*').single();
+      if (error) throw error;
+      await audit(admin, userData.user.id, {
+        contestId: body.contestId, action, targetType: 'content_package', targetId: data.id,
+        metadata: { restored_version: data.version },
+      });
+      return json(200, { package: data }, origin);
     }
     if (action === 'create_contest' || action === 'update_contest') {
       const query = action === 'create_contest'
