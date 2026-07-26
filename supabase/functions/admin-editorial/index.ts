@@ -80,18 +80,25 @@ Deno.serve(async (request) => {
     if (action === 'list_questions') {
       const from = (body.page - 1) * body.pageSize;
       let query = admin.from('editorial_questions')
-        .select('id,source_question_id,contest_id,status,difficulty,statement,explanation,curriculum_node_id,batch_id,version,created_at')
+        .select('id,source_question_id,contest_id,status,difficulty,statement,options,correct_answer,explanation,source,is_trick,curriculum_node_id,batch_id,payload,version,created_at,updated_at', { count: 'exact' })
         .eq('contest_id', body.contestId).order('created_at', { ascending: false }).range(from, from + body.pageSize - 1);
       if (body.status) query = query.eq('status', body.status);
       if (body.search) query = query.or(`source_question_id.ilike.%${body.search}%,statement.ilike.%${body.search}%`);
-      const { data, error } = await query;
+      const { data, error, count } = await query;
       if (error) throw error;
-      return respond(200, { questions: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+      return respond(200, { questions: data, total: count || 0, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
     if (action === 'list_batches') {
       const { data, error } = await admin.from('question_batches').select('*').eq('contest_id', body.contestId).order('created_at', { ascending: false });
       if (error) throw error;
       return respond(200, { batches: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+    }
+    if (action === 'list_versions') {
+      const { data, error } = await admin.from('question_publication_versions')
+        .select('id,contest_id,version,item_count,content_hash,status,created_at,published_at,rolled_back_at')
+        .eq('contest_id', body.contestId).order('created_at', { ascending: false });
+      if (error) throw error;
+      return respond(200, { versions: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
     if (action === 'validate_batch' || action === 'import_draft') {
       const validation = await validateBatch(admin, body.contestId, body.questions);
@@ -109,9 +116,17 @@ Deno.serve(async (request) => {
       return respond(201, { batchId, imported: body.questions.length }, origin);
     }
     if (action === 'update_draft') {
-      const { data: node, error: nodeError } = await admin.from('admin_curriculum_nodes').select('id')
+      const existingQuery = admin.from('editorial_questions').select('status,payload,version')
+        .eq('contest_id', body.contestId).eq('source_question_id', body.question.id).single();
+      const nodeQuery = admin.from('admin_curriculum_nodes').select('id')
         .eq('contest_id', body.contestId).eq('source_id', body.question.subtopic_id).eq('type', 'subtopic').single();
+      const [{ data: existing, error: existingError }, { data: node, error: nodeError }] = await Promise.all([
+        existingQuery,
+        nodeQuery,
+      ]);
+      if (existingError) throw existingError;
       if (nodeError) throw nodeError;
+      if (!['draft', 'technical_review'].includes(existing.status)) throw new Error('question_edit_not_allowed');
       const sourceId = body.question.id;
       const { data, error } = await admin.from('editorial_questions').update({
         statement: body.question.statement,
@@ -122,9 +137,10 @@ Deno.serve(async (request) => {
         source: body.question.source || null,
         is_trick: body.question.is_trick === true,
         curriculum_node_id: node.id,
-        payload: body.question,
-        version: 2,
-      }).eq('contest_id', body.contestId).eq('source_question_id', sourceId).eq('status', 'draft').select('*').single();
+        payload: { ...(existing.payload || {}), ...body.question },
+        version: Number(existing.version || 1) + 1,
+      }).eq('contest_id', body.contestId).eq('source_question_id', sourceId)
+        .eq('status', existing.status).select('*').single();
       if (error) throw error;
       await audit(admin, userData.user.id, body.contestId, action, sourceId);
       return respond(200, { question: data }, origin);
@@ -140,6 +156,10 @@ Deno.serve(async (request) => {
       const { data: rows, error: readError } = await admin.from('editorial_questions').select('source_question_id,status')
         .eq('contest_id', body.contestId).in('source_question_id', body.questionIds);
       if (readError) throw readError;
+      if (rows.length !== body.questionIds.length) throw new Error('question_selection_changed');
+      if (new Set(rows.map((row: { status: string }) => row.status)).size !== 1) {
+        throw new Error('question_status_mismatch');
+      }
       rows.forEach((row: { status: string }) => assertEditorialTransition(row.status, body.status));
       const { data, error } = await admin.from('editorial_questions').update({
         status: body.status,

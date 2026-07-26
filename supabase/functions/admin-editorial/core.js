@@ -10,7 +10,7 @@ import {
 } from '../_shared/adminValidation.js';
 
 export const EDITORIAL_ACTIONS = Object.freeze([
-  'list_questions', 'list_batches', 'validate_batch', 'import_draft', 'update_draft',
+  'list_questions', 'list_batches', 'list_versions', 'validate_batch', 'import_draft', 'update_draft',
   'delete_draft', 'transition', 'generate_snapshot', 'publish_snapshot', 'rollback_snapshot',
 ]);
 
@@ -23,9 +23,9 @@ export function assertEditorialTransition(from, to) {
   const transitions = {
     draft: ['technical_review', 'archived'],
     technical_review: ['draft', 'approved', 'archived'],
-    approved: ['technical_review', 'published', 'archived'],
-    published: ['archived'],
-    archived: ['draft'],
+    approved: ['technical_review', 'archived'],
+    published: [],
+    archived: [],
   };
   if (!transitions[from]?.includes(to)) throw new Error('transition_not_allowed');
   return to;
@@ -138,6 +138,7 @@ export function sanitizedEditorialErrorCode(error) {
     'question_explanation_missing', 'question_answer_invalid', 'contest_not_found',
     'developer_required', 'invalid_session', 'questions_invalid',
     'payload_too_large', 'audit_failure', 'question_import_database_error',
+    'question_edit_not_allowed', 'question_selection_changed', 'question_status_mismatch',
   ];
   if (known.includes(code)) return code;
   if (known.includes(message)) return message;
@@ -160,7 +161,7 @@ export function validateEditorialRequest(input) {
       ...safePagination(body),
     };
   }
-  if (action === 'list_batches') {
+  if (action === 'list_batches' || action === 'list_versions') {
     assertExactKeys(body, ['action', 'contestId'], ['contestId']);
     return { action, contestId: safeId(body.contestId, 'contest_id') };
   }

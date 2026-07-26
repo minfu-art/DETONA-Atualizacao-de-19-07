@@ -2,6 +2,25 @@ import { normalizeComparableText, normalizeQuestion } from '../core/questionSche
 import { getSupabaseClient } from '../supabase/client.js';
 
 export const EDITORIAL_STATUSES = Object.freeze(['draft', 'technical_review', 'approved', 'published', 'archived']);
+export const EDITORIAL_TRANSITIONS = Object.freeze({
+  draft: Object.freeze(['technical_review', 'archived']),
+  technical_review: Object.freeze(['draft', 'approved', 'archived']),
+  approved: Object.freeze(['technical_review', 'archived']),
+  published: Object.freeze([]),
+  archived: Object.freeze([]),
+});
+
+export function canEditEditorialQuestion(question) {
+  return ['draft', 'technical_review'].includes(String(question?.status || ''));
+}
+
+export function canTransitionEditorialSelection(questions, targetStatus) {
+  if (!Array.isArray(questions) || questions.length === 0) return false;
+  const statuses = new Set(questions.map(({ status }) => String(status || '')));
+  if (statuses.size !== 1) return false;
+  const [status] = statuses;
+  return EDITORIAL_TRANSITIONS[status]?.includes(targetStatus) === true;
+}
 
 const EDITORIAL_ERROR_MESSAGES = Object.freeze({
   question_subtopic_not_found: 'O subtópico informado não foi encontrado no currículo deste concurso.',
@@ -22,6 +41,9 @@ const EDITORIAL_ERROR_MESSAGES = Object.freeze({
   audit_failure: 'A importação não foi concluída porque o registro de auditoria falhou.',
   question_import_database_error: 'A importação precisa de uma correção segura do banco antes de continuar.',
   origin_not_allowed: 'Este endereço de Preview não está autorizado no ambiente de homologação.',
+  question_edit_not_allowed: 'Esta questão não pode mais ser editada no estado atual.',
+  question_selection_changed: 'A seleção mudou no backend. Atualize a lista e tente novamente.',
+  question_status_mismatch: 'As questões selecionadas não possuem o mesmo estado no backend.',
 });
 
 export function normalizeEditorialErrorCode(value) {
@@ -152,6 +174,10 @@ export class AdminQuestionService {
 
   async listBatches(contestId) {
     return this.#invoke('list_batches', { contestId });
+  }
+
+  async listVersions(contestId) {
+    return this.#invoke('list_versions', { contestId });
   }
 
   async validateBatch(contestId, questions) {
