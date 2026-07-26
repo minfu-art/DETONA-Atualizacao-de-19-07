@@ -1,6 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { OPERATIONAL_CAPABILITIES } from '../_shared/adminValidation.js';
-import { createAllowedOrigins, handleCorsPreflight, jsonResponse } from '../_shared/cors.js';
+import { createAllowedOrigins, handleCorsPreflight, isAllowedOrigin, jsonResponse } from '../_shared/cors.js';
 import {
   assertEditorialTransition,
   sanitizedEditorialErrorCode,
@@ -62,7 +62,7 @@ Deno.serve(async (request) => {
   const preflight = handleCorsPreflight(request, origins);
   if (preflight) return preflight;
   try {
-    if (!origins.has(origin)) return respond(403, { error: 'origin_not_allowed' });
+    if (!isAllowedOrigin(origin, origins)) return respond(403, { error: 'origin_not_allowed' });
     if (request.method !== 'POST') return respond(403, { error: 'request_not_allowed' }, origin);
     const authorization = request.headers.get('authorization') || '';
     if (!authorization.startsWith('Bearer ')) return respond(401, { error: 'invalid_session' }, origin);

@@ -6,6 +6,7 @@ import {
   corsHeaders,
   createAllowedOrigins,
   handleCorsPreflight,
+  isAllowedOrigin,
   jsonResponse,
 } from '../supabase/functions/_shared/cors.js';
 
@@ -26,6 +27,40 @@ async function source(relative) {
 test('allowlist normaliza origens, remove duplicadas e ignora entradas invÃ¡lidas', () => {
   const origins = createAllowedOrigins(` ${previewOrigin}/,not-a-url,ftp://invalid.example,${previewOrigin}`);
   assert.deepEqual([...origins], [previewOrigin]);
+});
+
+test('Previews Vercel do projeto detona-staging são permitidos sem aceitar projetos semelhantes', () => {
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-k62n8jqbr-min-fu-projetos.vercel.app', allowedOrigins),
+    true,
+  );
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-git-fix-p0-foundation-min-fu-projetos.vercel.app', allowedOrigins),
+    true,
+  );
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-k62n8jqbr-outro-projeto.vercel.app', allowedOrigins),
+    false,
+  );
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-preview-livre-min-fu-projetos.vercel.app', allowedOrigins),
+    false,
+  );
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-k62n8jqbr-min-fu-projetos.vercel.app.evil.example', allowedOrigins),
+    false,
+  );
+  assert.equal(
+    isAllowedOrigin('http://detona-staging-k62n8jqbr-min-fu-projetos.vercel.app', allowedOrigins),
+    false,
+  );
+  const preview = 'https://detona-staging-k62n8jqbr-min-fu-projetos.vercel.app';
+  const preflight = handleCorsPreflight(new Request(`${preview}/function`, {
+    method: 'OPTIONS',
+    headers: { Origin: preview },
+  }), allowedOrigins);
+  assert.equal(preflight.status, 204);
+  assert.equal(preflight.headers.get('access-control-allow-origin'), preview);
 });
 
 test('OPTIONS autorizado retorna 204 sem corpo e sem content-type JSON', async () => {

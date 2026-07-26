@@ -141,7 +141,7 @@ export async function createQuestionSnapshot(questions, { contestId, version } =
 }
 
 export class AdminQuestionService {
-  constructor({ getClient = getSupabaseClient, fetcher = globalThis.fetch } = {}) {
+  constructor({ getClient = getSupabaseClient, fetcher = globalThis.fetch?.bind(globalThis) } = {}) {
     this.getClient = getClient;
     this.fetcher = fetcher;
   }

@@ -8,6 +8,7 @@ import {
 import {
   createAllowedOrigins,
   handleCorsPreflight,
+  isAllowedOrigin,
   jsonResponse,
 } from '../_shared/cors.js';
 
@@ -76,7 +77,7 @@ Deno.serve(async (request) => {
   const origin = request.headers.get('origin') || '';
   const preflight = handleCorsPreflight(request, allowedOrigins);
   if (preflight) return preflight;
-  if (!allowedOrigins.has(origin)) return json(403, { error: 'origin_not_allowed' });
+  if (!isAllowedOrigin(origin, allowedOrigins)) return json(403, { error: 'origin_not_allowed' });
   if (request.method !== 'POST') return json(403, { error: 'request_not_allowed' }, origin);
   try {
     const authorization = request.headers.get('authorization') || '';

@@ -8,6 +8,7 @@ import {
   toggleEditorialSelection,
 } from '../app/js/admin/adminQuestionsScreen.js';
 import {
+  AdminQuestionService,
   canEditEditorialQuestion,
   canTransitionEditorialSelection,
 } from '../app/js/services/adminQuestionService.js';
@@ -133,4 +134,26 @@ test('16. fluxo permanece isolado por contestId e as 6.480 questões publicadas 
   const published = validatePublishedQuestions();
   assert.equal(published.valid, true, published.errors.join('\n'));
   assert.equal(published.total, 6480);
+});
+
+test('17. resumo publicado preserva o contexto de Window ao usar o fetch nativo', async () => {
+  const originalFetch = globalThis.fetch;
+  let receiver = null;
+  globalThis.fetch = async function fetchPublishedIndex() {
+    receiver = this;
+    return {
+      ok: true,
+      json: async () => ({ quantidade: 842, disciplinas: ['portugues'], versao: 'test' }),
+    };
+  };
+
+  try {
+    const service = new AdminQuestionService();
+    const result = await service.getPublishedSummary('pc_al_2026');
+    assert.equal(receiver, globalThis);
+    assert.equal(result.count, 842);
+    assert.equal(result.files, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
