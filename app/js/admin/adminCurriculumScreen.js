@@ -79,6 +79,7 @@ export async function renderAdminCurriculumScreen(root, ctx) {
     try {
       const result = await adminCurriculumService.importDraft(validPayload, ctx.adminSelectedContestId, { replace });
       output.innerHTML = `<div class="admin-validation admin-validation--ok">${result.imported} nós importados de forma transacional.</div>`;
+      globalThis.__DETONA_ADMIN?.markSaved?.();
       await renderAdminCurriculumScreen(root, ctx);
     } catch (error) {
       output.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;

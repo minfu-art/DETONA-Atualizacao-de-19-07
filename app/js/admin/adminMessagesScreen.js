@@ -54,6 +54,7 @@ export async function renderAdminMessagesScreen(root, ctx) {
       });
       const saved = await adminMessageService.create(ctx.adminSelectedContestId, payload);
       if (publish) await adminMessageService.publish(ctx.adminSelectedContestId, saved.id);
+      globalThis.__DETONA_ADMIN?.markSaved?.();
       await renderAdminMessagesScreen(root, ctx);
     } catch (error) {
       feedback.textContent = error.message || 'Falha ao salvar mensagem.';

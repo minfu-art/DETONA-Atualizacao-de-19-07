@@ -45,6 +45,10 @@ test('adminSelectedContestId é isolado e validado', () => {
   assert.equal(ctx.selectContest('novo_concurso_2027'), 'novo_concurso_2027');
   assert.throws(() => ctx.selectContest('invalid'), /inválido/);
   assert.equal(data.has('detona.activeContestId'), false);
+  assert.equal(ctx.restoreContest(contests, 'prf_2026'), 'prf_2026');
+  ctx.clear({ preserveWorkspace: true });
+  assert.equal(ctx.adminSelectedContestId, 'prf_2026');
+  assert.equal(data.get('detona.admin.selectedContestId'), 'prf_2026');
 });
 
 test('Painel Central não importa repositório acadêmico nem entitlement de aluno', async () => {

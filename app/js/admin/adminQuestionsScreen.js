@@ -399,6 +399,7 @@ export async function renderAdminQuestionsScreen(root, ctx) {
             throw new Error('O backend não confirmou todos os campos salvos.');
           }
           questionCache.set(id, persisted);
+          globalThis.__DETONA_ADMIN?.markSaved?.();
           await refreshQuestions();
           editStatus.innerHTML = '<div class="admin-validation admin-validation--ok">Questão salva e confirmada no backend.</div>';
           operationStatus.textContent = `Questão ${id} atualizada.`;
@@ -457,6 +458,7 @@ export async function renderAdminQuestionsScreen(root, ctx) {
         return;
       }
       output.innerHTML = `<div class="admin-validation admin-validation--ok">Lote ${escapeHtml(result.batchId)} importado com ${result.imported} questões.</div>`;
+      globalThis.__DETONA_ADMIN?.markSaved?.();
       await renderAdminQuestionsScreen(root, ctx);
     } catch (error) {
       importButton.disabled = true;

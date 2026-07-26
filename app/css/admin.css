@@ -32,6 +32,7 @@
 .admin-account span:last-child { display: grid; }
 .admin-account small { color: var(--admin-muted); }
 .admin-status { border: 1px solid #237653; color: #6df0b7; background: #0b2c22; border-radius: 999px; padding: 6px 9px; font-size: .7rem; font-weight: 700; }
+.admin-workspace-shell { max-width: 1500px; margin: 0 auto; padding: 22px 34px 0; box-sizing: border-box; }
 .admin-content { max-width: 1500px; margin: 0 auto; padding: 34px; outline: none; }
 .admin-page-header { display: flex; justify-content: space-between; margin-bottom: 26px; }
 .admin-page-header span, .admin-panel__eyebrow { color: var(--admin-orange); text-transform: uppercase; letter-spacing: .15em; font-size: .72rem; font-weight: 800; }
@@ -93,9 +94,12 @@
 .admin-workspace-header dl div { text-align: right; }
 .admin-workspace-header dt { color: var(--admin-muted); font-size: .7rem; text-transform: uppercase; }
 .admin-workspace-header dd { margin: 3px 0 0; font-weight: 700; }
-.admin-workspace-tabs { display: flex; gap: 5px; overflow-x: auto; margin-bottom: 20px; padding: 5px; border: 1px solid var(--admin-line); border-radius: 11px; background: #090e20; }
+.admin-workspace-tabs { display: flex; gap: 5px; overflow-x: auto; margin-bottom: 10px; padding: 5px; border: 1px solid var(--admin-line); border-radius: 11px; background: #090e20; scrollbar-width: thin; }
 .admin-workspace-tabs button { white-space: nowrap; border: 0; border-radius: 7px; background: transparent; color: var(--admin-muted); padding: 9px 13px; font: 600 .82rem Outfit, sans-serif; cursor: pointer; }
 .admin-workspace-tabs button:hover, .admin-workspace-tabs button.active { color: white; background: #2a2150; }
+.admin-workspace-steps { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--admin-muted); font-size: .78rem; }
+.admin-workspace-steps > div { display: flex; gap: 8px; }
+.admin-workspace-steps .admin-button { padding: 7px 11px; font-size: .78rem; }
 .admin-contest-list { display: grid; gap: 8px; margin-bottom: 14px; }
 .admin-contest-list button { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; border: 1px solid var(--admin-line); border-radius: 10px; background: #090e20; color: white; padding: 10px; text-align: left; cursor: pointer; }
 .admin-contest-list button.active { border-color: var(--admin-violet); }
@@ -172,10 +176,12 @@
   .admin-account span:last-child { display: none; }
   .admin-contest-selector { flex: 1; }
   .admin-contest-selector select { width: 100%; min-width: 0; max-width: 100%; }
+  .admin-workspace-shell { padding: 14px 14px 0; }
   .admin-content { padding: 22px 14px 90px; }
   .admin-grid--2, .admin-form__row { grid-template-columns: 1fr; }
   .admin-workspace-header { grid-template-columns: auto 1fr; }
   .admin-workspace-header dl { grid-column: 1 / -1; justify-content: space-between; }
+  .admin-workspace-tabs button { flex: 1 0 auto; min-width: 92px; }
   .admin-card-grid { grid-template-columns: 1fr; }
   .admin-visual-grid { grid-template-columns: 1fr 1fr; }
   .admin-table thead { display: none; }
@@ -192,6 +198,13 @@
 @media (max-width: 440px) {
   .admin-metrics { grid-template-columns: 1fr; }
   .admin-status { display: none; }
+  .admin-workspace-header { gap: 12px; padding: 14px; }
+  .admin-workspace-header h2 { font-size: 1rem; }
+  .admin-workspace-header p { font-size: .78rem; }
+  .admin-workspace-header dl { gap: 10px; }
+  .admin-workspace-steps { align-items: stretch; flex-direction: column; }
+  .admin-workspace-steps > div, .admin-workspace-steps .admin-button { width: 100%; }
+  .admin-workspace-steps .admin-button { flex: 1; }
   .admin-toolbar { align-items: stretch; flex-direction: column; }
   .admin-visual-grid { grid-template-columns: 1fr; }
   .admin-editorial-selection { align-items: stretch; flex-direction: column; }

@@ -47,6 +47,7 @@ export async function renderAdminPublicationScreen(root, ctx) {
     try {
       const result = await adminPublicationService.generate(ctx.adminSelectedContestId, new FormData(event.currentTarget).get('version'));
       feedback.innerHTML = `<div class="admin-validation admin-validation--ok">Pacote ${escapeHtml(result.package.version)} gerado.</div>`;
+      globalThis.__DETONA_ADMIN?.markSaved?.();
       await renderAdminPublicationScreen(root, ctx);
     } catch (error) {
       feedback.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;

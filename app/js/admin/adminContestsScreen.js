@@ -6,15 +6,6 @@ import {
 } from '../services/adminContestService.js';
 import { escapeHtml } from '../ui/helpers.js';
 
-export const CONTEST_WORKSPACE_TABS = Object.freeze([
-  ['contests', 'Geral'],
-  ['curriculum', 'Currículo'],
-  ['questions', 'Questões'],
-  ['media', 'Aparência'],
-  ['students', 'Alunos'],
-  ['publication', 'Publicação'],
-]);
-
 function contestForm(contest = {}, capabilities = {}) {
   const value = (key, fallback = '') => escapeHtml(contest[key] ?? fallback);
   const requiredCapability = contest.id ? 'update' : 'create';
@@ -73,24 +64,11 @@ export async function renderAdminContestsScreen(root, ctx) {
   const catalog = await adminContestService.listContests();
   const capabilities = catalog.capabilities || {};
   const selected = catalog.rows.find(({ id }) => id === ctx.adminSelectedContestId) || null;
-  let detail = null;
-  if (selected && catalog.writable) detail = await adminContestService.getContest(selected.id).catch(() => null);
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica de concursos</span><h1>Workspace operacional</h1>
       <p>Configure um concurso, importe o conteúdo e publique versões sem misturar jornadas.</p></div>
       ${capabilities.create === true ? '<button class="admin-button" type="button" id="admin-create-contest">+ Novo concurso</button>' : ''}
     </header>
-    ${selected ? `
-      <section class="admin-workspace-header" style="--contest-color:${escapeHtml(selected.color)};--contest-accent:${escapeHtml(selected.accent)}">
-        <span class="admin-workspace-icon">${escapeHtml(selected.icon)}</span>
-        <div><small>${escapeHtml(selected.code)}</small><h2>${escapeHtml(selected.name)}</h2><p>${escapeHtml(selected.role)}</p></div>
-        <dl><div><dt>Currículo</dt><dd>${detail?.counts?.curriculum ?? '—'}</dd></div>
-          <div><dt>Questões</dt><dd>${detail?.counts?.questions ?? '—'}</dd></div>
-          <div><dt>Status</dt><dd>${escapeHtml(selected.content_status)}</dd></div></dl>
-      </section>
-      <nav class="admin-workspace-tabs" aria-label="Áreas do concurso">
-        ${CONTEST_WORKSPACE_TABS.map(([screen, label]) => `<button type="button" data-workspace-screen="${screen}" class="${screen === 'contests' ? 'active' : ''}">${label}</button>`).join('')}
-      </nav>` : ''}
     <section class="admin-grid admin-grid--2">
       <div id="admin-contest-editor">${contestForm(selected || {}, capabilities)}</div>
       <aside class="admin-panel">
@@ -134,8 +112,9 @@ export async function renderAdminContestsScreen(root, ctx) {
         feedback.innerHTML = `<div class="admin-validation admin-validation--ok">Concurso ${escapeHtml(result.contest.code)} salvo em rascunho com auditoria.</div>`;
         const refreshed = await adminContestService.listContests();
         ctx.setAvailableContests(refreshed.rows);
-        ctx.selectContest(result.contest.id);
-        globalThis.location?.reload?.();
+        globalThis.__DETONA_ADMIN?.markSaved?.();
+        await globalThis.__DETONA_ADMIN?.selectContest?.(result.contest.id);
+        await globalThis.__DETONA_ADMIN?.navigate?.('contests', { historyMode: 'replace' });
       } catch (error) {
         feedback.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
       }
@@ -145,10 +124,6 @@ export async function renderAdminContestsScreen(root, ctx) {
   mountForm(selected || {});
   root.querySelector('#admin-create-contest')?.addEventListener('click', () => mountForm());
   root.querySelectorAll('[data-select-contest]').forEach((button) => button.addEventListener('click', () => {
-    ctx.selectContest(button.dataset.selectContest);
-    renderAdminContestsScreen(root, ctx);
-  }));
-  root.querySelectorAll('[data-workspace-screen]').forEach((button) => button.addEventListener('click', () => {
-    globalThis.__DETONA_ADMIN?.navigate?.(button.dataset.workspaceScreen);
+    globalThis.__DETONA_ADMIN?.selectContest?.(button.dataset.selectContest);
   }));
 }

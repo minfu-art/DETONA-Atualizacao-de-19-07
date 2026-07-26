@@ -21,12 +21,14 @@ export class AdminContext {
     return this.availableContests;
   }
 
-  restoreContest(contests = this.availableContests) {
+  restoreContest(contests = this.availableContests, preferredContestId = null) {
     this.setAvailableContests(contests);
     const saved = this.storage?.getItem?.(STORAGE_KEY);
-    this.adminSelectedContestId = this.availableContests.some(({ id }) => id === saved)
-      ? saved
-      : this.availableContests[0]?.id || null;
+    this.adminSelectedContestId = this.availableContests.some(({ id }) => id === preferredContestId)
+      ? preferredContestId
+      : this.availableContests.some(({ id }) => id === saved)
+        ? saved
+        : this.availableContests[0]?.id || null;
     if (this.adminSelectedContestId) this.storage?.setItem?.(STORAGE_KEY, this.adminSelectedContestId);
     return this.adminSelectedContestId;
   }
@@ -40,12 +42,14 @@ export class AdminContext {
     return contestId;
   }
 
-  clear() {
-    this.storage?.removeItem?.(STORAGE_KEY);
+  clear({ preserveWorkspace = false } = {}) {
+    if (!preserveWorkspace) this.storage?.removeItem?.(STORAGE_KEY);
     this.screen = 'overview';
     this.user = null;
-    this.adminSelectedContestId = null;
-    this.availableContests = [];
+    if (!preserveWorkspace) {
+      this.adminSelectedContestId = null;
+      this.availableContests = [];
+    }
   }
 }
 
