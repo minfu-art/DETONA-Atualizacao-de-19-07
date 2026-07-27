@@ -363,6 +363,32 @@ test('OpenAPI expõe somente as quatro ações e autenticação Bearer', async (
   assert.equal((schema.match(/^\s{2}\/detona-course-provisioner:/gm) || []).length, 1);
 });
 
+test('OpenAPI usa objeto raiz compativel com GPT Actions e respostas tipadas', async () => {
+  const schema = await readFile(new URL('../docs/detona-course-provisioner-openapi.yaml', import.meta.url), 'utf8');
+  const requestBody = schema.slice(schema.indexOf('      requestBody:'), schema.indexOf('      responses:'));
+  const successResponse = schema.slice(schema.indexOf("        '200':"), schema.indexOf("        '400':"));
+  const componentNames = new Set(
+    [...schema.matchAll(/^    ([A-Za-z][A-Za-z0-9]+):$/gm)].map((match) => match[1]),
+  );
+  const references = [...schema.matchAll(/\$ref: '#\/components\/schemas\/([A-Za-z][A-Za-z0-9]+)'/g)]
+    .map((match) => match[1]);
+
+  assert.match(schema, /^openapi: 3\.0\.3$/m);
+  assert.match(requestBody, /schema:\s*\n\s+type: object\s*\n\s+additionalProperties: false\s*\n\s+required:/);
+  assert.match(requestBody, /\n\s+properties:\s*\n\s+action:/);
+  assert.doesNotMatch(requestBody, /\boneOf:/);
+  assert.match(successResponse, /schema:\s*\n\s+type: object\s*\n\s+additionalProperties: true\s*\n\s+properties:/);
+  assert.match(successResponse, /\n\s+result:\s*\n\s+type: string/);
+  assert.match(successResponse, /CourseSummary/);
+  assert.match(successResponse, /OperationResponse/);
+  assert.match(schema, /^    CourseSummary:\s*\n\s+type: object[\s\S]*?^    OperationResponse:\s*\n\s+type: object/m);
+  assert.match(schema, /^        '404':\s*\n\s+\$ref: '#\/components\/responses\/SafeError'$/m);
+  assert.equal((schema.match(/operationId: operateDetonaCourse/g) || []).length, 1);
+  assert.equal((schema.match(/https:\/\/folnsdtmaiksjqqsohjx\.supabase\.co\/functions\/v1/g) || []).length, 1);
+  assert.doesNotMatch(schema, /\bconst:|type: ['"]?null|LicenseRef|production|service_role/i);
+  for (const reference of references) assert.ok(componentNames.has(reference), `ref ausente: ${reference}`);
+});
+
 test('instruções e conhecimento proíbem produção, publicação e dados inventados', async () => {
   const instructions = await readFile(new URL('../docs/detona-course-operator-gpt-instructions.md', import.meta.url), 'utf8');
   assert.match(instructions, /Nunca use produção/);
