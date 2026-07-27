@@ -1,13 +1,17 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { createAdminAccessHandler } from './core.js';
+import {
+  corsHeaders,
+  createAllowedOrigins,
+  handleCorsPreflight,
+  isAllowedOrigin,
+  jsonResponse,
+} from '../_shared/cors.js';
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL');
 const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY');
 const supabaseServiceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-const allowedOrigins = (Deno.env.get('ADMIN_ALLOWED_ORIGINS') || '')
-  .split(',')
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const allowedOrigins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
 
 if (!supabaseUrl || !supabaseAnonKey || !supabaseServiceRoleKey) {
   throw new Error('Configuração segura da Edge Function incompleta.');
@@ -18,6 +22,7 @@ const adminClient = createClient(supabaseUrl, supabaseServiceRoleKey, {
 });
 
 type ListUsersInput = {
+  contestId: string;
   search: string;
   page: number;
   pageSize: number;
@@ -38,17 +43,6 @@ type EntitlementRow = {
   source: string;
 };
 
-function corsHeaders(request: Request) {
-  const origin = request.headers.get('origin') || '';
-  const allowedOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0] || '';
-  return {
-    ...(allowedOrigin ? { 'access-control-allow-origin': allowedOrigin } : {}),
-    'access-control-allow-headers': 'authorization, x-client-info, apikey, content-type',
-    'access-control-allow-methods': 'POST, OPTIONS',
-    vary: 'Origin',
-  };
-}
-
 async function resolveIdentity(token: string) {
   const userClient = createClient(supabaseUrl!, supabaseAnonKey!, {
     auth: { persistSession: false, autoRefreshToken: false },
@@ -67,7 +61,7 @@ async function resolveIdentity(token: string) {
 }
 
 const repository = {
-  async listUsers({ search, page, pageSize }: ListUsersInput) {
+  async listUsers({ contestId, search, page, pageSize }: ListUsersInput) {
     const start = (page - 1) * pageSize;
     const end = start + pageSize - 1;
     let query = adminClient
@@ -87,7 +81,7 @@ const repository = {
       const result = await adminClient
         .from('contest_entitlements')
         .select('user_id,contest_id,status,granted_at,source')
-        .eq('contest_id', 'pc_al_2026')
+        .eq('contest_id', contestId)
         .in('user_id', userIds);
       if (result.error) throw new Error('entitlements_failed');
       entitlements = result.data || [];
@@ -100,6 +94,16 @@ const repository = {
       })),
       total: count || 0,
     };
+  },
+
+  async contestExists(contestId: string) {
+    const { data, error } = await adminClient
+      .from('admin_contests')
+      .select('id')
+      .eq('id', contestId)
+      .maybeSingle();
+    if (error) throw new Error('contest_lookup_failed');
+    return Boolean(data);
   },
 
   async userExists(userId: string) {
@@ -135,8 +139,18 @@ const repository = {
   },
 };
 
-Deno.serve((request) => createAdminAccessHandler({
-  resolveIdentity,
-  repository,
-  corsHeaders: corsHeaders(request),
-})(request));
+Deno.serve((request) => {
+  const origin = request.headers.get('origin') || '';
+  const preflight = handleCorsPreflight(request, allowedOrigins);
+  if (preflight) return preflight;
+  if (!isAllowedOrigin(origin, allowedOrigins)) {
+    return jsonResponse(403, {
+      error: { code: 'ORIGIN_NOT_ALLOWED', message: 'Origem não autorizada.' },
+    }, origin, allowedOrigins);
+  }
+  return createAdminAccessHandler({
+    resolveIdentity,
+    repository,
+    corsHeaders: corsHeaders(origin, allowedOrigins),
+  })(request);
+});

@@ -17,10 +17,13 @@ const DEV_ID = '11111111-1111-4111-8111-111111111111';
 const STUDENT_ID = '22222222-2222-4222-8222-222222222222';
 const SECOND_STUDENT_ID = '33333333-3333-4333-8333-333333333333';
 const CONTEST_ID = 'pc_al_2026';
+const SECOND_CONTEST_ID = 'pp_rn_2026';
 const forgeSource = readFileSync(new URL('../app/js/ui/forge.js', import.meta.url), 'utf8');
 const serviceSource = readFileSync(new URL('../app/js/services/adminAccessService.js', import.meta.url), 'utf8');
 const migrationSource = readFileSync(new URL('../supabase/migrations/006_admin_access_audit.sql', import.meta.url), 'utf8');
+const genericAccessMigration = readFileSync(new URL('../supabase/migrations/017_generic_contest_access_management.sql', import.meta.url), 'utf8');
 const functionSource = readFileSync(new URL('../supabase/functions/admin-access/index.ts', import.meta.url), 'utf8');
+const centralAccessScreen = readFileSync(new URL('../app/js/admin/adminAccessScreen.js', import.meta.url), 'utf8');
 const dataAccessSource = readFileSync(new URL('../supabase/migrations/003_explicit_data_api_access.sql', import.meta.url), 'utf8');
 const supabaseConfig = readFileSync(new URL('../supabase/config.toml', import.meta.url), 'utf8');
 
@@ -57,7 +60,7 @@ function makeSystem() {
   ]);
 
   const repository = {
-    async listUsers({ search, page, pageSize }) {
+    async listUsers({ contestId, search, page, pageSize }) {
       const term = search.toLocaleLowerCase('pt-BR');
       const filtered = profiles.filter((profile) => (
         !term
@@ -68,10 +71,13 @@ function makeSystem() {
       return {
         users: filtered.slice(start, start + pageSize).map((profile) => ({
           ...profile,
-          entitlement: entitlements.get(`${profile.id}:${CONTEST_ID}`) || null,
+          entitlement: entitlements.get(`${profile.id}:${contestId}`) || null,
         })),
         total: filtered.length,
       };
+    },
+    async contestExists(contestId) {
+      return [CONTEST_ID, SECOND_CONTEST_ID].includes(contestId);
     },
     async userExists(userId) {
       return profiles.some((profile) => profile.id === userId);
@@ -117,7 +123,11 @@ function makeSystem() {
   return { handler, profiles, entitlements, audit, academic };
 }
 
-async function call(handler, { token, body = { action: 'list_users' }, rawBody } = {}) {
+async function call(handler, {
+  token,
+  body = { action: 'list_users', contestId: CONTEST_ID },
+  rawBody,
+} = {}) {
   const headers = { 'content-type': 'application/json' };
   if (token) headers.authorization = `Bearer ${token}`;
   const response = await handler(new Request('https://example.test/admin-access', {
@@ -167,7 +177,7 @@ test('4. resposta não contém tokens ou hashes', async () => {
 test('5. pesquisa por nome funciona', async () => {
   const { payload } = await call(makeSystem().handler, {
     token: 'developer-token',
-    body: { action: 'list_users', search: 'Alfa' },
+    body: { action: 'list_users', contestId: CONTEST_ID, search: 'Alfa' },
   });
   assert.deepEqual(payload.users.map((user) => user.userId), [STUDENT_ID]);
 });
@@ -175,15 +185,15 @@ test('5. pesquisa por nome funciona', async () => {
 test('6. pesquisa por e-mail funciona', async () => {
   const { payload } = await call(makeSystem().handler, {
     token: 'developer-token',
-    body: { action: 'list_users', search: 'beta@example.test' },
+    body: { action: 'list_users', contestId: CONTEST_ID, search: 'beta@example.test' },
   });
   assert.deepEqual(payload.users.map((user) => user.userId), [SECOND_STUDENT_ID]);
 });
 
 test('7. paginação é limitada a cinquenta itens', () => {
-  assert.equal(validateAdminPayload({ action: 'list_users', pageSize: 50 }).pageSize, 50);
+  assert.equal(validateAdminPayload({ action: 'list_users', contestId: CONTEST_ID, pageSize: 50 }).pageSize, 50);
   assert.throws(
-    () => validateAdminPayload({ action: 'list_users', pageSize: 51 }),
+    () => validateAdminPayload({ action: 'list_users', contestId: CONTEST_ID, pageSize: 51 }),
     (error) => error.status === 400,
   );
 });
@@ -193,7 +203,7 @@ test('8. contest desconhecido é rejeitado', async () => {
     token: 'developer-token',
     body: { action: 'grant_access', targetUserId: STUDENT_ID, contestId: 'outro_concurso' },
   });
-  assert.equal(response.status, 400);
+  assert.equal(response.status, 404);
 });
 
 test('9. grant cria acesso ativo', async () => {
@@ -349,7 +359,7 @@ test('campos administrativos enviados pelo cliente são rejeitados', () => {
     (error) => error.status === 400,
   );
   assert.throws(
-    () => validateAdminPayload({ action: 'list_users', table: 'profiles' }),
+    () => validateAdminPayload({ action: 'list_users', contestId: CONTEST_ID, table: 'profiles' }),
     (error) => error.status === 400,
   );
 });
@@ -387,4 +397,50 @@ test('mudança de acesso e auditoria são atômicas e exclusivas do backend', ()
   assert.match(migrationSource, /grant execute on function public\.admin_set_contest_access[\s\S]*to service_role/i);
   assert.match(dataAccessSource, /grant select on table public\.contest_entitlements to authenticated/i);
   assert.doesNotMatch(dataAccessSource, /grant\s+(?:insert|update|delete)[^;]*contest_entitlements[^;]*authenticated/i);
+});
+
+test('painel central gerencia alunos do concurso selecionado sem allowlist de PC/AL', async () => {
+  const system = makeSystem();
+  const listed = await call(system.handler, {
+    token: 'developer-token',
+    body: { action: 'list_users', contestId: SECOND_CONTEST_ID },
+  });
+  assert.equal(listed.response.status, 200);
+
+  const granted = await call(system.handler, {
+    token: 'developer-token',
+    body: {
+      action: 'grant_access',
+      targetUserId: STUDENT_ID,
+      contestId: SECOND_CONTEST_ID,
+    },
+  });
+  assert.equal(granted.response.status, 200);
+  assert.equal(granted.payload.access.contestId, SECOND_CONTEST_ID);
+  assert.equal(system.entitlements.size, 1);
+  assert.doesNotMatch(centralAccessScreen, /somente para PC\/AL|próxima fase/i);
+  assert.match(centralAccessScreen, /ctx\.adminSelectedContestId/);
+});
+
+test('migration 017 aceita somente concursos cadastrados e prontos para concessão', () => {
+  assert.match(genericAccessMigration, /drop constraint if exists admin_access_audit_contest_check/i);
+  assert.match(genericAccessMigration, /foreign key \(contest_id\) references public\.admin_contests\(id\)/i);
+  assert.match(genericAccessMigration, /from public\.admin_contests contest[\s\S]+contest\.id = p_contest_id/i);
+  assert.match(genericAccessMigration, /p_action in \('grant_access', 'reactivate_access'\)[\s\S]+v_contest_status <> 'ready'/i);
+  assert.doesNotMatch(genericAccessMigration, /p_contest_id\s*<>\s*'pc_al_2026'/i);
+  assert.doesNotMatch(genericAccessMigration, /\bdelete from\b|\btruncate\b|\bdrop table\b/i);
+});
+
+test('listagem envia contestId e a Edge filtra entitlement pelo concurso solicitado', () => {
+  assert.match(serviceSource, /this\.invoke\('list_users', \{ contestId, search, page, pageSize \}\)/);
+  assert.match(functionSource, /\.eq\('contest_id', contestId\)/);
+  assert.match(functionSource, /from\('admin_contests'\)[\s\S]+\.eq\('id', contestId\)/);
+});
+
+test('admin-access usa a allowlist CORS compartilhada para Previews de staging', () => {
+  assert.match(functionSource, /createAllowedOrigins/);
+  assert.match(functionSource, /handleCorsPreflight/);
+  assert.match(functionSource, /isAllowedOrigin/);
+  assert.match(functionSource, /jsonResponse\(403/);
+  assert.doesNotMatch(functionSource, /allowedOrigins\.includes\(origin\)/);
 });

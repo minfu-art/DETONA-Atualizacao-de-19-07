@@ -44,8 +44,13 @@ export class AdminAccessService {
     return data;
   }
 
-  async listUsers({ search = '', page = 1, pageSize = 20 } = {}) {
-    return this.invoke('list_users', { search, page, pageSize });
+  async listUsers({
+    contestId = ADMIN_CONTEST_ID,
+    search = '',
+    page = 1,
+    pageSize = 20,
+  } = {}) {
+    return this.invoke('list_users', { contestId, search, page, pageSize });
   }
 
   async grantAccess(userId, contestId = ADMIN_CONTEST_ID) {

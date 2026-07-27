@@ -1,4 +1,3 @@
-import { ADMIN_CONTEST_ID } from '../services/adminAccessService.js';
 import { adminStudentService } from '../services/adminStudentService.js';
 import { escapeAttr, escapeHtml } from '../ui/helpers.js';
 
@@ -9,14 +8,10 @@ function stateFor(entitlement) {
 }
 
 export async function renderAdminAccessScreen(root, ctx) {
-  if (ctx.adminSelectedContestId !== ADMIN_CONTEST_ID) {
-    root.innerHTML = `<header class="admin-page-header"><div><span>Controle de matrícula</span><h1>Alunos e acessos</h1></div></header>
-      <div class="admin-prepared">O backend mantém uma allowlist segura somente para PC/AL. Este concurso está preparado para a próxima fase.</div>`;
-    return;
-  }
+  const selectedContest = ctx.availableContests.find(({ id }) => id === ctx.adminSelectedContestId);
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Controle de matrícula</span><h1>Alunos e acessos</h1>
-      <p>Conceda, revogue ou reative acesso sem apagar o progresso acadêmico.</p></div></header>
+      <p>Gerencie o acesso a <strong>${escapeHtml(selectedContest?.name || ctx.adminSelectedContestId)}</strong> sem apagar o progresso acadêmico.</p></div></header>
     <form id="admin-student-search" class="admin-toolbar" role="search">
       <input id="admin-student-query" type="search" maxlength="100" placeholder="Pesquisar nome ou e-mail" aria-label="Pesquisar aluno">
       <button class="admin-button" type="submit">Pesquisar</button>

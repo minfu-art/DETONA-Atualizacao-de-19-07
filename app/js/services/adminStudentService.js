@@ -7,7 +7,7 @@ export class AdminStudentService {
 
   listUsers(contestId, options = {}) {
     if (!contestId) throw new Error('contestId é obrigatório.');
-    return this.access.listUsers(options);
+    return this.access.listUsers({ ...options, contestId });
   }
 
   grant(contestId, userId) {

@@ -5,12 +5,11 @@ export const ADMIN_ACTIONS = Object.freeze([
   'reactivate_access',
 ]);
 
-export const ADMIN_CONTESTS = Object.freeze(['pc_al_2026']);
-
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const CONTEST_ID_PATTERN = /^[a-z0-9][a-z0-9_-]{1,79}$/;
 const SEARCH_PATTERN = /^[\p{L}\p{N}\s@._+\-]*$/u;
 const ACTION_FIELDS = Object.freeze({
-  list_users: new Set(['action', 'search', 'page', 'pageSize']),
+  list_users: new Set(['action', 'contestId', 'search', 'page', 'pageSize']),
   grant_access: new Set(['action', 'targetUserId', 'contestId']),
   revoke_access: new Set(['action', 'targetUserId', 'contestId']),
   reactivate_access: new Set(['action', 'targetUserId', 'contestId']),
@@ -54,11 +53,16 @@ export function validateAdminPayload(input) {
 
   if (action === 'list_users') {
     const search = String(input.search || '').trim();
+    const contestId = String(input.contestId || '').trim();
     if (search.length > 100 || !SEARCH_PATTERN.test(search)) {
       throw new AdminAccessError(400, 'INVALID_SEARCH', 'Pesquisa inválida.');
     }
+    if (!CONTEST_ID_PATTERN.test(contestId)) {
+      throw new AdminAccessError(400, 'INVALID_CONTEST', 'Concurso inválido.');
+    }
     return {
       action,
+      contestId,
       search,
       page: integer(input.page, 1, 'Página', 1, 100000),
       pageSize: integer(input.pageSize, 20, 'Tamanho da página', 1, 50),
@@ -70,8 +74,8 @@ export function validateAdminPayload(input) {
   if (!UUID_PATTERN.test(targetUserId)) {
     throw new AdminAccessError(400, 'INVALID_USER', 'Aluno inválido.');
   }
-  if (!ADMIN_CONTESTS.includes(contestId)) {
-    throw new AdminAccessError(400, 'INVALID_CONTEST', 'Concurso não permitido.');
+  if (!CONTEST_ID_PATTERN.test(contestId)) {
+    throw new AdminAccessError(400, 'INVALID_CONTEST', 'Concurso inválido.');
   }
   return { action, targetUserId, contestId };
 }
@@ -164,6 +168,9 @@ export function createAdminAccessHandler({
         throw new AdminAccessError(400, 'INVALID_JSON', 'Envie um JSON válido.');
       }
       const payload = validateAdminPayload(rawPayload);
+      if (!(await repository.contestExists(payload.contestId))) {
+        throw new AdminAccessError(404, 'CONTEST_NOT_FOUND', 'Concurso não encontrado.');
+      }
 
       if (payload.action === 'list_users') {
         const result = await repository.listUsers(payload);

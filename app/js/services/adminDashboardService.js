@@ -31,7 +31,7 @@ export class AdminDashboardService {
   async getSnapshot(contestId) {
     if (!contestId) throw new Error('contestId administrativo é obrigatório.');
     const [usersResult, messagesResult, questionsResult] = await Promise.allSettled([
-      this.access.listUsers({ page: 1, pageSize: 100 }),
+      this.access.listUsers({ contestId, page: 1, pageSize: 50 }),
       this.announcements.listAdminAnnouncements(),
       publishedQuestionCount(this.fetcher),
     ]);
