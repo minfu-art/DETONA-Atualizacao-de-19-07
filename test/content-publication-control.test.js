@@ -114,6 +114,10 @@ test('15. interface apresenta ações corretas e confirmação digitada por stat
   assert.match(screenSource, /Versão atualmente publicada/);
   assert.match(screenSource, /id="package-confirmation"/);
   assert.match(screenSource, /confirmationDialog\.showModal\(\)/);
+  assert.match(screenSource, /Digite exatamente/);
+  assert.match(screenSource, /Não digite “aprovo”/);
+  assert.match(screenSource, /validatePackageConfirmation/);
+  assert.match(screenSource, /Pacote pronto para publicar/);
   assert.match(screenSource, /action === 'unpublish'/);
   assert.match(screenSource, /action === 'publish'/);
   assert.doesNotMatch(screenSource, /globalThis\.confirm/);

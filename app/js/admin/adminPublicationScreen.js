@@ -1,4 +1,7 @@
-import { adminPublicationService } from '../services/adminPublicationService.js';
+import {
+  adminPublicationService,
+  validatePackageConfirmation,
+} from '../services/adminPublicationService.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 const LABELS = Object.freeze({
@@ -24,6 +27,7 @@ export async function renderAdminPublicationScreen(root, ctx) {
     adminPublicationService.list(ctx.adminSelectedContestId).catch(() => ({ packages: [] })),
   ]);
   const selectedContest = ctx.availableContests.find(({ id }) => id === ctx.adminSelectedContestId);
+  const generatedPackage = history.packages.find(({ status }) => status === 'generated');
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica · Publicação</span><h1>Pacote de conteúdo</h1>
       <p>Valide, gere uma versão imutável, confira a prévia e só então publique.</p></div></header>
@@ -39,6 +43,11 @@ export async function renderAdminPublicationScreen(root, ctx) {
         <div id="package-feedback" role="status"></div>
       </form>
     </section>
+    ${generatedPackage ? `<section class="admin-publication-guide" aria-label="Próximo passo">
+      <strong>Pacote pronto para publicar</strong>
+      <span>A versão ${escapeHtml(generatedPackage.version)} já foi gerada. Não é necessário gerar novamente sem alterar o conteúdo.</span>
+      <span>Na tabela abaixo, clique em <strong>Publicar</strong> e digite exatamente <code>${escapeHtml(selectedContest.code)}</code>.</span>
+    </section>` : ''}
     <section class="admin-panel"><h2>Histórico de versões</h2>
       <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Versão</th><th>Hash</th><th>Status</th><th>Criado</th><th>Ações</th></tr></thead><tbody>
       ${history.packages.map((item) => {
@@ -59,9 +68,10 @@ export async function renderAdminPublicationScreen(root, ctx) {
       <form class="admin-form" id="package-confirmation-form">
         <h2 id="package-confirmation-title">Confirmar ação</h2>
         <p id="package-confirmation-description"></p>
-        <label>Digite <strong id="package-confirmation-code"></strong>
-          <input name="confirmation" autocomplete="off" required>
+        <label>Digite exatamente <strong id="package-confirmation-code"></strong> para confirmar
+          <input name="confirmation" autocomplete="off" required aria-describedby="package-confirmation-hint">
         </label>
+        <small id="package-confirmation-hint">A confirmação diferencia letras e espaços. Não digite “aprovo”.</small>
         <div id="package-confirmation-feedback" role="alert"></div>
         <div class="admin-form__actions">
           <button type="button" class="admin-button admin-button--secondary" data-close-confirmation>Cancelar</button>
@@ -101,9 +111,15 @@ export async function renderAdminPublicationScreen(root, ctx) {
     root.querySelector('#package-confirmation-description').textContent = copy.description;
     root.querySelector('#package-confirmation-code').textContent = selectedContest.code;
     confirmationSubmit.textContent = copy.submit;
+    confirmationSubmit.disabled = true;
     confirmationDialog.showModal();
     confirmationForm.elements.confirmation.focus();
   };
+  confirmationForm.elements.confirmation.addEventListener('input', (event) => {
+    const matches = String(event.currentTarget.value || '').trim() === selectedContest.code;
+    confirmationSubmit.disabled = !matches;
+    confirmationFeedback.textContent = matches ? '' : `Digite exatamente ${selectedContest.code}.`;
+  });
   root.querySelectorAll('[data-close-confirmation]').forEach((button) => button.addEventListener('click', () => {
     pendingPackageAction = null;
     confirmationDialog.close();
@@ -112,7 +128,16 @@ export async function renderAdminPublicationScreen(root, ctx) {
     event.preventDefault();
     if (!pendingPackageAction) return;
     const { action, packageId } = pendingPackageAction;
-    const confirmation = String(new FormData(confirmationForm).get('confirmation') || '').trim();
+    let confirmation;
+    try {
+      confirmation = validatePackageConfirmation(
+        new FormData(confirmationForm).get('confirmation'),
+        selectedContest.code,
+      );
+    } catch (error) {
+      confirmationFeedback.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
+      return;
+    }
     confirmationSubmit.disabled = true;
     confirmationFeedback.textContent = '';
     try {
@@ -134,13 +159,21 @@ export async function renderAdminPublicationScreen(root, ctx) {
   });
   root.querySelector('#package-generator').addEventListener('submit', async (event) => {
     event.preventDefault();
+    const submitButton = event.currentTarget.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    feedback.innerHTML = '<div class="admin-validation">Gerando pacote com segurança…</div>';
     try {
       const result = await adminPublicationService.generate(ctx.adminSelectedContestId, new FormData(event.currentTarget).get('version'));
-      feedback.innerHTML = `<div class="admin-validation admin-validation--ok">Pacote ${escapeHtml(result.package.version)} gerado.</div>`;
       globalThis.__DETONA_ADMIN?.markSaved?.();
       await renderAdminPublicationScreen(root, ctx);
+      const currentFeedback = root.querySelector('#package-feedback');
+      const message = result.reused
+        ? `O pacote ${result.package.version} já existia e foi reutilizado. Clique em Publicar no histórico.`
+        : `Pacote ${result.package.version} gerado. Clique em Publicar no histórico.`;
+      currentFeedback.innerHTML = `<div class="admin-validation admin-validation--ok">${escapeHtml(message)}</div>`;
     } catch (error) {
       feedback.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
+      submitButton.disabled = false;
     }
   });
   root.querySelectorAll('[data-preview-package]').forEach((button) => button.addEventListener('click', async () => {

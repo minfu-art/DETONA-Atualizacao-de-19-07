@@ -208,7 +208,19 @@ Deno.serve(async (request) => {
         status: 'generated',
         created_by: userData.user.id,
       }).select('*').single();
-      if (error?.code === '23505') return json(409, { error: 'package_version_or_content_exists' }, origin);
+      if (error?.code === '23505') {
+        const { data: existingPackage, error: lookupError } = await admin.from('contest_content_packages').select('*')
+          .eq('contest_id', body.contestId).eq('content_hash', contentHash).maybeSingle();
+        if (lookupError) throw lookupError;
+        if (existingPackage) {
+          return json(200, {
+            package: existingPackage,
+            reused: true,
+            message: 'identical_package_reused',
+          }, origin);
+        }
+        return json(409, { error: 'package_version_exists' }, origin);
+      }
       if (error) throw error;
       await audit(admin, userData.user.id, {
         contestId: body.contestId, action, targetType: 'content_package', targetId: data.id,

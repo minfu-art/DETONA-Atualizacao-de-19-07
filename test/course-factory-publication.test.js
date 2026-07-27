@@ -2,7 +2,11 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
-import { validateContentVersion } from '../app/js/services/adminPublicationService.js';
+import {
+  publicationErrorMessage,
+  validateContentVersion,
+  validatePackageConfirmation,
+} from '../app/js/services/adminPublicationService.js';
 import { validateAdminContestRequest } from '../supabase/functions/admin-contests/core.js';
 
 test('publicação valida, gera, visualiza, publica e restaura por ações explícitas', () => {
@@ -45,4 +49,28 @@ test('confirmação de publicação não aceita campos extras nem packageId inv�
     packageId: '452d919a-8812-4fce-8eeb-13c5834b1760',
     production: true,
   }), /unexpected_field/);
+});
+
+test('confirmação local exige exatamente o código mostrado pelo painel', () => {
+  assert.equal(validatePackageConfirmation(' PP RN ', 'PP RN'), 'PP RN');
+  assert.throws(() => validatePackageConfirmation('aprovo', 'PP RN'), /Digite exatamente PP RN/);
+});
+
+test('erro HTTP da Edge Function é traduzido sem expor detalhes internos', async () => {
+  const error = new Error('Edge Function returned a non-2xx status code');
+  error.context = new Response(JSON.stringify({
+    error: 'publication_confirmation_invalid',
+    internal: 'select secret from private_table',
+  }), { status: 400, headers: { 'content-type': 'application/json' } });
+  const message = await publicationErrorMessage(error);
+  assert.match(message, /Confirmação incorreta/);
+  assert.doesNotMatch(message, /select|secret|private_table/i);
+});
+
+test('geração idempotente reutiliza pacote de conteúdo idêntico', async () => {
+  const source = await readFile(new URL('../supabase/functions/admin-contests/index.ts', import.meta.url), 'utf8');
+  assert.match(source, /\.eq\('contest_id', body\.contestId\)\.eq\('content_hash', contentHash\)\.maybeSingle\(\)/);
+  assert.match(source, /reused:\s*true/);
+  assert.match(source, /identical_package_reused/);
+  assert.match(source, /package_version_exists/);
 });
