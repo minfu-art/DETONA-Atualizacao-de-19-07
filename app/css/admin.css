@@ -68,6 +68,10 @@
 .admin-table th { color: var(--admin-muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
 .admin-table td small { display: block; color: var(--admin-muted); margin-top: 3px; }
 .admin-current-version { display: block; margin-top: 5px; color: #6df0b7; font-size: .72rem; }
+.admin-confirmation-dialog { width: min(92vw, 520px); border: 1px solid var(--admin-line); border-radius: 14px; padding: 22px; background: var(--admin-panel); color: var(--admin-text); box-shadow: 0 28px 90px #000c; }
+.admin-confirmation-dialog::backdrop { background: rgba(3, 5, 13, .78); backdrop-filter: blur(4px); }
+.admin-confirmation-dialog h2, .admin-confirmation-dialog p { margin: 0; }
+.admin-confirmation-dialog p { color: var(--admin-muted); }
 .admin-badge { display: inline-block; border-radius: 999px; padding: 5px 9px; background: #26304e; font-size: .75rem; }
 .admin-badge--revoke { color: #72efbd; background: #11392c; }
 .admin-badge--reactivate { color: #ffca81; background: #3a2812; }

@@ -54,8 +54,84 @@ export async function renderAdminPublicationScreen(root, ctx) {
       }).join('') || '<tr><td colspan="5">Nenhum pacote gerado.</td></tr>'}
       </tbody></table></div>
       <pre id="package-preview" class="admin-json-preview" tabindex="0"></pre>
-    </section>`;
+    </section>
+    <dialog class="admin-confirmation-dialog" id="package-confirmation" aria-labelledby="package-confirmation-title">
+      <form class="admin-form" id="package-confirmation-form">
+        <h2 id="package-confirmation-title">Confirmar ação</h2>
+        <p id="package-confirmation-description"></p>
+        <label>Digite <strong id="package-confirmation-code"></strong>
+          <input name="confirmation" autocomplete="off" required>
+        </label>
+        <div id="package-confirmation-feedback" role="alert"></div>
+        <div class="admin-form__actions">
+          <button type="button" class="admin-button admin-button--secondary" data-close-confirmation>Cancelar</button>
+          <button type="submit" class="admin-button" id="package-confirmation-submit">Confirmar</button>
+        </div>
+      </form>
+    </dialog>`;
   const feedback = root.querySelector('#package-feedback');
+  const confirmationDialog = root.querySelector('#package-confirmation');
+  const confirmationForm = root.querySelector('#package-confirmation-form');
+  const confirmationFeedback = root.querySelector('#package-confirmation-feedback');
+  const confirmationSubmit = root.querySelector('#package-confirmation-submit');
+  let pendingPackageAction = null;
+  const actionCopy = {
+    publish: {
+      title: 'Publicar pacote',
+      description: 'Esta versão ficará disponível tecnicamente para alunos autorizados.',
+      submit: 'Publicar',
+    },
+    unpublish: {
+      title: 'Retirar pacote do ar',
+      description: 'O conteúdo ficará temporariamente indisponível sem apagar dados ou acessos.',
+      submit: 'Retirar do ar',
+    },
+    restore: {
+      title: 'Restaurar pacote',
+      description: 'Esta mesma versão e seu hash voltarão a ficar disponíveis.',
+      submit: 'Restaurar',
+    },
+  };
+  const openConfirmation = (action, packageId) => {
+    const copy = actionCopy[action];
+    pendingPackageAction = { action, packageId };
+    confirmationForm.reset();
+    confirmationFeedback.textContent = '';
+    root.querySelector('#package-confirmation-title').textContent = copy.title;
+    root.querySelector('#package-confirmation-description').textContent = copy.description;
+    root.querySelector('#package-confirmation-code').textContent = selectedContest.code;
+    confirmationSubmit.textContent = copy.submit;
+    confirmationDialog.showModal();
+    confirmationForm.elements.confirmation.focus();
+  };
+  root.querySelectorAll('[data-close-confirmation]').forEach((button) => button.addEventListener('click', () => {
+    pendingPackageAction = null;
+    confirmationDialog.close();
+  }));
+  confirmationForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!pendingPackageAction) return;
+    const { action, packageId } = pendingPackageAction;
+    const confirmation = String(new FormData(confirmationForm).get('confirmation') || '').trim();
+    confirmationSubmit.disabled = true;
+    confirmationFeedback.textContent = '';
+    try {
+      if (action === 'publish') {
+        await adminPublicationService.publish(ctx.adminSelectedContestId, packageId, confirmation);
+      } else if (action === 'unpublish') {
+        await adminPublicationService.unpublish(ctx.adminSelectedContestId, packageId, confirmation);
+      } else {
+        await adminPublicationService.restore(ctx.adminSelectedContestId, packageId, confirmation);
+      }
+      pendingPackageAction = null;
+      confirmationDialog.close();
+      await renderAdminPublicationScreen(root, ctx);
+    } catch (error) {
+      confirmationFeedback.innerHTML = `<div class="admin-validation admin-validation--error">${escapeHtml(error.message)}</div>`;
+    } finally {
+      confirmationSubmit.disabled = false;
+    }
+  });
   root.querySelector('#package-generator').addEventListener('submit', async (event) => {
     event.preventDefault();
     try {
@@ -72,33 +148,12 @@ export async function renderAdminPublicationScreen(root, ctx) {
     root.querySelector('#package-preview').textContent = JSON.stringify(result.package, null, 2);
   }));
   root.querySelectorAll('[data-publish-package]').forEach((button) => button.addEventListener('click', async () => {
-    const confirmation = globalThis.prompt?.(`Digite ${selectedContest.code} para publicar esta versão:`);
-    if (!confirmation) return;
-    try {
-      await adminPublicationService.publish(ctx.adminSelectedContestId, button.dataset.publishPackage, confirmation);
-      await renderAdminPublicationScreen(root, ctx);
-    } catch (error) {
-      globalThis.alert?.(error.message);
-    }
+    openConfirmation('publish', button.dataset.publishPackage);
   }));
   root.querySelectorAll('[data-unpublish-package]').forEach((button) => button.addEventListener('click', async () => {
-    const confirmation = globalThis.prompt?.(`Digite ${selectedContest.code} para retirar esta versão do ar:`);
-    if (!confirmation) return;
-    try {
-      await adminPublicationService.unpublish(ctx.adminSelectedContestId, button.dataset.unpublishPackage, confirmation);
-      await renderAdminPublicationScreen(root, ctx);
-    } catch (error) {
-      globalThis.alert?.(error.message);
-    }
+    openConfirmation('unpublish', button.dataset.unpublishPackage);
   }));
   root.querySelectorAll('[data-restore-package]').forEach((button) => button.addEventListener('click', async () => {
-    const confirmation = globalThis.prompt?.(`Digite ${selectedContest.code} para restaurar esta versão:`);
-    if (!confirmation) return;
-    try {
-      await adminPublicationService.restore(ctx.adminSelectedContestId, button.dataset.restorePackage, confirmation);
-      await renderAdminPublicationScreen(root, ctx);
-    } catch (error) {
-      globalThis.alert?.(error.message);
-    }
+    openConfirmation('restore', button.dataset.restorePackage);
   }));
 }

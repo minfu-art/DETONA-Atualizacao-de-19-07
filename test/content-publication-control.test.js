@@ -112,9 +112,12 @@ test('15. interface apresenta ações corretas e confirmação digitada por stat
     preview: true, publish: false, unpublish: true, restore: false,
   });
   assert.match(screenSource, /Versão atualmente publicada/);
-  assert.match(screenSource, /Digite \$\{selectedContest\.code\} para retirar/);
-  assert.match(screenSource, /Digite \$\{selectedContest\.code\} para restaurar/);
+  assert.match(screenSource, /id="package-confirmation"/);
+  assert.match(screenSource, /confirmationDialog\.showModal\(\)/);
+  assert.match(screenSource, /action === 'unpublish'/);
+  assert.match(screenSource, /action === 'publish'/);
   assert.doesNotMatch(screenSource, /globalThis\.confirm/);
+  assert.doesNotMatch(screenSource, /globalThis\.prompt/);
   assert.match(adminEdge, /rpc\('admin_unpublish_content_package'/);
   assert.match(adminEdge, /rpc\('admin_restore_content_package'/);
 });
