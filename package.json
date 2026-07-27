@@ -7,6 +7,7 @@
     "test": "node --test",
     "test:root": "node --test test/*.test.js",
     "check:syntax": "node scripts/check-syntax.mjs",
-    "check:secrets": "node scripts/check-secrets.mjs"
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "course:provision": "node scripts/course-provisioner/index.mjs"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "contest_id": "curso_exemplo_2027",
+  "roles": [
+    {
+      "id": "cargo_exemplo",
+      "name": "Cargo oficial",
+      "order": 0,
+      "disciplines": [
+        {
+          "id": "disciplina_exemplo",
+          "name": "Disciplina oficial",
+          "order": 0,
+          "topics": [
+            {
+              "id": "topico_exemplo",
+              "name": "Tópico oficial",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "subtopico_exemplo",
+                  "name": "Subtópico oficial",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
