@@ -42,6 +42,14 @@ export class AdminPublicationService {
     return this.#invoke('publish_content_package', { contestId, packageId, confirmation: String(confirmation || '').trim() });
   }
 
+  unpublish(contestId, packageId, confirmation) {
+    return this.#invoke('unpublish_content_package', { contestId, packageId, confirmation: String(confirmation || '').trim() });
+  }
+
+  restore(contestId, packageId, confirmation) {
+    return this.#invoke('restore_content_package', { contestId, packageId, confirmation: String(confirmation || '').trim() });
+  }
+
   rollback(contestId, packageId) {
     return this.#invoke('rollback_content_package', { contestId, packageId });
   }

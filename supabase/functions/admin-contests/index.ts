@@ -232,6 +232,26 @@ Deno.serve(async (request) => {
       if (error) throw error;
       return json(200, { package: data }, origin);
     }
+    if (action === 'unpublish_content_package') {
+      const { data, error } = await admin.rpc('admin_unpublish_content_package', {
+        target_contest_id: body.contestId,
+        target_package_id: body.packageId,
+        confirmation: body.confirmation,
+        actor_id: userData.user.id,
+      });
+      if (error) throw error;
+      return json(200, { package: data }, origin);
+    }
+    if (action === 'restore_content_package') {
+      const { data, error } = await admin.rpc('admin_restore_content_package', {
+        target_contest_id: body.contestId,
+        target_package_id: body.packageId,
+        confirmation: body.confirmation,
+        actor_id: userData.user.id,
+      });
+      if (error) throw error;
+      return json(200, { package: data }, origin);
+    }
     if (action === 'rollback_content_package') {
       const { data, error } = await admin.rpc('admin_rollback_content_package', {
         target_contest_id: body.contestId,

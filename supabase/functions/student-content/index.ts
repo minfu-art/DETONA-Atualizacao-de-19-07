@@ -40,7 +40,10 @@ Deno.serve(async (request) => {
     if (packageError) throw packageError;
     if (!contentPackage) {
       if (body.contestId === 'pc_al_2026') return respond(200, { legacyStatic: true, contestId: body.contestId }, origin);
-      return respond(404, { error: 'published_package_not_found' }, origin);
+      return respond(503, {
+        error: 'content_temporarily_unavailable',
+        contestId: body.contestId,
+      }, origin);
     }
     const [{ data: questionVersion, error: versionError }, { data: questionItems, error: questionError }] = await Promise.all([
       admin.from('question_publication_versions').select('id,contest_id,content_hash,item_count,status')

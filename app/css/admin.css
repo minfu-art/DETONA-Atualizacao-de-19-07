@@ -60,12 +60,14 @@
 .admin-button, .admin-pagination button, .admin-message-list button { border: 0; border-radius: 9px; background: linear-gradient(135deg, #8255ef, #623acb); color: white; padding: 11px 16px; font: 700 .9rem Outfit, sans-serif; cursor: pointer; }
 .admin-button:disabled, .admin-pagination button:disabled { opacity: .45; cursor: not-allowed; }
 .admin-button--secondary { background: var(--admin-panel-2); border: 1px solid var(--admin-line); }
+.admin-button--danger { background: #5a202b; border: 1px solid #a94758; }
 .admin-button--small { padding: 7px 12px; }
 .admin-table-wrap { overflow: hidden; border: 1px solid var(--admin-line); border-radius: 12px; margin-top: 10px; }
 .admin-table { width: 100%; border-collapse: collapse; background: rgba(13, 18, 36, .9); }
 .admin-table th, .admin-table td { text-align: left; padding: 13px 15px; border-bottom: 1px solid var(--admin-line); }
 .admin-table th { color: var(--admin-muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
 .admin-table td small { display: block; color: var(--admin-muted); margin-top: 3px; }
+.admin-current-version { display: block; margin-top: 5px; color: #6df0b7; font-size: .72rem; }
 .admin-badge { display: inline-block; border-radius: 999px; padding: 5px 9px; background: #26304e; font-size: .75rem; }
 .admin-badge--revoke { color: #72efbd; background: #11392c; }
 .admin-badge--reactivate { color: #ffca81; background: #3a2812; }

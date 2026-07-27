@@ -9,6 +9,15 @@ const LABELS = Object.freeze({
   version: 'Versão editorial',
 });
 
+export function packageActionsForStatus(status) {
+  return Object.freeze({
+    preview: true,
+    publish: status === 'generated',
+    unpublish: status === 'published',
+    restore: ['archived', 'rolled_back'].includes(status),
+  });
+}
+
 export async function renderAdminPublicationScreen(root, ctx) {
   const [validation, history] = await Promise.all([
     adminPublicationService.validate(ctx.adminSelectedContestId).catch(() => ({ ready: false, checklist: {} })),
@@ -32,12 +41,17 @@ export async function renderAdminPublicationScreen(root, ctx) {
     </section>
     <section class="admin-panel"><h2>Histórico de versões</h2>
       <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Versão</th><th>Hash</th><th>Status</th><th>Criado</th><th>Ações</th></tr></thead><tbody>
-      ${history.packages.map((item) => `<tr><td>${escapeHtml(item.version)}</td><td><code>${escapeHtml(item.content_hash.slice(0, 12))}…</code></td>
-        <td>${escapeHtml(item.status)}</td><td>${new Date(item.created_at).toLocaleString('pt-BR')}</td><td>
-          <button class="admin-button admin-button--small admin-button--secondary" data-preview-package="${item.id}">Prévia</button>
-          ${item.status === 'generated' ? `<button class="admin-button admin-button--small" data-publish-package="${item.id}">Publicar</button>` : ''}
-          ${['archived', 'rolled_back'].includes(item.status) ? `<button class="admin-button admin-button--small admin-button--secondary" data-rollback-package="${item.id}">Restaurar</button>` : ''}
-        </td></tr>`).join('') || '<tr><td colspan="5">Nenhum pacote gerado.</td></tr>'}
+      ${history.packages.map((item) => {
+        const actions = packageActionsForStatus(item.status);
+        return `<tr><td>${escapeHtml(item.version)}</td><td><code>${escapeHtml(item.content_hash.slice(0, 12))}…</code></td>
+        <td>${escapeHtml(item.status)}${item.status === 'published' ? '<strong class="admin-current-version">Versão atualmente publicada</strong>' : ''}</td>
+        <td>${new Date(item.created_at).toLocaleString('pt-BR')}</td><td>
+          <button type="button" class="admin-button admin-button--small admin-button--secondary" data-preview-package="${item.id}">Prévia</button>
+          ${actions.publish ? `<button type="button" class="admin-button admin-button--small" data-publish-package="${item.id}">Publicar</button>` : ''}
+          ${actions.unpublish ? `<button type="button" class="admin-button admin-button--small admin-button--danger" data-unpublish-package="${item.id}">Retirar do ar</button>` : ''}
+          ${actions.restore ? `<button type="button" class="admin-button admin-button--small admin-button--secondary" data-restore-package="${item.id}">Restaurar</button>` : ''}
+        </td></tr>`;
+      }).join('') || '<tr><td colspan="5">Nenhum pacote gerado.</td></tr>'}
       </tbody></table></div>
       <pre id="package-preview" class="admin-json-preview" tabindex="0"></pre>
     </section>`;
@@ -67,9 +81,24 @@ export async function renderAdminPublicationScreen(root, ctx) {
       globalThis.alert?.(error.message);
     }
   }));
-  root.querySelectorAll('[data-rollback-package]').forEach((button) => button.addEventListener('click', async () => {
-    if (!globalThis.confirm?.('Restaurar esta versão anterior para este concurso?')) return;
-    await adminPublicationService.rollback(ctx.adminSelectedContestId, button.dataset.rollbackPackage);
-    await renderAdminPublicationScreen(root, ctx);
+  root.querySelectorAll('[data-unpublish-package]').forEach((button) => button.addEventListener('click', async () => {
+    const confirmation = globalThis.prompt?.(`Digite ${selectedContest.code} para retirar esta versão do ar:`);
+    if (!confirmation) return;
+    try {
+      await adminPublicationService.unpublish(ctx.adminSelectedContestId, button.dataset.unpublishPackage, confirmation);
+      await renderAdminPublicationScreen(root, ctx);
+    } catch (error) {
+      globalThis.alert?.(error.message);
+    }
+  }));
+  root.querySelectorAll('[data-restore-package]').forEach((button) => button.addEventListener('click', async () => {
+    const confirmation = globalThis.prompt?.(`Digite ${selectedContest.code} para restaurar esta versão:`);
+    if (!confirmation) return;
+    try {
+      await adminPublicationService.restore(ctx.adminSelectedContestId, button.dataset.restorePackage, confirmation);
+      await renderAdminPublicationScreen(root, ctx);
+    } catch (error) {
+      globalThis.alert?.(error.message);
+    }
   }));
 }

@@ -17,6 +17,7 @@ export const ADMIN_CONTEST_ACTIONS = Object.freeze([
   'import_curriculum_draft', 'get_curriculum_tree', 'replace_curriculum_draft',
   'validate_publication', 'list_content_packages', 'generate_content_package',
   'preview_content_package', 'publish_content_package', 'rollback_content_package',
+  'unpublish_content_package', 'restore_content_package',
 ]);
 
 export function assertAdminContestAction(action) {
@@ -152,7 +153,7 @@ export function validateAdminContestRequest(input) {
       packageId: safeUuid(body.packageId, 'package_id'),
     };
   }
-  if (action === 'publish_content_package') {
+  if (['publish_content_package', 'unpublish_content_package', 'restore_content_package'].includes(action)) {
     assertExactKeys(body, ['action', 'contestId', 'packageId', 'confirmation'], ['contestId', 'packageId', 'confirmation']);
     return {
       action,
