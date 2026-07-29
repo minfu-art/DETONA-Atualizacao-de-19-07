@@ -1,310 +1,294 @@
-/**
- * Preparação do Dia — UI acolhedora de autocuidado e constância.
- * Não concede XP; não destaca regras técnicas no topo.
- */
 import { $, toast, escapeHtml, openModal, closeModal } from './helpers.js';
 import { SFX } from '../core/audio.js';
-import { icon, semanticIcon } from './icons.js?v=66';
 import {
-  getTodayWellbeingState,
-  incrementHabit,
-  toggleHabit,
   completeMicroPractice,
-  HABIT_COLORS,
+  getHabitConfiguration,
+  getTodayWellbeingState,
+  saveHabitConfiguration,
+  setHabitAmount,
+  skipHabitConfiguration,
+  toggleHabit,
 } from '../core/wellbeing.js';
 import {
+  HABIT_CATALOG,
+  MAX_ACTIVE_HABITS,
+  habitPrivacyStatement,
+} from '../core/habitSystem.js';
+import {
+  DAY_MESSAGES,
   EDUCATION_CARDS,
-  PRODUCTIVE_RITUAL,
-  HARD_DAY_RITUAL,
-  HABIT_PRESENTATION,
   greetingForNow,
   messageForNow,
-  progressHumanLabel,
-  DAY_MESSAGES,
   pickMessage,
+  progressHumanLabel,
 } from '../core/wellbeingMessages.js';
 import { getPlayer } from '../core/seed.js';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 
-const PRIORITY_ORDER = ['wb_meditacao', 'wb_agua', 'wb_exercicio', 'wb_alimentacao', 'wb_sono'];
+function renderHabitCard(card) {
+  const { habit, catalog, pct, completed, done, target, automatic } = card;
+  return `
+    <article class="pd-habit ${completed ? 'is-done' : ''}" data-habit-card="${habit.id}">
+      <span class="pd-habit__ico" aria-hidden="true">${escapeHtml(catalog?.icon || '•')}</span>
+      <div class="pd-habit__body">
+        <strong>${escapeHtml(catalog?.label || habit.name)}</strong>
+        <p>${escapeHtml(catalog?.description || '')}</p>
+        <div class="pd-habit__track" aria-hidden="true"><span style="width:${pct}%"></span></div>
+        <small>${done}/${target} ${escapeHtml(habit.unit)}${automatic ? ' · automático' : ''}</small>
+      </div>
+      <button type="button" class="btn ${completed ? 'btn-ghost' : 'btn-primary'} pd-habit__act"
+        data-toggle-habit="${habit.id}" aria-label="${completed ? 'Desfazer' : 'Marcar'} ${escapeHtml(catalog?.label || habit.name)}">
+        ${completed ? 'Desfazer' : 'Registrar'}
+      </button>
+    </article>`;
+}
+
+function configurationBody(configuration) {
+  const currentMap = new Map(configuration.definitions.map((item) => [item.habitId, item]));
+  return `
+    <div class="pd-config">
+      <p>Escolha de 3 a 5 hábitos. Você pode misturar estudo e bem-estar ou pular por agora.</p>
+      <p class="pd-config__count" id="pd-config-count">0/${MAX_ACTIVE_HABITS} ativos</p>
+      <div class="pd-config__list">
+        ${HABIT_CATALOG.map((item) => {
+          const definition = currentMap.get(item.id);
+          const selected = definition?.enabled !== false && Boolean(definition);
+          const days = definition?.activeDays || [0, 1, 2, 3, 4, 5, 6];
+          return `
+            <article class="pd-config-row ${selected ? 'is-selected' : ''}" data-config-row="${item.id}">
+              <label class="pd-config-row__main">
+                <input type="checkbox" data-habit-select="${item.id}" ${selected ? 'checked' : ''}>
+                <span class="pd-config-row__icon" aria-hidden="true">${escapeHtml(item.icon)}</span>
+                <span><strong>${escapeHtml(item.label)}</strong><small>${escapeHtml(item.description)}</small></span>
+              </label>
+              <div class="pd-config-row__options" ${selected ? '' : 'hidden'}>
+                <label>Meta
+                  <select data-habit-target="${item.id}">
+                    ${item.allowedTargets.map((value) => `<option value="${value}" ${value === (definition?.target || item.defaultTarget) ? 'selected' : ''}>${value} ${escapeHtml(item.unit)}</option>`).join('')}
+                  </select>
+                </label>
+                <label>Lembrete opcional
+                  <input type="time" data-habit-reminder="${item.id}" value="${definition?.reminderTime || ''}">
+                </label>
+                <fieldset>
+                  <legend>Dias da semana</legend>
+                  <div class="pd-day-options">
+                    ${['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((label, day) => `
+                      <label>
+                        <input type="checkbox" data-habit-day="${item.id}" value="${day}" ${days.includes(day) ? 'checked' : ''}>
+                        <span>${label}</span>
+                      </label>`).join('')}
+                  </div>
+                </fieldset>
+                <div class="pd-order-actions">
+                  <button type="button" class="btn btn-ghost" data-move-habit="${item.id}" data-direction="-1" aria-label="Mover ${escapeHtml(item.label)} para cima">↑</button>
+                  <button type="button" class="btn btn-ghost" data-move-habit="${item.id}" data-direction="1" aria-label="Mover ${escapeHtml(item.label)} para baixo">↓</button>
+                </div>
+              </div>
+            </article>`;
+        }).join('')}
+      </div>
+      <label class="pd-minimum">Meta mínima do dia
+        <select id="pd-minimum-percent">
+          ${[40, 50, 60, 70, 80].map((value) => `<option value="${value}" ${value === configuration.minimumPercent ? 'selected' : ''}>${value}% dos hábitos ativos</option>`).join('')}
+        </select>
+      </label>
+      <p class="pd-privacy">${escapeHtml(habitPrivacyStatement())}</p>
+    </div>`;
+}
 
 export async function renderWellbeing(root, navigate) {
-  let mood = null; // 'productive' | 'hard' | null
+  let mood = null;
 
   async function paint() {
     const state = await getTodayWellbeingState();
     const player = await getPlayer().catch(() => null);
-    const name = player?.name || '';
-    const greeting = greetingForNow(new Date(), name);
-    const heroMsg = mood === 'hard'
+    const message = mood === 'hard'
       ? pickMessage(DAY_MESSAGES.baixa_energia, Date.now())
       : messageForNow(new Date());
-    const { cards, doneCount, total, allDone, vigor } = state;
-    const ringPct = total ? Math.round((doneCount / total) * 100) : 0;
-    const humanProgress = progressHumanLabel(doneCount, total);
-
-    const ordered = [...cards].sort((a, b) => {
-      const ia = PRIORITY_ORDER.indexOf(a.habit.id);
-      const ib = PRIORITY_ORDER.indexOf(b.habit.id);
-      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
-    });
-    const priority = ordered.slice(0, 5);
-
+    const percent = state.total ? Math.round((state.doneCount / state.total) * 100) : 0;
     root.innerHTML = `
-      <div class="pd-screen" data-wellbeing-v2="preparacao-do-dia">
-        <!-- A. TOPO MOTIVADOR -->
+      <div class="pd-screen" data-wellbeing-v3="kaela-habits">
         <header class="pd-hero" aria-label="Preparação do dia">
           <div class="pd-hero__glow" aria-hidden="true"></div>
-          <div class="pd-hero__art" aria-hidden="true">
-            <span class="pd-orb pd-orb--a"></span>
-            <span class="pd-orb pd-orb--b">✨</span>
-            <span class="pd-orb pd-orb--c"></span>
-          </div>
           <p class="pd-kicker">Preparação do Dia</p>
-          <h2 class="pd-greeting">${escapeHtml(greeting)}</h2>
-          <p class="pd-message" id="pd-day-msg">${escapeHtml(heroMsg)}</p>
+          <h2 class="pd-greeting">${escapeHtml(greetingForNow(new Date(), player?.name || ''))}</h2>
+          <p class="pd-message">${escapeHtml(message)}</p>
           <p class="pd-sub">Como posso me preparar melhor para estudar hoje?</p>
-          <button type="button" class="btn btn-primary pd-cta" id="pd-start-small">
-            Começar pequeno · 1 minuto
-          </button>
+          <button type="button" class="btn btn-primary pd-cta" id="pd-start-small">Começar pequeno · 1 minuto</button>
         </header>
 
-        <!-- Modos -->
         <section class="pd-modes" aria-label="Modos do dia">
           <button type="button" class="pd-mode pd-mode--go ${mood === 'productive' ? 'is-on' : ''}" id="pd-mode-prod">
-            <span class="pd-mode__ico" aria-hidden="true">${icon('bolt')}</span>
-            <span><strong>Quero entrar no modo produtivo</strong><small>Ritual leve para começar a estudar</small></span>
+            <strong>Quero entrar no modo produtivo</strong><small>Um ritual leve para começar</small>
           </button>
           <button type="button" class="pd-mode pd-mode--soft ${mood === 'hard' ? 'is-on' : ''}" id="pd-mode-hard">
-            <span class="pd-mode__ico" aria-hidden="true">${semanticIcon('plan')}</span>
-            <span><strong>Hoje estou sem energia</strong><small>Versão mínima, sem culpa</small></span>
+            <strong>Hoje estou sem energia</strong><small>Faça o mínimo possível, sem culpa</small>
           </button>
         </section>
-        <div id="pd-mode-panel" class="pd-mode-panel" hidden></div>
 
-        <!-- B. HÁBITOS PRIORITÁRIOS -->
         <section class="pd-block pd-block--habits" aria-labelledby="pd-habits-title">
           <div class="pd-block__head">
             <div>
-              <h3 id="pd-habits-title">Práticas de preparação</h3>
-              <p class="pd-human-progress">${escapeHtml(humanProgress)}</p>
+              <h3 id="pd-habits-title">Meus rituais</h3>
+              <p class="pd-human-progress">${escapeHtml(progressHumanLabel(state.doneCount, state.total))}</p>
             </div>
-            <div class="pd-ring" style="--p:${ringPct}" role="img" aria-label="Progresso do dia ${ringPct}%">
-              <strong>${doneCount}</strong>
-              <small>de ${total}</small>
+            <div class="pd-ring" style="--p:${percent}" role="img" aria-label="Progresso ${percent}%">
+              <strong>${state.doneCount}</strong><small>de ${state.total}</small>
             </div>
           </div>
           <div class="pd-habits">
-            ${priority.map((c) => renderHabitCard(c)).join('')}
+            ${state.cards.length ? state.cards.map(renderHabitCard).join('') : `
+              <div class="pd-empty-habits">
+                <strong>Escolha os rituais que combinam com sua rotina</strong>
+                <p>Nenhuma escolha bloqueia o aplicativo. Você pode voltar depois.</p>
+              </div>`}
           </div>
+          <button type="button" class="btn btn-ghost pd-configure" id="pd-configure">Configurar hábitos</button>
+          <p class="pd-privacy">${escapeHtml(habitPrivacyStatement())}</p>
         </section>
 
-        <!-- C. ISSO AJUDA SEU ESTUDO -->
-        <section class="pd-block pd-block--edu" aria-labelledby="pd-edu-title">
-          <h3 id="pd-edu-title">Isso ajuda seu estudo</h3>
+        <section class="pd-block pd-constancy" aria-label="Constância">
+          <h3>Sua constância</h3>
+          <div class="pd-stat-grid">
+            <div><strong>${state.consistency.streakCurrent}</strong><span>sequência</span></div>
+            <div><strong>${state.consistency.weeklyConsistency}%</strong><span>esta semana</span></div>
+            <div><strong>${state.consistency.thirtyDayConsistency}%</strong><span>últimos 30 dias</span></div>
+            <div><strong>${state.consistency.streakBest}</strong><span>melhor sequência</span></div>
+          </div>
+          <p>${state.minimumReached
+            ? 'Meta mínima de hoje alcançada. Consistência não exige perfeição.'
+            : `Você concluiu ${state.doneCount} de ${state.total} hábitos planejados hoje.`}</p>
+          <p class="pd-vigor-hint">Vigor consolidado: ${state.vigor}</p>
+        </section>
+
+        <section class="pd-block pd-block--edu">
+          <h3>Isso ajuda seu estudo</h3>
           <div class="pd-edu-grid">
             ${EDUCATION_CARDS.slice(0, 4).map((card) => `
-              <article class="pd-edu-card">
-                <span class="pd-edu-ico" aria-hidden="true">${semanticIcon(card.icon)}</span>
-                <strong>${escapeHtml(card.title)}</strong>
-                <p>${escapeHtml(card.text)}</p>
-              </article>
-            `).join('')}
+              <article class="pd-edu-card"><strong>${escapeHtml(card.title)}</strong><p>${escapeHtml(card.text)}</p></article>`).join('')}
           </div>
         </section>
-
-        <!-- D. AÇÕES RÁPIDAS -->
-        <section class="pd-block pd-block--quick" aria-label="Ações rápidas">
-          <h3>Ações rápidas</h3>
-          <div class="pd-quick">
-            <button type="button" class="btn pd-qbtn" data-quick="breathe">Preparar minha mente</button>
-            <button type="button" class="btn pd-qbtn" data-quick="light">Quero um começo leve</button>
-            <button type="button" class="btn pd-qbtn" data-quick="pause">Fazer uma pausa consciente</button>
-            <button type="button" class="btn btn-primary pd-qbtn" data-quick="study">Ir estudar (Edital)</button>
-          </div>
-        </section>
-
-        <!-- E. PROGRESSO VISUAL LEVE + vigor discreto -->
-        <section class="pd-block pd-block--constancy pd-constancy" aria-label="Constância">
-          <h3>Sua base de constância</h3>
-          <p class="muted">Pequenas ações repetidas, sem cobrança e sem competir com o estudo.</p>
-          <div class="pd-constancy__bar" aria-hidden="true">
-            <span style="width:${Math.max(8, ringPct)}%"></span>
-          </div>
-          <p class="pd-constancy__caption">
-            ${allDone
-              ? 'Hoje você cuidou da base. Bom ritmo para o estudo.'
-              : 'Cada prática deixa o próximo passo um pouco mais fácil.'}
-          </p>
-          <p class="pd-vigor-hint" title="Indicador de constância da preparação diária">
-            Constância do dia: ${doneCount}/${total}${vigor ? ` · Vigor acumulado: ${vigor}` : ''}
-          </p>
-        </section>
-
-        <button type="button" class="btn btn-block mt-12" id="pd-home">← Voltar ao Início</button>
-      </div>
-    `;
+        <button type="button" class="btn btn-block" id="pd-home">← Voltar ao Início</button>
+      </div>`;
 
     mountPageContainer(root, {
       variant: 'wellbeing',
       header: sectionHeader({
         eyebrow: 'Cuidado estratégico',
         title: 'Preparação do Dia',
-        subtitle: 'Energia, clareza e constância para estudar melhor.',
+        subtitle: 'Hábitos, energia e constância para sustentar o estudo.',
       }),
     });
-
-    bind(priority);
-    if (mood) showModePanel(mood);
+    bind(state);
   }
 
-  function renderHabitCard({ habit, pct, completed, done, target }) {
-    const pres = HABIT_PRESENTATION[habit.id] || {
-      title: habit.name,
-      blurb: 'Este hábito ajuda você a sustentar sua preparação.',
-      actionLabel: 'Registrar',
+  async function openConfiguration() {
+    const configuration = await getHabitConfiguration();
+    let selected = configuration.definitions
+      .filter((item) => item.enabled !== false)
+      .sort((a, b) => a.orderIndex - b.orderIndex)
+      .map((item) => item.habitId);
+    openModal(
+      'Configurar meus hábitos',
+      configurationBody(configuration),
+      `<button type="button" class="btn btn-ghost" id="pd-config-skip">Pular por agora</button>
+       <button type="button" class="btn btn-primary" id="pd-config-save">Salvar hábitos</button>`,
+    );
+    const modal = document.getElementById('app-modal');
+    const update = () => {
+      modal?.querySelectorAll('[data-habit-select]').forEach((input) => {
+        const row = input.closest('.pd-config-row');
+        row?.classList.toggle('is-selected', input.checked);
+        const options = row?.querySelector('.pd-config-row__options');
+        if (options) options.hidden = !input.checked;
+      });
+      const count = document.getElementById('pd-config-count');
+      if (count) count.textContent = `${selected.length}/${MAX_ACTIVE_HABITS} ativos`;
     };
-    const color = HABIT_COLORS[habit.category] || HABIT_COLORS.outro;
-    return `
-      <article class="pd-habit ${completed ? 'is-done' : ''}" data-hid="${habit.id}">
-        <div class="pd-habit__ico" style="--c:${color}" aria-hidden="true">${habit.icon}</div>
-        <div class="pd-habit__body">
-          <strong>${escapeHtml(pres.title)}</strong>
-          <p>${escapeHtml(pres.blurb)}</p>
-          <div class="pd-habit__track"><span style="width:${pct}%;background:${color}"></span></div>
-          <small class="muted">${completed ? 'Feito por hoje' : `${done}/${target} ${escapeHtml(habit.unit)}`}</small>
-        </div>
-        <button type="button" class="btn btn-primary pd-habit__act" data-act="micro" data-hid="${habit.id}"
-          ${completed && habit.input_type === 'toggle' ? '' : ''}>
-          ${completed && habit.input_type === 'toggle' ? 'Desmarcar' : escapeHtml(pres.actionLabel)}
-        </button>
-      </article>`;
-  }
-
-  function showModePanel(mode) {
-    const panel = $('#pd-mode-panel', root);
-    if (!panel) return;
-    const ritual = mode === 'hard' ? HARD_DAY_RITUAL : PRODUCTIVE_RITUAL;
-    const title = mode === 'hard' ? 'Dia com pouca energia' : 'Modo produtivo — ritual leve';
-    const lead = mode === 'hard'
-      ? 'Hoje não precisa ser perfeito. Precisa ser possível.'
-      : 'Comece pequeno. O importante é entrar em movimento.';
-    panel.hidden = false;
-    panel.innerHTML = `
-      <div class="pd-ritual">
-        <h4>${escapeHtml(title)}</h4>
-        <p class="muted">${escapeHtml(lead)}</p>
-        <ol>${ritual.map((s) => `<li>${escapeHtml(s.text)}</li>`).join('')}</ol>
-        <div class="pd-ritual__actions">
-          <button type="button" class="btn btn-primary" id="pd-ritual-go">
-            ${mode === 'hard' ? 'Fazer só o mínimo agora' : 'Começar o ritual'}
-          </button>
-          <button type="button" class="btn btn-ghost" id="pd-ritual-close">Fechar</button>
-        </div>
-      </div>`;
-    $('#pd-ritual-close', panel)?.addEventListener('click', () => {
-      panel.hidden = true;
-      mood = null;
-      paint();
-    });
-    $('#pd-ritual-go', panel)?.addEventListener('click', async () => {
-      SFX.click();
-      if (mode === 'hard') {
-        // micro: 1 min meditação se existir
-        try { await completeMicroPractice('wb_meditacao', 1); } catch { /* ignore */ }
-        toast('Mínimo registrado. Você está cuidando da constância.');
-      } else {
-        try { await completeMicroPractice('wb_meditacao', 1); } catch { /* ignore */ }
-        try { await completeMicroPractice('wb_agua', 1); } catch { /* ignore */ }
-        toast('Ritual iniciado. Agora escolha a primeira tarefa do edital.');
-      }
-      await paint();
-    });
-  }
-
-  function bind(priorityCards) {
-    $('#pd-home', root)?.addEventListener('click', () => { SFX.click(); navigate('home'); });
-
-    $('#pd-start-small', root)?.addEventListener('click', async () => {
-      SFX.click();
-      try {
-        await completeMicroPractice('wb_meditacao', 1);
-        toast('1 minuto de pausa registrado. Bom começo.');
-      } catch {
-        toast('Comece com uma respiração — você já entrou em movimento.');
-      }
-      await paint();
-    });
-
-    $('#pd-mode-prod', root)?.addEventListener('click', () => {
-      SFX.click();
-      mood = 'productive';
-      paint();
-    });
-    $('#pd-mode-hard', root)?.addEventListener('click', () => {
-      SFX.click();
-      mood = 'hard';
-      paint();
-    });
-
-    root.querySelectorAll('[data-quick]').forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        SFX.click();
-        const q = btn.dataset.quick;
-        if (q === 'study') {
-          navigate('edital');
+    modal?.querySelectorAll('[data-habit-select]').forEach((input) => {
+      input.addEventListener('change', () => {
+        const habitId = input.dataset.habitSelect;
+        if (input.checked && selected.length >= MAX_ACTIVE_HABITS) {
+          input.checked = false;
+          toast('Você pode manter no máximo cinco hábitos ativos.');
           return;
         }
-        if (q === 'breathe' || q === 'pause') {
-          try { await completeMicroPractice('wb_meditacao', 1); } catch { /* ignore */ }
-          openModal(
-            q === 'pause' ? 'Pausa consciente' : 'Preparar a mente',
-            `<p class="muted mb-8">Respire devagar por cerca de 1 minuto. Sem cobrança — só presença.</p>
-             <ol class="pd-breathe-steps">
-               <li>Inspire pelo nariz contando até 4</li>
-               <li>Segure suavemente até 2</li>
-               <li>Expire pela boca contando até 6</li>
-               <li>Repita algumas vezes</li>
-             </ol>`,
-            `<button type="button" class="btn btn-primary" id="pd-breathe-ok">Pronto</button>`,
-          );
-          document.getElementById('pd-breathe-ok')?.addEventListener('click', () => {
-            closeModal();
-            toast('Pausa feita. Você pode começar leve.');
-          });
-          await paint();
-          return;
-        }
-        if (q === 'light') {
-          mood = 'hard';
-          await paint();
-          toast('Modo leve: faça só o que for possível hoje.');
-        }
+        selected = input.checked
+          ? [...selected, habitId]
+          : selected.filter((id) => id !== habitId);
+        update();
       });
     });
+    modal?.querySelectorAll('[data-move-habit]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const from = selected.indexOf(button.dataset.moveHabit);
+        const to = from + Number(button.dataset.direction);
+        if (from < 0 || to < 0 || to >= selected.length) return;
+        [selected[from], selected[to]] = [selected[to], selected[from]];
+        toast('Ordem ajustada. Salve para confirmar.');
+      });
+    });
+    document.getElementById('pd-config-skip')?.addEventListener('click', async () => {
+      await skipHabitConfiguration();
+      closeModal();
+      await paint();
+    });
+    document.getElementById('pd-config-save')?.addEventListener('click', async () => {
+      const selections = selected.map((habitId) => ({
+        habitId,
+        target: Number(modal?.querySelector(`[data-habit-target="${habitId}"]`)?.value),
+        reminderTime: modal?.querySelector(`[data-habit-reminder="${habitId}"]`)?.value || null,
+        activeDays: [...(modal?.querySelectorAll(`[data-habit-day="${habitId}"]:checked`) || [])].map((input) => Number(input.value)),
+      }));
+      try {
+        await saveHabitConfiguration({
+          selections,
+          minimumPercent: Number(document.getElementById('pd-minimum-percent')?.value) || 60,
+        });
+        closeModal();
+        toast(selected.length < 3 ? 'Salvo. Você pode adicionar outros hábitos quando quiser.' : 'Seus hábitos foram salvos.');
+        await paint();
+      } catch {
+        toast('Não foi possível salvar os hábitos.');
+      }
+    });
+    update();
+  }
 
-    root.querySelectorAll('[data-act="micro"]').forEach((btn) => {
-      btn.addEventListener('click', async () => {
+  function bind(state) {
+    $('#pd-home', root)?.addEventListener('click', () => navigate('home'));
+    $('#pd-configure', root)?.addEventListener('click', openConfiguration);
+    $('#pd-mode-prod', root)?.addEventListener('click', async () => {
+      mood = 'productive';
+      toast('Ritual iniciado. Agora escolha a primeira tarefa do edital.');
+      await paint();
+    });
+    $('#pd-mode-hard', root)?.addEventListener('click', async () => { mood = 'hard'; await paint(); });
+    $('#pd-start-small', root)?.addEventListener('click', async () => {
+      const meditation = state.cards.find((card) => card.definition.habitId === 'meditation');
+      if (meditation) await completeMicroPractice(meditation.definition.id, 1);
+      toast('Você começou pequeno. Isso já é movimento.');
+      await paint();
+    });
+    root.querySelectorAll('[data-toggle-habit]').forEach((button) => {
+      button.addEventListener('click', async () => {
         SFX.click();
-        const hid = btn.dataset.hid;
-        const card = priorityCards.find((c) => c.habit.id === hid);
+        const card = state.cards.find((item) => item.habit.id === button.dataset.toggleHabit);
+        if (!card || card.automatic) {
+          if (card?.automatic) toast('Este hábito acompanha uma atividade acadêmica real.');
+          return;
+        }
         try {
-          let result;
-          if (card?.habit.input_type === 'toggle') {
-            result = await toggleHabit(hid);
-          } else if (card?.habit.input_type === 'hours') {
-            result = await incrementHabit(hid, 1);
+          if (card.completed) await setHabitAmount(card.definition.id, 0);
+          else if (['registro', 'planejamento', 'missão'].includes(card.definition.unit)) {
+            await toggleHabit(card.definition.id);
           } else {
-            result = await completeMicroPractice(hid);
-          }
-          if (result?.granted && result.vigor) {
-            toast('Dia de base completa. Constância reconhecida.');
-          } else if (card && !card.completed) {
-            toast('Prática registrada. Bom ritmo.');
+            await completeMicroPractice(card.definition.id, card.definition.target);
           }
           await paint();
-        } catch (e) {
-          toast(e.message || 'Não foi possível registrar.');
+        } catch (error) {
+          toast(error?.message || 'Não foi possível registrar.');
         }
       });
     });

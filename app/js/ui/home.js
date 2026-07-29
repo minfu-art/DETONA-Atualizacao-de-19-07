@@ -637,10 +637,11 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       class="dj-prep-chip ${c.completed ? 'is-done' : ''}"
       data-prep-habit="${escapeHtml(c.habit.id)}"
       aria-pressed="${c.completed ? 'true' : 'false'}"
+      ${c.automatic ? 'disabled aria-disabled="true"' : ''}
       title="${escapeHtml(c.habit.name)}">
       <span class="dj-prep-chip__check" aria-hidden="true">${c.completed ? icon('check', 'ico--sm') : icon('circle', 'ico--sm')}</span>
       <span class="dj-prep-chip__emoji" aria-hidden="true">${escapeHtml(c.habit.icon || '✦')}</span>
-      <span class="dj-prep-chip__label">${escapeHtml(c.habit.name)}</span>
+      <span class="dj-prep-chip__label">${escapeHtml(c.habit.name)}${c.automatic ? ' · auto' : ''}</span>
     </button>
   `).join('');
 

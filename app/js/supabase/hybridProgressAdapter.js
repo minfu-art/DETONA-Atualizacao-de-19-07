@@ -9,6 +9,7 @@ import * as localDb from '../core/db.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { progressCloud, recordKeyFor, SYNC_COLLECTIONS } from './progressCloud.js';
 import { shouldSyncCloudRecord } from './collectionKeys.js';
+import { mergeHabitLogs } from '../core/habitSystem.js';
 
 const OUTBOX_STORAGE = 'detona.sync.outbox';
 
@@ -224,6 +225,15 @@ export async function pullAndMergeProgress(userId, contestId, {
       const localRow = localMap.get(k);
       if (!localRow) {
         toWrite.push(payload);
+        continue;
+      }
+      if (collection === 'wellbeingLogs') {
+        const merged = mergeHabitLogs(localRow, { ...payload, updated_at: cloudAt });
+        const localValue = Number(localRow.completedValue ?? localRow.amount_done) || 0;
+        const mergedValue = Number(merged.completedValue ?? merged.amount_done) || 0;
+        if (mergedValue > localValue || merged.completed !== localRow.completed) {
+          toWrite.push(merged);
+        }
         continue;
       }
       // last-write-wins quando há timestamps comparáveis
