@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v84-ranked-events';
+const CACHE = 'detona-v85-career-library';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -80,6 +80,7 @@ const ASSETS = [
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
   './js/services/libraryService.js',
+  './js/services/careerLibraryService.js',
   './js/services/contestCatalogService.js',
   './js/services/contestContentService.js',
   './js/services/contestSummaryService.js',

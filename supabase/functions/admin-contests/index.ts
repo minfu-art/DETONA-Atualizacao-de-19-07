@@ -181,6 +181,8 @@ Deno.serve(async (request) => {
         accent: inputs.contest.accent,
         icon: inputs.contest.icon,
         sales_status: inputs.contest.sales_status,
+        career_area: inputs.contest.career_area,
+        career_subarea: inputs.contest.career_subarea,
       };
       const visualConfig = {
         battle_avatar: inputs.contest.battle_avatar_asset_id,

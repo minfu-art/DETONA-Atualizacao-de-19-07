@@ -29,5 +29,10 @@ export function normalizeCatalogContest(contest) {
     salesStatus: contest.sales_status,
     examDate: contest.exam_date,
     coverAsset: contest.cover_asset,
+    organization: contest.name,
+    careerArea: contest.career_area || 'other',
+    careerSubarea: contest.career_subarea || null,
+    subtopicCount: Number(contest.subtopic_count || 0),
+    questionCount: Number(contest.question_count || 0),
   };
 }

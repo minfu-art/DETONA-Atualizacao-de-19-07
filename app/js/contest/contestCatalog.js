@@ -10,6 +10,8 @@ export const CONTEST_CATALOG = [
     priceCents: 14990,
     currency: 'BRL',
     contentStatus: 'ready',
+    careerArea: 'police_security',
+    careerSubarea: 'civil_police',
     description: 'Jornada completa com edital verticalizado, questoes e batalhas.',
   },
   {
@@ -23,6 +25,8 @@ export const CONTEST_CATALOG = [
     priceCents: 18990,
     currency: 'BRL',
     contentStatus: 'preparing',
+    careerArea: 'police_security',
+    careerSubarea: 'federal_police',
     description: 'Modulo independente preparado para o proximo pacote editorial.',
   },
   {
@@ -36,6 +40,8 @@ export const CONTEST_CATALOG = [
     priceCents: 17990,
     currency: 'BRL',
     contentStatus: 'preparing',
+    careerArea: 'police_security',
+    careerSubarea: 'federal_highway_police',
     description: 'Modulo independente pronto para receber edital e banco de questoes.',
   },
 ];

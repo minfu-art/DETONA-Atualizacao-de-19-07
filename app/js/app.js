@@ -140,7 +140,7 @@ function showAuth() {
 }
 
 async function showLibrary() {
-  clearActiveContestId();
+  const activeContestId = getActiveContestId();
   clearActiveContestContent();
   ctx.contest = null;
   ctx.contentPackage = null;
@@ -157,11 +157,8 @@ async function showLibrary() {
   renderLibrary(root, {
     user,
     items,
+    activeContestId,
     onOpen: openContest,
-    onPurchase: async (contestId) => {
-      await libraryService.purchase(user, contestId);
-      await showLibrary();
-    },
     onLogout: logout,
   });
   root.focus({ preventScroll: true });

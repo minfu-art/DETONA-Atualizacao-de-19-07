@@ -17,6 +17,11 @@ export function normalizeDynamicContest(contest) {
     salesStatus: contest.salesStatus || contest.sales_status || 'coming_soon',
     examDate: contest.examDate || contest.exam_date || null,
     coverAsset: contest.coverAsset || contest.cover_asset || null,
+    organization: String(contest.organization || contest.name || ''),
+    careerArea: String(contest.careerArea || contest.career_area || 'other'),
+    careerSubarea: contest.careerSubarea || contest.career_subarea || null,
+    subtopicCount: Number(contest.subtopicCount ?? contest.subtopic_count ?? 0),
+    questionCount: Number(contest.questionCount ?? contest.question_count ?? 0),
     source: contest.source || 'dynamic_catalog',
   };
   if (!normalized.id || !normalized.code || !normalized.name) throw new Error('Concurso dinâmico inválido.');

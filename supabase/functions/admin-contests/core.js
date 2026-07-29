@@ -52,6 +52,7 @@ export function validateContestRecord(contest) {
   assertExactKeys(contest, [
     'id', 'code', 'slug', 'name', 'role', 'description', 'price_cents', 'currency',
     'color', 'accent', 'icon', 'cover_asset', 'content_status', 'sales_status', 'exam_date',
+    'career_area', 'career_subarea',
   ], ['id', 'code', 'slug', 'name', 'role', 'description']);
   const priceCents = Number(contest.price_cents ?? 0);
   if (!Number.isInteger(priceCents) || priceCents < 0 || priceCents > 100_000_000) throw new Error('price_cents_invalid');
@@ -82,6 +83,15 @@ export function validateContestRecord(contest) {
     content_status: safeEnum(contest.content_status || 'draft', ['draft', 'preparing', 'ready', 'archived'], 'content_status'),
     sales_status: safeEnum(contest.sales_status || 'unavailable', ['unavailable', 'coming_soon', 'available', 'suspended'], 'sales_status'),
     exam_date: examDate,
+    career_area: contest.career_area
+      ? safeEnum(contest.career_area, [
+        'police_security', 'administrative', 'fiscal_control',
+        'courts_legal', 'health_education', 'armed_forces',
+      ], 'career_area')
+      : null,
+    career_subarea: contest.career_subarea
+      ? safeId(contest.career_subarea, 'career_subarea')
+      : null,
   };
 }
 

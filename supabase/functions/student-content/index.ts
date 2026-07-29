@@ -30,7 +30,23 @@ Deno.serve(async (request) => {
         .in('sales_status', ['available', 'coming_soon'])
         .order('created_at');
       if (error) throw error;
-      return respond(200, { contests: data.map(normalizeCatalogContest) }, origin);
+      const contests = await Promise.all((data || []).map(async (contest: { id: string }) => {
+        const [subtopics, questions] = await Promise.all([
+          admin.from('admin_curriculum_nodes').select('id', { count: 'exact', head: true })
+            .eq('contest_id', contest.id).eq('type', 'subtopic').neq('status', 'archived'),
+          admin.from('question_publication_versions').select('item_count')
+            .eq('contest_id', contest.id).in('status', ['generated', 'published'])
+            .order('created_at', { ascending: false }).limit(1).maybeSingle(),
+        ]);
+        if (subtopics.error) throw subtopics.error;
+        if (questions.error) throw questions.error;
+        return normalizeCatalogContest({
+          ...contest,
+          subtopic_count: subtopics.count || 0,
+          question_count: questions.data?.item_count || 0,
+        });
+      }));
+      return respond(200, { contests }, origin);
     }
     const { data: entitlement } = await admin.from('contest_entitlements').select('status')
       .eq('user_id', auth.user.id).eq('contest_id', body.contestId).eq('status', 'active').maybeSingle();

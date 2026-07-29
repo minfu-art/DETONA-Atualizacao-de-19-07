@@ -4,6 +4,10 @@ import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities 
 
 export const CONTENT_STATUSES = Object.freeze(['draft', 'preparing', 'ready', 'archived']);
 export const SALES_STATUSES = Object.freeze(['unavailable', 'coming_soon', 'available', 'suspended']);
+export const CAREER_AREAS = Object.freeze([
+  'police_security', 'administrative', 'fiscal_control',
+  'courts_legal', 'health_education', 'armed_forces',
+]);
 export const COURSE_FACTORY_UNAVAILABLE_MESSAGE = 'Fábrica de Concursos indisponível neste ambiente. O backend administrativo ainda não foi ativado.';
 
 const ADMIN_ERROR_MESSAGES = Object.freeze({
@@ -72,6 +76,8 @@ function staticContest(contest) {
     sales_status: contest.contentStatus === 'ready' ? 'available' : 'coming_soon',
     landing_page_id: null,
     exam_date: null,
+    career_area: contest.careerArea || null,
+    career_subarea: contest.careerSubarea || null,
     source: 'static_catalog',
   };
 }
@@ -98,7 +104,11 @@ export function validateAdminContest(input = {}) {
   }
   const slug = required(input.slug, 'Slug', 80);
   const id = required(input.id, 'ID', 80);
+  const careerArea = String(input.career_area || '').trim() || null;
+  const careerSubarea = String(input.career_subarea || '').trim() || null;
   if (!/^[a-z0-9][a-z0-9_-]*$/i.test(id) || !/^[a-z0-9][a-z0-9_-]*$/i.test(slug)) throw new Error('ID ou slug inválido.');
+  if (careerArea && !CAREER_AREAS.includes(careerArea)) throw new Error('Área de carreira inválida.');
+  if (careerSubarea && !/^[a-z0-9][a-z0-9_-]*$/i.test(careerSubarea)) throw new Error('Subárea inválida.');
   return {
     id,
     code: required(input.code, 'Código', 30),
@@ -115,6 +125,8 @@ export function validateAdminContest(input = {}) {
     content_status: contentStatus,
     sales_status: salesStatus,
     exam_date: examDate,
+    career_area: careerArea,
+    career_subarea: careerSubarea,
   };
 }
 

@@ -28,6 +28,20 @@ function contestForm(contest = {}, capabilities = {}) {
       <label>Cargo<input name="role" maxlength="160" value="${value('role')}" required></label>
       <label>Descrição<textarea name="description" maxlength="600" rows="4" required>${value('description')}</textarea></label>
       <div class="admin-form__row">
+        <label>Área de carreira<select name="career_area">
+          <option value="">A classificar</option>
+          ${[
+            ['police_security', 'Policial e Segurança'],
+            ['administrative', 'Administrativa'],
+            ['fiscal_control', 'Fiscal e de Controle'],
+            ['courts_legal', 'Tribunais e Jurídica'],
+            ['health_education', 'Saúde e Educação'],
+            ['armed_forces', 'Militar — Forças Armadas'],
+          ].map(([id, label]) => `<option value="${id}" ${contest.career_area === id ? 'selected' : ''}>${label}</option>`).join('')}
+        </select></label>
+        <label>Subárea<input name="career_subarea" maxlength="80" pattern="[A-Za-z0-9_-]+" value="${value('career_subarea')}" placeholder="Ex.: civil_police"></label>
+      </div>
+      <div class="admin-form__row">
         <label>Preço em centavos<input name="price_cents" type="number" min="0" max="100000000" value="${value('price_cents', 0)}" required></label>
         <label>Moeda<input name="currency" maxlength="3" value="${value('currency', 'BRL')}" required></label>
       </div>
