@@ -22,6 +22,7 @@ const forgeSource = readFileSync(new URL('../app/js/ui/forge.js', import.meta.ur
 const serviceSource = readFileSync(new URL('../app/js/services/adminAccessService.js', import.meta.url), 'utf8');
 const migrationSource = readFileSync(new URL('../supabase/migrations/006_admin_access_audit.sql', import.meta.url), 'utf8');
 const genericAccessMigration = readFileSync(new URL('../supabase/migrations/017_generic_contest_access_management.sql', import.meta.url), 'utf8');
+const accessConflictFixMigration = readFileSync(new URL('../supabase/migrations/20260729030314_fix_admin_contest_access_conflict.sql', import.meta.url), 'utf8');
 const functionSource = readFileSync(new URL('../supabase/functions/admin-access/index.ts', import.meta.url), 'utf8');
 const centralAccessScreen = readFileSync(new URL('../app/js/admin/adminAccessScreen.js', import.meta.url), 'utf8');
 const dataAccessSource = readFileSync(new URL('../supabase/migrations/003_explicit_data_api_access.sql', import.meta.url), 'utf8');
@@ -443,4 +444,20 @@ test('admin-access usa a allowlist CORS compartilhada para Previews de staging',
   assert.match(functionSource, /isAllowedOrigin/);
   assert.match(functionSource, /jsonResponse\(403/);
   assert.doesNotMatch(functionSource, /allowedOrigins\.includes\(origin\)/);
+});
+
+test('migration de correção elimina a ambiguidade no upsert de acesso', () => {
+  assert.match(accessConflictFixMigration, /create or replace function public\.admin_set_contest_access/i);
+  assert.match(
+    accessConflictFixMigration,
+    /on conflict on constraint contest_entitlements_user_id_contest_id_key/i,
+  );
+  assert.doesNotMatch(
+    accessConflictFixMigration,
+    /on conflict\s*\(\s*user_id\s*,\s*contest_id\s*\)/i,
+  );
+  assert.match(
+    accessConflictFixMigration,
+    /grant execute on function public\.admin_set_contest_access[\s\S]*to service_role/i,
+  );
 });
