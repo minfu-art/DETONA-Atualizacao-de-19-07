@@ -30,10 +30,12 @@ import {
   canDismissAnnouncement,
 } from '../services/announcementService.js';
 import { dailyCharacterMessage } from '../services/dailyCharacterMessage.js';
+import { rankedEventService } from '../services/rankedEventService.js';
 import {
   announcementModalDetailsHtml,
   automaticMentorHtml,
   officialMentorHtml,
+  rankedEventMentorHtml,
 } from './mentorCommunication.js';
 import { refreshEmblems } from '../services/emblemService.js';
 import { emblemArt } from './emblems/emblemArt.js';
@@ -647,7 +649,16 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     contestId: ctx.contest?.id,
     userId: ctx.user?.id,
   });
+  let rankedSelection = null;
   let officialAnnouncement = null;
+  try {
+    if (ctx.user?.id && ctx.contest?.id) {
+      const ranked = await rankedEventService.getHomeEvent(ctx.contest.id);
+      rankedSelection = ranked?.selected || null;
+    }
+  } catch (error) {
+    console.warn('[home] avisos indisponíveis; usando conselho automático', error?.message || error);
+  }
   try {
     if (ctx.user?.id && ctx.contest?.id) {
       const candidate = await announcementService.getCurrentHomeAnnouncement({
@@ -657,11 +668,13 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       officialAnnouncement = candidate?.category === 'event' ? candidate : null;
     }
   } catch (error) {
-    console.warn('[home] avisos indisponíveis; usando conselho automático', error?.message || error);
+    console.warn('[home] comunicado oficial indisponível', error?.message || error);
   }
-  const mentorHtml = officialAnnouncement
-    ? officialMentorHtml(player, officialAnnouncement)
-    : automaticMentorHtml(player, automaticMentor);
+  const mentorHtml = rankedSelection
+    ? rankedEventMentorHtml(player, rankedSelection)
+    : officialAnnouncement
+      ? officialMentorHtml(player, officialAnnouncement)
+      : automaticMentorHtml(player, automaticMentor);
 
   root.innerHTML = `
     <div class="dj">
@@ -871,6 +884,11 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       onRead: () => $('#mentor-new-indicator', root)?.remove(),
       onDismiss: () => renderHome(root, navigate, ctx),
     });
+  });
+  $('#ranked-event-action', root)?.addEventListener('click', (event) => {
+    SFX.click();
+    ctx.rankedEventId = event.currentTarget.dataset.eventId || rankedSelection?.event?.id || null;
+    navigate('rankedEvent');
   });
   root.querySelectorAll('[data-prep-habit]').forEach((btn) => {
     btn.addEventListener('click', async () => {

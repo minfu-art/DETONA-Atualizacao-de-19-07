@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v83-dynamic-contests';
+const CACHE = 'detona-v84-ranked-events';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -7,6 +7,7 @@ const ASSETS = [
   './env.runtime.js',
   './css/main.css',
   './css/design-system.css',
+  './css/dashboard-jrpg.css',
   './manifest.json',
   './js/app.js',
   './js/core/pwaInstall.js',
@@ -24,6 +25,8 @@ const ASSETS = [
   './js/services/dailyGoalService.js',
   './js/services/studyStreakService.js',
   './js/services/emblemService.js',
+  './js/services/dailyCharacterMessage.js',
+  './js/services/rankedEventService.js',
   './js/core/localDate.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',
@@ -121,6 +124,8 @@ const ASSETS = [
   './js/ui/onboarding.js',
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
+  './js/ui/mentorCommunication.js',
+  './js/ui/rankedEvent.js',
   './js/ui/emblems/emblemArt.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',

@@ -171,6 +171,48 @@ export function officialMentorHtml(player, announcement, {
     </section>`;
 }
 
+const RANKED_EVENT_COPY = Object.freeze({
+  scheduled: Object.freeze({
+    eyebrow: 'EVENTO RANQUEADO',
+    title: 'Um novo desafio se aproxima.',
+    action: 'Ver evento',
+  }),
+  registration_open: Object.freeze({
+    eyebrow: 'INSCRIÇÕES ABERTAS',
+    title: 'Garanta seu lugar no desafio.',
+    action: 'Inscrever-se',
+  }),
+  live: Object.freeze({
+    eyebrow: 'EVENTO AO VIVO',
+    title: 'A arena ranqueada está aberta.',
+    action: 'Participar do simulado',
+  }),
+  finished: Object.freeze({
+    eyebrow: 'RESULTADO DISPONÍVEL',
+    title: 'Confira sua classificação.',
+    action: 'Ver resultado',
+  }),
+});
+
+export function rankedEventMentorHtml(player, selection, { preview = false } = {}) {
+  const event = selection?.event || selection;
+  const status = selection?.effectiveStatus || event?.effectiveStatus || event?.effective_status || event?.status || 'scheduled';
+  const copy = RANKED_EVENT_COPY[status] || RANKED_EVENT_COPY.scheduled;
+  return `
+    <section class="dj-mentor dj-mentor--official dj-mentor--ranked" aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
+      ${mentorPortraitHtml(player, { character: { id: 'master', name: 'Mestre', image: 'assets/mentor/mentor.png?v1' } })}
+      <div class="dj-mentor__bubble">
+        <div class="dj-mentor__meta">
+          <span class="dj-mentor__origin">ARENA DETONA</span>
+          <span class="dj-mentor__eyebrow">${escapeHtml(copy.eyebrow)}</span>
+        </div>
+        <h2 class="dj-mentor__title" id="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">${escapeHtml(event?.title || copy.title)}</h2>
+        <p class="dj-mentor__message">${escapeHtml(event?.description || copy.title)}</p>
+        <button type="button" class="dj-mentor__action"${preview ? ' disabled' : ` id="ranked-event-action" data-event-id="${escapeHtml(event?.id || '')}"`}>${escapeHtml(copy.action)}</button>
+      </div>
+    </section>`;
+}
+
 function formatDateTime(value) {
   if (!value) return null;
   const date = new Date(value);

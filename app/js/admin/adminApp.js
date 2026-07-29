@@ -15,6 +15,7 @@ import { renderAdminMediaScreen } from './adminMediaScreen.js';
 import { renderAdminLandingScreen } from './adminLandingScreen.js';
 import { renderAdminSettingsScreen } from './adminSettingsScreen.js';
 import { renderAdminPublicationScreen } from './adminPublicationScreen.js';
+import { renderAdminEventsScreen } from './adminEventsScreen.js';
 import { adminContestService } from '../services/adminContestService.js';
 import { buildAdminRouteUrl, resolveAdminRoute } from './adminWorkspaceNavigation.js';
 
@@ -29,6 +30,7 @@ const ROUTES = Object.freeze({
   landing: renderAdminLandingScreen,
   settings: renderAdminSettingsScreen,
   publication: renderAdminPublicationScreen,
+  events: renderAdminEventsScreen,
 });
 
 const UNSAVED_MESSAGE = 'Existem alterações não salvas. Deseja sair desta etapa e descartá-las?';

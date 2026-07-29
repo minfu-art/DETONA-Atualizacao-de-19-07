@@ -225,3 +225,5 @@
   .admin-snapshot-controls label, .admin-snapshot-controls .admin-button { width: 100%; max-width: none; box-sizing: border-box; }
   #question-detail-body, .admin-question-dialog__header { padding: 15px; }
 }
+.admin-event-list{display:grid;gap:12px}.admin-event-row{display:flex;align-items:center;justify-content:space-between;gap:16px}.admin-event-row h3{margin:8px 0 4px}.admin-event-row p{margin:0;color:var(--admin-muted,#aab0cc)}.admin-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.admin-button--danger{border-color:#a44149;color:#ffb8bd}.admin-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.admin-form-grid label,.admin-form>label{display:grid;gap:7px}.admin-form input,.admin-form textarea,.admin-form select{width:100%}.admin-form textarea{min-height:100px;resize:vertical}
+@media(max-width:720px){.admin-event-row{align-items:stretch;flex-direction:column}.admin-form-grid{grid-template-columns:1fr}.admin-event-row .admin-actions .admin-button{flex:1}}

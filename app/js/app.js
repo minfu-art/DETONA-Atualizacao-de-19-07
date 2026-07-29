@@ -18,6 +18,7 @@ import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=69';
 import { renderReview } from './ui/review.js?v=82';
+import { renderRankedEvent } from './ui/rankedEvent.js';
 import { ICO } from './ui/icons.js?v=66';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=70';
 import { renderAuth } from './ui/auth.js?v=74';
@@ -74,9 +75,10 @@ const ROUTES = {
   celebration: renderCelebration,
   topicTree: renderTopicTree,
   review: renderReview,
+  rankedEvent: renderRankedEvent,
 };
 
-const NAV_VISIBLE = new Set(['home', 'map', 'edital', 'expedition', 'performance', 'wellbeing', 'profile', 'topicTree', 'review']);
+const NAV_VISIBLE = new Set(['home', 'map', 'edital', 'expedition', 'performance', 'wellbeing', 'profile', 'topicTree', 'review', 'rankedEvent']);
 
 async function navigate(screen) {
   if (!canAccessInternalRoute(authService)) {

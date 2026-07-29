@@ -7,11 +7,13 @@ export const ADMIN_NAV_ITEMS = Object.freeze([
   ['students', 'Alunos e acessos'],
   ['messages', 'Mensagens'],
   ['settings', 'Configurações'],
+  ['events', 'Eventos ranqueados'],
   ['audit', 'Auditoria'],
 ]);
 
 const ICONS = Object.freeze({
   overview: '◫', contests: '◆', students: '♙', messages: '✦', settings: '⚙', audit: '✓',
+  events: '★',
 });
 
 let shellOptions = null;

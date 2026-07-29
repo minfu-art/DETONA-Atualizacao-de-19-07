@@ -10,6 +10,7 @@ export const CONTEST_WORKSPACE_TABS = Object.freeze([
 const MODULE_BY_SCREEN = Object.freeze({
   overview: 'overview',
   messages: 'messages',
+  events: 'events',
   settings: 'settings',
   audit: 'audit',
   landing: 'landing',
