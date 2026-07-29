@@ -2110,6 +2110,95 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
   .pd-config-row__options { grid-template-columns:1fr 1fr; }
   .pd-config-row__options fieldset { grid-column:1 / -1; }
 }
+
+/* Kaela — Guardiã do Vigor */
+.kaela-card {
+  position:relative;
+  display:grid;
+  grid-template-columns:92px minmax(0,1fr);
+  align-items:end;
+  gap:12px;
+  overflow:hidden;
+  padding:14px;
+  border:1px solid rgba(249,115,22,.34);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(249,115,22,.18),transparent 34%),
+    radial-gradient(circle at 85% 16%,rgba(124,58,237,.24),transparent 40%),
+    linear-gradient(145deg,rgba(9,12,27,.98),rgba(24,13,40,.94));
+  box-shadow:inset 0 1px rgba(255,255,255,.05),0 14px 34px rgba(0,0,0,.2);
+}
+.kaela-card::after {
+  content:"";
+  position:absolute;
+  right:-30px;
+  bottom:-40px;
+  width:130px;
+  height:130px;
+  border:1px solid rgba(167,139,250,.15);
+  border-radius:50%;
+}
+.kaela-card__portrait {
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  height:124px;
+  overflow:hidden;
+  border-radius:16px 16px 8px 8px;
+  background:linear-gradient(180deg,rgba(124,58,237,.16),rgba(249,115,22,.08));
+}
+.kaela-card__portrait img { width:150%; max-width:none; height:142px; object-fit:contain; object-position:center bottom; filter:drop-shadow(0 8px 12px rgba(0,0,0,.55)); }
+.kaela-card__copy { position:relative; z-index:1; min-width:0; }
+.kaela-card__copy .pd-kicker { margin-bottom:4px; font-size:9px; }
+.kaela-card__copy h2 { margin:0 0 5px; color:#fff; font-size:18px; line-height:1.15; }
+.kaela-card__copy > p:not(.pd-kicker) { margin:0 0 10px; color:var(--ds-text-2); font-size:12px; line-height:1.45; }
+.kaela-card__copy .btn { min-height:44px; width:100%; }
+.pd-shields { display:grid; grid-template-columns:1fr auto; gap:4px 10px; margin-top:14px; padding:12px; border:1px solid rgba(249,115,22,.2); border-radius:13px; background:rgba(249,115,22,.05); }
+.pd-shields strong { font-size:12px; }
+.pd-shields > span { display:flex; gap:5px; }
+.pd-shields i { color:#30364f; font-style:normal; }
+.pd-shields i.is-active { color:#fb923c; filter:drop-shadow(0 0 5px rgba(249,115,22,.55)); }
+.pd-shields small { grid-column:1/-1; color:var(--ds-text-3); font-size:10px; line-height:1.4; }
+.pd-calendar { display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:6px 4px; }
+.pd-calendar > span { display:grid; justify-items:center; gap:3px; min-width:0; }
+.pd-calendar > span > i { width:13px; height:13px; border-radius:4px; background:#232942; }
+.pd-calendar > span small { color:#737d9c; font-size:7px; }
+.pd-calendar > span.is-completed > i { background:#22c55e; box-shadow:0 0 7px rgba(34,197,94,.28); }
+.pd-calendar > span.is-protected > i { border:1px solid #fb923c; background:rgba(249,115,22,.2); }
+.pd-calendar > span.is-missed > i { background:#5b2333; }
+.pd-calendar > span.is-unplanned { opacity:.35; }
+.pd-calendar-legend { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; color:var(--ds-text-3); font-size:9px; }
+.pd-calendar-legend span { display:inline-flex; align-items:center; gap:4px; }
+.pd-calendar-legend i { width:8px; height:8px; border-radius:3px; background:#232942; }
+.pd-calendar-legend i.is-completed { background:#22c55e; }
+.pd-calendar-legend i.is-protected { border:1px solid #fb923c; background:rgba(249,115,22,.2); }
+.pd-calendar-legend i.is-missed { background:#5b2333; }
+.pd-routine-list { display:flex; flex-direction:column; gap:7px; }
+.pd-routine-list > div { display:grid; grid-template-columns:56px 1fr; align-items:center; gap:8px; min-height:44px; padding:8px 10px; border:1px solid rgba(167,139,250,.16); border-radius:11px; background:rgba(10,14,30,.45); }
+.pd-routine-list time { color:#fb923c; font-size:12px; font-weight:800; }
+.pd-routine-list span { color:var(--ds-text-2); font-size:12px; }
+
+@media (min-width: 760px) {
+  .kaela-card { grid-template-columns:160px minmax(0,1fr); min-height:210px; padding:18px 24px; }
+  .kaela-card__portrait { height:178px; }
+  .kaela-card__portrait img { height:205px; }
+  .kaela-card__copy h2 { font-size:24px; }
+  .kaela-card__copy > p:not(.pd-kicker) { max-width:52ch; font-size:14px; }
+  .kaela-card__copy .btn { width:auto; min-width:180px; }
+  .pd-calendar { grid-template-columns:repeat(15,minmax(0,1fr)); gap:9px; }
+  .pd-calendar > span > i { width:17px; height:17px; }
+}
+
+@media (max-width: 360px) {
+  .kaela-card { grid-template-columns:76px minmax(0,1fr); padding:10px; }
+  .kaela-card__portrait { height:112px; }
+  .kaela-card__portrait img { height:128px; }
+  .kaela-card__copy h2 { font-size:16px; }
+  .pd-calendar { grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .pd-config-row__options { padding-left:12px; }
+}
 @media (max-width:360px) {
   .insignia-line__track { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .insignia-art--hud { width:31px; height:31px; }

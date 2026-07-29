@@ -24,6 +24,8 @@ import {
 import { prefersReducedMotion } from './components.js';
 import { daysUntilExam } from '../core/progression.js';
 import { heroImgHtml } from './heroAssets.js';
+import { getHabitConfiguration } from '../core/wellbeing.js';
+import { habitRoutineEntries } from '../services/kaelaVigorService.js';
 
 const TABS = [
   ['semana', 'Semana'],
@@ -226,6 +228,8 @@ export async function renderExpedition(root, navigate, ctx) {
     const journeySnap = await routineService.getExamJourney();
     profile = dash.profile;
     const { state, blocks, next, streak, shields } = dash;
+    const habitConfiguration = await getHabitConfiguration();
+    const habitReminders = habitRoutineEntries(habitConfiguration.definitions, todayStr());
     const planned = state.plannedMinutes || 0;
     const actual = state.actualMinutes || 0;
     const pct = planned ? Math.min(100, Math.round((actual / planned) * 100)) : (state.minGoalMet ? 100 : 0);
@@ -281,6 +285,16 @@ export async function renderExpedition(root, navigate, ctx) {
         </div>
         ${blocks.length ? blocks.map(blockCard).join('') : '<p class="muted">Nenhum bloco hoje. Use a Semana ou “+ Bloco inteligente”.</p>'}
       </section>
+      ${habitReminders.length ? `
+        <section class="plan-card mb-8" aria-labelledby="routine-habits-title">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
+            <h2 id="routine-habits-title" style="margin:0">Rituais de hoje</h2>
+            <button type="button" class="btn btn-ghost" id="rt-open-rituals">Abrir Meus Rituais</button>
+          </div>
+          <div class="pd-routine-list">
+            ${habitReminders.map((entry) => `<div><time>${escapeHtml(entry.time)}</time><span>${escapeHtml(entry.title)}</span></div>`).join('')}
+          </div>
+        </section>` : ''}
     `;
 
     $('#rt-next', root)?.addEventListener('click', async () => {
@@ -303,6 +317,7 @@ export async function renderExpedition(root, navigate, ctx) {
       if (res.unlocked?.length) toast(`Conquista: ${res.unlocked[0].title}`);
       paint();
     });
+    $('#rt-open-rituals', root)?.addEventListener('click', () => navigate('wellbeing'));
     bindBlockActions(blocks, navigate);
   }
 

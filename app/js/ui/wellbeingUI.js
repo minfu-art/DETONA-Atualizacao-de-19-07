@@ -24,6 +24,13 @@ import {
 } from '../core/wellbeingMessages.js';
 import { getPlayer } from '../core/seed.js';
 import { mountPageContainer, sectionHeader } from './appShell.js';
+import {
+  KAELA,
+  buildHabitCalendar,
+  chooseKaelaGuidance,
+  habitRoutineEntries,
+  refreshKaelaConsistency,
+} from '../services/kaelaVigorService.js';
 
 function renderHabitCard(card) {
   const { habit, catalog, pct, completed, done, target, automatic } = card;
@@ -103,12 +110,35 @@ export async function renderWellbeing(root, navigate) {
   async function paint() {
     const state = await getTodayWellbeingState();
     const player = await getPlayer().catch(() => null);
+    const shieldLedger = await refreshKaelaConsistency(state);
+    const guidance = chooseKaelaGuidance(state);
+    const calendar = buildHabitCalendar({
+      definitions: state.configuration.definitions.filter((item) => item.enabled !== false),
+      logs: state.logs,
+      today: state.date,
+      minimumPercent: state.configuration.minimumPercent,
+      protectedDates: shieldLedger.protectedDates,
+    });
+    const routineEntries = habitRoutineEntries(state.configuration.definitions, state.date);
     const message = mood === 'hard'
       ? pickMessage(DAY_MESSAGES.baixa_energia, Date.now())
       : messageForNow(new Date());
     const percent = state.total ? Math.round((state.doneCount / state.total) * 100) : 0;
     root.innerHTML = `
       <div class="pd-screen" data-wellbeing-v3="kaela-habits">
+        <section class="kaela-card" aria-labelledby="kaela-guidance-title">
+          <div class="kaela-card__portrait">
+            <img src="${KAELA.asset}" alt="${escapeHtml(KAELA.name)}"
+              onerror="this.onerror=null;this.src='${KAELA.fallbackAsset}'">
+          </div>
+          <div class="kaela-card__copy">
+            <p class="pd-kicker">${escapeHtml(KAELA.name)}</p>
+            <h2 id="kaela-guidance-title">${escapeHtml(guidance.title)}</h2>
+            <p>${escapeHtml(guidance.message)}</p>
+            <button type="button" class="btn btn-primary" id="kaela-action">${escapeHtml(guidance.actionLabel)}</button>
+          </div>
+        </section>
+
         <header class="pd-hero" aria-label="Preparação do dia">
           <div class="pd-hero__glow" aria-hidden="true"></div>
           <p class="pd-kicker">Preparação do Dia</p>
@@ -160,6 +190,38 @@ export async function renderWellbeing(root, navigate) {
             ? 'Meta mínima de hoje alcançada. Consistência não exige perfeição.'
             : `Você concluiu ${state.doneCount} de ${state.total} hábitos planejados hoje.`}</p>
           <p class="pd-vigor-hint">Vigor consolidado: ${state.vigor}</p>
+          <div class="pd-shields" aria-label="${shieldLedger.shields} escudos de constância">
+            <strong>Escudos de Constância</strong>
+            <span>${Array.from({ length: 2 }, (_, index) => `<i class="${index < shieldLedger.shields ? 'is-active' : ''}" aria-hidden="true">◆</i>`).join('')}</span>
+            <small>${shieldLedger.protectedDates.length
+              ? `Proteção usada em ${shieldLedger.protectedDates.at(-1)}. Os hábitos reais não foram marcados.`
+              : 'Uma semana com 6 ou 7 dias cumpridos gera um escudo.'}</small>
+          </div>
+        </section>
+
+        <section class="pd-block pd-calendar-block" aria-labelledby="pd-calendar-title">
+          <div class="pd-block__head">
+            <div><h3 id="pd-calendar-title">Últimos 30 dias</h3><p class="pd-human-progress">Histórico real, sem inventar conclusões.</p></div>
+          </div>
+          <div class="pd-calendar" role="list" aria-label="Calendário de constância">
+            ${calendar.map((day) => `
+              <span role="listitem" class="is-${day.state}" title="${day.date}: ${day.completed}/${day.planned}">
+                <i aria-hidden="true"></i><small>${day.date.slice(-2)}</small>
+              </span>`).join('')}
+          </div>
+          <div class="pd-calendar-legend">
+            <span><i class="is-completed"></i>Cumprido</span>
+            <span><i class="is-protected"></i>Protegido</span>
+            <span><i class="is-missed"></i>Não atingido</span>
+          </div>
+        </section>
+
+        <section class="pd-block pd-routine-habits" aria-labelledby="pd-routine-habits-title">
+          <h3 id="pd-routine-habits-title">Rituais na rotina de hoje</h3>
+          ${routineEntries.length ? `
+            <div class="pd-routine-list">${routineEntries.map((entry) => `
+              <div><time>${escapeHtml(entry.time)}</time><span>${escapeHtml(entry.title)}</span></div>`).join('')}</div>`
+            : '<p class="muted">Adicione um horário opcional ao configurar um hábito. O histórico não muda quando o horário for alterado.</p>'}
         </section>
 
         <section class="pd-block pd-block--edu">
@@ -180,7 +242,7 @@ export async function renderWellbeing(root, navigate) {
         subtitle: 'Hábitos, energia e constância para sustentar o estudo.',
       }),
     });
-    bind(state);
+    bind(state, guidance);
   }
 
   async function openConfiguration() {
@@ -256,9 +318,24 @@ export async function renderWellbeing(root, navigate) {
     update();
   }
 
-  function bind(state) {
+  function bind(state, guidance) {
     $('#pd-home', root)?.addEventListener('click', () => navigate('home'));
     $('#pd-configure', root)?.addEventListener('click', openConfiguration);
+    $('#kaela-action', root)?.addEventListener('click', async () => {
+      if (guidance.action === 'configure') {
+        await openConfiguration();
+      } else if (guidance.action === 'home') {
+        navigate('home');
+      } else if (guidance.action === 'mark' && guidance.definitionId) {
+        const card = state.cards.find((item) => item.definition.id === guidance.definitionId);
+        if (card && !card.automatic) {
+          await completeMicroPractice(card.definition.id, card.definition.target);
+          await paint();
+        }
+      } else {
+        document.getElementById('pd-habits-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
     $('#pd-mode-prod', root)?.addEventListener('click', async () => {
       mood = 'productive';
       toast('Ritual iniciado. Agora escolha a primeira tarefa do edital.');
