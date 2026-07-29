@@ -11,6 +11,7 @@ import {
   normalizeCareerArea,
   selectActiveJourney,
 } from '../js/services/careerLibraryService.js';
+import { normalizeDynamicContest } from '../js/services/contestCatalogService.js';
 
 const item = ({
   id,
@@ -131,4 +132,14 @@ test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE
   assert.match(sql, /where id = 'pp_pe_2027'/i);
   assert.match(sql, /career_subarea = 'prison_police'/i);
   assert.doesNotMatch(sql, /contest_entitlements|progress_records|drop table|delete from/i);
+});
+
+test('PC AL preserva as contagens oficiais do catálogo legado', () => {
+  const contest = normalizeDynamicContest({
+    id: 'pc_al_2026',
+    code: 'PC AL',
+    name: 'Polícia Civil de Alagoas',
+  });
+  assert.equal(contest.subtopicCount, 137);
+  assert.equal(contest.questionCount, 6480);
 });

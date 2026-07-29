@@ -12,6 +12,8 @@ export const CONTEST_CATALOG = [
     contentStatus: 'ready',
     careerArea: 'police_security',
     careerSubarea: 'civil_police',
+    subtopicCount: 137,
+    questionCount: 6480,
     description: 'Jornada completa com edital verticalizado, questoes e batalhas.',
   },
   {

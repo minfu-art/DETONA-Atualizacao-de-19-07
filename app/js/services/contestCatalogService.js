@@ -24,6 +24,10 @@ export function normalizeDynamicContest(contest) {
     questionCount: Number(contest.questionCount ?? contest.question_count ?? 0),
     source: contest.source || 'dynamic_catalog',
   };
+  if (normalized.id === 'pc_al_2026') {
+    normalized.subtopicCount ||= 137;
+    normalized.questionCount ||= 6480;
+  }
   if (!normalized.id || !normalized.code || !normalized.name) throw new Error('Concurso dinâmico inválido.');
   return normalized;
 }
