@@ -29,7 +29,7 @@ import {
   announcementService,
   canDismissAnnouncement,
 } from '../services/announcementService.js';
-import { getMentorMessage } from '../services/mentorMessageService.js';
+import { dailyCharacterMessage } from '../services/dailyCharacterMessage.js';
 import {
   announcementModalDetailsHtml,
   automaticMentorHtml,
@@ -642,28 +642,19 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     </button>
   `).join('');
 
-  const automaticMentor = getMentorMessage({
-    player,
-    meta,
-    routine,
-    reviewData,
-    wellbeingState: wbState,
-    daysUntilExam: days,
-    missionFocus: dailyEnemyDiscId ? { id: dailyEnemyDiscId, name: missionFocus } : null,
-    missionLeft,
-    lastStudyDate: player.last_study_date,
-    studiedToday: player.last_study_date === todayStr()
-      || Number(log?.completed_amount) > 0
-      || Number(log?.domain_challenges_completed) > 0,
-    currentDate: todayStr(),
+  const automaticMentor = dailyCharacterMessage({
+    date: today,
+    contestId: ctx.contest?.id,
+    userId: ctx.user?.id,
   });
   let officialAnnouncement = null;
   try {
     if (ctx.user?.id && ctx.contest?.id) {
-      officialAnnouncement = await announcementService.getCurrentHomeAnnouncement({
+      const candidate = await announcementService.getCurrentHomeAnnouncement({
         userId: ctx.user.id,
         contestId: ctx.contest.id,
       });
+      officialAnnouncement = candidate?.category === 'event' ? candidate : null;
     }
   } catch (error) {
     console.warn('[home] avisos indisponíveis; usando conselho automático', error?.message || error);
@@ -861,6 +852,9 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   $('#mentor-action', root)?.addEventListener('click', () => {
     SFX.click();
     if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();
+    else if (automaticMentor.actionType === 'navigate' && automaticMentor.actionValue) {
+      navigate(automaticMentor.actionValue);
+    }
     else if (automaticMentor.actionType === 'review') navigate('review');
     else if (automaticMentor.actionType === 'performance') navigate('performance');
     else if (automaticMentor.actionType === 'wellbeing') navigate('wellbeing');

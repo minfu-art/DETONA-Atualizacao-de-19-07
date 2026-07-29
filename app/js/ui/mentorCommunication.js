@@ -10,6 +10,10 @@ export const ANNOUNCEMENT_CATEGORY_LABELS = Object.freeze({
 });
 
 export const AUTOMATIC_MENTOR_LABELS = Object.freeze({
+  cleric: 'CLÉRIGA DA CONSTÂNCIA',
+  strategist: 'ESTRATEGISTA',
+  warrior: 'GUERREIRO DA DISCIPLINA',
+  master: 'MESTRE DO CONHECIMENTO',
   daily_goal: '⚡ FOCO DO DIA',
   review_due: '🧠 REVISÃO INTELIGENTE',
   exam_near: '🏁 RETA FINAL',
@@ -42,8 +46,14 @@ export function mentorIdentity(player = {}) {
     };
 }
 
-function mentorPortraitHtml(player, { modal = false } = {}) {
-  const mentor = mentorIdentity(player);
+function mentorPortraitHtml(player, { modal = false, character = null } = {}) {
+  const mentor = character
+    ? {
+      name: character.name,
+      src: character.image,
+      variant: character.id,
+    }
+    : mentorIdentity(player);
   if (modal) {
     return `
       <img
@@ -122,7 +132,7 @@ export function automaticMentorHtml(player, mentor, { preview = false } = {}) {
     : '';
   return `
     <section class="dj-mentor dj-mentor--automatic dj-mentor--${escapeHtml(mentor.priority)}" aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
-      ${mentorPortraitHtml(player)}
+      ${mentorPortraitHtml(player, { character: mentor.character })}
       <div class="dj-mentor__bubble">
         <div class="dj-mentor__meta">
           <span class="dj-mentor__eyebrow">${escapeHtml(badge)}</span>

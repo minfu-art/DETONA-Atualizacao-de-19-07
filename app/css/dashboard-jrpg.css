@@ -912,6 +912,11 @@
     radial-gradient(circle at 10% 90%, rgba(124, 92, 255, 0.24), transparent 34%),
     linear-gradient(145deg, rgba(18, 20, 42, 0.98), rgba(8, 12, 27, 0.98));
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  animation: dj-mentor-enter 320ms ease-out both;
+}
+@keyframes dj-mentor-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .dj-mentor--official {
   border-color: rgba(56, 189, 248, 0.38);
@@ -1195,6 +1200,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .dj-mentor,
   .dj-mentor__action,
   .dj-mentor__new {
     transition: none;
