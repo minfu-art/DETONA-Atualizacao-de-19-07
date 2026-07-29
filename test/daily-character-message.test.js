@@ -62,6 +62,8 @@ test('card apresenta somente personagem, categoria, título, texto e ação opci
 
 test('Home usa mensagem diária e restringe o palco oficial a eventos', () => {
   assert.match(homeSource, /dailyCharacterMessage\(\{/);
+  assert.match(homeSource, /dailyCharacterMessage\(\{\s*date: new Date\(\)/);
+  assert.doesNotMatch(homeSource, /dailyCharacterMessage\(\{\s*date: today/);
   assert.match(homeSource, /candidate\?\.category === 'event' \? candidate : null/);
   assert.doesNotMatch(homeSource, /getMentorMessage\(\{/);
 });

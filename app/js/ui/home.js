@@ -645,7 +645,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   `).join('');
 
   const automaticMentor = dailyCharacterMessage({
-    date: today,
+    date: new Date(),
     contestId: ctx.contest?.id,
     userId: ctx.user?.id,
   });
