@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v87-home-streamline';
+const CACHE = 'detona-v88-evi-daily-missions';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -88,6 +88,7 @@ const ASSETS = [
   './js/services/reviewService.js',
   './js/services/performanceService.js',
   './js/services/orionEvolutionService.js',
+  './js/services/eviDailyMissionService.js',
   './js/data/editalSeed.js',
   './js/data/emblemCatalog.js',
   './js/data/insigniaCatalog.js',
@@ -127,6 +128,7 @@ const ASSETS = [
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
   './js/ui/orionEvolution.js',
+  './js/ui/eviDailyMission.js',
   './js/ui/mentorCommunication.js',
   './js/ui/rankedEvent.js',
   './js/ui/emblems/emblemArt.js',
@@ -165,6 +167,7 @@ const ASSETS = [
   './assets/mentor/mentor.png',
   './assets/mentor/mentora.png',
   './assets/mentor/orion-evolution.png',
+  './assets/mentors/evi.webp',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

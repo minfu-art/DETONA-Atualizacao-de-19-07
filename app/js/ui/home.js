@@ -42,8 +42,13 @@ import {
   emptyOrionEvolutionModel,
   orionEvolutionService,
 } from '../services/orionEvolutionService.js';
+import {
+  emptyEviDailyMissionModel,
+  eviDailyMissionService,
+} from '../services/eviDailyMissionService.js';
 import { emblemArt } from './emblems/emblemArt.js';
 import { renderOrionEvolution } from './orionEvolution.js';
+import { renderEviDailyMission } from './eviDailyMission.js';
 
 export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
@@ -595,10 +600,17 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   }
 
   const estMin = Math.max(8, Math.min(45, Math.round((mission.amount || 10) * 1.2)));
-  const xpReward = Math.max(40, Math.round((planned || 10) * 8));
-  const ringPct = meta.idle ? 0 : Math.min(100, Number(meta.pct) || 0);
-  const ringCirc = 2 * Math.PI * 42;
-  const ringOffset = ringCirc - (ringPct / 100) * ringCirc;
+  const eviMission = await eviDailyMissionService.getSnapshot({
+    dailyGoal: {
+      enabled: !meta.idle && routine?.enabled !== false,
+      questionGoal: meta.idle ? 0 : planned,
+      questionsCompleted: meta.idle ? 0 : doneToday,
+    },
+    activeMission: mission,
+  }).catch((error) => {
+    console.warn('[home] orientação da Evi indisponível', error?.message || error);
+    return emptyEviDailyMissionModel();
+  });
 
   const examBlock = days === null
     ? { value: '—', label: 'Defina a data', action: true }
@@ -623,8 +635,6 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       <span>${icon('checkCircle', 'ico--sm')}</span>
       <p>Nenhuma revisão crítica no momento.</p>
     </div>`;
-
-  const dayLabel = goalTypeLabel(routine?.goal_type) || 'questões';
 
   const PREP_ORDER = ['wb_meditacao', 'wb_agua', 'wb_exercicio', 'wb_alimentacao', 'wb_sono'];
   const prepCards = [...(wbState?.cards || [])].sort((a, b) => {
@@ -756,29 +766,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           <button type="button" class="dj-link" id="today-review">Ver todas ${icon('chevronRight', 'ico--sm')}</button>
         </section>
 
-        <section class="dj-card dj-card--goal" aria-labelledby="dj-goal-title">
-          <div class="dj-card__head">
-            <span class="dj-card__ico">${icon('target')}</span>
-            <h2 id="dj-goal-title">Meta diária</h2>
-          </div>
-          <div class="dj-ring-wrap">
-            <svg class="dj-ring" viewBox="0 0 100 100" aria-hidden="true">
-              <circle class="dj-ring__bg" cx="50" cy="50" r="42"/>
-              <circle class="dj-ring__fg" cx="50" cy="50" r="42"
-                stroke-dasharray="${ringCirc.toFixed(2)}"
-                stroke-dashoffset="${ringOffset.toFixed(2)}"/>
-            </svg>
-            <div class="dj-ring__center">
-              <strong>${meta.idle ? '—' : `${ringPct}%`}</strong>
-            </div>
-          </div>
-          <div class="dj-goal-copy">
-            <strong>${meta.idle ? 'Folga' : `${doneToday} / ${planned || 0}`}</strong>
-            <small>${meta.idle ? 'Sem meta hoje' : `${dayLabel} concluídas`}</small>
-            <em>+${xpReward} XP</em>
-          </div>
-          <button type="button" class="dj-link" id="today-routine">Ver minhas metas ${icon('chevronRight', 'ico--sm')}</button>
-        </section>
+        ${renderEviDailyMission(eviMission)}
       </div>
 
       <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
@@ -843,7 +831,12 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   root.querySelectorAll('[data-review-go]').forEach((btn) => {
     btn.addEventListener('click', () => { SFX.click(); startReview(); });
   });
-  $('#today-routine', root)?.addEventListener('click', () => { SFX.click(); navigate('expedition'); });
+  $('#evi-daily-action', root)?.addEventListener('click', () => {
+    SFX.click();
+    if (eviMission.actionRoute === 'review') startReview();
+    else if (eviMission.actionRoute === 'battle') startBattle();
+    else navigate(eviMission.actionRoute || 'expedition');
+  });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
   $('#today-emblems', root)?.addEventListener('click', () => {
     SFX.click();
