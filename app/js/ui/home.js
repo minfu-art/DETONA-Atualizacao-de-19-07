@@ -21,7 +21,12 @@ import { icon, semanticIcon, discIcon, discEnemySprite } from './icons.js?v=67';
 import { KNOWLEDGE_BLOCKS } from '../data/editalSeed.js?v=68';
 import { mountPageContainer, sectionHeader } from './appShell.js';
 import { getTodayRoutine, metaProgress, metaPreviewText, goalTypeLabel } from '../core/dailyMeta.js';
-import { ensureWellbeingHabits, getTodayWellbeingState, toggleHabit } from '../core/wellbeing.js';
+import {
+  ensureWellbeingHabits,
+  getTodayWellbeingState,
+  performHomeHabitQuickAction,
+  resolveHomeHabitQuickAction,
+} from '../core/wellbeing.js';
 import { createReviewSession, getReviewDashboardData } from '../services/reviewService.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import {
@@ -36,6 +41,7 @@ import {
   automaticMentorHtml,
   officialMentorHtml,
   rankedEventMentorHtml,
+  assertSingleDirectMentorCommunication,
 } from './mentorCommunication.js';
 import { refreshEmblems } from '../services/emblemService.js';
 import {
@@ -646,18 +652,37 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   const prepTotal = wbState?.total || prepCards.length || 0;
   const prepPct = prepTotal ? Math.round((prepDone / prepTotal) * 100) : 0;
   const prepAllDone = prepTotal > 0 && prepDone >= prepTotal;
-  const prepRows = prepCards.map((c) => `
+  const nextPrepCard = prepCards.find((card) => !card.completed);
+  const nextPrepTime = nextPrepCard?.plannedTime
+    || nextPrepCard?.definition?.reminderTime
+    || nextPrepCard?.definition?.desiredSleepTime
+    || nextPrepCard?.definition?.desiredWakeTime
+    || null;
+  const prepRows = prepCards.map((c) => {
+    const quickAction = resolveHomeHabitQuickAction(c);
+    const isReadOnly = quickAction.type === 'read_only';
+    const actionLabel = quickAction.type === 'increment_water'
+      ? `Adicionar um copo em ${c.habit.name}`
+      : quickAction.type === 'toggle'
+        ? `${c.completed ? 'Desmarcar' : 'Confirmar'} ${c.habit.name}`
+        : quickAction.type === 'open_record'
+          ? `Abrir registro de ${c.habit.name}`
+          : `${c.habit.name}, atualizado automaticamente`;
+    return `
     <button type="button"
       class="dj-prep-chip ${c.completed ? 'is-done' : ''}"
       data-prep-habit="${escapeHtml(c.habit.id)}"
+      data-home-habit-action="${quickAction.type}"
       aria-pressed="${c.completed ? 'true' : 'false'}"
-      ${c.automatic ? 'disabled aria-disabled="true"' : ''}
-      title="${escapeHtml(c.habit.name)}">
+      aria-label="${escapeHtml(actionLabel)}"
+      ${isReadOnly ? 'disabled aria-disabled="true"' : ''}
+      title="${escapeHtml(actionLabel)}">
       <span class="dj-prep-chip__check" aria-hidden="true">${c.completed ? icon('check', 'ico--sm') : icon('circle', 'ico--sm')}</span>
       <span class="dj-prep-chip__emoji" aria-hidden="true">${escapeHtml(c.habit.icon || '✦')}</span>
-      <span class="dj-prep-chip__label">${escapeHtml(c.habit.name)}${c.automatic ? ' · auto' : ''}</span>
+      <span class="dj-prep-chip__label">${escapeHtml(c.habit.name)}${isReadOnly ? ' · automático · somente leitura' : quickAction.type === 'increment_water' ? ' · +1 copo' : ''}</span>
     </button>
-  `).join('');
+  `;
+  }).join('');
 
   const automaticMentor = dailyCharacterMessage({
     date: new Date(),
@@ -772,25 +797,35 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
         <div class="dj-prep__head">
           <div>
-            <span class="dj-kicker">Rumo à aprovação</span>
-            <h2 id="dj-prep-title">Cuide do corpo e da mente</h2>
-            <p>Antes de estudar, marque o que já fez. Corpo e mente preparados sustentam a jornada.</p>
+            <span class="dj-kicker">Bem-estar e constância</span>
+            <h2 id="dj-prep-title">HÁBITOS DO DIA</h2>
+            <p>${prepTotal === 0
+              ? 'Escolha os hábitos que deseja acompanhar.'
+              : prepAllDone
+                ? 'Todos os hábitos planejados para hoje foram registrados.'
+                : `${prepDone} de ${prepTotal} concluídos${nextPrepCard
+                  ? `. Próximo: ${escapeHtml(nextPrepCard.habit.name)}${nextPrepTime ? ` — ${escapeHtml(nextPrepTime)}` : ''}.`
+                  : '.'}`}</p>
           </div>
-          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Preparação ${prepDone} de ${prepTotal}">
+          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Hábitos ${prepDone} de ${prepTotal}">
             <strong>${prepDone}</strong>
             <small>de ${prepTotal}</small>
           </div>
         </div>
-        <div class="dj-prep__list" role="group" aria-label="Hábitos de preparação de hoje">
+        <div class="dj-prep__list" role="group" aria-label="Hábitos de hoje">
           ${prepRows || '<p class="dj-empty-inline">Nenhum hábito configurado ainda.</p>'}
         </div>
         <div class="dj-prep__foot">
-          <span class="dj-prep__status">${prepAllDone
-            ? 'Hábitos do dia registrados — bom estudo!'
-            : prepDone > 0
-              ? `Você já cuidou de ${prepDone} prática(s). Continue.`
-              : 'Toque para marcar cada preparação antes de estudar.'}</span>
-          <button type="button" class="dj-link" id="today-wellbeing" aria-label="Hábitos" title="Hábitos">Abrir hábitos ${icon('heartPulse', 'ico--sm')}</button>
+          <span class="dj-prep__status">${prepTotal === 0
+            ? 'Nenhum hábito configurado.'
+            : prepAllDone
+              ? 'Registros de hoje concluídos.'
+              : `${prepTotal - prepDone} pendente${prepTotal - prepDone === 1 ? '' : 's'} hoje.`}</span>
+          <button type="button" class="dj-link" id="today-wellbeing" aria-label="Hábitos" title="Hábitos">${prepTotal === 0
+            ? 'Configurar hábitos'
+            : prepAllDone
+              ? 'Ver histórico'
+              : 'Abrir hábitos'} ${icon('heartPulse', 'ico--sm')}</button>
         </div>
       </section>
 
@@ -799,6 +834,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       ${mentorHtml}
     </div>`;
 
+  assertSingleDirectMentorCommunication(root);
   mountPageContainer(root, { variant: 'today' });
 
   const startReview = async () => {
@@ -842,7 +878,12 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     ctx.profileSection = 'emblems';
     navigate('profile');
   });
-  $('#today-wellbeing', root)?.addEventListener('click', () => { SFX.click(); navigate('wellbeing'); });
+  $('#today-wellbeing', root)?.addEventListener('click', () => {
+    SFX.click();
+    if (prepTotal === 0) ctx.habitNavigationIntent = { type: 'configure' };
+    else if (prepAllDone) ctx.habitNavigationIntent = { type: 'history' };
+    navigate('wellbeing');
+  });
   $('#mentor-action', root)?.addEventListener('click', () => {
     SFX.click();
     if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();
@@ -876,10 +917,16 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       SFX.click();
       const id = btn.getAttribute('data-prep-habit');
       if (!id) return;
+      const card = prepCards.find((item) => item.habit.id === id);
+      if (!card) return;
       try {
-        await toggleHabit(id);
-        // re-render home to refresh prep state
-        await renderHome(root, navigate, ctx);
+        const result = await performHomeHabitQuickAction(card, {
+          openRecord: (definitionId) => {
+            ctx.habitNavigationIntent = { type: 'record', definitionId };
+            navigate('wellbeing');
+          },
+        });
+        if (result.mutates) await renderHome(root, navigate, ctx);
       } catch (error) {
         toast(error.message || 'Não foi possível atualizar o hábito.');
       }

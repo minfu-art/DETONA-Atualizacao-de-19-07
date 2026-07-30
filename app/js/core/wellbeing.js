@@ -8,6 +8,7 @@ import { localDateKey } from './localDate.js';
 import {
   DEFAULT_MINIMUM_PERCENT,
   HABIT_CATALOG,
+  HABIT_RECORD_TYPES,
   HABIT_SOURCES,
   MAX_ACTIVE_HABITS,
   applyAcademicAutomation,
@@ -346,6 +347,55 @@ export async function toggleHabitForDate(definitionId, date = localDateKey(), re
 
 export async function toggleHabit(definitionId, repository = progressRepository) {
   return toggleHabitForDate(definitionId, localDateKey(), repository);
+}
+
+export const HOME_HABIT_QUICK_ACTIONS = Object.freeze({
+  TOGGLE: 'toggle',
+  INCREMENT_WATER: 'increment_water',
+  OPEN_RECORD: 'open_record',
+  READ_ONLY: 'read_only',
+});
+
+export function resolveHomeHabitQuickAction(card = {}) {
+  const definition = card.definition || {};
+  const recordType = definition.recordType || card.catalog?.recordType;
+  if (card.automatic || recordType === HABIT_RECORD_TYPES.AUTOMATIC) {
+    return { type: HOME_HABIT_QUICK_ACTIONS.READ_ONLY, mutates: false };
+  }
+  if (definition.habitId === 'water') {
+    return { type: HOME_HABIT_QUICK_ACTIONS.INCREMENT_WATER, delta: 1, mutates: true };
+  }
+  if (recordType === HABIT_RECORD_TYPES.BOOLEAN) {
+    return { type: HOME_HABIT_QUICK_ACTIONS.TOGGLE, mutates: true };
+  }
+  return { type: HOME_HABIT_QUICK_ACTIONS.OPEN_RECORD, mutates: false };
+}
+
+export async function performHomeHabitQuickAction(card, {
+  date = localDateKey(),
+  repository = progressRepository,
+  increment = incrementHabitForDate,
+  toggle = toggleHabitForDate,
+  openRecord = null,
+} = {}) {
+  const definitionId = card?.definition?.id || card?.habit?.id;
+  if (!definitionId) throw new Error('Hábito não encontrado');
+  const action = resolveHomeHabitQuickAction(card);
+
+  if (action.type === HOME_HABIT_QUICK_ACTIONS.READ_ONLY) {
+    return { ...action, handled: false, definitionId };
+  }
+  if (action.type === HOME_HABIT_QUICK_ACTIONS.OPEN_RECORD) {
+    openRecord?.(definitionId);
+    return { ...action, handled: true, definitionId };
+  }
+  if (action.type === HOME_HABIT_QUICK_ACTIONS.INCREMENT_WATER) {
+    await increment(definitionId, 1, date, repository);
+    return { ...action, handled: true, definitionId };
+  }
+
+  await toggle(definitionId, date, repository);
+  return { ...action, handled: true, definitionId };
 }
 
 export async function skipHabitForDate(definitionId, date = localDateKey(), repository = progressRepository) {

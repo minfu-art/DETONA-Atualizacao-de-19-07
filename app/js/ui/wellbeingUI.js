@@ -241,7 +241,7 @@ function configurationBody(configuration, focusHabitId = null) {
     </div>`;
 }
 
-export async function renderWellbeing(root, navigate) {
+export async function renderWellbeing(root, navigate, ctx = {}) {
   let selectedDate = localDateKey();
   let calendarFilter = 'all';
 
@@ -390,6 +390,15 @@ export async function renderWellbeing(root, navigate) {
       }),
     });
     bind({ state, guidance, agenda, calendar, today });
+    const intent = ctx?.habitNavigationIntent;
+    if (intent) {
+      delete ctx.habitNavigationIntent;
+      if (intent.type === 'record' && intent.definitionId) openRecord(intent.definitionId, state);
+      else if (intent.type === 'configure') openConfiguration();
+      else if (intent.type === 'history') {
+        document.getElementById('hb-history')?.scrollIntoView({ block: 'start' });
+      }
+    }
   }
 
   async function openConfiguration(focusHabitId = null) {

@@ -22,7 +22,7 @@ function metricCard({ iconName, label, value, detail = '', tone = '', extra = ''
     </article>`;
 }
 
-export function renderOrionEvolution(model = {}) {
+export function renderOrionEvolution(model = {}, { direct = false } = {}) {
   const accuracy = model.accuracyWeek == null
     ? '<span class="orion-metric__empty">Sem dados suficientes</span>'
     : `${Math.round(model.accuracyWeek)}%`;
@@ -103,7 +103,9 @@ export function renderOrionEvolution(model = {}) {
   ].join('');
 
   return `
-    <section class="orion-evolution" aria-labelledby="orion-evolution-title">
+    <section class="orion-evolution"
+      data-home-mentor-communication="${direct ? 'direct' : 'neutral'}"
+      aria-labelledby="orion-evolution-title">
       <div class="orion-evolution__hud" aria-hidden="true"></div>
       <div class="orion-evolution__content">
         <header class="orion-evolution__head">
@@ -114,8 +116,10 @@ export function renderOrionEvolution(model = {}) {
         <div class="orion-evolution__metrics">${cards}</div>
         <p class="orion-evolution__message">
           <span aria-hidden="true">${icon('bolt', 'ico--sm')}</span>
-          <strong>ORION:</strong>
-          ${escapeHtml(model.recommendation || 'Comece hoje para gerar sua análise.')}
+          <strong>${direct ? 'ORION:' : 'LEITURA DOS DADOS'}</strong>
+          ${direct
+            ? escapeHtml(model.recommendation || 'Comece hoje para gerar sua análise.')
+            : 'Indicadores calculados a partir das atividades acadêmicas registradas.'}
         </p>
       </div>
       <div class="orion-evolution__art" aria-hidden="true">

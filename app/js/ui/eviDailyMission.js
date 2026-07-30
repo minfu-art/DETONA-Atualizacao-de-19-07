@@ -1,7 +1,7 @@
 import { escapeHtml } from './helpers.js';
 import { icon } from './icons.js?v=67';
 
-export function renderEviDailyMission(model) {
+export function renderEviDailyMission(model, { direct = false } = {}) {
   const progress = Math.max(0, Math.min(100, Number(model?.overallProgress) || 0));
   const circumference = 2 * Math.PI * 42;
   const offset = circumference - (progress / 100) * circumference;
@@ -9,7 +9,9 @@ export function renderEviDailyMission(model) {
   const nextMission = model?.nextMission || {};
 
   return `
-    <section class="evi-card evi-card--${escapeHtml(model?.state || 'no_plan')}" aria-labelledby="evi-card-title">
+    <section class="evi-card evi-card--${escapeHtml(model?.state || 'no_plan')}"
+      data-home-mentor-communication="${direct ? 'direct' : 'neutral'}"
+      aria-labelledby="evi-card-title">
       <div class="evi-card__glow" aria-hidden="true"></div>
       <div class="evi-card__content">
         <div class="evi-card__head">
@@ -42,13 +44,15 @@ export function renderEviDailyMission(model) {
         <div class="evi-card__guidance" aria-live="polite">
           <span>PRÓXIMA MISSÃO</span>
           <strong>${escapeHtml(nextMission.title || 'Planejar uma missão possível')}</strong>
-          <p>${escapeHtml(model?.message || 'Você não precisa fazer tudo. Apenas a próxima missão certa.')}</p>
+          <p>${direct
+            ? escapeHtml(model?.message || 'Você não precisa fazer tudo. Apenas a próxima missão certa.')
+            : 'Dados do plano acadêmico e da próxima missão prevista.'}</p>
         </div>
         <button type="button" class="evi-card__action" id="evi-daily-action"
           aria-label="${escapeHtml(model?.actionLabel || 'Planejar o dia')} com Evi">
           ${escapeHtml(model?.actionLabel || 'Planejar o dia')} ${icon('chevronRight', 'ico--sm')}
         </button>
-        <blockquote>“Você não precisa fazer tudo. Apenas a próxima missão certa.”</blockquote>
+        ${direct ? '<blockquote>“Você não precisa fazer tudo. Apenas a próxima missão certa.”</blockquote>' : ''}
       </div>
       <div class="evi-card__art">
         <img src="./assets/mentors/evi.webp" alt="Evi, guia de missões do DETONA" width="1024" height="1024">

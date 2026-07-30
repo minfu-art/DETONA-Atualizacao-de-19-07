@@ -131,7 +131,9 @@ export function automaticMentorHtml(player, mentor, { preview = false } = {}) {
     ? `<button type="button" class="dj-mentor__action"${preview ? ' disabled' : ' id="mentor-action"'}>${escapeHtml(mentor.actionLabel)}</button>`
     : '';
   return `
-    <section class="dj-mentor dj-mentor--automatic dj-mentor--${escapeHtml(mentor.priority)}" aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
+    <section class="dj-mentor dj-mentor--automatic dj-mentor--${escapeHtml(mentor.priority)}"
+      data-home-mentor-communication="direct"
+      aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
       ${mentorPortraitHtml(player, { character: mentor.character })}
       <div class="dj-mentor__bubble">
         <div class="dj-mentor__meta">
@@ -154,7 +156,9 @@ export function officialMentorHtml(player, announcement, {
   const motivational = announcement.category === 'focus' || announcement.category === 'study_tip';
   const context = eventContextText(announcement, now);
   return `
-    <section class="dj-mentor dj-mentor--official dj-mentor--${escapeHtml(announcement.priority)}" aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
+    <section class="dj-mentor dj-mentor--official dj-mentor--${escapeHtml(announcement.priority)}"
+      data-home-mentor-communication="direct"
+      aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
       ${mentorPortraitHtml(player)}
       <div class="dj-mentor__bubble">
         <div class="dj-mentor__meta">
@@ -199,7 +203,9 @@ export function rankedEventMentorHtml(player, selection, { preview = false } = {
   const status = selection?.effectiveStatus || event?.effectiveStatus || event?.effective_status || event?.status || 'scheduled';
   const copy = RANKED_EVENT_COPY[status] || RANKED_EVENT_COPY.scheduled;
   return `
-    <section class="dj-mentor dj-mentor--official dj-mentor--ranked" aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
+    <section class="dj-mentor dj-mentor--official dj-mentor--ranked"
+      data-home-mentor-communication="direct"
+      aria-labelledby="${preview ? 'mentor-preview-title' : 'dj-mentor-title'}">
       ${mentorPortraitHtml(player, { character: { id: 'master', name: 'Mestre', image: 'assets/mentor/mentor.png?v1' } })}
       <div class="dj-mentor__bubble">
         <div class="dj-mentor__meta">
@@ -211,6 +217,21 @@ export function rankedEventMentorHtml(player, selection, { preview = false } = {
         <button type="button" class="dj-mentor__action"${preview ? ' disabled' : ` id="ranked-event-action" data-event-id="${escapeHtml(event?.id || '')}"`}>${escapeHtml(copy.action)}</button>
       </div>
     </section>`;
+}
+
+export function countDirectMentorCommunications(value) {
+  if (typeof value === 'string') {
+    return (value.match(/data-home-mentor-communication=["']direct["']/g) || []).length;
+  }
+  return value?.querySelectorAll?.('[data-home-mentor-communication="direct"]').length || 0;
+}
+
+export function assertSingleDirectMentorCommunication(value) {
+  const count = countDirectMentorCommunications(value);
+  if (count !== 1) {
+    throw new Error(`HOME_MENTOR_COMMUNICATION_CONFLICT:${count}`);
+  }
+  return true;
 }
 
 function formatDateTime(value) {
