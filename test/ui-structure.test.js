@@ -20,6 +20,7 @@ const worldMapUrl = new URL('../app/js/ui/worldMap.js', import.meta.url);
 const homeUrl = new URL('../app/js/ui/home.js', import.meta.url);
 const topicTreeUrl = new URL('../app/js/ui/topicTree.js', import.meta.url);
 const performanceUrl = new URL('../app/js/ui/performance.js', import.meta.url);
+const performanceCssUrl = new URL('../app/css/performance-mobile.css', import.meta.url);
 const performanceServiceUrl = new URL('../app/js/services/performanceService.js', import.meta.url);
 const navigationUrl = new URL('../app/js/ui/navigation.js', import.meta.url);
 const adminAppUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
@@ -32,7 +33,7 @@ test('navegação principal usa um único vocabulário sem renomear rotas intern
     readFile(indexUrl, 'utf8'),
     readFile(appUrl, 'utf8'),
   ]);
-  for (const [screen, label] of [['home', 'Hoje'], ['map', 'Estudar'], ['edital', 'Edital'], ['expedition', 'Plano'], ['performance', 'Evolução']]) {
+  for (const [screen, label] of [['home', 'Hoje'], ['map', 'Estudar'], ['edital', 'Edital'], ['expedition', 'Plano'], ['performance', 'Desempenho']]) {
     assert.match(navigation, new RegExp(`screen: '${screen}'.+label: '${label}'`));
     assert.match(html, new RegExp(`data-screen="${screen}"[\\s\\S]+?<span>${label}<\\/span>`));
   }
@@ -138,6 +139,22 @@ test('desempenho possui rota e serviço próprios derivados apenas de dados reai
   }
   assert.match(performance, /Domínio do edital/);
   assert.doesNotMatch(performance + service, /ranking|moeda|checkout|applyXp/i);
+});
+
+test('painel de desempenho usa Orion e identidade visual própria sem renomear a rota interna', async () => {
+  const [performance, navigation, css, mobileCss] = await Promise.all([
+    readFile(performanceUrl, 'utf8'),
+    readFile(navigationUrl, 'utf8'),
+    readFile(cssUrl, 'utf8'),
+    readFile(performanceCssUrl, 'utf8'),
+  ]);
+  assert.match(performance, /<h1>Desempenho<\/h1>/);
+  assert.match(performance, /orion-performance-analyst\.webp/);
+  assert.match(performance, /Orion analisando o desempenho do estudante/);
+  assert.match(navigation, /screen: 'performance'.+label: 'Desempenho'/);
+  assert.match(css, /--performance-blue:#38bdf8/);
+  assert.match(mobileCss, /\.ev-mastery-card__mentor/);
+  assert.doesNotMatch(performance, /hero-evolution-dynamic/);
 });
 
 test('edital verticalizado mostra taxa de acerto e permite enfrentar subtópico', async () => {

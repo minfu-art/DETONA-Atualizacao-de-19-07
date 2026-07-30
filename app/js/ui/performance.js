@@ -49,7 +49,7 @@ function compactHeader(contest, period) {
   return `<header class="performance-mobile-header">
     <button type="button" class="performance-icon-button" id="performance-back" aria-label="Voltar para Hoje">${ICO.home?.() || ''}</button>
     <div>
-      <span>Evolução</span>
+      <span>Desempenho</span>
       <strong>${escapeHtml(contestName)}</strong>
       ${role ? `<small>${escapeHtml(role)}</small>` : ''}
     </div>
@@ -58,7 +58,7 @@ function compactHeader(contest, period) {
   </header>`;
 }
 
-const EVOLUTION_HERO = 'assets/ui/hero-evolution-dynamic.png?v=1';
+const PERFORMANCE_MENTOR_ART = 'assets/mentor/orion-performance-analyst.webp?v=1';
 
 /** Caixa unificada: domínio do edital no topo + progresso geral + conteúdo restante + herói à esquerda */
 function masteryHeroCard(data) {
@@ -79,8 +79,12 @@ function masteryHeroCard(data) {
       </div>
     </div>
     <div class="ev-mastery-card__body">
-      <div class="ev-mastery-card__hero" aria-hidden="true">
-        <img src="${EVOLUTION_HERO}" alt="" class="ev-mastery-card__hero-img" width="420" height="560" decoding="async" />
+      <div class="ev-mastery-card__hero">
+        <img src="${PERFORMANCE_MENTOR_ART}" alt="Orion analisando o desempenho do estudante" class="ev-mastery-card__hero-img" width="1024" height="1536" decoding="async" />
+        <div class="ev-mastery-card__mentor" aria-hidden="true">
+          <strong>ORION</strong>
+          <span>Analista de desempenho</span>
+        </div>
       </div>
       <div class="ev-mastery-card__stats">
         <div class="ev-mastery-stat ev-mastery-stat--progress">
@@ -106,7 +110,7 @@ function overviewCards(data) {
   const accuracy = data.overview.accuracy == null ? '—' : `${data.overview.accuracy}%`;
   const accuracyDetail = data.hasQuestionData ? `${data.overview.correct} acertos` : 'Ainda não há respostas no período';
   return `<section class="performance-overview" aria-labelledby="performance-overview-title">
-    <div class="performance-section-heading"><div><span>Visão geral</span><h2 id="performance-overview-title">Indicadores do período</h2></div></div>
+    <div class="performance-section-heading"><div><span>Resumo do período</span><h2 id="performance-overview-title">Indicadores principais</h2></div></div>
     <div class="performance-metric-grid">
       <article><span>Taxa de acertos</span><strong>${accuracy}</strong><small>${escapeHtml(accuracyDetail)}</small></article>
       <article><span>Questões</span><strong>${data.overview.answered}</strong><small>${data.overview.errors} erros registrados</small></article>
@@ -195,7 +199,7 @@ function disciplineRows(rows, mode = 'edital') {
 function disciplinesCard(data) {
   return `<section class="performance-panel performance-disciplines" aria-labelledby="performance-disciplines-title">
     <div class="performance-section-heading">
-      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Toque para expandir</h2></div>
+      <div><span>Desempenho por disciplina</span><h2 id="performance-disciplines-title">Precisão em cada matéria</h2></div>
       <label class="performance-sort"><span>Ordenar</span><select id="performance-discipline-sort"><option value="edital">Ordem do edital</option><option value="lowest">Menor desempenho</option><option value="highest">Maior desempenho</option></select></label>
     </div>
     ${data.disciplines.length
@@ -278,7 +282,7 @@ function reviewsCard(data) {
 function summaryCard(data) {
   return `<section class="performance-summary" aria-labelledby="performance-summary-title">
     <span aria-hidden="true">${ICO.chart?.() || ''}</span>
-    <div><h2 id="performance-summary-title">Resumo da jornada</h2><p>${escapeHtml(data.summary)}</p></div>
+    <div><h2 id="performance-summary-title">Síntese do desempenho</h2><p>${escapeHtml(data.summary)}</p></div>
   </section>`;
 }
 
@@ -287,7 +291,7 @@ function page(data, contest) {
   const contestRole = contest?.role || contest?.cargo || '';
   return `${compactHeader(contest, data.period)}
     <header class="performance-desktop-header">
-      <div><span>Inteligência de estudo</span><h1>Evolução</h1><p>${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
+      <div><span>Painel do estudante</span><h1>Desempenho</h1><p>Acompanhe domínio, precisão, tempo e memória · ${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
       <div>${periodFilter(data.period, 'performance-period-desktop')}<button type="button" class="performance-avatar" id="performance-profile-desktop" aria-label="Abrir meu perfil">${ICO.user?.() || 'P'}<span>Meu perfil</span></button></div>
     </header>
     <main class="performance-dashboard">
