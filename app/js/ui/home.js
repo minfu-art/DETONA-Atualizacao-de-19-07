@@ -38,7 +38,12 @@ import {
   rankedEventMentorHtml,
 } from './mentorCommunication.js';
 import { refreshEmblems } from '../services/emblemService.js';
+import {
+  emptyOrionEvolutionModel,
+  orionEvolutionService,
+} from '../services/orionEvolutionService.js';
 import { emblemArt } from './emblems/emblemArt.js';
+import { renderOrionEvolution } from './orionEvolution.js';
 
 export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
@@ -51,13 +56,17 @@ export async function renderHome(root, navigate, ctx) {
 
   await ensureWellbeingHabits();
 
-  const [radar, disciplines, cards, routines, wbState, reviewData] = await Promise.all([
+  const [radar, disciplines, cards, routines, wbState, reviewData, orionEvolution] = await Promise.all([
     getRadarStats(),
     progressRepository.getAll(STORES.disciplines),
     progressRepository.getAll(STORES.mvpCards),
     progressRepository.getAll(STORES.routines),
     getTodayWellbeingState(),
     getReviewDashboardData(),
+    orionEvolutionService.getSnapshot().catch((error) => {
+      console.warn('[home] análise do Orion indisponível', error?.message || error);
+      return emptyOrionEvolutionModel();
+    }),
   ]);
 
   const today = todayStr();
@@ -167,6 +176,7 @@ export async function renderHome(root, navigate, ctx) {
     avgAccuracy,
     wbState,
     emblemState,
+    orionEvolution,
   });
   return;
 
@@ -528,6 +538,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     routine, meta, planned, doneToday, missionLeft, missionFocus,
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
     phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
+    orionEvolution = emptyOrionEvolutionModel(),
   } = data;
   const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
   const missionHero = customHero
@@ -819,6 +830,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           <div><small>${icon('chartSteps', 'ico--sm')} Domínio médio</small><strong>${avgAccuracy}%</strong></div>
         </div>
       </section>
+
+      ${renderOrionEvolution(orionEvolution)}
 
       ${mentorHtml}
     </div>`;

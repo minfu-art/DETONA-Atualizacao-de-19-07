@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v85-career-library';
+const CACHE = 'detona-v86-orion-evolution';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -87,6 +87,7 @@ const ASSETS = [
   './js/services/questionExplanationService.js',
   './js/services/reviewService.js',
   './js/services/performanceService.js',
+  './js/services/orionEvolutionService.js',
   './js/data/editalSeed.js',
   './js/data/emblemCatalog.js',
   './js/data/insigniaCatalog.js',
@@ -125,6 +126,7 @@ const ASSETS = [
   './js/ui/onboarding.js',
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
+  './js/ui/orionEvolution.js',
   './js/ui/mentorCommunication.js',
   './js/ui/rankedEvent.js',
   './js/ui/emblems/emblemArt.js',
@@ -162,6 +164,7 @@ const ASSETS = [
   './assets/hero/tiers/female/tier-100.png',
   './assets/mentor/mentor.png',
   './assets/mentor/mentora.png',
+  './assets/mentor/orion-evolution.png',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

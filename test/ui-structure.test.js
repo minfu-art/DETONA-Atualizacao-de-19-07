@@ -210,7 +210,8 @@ test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáv
   assert.match(dashboardCss, /\.dj-mentor/);
   assert.match(css, /today-mission/);
   assert.match(css, /today-grid/);
-  assert.match(css, /today-evolution/);
+  assert.match(source, /renderOrionEvolution\(orionEvolution\)/);
+  assert.match(css, /orion-evolution/);
 });
 
 test('resultado do desafio comunica domínio e XP sem misturar LV acadêmico', async () => {
