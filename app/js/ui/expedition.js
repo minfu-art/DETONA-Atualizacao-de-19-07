@@ -28,19 +28,20 @@ import { getHabitConfiguration } from '../core/wellbeing.js';
 import { habitRoutineEntries } from '../services/kaelaVigorService.js';
 
 const TABS = [
-  ['semana', 'Semana'],
-  ['mes', 'Mês'],
-  ['hoje', 'Hoje'],
-  ['vida', 'Vida'],
-  ['jornada', 'Prova'],
-  ['foco', 'Sessão'],
-  ['progresso', 'Análise'],
+  { id: 'hoje', label: 'Missões', detail: 'Plano de hoje', icon: 'target' },
+  { id: 'semana', label: 'Semana', detail: 'Cronograma', icon: 'calendar' },
+  { id: 'mes', label: 'Calendário', detail: 'Visão mensal', icon: 'calendar' },
+  { id: 'revisao', label: 'Revisões', detail: 'Memória em dia', icon: 'layers' },
+  { id: 'vida', label: 'Disponibilidade', detail: 'Vida real', icon: 'focus' },
+  { id: 'jornada', label: 'Até a prova', detail: 'Rota completa', icon: 'flag' },
+  { id: 'foco', label: 'Sessão', detail: 'Modo foco', icon: 'bolt' },
+  { id: 'progresso', label: 'Resultados', detail: 'Análise', icon: 'chart' },
 ];
 
 const DAY_NAMES = WEEKDAY_SHORT;
 const LIFE_DAY_LABELS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-const PLANNER_ART = 'assets/ui/plan-planner-female.jpg?v=1';
+const PLANNER_ART = 'assets/mentors/evi.webp?v=1';
 
 function endTimeFrom(start, minutes) {
   if (!start || !/^\d{2}:\d{2}$/.test(start)) return null;
@@ -62,7 +63,9 @@ function familyMinutes(blocks = []) {
 }
 
 export async function renderExpedition(root, navigate, ctx) {
-  let tab = 'semana';
+  const requestedTab = String(ctx?.planSection || '');
+  let tab = TABS.some((item) => item.id === requestedTab) ? requestedTab : 'semana';
+  if (ctx) delete ctx.planSection;
   let profile = await routineService.ensureProfile();
   let focusCtl = null;
   let focusTimer = null;
@@ -93,7 +96,7 @@ export async function renderExpedition(root, navigate, ctx) {
     else if (tab === 'progresso') await paintProgresso();
     else if (tab === 'revisao') await paintRevisao();
 
-    mountShell(TABS.find((t) => t[0] === tab)?.[1] || 'Plano');
+    mountShell(TABS.find((item) => item.id === tab)?.label || 'Plano');
     bindTabs();
   }
 
@@ -110,10 +113,22 @@ export async function renderExpedition(root, navigate, ctx) {
 
   function tabsHtml(active) {
     return `
-      <nav class="routine-tabs plan-tabs" aria-label="Áreas do plano">
-        ${TABS.map(([id, label]) => `
-          <button type="button" class="routine-tab ${active === id ? 'is-active' : ''}" data-tab="${id}" aria-current="${active === id ? 'page' : 'false'}">${label}</button>
-        `).join('')}
+      <nav class="plan-workspace-nav" aria-label="Áreas do plano">
+        <div class="plan-workspace-nav__intro">
+          <span>Central de planejamento</span>
+          <strong>Escolha o que deseja organizar</strong>
+        </div>
+        <div class="plan-workspace-nav__rail">
+          ${TABS.map((item) => `
+            <button type="button" class="plan-workspace-tab ${active === item.id ? 'is-active' : ''}" data-tab="${item.id}" aria-current="${active === item.id ? 'page' : 'false'}" aria-label="${item.label}: ${item.detail}">
+              <span class="plan-workspace-tab__icon" aria-hidden="true">${icon(item.icon, 'ico--sm')}</span>
+              <span class="plan-workspace-tab__copy">
+                <strong>${item.label}</strong>
+                <small>${item.detail}</small>
+              </span>
+            </button>
+          `).join('')}
+        </div>
       </nav>`;
   }
 
@@ -122,14 +137,14 @@ export async function renderExpedition(root, navigate, ctx) {
     return `
       <section class="plan-banner" aria-label="Planejamento do edital">
         <div class="plan-banner__copy">
-          <span class="plan-banner__kicker">Sua estrategista</span>
+          <span class="plan-banner__kicker">Evi organiza sua próxima missão</span>
           <h1>${escapeHtml(title || 'Planeje a semana com inteligência')}</h1>
           <p>${escapeHtml(subtitle || 'Equilibre estudo, trabalho e descanso para sustentar a jornada até a prova.')}</p>
           ${statsHtml ? `<div class="plan-banner__stats">${statsHtml}</div>` : ''}
         </div>
-        <div class="plan-banner__art" aria-hidden="true">
+        <div class="plan-banner__art">
           <div class="plan-banner__glow"></div>
-          <img class="plan-banner__hero" src="${PLANNER_ART}" alt="" width="300" height="300" decoding="async" />
+          <img class="plan-banner__hero" src="${PLANNER_ART}" alt="Evi, guia de missões do DETONA" width="300" height="300" decoding="async" />
         </div>
       </section>`;
   }
@@ -1258,6 +1273,26 @@ export async function renderExpedition(root, navigate, ctx) {
     const m = snap.metrics;
     root.innerHTML = `
       ${tabsHtml('revisao')}
+      ${planBanner({
+        title: 'Proteja o que você já aprendeu',
+        subtitle: 'Confira seu ritmo, abra a fila de revisão e ajuste a próxima semana sem perder o foco da missão principal.',
+        stats: [
+          { value: `${m.actualHours || 0}h`, label: 'realizadas', icon: icon('focus', 'ico--sm') },
+          { value: `${m.daysMet || 0}/${m.daysProgrammed || 0}`, label: 'dias cumpridos', icon: icon('checkCircle', 'ico--sm') },
+          { value: `${m.weeklyConsistency || 0}%`, label: 'constância', icon: icon('flame', 'ico--sm') },
+        ],
+      })}
+      <section class="plan-review-entry mb-8" aria-labelledby="plan-review-entry-title">
+        <div class="plan-review-entry__icon" aria-hidden="true">${icon('layers')}</div>
+        <div>
+          <span class="plan-review-entry__eyebrow">Plano de revisão</span>
+          <h2 id="plan-review-entry-title">Reforce os pontos no momento certo</h2>
+          <p>A fila prioriza o conteúdo que precisa voltar à memória. O início da atividade continua sob seu controle.</p>
+        </div>
+        <button type="button" class="btn btn-primary" id="plan-open-review">
+          Ver fila de revisão ${icon('chevronRight', 'ico--sm')}
+        </button>
+      </section>
       <section class="ro-window mb-8">
         <div class="ro-title">Revisão semanal (~2 min)</div>
         <div class="ro-body">
@@ -1290,6 +1325,11 @@ export async function renderExpedition(root, navigate, ctx) {
         </div>
       </section>
     `;
+
+    $('#plan-open-review', root)?.addEventListener('click', () => {
+      SFX.click();
+      navigate('review');
+    });
 
     $('#rw-save', root)?.addEventListener('click', async () => {
       SFX.click();

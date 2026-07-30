@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v88-evi-daily-missions';
+const CACHE = 'detona-v89-plan-workspace';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -139,6 +139,7 @@ const ASSETS = [
   './js/ui/grimorio.js',
   './js/ui/performance.js',
   './js/ui/expedition.js',
+  './css/plan-edital.css',
   './js/ui/wellbeingUI.js',
   './js/ui/topicTree.js',
   './js/ui/profile.js',

@@ -833,9 +833,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   });
   $('#evi-daily-action', root)?.addEventListener('click', () => {
     SFX.click();
-    if (eviMission.actionRoute === 'review') startReview();
-    else if (eviMission.actionRoute === 'battle') startBattle();
-    else navigate(eviMission.actionRoute || 'expedition');
+    ctx.planSection = eviMission.actionSection || 'hoje';
+    navigate('expedition');
   });
   $('#today-exam-date', root)?.addEventListener('click', () => { SFX.click(); navigate('profile'); });
   $('#today-emblems', root)?.addEventListener('click', () => {

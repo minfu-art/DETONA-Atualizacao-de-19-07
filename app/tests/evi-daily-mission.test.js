@@ -55,8 +55,10 @@ test('prioriza revisão vencida somente quando ela faz parte do plano', () => {
     }],
   });
   assert.equal(result.nextMission.type, 'review_due');
-  assert.equal(result.actionLabel, 'Abrir revisão');
-  assert.equal(result.actionRoute, 'review');
+  assert.equal(result.actionLabel, 'Ver plano de revisão');
+  assert.equal(result.actionRoute, 'expedition');
+  assert.equal(result.actionSection, 'revisao');
+  assert.equal(result.nextMission.actionSection, 'revisao');
 });
 
 test('retoma tarefa iniciada quando não existe prioridade anterior', () => {
@@ -72,8 +74,10 @@ test('retoma tarefa iniciada quando não existe prioridade anterior', () => {
     studySessions: [{ blockId: 'started-1', status: 'running' }],
   });
   assert.equal(result.nextMission.type, 'started');
-  assert.equal(result.actionLabel, 'Continuar batalha');
-  assert.equal(result.actionRoute, 'battle');
+  assert.equal(result.actionLabel, 'Retomar pelo plano');
+  assert.equal(result.actionRoute, 'expedition');
+  assert.equal(result.actionSection, 'hoje');
+  assert.equal(result.nextMission.actionSection, 'hoje');
 });
 
 test('redistribui pesos quando categorias planejadas estão ausentes', () => {
@@ -149,6 +153,7 @@ test('sem plano oferece fallback seguro para planejar o dia', () => {
   assert.equal(result.state, 'no_plan');
   assert.equal(result.actionLabel, 'Planejar o dia');
   assert.equal(result.actionRoute, 'expedition');
+  assert.equal(result.nextMission.actionSection, 'hoje');
   assert.equal(result.dailyStar.status, 'locked');
 });
 
@@ -194,6 +199,7 @@ test('Home, CSS móvel e PWA integram a Evi sem rolagem horizontal', async () =>
   ]);
   assert.match(home, /eviDailyMissionService\.getSnapshot/);
   assert.match(home, /renderEviDailyMission\(eviMission\)/);
+  assert.match(home, /ctx\.planSection = eviMission\.actionSection \|\| 'hoje'/);
   assert.match(css, /\.evi-card\s*\{/);
   assert.match(css, /@media \(max-width: 620px\)/);
   assert.match(css, /\.evi-card__art[\s\S]*pointer-events:\s*none/);

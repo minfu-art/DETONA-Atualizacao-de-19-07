@@ -50,9 +50,18 @@ function routeForBlock(block) {
 
 function actionForBlock(block, { started = false } = {}) {
   const route = routeForBlock(block);
-  if (route === 'review') return { actionLabel: 'Abrir revisão', actionRoute: route };
-  if (started && route === 'battle') return { actionLabel: 'Continuar batalha', actionRoute: route };
-  return { actionLabel: 'Começar missão', actionRoute: route };
+  if (route === 'review') {
+    return {
+      actionLabel: 'Ver plano de revisão',
+      actionRoute: 'expedition',
+      actionSection: 'revisao',
+    };
+  }
+  return {
+    actionLabel: started ? 'Retomar pelo plano' : 'Ver plano de missões',
+    actionRoute: 'expedition',
+    actionSection: 'hoje',
+  };
 }
 
 function blockTitle(block, fallback = 'Missão planejada') {
@@ -157,8 +166,11 @@ function resolveNextMission({
         ? String(activeMission.title || `Resolver ${remaining} questões`)
         : `Resolver ${remaining} ${remaining === 1 ? 'questão' : 'questões'} da meta`,
       reason: 'É o próximo passo necessário para completar a meta acadêmica de hoje.',
-      actionLabel: 'Começar missão',
-      actionRoute: activeMission?.type === 'review' ? 'review' : 'battle',
+      actionLabel: activeMission?.type === 'review'
+        ? 'Ver plano de revisão'
+        : 'Ver plano de missões',
+      actionRoute: 'expedition',
+      actionSection: activeMission?.type === 'review' ? 'revisao' : 'hoje',
     };
   }
 
@@ -182,8 +194,9 @@ function resolveNextMission({
       type: 'completed',
       title: 'Plano acadêmico do dia concluído',
       reason: 'Confira o resultado e preserve seu ritmo.',
-      actionLabel: 'Ver resultado',
-      actionRoute: 'performance',
+      actionLabel: 'Ver plano concluído',
+      actionRoute: 'expedition',
+      actionSection: 'hoje',
     };
   }
 
@@ -195,6 +208,7 @@ function resolveNextMission({
       reason: 'Ainda não há tarefas acadêmicas planejadas para hoje.',
       actionLabel: 'Planejar o dia',
       actionRoute: 'expedition',
+      actionSection: 'hoje',
     };
   }
 
@@ -204,12 +218,11 @@ function resolveNextMission({
       type: 'maintenance',
       title: String(activeMission.title),
       reason: 'Uma missão leve mantém sua evolução sem inventar novas obrigações.',
-      actionLabel: 'Começar missão',
-      actionRoute: activeMission.type === 'review'
-        ? 'review'
-        : activeMission.type === 'battle'
-          ? 'battle'
-          : 'expedition',
+      actionLabel: activeMission.type === 'review'
+        ? 'Ver plano de revisão'
+        : 'Ver plano de missões',
+      actionRoute: 'expedition',
+      actionSection: activeMission.type === 'review' ? 'revisao' : 'hoje',
     };
   }
 
@@ -220,6 +233,7 @@ function resolveNextMission({
     reason: 'Ainda não há tarefas acadêmicas planejadas para hoje.',
     actionLabel: 'Planejar o dia',
     actionRoute: 'expedition',
+    actionSection: 'hoje',
   };
 }
 
@@ -331,6 +345,7 @@ export function buildEviDailyMissionModel({
     message: STATE_MESSAGES[state],
     actionLabel: nextMission.actionLabel,
     actionRoute: nextMission.actionRoute,
+    actionSection: nextMission.actionSection,
   };
 }
 
