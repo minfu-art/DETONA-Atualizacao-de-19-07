@@ -12,12 +12,12 @@ const STARTED_BLOCK_STATUSES = new Set(['in_progress', 'partially_completed']);
 const ACTIVE_SESSION_STATUSES = new Set(['running', 'paused']);
 
 const STATE_MESSAGES = Object.freeze({
-  start: 'Vamos começar pela missão que mais move seu plano hoje.',
+  start: 'Comece sua primeira missão para gerar progresso.',
   in_progress: 'Você já começou. Retome de onde parou e feche este bloco.',
   review_due: 'Uma revisão planejada venceu. Resolva agora para proteger a memória.',
   almost_done: 'Falta pouco. Conclua a próxima missão e garanta a estrela do dia.',
-  completed: 'Plano concluído. Sua estrela do dia está garantida.',
-  no_plan: 'Seu dia ainda não tem um plano. Vamos escolher uma missão possível.',
+  completed: 'Plano concluído. Sua estrela do dia foi conquistada.',
+  no_plan: 'Defina sua primeira meta diária.',
   overloaded: 'Há muita coisa para hoje. Foque somente na próxima missão certa.',
 });
 

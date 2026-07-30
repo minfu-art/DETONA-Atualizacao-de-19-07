@@ -609,6 +609,16 @@
   color: #f5f3ff;
   font-size: 12px;
 }
+.evi-card__stats .evi-card__no-reviews {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px;
+}
+.evi-card__no-reviews strong {
+  color: #b9c0db;
+  font-size: 9px;
+  font-weight: 700;
+}
 .evi-card__guidance {
   display: grid;
   gap: 2px;

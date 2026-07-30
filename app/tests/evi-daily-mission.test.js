@@ -177,9 +177,12 @@ test('interface mostra Evi, uma ação e todos os indicadores acessíveis', () =
   assert.match(html, /EVI/);
   assert.match(html, /GUIA DE MISSÕES/);
   assert.match(html, /evi\.webp/);
+  assert.match(html, /alt="Evi, guia de missões do DETONA"/);
   assert.match(html, /role="progressbar"/);
   assert.match(html, /aria-valuenow="25"/);
   assert.equal((html.match(/id="evi-daily-action"/g) || []).length, 1);
+  assert.match(html, /Nenhuma prevista hoje/);
+  assert.doesNotMatch(html, /0\s*\/\s*0/);
   assert.doesNotMatch(html, /\+\d+\s*XP/);
 });
 

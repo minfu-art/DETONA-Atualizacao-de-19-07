@@ -34,7 +34,9 @@ export function renderEviDailyMission(model) {
           </div>
           <div class="evi-card__stats">
             <span><small>Questões</small><strong>${Number(model?.questionsCompleted) || 0} / ${Number(model?.questionGoal) || 0}</strong></span>
-            <span><small>Revisões</small><strong>${Number(model?.reviewsCompleted) || 0} / ${Number(model?.reviewsPlanned) || 0}</strong></span>
+            ${Number(model?.reviewsPlanned) > 0
+              ? `<span><small>Revisões</small><strong>${Number(model?.reviewsCompleted) || 0} / ${Number(model?.reviewsPlanned) || 0}</strong></span>`
+              : '<span class="evi-card__no-reviews"><small>Revisões</small><strong>Nenhuma prevista hoje</strong></span>'}
           </div>
         </div>
         <div class="evi-card__guidance" aria-live="polite">
@@ -48,9 +50,9 @@ export function renderEviDailyMission(model) {
         </button>
         <blockquote>“Você não precisa fazer tudo. Apenas a próxima missão certa.”</blockquote>
       </div>
-      <div class="evi-card__art" aria-hidden="true">
-        <img src="./assets/mentors/evi.webp" alt="" width="1024" height="1024">
-        <span class="evi-card__fallback">EVI</span>
+      <div class="evi-card__art">
+        <img src="./assets/mentors/evi.webp" alt="Evi, guia de missões do DETONA" width="1024" height="1024">
+        <span class="evi-card__fallback" aria-hidden="true">EVI</span>
       </div>
     </section>`;
 }
