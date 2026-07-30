@@ -501,3 +501,48 @@ test('copy day e duplicate no serviço', async () => {
   const copies = await svc.copyDay('2026-07-15', '2026-07-16');
   assert.ok(copies.length >= 1);
 });
+test('geração semanal é idempotente e repara somente duplicatas automáticas planejadas', async () => {
+  const repository = memoryRepo('student', 'pc_al');
+  const service = new RoutineService({ repository });
+  await service.completeSetup({
+    model: 'equilibrada',
+    overrides: { availableDays: [0, 1, 2, 3, 4, 5, 6], restDays: [] },
+    generatePlan: false,
+  });
+
+  const [first, simultaneousRetry] = await Promise.all([
+    service.regenerateCurrentWeek(),
+    service.regenerateCurrentWeek(),
+  ]);
+  assert.equal(first.created, true);
+  assert.equal(simultaneousRetry, first);
+
+  const afterFirst = await repository.getAll('routineBlocks');
+  assert.ok(afterFirst.length > 0);
+  const retry = await service.regenerateCurrentWeek();
+  const afterRetry = await repository.getAll('routineBlocks');
+  assert.equal(retry.created, false);
+  assert.equal(retry.reason, 'already_exists');
+  assert.equal(afterRetry.length, afterFirst.length);
+
+  const original = afterFirst.find((block) => ['template', 'weakspot', 'review'].includes(block.source));
+  await repository.put('routineBlocks', {
+    ...original,
+    id: `${original.id}:duplicate`,
+    createdAt: new Date(Date.parse(original.createdAt) + 1_000).toISOString(),
+  });
+  await repository.put('routineBlocks', {
+    ...original,
+    id: `${original.id}:manual`,
+    source: 'user',
+  });
+
+  const week = await service.getWeekView();
+  const repaired = await repository.getAll('routineBlocks');
+  assert.equal(week.repairedDuplicates, 1);
+  assert.equal(
+    repaired.filter((block) => block.source === original.source).length,
+    afterFirst.filter((block) => block.source === original.source).length,
+  );
+  assert.ok(repaired.some((block) => block.id === `${original.id}:manual`));
+});

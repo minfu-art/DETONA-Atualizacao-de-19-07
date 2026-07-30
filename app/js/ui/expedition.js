@@ -70,6 +70,7 @@ export async function renderExpedition(root, navigate, ctx) {
   let focusCtl = null;
   let focusTimer = null;
   let pendingReschedule = null;
+  let planGenerationInFlight = false;
   let weekCursor = dateKey();
   let monthCursor = { year: new Date().getFullYear(), monthIndex: new Date().getMonth() };
 
@@ -518,6 +519,10 @@ export async function renderExpedition(root, navigate, ctx) {
     const maxDaily = view.maxDaily || 90;
     const rangeLabel = `${view.week[0].slice(8)}/${view.week[0].slice(5, 7)} – ${view.week[6].slice(8)}/${view.week[6].slice(5, 7)}`;
     const weekBlocks = view.blocks || [];
+    const hasGeneratedPlan = weekBlocks.some((block) => (
+      ['template', 'weakspot', 'review'].includes(block.source)
+      && ['planned', 'in_progress', 'partially_completed', 'completed'].includes(block.status)
+    ));
     const weekBal = familyMinutes(weekBlocks);
 
     root.innerHTML = `
@@ -582,7 +587,7 @@ export async function renderExpedition(root, navigate, ctx) {
           </div>` : ''}
         <div class="plan-week__actions">
           <button type="button" class="btn btn-primary" id="wk-add">+ Bloco inteligente</button>
-          <button type="button" class="btn" id="wk-regen">Gerar plano de estudo</button>
+          <button type="button" class="btn" id="wk-regen"${hasGeneratedPlan ? ' disabled aria-disabled="true" title="O plano desta semana já foi gerado"' : ''}>${hasGeneratedPlan ? 'Plano desta semana já gerado' : 'Gerar plano de estudo'}</button>
           <button type="button" class="btn btn-ghost" id="wk-vida">Ajustar vida (trabalho/descanso)</button>
           <button type="button" class="btn btn-ghost" id="wk-pause">${profile.paused ? 'Retomar' : 'Pausar'}</button>
         </div>
@@ -593,10 +598,29 @@ export async function renderExpedition(root, navigate, ctx) {
     $('#wk-next', root)?.addEventListener('click', () => { SFX.click(); weekCursor = shiftWeek(weekCursor, 1); paint(); });
     $('#wk-today', root)?.addEventListener('click', () => { SFX.click(); weekCursor = dateKey(); paint(); });
     $('#wk-regen', root)?.addEventListener('click', async () => {
+      if (planGenerationInFlight || hasGeneratedPlan) return;
+      planGenerationInFlight = true;
+      const button = root.querySelector('#wk-regen');
+      if (button) {
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+        button.textContent = 'Gerando plano…';
+      }
       SFX.click();
-      await routineService.regenerateCurrentWeek();
-      toast('Plano de estudo regenerado (concluídos preservados).');
-      paint();
+      try {
+        const result = await routineService.regenerateCurrentWeek();
+        toast(result.created ? 'Plano de estudo gerado.' : 'O plano desta semana já está pronto.');
+        await paint();
+      } catch (error) {
+        toast(error?.message || 'Não foi possível gerar o plano.');
+        if (button) {
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+          button.textContent = 'Gerar plano de estudo';
+        }
+      } finally {
+        planGenerationInFlight = false;
+      }
     });
     $('#wk-pause', root)?.addEventListener('click', async () => {
       profile = await routineService.saveProfile({ paused: !profile.paused });

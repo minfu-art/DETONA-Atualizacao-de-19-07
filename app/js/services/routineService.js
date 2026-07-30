@@ -65,9 +65,27 @@ function repo() {
   return progressRepository;
 }
 
+const AUTOMATIC_PLAN_SOURCES = new Set(['template', 'weakspot', 'review']);
+const ACTIVE_PLAN_STATUSES = new Set(['planned', 'in_progress', 'partially_completed', 'completed']);
+
+function automaticPlanFingerprint(block = {}) {
+  return [
+    block.date,
+    block.startTime,
+    block.endTime,
+    block.plannedMinutes,
+    block.activityType,
+    block.title,
+    block.subjectId,
+    block.subtopicId,
+    block.source,
+  ].map((value) => String(value ?? '')).join('|');
+}
+
 export class RoutineService {
   constructor({ repository = progressRepository } = {}) {
     this.repository = repository;
+    this.weekPlanGeneration = null;
   }
 
   userId() {
@@ -151,9 +169,59 @@ export class RoutineService {
     return profile;
   }
 
+  async repairGeneratedPlanDuplicates(week = weekDatesFrom()) {
+    const existing = await this.repository.getAll(STORES.routineBlocks);
+    const seen = new Set();
+    let removed = 0;
+    const candidates = existing
+      .filter((block) => (
+        week.includes(block.date)
+        && block.status === 'planned'
+        && AUTOMATIC_PLAN_SOURCES.has(block.source)
+      ))
+      .sort((a, b) => String(a.createdAt || '').localeCompare(String(b.createdAt || '')) || String(a.id).localeCompare(String(b.id)));
+
+    for (const block of candidates) {
+      const fingerprint = automaticPlanFingerprint(block);
+      if (!seen.has(fingerprint)) {
+        seen.add(fingerprint);
+        continue;
+      }
+      await this.repository.remove(STORES.routineBlocks, block.id);
+      removed += 1;
+    }
+    return removed;
+  }
+
   async regenerateCurrentWeek(profile) {
+    if (this.weekPlanGeneration) return this.weekPlanGeneration;
+    this.weekPlanGeneration = this.generateCurrentWeekOnce(profile);
+    try {
+      return await this.weekPlanGeneration;
+    } finally {
+      this.weekPlanGeneration = null;
+    }
+  }
+
+  async generateCurrentWeekOnce(profile) {
     profile = profile || await this.ensureProfile();
     const week = weekDatesFrom();
+    const repairedDuplicates = await this.repairGeneratedPlanDuplicates(week);
+    const existing = await this.repository.getAll(STORES.routineBlocks);
+    const activePlan = existing.filter((block) => (
+      week.includes(block.date)
+      && AUTOMATIC_PLAN_SOURCES.has(block.source)
+      && ACTIVE_PLAN_STATUSES.has(block.status)
+    ));
+    if (activePlan.length) {
+      return {
+        created: false,
+        reason: 'already_exists',
+        blocks: activePlan,
+        repairedDuplicates,
+      };
+    }
+
     const subtopics = await this.repository.getAll(STORES.subtopics);
     const weak = weakSpotSuggestions(subtopics, { limit: 6 });
     let dueReviews = 0;
@@ -163,14 +231,6 @@ export class RoutineService {
       dueReviews = rq.filter((i) => i.status !== 'frozen' && (i.nextReviewAt || '') <= `${today}T23:59:59`).length;
     } catch { /* ignore */ }
 
-    const existing = await this.repository.getAll(STORES.routineBlocks);
-    // remove planned template blocks da semana atual (preserva completed/history)
-    for (const b of existing) {
-      if (week.includes(b.date) && ['planned'].includes(b.status) && ['template', 'weakspot', 'review'].includes(b.source)) {
-        await this.repository.remove(STORES.routineBlocks, b.id);
-      }
-    }
-
     const generated = generateWeekPlan(profile, {
       weekDates: week,
       weakSubtopics: weak,
@@ -179,7 +239,12 @@ export class RoutineService {
       contestId: this.contestId(),
     });
     if (generated.length) await this.repository.putMany(STORES.routineBlocks, generated);
-    return generated;
+    return {
+      created: true,
+      reason: null,
+      blocks: generated,
+      repairedDuplicates,
+    };
   }
 
   async listBlocks({ from, to } = {}) {
@@ -664,6 +729,7 @@ export class RoutineService {
   async getWeekView(reference = dateKey()) {
     const profile = await this.ensureProfile();
     const week = weekDatesFrom(reference);
+    const repairedDuplicates = await this.repairGeneratedPlanDuplicates(week);
     const blocks = await this.listBlocks({ from: week[0], to: week[6] });
     const states = [];
     for (const d of week) states.push(await this.getDailyState(d));
@@ -680,6 +746,7 @@ export class RoutineService {
       days,
       summary,
       maxDaily: profile.maxDailyMinutes || 90,
+      repairedDuplicates,
     };
   }
 

@@ -44,3 +44,15 @@ test('workspace mantém acessibilidade e tratamento responsivo no celular', asyn
   assert.match(css, /@media \(max-width: 620px\)/);
   assert.match(css, /\.plan-review-entry \.btn[\s\S]*width:\s*100%/);
 });
+test('geração semanal bloqueia repetição e comunica o plano existente', async () => {
+  const [expedition, service] = await Promise.all([
+    source('js/ui/expedition.js'),
+    source('js/services/routineService.js'),
+  ]);
+  assert.match(expedition, /planGenerationInFlight/);
+  assert.match(expedition, /Plano desta semana já gerado/);
+  assert.match(expedition, /aria-busy/);
+  assert.match(service, /weekPlanGeneration/);
+  assert.match(service, /reason: 'already_exists'/);
+  assert.match(service, /repairGeneratedPlanDuplicates/);
+});
