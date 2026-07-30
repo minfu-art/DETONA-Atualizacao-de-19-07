@@ -19,7 +19,7 @@ test('workspace do plano oferece missões, revisões e todas as áreas existente
   assert.match(expedition, /label: 'Revisões'/);
   assert.match(expedition, /plan-workspace-nav/);
   assert.match(expedition, /Evi organiza sua próxima missão/);
-  assert.match(expedition, /assets\/mentors\/evi\.webp/);
+  assert.match(expedition, /assets\/mentors\/evi-plan-strategist\.webp/);
 });
 
 test('contexto vindo da Home abre diretamente o plano solicitado', async () => {
@@ -38,7 +38,8 @@ test('workspace mantém acessibilidade e tratamento responsivo no celular', asyn
   ]);
   assert.match(expedition, /aria-label="Áreas do plano"/);
   assert.match(expedition, /aria-current=/);
-  assert.match(expedition, /alt="Evi, guia de missões do DETONA"/);
+  assert.match(expedition, /alt="Evi organizando o plano de missões"/);
+  assert.match(css, /\.plan-banner__hero[\s\S]*animation:\s*none/);
   assert.match(css, /\.plan-workspace-nav__rail[\s\S]*overflow-x:\s*auto/);
   assert.match(css, /@media \(max-width: 620px\)/);
   assert.match(css, /\.plan-review-entry \.btn[\s\S]*width:\s*100%/);

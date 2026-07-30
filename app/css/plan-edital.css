@@ -10,7 +10,7 @@
   isolation: isolate;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(150px, 0.65fr);
+  grid-template-columns: 1fr;
   gap: 18px;
   min-height: 174px;
   margin-bottom: 16px;
@@ -34,6 +34,7 @@
   position: relative;
   z-index: 1;
   min-width: 0;
+  width: min(62%, 650px);
   align-self: center;
 }
 .plan-banner__kicker {
@@ -76,39 +77,34 @@
 }
 .plan-banner__stats strong { color: #fdba74; }
 .plan-banner__art {
-  position: relative;
-  z-index: 1;
-  min-height: 150px;
-  display: grid;
-  place-items: end center;
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 auto;
+  width: min(61%, 680px);
+  min-height: 0;
+  overflow: hidden;
   pointer-events: none;
+  opacity: 0.96;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.78) 23%, #000 42%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.78) 23%, #000 42%);
 }
 .plan-banner__glow {
-  position: absolute;
-  width: 176px;
-  height: 176px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 68%);
-  filter: blur(6px);
-  animation: planGlow 3.2s ease-in-out infinite;
+  display: none;
 }
 @keyframes planGlow {
   0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
   50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
 }
 .plan-banner__hero {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 176px;
-  height: 174px;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 12px 18px rgba(88, 28, 135, 0.4));
-  animation: planHeroFloat 3.4s ease-in-out infinite;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 34%;
+  filter: saturate(1.04) contrast(1.03);
+  animation: none;
 }
 @keyframes planHeroFloat {
   0%, 100% { transform: translateY(0); }
@@ -750,14 +746,23 @@
 }
 @media (max-width: 620px) {
   .plan-banner {
-    grid-template-columns: minmax(0, 1fr) 100px;
+    grid-template-columns: 1fr;
     min-height: 148px;
     padding: 15px;
     border-radius: 19px;
   }
   .plan-banner__hero {
-    max-width: 108px;
-    height: 132px;
+    max-width: none;
+    height: 100%;
+    object-position: 66% 38%;
+  }
+  .plan-banner__copy {
+    width: 64%;
+  }
+  .plan-banner__art {
+    width: 60%;
+    min-height: 0;
+    opacity: 0.88;
   }
   .plan-banner h1 {
     font-size: 20px;
@@ -810,8 +815,11 @@
   .plan-banner {
     grid-template-columns: 1fr;
   }
+  .plan-banner__copy {
+    width: 68%;
+  }
   .plan-banner__art {
-    order: -1;
-    min-height: 110px;
+    width: 58%;
+    min-height: 0;
   }
 }

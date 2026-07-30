@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v89-plan-workspace';
+const CACHE = 'detona-v90-plan-strategist-art';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -169,6 +169,7 @@ const ASSETS = [
   './assets/mentor/mentora.png',
   './assets/mentor/orion-evolution.png',
   './assets/mentors/evi.webp',
+  './assets/mentors/evi-plan-strategist.webp',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

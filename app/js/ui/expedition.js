@@ -41,7 +41,7 @@ const TABS = [
 const DAY_NAMES = WEEKDAY_SHORT;
 const LIFE_DAY_LABELS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-const PLANNER_ART = 'assets/mentors/evi.webp?v=1';
+const PLANNER_ART = 'assets/mentors/evi-plan-strategist.webp?v=1';
 
 function endTimeFrom(start, minutes) {
   if (!start || !/^\d{2}:\d{2}$/.test(start)) return null;
@@ -144,7 +144,7 @@ export async function renderExpedition(root, navigate, ctx) {
         </div>
         <div class="plan-banner__art">
           <div class="plan-banner__glow"></div>
-          <img class="plan-banner__hero" src="${PLANNER_ART}" alt="Evi, guia de missões do DETONA" width="300" height="300" decoding="async" />
+          <img class="plan-banner__hero" src="${PLANNER_ART}" alt="Evi organizando o plano de missões" width="1536" height="1024" decoding="async" />
         </div>
       </section>`;
   }
