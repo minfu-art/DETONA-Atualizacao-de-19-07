@@ -3,6 +3,21 @@ import { escapeHtml } from './helpers.js';
 import { PRIMARY_NAV_ITEMS, UTILITY_NAV_ITEMS, SCREEN_TITLES, primaryScreenFor } from './navigation.js?v=72';
 
 const LIBRARY_ITEM = { screen: 'library', icon: 'book', label: 'Biblioteca' };
+const SCREEN_THEMES = Object.freeze({
+  home: 'today',
+  map: 'study',
+  topicTree: 'study',
+  edital: 'study',
+  battle: 'battle',
+  review: 'study',
+  expedition: 'plan',
+  performance: 'performance',
+  grimorio: 'performance',
+  wellbeing: 'habits',
+  rankedEvent: 'ranked',
+  profile: 'profile',
+  library: 'library',
+});
 
 function icon(name) {
   return ICO[name]?.() || '';
@@ -10,13 +25,13 @@ function icon(name) {
 
 export function sectionHeader({ eyebrow = '', title, subtitle = '', actions = '' }) {
   return `
-    <header class="section-header">
-      <div class="section-header__copy">
-        ${eyebrow ? `<span class="section-header__eyebrow">${escapeHtml(eyebrow)}</span>` : ''}
-        <h1 class="section-header__title">${escapeHtml(title)}</h1>
-        ${subtitle ? `<p class="section-header__subtitle">${escapeHtml(subtitle)}</p>` : ''}
+    <header class="section-header ds-section-header">
+      <div class="section-header__copy ds-section-header__copy">
+        ${eyebrow ? `<span class="section-header__eyebrow ds-section-header__eyebrow">${escapeHtml(eyebrow)}</span>` : ''}
+        <h1 class="section-header__title ds-section-header__title">${escapeHtml(title)}</h1>
+        ${subtitle ? `<p class="section-header__subtitle ds-section-header__subtitle">${escapeHtml(subtitle)}</p>` : ''}
       </div>
-      ${actions ? `<div class="section-header__actions">${actions}</div>` : ''}
+      ${actions ? `<div class="section-header__actions ds-section-header__actions">${actions}</div>` : ''}
     </header>`;
 }
 
@@ -33,7 +48,7 @@ export function statsPanel(items) {
 
 export function mountPageContainer(root, { variant = '', header = '', stats = '' } = {}) {
   const page = document.createElement('div');
-  page.className = `page-container${variant ? ` page-container--${variant}` : ''}`;
+  page.className = `page-container ds-page${variant ? ` page-container--${variant}` : ''}`;
   if (header) page.insertAdjacentHTML('beforeend', header);
   if (stats) page.insertAdjacentHTML('beforeend', stats);
   while (root.firstChild) page.appendChild(root.firstChild);
@@ -94,7 +109,10 @@ export function updateAppShell({ screen, player, contest, user }) {
   const root = document.getElementById('screen');
   const immersive = screen === 'onboarding' || screen === 'celebration';
   app?.classList.toggle('app-shell--immersive', immersive);
-  if (root) root.dataset.screen = screen;
+  if (root) {
+    root.dataset.screen = screen;
+    root.dataset.theme = SCREEN_THEMES[screen] || 'study';
+  }
 
   document.querySelectorAll('[data-shell-screen]').forEach((item) => {
     const active = item.dataset.shellScreen === primaryScreenFor(screen);

@@ -7,20 +7,20 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
-import { renderHome } from './ui/home.js?v=80';
+import { renderHome } from './ui/home.js?v=81';
 import { renderWorldMap } from './ui/worldMap.js?v=73';
 import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
 import { renderExpedition } from './ui/expedition.js?v=75';
-import { renderWellbeing } from './ui/wellbeingUI.js?v=70';
+import { renderWellbeing } from './ui/wellbeingUI.js?v=71';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=69';
-import { renderReview } from './ui/review.js?v=82';
+import { renderReview } from './ui/review.js?v=83';
 import { renderRankedEvent } from './ui/rankedEvent.js';
 import { ICO } from './ui/icons.js?v=66';
-import { initAppShell, updateAppShell } from './ui/appShell.js?v=70';
+import { initAppShell, updateAppShell } from './ui/appShell.js?v=71';
 import { renderAuth } from './ui/auth.js?v=74';
 import { renderLibrary } from './ui/library.js';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
@@ -28,7 +28,7 @@ import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';
 import { clearActiveContestId, getActiveContestId, setActiveContestId } from './contest/activeContest.js';
 import { clearActiveContestContent, setActiveContestContent } from './contest/contestRuntime.js';
-import { skeleton } from './ui/components.js';
+import { errorState, skeleton } from './ui/components.js';
 import { primaryScreenFor } from './ui/navigation.js?v=70';
 import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
@@ -117,11 +117,11 @@ async function navigate(screen) {
     await fn(root, navigate, ctx);
   } catch (err) {
     console.error(err);
-    root.innerHTML = `
-      <div class="ro-window" role="alert"><div class="ro-body">
-        <p style="color:var(--danger)">Erro: ${err.message || err}</p>
-        <button type="button" class="btn btn-primary mt-12" id="err-home">Hoje</button>
-      </div></div>`;
+    root.innerHTML = errorState({
+      title: 'Não foi possível abrir esta área',
+      description: err.message || String(err),
+      action: '<button type="button" class="ds-button ds-button--primary" id="err-home">Voltar para Hoje</button>',
+    });
     document.getElementById('err-home')?.addEventListener('click', () => navigate('home'));
   }
 
@@ -136,7 +136,10 @@ function showAuth() {
   document.getElementById('app')?.classList.remove('app-shell--library');
   document.getElementById('bottom-nav')?.classList.add('hidden');
   const root = document.getElementById('screen');
-  if (root) renderAuth(root, { authService, onAuthenticated: initializeAuthenticatedApp });
+  if (root) {
+    delete root.dataset.theme;
+    renderAuth(root, { authService, onAuthenticated: initializeAuthenticatedApp });
+  }
 }
 
 async function showLibrary() {
@@ -151,6 +154,7 @@ async function showLibrary() {
   const root = document.getElementById('screen');
   if (!root) return;
   root.dataset.screen = 'library';
+  root.dataset.theme = 'library';
   const user = authService.getCurrentUser();
   ctx.user = user;
   const items = await libraryService.getLibrary(user);

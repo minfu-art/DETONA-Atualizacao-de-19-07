@@ -364,7 +364,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           <div class="hb-calendar-legend"><span>✓ Completo</span><span>◐ Parcial</span><span>! Não realizado</span><span>— Sem hábitos</span></div>
         </section>
 
-        <section class="hb-panel hb-analysis" aria-labelledby="hb-analysis-title">
+        <section class="hb-panel hb-analysis ds-surface ds-surface--data" aria-labelledby="hb-analysis-title">
           <div class="hb-section-head"><div><span class="hb-eyebrow">PADRÕES REGISTRADOS</span><h3 id="hb-analysis-title">Análise por hábito</h3></div></div>
           <div class="hb-analysis-grid">${analysis.map((item) => `<article>
             <h4>${escapeHtml(item.label)}</h4><strong>${item.completed} de ${item.planned}</strong><span>registros nos últimos 30 dias</span>

@@ -9,7 +9,7 @@ export async function renderReview(root, navigate, ctx) {
   if (!session) {
     const plan = await getReviewPlanData(ctx.reviewFilters || {});
     if (!plan.total) {
-      root.innerHTML = `<main class="review-empty"><span>${icon('shieldCheck')}</span><small>Sistema de suporte à aprovação</small><h1>Memória em dia.</h1><p>Nenhuma revisão precisa da sua atenção agora. O sistema continuará observando seus resultados e organizará a fila automaticamente.</p>
+      root.innerHTML = `<main class="review-empty ds-page ds-page--standard ds-surface ds-surface--empty"><span>${icon('shieldCheck')}</span><small>Sistema de suporte à aprovação</small><h1>Memória em dia.</h1><p>Nenhuma revisão precisa da sua atenção agora. O sistema continuará observando seus resultados e organizará a fila automaticamente.</p>
         <div class="review-empty__status"><strong>0 itens</strong><span>Nenhuma prioridade ativa</span></div>
         <section class="review-empty__signals" aria-label="Tipos de revisão monitorados">
           <article class="review-type-card review-type-card--error"><div><span>Erro recente</span><strong>0</strong></div><p>Respostas incorretas entram na fila para correção.</p></article>
@@ -123,13 +123,13 @@ function renderReviewPlan(root, plan) {
     ['recurring', 'RecorrÃªncia', plan.counts.recurring, 'Atacar padrÃµes de erro que voltaram a aparecer.'],
     ['scheduled', 'Agendada', plan.counts.scheduled, 'Manter o conteÃºdo acessÃ­vel com repetiÃ§Ã£o espaÃ§ada.'],
   ];
-  root.innerHTML = `<main class="review-plan">
+  root.innerHTML = `<main class="review-plan ds-page ds-page--wide">
     <header class="review-plan__header">
       <div><span class="ds-kicker">Sistema de suporte Ã  aprovaÃ§Ã£o</span><h1>RevisÃ£o estratÃ©gica</h1><p>O sistema reuniu o que mais precisa da sua atenÃ§Ã£o e ordenou pelo impacto na sua memÃ³ria.</p></div>
       <button type="button" class="review-plan__back" id="review-back" aria-label="Voltar ao inÃ­cio"><span aria-hidden="true">â†</span><span>Voltar</span></button>
     </header>
 
-    <section class="review-plan__hero" aria-labelledby="review-recommendation-title">
+    <section class="review-plan__hero ds-surface ds-surface--primary" aria-labelledby="review-recommendation-title">
       <div class="review-plan__hero-copy">
         <span>PrÃ³ximo bloco recomendado</span>
         <h2 id="review-recommendation-title">FortaleÃ§a ${plan.total} ${plan.total === 1 ? 'ponto' : 'pontos'} da sua preparaÃ§Ã£o</h2>
@@ -144,12 +144,12 @@ function renderReviewPlan(root, plan) {
       </dl>
     </section>
 
-    <section class="review-plan__types" aria-labelledby="review-types-title">
+    <section class="review-plan__types ds-surface ds-surface--secondary" aria-labelledby="review-types-title">
       <div class="review-plan__section-title"><div><span>Por que revisar</span><h2 id="review-types-title">Motivos da fila</h2></div><p>Cada cor representa uma causa, nÃ£o um novo caminho de navegaÃ§Ã£o.</p></div>
       <div class="review-type-grid">${types.map(([tone, label, count, description]) => `<article class="review-type-card review-type-card--${tone}"><div><span>${label}</span><strong>${count}</strong></div><p>${description}</p></article>`).join('')}</div>
     </section>
 
-    <section class="review-plan__queue" aria-labelledby="review-queue-title">
+    <section class="review-plan__queue ds-surface ds-surface--data" aria-labelledby="review-queue-title">
       <div class="review-plan__section-title"><div><span>O que revisar</span><h2 id="review-queue-title">Fila recomendada</h2></div><p>Ordem calculada por prazo, recorrÃªncia, dificuldade e domÃ­nio.</p></div>
       <ol class="review-plan__list">${plan.items.map((item) => `<li class="review-plan__item review-plan__item--${item.priority.tone}">
         <span class="review-plan__order">${String(item.order).padStart(2, '0')}</span>

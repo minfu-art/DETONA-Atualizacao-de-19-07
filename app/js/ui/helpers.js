@@ -82,17 +82,21 @@ export function escapeAttr(s) {
   return escapeHtml(s).replace(/'/g, '&#39;');
 }
 
-/** Modal genérico */
-export function openModal(title, bodyHtml, actionsHtml = '') {
+/** Modal oficial. Variantes: default, confirm, form, critical, alert e editor. */
+export function openModal(title, bodyHtml, actionsHtml = '', options = {}) {
   closeModal();
   modalReturnFocus = document.activeElement;
+  const variant = ['default', 'confirm', 'form', 'critical', 'alert', 'editor'].includes(options.variant) ? options.variant : 'default';
   const overlay = el(`
-    <div class="modal-overlay" id="modal-root">
-      <div class="modal ro-window" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-        <div class="ro-title" id="modal-title">${escapeHtml(title)}</div>
-        <div class="ro-body">
+    <div class="modal-overlay ds-modal-overlay" id="modal-root">
+      <div class="modal ro-window ds-modal ds-modal--${variant}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <div class="ds-modal__header">
+          <div class="ds-modal__title" id="modal-title">${escapeHtml(title)}</div>
+          <button type="button" class="ds-modal__close" data-modal-close aria-label="Fechar janela">×</button>
+        </div>
+        <div class="ro-body ds-modal__body">
           ${bodyHtml}
-          ${actionsHtml ? `<div class="mt-12 row gap-8">${actionsHtml}</div>` : ''}
+          ${actionsHtml ? `<div class="ds-modal__actions">${actionsHtml}</div>` : ''}
         </div>
       </div>
     </div>
@@ -101,6 +105,8 @@ export function openModal(title, bodyHtml, actionsHtml = '') {
     if (e.target === overlay) closeModal();
   });
   document.body.appendChild(overlay);
+  document.body.classList.add('has-open-modal');
+  overlay.querySelector('[data-modal-close]')?.addEventListener('click', closeModal);
   const dialog = overlay.querySelector('[role="dialog"]');
   const focusable = () => [...overlay.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')].filter((item) => !item.disabled);
   modalKeyHandler = (event) => {
@@ -113,12 +119,13 @@ export function openModal(title, bodyHtml, actionsHtml = '') {
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   };
   document.addEventListener('keydown', modalKeyHandler);
-  requestAnimationFrame(() => (focusable()[0] || dialog).focus());
+  requestAnimationFrame(() => (overlay.querySelector('[autofocus]') || focusable().find((item) => !item.matches('[data-modal-close]')) || dialog).focus());
   return overlay;
 }
 
 export function closeModal() {
   $('#modal-root')?.remove();
+  document.body.classList.remove('has-open-modal');
   if (modalKeyHandler) document.removeEventListener('keydown', modalKeyHandler);
   modalKeyHandler = null;
   if (modalReturnFocus?.isConnected) modalReturnFocus.focus();

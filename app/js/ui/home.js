@@ -781,7 +781,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       </section>
 
       <div class="dj-split">
-        <section class="dj-card dj-card--reviews" aria-labelledby="dj-reviews-title">
+        <section class="dj-card dj-card--reviews ds-surface ds-surface--secondary" aria-labelledby="dj-reviews-title">
           <div class="dj-card__head">
             <span class="dj-card__ico">${icon('layers')}</span>
             <h2 id="dj-reviews-title">Revisões pendentes</h2>

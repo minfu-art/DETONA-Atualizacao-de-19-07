@@ -9,7 +9,7 @@ export function progressBar({ value = 0, label = 'Progresso', tone = 'plasma', d
 }
 
 export function metricCard({ label, value, detail = '', icon = '', tone = 'plasma' }) {
-  return `<article class="ds-metric ds-metric--${tone}">${icon ? `<span class="ds-metric__icon" aria-hidden="true">${icon}</span>` : ''}<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(String(value))}</strong>${detail ? `<small>${escapeHtml(detail)}</small>` : ''}</div></article>`;
+  return `<article class="ds-metric ds-metric--${tone} ds-surface ds-surface--data">${icon ? `<span class="ds-metric__icon" aria-hidden="true">${icon}</span>` : ''}<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(String(value))}</strong>${detail ? `<small>${escapeHtml(detail)}</small>` : ''}</div></article>`;
 }
 
 export function statusBadge(label, tone = 'info') {
@@ -17,11 +17,15 @@ export function statusBadge(label, tone = 'info') {
 }
 
 export function emptyState({ title, description, action = '' }) {
-  return `<div class="ds-empty" role="status"><span class="ds-empty__mark" aria-hidden="true">DT</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p>${action}</div>`;
+  return `<div class="ds-empty ds-surface ds-surface--empty" role="status"><span class="ds-empty__mark" aria-hidden="true">DT</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p>${action ? `<div class="ds-empty__action">${action}</div>` : ''}</div>`;
 }
 
 export function skeleton(lines = 3, label = 'Carregando conteudo') {
-  return `<div class="ds-skeleton" role="status" aria-label="${escapeHtml(label)}">${Array.from({ length: lines }, (_, index) => `<span style="--skeleton-width:${100 - index * 13}%"></span>`).join('')}</div>`;
+  return `<div class="ds-skeleton" role="status" aria-label="${escapeHtml(label)}" aria-busy="true">${Array.from({ length: lines }, () => '<span></span>').join('')}</div>`;
+}
+
+export function loadingState({ label = 'Carregando conteúdo' } = {}) {
+  return `<div class="ds-loading ds-surface ds-surface--secondary" role="status" aria-live="polite" aria-busy="true"><span class="ds-loading__spinner" aria-hidden="true"></span><span>${escapeHtml(label)}</span></div>`;
 }
 
 export function feedbackMessage({ correct, explanation = '', bonus = '' }) {
@@ -36,11 +40,11 @@ export function prefersReducedMotion(matchMedia = globalThis.matchMedia) {
 }
 
 export function appCard({ content = '', className = '', label = '' } = {}) {
-  return `<article class="ds-card${className ? ` ${escapeHtml(className)}` : ''}"${label ? ` aria-label="${escapeHtml(label)}"` : ''}>${content}</article>`;
+  return `<article class="ds-card ds-surface${className ? ` ${escapeHtml(className)}` : ''}"${label ? ` aria-label="${escapeHtml(label)}"` : ''}>${content}</article>`;
 }
 
 export function gamePanel({ title = '', content = '', tone = 'plasma', className = '' } = {}) {
-  return `<section class="ds-game-panel ds-game-panel--${escapeHtml(tone)}${className ? ` ${escapeHtml(className)}` : ''}">${title ? `<header>${escapeHtml(title)}</header>` : ''}<div class="ds-game-panel__body">${content}</div></section>`;
+  return `<section class="ds-game-panel ds-game-panel--${escapeHtml(tone)} ds-surface ds-surface--primary${className ? ` ${escapeHtml(className)}` : ''}">${title ? `<header>${escapeHtml(title)}</header>` : ''}<div class="ds-game-panel__body">${content}</div></section>`;
 }
 
 export function xpBar({ value = 0, current = 0, target = 0, label = 'Experiência' } = {}) {
@@ -61,7 +65,12 @@ export function statCard(options) {
 }
 
 export function actionCard({ title, description = '', icon = '', action = '', tone = 'plasma' } = {}) {
-  return `<article class="ds-action ds-action--${escapeHtml(tone)}">${icon ? `<span class="ds-action__icon" aria-hidden="true">${icon}</span>` : ''}<div><strong>${escapeHtml(title)}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ''}</div>${action}</article>`;
+  return `<article class="ds-action ds-action--${escapeHtml(tone)} ds-surface ds-surface--action">${icon ? `<span class="ds-action__icon" aria-hidden="true">${icon}</span>` : ''}<div><strong>${escapeHtml(title)}</strong>${description ? `<p>${escapeHtml(description)}</p>` : ''}</div>${action}</article>`;
+}
+
+export function mentorSurface({ mentor = 'orion', name = '', role = '', title = '', message = '', context = '', image = '', action = '', compact = false, direct = false } = {}) {
+  const safeMentor = ['orion', 'evi', 'kaely'].includes(mentor) ? mentor : 'orion';
+  return `<section class="ds-mentor ds-mentor--${safeMentor}${compact ? ' ds-mentor--compact' : ''}${direct ? ' ds-mentor--direct' : ''}" aria-label="${escapeHtml(name || 'Orientação do mentor')}"><div class="ds-mentor__copy">${name ? `<span class="ds-mentor__name">${escapeHtml(name)}</span>` : ''}${role ? `<span class="ds-mentor__role">${escapeHtml(role)}</span>` : ''}${title ? `<h2 class="ds-mentor__title">${escapeHtml(title)}</h2>` : ''}${message ? `<p class="ds-mentor__message">${escapeHtml(message)}</p>` : ''}${context ? `<span class="ds-mentor__context">${escapeHtml(context)}</span>` : ''}${action ? `<div class="ds-empty__action">${action}</div>` : ''}</div>${image ? `<img class="ds-mentor__art" src="${escapeHtml(image)}" alt="" loading="lazy" decoding="async">` : ''}</section>`;
 }
 
 export function characterPanel({ image, name = '', role = '', content = '' } = {}) {
@@ -77,5 +86,5 @@ export function energyDivider(label = '') {
 }
 
 export function errorState({ title = 'Algo saiu do plano', description = 'Tente novamente em instantes.', action = '' } = {}) {
-  return `<div class="ds-error" role="alert"><span aria-hidden="true">!</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p>${action}</div>`;
+  return `<div class="ds-error ds-surface ds-surface--critical" role="alert"><span aria-hidden="true">!</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p>${action ? `<div class="ds-error__action">${action}</div>` : ''}</div>`;
 }
