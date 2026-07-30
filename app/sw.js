@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v92-idempotent-plan';
+const CACHE = 'detona-v93-kaely-habits';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -56,6 +56,7 @@ const ASSETS = [
   './js/core/backupSchema.js',
   './js/core/dailyMeta.js',
   './js/core/wellbeing.js',
+  './js/services/kaelyHabitService.js',
   './js/auth/activeUser.js',
   './js/auth/academicSessionContext.js',
   './js/auth/authDb.js',
@@ -171,6 +172,7 @@ const ASSETS = [
   './assets/mentor/orion-performance-analyst.webp',
   './assets/mentors/evi.webp',
   './assets/mentors/evi-plan-strategist.webp',
+  './assets/mentors/kaely-resistance.webp',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

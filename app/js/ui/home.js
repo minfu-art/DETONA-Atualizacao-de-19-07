@@ -251,7 +251,7 @@ export async function renderHome(root, navigate, ctx) {
           <small>${escapeHtml(metaPreview.length > 42 ? metaPreview.slice(0, 40) + '…' : metaPreview)}</small>
         </button>
         <button type="button" class="dash-qbtn" data-go="wellbeing">
-          <span class="dash-qico dash-qico--svg">${icon('seedling')}</span>
+          <span class="dash-qico dash-qico--svg">${icon('heartPulse')}</span>
           <strong>BEM-ESTAR</strong>
           <small>${wbDone}/${wbTotal} hábitos hoje</small>
         </button>
@@ -786,11 +786,11 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
         </div>
         <div class="dj-prep__foot">
           <span class="dj-prep__status">${prepAllDone
-            ? 'Preparação do dia concluída — bom estudo!'
+            ? 'Hábitos do dia registrados — bom estudo!'
             : prepDone > 0
               ? `Você já cuidou de ${prepDone} prática(s). Continue.`
               : 'Toque para marcar cada preparação antes de estudar.'}</span>
-          <button type="button" class="dj-link" id="today-wellbeing">Abrir preparação ${icon('seedling', 'ico--sm')}</button>
+          <button type="button" class="dj-link" id="today-wellbeing" aria-label="Hábitos" title="Hábitos">Abrir hábitos ${icon('heartPulse', 'ico--sm')}</button>
         </div>
       </section>
 

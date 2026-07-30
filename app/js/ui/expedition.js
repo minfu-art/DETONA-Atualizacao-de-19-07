@@ -25,7 +25,7 @@ import { prefersReducedMotion } from './components.js';
 import { daysUntilExam } from '../core/progression.js';
 import { heroImgHtml } from './heroAssets.js';
 import { getHabitConfiguration } from '../core/wellbeing.js';
-import { habitRoutineEntries } from '../services/kaelaVigorService.js';
+import { habitRoutineEntries } from '../services/kaelyHabitService.js';
 
 const TABS = [
   { id: 'hoje', label: 'Missões', detail: 'Plano de hoje', icon: 'target' },

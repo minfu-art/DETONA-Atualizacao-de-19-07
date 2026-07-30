@@ -69,6 +69,7 @@ export const ICO = {
   shieldCheck: painted('nature', '<path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"/><path d="m9 12 2 2 4-4"/>'),
   clipboard: painted('data', '<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h4"/>'),
   seedling: painted('nature', '<path d="M12 22V12"/><path d="M12 12c-3-1-6-4-5-8 4 0 6 3 6 6"/><path d="M12 12c3-1 6-4 5-8-4 0-6 3-6 6"/>'),
+  heartPulse: painted('danger', '<path d="M20.8 5.8a5.4 5.4 0 0 0-7.7 0L12 6.9l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 22l8.8-8.5a5.4 5.4 0 0 0 0-7.7Z"/><path d="M3.8 13h4l1.5-3.2 2.3 6 1.8-4 1.2 1.2h5.7"/>'),
   logout: painted('danger', '<path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5"/><path d="m15 8 4 4-4 4M8 12h11"/>'),
   refresh: painted('data', '<path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M6.1 8a7 7 0 0 1 11.4-2L20 8M4 16l2.5 2a7 7 0 0 0 11.4-2"/>'),
   layers: painted('data', '<path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>'),

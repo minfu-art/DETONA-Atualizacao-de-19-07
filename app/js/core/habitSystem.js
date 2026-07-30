@@ -12,6 +12,14 @@ export const HABIT_SOURCES = Object.freeze({
   MIGRATION: 'migration',
 });
 
+export const HABIT_RECORD_TYPES = Object.freeze({
+  BOOLEAN: 'boolean',
+  QUANTITATIVE: 'quantitative',
+  SCALE: 'scale',
+  TIME: 'time',
+  AUTOMATIC: 'automatic',
+});
+
 export const MAX_ACTIVE_HABITS = 5;
 export const RECOMMENDED_ACTIVE_HABITS = 3;
 export const DEFAULT_MINIMUM_PERCENT = 60;
@@ -29,6 +37,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [5, 10, 15, 20, 30, 40, 50],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.AUTOMATIC,
   },
   {
     id: 'review_errors',
@@ -41,6 +50,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3, 5],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.AUTOMATIC,
   },
   {
     id: 'theory_block',
@@ -53,6 +63,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
   },
   {
     id: 'plan_tomorrow',
@@ -65,6 +76,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
   },
   {
     id: 'distraction_free',
@@ -77,6 +89,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
   },
   {
     id: 'finish_priority',
@@ -89,6 +102,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.AUTOMATIC,
   },
   {
     id: 'water',
@@ -101,6 +115,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [4, 5, 6, 7, 8, 10, 12],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'exercise',
@@ -113,6 +128,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [5, 10, 15, 20, 30, 45, 60],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'meditation',
@@ -125,6 +141,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 3, 5, 10, 15, 20],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'conscious_break',
@@ -137,6 +154,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3, 4],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'nutrition',
@@ -149,6 +167,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3, 4],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
   },
   {
     id: 'sleep_schedule',
@@ -161,6 +180,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1],
     isMedicalSensitive: true,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.TIME,
   },
   {
     id: 'reading',
@@ -173,6 +193,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [5, 10, 15, 20, 30, 45, 60],
     isMedicalSensitive: false,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'personal_supplement',
@@ -185,6 +206,59 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1],
     isMedicalSensitive: true,
     status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+  },
+  {
+    id: 'creatine',
+    category: HABIT_CATEGORIES.WELLBEING,
+    label: 'Creatina',
+    description: 'Lembrete pessoal, sem indicação ou informação de dose.',
+    icon: 'C',
+    unit: 'registro',
+    defaultTarget: 1,
+    allowedTargets: [1],
+    isMedicalSensitive: true,
+    status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+  },
+  {
+    id: 'medication',
+    category: HABIT_CATEGORIES.WELLBEING,
+    label: 'Medicação',
+    description: 'Lembrete pessoal discreto que não substitui orientação profissional.',
+    icon: 'M',
+    unit: 'registro',
+    defaultTarget: 1,
+    allowedTargets: [1],
+    isMedicalSensitive: true,
+    status: 'active',
+    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+  },
+  {
+    id: 'wake_time',
+    category: HABIT_CATEGORIES.WELLBEING,
+    label: 'Horário de acordar',
+    description: 'Compare o horário planejado com o horário registrado.',
+    icon: 'A',
+    unit: 'registro',
+    defaultTarget: 1,
+    allowedTargets: [1],
+    isMedicalSensitive: false,
+    status: 'active',
+    recordType: HABIT_RECORD_TYPES.TIME,
+  },
+  {
+    id: 'energy_level',
+    category: HABIT_CATEGORIES.WELLBEING,
+    label: 'Energia percebida',
+    description: 'Registre como você percebe sua energia, sem diagnóstico ou recomendação.',
+    icon: 'E',
+    unit: 'nível',
+    defaultTarget: 3,
+    allowedTargets: [1, 2, 3, 4, 5],
+    isMedicalSensitive: false,
+    status: 'active',
+    recordType: HABIT_RECORD_TYPES.SCALE,
   },
 ]);
 
@@ -238,6 +312,24 @@ export function createHabitDefinition({
   reminderTime = null,
   orderIndex = 0,
   enabled = true,
+  recordType = null,
+  windowStart = null,
+  windowEnd = null,
+  cutoffTime = null,
+  cupSizeMl = null,
+  mealAnchor = null,
+  discreteMode = false,
+  privateLabel = null,
+  desiredSleepTime = null,
+  desiredWakeTime = null,
+  activityType = null,
+  minimumPossible = null,
+  location = null,
+  note = null,
+  reminderEnabled = true,
+  reminderLeadMinutes = 0,
+  pausedUntil = null,
+  modelVersion = 2,
   now = new Date().toISOString(),
 } = {}) {
   const catalog = getHabitCatalogItem(habitId);
@@ -255,6 +347,26 @@ export function createHabitDefinition({
     unit: unit || catalog.unit,
     activeDays: normalizeActiveDays(activeDays),
     reminderTime: /^\d{2}:\d{2}$/.test(String(reminderTime || '')) ? reminderTime : null,
+    recordType: Object.values(HABIT_RECORD_TYPES).includes(recordType)
+      ? recordType
+      : catalog.recordType || HABIT_RECORD_TYPES.BOOLEAN,
+    windowStart: /^\d{2}:\d{2}$/.test(String(windowStart || '')) ? windowStart : null,
+    windowEnd: /^\d{2}:\d{2}$/.test(String(windowEnd || '')) ? windowEnd : null,
+    cutoffTime: /^\d{2}:\d{2}$/.test(String(cutoffTime || '')) ? cutoffTime : null,
+    cupSizeMl: Math.max(0, Number(cupSizeMl) || 0) || null,
+    mealAnchor: String(mealAnchor || '').slice(0, 60) || null,
+    discreteMode: Boolean(discreteMode),
+    privateLabel: String(privateLabel || '').slice(0, 80) || null,
+    desiredSleepTime: /^\d{2}:\d{2}$/.test(String(desiredSleepTime || '')) ? desiredSleepTime : null,
+    desiredWakeTime: /^\d{2}:\d{2}$/.test(String(desiredWakeTime || '')) ? desiredWakeTime : null,
+    activityType: String(activityType || '').slice(0, 60) || null,
+    minimumPossible: Math.max(0, Number(minimumPossible) || 0) || null,
+    location: String(location || '').slice(0, 100) || null,
+    note: String(note || '').slice(0, 500) || null,
+    reminderEnabled: reminderEnabled !== false,
+    reminderLeadMinutes: Math.max(0, Math.min(1440, Number(reminderLeadMinutes) || 0)),
+    pausedUntil: /^\d{4}-\d{2}-\d{2}$/.test(String(pausedUntil || '')) ? pausedUntil : null,
+    modelVersion: Math.max(2, Number(modelVersion) || 2),
     orderIndex: Math.max(0, Number(orderIndex) || 0),
     enabled: enabled !== false,
     createdAt: now,
@@ -267,12 +379,27 @@ export function createHabitDailyLog({
   localDate = localDateKey(),
   completedValue = 0,
   source = HABIT_SOURCES.MANUAL,
+  status = null,
+  plannedTime = null,
+  actualTime = null,
+  note = null,
+  quality = null,
+  skipReason = null,
+  originalPlannedTime = null,
   now = new Date().toISOString(),
 } = {}) {
   if (!definition?.id) throw new Error('HABIT_DEFINITION_REQUIRED');
   const value = Math.max(0, Number(completedValue) || 0);
   const target = Math.max(1, Number(definition.target) || 1);
-  const completed = value >= target;
+  const normalizedStatus = ['planned', 'completed', 'partial', 'minimum', 'skipped', 'missed']
+    .includes(status)
+    ? status
+    : value >= target
+      ? 'completed'
+      : value > 0
+        ? 'partial'
+        : 'planned';
+  const completed = normalizedStatus === 'completed' || (status == null && value >= target);
   return {
     id: habitDailyLogId(definition.id, localDate),
     userId: definition.userId,
@@ -281,6 +408,18 @@ export function createHabitDailyLog({
     habitId: definition.habitId,
     localDate,
     completedValue: value,
+    plannedValue: target,
+    actualValue: value,
+    unit: definition.unit,
+    plannedTime: /^\d{2}:\d{2}$/.test(String(plannedTime || definition.reminderTime || ''))
+      ? (plannedTime || definition.reminderTime)
+      : null,
+    originalPlannedTime: /^\d{2}:\d{2}$/.test(String(originalPlannedTime || '')) ? originalPlannedTime : null,
+    actualTime: /^\d{2}:\d{2}$/.test(String(actualTime || '')) ? actualTime : null,
+    status: completed ? 'completed' : normalizedStatus,
+    note: String(note || '').slice(0, 500) || null,
+    quality: quality == null ? null : Math.max(1, Math.min(5, Number(quality) || 1)),
+    skipReason: String(skipReason || '').slice(0, 160) || null,
     completed,
     completedAt: completed ? now : null,
     source: Object.values(HABIT_SOURCES).includes(source) ? source : HABIT_SOURCES.MANUAL,
@@ -364,6 +503,7 @@ export function isHabitPlannedOn(definition, date) {
   const day = new Date(`${date}T12:00:00`).getDay();
   const createdDate = String(definition?.createdAt || '').slice(0, 10);
   return definition?.enabled !== false
+    && (!definition?.pausedUntil || date > definition.pausedUntil)
     && (!createdDate || date >= createdDate)
     && normalizeActiveDays(definition?.activeDays).includes(day);
 }

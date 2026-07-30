@@ -1,5 +1,5 @@
 /**
- * Mensagens e conteúdo educativo da Preparação do Dia.
+ * Mensagens e conteúdo educativo dos Hábitos do dia.
  * Sem menção a XP. Sem promessas médicas.
  */
 

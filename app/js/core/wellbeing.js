@@ -24,6 +24,7 @@ import {
 
 export const VIGOR_FULL_DAY = 1;
 const MIGRATION_KEY = 'personalized_habits_migrated_v1';
+const MODEL_MIGRATION_KEY = 'personalized_habits_model_v2';
 const CONFIG_KEY = 'personalized_habits_config_v1';
 const MINIMUM_KEY = 'personalized_habits_minimum_percent';
 
@@ -35,9 +36,32 @@ function isDefinition(row) {
   return Boolean(row?.habitId && row?.id?.startsWith('habit:'));
 }
 
+function normalizeDefinition(row, userId, contestId) {
+  const normalized = createHabitDefinition({
+    ...row,
+    userId,
+    contestId,
+    now: row.createdAt || row.created_at || new Date().toISOString(),
+  });
+  normalized.createdAt = row.createdAt || row.created_at || normalized.createdAt;
+  normalized.updatedAt = row.updatedAt || row.updated_at || normalized.updatedAt;
+  return normalized;
+}
+
 export async function ensureWellbeingHabits(repository = progressRepository) {
   const existing = await repository.getAll(STORES.wellbeingHabits);
-  if (existing.some(isDefinition)) return existing.filter(isDefinition);
+  if (existing.some(isDefinition)) {
+    const { userId, contestId } = scope(repository);
+    const definitions = existing.filter(isDefinition).map((row) => normalizeDefinition(row, userId, contestId));
+    if (!await repository.getMeta(MODEL_MIGRATION_KEY)) {
+      await repository.putMany(STORES.wellbeingHabits, definitions);
+      await repository.setMeta(MODEL_MIGRATION_KEY, {
+        completedAt: new Date().toISOString(),
+        normalizedDefinitions: definitions.length,
+      });
+    }
+    return definitions;
+  }
 
   if (await repository.getMeta(MIGRATION_KEY)) return [];
   const oldLogs = await repository.getAll(STORES.wellbeingLogs);
@@ -128,6 +152,13 @@ function normalizeStoredLog(log) {
     habitDefinitionId: log.habitDefinitionId || log.habit_id,
     localDate: log.localDate || log.date,
     completedValue: Number(log.completedValue ?? log.amount_done) || 0,
+    actualValue: Number(log.actualValue ?? log.completedValue ?? log.amount_done) || 0,
+    plannedValue: Number(log.plannedValue) || null,
+    plannedTime: log.plannedTime || null,
+    originalPlannedTime: log.originalPlannedTime || null,
+    actualTime: log.actualTime || null,
+    status: log.status || (log.completed ? 'completed' : Number(log.completedValue ?? log.amount_done) > 0 ? 'partial' : 'planned'),
+    note: log.note || null,
   };
 }
 
@@ -215,6 +246,9 @@ export async function getHabitSystemState(date = localDateKey(), repository = pr
         target,
         pct: Math.min(100, Math.round((done / target) * 100)),
         completed: Boolean(log.completed),
+        status: log.status || (log.completed ? 'completed' : done > 0 ? 'partial' : 'planned'),
+        plannedTime: log.plannedTime || definition.reminderTime,
+        actualTime: log.actualTime || null,
         automatic: log.source === HABIT_SOURCES.ACADEMIC_AUTO,
       };
     });
@@ -242,38 +276,88 @@ export function logId(habitId, date) {
   return habitDailyLogId(definitionId, date);
 }
 
-export async function setHabitAmount(definitionId, amount, repository = progressRepository) {
+export async function setHabitAmountForDate(
+  definitionId,
+  amount,
+  date = localDateKey(),
+  details = {},
+  repository = progressRepository,
+) {
   const definitions = await ensureWellbeingHabits(repository);
   const definition = definitions.find((item) => item.id === definitionId || item.habitId === definitionId);
   if (!definition) throw new Error('Hábito não encontrado');
-  const date = localDateKey();
+  const existing = await repository.getById(STORES.wellbeingLogs, habitDailyLogId(definition.id, date));
   const row = createHabitDailyLog({
     definition,
     localDate: date,
     completedValue: amount,
     source: HABIT_SOURCES.MANUAL,
+    plannedTime: details.plannedTime || existing?.plannedTime || definition.reminderTime,
+    originalPlannedTime: details.originalPlannedTime || existing?.originalPlannedTime,
+    actualTime: details.actualTime,
+    status: details.status,
+    note: details.note,
+    quality: details.quality,
+    skipReason: details.skipReason,
   });
   await repository.put(STORES.wellbeingLogs, row);
-  return grantVigorIfReady(repository);
+  if (date === localDateKey()) return grantVigorIfReady(repository);
+  return { saved: true, row };
+}
+
+export async function setHabitAmount(definitionId, amount, repository = progressRepository) {
+  return setHabitAmountForDate(definitionId, amount, localDateKey(), {}, repository);
+}
+
+export async function incrementHabitForDate(
+  definitionId,
+  delta = 1,
+  date = localDateKey(),
+  repository = progressRepository,
+) {
+  const id = String(definitionId).startsWith('habit:') ? definitionId : `habit:${definitionId}`;
+  const existing = await repository.getById(STORES.wellbeingLogs, habitDailyLogId(id, date));
+  return setHabitAmountForDate(
+    id,
+    Math.max(0, (Number(existing?.completedValue ?? existing?.amount_done) || 0) + delta),
+    date,
+    {},
+    repository,
+  );
 }
 
 export async function incrementHabit(definitionId, delta = 1, repository = progressRepository) {
-  const date = localDateKey();
-  const id = String(definitionId).startsWith('habit:') ? definitionId : `habit:${definitionId}`;
-  const existing = await repository.getById(STORES.wellbeingLogs, habitDailyLogId(id, date));
-  return setHabitAmount(id, (Number(existing?.completedValue ?? existing?.amount_done) || 0) + delta, repository);
+  return incrementHabitForDate(definitionId, delta, localDateKey(), repository);
 }
 
-export async function toggleHabit(definitionId, repository = progressRepository) {
+export async function toggleHabitForDate(definitionId, date = localDateKey(), repository = progressRepository) {
   const definitions = await ensureWellbeingHabits(repository);
   const definition = definitions.find((item) => item.id === definitionId || item.habitId === definitionId);
   if (!definition) throw new Error('Hábito não encontrado');
   const existing = await repository.getById(
     STORES.wellbeingLogs,
-    habitDailyLogId(definition.id, localDateKey()),
+    habitDailyLogId(definition.id, date),
   );
   const done = existing?.completed ? 0 : definition.target;
-  return setHabitAmount(definition.id, done, repository);
+  return setHabitAmountForDate(definition.id, done, date, {
+    actualTime: done ? new Date().toTimeString().slice(0, 5) : null,
+  }, repository);
+}
+
+export async function toggleHabit(definitionId, repository = progressRepository) {
+  return toggleHabitForDate(definitionId, localDateKey(), repository);
+}
+
+export async function skipHabitForDate(definitionId, date = localDateKey(), repository = progressRepository) {
+  return setHabitAmountForDate(definitionId, 0, date, {
+    status: 'skipped',
+    skipReason: 'Exceção somente para este dia',
+  }, repository);
+}
+
+export async function recordHabitDetails(definitionId, details = {}, date = localDateKey(), repository = progressRepository) {
+  const value = Number(details.actualValue ?? details.completedValue) || 0;
+  return setHabitAmountForDate(definitionId, value, date, details, repository);
 }
 
 export async function completeMicroPractice(definitionId, amount = null, repository = progressRepository) {

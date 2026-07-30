@@ -11,7 +11,7 @@ export const PRIMARY_NAV_ITEMS = Object.freeze([
 ]);
 
 export const UTILITY_NAV_ITEMS = Object.freeze([
-  { screen: 'wellbeing', icon: 'seedling', label: 'Preparação' },
+  { screen: 'wellbeing', icon: 'heartPulse', label: 'Hábitos', ariaLabel: 'Hábitos', title: 'Hábitos' },
 ]);
 
 export const SCREEN_TITLES = Object.freeze({
@@ -21,7 +21,7 @@ export const SCREEN_TITLES = Object.freeze({
   battle: 'Questões',
   review: 'Revisão',
   forge: 'Banco de questões',
-  wellbeing: 'Preparação',
+  wellbeing: 'Hábitos',
   profile: 'Meu perfil',
   onboarding: 'Configuração inicial',
   celebration: 'Evolução',

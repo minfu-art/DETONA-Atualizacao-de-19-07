@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   HABIT_CATALOG,
+  HABIT_RECORD_TYPES,
   HABIT_SOURCES,
   MAX_ACTIVE_HABITS,
   applyAcademicAutomation,
@@ -37,11 +38,16 @@ function completedLog(item, localDate, value = item.target, source = HABIT_SOURC
   return createHabitDailyLog({ definition: item, localDate, completedValue: value, source });
 }
 
-test('catálogo possui as 14 opções solicitadas e suplementação é apenas registro sensível', () => {
-  assert.equal(HABIT_CATALOG.length, 14);
+test('catálogo ampliado mantém opções anteriores e inclui creatina, medicação e horário de acordar', () => {
+  assert.equal(HABIT_CATALOG.length, 18);
   const supplement = HABIT_CATALOG.find((item) => item.id === 'personal_supplement');
   assert.equal(supplement.isMedicalSensitive, true);
   assert.match(supplement.description, /sem indicação, dosagem ou recomendação/i);
+  assert.equal(HABIT_CATALOG.find((item) => item.id === 'water').recordType, HABIT_RECORD_TYPES.QUANTITATIVE);
+  assert.equal(HABIT_CATALOG.find((item) => item.id === 'creatine').recordType, HABIT_RECORD_TYPES.BOOLEAN);
+  assert.equal(HABIT_CATALOG.find((item) => item.id === 'medication').recordType, HABIT_RECORD_TYPES.BOOLEAN);
+  assert.equal(HABIT_CATALOG.find((item) => item.id === 'sleep_schedule').recordType, HABIT_RECORD_TYPES.TIME);
+  assert.equal(HABIT_CATALOG.find((item) => item.id === 'energy_level').recordType, HABIT_RECORD_TYPES.SCALE);
 });
 
 test('escolha aceita 3 a 5, recomenda 3 e permite pular sem bloquear', () => {
