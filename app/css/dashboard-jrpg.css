@@ -537,72 +537,6 @@
   align-self: center;
 }
 
-/* Progresso do dia */
-.dj-card--day { padding-bottom: 14px; }
-.dj-day-bar {
-  position: relative;
-  height: 10px;
-  margin-top: 4px;
-  border-radius: 999px;
-  background: rgba(20, 16, 40, 0.9);
-  overflow: visible;
-}
-.dj-day-bar > span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #7c3aed, #f97316 70%, #fb923c);
-  box-shadow: 0 0 12px rgba(249, 115, 22, 0.35);
-}
-.dj-day-bar > i {
-  position: absolute;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  margin-left: -8px;
-  margin-top: -8px;
-  border-radius: 50%;
-  background: #fb923c;
-  border: 3px solid #1a1028;
-  box-shadow: 0 0 10px rgba(251, 146, 60, 0.7);
-  pointer-events: none;
-}
-.dj-day-scale {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
-  color: #6b728e;
-  font-size: 9px;
-  font-weight: 700;
-}
-.dj-day-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 12px;
-}
-.dj-day-stats > div {
-  padding: 8px;
-  border-radius: 11px;
-  border: 1px solid rgba(140, 164, 255, 0.1);
-  background: rgba(6, 8, 18, 0.45);
-  text-align: center;
-}
-.dj-day-stats small {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  color: var(--ds-text-3, #9aa3c7);
-  font-size: 9px;
-  font-weight: 750;
-}
-.dj-day-stats strong {
-  display: block;
-  margin-top: 4px;
-  font-size: 16px;
-}
-
 /* Desempenho */
 .dj-perf-list {
   display: flex;
@@ -876,8 +810,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dj-ring__fg,
-  .dj-day-bar > span {
+  .dj-ring__fg {
     transition: none;
   }
 }

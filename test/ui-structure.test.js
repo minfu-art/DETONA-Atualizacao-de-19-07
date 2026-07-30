@@ -202,7 +202,7 @@ test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáv
   assert.match(source, /renderTodayCommandCenter/);
   assert.match(source, /Sua próxima missão/);
   assert.match(source, /Revisões pendentes/);
-  assert.match(source, /Progresso do dia/);
+  assert.doesNotMatch(source, /Progresso do dia/);
   assert.match(source, /FALTAM/);
   assert.match(source, /mentorCommunication/);
   assert.match(source, /officialMentorHtml/);

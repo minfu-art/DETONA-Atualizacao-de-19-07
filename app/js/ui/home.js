@@ -148,10 +148,6 @@ export async function renderHome(root, navigate, ctx) {
     name: shortNames[r.id] || shortLabel(r.name, 12),
   }));
 
-  const avgAccuracy = discBars.length
-    ? Math.round(discBars.reduce((s, d) => s + (Number(d.pct) || 0), 0) / discBars.length)
-    : 0;
-
   await renderTodayCommandCenter(root, navigate, ctx, {
     player,
     stage,
@@ -172,8 +168,6 @@ export async function renderHome(root, navigate, ctx) {
     discBars,
     reviewData,
     phrase,
-    log,
-    avgAccuracy,
     wbState,
     emblemState,
     orionEvolution,
@@ -537,7 +531,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     player, stage, rank, totalXp, xpNeed, xpPct, editalPct, days,
     routine, meta, planned, doneToday, missionLeft, missionFocus,
     dailyEnemySprite, dailyEnemyDiscId, discBars, reviewData,
-    phrase = '', log = null, avgAccuracy = 0, wbState = null, emblemState = null,
+    phrase = '', wbState = null, emblemState = null,
     orionEvolution = emptyOrionEvolutionModel(),
   } = data;
   const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
@@ -630,7 +624,6 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       <p>Nenhuma revisão crítica no momento.</p>
     </div>`;
 
-  const battlesToday = log?.domain_challenges_completed || 0;
   const dayLabel = goalTypeLabel(routine?.goal_type) || 'questões';
 
   const PREP_ORDER = ['wb_meditacao', 'wb_agua', 'wb_exercicio', 'wb_alimentacao', 'wb_sono'];
@@ -810,24 +803,6 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
               ? `Você já cuidou de ${prepDone} prática(s). Continue.`
               : 'Toque para marcar cada preparação antes de estudar.'}</span>
           <button type="button" class="dj-link" id="today-wellbeing">Abrir preparação ${icon('seedling', 'ico--sm')}</button>
-        </div>
-      </section>
-
-      <section class="dj-card dj-card--day" aria-labelledby="dj-day-title">
-        <div class="dj-card__head">
-          <span class="dj-card__ico">${icon('flag')}</span>
-          <h2 id="dj-day-title">Progresso do dia</h2>
-          <strong class="dj-card__badge dj-card__badge--soft">${ringPct}%</strong>
-        </div>
-        <div class="dj-day-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${ringPct}">
-          <span style="width:${ringPct}%"></span>
-          <i style="left:${ringPct}%"></i>
-        </div>
-        <div class="dj-day-scale" aria-hidden="true"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
-        <div class="dj-day-stats">
-          <div><small>${icon('focus', 'ico--sm')} Batalhas</small><strong>${battlesToday}</strong></div>
-          <div><small>${icon('question', 'ico--sm')} Feitas</small><strong>${doneToday}</strong></div>
-          <div><small>${icon('chartSteps', 'ico--sm')} Domínio médio</small><strong>${avgAccuracy}%</strong></div>
         </div>
       </section>
 
