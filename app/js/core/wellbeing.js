@@ -3,7 +3,7 @@
  * REGRA: este módulo nunca concede XP, nível, estrelas, domínio ou progresso de edital.
  */
 import { STORES } from './types.js';
-import { progressRepository } from '../repositories/progressRepository.js';
+import { localPersonalRepository as progressRepository } from '../repositories/localPersonalRepository.js';
 import { localDateKey } from './localDate.js';
 import {
   DEFAULT_MINIMUM_PERCENT,
@@ -108,6 +108,29 @@ export async function saveHabitConfiguration({
   const ids = selections.map((item) => item.habitId);
   const validation = validateHabitSelection(ids);
   if (!validation.canSave) throw new Error('HABIT_ACTIVE_LIMIT');
+  if (new Set(ids).size !== ids.length) throw new Error('HABIT_DUPLICATE');
+  for (const selection of selections) {
+    const catalog = getHabitCatalogItem(selection.habitId);
+    if (!catalog) throw new Error('HABIT_NOT_FOUND');
+    if (!Array.isArray(selection.activeDays) || selection.activeDays.length === 0) {
+      const error = new Error('HABIT_ACTIVE_DAYS_REQUIRED');
+      error.habitId = selection.habitId;
+      error.field = 'activeDays';
+      throw error;
+    }
+    if (selection.reminderTime && !/^([01]\d|2[0-3]):[0-5]\d$/.test(selection.reminderTime)) {
+      const error = new Error('HABIT_TIME_INVALID');
+      error.habitId = selection.habitId;
+      error.field = 'reminderTime';
+      throw error;
+    }
+    if (!catalog.allowedTargets.includes(Number(selection.target))) {
+      const error = new Error('HABIT_TARGET_INVALID');
+      error.habitId = selection.habitId;
+      error.field = 'target';
+      throw error;
+    }
+  }
   const { userId, contestId } = scope(repository);
   const previous = await ensureWellbeingHabits(repository);
   const previousMap = new Map(previous.map((item) => [item.habitId, item]));

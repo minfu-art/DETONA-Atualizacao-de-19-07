@@ -1,3 +1,5 @@
+import { isLocalOnlyCollection, isLocalOnlyRecord } from '../privacy/localPersonalData.js';
+
 /**
  * Chaves primárias das coleções de progresso (alinhado a backupSchema.COLLECTION_KEYS).
  */
@@ -33,8 +35,6 @@ export const SYNC_COLLECTIONS = Object.freeze([
   'routines',
   'dailyLogs',
   'mvpCards',
-  'wellbeingHabits',
-  'wellbeingLogs',
   'reviewQueue',
   'meta',
   'routineProfiles',
@@ -55,8 +55,16 @@ export const SYNC_COLLECTIONS = Object.freeze([
  * sincronização híbrida.
  */
 export function shouldSyncCloudRecord(collection, value) {
+  if (isLocalOnlyRecord(collection, value)) return false;
   if (collection !== 'questions') return SYNC_COLLECTIONS.includes(collection);
   return value?.is_user_created === true;
+}
+
+export function shouldSyncCloudOperation({ collection, value = null, recordKey = null } = {}) {
+  if (isLocalOnlyCollection(collection)) return false;
+  if (collection === 'meta' && isLocalOnlyRecord(collection, value || recordKey)) return false;
+  if (!SYNC_COLLECTIONS.includes(collection)) return false;
+  return value ? shouldSyncCloudRecord(collection, value) : true;
 }
 
 export function recordKeyFor(collection, value) {

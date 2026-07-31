@@ -5,9 +5,11 @@ import { getSupabaseClient } from './client.js';
 import {
   COLLECTION_KEYS,
   recordKeyFor,
+  shouldSyncCloudOperation,
   shouldSyncCloudRecord,
   SYNC_COLLECTIONS,
 } from './collectionKeys.js';
+import { isLocalOnlyRecord } from '../privacy/localPersonalData.js';
 
 function requireClient(client) {
   if (!client) throw new Error('SUPABASE_UNAVAILABLE');
@@ -86,22 +88,6 @@ function mirrorRows(userId, contestId, collection, recordKey, payload, updatedAt
       },
     };
   }
-  if (collection === 'wellbeingLogs') {
-    return {
-      table: 'wellbeing_logs',
-      row: {
-        user_id: userId,
-        contest_id: contestId,
-        log_id: String(payload?.id || recordKey),
-        habit_id: String(payload?.habit_id || ''),
-        log_date: payload?.date || null,
-        amount_done: Number(payload?.amount_done) || 0,
-        completed: Boolean(payload?.completed),
-        payload,
-        updated_at: now,
-      },
-    };
-  }
   if (collection === 'routineBlocks') {
     return {
       table: 'routine_blocks',
@@ -125,6 +111,7 @@ export class ProgressCloud {
   }
 
   async upsertRecord(userId, contestId, collection, value, updatedAt = new Date().toISOString()) {
+    if (isLocalOnlyRecord(collection, value)) throw new Error('LOCAL_ONLY_COLLECTION');
     if (!shouldSyncCloudRecord(collection, value)) return null;
     const recordKey = recordKeyFor(collection, value);
     if (!recordKey) return null;
@@ -156,6 +143,7 @@ export class ProgressCloud {
   }
 
   async upsertMany(userId, contestId, collection, values) {
+    if ((values || []).some((value) => isLocalOnlyRecord(collection, value))) throw new Error('LOCAL_ONLY_COLLECTION');
     const syncable = (values || []).filter((value) => shouldSyncCloudRecord(collection, value));
     if (!syncable.length) return [];
     const results = [];
@@ -173,6 +161,7 @@ export class ProgressCloud {
   }
 
   async deleteRecord(userId, contestId, collection, recordKey) {
+    if (!shouldSyncCloudOperation({ collection, recordKey })) throw new Error('LOCAL_ONLY_COLLECTION');
     const client = requireClient(await this.getClient());
     const { error } = await client
       .from('progress_records')
@@ -189,7 +178,6 @@ export class ProgressCloud {
       subtopics: { table: 'subtopic_progress', col: 'subtopic_id' },
       dailyLogs: { table: 'daily_logs', col: 'log_date' },
       reviewQueue: { table: 'review_queue', col: 'question_id' },
-      wellbeingLogs: { table: 'wellbeing_logs', col: 'log_id' },
       routineBlocks: { table: 'routine_blocks', col: 'block_id' },
     };
     const m = mirrorMap[collection];
@@ -201,6 +189,7 @@ export class ProgressCloud {
   }
 
   async clearCollection(userId, contestId, collection) {
+    if (!shouldSyncCloudOperation({ collection })) throw new Error('LOCAL_ONLY_COLLECTION');
     const client = requireClient(await this.getClient());
     const { error } = await client
       .from('progress_records')
@@ -236,7 +225,11 @@ export class ProgressCloud {
 
     const { data, error } = await query;
     if (error) throw error;
-    return data || [];
+    return (data || []).filter((row) => shouldSyncCloudOperation({
+      collection: row.collection,
+      value: row.payload,
+      recordKey: row.record_key,
+    }));
   }
 
   /** Agrupa pull em mapa collection → rows[] (payloads). */
@@ -253,6 +246,7 @@ export class ProgressCloud {
     const map = Object.create(null);
     for (const name of SYNC_COLLECTIONS) map[name] = [];
     for (const row of rows) {
+      if (!shouldSyncCloudOperation({ collection: row.collection, value: row.payload, recordKey: row.record_key })) continue;
       if (!map[row.collection]) map[row.collection] = [];
       if (row.payload && typeof row.payload === 'object') {
         map[row.collection].push({ ...row.payload, __cloud_updated_at: row.updated_at });

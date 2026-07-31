@@ -6,7 +6,7 @@ import {
   isHabitPlannedOn,
   MAX_CONSISTENCY_SHIELDS,
 } from '../core/habitSystem.js';
-import { progressRepository } from '../repositories/progressRepository.js';
+import { localPersonalRepository as progressRepository } from '../repositories/localPersonalRepository.js';
 
 export const KAELY = Object.freeze({
   id: 'kaely',

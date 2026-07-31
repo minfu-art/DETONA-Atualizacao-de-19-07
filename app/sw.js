@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v97-shell-navigation';
+const CACHE = 'detona-v98-local-habits';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -56,6 +56,9 @@ const ASSETS = [
   './js/core/backupSchema.js',
   './js/core/dailyMeta.js',
   './js/core/wellbeing.js',
+  './js/privacy/localPersonalData.js',
+  './js/repositories/localPersonalRepository.js',
+  './js/services/habitReminderService.js',
   './js/services/kaelyHabitService.js',
   './js/auth/activeUser.js',
   './js/auth/academicSessionContext.js',
@@ -285,4 +288,17 @@ self.addEventListener('fetch', (e) => {
       return cached || fetched;
     })
   );
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil((async () => {
+    const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    const existing = windows[0];
+    if (existing) {
+      existing.postMessage({ type: 'DETONA_NAVIGATE', screen: 'wellbeing' });
+      return existing.focus();
+    }
+    return self.clients.openWindow('./?screen=wellbeing');
+  })());
 });

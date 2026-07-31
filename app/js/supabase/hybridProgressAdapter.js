@@ -8,8 +8,7 @@
 import * as localDb from '../core/db.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { progressCloud, recordKeyFor, SYNC_COLLECTIONS } from './progressCloud.js';
-import { shouldSyncCloudRecord } from './collectionKeys.js';
-import { mergeHabitLogs } from '../core/habitSystem.js';
+import { shouldSyncCloudOperation, shouldSyncCloudRecord } from './collectionKeys.js';
 
 const OUTBOX_STORAGE = 'detona.sync.outbox';
 
@@ -21,7 +20,10 @@ function readOutbox() {
   try {
     const raw = globalThis?.localStorage?.getItem?.(OUTBOX_STORAGE);
     const list = raw ? JSON.parse(raw) : [];
-    return Array.isArray(list) ? list : [];
+    if (!Array.isArray(list)) return [];
+    const clean = sanitizeOutboxEntries(list);
+    if (clean.length !== list.length) writeOutbox(clean);
+    return clean;
   } catch {
     return [];
   }
@@ -36,9 +38,15 @@ function writeOutbox(list) {
 }
 
 function enqueueOutbox(entry) {
+  if (!shouldSyncCloudOperation(entry)) return false;
   const list = readOutbox();
   list.push({ ...entry, enqueuedAt: new Date().toISOString() });
   writeOutbox(list);
+  return true;
+}
+
+export function sanitizeOutboxEntries(entries = []) {
+  return (Array.isArray(entries) ? entries : []).filter((entry) => shouldSyncCloudOperation(entry));
 }
 
 async function cloudWriteSafe(fn, onFailure) {
@@ -109,7 +117,7 @@ export function createHybridProgressAdapter({
     },
     async remove(store, id, userId, contestId) {
       await local.remove(store, id, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
+      if (cloudEnabled() && shouldSyncCloudOperation({ collection: store, recordKey: id })) {
         const op = { op: 'delete', userId, contestId, collection: store, recordKey: String(id) };
         if (!online()) enqueue(op);
         else await cloudWriteSafe(
@@ -120,7 +128,7 @@ export function createHybridProgressAdapter({
     },
     async clearStore(store, userId, contestId) {
       await local.clearStore(store, userId, contestId);
-      if (cloudEnabled() && SYNC_COLLECTIONS.includes(store)) {
+      if (cloudEnabled() && shouldSyncCloudOperation({ collection: store })) {
         const op = { op: 'clear', userId, contestId, collection: store };
         if (!online()) enqueue(op);
         else await cloudWriteSafe(
@@ -155,8 +163,11 @@ export async function flushOutbox({
   online = isOnline,
 } = {}) {
   if (!cloudEnabled() || !online()) return { flushed: 0 };
-  const list = read();
-  if (!list.length) return { flushed: 0 };
+  const original = read();
+  const list = sanitizeOutboxEntries(original);
+  const sanitized = Math.max(0, (Array.isArray(original) ? original.length : 0) - list.length);
+  if (sanitized) write(list);
+  if (!list.length) return { flushed: 0, sanitized };
 
   const remaining = [];
   let flushed = 0;
@@ -181,7 +192,7 @@ export async function flushOutbox({
     }
   }
   write(remaining);
-  return { flushed, remaining: remaining.length };
+  return { flushed, remaining: remaining.length, sanitized };
 }
 
 /**
@@ -225,15 +236,6 @@ export async function pullAndMergeProgress(userId, contestId, {
       const localRow = localMap.get(k);
       if (!localRow) {
         toWrite.push(payload);
-        continue;
-      }
-      if (collection === 'wellbeingLogs') {
-        const merged = mergeHabitLogs(localRow, { ...payload, updated_at: cloudAt });
-        const localValue = Number(localRow.completedValue ?? localRow.amount_done) || 0;
-        const mergedValue = Number(merged.completedValue ?? merged.amount_done) || 0;
-        if (mergedValue > localValue || merged.completed !== localRow.completed) {
-          toWrite.push(merged);
-        }
         continue;
       }
       // last-write-wins quando há timestamps comparáveis

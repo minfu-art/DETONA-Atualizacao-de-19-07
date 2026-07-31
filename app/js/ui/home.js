@@ -55,6 +55,7 @@ import {
 import { emblemArt } from './emblems/emblemArt.js';
 import { renderOrionEvolution } from './orionEvolution.js';
 import { renderEviDailyMission } from './eviDailyMission.js';
+import { KAELY } from '../services/kaelyHabitService.js';
 
 export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
@@ -650,7 +651,6 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   }).slice(0, 5);
   const prepDone = wbState?.doneCount || 0;
   const prepTotal = wbState?.total || prepCards.length || 0;
-  const prepPct = prepTotal ? Math.round((prepDone / prepTotal) * 100) : 0;
   const prepAllDone = prepTotal > 0 && prepDone >= prepTotal;
   const nextPrepCard = prepCards.find((card) => !card.completed);
   const nextPrepTime = nextPrepCard?.plannedTime
@@ -715,6 +715,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     : officialAnnouncement
       ? officialMentorHtml(player, officialAnnouncement)
       : automaticMentorHtml(player, automaticMentor);
+  const kaelyIsDirect = prepTotal === 0;
+  const activeMentorHtml = kaelyIsDirect ? '' : mentorHtml;
 
   root.innerHTML = `
     <div class="dj">
@@ -794,20 +796,25 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
         ${renderEviDailyMission(eviMission)}
       </div>
 
-      <section class="dj-prep ${prepAllDone ? 'is-complete' : ''}" aria-labelledby="dj-prep-title">
+      <section class="dj-prep dj-prep--kaely ${prepAllDone ? 'is-complete' : ''}" ${kaelyIsDirect ? 'data-home-mentor-communication="direct"' : ''} aria-labelledby="dj-prep-title">
+        <div class="dj-prep__kaely" aria-hidden="true">
+          <img src="${KAELY.asset}" alt="" onerror="this.onerror=null;this.src='${KAELY.fallbackAsset}'">
+        </div>
+        <div class="dj-prep__content">
+        <div class="dj-prep__identity"><strong>KAELY</strong><span>MENTORA DA RESISTÊNCIA</span></div>
         <div class="dj-prep__head">
           <div>
             <span class="dj-kicker">Bem-estar e constância</span>
-            <h2 id="dj-prep-title">HÁBITOS DO DIA</h2>
+            <h2 id="dj-prep-title">${prepTotal === 0 ? 'Construa sua base diária' : prepAllDone ? 'Base diária concluída' : 'HÁBITOS DO DIA'}</h2>
             <p>${prepTotal === 0
-              ? 'Escolha os hábitos que deseja acompanhar.'
+              ? 'Escolha hábitos simples para sustentar sua preparação. Seus dados ficam somente neste dispositivo.'
               : prepAllDone
                 ? 'Todos os hábitos planejados para hoje foram registrados.'
                 : `${prepDone} de ${prepTotal} concluídos${nextPrepCard
                   ? `. Próximo: ${escapeHtml(nextPrepCard.habit.name)}${nextPrepTime ? ` — ${escapeHtml(nextPrepTime)}` : ''}.`
                   : '.'}`}</p>
           </div>
-          <div class="dj-prep__ring" style="--p:${prepPct}" aria-label="Hábitos ${prepDone} de ${prepTotal}">
+          <div class="dj-prep__ring" aria-label="Hábitos ${prepDone} de ${prepTotal}">
             <strong>${prepDone}</strong>
             <small>de ${prepTotal}</small>
           </div>
@@ -826,12 +833,14 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
             : prepAllDone
               ? 'Ver histórico'
               : 'Abrir hábitos'} ${icon('heartPulse', 'ico--sm')}</button>
+          ${nextPrepCard && !prepAllDone ? '<button type="button" class="dj-link dj-link--secondary" id="today-habit-register">Registrar próximo</button>' : ''}
+        </div>
         </div>
       </section>
 
       ${renderOrionEvolution(orionEvolution)}
 
-      ${mentorHtml}
+      ${activeMentorHtml}
     </div>`;
 
   assertSingleDirectMentorCommunication(root);
@@ -880,8 +889,16 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   });
   $('#today-wellbeing', root)?.addEventListener('click', () => {
     SFX.click();
-    if (prepTotal === 0) ctx.habitNavigationIntent = { type: 'configure' };
+    if (prepTotal === 0) {
+      ctx.habitNavigationIntent = { type: 'configure' };
+      ctx.habitReturnToHome = true;
+    }
     else if (prepAllDone) ctx.habitNavigationIntent = { type: 'history' };
+    navigate('wellbeing');
+  });
+  $('#today-habit-register', root)?.addEventListener('click', () => {
+    if (!nextPrepCard?.definition?.id) return;
+    ctx.habitNavigationIntent = { type: 'record', definitionId: nextPrepCard.definition.id };
     navigate('wellbeing');
   });
   $('#mentor-action', root)?.addEventListener('click', () => {

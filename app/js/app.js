@@ -34,6 +34,10 @@ import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supa
 import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext } from './auth/academicSessionContext.js';
+import {
+  deliverDueHabitReminders,
+  snoozeHabitReminder,
+} from './services/habitReminderService.js';
 
 const ctx = {
   battleSession: null,
@@ -68,6 +72,59 @@ const ROUTES = {
   review: renderReview,
   rankedEvent: renderRankedEvent,
 };
+
+let habitReminderRuntimeBound = false;
+
+function showInternalHabitReminder(reminder) {
+  document.getElementById('habit-local-reminder')?.remove();
+  const notice = document.createElement('aside');
+  notice.id = 'habit-local-reminder';
+  notice.className = 'habit-local-reminder';
+  notice.setAttribute('role', 'status');
+  notice.setAttribute('aria-live', 'polite');
+  notice.innerHTML = `
+    <div><strong data-reminder-title></strong><p data-reminder-body></p></div>
+    <div class="habit-local-reminder__actions">
+      <button type="button" class="btn btn-primary" data-reminder-open>Registrar</button>
+      <button type="button" class="btn btn-ghost" data-reminder-snooze>Adiar 10 min</button>
+      <button type="button" class="btn btn-ghost" data-reminder-dismiss>Dispensar</button>
+    </div>`;
+  notice.querySelector('[data-reminder-title]').textContent = reminder.title;
+  notice.querySelector('[data-reminder-body]').textContent = reminder.body;
+  notice.querySelector('[data-reminder-open]').addEventListener('click', () => {
+    notice.remove();
+    ctx.habitNavigationIntent = { type: 'record', definitionId: reminder.habitDefinitionId };
+    navigate('wellbeing');
+  });
+  notice.querySelector('[data-reminder-snooze]').addEventListener('click', async () => {
+    await snoozeHabitReminder(reminder, 10);
+    notice.remove();
+  });
+  notice.querySelector('[data-reminder-dismiss]').addEventListener('click', () => notice.remove());
+  document.body.append(notice);
+}
+
+async function checkHabitReminders() {
+  if (!authService.getCurrentUser() || !getActiveContestId()) return;
+  try {
+    await deliverDueHabitReminders({ onInternal: showInternalHabitReminder });
+  } catch (error) {
+    console.warn('[habits] local reminder unavailable', error?.message || error);
+  }
+}
+
+function bindHabitReminderRuntime() {
+  if (habitReminderRuntimeBound) return;
+  habitReminderRuntimeBound = true;
+  window.addEventListener('focus', checkHabitReminders);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') checkHabitReminders();
+  });
+  navigator.serviceWorker?.addEventListener('message', (event) => {
+    if (event.data?.type === 'DETONA_NAVIGATE' && event.data?.screen === 'wellbeing') navigate('wellbeing');
+  });
+  window.setInterval(checkHabitReminders, 60000);
+}
 
 async function navigate(screen) {
   if (!canAccessInternalRoute(authService)) {
@@ -114,6 +171,7 @@ async function navigate(screen) {
   root.focus({ preventScroll: true });
 
   window.scrollTo(0, 0);
+  checkHabitReminders();
 }
 
 function showAuth() {
@@ -203,7 +261,8 @@ async function openContest(contestId) {
     await navigate('onboarding');
   } else {
     document.getElementById('bottom-nav')?.classList.remove('hidden');
-    await navigate('home');
+    const requestedScreen = new URLSearchParams(window.location.search).get('screen');
+    await navigate(requestedScreen === 'wellbeing' ? 'wellbeing' : 'home');
   }
 }
 
@@ -264,6 +323,7 @@ async function init() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
+    bindHabitReminderRuntime();
     try {
       const { initPwaInstall } = await import('./core/pwaInstall.js');
       initPwaInstall();

@@ -31,6 +31,14 @@ import {
   nextHabitFromAgenda,
   refreshKaelyConsistency,
 } from '../services/kaelyHabitService.js';
+import {
+  REMINDER_LEAD_OPTIONS,
+  notificationPermissionStatus,
+  requestHabitNotificationPermission,
+  saveHabitReminderSettings,
+  isIosStandalone,
+} from '../services/habitReminderService.js';
+import { localPersonalRepository } from '../repositories/localPersonalRepository.js';
 
 const FILTERS = Object.freeze([
   ['all', 'Todos'],
@@ -169,11 +177,15 @@ function renderAgenda(entries, selectedDate) {
   </ol>`;
 }
 
-function configurationBody(configuration, focusHabitId = null) {
+function configurationBody(configuration, focusHabitId = null, permission = 'default') {
   const currentMap = new Map(configuration.definitions.map((item) => [item.habitId, item]));
   return `
     <div class="hb-config">
-      <p>Escolha até ${MAX_ACTIVE_HABITS} hábitos. Os dados ficam isolados nesta conta e neste concurso.</p>
+      <p>Escolha até ${MAX_ACTIVE_HABITS} hábitos. Esta é uma área pessoal e local do dispositivo.</p>
+      <aside class="hb-local-notice" aria-label="Privacidade dos hábitos">
+        <strong>Privacidade local</strong>
+        <p>${escapeHtml(habitPrivacyStatement())}</p>
+      </aside>
       <p class="hb-config__count" id="hb-config-count">0/${MAX_ACTIVE_HABITS} ativos</p>
       <div class="hb-config__list">
         ${HABIT_CATALOG.map((item) => {
@@ -197,6 +209,12 @@ function configurationBody(configuration, focusHabitId = null) {
                 <label>Horário preferencial
                   <input type="time" data-habit-reminder="${item.id}" value="${definition?.reminderTime || ''}">
                 </label>
+                <label class="hb-check"><input type="checkbox" data-field="reminderEnabled" data-for="${item.id}" ${definition?.reminderEnabled ? 'checked' : ''}> Lembrar neste dispositivo</label>
+                <label>Antecedência
+                  <select data-field="reminderLeadMinutes" data-for="${item.id}">
+                    ${REMINDER_LEAD_OPTIONS.map((value) => `<option value="${value}" ${value === Number(definition?.reminderLeadMinutes || 0) ? 'selected' : ''}>${value === 0 ? 'No horário' : `${value} minutos antes`}</option>`).join('')}
+                  </select>
+                </label>
                 ${item.id === 'water' ? `
                   <label>Início da janela<input type="time" data-field="windowStart" data-for="${item.id}" value="${definition?.windowStart || '07:00'}"></label>
                   <label>Fim da janela<input type="time" data-field="windowEnd" data-for="${item.id}" value="${definition?.windowEnd || '20:30'}"></label>
@@ -206,7 +224,7 @@ function configurationBody(configuration, focusHabitId = null) {
                   <label>Momento<input type="text" maxlength="60" data-field="mealAnchor" data-for="${item.id}" value="${escapeHtml(definition?.mealAnchor || 'Após o almoço')}"></label>` : ''}
                 ${item.id === 'medication' ? `
                   <label>Nome ou apelido opcional<input type="text" maxlength="80" data-field="privateLabel" data-for="${item.id}" value="${escapeHtml(definition?.privateLabel || '')}"></label>
-                  <label class="hb-check"><input type="checkbox" data-field="discreteMode" data-for="${item.id}" ${definition?.discreteMode !== false ? 'checked' : ''}> Modo discreto</label>
+                  <label class="hb-check"><input type="checkbox" data-field="discreteMode" data-for="${item.id}" ${definition?.discreteMode !== false ? 'checked' : ''}> Lembrete discreto</label>
                   <p class="hb-medical-note">Este registro serve apenas como lembrete e não substitui orientação profissional.</p>` : ''}
                 ${item.id === 'sleep_schedule' ? `
                   <label>Dormir às<input type="time" data-field="desiredSleepTime" data-for="${item.id}" value="${definition?.desiredSleepTime || '22:30'}"></label>
@@ -237,6 +255,12 @@ function configurationBody(configuration, focusHabitId = null) {
           ${[40, 50, 60, 70, 80].map((value) => `<option value="${value}" ${value === configuration.minimumPercent ? 'selected' : ''}>${value}% dos hábitos ativos</option>`).join('')}
         </select>
       </label>
+      <div class="hb-notification-permission">
+        <strong>Notificações do dispositivo</strong>
+        <p data-notification-status>Status: ${permission === 'granted' ? 'permitidas' : permission === 'denied' ? 'bloqueadas pelo navegador' : permission === 'unsupported' ? 'indisponíveis neste navegador' : 'ainda não autorizadas'}.</p>
+        <button type="button" class="btn btn-ghost" id="hb-enable-notifications" ${permission === 'granted' || permission === 'unsupported' ? 'disabled' : ''}>${permission === 'granted' ? 'Notificações ativadas' : 'Ativar notificações'}</button>
+        <small>O DETONA não usa servidor de push nem envia horários para a nuvem. O navegador pode suspender lembretes quando o app está fechado. No iPhone, instale o app na Tela de Início para usar notificações.</small>
+      </div>
       <p class="hb-privacy">${escapeHtml(habitPrivacyStatement())}</p>
     </div>`;
 }
@@ -375,7 +399,10 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
 
         <section class="hb-panel hb-settings" aria-labelledby="hb-settings-title">
           <div><span class="hb-eyebrow">CONTROLE PESSOAL</span><h3 id="hb-settings-title">Configurações</h3><p>Edite dias, horários, metas, lembretes, privacidade e ordem dos hábitos.</p></div>
-          <button type="button" class="btn btn-primary" id="hb-settings-open">Configurar hábitos</button>
+          <div class="hb-settings__actions">
+            <button type="button" class="btn btn-primary" id="hb-settings-open">Configurar hábitos</button>
+            <button type="button" class="btn btn-ghost hb-delete-local" id="hb-delete-local">Apagar meus dados pessoais deste dispositivo</button>
+          </div>
           <p class="hb-privacy">${escapeHtml(habitPrivacyStatement())}</p>
         </section>
         <button type="button" class="btn btn-block" id="hb-home">← Voltar ao Início</button>
@@ -403,11 +430,12 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
 
   async function openConfiguration(focusHabitId = null) {
     const configuration = await getHabitConfiguration();
+    const permission = notificationPermissionStatus();
     let selected = configuration.definitions
       .filter((item) => item.enabled !== false)
       .sort((a, b) => a.orderIndex - b.orderIndex)
       .map((item) => item.habitId);
-    openModal('Configurar hábitos', configurationBody(configuration, focusHabitId), `
+    openModal('Configurar hábitos', configurationBody(configuration, focusHabitId, permission), `
       <button type="button" class="btn btn-ghost" id="hb-config-skip">Pular por agora</button>
       <button type="button" class="btn btn-primary" id="hb-config-save">Salvar hábitos</button>`);
     const modal = document.getElementById('app-modal');
@@ -438,12 +466,28 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
       [selected[from], selected[to]] = [selected[to], selected[from]];
       toast('Ordem ajustada. Salve para confirmar.');
     }));
+    document.getElementById('hb-enable-notifications')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      const result = await requestHabitNotificationPermission();
+      const status = modal?.querySelector('[data-notification-status]');
+      if (status) status.textContent = result === 'granted'
+        ? 'Status: permitidas.'
+        : result === 'denied'
+          ? 'Status: bloqueadas pelo navegador.'
+          : 'Status: indisponíveis neste navegador.';
+      button.textContent = result === 'granted' ? 'Notificações ativadas' : 'Tentar novamente';
+      button.disabled = result === 'granted' || result === 'unsupported';
+      const ios = isIosStandalone();
+      if (ios.ios && !ios.standalone) toast('No iPhone, adicione o DETONA à Tela de Início antes de ativar notificações.');
+    });
     document.getElementById('hb-config-skip')?.addEventListener('click', async () => {
       await skipHabitConfiguration();
       closeModal();
       await paint();
     });
-    document.getElementById('hb-config-save')?.addEventListener('click', async () => {
+    document.getElementById('hb-config-save')?.addEventListener('click', async (event) => {
+      const saveButton = event.currentTarget;
       const fieldValue = (habitId, field) => {
         const input = modal?.querySelector(`[data-field="${field}"][data-for="${habitId}"]`);
         if (!input) return undefined;
@@ -453,6 +497,8 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         habitId,
         target: Number(modal?.querySelector(`[data-habit-target="${habitId}"]`)?.value),
         reminderTime: modal?.querySelector(`[data-habit-reminder="${habitId}"]`)?.value || null,
+        reminderEnabled: fieldValue(habitId, 'reminderEnabled') === true,
+        reminderLeadMinutes: Number(fieldValue(habitId, 'reminderLeadMinutes')) || 0,
         activeDays: [...(modal?.querySelectorAll(`[data-habit-day="${habitId}"]:checked`) || [])].map((input) => Number(input.value)),
         windowStart: fieldValue(habitId, 'windowStart'),
         windowEnd: fieldValue(habitId, 'windowEnd'),
@@ -468,15 +514,47 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         note: fieldValue(habitId, 'note'),
       }));
       try {
+        saveButton.disabled = true;
         await saveHabitConfiguration({
           selections,
           minimumPercent: Number(document.getElementById('hb-minimum-percent')?.value) || 60,
         });
+        await saveHabitReminderSettings(selections.map((selection) => ({
+          habitDefinitionId: `habit:${selection.habitId}`,
+          enabled: selection.reminderEnabled,
+          time: selection.reminderTime,
+          activeDays: selection.activeDays,
+          leadMinutes: selection.reminderLeadMinutes,
+          discrete: selection.discreteMode === true,
+        })));
         closeModal();
         toast('Seus hábitos foram salvos.');
-        await paint();
-      } catch {
-        toast('Não foi possível salvar os hábitos.');
+        if (ctx?.habitReturnToHome) {
+          delete ctx.habitReturnToHome;
+          navigate('home');
+        } else await paint();
+      } catch (error) {
+        console.error('[habits] save failed', {
+          code: error?.message || 'HABIT_SAVE_FAILED',
+          field: error?.field || null,
+          habitId: error?.habitId || null,
+        });
+        saveButton.disabled = false;
+        const messages = {
+          HABIT_DUPLICATE: 'O mesmo hábito foi selecionado mais de uma vez.',
+          HABIT_ACTIVE_DAYS_REQUIRED: 'Selecione pelo menos um dia da semana para cada hábito.',
+          HABIT_TIME_INVALID: 'Revise o horário do lembrete.',
+          HABIT_TARGET_INVALID: 'Revise a meta pessoal selecionada.',
+        };
+        toast(messages[error?.message] || 'Não foi possível salvar. Revise os campos destacados e tente novamente.');
+        const row = error?.habitId ? modal?.querySelector(`[data-config-row="${error.habitId}"]`) : null;
+        row?.classList.add('has-error');
+        const target = error?.field === 'activeDays'
+          ? row?.querySelector('[data-habit-day]')
+          : error?.field === 'reminderTime'
+            ? row?.querySelector('[data-habit-reminder]')
+            : row?.querySelector('input,select,textarea');
+        target?.focus();
       }
     });
     update();
@@ -578,6 +656,23 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     $('#hb-home', root)?.addEventListener('click', () => navigate('home'));
     $('#hb-configure', root)?.addEventListener('click', () => openConfiguration());
     $('#hb-settings-open', root)?.addEventListener('click', () => openConfiguration());
+    $('#hb-delete-local', root)?.addEventListener('click', () => {
+      openModal('Apagar dados pessoais locais', `
+        <div class="hb-delete-confirm">
+          <p>Esta ação apaga somente hábitos, registros pessoais e lembretes guardados neste dispositivo.</p>
+          <p><strong>Progresso acadêmico, batalhas, revisões, XP e acesso aos concursos serão preservados.</strong></p>
+          <p>A exclusão local não pode ser desfeita.</p>
+        </div>`, `
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancelar</button>
+        <button type="button" class="btn btn-primary" id="hb-delete-local-confirm">Confirmar exclusão local</button>`);
+      document.getElementById('hb-delete-local-confirm')?.addEventListener('click', async (event) => {
+        event.currentTarget.disabled = true;
+        await localPersonalRepository.clearPersonalData();
+        closeModal();
+        toast('Dados pessoais locais apagados. Seu progresso acadêmico foi preservado.');
+        await paint();
+      });
+    });
     $('#hb-summary-action', root)?.addEventListener('click', () => {
       if (!state.total) openConfiguration();
       else document.getElementById('hb-agenda-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });

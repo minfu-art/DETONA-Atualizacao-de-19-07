@@ -669,6 +669,9 @@ export function applyAcademicAutomation({ definitions = [], logs = [], date = lo
   return result;
 }
 
-export function habitPrivacyStatement() {
-  return 'O DETONA acompanha apenas os hábitos que você escolher. Estes registros não substituem orientação médica ou profissional.';
+export function habitPrivacyStatement(catalog = null) {
+  const local = 'Seus hábitos e horários ficam somente neste dispositivo e não são sincronizados com a nuvem. Se os dados do navegador forem apagados, este histórico será perdido.';
+  return catalog?.isMedicalSensitive
+    ? `${local} Registros pessoais não substituem orientação médica ou profissional.`
+    : local;
 }
