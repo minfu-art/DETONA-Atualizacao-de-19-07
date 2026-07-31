@@ -32,6 +32,33 @@ async function walk(url) {
   return output;
 }
 
+function themeBlock(css, theme) {
+  const match = css.match(new RegExp(`\\[data-theme="${theme}"\\]\\s*\\{([^}]*)\\}`));
+  assert.ok(match, `tema ${theme}`);
+  return match[1];
+}
+
+function customProperty(block, name) {
+  const match = block.match(new RegExp(`${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*:\\s*(#[0-9a-f]{3,6})`, 'i'));
+  assert.ok(match, name);
+  return match[1].toLowerCase();
+}
+
+function relativeLuminance(hex) {
+  const normalized = hex.slice(1).length === 3
+    ? [...hex.slice(1)].map((value) => value + value).join('')
+    : hex.slice(1);
+  const [red, green, blue] = [0, 2, 4]
+    .map((index) => Number.parseInt(normalized.slice(index, index + 2), 16) / 255)
+    .map((value) => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
+  return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+}
+
+function contrastRatio(first, second) {
+  const values = [relativeLuminance(first), relativeLuminance(second)].sort((a, b) => b - a);
+  return (values[0] + 0.05) / (values[1] + 0.05);
+}
+
 test('fundação possui tokens canônicos sem duplicação crítica', async () => {
   const css = await readFile(cssUrl, 'utf8');
   const required = [
@@ -56,6 +83,45 @@ test('temas de área alteram variáveis compartilhadas', async () => {
   }
   const shell = await readFile(shellUrl, 'utf8');
   assert.match(shell, /root\.dataset\.theme = SCREEN_THEMES\[screen\]/);
+});
+
+test('matriz oficial preserva as cores principal e secundária de cada área', async () => {
+  const css = await readFile(cssUrl, 'utf8');
+  const expected = {
+    today: { accent: '#fb923c', secondary: '#a78bfa' },
+    study: { accent: '#2563eb', secondary: '#38bdf8' },
+    battle: { accent: '#fb923c', secondary: '#fb7185' },
+    plan: { accent: '#c084fc', secondary: '#60a5fa' },
+    performance: { accent: '#38bdf8', secondary: '#6366f1' },
+    habits: { accent: '#fb7185', secondary: '#be123c' },
+    ranked: { accent: '#f6c453', secondary: '#ef4444' },
+    profile: { accent: '#f6c453', secondary: '#a78bfa' },
+    library: { accent: '#cbd5e1', secondary: '#94a3b8' },
+  };
+  for (const [theme, colors] of Object.entries(expected)) {
+    const block = themeBlock(css, theme);
+    assert.equal(customProperty(block, '--ds-theme-accent'), colors.accent, `${theme} principal`);
+    assert.equal(customProperty(block, '--ds-theme-secondary'), colors.secondary, `${theme} apoio`);
+  }
+});
+
+test('CTAs temáticos possuem fundo sólido e contraste WCAG AA normal e hover', async () => {
+  const css = await readFile(cssUrl, 'utf8');
+  for (const theme of ['today', 'study', 'battle', 'plan', 'performance', 'habits', 'ranked', 'profile', 'library']) {
+    const block = themeBlock(css, theme);
+    const foreground = customProperty(block, '--ds-theme-on-accent');
+    const background = customProperty(block, '--ds-theme-button-bg');
+    const hover = customProperty(block, '--ds-theme-button-bg-hover');
+    assert.ok(contrastRatio(foreground, background) >= 4.5, `${theme} CTA normal`);
+    assert.ok(contrastRatio(foreground, hover) >= 4.5, `${theme} CTA hover`);
+  }
+  const primaryRule = css.match(/\.ds-button--primary\s*\{([^}]*)\}/)?.[1] || '';
+  assert.match(primaryRule, /background:var\(--ds-theme-button-bg\)/);
+  assert.match(primaryRule, /color:var\(--ds-theme-on-accent\)/);
+  assert.doesNotMatch(primaryRule, /linear-gradient/);
+  const disabledRule = css.match(/\.ds-button--primary:disabled,[^{]+\{([^}]*)\}/)?.[1] || '';
+  assert.match(disabledRule, /background:var\(--ds-theme-button-bg\)/);
+  assert.match(disabledRule, /color:var\(--ds-theme-on-accent\)/);
 });
 
 test('primitivos oficiais cobrem superfícies, botões, campos e larguras', async () => {
