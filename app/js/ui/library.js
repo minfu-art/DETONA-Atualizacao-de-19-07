@@ -104,6 +104,7 @@ export function renderLibrary(root, {
   activeContestId = null,
   onOpen,
   onLogout,
+  embedded = false,
 }) {
   const activeJourney = selectActiveJourney(items, activeContestId);
   const exploreItems = activeJourney
@@ -114,11 +115,11 @@ export function renderLibrary(root, {
   const state = { area: 'all', search: '' };
 
   root.innerHTML = `
-    <div class="library-page">
-      <header class="library-header">
+    <div class="library-page ${embedded ? 'library-page--embedded' : ''}">
+      ${embedded ? '' : `<header class="library-header">
         <div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div>
         <div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div>
-      </header>
+      </header>`}
       <section class="library-hero">
         <div class="library-hero__copy"><span class="saas-kicker">Minha biblioteca</span><p class="library-greeting">Olá, <strong>${escapeHtml(user.name.split(' ')[0])}</strong>. Sua evolução é construída todos os dias.</p><h1>Escolha sua próxima missão.</h1><p>Encontre concursos pela carreira que combina com seu objetivo.</p><div class="library-summary"><strong>${owned.length}</strong><span>${owned.length === 1 ? 'concurso ativo' : 'concursos ativos'}</span></div></div>
         <div class="library-guide" aria-hidden="true"><span class="library-guide__orbit"></span><img src="${heroSrcForLevel(guideLevel)}" alt="" width="560" height="560" decoding="async"><div><small>Conhecimento é poder</small><strong>Continue de onde parou.</strong></div></div>
@@ -157,7 +158,7 @@ export function renderLibrary(root, {
     }));
   };
 
-  root.querySelector('#library-logout').addEventListener('click', onLogout);
+  root.querySelector('#library-logout')?.addEventListener('click', onLogout);
   root.querySelectorAll('.contest-grid--active [data-open-contest]').forEach((button) => button.addEventListener('click', () => onOpen(button.dataset.openContest)));
   root.querySelector('#library-search').addEventListener('input', (event) => {
     state.search = event.currentTarget.value;

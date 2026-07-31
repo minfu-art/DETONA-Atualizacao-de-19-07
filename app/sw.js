@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v96-visual-contrast';
+const CACHE = 'detona-v97-shell-navigation';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -122,9 +122,9 @@ const ASSETS = [
   './js/ui/icons.js',
   './js/ui/icons.js?v=66',
   './js/ui/icons.js?v=74',
-  './js/ui/navigation.js?v=70',
+  './js/ui/navigation.js?v=73',
   './js/ui/appShell.js',
-  './js/ui/appShell.js?v=71',
+  './js/ui/appShell.js?v=72',
   './js/ui/onboarding.js',
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',

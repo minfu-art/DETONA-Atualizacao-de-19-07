@@ -26,20 +26,22 @@ const navigationUrl = new URL('../app/js/ui/navigation.js', import.meta.url);
 const adminAppUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
 const adminHtmlUrl = new URL('../app/admin.html', import.meta.url);
 
-test('navegação principal usa um único vocabulário sem renomear rotas internas', async () => {
+test('navegação principal usa uma única fonte sem renomear rotas internas', async () => {
   const [navigation, shell, html, app] = await Promise.all([
     readFile(navigationUrl, 'utf8'),
     readFile(shellUrl, 'utf8'),
     readFile(indexUrl, 'utf8'),
     readFile(appUrl, 'utf8'),
   ]);
-  for (const [screen, label] of [['home', 'Hoje'], ['map', 'Estudar'], ['edital', 'Edital'], ['expedition', 'Plano'], ['performance', 'Desempenho']]) {
+  for (const [screen, label] of [['home', 'Hoje'], ['map', 'Estudar'], ['edital', 'Edital'], ['expedition', 'Plano'], ['performance', 'Desempenho'], ['wellbeing', 'Hábitos'], ['rankedEvent', 'Simulados'], ['library', 'Biblioteca'], ['profile', 'Perfil']]) {
     assert.match(navigation, new RegExp(`screen: '${screen}'.+label: '${label}'`));
-    assert.match(html, new RegExp(`data-screen="${screen}"[\\s\\S]+?<span>${label}<\\/span>`));
   }
-  assert.match(shell, /PRIMARY_NAV_ITEMS\.map\(menuButton\)/);
+  assert.doesNotMatch(html, /data-screen="(?:home|map|edital|expedition|performance)"/);
+  assert.match(shell, /DESKTOP_NAVIGATION_GROUPS/);
+  assert.match(shell, /MOBILE_PRIMARY_ITEMS/);
+  assert.match(shell, /MOBILE_MORE_NAVIGATION_GROUPS/);
   assert.match(shell, /primaryScreenFor\(screen\)/);
-  assert.match(app, /primaryScreenFor\(screen\)/);
+  assert.match(app, /isBottomNavigationVisible\(screen\)/);
   assert.match(navigation, /topicTree: 'map'/);
   assert.match(navigation, /battle: 'map'/);
   assert.match(navigation, /review: 'map'/);

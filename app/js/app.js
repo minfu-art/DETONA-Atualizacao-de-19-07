@@ -19,8 +19,7 @@ import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=69';
 import { renderReview } from './ui/review.js?v=83';
 import { renderRankedEvent } from './ui/rankedEvent.js';
-import { ICO } from './ui/icons.js?v=66';
-import { initAppShell, updateAppShell } from './ui/appShell.js?v=71';
+import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
 import { renderAuth } from './ui/auth.js?v=74';
 import { renderLibrary } from './ui/library.js';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
@@ -29,7 +28,7 @@ import { redirectForRole } from './auth/roleRouting.js';
 import { clearActiveContestId, getActiveContestId, setActiveContestId } from './contest/activeContest.js';
 import { clearActiveContestContent, setActiveContestContent } from './contest/contestRuntime.js';
 import { errorState, skeleton } from './ui/components.js';
-import { primaryScreenFor } from './ui/navigation.js?v=70';
+import { isBottomNavigationVisible } from './ui/navigation.js?v=73';
 import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
@@ -52,14 +51,6 @@ const ctx = {
 
 let shellInitialized = false;
 
-function injectNavIcons() {
-  document.querySelectorAll('.nav-ico[data-ico]').forEach((el) => {
-    const name = el.dataset.ico;
-    const fn = ICO[name];
-    if (fn) el.innerHTML = fn();
-  });
-}
-
 const ROUTES = {
   library: renderLibrary,
   onboarding: renderOnboarding,
@@ -77,8 +68,6 @@ const ROUTES = {
   review: renderReview,
   rankedEvent: renderRankedEvent,
 };
-
-const NAV_VISIBLE = new Set(['home', 'map', 'edital', 'expedition', 'performance', 'wellbeing', 'profile', 'topicTree', 'review', 'rankedEvent']);
 
 async function navigate(screen) {
   if (!canAccessInternalRoute(authService)) {
@@ -104,11 +93,7 @@ async function navigate(screen) {
 
   // nav highlight
   if (nav) {
-    nav.classList.toggle('hidden', !NAV_VISIBLE.has(screen) && screen !== 'battle');
-    nav.querySelectorAll('.nav-item').forEach((item) => {
-      const active = item.dataset.screen === primaryScreenFor(screen);
-      item.classList.toggle('active', active);
-    });
+    nav.classList.toggle('hidden', !isBottomNavigationVisible(screen));
   }
 
   root.innerHTML = skeleton(4, `Carregando ${screen}`);
@@ -145,12 +130,13 @@ function showAuth() {
 async function showLibrary() {
   const activeContestId = getActiveContestId();
   clearActiveContestContent();
-  ctx.contest = null;
+  ctx.contest = activeContestId ? await libraryService.getContest(activeContestId) : null;
   ctx.contentPackage = null;
   ctx.screen = 'library';
   const app = document.getElementById('app');
   app?.classList.remove('app-shell--auth');
   app?.classList.add('app-shell--library');
+  document.getElementById('bottom-nav')?.classList.remove('hidden');
   const root = document.getElementById('screen');
   if (!root) return;
   root.dataset.screen = 'library';
@@ -164,7 +150,9 @@ async function showLibrary() {
     activeContestId,
     onOpen: openContest,
     onLogout: logout,
+    embedded: true,
   });
+  updateAppShell({ screen: 'library', player: await getPlayer(), contest: ctx.contest, user });
   root.focus({ preventScroll: true });
   window.scrollTo(0, 0);
 }
@@ -241,16 +229,8 @@ async function initializeAuthenticatedApp() {
   }
   ctx.user = authenticatedUser;
   document.getElementById('app')?.classList.remove('app-shell--auth');
-  injectNavIcons();
-
   if (!shellInitialized) {
-    initAppShell(navigate, { onLogout: logout });
-    document.getElementById('bottom-nav')?.addEventListener('click', (e) => {
-      const btn = e.target.closest('.nav-item');
-      if (!btn) return;
-      SFX.click();
-      navigate(btn.dataset.screen);
-    });
+    initAppShell(navigate, { onLogout: logout, onActivate: () => SFX.click() });
     shellInitialized = true;
   }
 

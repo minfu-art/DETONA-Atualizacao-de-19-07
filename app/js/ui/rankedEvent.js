@@ -4,6 +4,7 @@ import { mountPageContainer } from './appShell.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 import { STORES } from '../core/types.js';
 import { createReviewItem } from '../core/reviewQueue.js';
+import { emptyState } from './components.js';
 
 const STATUS_LABELS = Object.freeze({
   scheduled: 'Em breve',
@@ -170,8 +171,13 @@ export async function renderRankedEvent(root, navigate, ctx) {
   const { events = [] } = await rankedEventService.listEvents(ctx.contest.id);
   const selected = events.find(({ id }) => id === ctx.rankedEventId) || events[0] || null;
   if (!selected) {
-    root.innerHTML = '<div class="ranked-event-page"><h1>Eventos ranqueados</h1><p>Nenhum evento disponível para este concurso.</p></div>';
+    root.innerHTML = `<div class="ranked-event-page"><header class="ranked-event-hero"><span>ARENA DETONA</span><h1>Simulados</h1></header>${emptyState({
+      title: 'Nenhum simulado ranqueado ativo',
+      description: 'Os próximos desafios aparecerão aqui quando forem liberados.',
+      action: '<button type="button" class="ds-button ds-button--primary" id="ranked-back-home">Voltar para Hoje</button>',
+    })}</div>`;
     mountPageContainer(root, { variant: 'ranked-event' });
+    root.querySelector('#ranked-back-home')?.addEventListener('click', () => navigate('home'));
     return;
   }
   const status = selected.effectiveStatus || selected.status;

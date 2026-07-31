@@ -18,13 +18,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/main.css?v=77" />
+  <link rel="stylesheet" href="css/main.css?v=78" />
   <link rel="stylesheet" href="css/design-system.css?v=82" />
   <link rel="stylesheet" href="css/dashboard-jrpg.css?v=80" />
   <link rel="stylesheet" href="css/plan-edital.css?v=3" />
   <link rel="stylesheet" href="css/performance-mobile.css?v=3" />
 </head>
 <body>
+  <a class="skip-link" href="#screen">Pular para o conteúdo</a>
   <div class="app-bg" aria-hidden="true">
     <div class="app-bg__glow app-bg__glow--a"></div>
     <div class="app-bg__glow app-bg__glow--b"></div>
@@ -40,31 +41,12 @@
       </div>
     </div>
 
-    <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação principal">
-      <button type="button" class="nav-item active" data-screen="home" aria-label="Hoje">
-        <span class="nav-ico" data-ico="home"></span>
-        <span>Hoje</span>
-      </button>
-      <button type="button" class="nav-item" data-screen="map" aria-label="Estudar">
-        <span class="nav-ico" data-ico="book"></span>
-        <span>Estudar</span>
-      </button>
-      <button type="button" class="nav-item" data-screen="edital" aria-label="Edital verticalizado">
-        <span class="nav-ico" data-ico="clipboard"></span>
-        <span>Edital</span>
-      </button>
-      <button type="button" class="nav-item" data-screen="expedition" aria-label="Plano">
-        <span class="nav-ico" data-ico="calendar"></span>
-        <span>Plano</span>
-      </button>
-      <button type="button" class="nav-item" data-screen="performance" aria-label="Desempenho">
-        <span class="nav-ico" data-ico="chartSteps"></span>
-        <span>Desempenho</span>
-      </button>
-    </nav>
+    <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação principal"></nav>
+    <div id="mobile-more-root"></div>
+    <p class="sr-only" id="shell-announcer" aria-live="polite" aria-atomic="true"></p>
   </div>
 
   <script src="env.runtime.js"></script>
-  <script type="module" src="js/app.js?v=87"></script>
+  <script type="module" src="js/app.js?v=88"></script>
 </body>
 </html>

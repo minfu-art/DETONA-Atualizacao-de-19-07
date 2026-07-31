@@ -165,12 +165,12 @@ test('rota protegida, navegação principal e retorno ao perfil permanecem expl�
   assert.match(app, /performance:\s*renderPerformance/);
   assert.match(app, /if \(!canAccessInternalRoute\(authService\)\)/);
   assert.match(app, /if \(!getActiveContestId\(\)\)/);
-  assert.match(navigation, /screen: 'performance'.+icon: 'chartSteps'.+label: 'Desempenho'/);
-  assert.doesNotMatch(navigation, /screen: 'profile'/);
-  assert.match(shell, /data-shell-screen="profile"[^>]*>.*Meu perfil/s);
-  assert.equal((html.match(/class="nav-item/g) || []).length, 5);
-  assert.match(html, /data-screen="performance"[\s\S]*Desempenho/);
-  assert.doesNotMatch(html, /data-screen="profile"/);
+  assert.match(navigation, /screen: 'performance'.+label: 'Desempenho'.+icon: 'chartSteps'/);
+  assert.match(navigation, /screen: 'profile'.+label: 'Perfil'/);
+  assert.match(shell, /data-shell-screen="profile"[^>]*aria-label="Abrir Perfil"/);
+  assert.match(shell, /MOBILE_PRIMARY_ITEMS\.map/);
+  assert.match(shell, /MOBILE_MORE_NAVIGATION_GROUPS\.map/);
+  assert.equal((html.match(/class="nav-item/g) || []).length, 0);
   assert.match(performance, /performance-profile/);
   assert.match(performance, /querySelector\('#performance-profile'\).*navigate\('profile'\)/);
   assert.doesNotMatch(performance, /applyXp|ranking|checkout|moeda/i);

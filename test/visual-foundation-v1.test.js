@@ -82,7 +82,7 @@ test('temas de área alteram variáveis compartilhadas', async () => {
     assert.match(css, new RegExp(`\\[data-theme="${theme}"\\][^{]*\\{[^}]*--ds-theme-accent:`));
   }
   const shell = await readFile(shellUrl, 'utf8');
-  assert.match(shell, /root\.dataset\.theme = SCREEN_THEMES\[screen\]/);
+  assert.match(shell, /root\.dataset\.theme = themeForScreen\(screen\)/);
 });
 
 test('matriz oficial preserva as cores principal e secundária de cada área', async () => {

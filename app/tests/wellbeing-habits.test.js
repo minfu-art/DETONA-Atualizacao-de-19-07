@@ -28,7 +28,7 @@ test('menu usa coração com pulsação e acessibilidade', async () => {
   ]);
   assert.match(navigation, /icon: 'heartPulse'/);
   assert.match(icons, /heartPulse:[\s\S]*5\.4 5\.4[\s\S]*M3\.8 13/);
-  assert.match(shell, /aria-label="\$\{label\}" title="\$\{label\}"/);
+  assert.match(shell, /aria-label="\$\{escapeHtml\(item\.ariaLabel\)\}" title="\$\{escapeHtml\(item\.label\)\}"/);
 });
 
 test('hero oficial separa arte à esquerda e conteúdo à direita', async () => {
