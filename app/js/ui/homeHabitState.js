@@ -14,6 +14,7 @@ export const HOME_MENTOR_OWNERS = Object.freeze({
 
 export function resolveHomeHabitState(configuration = {}, cards = [], date = new Date()) {
   void date;
+  if (configuration?.configured === false) return HOME_HABIT_STATES.NO_CONFIGURATION;
   const enabledDefinitions = (configuration?.definitions || [])
     .filter((definition) => definition?.enabled !== false);
   if (enabledDefinitions.length === 0) return HOME_HABIT_STATES.NO_CONFIGURATION;

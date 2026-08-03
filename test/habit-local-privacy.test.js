@@ -120,3 +120,36 @@ test('interface declara privacidade local, exclusão seletiva e não usa Push re
   assert.doesNotMatch(`${reminders}\n${app}\n${sw}`, /PushManager|pushManager|subscribe\s*\(/);
   assert.match(sw, /notificationclick/);
 });
+
+test('fallback atômico restaura hábitos e metadados quando lembretes falham', async () => {
+  const adapter = memoryAdapter();
+  const originalSetMeta = adapter.setMeta;
+  let failOnce = true;
+  adapter.setMeta = async (key, value, user, contest) => {
+    if (key === 'habit_reminder_settings_v1' && failOnce) {
+      failOnce = false;
+      throw new Error('REMINDER_WRITE_FAILED');
+    }
+    return originalSetMeta(key, value, user, contest);
+  };
+  const repository = new LocalPersonalRepository({
+    adapter,
+    userContext: { getUserId: () => 'u1' },
+    contestContext: { getContestId: () => 'c1' },
+  });
+  await repository.put('wellbeingHabits', { id: 'habit:water', target: 4 });
+  await repository.setMeta('personalized_habits_config_v1', { configured: false });
+  const beforeRows = await repository.getAll('wellbeingHabits');
+  const beforeConfig = await repository.getMeta('personalized_habits_config_v1');
+
+  await assert.rejects(() => repository.putManyAndMetaAtomic('wellbeingHabits', [
+    { id: 'habit:water', target: 8 },
+  ], [
+    { key: 'personalized_habits_config_v1', value: { configured: true } },
+    { key: 'habit_reminder_settings_v1', value: [{ habitDefinitionId: 'habit:water' }] },
+  ]), /REMINDER_WRITE_FAILED/);
+
+  assert.deepEqual(await repository.getAll('wellbeingHabits'), beforeRows);
+  assert.deepEqual(await repository.getMeta('personalized_habits_config_v1'), beforeConfig);
+  assert.equal(await repository.getMeta('habit_reminder_settings_v1'), null);
+});

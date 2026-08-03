@@ -53,6 +53,35 @@ export class LocalPersonalRepository {
     return this.adapter.setMeta(key, value, this.userId(), this.contestId());
   }
 
+  async putManyAndMetaAtomic(store, values = [], metadata = []) {
+    assertPersonalWrite(store);
+    metadata.forEach((entry) => assertPersonalWrite(STORES.meta, entry?.key));
+    const userId = this.userId();
+    const contestId = this.contestId();
+    if (typeof this.adapter.putManyAndMetaAtomic === 'function') {
+      return this.adapter.putManyAndMetaAtomic({ store, values, metadata }, userId, contestId);
+    }
+
+    const previousRows = await this.adapter.getAll(store, userId, contestId);
+    const previousMeta = await Promise.all(metadata.map(async (entry) => ({
+      key: entry.key,
+      row: await this.adapter.getById(STORES.meta, entry.key, userId, contestId),
+    })));
+    try {
+      await this.adapter.putMany(store, values, userId, contestId);
+      for (const entry of metadata) await this.adapter.setMeta(entry.key, entry.value, userId, contestId);
+      return { values, metadata };
+    } catch (error) {
+      await this.adapter.clearStore(store, userId, contestId);
+      if (previousRows.length) await this.adapter.putMany(store, previousRows, userId, contestId);
+      for (const entry of previousMeta) {
+        if (entry.row) await this.adapter.put(STORES.meta, entry.row, userId, contestId);
+        else await this.adapter.remove(STORES.meta, entry.key, userId, contestId);
+      }
+      throw error;
+    }
+  }
+
   async clearPersonalData() {
     const userId = this.userId();
     const contestId = this.contestId();

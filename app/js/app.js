@@ -7,13 +7,13 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
-import { renderHome } from './ui/home.js?v=81';
+import { renderHome } from './ui/home.js?v=82';
 import { renderWorldMap } from './ui/worldMap.js?v=74';
 import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
 import { renderExpedition } from './ui/expedition.js?v=75';
-import { renderWellbeing } from './ui/wellbeingUI.js?v=71';
+import { renderWellbeing } from './ui/wellbeingUI.js?v=72';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=70';
@@ -35,7 +35,10 @@ import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext } from './auth/academicSessionContext.js';
 import {
+  createHabitReminderQueue,
   deliverDueHabitReminders,
+  dismissHabitReminder,
+  markHabitReminderPresented,
   snoozeHabitReminder,
 } from './services/habitReminderService.js';
 
@@ -76,16 +79,18 @@ const ROUTES = {
 };
 
 let habitReminderRuntimeBound = false;
+let habitReminderCheckPromise = null;
 
-function showInternalHabitReminder(reminder) {
+function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented = false } = {}) {
   document.getElementById('habit-local-reminder')?.remove();
+  if (!reminder) return;
   const notice = document.createElement('aside');
   notice.id = 'habit-local-reminder';
   notice.className = 'habit-local-reminder';
   notice.setAttribute('role', 'status');
   notice.setAttribute('aria-live', 'polite');
   notice.innerHTML = `
-    <div><strong data-reminder-title></strong><p data-reminder-body></p></div>
+    <div><strong data-reminder-title></strong><p data-reminder-body></p><small data-reminder-count></small></div>
     <div class="habit-local-reminder__actions">
       <button type="button" class="btn btn-primary" data-reminder-open>Registrar</button>
       <button type="button" class="btn btn-ghost" data-reminder-snooze>Adiar 10 min</button>
@@ -93,26 +98,47 @@ function showInternalHabitReminder(reminder) {
     </div>`;
   notice.querySelector('[data-reminder-title]').textContent = reminder.title;
   notice.querySelector('[data-reminder-body]').textContent = reminder.body;
-  notice.querySelector('[data-reminder-open]').addEventListener('click', () => {
-    notice.remove();
+  notice.querySelector('[data-reminder-count]').textContent = pendingCount > 1
+    ? `${pendingCount} lembretes pendentes`
+    : '1 lembrete pendente';
+  notice.querySelector('[data-reminder-open]').addEventListener('click', async () => {
+    await dismissHabitReminder(reminder);
+    habitReminderQueue.advance();
     ctx.habitNavigationIntent = { type: 'record', definitionId: reminder.habitDefinitionId };
     navigate('wellbeing');
   });
   notice.querySelector('[data-reminder-snooze]').addEventListener('click', async () => {
     await snoozeHabitReminder(reminder, 10);
-    notice.remove();
+    habitReminderQueue.advance();
   });
-  notice.querySelector('[data-reminder-dismiss]').addEventListener('click', () => notice.remove());
+  notice.querySelector('[data-reminder-dismiss]').addEventListener('click', async () => {
+    await dismissHabitReminder(reminder);
+    habitReminderQueue.advance();
+  });
   document.body.append(notice);
+  if (markPresented) markHabitReminderPresented(reminder).catch((error) => {
+    console.warn('[habits] reminder checkpoint unavailable', error?.message || error);
+  });
+}
+
+const habitReminderQueue = createHabitReminderQueue({ onPresent: renderInternalHabitReminder });
+
+function enqueueInternalHabitReminder(reminder) {
+  const presentedImmediately = habitReminderQueue.enqueue(reminder);
+  if (!presentedImmediately) {
+    const count = document.querySelector('#habit-local-reminder [data-reminder-count]');
+    if (count) count.textContent = `${habitReminderQueue.pendingCount()} lembretes pendentes`;
+  }
+  return presentedImmediately;
 }
 
 async function checkHabitReminders() {
   if (!authService.getCurrentUser() || !getActiveContestId()) return;
-  try {
-    await deliverDueHabitReminders({ onInternal: showInternalHabitReminder });
-  } catch (error) {
-    console.warn('[habits] local reminder unavailable', error?.message || error);
-  }
+  if (habitReminderCheckPromise) return habitReminderCheckPromise;
+  habitReminderCheckPromise = deliverDueHabitReminders({ onInternal: enqueueInternalHabitReminder })
+    .catch((error) => console.warn('[habits] local reminder unavailable', error?.message || error))
+    .finally(() => { habitReminderCheckPromise = null; });
+  return habitReminderCheckPromise;
 }
 
 function bindHabitReminderRuntime() {

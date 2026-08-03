@@ -22,12 +22,17 @@ import {
   migrateLegacyWellbeing,
   validateHabitSelection,
 } from './habitSystem.js';
+import {
+  HABIT_REMINDER_META_KEY,
+  normalizeHabitReminder,
+} from '../services/habitReminderService.js';
 
 export const VIGOR_FULL_DAY = 1;
 const MIGRATION_KEY = 'personalized_habits_migrated_v1';
-const MODEL_MIGRATION_KEY = 'personalized_habits_model_v2';
+const MODEL_MIGRATION_KEY = 'personalized_habits_model_v4';
 const CONFIG_KEY = 'personalized_habits_config_v1';
 const MINIMUM_KEY = 'personalized_habits_minimum_percent';
+const CONSISTENCY_LEDGER_KEY = 'habit_consistency_shield_v1';
 
 function scope(repository = progressRepository) {
   return { userId: repository.userId(), contestId: repository.contestId() };
@@ -104,10 +109,12 @@ export async function saveHabitConfiguration({
   selections = [],
   minimumPercent = DEFAULT_MINIMUM_PERCENT,
   skipped = false,
+  reminders = null,
 } = {}, repository = progressRepository) {
   const ids = selections.map((item) => item.habitId);
   const validation = validateHabitSelection(ids);
   if (!validation.canSave) throw new Error('HABIT_ACTIVE_LIMIT');
+  if (!skipped && ids.length === 0) throw new Error('HABIT_SELECTION_REQUIRED');
   if (new Set(ids).size !== ids.length) throw new Error('HABIT_DUPLICATE');
   for (const selection of selections) {
     const catalog = getHabitCatalogItem(selection.habitId);
@@ -154,20 +161,54 @@ export async function saveHabitConfiguration({
     .filter((item) => !selected.has(item.habitId))
     .map((item) => ({ ...item, enabled: false, updatedAt: now }));
 
-  if (definitions.length || disabled.length) {
-    await repository.putMany(STORES.wellbeingHabits, [...definitions, ...disabled]);
-  }
-  await repository.setMeta(CONFIG_KEY, {
+  const configurationMeta = {
     configured: !skipped,
     skipped: Boolean(skipped),
     updatedAt: now,
-  });
-  await repository.setMeta(MINIMUM_KEY, Math.max(1, Math.min(100, Number(minimumPercent) || DEFAULT_MINIMUM_PERCENT)));
+  };
+  const safeMinimum = Math.max(1, Math.min(100, Number(minimumPercent) || DEFAULT_MINIMUM_PERCENT));
+  const metadata = [
+    { key: CONFIG_KEY, value: configurationMeta },
+    { key: MINIMUM_KEY, value: safeMinimum },
+  ];
+  if (Array.isArray(reminders)) {
+    const previousReminders = new Map(((await repository.getMeta(HABIT_REMINDER_META_KEY)) || [])
+      .map((row) => [row.habitDefinitionId, row]));
+    const normalizedReminders = reminders.map((value) => normalizeHabitReminder({
+      ...previousReminders.get(value.habitDefinitionId),
+      ...value,
+    }, now));
+    metadata.push({ key: HABIT_REMINDER_META_KEY, value: normalizedReminders });
+  }
+  await repository.putManyAndMetaAtomic(
+    STORES.wellbeingHabits,
+    [...definitions, ...disabled],
+    metadata,
+  );
   return getHabitConfiguration(repository);
 }
 
 export async function skipHabitConfiguration(repository = progressRepository) {
-  return saveHabitConfiguration({ selections: [], skipped: true }, repository);
+  await repository.setMeta(CONFIG_KEY, {
+    configured: false,
+    skipped: true,
+    updatedAt: new Date().toISOString(),
+  });
+  return getHabitConfiguration(repository);
+}
+
+export async function disableAllHabits(repository = progressRepository) {
+  const configuration = await getHabitConfiguration(repository);
+  const now = new Date().toISOString();
+  const definitions = configuration.definitions.map((item) => ({ ...item, enabled: false, updatedAt: now }));
+  const reminders = ((await repository.getMeta(HABIT_REMINDER_META_KEY)) || [])
+    .map((item) => normalizeHabitReminder({ ...item, enabled: false }, now));
+  await repository.putManyAndMetaAtomic(STORES.wellbeingHabits, definitions, [
+    { key: CONFIG_KEY, value: { configured: true, skipped: false, updatedAt: now } },
+    { key: MINIMUM_KEY, value: configuration.minimumPercent },
+    { key: HABIT_REMINDER_META_KEY, value: reminders },
+  ]);
+  return getHabitConfiguration(repository);
 }
 
 function normalizeStoredLog(log) {
@@ -181,6 +222,9 @@ function normalizeStoredLog(log) {
     plannedTime: log.plannedTime || null,
     originalPlannedTime: log.originalPlannedTime || null,
     actualTime: log.actualTime || null,
+    actualSleepTime: log.actualSleepTime || null,
+    actualWakeTime: log.actualWakeTime || null,
+    durationMinutes: log.durationMinutes == null ? null : Number(log.durationMinutes) || 0,
     status: log.status || (log.completed ? 'completed' : Number(log.completedValue ?? log.amount_done) > 0 ? 'partial' : 'planned'),
     note: log.note || null,
   };
@@ -219,7 +263,9 @@ async function syncAcademicHabits(definitions, logs, date, repository) {
 
 export async function getHabitSystemState(date = localDateKey(), repository = progressRepository) {
   const configuration = await getHabitConfiguration(repository);
-  const definitions = configuration.definitions.filter((item) => item.enabled !== false);
+  const definitions = configuration.configured
+    ? configuration.definitions.filter((item) => item.enabled !== false)
+    : [];
   let logs = (await repository.getAll(STORES.wellbeingLogs)).map(normalizeStoredLog);
   logs = await syncAcademicHabits(definitions, logs, date, repository);
   const status = dailyHabitStatus({
@@ -228,11 +274,13 @@ export async function getHabitSystemState(date = localDateKey(), repository = pr
     date,
     minimumPercent: configuration.minimumPercent,
   });
+  const shieldLedger = await repository.getMeta(CONSISTENCY_LEDGER_KEY) || {};
   const consistency = calculateHabitConsistency({
     definitions,
     logs,
     today: date,
     minimumPercent: configuration.minimumPercent,
+    protectedDates: shieldLedger.protectedDates || [],
   });
   const todayLogs = new Map(logs
     .filter((log) => log.localDate === date)
@@ -273,7 +321,7 @@ export async function getHabitSystemState(date = localDateKey(), repository = pr
         status: log.status || (log.completed ? 'completed' : done > 0 ? 'partial' : 'planned'),
         plannedTime: log.plannedTime || definition.reminderTime,
         actualTime: log.actualTime || null,
-        automatic: log.source === HABIT_SOURCES.ACADEMIC_AUTO,
+        automatic: definition.recordType === HABIT_RECORD_TYPES.AUTOMATIC,
       };
     });
   return {
@@ -310,6 +358,7 @@ export async function setHabitAmountForDate(
   const definitions = await ensureWellbeingHabits(repository);
   const definition = definitions.find((item) => item.id === definitionId || item.habitId === definitionId);
   if (!definition) throw new Error('Hábito não encontrado');
+  if (definition.recordType === HABIT_RECORD_TYPES.AUTOMATIC) throw new Error('HABIT_AUTOMATIC_READ_ONLY');
   const existing = await repository.getById(STORES.wellbeingLogs, habitDailyLogId(definition.id, date));
   const row = createHabitDailyLog({
     definition,
@@ -319,6 +368,9 @@ export async function setHabitAmountForDate(
     plannedTime: details.plannedTime || existing?.plannedTime || definition.reminderTime,
     originalPlannedTime: details.originalPlannedTime || existing?.originalPlannedTime,
     actualTime: details.actualTime,
+    actualSleepTime: details.actualSleepTime,
+    actualWakeTime: details.actualWakeTime,
+    durationMinutes: details.durationMinutes,
     status: details.status,
     note: details.note,
     quality: details.quality,
@@ -429,8 +481,29 @@ export async function skipHabitForDate(definitionId, date = localDateKey(), repo
 }
 
 export async function recordHabitDetails(definitionId, details = {}, date = localDateKey(), repository = progressRepository) {
-  const value = Number(details.actualValue ?? details.completedValue) || 0;
-  return setHabitAmountForDate(definitionId, value, date, details, repository);
+  const definitions = await ensureWellbeingHabits(repository);
+  const definition = definitions.find((item) => item.id === definitionId || item.habitId === definitionId);
+  if (!definition) throw new Error('Hábito não encontrado');
+  if (definition.recordType === HABIT_RECORD_TYPES.AUTOMATIC) throw new Error('HABIT_AUTOMATIC_READ_ONLY');
+  const normalized = { ...details };
+  let value = Number(details.actualValue ?? details.completedValue) || 0;
+  if (definition.habitId === 'energy_level') {
+    if (!Number.isInteger(value) || value < 1 || value > 5) throw new Error('HABIT_SCALE_INVALID');
+    normalized.status = 'completed';
+  }
+  if (definition.habitId === 'sleep_schedule') {
+    if (!/^\d{2}:\d{2}$/.test(String(details.actualSleepTime || ''))
+      || !/^\d{2}:\d{2}$/.test(String(details.actualWakeTime || ''))
+      || Number(details.durationMinutes) <= 0) throw new Error('HABIT_SLEEP_INVALID');
+    value = 1;
+    normalized.status = 'completed';
+    normalized.actualTime = details.actualWakeTime;
+  } else if (definition.recordType === HABIT_RECORD_TYPES.TIME) {
+    if (!/^\d{2}:\d{2}$/.test(String(details.actualTime || ''))) throw new Error('HABIT_TIME_INVALID');
+    value = 1;
+    normalized.status = 'completed';
+  }
+  return setHabitAmountForDate(definition.id, value, date, normalized, repository);
 }
 
 export async function completeMicroPractice(definitionId, amount = null, repository = progressRepository) {

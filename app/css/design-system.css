@@ -2675,6 +2675,12 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .hb-notification-permission .btn { margin-top:9px; }
 .hb-config-row.has-error { border-color:#fb7185; box-shadow:0 0 0 2px rgba(251,113,133,.18); }
 .hb-config__count { position:sticky; top:0; z-index:3; padding:9px 10px; border-radius:10px; color:#fecaca; background:#1b1017; font-weight:800; }
+.hb-config__error { margin:8px 0; padding:10px 12px; border:1px solid rgba(251,113,133,.55); border-radius:10px; color:#fecdd3; background:rgba(127,29,29,.28); font-size:11px; line-height:1.45; }
+.hb-config__error[hidden] { display:none; }
+.hb-disable-all { margin-top:14px; padding:12px; border:1px solid rgba(251,113,133,.24); border-radius:12px; background:rgba(76,5,25,.12); }
+.hb-disable-all > div { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:10px; }
+.hb-disable-all > div[hidden] { display:none; }
+.hb-disable-all p { flex:1 1 100%; margin:0; color:var(--ds-text-2); font-size:11px; line-height:1.45; }
 .hb-config__list { display:flex; flex-direction:column; gap:8px; }
 .hb-config-row { overflow:hidden; border:1px solid rgba(148,163,184,.16); border-radius:13px; background:#0b1020; }
 .hb-config-row.is-selected { border-color:rgba(239,68,68,.45); }

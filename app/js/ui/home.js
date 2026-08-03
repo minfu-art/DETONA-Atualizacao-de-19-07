@@ -27,6 +27,7 @@ import {
   performHomeHabitQuickAction,
   resolveHomeHabitQuickAction,
 } from '../core/wellbeing.js';
+import { HABIT_RECORD_TYPES } from '../core/habitSystem.js';
 import { createReviewSession, getReviewDashboardData } from '../services/reviewService.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import {
@@ -659,7 +660,9 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   const prepTotal = wbState?.total || prepCards.length || 0;
   const homeHabitState = resolveHomeHabitState(wbState?.configuration, prepCards, wbState?.date);
   const prepAllDone = homeHabitState === HOME_HABIT_STATES.COMPLETED_TODAY;
-  const nextPrepCard = prepCards.find((card) => !card.completed);
+  const nextPrepCard = prepCards.find((card) => (
+    !card.completed && card.definition?.recordType !== HABIT_RECORD_TYPES.AUTOMATIC
+  ));
   const nextPrepTime = nextPrepCard?.plannedTime
     || nextPrepCard?.definition?.reminderTime
     || nextPrepCard?.definition?.desiredSleepTime

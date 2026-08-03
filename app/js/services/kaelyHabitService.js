@@ -57,7 +57,11 @@ export function chooseKaelyGuidance(state = {}, nextHabit = null) {
   const configuration = state.configuration || {};
   const consistency = state.consistency || {};
   const pending = cards.filter((card) => !card.completed && card.status !== 'skipped');
-  const important = nextHabit?.card || pending[0];
+  const manualPending = pending.filter((card) => card.definition?.recordType !== HABIT_RECORD_TYPES.AUTOMATIC);
+  const candidate = nextHabit?.card;
+  const important = candidate?.definition?.recordType === HABIT_RECORD_TYPES.AUTOMATIC
+    ? manualPending[0]
+    : candidate || manualPending[0];
   const returned = consistency.comebackCount > 0 && consistency.streakCurrent === 1;
 
   if (state.allDone && state.total > 0) {
@@ -90,8 +94,17 @@ export function chooseKaelyGuidance(state = {}, nextHabit = null) {
         : important.definition?.habitId === 'sleep_schedule' ? 'Informar sono'
           : important.definition?.habitId === 'exercise' ? 'Iniciar treino'
             : `Confirmar ${label.toLocaleLowerCase('pt-BR')}`,
-      action: 'record',
+      action: important.definition?.habitId === 'water' ? 'increment' : 'record',
       definitionId: important.definition?.id,
+    };
+  }
+  if (pending.length) {
+    return {
+      code: 'automatic',
+      title: 'Acompanhamento acadêmico ativo',
+      message: 'Os hábitos acadêmicos pendentes são atualizados automaticamente pelas suas atividades.',
+      actionLabel: 'Ver meus hábitos',
+      action: 'habits',
     };
   }
   if (!configuration.configured) {
@@ -222,19 +235,21 @@ export function buildHabitHistory({
   logs = [],
   today = localDateKey(),
   minimumPercent = 60,
+  protectedDates = [],
 } = {}) {
   const weekStart = startOfWeek(today);
   const days = Array.from({ length: 7 }, (_, index) => addDays(weekStart, index));
-  const states = days.map((date) => dailyHabitStatus({ definitions, logs, date, minimumPercent }));
+  const elapsedDays = days.filter((date) => date <= today);
+  const states = elapsedDays.map((date) => dailyHabitStatus({ definitions, logs, date, minimumPercent }));
   const partialDates = new Set(logs
-    .filter((log) => days.includes(log.localDate || log.date)
+    .filter((log) => elapsedDays.includes(log.localDate || log.date)
       && ['partial', 'minimum'].includes(log.status))
     .map((log) => log.localDate || log.date));
   const planned = states.reduce((sum, state) => sum + state.planned, 0);
   const completed = states.reduce((sum, state) => sum + state.completed, 0);
   const byHabit = definitions.map((definition) => {
     const catalog = getHabitCatalogItem(definition.habitId);
-    const plannedDates = days.filter((date) => isHabitPlannedOn(definition, date) && date <= today);
+    const plannedDates = elapsedDays.filter((date) => isHabitPlannedOn(definition, date));
     const completedDates = plannedDates.filter((date) => logFor(definition, date, logs)?.completed);
     return {
       definitionId: definition.id,
@@ -252,11 +267,25 @@ export function buildHabitHistory({
     completeDays: states.filter((state) => state.allCompleted).length,
     partialDays: states.filter((state) => !state.allCompleted
       && (state.completed > 0 || partialDates.has(state.date))).length,
-    emptyDays: states.filter((state) => state.planned > 0 && state.completed === 0).length,
+    emptyDays: states.filter((state) => state.planned > 0 && state.completed === 0 && !protectedDates.includes(state.date)).length,
+    protectedDays: states.filter((state) => protectedDates.includes(state.date)).length,
     mostConsistent: sorted[0] || null,
     needsAttention: sorted.at(-1) || null,
     byHabit,
   };
+}
+
+function frequentRecordedTime(logs = []) {
+  const frequency = new Map();
+  for (const log of logs) {
+    if (!/^\d{2}:\d{2}$/.test(String(log?.actualTime || ''))) continue;
+    const current = frequency.get(log.actualTime) || { count: 0, latest: 0 };
+    current.count += 1;
+    current.latest = Math.max(current.latest, Date.parse(log.updatedAt || log.updated_at || 0) || 0);
+    frequency.set(log.actualTime, current);
+  }
+  return [...frequency.entries()]
+    .sort((a, b) => b[1].count - a[1].count || b[1].latest - a[1].latest || b[0].localeCompare(a[0]))[0]?.[0] || null;
 }
 
 export function buildHabitAnalysis({
@@ -273,14 +302,11 @@ export function buildHabitAnalysis({
     const completed = habitLogs.filter(({ log }) => log?.completed).length;
     const partial = habitLogs.filter(({ log }) => ['partial', 'minimum'].includes(log?.status)).length;
     const missesByDay = new Map();
-    habitLogs.filter(({ log }) => !log?.completed).forEach(({ date }) => {
+    habitLogs.filter(({ log }) => !log?.completed && !['partial', 'minimum'].includes(log?.status)).forEach(({ date }) => {
       const day = WEEK_LABELS[new Date(`${date}T12:00:00`).getDay()];
       missesByDay.set(day, (missesByDay.get(day) || 0) + 1);
     });
-    const frequentTime = habitLogs
-      .map(({ log }) => log?.actualTime)
-      .filter(Boolean)
-      .sort()[0] || null;
+    const frequentTime = frequentRecordedTime(habitLogs.map(({ log }) => log).filter(Boolean));
     const weakDays = [...missesByDay.entries()].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([day]) => day);
     return {
       definitionId: definition.id,

@@ -159,6 +159,19 @@ export async function putMany(store, values, userId = requireActiveUserId(), con
   });
 }
 
+export async function putManyAndMetaAtomic({ store, values = [], metadata = [] } = {}, userId = requireActiveUserId(), contestId = requireActiveContestId()) {
+  const t = await tx([store, STORES.meta], 'readwrite', userId, contestId);
+  const records = t.objectStore(store);
+  const meta = t.objectStore(STORES.meta);
+  for (const value of values) records.put(value);
+  for (const entry of metadata) meta.put({ key: entry.key, value: entry.value });
+  return new Promise((resolve, reject) => {
+    t.oncomplete = () => resolve({ values, metadata });
+    t.onerror = (event) => reject(event.target?.error || t.error || new Error('Transaction failed'));
+    t.onabort = () => reject(t.error || new Error('Transaction aborted'));
+  });
+}
+
 export async function remove(store, id, userId = requireActiveUserId(), contestId = requireActiveContestId()) {
   const t = await tx([store], 'readwrite', userId, contestId);
   await reqToPromise(t.objectStore(store).delete(id));

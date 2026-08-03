@@ -63,7 +63,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3],
     isMedicalSensitive: false,
     status: 'active',
-    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'plan_tomorrow',
@@ -89,7 +89,7 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3],
     isMedicalSensitive: false,
     status: 'active',
-    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'finish_priority',
@@ -167,13 +167,13 @@ export const HABIT_CATALOG = Object.freeze([
     allowedTargets: [1, 2, 3, 4],
     isMedicalSensitive: false,
     status: 'active',
-    recordType: HABIT_RECORD_TYPES.BOOLEAN,
+    recordType: HABIT_RECORD_TYPES.QUANTITATIVE,
   },
   {
     id: 'sleep_schedule',
     category: HABIT_CATEGORIES.WELLBEING,
-    label: 'Respeitar horário de sono',
-    description: 'Registre se cumpriu o horário de sono escolhido.',
+    label: 'Registrar sono',
+    description: 'Registre horários, duração e qualidade percebida do sono.',
     icon: '☾',
     unit: 'registro',
     defaultTarget: 1,
@@ -181,6 +181,8 @@ export const HABIT_CATALOG = Object.freeze([
     isMedicalSensitive: true,
     status: 'active',
     recordType: HABIT_RECORD_TYPES.TIME,
+    countsTowardConsistency: true,
+    isCheckIn: true,
   },
   {
     id: 'reading',
@@ -246,6 +248,8 @@ export const HABIT_CATALOG = Object.freeze([
     isMedicalSensitive: false,
     status: 'active',
     recordType: HABIT_RECORD_TYPES.TIME,
+    countsTowardConsistency: true,
+    isCheckIn: true,
   },
   {
     id: 'energy_level',
@@ -254,11 +258,13 @@ export const HABIT_CATALOG = Object.freeze([
     description: 'Registre como você percebe sua energia, sem diagnóstico ou recomendação.',
     icon: 'E',
     unit: 'nível',
-    defaultTarget: 3,
-    allowedTargets: [1, 2, 3, 4, 5],
+    defaultTarget: 5,
+    allowedTargets: [5],
     isMedicalSensitive: false,
     status: 'active',
     recordType: HABIT_RECORD_TYPES.SCALE,
+    countsTowardConsistency: true,
+    isCheckIn: true,
   },
 ]);
 
@@ -330,6 +336,8 @@ export function createHabitDefinition({
   reminderLeadMinutes = 0,
   pausedUntil = null,
   modelVersion = 2,
+  countsTowardConsistency = null,
+  isCheckIn = null,
   now = new Date().toISOString(),
 } = {}) {
   const catalog = getHabitCatalogItem(habitId);
@@ -347,9 +355,13 @@ export function createHabitDefinition({
     unit: unit || catalog.unit,
     activeDays: normalizeActiveDays(activeDays),
     reminderTime: /^\d{2}:\d{2}$/.test(String(reminderTime || '')) ? reminderTime : null,
-    recordType: Object.values(HABIT_RECORD_TYPES).includes(recordType)
+    recordType: catalog.recordType || (Object.values(HABIT_RECORD_TYPES).includes(recordType)
       ? recordType
-      : catalog.recordType || HABIT_RECORD_TYPES.BOOLEAN,
+      : HABIT_RECORD_TYPES.BOOLEAN),
+    countsTowardConsistency: countsTowardConsistency == null
+      ? catalog.countsTowardConsistency !== false
+      : Boolean(countsTowardConsistency),
+    isCheckIn: isCheckIn == null ? Boolean(catalog.isCheckIn) : Boolean(isCheckIn),
     windowStart: /^\d{2}:\d{2}$/.test(String(windowStart || '')) ? windowStart : null,
     windowEnd: /^\d{2}:\d{2}$/.test(String(windowEnd || '')) ? windowEnd : null,
     cutoffTime: /^\d{2}:\d{2}$/.test(String(cutoffTime || '')) ? cutoffTime : null,
@@ -386,6 +398,9 @@ export function createHabitDailyLog({
   quality = null,
   skipReason = null,
   originalPlannedTime = null,
+  actualSleepTime = null,
+  actualWakeTime = null,
+  durationMinutes = null,
   now = new Date().toISOString(),
 } = {}) {
   if (!definition?.id) throw new Error('HABIT_DEFINITION_REQUIRED');
@@ -416,6 +431,10 @@ export function createHabitDailyLog({
       : null,
     originalPlannedTime: /^\d{2}:\d{2}$/.test(String(originalPlannedTime || '')) ? originalPlannedTime : null,
     actualTime: /^\d{2}:\d{2}$/.test(String(actualTime || '')) ? actualTime : null,
+    actualSleepTime: /^\d{2}:\d{2}$/.test(String(actualSleepTime || '')) ? actualSleepTime : null,
+    actualWakeTime: /^\d{2}:\d{2}$/.test(String(actualWakeTime || '')) ? actualWakeTime : null,
+    durationMinutes: durationMinutes == null ? null : Math.max(0, Number(durationMinutes) || 0),
+    countsTowardConsistency: definition.countsTowardConsistency !== false,
     status: completed ? 'completed' : normalizedStatus,
     note: String(note || '').slice(0, 500) || null,
     quality: quality == null ? null : Math.max(1, Math.min(5, Number(quality) || 1)),
@@ -553,6 +572,7 @@ export function calculateHabitConsistency({
   logs = [],
   today = localDateKey(),
   minimumPercent = DEFAULT_MINIMUM_PERCENT,
+  protectedDates = [],
 } = {}) {
   const end = new Date(`${today}T12:00:00`);
   const weekStart = new Date(end);
@@ -563,7 +583,10 @@ export function calculateHabitConsistency({
   const states = allDates.map((date) => dailyHabitStatus({ definitions, logs, date, minimumPercent }));
   const plannedStates = states.filter((state) => state.planned > 0);
   const weeklyStates = states.filter((state) => state.date >= localDateKey(weekStart) && state.planned > 0);
-  const metDates = new Set(plannedStates.filter((state) => state.minimumReached).map((state) => state.date));
+  const protectedSet = new Set(protectedDates);
+  const metDates = new Set(plannedStates
+    .filter((state) => state.minimumReached || protectedSet.has(state.date))
+    .map((state) => state.date));
 
   let currentStreak = 0;
   let bestStreak = 0;
@@ -572,7 +595,7 @@ export function calculateHabitConsistency({
   let sawMiss = false;
   let sawCompletedDay = false;
   for (const state of plannedStates) {
-    if (state.minimumReached) {
+    if (state.minimumReached || protectedSet.has(state.date)) {
       running += 1;
       bestStreak = Math.max(bestStreak, running);
       if (sawMiss && sawCompletedDay) {
@@ -604,6 +627,7 @@ export function calculateHabitConsistency({
     plannedToday: todayState.planned,
     comebackCount,
     today: todayState,
+    protectedDates: [...protectedSet].sort(),
   };
 }
 

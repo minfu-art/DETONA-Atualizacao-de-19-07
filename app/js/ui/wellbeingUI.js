@@ -3,6 +3,7 @@ import { SFX } from '../core/audio.js';
 import {
   getHabitConfiguration,
   getHabitSystemState,
+  disableAllHabits,
   incrementHabitForDate,
   recordHabitDetails,
   saveHabitConfiguration,
@@ -33,9 +34,9 @@ import {
 } from '../services/kaelyHabitService.js';
 import {
   REMINDER_LEAD_OPTIONS,
+  LOCAL_REMINDER_LIMITATION,
   notificationPermissionStatus,
   requestHabitNotificationPermission,
-  saveHabitReminderSettings,
   isIosStandalone,
 } from '../services/habitReminderService.js';
 import { localPersonalRepository } from '../repositories/localPersonalRepository.js';
@@ -119,12 +120,17 @@ function renderHabitCard(card, selectedDate) {
         </div>
         <p>${escapeHtml(catalog?.description || '')}</p>
         <div class="hb-habit-card__meta">
-          <span><strong>Meta:</strong> ${target} ${escapeHtml(definition.unit)}</span>
+          ${isScale
+            ? `<span><strong>Valor registrado:</strong> ${completed ? `${done} de 5` : '—'}</span>`
+            : `<span><strong>Meta:</strong> ${target} ${escapeHtml(definition.unit)}</span>`}
           <span><strong>Horário:</strong> ${escapeHtml(schedule)}</span>
           ${definition.habitId === 'water' && definition.cutoffTime
             ? `<span><strong>Evitar após:</strong> ${escapeHtml(definition.cutoffTime)}</span>` : ''}
           ${definition.habitId === 'exercise' && definition.minimumPossible
             ? `<span><strong>Mínimo possível:</strong> ${definition.minimumPossible} min</span>` : ''}
+          ${definition.habitId === 'sleep_schedule' && card.log?.actualSleepTime && card.log?.actualWakeTime
+            ? `<span><strong>Registrado:</strong> ${escapeHtml(card.log.actualSleepTime)}–${escapeHtml(card.log.actualWakeTime)} · ${Number(card.log.durationMinutes) || 0} min</span>`
+            : card.actualTime ? `<span><strong>Realizado:</strong> ${escapeHtml(card.actualTime)}</span>` : ''}
         </div>
         <div class="hb-progress" role="progressbar" aria-valuemin="0" aria-valuemax="${target}" aria-valuenow="${done}" aria-label="${escapeHtml(label)}: ${done} de ${target}">
           <span style="--habit-progress:${pct}%"></span>
@@ -177,7 +183,7 @@ function renderAgenda(entries, selectedDate) {
   </ol>`;
 }
 
-function configurationBody(configuration, focusHabitId = null, permission = 'default') {
+function configurationBody(configuration, focusHabitId = null, permission = 'default', platform = {}) {
   const currentMap = new Map(configuration.definitions.map((item) => [item.habitId, item]));
   return `
     <div class="hb-config">
@@ -187,10 +193,11 @@ function configurationBody(configuration, focusHabitId = null, permission = 'def
         <p>${escapeHtml(habitPrivacyStatement())}</p>
       </aside>
       <p class="hb-config__count" id="hb-config-count">0/${MAX_ACTIVE_HABITS} ativos</p>
+      <p class="hb-config__error" id="hb-config-error" role="alert" hidden></p>
       <div class="hb-config__list">
         ${HABIT_CATALOG.map((item) => {
           const definition = currentMap.get(item.id);
-          const selected = definition?.enabled !== false && Boolean(definition);
+          const selected = configuration.configured && definition?.enabled !== false && Boolean(definition);
           const days = definition?.activeDays || [0, 1, 2, 3, 4, 5, 6];
           const focused = focusHabitId === item.id;
           return `
@@ -201,9 +208,9 @@ function configurationBody(configuration, focusHabitId = null, permission = 'def
                 <span><strong>${escapeHtml(item.label)}</strong><small>${escapeHtml(item.description)}</small></span>
               </label>
               <div class="hb-config-row__options" ${selected ? '' : 'hidden'}>
-                <label>Meta pessoal
+                <label>${item.recordType === HABIT_RECORD_TYPES.SCALE ? 'Escala de registro' : 'Meta pessoal'}
                   <select data-habit-target="${item.id}">
-                    ${item.allowedTargets.map((value) => `<option value="${value}" ${value === (definition?.target || item.defaultTarget) ? 'selected' : ''}>${value} ${escapeHtml(item.unit)}</option>`).join('')}
+                    ${item.allowedTargets.map((value) => `<option value="${value}" ${value === (definition?.target || item.defaultTarget) ? 'selected' : ''}>${item.recordType === HABIT_RECORD_TYPES.SCALE ? '1 a 5 níveis' : `${value} ${escapeHtml(item.unit)}`}</option>`).join('')}
                   </select>
                 </label>
                 <label>Horário preferencial
@@ -258,9 +265,18 @@ function configurationBody(configuration, focusHabitId = null, permission = 'def
       <div class="hb-notification-permission">
         <strong>Notificações do dispositivo</strong>
         <p data-notification-status>Status: ${permission === 'granted' ? 'permitidas' : permission === 'denied' ? 'bloqueadas pelo navegador' : permission === 'unsupported' ? 'indisponíveis neste navegador' : 'ainda não autorizadas'}.</p>
-        <button type="button" class="btn btn-ghost" id="hb-enable-notifications" ${permission === 'granted' || permission === 'unsupported' ? 'disabled' : ''}>${permission === 'granted' ? 'Notificações ativadas' : 'Ativar notificações'}</button>
-        <small>O DETONA não usa servidor de push nem envia horários para a nuvem. O navegador pode suspender lembretes quando o app está fechado. No iPhone, instale o app na Tela de Início para usar notificações.</small>
+        <button type="button" class="btn btn-ghost" id="hb-enable-notifications" ${permission === 'granted' || permission === 'unsupported' ? 'disabled' : ''}>${permission === 'granted' ? 'Notificações ativadas' : platform.ios && !platform.standalone ? 'Adicionar à Tela de Início primeiro' : 'Ativar notificações'}</button>
+        <small>${escapeHtml(LOCAL_REMINDER_LIMITATION)}</small>
+        ${platform.ios && !platform.standalone ? '<small>No iPhone, adicione o DETONA à Tela de Início antes de autorizar notificações.</small>' : ''}
       </div>
+      ${configuration.configured ? `<div class="hb-disable-all">
+        <button type="button" class="btn btn-ghost" id="hb-config-disable">Desativar todos os hábitos</button>
+        <div id="hb-disable-confirm" role="alert" hidden>
+          <p>Os hábitos ficarão inativos, mas todo o histórico local será preservado.</p>
+          <button type="button" class="btn btn-ghost" id="hb-disable-cancel">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="hb-disable-confirm-button">Confirmar desativação</button>
+        </div>
+      </div>` : ''}
       <p class="hb-privacy">${escapeHtml(habitPrivacyStatement())}</p>
     </div>`;
 }
@@ -274,7 +290,9 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     const today = localDateKey();
     const actualTodayState = selectedDate === today ? state : await getHabitSystemState(today);
     const shieldLedger = await refreshKaelyConsistency(actualTodayState);
-    const definitions = state.configuration.definitions.filter((item) => item.enabled !== false);
+    const definitions = state.configuration.configured
+      ? state.configuration.definitions.filter((item) => item.enabled !== false)
+      : [];
     const agenda = habitRoutineEntries(definitions, selectedDate, state.logs);
     const nextHabit = nextHabitFromAgenda(agenda);
     const nextCard = nextHabit ? state.cards.find((card) => card.definition.id === nextHabit.definitionId) : null;
@@ -298,6 +316,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
       logs: state.logs,
       today,
       minimumPercent: state.configuration.minimumPercent,
+      protectedDates: shieldLedger.protectedDates,
     });
     const analysis = buildHabitAnalysis({ definitions, logs: state.logs, today });
     const percent = state.total ? Math.round(state.doneCount / state.total * 100) : 0;
@@ -327,7 +346,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           <div class="kaely-hero__copy">
             <div class="kaely-hero__identity"><strong>KAELY</strong><span>MENTORA DA RESISTÊNCIA</span></div>
             <h2 id="kaely-hero-title">${escapeHtml(guidance.title)}</h2>
-            <blockquote>“Seu corpo sustenta a mente que enfrentará a prova.”</blockquote>
+            <blockquote>${escapeHtml(guidance.message)}</blockquote>
             ${nextHabit ? `<div class="kaely-hero__next"><span>PRÓXIMO HÁBITO</span><strong>${escapeHtml(nextHabit.title)}${nextTime ? ` — ${escapeHtml(nextTime)}` : ''}</strong><small>${escapeHtml(nextState)}</small></div>` : ''}
             <div class="kaely-hero__today"><span>HOJE</span><strong>${state.doneCount} de ${state.total} hábitos concluídos</strong></div>
             <button type="button" class="btn btn-primary" id="kaely-action">${escapeHtml(guidance.actionLabel)}</button>
@@ -374,6 +393,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
             <div><span>Planejados</span><strong>${history.planned}</strong></div><div><span>Realizados</span><strong>${history.completed}</strong></div>
             <div><span>Dias completos</span><strong>${history.completeDays}</strong></div><div><span>Dias parciais</span><strong>${history.partialDays}</strong></div>
             <div><span>Sem registros</span><strong>${history.emptyDays}</strong></div><div><span>Sequência atual</span><strong>${state.consistency.streakCurrent}</strong></div>
+            <div><span>Escudos disponíveis</span><strong>${shieldLedger.shields}</strong></div><div><span>Dias protegidos</span><strong>${history.protectedDays}</strong></div>
           </div>
           <div class="hb-history-list">${history.byHabit.map((item) => `<div><span>${escapeHtml(item.label)}</span><strong>${item.completed} de ${item.planned} dias</strong><small>${item.rate}%</small></div>`).join('') || '<p class="muted">Ainda não há histórico suficiente.</p>'}</div>
           ${history.mostConsistent ? `<p><strong>Mais consistente:</strong> ${escapeHtml(history.mostConsistent.label)} · <strong>Precisa de atenção:</strong> ${escapeHtml(history.needsAttention?.label || '—')}</p>` : ''}
@@ -385,7 +405,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           <div class="hb-calendar" role="grid" aria-label="Registros dos últimos 30 dias">
             ${filteredCalendar.map((day) => `<button type="button" role="gridcell" class="is-${day.state}" data-calendar-date="${day.date}" aria-label="${day.date}: ${day.completed} de ${day.planned}; estado ${day.state}"><span>${day.date.slice(-2)}</span><i aria-hidden="true"></i><small>${day.completed}/${day.planned}</small></button>`).join('')}
           </div>
-          <div class="hb-calendar-legend"><span>✓ Completo</span><span>◐ Parcial</span><span>! Não realizado</span><span>— Sem hábitos</span></div>
+          <div class="hb-calendar-legend"><span>✓ Completo</span><span>◐ Parcial</span><span>◇ Protegido por escudo</span><span>! Não realizado</span><span>— Sem hábitos</span></div>
         </section>
 
         <section class="hb-panel hb-analysis ds-surface ds-surface--data" aria-labelledby="hb-analysis-title">
@@ -421,6 +441,11 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     if (intent) {
       delete ctx.habitNavigationIntent;
       if (intent.type === 'record' && intent.definitionId) openRecord(intent.definitionId, state);
+      else if (intent.type === 'increment' && intent.definitionId) {
+        await incrementHabitForDate(intent.definitionId, 1, selectedDate);
+        toast('Um copo foi adicionado.');
+        await paint();
+      }
       else if (intent.type === 'configure') openConfiguration();
       else if (intent.type === 'history') {
         document.getElementById('hb-history')?.scrollIntoView({ block: 'start' });
@@ -431,14 +456,17 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
   async function openConfiguration(focusHabitId = null) {
     const configuration = await getHabitConfiguration();
     const permission = notificationPermissionStatus();
-    let selected = configuration.definitions
-      .filter((item) => item.enabled !== false)
-      .sort((a, b) => a.orderIndex - b.orderIndex)
-      .map((item) => item.habitId);
-    openModal('Configurar hábitos', configurationBody(configuration, focusHabitId, permission), `
-      <button type="button" class="btn btn-ghost" id="hb-config-skip">Pular por agora</button>
+    const platform = isIosStandalone();
+    let selected = configuration.configured
+      ? configuration.definitions
+        .filter((item) => item.enabled !== false)
+        .sort((a, b) => a.orderIndex - b.orderIndex)
+        .map((item) => item.habitId)
+      : [];
+    openModal('Configurar hábitos', configurationBody(configuration, focusHabitId, permission, platform), `
+      <button type="button" class="btn btn-ghost" id="hb-config-skip">${configuration.configured ? 'Cancelar' : 'Pular por agora'}</button>
       <button type="button" class="btn btn-primary" id="hb-config-save">Salvar hábitos</button>`);
-    const modal = document.getElementById('app-modal');
+    const modal = document.getElementById('modal-root');
     const update = () => {
       modal?.querySelectorAll('[data-habit-select]').forEach((input) => {
         const row = input.closest('.hb-config-row');
@@ -468,6 +496,10 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     }));
     document.getElementById('hb-enable-notifications')?.addEventListener('click', async (event) => {
       const button = event.currentTarget;
+      if (platform.ios && !platform.standalone) {
+        toast('Adicione o DETONA à Tela de Início antes de autorizar notificações.');
+        return;
+      }
       button.disabled = true;
       const result = await requestHabitNotificationPermission();
       const status = modal?.querySelector('[data-notification-status]');
@@ -475,16 +507,36 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         ? 'Status: permitidas.'
         : result === 'denied'
           ? 'Status: bloqueadas pelo navegador.'
-          : 'Status: indisponíveis neste navegador.';
+          : result === 'default'
+            ? 'Status: ainda não autorizadas.'
+            : 'Status: indisponíveis neste navegador.';
       button.textContent = result === 'granted' ? 'Notificações ativadas' : 'Tentar novamente';
       button.disabled = result === 'granted' || result === 'unsupported';
-      const ios = isIosStandalone();
-      if (ios.ios && !ios.standalone) toast('No iPhone, adicione o DETONA à Tela de Início antes de ativar notificações.');
     });
     document.getElementById('hb-config-skip')?.addEventListener('click', async () => {
-      await skipHabitConfiguration();
+      if (!configuration.configured) await skipHabitConfiguration();
       closeModal();
       await paint();
+    });
+    document.getElementById('hb-config-disable')?.addEventListener('click', () => {
+      const confirmation = document.getElementById('hb-disable-confirm');
+      if (confirmation) confirmation.hidden = false;
+    });
+    document.getElementById('hb-disable-cancel')?.addEventListener('click', () => {
+      const confirmation = document.getElementById('hb-disable-confirm');
+      if (confirmation) confirmation.hidden = true;
+    });
+    document.getElementById('hb-disable-confirm-button')?.addEventListener('click', async (event) => {
+      event.currentTarget.disabled = true;
+      try {
+        await disableAllHabits();
+        closeModal();
+        toast('Todos os hábitos foram desativados. O histórico foi preservado.');
+        await paint();
+      } catch (error) {
+        event.currentTarget.disabled = false;
+        toast('Não foi possível desativar os hábitos. Tente novamente.');
+      }
     });
     document.getElementById('hb-config-save')?.addEventListener('click', async (event) => {
       const saveButton = event.currentTarget;
@@ -514,19 +566,28 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         note: fieldValue(habitId, 'note'),
       }));
       try {
+        const formError = document.getElementById('hb-config-error');
+        if (selections.length === 0) {
+          if (formError) {
+            formError.textContent = 'Selecione pelo menos um hábito ou use “Desativar todos os hábitos”.';
+            formError.hidden = false;
+          }
+          return;
+        }
+        if (formError) formError.hidden = true;
         saveButton.disabled = true;
         await saveHabitConfiguration({
           selections,
           minimumPercent: Number(document.getElementById('hb-minimum-percent')?.value) || 60,
+          reminders: selections.map((selection) => ({
+            habitDefinitionId: `habit:${selection.habitId}`,
+            enabled: selection.reminderEnabled,
+            time: selection.reminderTime,
+            activeDays: selection.activeDays,
+            leadMinutes: selection.reminderLeadMinutes,
+            discrete: selection.discreteMode === true,
+          })),
         });
-        await saveHabitReminderSettings(selections.map((selection) => ({
-          habitDefinitionId: `habit:${selection.habitId}`,
-          enabled: selection.reminderEnabled,
-          time: selection.reminderTime,
-          activeDays: selection.activeDays,
-          leadMinutes: selection.reminderLeadMinutes,
-          discrete: selection.discreteMode === true,
-        })));
         closeModal();
         toast('Seus hábitos foram salvos.');
         if (ctx?.habitReturnToHome) {
@@ -545,6 +606,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           HABIT_ACTIVE_DAYS_REQUIRED: 'Selecione pelo menos um dia da semana para cada hábito.',
           HABIT_TIME_INVALID: 'Revise o horário do lembrete.',
           HABIT_TARGET_INVALID: 'Revise a meta pessoal selecionada.',
+          HABIT_SELECTION_REQUIRED: 'Selecione pelo menos um hábito ou desative todos explicitamente.',
         };
         toast(messages[error?.message] || 'Não foi possível salvar. Revise os campos destacados e tente novamente.');
         const row = error?.habitId ? modal?.querySelector(`[data-config-row="${error.habitId}"]`) : null;
@@ -565,6 +627,10 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     const card = state.cards.find((item) => item.definition.id === definitionId);
     if (!card) return;
     const { definition, catalog } = card;
+    if (definition.recordType === HABIT_RECORD_TYPES.AUTOMATIC) {
+      toast('Este hábito é automático e somente leitura.');
+      return;
+    }
     const isSleep = definition.habitId === 'sleep_schedule';
     const isScale = definition.recordType === HABIT_RECORD_TYPES.SCALE;
     const isTime = definition.recordType === HABIT_RECORD_TYPES.TIME;
@@ -603,6 +669,9 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
       await recordHabitDetails(definition.id, {
         actualValue,
         actualTime: actualTime || wake || null,
+        actualSleepTime: sleep || null,
+        actualWakeTime: wake || null,
+        durationMinutes: isSleep ? minutesBetween(sleep, wake) : null,
         plannedTime: definition.reminderTime || definition.desiredWakeTime || definition.desiredSleepTime,
         status: document.getElementById('hb-record-status')?.value || (actualValue >= definition.target ? 'completed' : 'partial'),
         quality: Number(document.getElementById('hb-record-quality')?.value) || null,
@@ -645,10 +714,12 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
   }
 
   function openCalendarDetail(date, state) {
-    const definitions = state.configuration.definitions.filter((item) => item.enabled !== false);
+    const definitions = state.configuration.configured
+      ? state.configuration.definitions.filter((item) => item.enabled !== false)
+      : [];
     const entries = habitRoutineEntries(definitions, date, state.logs);
     openModal(`Hábitos de ${date}`, entries.length ? `
-      <div class="hb-day-detail">${entries.map((entry) => `<article><strong>${escapeHtml(entry.title)}</strong><span>${escapeHtml(STATUS_LABELS[entry.status] || entry.status)}</span><p>Planejado: ${escapeHtml(entry.time || 'sem horário')} · Registrado: ${escapeHtml(entry.log?.actualTime || '—')}</p>${entry.log?.note ? `<small>${escapeHtml(entry.log.note)}</small>` : ''}</article>`).join('')}</div>`
+      <div class="hb-day-detail">${entries.map((entry) => `<article><strong>${escapeHtml(entry.title)}</strong><span>${escapeHtml(STATUS_LABELS[entry.status] || entry.status)}</span><p>Planejado: ${escapeHtml(entry.time || 'sem horário')} · Registrado: ${escapeHtml(entry.log?.actualTime || '—')}</p>${entry.log?.actualSleepTime && entry.log?.actualWakeTime ? `<p>Sono: ${escapeHtml(entry.log.actualSleepTime)}–${escapeHtml(entry.log.actualWakeTime)} · ${Number(entry.log.durationMinutes) || 0} min</p>` : ''}${entry.log?.note ? `<small>${escapeHtml(entry.log.note)}</small>` : ''}</article>`).join('')}</div>`
       : '<p>Nenhum hábito estava planejado para este dia.</p>', '<button type="button" class="btn btn-primary" data-modal-close>Fechar</button>');
   }
 
@@ -679,6 +750,11 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
     });
     $('#kaely-action', root)?.addEventListener('click', async () => {
       if (guidance.action === 'configure') return openConfiguration();
+      if (guidance.action === 'increment' && guidance.definitionId) {
+        await incrementHabitForDate(guidance.definitionId, 1, selectedDate);
+        toast('Um copo foi adicionado.');
+        return paint();
+      }
       if (guidance.action === 'record' && guidance.definitionId) return openRecord(guidance.definitionId, state);
       document.getElementById(guidance.action === 'history' ? 'hb-history' : 'hb-agenda-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
