@@ -56,6 +56,12 @@ import { emblemArt } from './emblems/emblemArt.js';
 import { renderOrionEvolution } from './orionEvolution.js';
 import { renderEviDailyMission } from './eviDailyMission.js';
 import { KAELY } from '../services/kaelyHabitService.js';
+import {
+  HOME_HABIT_STATES,
+  HOME_MENTOR_OWNERS,
+  resolveHomeHabitState,
+  resolveHomeMentorOwner,
+} from './homeHabitState.js';
 
 export { automaticMentorHtml, officialMentorHtml } from './mentorCommunication.js';
 
@@ -651,7 +657,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   }).slice(0, 5);
   const prepDone = wbState?.doneCount || 0;
   const prepTotal = wbState?.total || prepCards.length || 0;
-  const prepAllDone = prepTotal > 0 && prepDone >= prepTotal;
+  const homeHabitState = resolveHomeHabitState(wbState?.configuration, prepCards, wbState?.date);
+  const prepAllDone = homeHabitState === HOME_HABIT_STATES.COMPLETED_TODAY;
   const nextPrepCard = prepCards.find((card) => !card.completed);
   const nextPrepTime = nextPrepCard?.plannedTime
     || nextPrepCard?.definition?.reminderTime
@@ -710,13 +717,51 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   } catch (error) {
     console.warn('[home] comunicado oficial indisponível', error?.message || error);
   }
+  const mentorOwner = resolveHomeMentorOwner({
+    habitState: homeHabitState,
+    rankedSelection,
+    officialAnnouncement,
+  });
   const mentorHtml = rankedSelection
     ? rankedEventMentorHtml(player, rankedSelection)
     : officialAnnouncement
       ? officialMentorHtml(player, officialAnnouncement)
       : automaticMentorHtml(player, automaticMentor);
-  const kaelyIsDirect = prepTotal === 0;
+  const kaelyIsDirect = mentorOwner === HOME_MENTOR_OWNERS.KAELY;
   const activeMentorHtml = kaelyIsDirect ? '' : mentorHtml;
+
+  const habitPresentation = {
+    [HOME_HABIT_STATES.NO_CONFIGURATION]: {
+      title: 'Construa sua base diária',
+      description: 'Escolha hábitos simples para sustentar sua preparação. Seus dados ficam somente neste dispositivo.',
+      empty: 'Nenhum hábito configurado ainda.',
+      status: 'Nenhum hábito configurado.',
+      action: 'Configurar meus hábitos',
+    },
+    [HOME_HABIT_STATES.CONFIGURED_NO_HABITS_TODAY]: {
+      title: 'Hoje não há hábitos programados',
+      description: 'Sua rotina está configurada para outros dias.',
+      empty: 'Nenhuma atividade prevista para hoje.',
+      status: 'Programação preservada para os próximos dias.',
+      action: 'Ver minha programação',
+    },
+    [HOME_HABIT_STATES.SCHEDULED_TODAY]: {
+      title: 'HÁBITOS DO DIA',
+      description: `${prepDone} de ${prepTotal} concluídos${nextPrepCard
+        ? `. Próximo: ${escapeHtml(nextPrepCard.habit.name)}${nextPrepTime ? ` — ${escapeHtml(nextPrepTime)}` : ''}.`
+        : '.'}`,
+      empty: '',
+      status: `${prepTotal - prepDone} pendente${prepTotal - prepDone === 1 ? '' : 's'} hoje.`,
+      action: 'Abrir hábitos',
+    },
+    [HOME_HABIT_STATES.COMPLETED_TODAY]: {
+      title: 'Base diária concluída',
+      description: 'Todos os hábitos planejados para hoje foram registrados.',
+      empty: '',
+      status: 'Registros de hoje concluídos.',
+      action: 'Ver histórico',
+    },
+  }[homeHabitState];
 
   root.innerHTML = `
     <div class="dj">
@@ -805,14 +850,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
         <div class="dj-prep__head">
           <div>
             <span class="dj-kicker">Bem-estar e constância</span>
-            <h2 id="dj-prep-title">${prepTotal === 0 ? 'Construa sua base diária' : prepAllDone ? 'Base diária concluída' : 'HÁBITOS DO DIA'}</h2>
-            <p>${prepTotal === 0
-              ? 'Escolha hábitos simples para sustentar sua preparação. Seus dados ficam somente neste dispositivo.'
-              : prepAllDone
-                ? 'Todos os hábitos planejados para hoje foram registrados.'
-                : `${prepDone} de ${prepTotal} concluídos${nextPrepCard
-                  ? `. Próximo: ${escapeHtml(nextPrepCard.habit.name)}${nextPrepTime ? ` — ${escapeHtml(nextPrepTime)}` : ''}.`
-                  : '.'}`}</p>
+            <h2 id="dj-prep-title">${habitPresentation.title}</h2>
+            <p>${habitPresentation.description}</p>
           </div>
           <div class="dj-prep__ring" aria-label="Hábitos ${prepDone} de ${prepTotal}">
             <strong>${prepDone}</strong>
@@ -820,19 +859,14 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           </div>
         </div>
         <div class="dj-prep__list" role="group" aria-label="Hábitos de hoje">
-          ${prepRows || '<p class="dj-empty-inline">Nenhum hábito configurado ainda.</p>'}
+          ${prepRows || `<p class="dj-empty-inline">${habitPresentation.empty}</p>`}
         </div>
         <div class="dj-prep__foot">
-          <span class="dj-prep__status">${prepTotal === 0
-            ? 'Nenhum hábito configurado.'
-            : prepAllDone
-              ? 'Registros de hoje concluídos.'
-              : `${prepTotal - prepDone} pendente${prepTotal - prepDone === 1 ? '' : 's'} hoje.`}</span>
-          <button type="button" class="dj-link" id="today-wellbeing" aria-label="Hábitos" title="Hábitos">${prepTotal === 0
-            ? 'Configurar hábitos'
-            : prepAllDone
-              ? 'Ver histórico'
-              : 'Abrir hábitos'} ${icon('heartPulse', 'ico--sm')}</button>
+          <span class="dj-prep__status">${habitPresentation.status}</span>
+          <button type="button" class="dj-link" id="today-wellbeing" aria-label="Hábitos" title="Hábitos">${habitPresentation.action} ${icon('heartPulse', 'ico--sm')}</button>
+          ${homeHabitState === HOME_HABIT_STATES.CONFIGURED_NO_HABITS_TODAY
+            ? '<button type="button" class="dj-link dj-link--secondary" id="today-habit-edit">Editar hábitos</button>'
+            : ''}
           ${nextPrepCard && !prepAllDone ? '<button type="button" class="dj-link dj-link--secondary" id="today-habit-register">Registrar próximo</button>' : ''}
         </div>
         </div>
@@ -889,11 +923,17 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   });
   $('#today-wellbeing', root)?.addEventListener('click', () => {
     SFX.click();
-    if (prepTotal === 0) {
+    if (homeHabitState === HOME_HABIT_STATES.NO_CONFIGURATION) {
       ctx.habitNavigationIntent = { type: 'configure' };
       ctx.habitReturnToHome = true;
     }
-    else if (prepAllDone) ctx.habitNavigationIntent = { type: 'history' };
+    else if (homeHabitState === HOME_HABIT_STATES.COMPLETED_TODAY) ctx.habitNavigationIntent = { type: 'history' };
+    navigate('wellbeing');
+  });
+  $('#today-habit-edit', root)?.addEventListener('click', () => {
+    SFX.click();
+    ctx.habitNavigationIntent = { type: 'configure' };
+    ctx.habitReturnToHome = true;
     navigate('wellbeing');
   });
   $('#today-habit-register', root)?.addEventListener('click', () => {

@@ -2659,7 +2659,7 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .hb-settings__actions { display:flex; flex-wrap:wrap; gap:8px; }
 .hb-delete-local { border-color:rgba(251,113,133,.38); color:#fecdd3; }
 .hb-delete-confirm p { color:var(--ds-text-2); line-height:1.55; }
-.hb-settings p,.hb-privacy { color:var(--ds-text-3); font-size:10px; line-height:1.45; }
+.hb-settings p,.hb-privacy { color:var(--ds-text-3); font-size:var(--ds-type-micro); line-height:1.45; }
 .hb-empty { padding:22px 15px; border:1px dashed rgba(148,163,184,.22); border-radius:13px; text-align:center; }
 .hb-empty strong { display:block; margin-bottom:5px; }
 .hb-empty p { margin:0; color:var(--ds-text-3); font-size:11px; }
@@ -2670,8 +2670,8 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .ds-modal:has(.hb-config) .ds-modal__actions { flex:0 0 auto; margin:0; padding:12px 0 max(2px,env(safe-area-inset-bottom)); border-top:1px solid rgba(148,163,184,.18); background:var(--ds-surface-1,#0b1020); }
 .hb-config > p:first-child { color:var(--ds-text-2); font-size:12px; }
 .hb-local-notice,.hb-notification-permission { margin:10px 0; padding:11px; border:1px solid rgba(251,113,133,.25); border-radius:11px; background:rgba(76,5,25,.15); }
-.hb-local-notice strong,.hb-notification-permission strong { color:#fecdd3; font-size:11px; }
-.hb-local-notice p,.hb-notification-permission p,.hb-notification-permission small { display:block; margin:5px 0 0; color:var(--ds-text-2); font-size:10px; line-height:1.45; }
+.hb-local-notice strong,.hb-notification-permission strong { color:#fecdd3; font-size:var(--ds-type-label); }
+.hb-local-notice p,.hb-notification-permission p,.hb-notification-permission small { display:block; margin:5px 0 0; color:var(--ds-text-2); font-size:var(--ds-type-micro); line-height:1.45; }
 .hb-notification-permission .btn { margin-top:9px; }
 .hb-config-row.has-error { border-color:#fb7185; box-shadow:0 0 0 2px rgba(251,113,133,.18); }
 .hb-config__count { position:sticky; top:0; z-index:3; padding:9px 10px; border-radius:10px; color:#fecaca; background:#1b1017; font-weight:800; }
@@ -2811,4 +2811,4 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .habit-local-reminder strong { color:#fff; }
 .habit-local-reminder p { margin:4px 0 0; color:var(--ds-text-2); font-size:12px; line-height:1.45; }
 .habit-local-reminder__actions { display:flex; flex-wrap:wrap; gap:6px; }
-.habit-local-reminder__actions .btn { min-height:40px; flex:1 1 100px; }
+.habit-local-reminder__actions .btn { min-height:var(--ds-touch-target); flex:1 1 100px; }

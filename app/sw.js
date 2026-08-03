@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v98-local-habits';
+const CACHE = 'detona-v99-kaely-schedule-states';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -131,6 +131,7 @@ const ASSETS = [
   './js/ui/onboarding.js',
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
+  './js/ui/homeHabitState.js',
   './js/ui/orionEvolution.js',
   './js/ui/eviDailyMission.js',
   './js/ui/mentorCommunication.js',

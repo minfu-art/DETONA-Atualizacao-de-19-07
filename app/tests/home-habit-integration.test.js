@@ -100,6 +100,11 @@ test('hábito automático permanece somente leitura', async () => {
 test('bloco da Home usa HÁBITOS DO DIA e remove cópia operacional antiga', async () => {
   const source = await readFile(path.join(appDir, 'js/ui/home.js'), 'utf8');
   assert.match(source, /HÁBITOS DO DIA/);
+  assert.match(source, /Hoje não há hábitos programados/);
+  assert.match(source, /Sua rotina está configurada para outros dias/);
+  assert.match(source, /Ver minha programação/);
+  assert.match(source, /Editar hábitos/);
+  assert.doesNotMatch(source, /kaelyIsDirect = prepTotal === 0/);
   assert.doesNotMatch(source, /Cuide do corpo e da mente/);
   assert.doesNotMatch(source, /marcar cada preparação/);
   assert.doesNotMatch(source, /prática\(s\)/);
