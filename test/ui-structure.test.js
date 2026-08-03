@@ -190,19 +190,18 @@ test('administracao sai do shell academico e usa aplicacao developer independent
   assert.doesNotMatch(html, /data-screen="forge"/);
   assert.doesNotMatch(shell, /data-developer-only|DEVELOPER_ITEM|screen:\s*'forge'/);
   assert.doesNotMatch(tree, /m-forge|navigate\('forge'\)/);
-  assert.match(tree, /Conteúdo em preparação/);
+  assert.match(tree, /Questões ainda não disponíveis/);
   assert.match(adminHtml, /js\/admin\/adminApp\.js/);
   assert.match(adminApp, /developer|renderAdminAccessScreen|renderAdminMessagesScreen/);
 });
 
-test('mapa inicia na visão geral sem abrir Português automaticamente', async () => {
+test('Estudar inicia na visão geral sem abrir Português automaticamente', async () => {
   const source = await readFile(worldMapUrl, 'utf8');
-  assert.match(source, /let openId = null/);
-  assert.doesNotMatch(source, /let openId = disciplines\[0\]/);
-  assert.match(source, /Escolha uma disciplina para abrir sua trilha/);
-  assert.match(source, /<h3>\$\{escapeHtml\(d\.name\)\}<\/h3>/);
-  assert.match(source, /discIcon\(d\.id/);
-  assert.doesNotMatch(source, /\$\{d\.biome \|\| d\.name\}|\$\{d\.icon\}/);
+  assert.match(source, /Escolha uma disciplina e avance pelo edital/);
+  assert.match(source, /study-discipline-card/);
+  assert.match(source, /discIcon\(item\.id/);
+  assert.match(source, /ctx\.disciplineId = button\.dataset\.disciplineId/);
+  assert.doesNotMatch(source, /createBattleSession|enemyImgHtml|biome/);
 });
 
 test('personagem possui animação de repouso na tela inicial e na batalha', async () => {

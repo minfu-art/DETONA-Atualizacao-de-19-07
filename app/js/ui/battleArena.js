@@ -355,7 +355,7 @@ export async function renderBattle(root, navigate, ctx) {
             </div>
           ` : ''}
           <div class="row gap-8 mt-12">
-            <button type="button" class="btn btn-block" id="r-map">Mapa</button>
+            <button type="button" class="btn btn-block" id="r-map">Estudar</button>
             <button type="button" class="btn btn-primary btn-block" id="r-home">Hoje</button>
           </div>
         </div>
@@ -376,10 +376,10 @@ export async function renderBattle(root, navigate, ctx) {
       navigate('home');
     };
 
-    // Se veio da árvore, botão mapa vira "Árvore"
+    // Se veio da disciplina, preserva o retorno ao contexto curricular correto.
     if (ctx.returnToTree) {
       const mapBtn = $('#r-map', root);
-      if (mapBtn) mapBtn.textContent = 'Árvore';
+      if (mapBtn) mapBtn.textContent = 'Voltar à disciplina';
     }
 
     if (summary.player?._pending_celebration && !summary.player.celebration_shown) {

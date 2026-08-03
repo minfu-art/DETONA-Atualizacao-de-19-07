@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v99-kaely-schedule-states';
+const CACHE = 'detona-v100-study-flow';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -132,6 +132,7 @@ const ASSETS = [
   './js/ui/onboarding.js?v=70',
   './js/ui/home.js',
   './js/ui/homeHabitState.js',
+  './js/ui/studyPresentation.js',
   './js/ui/orionEvolution.js',
   './js/ui/eviDailyMission.js',
   './js/ui/mentorCommunication.js',

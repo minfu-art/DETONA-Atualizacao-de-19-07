@@ -4,6 +4,8 @@ const RESET_FIELDS = Object.freeze({
   reviewFilters: null,
   disciplineId: null,
   returnToTree: null,
+  studyTopicId: null,
+  studySubtopicId: null,
   profileSection: null,
   contest: null,
   contentPackage: null,

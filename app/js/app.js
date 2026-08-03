@@ -8,7 +8,7 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=81';
-import { renderWorldMap } from './ui/worldMap.js?v=73';
+import { renderWorldMap } from './ui/worldMap.js?v=74';
 import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
@@ -16,7 +16,7 @@ import { renderExpedition } from './ui/expedition.js?v=75';
 import { renderWellbeing } from './ui/wellbeingUI.js?v=71';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
-import { renderTopicTree } from './ui/topicTree.js?v=69';
+import { renderTopicTree } from './ui/topicTree.js?v=70';
 import { renderReview } from './ui/review.js?v=83';
 import { renderRankedEvent } from './ui/rankedEvent.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
@@ -46,6 +46,8 @@ const ctx = {
   screen: 'home',
   disciplineId: null,
   returnToTree: null,
+  studyTopicId: null,
+  studySubtopicId: null,
   logout: null,
   contest: null,
   openContest: null,

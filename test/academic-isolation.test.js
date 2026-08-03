@@ -215,6 +215,8 @@ test('10. troca de conta remove dados acadêmicos transitórios da interface', (
     disciplineId: null,
     profileSection: null,
     returnToTree: null,
+    studyTopicId: null,
+    studySubtopicId: null,
     contentPackage: null,
     screen: 'auth',
   });

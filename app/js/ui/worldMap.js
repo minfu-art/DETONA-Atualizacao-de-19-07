@@ -1,182 +1,135 @@
-import { $, starsHtml, formatStars, openModal, closeModal, toast, escapeHtml } from './helpers.js';
+import { $, escapeAttr, escapeHtml } from './helpers.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
-import { MIN_QUESTIONS_BATTLE, getQuestionCounts } from '../core/ssot.js';
-import { tempLabel, effectiveStars, computeMemoryTemperature } from '../core/memory.js';
-import { createBattleSession } from '../core/battle.js?v=69';
-import { SFX } from '../core/audio.js';
-import { enemyImgHtml } from './enemyAssets.js';
-import { icon, discIcon, semanticIcon } from './icons.js?v=67';
-import { averageSubtopicMastery } from '../core/mastery.js';
-import { isDeveloperUser } from '../auth/authService.js';
+import { discIcon, icon } from './icons.js?v=67';
+import {
+  STUDY_FILTERS,
+  buildDisciplineTopics,
+  filterDisciplines,
+  resolveDisciplinePresentation,
+} from './studyPresentation.js';
 
-export async function renderWorldMap(root, navigate, ctx) {
-  const developer = isDeveloperUser(ctx?.user);
-  const [disciplines, subtopics] = await Promise.all([
-    progressRepository.getAll(STORES.disciplines),
-    progressRepository.getAll(STORES.subtopics),
-  ]);
-  const counts = await getQuestionCounts();
-  disciplines.sort((a, b) => a.order - b.order);
-
-  // O mapa sempre começa na visão geral; a disciplina só abre por escolha do aluno.
-  let openId = null;
-
-  root.innerHTML = `
-    <div class="ro-window mb-8 map-screen">
-      <div class="ro-title">${icon('map', 'ico--inline')} Mapa do edital</div>
-      <div class="ro-body">
-        <p class="muted mb-8">Escolha uma disciplina para abrir sua trilha. Cada ponto mostra domínio, memória e prontidão para praticar.</p>
-        <div id="map-biomes"></div>
-      </div>
-    </div>
-  `;
-
-  const container = $('#map-biomes', root);
-
-  function paint() {
-    container.innerHTML = disciplines.map((d) => {
-      const subs = subtopics
-        .filter((s) => s.discipline_id === d.id)
-        .sort((a, b) => String(a.edital_numbering).localeCompare(String(b.edital_numbering), undefined, { numeric: true }));
-      const done = subs.filter((s) => effectiveStars(s) >= 3).length;
-      const mastery = Math.round(averageSubtopicMastery(subs) * 100) / 100;
-      const isOpen = openId === d.id;
-      return `
-        <div class="biome ro-window ${isOpen ? 'open' : ''}" data-id="${d.id}" style="margin-bottom:10px">
-          <div class="biome-header">
-            <span class="biome-header__icon" aria-hidden="true">${discIcon(d.id, 'ico--inline')}</span>
-            <h3>${escapeHtml(d.name)}</h3>
-            <span class="badge">${mastery}% · ${done}/${subs.length}</span>
-            <span class="biome-header__chevron" aria-hidden="true">${icon(isOpen ? 'chevronDown' : 'chevronRight', 'ico--control')}</span>
-          </div>
-          <div class="trail">
-            ${subs.map((s) => {
-              const temp = s.memory_temperature || computeMemoryTemperature(s.last_studied_at);
-              const st = effectiveStars(s);
-              const nq = counts[s.id] || 0;
-              return `
-                <div class="trail-node ${temp}" data-sid="${s.id}">
-                  <div class="enemy-ico enemy-ico--art">${enemyImgHtml(s.enemy_sprite, { size: 'sm' })}</div>
-                  <div class="meta">
-                    <strong>${s.edital_numbering} · ${shortName(s.name)}</strong>
-                    <small>${starsHtml(st)} · ${tempLabel(temp)} · ${nq}q</small>
-                  </div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    container.querySelectorAll('.biome-header').forEach((h) => {
-      h.addEventListener('click', () => {
-        SFX.click();
-        const id = h.closest('.biome').dataset.id;
-        openId = openId === id ? null : id;
-        paint();
-      });
-    });
-
-    container.querySelectorAll('.trail-node').forEach((node) => {
-      node.addEventListener('click', () => {
-        SFX.click();
-        openPrep(node.dataset.sid);
-      });
-    });
-  }
-
-  async function startQuestions(sid) {
-    const session = await createBattleSession(sid);
-    if (!session?.questions?.length) {
-      throw new Error('Não foi possível montar o desafio com questões deste subtópico.');
-    }
-    ctx.battleSession = session;
-    closeModal();
-    navigate('battle');
-  }
-
-  async function openPrep(sid) {
-    try {
-      const sub = subtopics.find((s) => s.id === sid);
-      if (!sub) {
-        toast('Subtópico não encontrado.');
-        return;
-      }
-      const nq = counts[sid] || 0;
-      const armed = nq >= MIN_QUESTIONS_BATTLE;
-      const temp = sub.memory_temperature || computeMemoryTemperature(sub.last_studied_at);
-      const st = effectiveStars(sub);
-
-      // Com banco armado, entra direto nas questões (comportamento esperado no mapa)
-      if (armed) {
-        try {
-          toast('Carregando questões…');
-          await startQuestions(sid);
-          return;
-        } catch (e) {
-          // se falhar o atalho, mostra o modal com detalhes
-          console.warn('[map] startQuestions failed', e);
-        }
-      }
-
-      openModal(
-        'Preparação para questões',
-        `
-          <div class="prep-enemy">${enemyImgHtml(sub.enemy_sprite, { size: 'lg' })}</div>
-          <p class="text-center prep-enemy-name">${escapeHtml(sub.name)}</p>
-          <p class="muted text-center mb-8">Desafio: ${escapeHtml(sub.enemy_name)}</p>
-          <div class="bar-label"><span>Melhor acurácia</span><span>${sub.best_accuracy || 0}%</span></div>
-          <div class="bar-track mb-8"><div class="bar-fill xp" style="width:${sub.best_accuracy || 0}%"></div></div>
-          <div class="mastery-stars-result">
-            <strong>Melhor resultado</strong>
-            ${starsHtml(st)}
-            <small>${formatStars(st)} / 5 estrelas · ${tempLabel(temp)}</small>
-          </div>
-          <p class="muted text-center mt-8">Tentativas: ${sub.attempts_count || 0} · Questões: ${nq}</p>
-          ${!armed ? `<p class="text-center mt-8" style="color:var(--warn)">${developer
-            ? `Precisa de ${MIN_QUESTIONS_BATTLE} questões. Abra a Central de questões para completar o banco.`
-            : 'Conteúdo em preparação — novas questões serão liberadas pela equipe.'}</p>` : ''}
-        `,
-        `
-          <button type="button" class="btn btn-ghost" id="m-close">Fechar</button>
-          ${armed
-            ? `<button type="button" class="btn btn-primary" id="m-fight">${semanticIcon('focus', 'ico--inline')} Iniciar questões</button>`
-            : developer
-              ? `<button type="button" class="btn btn-primary" id="m-forge">Central de questões</button>`
-              : ''}
-        `
-      );
-
-      $('#m-close')?.addEventListener('click', () => { SFX.click(); closeModal(); });
-      $('#m-forge')?.addEventListener('click', () => { SFX.click(); closeModal(); navigate('forge'); });
-      $('#m-fight')?.addEventListener('click', async () => {
-        SFX.click();
-        const btn = $('#m-fight');
-        if (btn) {
-          btn.disabled = true;
-          btn.textContent = 'Carregando questões…';
-        }
-        try {
-          await startQuestions(sid);
-        } catch (e) {
-          toast(e.message || 'Falha ao iniciar as questões.');
-          if (btn) {
-            btn.disabled = false;
-            btn.innerHTML = `${semanticIcon('focus', 'ico--inline')} Iniciar questões`;
-          }
-        }
-      });
-    } catch (err) {
-      console.error('[map] openPrep', err);
-      toast(err?.message || 'Não foi possível abrir este subtópico.');
-    }
-  }
-
-  paint();
+function pendingReviews(rows = []) {
+  return rows.filter((item) => item?.status !== 'frozen').length;
+}
+function overallAccuracy(subtopics = []) {
+  const started = subtopics.filter((item) => Number(item.attempts_count ?? item.tentativas) > 0);
+  if (!started.length) return 0;
+  return Math.round(started.reduce((sum, item) => sum + (Number(item.best_accuracy ?? item.melhorPercentual) || 0), 0) / started.length);
 }
 
-function shortName(n) {
-  return n.length > 36 ? n.slice(0, 34) + '…' : n;
+export async function renderWorldMap(root, navigate, ctx) {
+  root.dataset.theme = 'study';
+  const [disciplines, subtopics, players, reviewQueue] = await Promise.all([
+    progressRepository.getAll(STORES.disciplines),
+    progressRepository.getAll(STORES.subtopics),
+    progressRepository.getAll(STORES.player),
+    progressRepository.getAll(STORES.reviewQueue),
+  ]);
+  disciplines.sort((a, b) => Number(a.order || 0) - Number(b.order || 0));
+  const curriculum = Array.isArray(ctx?.contentPackage?.curriculum) ? ctx.contentPackage.curriculum : [];
+  const player = players[0] || {};
+  const cards = disciplines.map((discipline) => {
+    const ownSubtopics = subtopics.filter((item) => item.discipline_id === discipline.id);
+    const presentation = resolveDisciplinePresentation(discipline, ownSubtopics);
+    presentation.topicCount = buildDisciplineTopics(discipline, ownSubtopics, curriculum).length;
+    return presentation;
+  });
+  const startedDisciplines = cards.filter((item) => item.status.key !== 'not-started').length;
+  const completedSubtopics = subtopics.filter((item) => Number(item.stars) >= 3).length;
+  const state = { filter: 'all', search: '' };
+
+  root.innerHTML = `
+    <section class="study-screen" aria-labelledby="study-title">
+      <header class="study-hero ds-surface">
+        <div>
+          <span class="ds-eyebrow">Núcleo acadêmico</span>
+          <h1 id="study-title">Estudar</h1>
+          <p>Escolha uma disciplina e avance pelo edital.</p>
+        </div>
+        <div class="study-summary" aria-label="Resumo acadêmico">
+          <article><span>Progresso do edital</span><strong>${Number(player.edital_completion_pct ?? player.mastery_pct) || 0}%</strong></article>
+          <article><span>Disciplinas iniciadas</span><strong>${startedDisciplines} de ${cards.length}</strong></article>
+          <article><span>Subtópicos concluídos</span><strong>${completedSubtopics} de ${subtopics.length}</strong></article>
+          <article><span>Taxa de acerto geral</span><strong>${overallAccuracy(subtopics)}%</strong></article>
+          <article><span>Revisões pendentes</span><strong>${pendingReviews(reviewQueue)}</strong></article>
+        </div>
+      </header>
+
+      <section class="study-catalog" aria-labelledby="study-disciplines-title">
+        <div class="study-catalog__heading">
+          <div>
+            <span class="ds-eyebrow">Edital por disciplina</span>
+            <h2 id="study-disciplines-title">Disciplinas</h2>
+          </div>
+          <label class="study-search">
+            <span>Buscar disciplina</span>
+            <input type="search" id="study-search" placeholder="Digite o nome" autocomplete="off">
+          </label>
+        </div>
+        <div class="study-filters" role="group" aria-label="Filtrar disciplinas">
+          ${STUDY_FILTERS.map((filter) => `<button type="button" class="study-filter" data-study-filter="${filter.id}" aria-pressed="${filter.id === 'all'}">${escapeHtml(filter.label)}</button>`).join('')}
+        </div>
+        <p class="study-results" id="study-results" aria-live="polite"></p>
+        <div class="study-discipline-grid" id="study-discipline-grid"></div>
+      </section>
+    </section>`;
+
+  const grid = $('#study-discipline-grid', root);
+  const results = $('#study-results', root);
+
+  function paint() {
+    const visible = filterDisciplines(cards, state);
+    results.textContent = `${visible.length} disciplina${visible.length === 1 ? '' : 's'} encontrada${visible.length === 1 ? '' : 's'}.`;
+    grid.innerHTML = visible.length ? visible.map((item) => `
+      <button type="button" class="study-discipline-card" data-discipline-id="${escapeAttr(item.id)}" aria-label="Abrir disciplina ${escapeAttr(item.name)}">
+        <span class="study-discipline-card__top">
+          <span class="study-discipline-card__icon" aria-hidden="true">${discIcon(item.id, 'ico--control')}</span>
+          <span class="study-state study-state--${item.status.tone}">${escapeHtml(item.status.label)}</span>
+        </span>
+        <strong class="study-discipline-card__name">${escapeHtml(item.name)}</strong>
+        <span class="study-discipline-card__meta">${item.topicCount} tópico${item.topicCount === 1 ? '' : 's'} · ${item.subtopicCount} subtópicos</span>
+        <span class="study-progress-copy"><span>Progresso</span><strong>${item.progress}%</strong></span>
+        <progress max="100" value="${item.progress}" aria-label="Progresso em ${escapeAttr(item.name)}: ${item.progress}%"></progress>
+        <span class="study-discipline-card__stats">
+          <span><small>Taxa de acerto</small><strong>${item.accuracy}%</strong></span>
+          <span><small>Concluídos</small><strong>${item.completedSubtopics}/${item.subtopicCount}</strong></span>
+        </span>
+        <span class="study-discipline-card__action">${escapeHtml(item.actionLabel)} ${icon('chevronRight', 'ico--inline')}</span>
+      </button>`).join('') : `
+      <div class="ds-empty-state study-empty" role="status">
+        <strong>Nenhuma disciplina encontrada</strong>
+        <p>Ajuste o filtro ou limpe a busca para visualizar novamente o edital completo.</p>
+        <button type="button" class="ds-button ds-button--secondary" id="study-clear-filters">Limpar filtros</button>
+      </div>`;
+
+    grid.querySelectorAll('[data-discipline-id]').forEach((button) => {
+      button.addEventListener('click', () => {
+        ctx.disciplineId = button.dataset.disciplineId;
+        ctx.studyTopicId = null;
+        ctx.studySubtopicId = null;
+        navigate('topicTree');
+      });
+    });
+    $('#study-clear-filters', grid)?.addEventListener('click', () => {
+      state.filter = 'all';
+      state.search = '';
+      $('#study-search', root).value = '';
+      root.querySelectorAll('[data-study-filter]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.studyFilter === 'all')));
+      paint();
+    });
+  }
+
+  root.querySelectorAll('[data-study-filter]').forEach((button) => {
+    button.addEventListener('click', () => {
+      state.filter = button.dataset.studyFilter;
+      root.querySelectorAll('[data-study-filter]').forEach((candidate) => candidate.setAttribute('aria-pressed', String(candidate === button)));
+      paint();
+    });
+  });
+  $('#study-search', root)?.addEventListener('input', (event) => {
+    state.search = event.currentTarget.value;
+    paint();
+  });
+  paint();
 }

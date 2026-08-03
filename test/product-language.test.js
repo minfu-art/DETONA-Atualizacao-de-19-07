@@ -18,7 +18,7 @@ test('ações acadêmicas substituem metáforas nos rótulos principais', async 
   assert.match(home, /QUESTÕES DO DIA/);
   assert.match(home, /INICIAR QUESTÕES/);
   assert.match(edital, /Iniciar questões/);
-  assert.match(map, /Mapa do edital/);
+  assert.match(map, /Escolha uma disciplina e avance pelo edital/);
   assert.match(profile, /Configurações e backup/);
   assert.match(performance, /Domínio do edital/);
   assert.match(forge, /Salvar questão/);
