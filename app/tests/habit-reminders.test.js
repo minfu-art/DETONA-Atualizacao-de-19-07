@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
+  executeScopedHabitReminderAction,
   findDueHabitReminders,
   habitNotificationContent,
+  habitReminderScopeKey,
   isIosStandalone,
   normalizeHabitReminder,
   notificationPermissionStatus,
@@ -84,10 +86,13 @@ test('entrega interna ocorre uma vez e notificação depende de permissão conce
 test('fila mantém ordem, deduplica e só apresenta um lembrete por vez', () => {
   const presented = [];
   const queue = createHabitReminderQueue({
-    onPresent: (reminder, state) => presented.push([reminder.deliveryKey, state.pendingCount, state.markPresented]),
+    onPresent: (reminder, state) => {
+      if (reminder) presented.push([reminder.deliveryKey, state.pendingCount, state.markPresented]);
+    },
   });
-  const first = { habitDefinitionId: 'habit:water', deliveryKey: 'water:1' };
-  const second = { habitDefinitionId: 'habit:exercise', deliveryKey: 'exercise:1' };
+  queue.setScope('u1:c1');
+  const first = { scopeKey: 'u1:c1', habitDefinitionId: 'habit:water', deliveryKey: 'water:1' };
+  const second = { scopeKey: 'u1:c1', habitDefinitionId: 'habit:exercise', deliveryKey: 'exercise:1' };
   assert.equal(queue.enqueue(first), true);
   assert.equal(queue.enqueue(second), false);
   assert.equal(queue.enqueue(second), false);
@@ -198,4 +203,63 @@ test('falha de showNotification é registrada e não repete a cada minuto', asyn
   await deliverDueHabitReminders({ ...options, now: new Date('2026-07-30T10:01:00') });
   assert.equal(attempts, 1);
   assert.match(stored[0].lastFailedKey, /habit:water/);
+});
+
+test('fila isola usuario e concurso e limpa ao trocar de escopo', () => {
+  const presented = [];
+  const queue = createHabitReminderQueue({ onPresent: (reminder) => presented.push(reminder?.scopeKey || null) });
+  const userAContestA = habitReminderScopeKey('user-a', 'contest-a');
+  queue.setScope(userAContestA);
+  assert.equal(queue.enqueue({ scopeKey: userAContestA, habitDefinitionId: 'habit:water', deliveryKey: 'same' }), true);
+  assert.equal(queue.pendingCount(), 1);
+  const userBContestA = habitReminderScopeKey('user-b', 'contest-a');
+  queue.setScope(userBContestA);
+  assert.equal(queue.pendingCount(), 0);
+  assert.equal(queue.current(), null);
+  assert.equal(queue.enqueue({ scopeKey: userAContestA, habitDefinitionId: 'habit:water', deliveryKey: 'same' }), false);
+  assert.equal(queue.enqueue({ scopeKey: userBContestA, habitDefinitionId: 'habit:water', deliveryKey: 'same' }), true);
+  const userBContestB = habitReminderScopeKey('user-b', 'contest-b');
+  queue.setScope(userBContestB);
+  assert.equal(queue.pendingCount(), 0);
+  assert.equal(queue.enqueue({ scopeKey: userBContestB, habitDefinitionId: 'habit:water', deliveryKey: 'same' }), true);
+  assert.ok(presented.includes(null));
+});
+
+test('logout limpa fila e deduplicacao permite deliveryKey igual em outro usuario', () => {
+  const queue = createHabitReminderQueue();
+  queue.setScope('user-a:contest');
+  assert.equal(queue.enqueue({ scopeKey: 'user-a:contest', habitDefinitionId: 'habit:water', deliveryKey: 'delivery' }), true);
+  queue.setScope(null);
+  assert.equal(queue.currentScope(), null);
+  assert.equal(queue.pendingCount(), 0);
+  queue.setScope('user-b:contest');
+  assert.equal(queue.enqueue({ scopeKey: 'user-b:contest', habitDefinitionId: 'habit:water', deliveryKey: 'delivery' }), true);
+});
+
+test('resultado assincrono do escopo anterior e descartado', async () => {
+  const queue = createHabitReminderQueue();
+  queue.setScope('user-a:contest-a');
+  const staleResult = Promise.resolve().then(() => queue.enqueue({
+    scopeKey: 'user-a:contest-a', habitDefinitionId: 'habit:water', deliveryKey: 'late',
+  }));
+  queue.setScope('user-b:contest-b');
+  assert.equal(await staleResult, false);
+  assert.equal(queue.pendingCount(), 0);
+});
+
+test('Registrar, Adiar e Dispensar nao escrevem fora do escopo', async () => {
+  const reminder = { scopeKey: 'user-a:contest-a', habitDefinitionId: 'habit:water', deliveryKey: 'same' };
+  for (const actionName of ['Registrar', 'Adiar', 'Dispensar']) {
+    let writes = 0;
+    let mismatches = 0;
+    const result = await executeScopedHabitReminderAction({
+      reminder,
+      currentScope: 'user-b:contest-b',
+      action: async () => { writes += 1; },
+      onMismatch: () => { mismatches += 1; },
+    });
+    assert.equal(result.executed, false, actionName);
+    assert.equal(writes, 0, actionName);
+    assert.equal(mismatches, 1, actionName);
+  }
 });

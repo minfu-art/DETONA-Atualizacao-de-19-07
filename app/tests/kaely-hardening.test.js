@@ -273,3 +273,21 @@ test('interface vincula o modal real e apresenta contratos de configuração seg
   assert.match(app, /habitReminderCheckPromise/);
   assert.match(app, /createHabitReminderQueue/);
 });
+
+test('runtime de lembretes limpa sessao e concurso e invalida resultado assincrono antigo', async () => {
+  const [app, ui, css] = await Promise.all([
+    readFile(new URL('../js/app.js', import.meta.url), 'utf8'),
+    readFile(new URL('../js/ui/wellbeingUI.js', import.meta.url), 'utf8'),
+    readFile(new URL('../css/design-system.css', import.meta.url), 'utf8'),
+  ]);
+  assert.match(app, /habitReminderRuntimeGeneration/);
+  assert.match(app, /generation !== habitReminderRuntimeGeneration/);
+  assert.match(app, /resetHabitReminderRuntime\(\);[\s\S]*authService\.logout/);
+  assert.match(app, /getActiveContestId\(\) !== contestId\) resetHabitReminderRuntime/);
+  assert.match(app, /clearActiveContestId\(\);[\s\S]*resetHabitReminderRuntime\(\)/);
+  assert.match(app, /executeScopedHabitReminderAction/);
+  assert.match(ui, /clearHabitReminderRuntime/);
+  assert.match(css, /\.hb-config__error[^}]*font-size:var\(--ds-type-micro\)/);
+  assert.match(css, /\.hb-disable-all p[^}]*font-size:var\(--ds-type-micro\)/);
+  assert.doesNotMatch(css, /\.hb-(?:config__error|disable-all p)[^}]*font-size:11px/);
+});

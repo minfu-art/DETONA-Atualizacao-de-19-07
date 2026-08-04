@@ -13,7 +13,7 @@ import { renderBattle } from './ui/battleArena.js?v=74';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
 import { renderExpedition } from './ui/expedition.js?v=75';
-import { renderWellbeing } from './ui/wellbeingUI.js?v=72';
+import { renderWellbeing } from './ui/wellbeingUI.js?v=73';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=70';
@@ -38,9 +38,12 @@ import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
   dismissHabitReminder,
+  executeScopedHabitReminderAction,
+  habitReminderScopeKey,
   markHabitReminderPresented,
   snoozeHabitReminder,
 } from './services/habitReminderService.js';
+import { localPersonalRepository } from './repositories/localPersonalRepository.js';
 
 const ctx = {
   battleSession: null,
@@ -80,6 +83,35 @@ const ROUTES = {
 
 let habitReminderRuntimeBound = false;
 let habitReminderCheckPromise = null;
+let habitReminderRuntimeGeneration = 0;
+
+function currentHabitReminderScope() {
+  return habitReminderScopeKey(authService.getCurrentUser()?.id, getActiveContestId());
+}
+
+function resetHabitReminderRuntime(scopeKey = null) {
+  habitReminderRuntimeGeneration += 1;
+  habitReminderCheckPromise = null;
+  if (habitReminderQueue.currentScope() === scopeKey) habitReminderQueue.clear();
+  else habitReminderQueue.setScope(scopeKey);
+  document.getElementById('habit-local-reminder')?.remove();
+}
+
+function reminderMatchesCurrentScope(reminder) {
+  return Boolean(reminder?.scopeKey && reminder.scopeKey === habitReminderQueue.currentScope()
+    && reminder.scopeKey === currentHabitReminderScope());
+}
+
+function discardOutOfScopeReminder(reminder) {
+  document.getElementById('habit-local-reminder')?.remove();
+  habitReminderQueue.discard(reminder);
+}
+
+function currentHabitReminderRepository() {
+  const userId = authService.getCurrentUser()?.id;
+  const contestId = getActiveContestId();
+  return userId && contestId ? localPersonalRepository.forScope(userId, contestId) : null;
+}
 
 function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented = false } = {}) {
   document.getElementById('habit-local-reminder')?.remove();
@@ -102,21 +134,43 @@ function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented
     ? `${pendingCount} lembretes pendentes`
     : '1 lembrete pendente';
   notice.querySelector('[data-reminder-open]').addEventListener('click', async () => {
-    await dismissHabitReminder(reminder);
+    const repository = currentHabitReminderRepository();
+    const result = await executeScopedHabitReminderAction({
+      reminder,
+      currentScope: reminderMatchesCurrentScope(reminder) ? currentHabitReminderScope() : null,
+      action: () => dismissHabitReminder(reminder, repository),
+      onMismatch: discardOutOfScopeReminder,
+    });
+    if (!result.executed) return;
     habitReminderQueue.advance();
     ctx.habitNavigationIntent = { type: 'record', definitionId: reminder.habitDefinitionId };
     navigate('wellbeing');
   });
   notice.querySelector('[data-reminder-snooze]').addEventListener('click', async () => {
-    await snoozeHabitReminder(reminder, 10);
+    const repository = currentHabitReminderRepository();
+    const result = await executeScopedHabitReminderAction({
+      reminder,
+      currentScope: reminderMatchesCurrentScope(reminder) ? currentHabitReminderScope() : null,
+      action: () => snoozeHabitReminder(reminder, 10, repository),
+      onMismatch: discardOutOfScopeReminder,
+    });
+    if (!result.executed) return;
     habitReminderQueue.advance();
   });
   notice.querySelector('[data-reminder-dismiss]').addEventListener('click', async () => {
-    await dismissHabitReminder(reminder);
+    const repository = currentHabitReminderRepository();
+    const result = await executeScopedHabitReminderAction({
+      reminder,
+      currentScope: reminderMatchesCurrentScope(reminder) ? currentHabitReminderScope() : null,
+      action: () => dismissHabitReminder(reminder, repository),
+      onMismatch: discardOutOfScopeReminder,
+    });
+    if (!result.executed) return;
     habitReminderQueue.advance();
   });
   document.body.append(notice);
-  if (markPresented) markHabitReminderPresented(reminder).catch((error) => {
+  const repository = currentHabitReminderRepository();
+  if (markPresented && reminderMatchesCurrentScope(reminder) && repository) markHabitReminderPresented(reminder, repository).catch((error) => {
     console.warn('[habits] reminder checkpoint unavailable', error?.message || error);
   });
 }
@@ -133,12 +187,28 @@ function enqueueInternalHabitReminder(reminder) {
 }
 
 async function checkHabitReminders() {
-  if (!authService.getCurrentUser() || !getActiveContestId()) return;
+  const userId = authService.getCurrentUser()?.id;
+  const contestId = getActiveContestId();
+  const scopeKey = habitReminderScopeKey(userId, contestId);
+  if (!scopeKey) return;
+  if (habitReminderQueue.currentScope() !== scopeKey) resetHabitReminderRuntime(scopeKey);
   if (habitReminderCheckPromise) return habitReminderCheckPromise;
-  habitReminderCheckPromise = deliverDueHabitReminders({ onInternal: enqueueInternalHabitReminder })
+  const generation = habitReminderRuntimeGeneration;
+  const repository = localPersonalRepository.forScope(userId, contestId);
+  const onInternal = (reminder) => {
+    if (generation !== habitReminderRuntimeGeneration
+      || userId !== authService.getCurrentUser()?.id
+      || contestId !== getActiveContestId()
+      || scopeKey !== habitReminderQueue.currentScope()) return false;
+    return enqueueInternalHabitReminder({ ...reminder, scopeKey });
+  };
+  const checkPromise = deliverDueHabitReminders({ onInternal, repository })
     .catch((error) => console.warn('[habits] local reminder unavailable', error?.message || error))
-    .finally(() => { habitReminderCheckPromise = null; });
-  return habitReminderCheckPromise;
+    .finally(() => {
+      if (habitReminderCheckPromise === checkPromise) habitReminderCheckPromise = null;
+    });
+  habitReminderCheckPromise = checkPromise;
+  return checkPromise;
 }
 
 function bindHabitReminderRuntime() {
@@ -203,6 +273,7 @@ async function navigate(screen) {
 }
 
 function showAuth() {
+  resetHabitReminderRuntime();
   document.getElementById('app')?.classList.add('app-shell--auth');
   document.getElementById('app')?.classList.remove('app-shell--library');
   document.getElementById('bottom-nav')?.classList.add('hidden');
@@ -245,6 +316,7 @@ async function showLibrary() {
 
 async function openContest(contestId) {
   const user = authService.getCurrentUser();
+  if (getActiveContestId() !== contestId) resetHabitReminderRuntime();
   if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
   const contest = await libraryService.getContest(contestId, { refresh: true });
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
@@ -252,6 +324,7 @@ async function openContest(contestId) {
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
   setActiveContestId(contestId);
+  resetHabitReminderRuntime(habitReminderScopeKey(user.id, contestId));
   setActiveContestContent(contentPackage);
   ctx.contest = contest;
   ctx.contentPackage = contentPackage;
@@ -295,6 +368,7 @@ async function openContest(contestId) {
 }
 
 async function logout() {
+  resetHabitReminderRuntime();
   await authService.logout();
   clearActiveContestId();
   clearActiveContestContent();
@@ -304,6 +378,7 @@ async function logout() {
 
 ctx.logout = logout;
 ctx.openContest = openContest;
+ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitReminderScope());
 
 async function initializeAuthenticatedApp() {
   const authenticatedUser = authService.getCurrentUser();
@@ -312,6 +387,7 @@ async function initializeAuthenticatedApp() {
     return;
   }
   if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
+    resetHabitReminderRuntime();
     resetAcademicSessionContext(ctx);
   }
   ctx.user = authenticatedUser;
@@ -337,6 +413,7 @@ async function initializeAuthenticatedApp() {
       return;
     }
     clearActiveContestId();
+    resetHabitReminderRuntime();
   }
 
   await showLibrary();

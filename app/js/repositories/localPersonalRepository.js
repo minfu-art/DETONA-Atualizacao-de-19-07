@@ -27,6 +27,14 @@ export class LocalPersonalRepository {
 
   userId() { return this.userContext.getUserId(); }
   contestId() { return this.contestContext.getContestId(); }
+  forScope(userId, contestId) {
+    if (!userId || !contestId) throw new Error('PERSONAL_SCOPE_REQUIRED');
+    return new LocalPersonalRepository({
+      adapter: this.adapter,
+      userContext: { getUserId: () => userId },
+      contestContext: { getContestId: () => contestId },
+    });
+  }
   getAll(store) { return this.adapter.getAll(store, this.userId(), this.contestId()); }
   getById(store, id) { return this.adapter.getById(store, id, this.userId(), this.contestId()); }
   getByIndex(store, index, value) { return this.adapter.getByIndex(store, index, value, this.userId(), this.contestId()); }

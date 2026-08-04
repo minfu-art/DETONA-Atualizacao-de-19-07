@@ -738,6 +738,7 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         <button type="button" class="btn btn-primary" id="hb-delete-local-confirm">Confirmar exclusão local</button>`);
       document.getElementById('hb-delete-local-confirm')?.addEventListener('click', async (event) => {
         event.currentTarget.disabled = true;
+        ctx.clearHabitReminderRuntime?.();
         await localPersonalRepository.clearPersonalData();
         closeModal();
         toast('Dados pessoais locais apagados. Seu progresso acadêmico foi preservado.');

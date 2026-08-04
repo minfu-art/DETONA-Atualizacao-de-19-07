@@ -100,17 +100,46 @@ export function habitNotificationContent(reminder, label = 'Hábito programado')
   return { title: 'Hora do seu hábito', body: `${label} está programado para agora.` };
 }
 
+export function habitReminderScopeKey(userId, contestId) {
+  if (!userId || !contestId) return null;
+  return `${userId}:${contestId}`;
+}
+
+export async function executeScopedHabitReminderAction({
+  reminder,
+  currentScope,
+  action,
+  onMismatch = () => {},
+}) {
+  if (!reminder?.scopeKey || reminder.scopeKey !== currentScope) {
+    onMismatch(reminder);
+    return { executed: false };
+  }
+  await action(reminder);
+  return { executed: true };
+}
+
 export function createHabitReminderQueue({ onPresent = () => {} } = {}) {
   const entries = [];
   const keys = new Set();
-  const keyOf = (reminder) => reminder.deliveryKey
-    || `${reminder.habitDefinitionId}:${reminder.snoozedUntil || reminder.time}`;
+  let scopeKey = null;
+  const keyOf = (reminder) => [
+    reminder.scopeKey,
+    reminder.habitDefinitionId,
+    reminder.deliveryKey || reminder.snoozedUntil || reminder.time,
+  ].join(':');
   const present = (markPresented) => {
     if (!entries.length) return;
     onPresent(entries[0], { pendingCount: entries.length, markPresented });
   };
+  const clear = () => {
+    entries.length = 0;
+    keys.clear();
+    onPresent(null, { pendingCount: 0, markPresented: false });
+  };
   return {
     enqueue(reminder) {
+      if (!scopeKey || reminder?.scopeKey !== scopeKey) return false;
       const key = keyOf(reminder);
       if (keys.has(key)) return false;
       const presentedImmediately = entries.length === 0;
@@ -127,6 +156,23 @@ export function createHabitReminderQueue({ onPresent = () => {} } = {}) {
     },
     current() { return entries[0] || null; },
     pendingCount() { return entries.length; },
+    clear,
+    currentScope() { return scopeKey; },
+    setScope(nextScopeKey) {
+      const normalized = nextScopeKey || null;
+      if (normalized === scopeKey) return false;
+      clear();
+      scopeKey = normalized;
+      return true;
+    },
+    discard(reminder) {
+      const index = entries.indexOf(reminder);
+      if (index < 0) return false;
+      const [removed] = entries.splice(index, 1);
+      keys.delete(keyOf(removed));
+      if (index === 0) present(false);
+      return true;
+    },
   };
 }
 
