@@ -267,18 +267,6 @@ function evolutionCard(data) {
   </section>`;
 }
 
-function reviewsCard(data) {
-  const memories = [
-    ['quente', 'Quente'], ['morna', 'Morna'], ['fria', 'Fria'], ['congelada', 'Congelada'],
-  ];
-  return `<section class="performance-panel performance-reviews" aria-labelledby="performance-reviews-title">
-    <div class="performance-section-heading"><div><span>Revisões</span><h2 id="performance-reviews-title">Memória e atenção</h2></div></div>
-    <div class="performance-review-metrics"><div><span>Na fila</span><strong>${data.reviews.pending}</strong></div><div><span>Vencidas</span><strong>${data.reviews.due}</strong></div><div><span>Realizadas</span><strong>${data.reviews.completed}</strong></div></div>
-    <ul class="performance-memory-list">${memories.map(([key, label]) => `<li class="memory-${key}"><span>${label}</span><strong>${data.reviews.memory[key]}</strong></li>`).join('')}</ul>
-    ${data.reviews.pending ? '<button type="button" class="btn btn-primary btn-block" id="performance-review">Iniciar revisão</button>' : '<p class="performance-panel-note">Nenhuma revisão pendente neste concurso.</p>'}
-  </section>`;
-}
-
 function summaryCard(data) {
   return `<section class="performance-summary" aria-labelledby="performance-summary-title">
     <span aria-hidden="true">${ICO.chart?.() || ''}</span>
@@ -296,7 +284,7 @@ function page(data, contest) {
     </header>
     <main class="performance-dashboard">
       <div class="performance-top-grid performance-top-grid--mastery">${masteryHeroCard(data)}${overviewCards(data)}</div>
-      <div class="performance-middle-grid">${disciplinesCard(data)}${reviewsCard(data)}</div>
+      <div class="performance-middle-grid performance-middle-grid--single">${disciplinesCard(data)}</div>
       <div class="performance-bottom-grid">${timeCard(data)}${evolutionCard(data)}</div>
       ${summaryCard(data)}
     </main>`;
@@ -307,11 +295,6 @@ function bind(root, navigate, ctx, data, rerender) {
   root.querySelector('#performance-back')?.addEventListener('click', () => navigate('home'));
   root.querySelector('#performance-profile')?.addEventListener('click', () => navigate('profile'));
   root.querySelector('#performance-profile-desktop')?.addEventListener('click', () => navigate('profile'));
-  root.querySelector('#performance-review')?.addEventListener('click', () => {
-    ctx.reviewSession = null;
-    ctx.reviewFilters = {};
-    navigate('review');
-  });
   const bindDiscAccordion = () => {
     root.querySelectorAll('.ev-disc-acc__trigger').forEach((btn) => {
       btn.addEventListener('click', () => {

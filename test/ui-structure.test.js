@@ -160,6 +160,19 @@ test('painel de desempenho usa Orion e identidade visual própria sem renomear a
   assert.doesNotMatch(performance, /hero-evolution-dynamic/);
 });
 
+test('desempenho remove o painel lateral de revisões e amplia a leitura das disciplinas', async () => {
+  const [performance, css, mobileCss] = await Promise.all([
+    readFile(performanceUrl, 'utf8'),
+    readFile(cssUrl, 'utf8'),
+    readFile(performanceCssUrl, 'utf8'),
+  ]);
+  assert.match(performance, /performance-middle-grid performance-middle-grid--single/);
+  assert.doesNotMatch(performance, /performance-reviews|performance-review-metrics|id="performance-review"/);
+  assert.match(css, /\.performance-middle-grid--single\s*\{\s*grid-template-columns:minmax\(0,1fr\)/);
+  assert.match(mobileCss, /\.performance-middle-grid--single \.ev-disc-accordion[^{]*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
+  assert.match(mobileCss, /\.performance-middle-grid--single \.ev-disc-acc\.is-open[^{]*\{[^}]*grid-column:\s*1 \/ -1/s);
+});
+
 test('edital verticalizado mostra taxa de acerto e permite enfrentar subtópico', async () => {
   const [source, css] = await Promise.all([readFile(grimorioUrl, 'utf8'), readFile(cssUrl, 'utf8')]);
   assert.match(source, /progressBar\(/);

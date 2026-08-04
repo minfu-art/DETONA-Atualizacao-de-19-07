@@ -187,6 +187,29 @@
   padding: 0;
   list-style: none;
 }
+
+.performance-middle-grid--single .performance-disciplines {
+  background:
+    radial-gradient(circle at 96% 0, rgba(34, 211, 238, 0.09), transparent 30%),
+    linear-gradient(150deg, rgba(11, 24, 48, 0.96), rgba(5, 9, 20, 0.98));
+}
+
+.performance-middle-grid--single .performance-section-heading {
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+}
+
+@media (min-width: 780px) {
+  .performance-middle-grid--single .ev-disc-accordion {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 10px !important;
+  }
+
+  .performance-middle-grid--single .ev-disc-acc.is-open {
+    grid-column: 1 / -1;
+  }
+}
 .ev-disc-acc {
   border: 1px solid rgba(140, 164, 255, 0.14);
   border-radius: 14px;
