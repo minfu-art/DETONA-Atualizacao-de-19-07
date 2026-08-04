@@ -10,6 +10,7 @@ import {
   buildDisciplineTopics,
   createSingleSessionStarter,
   resolveSubtopicPresentation,
+  studySessionErrorMessage,
 } from './studyPresentation.js';
 
 const STARS_TO_UNLOCK_NEXT = 1;
@@ -208,7 +209,7 @@ export async function renderTopicTree(root, navigate, ctx) {
       openUnavailable(node);
       return;
     }
-    const answered = new Set(node.subtopic.answered_question_ids || []);
+    const answered = new Set(node.subtopic.answered_question_ids || node.subtopic.questoesRespondidas || []);
     const answeredAvailable = Math.min(node.questionCount, answered.size);
     const unseen = Math.max(0, node.questionCount - answeredAvailable);
     const topic = topics.find((entry) => entry.subtopics.some((item) => item.id === sid));
@@ -245,7 +246,7 @@ export async function renderTopicTree(root, navigate, ctx) {
         await startOnce(sid);
       } catch (sessionError) {
         if (error) {
-          error.textContent = sessionError?.message || 'Não foi possível iniciar as questões. Tente novamente.';
+          error.textContent = studySessionErrorMessage(sessionError);
           error.hidden = false;
         }
         button.disabled = false;

@@ -180,3 +180,11 @@ export function createSingleSessionStarter(createSession) {
     }
   };
 }
+
+export function studySessionErrorMessage(error) {
+  const message = String(error?.message || '').trim();
+  if (/precisa de \d+ quest(?:ão|ões) disponíveis/i.test(message)) return message;
+  if (/exatamente \d+ quest(?:ão|ões) válidas/i.test(message)) return message;
+  if (/subtópico não encontrado/i.test(message)) return 'Este subtópico não está disponível no momento.';
+  return 'Não foi possível preparar a sessão. Tente novamente.';
+}

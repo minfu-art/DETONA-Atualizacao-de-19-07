@@ -7,6 +7,7 @@ import {
   filterDisciplines,
   resolveDisciplinePresentation,
   resolveSubtopicPresentation,
+  studySessionErrorMessage,
 } from '../js/ui/studyPresentation.js';
 
 const discipline = { id: 'port', name: 'Língua Portuguesa', order: 1 };
@@ -92,6 +93,17 @@ test('falha ao criar sessão libera uma nova tentativa sem duplicar chamadas con
   assert.equal(calls, 2);
 });
 
+test('preparação não expõe códigos internos e preserva mensagens acadêmicas úteis', () => {
+  assert.equal(
+    studySessionErrorMessage(new Error('AUTH_REQUIRED')),
+    'Não foi possível preparar a sessão. Tente novamente.',
+  );
+  assert.equal(
+    studySessionErrorMessage(new Error('Este subtópico precisa de 10 questões disponíveis; hoje possui 4.')),
+    'Este subtópico precisa de 10 questões disponíveis; hoje possui 4.',
+  );
+});
+
 test('ações de apresentação preservam snapshot acadêmico completo', () => {
   const academic = {
     player: { xp: 420, level: 17, mastery_pct: 33, edital_completion_pct: 21 },
@@ -124,6 +136,8 @@ test('interface usa botões, accordion semântico, modal explícito e retorno à
   assert.match(tree, /aria-controls/);
   assert.match(tree, /Iniciar questões/);
   assert.match(tree, /createSingleSessionStarter/);
+  assert.match(tree, /answered_question_ids \|\| node\.subtopic\.questoesRespondidas/);
+  assert.match(tree, /studySessionErrorMessage\(sessionError\)/);
   assert.match(tree, /ctx\.returnToTree = discId/);
   assert.match(tree, /ctx\.studySubtopicId = sid/);
   assert.match(tree, /Questões ainda não disponíveis/);
