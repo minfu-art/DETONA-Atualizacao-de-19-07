@@ -269,6 +269,10 @@ test('interface usa botões, accordion semântico, modal explícito e retorno à
   assert.doesNotMatch(tree, /style=/);
   const studyCss = css.slice(css.indexOf('Núcleo acadêmico v1'), css.indexOf('Administração segura de alunos'));
   assert.doesNotMatch(studyCss, /!important|font-size:\s*(?:[0-9]|1[01])px/);
+  assert.match(studyCss, /\.study-discipline-grid[^}]*minmax\(min\(100%,240px\),1fr\)/);
+  assert.match(studyCss, /\.study-discipline-card \{[^}]*min-height:250px/);
+  assert.match(studyCss, /\.study-discipline-card__name[^}]*clamp\(20px,2vw,27px\)/);
+  assert.match(studyCss, /\.study-discipline-card__name[^}]*word-break:normal/);
   assert.match(studyCss, /min-height:var\(--ds-touch-target\)/);
   assert.match(studyCss, /max-width:390px/);
   assert.match(studyCss, /max-width:320px/);

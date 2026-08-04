@@ -283,6 +283,10 @@ test('review presents a strategic plan without changing the queue engine', async
   for (const marker of ['review-plan__hero', 'review-start', 'review-plan__queue', 'review-priority']) {
     assert.match(ui, new RegExp(marker));
   }
+  assert.match(ui, /Sistema de suporte à aprovação/);
+  assert.match(ui, /Revisão estratégica/);
+  assert.match(ui, /Fortaleça \$\{plan\.total\}/);
+  assert.doesNotMatch(ui, /\u00c3|\u00c2|\u00e2\u20ac/);
   assert.match(service, /selectReviewItems\(items/);
   assert.match(service, /describeReviewItem/);
   for (const marker of ['review-type--error', 'review-type--confidence', 'review-type--recurring', 'review-type--scheduled']) {

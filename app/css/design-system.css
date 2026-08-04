@@ -1727,6 +1727,7 @@ body.has-open-modal { overflow:hidden; }
 .orion-metric__copy { min-width:0; display:flex; flex-direction:column; gap:2px; }
 .orion-metric__copy small { color:#86a1c9; font-size:7.5px; font-weight:800; letter-spacing:.055em; line-height:1.25; text-transform:uppercase; }
 .orion-metric__copy strong { display:block; min-width:0; color:#f4f8ff; font:780 clamp(13px,1.35vw,18px)/1.15 var(--display); overflow-wrap:anywhere; }
+.orion-metric--pace .orion-metric__copy strong { font-size:clamp(12px,1.15vw,16px); overflow-wrap:normal; word-break:normal; hyphens:none; }
 .orion-metric__copy>span { color:#8ea5c8; font-size:8px; line-height:1.25; }
 .orion-metric__empty { color:#a8b8d1 !important; font:650 10px/1.2 var(--body) !important; }
 .orion-metric__progress { position:absolute; inset:auto 10px 8px; height:4px; overflow:hidden; border-radius:999px; background:rgba(15,23,42,.9); }

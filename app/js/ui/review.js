@@ -113,48 +113,48 @@ export async function renderReview(root, navigate, ctx) {
 
 function renderReviewPlan(root, plan) {
   const recommendation = plan.urgent
-    ? `${plan.urgent} ${plan.urgent === 1 ? 'item recorrente exige' : 'itens recorrentes exigem'} atenÃ§Ã£o agora.`
+    ? `${plan.urgent} ${plan.urgent === 1 ? 'item recorrente exige' : 'itens recorrentes exigem'} atenção agora.`
     : plan.due
-      ? `${plan.due} ${plan.due === 1 ? 'revisÃ£o estÃ¡ vencida' : 'revisÃµes estÃ£o vencidas'} e pronta para reforÃ§o.`
-      : 'Seu prÃ³ximo ciclo de memÃ³ria jÃ¡ estÃ¡ organizado por prioridade.';
+      ? `${plan.due} ${plan.due === 1 ? 'revisão está vencida' : 'revisões estão vencidas'} e pronta para reforço.`
+      : 'Seu próximo ciclo de memória já está organizado por prioridade.';
   const types = [
     ['error', 'Erro recente', plan.counts.error, 'Corrigir uma resposta incorreta antes que o erro se consolide.'],
-    ['confidence', 'Baixa confianÃ§a', plan.counts.low_confidence, 'Transformar dÃºvida em seguranÃ§a para a prÃ³xima prova.'],
-    ['recurring', 'RecorrÃªncia', plan.counts.recurring, 'Atacar padrÃµes de erro que voltaram a aparecer.'],
-    ['scheduled', 'Agendada', plan.counts.scheduled, 'Manter o conteÃºdo acessÃ­vel com repetiÃ§Ã£o espaÃ§ada.'],
+    ['confidence', 'Baixa confiança', plan.counts.low_confidence, 'Transformar dúvida em segurança para a próxima prova.'],
+    ['recurring', 'Recorrência', plan.counts.recurring, 'Atacar padrões de erro que voltaram a aparecer.'],
+    ['scheduled', 'Agendada', plan.counts.scheduled, 'Manter o conteúdo acessível com repetição espaçada.'],
   ];
   root.innerHTML = `<main class="review-plan ds-page ds-page--wide">
     <header class="review-plan__header">
-      <div><span class="ds-kicker">Sistema de suporte Ã  aprovaÃ§Ã£o</span><h1>RevisÃ£o estratÃ©gica</h1><p>O sistema reuniu o que mais precisa da sua atenÃ§Ã£o e ordenou pelo impacto na sua memÃ³ria.</p></div>
-      <button type="button" class="review-plan__back" id="review-back" aria-label="Voltar ao inÃ­cio"><span aria-hidden="true">â†</span><span>Voltar</span></button>
+      <div><span class="ds-kicker">Sistema de suporte à aprovação</span><h1>Revisão estratégica</h1><p>O sistema reuniu o que mais precisa da sua atenção e ordenou pelo impacto na sua memória.</p></div>
+      <button type="button" class="review-plan__back" id="review-back" aria-label="Voltar ao início"><span aria-hidden="true">←</span><span>Voltar</span></button>
     </header>
 
     <section class="review-plan__hero ds-surface ds-surface--primary" aria-labelledby="review-recommendation-title">
       <div class="review-plan__hero-copy">
-        <span>PrÃ³ximo bloco recomendado</span>
-        <h2 id="review-recommendation-title">FortaleÃ§a ${plan.total} ${plan.total === 1 ? 'ponto' : 'pontos'} da sua preparaÃ§Ã£o</h2>
-        <p>${escapeHtml(recommendation)} A sessÃ£o respeita a prioridade da fila e tem no mÃ¡ximo 10 questÃµes.</p>
-        <div class="review-plan__actions"><button type="button" class="btn btn-primary" id="review-start">${icon('bolt')} Iniciar revisÃ£o</button><span>${plan.total} ${plan.total === 1 ? 'item' : 'itens'} neste bloco</span></div>
+        <span>Próximo bloco recomendado</span>
+        <h2 id="review-recommendation-title">Fortaleça ${plan.total} ${plan.total === 1 ? 'ponto' : 'pontos'} da sua preparação</h2>
+        <p>${escapeHtml(recommendation)} A sessão respeita a prioridade da fila e tem no máximo 10 questões.</p>
+        <div class="review-plan__actions"><button type="button" class="btn btn-primary" id="review-start">${icon('bolt')} Iniciar revisão</button><span>${plan.total} ${plan.total === 1 ? 'item' : 'itens'} neste bloco</span></div>
       </div>
       <dl class="review-plan__summary">
         <div><dt>Quantidade</dt><dd>${plan.total}</dd><small>itens priorizados</small></div>
-        <div><dt>Para hoje</dt><dd>${plan.due}</dd><small>jÃ¡ disponÃ­veis</small></div>
+        <div><dt>Para hoje</dt><dd>${plan.due}</dd><small>já disponíveis</small></div>
         <div class="${plan.urgent ? 'is-urgent' : ''}"><dt>Urgentes</dt><dd>${plan.urgent}</dd><small>recorrentes vencidos</small></div>
-        <div><dt>PrÃ³ximo ciclo</dt><dd class="is-date">${escapeHtml(formatDate(plan.nextReviewAt))}</dd><small>memÃ³ria espaÃ§ada</small></div>
+        <div><dt>Próximo ciclo</dt><dd class="is-date">${escapeHtml(formatDate(plan.nextReviewAt))}</dd><small>memória espaçada</small></div>
       </dl>
     </section>
 
     <section class="review-plan__types ds-surface ds-surface--secondary" aria-labelledby="review-types-title">
-      <div class="review-plan__section-title"><div><span>Por que revisar</span><h2 id="review-types-title">Motivos da fila</h2></div><p>Cada cor representa uma causa, nÃ£o um novo caminho de navegaÃ§Ã£o.</p></div>
+      <div class="review-plan__section-title"><div><span>Por que revisar</span><h2 id="review-types-title">Motivos da fila</h2></div><p>Cada cor representa uma causa, não um novo caminho de navegação.</p></div>
       <div class="review-type-grid">${types.map(([tone, label, count, description]) => `<article class="review-type-card review-type-card--${tone}"><div><span>${label}</span><strong>${count}</strong></div><p>${description}</p></article>`).join('')}</div>
     </section>
 
     <section class="review-plan__queue ds-surface ds-surface--data" aria-labelledby="review-queue-title">
-      <div class="review-plan__section-title"><div><span>O que revisar</span><h2 id="review-queue-title">Fila recomendada</h2></div><p>Ordem calculada por prazo, recorrÃªncia, dificuldade e domÃ­nio.</p></div>
+      <div class="review-plan__section-title"><div><span>O que revisar</span><h2 id="review-queue-title">Fila recomendada</h2></div><p>Ordem calculada por prazo, recorrência, dificuldade e domínio.</p></div>
       <ol class="review-plan__list">${plan.items.map((item) => `<li class="review-plan__item review-plan__item--${item.priority.tone}">
         <span class="review-plan__order">${String(item.order).padStart(2, '0')}</span>
         <div class="review-plan__item-copy"><div class="review-plan__badges"><span class="review-type review-type--${item.tone}">${escapeHtml(item.label)}</span><span class="review-priority review-priority--${item.priority.tone}">${escapeHtml(item.priority.label)}</span></div><strong>${escapeHtml(item.subtopicName)}</strong><p>${escapeHtml(item.reason)}</p></div>
-        <dl class="review-plan__item-meta"><div><dt>DomÃ­nio</dt><dd>${item.mastery}%</dd></div><div><dt>Erros</dt><dd>${Number(item.errorCount) || 0}</dd></div><div><dt>RevisÃ£o</dt><dd>${escapeHtml(formatDate(item.nextReviewAt))}</dd></div></dl>
+        <dl class="review-plan__item-meta"><div><dt>Domínio</dt><dd>${item.mastery}%</dd></div><div><dt>Erros</dt><dd>${Number(item.errorCount) || 0}</dd></div><div><dt>Revisão</dt><dd>${escapeHtml(formatDate(item.nextReviewAt))}</dd></div></dl>
       </li>`).join('')}</ol>
     </section>
   </main>`;

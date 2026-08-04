@@ -128,6 +128,8 @@ test('Home, CSS responsivo e PWA integram o painel e o asset do Orion', async ()
   assert.match(home, /orionEvolutionService\.getSnapshot/);
   assert.match(home, /renderOrionEvolution\(orionEvolution\)/);
   assert.match(css, /\.orion-evolution__metrics/);
+  assert.match(css, /\.orion-metric--pace \.orion-metric__copy strong[^}]*overflow-wrap:normal/);
+  assert.match(css, /\.orion-metric--pace \.orion-metric__copy strong[^}]*word-break:normal/);
   assert.match(css, /grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.match(css, /@media \(max-width:620px\)/);
   assert.match(sw, /orionEvolutionService\.js/);
