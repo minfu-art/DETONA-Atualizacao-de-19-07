@@ -280,12 +280,13 @@ test('batalha prioriza leitura, confirmação, confiança e explicação didáti
   assert.match(css, /battle-review-note--review/);
 });
 
-test('revisão informa memória e próxima data sem XP ou domínio oficial', async () => {
+test('revisão informa memória, próxima data e XP persistido sem domínio oficial', async () => {
   const [ui, service] = await Promise.all([readFile(reviewUiUrl, 'utf8'), readFile(reviewServiceUrl, 'utf8')]);
   for (const label of ['Questões revisadas', 'Acertos', 'Erros', 'Memória fortalecida', 'Continuam quentes', 'Próxima revisão sugerida']) {
     assert.match(ui, new RegExp(label));
   }
-  assert.doesNotMatch(ui, /\bXP\b|summary\.xp/i);
+  assert.match(ui, /XP persistido/);
+  assert.match(ui, /summary\.xp/);
   assert.doesNotMatch(service, /recalculateEditalSSOT|applyOfficialMasteryAttempt|levelFromMastery|applyXp/);
 });
 

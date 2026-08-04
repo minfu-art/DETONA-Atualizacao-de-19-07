@@ -10,6 +10,17 @@ const NOW = new Date('2026-07-15T12:00:00.000Z');
 const input = (id = 'q1', contestId = 'pc_al') => ({
   questionId: id, contestId, subtopicId: 'sub1', disciplineId: 'disc1', difficulty: 'media', source: 'bank',
 });
+const question = (id = 'q1') => ({
+  id, subtopic_id: 'sub1', topicoEditalId: 'sub1', disciplina: 'disc1', statement: `Questão ${id}`,
+  format: 'certo_errado', options: ['Certo', 'Errado'], correct_answer: true, situacao: 'ativa',
+});
+const selectionContext = (ids, overrides = {}) => ({
+  questions: ids.map(question),
+  subtopics: [{ id: 'sub1', discipline_id: 'disc1' }],
+  contestId: 'pc_al',
+  isQuestionEligible: () => true,
+  ...overrides,
+});
 
 test('erro adiciona questão à revisão', () => {
   const item = applyReviewEvent(null, input(), { now: NOW, correct: false, reason: 'incorrect', subtopicMastery: 100 });
@@ -59,17 +70,17 @@ test('novo erro reaquece questão consolidada', () => {
   assert.equal(item.consecutiveCorrect, 0);
 });
 
-test('agendamento usa 1 dia no primeiro erro e 6 horas no recorrente', () => {
+test('agendamento usa um dia civil após erro inicial ou recorrente', () => {
   const first = calculateNextReviewAt({ errorCount: 0, difficulty: 3 }, { now: NOW, correct: false, subtopicMastery: 100 });
   const recurrent = calculateNextReviewAt({ errorCount: 1, difficulty: 3 }, { now: NOW, correct: false, subtopicMastery: 100 });
   assert.equal(new Date(first) - NOW, 86400000);
-  assert.equal(new Date(recurrent) - NOW, 21600000);
+  assert.equal(new Date(recurrent) - NOW, 86400000);
 });
 
-test('agendamento de acertos progride por 3, 7, 15, 30 e 60 dias', () => {
+test('agendamento de acertos preserva o calendário 6, 15 e 30 dias', () => {
   const days = [0, 1, 2, 3, 4].map((consecutiveCorrect) =>
     (new Date(calculateNextReviewAt({ consecutiveCorrect, errorCount: 0, difficulty: 3 }, { now: NOW, correct: true, subtopicMastery: 100 })) - NOW) / 86400000);
-  assert.deepEqual(days, [3, 7, 15, 30, 60]);
+  assert.deepEqual(days, [6, 15, 30, 30, 30]);
 });
 
 test('priorityScore favorece vencidas, recorrentes, difíceis e baixo domínio', () => {
@@ -82,23 +93,23 @@ test('priorityScore favorece vencidas, recorrentes, difíceis e baixo domínio',
 test('seleção respeita vencimento e prioridade', () => {
   const future = { ...createReviewItem(input('future'), { now: NOW, reason: 'incorrect' }), nextReviewAt: '2026-07-20T12:00:00.000Z' };
   const due = { ...createReviewItem(input('due'), { now: NOW, reason: 'incorrect' }), nextReviewAt: '2026-07-14T12:00:00.000Z' };
-  const selected = selectReviewItems([future, due], { now: NOW, contestId: 'pc_al', masteryBySubtopic: { sub1: 50 } });
+  const selected = selectReviewItems([future, due], { ...selectionContext(['future', 'due']), now: NOW, masteryBySubtopic: { sub1: 50 } });
   assert.equal(selected[0].questionId, 'due');
 });
 
 test('sessão limita dez e não repete questão', () => {
-  const items = Array.from({ length: 12 }, (_, index) => createReviewItem(input(`q${index}`), { now: NOW, reason: 'incorrect' }));
+  const items = Array.from({ length: 12 }, (_, index) => ({ ...createReviewItem(input(`q${index}`), { now: NOW, reason: 'incorrect' }), nextReviewAt: NOW.toISOString() }));
   items.push(structuredClone(items[0]));
-  const selected = selectReviewItems(items, { now: NOW, contestId: 'pc_al', limit: 10 });
+  const selected = selectReviewItems(items, { ...selectionContext(Array.from({ length: 12 }, (_, index) => `q${index}`)), now: NOW, limit: 10 });
   assert.equal(selected.length, 10);
   assert.equal(new Set(selected.map((item) => item.questionId)).size, 10);
 });
 
 test('sessão não mistura concursos', () => {
   const selected = selectReviewItems([
-    createReviewItem(input('pc', 'pc_al'), { now: NOW, reason: 'incorrect' }),
+    { ...createReviewItem(input('pc', 'pc_al'), { now: NOW, reason: 'incorrect' }), nextReviewAt: NOW.toISOString() },
     createReviewItem(input('pf', 'pf'), { now: NOW, reason: 'incorrect' }),
-  ], { now: NOW, contestId: 'pc_al' });
+  ], { ...selectionContext(['pc', 'pf']), now: NOW });
   assert.deepEqual(selected.map((item) => item.questionId), ['pc']);
 });
 
@@ -116,7 +127,7 @@ test('migração preserva IDs e datas antigas sem inventar tentativas', () => {
   const migrated = migrateLegacyReviewItems([{
     id: 'sub1', discipline_id: 'disc1', best_accuracy: 40,
     review_question_ids: ['q1'], question_history: { q1: { lastAnsweredAt: '2026-07-01T10:00:00.000Z', incorrectCount: 3 } },
-  }], [{ id: 'q1', dificuldade: 'dificil' }], { contestId: 'pc_al', now: NOW });
+  }], [{ ...question('q1'), dificuldade: 'dificil' }], { contestId: 'pc_al', now: NOW, isQuestionEligible: () => true });
   assert.equal(migrated.length, 1);
   assert.equal(migrated[0].source, 'migration');
   assert.equal(migrated[0].lastErrorAt, '2026-07-01T10:00:00.000Z');

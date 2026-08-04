@@ -7,6 +7,8 @@ const RESET_FIELDS = Object.freeze({
   studyTopicId: null,
   studySubtopicId: null,
   profileSection: null,
+  requestReviewExit: null,
+  allowReviewExit: false,
   contest: null,
   contentPackage: null,
   user: null,

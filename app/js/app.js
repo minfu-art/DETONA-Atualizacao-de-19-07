@@ -17,7 +17,7 @@ import { renderWellbeing } from './ui/wellbeingUI.js?v=73';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=72';
-import { renderReview } from './ui/review.js?v=83';
+import { renderReview } from './ui/review.js?v=84';
 import { renderRankedEvent } from './ui/rankedEvent.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
 import { renderAuth } from './ui/auth.js?v=74';
@@ -62,6 +62,8 @@ const ctx = {
   requestBattleExit: null,
   allowBattleExit: false,
   battleFinalizing: false,
+  requestReviewExit: null,
+  allowReviewExit: false,
 };
 
 let shellInitialized = false;
@@ -236,7 +238,16 @@ async function navigate(screen) {
     ctx.requestBattleExit?.(screen);
     return;
   }
+  if (ctx.screen === 'review'
+    && screen !== 'review'
+    && ctx.reviewSession
+    && !ctx.reviewSession.finished
+    && !ctx.allowReviewExit) {
+    ctx.requestReviewExit?.(screen);
+    return;
+  }
   ctx.allowBattleExit = false;
+  ctx.allowReviewExit = false;
   if (!canAccessInternalRoute(authService)) {
     showAuth();
     return;
@@ -335,7 +346,12 @@ async function showLibrary() {
 
 async function openContest(contestId) {
   const user = authService.getCurrentUser();
+  const contestChanged = getActiveContestId() !== contestId;
   if (getActiveContestId() !== contestId) resetHabitReminderRuntime();
+  if (contestChanged) {
+    ctx.reviewSession = null;
+    ctx.reviewFilters = null;
+  }
   if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
   const contest = await libraryService.getContest(contestId, { refresh: true });
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');

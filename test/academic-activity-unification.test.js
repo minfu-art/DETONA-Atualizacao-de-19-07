@@ -98,8 +98,8 @@ function reviewSession(overrides = {}) {
   return {
     id: 'review_123e4567-e89b-12d3-a456-426614174000',
     contestId: 'pc_al_2026',
-    items: [{ subtopicId: 's1', disciplineId: 'd1', memoryState: 'fria', nextReviewAt: '2026-07-25T12:00:00Z' }],
-    questions: [{ id: 'q1' }],
+    items: [{ questionId: 'q1', subtopicId: 's1', disciplineId: 'd1', memoryState: 'fria', nextReviewAt: '2026-07-25T12:00:00Z' }],
+    questions: [{ id: 'q1', subtopic_id: 's1', statement: 'Questão válida', format: 'certo_errado', correct_answer: true }],
     index: 0,
     correct: 1,
     errors: 0,
@@ -231,7 +231,7 @@ test('14. retry da mesma resposta de revisão não duplica review_count', async 
   const makeSession = () => ({
     id: 'review_same',
     items: [structuredClone(queueItem)],
-    questions: [{ id: 'q1', format: 'certo_errado', correct_answer: true, explanation: 'ok' }],
+    questions: [{ id: 'q1', subtopic_id: 's1', statement: 'Questão válida', format: 'certo_errado', correct_answer: true, explanation: 'ok' }],
     index: 0,
     correct: 0,
     errors: 0,
