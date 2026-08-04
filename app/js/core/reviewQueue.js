@@ -180,14 +180,25 @@ export function migrateLegacyReviewItems(subtopics = [], questions = [], context
   const now = iso(context.now || new Date());
   const contestId = String(context.contestId || '');
   const questionById = new Map(questions.map((question) => [String(question.id), question]));
+  const audit = context.audit && typeof context.audit === 'object' ? context.audit : null;
+  if (audit) {
+    audit.ignoredAmbiguous = Number(audit.ignoredAmbiguous) || 0;
+    audit.invalid = Number(audit.invalid) || 0;
+  }
   const items = [];
   for (const subtopic of subtopics) {
     const ids = [...new Set([...(subtopic.review_question_ids || []), ...(subtopic.questoesRevisao || []), ...(subtopic.incorrect_question_ids || [])])];
     for (const questionId of ids) {
       const question = questionById.get(String(questionId));
       const questionSubtopicId = String(question?.subtopic_id || question?.topicoEditalId || '').trim();
-      if (!question || (context.isQuestionEligible && !context.isQuestionEligible(question))
-        || questionSubtopicId !== String(subtopic.id)) continue;
+      if (!question || (context.isQuestionEligible && !context.isQuestionEligible(question))) {
+        if (audit) audit.invalid += 1;
+        continue;
+      }
+      if (!questionSubtopicId || questionSubtopicId !== String(subtopic.id)) {
+        if (audit) audit.ignoredAmbiguous += 1;
+        continue;
+      }
       const history = subtopic.question_history?.[questionId] || {};
       const date = history.lastAnsweredAt || subtopic.last_attempt_at || subtopic.last_studied_at || now;
       const item = createReviewItem({

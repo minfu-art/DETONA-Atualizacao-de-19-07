@@ -97,8 +97,10 @@ function repoForGoal(goalType, goalAmount = 10, extra = {}) {
 function reviewSession(overrides = {}) {
   return {
     id: 'review_123e4567-e89b-12d3-a456-426614174000',
+    userId: '',
     contestId: 'pc_al_2026',
-    items: [{ questionId: 'q1', subtopicId: 's1', disciplineId: 'd1', memoryState: 'fria', nextReviewAt: '2026-07-25T12:00:00Z' }],
+    scopeKey: 'local:pc_al_2026',
+    items: [{ questionId: 'q1', contestId: 'pc_al_2026', subtopicId: 's1', disciplineId: 'd1', memoryState: 'fria', nextReviewAt: '2026-07-25T12:00:00Z' }],
     questions: [{ id: 'q1', subtopic_id: 's1', statement: 'Questão válida', format: 'certo_errado', correct_answer: true }],
     index: 0,
     correct: 1,
@@ -230,6 +232,9 @@ test('14. retry da mesma resposta de revisão não duplica review_count', async 
   });
   const makeSession = () => ({
     id: 'review_same',
+    userId: '',
+    contestId: 'pc_al_2026',
+    scopeKey: 'local:pc_al_2026',
     items: [structuredClone(queueItem)],
     questions: [{ id: 'q1', subtopic_id: 's1', statement: 'Questão válida', format: 'certo_errado', correct_answer: true, explanation: 'ok' }],
     index: 0,

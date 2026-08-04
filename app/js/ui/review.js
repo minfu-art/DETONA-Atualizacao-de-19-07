@@ -28,7 +28,7 @@ export async function renderReview(root, navigate, ctx) {
       button.textContent = 'Preparando revisão…';
       try {
         session = await createReviewSession(ctx.reviewFilters || {});
-        if (!session.questions.length) throw new Error('REVIEW_EMPTY');
+        if (!session) throw new Error('REVIEW_EMPTY');
         ctx.reviewSession = session;
         await renderReview(root, navigate, ctx);
       } catch (error) {

@@ -14,6 +14,9 @@ import {
 } from '../app/js/core/reviewQueue.js';
 import {
   answerReviewQuestion,
+  createReviewSession,
+  ensureReviewQueueMigration,
+  finalizeReviewSession,
   validateReviewSession,
 } from '../app/js/services/reviewService.js';
 import { clearActiveContestId, setActiveContestId } from '../app/js/contest/activeContest.js';
@@ -84,6 +87,7 @@ function memoryRepository(seed = {}, { failOnce = null } = {}) {
   let failed = false;
   return {
     rows,
+    metaValues,
     async getAll(store) { return structuredClone(rows[store] || []); },
     async getById(store, id) {
       return structuredClone((rows[store] || []).find((row) => String(keyFor(store, row)) === String(id)) || null);
@@ -198,6 +202,83 @@ test('sessão valida escopo, alinhamento item–questão, unicidade, tamanho e e
   assert.ok(validateReviewSession(session({ questions: [question('q1', { situacao: 'arquivada' })] }), { isQuestionEligible }).errors.includes('QUESTION_INELIGIBLE'));
 });
 
+test('review session rejects incompatible scope, user, contest and academic links', () => {
+  const context = { userId: 'user-a', contestId: 'contest-a', scopeKey: 'user-a:contest-a', isQuestionEligible };
+  assert.ok(validateReviewSession(session({ scopeKey: 'user-a:contest-b' }), context).errors.includes('SCOPE_KEY_MISMATCH'));
+  assert.ok(validateReviewSession(session(), { ...context, userId: 'user-b', scopeKey: 'user-b:contest-a' }).errors.includes('USER_ID_MISMATCH'));
+  assert.ok(validateReviewSession(session(), { ...context, contestId: 'contest-b', scopeKey: 'user-a:contest-b' }).errors.includes('CONTEST_ID_MISMATCH'));
+  assert.ok(validateReviewSession(session({ items: [item('q1', { contestId: 'contest-b' })] }), context).errors.includes('ITEM_CONTEST_MISMATCH'));
+  assert.ok(validateReviewSession(session({ items: [item('q1', { disciplineId: 'd2' })] }), {
+    ...context, subtopics: [subtopic()], isQuestionEligible,
+  }).errors.includes('DISCIPLINE_MISMATCH'));
+});
+
+test('review session rejects duplicate, external, out-of-order and malformed results', () => {
+  const twoQuestions = [question('q1'), question('q2')];
+  const twoItems = [item('q1'), item('q2')];
+  const firstResult = { eventId: 'review:s:q1', questionId: 'q1', correct: true };
+  const secondResult = { eventId: 'review:s:q2', questionId: 'q2', correct: false };
+  assert.ok(validateReviewSession(session({ questions: twoQuestions, items: [item('q1'), item('q1')] }), { isQuestionEligible }).errors.includes('DUPLICATE_ITEM'));
+  assert.ok(validateReviewSession(session({ results: [{ ...firstResult, questionId: 'outside' }], correct: 1, index: 1 }), { isQuestionEligible }).errors.includes('RESULT_QUESTION_EXTERNAL'));
+  assert.ok(validateReviewSession(session({
+    questions: twoQuestions, items: twoItems, results: [firstResult, { ...secondResult, questionId: 'q1' }],
+    correct: 1, errors: 1, finished: true, finishedAt: NOW.toISOString(), index: 1,
+  }), { isQuestionEligible }).errors.includes('DUPLICATE_RESULT_QUESTION'));
+  assert.ok(validateReviewSession(session({
+    questions: twoQuestions, items: twoItems, results: [firstResult, { ...secondResult, eventId: firstResult.eventId }],
+    correct: 1, errors: 1, finished: true, finishedAt: NOW.toISOString(), index: 1,
+  }), { isQuestionEligible }).errors.includes('DUPLICATE_RESULT_EVENT'));
+  assert.ok(validateReviewSession(session({ questions: twoQuestions, items: twoItems, results: [secondResult], errors: 1, index: 1 }), { isQuestionEligible }).errors.includes('RESULT_ORDER_MISMATCH'));
+  assert.ok(validateReviewSession(session({ results: [{ ...firstResult, correct: 'true' }], correct: 0, index: 1 }), { isQuestionEligible }).errors.includes('RESULT_CORRECT_INVALID'));
+});
+
+test('review session rejects corrupt counters, indexes and completion state', () => {
+  const result = { eventId: 'review:s:q1', questionId: 'q1', correct: true };
+  assert.ok(validateReviewSession(session({ results: [result], correct: 0, index: 1 }), { isQuestionEligible }).errors.includes('CORRECT_COUNTER_MISMATCH'));
+  assert.ok(validateReviewSession(session({ results: [{ ...result, correct: false }], errors: 0, index: 1 }), { isQuestionEligible }).errors.includes('ERROR_COUNTER_MISMATCH'));
+  assert.ok(validateReviewSession(session({ results: [result], correct: 1, errors: 1, index: 1 }), { isQuestionEligible }).errors.includes('COUNTER_TOTAL_MISMATCH'));
+  assert.ok(validateReviewSession(session({ index: 1 }), { isQuestionEligible }).errors.includes('INDEX_INVALID'));
+  const twoQuestions = [question('q1'), question('q2')];
+  const twoItems = [item('q1'), item('q2')];
+  assert.ok(validateReviewSession(session({ questions: twoQuestions, items: twoItems, results: [result], correct: 1, index: 0 }), { isQuestionEligible }).errors.includes('ACTIVE_INDEX_MISMATCH'));
+  assert.ok(validateReviewSession(session({ questions: twoQuestions, items: twoItems, results: [result], correct: 1, finished: true, finishedAt: NOW.toISOString(), index: 1 }), { isQuestionEligible }).errors.includes('FINISHED_WITHOUT_ALL_RESULTS'));
+  assert.ok(validateReviewSession(session({ results: [result], correct: 1, finished: false, index: 0 }), { isQuestionEligible }).errors.includes('UNFINISHED_WITH_ALL_RESULTS'));
+  assert.ok(validateReviewSession(session({ results: [result], correct: 1, finished: true, finishedAt: 'invalid', index: 0 }), { isQuestionEligible }).errors.includes('FINISHED_AT_INVALID'));
+});
+
+test('empty review session is invalid and creation returns null', async () => {
+  assert.ok(validateReviewSession(session({ questions: [], items: [] }), { isQuestionEligible }).errors.includes('SESSION_SIZE_INVALID'));
+  const repository = memoryRepository({ [STORES.reviewQueue]: [], [STORES.subtopics]: [] });
+  const created = await createReviewSession({}, {
+    repository,
+    userId: 'user-a',
+    contestId: 'contest-a',
+    now: () => NOW,
+    questionProvider: { async listar() { return [question()]; } },
+  });
+  assert.equal(created, null);
+});
+
+test('invalid validation blocks answer and finalization before any write', async () => {
+  setActiveUserId('user-a');
+  setActiveContestId('contest-a');
+  const repository = memoryRepository({
+    [STORES.reviewQueue]: [item()],
+    [STORES.subtopics]: [subtopic()],
+    [STORES.player]: [{ id: 'player', xp: 0 }],
+  });
+  const before = structuredClone(repository.rows);
+  await assert.rejects(answerReviewQuestion(session({ correct: 1 }), true, NOW, { repository }), /REVIEW_SESSION_INVALID/);
+  await assert.rejects(finalizeReviewSession(session({
+    results: [{ eventId: 'review:s:q1', questionId: 'outside', correct: true }],
+    correct: 1, finished: true, finishedAt: NOW.toISOString(), index: 0,
+  }), { repository, now: () => NOW }), /REVIEW_SESSION_NOT_FINISHED/);
+  assert.deepEqual(repository.rows, before);
+  assert.equal(repository.metaValues.size, 0);
+  clearActiveUserId();
+  clearActiveContestId();
+});
+
 test('confirmação interrompida após a fila retoma subtópico e verticalizado sem duplicar', async () => {
   setActiveUserId('user-a');
   setActiveContestId('contest-a');
@@ -260,6 +341,42 @@ test('migração preserva legado ambíguo e cria somente vínculo inequívoco', 
   ], [question()], { contestId: 'contest-a', now: NOW, isQuestionEligible });
   assert.deepEqual(valid.map((row) => row.questionId), ['q1']);
   assert.equal(valid[0].source, 'migration');
+});
+
+test('migration metadata counts duplicates, ambiguous and invalid legacy links', async () => {
+  const legacy = { ...subtopic(), review_question_ids: ['q1', 'missing', 'q2'] };
+  const repository = memoryRepository({
+    [STORES.reviewQueue]: [item('q1')],
+    [STORES.subtopics]: [legacy],
+  });
+  await repository.setMeta('intelligent_review_migration_v1:user-a:contest-a', { migrated: 1 });
+  await ensureReviewQueueMigration({
+    repository,
+    userId: 'user-a',
+    contestId: 'contest-a',
+    now: () => NOW,
+    questionProvider: { async listar() { return [question('q1'), question('q2', { subtopic_id: 's2', topicoEditalId: 's2' })]; } },
+  });
+  const metadata = repository.metaValues.get('intelligent_review_migration_v2:user-a:contest-a');
+  assert.deepEqual({
+    migrated: metadata.migrated,
+    ignoredDuplicates: metadata.ignoredDuplicates,
+    ignoredAmbiguous: metadata.ignoredAmbiguous,
+    invalid: metadata.invalid,
+  }, { migrated: 0, ignoredDuplicates: 1, ignoredAmbiguous: 1, invalid: 1 });
+  assert.deepEqual(repository.metaValues.get('intelligent_review_migration_v1:user-a:contest-a'), { migrated: 1 });
+  assert.deepEqual(repository.rows[STORES.subtopics][0], legacy);
+});
+
+test('review operational typography uses tokens without values below 12px', async () => {
+  const css = await readFile(new URL('../app/css/design-system.css', import.meta.url), 'utf8');
+  const start = css.indexOf('/* Revis');
+  const end = css.indexOf('/* Login', start);
+  const reviewCss = css.slice(start, end);
+  assert.match(reviewCss, /\.review-session__exit[^}]*font:750 var\(--ds-type-label\)/);
+  assert.match(reviewCss, /\.review-feedback dt[^}]*font-size:var\(--ds-type-label\)/);
+  assert.doesNotMatch(reviewCss, /font-size:\s*(?:[0-9]|1[01])px/);
+  assert.doesNotMatch(reviewCss, /font:\s*[^;}]*\s(?:[0-9]|1[01])px\s/);
 });
 
 test('UI separa seleção de confirmação, protege saída e não oferece recompensa ao abandonar', async () => {

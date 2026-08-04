@@ -15,7 +15,7 @@ import { refreshEmblems } from './emblemService.js';
 import { localDateKey } from '../core/localDate.js';
 import { isQuestionEligible } from '../core/questionSchema.js';
 
-const MIGRATION_KEY = 'intelligent_review_migration_v1';
+const MIGRATION_KEY = 'intelligent_review_migration_v2';
 const MAX_ACTIVE_REVIEW_GAP_SECONDS = 10 * 60;
 const REVIEW_FINALIZATION_STEPS = Object.freeze([
   'history', 'xp', 'dailyGoal', 'streak', 'activity', 'emblems', 'summary',
@@ -59,13 +59,24 @@ function assertSessionScope(session, scope = {}) {
   return true;
 }
 
-function ensureSessionScopeFields(session, { userId = null, contestId = null } = {}) {
-  if (!session || typeof session !== 'object') return session;
-  session.contestId ||= text(contestId || getActiveContestId());
-  session.userId ||= text(userId || getActiveUserId());
-  session.scopeKey ||= `${session.userId || 'local'}:${session.contestId}`;
-  session.items?.forEach((item, index) => { item.questionId ||= text(session.questions?.[index]?.id); });
-  return session;
+function currentValidationScope({ userId = null, contestId = null } = {}) {
+  const currentUserId = text(userId || getActiveUserId());
+  const currentContestId = text(contestId || getActiveContestId());
+  if (!currentContestId) return {};
+  return {
+    userId: currentUserId,
+    contestId: currentContestId,
+    scopeKey: `${currentUserId || 'local'}:${currentContestId}`,
+  };
+}
+
+function sessionValidationContext(scopeContext = {}, subtopics = []) {
+  return {
+    ...scopeContext,
+    subtopics,
+    subtopicById: new Map(subtopics.map((item) => [text(item.id), item])),
+    isQuestionEligible,
+  };
 }
 
 function validationContext({ questions, subtopics, contestId }) {
@@ -84,18 +95,20 @@ export async function ensureReviewQueueMigration({
   userId = null,
   contestId = null,
   now = () => new Date(),
+  questionProvider = questionService,
 } = {}) {
   const scope = scopeFrom(repository, { userId, contestId });
   const repo = scopedRepository(repository, scope);
   const key = `${MIGRATION_KEY}:${scope.scopeKey}`;
   if (await repo.getMeta(key)) return repo.getAll(STORES.reviewQueue);
   const [existing, subtopics, questions] = await Promise.all([
-    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics), questionService.listar(),
+    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics), questionProvider.listar(),
   ]);
   const context = validationContext({ questions, subtopics, contestId: scope.contestId });
   const known = new Set(existing.map((item) => `${scope.scopeKey}:${text(item.questionId)}`));
+  const legacyAudit = { ignoredAmbiguous: 0, invalid: 0 };
   const candidates = migrateLegacyReviewItems(subtopics, questions, {
-    contestId: scope.contestId, now: now(), isQuestionEligible,
+    contestId: scope.contestId, now: now(), isQuestionEligible, audit: legacyAudit,
   });
   const migrated = [];
   let invalid = 0;
@@ -113,7 +126,8 @@ export async function ensureReviewQueueMigration({
     migratedAt: now().toISOString(),
     migrated: migrated.length,
     ignoredDuplicates: duplicate,
-    invalid,
+    ignoredAmbiguous: legacyAudit.ignoredAmbiguous,
+    invalid: invalid + legacyAudit.invalid,
   });
   return [...existing, ...migrated];
 }
@@ -186,32 +200,100 @@ export async function recordBattleReviewEvents(
 
 export function validateReviewSession(session, context = {}) {
   const errors = [];
-  const questions = Array.isArray(session?.questions) ? session.questions : [];
-  const items = Array.isArray(session?.items) ? session.items : [];
+  const questionsAreArray = Array.isArray(session?.questions);
+  const itemsAreArray = Array.isArray(session?.items);
+  const resultsAreArray = Array.isArray(session?.results);
+  const questions = questionsAreArray ? session.questions : [];
+  const items = itemsAreArray ? session.items : [];
+  const results = resultsAreArray ? session.results : [];
+  const sessionUserId = text(session?.userId);
+  const sessionContestId = text(session?.contestId);
+  const sessionScopeKey = text(session?.scopeKey);
   if (!text(session?.id)) errors.push('SESSION_ID_REQUIRED');
-  if (!text(session?.contestId)) errors.push('CONTEST_ID_REQUIRED');
-  if (!text(session?.scopeKey)) errors.push('SCOPE_KEY_REQUIRED');
+  if (!sessionContestId) errors.push('CONTEST_ID_REQUIRED');
+  if (!sessionScopeKey) errors.push('SCOPE_KEY_REQUIRED');
+  if ((context.authenticated === true || text(context.userId)) && !sessionUserId) errors.push('USER_ID_REQUIRED');
+  const expectedScopeKey = `${sessionUserId || 'local'}:${sessionContestId}`;
+  if (sessionScopeKey && sessionScopeKey !== expectedScopeKey) errors.push('SCOPE_KEY_MISMATCH');
+  if (Object.hasOwn(context, 'userId') && context.userId != null && sessionUserId !== text(context.userId)) errors.push('USER_ID_MISMATCH');
+  if (Object.hasOwn(context, 'contestId') && context.contestId != null && sessionContestId !== text(context.contestId)) errors.push('CONTEST_ID_MISMATCH');
+  if (Object.hasOwn(context, 'scopeKey') && context.scopeKey != null && sessionScopeKey !== text(context.scopeKey)) errors.push('CONTEXT_SCOPE_KEY_MISMATCH');
+  if (!questionsAreArray) errors.push('QUESTIONS_ARRAY_REQUIRED');
+  if (!itemsAreArray) errors.push('ITEMS_ARRAY_REQUIRED');
+  if (!resultsAreArray) errors.push('RESULTS_ARRAY_REQUIRED');
   if (!questions.length || questions.length > 10) errors.push('SESSION_SIZE_INVALID');
   if (items.length !== questions.length) errors.push('ITEM_QUESTION_LENGTH_MISMATCH');
-  const ids = new Set();
+  const questionIds = new Set();
+  const itemQuestionIds = new Set();
   questions.forEach((question, index) => {
     const item = items[index];
-    if (!question || !item || text(question.id) !== text(item.questionId)) errors.push('ITEM_QUESTION_MISMATCH');
-    if (question && ids.has(text(question.id))) errors.push('DUPLICATE_QUESTION');
-    ids.add(text(question?.id));
+    const questionId = text(question?.id);
+    const itemQuestionId = text(item?.questionId);
+    if (!questionId) errors.push('QUESTION_ID_REQUIRED');
+    if (!itemQuestionId) errors.push('ITEM_QUESTION_ID_REQUIRED');
+    if (!question || !item || questionId !== itemQuestionId) errors.push('ITEM_QUESTION_MISMATCH');
+    if (questionId && questionIds.has(questionId)) errors.push('DUPLICATE_QUESTION');
+    if (itemQuestionId && itemQuestionIds.has(itemQuestionId)) errors.push('DUPLICATE_ITEM');
+    if (questionId) questionIds.add(questionId);
+    if (itemQuestionId) itemQuestionIds.add(itemQuestionId);
+    const knownQuestion = context.questionById?.get?.(questionId)
+      || context.questions?.find?.((row) => text(row?.id) === questionId);
+    if ((context.questionById || context.questions) && !knownQuestion) errors.push('QUESTION_NOT_FOUND');
     if (question && context.isQuestionEligible && !context.isQuestionEligible(question)) errors.push('QUESTION_INELIGIBLE');
     const questionSubtopicId = text(question?.subtopic_id || question?.topicoEditalId);
     if (item && questionSubtopicId && questionSubtopicId !== text(item.subtopicId)) errors.push('SUBTOPIC_MISMATCH');
+    const subtopic = context.subtopicById?.get?.(text(item?.subtopicId))
+      || context.subtopics?.find?.((row) => text(row?.id) === text(item?.subtopicId));
+    const expectedDisciplineId = text(subtopic?.discipline_id
+      || question?.disciplinaId || question?.disciplina || question?.discipline_id);
+    if (item && expectedDisciplineId && text(item.disciplineId) !== expectedDisciplineId) errors.push('DISCIPLINE_MISMATCH');
+    if (item && text(item.contestId) !== sessionContestId) errors.push('ITEM_CONTEST_MISMATCH');
+    const questionContestId = text(question?.concursoId || question?.contestId || question?.contest_id);
+    if (questionContestId && questionContestId !== sessionContestId) errors.push('QUESTION_CONTEST_MISMATCH');
   });
-  if ((Number(session?.index) || 0) < 0 || (Number(session?.index) || 0) > questions.length) errors.push('INDEX_INVALID');
-  if ((session?.results || []).length > questions.length) errors.push('RESULTS_INVALID');
-  if (session?.finished && (session.results || []).length !== questions.length) errors.push('FINISHED_WITHOUT_ALL_RESULTS');
+  const eventIds = new Set();
+  const resultQuestionIds = new Set();
+  results.forEach((result, index) => {
+    const eventId = text(result?.eventId);
+    const questionId = text(result?.questionId);
+    if (!eventId) errors.push('RESULT_EVENT_ID_REQUIRED');
+    if (!questionId) errors.push('RESULT_QUESTION_ID_REQUIRED');
+    if (eventId && eventIds.has(eventId)) errors.push('DUPLICATE_RESULT_EVENT');
+    if (questionId && resultQuestionIds.has(questionId)) errors.push('DUPLICATE_RESULT_QUESTION');
+    if (eventId) eventIds.add(eventId);
+    if (questionId) resultQuestionIds.add(questionId);
+    if (!questionIds.has(questionId)) errors.push('RESULT_QUESTION_EXTERNAL');
+    if (questionId !== text(questions[index]?.id)) errors.push('RESULT_ORDER_MISMATCH');
+    if (typeof result?.correct !== 'boolean') errors.push('RESULT_CORRECT_INVALID');
+  });
+  const actualCorrect = results.filter((result) => result?.correct === true).length;
+  const actualErrors = results.filter((result) => result?.correct === false).length;
+  const correct = session?.correct;
+  const errorCount = session?.errors;
+  if (!Number.isInteger(correct) || correct < 0) errors.push('CORRECT_COUNTER_INVALID');
+  else if (correct !== actualCorrect) errors.push('CORRECT_COUNTER_MISMATCH');
+  if (!Number.isInteger(errorCount) || errorCount < 0) errors.push('ERROR_COUNTER_INVALID');
+  else if (errorCount !== actualErrors) errors.push('ERROR_COUNTER_MISMATCH');
+  if (Number.isInteger(correct) && Number.isInteger(errorCount) && correct + errorCount !== results.length) errors.push('COUNTER_TOTAL_MISMATCH');
+  const index = session?.index;
+  if (!Number.isInteger(index) || index < 0 || index >= questions.length) errors.push('INDEX_INVALID');
+  const finished = session?.finished === true;
+  if (typeof session?.finished !== 'boolean') errors.push('FINISHED_STATE_INVALID');
+  if (finished) {
+    if (results.length !== questions.length) errors.push('FINISHED_WITHOUT_ALL_RESULTS');
+    if (Number.isInteger(correct) && Number.isInteger(errorCount) && correct + errorCount !== questions.length) errors.push('FINISHED_COUNTERS_INCOMPLETE');
+    if (index !== questions.length - 1) errors.push('FINISHED_INDEX_INVALID');
+    if (!validDate(session?.finishedAt)) errors.push('FINISHED_AT_INVALID');
+  } else {
+    if (results.length >= questions.length && questions.length) errors.push('UNFINISHED_WITH_ALL_RESULTS');
+    if (index !== results.length) errors.push('ACTIVE_INDEX_MISMATCH');
+  }
   return { valid: errors.length === 0, errors, session };
 }
 
-async function reviewData(repo, contestId) {
+async function reviewData(repo, contestId, questionProvider = questionService) {
   const [items, subtopics, questions] = await Promise.all([
-    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics), questionService.listar(),
+    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics), questionProvider.listar(),
   ]);
   const context = validationContext({ questions, subtopics, contestId });
   const seen = new Map();
@@ -231,11 +313,12 @@ export async function createReviewSession(filters = {}, {
   now = () => new Date(),
   userId = null,
   contestId = null,
+  questionProvider = questionService,
 } = {}) {
   const scope = scopeFrom(repository, { userId, contestId });
   const repo = scopedRepository(repository, scope);
-  await ensureReviewQueueMigration({ repository: repo, ...scope, now });
-  const data = await reviewData(repo, scope.contestId);
+  await ensureReviewQueueMigration({ repository: repo, ...scope, now, questionProvider });
+  const data = await reviewData(repo, scope.contestId, questionProvider);
   const masteryBySubtopic = Object.fromEntries(data.subtopics.map((item) => [item.id, item.best_accuracy || 0]));
   const current = validDate(filters.now) || now();
   const items = data.validItems;
@@ -249,6 +332,7 @@ export async function createReviewSession(filters = {}, {
   });
   const byId = data.context.questionById;
   const sessionItems = selected.filter((item) => byId.has(text(item.questionId)));
+  if (!sessionItems.length) return null;
   const startedAt = now().toISOString();
   return {
     id: createReviewSessionId(),
@@ -377,15 +461,19 @@ export async function answerReviewQuestion(session, userAnswer, now = new Date()
   userId = null,
   contestId = null,
 } = {}) {
-  ensureSessionScopeFields(session, { userId, contestId });
   assertSessionScope(session, { userId, contestId });
-  const validation = validateReviewSession(session, { isQuestionEligible });
-  if (!validation.valid || session.finished) throw new Error('REVIEW_SESSION_INVALID');
+  const currentScope = currentValidationScope({ userId, contestId });
+  const preliminary = validateReviewSession(session, sessionValidationContext(currentScope));
+  if (!preliminary.valid || session.finished) throw new Error('REVIEW_SESSION_INVALID');
+  const scope = { userId: text(session.userId), contestId: text(session.contestId), scopeKey: text(session.scopeKey) };
+  const repo = scopedRepository(repository, scope);
+  const subtopics = await repo.getAll(STORES.subtopics);
+  const validationContext = sessionValidationContext(currentScope, subtopics);
+  const validation = validateReviewSession(session, validationContext);
+  if (!validation.valid) throw new Error('REVIEW_SESSION_INVALID');
   const question = session.questions[session.index];
   const queueItem = session.items[session.index];
   if (!question || !queueItem) throw new Error('REVIEW_QUESTION_UNAVAILABLE');
-  const scope = { userId: session.userId || text(userId), contestId: session.contestId, scopeKey: session.scopeKey };
-  const repo = scopedRepository(repository, scope);
   const eventId = `review:${session.id}:${question.id}`;
   const key = answerJournalKey(session, question.id);
   let journal = await repo.getById(STORES.meta, key);
@@ -471,6 +559,8 @@ export async function answerReviewQuestion(session, userAnswer, now = new Date()
   }
   trackReviewActivity(session, now);
   const already = reconcileSession(session, result, journal.updatedItem);
+  const reconciled = validateReviewSession(session, validationContext);
+  if (!reconciled.valid) throw new Error('REVIEW_SESSION_CORRUPTED');
   return {
     ...result,
     question,
@@ -511,12 +601,15 @@ export async function finalizeReviewSession(session, {
   userId = null,
   contestId = null,
 } = {}) {
-  ensureSessionScopeFields(session, { userId, contestId });
   assertSessionScope(session, { userId, contestId });
-  const validation = validateReviewSession(session, { isQuestionEligible });
-  if (!validation.valid || session.finished !== true || !session.results?.length) throw new Error('REVIEW_SESSION_NOT_FINISHED');
-  const scope = { userId: session.userId || text(userId), contestId: session.contestId, scopeKey: session.scopeKey };
+  const currentScope = currentValidationScope({ userId, contestId });
+  const preliminary = validateReviewSession(session, sessionValidationContext(currentScope));
+  if (!preliminary.valid || session.finished !== true || !session.results?.length) throw new Error('REVIEW_SESSION_NOT_FINISHED');
+  const scope = { userId: text(session.userId), contestId: text(session.contestId), scopeKey: text(session.scopeKey) };
   const repo = scopedRepository(repository, scope);
+  const subtopics = await repo.getAll(STORES.subtopics);
+  const validation = validateReviewSession(session, sessionValidationContext(currentScope, subtopics));
+  if (!validation.valid) throw new Error('REVIEW_SESSION_NOT_FINISHED');
   const finished = validDate(session.finishedAt) || now();
   const finishedAt = finished.toISOString();
   const key = reviewJournalKey(session);
