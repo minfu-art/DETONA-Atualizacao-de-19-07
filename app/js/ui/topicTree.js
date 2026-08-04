@@ -1,14 +1,19 @@
 import { $, closeModal, escapeAttr, escapeHtml, formatDate, openModal, starsHtml } from './helpers.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
-import { MIN_QUESTIONS_BATTLE, getQuestionCounts } from '../core/ssot.js';
+import { MIN_QUESTIONS_BATTLE } from '../core/ssot.js';
 import { effectiveStars } from '../core/memory.js';
 import { createBattleSession } from '../core/battle.js?v=69';
+import { questionService } from '../services/questionService.js';
 import { discIcon, icon } from './icons.js?v=67';
 import { averageSubtopicMastery } from '../core/mastery.js';
 import {
   buildDisciplineTopics,
+  buildQuestionAvailabilityBySubtopic,
   createSingleSessionStarter,
+  eligibleReviewItems,
+  resolveQuestionBankState,
+  resolveStudyContinuation,
   resolveSubtopicPresentation,
   studySessionErrorMessage,
 } from './studyPresentation.js';
@@ -18,10 +23,6 @@ const STARS_TO_UNLOCK_NEXT = 1;
 function topicProgress(subtopics = []) {
   return Math.max(0, Math.min(100, Math.round(averageSubtopicMastery(subtopics) * 100) / 100));
 }
-function reviewItemsFor(queue, subtopicId) {
-  return queue.filter((item) => String(item.subtopicId || item.subtopic_id) === String(subtopicId) && item.status !== 'frozen');
-}
-
 function lastActivity(subtopic) {
   return subtopic.last_attempt_at || subtopic.ultimaTentativaEm || subtopic.last_studied_at || null;
 }
@@ -34,10 +35,10 @@ export async function renderTopicTree(root, navigate, ctx) {
     return;
   }
 
-  const [discipline, allSubs, counts, reviewQueue] = await Promise.all([
+  const [discipline, allSubs, questions, reviewQueue] = await Promise.all([
     progressRepository.getById(STORES.disciplines, discId),
     progressRepository.getAll(STORES.subtopics),
-    getQuestionCounts(),
+    questionService.listar(),
     progressRepository.getAll(STORES.reviewQueue),
   ]);
   if (!discipline) {
@@ -50,27 +51,37 @@ export async function renderTopicTree(root, navigate, ctx) {
     .sort((a, b) => String(a.edital_numbering).localeCompare(String(b.edital_numbering), undefined, { numeric: true }));
   const curriculum = Array.isArray(ctx?.contentPackage?.curriculum) ? ctx.contentPackage.curriculum : [];
   const topics = buildDisciplineTopics(discipline, subs, curriculum);
+  const availabilityBySubtopic = buildQuestionAvailabilityBySubtopic({ questions, subtopics: subs });
   const nodeById = new Map();
   subs.forEach((subtopic, index) => {
     const previous = index > 0 ? subs[index - 1] : null;
     const unlocked = index === 0 || effectiveStars(previous) >= STARS_TO_UNLOCK_NEXT;
-    const reviewItems = reviewItemsFor(reviewQueue, subtopic.id);
+    const availability = availabilityBySubtopic[subtopic.id] || {
+      eligibleIds: [], total: 0, answeredEligibleIds: [], answeredTotal: 0, unseenEligibleIds: [], unseenTotal: 0,
+    };
+    const reviewItems = eligibleReviewItems({ reviewQueue, questions, subtopicId: subtopic.id });
+    const topicId = topics.find((topic) => topic.subtopics.some((item) => item.id === subtopic.id))?.id || null;
     nodeById.set(String(subtopic.id), {
       subtopic,
       unlocked,
-      questionCount: Number(counts[subtopic.id]) || 0,
+      topicId,
+      availability,
+      questionCount: availability.total,
       reviewItems,
-      presentation: resolveSubtopicPresentation(subtopic, Number(counts[subtopic.id]) || 0, {
+      presentation: resolveSubtopicPresentation(subtopic, availability.total, {
         count: reviewItems.length,
         unlocked,
       }),
     });
   });
 
-  const firstPending = subs.find((item) => Number(item.attempts_count || 0) === 0) || subs[0];
-  const initialTopic = topics.find((topic) => topic.subtopics.some((item) => item.id === ctx.studySubtopicId))
+  const continuation = resolveStudyContinuation({
+    subtopics: subs,
+    nodes: nodeById,
+    currentSubtopicId: ctx.studySubtopicId,
+  });
+  const initialTopic = topics.find((topic) => topic.subtopics.some((item) => item.id === continuation?.subtopicId))
     || topics.find((topic) => topic.id === ctx.studyTopicId)
-    || topics.find((topic) => topic.subtopics.some((item) => item.id === firstPending?.id))
     || topics[0];
   let expandedTopicId = initialTopic?.id || null;
   const disciplineProgress = topicProgress(subs);
@@ -93,17 +104,25 @@ export async function renderTopicTree(root, navigate, ctx) {
         </div>
         <div class="study-tree__summary" aria-label="Resumo da disciplina">
           <article><span>Progresso</span><strong>${disciplineProgress}%</strong></article>
-          <article><span>Taxa de acerto</span><strong>${disciplineAccuracy}%</strong></article>
+          <article><span>Domínio médio</span><strong>${disciplineAccuracy}%</strong></article>
           <article><span>Tópicos</span><strong>${topics.length}</strong></article>
           <article><span>Subtópicos</span><strong>${subs.length}</strong></article>
         </div>
         <progress max="100" value="${disciplineProgress}" aria-label="Progresso em ${escapeAttr(discipline.name)}: ${disciplineProgress}%"></progress>
-        ${firstPending ? `<button type="button" class="ds-button ds-button--secondary" id="study-continue" data-subtopic-id="${escapeAttr(firstPending.id)}">Continuar de onde parei</button>` : ''}
+        ${continuation ? `<button type="button" class="ds-button ds-button--secondary" id="study-continue" data-subtopic-id="${escapeAttr(continuation.subtopicId)}" data-topic-id="${escapeAttr(continuation.topicId || '')}">${escapeHtml(continuation.actionLabel)}</button>` : ''}
       </header>
       <div class="study-topics" id="study-topics"></div>
     </section>`;
 
   const topicsRoot = $('#study-topics', root);
+
+  function focusSubtopicAction(sid) {
+    requestAnimationFrame(() => {
+      const card = root.querySelector(`[data-subtopic-card="${CSS.escape(sid)}"]`);
+      card?.scrollIntoView({ block: 'center' });
+      card?.querySelector('[data-study-subtopic]')?.focus();
+    });
+  }
 
   function paintTopics() {
     topicsRoot.innerHTML = topics.map((topic, topicIndex) => {
@@ -114,7 +133,7 @@ export async function renderTopicTree(root, navigate, ctx) {
         <article class="study-topic ${expanded ? 'is-expanded' : ''}">
           <h2>
             <button type="button" class="study-topic__toggle" data-topic-id="${escapeAttr(topic.id)}" aria-expanded="${expanded}" aria-controls="${panelId}">
-              <span><strong>${escapeHtml(topic.name)}</strong><small>${topic.subtopics.length} subtópico${topic.subtopics.length === 1 ? '' : 's'} · ${progress}% concluído</small></span>
+              <span><strong>${escapeHtml(topic.name)}</strong><small>${topic.subtopics.length} subtópico${topic.subtopics.length === 1 ? '' : 's'} · ${progress}% de domínio médio</small></span>
               <span aria-hidden="true">${icon(expanded ? 'chevronDown' : 'chevronRight', 'ico--control')}</span>
             </button>
           </h2>
@@ -186,18 +205,30 @@ export async function renderTopicTree(root, navigate, ctx) {
   }
 
   function openUnavailable(node) {
+    const state = resolveQuestionBankState(node.availability.total, MIN_QUESTIONS_BATTLE);
     openModal(
-      'Questões ainda não disponíveis',
+      state.title,
       `<div class="study-prep study-prep--empty">
-        <p>Este subtópico faz parte do seu edital, mas o banco de treino ainda está em preparação.</p>
+        <p>${escapeHtml(state.description)}</p>
         <dl><div><dt>Disciplina</dt><dd>${escapeHtml(discipline.name)}</dd></div><div><dt>Subtópico</dt><dd>${escapeHtml(node.subtopic.name)}</dd></div></dl>
       </div>`,
-      `<button type="button" class="ds-button ds-button--secondary" id="study-unavailable-back">Voltar para a disciplina</button>
+      `<button type="button" class="ds-button ds-button--secondary" id="study-unavailable-close">Fechar</button>
        <button type="button" class="ds-button ds-button--primary" id="study-unavailable-other">Escolher outro subtópico</button>`,
       { variant: 'alert' },
     );
-    $('#study-unavailable-back')?.addEventListener('click', closeModal);
-    $('#study-unavailable-other')?.addEventListener('click', closeModal);
+    $('#study-unavailable-close')?.addEventListener('click', closeModal);
+    $('#study-unavailable-other')?.addEventListener('click', () => {
+      const target = [...nodeById.values()].find((candidate) => (
+        candidate.unlocked && candidate.availability.total >= MIN_QUESTIONS_BATTLE
+      ));
+      closeModal();
+      if (!target) return;
+      ctx.studyTopicId = target.topicId;
+      ctx.studySubtopicId = target.subtopic.id;
+      expandedTopicId = target.topicId || expandedTopicId;
+      paintTopics();
+      focusSubtopicAction(target.subtopic.id);
+    });
   }
 
   function openPreparation(sid) {
@@ -205,13 +236,10 @@ export async function renderTopicTree(root, navigate, ctx) {
     if (!node || !node.unlocked) return;
     ctx.studySubtopicId = sid;
     ctx.studyTopicId = topics.find((topic) => topic.subtopics.some((item) => item.id === sid))?.id || expandedTopicId;
-    if (node.questionCount < MIN_QUESTIONS_BATTLE) {
+    if (!resolveQuestionBankState(node.questionCount, MIN_QUESTIONS_BATTLE).ready) {
       openUnavailable(node);
       return;
     }
-    const answered = new Set(node.subtopic.answered_question_ids || node.subtopic.questoesRespondidas || []);
-    const answeredAvailable = Math.min(node.questionCount, answered.size);
-    const unseen = Math.max(0, node.questionCount - answeredAvailable);
     const topic = topics.find((entry) => entry.subtopics.some((item) => item.id === sid));
     const startOnce = createSingleSessionStarter(createAndEnterSession);
     openModal(
@@ -219,9 +247,9 @@ export async function renderTopicTree(root, navigate, ctx) {
       `<div class="study-prep">
         <nav aria-label="Localização curricular"><span>${escapeHtml(discipline.name)}</span><span>${escapeHtml(topic?.name || 'Conteúdos')}</span><strong>${escapeHtml(node.subtopic.name)}</strong></nav>
         <div class="study-prep__summary">
-          <article><span>Disponíveis</span><strong>${node.questionCount}</strong></article>
-          <article><span>Inéditas</span><strong>${unseen}</strong></article>
-          <article><span>Já respondidas</span><strong>${answeredAvailable}</strong></article>
+          <article><span>Disponíveis</span><strong>${node.availability.total}</strong></article>
+          <article><span>Inéditas</span><strong>${node.availability.unseenTotal}</strong></article>
+          <article><span>Já respondidas</span><strong>${node.availability.answeredTotal}</strong></article>
           <article><span>Erros para revisão</span><strong>${node.reviewItems.length}</strong></article>
           <article><span>Melhor resultado</span><strong>${Number(node.subtopic.best_accuracy) || 0}%</strong></article>
           <article><span>Estrelas atuais</span>${starsHtml(effectiveStars(node.subtopic))}</article>
@@ -259,10 +287,12 @@ export async function renderTopicTree(root, navigate, ctx) {
   $('#study-tree-back', root)?.addEventListener('click', () => navigate('map'));
   $('#study-continue', root)?.addEventListener('click', (event) => {
     const sid = event.currentTarget.dataset.subtopicId;
-    const topic = topics.find((entry) => entry.subtopics.some((item) => item.id === sid));
-    expandedTopicId = topic?.id || expandedTopicId;
+    const topicId = event.currentTarget.dataset.topicId || nodeById.get(String(sid))?.topicId || null;
+    ctx.studyTopicId = topicId;
+    ctx.studySubtopicId = sid;
+    expandedTopicId = topicId || expandedTopicId;
     paintTopics();
-    root.querySelector(`[data-subtopic-card="${CSS.escape(sid)}"]`)?.scrollIntoView({ block: 'center' });
+    focusSubtopicAction(sid);
   });
   paintTopics();
   if (ctx.studySubtopicId) {

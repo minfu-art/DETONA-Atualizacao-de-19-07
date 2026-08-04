@@ -1,4 +1,5 @@
 import { averageSubtopicMastery } from '../core/mastery.js';
+import { isQuestionEligible } from '../core/questionSchema.js';
 
 export const STUDY_FILTERS = Object.freeze([
   Object.freeze({ id: 'all', label: 'Todas' }),
@@ -23,6 +24,120 @@ function normalizedAttempts(item = {}) {
 
 function normalizedAccuracy(item = {}) {
   return Math.max(0, Math.min(100, Number(item.best_accuracy ?? item.melhorPercentual) || 0));
+}
+
+function canonicalSubtopicId(question = {}) {
+  return String(question.subtopic_id || '').trim();
+}
+
+function uniqueIds(values = []) {
+  return [...new Set((Array.isArray(values) ? values : [])
+    .map((value) => String(value || '').trim())
+    .filter(Boolean))];
+}
+
+function activityDate(subtopic = {}) {
+  const value = subtopic.last_attempt_at || subtopic.ultimaTentativaEm || subtopic.last_studied_at || null;
+  const timestamp = Date.parse(value || '');
+  return Number.isFinite(timestamp) ? { value, timestamp } : { value: null, timestamp: Number.NEGATIVE_INFINITY };
+}
+
+export function buildQuestionAvailabilityBySubtopic({ questions = [], subtopics = [] } = {}) {
+  const eligibleBySubtopic = new Map(subtopics.map((subtopic) => [String(subtopic.id), new Set()]));
+  const seenQuestionIds = new Set();
+  for (const question of questions) {
+    if (!isQuestionEligible(question)) continue;
+    const subtopicId = canonicalSubtopicId(question);
+    const id = String(question.id || '').trim();
+    if (!id || seenQuestionIds.has(id) || !eligibleBySubtopic.has(subtopicId)) continue;
+    seenQuestionIds.add(id);
+    eligibleBySubtopic.get(subtopicId).add(id);
+  }
+  return Object.fromEntries(subtopics.map((subtopic) => {
+    const subtopicId = String(subtopic.id);
+    const eligibleIds = [...(eligibleBySubtopic.get(subtopicId) || [])];
+    const answeredIds = new Set(uniqueIds([
+      ...(Array.isArray(subtopic.answered_question_ids) ? subtopic.answered_question_ids : []),
+      ...(Array.isArray(subtopic.questoesRespondidas) ? subtopic.questoesRespondidas : []),
+    ]));
+    const answeredEligibleIds = eligibleIds.filter((id) => answeredIds.has(id));
+    const unseenEligibleIds = eligibleIds.filter((id) => !answeredIds.has(id));
+    return [subtopicId, {
+      eligibleIds,
+      total: eligibleIds.length,
+      answeredEligibleIds,
+      answeredTotal: answeredEligibleIds.length,
+      unseenEligibleIds,
+      unseenTotal: unseenEligibleIds.length,
+    }];
+  }));
+}
+
+export function eligibleReviewItems({ reviewQueue = [], questions = [], subtopicId } = {}) {
+  const expectedSubtopicId = String(subtopicId || '');
+  const eligibleQuestions = new Map(questions
+    .filter(isQuestionEligible)
+    .filter((question) => canonicalSubtopicId(question) === expectedSubtopicId)
+    .map((question) => [String(question.id), question]));
+  return reviewQueue.filter((item) => {
+    if (item?.status === 'frozen') return false;
+    if (String(item?.subtopicId || item?.subtopic_id || '') !== expectedSubtopicId) return false;
+    const questionId = String(item?.questionId || item?.question_id || '').trim();
+    return Boolean(questionId && eligibleQuestions.has(questionId));
+  });
+}
+
+export function resolveQuestionBankState(totalValue, minimumValue) {
+  const total = Math.max(0, Number(totalValue) || 0);
+  const minimum = Math.max(1, Number(minimumValue) || 1);
+  if (total === 0) {
+    return {
+      key: 'empty',
+      ready: false,
+      title: 'Questões ainda não disponíveis',
+      description: 'O banco de treino deste subtópico ainda está em preparação.',
+    };
+  }
+  if (total < minimum) {
+    return {
+      key: 'insufficient',
+      ready: false,
+      title: 'Banco ainda insuficiente para uma sessão',
+      description: `Este subtópico possui ${total} questões elegíveis. São necessárias ${minimum} para montar uma sessão completa.`,
+    };
+  }
+  return { key: 'ready', ready: true, title: '', description: '' };
+}
+
+export function resolveStudyContinuation({ subtopics = [], nodes = [], currentSubtopicId = null } = {}) {
+  const nodeList = nodes instanceof Map ? [...nodes.values()] : [...nodes];
+  const nodeById = new Map(nodeList.map((node) => [
+    String(node.subtopicId || node.subtopic?.id || ''),
+    node,
+  ]));
+  const unlocked = (subtopic) => {
+    const node = nodeById.get(String(subtopic?.id || ''));
+    return node?.unlocked === true ? { subtopic, node } : null;
+  };
+  let selected = unlocked(subtopics.find((item) => String(item.id) === String(currentSubtopicId)));
+  if (!selected) {
+    selected = subtopics.map(unlocked).filter(Boolean)
+      .map((entry) => ({ ...entry, activity: activityDate(entry.subtopic) }))
+      .filter((entry) => entry.activity.value)
+      .sort((a, b) => b.activity.timestamp - a.activity.timestamp)[0] || null;
+  }
+  if (!selected) selected = subtopics.map(unlocked).filter(Boolean)
+    .find((entry) => normalizedAttempts(entry.subtopic) === 0) || null;
+  if (!selected) selected = subtopics.map(unlocked).find(Boolean) || null;
+  if (!selected) return null;
+  const lastActivity = activityDate(selected.subtopic).value;
+  return {
+    subtopicId: String(selected.subtopic.id),
+    topicId: selected.node.topicId || null,
+    mode: lastActivity ? 'resume' : 'start',
+    actionLabel: lastActivity ? 'Retomar último subtópico' : 'Começar próximo subtópico',
+    lastActivity,
+  };
 }
 
 function statusFromProgress({ attempts = 0, progress = 0, accuracy = 0, memory = '' } = {}) {

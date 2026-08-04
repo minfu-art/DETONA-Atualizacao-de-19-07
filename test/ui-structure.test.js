@@ -19,6 +19,7 @@ const shellUrl = new URL('../app/js/ui/appShell.js', import.meta.url);
 const worldMapUrl = new URL('../app/js/ui/worldMap.js', import.meta.url);
 const homeUrl = new URL('../app/js/ui/home.js', import.meta.url);
 const topicTreeUrl = new URL('../app/js/ui/topicTree.js', import.meta.url);
+const studyPresentationUrl = new URL('../app/js/ui/studyPresentation.js', import.meta.url);
 const performanceUrl = new URL('../app/js/ui/performance.js', import.meta.url);
 const performanceCssUrl = new URL('../app/css/performance-mobile.css', import.meta.url);
 const performanceServiceUrl = new URL('../app/js/services/performanceService.js', import.meta.url);
@@ -180,17 +181,18 @@ test('edital verticalizado mostra taxa de acerto e permite enfrentar subtópico'
 });
 
 test('administracao sai do shell academico e usa aplicacao developer independente', async () => {
-  const [shell, html, tree, adminHtml, adminApp] = await Promise.all([
+  const [shell, html, tree, studyPresentation, adminHtml, adminApp] = await Promise.all([
     readFile(shellUrl, 'utf8'),
     readFile(indexUrl, 'utf8'),
     readFile(topicTreeUrl, 'utf8'),
+    readFile(studyPresentationUrl, 'utf8'),
     readFile(adminHtmlUrl, 'utf8'),
     readFile(adminAppUrl, 'utf8'),
   ]);
   assert.doesNotMatch(html, /data-screen="forge"/);
   assert.doesNotMatch(shell, /data-developer-only|DEVELOPER_ITEM|screen:\s*'forge'/);
   assert.doesNotMatch(tree, /m-forge|navigate\('forge'\)/);
-  assert.match(tree, /Questões ainda não disponíveis/);
+  assert.match(studyPresentation, /Questões ainda não disponíveis/);
   assert.match(adminHtml, /js\/admin\/adminApp\.js/);
   assert.match(adminApp, /developer|renderAdminAccessScreen|renderAdminMessagesScreen/);
 });

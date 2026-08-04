@@ -51,7 +51,7 @@ export async function renderWorldMap(root, navigate, ctx) {
           <article><span>Progresso do edital</span><strong>${Number(player.edital_completion_pct ?? player.mastery_pct) || 0}%</strong></article>
           <article><span>Disciplinas iniciadas</span><strong>${startedDisciplines} de ${cards.length}</strong></article>
           <article><span>Subtópicos concluídos</span><strong>${completedSubtopics} de ${subtopics.length}</strong></article>
-          <article><span>Taxa de acerto geral</span><strong>${overallAccuracy(subtopics)}%</strong></article>
+          <article><span>Domínio médio</span><strong>${overallAccuracy(subtopics)}%</strong></article>
           <article><span>Revisões pendentes</span><strong>${pendingReviews(reviewQueue)}</strong></article>
         </div>
       </header>
@@ -92,7 +92,7 @@ export async function renderWorldMap(root, navigate, ctx) {
         <span class="study-progress-copy"><span>Progresso</span><strong>${item.progress}%</strong></span>
         <progress max="100" value="${item.progress}" aria-label="Progresso em ${escapeAttr(item.name)}: ${item.progress}%"></progress>
         <span class="study-discipline-card__stats">
-          <span><small>Taxa de acerto</small><strong>${item.accuracy}%</strong></span>
+          <span><small>Domínio médio</small><strong>${item.accuracy}%</strong></span>
           <span><small>Concluídos</small><strong>${item.completedSubtopics}/${item.subtopicCount}</strong></span>
         </span>
         <span class="study-discipline-card__action">${escapeHtml(item.actionLabel)} ${icon('chevronRight', 'ico--inline')}</span>
