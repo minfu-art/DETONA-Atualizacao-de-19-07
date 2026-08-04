@@ -1,5 +1,7 @@
-import { $, starsHtml, formatStars, escapeHtml, escapeAttr } from './helpers.js';
-import { answerQuestion, finalizeBattle } from '../core/battle.js?v=70';
+import { $, starsHtml, formatStars, escapeHtml, escapeAttr, openModal, closeModal } from './helpers.js';
+import {
+  answerQuestion, finalizeBattle, getBattleResult, validateBattleSession,
+} from '../core/battle.js?v=71';
 import { SFX } from '../core/audio.js';
 import { getPlayer } from '../core/seed.js';
 import { heroImgHtml } from './heroAssets.js';
@@ -22,6 +24,18 @@ export async function renderBattle(root, navigate, ctx) {
     $('#b-back', root).onclick = () => navigate('map');
     return;
   }
+  try {
+    validateBattleSession(session);
+  } catch {
+    ctx.battleSession = null;
+    root.innerHTML = `
+      <div class="ro-window"><div class="ro-body text-center" role="alert">
+        <p class="mb-8">Esta sessão não pôde ser aberta com segurança. Nenhum progresso foi alterado.</p>
+        <button type="button" class="btn btn-primary" id="b-invalid-back">Voltar para Estudar</button>
+      </div></div>`;
+    $('#b-invalid-back', root).onclick = () => navigate(ctx.returnToTree ? 'topicTree' : 'map');
+    return;
+  }
 
   const player = await getPlayer();
   const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
@@ -29,6 +43,22 @@ export async function renderBattle(root, navigate, ctx) {
     ? `<img src="${escapeAttr(customHero)}" alt="Avatar do concurso" class="${className}" draggable="false">`
     : heroImgHtml({ className, level: player.level, sprite: player.avatar_sprite });
   let locked = false;
+  ctx.requestBattleExit = (targetScreen) => {
+    const modal = openModal(
+      'Encerrar esta sessão?',
+      '<p>As respostas desta sessão ainda não finalizada serão descartadas e nenhuma recompensa será concedida.</p>',
+      '<button type="button" class="btn btn-ghost" data-battle-stay autofocus>Continuar respondendo</button><button type="button" class="btn btn-primary" data-battle-leave>Encerrar sessão</button>',
+      { variant: 'confirm' },
+    );
+    modal.querySelector('[data-battle-stay]')?.addEventListener('click', closeModal);
+    modal.querySelector('[data-battle-leave]')?.addEventListener('click', () => {
+      ctx.allowBattleExit = true;
+      ctx.battleSession = null;
+      ctx.requestBattleExit = null;
+      closeModal();
+      navigate(targetScreen);
+    });
+  };
 
   function paintQuestion() {
     if (session.finished) {
@@ -120,6 +150,7 @@ export async function renderBattle(root, navigate, ctx) {
           <div class="battle-focus__heading">
             <span class="battle-focus__eyebrow">Missão de domínio</span>
             <h1>${escapeHtml(subjectLabel)}</h1>
+            <button type="button" class="btn btn-ghost battle-focus__exit" id="battle-exit" aria-label="Encerrar sessão de questões">Sair da sessão</button>
           </div>
           <div class="battle-focus__counter"><strong>${questionNumber}</strong><span>de ${total}</span></div>
           <div class="battle-focus__progress" aria-label="Progresso do bloco">
@@ -163,7 +194,7 @@ export async function renderBattle(root, navigate, ctx) {
             </div>
             <div class="battle-question__statement">
               <span class="battle-question__label">Enunciado</span>
-              <p id="battle-statement">${escapeHtml(q.statement)}</p>
+              <p id="battle-statement" tabindex="-1">${escapeHtml(q.statement)}</p>
             </div>
 
             <fieldset class="battle-answers" id="answers">
@@ -183,7 +214,7 @@ export async function renderBattle(root, navigate, ctx) {
               <button type="button" class="battle-submit" id="btn-answer" disabled>Responder ${icon('bolt', 'ico--sm')}</button>
             </div>
 
-            <div id="feedback" class="battle-feedback-wrap hidden" aria-live="polite"></div>
+            <div id="feedback" class="battle-feedback-wrap hidden" role="status" aria-live="polite" tabindex="-1"></div>
             <button type="button" class="battle-next hidden" id="btn-next">Próxima questão ${icon('bolt', 'ico--sm')}</button>
           </article>
 
@@ -228,6 +259,8 @@ export async function renderBattle(root, navigate, ctx) {
     submit.addEventListener('click', () => {
       if (selectedButton) onAnswer(selectedButton);
     });
+    $('#battle-exit', root)?.addEventListener('click', () => navigate(ctx.returnToTree ? 'topicTree' : 'map'));
+    requestAnimationFrame(() => $('#battle-statement', root)?.focus({ preventScroll: true }));
   }
 
   function renderAnswers(q) {
@@ -252,8 +285,25 @@ export async function renderBattle(root, navigate, ctx) {
     if (ans === 'false') ans = false;
 
     const confidence = root.querySelector('input[name="answer-confidence"]:checked')?.value || 'normal';
-    const result = answerQuestion(session, ans, { confidence });
-    if (!result) return;
+    let result;
+    try {
+      result = answerQuestion(session, ans, {
+        confidence,
+        questionId: session.questions[session.index]?.id,
+      });
+    } catch {
+      locked = false;
+      const hint = $('#battle-selection-hint', root);
+      if (hint) {
+        hint.setAttribute('role', 'alert');
+        hint.textContent = 'Não foi possível confirmar agora. Sua questão continua aberta; tente novamente.';
+      }
+      return;
+    }
+    if (!result) {
+      locked = false;
+      return;
+    }
 
     const stage = $('#stage', root);
     const hero = $('#hero', root);
@@ -306,7 +356,7 @@ export async function renderBattle(root, navigate, ctx) {
     const next = $('#btn-next', root);
     next.classList.remove('hidden');
     next.innerHTML = result.isLast ? `Ver resultado ${icon('chart', 'ico--sm')}` : `Próxima questão ${icon('bolt', 'ico--sm')}`;
-    next.focus();
+    fb.focus({ preventScroll: true });
     next.onclick = async () => {
       SFX.click();
       locked = false;
@@ -316,14 +366,40 @@ export async function renderBattle(root, navigate, ctx) {
   }
 
   async function paintResult() {
+    if (ctx.battleFinalizing) return;
+    ctx.battleFinalizing = true;
+    root.setAttribute('aria-busy', 'true');
     root.innerHTML = `
       <div class="ro-window">
         <div class="ro-title">Calculando domínio...</div>
         <div class="ro-body text-center"><p class="muted">Atualizando seu progresso no edital...</p></div>
       </div>`;
 
-    const summary = await finalizeBattle(session);
+    let summary;
+    try {
+      summary = await finalizeBattle(session);
+    } catch (error) {
+      if (error?.code === 'BATTLE_ALREADY_FINALIZED') {
+        summary = await getBattleResult(session.id).catch(() => null);
+      }
+      if (!summary) {
+        ctx.battleFinalizing = false;
+        root.removeAttribute('aria-busy');
+        root.innerHTML = `
+          <div class="ro-window"><div class="ro-body text-center" role="alert">
+            <h1 tabindex="-1" id="battle-result-error">Não foi possível concluir agora</h1>
+            <p class="muted">As etapas já concluídas foram preservadas. Tente novamente para finalizar com segurança.</p>
+            <button type="button" class="btn btn-primary" id="battle-result-retry">Tentar novamente</button>
+          </div></div>`;
+        $('#battle-result-retry', root)?.addEventListener('click', paintResult);
+        requestAnimationFrame(() => $('#battle-result-error', root)?.focus());
+        return;
+      }
+    }
     ctx.battleSession = null;
+    ctx.requestBattleExit = null;
+    ctx.battleFinalizing = false;
+    root.removeAttribute('aria-busy');
 
     if (summary.improved) SFX.win();
     else SFX.click();
@@ -331,12 +407,14 @@ export async function renderBattle(root, navigate, ctx) {
 
     root.innerHTML = `
       <div class="ro-window result-card">
-        <div class="ro-title">Resultado do desafio</div>
+        <h1 class="ro-title" id="battle-result-title" tabindex="-1">Resultado do desafio</h1>
         <div class="ro-body">
           <div class="result-stars">${starsHtml(summary.stars)}</div>
           <p class="text-center muted">${formatStars(summary.stars)} / 5 estrelas de domínio</p>
           <p class="text-center muted">${summary.correct}/${summary.total} · novo resultado ${formatPercent(summary.newResult)}</p>
           <ul class="muted result-list">
+            <li>Acertos, erros e não respondidas: <strong>${summary.correct} + ${summary.errors} + ${summary.unanswered} = ${summary.total}</strong></li>
+            <li>Tempo ativo: <strong>${formatDuration(summary.activeSeconds)}</strong></li>
             <li>Melhor resultado anterior: <strong>${formatPercent(summary.previousBest)}</strong></li>
             <li>Novo resultado: <strong>${formatPercent(summary.newResult)}</strong></li>
             <li>Domínio atualizado: <strong>${formatPercent(summary.mastery)}</strong>${summary.improved ? ' · novo melhor' : ' · melhor preservado'}</li>
@@ -361,6 +439,7 @@ export async function renderBattle(root, navigate, ctx) {
         </div>
       </div>
     `;
+    requestAnimationFrame(() => $('#battle-result-title', root)?.focus({ preventScroll: true }));
 
     $('#r-map', root).onclick = () => {
       if (ctx.returnToTree) {
@@ -446,6 +525,7 @@ function renderBattleFeedback(result, explanation, confidence) {
         <span class="battle-learning__kicker">Explicação</span>
         <h3>Entenda a lógica da resposta</h3>
         <p>${escapeHtml(explanation.explanation)}</p>
+        ${!correct ? `<p><strong>Resposta correta:</strong> ${escapeHtml(describeCorrectAnswer(explanation))}</p>` : ''}
       </div>
       ${renderExplanationDetails(explanation)}
       ${!correct || attention ? `
@@ -456,6 +536,15 @@ function renderBattleFeedback(result, explanation, confidence) {
     </section>`;
 }
 
+function describeCorrectAnswer(explanation) {
+  const answer = explanation.correctAnswer;
+  if (answer === true || /^(true|certo|c)$/i.test(String(answer))) return 'Certo';
+  if (answer === false || /^(false|errado|e)$/i.test(String(answer))) return 'Errado';
+  const normalized = String(answer ?? '').trim().toUpperCase();
+  const alternative = explanation.alternatives?.find((item) => String(item).trim().toUpperCase().startsWith(`${normalized})`));
+  return alternative || normalized || 'Consulte a alternativa destacada acima.';
+}
+
 function renderExplanationDetails(explanation) {
   const sections = explanation.sections.map((section) => `
     <article class="battle-explanation__item"><strong>${escapeHtml(section.label)}</strong><p>${escapeHtml(section.text)}</p></article>
@@ -463,11 +552,21 @@ function renderExplanationDetails(explanation) {
   const references = explanation.references.length
     ? `<article class="battle-explanation__item battle-explanation__item--references"><strong>Referências</strong><ul>${explanation.references.map((reference) => `<li>${escapeHtml(reference)}</li>`).join('')}</ul></article>`
     : '';
-  return sections || references ? `<div class="battle-explanation">${sections}${references}</div>` : '';
+  const source = explanation.source
+    ? `<article class="battle-explanation__item battle-explanation__item--references"><strong>Fonte</strong><p>${escapeHtml(explanation.source)}</p></article>`
+    : '';
+  return sections || references || source ? `<div class="battle-explanation">${sections}${references}${source}</div>` : '';
 }
 
 function formatPercent(value) {
   return `${Number(value || 0).toLocaleString('pt-BR', { maximumFractionDigits: 2 })}%`;
+}
+
+function formatDuration(seconds) {
+  const safeSeconds = Math.max(0, Number(seconds) || 0);
+  const minutes = Math.floor(safeSeconds / 60);
+  const remainder = Math.round(safeSeconds % 60);
+  return minutes ? `${minutes} min ${remainder}s` : `${remainder}s`;
 }
 
 function formatDelta(value, percent = true) {

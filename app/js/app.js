@@ -9,14 +9,14 @@ import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=82';
 import { renderWorldMap } from './ui/worldMap.js?v=74';
-import { renderBattle } from './ui/battleArena.js?v=74';
+import { renderBattle } from './ui/battleArena.js?v=75';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
 import { renderExpedition } from './ui/expedition.js?v=75';
 import { renderWellbeing } from './ui/wellbeingUI.js?v=73';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
-import { renderTopicTree } from './ui/topicTree.js?v=70';
+import { renderTopicTree } from './ui/topicTree.js?v=72';
 import { renderReview } from './ui/review.js?v=83';
 import { renderRankedEvent } from './ui/rankedEvent.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
@@ -59,6 +59,9 @@ const ctx = {
   openContest: null,
   user: null,
   contentPackage: null,
+  requestBattleExit: null,
+  allowBattleExit: false,
+  battleFinalizing: false,
 };
 
 let shellInitialized = false;
@@ -225,6 +228,15 @@ function bindHabitReminderRuntime() {
 }
 
 async function navigate(screen) {
+  if (ctx.screen === 'battle' && screen !== 'battle' && ctx.battleFinalizing) return;
+  if (ctx.screen === 'battle'
+    && screen !== 'battle'
+    && ctx.battleSession
+    && !ctx.allowBattleExit) {
+    ctx.requestBattleExit?.(screen);
+    return;
+  }
+  ctx.allowBattleExit = false;
   if (!canAccessInternalRoute(authService)) {
     showAuth();
     return;
@@ -269,6 +281,13 @@ async function navigate(screen) {
   root.focus({ preventScroll: true });
 
   window.scrollTo(0, 0);
+  if (screen === 'topicTree' && ctx.studySubtopicId) {
+    requestAnimationFrame(() => {
+      const card = root.querySelector(`[data-subtopic-card="${CSS.escape(ctx.studySubtopicId)}"]`);
+      card?.scrollIntoView({ block: 'center' });
+      card?.querySelector('[data-study-subtopic]')?.focus({ preventScroll: true });
+    });
+  }
   checkHabitReminders();
 }
 

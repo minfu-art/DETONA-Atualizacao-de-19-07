@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  buildQuestionExplanation, enhanceQuestionExplanation, registerExplanationEnhancer,
+  buildQuestionExplanation, enhanceQuestionExplanation, normalizeQuestionFeedback, registerExplanationEnhancer,
 } from '../js/services/questionExplanationService.js';
 
 test('explicação simples continua compatível', () => {
@@ -27,4 +27,32 @@ test('ponto de extensão aceita enriquecedor futuro sem implementar IA', async (
   const enhanced = await enhanceQuestionExplanation({ explanation: 'Base.' });
   unregister();
   assert.equal(enhanced.summaryGenerated, 'Resumo futuro');
+});
+
+test('normalização cobre aliases legados sem modificar a questão', () => {
+  const question = {
+    justificativa: 'Fundamento legado.',
+    pegadinha: 'Atenção ao termo sempre.',
+    conhecimento: 'Compare a exceção.',
+    fonte: 'Fonte oficial',
+    resposta_correta: 'B',
+    alternativas: ['A) Um', 'B) Dois'],
+  };
+  const before = structuredClone(question);
+  const view = normalizeQuestionFeedback(question);
+  assert.equal(view.explanation, 'Fundamento legado.');
+  assert.equal(view.trap, 'Atenção ao termo sempre.');
+  assert.equal(view.addedKnowledge, 'Compare a exceção.');
+  assert.equal(view.source, 'Fonte oficial');
+  assert.equal(view.correctAnswer, 'B');
+  assert.equal(view.hasCompleteExplanation, true);
+  assert.deepEqual(question, before);
+});
+
+test('feedback incompleto usa mensagem factual e não inventa explicação', () => {
+  const view = normalizeQuestionFeedback({ correct_answer: true });
+  assert.equal(view.explanation, 'Explicação detalhada ainda não disponível para esta questão.');
+  assert.equal(view.hasCompleteExplanation, false);
+  assert.equal(view.trap, '');
+  assert.equal(view.addedKnowledge, '');
 });

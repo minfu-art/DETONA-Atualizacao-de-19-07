@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 import {
   finalizeBattle,
+  getBattleResult,
   validateOfficialBattleSession,
 } from '../app/js/core/battle.js';
 import { recalculateEditalSSOT } from '../app/js/core/ssot.js';
@@ -41,6 +42,7 @@ function session({
     results,
     correct,
     answered,
+    index: 9,
     finished,
     maxCombo: correct,
   };
@@ -262,6 +264,11 @@ test('battleId repetido é bloqueado após reload sem duplicar efeitos', async (
   const deps = dependencies(repository);
   const value = session({ id: 'persistent-battle', correct: 5 });
   await finalizeBattle(value, deps.options);
+  const recovered = await getBattleResult(value.id, { repository });
+  assert.equal(recovered.correct, 5);
+  assert.equal(recovered.errors, 5);
+  assert.equal(recovered.unanswered, 0);
+  assert.equal(recovered.total, 10);
   const before = {
     attempts: repository.rows[STORES.subtopics][0].attempts_count,
     log: structuredClone(repository.rows[STORES.dailyLogs][0]),

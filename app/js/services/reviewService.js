@@ -11,6 +11,7 @@ import { applyDailyGoalActivity } from './dailyGoalService.js';
 import { applyValidStudyDay } from './studyStreakService.js';
 import { refreshEmblems } from './emblemService.js';
 import { localDateKey } from '../core/localDate.js';
+import { isQuestionEligible } from '../core/questionSchema.js';
 
 const MIGRATION_KEY = 'intelligent_review_migration_v1';
 const MAX_ACTIVE_REVIEW_GAP_SECONDS = 10 * 60;
@@ -81,6 +82,8 @@ export async function recordBattleReviewEvents(
   for (const result of session.results) {
     const question = session.questions.find((item) => item.id === result.questionId);
     if (!question) continue;
+    const questionSubtopicId = String(question.subtopic_id || question.topicoEditalId || '').trim();
+    if (!isQuestionEligible(question) || !questionSubtopicId || questionSubtopicId !== String(subtopic?.id || '').trim()) continue;
     const shouldQueue = !result.correct || result.confidence === 'low' || domainDropped;
     if (!shouldQueue) continue;
     const existing = await repository.getById(STORES.reviewQueue, question.id);

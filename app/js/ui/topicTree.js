@@ -118,9 +118,11 @@ export async function renderTopicTree(root, navigate, ctx) {
 
   function focusSubtopicAction(sid) {
     requestAnimationFrame(() => {
-      const card = root.querySelector(`[data-subtopic-card="${CSS.escape(sid)}"]`);
-      card?.scrollIntoView({ block: 'center' });
-      card?.querySelector('[data-study-subtopic]')?.focus();
+      requestAnimationFrame(() => {
+        const card = root.querySelector(`[data-subtopic-card="${CSS.escape(sid)}"]`);
+        card?.scrollIntoView({ block: 'center' });
+        card?.querySelector('[data-study-subtopic]')?.focus();
+      });
     });
   }
 
@@ -296,6 +298,6 @@ export async function renderTopicTree(root, navigate, ctx) {
   });
   paintTopics();
   if (ctx.studySubtopicId) {
-    requestAnimationFrame(() => root.querySelector(`[data-subtopic-card="${CSS.escape(ctx.studySubtopicId)}"]`)?.scrollIntoView({ block: 'center' }));
+    focusSubtopicAction(ctx.studySubtopicId);
   }
 }

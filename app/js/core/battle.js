@@ -86,6 +86,7 @@ function normalizeBattleJournal(value, { battleId, subtopicId, startedAt }) {
     started_at: source.started_at || startedAt,
     updated_at: source.updated_at || startedAt,
     completed_at: source.completed_at || null,
+    result: source.result && typeof source.result === 'object' ? source.result : null,
   };
 }
 
@@ -116,7 +117,7 @@ function findBattleAttempt(subtopic, battleId) {
   return null;
 }
 
-export function validateOfficialBattleSession(session) {
+export function validateBattleSession(session) {
   if (!session || typeof session !== 'object') {
     throw battleValidationError('BATTLE_SESSION_REQUIRED', 'A sessão da batalha é obrigatória.');
   }
@@ -124,48 +125,64 @@ export function validateOfficialBattleSession(session) {
   if (!battleId) {
     throw battleValidationError('BATTLE_ID_REQUIRED', 'A batalha precisa de um identificador válido.');
   }
-  if (session.finished !== true) {
-    throw battleValidationError('BATTLE_NOT_FINISHED', 'A batalha ainda não foi concluída.');
-  }
   if (!Array.isArray(session.questions) || session.questions.length !== CHALLENGE_QUESTION_COUNT) {
     throw battleValidationError('BATTLE_QUESTIONS_INVALID', 'A batalha oficial precisa conter exatamente 10 questões.');
-  }
-  if (!Number.isInteger(session.answered) || session.answered !== CHALLENGE_QUESTION_COUNT) {
-    throw battleValidationError('BATTLE_ANSWERS_INVALID', 'A batalha oficial precisa ter exatamente 10 respostas.');
-  }
-  if (!Array.isArray(session.results) || session.results.length !== CHALLENGE_QUESTION_COUNT) {
-    throw battleValidationError('BATTLE_RESULTS_INVALID', 'A batalha oficial precisa ter exatamente 10 resultados.');
   }
   const subtopicId = String(session.subtopic_id || '').trim();
   if (!subtopicId) {
     throw battleValidationError('BATTLE_SUBTOPIC_REQUIRED', 'A batalha precisa estar vinculada a um subtópico.');
   }
+  const curricularSubtopicId = String(session.subtopic?.id || subtopicId).trim();
+  if (curricularSubtopicId !== subtopicId) {
+    throw battleValidationError('BATTLE_SUBTOPIC_MISMATCH', 'O contexto curricular da batalha é inválido.');
+  }
   const questionIds = session.questions.map((question) => String(question?.id || '').trim());
   if (questionIds.some((id) => !id) || new Set(questionIds).size !== CHALLENGE_QUESTION_COUNT) {
     throw battleValidationError('BATTLE_DUPLICATE_QUESTION', 'A batalha oficial precisa ter 10 questões únicas.');
+  }
+  if (session.questions.some((question) => !isQuestionEligible(question))) {
+    throw battleValidationError('BATTLE_QUESTION_INELIGIBLE', 'A batalha contém uma questão indisponível.');
   }
   if (session.questions.some((question) => (
     String(question?.subtopic_id || question?.topicoEditalId || '').trim() !== subtopicId
   ))) {
     throw battleValidationError('BATTLE_MIXED_SUBTOPICS', 'Todas as questões devem pertencer ao subtópico da batalha.');
   }
+  if (!Number.isInteger(session.index) || session.index < 0 || session.index >= CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_INDEX_INVALID', 'A posição atual da batalha é inválida.');
+  }
+  if (!Array.isArray(session.results) || session.results.length > CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_RESULTS_INVALID', 'Os resultados da batalha são inválidos.');
+  }
+  if (!Number.isInteger(session.answered) || session.answered !== session.results.length) {
+    throw battleValidationError('BATTLE_ANSWERS_INVALID', 'A quantidade de respostas não corresponde aos resultados.');
+  }
   const allowedQuestionIds = new Set(questionIds);
   const resultQuestionIds = session.results.map((result) => String(result?.questionId || '').trim());
   if (resultQuestionIds.some((id) => !allowedQuestionIds.has(id))) {
     throw battleValidationError('BATTLE_EXTERNAL_RESULT', 'Existe resultado de uma questão que não pertence à batalha.');
   }
-  if (new Set(resultQuestionIds).size !== CHALLENGE_QUESTION_COUNT) {
+  if (new Set(resultQuestionIds).size !== resultQuestionIds.length) {
     throw battleValidationError('BATTLE_DUPLICATE_RESULT', 'Existe resultado duplicado para a mesma questão.');
+  }
+  if (resultQuestionIds.some((id, index) => id !== questionIds[index])) {
+    throw battleValidationError('BATTLE_RESULT_ORDER_INVALID', 'A sequência de resultados da batalha é inválida.');
   }
   if (session.results.some((result) => typeof result?.correct !== 'boolean')) {
     throw battleValidationError('BATTLE_RESULT_INVALID', 'Todos os resultados precisam informar se a resposta está correta.');
   }
-  if (!Number.isInteger(session.correct) || session.correct < 0 || session.correct > CHALLENGE_QUESTION_COUNT) {
+  if (!Number.isInteger(session.correct) || session.correct < 0 || session.correct > session.answered) {
     throw battleValidationError('BATTLE_CORRECT_INVALID', 'A quantidade de acertos da batalha é inválida.');
   }
   const actualCorrect = session.results.filter((result) => result.correct === true).length;
   if (session.correct !== actualCorrect) {
     throw battleValidationError('BATTLE_CORRECT_MISMATCH', 'A quantidade de acertos não corresponde aos resultados.');
+  }
+  if (session.finished === true && session.index !== CHALLENGE_QUESTION_COUNT - 1) {
+    throw battleValidationError('BATTLE_INDEX_INVALID', 'A posição final da batalha é inválida.');
+  }
+  if (session.finished !== true && session.index !== session.answered) {
+    throw battleValidationError('BATTLE_INDEX_INVALID', 'A posição atual não corresponde às respostas registradas.');
   }
   return {
     battleId,
@@ -174,6 +191,25 @@ export function validateOfficialBattleSession(session) {
     correctIds: session.results.filter((result) => result.correct).map((result) => String(result.questionId)),
     incorrectIds: session.results.filter((result) => !result.correct).map((result) => String(result.questionId)),
   };
+}
+
+export function validateOfficialBattleSession(session) {
+  if (!session || typeof session !== 'object') {
+    throw battleValidationError('BATTLE_SESSION_REQUIRED', 'A sessão da batalha é obrigatória.');
+  }
+  if (session.finished !== true) {
+    throw battleValidationError('BATTLE_NOT_FINISHED', 'A batalha ainda não foi concluída.');
+  }
+  if (!Array.isArray(session.questions) || session.questions.length !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_QUESTIONS_INVALID', 'A batalha oficial precisa conter exatamente 10 questões.');
+  }
+  if (session.answered !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_ANSWERS_INVALID', 'A batalha oficial precisa ter exatamente 10 respostas.');
+  }
+  if (!Array.isArray(session.results) || session.results.length !== CHALLENGE_QUESTION_COUNT) {
+    throw battleValidationError('BATTLE_RESULTS_INVALID', 'A batalha oficial precisa ter exatamente 10 resultados.');
+  }
+  return validateBattleSession(session);
 }
 
 /** Pool de batalha: nunca usa questões DEMO (mesmo se restarem no store legado). */
@@ -249,7 +285,7 @@ export async function createBattleSession(subtopicId, opts = {}) {
   }
 
   const startedAt = new Date().toISOString();
-  return {
+  const session = {
     id: createBattleId(),
     subtopic_id: subtopicId,
     subtopic,
@@ -268,6 +304,8 @@ export async function createBattleSession(subtopicId, opts = {}) {
     lastActiveAt: startedAt,
     activeSeconds: 0,
   };
+  validateBattleSession(session);
+  return session;
 }
 
 async function pickDailyQuestions(endgame = false) {
@@ -295,8 +333,18 @@ async function pickDailyQuestions(endgame = false) {
 }
 
 export function answerQuestion(session, userAnswer, options = {}) {
+  if (!session || !Array.isArray(session.questions) || !Array.isArray(session.results)) {
+    throw battleValidationError('BATTLE_SESSION_REQUIRED', 'A sessão da batalha é obrigatória.');
+  }
   const question = session.questions[session.index];
   if (!question || session.finished) return null;
+  const expectedQuestionId = String(options.questionId || '').trim();
+  if (expectedQuestionId && expectedQuestionId !== String(question.id)) {
+    throw battleValidationError('BATTLE_QUESTION_STALE', 'Esta questão já foi confirmada ou não está mais ativa.');
+  }
+  if (session.results.some((result) => String(result?.questionId) === String(question.id))) {
+    throw battleValidationError('BATTLE_ANSWER_ALREADY_CONFIRMED', 'Esta resposta já foi confirmada.');
+  }
   trackBattleActivity(session, options.now || new Date());
 
   let correct = false;
@@ -549,12 +597,10 @@ export async function finalizeBattle(session, {
     let ssot = { player };
     if (!journal.steps.ssot) {
       ssot = await recalculate(repository, { updatedAt: attemptedAt });
-      await persistBattleJournal(repository, journal, now, { step: 'ssot', completed: true });
-    } else if (journal.status !== 'completed') {
-      await persistBattleJournal(repository, journal, now, { completed: true });
+      await persistBattleJournal(repository, journal, now, { step: 'ssot' });
     }
 
-    return {
+    const summary = {
       accuracy: newResult,
       newResult,
       previousBest,
@@ -563,7 +609,10 @@ export async function finalizeBattle(session, {
       stars,
       resultStars: starsFromAccuracy(newResult),
       correct: session.correct,
+      errors: total - session.correct,
+      unanswered: Math.max(0, total - session.answered),
       total,
+      activeSeconds: Math.max(0, Number(session.activeSeconds) || 0),
       maxCombo: session.maxCombo,
       disciplineBefore,
       disciplineAfter,
@@ -582,7 +631,18 @@ export async function finalizeBattle(session, {
       activityMinutes: Math.round((Number(activity?.durationSeconds) || 0) / 60),
       player: ssot.player || player,
     };
+    journal.result = structuredClone(summary);
+    await persistBattleJournal(repository, journal, now, { completed: true });
+    return summary;
   } finally {
     finalizingBattleIds.delete(validated.battleId);
   }
+}
+
+export async function getBattleResult(battleId, { repository = progressRepository } = {}) {
+  const id = String(battleId || '').trim();
+  if (!id) return null;
+  const journal = await repository.getById(STORES.meta, battleJournalKey(id));
+  if (journal?.status !== 'completed' || !journal.result || typeof journal.result !== 'object') return null;
+  return structuredClone(journal.result);
 }

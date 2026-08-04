@@ -252,6 +252,7 @@ test('interface usa botões, accordion semântico, modal explícito e retorno à
   assert.match(tree, /studySessionErrorMessage\(sessionError\)/);
   assert.match(tree, /ctx\.returnToTree = discId/);
   assert.match(tree, /ctx\.studySubtopicId = sid/);
+  assert.match(tree, /if \(ctx\.studySubtopicId\) \{\s*focusSubtopicAction\(ctx\.studySubtopicId\)/);
   assert.match(presentation, /Questões ainda não disponíveis/);
   assert.match(presentation, /Banco ainda insuficiente para uma sessão/);
   assert.match(tree, /id="study-unavailable-close">Fechar/);
