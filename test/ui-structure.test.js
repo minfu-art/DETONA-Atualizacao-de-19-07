@@ -281,12 +281,15 @@ test('batalha prioriza leitura, confirmação, confiança e explicação didáti
 });
 
 test('revisão informa memória, próxima data e XP persistido sem domínio oficial', async () => {
-  const [ui, service] = await Promise.all([readFile(reviewUiUrl, 'utf8'), readFile(reviewServiceUrl, 'utf8')]);
-  for (const label of ['Questões revisadas', 'Acertos', 'Erros', 'Memória fortalecida', 'Continuam quentes', 'Próxima revisão sugerida']) {
+  const presentationUrl = new URL('../app/js/ui/reviewPresentation.js', import.meta.url);
+  const [ui, service, presentation] = await Promise.all([
+    readFile(reviewUiUrl, 'utf8'), readFile(reviewServiceUrl, 'utf8'), readFile(presentationUrl, 'utf8'),
+  ]);
+  for (const label of ['Questões revisadas', 'Acertos', 'Erros', 'Memória fortalecida', 'Permanecem quentes', 'Próxima revisão']) {
     assert.match(ui, new RegExp(label));
   }
   assert.match(ui, /XP persistido/);
-  assert.match(ui, /summary\.xp/);
+  assert.match(presentation, /summary\.xp/);
   assert.doesNotMatch(service, /recalculateEditalSSOT|applyOfficialMasteryAttempt|levelFromMastery|applyXp/);
 });
 
@@ -294,18 +297,18 @@ test('review presents a strategic plan without changing the queue engine', async
   const [ui, service, css, home] = await Promise.all([
     readFile(reviewUiUrl, 'utf8'), readFile(reviewServiceUrl, 'utf8'), readFile(cssUrl, 'utf8'), readFile(homeUrl, 'utf8'),
   ]);
-  for (const marker of ['review-plan__hero', 'review-start', 'review-plan__queue', 'review-priority']) {
+  for (const marker of ['review-summary__recommendation', 'review-start', 'review-queue__list', 'review-priority']) {
     assert.match(ui, new RegExp(marker));
   }
-  assert.match(ui, /Sistema de suporte à aprovação/);
-  assert.match(ui, /Revisão estratégica/);
-  assert.match(ui, /Fortaleça \$\{plan\.total\}/);
+  assert.match(ui, /Consolidação da memória/);
+  assert.match(ui, /Revisão inteligente/);
+  assert.match(ui, /\$\{view\.total\} \$\{view\.total === 1/);
   assert.doesNotMatch(ui, /\u00c3|\u00c2|\u00e2\u20ac/);
   assert.match(service, /selectReviewItems\(items/);
   assert.match(service, /describeReviewItem/);
   for (const marker of ['review-type--error', 'review-type--confidence', 'review-type--recurring', 'review-type--scheduled']) {
     assert.match(css, new RegExp(marker));
   }
-  assert.match(ui, /review-empty__signals/);
+  assert.match(ui, /review-state__signals/);
   assert.match(home, /today-review.*addEventListener\('click'.*startReview\(\)/s);
 });

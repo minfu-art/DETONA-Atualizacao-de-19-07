@@ -292,8 +292,9 @@ export function validateReviewSession(session, context = {}) {
 }
 
 async function reviewData(repo, contestId, questionProvider = questionService) {
-  const [items, subtopics, questions] = await Promise.all([
-    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics), questionProvider.listar(),
+  const [items, subtopics, disciplines, questions] = await Promise.all([
+    repo.getAll(STORES.reviewQueue), repo.getAll(STORES.subtopics),
+    repo.getAll(STORES.disciplines), questionProvider.listar(),
   ]);
   const context = validationContext({ questions, subtopics, contestId });
   const seen = new Map();
@@ -301,6 +302,7 @@ async function reviewData(repo, contestId, questionProvider = questionService) {
   return {
     items,
     subtopics,
+    disciplines,
     questions,
     context,
     validItems: validations.filter((entry) => entry.valid).map((entry) => entry.item),
@@ -384,6 +386,7 @@ export async function getReviewPlanData(filters = {}, now = new Date(), {
   const data = await reviewData(repo, scope.contestId);
   const masteryBySubtopic = Object.fromEntries(data.subtopics.map((item) => [item.id, item.best_accuracy || 0]));
   const subtopicById = data.context.subtopicById;
+  const disciplineById = new Map(data.disciplines.map((item) => [text(item.id), item]));
   const items = data.validItems;
   const selectionContext = {
     ...filters,
@@ -402,6 +405,7 @@ export async function getReviewPlanData(filters = {}, now = new Date(), {
       order: index + 1,
       question: data.context.questionById.get(text(item.questionId)),
       subtopicName: subtopic?.name || 'Conteúdo do edital',
+      disciplineName: disciplineById.get(text(subtopic?.discipline_id))?.name || '',
       mastery: Number(subtopic?.best_accuracy) || 0,
     };
   });

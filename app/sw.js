@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v109-review-session-invariants';
+const CACHE = 'detona-v110-intelligent-review-experience';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -7,6 +7,7 @@ const ASSETS = [
   './env.runtime.js',
   './css/main.css',
   './css/design-system.css',
+  './css/review.css',
   './css/dashboard-jrpg.css',
   './manifest.json',
   './js/app.js',
@@ -142,6 +143,7 @@ const ASSETS = [
   './js/ui/worldMap.js',
   './js/ui/battleArena.js',
   './js/ui/review.js',
+  './js/ui/reviewPresentation.js',
   './js/ui/grimorio.js',
   './js/ui/performance.js',
   './js/ui/expedition.js',

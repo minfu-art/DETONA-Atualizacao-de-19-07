@@ -17,7 +17,7 @@ import { renderWellbeing } from './ui/wellbeingUI.js?v=73';
 import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=72';
-import { renderReview } from './ui/review.js?v=85';
+import { renderReview } from './ui/review.js?v=86';
 import { renderRankedEvent } from './ui/rankedEvent.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
 import { renderAuth } from './ui/auth.js?v=74';
