@@ -9,7 +9,7 @@ import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=82';
 import { renderWorldMap } from './ui/worldMap.js?v=74';
-import { renderBattle } from './ui/battleArena.js?v=75';
+import { renderBattle } from './ui/battleArena.js?v=76';
 import { renderGrimorio } from './ui/grimorio.js?v=69';
 import { renderPerformance } from './ui/performance.js?v=74';
 import { renderExpedition } from './ui/expedition.js?v=75';

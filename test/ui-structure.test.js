@@ -250,10 +250,10 @@ test('Home Hoje prioriza próxima missão e mantém somente indicadores acionáv
 test('resultado do desafio comunica domínio e XP sem misturar LV acadêmico', async () => {
   const [ui, core] = await Promise.all([readFile(battleUiUrl, 'utf8'), readFile(battleCoreUrl, 'utf8')]);
   for (const label of [
-    'Melhor resultado anterior', 'Novo resultado', 'Domínio atualizado', 'Barra da disciplina',
-    'LV global', 'Quantidade de tentativas', 'Questões adicionadas à revisão',
+    'Resultado da missão', 'Domínio atualizado', 'Melhor resultado', 'Disciplina',
+    'Nível global', 'Tentativas', 'Revisão',
   ]) assert.match(ui, new RegExp(label));
-  assert.match(ui, /XP da jornada/);
+  assert.match(ui, /XP e recompensas confirmadas/);
   assert.match(ui, /summary\.xpEarned/);
   assert.match(core, /grantBattleXp/);
   assert.doesNotMatch(core, /player\.level\s*[+*/-]?=/);
@@ -272,7 +272,7 @@ test('batalha prioriza leitura, confirmação, confiança e explicação didáti
   assert.match(source, /id="btn-answer" disabled/);
   assert.match(source, /answer-confidence/);
   assert.match(source, /renderBattleFeedback/);
-  assert.match(source, /Adicionada à revisão/);
+  assert.match(source, /Esta questão entrou no seu ciclo de revisão/);
   assert.match(source, /Entenda a lógica da resposta/);
   assert.match(css, /battle-feedback--correct/);
   assert.match(css, /battle-feedback--wrong/);
