@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v111-ranked-simulation-hardening';
+const CACHE = 'detona-v113-ranked-simulation-safe-area';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -140,6 +140,7 @@ const ASSETS = [
   './js/ui/eviDailyMission.js',
   './js/ui/mentorCommunication.js',
   './js/ui/rankedEvent.js',
+  './js/ui/rankedVisualModel.js',
   './js/ui/emblems/emblemArt.js',
   './js/ui/forge.js',
   './js/ui/worldMap.js',
@@ -182,6 +183,7 @@ const ASSETS = [
   './assets/mentors/evi.webp',
   './assets/mentors/evi-plan-strategist.webp',
   './assets/mentors/kaely-resistance.webp',
+  './assets/mentors/kiro-ranked-strategist.webp',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',
