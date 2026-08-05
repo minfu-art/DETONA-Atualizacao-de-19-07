@@ -18,7 +18,7 @@ import { renderProfile } from './ui/profile.js?v=79';
 import { renderCelebration } from './ui/celebration.js?v=68';
 import { renderTopicTree } from './ui/topicTree.js?v=72';
 import { renderReview } from './ui/review.js?v=86';
-import { renderRankedEvent } from './ui/rankedEvent.js';
+import { renderRankedEvent } from './ui/rankedEvent.js?v=87';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
 import { renderAuth } from './ui/auth.js?v=74';
 import { renderLibrary } from './ui/library.js';
@@ -64,6 +64,13 @@ const ctx = {
   battleFinalizing: false,
   requestReviewExit: null,
   allowReviewExit: false,
+  rankedEventSession: null,
+  rankedEventResult: null,
+  rankedEventId: null,
+  rankedCompletionNotice: null,
+  requestRankedExit: null,
+  allowRankedExit: false,
+  clearRankedTimer: null,
 };
 
 let shellInitialized = false;
@@ -246,8 +253,18 @@ async function navigate(screen) {
     ctx.requestReviewExit?.(screen);
     return;
   }
+  if (ctx.screen === 'rankedEvent'
+    && screen !== 'rankedEvent'
+    && ctx.rankedEventSession
+    && ctx.rankedEventSession.status === 'started'
+    && !ctx.allowRankedExit) {
+    ctx.requestRankedExit?.(screen);
+    return;
+  }
   ctx.allowBattleExit = false;
   ctx.allowReviewExit = false;
+  ctx.allowRankedExit = false;
+  if (ctx.screen === 'rankedEvent' && screen !== 'rankedEvent') ctx.clearRankedTimer?.();
   if (!canAccessInternalRoute(authService)) {
     showAuth();
     return;
@@ -351,6 +368,10 @@ async function openContest(contestId) {
   if (contestChanged) {
     ctx.reviewSession = null;
     ctx.reviewFilters = null;
+    ctx.clearRankedTimer?.();
+    ctx.rankedEventSession = null;
+    ctx.rankedEventResult = null;
+    ctx.rankedEventId = null;
   }
   if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
   const contest = await libraryService.getContest(contestId, { refresh: true });

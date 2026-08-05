@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v110-intelligent-review-experience';
+const CACHE = 'detona-v111-ranked-simulation-hardening';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -8,6 +8,7 @@ const ASSETS = [
   './css/main.css',
   './css/design-system.css',
   './css/review.css',
+  './css/ranked-functional.css',
   './css/dashboard-jrpg.css',
   './manifest.json',
   './js/app.js',
@@ -28,6 +29,7 @@ const ASSETS = [
   './js/services/emblemService.js',
   './js/services/dailyCharacterMessage.js',
   './js/services/rankedEventService.js',
+  './js/core/rankedSimulation.js',
   './js/core/localDate.js',
   './assets/icons/icon-192.png',
   './assets/icons/icon-256.png',

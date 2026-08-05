@@ -27,6 +27,72 @@ const RANKING_MODES = new Set(['immediate', 'after_event']);
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const ID_PATTERN = /^[a-z0-9][a-z0-9_-]{0,79}$/i;
 
+function text(value) {
+  return String(value ?? '').trim();
+}
+
+function timestamp(value) {
+  const result = new Date(value).getTime();
+  return Number.isFinite(result) ? result : null;
+}
+
+export function rankedEventVersion(event) {
+  return text(event?.version || event?.published_at || event?.publishedAt || event?.id);
+}
+
+export function validateRankedEvent(event, context = {}) {
+  const errors = [];
+  const id = text(event?.id);
+  const contestId = text(event?.contest_id || event?.contestId);
+  const startsAt = timestamp(event?.starts_at || event?.startsAt);
+  const endsAt = timestamp(event?.ends_at || event?.endsAt);
+  const durationMinutes = Number(event?.duration_minutes || event?.durationMinutes);
+  const questionCount = Number(event?.question_count || event?.questionCount);
+  const status = text(event?.effectiveStatus || event?.status);
+  const registrationStartsAt = timestamp(event?.registration_starts_at || event?.registrationStartsAt);
+  const registrationEndsAt = timestamp(event?.registration_ends_at || event?.registrationEndsAt);
+  const scoringMode = text(event?.scoring_mode || event?.scoringMode);
+  const rankingReleaseMode = text(event?.ranking_release_mode || event?.rankingReleaseMode);
+  if (!id) errors.push('EVENT_ID_REQUIRED');
+  if (!contestId) errors.push('EVENT_CONTEST_REQUIRED');
+  if (context.contestId && contestId !== text(context.contestId)) errors.push('EVENT_CONTEST_MISMATCH');
+  if (startsAt == null || endsAt == null) errors.push('EVENT_DATES_INVALID');
+  else if (startsAt >= endsAt) errors.push('EVENT_PERIOD_INVALID');
+  if (!Number.isInteger(durationMinutes) || durationMinutes <= 0) errors.push('EVENT_DURATION_INVALID');
+  if (!Number.isInteger(questionCount) || questionCount <= 0) errors.push('EVENT_QUESTION_COUNT_INVALID');
+  if (!EVENT_STATUSES.has(status)) errors.push('EVENT_STATUS_INVALID');
+  if (!SCORING_MODES.has(scoringMode)) errors.push('EVENT_SCORING_MODE_INVALID');
+  if (!RANKING_MODES.has(rankingReleaseMode)) errors.push('EVENT_RANKING_MODE_INVALID');
+  if (registrationStartsAt == null || registrationEndsAt == null) errors.push('EVENT_REGISTRATION_DATES_INVALID');
+  else if (!(registrationStartsAt < registrationEndsAt && registrationEndsAt <= startsAt)) {
+    errors.push('EVENT_REGISTRATION_PERIOD_INVALID');
+  }
+  if (status !== 'draft' && !(event?.published_at || event?.publishedAt)) errors.push('EVENT_PUBLISHED_AT_REQUIRED');
+  if (!rankedEventVersion(event)) errors.push('EVENT_VERSION_REQUIRED');
+  if (Array.isArray(context.questions)) {
+    const ids = context.questions.map((question) => text(question?.question_id || question?.id));
+    if (ids.some((questionId) => !questionId)) errors.push('EVENT_QUESTION_ID_REQUIRED');
+    if (new Set(ids).size !== ids.length) errors.push('EVENT_QUESTIONS_DUPLICATED');
+    if (ids.length !== questionCount) errors.push('EVENT_QUESTION_COUNT_MISMATCH');
+    if (context.isQuestionEligible && context.questions.some((question) => !context.isQuestionEligible(question))) {
+      errors.push('EVENT_QUESTION_INELIGIBLE');
+    }
+    if (context.questions.some((question) => {
+      const questionContestId = text(question?.contest_id || question?.contestId);
+      return questionContestId && questionContestId !== contestId;
+    })) errors.push('EVENT_QUESTION_CONTEST_MISMATCH');
+  }
+  return { valid: errors.length === 0, errors };
+}
+
+export function rankedDeadline(event, attempt) {
+  const eventEnd = timestamp(event?.ends_at || event?.endsAt);
+  const startedAt = timestamp(attempt?.started_at || attempt?.startedAt);
+  const durationMinutes = Number(event?.duration_minutes || event?.durationMinutes);
+  if (eventEnd == null || startedAt == null || !Number.isFinite(durationMinutes) || durationMinutes <= 0) return null;
+  return Math.min(eventEnd, startedAt + durationMinutes * 60000);
+}
+
 function cleanText(value, label, max) {
   const clean = String(value || '').trim();
   if (!clean || clean.length > max || /[\u0000-\u001f\u007f]/u.test(clean)) {
@@ -128,11 +194,43 @@ function normalizeExpectedAnswer(payload = {}) {
   return normalized;
 }
 
+function allowedAnswerValues(question) {
+  const payload = question?.payload || question || {};
+  const options = payload.options || payload.alternativas;
+  if (!Array.isArray(options) || options.length < 2) return new Set(['C', 'E', '']);
+  return new Set(options.map((option, index) => {
+    const label = typeof option === 'object' ? option.text || option.label || option.value : option;
+    return (/^([A-E])[\s).:-]/i.exec(text(label))?.[1] || String.fromCharCode(65 + index)).toUpperCase();
+  }).concat(''));
+}
+
+export function normalizeRankedSubmissionAnswers(questions = [], answers = []) {
+  const questionById = new Map(questions.map((question) => [text(question?.question_id || question?.id), question]));
+  if (questionById.size !== questions.length || [...questionById.keys()].some((questionId) => !questionId)) {
+    throw new RankedEventError(409, 'EVENT_QUESTIONS_INVALID', 'O conjunto de questões do evento é inválido.');
+  }
+  const byQuestion = new Map();
+  for (const answer of answers) {
+    const questionId = text(answer?.questionId || answer?.question_id);
+    const value = text(answer?.answer).toUpperCase();
+    const question = questionById.get(questionId);
+    if (!question) throw new RankedEventError(400, 'ANSWER_OUTSIDE_EVENT', 'Uma resposta não pertence a este evento.');
+    if (byQuestion.has(questionId)) throw new RankedEventError(400, 'DUPLICATE_ANSWER', 'Uma questão recebeu respostas duplicadas.');
+    if (!allowedAnswerValues(question).has(value)) {
+      throw new RankedEventError(400, 'INVALID_ANSWER_OPTION', 'Uma alternativa enviada é inválida.');
+    }
+    byQuestion.set(questionId, value);
+  }
+  return questions.map((question) => {
+    const questionId = text(question?.question_id || question?.id);
+    return { questionId, answer: byQuestion.get(questionId) || '' };
+  });
+}
+
 export function scoreRankedAnswers(questions = [], answers = [], scoringMode = 'simple') {
   if (!SCORING_MODES.has(scoringMode)) throw new TypeError('Modo de pontuação inválido.');
-  const answerByQuestion = new Map(
-    answers.map((answer) => [String(answer.questionId || answer.question_id), String(answer.answer || '').trim().toUpperCase()]),
-  );
+  const normalizedAnswers = normalizeRankedSubmissionAnswers(questions, answers);
+  const answerByQuestion = new Map(normalizedAnswers.map((answer) => [answer.questionId, answer.answer]));
   let correct = 0;
   let incorrect = 0;
   let blank = 0;
@@ -155,15 +253,57 @@ export function scoreRankedAnswers(questions = [], answers = [], scoringMode = '
   };
 }
 
-export function rankAttempts(attempts = []) {
+export function validateRankedSession(session, context = {}) {
+  const errors = [];
+  const questions = Array.isArray(context.questions) ? context.questions : [];
+  const event = context.event;
+  if (!text(session?.id)) errors.push('SESSION_ID_REQUIRED');
+  if (!text(session?.event_id || session?.eventId)) errors.push('SESSION_EVENT_REQUIRED');
+  if (event && text(session?.event_id || session?.eventId) !== text(event.id)) errors.push('SESSION_EVENT_MISMATCH');
+  if (context.userId && text(session?.user_id || session?.userId) !== text(context.userId)) errors.push('SESSION_USER_MISMATCH');
+  if (!['registered', 'started', 'submitted', 'timed_out', 'disqualified'].includes(text(session?.status))) {
+    errors.push('SESSION_STATUS_INVALID');
+  }
+  if (session?.status === 'started' && timestamp(session?.started_at || session?.startedAt) == null) {
+    errors.push('SESSION_STARTED_AT_INVALID');
+  }
+  if (event && rankedDeadline(event, session) == null && session?.status !== 'registered') {
+    errors.push('SESSION_DEADLINE_INVALID');
+  }
+  try { normalizeRankedSubmissionAnswers(questions, session?.answers || []); }
+  catch (error) { errors.push(error.code || 'SESSION_ANSWERS_INVALID'); }
+  return { valid: errors.length === 0, errors };
+}
+
+export function rankAttempts(attempts = [], event = null) {
+  const seenUsers = new Set();
+  const expectedTotal = Number(event?.question_count || event?.questionCount || 0);
   return [...attempts]
-    .filter((attempt) => ['submitted', 'timed_out'].includes(attempt.status))
+    .filter((attempt) => ['submitted', 'timed_out'].includes(attempt.status)
+      && Number.isFinite(Number(attempt.score))
+      && Number.isFinite(Number(attempt.accuracy))
+      && Number(attempt.accuracy) >= 0
+      && Number(attempt.accuracy) <= 100
+      && Number.isFinite(Number(attempt.elapsed_seconds))
+      && Number(attempt.elapsed_seconds) >= 0
+      && [attempt.correct_count ?? 0, attempt.incorrect_count ?? 0, attempt.blank_count ?? 0]
+        .every((value) => Number.isInteger(Number(value)) && Number(value) >= 0)
+      && (!expectedTotal || Number(attempt.correct_count ?? 0) + Number(attempt.incorrect_count ?? 0)
+        + Number(attempt.blank_count ?? 0) === expectedTotal))
     .sort((a, b) => (
       Number(b.score) - Number(a.score)
       || Number(b.accuracy) - Number(a.accuracy)
       || Number(a.elapsed_seconds) - Number(b.elapsed_seconds)
       || new Date(a.submitted_at) - new Date(b.submitted_at)
+      || text(a.id).localeCompare(text(b.id))
     ))
+    .filter((attempt) => {
+      const userId = text(attempt.user_id || attempt.userId);
+      if (!userId) return true;
+      if (seenUsers.has(userId)) return false;
+      seenUsers.add(userId);
+      return true;
+    })
     .map((attempt, index) => ({
       position: index + 1,
       displayName: attempt.display_name,
@@ -323,7 +463,8 @@ export function createRankedEventHandler({
         if (!(await repository.hasEntitlement(identity.userId, payload.contestId))) {
           throw new RankedEventError(403, 'ENTITLEMENT_REQUIRED', 'Acesso ao concurso não liberado.');
         }
-        const events = await repository.listEvents(payload.contestId);
+        const events = (await repository.listEvents(payload.contestId))
+          .filter((event) => validateRankedEvent(event, { contestId: payload.contestId }).valid);
         if (payload.action === 'get_home_event') {
           return jsonResponse(200, { selected: selectHomeRankedEvent(events, now()) }, corsHeaders);
         }
@@ -333,6 +474,9 @@ export function createRankedEventHandler({
       }
       const event = await repository.getEvent(payload.eventId);
       if (!event) throw new RankedEventError(404, 'EVENT_NOT_FOUND', 'Evento não encontrado.');
+      if (!validateRankedEvent(event).valid) {
+        throw new RankedEventError(409, 'EVENT_INVALID', 'Este evento possui uma configuração inválida.');
+      }
       if (!(await repository.hasEntitlement(identity.userId, event.contest_id))) {
         throw new RankedEventError(403, 'ENTITLEMENT_REQUIRED', 'Acesso ao concurso não liberado.');
       }
@@ -348,28 +492,50 @@ export function createRankedEventHandler({
           throw new RankedEventError(409, 'EVENT_NOT_LIVE', 'O evento ainda não está ao vivo.');
         }
         const attempt = await repository.start(event, identity.userId, now());
+        if (['submitted', 'timed_out'].includes(attempt?.status)) {
+          return jsonResponse(200, {
+            attempt,
+            questions: [],
+            completed: true,
+            eventVersion: rankedEventVersion(event),
+            serverNow: now().toISOString(),
+          }, corsHeaders);
+        }
         const questions = await repository.getQuestions(event.id, identity.userId);
+        if (!validateRankedEvent(event, { questions }).valid) {
+          throw new RankedEventError(409, 'EVENT_QUESTIONS_INVALID', 'O conjunto de questões do evento é inválido.');
+        }
+        const deadline = rankedDeadline(event, attempt);
         return jsonResponse(200, {
           attempt,
           questions: questions.map((question) => publicQuestion(question)),
+          eventVersion: rankedEventVersion(event),
+          deadlineAt: deadline == null ? null : new Date(deadline).toISOString(),
           serverNow: now().toISOString(),
         }, corsHeaders);
       }
       if (payload.action === 'submit') {
         const attempt = await repository.getAttempt(event.id, identity.userId);
+        if (attempt && ['submitted', 'timed_out'].includes(attempt.status)) {
+          return jsonResponse(200, { attempt, recovered: true }, corsHeaders);
+        }
         if (!attempt || attempt.status !== 'started') {
           throw new RankedEventError(409, 'ATTEMPT_NOT_STARTED', 'Tentativa não iniciada.');
         }
         const questions = await repository.getQuestions(event.id, identity.userId);
-        const deadline = Math.min(
-          new Date(event.ends_at).getTime(),
-          new Date(attempt.started_at).getTime() + Number(event.duration_minutes) * 60000,
-        );
+        const sessionValidation = validateRankedSession(attempt, { event, questions, userId: identity.userId });
+        if (!sessionValidation.valid) {
+          throw new RankedEventError(409, 'ATTEMPT_INVALID', 'A tentativa não possui integridade suficiente para entrega.');
+        }
+        const deadline = rankedDeadline(event, attempt);
         const timedOut = now().getTime() > deadline;
-        const acceptedAnswers = timedOut ? [] : payload.answers;
+        const submittedAnswers = timedOut && Array.isArray(attempt.answers) && attempt.answers.length
+          ? attempt.answers
+          : payload.answers;
+        const acceptedAnswers = normalizeRankedSubmissionAnswers(questions, submittedAnswers);
         const result = scoreRankedAnswers(questions, acceptedAnswers, event.scoring_mode);
         const elapsedSeconds = Math.max(0, Math.min(
-          Number(event.duration_minutes) * 60,
+          Math.floor((deadline - new Date(attempt.started_at).getTime()) / 1000),
           Math.floor((now().getTime() - new Date(attempt.started_at).getTime()) / 1000),
         ));
         const saved = await repository.submit(event, identity.userId, {
@@ -386,6 +552,13 @@ export function createRankedEventHandler({
           throw new RankedEventError(403, 'RESULT_NOT_RELEASED', 'Resultado ainda não liberado.');
         }
         const attempt = await repository.getAttempt(event.id, identity.userId);
+        if (!attempt || !['submitted', 'timed_out'].includes(attempt.status)) {
+          throw new RankedEventError(409, 'RESULT_NOT_AVAILABLE', 'Nenhum resultado válido está disponível para esta tentativa.');
+        }
+        const total = Number(attempt.correct_count) + Number(attempt.incorrect_count) + Number(attempt.blank_count);
+        if (total !== Number(event.question_count)) {
+          throw new RankedEventError(409, 'RESULT_INVALID', 'O resultado persistido não passou pela validação de integridade.');
+        }
         const questions = await repository.getQuestions(event.id, identity.userId);
         return jsonResponse(200, {
           attempt,
@@ -399,7 +572,7 @@ export function createRankedEventHandler({
         throw new RankedEventError(403, 'RANKING_NOT_RELEASED', 'Ranking ainda não liberado.');
       }
       return jsonResponse(200, {
-        ranking: rankAttempts(await repository.listParticipants(event.id)),
+        ranking: rankAttempts(await repository.listParticipants(event.id), event),
       }, corsHeaders);
     } catch (error) {
       if (error instanceof RankedEventError) {

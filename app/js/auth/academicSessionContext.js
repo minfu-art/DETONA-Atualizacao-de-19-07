@@ -9,6 +9,13 @@ const RESET_FIELDS = Object.freeze({
   profileSection: null,
   requestReviewExit: null,
   allowReviewExit: false,
+  rankedEventSession: null,
+  rankedEventResult: null,
+  rankedEventId: null,
+  rankedCompletionNotice: null,
+  requestRankedExit: null,
+  allowRankedExit: false,
+  clearRankedTimer: null,
   contest: null,
   contentPackage: null,
   user: null,
@@ -21,6 +28,7 @@ const RESET_FIELDS = Object.freeze({
  */
 export function resetAcademicSessionContext(context) {
   if (!context || typeof context !== 'object') return context;
+  context.clearRankedTimer?.();
   Object.assign(context, RESET_FIELDS);
   return context;
 }

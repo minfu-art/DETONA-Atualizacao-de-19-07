@@ -33,6 +33,7 @@ function event(overrides = {}) {
     ranking_release_mode: 'after_event',
     result_display_hours: 24,
     status: 'scheduled',
+    published_at: '2026-07-29T07:00:00.000Z',
     ...overrides,
   };
 }
@@ -116,13 +117,20 @@ test('aluno sem entitlement recebe bloqueio do servidor', async () => {
 
 test('tempo expirado finaliza uma tentativa como timed_out', async () => {
   let submitted;
-  const currentEvent = event();
+  const currentEvent = event({ question_count: 1 });
   const handler = createRankedEventHandler({
     resolveIdentity: async () => ({ userId: 'student', role: 'student' }),
     repository: {
       getEvent: async () => currentEvent,
       hasEntitlement: async () => true,
-      getAttempt: async () => ({ status: 'started', started_at: '2026-07-29T10:00:00Z' }),
+      getAttempt: async () => ({
+        id: 'attempt-1',
+        event_id: currentEvent.id,
+        user_id: 'student',
+        status: 'started',
+        started_at: '2026-07-29T10:00:00Z',
+        answers: [],
+      }),
       getQuestions: async () => [{ question_id: 'q1', payload: { correct_answer: 'C' } }],
       submit: async (_event, _user, result) => { submitted = result; return result; },
     },
@@ -135,7 +143,8 @@ test('tempo expirado finaliza uma tentativa como timed_out', async () => {
   }));
   assert.equal(response.status, 200);
   assert.equal(submitted.status, 'timed_out');
-  assert.equal(submitted.blankCount, 1);
+  assert.equal(submitted.correctCount, 1);
+  assert.equal(submitted.blankCount, 0);
 });
 
 test('banco garante uma tentativa e impede questões de outro concurso', () => {

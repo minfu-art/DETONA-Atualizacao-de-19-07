@@ -159,7 +159,7 @@ const repository = {
   },
   async start(event: any, userId: string, now: Date) {
     const existing = await this.getAttempt(event.id, userId);
-    if (existing?.status === 'started') return existing;
+    if (existing && ['started', 'submitted', 'timed_out'].includes(existing.status)) return existing;
     if (existing?.status !== 'registered') throw new Error('attempt_not_registered');
     const { data, error } = await admin.from('ranked_event_attempts').update({
       status: 'started',
@@ -179,9 +179,12 @@ const repository = {
     if (error) throw error;
     return (data || []).sort((a, b) => (
       shuffleKey(eventId, userId, a.question_id) - shuffleKey(eventId, userId, b.question_id)
+      || String(a.question_id).localeCompare(String(b.question_id))
     ));
   },
   async submit(event: any, userId: string, result: any) {
+    const existing = await this.getAttempt(event.id, userId);
+    if (existing && ['submitted', 'timed_out'].includes(existing.status)) return existing;
     const { data, error } = await admin.from('ranked_event_attempts').update({
       status: result.status,
       submitted_at: result.submittedAt,
@@ -193,12 +196,16 @@ const repository = {
       accuracy: result.accuracy,
       answers: result.answers,
     }).eq('event_id', event.id).eq('user_id', userId).eq('status', 'started').select('*').single();
-    if (error) throw error;
+    if (error) {
+      const recovered = await this.getAttempt(event.id, userId);
+      if (recovered && ['submitted', 'timed_out'].includes(recovered.status)) return recovered;
+      throw error;
+    }
     return data;
   },
   async listParticipants(eventId: string) {
     const { data, error } = await admin.from('ranked_event_attempts').select(
-      'display_name,avatar,status,started_at,submitted_at,elapsed_seconds,correct_count,incorrect_count,blank_count,score,accuracy',
+      'id,user_id,display_name,avatar,status,started_at,submitted_at,elapsed_seconds,correct_count,incorrect_count,blank_count,score,accuracy',
     ).eq('event_id', eventId);
     if (error) throw error;
     return data || [];
