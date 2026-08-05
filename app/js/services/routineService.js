@@ -60,6 +60,18 @@ import {
   dayLoadLevel,
   MONTH_NAMES,
 } from '../core/routine/routineCalendar.js';
+import {
+  assertStudyPlanScope,
+  safeStudyPlanError,
+  stableStudyBlockId,
+  studyPlanIdentity,
+  studyPlanScopeKey,
+  validateExamDate,
+  validatePlanCompletionEvidence,
+  validateStudyAvailability,
+  validateStudyPlan,
+  validLocalDate,
+} from '../core/routine/studyPlanContract.js';
 
 function repo() {
   return progressRepository;
@@ -96,49 +108,88 @@ export class RoutineService {
     return this.repository.contestId();
   }
 
-  async ensureProfile() {
-    const profiles = await this.repository.getAll(STORES.routineProfiles);
-    if (profiles.length) {
-      const p = normalizeRoutineProfile(profiles[0]);
-      await this.repository.put(STORES.routineProfiles, p);
-      return p;
+  captureScope() {
+    const userId = this.userId();
+    const contestId = this.contestId();
+    const scopeKey = studyPlanScopeKey(userId, contestId);
+    const repository = typeof this.repository.forScope === 'function'
+      ? this.repository.forScope(userId, contestId)
+      : this.repository;
+    return { userId, contestId, scopeKey, repository };
+  }
+
+  assertActiveScope(context) {
+    if (this.userId() !== context.userId || this.contestId() !== context.contestId) {
+      const error = new Error('Este plano pertence a outro contexto de estudo e foi encerrado com segurança.');
+      error.code = 'STUDY_PLAN_CONTEXT_CHANGED';
+      throw error;
     }
-    const legacy = await this.repository.getAll(STORES.routines);
-    const player = (await this.repository.getAll(STORES.player))[0];
+  }
+
+  async readMeta(repository, key) {
+    if (typeof repository.getMeta === 'function') return repository.getMeta(key);
+    const row = await repository.getById(STORES.meta, key);
+    return row?.value ?? row ?? null;
+  }
+
+  async writeMeta(repository, key, value) {
+    if (typeof repository.setMeta === 'function') return repository.setMeta(key, value);
+    return repository.put(STORES.meta, { key, value });
+  }
+
+  async ensureProfile(context = this.captureScope()) {
+    const { repository, userId, contestId, scopeKey } = context;
+    const profiles = await repository.getAll(STORES.routineProfiles);
+    if (profiles.length) {
+      return normalizeRoutineProfile({ ...profiles[0], userId, contestId, scopeKey });
+    }
+    const legacy = await repository.getAll(STORES.routines);
+    const player = (await repository.getAll(STORES.player))[0];
     const profile = migrateLegacyRoutinesToProfile(legacy, {
-      userId: this.userId(),
-      contestId: this.contestId(),
+      userId,
+      contestId,
       examDate: player?.exam_date || null,
     });
-    await this.repository.put(STORES.routineProfiles, profile);
+    profile.scopeKey = scopeKey;
+    this.assertActiveScope(context);
+    await repository.put(STORES.routineProfiles, profile);
     const reminders = createReminderSettings({
-      id: `reminders_${this.userId()}_${this.contestId()}`,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      id: `reminders_${userId}_${contestId}`,
+      userId,
+      contestId,
     });
-    await this.repository.put(STORES.routineReminderSettings, reminders);
+    await repository.put(STORES.routineReminderSettings, reminders);
     profile.reminderSettingsId = reminders.id;
-    await this.repository.put(STORES.routineProfiles, profile);
+    await repository.put(STORES.routineProfiles, profile);
     return profile;
   }
 
-  async saveProfile(patch) {
-    const current = await this.ensureProfile();
+  async saveProfile(patch, context = this.captureScope()) {
+    const current = await this.ensureProfile(context);
+    const candidate = { ...current, ...patch };
+    if (candidate.setupCompleted) {
+      const week = weekDatesFrom();
+      const availability = validateStudyAvailability(candidate, { weekDates: week });
+      if (!availability.valid) throw safeStudyPlanError('STUDY_PLAN_CONFIGURATION_INVALID');
+      const exam = validateExamDate(candidate.examDate);
+      if (!exam.valid) throw safeStudyPlanError('STUDY_PLAN_EXAM_DATE_INVALID');
+    }
     const next = normalizeRoutineProfile({
-      ...current,
-      ...patch,
+      ...candidate,
       id: current.id,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
       updatedAt: nowIso(),
     });
-    await this.repository.put(STORES.routineProfiles, next);
-    await this.syncLegacyRoutines(next);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineProfiles, next);
+    await this.syncLegacyRoutines(next, context);
     return next;
   }
 
   /** Mantém StudyRoutine legado em sincronia para home/battle */
-  async syncLegacyRoutines(profile) {
+  async syncLegacyRoutines(profile, context = this.captureScope()) {
     const rows = [0, 1, 2, 3, 4, 5, 6].map((dow) => {
       const enabled = (profile.availableDays || []).includes(dow) && !(profile.restDays || []).includes(dow);
       const win = profile.dayWindows?.[dow] || { start: '19:00', end: '21:00' };
@@ -154,23 +205,25 @@ export class RoutineService {
         end_time: win.end || '21:00',
       };
     });
-    await this.repository.putMany(STORES.routines, rows);
+    this.assertActiveScope(context);
+    await context.repository.putMany(STORES.routines, rows);
   }
 
   async completeSetup({ model = 'equilibrada', overrides = {}, generatePlan = true } = {}) {
+    const context = this.captureScope();
     const profile = await this.saveProfile({
       ...overrides,
       model,
       setupCompleted: true,
-    });
+    }, context);
     if (generatePlan) {
-      await this.regenerateCurrentWeek(profile);
+      await this.regenerateCurrentWeek(profile, context);
     }
     return profile;
   }
 
-  async repairGeneratedPlanDuplicates(week = weekDatesFrom()) {
-    const existing = await this.repository.getAll(STORES.routineBlocks);
+  async repairGeneratedPlanDuplicates(week = weekDatesFrom(), context = this.captureScope()) {
+    const existing = await context.repository.getAll(STORES.routineBlocks);
     const seen = new Set();
     let removed = 0;
     const candidates = existing
@@ -187,27 +240,47 @@ export class RoutineService {
         seen.add(fingerprint);
         continue;
       }
-      await this.repository.remove(STORES.routineBlocks, block.id);
+      this.assertActiveScope(context);
+      await context.repository.remove(STORES.routineBlocks, block.id);
       removed += 1;
     }
     return removed;
   }
 
-  async regenerateCurrentWeek(profile) {
-    if (this.weekPlanGeneration) return this.weekPlanGeneration;
-    this.weekPlanGeneration = this.generateCurrentWeekOnce(profile);
+  async regenerateCurrentWeek(profile, capturedContext = null) {
+    const context = capturedContext || this.captureScope();
+    if (this.weekPlanGeneration) {
+      if (this.weekPlanGeneration.scopeKey !== context.scopeKey) {
+        const error = new Error('Este plano pertence a outro contexto de estudo e foi encerrado com segurança.');
+        error.code = 'STUDY_PLAN_CONTEXT_CHANGED';
+        throw error;
+      }
+      return this.weekPlanGeneration.promise;
+    }
+    const promise = this.generateCurrentWeekOnce(profile, context);
+    this.weekPlanGeneration = { scopeKey: context.scopeKey, promise };
     try {
-      return await this.weekPlanGeneration;
+      return await promise;
     } finally {
       this.weekPlanGeneration = null;
     }
   }
 
-  async generateCurrentWeekOnce(profile) {
-    profile = profile || await this.ensureProfile();
+  async generateCurrentWeekOnce(profile, context = this.captureScope()) {
+    const { repository, userId, contestId, scopeKey } = context;
+    profile = profile || await this.ensureProfile(context);
     const week = weekDatesFrom();
-    const repairedDuplicates = await this.repairGeneratedPlanDuplicates(week);
-    const existing = await this.repository.getAll(STORES.routineBlocks);
+    const generationDates = week.filter((candidate) => candidate >= dateKey());
+    if (!profile.setupCompleted) {
+      return { created: false, reason: 'configuration_required', blocks: [], repairedDuplicates: 0 };
+    }
+    const availability = validateStudyAvailability(profile, { weekDates: week });
+    if (!availability.valid) throw safeStudyPlanError('STUDY_PLAN_CONFIGURATION_INVALID');
+    const exam = validateExamDate(profile.examDate);
+    if (!exam.valid) throw safeStudyPlanError('STUDY_PLAN_EXAM_DATE_INVALID');
+
+    const repairedDuplicates = await this.repairGeneratedPlanDuplicates(week, context);
+    const existing = await repository.getAll(STORES.routineBlocks);
     const activePlan = existing.filter((block) => (
       week.includes(block.date)
       && AUTOMATIC_PLAN_SOURCES.has(block.source)
@@ -222,23 +295,104 @@ export class RoutineService {
       };
     }
 
-    const subtopics = await this.repository.getAll(STORES.subtopics);
-    const weak = weakSpotSuggestions(subtopics, { limit: 6 });
+    const [subtopics, disciplines, questions] = await Promise.all([
+      repository.getAll(STORES.subtopics),
+      repository.getAll(STORES.disciplines),
+      repository.getAll(STORES.questions),
+    ]);
+    const disciplineIds = new Set(disciplines.map((item) => String(item.id)));
+    const questionSubtopics = new Set(questions.map((item) => String(item.subtopic_id || item.topicoEditalId || '')).filter(Boolean));
+    const eligibleSubtopics = subtopics.filter((item) => (
+      disciplineIds.has(String(item.discipline_id || item.disciplineId || ''))
+      && questionSubtopics.has(String(item.id))
+    ));
+    const weak = weakSpotSuggestions(eligibleSubtopics, { limit: 6 });
     let dueReviews = 0;
     try {
-      const rq = await this.repository.getAll(STORES.reviewQueue);
+      const rq = await repository.getAll(STORES.reviewQueue);
       const today = dateKey();
-      dueReviews = rq.filter((i) => i.status !== 'frozen' && (i.nextReviewAt || '') <= `${today}T23:59:59`).length;
+      const questionIds = new Set(questions.map((item) => String(item.id)));
+      dueReviews = rq.filter((i) => (
+        i.status !== 'frozen'
+        && (i.nextReviewAt || '') <= `${today}T23:59:59`
+        && questionIds.has(String(i.questionId || i.id || ''))
+      )).length;
     } catch { /* ignore */ }
 
+    const identity = studyPlanIdentity({ userId, contestId, weekStart: week[0], version: 1 });
     const generated = generateWeekPlan(profile, {
-      weekDates: week,
+      weekDates: generationDates,
       weakSubtopics: weak,
       dueReviews,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      userId,
+      contestId,
+    }).map((block, index) => normalizeRoutineBlock({
+      ...block,
+      id: stableStudyBlockId(identity.planId, block, index),
+      userId,
+      contestId,
+      scopeKey,
+      planId: identity.planId,
+      planVersion: identity.version,
+      generationId: identity.generationId,
+      algorithmVersion: identity.algorithmVersion,
+    }));
+    if (!generated.length) {
+      return { created: false, reason: 'no_available_content', blocks: [], repairedDuplicates };
+    }
+
+    const plan = {
+      ...identity,
+      userId,
+      contestId,
+      status: 'active',
+      startDate: week[0],
+      endDate: week[6],
+      examDate: profile.examDate || null,
+      configuration: profile,
+      weekDates: generationDates,
+      blocks: generated,
+    };
+    const validation = validateStudyPlan(plan, {
+      userId,
+      contestId,
+      today: dateKey(),
+      disciplines,
+      subtopics,
+      questions,
     });
-    if (generated.length) await this.repository.putMany(STORES.routineBlocks, generated);
+    if (!validation.valid) throw safeStudyPlanError('STUDY_PLAN_INVALID');
+
+    const journalKey = `study_plan_generation:${identity.planId}:${identity.generationId}`;
+    const previous = await this.readMeta(repository, journalKey);
+    if (previous?.status === 'completed') {
+      const persisted = await repository.getAll(STORES.routineBlocks);
+      return {
+        created: false,
+        reason: 'already_exists',
+        blocks: persisted.filter((block) => block.planId === identity.planId),
+        repairedDuplicates,
+      };
+    }
+    const journal = {
+      key: journalKey,
+      scopeKey,
+      planId: identity.planId,
+      generationId: identity.generationId,
+      status: 'processing',
+      startedAt: previous?.startedAt || nowIso(),
+      updatedAt: nowIso(),
+    };
+    await this.writeMeta(repository, journalKey, journal);
+    this.assertActiveScope(context);
+    await repository.putMany(STORES.routineBlocks, generated);
+    await this.writeMeta(repository, journalKey, {
+      ...journal,
+      status: 'completed',
+      updatedAt: nowIso(),
+      completedAt: nowIso(),
+      blockIds: generated.map((block) => block.id),
+    });
     return {
       created: true,
       reason: null,
@@ -247,8 +401,8 @@ export class RoutineService {
     };
   }
 
-  async listBlocks({ from, to } = {}) {
-    const all = await this.repository.getAll(STORES.routineBlocks);
+  async listBlocks({ from, to } = {}, context = this.captureScope()) {
+    const all = await context.repository.getAll(STORES.routineBlocks);
     return all.filter((b) => {
       if (from && b.date < from) return false;
       if (to && b.date > to) return false;
@@ -256,35 +410,61 @@ export class RoutineService {
     });
   }
 
-  async getBlocksForDate(date = dateKey()) {
-    const all = await this.listBlocks({ from: date, to: date });
+  async getBlocksForDate(date = dateKey(), context = this.captureScope()) {
+    if (!validLocalDate(date)) throw safeStudyPlanError('STUDY_PLAN_INVALID');
+    const all = await this.listBlocks({ from: date, to: date }, context);
     return sortBlocksForDay(all);
   }
 
-  async upsertBlock(partial) {
+  async upsertBlock(partial, context = this.captureScope()) {
+    if (!validLocalDate(partial?.date || '')) throw safeStudyPlanError('STUDY_PLAN_INVALID');
+    const plannedMinutes = Number(partial?.plannedMinutes);
+    if (!Number.isInteger(plannedMinutes) || plannedMinutes <= 0 || plannedMinutes > 480) {
+      throw safeStudyPlanError('STUDY_PLAN_INVALID');
+    }
+    if ((partial?.userId && partial.userId !== context.userId)
+      || (partial?.contestId && partial.contestId !== context.contestId)) {
+      throw safeStudyPlanError('STUDY_PLAN_INVALID');
+    }
     const block = normalizeRoutineBlock({
       ...partial,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
       updatedAt: nowIso(),
     });
-    await this.repository.put(STORES.routineBlocks, block);
+    assertStudyPlanScope(block, context);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineBlocks, block);
     return block;
   }
 
-  async createBlock(partial) {
+  async createBlock(partial, context = this.captureScope()) {
     return this.upsertBlock(createRoutineBlock({
       ...partial,
-      userId: this.userId(),
-      contestId: this.contestId(),
-    }));
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
+    }), context);
   }
 
   async startBlock(blockId) {
-    const block = await this.repository.getById(STORES.routineBlocks, blockId);
-    if (!block) throw new Error('Bloco não encontrado.');
-    const next = normalizeRoutineBlock({ ...block, status: 'in_progress', updatedAt: nowIso() });
-    await this.repository.put(STORES.routineBlocks, next);
+    const context = this.captureScope();
+    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    assertStudyPlanScope(block, context);
+    if (block.status === 'in_progress') return block;
+    if (!['planned', 'partially_completed'].includes(block.status)) {
+      throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    }
+    const next = normalizeRoutineBlock({
+      ...block,
+      status: 'in_progress',
+      startedAt: block.startedAt || nowIso(),
+      updatedAt: nowIso(),
+    });
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineBlocks, next);
     return next;
   }
 
@@ -293,22 +473,48 @@ export class RoutineService {
     partial = false,
     skipReason = null,
     skipAcademicActivity = false,
+    evidence = null,
   } = {}) {
-    const block = await this.repository.getById(STORES.routineBlocks, blockId);
-    if (!block) throw new Error('Bloco não encontrado.');
+    const context = this.captureScope();
+    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    assertStudyPlanScope(block, context);
+    if (block.status === 'completed') return block;
+    if (['rescheduled', 'cancelled', 'skipped'].includes(block.status)) {
+      throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    }
+    if (!partial) {
+      const completion = validatePlanCompletionEvidence(block, evidence || {}, context);
+      if (!completion.valid) throw safeStudyPlanError('STUDY_PLAN_EVIDENCE_REQUIRED');
+    }
     const minutes = actualMinutes == null ? (block.actualMinutes || 0) : Math.max(0, Number(actualMinutes) || 0);
+    const completedAt = partial ? null : evidence.endedAt;
+    const eventId = partial ? null : `block:${block.id}:${evidence.id}`;
     const next = normalizeRoutineBlock({
       ...block,
       actualMinutes: minutes,
       status: partial ? 'partially_completed' : 'completed',
       skipReason: partial ? (skipReason || block.skipReason) : null,
-      completedAt: nowIso(),
+      completedAt,
+      activityId: partial ? block.activityId : evidence.id,
+      sessionId: partial ? block.sessionId : evidence.id,
+      completionEvidence: partial ? null : {
+        activityId: evidence.id,
+        blockId: block.id,
+        status: evidence.status,
+        elapsedSeconds: Number(evidence.elapsedSeconds),
+        endedAt: evidence.endedAt,
+        subtopicId: evidence.subtopicId || null,
+      },
+      processedEventIds: eventId
+        ? [...new Set([...(block.processedEventIds || []), eventId])]
+        : block.processedEventIds,
       updatedAt: nowIso(),
     });
-    await this.repository.put(STORES.routineBlocks, next);
-    await this.refreshDailyState(block.date);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineBlocks, next);
+    await this.refreshDailyState(block.date, context);
     if (!skipAcademicActivity && next.status === 'completed' && minutes > 0) {
-      const eventId = `block:${next.id}:${next.date}`;
       await applyDailyGoalActivity({
         eventId,
         type: 'block',
@@ -316,87 +522,52 @@ export class RoutineService {
         battleCount: 0,
         activeMinutes: minutes,
         occurredAt: next.completedAt,
-      }, { repository: this.repository });
+      }, { repository: context.repository });
       await applyValidStudyDay({
         eventId,
         occurredAt: next.completedAt,
         valid: true,
         source: 'routine_block',
-      }, { repository: this.repository });
-      await refreshEmblems({ repository: this.repository });
+      }, { repository: context.repository });
+      await refreshEmblems({ repository: context.repository });
     }
     return next;
   }
 
   async skipBlock(blockId, skipReason = null) {
-    const block = await this.repository.getById(STORES.routineBlocks, blockId);
-    if (!block) throw new Error('Bloco não encontrado.');
+    const context = this.captureScope();
+    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    assertStudyPlanScope(block, context);
+    if (block.status === 'skipped') return block;
+    if (['completed', 'rescheduled', 'cancelled'].includes(block.status)) {
+      throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    }
     const next = normalizeRoutineBlock({
       ...block,
       status: 'skipped',
       skipReason,
+      skippedAt: block.skippedAt || nowIso(),
       updatedAt: nowIso(),
     });
-    await this.repository.put(STORES.routineBlocks, next);
-    await this.refreshDailyState(block.date);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineBlocks, next);
+    await this.refreshDailyState(block.date, context);
     return next;
   }
 
   async rescheduleBlock(blockId, option = 'find_week') {
-    const profile = await this.ensureProfile();
-    const block = await this.repository.getById(STORES.routineBlocks, blockId);
-    if (!block) throw new Error('Bloco não encontrado.');
-    const week = weekDatesFrom();
-    const existing = await this.repository.getAll(STORES.routineBlocks);
+    const context = this.captureScope();
+    const profile = await this.ensureProfile(context);
+    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    assertStudyPlanScope(block, context);
+    if (['completed', 'rescheduled', 'cancelled', 'skipped'].includes(block.status)) {
+      throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    }
+    const existing = await context.repository.getAll(STORES.routineBlocks);
     const today = dateKey();
 
-    if (option === 'today') {
-      const suggestion = normalizeRoutineBlock({
-        ...block,
-        id: `block_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 7)}`,
-        date: today,
-        status: 'planned',
-        rescheduledFrom: block.id,
-        source: 'reschedule',
-        actualMinutes: 0,
-        completedAt: null,
-        updatedAt: nowIso(),
-        createdAt: nowIso(),
-      });
-      return { suggestion, preview: true, reason: 'Reagendar para hoje (confirme).' };
-    }
-    if (option === 'tomorrow') {
-      const d = new Date(`${today}T12:00:00`);
-      d.setDate(d.getDate() + 1);
-      const suggestion = normalizeRoutineBlock({
-        ...block,
-        id: `block_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 7)}`,
-        date: dateKey(d),
-        status: 'planned',
-        rescheduledFrom: block.id,
-        source: 'reschedule',
-        actualMinutes: 0,
-        completedAt: null,
-        updatedAt: nowIso(),
-        createdAt: nowIso(),
-      });
-      return { suggestion, preview: true, reason: 'Reagendar para amanhã (confirme).' };
-    }
-    if (option === 'next_week') {
-      const d = new Date(`${today}T12:00:00`);
-      d.setDate(d.getDate() + 7);
-      const suggestion = normalizeRoutineBlock({
-        ...block,
-        id: `block_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 7)}`,
-        date: dateKey(d),
-        status: 'planned',
-        rescheduledFrom: block.id,
-        source: 'reschedule',
-        actualMinutes: 0,
-        completedAt: null,
-      });
-      return { suggestion, preview: true, reason: 'Mover para a próxima semana (confirme).' };
-    }
     if (option === 'pending') {
       return { suggestion: null, keepPending: true, reason: 'Manter como pendente sem reagendar.' };
     }
@@ -404,23 +575,93 @@ export class RoutineService {
       return { suggestion: null, cancel: true, reason: 'Cancelar bloco conscientemente.' };
     }
 
-    const found = suggestRescheduleSlot(block, profile, existing, { weekDates: week, today });
+    let week = weekDatesFrom();
+    let targetToday = today;
+    if (option === 'today') week = [today];
+    if (option === 'tomorrow') {
+      const target = new Date(`${today}T12:00:00`);
+      target.setDate(target.getDate() + 1);
+      targetToday = dateKey(target);
+      week = [targetToday];
+    }
+    if (option === 'next_week') {
+      const target = new Date(`${today}T12:00:00`);
+      target.setDate(target.getDate() + 7);
+      targetToday = dateKey(target);
+      week = weekDatesFrom(targetToday);
+    }
+    const found = suggestRescheduleSlot(block, profile, existing, {
+      weekDates: week,
+      today: targetToday,
+      preferTomorrow: option === 'find_week',
+    });
     return { ...found, preview: true };
   }
 
   async confirmReschedule(blockId, suggestion) {
-    const block = await this.repository.getById(STORES.routineBlocks, blockId);
-    if (!block) throw new Error('Bloco não encontrado.');
-    if (!suggestion) throw new Error('Sugestão inválida.');
+    const context = this.captureScope();
+    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    assertStudyPlanScope(block, context);
+    if (!suggestion || suggestion.rescheduledFrom !== block.id) {
+      throw safeStudyPlanError('STUDY_PLAN_RESCHEDULE_INVALID');
+    }
+    if (block.status === 'rescheduled' && block.rescheduledTo === suggestion.id) {
+      const existingTarget = await context.repository.getById(STORES.routineBlocks, suggestion.id);
+      if (existingTarget) return { from: block, to: existingTarget };
+    }
+    if (['completed', 'rescheduled', 'cancelled', 'skipped'].includes(block.status)) {
+      throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
+    }
+    const scopedSuggestion = {
+      ...suggestion,
+      userId: suggestion.userId || context.userId,
+      contestId: suggestion.contestId || context.contestId,
+      scopeKey: suggestion.scopeKey || context.scopeKey,
+    };
+    assertStudyPlanScope(scopedSuggestion, context);
+    const profile = await this.ensureProfile(context);
+    const existing = await context.repository.getAll(STORES.routineBlocks);
+    const verified = suggestRescheduleSlot(block, profile, existing, {
+      weekDates: [suggestion.date],
+      today: suggestion.date,
+    });
+    if (!verified.ok
+      || verified.suggestion.id !== suggestion.id
+      || verified.suggestion.startTime !== suggestion.startTime
+      || verified.suggestion.endTime !== suggestion.endTime) {
+      throw safeStudyPlanError('STUDY_PLAN_RESCHEDULE_INVALID');
+    }
+    const journalKey = `study_plan_reschedule:${block.id}:${suggestion.id}`;
+    const stored = await this.readMeta(context.repository, journalKey);
+    if (stored?.status === 'completed') {
+      const [from, to] = await Promise.all([
+        context.repository.getById(STORES.routineBlocks, block.id),
+        context.repository.getById(STORES.routineBlocks, suggestion.id),
+      ]);
+      if (from && to) return { from, to };
+    }
     const { from, to } = applyReschedule(block, suggestion);
-    from.userId = this.userId();
-    from.contestId = this.contestId();
-    to.userId = this.userId();
-    to.contestId = this.contestId();
-    await this.repository.put(STORES.routineBlocks, from);
-    await this.repository.put(STORES.routineBlocks, to);
-    await this.refreshDailyState(from.date);
-    await this.refreshDailyState(to.date);
+    Object.assign(from, { userId: context.userId, contestId: context.contestId, scopeKey: context.scopeKey });
+    Object.assign(to, { userId: context.userId, contestId: context.contestId, scopeKey: context.scopeKey });
+    await this.writeMeta(context.repository, journalKey, {
+      key: journalKey,
+      scopeKey: context.scopeKey,
+      status: 'processing',
+      updatedAt: nowIso(),
+    });
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineBlocks, from);
+    await context.repository.put(STORES.routineBlocks, to);
+    await this.writeMeta(context.repository, journalKey, {
+      key: journalKey,
+      scopeKey: context.scopeKey,
+      status: 'completed',
+      completedAt: nowIso(),
+      updatedAt: nowIso(),
+    });
+    await this.refreshDailyState(from.date, context);
+    await this.refreshDailyState(to.date, context);
     return { from, to };
   }
 
@@ -459,28 +700,30 @@ export class RoutineService {
     return { reduced, state };
   }
 
-  async getDailyState(date = dateKey()) {
+  async getDailyState(date = dateKey(), context = this.captureScope()) {
     const id = date;
-    let state = await this.repository.getById(STORES.routineDailyStates, id);
+    let state = await context.repository.getById(STORES.routineDailyStates, id);
     if (!state) {
-      const profile = await this.ensureProfile();
+      const profile = await this.ensureProfile(context);
       const flags = isProgrammedDay(profile, date);
       state = createDailyState({
         id,
         date,
-        userId: this.userId(),
-        contestId: this.contestId(),
+        userId: context.userId,
+        contestId: context.contestId,
+        scopeKey: context.scopeKey,
         programmed: flags.programmed,
         restDay: flags.restDay,
       });
-      await this.repository.put(STORES.routineDailyStates, state);
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.routineDailyStates, state);
     }
     return state;
   }
 
-  async refreshDailyState(date = dateKey()) {
-    const profile = await this.ensureProfile();
-    const blocks = await this.getBlocksForDate(date);
+  async refreshDailyState(date = dateKey(), context = this.captureScope()) {
+    const profile = await this.ensureProfile(context);
+    const blocks = await this.getBlocksForDate(date, context);
     const flags = isProgrammedDay(profile, date);
     const plannedMinutes = blocks
       .filter((b) => !['cancelled', 'rescheduled'].includes(b.status) && b.source !== 'reduced')
@@ -492,11 +735,11 @@ export class RoutineService {
     // questões do dailyLog legado (batalhas) — apenas leitura
     let answeredQuestions = 0;
     try {
-      const log = await this.repository.getById(STORES.dailyLogs, date);
+      const log = await context.repository.getById(STORES.dailyLogs, date);
       answeredQuestions = log?.completed_amount || 0;
     } catch { /* ignore */ }
 
-    const prev = await this.getDailyState(date);
+    const prev = await this.getDailyState(date, context);
     const minGoalMet = evaluateMinGoal(profile.minGoal, {
       actualMinutes,
       answeredQuestions,
@@ -517,8 +760,9 @@ export class RoutineService {
       ...prev,
       id: date,
       date,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
       programmed: flags.programmed,
       restDay: flags.restDay,
       plannedMinutes,
@@ -531,14 +775,26 @@ export class RoutineService {
       status: flags.restDay ? 'rest' : minGoalMet ? 'min_met' : 'open',
       updatedAt: nowIso(),
     });
-    await this.repository.put(STORES.routineDailyStates, state);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineDailyStates, state);
 
     return state;
   }
 
   async closeDay(date = dateKey()) {
-    const profile = await this.ensureProfile();
-    const state = await this.refreshDailyState(date);
+    const context = this.captureScope();
+    const profile = await this.ensureProfile(context);
+    const state = await this.refreshDailyState(date, context);
+    if (state.consistencyApplied) {
+      return {
+        state,
+        consistency: profile.consistency,
+        shieldUsed: Boolean(state.shieldUsed),
+        message: 'Este dia já foi registrado.',
+        unlocked: [],
+      };
+    }
+    const eventId = `study_plan_day_close:${context.scopeKey}:${date}`;
     const result = applyDayToConsistency(profile.consistency, {
       programmed: state.programmed,
       restDay: state.restDay,
@@ -550,27 +806,30 @@ export class RoutineService {
       const y = new Date(`${date}T12:00:00`);
       y.setDate(y.getDate() - 1);
       const yKey = dateKey(y);
-      const yState = await this.repository.getById(STORES.routineDailyStates, yKey);
+      const yState = await context.repository.getById(STORES.routineDailyStates, yKey);
       if (yState?.programmed && !yState.restDay && !yState.minGoalMet) {
         result.consistency = markRetake(result.consistency, true);
       }
     }
     profile.consistency = result.consistency;
     profile.updatedAt = nowIso();
-    await this.repository.put(STORES.routineProfiles, profile);
+    this.assertActiveScope(context);
+    await context.repository.put(STORES.routineProfiles, profile);
 
-    if (result.shieldUsed) {
-      state.shieldUsed = true;
-      await this.repository.put(STORES.routineDailyStates, state);
-    }
+    state.shieldUsed = Boolean(result.shieldUsed);
+    state.consistencyApplied = true;
+    state.closedAt = state.closedAt || nowIso();
+    state.processedEventIds = [...new Set([...(state.processedEventIds || []), eventId])];
+    state.updatedAt = nowIso();
+    await context.repository.put(STORES.routineDailyStates, state);
 
-    const earned = await this.repository.getAll(STORES.routineAchievements);
+    const earned = await context.repository.getAll(STORES.routineAchievements);
     const unlocked = evaluateAchievements(profile.consistency, earned.map((a) => a.code));
     for (const u of unlocked) {
-      await this.repository.put(STORES.routineAchievements, createAchievement({
-        id: `${u.code}_${this.userId()}_${this.contestId()}`,
-        userId: this.userId(),
-        contestId: this.contestId(),
+      await context.repository.put(STORES.routineAchievements, createAchievement({
+        id: `${u.code}_${context.userId}_${context.contestId}`,
+        userId: context.userId,
+        contestId: context.contestId,
         code: u.code,
         title: u.title,
       }));
@@ -580,11 +839,22 @@ export class RoutineService {
   }
 
   async recordSessionResult(session, actualMinutes, { blockId = null, partial = false } = {}) {
-    session.userId = this.userId();
-    session.contestId = this.contestId();
+    const context = this.captureScope();
+    if ((session?.userId && session.userId !== context.userId)
+      || (session?.contestId && session.contestId !== context.contestId)) {
+      throw safeStudyPlanError('STUDY_PLAN_INVALID');
+    }
+    session = {
+      ...session,
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
+      blockId: blockId || session.blockId || null,
+    };
+    assertStudyPlanScope(session, context);
     const eventId = `focus:${session.id}`;
     const journalKey = `focus_finalization:${session.id}`;
-    const stored = await this.repository.getById(STORES.meta, journalKey);
+    const stored = await context.repository.getById(STORES.meta, journalKey);
     const steps = {
       session: stored?.steps?.session === true,
       profile: stored?.steps?.profile === true,
@@ -602,9 +872,10 @@ export class RoutineService {
       started_at: stored?.started_at || session.startedAt || nowIso(),
       updated_at: nowIso(),
       completed_at: stored?.completed_at || null,
+      scopeKey: context.scopeKey,
     };
     if (journal.status === 'completed') return session;
-    if (!stored) await this.repository.put(STORES.meta, structuredClone(journal));
+    if (!stored) await context.repository.put(STORES.meta, structuredClone(journal));
     const checkpoint = async (step, completed = false) => {
       journal.steps[step] = true;
       journal.updated_at = nowIso();
@@ -612,15 +883,17 @@ export class RoutineService {
         journal.status = 'completed';
         journal.completed_at = journal.updated_at;
       }
-      await this.repository.put(STORES.meta, structuredClone(journal));
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.meta, structuredClone(journal));
     };
 
     if (!journal.steps.session) {
-      await this.repository.put(STORES.studySessions, session);
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.studySessions, session);
       await checkpoint('session');
     }
     if (!journal.steps.profile) {
-      const profile = await this.ensureProfile();
+      const profile = await this.ensureProfile(context);
       const processed = [...new Set(profile.consistency?.processedSessionIds || [])];
       profile.consistency = {
         ...profile.consistency,
@@ -628,13 +901,14 @@ export class RoutineService {
           + (session.status === 'completed' && !processed.includes(session.id) ? 1 : 0),
         processedSessionIds: [...processed, session.id].slice(-1000),
       };
-      await this.repository.put(STORES.routineProfiles, profile);
+      await context.repository.put(STORES.routineProfiles, profile);
       await checkpoint('profile');
     }
 
     if (!journal.steps.block && blockId) {
-      const block = await this.repository.getById(STORES.routineBlocks, blockId);
+      const block = await context.repository.getById(STORES.routineBlocks, blockId);
       if (block) {
+        assertStudyPlanScope(block, context);
         const minutes = validSessionMinutes(session.elapsedSeconds, {
           completed: session.status === 'completed',
           aborted: session.status === 'aborted',
@@ -643,11 +917,12 @@ export class RoutineService {
           actualMinutes: minutes || actualMinutes || 0,
           partial: partial || session.status === 'aborted',
           skipAcademicActivity: true,
+          evidence: { ...session, blockId: block.id },
         });
       }
       await checkpoint('block');
     } else if (!journal.steps.block) {
-      await this.refreshDailyState(session.date || dateKey());
+      await this.refreshDailyState(session.date || dateKey(), context);
       await checkpoint('block');
     }
 
@@ -665,7 +940,7 @@ export class RoutineService {
         battleCount: 0,
         activeMinutes: valid ? minutes : 0,
         occurredAt: finishedAt,
-      }, { repository: this.repository });
+      }, { repository: context.repository });
       await checkpoint('dailyGoal');
     }
     if (!journal.steps.streak) {
@@ -674,7 +949,7 @@ export class RoutineService {
         occurredAt: finishedAt,
         valid,
         source: 'focus_session',
-      }, { repository: this.repository });
+      }, { repository: context.repository });
       await checkpoint('streak');
     }
     if (!journal.steps.xp) {
@@ -685,12 +960,12 @@ export class RoutineService {
           type: 'focus_completed',
           amount,
           occurredAt: finishedAt,
-        }, { repository: this.repository });
+        }, { repository: context.repository });
       }
       await checkpoint('xp');
     }
     if (!journal.steps.emblems) {
-      const emblems = await refreshEmblems({ repository: this.repository });
+      const emblems = await refreshEmblems({ repository: context.repository });
       session.newInsignias = emblems.unlocked || [];
       await checkpoint('emblems', true);
     }
@@ -729,7 +1004,7 @@ export class RoutineService {
   async getWeekView(reference = dateKey()) {
     const profile = await this.ensureProfile();
     const week = weekDatesFrom(reference);
-    const repairedDuplicates = await this.repairGeneratedPlanDuplicates(week);
+    const repairedDuplicates = 0;
     const blocks = await this.listBlocks({ from: week[0], to: week[6] });
     const states = [];
     for (const d of week) states.push(await this.getDailyState(d));

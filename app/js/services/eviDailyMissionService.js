@@ -18,6 +18,7 @@ const STATE_MESSAGES = Object.freeze({
   almost_done: 'Falta pouco. Conclua a próxima missão e garanta a estrela do dia.',
   completed: 'Plano concluído. Sua estrela do dia foi conquistada.',
   no_plan: 'Defina sua primeira meta diária.',
+  configuration_required: 'Configure sua disponibilidade para a Evi montar uma missão segura.',
   overloaded: 'Há muita coisa para hoje. Foque somente na próxima missão certa.',
 });
 
@@ -268,6 +269,7 @@ export function buildEviDailyMissionModel({
   studySessions = [],
   questionHistory = [],
   activeMission = null,
+  planConfigured = true,
 } = {}) {
   const enabled = dailyGoal?.enabled !== false;
   const questionGoal = enabled
@@ -305,7 +307,7 @@ export function buildEviDailyMissionModel({
   const pendingMissionCount = (questionGoal > questionsCompleted ? 1 : 0)
     + reviewBlocks.filter((block) => !isCompleted(block)).length
     + otherBlocks.filter((block) => !isCompleted(block)).length;
-  const nextMission = resolveNextMission({
+  let nextMission = resolveNextMission({
     localDate,
     dailyGoal: { questionGoal, questionsCompleted },
     academicBlocks,
@@ -314,13 +316,25 @@ export function buildEviDailyMissionModel({
     activeMission,
     overallProgress,
   });
-  const state = resolveState({
+  let state = resolveState({
     overallProgress,
     plannedUnits,
     incompleteUnits,
     pendingMissionCount,
     nextMission,
   });
+  if (!planConfigured) {
+    state = 'configuration_required';
+    nextMission = {
+      id: 'configure-plan',
+      type: 'configuration_required',
+      title: 'Configurar disponibilidade e limites',
+      reason: 'O plano precisa conhecer seus horários antes de organizar blocos.',
+      actionLabel: 'Configurar plano',
+      actionRoute: 'expedition',
+      actionSection: 'config',
+    };
+  }
   const earned = plannedUnits > 0 && (overallProgress >= 100 || incompleteUnits === 0);
   const almost = !earned && plannedUnits > 0 && (overallProgress >= 80 || incompleteUnits === 1);
   const dailyStar = {
@@ -371,11 +385,15 @@ export class EviDailyMissionService {
     const localDate = localDateKey(now);
     const userId = this.userId();
     const contestId = this.contestId();
-    const [routineTasks, reviewQueue, studySessions, subtopics] = await Promise.all([
-      this.repository.getAll(STORES.routineBlocks),
-      this.repository.getAll(STORES.reviewQueue),
-      this.repository.getAll(STORES.studySessions),
-      this.repository.getAll(STORES.subtopics),
+    const repository = typeof this.repository.forScope === 'function'
+      ? this.repository.forScope(userId, contestId)
+      : this.repository;
+    const [routineTasks, reviewQueue, studySessions, subtopics, profiles] = await Promise.all([
+      repository.getAll(STORES.routineBlocks),
+      repository.getAll(STORES.reviewQueue),
+      repository.getAll(STORES.studySessions),
+      repository.getAll(STORES.subtopics),
+      repository.getAll(STORES.routineProfiles),
     ]);
     const questionHistory = (subtopics || []).flatMap((subtopic) => subtopic?.attempt_history || []);
     const model = buildEviDailyMissionModel({
@@ -388,24 +406,15 @@ export class EviDailyMissionService {
       studySessions,
       questionHistory,
       activeMission,
+      planConfigured: profiles.some((profile) => profile?.setupCompleted === true),
     });
 
     if (model.dailyStar.earned && model.dailyStar.id) {
-      const existing = await this.repository.getMeta(model.dailyStar.id);
-      if (!existing) {
-        await this.repository.setMeta(model.dailyStar.id, {
-          id: model.dailyStar.id,
-          type: 'dailyMissionStar',
-          userId,
-          contestId,
-          localDate,
-          earnedAt: now.toISOString(),
-        });
-      }
+      const existing = await repository.getMeta(model.dailyStar.id);
       model.dailyStar = {
         ...model.dailyStar,
-        earnedAt: existing?.earnedAt || now.toISOString(),
-        newlyEarned: !existing,
+        earnedAt: existing?.earnedAt || null,
+        newlyEarned: false,
       };
     }
 

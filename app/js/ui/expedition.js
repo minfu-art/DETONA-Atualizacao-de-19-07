@@ -71,6 +71,7 @@ export async function renderExpedition(root, navigate, ctx) {
   let focusTimer = null;
   let pendingReschedule = null;
   let planGenerationInFlight = false;
+  const blockOperations = new Set();
   let weekCursor = dateKey();
   let monthCursor = { year: new Date().getFullYear(), monthIndex: new Date().getMonth() };
 
@@ -209,6 +210,7 @@ export async function renderExpedition(root, navigate, ctx) {
 
   function bindSetup() {
     let model = profile.model || 'equilibrada';
+    let setupInFlight = false;
     root.querySelectorAll('[data-model]').forEach((btn) => {
       btn.addEventListener('click', () => {
         model = btn.dataset.model;
@@ -216,23 +218,41 @@ export async function renderExpedition(root, navigate, ctx) {
       });
     });
     const finish = async (skip = false) => {
-      SFX.click();
-      const m = skip ? 'leve' : model;
-      const minutes = Number($('#rs-min', root)?.value) || 10;
-      const questions = Number($('#rs-q', root)?.value) || 30;
-      const flexible = $('#rs-flex', root)?.checked !== false;
-      profile = await routineService.completeSetup({
-        model: m,
-        overrides: {
-          flexible,
-          dailyQuestionsGoal: questions,
-          minGoal: { type: 'minutes', minutes, questions: 5, blocks: 1, reviews: 0 },
-          minDailyMinutes: minutes,
-        },
-        generatePlan: true,
+      if (setupInFlight) return;
+      setupInFlight = true;
+      const buttons = [$('#rs-save', root), $('#rs-skip', root)].filter(Boolean);
+      buttons.forEach((button) => {
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
       });
-      toast('Plano de estudos pronto. Boa jornada!');
-      paint();
+      SFX.click();
+      try {
+        const m = skip ? 'leve' : model;
+        const minutes = Number($('#rs-min', root)?.value) || 10;
+        const questions = Number($('#rs-q', root)?.value) || 30;
+        const flexible = $('#rs-flex', root)?.checked !== false;
+        profile = await routineService.completeSetup({
+          model: m,
+          overrides: {
+            flexible,
+            dailyQuestionsGoal: questions,
+            minGoal: { type: 'minutes', minutes, questions: 5, blocks: 1, reviews: 0 },
+            minDailyMinutes: minutes,
+          },
+          generatePlan: true,
+        });
+        toast('Plano de estudos pronto. Boa jornada!');
+        await paint();
+      } catch (error) {
+        toast(error?.message || 'Não foi possível salvar o plano. Seus dados anteriores foram preservados.');
+      } finally {
+        setupInFlight = false;
+        buttons.forEach((button) => {
+          if (!button.isConnected) return;
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+        });
+      }
     };
     $('#rs-save', root)?.addEventListener('click', () => finish(false));
     $('#rs-skip', root)?.addEventListener('click', () => finish(true));
@@ -353,7 +373,6 @@ export async function renderExpedition(root, navigate, ctx) {
         <div class="routine-block__actions">
           ${['planned', 'in_progress', 'partially_completed'].includes(b.status) ? `
             <button type="button" class="btn btn-primary" data-act="start" data-id="${b.id}">Iniciar</button>
-            <button type="button" class="btn" data-act="done" data-id="${b.id}">Concluir</button>
             <button type="button" class="btn" data-act="partial" data-id="${b.id}">Parcial</button>
             <button type="button" class="btn btn-ghost" data-act="reschedule" data-id="${b.id}">Reagendar</button>
             <button type="button" class="btn btn-ghost" data-act="skip" data-id="${b.id}">Ignorar</button>
@@ -366,23 +385,32 @@ export async function renderExpedition(root, navigate, ctx) {
   function bindBlockActions(blocks, navigate) {
     root.querySelectorAll('[data-act]').forEach((btn) => {
       btn.addEventListener('click', async () => {
-        SFX.click();
         const id = btn.dataset.id;
         const act = btn.dataset.act;
         const block = blocks.find((b) => b.id === id);
-        if (!block) return;
-        if (act === 'start') await startBlockFlow(block, navigate);
-        if (act === 'done') {
-          await routineService.completeBlock(id, { actualMinutes: block.actualMinutes || block.plannedMinutes, partial: false });
-          toast('Bloco de estudo concluído.');
-          paint();
-        }
-        if (act === 'partial') openSkipModal(id, true);
-        if (act === 'skip') openSkipModal(id, false);
-        if (act === 'reschedule') openRescheduleModal(id);
-        if (act === 'open') {
-          const target = routineService.navigateTargetForBlock(block);
-          navigate(target);
+        const operationKey = `${act}:${id}`;
+        if (!block || blockOperations.has(operationKey)) return;
+        blockOperations.add(operationKey);
+        btn.disabled = true;
+        btn.setAttribute('aria-busy', 'true');
+        SFX.click();
+        try {
+          if (act === 'start') await startBlockFlow(block, navigate);
+          if (act === 'partial') openSkipModal(id, true);
+          if (act === 'skip') openSkipModal(id, false);
+          if (act === 'reschedule') openRescheduleModal(id);
+          if (act === 'open') {
+            const target = routineService.navigateTargetForBlock(block);
+            navigate(target);
+          }
+        } catch (error) {
+          toast(error?.message || 'Não foi possível atualizar este bloco.');
+        } finally {
+          blockOperations.delete(operationKey);
+          if (btn.isConnected) {
+            btn.disabled = false;
+            btn.removeAttribute('aria-busy');
+          }
         }
       });
     });
@@ -609,7 +637,14 @@ export async function renderExpedition(root, navigate, ctx) {
       SFX.click();
       try {
         const result = await routineService.regenerateCurrentWeek();
-        toast(result.created ? 'Plano de estudo gerado.' : 'O plano desta semana já está pronto.');
+        const message = result.created
+          ? 'Plano de estudo gerado.'
+          : result.reason === 'no_available_content'
+            ? 'Ainda não há questões ou revisões elegíveis para montar o plano.'
+            : result.reason === 'configuration_required'
+              ? 'Configure sua disponibilidade antes de gerar o plano.'
+              : 'O plano desta semana já está pronto.';
+        toast(message);
         await paint();
       } catch (error) {
         toast(error?.message || 'Não foi possível gerar o plano.');

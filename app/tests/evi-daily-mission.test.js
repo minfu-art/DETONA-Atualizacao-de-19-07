@@ -126,7 +126,7 @@ function fakeRepository(meta = new Map()) {
   };
 }
 
-test('concede a estrela uma única vez sem tocar em XP, LV ou domínio', async () => {
+test('leitura da Home não persiste estrela nem toca em XP, LV ou domínio', async () => {
   const repository = fakeRepository();
   const service = new EviDailyMissionService({
     repository,
@@ -137,12 +137,25 @@ test('concede a estrela uma única vez sem tocar em XP, LV ou domínio', async (
   const input = { dailyGoal: { questionGoal: 10, questionsCompleted: 10 } };
   const first = await service.getSnapshot(input);
   const second = await service.getSnapshot(input);
-  assert.equal(first.dailyStar.newlyEarned, true);
+  assert.equal(first.dailyStar.newlyEarned, false);
   assert.equal(second.dailyStar.newlyEarned, false);
-  assert.equal(repository.writes.length, 1);
-  assert.deepEqual(Object.keys(repository.writes[0].value).sort(), [
-    'contestId', 'earnedAt', 'id', 'localDate', 'type', 'userId',
-  ]);
+  assert.equal(repository.writes.length, 0);
+  assert.equal(first.dailyStar.earnedAt, null);
+});
+
+test('serviço orienta configuração quando o perfil de plano ainda não foi concluído', async () => {
+  const repository = fakeRepository();
+  const service = new EviDailyMissionService({
+    repository,
+    now: () => new Date(`${today}T12:00:00`),
+    userId: () => 'student-a',
+    contestId: () => 'pc_al_2026',
+  });
+  const snapshot = await service.getSnapshot();
+  assert.equal(snapshot.state, 'configuration_required');
+  assert.equal(snapshot.actionLabel, 'Configurar plano');
+  assert.equal(snapshot.actionSection, 'config');
+  assert.equal(repository.writes.length, 0);
 });
 
 test('sem plano oferece fallback seguro para planejar o dia', () => {

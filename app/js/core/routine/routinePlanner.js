@@ -8,6 +8,11 @@ import {
   makeId,
   normalizeRoutineBlock,
 } from './routineSchema.js';
+import {
+  dailyCapacityForDate,
+  stableStudyBlockId,
+  validateStudyAvailability,
+} from './studyPlanContract.js';
 
 export function timeToMinutes(hhmm) {
   if (!hhmm || typeof hhmm !== 'string') return null;
@@ -109,19 +114,37 @@ export function generateWeekPlan(profile, {
   const blocks = [];
   const session = profile.preferredSessionMinutes || 25;
   weakSubtopics = weakSubtopics.slice(0, 6);
+  const availability = validateStudyAvailability(profile, { weekDates });
+  if (!profile?.setupCompleted || !availability.valid) return blocks;
+  let weeklyRemaining = availability.weeklyCapacity;
+  let remainingReviews = Math.max(0, Math.floor(Number(dueReviews) || 0));
+  let weakCursor = 0;
 
-  weekDates.forEach((date, idx) => {
+  weekDates.forEach((date) => {
     const dow = new Date(`${date}T12:00:00`).getDay();
     if ((profile.restDays || []).includes(dow) || !(profile.availableDays || []).includes(dow)) {
       return;
     }
-    const window = profile.dayWindows?.[dow] || { start: '19:00', end: '21:00' };
-    const startMin = timeToMinutes(window.start) ?? 19 * 60;
+    const window = profile.dayWindows?.[dow];
+    const startMin = timeToMinutes(window?.start);
+    const endLimit = timeToMinutes(window?.end);
+    const dailyCapacity = Math.min(dailyCapacityForDate(profile, date), weeklyRemaining);
+    if (startMin == null || endLimit == null || dailyCapacity <= 0) return;
     let cursor = startMin;
     const dayBlocks = [];
+    let dayLoad = 0;
+    const pushIfFits = (block) => {
+      const duration = Number(block?.plannedMinutes) || 0;
+      if (duration <= 0 || dayLoad + duration > dailyCapacity) return false;
+      if (timeToMinutes(block.endTime) > endLimit) return false;
+      dayBlocks.push(block);
+      dayLoad += duration;
+      weeklyRemaining -= duration;
+      return true;
+    };
 
     // 1) revisão se houver fila
-    if (dueReviews > 0 && dayBlocks.length < profile.maxBlocksPerDay) {
+    if (remainingReviews > 0 && dayBlocks.length < profile.maxBlocksPerDay) {
       const b = createRoutineBlock({
         userId, contestId, date,
         startTime: minutesToTime(cursor),
@@ -134,14 +157,16 @@ export function generateWeekPlan(profile, {
         scheduleType: 'horario_fixo',
         anchorType: 'horario',
       });
-      dayBlocks.push(b);
-      cursor += b.plannedMinutes + (profile.preferredBreakMinutes || 5);
+      if (pushIfFits(b)) {
+        remainingReviews -= 1;
+        cursor += b.plannedMinutes + (profile.preferredBreakMinutes || 5);
+      }
     }
 
     // 2) questões em ponto fraco
-    const weak = weakSubtopics[idx % Math.max(1, weakSubtopics.length)];
+    const weak = weakSubtopics[weakCursor] || null;
     if (weak && dayBlocks.length < profile.maxBlocksPerDay) {
-      const mins = session;
+      const mins = Math.min(session, dailyCapacity - dayLoad);
       const b = createRoutineBlock({
         userId, contestId, date,
         startTime: minutesToTime(cursor),
@@ -156,48 +181,17 @@ export function generateWeekPlan(profile, {
         scheduleType: 'horario_fixo',
         description: weak.reason || 'Subtópico com desempenho frágil',
       });
-      dayBlocks.push(b);
-      cursor += mins + (profile.preferredBreakMinutes || 5);
+      if (mins >= 5 && pushIfFits(b)) {
+        weakCursor += 1;
+        cursor += mins + (profile.preferredBreakMinutes || 5);
+      }
     }
 
-    // 3) teoria / lei (modelos mais densos)
-    if (profile.model !== 'leve' && dayBlocks.length < profile.maxBlocksPerDay) {
-      const mins = Math.min(session, 30);
-      const b = createRoutineBlock({
-        userId, contestId, date,
-        startTime: minutesToTime(cursor),
-        endTime: minutesToTime(cursor + mins),
-        plannedMinutes: mins,
-        activityType: profile.model === 'intensa' ? 'lei_seca' : 'teoria',
-        title: profile.model === 'intensa' ? 'Lei seca' : 'Teoria dirigida',
-        priority: 60,
-        source: 'template',
-        scheduleType: 'janela_flexivel',
-      });
-      dayBlocks.push(b);
-      cursor += mins;
-    }
-
-    // 4) simulado semanal (intensa, 1x)
-    if (profile.model === 'intensa' && dow === 6 && dayBlocks.length < profile.maxBlocksPerDay) {
-      dayBlocks.push(createRoutineBlock({
-        userId, contestId, date,
-        startTime: '10:00',
-        endTime: '11:00',
-        plannedMinutes: 60,
-        activityType: 'simulado',
-        title: 'Simulado semanal',
-        priority: 90,
-        source: 'template',
+    for (const [index, block] of dayBlocks.entries()) {
+      blocks.push(normalizeRoutineBlock({
+        ...block,
+        id: stableStudyBlockId(`week:${weekDates[0]}`, block, blocks.length + index),
       }));
-    }
-
-    // respeita max diário
-    let load = 0;
-    for (const b of dayBlocks) {
-      if (load + b.plannedMinutes > (profile.maxDailyMinutes || 90)) break;
-      load += b.plannedMinutes;
-      blocks.push(b);
     }
   });
 
@@ -317,6 +311,16 @@ export function suggestRescheduleSlot(block, profile, existingBlocks = [], {
   today = dateKey(),
 } = {}) {
   const sortedDates = [...weekDates].sort();
+  const availability = validateStudyAvailability(profile, { weekDates: sortedDates });
+  if (!availability.valid) {
+    return { ok: false, suggestion: null, reason: 'A disponibilidade configurada precisa ser revisada.' };
+  }
+  const activeExisting = existingBlocks.filter((candidate) => candidate.id !== block.id);
+  const existingWeekLoad = sortedDates.reduce((sum, date) => sum + dayLoadMinutes(activeExisting, date), 0);
+  const blockMinutes = Number(block.plannedMinutes) || 0;
+  if (existingWeekLoad + blockMinutes > availability.weeklyCapacity) {
+    return { ok: false, suggestion: null, reason: 'A semana não possui capacidade disponível para este bloco.' };
+  }
   let candidates = sortedDates.filter((d) => d >= today);
   if (preferTomorrow) {
     const tIdx = candidates.indexOf(today);
@@ -328,11 +332,11 @@ export function suggestRescheduleSlot(block, profile, existingBlocks = [], {
     if ((profile.restDays || []).includes(dow)) continue;
     if ((profile.availableDays || []).length && !(profile.availableDays || []).includes(dow)) continue;
 
-    const load = dayLoadMinutes(existingBlocks, date);
+    const load = dayLoadMinutes(activeExisting, date);
     const mins = block.plannedMinutes || 25;
-    if (load + mins > (profile.maxDailyMinutes || 90)) continue;
+    if (load + mins > dailyCapacityForDate(profile, date)) continue;
 
-    const dayBlocks = existingBlocks.filter((b) => b.date === date && !['cancelled', 'rescheduled'].includes(b.status));
+    const dayBlocks = activeExisting.filter((b) => b.date === date && !['cancelled', 'rescheduled'].includes(b.status));
     if (dayBlocks.length >= (profile.maxBlocksPerDay || 4)) continue;
 
     const window = profile.dayWindows?.[dow] || { start: '19:00', end: '21:00' };
@@ -347,11 +351,15 @@ export function suggestRescheduleSlot(block, profile, existingBlocks = [], {
       if (start + mins <= slot.s) break;
       start = Math.max(start, slot.e + (profile.preferredBreakMinutes || 0));
     }
-    if (start + mins > endLimit + 30) continue; // pequena folga
+    if (start + mins > endLimit) continue;
 
     const suggestion = normalizeRoutineBlock({
       ...block,
-      id: makeId('block'),
+      id: stableStudyBlockId(block.planId || `reschedule:${block.id}`, {
+        ...block,
+        date,
+        source: 'reschedule',
+      }),
       date,
       startTime: minutesToTime(start),
       endTime: minutesToTime(start + mins),
@@ -374,11 +382,13 @@ export function suggestRescheduleSlot(block, profile, existingBlocks = [], {
 }
 
 export function applyReschedule(original, suggestion) {
+  const rescheduledAt = new Date().toISOString();
   const from = normalizeRoutineBlock({
     ...original,
     status: 'rescheduled',
     rescheduledTo: suggestion.id,
-    updatedAt: new Date().toISOString(),
+    rescheduledAt,
+    updatedAt: rescheduledAt,
   });
   const to = normalizeRoutineBlock({
     ...suggestion,

@@ -504,9 +504,20 @@ test('copy day e duplicate no serviço', async () => {
 test('geração semanal é idempotente e repara somente duplicatas automáticas planejadas', async () => {
   const repository = memoryRepo('student', 'pc_al');
   const service = new RoutineService({ repository });
+  await repository.put('disciplines', { id: 'discipline-1', name: 'Disciplina' });
+  await repository.put('subtopics', {
+    id: 'subtopic-1', discipline_id: 'discipline-1', name: 'Subtópico', mastery_pct: 10,
+  });
+  await repository.put('questions', { id: 'question-1', subtopic_id: 'subtopic-1' });
   await service.completeSetup({
     model: 'equilibrada',
-    overrides: { availableDays: [0, 1, 2, 3, 4, 5, 6], restDays: [] },
+    overrides: {
+      availableDays: [0, 1, 2, 3, 4, 5, 6],
+      restDays: [],
+      dayWindows: Object.fromEntries(
+        [0, 1, 2, 3, 4, 5, 6].map((day) => [day, { start: '19:00', end: '21:00' }]),
+      ),
+    },
     generatePlan: false,
   });
 
@@ -537,9 +548,11 @@ test('geração semanal é idempotente e repara somente duplicatas automáticas 
     source: 'user',
   });
 
+  const repairedDuplicates = await service.repairGeneratedPlanDuplicates();
   const week = await service.getWeekView();
   const repaired = await repository.getAll('routineBlocks');
-  assert.equal(week.repairedDuplicates, 1);
+  assert.equal(repairedDuplicates, 1);
+  assert.equal(week.repairedDuplicates, 0);
   assert.equal(
     repaired.filter((block) => block.source === original.source).length,
     afterFirst.filter((block) => block.source === original.source).length,

@@ -3,6 +3,7 @@
  * Schema version: 1
  */
 import { localDateKey } from '../localDate.js';
+import { studyPlanScopeKey } from './studyPlanContract.js';
 
 export const ROUTINE_SCHEMA_VERSION = 2;
 
@@ -195,6 +196,7 @@ export function normalizeRoutineProfile(raw = {}) {
     id: raw.id || makeId('profile'),
     userId: raw.userId ?? null,
     contestId: raw.contestId ?? null,
+    scopeKey: raw.scopeKey || studyPlanScopeKey(raw.userId, raw.contestId),
     schemaVersion: Number(raw.schemaVersion) || ROUTINE_SCHEMA_VERSION,
     setupCompleted: Boolean(raw.setupCompleted),
     paused: Boolean(raw.paused),
@@ -282,6 +284,11 @@ export function normalizeRoutineBlock(raw = {}) {
     id: raw.id || makeId('block'),
     userId: raw.userId ?? null,
     contestId: raw.contestId ?? null,
+    scopeKey: raw.scopeKey || studyPlanScopeKey(raw.userId, raw.contestId),
+    planId: raw.planId || null,
+    planVersion: Number(raw.planVersion) || null,
+    generationId: raw.generationId || null,
+    algorithmVersion: raw.algorithmVersion || null,
     date: dateKey(raw.date || dateKey()),
     startTime: raw.startTime || null,
     endTime: raw.endTime || null,
@@ -303,6 +310,13 @@ export function normalizeRoutineBlock(raw = {}) {
     createdAt: raw.createdAt || nowIso(),
     updatedAt: raw.updatedAt || nowIso(),
     completedAt: raw.completedAt || null,
+    startedAt: raw.startedAt || null,
+    skippedAt: raw.skippedAt || null,
+    rescheduledAt: raw.rescheduledAt || null,
+    activityId: raw.activityId || null,
+    sessionId: raw.sessionId || null,
+    completionEvidence: raw.completionEvidence || null,
+    processedEventIds: Array.isArray(raw.processedEventIds) ? [...new Set(raw.processedEventIds.map(String))] : [],
     rescheduledFrom: raw.rescheduledFrom || null,
     rescheduledTo: raw.rescheduledTo || null,
     skipReason: raw.skipReason || null,
@@ -318,6 +332,10 @@ export function createStudySession(partial = {}) {
     id: partial.id || makeId('sess'),
     userId: partial.userId ?? null,
     contestId: partial.contestId ?? null,
+    scopeKey: partial.scopeKey || studyPlanScopeKey(partial.userId, partial.contestId),
+    planId: partial.planId || null,
+    planVersion: Number(partial.planVersion) || null,
+    subtopicId: partial.subtopicId || null,
     blockId: partial.blockId || null,
     date: dateKey(partial.date || dateKey()),
     plannedMinutes: clampInt(partial.plannedMinutes, 1, 480, 25),
@@ -343,6 +361,7 @@ export function createDailyState(partial = {}) {
     id: partial.id || dateKey(partial.date || dateKey()),
     userId: partial.userId ?? null,
     contestId: partial.contestId ?? null,
+    scopeKey: partial.scopeKey || studyPlanScopeKey(partial.userId, partial.contestId),
     date: dateKey(partial.date || dateKey()),
     programmed: partial.programmed !== false,
     restDay: Boolean(partial.restDay),
@@ -358,6 +377,9 @@ export function createDailyState(partial = {}) {
     originalPlanSnapshot: partial.originalPlanSnapshot || null,
     shieldUsed: Boolean(partial.shieldUsed),
     status: partial.status || 'open', // open | min_met | complete | missed | rest
+    closedAt: partial.closedAt || null,
+    consistencyApplied: Boolean(partial.consistencyApplied),
+    processedEventIds: Array.isArray(partial.processedEventIds) ? [...new Set(partial.processedEventIds.map(String))] : [],
     createdAt: partial.createdAt || nowIso(),
     updatedAt: partial.updatedAt || nowIso(),
     schemaVersion: ROUTINE_SCHEMA_VERSION,
@@ -462,7 +484,8 @@ export function moduleTargetForActivity(type) {
 /** Migra rotinas legadas (day_of_week) → perfil básico */
 export function migrateLegacyRoutinesToProfile(legacyRoutines = [], { userId, contestId, examDate } = {}) {
   const enabledDays = legacyRoutines.filter((r) => r.enabled !== false).map((r) => Number(r.day_of_week));
-  const restDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !enabledDays.includes(d));
+  const availableDays = enabledDays.length ? enabledDays : [1, 2, 3, 4, 5];
+  const restDays = [0, 1, 2, 3, 4, 5, 6].filter((d) => !availableDays.includes(d));
   const sample = legacyRoutines.find((r) => r.enabled !== false) || legacyRoutines[0] || {};
   const dayWindows = {};
   for (const r of legacyRoutines) {
@@ -481,7 +504,7 @@ export function migrateLegacyRoutinesToProfile(legacyRoutines = [], { userId, co
     examDate,
     overrides: {
       setupCompleted: legacyRoutines.length > 0,
-      availableDays: enabledDays.length ? enabledDays : [1, 2, 3, 4, 5],
+      availableDays,
       restDays: restDays.length ? restDays : [0, 6],
       dayWindows: Object.keys(dayWindows).length ? dayWindows : undefined,
       dailyQuestionsGoal: goalType === 'questoes' ? amount : 30,

@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v114-official-kiro';
+const CACHE = 'detona-v115-study-plan-hardening';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -18,6 +18,7 @@ const ASSETS = [
   './js/core/routine/index.js',
   './js/core/routine/routineSchema.js',
   './js/core/routine/routinePlanner.js',
+  './js/core/routine/studyPlanContract.js',
   './js/core/routine/routineConsistency.js',
   './js/core/routine/routineMetrics.js',
   './js/core/routine/routineFocus.js',

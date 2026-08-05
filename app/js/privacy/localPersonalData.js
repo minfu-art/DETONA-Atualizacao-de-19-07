@@ -9,6 +9,7 @@ export const LOCAL_ONLY_META_PREFIXES = Object.freeze([
   'habit_',
   'kaely_',
   'local_notification_',
+  'study_plan_',
 ]);
 
 const localCollections = new Set(LOCAL_ONLY_COLLECTIONS);
