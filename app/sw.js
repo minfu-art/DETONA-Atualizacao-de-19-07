@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v113-ranked-simulation-safe-area';
+const CACHE = 'detona-v114-official-kiro';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -183,7 +183,7 @@ const ASSETS = [
   './assets/mentors/evi.webp',
   './assets/mentors/evi-plan-strategist.webp',
   './assets/mentors/kaely-resistance.webp',
-  './assets/mentors/kiro-ranked-strategist.webp',
+  './assets/mentors/kiro-official.webp',
   './assets/battle/arena-bg.jpg',
   './assets/enemies/enemy-1.png',
   './assets/enemies/enemy-2.png',

@@ -22,7 +22,7 @@ const STATUS_PRIORITY = Object.freeze({
   cancelled: 4,
 });
 
-export const KIRO_ASSET = 'assets/mentors/kiro-ranked-strategist.webp';
+export const KIRO_ASSET = 'assets/mentors/kiro-official.webp';
 
 export function rankedStatus(event) {
   return String(event?.effectiveStatus || event?.status || 'scheduled');

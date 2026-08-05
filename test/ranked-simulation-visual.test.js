@@ -88,7 +88,7 @@ test('lista, vazio, preparação e cancelamento têm contratos factuais e um h1 
   assert.match(uiSource, /Simulado cancelado/);
   assert.match(uiSource, /Voltar para Simulados/);
   assert.doesNotMatch(uiSource, /participantes? fictícios?|posição nacional|Top 10|Campeão/i);
-  assert.equal(KIRO_ASSET, 'assets/mentors/kiro-ranked-strategist.webp');
+  assert.equal(KIRO_ASSET, 'assets/mentors/kiro-official.webp');
 });
 
 test('tentativa mantém semântica de prova, acessibilidade e mensagens seguras', () => {
@@ -136,8 +136,8 @@ test('CSS ranqueado é isolado, responsivo, acessível e respeita movimento redu
 
 test('cache e carregamento entregam juntos o modelo, CSS e retrato de Kiro', () => {
   assert.ok(indexSource.indexOf('dashboard-jrpg.css') < indexSource.indexOf('ranked-functional.css?v=3'));
-  assert.match(swSource, /detona-v113-ranked-simulation-safe-area/);
+  assert.match(swSource, /detona-v114-official-kiro/);
   assert.match(swSource, /js\/ui\/rankedVisualModel\.js/);
-  assert.match(swSource, /assets\/mentors\/kiro-ranked-strategist\.webp/);
+  assert.match(swSource, /assets\/mentors\/kiro-official\.webp/);
   assert.match(modelSource, /Object\.freeze/);
 });
