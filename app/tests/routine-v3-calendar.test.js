@@ -300,8 +300,8 @@ test('serviço: rotina calendário não altera domínio/estrelas/progresso acad�
   await svc.completeSetup({ model: 'leve', generatePlan: true });
   await svc.setExamMeta({ examDate: '2026-11-01', journeyStartDate: '2026-06-01' });
   await svc.createBlock({
-    title: 'Questões LP',
-    activityType: 'questoes',
+    title: 'Foco livre',
+    activityType: 'estudo_livre',
     plannedMinutes: 25,
     date: dateKey(),
   });

@@ -9,8 +9,8 @@ export const STUDY_BLOCK_STATUSES = Object.freeze([
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_PATTERN = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
 const SAFE_ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,199}$/;
-const QUESTION_ACTIVITY_TYPES = new Set(['questoes', 'simulado', 'correcao_simulado']);
-const CURRICULAR_ACTIVITY_TYPES = new Set(['questoes', 'teoria', 'lei_seca', 'estudo', 'simulado', 'correcao_simulado']);
+export const QUESTION_ACTIVITY_TYPES = new Set(['questoes', 'simulado', 'correcao_simulado']);
+export const CURRICULAR_ACTIVITY_TYPES = new Set(['questoes', 'teoria', 'lei_seca', 'estudo', 'simulado', 'correcao_simulado']);
 const NON_CAPACITY_STATUSES = new Set(['cancelled', 'rescheduled']);
 
 function finiteInteger(value) {
@@ -46,6 +46,22 @@ export function studyPlanIdentity({ userId, contestId, weekStart, version = 1 } 
     version: Number(version),
     generationId: `${planId}:v${Number(version)}`,
     algorithmVersion: STUDY_PLAN_ALGORITHM_VERSION,
+  };
+}
+
+export function reducedStudyPlanIdentity({ userId, contestId, date, minutes, version = 1 } = {}) {
+  const scopeKey = studyPlanScopeKey(userId, contestId);
+  if (!scopeKey || !validLocalDate(date) || !Number.isInteger(Number(minutes))
+    || Number(minutes) < 5 || !Number.isInteger(Number(version)) || Number(version) < 1) return null;
+  const fingerprint = `${scopeKey}:${date}:${Number(minutes)}:${STUDY_PLAN_ALGORITHM_VERSION}`;
+  const planId = `study_reduced_${stableStudyPlanToken(fingerprint)}_${date}`;
+  return {
+    planId,
+    scopeKey,
+    version: Number(version),
+    generationId: `${planId}:v${Number(version)}`,
+    algorithmVersion: STUDY_PLAN_ALGORITHM_VERSION,
+    journalKey: `study_plan_reduced:${scopeKey}:${date}:${Number(minutes)}:${STUDY_PLAN_ALGORITHM_VERSION}`,
   };
 }
 
@@ -202,9 +218,10 @@ export function validateStudyPlan(plan = {}, context = {}) {
     if (!validId(block?.id) || ids.has(block.id)) errors.push('block_id_invalid_or_duplicate');
     if (block?.id) ids.add(block.id);
     if (block?.userId !== context.userId || block?.contestId !== context.contestId) errors.push('block_scope_invalid');
-    if (block?.scopeKey && block.scopeKey !== expectedScope) errors.push('block_scope_key_invalid');
-    if (block?.planId && block.planId !== plan.planId) errors.push('block_plan_invalid');
-    if (block?.planVersion && Number(block.planVersion) !== Number(plan.version)) errors.push('block_plan_version_invalid');
+    if (block?.scopeKey !== expectedScope) errors.push('block_scope_key_invalid');
+    if (block?.planId !== plan.planId) errors.push('block_plan_invalid');
+    if (Number(block?.planVersion) !== Number(plan.version)) errors.push('block_plan_version_invalid');
+    if (plan.generationId && block?.generationId !== plan.generationId) errors.push('block_generation_invalid');
     if (!STUDY_BLOCK_STATUSES.includes(block?.status)) errors.push('block_status_invalid');
     if (!validLocalDate(block?.date)) errors.push('block_date_invalid');
     if (!Number.isInteger(Number(block?.plannedMinutes)) || Number(block.plannedMinutes) <= 0) errors.push('block_duration_invalid');
@@ -246,14 +263,27 @@ export function validateStudyPlan(plan = {}, context = {}) {
 
 export function validatePlanCompletionEvidence(block = {}, activity = {}, context = {}) {
   const errors = [];
+  const expectedScope = studyPlanScopeKey(context.userId, context.contestId);
   if (!block?.id || activity?.blockId !== block.id) errors.push('evidence_block_invalid');
   if (!activity?.id) errors.push('evidence_activity_invalid');
   if (activity?.userId !== context.userId || activity?.contestId !== context.contestId) errors.push('evidence_scope_invalid');
   if (block?.userId !== context.userId || block?.contestId !== context.contestId) errors.push('block_scope_invalid');
+  if (!expectedScope || activity?.scopeKey !== expectedScope || block?.scopeKey !== expectedScope) errors.push('evidence_scope_key_invalid');
+  if (!block?.planId || activity?.planId !== block.planId) errors.push('evidence_plan_invalid');
+  if (!Number.isInteger(Number(block?.planVersion))
+    || Number(block.planVersion) < 1
+    || Number(activity?.planVersion) !== Number(block.planVersion)) errors.push('evidence_plan_version_invalid');
   if (activity?.status !== 'completed') errors.push('evidence_status_invalid');
   if (!Number.isFinite(Number(activity?.elapsedSeconds)) || Number(activity.elapsedSeconds) < 30) errors.push('evidence_duration_invalid');
-  if (!activity?.endedAt) errors.push('evidence_date_invalid');
-  if (block?.subtopicId && activity?.subtopicId && block.subtopicId !== activity.subtopicId) errors.push('evidence_subtopic_invalid');
+  if (!activity?.endedAt || !Number.isFinite(Date.parse(activity.endedAt))) errors.push('evidence_date_invalid');
+  if (activity?.activityType !== block?.activityType) errors.push('evidence_activity_type_invalid');
+  if (CURRICULAR_ACTIVITY_TYPES.has(block?.activityType)) {
+    if (!block?.subjectId || activity?.subjectId !== block.subjectId) errors.push('evidence_subject_invalid');
+    if (!block?.subtopicId || activity?.subtopicId !== block.subtopicId) errors.push('evidence_subtopic_invalid');
+  } else {
+    if (block?.subjectId && activity?.subjectId !== block.subjectId) errors.push('evidence_subject_invalid');
+    if (block?.subtopicId && activity?.subtopicId !== block.subtopicId) errors.push('evidence_subtopic_invalid');
+  }
   return { valid: errors.length === 0, errors };
 }
 
@@ -277,6 +307,8 @@ export function safeStudyPlanError(code) {
     STUDY_PLAN_INVALID: 'Este plano possui dados inconsistentes e foi preservado para verificação.',
     STUDY_PLAN_BLOCK_UNAVAILABLE: 'Este bloco não está disponível para esta operação.',
     STUDY_PLAN_EVIDENCE_REQUIRED: 'Conclua uma atividade acadêmica real antes de finalizar o bloco.',
+    STUDY_PLAN_ACADEMIC_CONTENT_REQUIRED: 'Este bloco não possui conteúdo acadêmico disponível para ser iniciado.',
+    STUDY_PLAN_REDUCED_UNAVAILABLE: 'Não há conteúdo acadêmico elegível ou espaço disponível para montar um plano reduzido agora.',
     STUDY_PLAN_RESCHEDULE_INVALID: 'Não foi possível reagendar sem ultrapassar sua disponibilidade.',
     STUDY_PLAN_PERSISTENCE_FAILED: 'Não foi possível salvar esta alteração. Seus dados anteriores foram preservados; tente novamente.',
   };

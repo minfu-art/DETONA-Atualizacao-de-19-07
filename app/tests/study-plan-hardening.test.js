@@ -136,6 +136,7 @@ test('validação canônica bloqueia plano vazio, currículo externo, banco ause
     scopeKey: identity.scopeKey,
     planId: identity.planId,
     planVersion: 1,
+    generationId: identity.generationId,
     date: week[0],
     startTime: '18:00',
     endTime: '18:25',
@@ -178,8 +179,11 @@ test('validação canônica bloqueia plano vazio, currículo externo, banco ause
 });
 
 test('evidência de conclusão exige atividade real, vínculo e escopo corretos', () => {
+  const scopeKey = 'student-a:pc_al_2026';
   const block = createRoutineBlock({
-    id: 'block-1', userId: 'student-a', contestId: 'pc_al_2026', subtopicId: 'subtopic-1',
+    id: 'block-1', userId: 'student-a', contestId: 'pc_al_2026', scopeKey,
+    planId: 'plan-1', planVersion: 1, generationId: 'plan-1:v1',
+    activityType: 'questoes', subjectId: 'discipline-1', subtopicId: 'subtopic-1',
   });
   const context = { userId: 'student-a', contestId: 'pc_al_2026' };
   const evidence = {
@@ -187,6 +191,11 @@ test('evidência de conclusão exige atividade real, vínculo e escopo corretos'
     blockId: 'block-1',
     userId: 'student-a',
     contestId: 'pc_al_2026',
+    scopeKey,
+    planId: 'plan-1',
+    planVersion: 1,
+    activityType: 'questoes',
+    subjectId: 'discipline-1',
     subtopicId: 'subtopic-1',
     status: 'completed',
     elapsedSeconds: 60,
@@ -244,8 +253,10 @@ test('falha de persistência mantém journal recuperável e retry cria um único
 test('bloco só conclui com evidência, e retry não repete conclusão', async () => {
   const repository = memoryRepo();
   const service = new RoutineService({ repository });
+  await seedEligibleContent(repository);
   const block = await service.createBlock({
-    date: dateKey(), title: 'Missão real', activityType: 'questoes', plannedMinutes: 20,
+    date: dateKey(), title: 'Missão real', activityType: 'questoes',
+    subjectId: 'discipline-1', subtopicId: 'subtopic-1', plannedMinutes: 20,
   });
   await service.startBlock(block.id);
   await assert.rejects(
@@ -257,6 +268,12 @@ test('bloco só conclui com evidência, e retry não repete conclusão', async (
     blockId: block.id,
     userId: 'student-a',
     contestId: 'pc_al_2026',
+    scopeKey: block.scopeKey,
+    planId: block.planId,
+    planVersion: block.planVersion,
+    activityType: block.activityType,
+    subjectId: block.subjectId,
+    subtopicId: block.subtopicId,
     status: 'completed',
     elapsedSeconds: 1200,
     endedAt: new Date().toISOString(),
@@ -280,7 +297,7 @@ test('reagendamento respeita capacidade, preserva histórico e é idempotente', 
   const profile = allDaysProfile();
   await repository.put('routineProfiles', profile);
   const block = await service.createBlock({
-    date: dateKey(), title: 'Reagendar', activityType: 'questoes', plannedMinutes: 20,
+    date: dateKey(), title: 'Reagendar', activityType: 'estudo_livre', plannedMinutes: 20,
   });
   const preview = await service.rescheduleBlock(block.id, 'find_week');
   assert.equal(preview.ok, true);

@@ -224,10 +224,14 @@ test('21 planejamento reduzido não remove originais', () => {
   const originals = [createRoutineBlock({ id: 'keep', status: 'planned', title: 'Original' })];
   const reduced = buildReducedPlan({
     minutes: 20,
-    profile: createRoutineProfile({ model: 'equilibrada' }),
-    dueReviews: 1,
-    weakSubtopics: [{ id: 'w', name: 'Fraco' }],
+    weakSubtopics: [{ id: 'w', name: 'Fraco', discipline_id: 'd' }],
     essentialBlocks: originals,
+    userId: 'u',
+    contestId: 'c',
+    scopeKey: 'u:c',
+    planId: 'reduced-plan',
+    planVersion: 1,
+    generationId: 'reduced-plan:v1',
   });
   assert.ok(reduced.length >= 1);
   assert.ok(reduced.every((b) => b.source === 'reduced'));
@@ -457,7 +461,7 @@ test('serviço: fluxo criar, parcial, reagendar e fechar dia', async () => {
   const today = dateKey();
   let blocks = await svc.getBlocksForDate(today);
   if (!blocks.length) {
-    await svc.createBlock({ title: 'Teste', date: today, plannedMinutes: 20, activityType: 'questoes' });
+    await svc.createBlock({ title: 'Teste', date: today, plannedMinutes: 20, activityType: 'estudo_livre' });
     blocks = await svc.getBlocksForDate(today);
   }
   const id = blocks[0].id;

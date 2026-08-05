@@ -429,8 +429,9 @@ export async function renderExpedition(root, navigate, ctx) {
 
   function openLittleTimeModal() {
     openModal('Tenho pouco tempo hoje', `
+      <div id="lt-panel">
       <p class="muted mb-8">Montamos um plano reduzido <strong>sem apagar</strong> seu planejamento original.</p>
-      <div class="routine-quick-row">
+      <div class="routine-quick-row" id="lt-actions">
         <button type="button" class="btn btn-primary" data-lt="10">10 min</button>
         <button type="button" class="btn btn-primary" data-lt="20">20 min</button>
         <button type="button" class="btn btn-primary" data-lt="30">30 min</button>
@@ -439,24 +440,52 @@ export async function renderExpedition(root, navigate, ctx) {
         <label for="lt-custom">Personalizar (minutos)</label>
         <input type="number" id="lt-custom" min="10" max="60" value="15" />
       </div>
+      <p id="lt-status" class="muted mt-8" role="status" aria-live="polite"></p>
+      </div>
     `, `<button type="button" class="btn btn-primary" id="lt-go">Criar plano reduzido</button>
         <button type="button" class="btn" id="lt-cancel">Cancelar</button>`);
-    document.querySelectorAll('[data-lt]').forEach((b) => {
-      b.addEventListener('click', async () => {
+    let running = false;
+    const run = async (minutes) => {
+      if (running) return;
+      running = true;
+      const panel = document.getElementById('lt-panel');
+      const status = document.getElementById('lt-status');
+      const controls = [...document.querySelectorAll('[data-lt], #lt-go, #lt-cancel, #lt-custom')];
+      panel?.setAttribute('aria-busy', 'true');
+      controls.forEach((control) => { control.disabled = true; });
+      if (status) status.textContent = 'Validando conteúdo e disponibilidade...';
+      try {
+        const result = await routineService.activateReducedPlan(minutes);
+        if (!result.reduced?.length) {
+          if (status) {
+            status.setAttribute('role', 'alert');
+            status.textContent = 'Não há conteúdo acadêmico elegível ou espaço disponível para montar um plano reduzido agora.';
+          }
+          return;
+        }
+        if (status) status.textContent = result.created ? 'Plano reduzido criado.' : 'Este plano reduzido já estava disponível.';
+        toast(result.created ? 'Plano reduzido adicionado ao dia.' : 'Plano reduzido já estava disponível.');
         closeModal();
-        await routineService.activateReducedPlan(Number(b.dataset.lt));
-        toast('Plano reduzido adicionado ao dia.');
-        paint();
-      });
+        await paint();
+      } catch (error) {
+        if (status) {
+          status.setAttribute('role', 'alert');
+          status.textContent = error?.message || 'Não foi possível criar o plano reduzido.';
+        }
+      } finally {
+        running = false;
+        panel?.removeAttribute('aria-busy');
+        controls.forEach((control) => { if (control.isConnected) control.disabled = false; });
+      }
+    };
+    document.querySelectorAll('[data-lt]').forEach((b) => {
+      b.addEventListener('click', () => run(Number(b.dataset.lt)));
     });
-    document.getElementById('lt-go')?.addEventListener('click', async () => {
+    document.getElementById('lt-go')?.addEventListener('click', () => {
       const m = Number(document.getElementById('lt-custom')?.value) || 15;
-      closeModal();
-      await routineService.activateReducedPlan(m);
-      toast('Plano reduzido adicionado ao dia.');
-      paint();
+      run(m);
     });
-    document.getElementById('lt-cancel')?.addEventListener('click', closeModal);
+    document.getElementById('lt-cancel')?.addEventListener('click', () => { if (!running) closeModal(); });
   }
 
   function openSkipModal(blockId, partial) {
@@ -938,8 +967,14 @@ export async function renderExpedition(root, navigate, ctx) {
   }
 
   /* ───────── Modal: bloco inteligente ───────── */
-  function openSmartBlockModal({ date = todayStr() } = {}) {
+  async function openSmartBlockModal({ date = todayStr() } = {}) {
     let family = 'estudo';
+    let academicOptions = { disciplines: [], subtopics: [] };
+    try {
+      academicOptions = await routineService.getAcademicOptions();
+    } catch (error) {
+      toast(error?.message || 'Não foi possível carregar o currículo deste concurso.');
+    }
     const win = profile?.dayWindows?.[new Date(`${date}T12:00:00`).getDay()] || { start: '19:00', end: '21:00' };
     openModal('Novo horário no plano', `
       <div class="plan-modal">
@@ -959,6 +994,20 @@ export async function renderExpedition(root, navigate, ctx) {
             <option value="lei_seca">Lei seca</option>
             <option value="simulado">Simulado</option>
             <option value="estudo">Estudo geral</option>
+            <option value="estudo_livre">Foco livre (sem vínculo curricular)</option>
+          </select>
+        </div>
+        <div class="field" id="sb-subject-wrap">
+          <label for="sb-subject">Disciplina</label>
+          <select id="sb-subject" aria-describedby="sb-errors">
+            <option value="">Selecione uma disciplina</option>
+            ${academicOptions.disciplines.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.name)}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field" id="sb-subtopic-wrap">
+          <label for="sb-subtopic">Subtópico</label>
+          <select id="sb-subtopic" aria-describedby="sb-errors" disabled>
+            <option value="">Selecione primeiro a disciplina</option>
           </select>
         </div>
         <div class="field"><label for="sb-date">Dia</label><input id="sb-date" type="date" value="${escapeHtml(date)}" /></div>
@@ -968,11 +1017,35 @@ export async function renderExpedition(root, navigate, ctx) {
           <label><input type="checkbox" id="sb-week" /> Repetir nos dias de estudo desta semana</label>
         </div>
         <div class="plan-suggest" id="sb-hint">Sugestão: sessões de ${profile?.preferredSessionMinutes || 25} min cabem melhor na janela de estudo.</div>
+        <p id="sb-errors" class="muted" role="alert" aria-live="assertive"></p>
       </div>
     `, `<button type="button" class="btn btn-primary" id="sb-save">Salvar no plano</button>
         <button type="button" class="btn" id="sb-cancel">Cancelar</button>`);
 
     const titles = { estudo: 'Bloco de estudo', trabalho: 'Trabalho', descanso: 'Descanso' };
+    const curricularTypes = new Set(['questoes', 'teoria', 'lei_seca', 'estudo', 'simulado', 'correcao_simulado']);
+    const questionTypes = new Set(['questoes', 'simulado', 'correcao_simulado']);
+    const studyType = document.getElementById('sb-study-type');
+    const subject = document.getElementById('sb-subject');
+    const subtopic = document.getElementById('sb-subtopic');
+    const updateCurriculumFields = () => {
+      const type = studyType?.value || 'questoes';
+      const needsCurriculum = family === 'estudo' && curricularTypes.has(type);
+      const subjectWrap = document.getElementById('sb-subject-wrap');
+      const subtopicWrap = document.getElementById('sb-subtopic-wrap');
+      if (subjectWrap) subjectWrap.hidden = !needsCurriculum;
+      if (subtopicWrap) subtopicWrap.hidden = !needsCurriculum;
+      if (!needsCurriculum || !subtopic) return;
+      const options = academicOptions.subtopics.filter((item) => (
+        String(item.subjectId) === String(subject?.value || '')
+        && (!questionTypes.has(type) || item.hasQuestionBank)
+      ));
+      subtopic.innerHTML = `<option value="">${subject?.value ? 'Selecione um subtópico' : 'Selecione primeiro a disciplina'}</option>`
+        + options.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.name)}</option>`).join('');
+      subtopic.disabled = !subject?.value || options.length === 0;
+    };
+    subject?.addEventListener('change', updateCurriculumFields);
+    studyType?.addEventListener('change', updateCurriculumFields);
     document.querySelectorAll('[data-fam]').forEach((btn) => {
       btn.addEventListener('click', () => {
         family = btn.dataset.fam;
@@ -981,6 +1054,7 @@ export async function renderExpedition(root, navigate, ctx) {
         if (title) title.value = titles[family] || 'Bloco';
         const wrap = document.getElementById('sb-study-wrap');
         if (wrap) wrap.hidden = family !== 'estudo';
+        updateCurriculumFields();
         const mins = document.getElementById('sb-mins');
         if (mins) {
           if (family === 'trabalho') mins.value = '240';
@@ -997,9 +1071,13 @@ export async function renderExpedition(root, navigate, ctx) {
         }
       });
     });
+    updateCurriculumFields();
 
     document.getElementById('sb-cancel')?.addEventListener('click', closeModal);
     document.getElementById('sb-save')?.addEventListener('click', async () => {
+      const saveButton = document.getElementById('sb-save');
+      const errorBox = document.getElementById('sb-errors');
+      if (saveButton?.getAttribute('aria-busy') === 'true') return;
       const d = document.getElementById('sb-date')?.value || date;
       const start = document.getElementById('sb-start')?.value || null;
       const mins = Number(document.getElementById('sb-mins')?.value) || 25;
@@ -1008,34 +1086,57 @@ export async function renderExpedition(root, navigate, ctx) {
       if (family === 'trabalho') activityType = 'trabalho';
       else if (family === 'descanso') activityType = 'descanso';
       else activityType = document.getElementById('sb-study-type')?.value || 'questoes';
+      const needsCurriculum = curricularTypes.has(activityType);
+      const subjectId = needsCurriculum ? document.getElementById('sb-subject')?.value || null : null;
+      const subtopicId = needsCurriculum ? document.getElementById('sb-subtopic')?.value || null : null;
+      document.getElementById('sb-subject')?.removeAttribute('aria-invalid');
+      document.getElementById('sb-subtopic')?.removeAttribute('aria-invalid');
+      if (needsCurriculum && (!subjectId || !subtopicId)) {
+        if (!subjectId) document.getElementById('sb-subject')?.setAttribute('aria-invalid', 'true');
+        if (!subtopicId) document.getElementById('sb-subtopic')?.setAttribute('aria-invalid', 'true');
+        if (errorBox) errorBox.textContent = 'Selecione uma disciplina e um subtópico elegível.';
+        document.getElementById(!subjectId ? 'sb-subject' : 'sb-subtopic')?.focus();
+        return;
+      }
       const payload = {
         date: d,
         title,
         activityType,
+        subjectId,
+        subtopicId,
         plannedMinutes: mins,
         startTime: start,
         endTime: endTimeFrom(start, mins),
         source: 'user',
         scheduleType: start ? 'horario_fixo' : 'janela_flexivel',
       };
-      const repeat = document.getElementById('sb-week')?.checked;
-      if (repeat) {
-        const week = await routineService.getWeekView(d);
-        const rest = new Set(profile.restDays || []);
-        let n = 0;
-        for (const day of week.week || []) {
-          const dow = new Date(`${day}T12:00:00`).getDay();
-          if (rest.has(dow) && family === 'estudo') continue;
-          await routineService.createBlock({ ...payload, date: day });
-          n += 1;
+      saveButton?.setAttribute('aria-busy', 'true');
+      if (saveButton) saveButton.disabled = true;
+      try {
+        const repeat = document.getElementById('sb-week')?.checked;
+        if (repeat) {
+          const week = await routineService.getWeekView(d);
+          const rest = new Set(profile.restDays || []);
+          let n = 0;
+          for (const day of week.week || []) {
+            const dow = new Date(`${day}T12:00:00`).getDay();
+            if (rest.has(dow) && family === 'estudo') continue;
+            await routineService.createBlock({ ...payload, date: day });
+            n += 1;
+          }
+          toast(`${n} blocos criados na semana.`);
+        } else {
+          await routineService.createBlock(payload);
+          toast('Horário adicionado ao plano.');
         }
-        toast(`${n} blocos criados na semana.`);
-      } else {
-        await routineService.createBlock(payload);
-        toast('Horário adicionado ao plano.');
+        closeModal();
+        await paint();
+      } catch (error) {
+        if (errorBox) errorBox.textContent = error?.message || 'Não foi possível salvar este bloco.';
+      } finally {
+        saveButton?.removeAttribute('aria-busy');
+        if (saveButton?.isConnected) saveButton.disabled = false;
       }
-      closeModal();
-      paint();
     });
   }
 

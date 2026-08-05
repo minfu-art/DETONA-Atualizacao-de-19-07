@@ -204,23 +204,35 @@ export function generateWeekPlan(profile, {
  */
 export function buildReducedPlan({
   minutes = 20,
-  profile,
-  dueReviews = 0,
+  dueReviewBlocks = [],
   weakSubtopics = [],
   essentialBlocks = [],
+  eligibleSubtopics = [],
   userId = null,
   contestId = null,
+  scopeKey = null,
+  planId = null,
+  planVersion = 1,
+  generationId = null,
+  algorithmVersion = null,
   date = dateKey(),
 } = {}) {
   const plan = [];
-  let remaining = Math.max(10, Number(minutes) || 20);
+  let remaining = Math.max(0, Number(minutes) || 0);
+  const usedSubtopics = new Set();
 
   const push = (partial) => {
     const mins = Math.min(remaining, partial.plannedMinutes || 10);
-    if (mins < 5 || remaining < 5) return false;
-    plan.push(createRoutineBlock({
+    if (mins < 5 || remaining < 5 || !partial.subjectId || !partial.subtopicId) return false;
+    if (usedSubtopics.has(partial.subtopicId)) return false;
+    const candidate = {
       userId,
       contestId,
+      scopeKey,
+      planId,
+      planVersion,
+      generationId,
+      algorithmVersion,
       date,
       plannedMinutes: mins,
       startTime: null,
@@ -231,35 +243,44 @@ export function buildReducedPlan({
       priority: partial.priority || 80,
       ...partial,
       plannedMinutes: mins,
+    };
+    plan.push(createRoutineBlock({
+      ...candidate,
+      id: stableStudyBlockId(planId, candidate, plan.length),
     }));
+    usedSubtopics.add(partial.subtopicId);
     remaining -= mins;
     return remaining >= 5;
   };
 
-  if (dueReviews > 0 && remaining >= 5) {
+  for (const review of dueReviewBlocks) {
+    if (remaining < 5) break;
     push({
       activityType: 'revisao_fila',
-      title: 'Revisão rápida (fila)',
+      title: `Revisão rápida · ${review.name || review.title || 'conteúdo pendente'}`,
+      subjectId: review.subjectId || review.discipline_id || review.disciplineId,
+      subtopicId: review.subtopicId || review.id,
       plannedMinutes: Math.min(15, remaining),
       priority: 100,
     });
   }
 
-  const weak = weakSubtopics[0];
-  if (weak && remaining >= 5) {
+  for (const weak of weakSubtopics) {
+    if (remaining < 5) break;
     push({
       activityType: 'questoes',
       title: `Questões · ${weak.name || 'ponto fraco'}`,
       subtopicId: weak.id,
-      subjectId: weak.discipline_id || null,
+      subjectId: weak.discipline_id || weak.disciplineId || null,
       plannedMinutes: Math.min(15, remaining),
       priority: 90,
       description: 'Subtópico frágil / erros recentes',
     });
   }
 
-  const essential = (essentialBlocks || []).find((b) => b.status === 'planned' || b.status === 'in_progress');
-  if (essential && remaining >= 5) {
+  for (const essential of essentialBlocks) {
+    if (remaining < 5) break;
+    if (!['planned', 'in_progress'].includes(essential.status)) continue;
     push({
       activityType: essential.activityType,
       title: `Essencial · ${essential.title}`,
@@ -270,21 +291,15 @@ export function buildReducedPlan({
     });
   }
 
-  if (remaining >= 5) {
+  for (const candidate of eligibleSubtopics) {
+    if (remaining < 5) break;
     push({
       activityType: 'questoes',
-      title: 'Mini sessão de questões',
-      plannedMinutes: Math.min(10, remaining),
+      title: `Questões · ${candidate.name || candidate.id}`,
+      subjectId: candidate.discipline_id || candidate.disciplineId,
+      subtopicId: candidate.id,
+      plannedMinutes: Math.min(15, remaining),
       priority: 70,
-    });
-  }
-
-  if (remaining >= 5 && profile?.model !== 'leve') {
-    push({
-      activityType: 'teoria',
-      title: 'Teoria em pílula',
-      plannedMinutes: Math.min(10, remaining),
-      priority: 50,
     });
   }
 

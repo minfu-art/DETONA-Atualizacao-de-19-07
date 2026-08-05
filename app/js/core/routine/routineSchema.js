@@ -11,7 +11,7 @@ export const ACTIVITY_TYPES = Object.freeze([
   'teoria', 'questoes', 'revisao', 'revisao_fila', 'lei_seca', 'resumo',
   'flashcards', 'simulado', 'correcao_simulado', 'aula', 'personalizada',
   /* vida / planejamento do edital */
-  'estudo', 'trabalho', 'descanso', 'lazer', 'compromisso',
+  'estudo', 'estudo_livre', 'trabalho', 'descanso', 'lazer', 'compromisso',
 ]);
 
 /** Família do bloco para UI (estudo / trabalho / descanso) */
@@ -255,7 +255,7 @@ export function createRoutineBlock(partial = {}) {
     subjectId: null,
     topicId: null,
     subtopicId: null,
-    activityType: 'questoes',
+    activityType: 'estudo_livre',
     title: 'Bloco de estudo',
     description: '',
     priority: 50,
@@ -465,6 +465,7 @@ export function activityLabel(type) {
     aula: 'Aula',
     personalizada: 'Atividade personalizada',
     estudo: 'Estudo (edital)',
+    estudo_livre: 'Foco livre',
     trabalho: 'Trabalho',
     descanso: 'Descanso',
     lazer: 'Lazer',
@@ -475,6 +476,7 @@ export function activityLabel(type) {
 
 export function moduleTargetForActivity(type) {
   if (type === 'trabalho' || type === 'descanso' || type === 'lazer' || type === 'compromisso') return 'expedition';
+  if (type === 'estudo_livre') return 'expedition';
   if (type === 'revisao' || type === 'revisao_fila') return 'review';
   if (type === 'questoes' || type === 'simulado' || type === 'correcao_simulado' || type === 'estudo') return 'map';
   if (type === 'teoria' || type === 'lei_seca' || type === 'aula') return 'map';

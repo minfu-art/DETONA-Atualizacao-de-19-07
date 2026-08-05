@@ -4,6 +4,7 @@
  */
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
+import { questionRepository } from '../repositories/questionRepository.js';
 import {
   createRoutineProfile,
   createRoutineBlock,
@@ -61,9 +62,14 @@ import {
   MONTH_NAMES,
 } from '../core/routine/routineCalendar.js';
 import {
+  CURRICULAR_ACTIVITY_TYPES,
+  QUESTION_ACTIVITY_TYPES,
   assertStudyPlanScope,
+  dailyCapacityForDate,
+  reducedStudyPlanIdentity,
   safeStudyPlanError,
   stableStudyBlockId,
+  stableStudyPlanToken,
   studyPlanIdentity,
   studyPlanScopeKey,
   validateExamDate,
@@ -95,9 +101,22 @@ function automaticPlanFingerprint(block = {}) {
 }
 
 export class RoutineService {
-  constructor({ repository = progressRepository } = {}) {
+  constructor({
+    repository = progressRepository,
+    effects = {},
+    questionProvider = repository === progressRepository ? questionRepository : null,
+  } = {}) {
     this.repository = repository;
+    this.questionProvider = questionProvider;
+    this.effects = {
+      applyDailyGoalActivity,
+      applyValidStudyDay,
+      refreshEmblems,
+      ...effects,
+    };
     this.weekPlanGeneration = null;
+    this.reducedPlanOperations = new Map();
+    this.blockStartOperations = new Map();
   }
 
   userId() {
@@ -135,6 +154,78 @@ export class RoutineService {
   async writeMeta(repository, key, value) {
     if (typeof repository.setMeta === 'function') return repository.setMeta(key, value);
     return repository.put(STORES.meta, { key, value });
+  }
+
+  async loadAcademicCatalog(context = this.captureScope()) {
+    const [disciplines, subtopics, storedQuestions, publishedQuestions] = await Promise.all([
+      context.repository.getAll(STORES.disciplines),
+      context.repository.getAll(STORES.subtopics),
+      context.repository.getAll(STORES.questions),
+      this.questionProvider?.listar ? this.questionProvider.listar() : [],
+    ]);
+    this.assertActiveScope(context);
+    const questionById = new Map();
+    for (const question of [...storedQuestions, ...publishedQuestions]) {
+      const key = String(question?.id || '');
+      if (key && !questionById.has(key)) questionById.set(key, question);
+    }
+    const questions = [...questionById.values()];
+    const disciplineById = new Map(disciplines.map((item) => [String(item.id), item]));
+    const subtopicById = new Map(subtopics.map((item) => [String(item.id), item]));
+    const questionCountBySubtopic = new Map();
+    for (const question of questions) {
+      const subtopicId = String(question?.subtopic_id || question?.topicoEditalId || '');
+      if (!subtopicId) continue;
+      questionCountBySubtopic.set(subtopicId, (questionCountBySubtopic.get(subtopicId) || 0) + 1);
+    }
+    const eligibleSubtopics = subtopics
+      .filter((item) => item.archived !== true
+        && item.status !== 'archived'
+        && disciplineById.has(String(item.discipline_id || item.disciplineId || '')))
+      .sort((a, b) => String(a.order ?? '').localeCompare(String(b.order ?? ''), undefined, { numeric: true })
+        || String(a.id).localeCompare(String(b.id)));
+    return { disciplines, subtopics, questions, disciplineById, subtopicById, questionCountBySubtopic, eligibleSubtopics };
+  }
+
+  validateAcademicBlockAgainstCatalog(block, catalog) {
+    if (!CURRICULAR_ACTIVITY_TYPES.has(block?.activityType)) return true;
+    const subjectId = String(block?.subjectId || '');
+    const subtopicId = String(block?.subtopicId || '');
+    const discipline = catalog.disciplineById.get(subjectId);
+    const subtopic = catalog.subtopicById.get(subtopicId);
+    const linkedDisciplineId = String(subtopic?.discipline_id || subtopic?.disciplineId || '');
+    const hasQuestions = (catalog.questionCountBySubtopic.get(subtopicId) || 0) > 0;
+    if (!discipline || !subtopic || linkedDisciplineId !== subjectId
+      || (QUESTION_ACTIVITY_TYPES.has(block.activityType) && !hasQuestions)) {
+      throw safeStudyPlanError('STUDY_PLAN_ACADEMIC_CONTENT_REQUIRED');
+    }
+    return true;
+  }
+
+  async validateAcademicBlock(block, context = this.captureScope(), catalog = null) {
+    if (!CURRICULAR_ACTIVITY_TYPES.has(block?.activityType)) return true;
+    const resolved = catalog || await this.loadAcademicCatalog(context);
+    this.validateAcademicBlockAgainstCatalog(block, resolved);
+    this.assertActiveScope(context);
+    return true;
+  }
+
+  async getAcademicOptions(context = this.captureScope()) {
+    const catalog = await this.loadAcademicCatalog(context);
+    return {
+      disciplines: catalog.disciplines.map((item) => ({ id: item.id, name: item.name || item.title || item.id })),
+      subtopics: catalog.eligibleSubtopics.map((item) => ({
+        id: item.id,
+        name: item.name || item.title || item.id,
+        subjectId: item.discipline_id || item.disciplineId,
+        hasQuestionBank: (catalog.questionCountBySubtopic.get(String(item.id)) || 0) > 0,
+      })),
+    };
+  }
+
+  manualPlanIdentity(context, date) {
+    const planId = `study_manual_${stableStudyPlanToken(`${context.scopeKey}:${date}`)}_${date}`;
+    return { planId, planVersion: 1, generationId: `${planId}:v1` };
   }
 
   async ensureProfile(context = this.captureScope()) {
@@ -426,14 +517,17 @@ export class RoutineService {
       || (partial?.contestId && partial.contestId !== context.contestId)) {
       throw safeStudyPlanError('STUDY_PLAN_INVALID');
     }
+    const manualIdentity = partial?.planId ? null : this.manualPlanIdentity(context, partial.date);
     const block = normalizeRoutineBlock({
       ...partial,
+      ...(manualIdentity || {}),
       userId: context.userId,
       contestId: context.contestId,
       scopeKey: context.scopeKey,
       updatedAt: nowIso(),
     });
     assertStudyPlanScope(block, context);
+    await this.validateAcademicBlock(block, context);
     this.assertActiveScope(context);
     await context.repository.put(STORES.routineBlocks, block);
     return block;
@@ -450,9 +544,23 @@ export class RoutineService {
 
   async startBlock(blockId) {
     const context = this.captureScope();
+    const operationKey = `${context.scopeKey}:${blockId}`;
+    const current = this.blockStartOperations.get(operationKey);
+    if (current) return current;
+    const operation = this.startBlockOnce(blockId, context);
+    this.blockStartOperations.set(operationKey, operation);
+    try {
+      return await operation;
+    } finally {
+      this.blockStartOperations.delete(operationKey);
+    }
+  }
+
+  async startBlockOnce(blockId, context) {
     const block = await context.repository.getById(STORES.routineBlocks, blockId);
     if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
     assertStudyPlanScope(block, context);
+    await this.validateAcademicBlock(block, context);
     if (block.status === 'in_progress') return block;
     if (!['planned', 'partially_completed'].includes(block.status)) {
       throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
@@ -476,62 +584,147 @@ export class RoutineService {
     evidence = null,
   } = {}) {
     const context = this.captureScope();
-    const block = await context.repository.getById(STORES.routineBlocks, blockId);
+    let block = await context.repository.getById(STORES.routineBlocks, blockId);
     if (!block) throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
     assertStudyPlanScope(block, context);
-    if (block.status === 'completed') return block;
     if (['rescheduled', 'cancelled', 'skipped'].includes(block.status)) {
       throw safeStudyPlanError('STUDY_PLAN_BLOCK_UNAVAILABLE');
     }
-    if (!partial) {
-      const completion = validatePlanCompletionEvidence(block, evidence || {}, context);
-      if (!completion.valid) throw safeStudyPlanError('STUDY_PLAN_EVIDENCE_REQUIRED');
+    if (partial) {
+      if (block.status === 'completed') return block;
+      const minutes = actualMinutes == null ? (block.actualMinutes || 0) : Math.max(0, Number(actualMinutes) || 0);
+      const next = normalizeRoutineBlock({
+        ...block,
+        actualMinutes: minutes,
+        status: 'partially_completed',
+        skipReason: skipReason || block.skipReason,
+        updatedAt: nowIso(),
+      });
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.routineBlocks, next);
+      await this.refreshDailyState(block.date, context);
+      return next;
     }
-    const minutes = actualMinutes == null ? (block.actualMinutes || 0) : Math.max(0, Number(actualMinutes) || 0);
-    const completedAt = partial ? null : evidence.endedAt;
-    const eventId = partial ? null : `block:${block.id}:${evidence.id}`;
-    const next = normalizeRoutineBlock({
-      ...block,
-      actualMinutes: minutes,
-      status: partial ? 'partially_completed' : 'completed',
-      skipReason: partial ? (skipReason || block.skipReason) : null,
-      completedAt,
-      activityId: partial ? block.activityId : evidence.id,
-      sessionId: partial ? block.sessionId : evidence.id,
-      completionEvidence: partial ? null : {
-        activityId: evidence.id,
-        blockId: block.id,
-        status: evidence.status,
-        elapsedSeconds: Number(evidence.elapsedSeconds),
-        endedAt: evidence.endedAt,
-        subtopicId: evidence.subtopicId || null,
-      },
-      processedEventIds: eventId
-        ? [...new Set([...(block.processedEventIds || []), eventId])]
-        : block.processedEventIds,
+
+    const completion = validatePlanCompletionEvidence(block, evidence || {}, context);
+    if (!completion.valid) throw safeStudyPlanError('STUDY_PLAN_EVIDENCE_REQUIRED');
+    const minutes = validSessionMinutes(evidence.elapsedSeconds, { completed: true });
+    if (!Number.isInteger(minutes) || minutes <= 0) throw safeStudyPlanError('STUDY_PLAN_EVIDENCE_REQUIRED');
+    const eventId = `block:${block.id}:${evidence.id}`;
+    const journalKey = `study_plan_completion:${context.scopeKey}:${block.planId}:${block.id}:${evidence.id}`;
+    const stored = await this.readMeta(context.repository, journalKey);
+    if (stored?.status === 'completed') {
+      return (await context.repository.getById(STORES.routineBlocks, block.id)) || block;
+    }
+    // Conclusões legadas sem journal permanecem intocadas para não repetir efeitos antigos.
+    if (block.status === 'completed' && !stored) return block;
+
+    const steps = {
+      validation: stored?.steps?.validation === true,
+      block: stored?.steps?.block === true,
+      dailyState: stored?.steps?.dailyState === true,
+      dailyGoal: stored?.steps?.dailyGoal === true,
+      streak: stored?.steps?.streak === true,
+      emblems: stored?.steps?.emblems === true,
+      completed: stored?.steps?.completed === true,
+    };
+    const journal = {
+      key: journalKey,
+      scopeKey: context.scopeKey,
+      planId: block.planId,
+      planVersion: block.planVersion,
+      blockId: block.id,
+      activityId: evidence.id,
+      status: 'processing',
+      skipAcademicActivity: stored?.skipAcademicActivity ?? Boolean(skipAcademicActivity),
+      steps,
+      notApplicable: stored?.notApplicable || [],
+      startedAt: stored?.startedAt || nowIso(),
       updatedAt: nowIso(),
-    });
-    this.assertActiveScope(context);
-    await context.repository.put(STORES.routineBlocks, next);
-    await this.refreshDailyState(block.date, context);
-    if (!skipAcademicActivity && next.status === 'completed' && minutes > 0) {
-      await applyDailyGoalActivity({
-        eventId,
-        type: 'block',
-        questionCount: 0,
-        battleCount: 0,
-        activeMinutes: minutes,
-        occurredAt: next.completedAt,
-      }, { repository: context.repository });
-      await applyValidStudyDay({
-        eventId,
-        occurredAt: next.completedAt,
-        valid: true,
-        source: 'routine_block',
-      }, { repository: context.repository });
-      await refreshEmblems({ repository: context.repository });
+      completedAt: stored?.completedAt || null,
+    };
+    if (!stored) await this.writeMeta(context.repository, journalKey, structuredClone(journal));
+    const checkpoint = async (step, { completed = false, notApplicable = false } = {}) => {
+      journal.steps[step] = true;
+      if (notApplicable) journal.notApplicable = [...new Set([...journal.notApplicable, step])];
+      journal.updatedAt = nowIso();
+      if (completed) {
+        journal.status = 'completed';
+        journal.completedAt = journal.completedAt || journal.updatedAt;
+      }
+      this.assertActiveScope(context);
+      await this.writeMeta(context.repository, journalKey, structuredClone(journal));
+    };
+
+    if (!journal.steps.validation) await checkpoint('validation');
+    if (!journal.steps.block) {
+      const next = normalizeRoutineBlock({
+        ...block,
+        actualMinutes: block.status === 'completed' ? block.actualMinutes : minutes,
+        status: 'completed',
+        skipReason: null,
+        completedAt: block.completedAt || evidence.endedAt,
+        activityId: block.activityId || evidence.id,
+        sessionId: block.sessionId || evidence.id,
+        completionEvidence: block.completionEvidence || {
+          activityId: evidence.id,
+          blockId: block.id,
+          scopeKey: evidence.scopeKey,
+          planId: evidence.planId,
+          planVersion: Number(evidence.planVersion),
+          activityType: evidence.activityType,
+          status: evidence.status,
+          elapsedSeconds: Number(evidence.elapsedSeconds),
+          endedAt: evidence.endedAt,
+          subjectId: evidence.subjectId || null,
+          subtopicId: evidence.subtopicId || null,
+        },
+        processedEventIds: [...new Set([...(block.processedEventIds || []), eventId])],
+        updatedAt: nowIso(),
+      });
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.routineBlocks, next);
+      block = next;
+      await checkpoint('block');
+    } else {
+      block = (await context.repository.getById(STORES.routineBlocks, block.id)) || block;
     }
-    return next;
+    if (!journal.steps.dailyState) {
+      await this.refreshDailyState(block.date, context);
+      await checkpoint('dailyState');
+    }
+    if (journal.skipAcademicActivity) {
+      for (const step of ['dailyGoal', 'streak', 'emblems']) {
+        if (!journal.steps[step]) await checkpoint(step, { notApplicable: true });
+      }
+    } else {
+      if (!journal.steps.dailyGoal) {
+        await this.effects.applyDailyGoalActivity({
+          eventId,
+          type: 'block',
+          questionCount: 0,
+          battleCount: 0,
+          activeMinutes: block.actualMinutes,
+          occurredAt: block.completedAt,
+        }, { repository: context.repository });
+        await checkpoint('dailyGoal');
+      }
+      if (!journal.steps.streak) {
+        await this.effects.applyValidStudyDay({
+          eventId,
+          occurredAt: block.completedAt,
+          valid: true,
+          source: 'routine_block',
+        }, { repository: context.repository });
+        await checkpoint('streak');
+      }
+      if (!journal.steps.emblems) {
+        await this.effects.refreshEmblems({ repository: context.repository });
+        await checkpoint('emblems');
+      }
+    }
+    if (!journal.steps.completed) await checkpoint('completed', { completed: true });
+    return (await context.repository.getById(STORES.routineBlocks, block.id)) || block;
   }
 
   async skipBlock(blockId, skipReason = null) {
@@ -666,38 +859,198 @@ export class RoutineService {
   }
 
   async activateReducedPlan(minutes = 20) {
-    const profile = await this.ensureProfile();
+    const context = this.captureScope();
     const today = dateKey();
-    const blocks = await this.getBlocksForDate(today);
-    const subtopics = await this.repository.getAll(STORES.subtopics);
-    const weak = weakSpotSuggestions(subtopics, { limit: 3 });
-    let dueReviews = 0;
+    const requestedMinutes = Number(minutes);
+    if (!Number.isInteger(requestedMinutes) || requestedMinutes < 10 || requestedMinutes > 60) {
+      throw safeStudyPlanError('STUDY_PLAN_REDUCED_UNAVAILABLE');
+    }
+    const identity = reducedStudyPlanIdentity({
+      userId: context.userId,
+      contestId: context.contestId,
+      date: today,
+      minutes: requestedMinutes,
+    });
+    if (!identity) throw safeStudyPlanError('STUDY_PLAN_REDUCED_UNAVAILABLE');
+    const current = this.reducedPlanOperations.get(identity.journalKey);
+    if (current) return current;
+    const operation = this.activateReducedPlanOnce(requestedMinutes, today, identity, context);
+    this.reducedPlanOperations.set(identity.journalKey, operation);
     try {
-      const rq = await this.repository.getAll(STORES.reviewQueue);
-      dueReviews = rq.filter((i) => i.status !== 'frozen' && (i.nextReviewAt || '') <= `${today}T23:59:59`).length;
-    } catch { /* ignore */ }
+      return await operation;
+    } finally {
+      this.reducedPlanOperations.delete(identity.journalKey);
+    }
+  }
+
+  async activateReducedPlanOnce(minutes, today, identity, context) {
+    const stored = await this.readMeta(context.repository, identity.journalKey);
+    if (stored?.status === 'completed') {
+      const persisted = (await context.repository.getAll(STORES.routineBlocks))
+        .filter((block) => block.generationId === identity.generationId)
+        .sort((a, b) => String(a.id).localeCompare(String(b.id)));
+      return {
+        created: false,
+        reason: 'already_exists',
+        reduced: persisted,
+        state: await context.repository.getById(STORES.routineDailyStates, today),
+      };
+    }
+
+    const profile = await this.ensureProfile(context);
+    const week = weekDatesFrom(today);
+    const availability = validateStudyAvailability(profile, { weekDates: week });
+    if (!availability.valid) throw safeStudyPlanError('STUDY_PLAN_CONFIGURATION_INVALID');
+    const allBlocks = await context.repository.getAll(STORES.routineBlocks);
+    const existingForCapacity = allBlocks.filter((block) => (
+      block.generationId !== identity.generationId
+      && ACTIVE_PLAN_STATUSES.has(block.status)
+    ));
+    const todayBlocks = existingForCapacity.filter((block) => block.date === today);
+    const weekBlocks = existingForCapacity.filter((block) => week.includes(block.date));
+    const dayLoad = todayBlocks.reduce((sum, block) => sum + (Number(block.plannedMinutes) || 0), 0);
+    const weekLoad = weekBlocks.reduce((sum, block) => sum + (Number(block.plannedMinutes) || 0), 0);
+    const remainingDay = Math.max(0, dailyCapacityForDate(profile, today) - dayLoad);
+    const remainingWeek = Math.max(0, availability.weeklyCapacity - weekLoad);
+    const remainingBlocks = Math.max(0, Number(profile.maxBlocksPerDay || 0) - todayBlocks.length);
+    const allowedMinutes = Math.min(minutes, remainingDay, remainingWeek);
+    if (allowedMinutes < 5 || remainingBlocks < 1) {
+      return { created: false, reason: 'no_capacity', reduced: [], state: null };
+    }
+
+    const catalog = await this.loadAcademicCatalog(context);
+    const eligibleWithQuestions = catalog.eligibleSubtopics
+      .filter((item) => (catalog.questionCountBySubtopic.get(String(item.id)) || 0) > 0);
+    const weak = weakSpotSuggestions(eligibleWithQuestions, { limit: Math.max(3, remainingBlocks) })
+      .sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0) || String(a.id).localeCompare(String(b.id)));
+    const eligibleIds = new Set(eligibleWithQuestions.map((item) => String(item.id)));
+    const essentialBlocks = todayBlocks.filter((block) => (
+      ['planned', 'in_progress'].includes(block.status)
+      && block.subjectId
+      && eligibleIds.has(String(block.subtopicId || ''))
+      && (!QUESTION_ACTIVITY_TYPES.has(block.activityType)
+        || (catalog.questionCountBySubtopic.get(String(block.subtopicId)) || 0) > 0)
+    ));
+    const questionById = new Map(catalog.questions.map((item) => [String(item.id), item]));
+    const dueReviewBlocks = [];
+    try {
+      const queue = await context.repository.getAll(STORES.reviewQueue);
+      const seen = new Set();
+      for (const item of queue
+        .filter((entry) => entry.status !== 'frozen' && (entry.nextReviewAt || '') <= `${today}T23:59:59`)
+        .sort((a, b) => String(a.nextReviewAt || '').localeCompare(String(b.nextReviewAt || '')) || String(a.id).localeCompare(String(b.id)))) {
+        const question = questionById.get(String(item.questionId || item.id || ''));
+        const subtopicId = String(question?.subtopic_id || question?.topicoEditalId || '');
+        const subtopic = catalog.subtopicById.get(subtopicId);
+        if (!subtopic || !eligibleIds.has(subtopicId) || seen.has(subtopicId)) continue;
+        seen.add(subtopicId);
+        dueReviewBlocks.push({
+          id: subtopicId,
+          subtopicId,
+          subjectId: subtopic.discipline_id || subtopic.disciplineId,
+          name: subtopic.name || subtopic.title || subtopicId,
+        });
+      }
+    } catch { /* fila opcional */ }
 
     const reduced = buildReducedPlan({
-      minutes,
-      profile,
-      dueReviews,
+      minutes: allowedMinutes,
+      dueReviewBlocks,
       weakSubtopics: weak,
-      essentialBlocks: blocks,
-      userId: this.userId(),
-      contestId: this.contestId(),
+      essentialBlocks,
+      eligibleSubtopics: eligibleWithQuestions,
+      userId: context.userId,
+      contestId: context.contestId,
+      scopeKey: context.scopeKey,
+      planId: identity.planId,
+      planVersion: identity.version,
+      generationId: identity.generationId,
+      algorithmVersion: identity.algorithmVersion,
       date: today,
+    }).slice(0, remainingBlocks);
+    if (!reduced.length) {
+      return { created: false, reason: 'no_available_content', reduced: [], state: null };
+    }
+    for (const block of reduced) {
+      assertStudyPlanScope(block, context);
+      this.validateAcademicBlockAgainstCatalog(block, catalog);
+    }
+    const validation = validateStudyPlan({
+      ...identity,
+      userId: context.userId,
+      contestId: context.contestId,
+      status: 'active',
+      startDate: today,
+      endDate: today,
+      examDate: profile.examDate || null,
+      configuration: profile,
+      weekDates: [today],
+      blocks: reduced,
+    }, {
+      userId: context.userId,
+      contestId: context.contestId,
+      today,
+      disciplines: catalog.disciplines,
+      subtopics: catalog.subtopics,
+      questions: catalog.questions,
     });
+    if (!validation.valid) throw safeStudyPlanError('STUDY_PLAN_INVALID');
 
-    const state = await this.getDailyState(today);
-    state.reducedPlanActive = true;
-    state.reducedPlanMinutes = minutes;
-    state.originalPlanSnapshot = blocks.map((b) => b.id);
-    state.updatedAt = nowIso();
-    await this.repository.put(STORES.routineDailyStates, state);
-
-    // NÃO remove originais — adiciona blocos reduzidos
-    if (reduced.length) await this.repository.putMany(STORES.routineBlocks, reduced);
-    return { reduced, state };
+    const journal = {
+      key: identity.journalKey,
+      scopeKey: context.scopeKey,
+      planId: identity.planId,
+      generationId: identity.generationId,
+      status: 'processing',
+      steps: {
+        validation: true,
+        blocks: stored?.steps?.blocks === true,
+        dailyState: stored?.steps?.dailyState === true,
+      },
+      blockIds: reduced.map((block) => block.id),
+      startedAt: stored?.startedAt || nowIso(),
+      updatedAt: nowIso(),
+    };
+    if (!stored) await this.writeMeta(context.repository, identity.journalKey, structuredClone(journal));
+    const checkpoint = async (step, completed = false) => {
+      journal.steps[step] = true;
+      journal.updatedAt = nowIso();
+      if (completed) {
+        journal.status = 'completed';
+        journal.completedAt = journal.completedAt || journal.updatedAt;
+      }
+      this.assertActiveScope(context);
+      await this.writeMeta(context.repository, identity.journalKey, structuredClone(journal));
+    };
+    if (!journal.steps.blocks) {
+      const existingIds = new Set(allBlocks.map((block) => block.id));
+      const missing = reduced.filter((block) => !existingIds.has(block.id));
+      this.assertActiveScope(context);
+      if (missing.length) await context.repository.putMany(STORES.routineBlocks, missing);
+      await checkpoint('blocks');
+    }
+    let state = await context.repository.getById(STORES.routineDailyStates, today);
+    if (!journal.steps.dailyState) {
+      state = state || createDailyState({
+        id: today,
+        date: today,
+        userId: context.userId,
+        contestId: context.contestId,
+        scopeKey: context.scopeKey,
+      });
+      state.reducedPlanActive = true;
+      state.reducedPlanMinutes = reduced.reduce((sum, block) => sum + block.plannedMinutes, 0);
+      state.originalPlanSnapshot = allBlocks
+        .filter((block) => block.generationId !== identity.generationId)
+        .map((block) => block.id);
+      state.updatedAt = nowIso();
+      this.assertActiveScope(context);
+      await context.repository.put(STORES.routineDailyStates, state);
+      await checkpoint('dailyState', true);
+    } else if (journal.status !== 'completed') {
+      await checkpoint('dailyState', true);
+    }
+    return { created: !stored, reason: stored ? 'recovered' : null, reduced, state };
   }
 
   async getDailyState(date = dateKey(), context = this.captureScope()) {
@@ -917,7 +1270,17 @@ export class RoutineService {
           actualMinutes: minutes || actualMinutes || 0,
           partial: partial || session.status === 'aborted',
           skipAcademicActivity: true,
-          evidence: { ...session, blockId: block.id },
+          evidence: {
+            ...session,
+            blockId: block.id,
+            scopeKey: block.scopeKey,
+            planId: block.planId,
+            planVersion: block.planVersion,
+            activityType: block.activityType,
+            subjectId: block.subjectId,
+            subtopicId: block.subtopicId,
+            endedAt: session.endedAt || session.finishedAt,
+          },
         });
       }
       await checkpoint('block');
