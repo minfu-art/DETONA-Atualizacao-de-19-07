@@ -4,20 +4,20 @@
  */
 
 /** Cache-bust ao trocar artes */
-const HERO_VER = 'v57-female-alpha';
+const HERO_VER = 'v58-tactical-evolution';
 
-/** Tiers masculinos (artes existentes) */
+/** Tiers masculinos — evolução tática DETONA v2 */
 export const HERO_TIERS_MALE = Object.freeze([
-  { min: 1, max: 9, file: 'assets/hero/tiers/tier-01-09.png', key: '01-09' },
-  { min: 10, max: 19, file: 'assets/hero/tiers/tier-10-19.png', key: '10-19' },
-  { min: 20, max: 29, file: 'assets/hero/tiers/tier-20-29.png', key: '20-29' },
-  { min: 30, max: 39, file: 'assets/hero/tiers/tier-30-39.png', key: '30-39' },
-  { min: 40, max: 49, file: 'assets/hero/tiers/tier-40-49.png', key: '40-49' },
-  { min: 50, max: 59, file: 'assets/hero/tiers/tier-50-59.png', key: '50-59' },
-  { min: 60, max: 69, file: 'assets/hero/tiers/tier-60-69.png', key: '60-69' },
-  { min: 70, max: 79, file: 'assets/hero/tiers/tier-70-79.png', key: '70-79' },
-  { min: 80, max: 89, file: 'assets/hero/tiers/tier-80-89.png', key: '80-89' },
-  { min: 90, max: 100, file: 'assets/hero/tiers/tier-90-99.png', key: '90-99' },
+  { min: 1, max: 9, file: 'assets/hero/tiers-v2/male/stage-01.png', key: '01-09' },
+  { min: 10, max: 19, file: 'assets/hero/tiers-v2/male/stage-02.png', key: '10-19' },
+  { min: 20, max: 29, file: 'assets/hero/tiers-v2/male/stage-03.png', key: '20-29' },
+  { min: 30, max: 39, file: 'assets/hero/tiers-v2/male/stage-04.png', key: '30-39' },
+  { min: 40, max: 49, file: 'assets/hero/tiers-v2/male/stage-05.png', key: '40-49' },
+  { min: 50, max: 59, file: 'assets/hero/tiers-v2/male/stage-06.png', key: '50-59' },
+  { min: 60, max: 69, file: 'assets/hero/tiers-v2/male/stage-07.png', key: '60-69' },
+  { min: 70, max: 79, file: 'assets/hero/tiers-v2/male/stage-08.png', key: '70-79' },
+  { min: 80, max: 89, file: 'assets/hero/tiers-v2/male/stage-09.png', key: '80-89' },
+  { min: 90, max: 100, file: 'assets/hero/tiers-v2/male/stage-10.png', key: '90-100' },
 ]);
 
 /**
@@ -25,16 +25,16 @@ export const HERO_TIERS_MALE = Object.freeze([
  * LV 70–89 usa uma única arte; LV 100 tem arte própria.
  */
 export const HERO_TIERS_FEMALE = Object.freeze([
-  { min: 1, max: 9, file: 'assets/hero/tiers/female/tier-01-09.png', key: 'f-01-09' },
-  { min: 10, max: 19, file: 'assets/hero/tiers/female/tier-10-19.png', key: 'f-10-19' },
-  { min: 20, max: 29, file: 'assets/hero/tiers/female/tier-20-29.png', key: 'f-20-29' },
-  { min: 30, max: 39, file: 'assets/hero/tiers/female/tier-30-39.png', key: 'f-30-39' },
-  { min: 40, max: 49, file: 'assets/hero/tiers/female/tier-40-49.png', key: 'f-40-49' },
-  { min: 50, max: 59, file: 'assets/hero/tiers/female/tier-50-59.png', key: 'f-50-59' },
-  { min: 60, max: 69, file: 'assets/hero/tiers/female/tier-60-69.png', key: 'f-60-69' },
-  { min: 70, max: 89, file: 'assets/hero/tiers/female/tier-70-89.png', key: 'f-70-89' },
-  { min: 90, max: 99, file: 'assets/hero/tiers/female/tier-90-99.png', key: 'f-90-99' },
-  { min: 100, max: 100, file: 'assets/hero/tiers/female/tier-100.png', key: 'f-100' },
+  { min: 1, max: 9, file: 'assets/hero/tiers-v2/female/stage-01.png', key: 'f-01-09' },
+  { min: 10, max: 19, file: 'assets/hero/tiers-v2/female/stage-02.png', key: 'f-10-19' },
+  { min: 20, max: 29, file: 'assets/hero/tiers-v2/female/stage-03.png', key: 'f-20-29' },
+  { min: 30, max: 39, file: 'assets/hero/tiers-v2/female/stage-04.png', key: 'f-30-39' },
+  { min: 40, max: 49, file: 'assets/hero/tiers-v2/female/stage-05.png', key: 'f-40-49' },
+  { min: 50, max: 59, file: 'assets/hero/tiers-v2/female/stage-06.png', key: 'f-50-59' },
+  { min: 60, max: 69, file: 'assets/hero/tiers-v2/female/stage-07.png', key: 'f-60-69' },
+  { min: 70, max: 79, file: 'assets/hero/tiers-v2/female/stage-08.png', key: 'f-70-79' },
+  { min: 80, max: 89, file: 'assets/hero/tiers-v2/female/stage-09.png', key: 'f-80-89' },
+  { min: 90, max: 100, file: 'assets/hero/tiers-v2/female/stage-10.png', key: 'f-90-100' },
 ]);
 
 /** @deprecated use getHeroTiers('male') — mantido para imports legados */
