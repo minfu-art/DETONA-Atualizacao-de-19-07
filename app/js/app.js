@@ -20,7 +20,7 @@ import { renderTopicTree } from './ui/topicTree.js?v=72';
 import { renderReview } from './ui/review.js?v=86';
 import { renderRankedEvent } from './ui/rankedEvent.js?v=87';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=72';
-import { renderAuth } from './ui/auth.js?v=74';
+import { renderAuth } from './ui/auth.js?v=75';
 import { renderLibrary } from './ui/library.js';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
@@ -494,6 +494,10 @@ async function init() {
 
     bindOnlineFlush();
 
+    if (authService.isPasswordRecoveryLocation()) {
+      showAuth();
+      return;
+    }
     const restored = await authService.restoreSession();
     if (restored) await initializeAuthenticatedApp();
     else showAuth();

@@ -1,7 +1,7 @@
 import { authService } from '../services/appServices.js';
 import { isDeveloperUser } from '../auth/authService.js';
 import { redirectForRole } from '../auth/roleRouting.js';
-import { renderAuth } from '../ui/auth.js';
+import { renderAuth } from '../ui/auth.js?v=75';
 import { adminContext } from './adminContext.js';
 import { mountAdminShell, updateAdminShell } from './adminShell.js';
 import { renderAdminDashboard } from './adminDashboard.js';
@@ -172,6 +172,10 @@ function registerNavigationGuards() {
 async function init() {
   registerNavigationGuards();
   try {
+    if (authService.isPasswordRecoveryLocation()) {
+      showLogin();
+      return;
+    }
     const restored = await authService.restoreSession();
     if (restored) await initializeAuthenticatedAdmin();
     else showLogin();

@@ -86,8 +86,8 @@ test('autenticacao e biblioteca integram arte aprovada sem usar os mockups como 
     readFile(new URL('../app/js/ui/auth.js', import.meta.url), 'utf8'),
     readFile(new URL('../app/js/ui/library.js', import.meta.url), 'utf8'),
   ]);
-  assert.match(auth, /heroSrcForLevel/);
-  assert.match(auth, /auth-character/);
+  assert.match(auth, /login-command-hall\.webp/);
+  assert.match(auth, /auth-backdrop/);
   assert.match(library, /library-guide/);
   assert.doesNotMatch(auth + library, /ref-dashboard\.png|DETONA_UI_CONCEITO/);
 });
@@ -97,15 +97,15 @@ test('login vertical preserva autenticação e aproxima a composição da arte D
     readFile(new URL('../app/js/ui/auth.js', import.meta.url), 'utf8'),
     readFile(cssUrl, 'utf8'),
   ]);
-  for (const marker of ['detona-login-card', 'auth-logo-lockup', 'auth-character', 'auth-tagline', 'auth-input', 'auth-submit']) {
+  for (const marker of ['detona-login-card', 'auth-logo-lockup', 'auth-backdrop', 'auth-story-copy', 'auth-input', 'auth-submit']) {
     assert.match(auth, new RegExp(marker));
     assert.match(css, new RegExp(`\\.${marker}`));
   }
-  assert.match(auth, /heroSrcForLevel\(1, 'female'\)/);
-  assert.match(auth, /ESTUDE\. EVOLUA\. DETONE\./);
-  assert.match(auth, /boss final/);
+  assert.match(auth, /Seu próximo nível/);
+  assert.match(auth, /PREPARAÇÃO DE ALTA PERFORMANCE/);
+  assert.match(auth, /Esqueci minha senha/);
   assert.match(auth, /authService\.register\(input\).*authService\.login\(input\)/s);
-  assert.match(css, /@media \(max-height:700px\)/);
+  assert.match(css, /@media \(max-width:760px\)/);
   assert.match(css, /body:has\(\.app-shell--auth\) \.pwa-install-banner/);
 });
 

@@ -74,6 +74,29 @@ export class CloudAwareAuthService {
     return user;
   }
 
+  isPasswordRecoveryLocation(location = globalThis.location) {
+    return this.cloudAuth?.isPasswordRecoveryLocation?.(location) === true;
+  }
+
+  async requestPasswordReset(input) {
+    this.#assertAuthAvailable();
+    if (!this.#useCloud()) {
+      throw new Error('A recuperação por e-mail está disponível no ambiente online.');
+    }
+    return this.cloudAuth.requestPasswordReset(input);
+  }
+
+  async updatePassword(input) {
+    this.#assertAuthAvailable();
+    if (!this.#useCloud()) {
+      throw new Error('A redefinição de senha está disponível no ambiente online.');
+    }
+    const result = await this.cloudAuth.updatePassword(input);
+    this.currentUser = null;
+    this.mode = 'none';
+    return result;
+  }
+
   async restoreSession() {
     this.#assertAuthAvailable();
     if (this.#useCloud()) {

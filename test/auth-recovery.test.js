@@ -1,0 +1,125 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile, stat } from 'node:fs/promises';
+
+import { SupabaseAuthAdapter } from '../app/js/supabase/authAdapter.js';
+import { CloudAwareAuthService } from '../app/js/auth/cloudAuthService.js';
+
+const authUiUrl = new URL('../app/js/ui/auth.js', import.meta.url);
+const cssUrl = new URL('../app/css/design-system.css', import.meta.url);
+const appUrl = new URL('../app/js/app.js', import.meta.url);
+const adminUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
+const swUrl = new URL('../app/sw.js', import.meta.url);
+const artUrl = new URL('../app/assets/ui/login-command-hall.webp', import.meta.url);
+
+test('Supabase solicita recuperação com e-mail normalizado e redirect explícito', async () => {
+  const calls = [];
+  const adapter = new SupabaseAuthAdapter({
+    getClient: async () => ({
+      auth: {
+        resetPasswordForEmail: async (...args) => {
+          calls.push(args);
+          return { error: null };
+        },
+      },
+    }),
+  });
+
+  const result = await adapter.requestPasswordReset({
+    email: '  ALUNO@EXEMPLO.COM ',
+    redirectTo: 'https://preview.detona.test/index.html?auth=recovery',
+  });
+
+  assert.deepEqual(result, { accepted: true });
+  assert.deepEqual(calls, [[
+    'aluno@exemplo.com',
+    { redirectTo: 'https://preview.detona.test/index.html?auth=recovery' },
+  ]]);
+});
+
+test('redefinição valida a senha, atualiza no Supabase e encerra a sessão temporária', async () => {
+  const events = [];
+  const adapter = new SupabaseAuthAdapter({
+    getClient: async () => ({
+      auth: {
+        updateUser: async (payload) => {
+          events.push(['update', payload]);
+          return { error: null };
+        },
+        signOut: async () => events.push(['signout']),
+      },
+    }),
+  });
+
+  await assert.rejects(() => adapter.updatePassword({ password: 'fraca' }), /8 caracteres/);
+  await assert.rejects(() => adapter.updatePassword({ password: 'semnumero' }), /número/);
+  assert.deepEqual(await adapter.updatePassword({ password: 'NovaSenha2026' }), { updated: true });
+  assert.deepEqual(events, [
+    ['update', { password: 'NovaSenha2026' }],
+    ['signout'],
+  ]);
+});
+
+test('detecção de link de recuperação cobre query e hash do Supabase', () => {
+  const adapter = new SupabaseAuthAdapter({ getClient: async () => null });
+  assert.equal(adapter.isPasswordRecoveryLocation({ search: '?auth=recovery', hash: '' }), true);
+  assert.equal(adapter.isPasswordRecoveryLocation({ search: '', hash: '#type=recovery&access_token=redacted' }), true);
+  assert.equal(adapter.isPasswordRecoveryLocation({ search: '?screen=home', hash: '' }), false);
+});
+
+test('serviço híbrido não faz fallback local para recuperação de senha', async () => {
+  let localCalls = 0;
+  const cloudCalls = [];
+  const service = new CloudAwareAuthService({
+    localAuth: {
+      requestPasswordReset: async () => { localCalls += 1; },
+      updatePassword: async () => { localCalls += 1; },
+    },
+    cloudAuth: {
+      isAvailable: () => true,
+      requestPasswordReset: async (input) => { cloudCalls.push(['request', input]); return { accepted: true }; },
+      updatePassword: async (input) => { cloudCalls.push(['update', input]); return { updated: true }; },
+      isPasswordRecoveryLocation: () => true,
+    },
+    cloudEnabled: () => true,
+    localFallbackAllowed: () => false,
+    cloudRequired: () => false,
+  });
+
+  assert.equal(service.isPasswordRecoveryLocation(), true);
+  await service.requestPasswordReset({ email: 'a@b.com' });
+  await service.updatePassword({ password: 'NovaSenha2026' });
+  assert.equal(localCalls, 0);
+  assert.deepEqual(cloudCalls, [
+    ['request', { email: 'a@b.com' }],
+    ['update', { password: 'NovaSenha2026' }],
+  ]);
+});
+
+test('interface oferece fluxo completo e acessível sem botão decorativo desabilitado', async () => {
+  const [ui, css, app, admin, sw, art] = await Promise.all([
+    readFile(authUiUrl, 'utf8'),
+    readFile(cssUrl, 'utf8'),
+    readFile(appUrl, 'utf8'),
+    readFile(adminUrl, 'utf8'),
+    readFile(swUrl, 'utf8'),
+    stat(artUrl),
+  ]);
+
+  assert.match(ui, /AUTH_MODES\.FORGOT/);
+  assert.match(ui, /AUTH_MODES\.RESET/);
+  assert.match(ui, /requestPasswordReset/);
+  assert.match(ui, /updatePassword/);
+  assert.match(ui, /Esqueci minha senha/);
+  assert.match(ui, /Por segurança, não informamos se o endereço está cadastrado/);
+  assert.doesNotMatch(ui, /class="auth-future" disabled/);
+  assert.match(ui, /aria-live="assertive"/);
+  assert.match(ui, /autocomplete: 'new-password'/);
+  assert.match(css, /grid-template-columns:minmax\(0,1\.35fr\) minmax\(390px,\.9fr\)/);
+  assert.match(css, /@media \(max-width:760px\)/);
+  assert.match(css, /\.auth-forgot:focus-visible/);
+  assert.match(app, /isPasswordRecoveryLocation\(\)[\s\S]*showAuth\(\)/);
+  assert.match(admin, /isPasswordRecoveryLocation\(\)[\s\S]*showLogin\(\)/);
+  assert.match(sw, /assets\/ui\/login-command-hall\.webp/);
+  assert.ok(art.size > 50_000 && art.size < 500_000, `arte otimizada fora da faixa: ${art.size}`);
+});

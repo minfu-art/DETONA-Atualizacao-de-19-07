@@ -2277,6 +2277,247 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 @media (max-width:360px) { .detona-login-card .saas-auth__story { height:310px; } .auth-logo-lockup { transform:translateX(-50%) scale(.82); transform-origin:top center; } .detona-login-card .auth-character { width:285px; height:255px; } }
 @media (prefers-reduced-motion:reduce) { .detona-login-card .rpg-energy { animation:none !important; } }
 
+/* Login v88 — portal de acesso responsivo e recuperação de senha */
+.app-shell--auth .saas-auth {
+  min-height:100dvh;
+  padding:clamp(14px,3vw,34px);
+  background:
+    radial-gradient(circle at 12% 18%,rgba(124,58,237,.18),transparent 32%),
+    radial-gradient(circle at 88% 82%,rgba(249,115,22,.1),transparent 28%),
+    linear-gradient(145deg,#02040b,#070a16 54%,#03050b);
+}
+.detona-login-card {
+  position:relative;
+  isolation:isolate;
+  width:min(1120px,calc(100vw - 28px));
+  min-height:min(680px,calc(100dvh - 48px));
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(390px,.9fr);
+  overflow:hidden;
+  border:1px solid rgba(139,92,246,.48);
+  border-radius:28px;
+  background:#060914;
+  box-shadow:0 32px 100px rgba(0,0,0,.68),0 0 55px rgba(76,29,149,.16),inset 0 1px rgba(255,255,255,.07);
+}
+.detona-login-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  border-radius:inherit;
+  background:linear-gradient(90deg,transparent 38%,rgba(3,6,15,.16) 55%,rgba(3,6,15,.76) 68%,rgba(3,6,15,.98) 100%);
+  box-shadow:inset 0 0 50px rgba(24,12,57,.26);
+  pointer-events:none;
+}
+.auth-backdrop {
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.94) contrast(1.04);
+}
+.detona-login-card .saas-auth__story {
+  position:relative;
+  z-index:2;
+  height:auto;
+  min-height:620px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  padding:clamp(28px,4vw,52px);
+  overflow:hidden;
+  background:linear-gradient(180deg,rgba(2,4,11,.04) 30%,rgba(3,5,13,.88) 100%);
+}
+.detona-login-card .saas-auth__story::before,
+.detona-login-card .saas-auth__story::after { content:none; }
+.auth-logo-lockup {
+  position:absolute;
+  top:34px;
+  left:40px;
+  z-index:3;
+  width:auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  transform:none;
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,.6));
+}
+.auth-logo-lockup__emblem { width:58px; height:58px; object-fit:contain; }
+.auth-logo-lockup__wordmark { display:grid; justify-items:start; margin:0; transform:none; }
+.auth-logo-lockup__wordmark strong {
+  color:#f8fafc;
+  font:950 27px/.9 var(--display);
+  letter-spacing:-.035em;
+  text-shadow:0 3px 10px rgba(0,0,0,.8);
+  -webkit-text-stroke:0;
+}
+.auth-logo-lockup__wordmark span { margin-top:7px; color:#fb923c; font:850 9px/1 var(--display); letter-spacing:.28em; }
+.auth-story-copy { position:relative; z-index:3; max-width:490px; }
+.auth-story-copy>span {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#c4b5fd;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.16em;
+}
+.auth-story-copy>span::before { content:""; width:25px; height:2px; background:#fb923c; box-shadow:0 0 10px rgba(249,115,22,.65); }
+.auth-story-copy h2 { margin:12px 0 10px; color:#fff; font:900 clamp(34px,4.3vw,58px)/.98 var(--display); letter-spacing:-.045em; text-shadow:0 6px 24px rgba(0,0,0,.82); }
+.auth-story-copy h2 em { color:#fb923c; font-style:normal; }
+.auth-story-copy p { max-width:440px; margin:0; color:#d4d9e7; font-size:14px; line-height:1.55; text-shadow:0 2px 8px #000; }
+.detona-login-card .saas-auth__panel {
+  position:relative;
+  z-index:3;
+  min-height:620px;
+  display:grid;
+  place-items:center;
+  padding:clamp(30px,4vw,54px);
+  border:0;
+  border-left:1px solid rgba(167,139,250,.16);
+  background:linear-gradient(155deg,rgba(10,14,29,.93),rgba(4,7,16,.985));
+  backdrop-filter:blur(18px);
+}
+.detona-login-card .saas-auth__form-wrap { width:100%; max-width:390px; padding:0; }
+.auth-mobile-brand { display:none; }
+.auth-mode-heading {
+  position:static;
+  width:auto;
+  height:auto;
+  margin:0 0 28px;
+  padding:0;
+  overflow:visible;
+  clip:auto;
+  clip-path:none;
+  white-space:normal;
+  text-align:left;
+}
+.auth-mode-heading .saas-kicker { color:#fb923c; font-size:10px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.auth-mode-heading h1 { margin:9px 0 8px; color:#f8fafc; font:850 clamp(28px,3vw,38px)/1.06 var(--display); letter-spacing:-.035em; }
+.auth-mode-heading p { max-width:360px; color:#aab3ca; font-size:13px; line-height:1.55; }
+.detona-login-card .auth-form { display:grid; gap:13px; margin:0; }
+.detona-login-card .auth-field { margin:0; }
+.detona-login-card .auth-input input {
+  width:100%;
+  min-height:54px;
+  padding:13px 50px 13px 45px;
+  border:1px solid rgba(143,155,195,.3);
+  border-radius:12px;
+  background:rgba(3,7,18,.78);
+  color:#f8fafc;
+  font-size:14px;
+  box-shadow:inset 0 1px rgba(255,255,255,.025),0 9px 20px rgba(0,0,0,.11);
+  transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.detona-login-card .auth-input input::placeholder { color:#727c99; }
+.detona-login-card .auth-input input:hover { border-color:rgba(167,139,250,.48); }
+.detona-login-card .auth-input input:focus { border-color:#a78bfa; background:rgba(5,9,23,.96); box-shadow:0 0 0 3px rgba(124,92,255,.17),0 12px 30px rgba(0,0,0,.18); }
+.auth-input__icon { left:15px; color:#8b9cc7; }
+.auth-input__icon .ico { font-size:18px; }
+.detona-login-card .input-action button { top:4px; right:4px; width:46px; min-height:46px; border-radius:9px; color:#9ca8c8; }
+.detona-login-card .input-action button:hover { background:rgba(167,139,250,.08); color:#c4b5fd; }
+.auth-options { min-height:30px; }
+.auth-session-note { color:#8791ad; font-size:10px; }
+.auth-session-note .ico { color:#4ade80; font-size:14px; }
+.detona-login-card .auth-forgot {
+  min-height:30px;
+  padding:3px 0;
+  border:0;
+  background:transparent;
+  color:#c4b5fd;
+  font-size:11px;
+  font-weight:750;
+  cursor:pointer;
+}
+.detona-login-card .auth-forgot:hover { color:#fff; text-decoration:underline; text-underline-offset:3px; }
+.detona-login-card .auth-forgot:focus-visible,
+.detona-login-card .auth-switch:focus-visible { outline:3px solid var(--ds-focus); outline-offset:3px; border-radius:5px; }
+.detona-login-card .auth-error { min-height:18px; margin:0; color:#fda4af; font-size:11px; line-height:1.45; text-align:left; }
+.detona-login-card .auth-error.is-success { color:#86efac; }
+.detona-login-card .auth-submit {
+  min-height:54px;
+  display:grid;
+  grid-template-columns:28px 1fr 28px;
+  align-items:center;
+  padding:10px 14px;
+  border:1px solid #ff9c28;
+  border-radius:12px;
+  background:#a93608;
+  color:#fff7ed;
+  box-shadow:inset 0 1px rgba(255,221,172,.32),0 12px 30px rgba(169,54,8,.24);
+  font-size:14px;
+  letter-spacing:.04em;
+  text-shadow:0 2px 4px rgba(0,0,0,.55);
+  transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+}
+.detona-login-card .auth-submit:hover { border-color:#ffd08a; background:#c2410c; box-shadow:inset 0 1px rgba(255,221,172,.36),0 16px 36px rgba(194,65,12,.3); transform:translateY(-1px); }
+.detona-login-card .auth-submit:active { transform:translateY(0); }
+.detona-login-card .auth-submit:disabled { border-color:#5b6073; background:#343848; color:#a5adbf; box-shadow:none; cursor:wait; transform:none; }
+.detona-login-card .auth-submit--single { grid-template-columns:1fr; }
+.detona-login-card .auth-submit .ico { color:#fde68a; font-size:18px; }
+.detona-login-card .auth-submit>span:last-child { transform:scaleX(-1); }
+.detona-login-card .auth-switch { min-height:42px; padding:13px 4px 5px; color:#8f99b3; font-size:11px; font-weight:550; }
+.detona-login-card .auth-switch strong { margin-left:3px; color:#fb923c; font-weight:850; }
+.detona-login-card .auth-install-wrap { display:flex; justify-content:center; margin-top:3px; }
+.detona-login-card .auth-install-wrap .install-app-btn { min-height:34px; padding:5px 9px; border:0; color:#a78bfa; font-size:10px; }
+.auth-legal { max-width:340px; margin:16px auto 0; color:#68728e; font-size:9px; line-height:1.55; text-align:center; }
+.auth-legal strong { color:#9f8bd4; font-weight:700; }
+.detona-login-card .auth-requirements { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px 10px; margin:0; padding:0 3px; }
+.detona-login-card .auth-requirements span { color:#7d87a2; font-size:9px; }
+.detona-login-card .auth-requirements span::before { content:"○"; margin-right:5px; }
+.detona-login-card .auth-requirements span.is-met { color:#86efac; }
+.detona-login-card .auth-requirements span.is-met::before { content:"✓"; }
+.auth-sent { margin:4px 0 22px; padding:22px; border:1px solid rgba(74,222,128,.22); border-radius:16px; background:rgba(74,222,128,.055); text-align:center; }
+.auth-sent>span { width:50px; height:50px; display:grid; place-items:center; margin:0 auto 13px; border:1px solid rgba(74,222,128,.25); border-radius:14px; background:rgba(74,222,128,.08); color:#86efac; }
+.auth-sent .ico { font-size:25px; }
+.auth-sent strong { display:block; color:#f1f5f9; font-size:14px; }
+.auth-sent p { margin:7px 0 0; color:#9ca6be; font-size:11px; line-height:1.5; }
+
+@media (max-width:760px) {
+  .app-shell--auth .saas-auth { align-items:start; padding:8px; }
+  .detona-login-card { width:min(440px,calc(100vw - 16px)); min-height:0; grid-template-columns:1fr; border-radius:22px; }
+  .detona-login-card::before { background:linear-gradient(180deg,transparent 10%,rgba(3,6,15,.12) 28%,rgba(3,6,15,.88) 41%,rgba(3,6,15,.99) 54%); }
+  .auth-backdrop { height:310px; object-position:25% 28%; }
+  .detona-login-card .saas-auth__story { height:282px; min-height:282px; padding:20px; background:linear-gradient(180deg,rgba(2,4,11,.05) 35%,rgba(3,5,13,.92) 100%); }
+  .auth-logo-lockup { top:18px; left:20px; gap:8px; }
+  .auth-logo-lockup__emblem { width:42px; height:42px; }
+  .auth-logo-lockup__wordmark strong { font-size:20px; }
+  .auth-logo-lockup__wordmark span { margin-top:5px; font-size:7px; }
+  .auth-story-copy>span { font-size:8px; }
+  .auth-story-copy h2 { margin:8px 0 5px; font-size:29px; }
+  .auth-story-copy p { display:none; }
+  .detona-login-card .saas-auth__panel { min-height:0; padding:24px 20px 20px; border:0; border-top:1px solid rgba(167,139,250,.15); backdrop-filter:none; }
+  .auth-mode-heading { margin-bottom:19px; }
+  .auth-mode-heading h1 { margin-block:7px 6px; font-size:27px; }
+  .auth-mode-heading p { font-size:12px; }
+  .detona-login-card .auth-form { gap:10px; }
+  .detona-login-card .auth-input input { min-height:50px; }
+  .detona-login-card .input-action button { min-height:42px; }
+  .detona-login-card .auth-submit { min-height:50px; }
+  .auth-legal { margin-top:11px; }
+}
+
+@media (max-height:720px) and (min-width:761px) {
+  .detona-login-card { min-height:620px; }
+  .detona-login-card .saas-auth__story,
+  .detona-login-card .saas-auth__panel { min-height:620px; }
+}
+
+@media (max-width:380px) {
+  .app-shell--auth .saas-auth { padding:4px; }
+  .detona-login-card { width:calc(100vw - 8px); border-radius:18px; }
+  .auth-backdrop { height:265px; }
+  .detona-login-card .saas-auth__story { height:240px; min-height:240px; }
+  .auth-story-copy h2 { font-size:25px; }
+  .detona-login-card .saas-auth__panel { padding:20px 15px 16px; }
+  .auth-mode-heading { margin-bottom:15px; }
+  .auth-mode-heading h1 { font-size:24px; }
+}
+
 /* Insígnias evolutivas premium */
 .insignia-art { position:relative; display:inline-grid; flex:0 0 auto; place-items:center; }
 .insignia-art img { display:block; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 4px 7px rgba(0,0,0,.72)) drop-shadow(0 0 8px rgba(139,92,246,.24)); }

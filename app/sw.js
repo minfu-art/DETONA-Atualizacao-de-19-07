@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v116-study-plan-hardening-gaps';
+const CACHE = 'detona-v117-login-recovery';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -122,7 +122,7 @@ const ASSETS = [
   './js/ui/helpers.js',
   './js/ui/components.js',
   './js/ui/auth.js',
-  './js/ui/auth.js?v=74',
+  './js/ui/auth.js?v=75',
   './js/ui/library.js',
   './js/ui/heroAssets.js',
   './js/ui/enemyAssets.js',
@@ -157,6 +157,7 @@ const ASSETS = [
   './js/ui/profile.js',
   './js/ui/celebration.js',
   './assets/hero/hero-warrior.png',
+  './assets/ui/login-command-hall.webp',
   './assets/hero/tiers/tier-01-09.png',
   './assets/hero/tiers/tier-10-19.png',
   './assets/hero/tiers/tier-20-29.png',

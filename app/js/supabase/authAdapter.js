@@ -17,6 +17,24 @@ function normalizeEmail(email) {
   return String(email || '').trim().toLowerCase();
 }
 
+function validatePassword(password) {
+  const value = String(password || '');
+  if (value.length < 8) throw new Error('A senha deve ter ao menos 8 caracteres.');
+  if (!/[A-Za-z]/.test(value)) throw new Error('A senha deve conter ao menos uma letra.');
+  if (!/\d/.test(value)) throw new Error('A senha deve conter ao menos um número.');
+  if (/\s/.test(value)) throw new Error('A senha não pode conter espaços.');
+  return value;
+}
+
+function isRecoveryLocation(location = globalThis.location) {
+  if (!location) return false;
+  const search = new URLSearchParams(location.search || '');
+  const hash = new URLSearchParams(String(location.hash || '').replace(/^#/, ''));
+  return search.get('auth') === 'recovery'
+    || search.get('type') === 'recovery'
+    || hash.get('type') === 'recovery';
+}
+
 function mapProfileToUser(profile, authUser) {
   return {
     id: profile?.id || authUser.id,
@@ -130,6 +148,33 @@ export class SupabaseAuthAdapter {
 
     const profile = await this.#ensureProfile(data.user);
     return this.#activate(data.user, profile);
+  }
+
+  isPasswordRecoveryLocation(location = globalThis.location) {
+    return isRecoveryLocation(location);
+  }
+
+  async requestPasswordReset({ email, redirectTo }) {
+    const cleanEmail = normalizeEmail(email);
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) throw new Error('Informe um e-mail válido.');
+    const target = new URL(String(redirectTo || ''), globalThis.location?.href || 'http://localhost/');
+    if (globalThis.location?.origin && target.origin !== globalThis.location.origin) {
+      throw new Error('Destino de recuperação inválido.');
+    }
+    const client = await this.#client();
+    const { error } = await client.auth.resetPasswordForEmail(cleanEmail, { redirectTo: target.toString() });
+    if (error) throw new Error('Não foi possível enviar o link agora. Tente novamente em alguns minutos.');
+    return { accepted: true };
+  }
+
+  async updatePassword({ password }) {
+    const nextPassword = validatePassword(password);
+    const client = await this.#client();
+    const { error } = await client.auth.updateUser({ password: nextPassword });
+    if (error) throw new Error('O link expirou ou é inválido. Solicite uma nova recuperação.');
+    await client.auth.signOut();
+    clearActiveUserId();
+    return { updated: true };
   }
 
   async restoreSession() {
