@@ -1,21 +1,40 @@
+import { localDateKey } from '../core/localDate.js';
 import { STORES } from '../core/types.js';
 import { progressRepository } from '../repositories/progressRepository.js';
 
 const PERIOD_DAYS = Object.freeze({ '7d': 7, '30d': 30, '90d': 90, all: null });
+const EXECUTED_BLOCK_STATUSES = new Set(['completed', 'partially_completed']);
+const VALID_SESSION_STATUSES = new Set(['completed', 'aborted']);
 
-export function clampPercent(value) {
-  return Math.max(0, Math.min(100, Number(value) || 0));
+function finiteNumber(value) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : null;
 }
 
-function validDate(value) {
-  const date = value ? new Date(value) : null;
-  return date && !Number.isNaN(date.getTime()) ? date : null;
+function nonNegative(value) {
+  const numeric = finiteNumber(value);
+  return numeric != null && numeric >= 0 ? numeric : null;
+}
+
+export function clampPercent(value) {
+  const numeric = finiteNumber(value);
+  return numeric == null ? 0 : Math.max(0, Math.min(100, numeric));
+}
+
+function localKey(value) {
+  if (!value) return null;
+  try {
+    return localDateKey(value);
+  } catch {
+    return null;
+  }
 }
 
 export function periodCutoff(period = '30d', now = new Date()) {
   const days = Object.hasOwn(PERIOD_DAYS, period) ? PERIOD_DAYS[period] : PERIOD_DAYS['30d'];
   if (days == null) return null;
   const cutoff = new Date(now);
+  if (Number.isNaN(cutoff.getTime())) return null;
   cutoff.setHours(0, 0, 0, 0);
   cutoff.setDate(cutoff.getDate() - (days - 1));
   return cutoff;
@@ -23,57 +42,146 @@ export function periodCutoff(period = '30d', now = new Date()) {
 
 function inPeriod(value, cutoff) {
   if (!cutoff) return true;
-  const date = validDate(value);
-  return Boolean(date && date >= cutoff);
+  const valueKey = localKey(value);
+  const cutoffKey = localKey(cutoff);
+  return Boolean(valueKey && cutoffKey && valueKey >= cutoffKey);
 }
 
-function totalsFromQuestionHistory(subtopic) {
-  const entries = Object.values(subtopic.question_history || {});
-  if (!entries.length) return null;
-  return entries.reduce((totals, entry) => ({
-    answered: totals.answered + (Number(entry.attempts) || 0),
-    correct: totals.correct + (Number(entry.correctCount) || 0),
-    errors: totals.errors + (Number(entry.incorrectCount) || 0),
-  }), { answered: 0, correct: 0, errors: 0 });
+function emptyTotals(source = 'none', warnings = []) {
+  return { answered: 0, correct: 0, errors: 0, source, warnings };
 }
 
-function totalsFromAttempts(subtopic, cutoff = null) {
-  return (subtopic.attempt_history || [])
-    .filter((attempt) => inPeriod(attempt.attemptedAt, cutoff))
-    .reduce((totals, attempt) => {
-      const answered = Math.max(0, Number(attempt.total) || 0);
-      const correct = Math.max(0, Math.min(answered, Number(attempt.correct) || 0));
-      return {
-        answered: totals.answered + answered,
-        correct: totals.correct + correct,
-        errors: totals.errors + Math.max(0, answered - correct),
-      };
-    }, { answered: 0, correct: 0, errors: 0 });
+function validQuestionHistoryTotals(subtopic) {
+  const history = subtopic?.question_history;
+  if (!history || typeof history !== 'object' || Array.isArray(history) || !Object.keys(history).length) return null;
+  const totals = emptyTotals('question_history');
+  for (const entry of Object.values(history)) {
+    const answered = finiteNumber(entry?.attempts);
+    const correct = finiteNumber(entry?.correctCount);
+    const errors = finiteNumber(entry?.incorrectCount);
+    if (![answered, correct, errors].every((value) => Number.isInteger(value) && value >= 0)
+      || correct + errors !== answered) {
+      totals.warnings.push('INVALID_QUESTION_HISTORY_ENTRY');
+      continue;
+    }
+    totals.answered += answered;
+    totals.correct += correct;
+    totals.errors += errors;
+  }
+  return totals;
 }
 
-function totalsFromLegacySets(subtopic) {
-  const answered = new Set(subtopic.answered_question_ids || []).size;
-  const correct = new Set(subtopic.correct_question_ids || []).size;
-  const errors = new Set(subtopic.incorrect_question_ids || []).size;
-  return { answered, correct, errors };
+function canonicalAttemptId(attempt) {
+  return attempt?.battleId || attempt?.attemptId || attempt?.eventId || attempt?.id || null;
+}
+
+function validAttemptTotals(subtopic, cutoff = null) {
+  const attempts = Array.isArray(subtopic?.attempt_history) ? subtopic.attempt_history : [];
+  if (!attempts.length) return null;
+  const totals = emptyTotals('attempt_history');
+  const seen = new Set();
+  for (const attempt of attempts) {
+    const eventId = canonicalAttemptId(attempt);
+    if (eventId && seen.has(String(eventId))) {
+      totals.warnings.push('DUPLICATE_ATTEMPT_ID_IGNORED');
+      continue;
+    }
+    if (eventId) seen.add(String(eventId));
+    const attemptedAt = attempt?.attemptedAt || attempt?.attempted_at;
+    if (cutoff && !inPeriod(attemptedAt, cutoff)) continue;
+    if (!cutoff && !localKey(attemptedAt)) totals.warnings.push('UNDATED_ATTEMPT_INCLUDED_IN_ALL_HISTORY');
+    const answered = finiteNumber(attempt?.total);
+    const correct = finiteNumber(attempt?.correct);
+    if (!Number.isInteger(answered) || answered <= 0
+      || !Number.isInteger(correct) || correct < 0 || correct > answered) {
+      totals.warnings.push('INVALID_ATTEMPT_IGNORED');
+      continue;
+    }
+    totals.answered += answered;
+    totals.correct += correct;
+    totals.errors += answered - correct;
+  }
+  return totals;
+}
+
+function legacyQuestionTotals(subtopic) {
+  const answeredList = Array.isArray(subtopic?.answered_question_ids) ? subtopic.answered_question_ids : [];
+  const correctList = Array.isArray(subtopic?.correct_question_ids) ? subtopic.correct_question_ids : [];
+  const incorrectList = Array.isArray(subtopic?.incorrect_question_ids) ? subtopic.incorrect_question_ids : [];
+  if (!answeredList.length && !correctList.length && !incorrectList.length) return null;
+  const answeredIds = new Set([...answeredList, ...correctList, ...incorrectList].filter(Boolean).map(String));
+  const incorrectIds = new Set(incorrectList.filter(Boolean).map(String));
+  const correctIds = new Set(correctList.filter(Boolean).map(String));
+  const overlap = [...correctIds].filter((id) => incorrectIds.has(id));
+  overlap.forEach((id) => correctIds.delete(id));
+  const correct = [...correctIds].filter((id) => answeredIds.has(id)).length;
+  return {
+    answered: answeredIds.size,
+    correct,
+    errors: Math.max(0, answeredIds.size - correct),
+    source: 'legacy_question_ids',
+    warnings: overlap.length ? ['AMBIGUOUS_LEGACY_ANSWER_TREATED_AS_ERROR'] : [],
+  };
+}
+
+export function subtopicQuestionTotalsDetailed(subtopic, cutoff = null) {
+  const history = validQuestionHistoryTotals(subtopic);
+  const allAttempts = validAttemptTotals(subtopic, null);
+  const periodAttempts = cutoff ? validAttemptTotals(subtopic, cutoff) : allAttempts;
+  const legacy = legacyQuestionTotals(subtopic);
+
+  if (cutoff) {
+    if (periodAttempts) {
+      const reliableAll = Math.max(history?.answered || 0, allAttempts?.answered || 0);
+      const warnings = [...periodAttempts.warnings];
+      if (!history && !allAttempts?.answered) warnings.push('PERIOD_SOURCE_UNAVAILABLE');
+      if (periodAttempts.answered > reliableAll) warnings.push('PERIOD_EXCEEDS_RELIABLE_HISTORY');
+      return { ...periodAttempts, warnings };
+    }
+    return emptyTotals('none', history || legacy ? ['UNDATED_HISTORY_EXCLUDED_FROM_PERIOD'] : []);
+  }
+
+  if (history && (!allAttempts || history.answered >= allAttempts.answered)) return history;
+  if (allAttempts) {
+    return {
+      ...allAttempts,
+      warnings: [
+        ...allAttempts.warnings,
+        ...(history ? ['QUESTION_HISTORY_INCOMPLETE_USING_ATTEMPT_HISTORY'] : []),
+      ],
+    };
+  }
+  return legacy || emptyTotals();
 }
 
 export function subtopicQuestionTotals(subtopic, cutoff = null) {
-  if (cutoff) return totalsFromAttempts(subtopic, cutoff);
-  const history = totalsFromQuestionHistory(subtopic);
-  if (history) return history;
-  if ((subtopic.attempt_history || []).length) return totalsFromAttempts(subtopic);
-  return totalsFromLegacySets(subtopic);
+  const { answered, correct, errors } = subtopicQuestionTotalsDetailed(subtopic, cutoff);
+  return { answered, correct, errors };
+}
+
+function questionTotalsDetailed(subtopics, cutoff = null) {
+  const sources = new Set();
+  const warnings = [];
+  const totals = (subtopics || []).reduce((sum, subtopic) => {
+    const current = subtopicQuestionTotalsDetailed(subtopic, cutoff);
+    sum.answered += current.answered;
+    sum.correct += current.correct;
+    sum.errors += current.errors;
+    if (current.source !== 'none') sources.add(current.source);
+    warnings.push(...current.warnings);
+    return sum;
+  }, { answered: 0, correct: 0, errors: 0 });
+  return {
+    ...totals,
+    source: sources.size ? [...sources].sort().join('+') : 'none',
+    warnings: [...new Set(warnings)],
+    hasEnoughData: totals.answered > 0,
+  };
 }
 
 export function questionTotals(subtopics, cutoff = null) {
-  return subtopics.reduce((totals, subtopic) => {
-    const current = subtopicQuestionTotals(subtopic, cutoff);
-    totals.answered += current.answered;
-    totals.correct += current.correct;
-    totals.errors += current.errors;
-    return totals;
-  }, { answered: 0, correct: 0, errors: 0 });
+  const { answered, correct, errors } = questionTotalsDetailed(subtopics, cutoff);
+  return { answered, correct, errors };
 }
 
 function classifyAccuracy(accuracy) {
@@ -84,39 +192,108 @@ function classifyAccuracy(accuracy) {
   return 'Prioridade de revisão';
 }
 
-function minutesBySubtopic(blocks, cutoff) {
-  const map = new Map();
-  for (const block of blocks || []) {
-    if (!inPeriod(block.date || block.completedAt, cutoff)) continue;
-    const minutes = Number(block.actualMinutes) || 0;
-    const sid = block.subtopicId || block.topicId || null;
-    if (!minutes || !sid) continue;
-    map.set(sid, (map.get(sid) || 0) + minutes);
-  }
-  return map;
+function recordDate(record) {
+  return record?.date || record?.completedAt || record?.endedAt || record?.finishedAt || null;
 }
 
-function minutesByDiscipline(blocks, cutoff) {
-  const map = new Map();
-  for (const block of blocks || []) {
-    if (!inPeriod(block.date || block.completedAt, cutoff)) continue;
-    const minutes = Number(block.actualMinutes) || 0;
-    const did = block.subjectId || block.disciplineId || null;
-    const sid = block.subtopicId || block.topicId || null;
-    if (sid) continue;
-    if (!minutes || !did) continue;
-    map.set(did, (map.get(did) || 0) + minutes);
-  }
-  return map;
+function blockTimeRecord(block, cutoff) {
+  const dateKey = localKey(recordDate(block));
+  if (!dateKey || !EXECUTED_BLOCK_STATUSES.has(block?.status) || !inPeriod(dateKey, cutoff)) return null;
+  const minutes = nonNegative(block?.actualMinutes);
+  if (minutes == null || minutes <= 0) return null;
+  return {
+    id: `block:${block.id || 'unknown'}`,
+    dateKey,
+    minutes,
+    disciplineId: block.subjectId || block.disciplineId || null,
+    subtopicId: block.subtopicId || block.topicId || null,
+    source: 'routineBlocks',
+  };
 }
 
-function subtopicPerformanceRows(related, cutoff, minutesMap) {
+function sessionTimeRecord(session, cutoff) {
+  const dateKey = localKey(recordDate(session));
+  if (!dateKey || session?.blockId || !VALID_SESSION_STATUSES.has(session?.status) || session?.valid !== true
+    || !inPeriod(dateKey, cutoff)) return null;
+  const seconds = nonNegative(session?.durationSeconds ?? session?.elapsedSeconds);
+  if (seconds == null || seconds <= 0) return null;
+  return {
+    id: `session:${session.id || 'unknown'}`,
+    dateKey,
+    minutes: Math.max(1, Math.round(seconds / 60)),
+    disciplineId: session.subjectId || session.disciplineId || null,
+    subtopicId: session.subtopicId || null,
+    source: 'studySessions',
+  };
+}
+
+export function studyTimeSnapshot({ blocks = [], sessions = [], dailyStates = [], disciplines = [], subtopics = [], cutoff = null } = {}) {
+  const blockRecords = blocks.map((block) => blockTimeRecord(block, cutoff)).filter(Boolean);
+  const sessionRecords = sessions.map((session) => sessionTimeRecord(session, cutoff)).filter(Boolean);
+  const detailed = [...blockRecords, ...sessionRecords];
+  const detailedDates = new Set(detailed.map((record) => record.dateKey).filter(Boolean));
+  const fallbackByDate = new Map();
+  for (const state of dailyStates || []) {
+    const dateKey = localKey(recordDate(state));
+    const minutes = nonNegative(state?.actualMinutes);
+    if (!dateKey || !inPeriod(dateKey, cutoff) || detailedDates.has(dateKey) || minutes == null || minutes <= 0) continue;
+    fallbackByDate.set(dateKey, Math.max(fallbackByDate.get(dateKey) || 0, minutes));
+  }
+  const fallbackRecords = [...fallbackByDate.entries()].map(([dateKey, minutes]) => ({
+    id: `daily:${dateKey}`, dateKey, minutes, disciplineId: null, subtopicId: null, source: 'routineDailyStates',
+  }));
+  const records = [...detailed, ...fallbackRecords];
+  const totalMinutes = records.reduce((sum, record) => sum + record.minutes, 0);
+  const disciplineMap = new Map((disciplines || []).map((discipline) => [discipline.id, discipline.name]));
+  const subtopicDisciplineMap = new Map((subtopics || []).map((subtopic) => [subtopic.id, subtopic.discipline_id]));
+  const grouped = new Map();
+  for (const record of records) {
+    const disciplineId = record.disciplineId || subtopicDisciplineMap.get(record.subtopicId) || null;
+    if (!disciplineId || !disciplineMap.has(disciplineId)) continue;
+    record.disciplineId = disciplineId;
+    grouped.set(disciplineId, (grouped.get(disciplineId) || 0) + record.minutes);
+  }
+  const distributedMinutes = [...grouped.values()].reduce((sum, minutes) => sum + minutes, 0);
+  const byDiscipline = [...grouped.entries()]
+    .map(([id, minutes]) => ({
+      id,
+      name: disciplineMap.get(id),
+      minutes,
+      percentage: totalMinutes ? Math.round((minutes / totalMinutes) * 100) : 0,
+    }))
+    .sort((a, b) => b.minutes - a.minutes || a.name.localeCompare(b.name, 'pt-BR'));
+  const sources = [...new Set(records.map((record) => record.source))];
+  return {
+    totalMinutes,
+    distributedMinutes,
+    undistributedMinutes: Math.max(0, totalMinutes - distributedMinutes),
+    byDiscipline,
+    records,
+    source: sources.length ? sources.join('+') : 'none',
+    quality: fallbackRecords.length ? 'fallback' : detailed.length ? 'canonical' : 'empty',
+    isEstimated: false,
+    hasDistribution: distributedMinutes > 0,
+    warnings: fallbackRecords.length ? ['DAILY_STATE_USED_FOR_DAYS_WITHOUT_DETAILED_TIME'] : [],
+  };
+}
+
+function minutesMaps(records) {
+  const bySubtopic = new Map();
+  const directByDiscipline = new Map();
+  for (const record of records) {
+    if (record.subtopicId) bySubtopic.set(record.subtopicId, (bySubtopic.get(record.subtopicId) || 0) + record.minutes);
+    else if (record.disciplineId) directByDiscipline.set(record.disciplineId, (directByDiscipline.get(record.disciplineId) || 0) + record.minutes);
+  }
+  return { bySubtopic, directByDiscipline };
+}
+
+function subtopicPerformanceRows(related, cutoff, timeMaps) {
   return [...related]
     .sort((a, b) => String(a.edital_numbering || '').localeCompare(String(b.edital_numbering || ''), 'pt', { numeric: true }))
     .map((subtopic) => {
-      const totals = subtopicQuestionTotals(subtopic, cutoff);
-      const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
-      const best = clampPercent(subtopic.melhorPercentual ?? subtopic.best_accuracy ?? accuracy ?? 0);
+      const totals = subtopicQuestionTotalsDetailed(subtopic, cutoff);
+      const accuracy = totals.answered ? (totals.correct / totals.answered) * 100 : null;
+      const masteryValue = finiteNumber(subtopic.melhorPercentual ?? subtopic.best_accuracy ?? subtopic.mastery_pct);
       return {
         id: subtopic.id,
         name: subtopic.name,
@@ -126,26 +303,27 @@ function subtopicPerformanceRows(related, cutoff, minutesMap) {
         errors: totals.errors,
         accuracy,
         classification: classifyAccuracy(accuracy),
-        minutes: minutesMap.get(subtopic.id) || 0,
-        stars: Number(subtopic.stars) || 0,
-        masteryPct: best,
+        minutes: timeMaps.bySubtopic.get(subtopic.id) || 0,
+        stars: Math.max(0, Number(subtopic.stars) || 0),
+        masteryPct: masteryValue == null ? null : clampPercent(masteryValue),
         memory: subtopic.memory_temperature || null,
+        quality: { source: totals.source, warnings: totals.warnings },
       };
     });
 }
 
-function disciplinePerformance(disciplines, subtopics, cutoff, blocks = []) {
-  const subMinutes = minutesBySubtopic(blocks, cutoff);
-  const discMinutes = minutesByDiscipline(blocks, cutoff);
+function disciplinePerformance(disciplines, subtopics, cutoff, timeRecords = []) {
+  const timeMaps = minutesMaps(timeRecords);
   return [...disciplines]
-    .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))
+    .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0) || String(a.id).localeCompare(String(b.id)))
     .map((discipline) => {
       const related = subtopics.filter((subtopic) => subtopic.discipline_id === discipline.id);
-      const totals = questionTotals(related, cutoff);
-      const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
-      const subRows = subtopicPerformanceRows(related, cutoff, subMinutes);
-      const minutesFromSubs = subRows.reduce((sum, row) => sum + (row.minutes || 0), 0);
-      const minutes = minutesFromSubs + (discMinutes.get(discipline.id) || 0);
+      const totals = questionTotalsDetailed(related, cutoff);
+      const accuracy = totals.answered ? (totals.correct / totals.answered) * 100 : null;
+      const subRows = subtopicPerformanceRows(related, cutoff, timeMaps);
+      const minutes = subRows.reduce((sum, row) => sum + row.minutes, 0)
+        + (timeMaps.directByDiscipline.get(discipline.id) || 0);
+      const masteryValue = finiteNumber(discipline.mastery_pct);
       return {
         id: discipline.id,
         name: discipline.name,
@@ -155,127 +333,114 @@ function disciplinePerformance(disciplines, subtopics, cutoff, blocks = []) {
         errors: totals.errors,
         accuracy,
         classification: classifyAccuracy(accuracy),
-        needsReview: accuracy != null && accuracy < 55,
-        masteryPct: clampPercent(discipline.mastery_pct),
+        needsReview: totals.answered >= 10 && accuracy < 55,
+        masteryPct: masteryValue == null ? null : clampPercent(masteryValue),
         minutes,
         subtopics: subRows,
         subtopicCount: related.length,
+        quality: { source: totals.source, warnings: totals.warnings },
       };
     });
 }
 
-function actualMinutesFromSession(session) {
-  const elapsedSeconds = Math.max(
-    0,
-    Number(session.durationSeconds ?? session.elapsedSeconds) || 0,
-  );
-  if (!elapsedSeconds) return 0;
-  return Math.max(1, Math.round(elapsedSeconds / 60));
-}
-
-function standaloneSessionTimeRecords(sessions, cutoff) {
-  return (sessions || [])
-    .filter((session) => (
-      !session.blockId
-      && ['completed', 'aborted'].includes(session.status)
-      && session.valid !== false
-      && inPeriod(session.date || session.endedAt || session.finishedAt, cutoff)
-    ))
-    .map((session) => ({
-      ...session,
-      date: session.date || String(session.endedAt || session.finishedAt || '').slice(0, 10),
-      actualMinutes: actualMinutesFromSession(session),
-      subjectId: session.subjectId || session.disciplineId || null,
-      subtopicId: session.subtopicId || null,
-    }))
-    .filter((session) => session.actualMinutes > 0);
-}
-
-function studyTime({ blocks, sessions, dailyStates, disciplines, cutoff }) {
-  const completedBlocks = blocks.filter((block) => inPeriod(block.date || block.completedAt, cutoff));
-  const sessionRecords = standaloneSessionTimeRecords(sessions, cutoff);
-  const blockMinutes = completedBlocks.reduce((sum, block) => sum + (Number(block.actualMinutes) || 0), 0);
-  const sessionMinutes = sessionRecords.reduce((sum, session) => sum + session.actualMinutes, 0);
-  let totalMinutes = blockMinutes + sessionMinutes;
-  let source = blockMinutes && sessionMinutes
-    ? 'routineBlocks+academicActivities'
-    : sessionMinutes
-      ? 'academicActivities'
-      : 'routineBlocks';
-  if (!totalMinutes) {
-    totalMinutes = dailyStates
-      .filter((state) => inPeriod(state.date, cutoff))
-      .reduce((sum, state) => sum + (Number(state.actualMinutes) || 0), 0);
-    source = 'routineDailyStates';
+export function recentEvolution(subtopics, cutoff) {
+  const buckets = new Map();
+  for (const subtopic of subtopics || []) {
+    const attempts = Array.isArray(subtopic?.attempt_history) ? subtopic.attempt_history : [];
+    const seen = new Set();
+    for (const attempt of attempts) {
+      const eventId = canonicalAttemptId(attempt);
+      if (eventId && seen.has(String(eventId))) continue;
+      if (eventId) seen.add(String(eventId));
+      const dateKey = localKey(attempt?.attemptedAt || attempt?.attempted_at);
+      const answered = finiteNumber(attempt?.total);
+      const correct = finiteNumber(attempt?.correct);
+      if (!dateKey || !inPeriod(dateKey, cutoff) || !Number.isInteger(answered) || answered <= 0
+        || !Number.isInteger(correct) || correct < 0 || correct > answered) continue;
+      const bucket = buckets.get(dateKey) || { dateKey, at: `${dateKey}T12:00:00`, answered: 0, correct: 0, errors: 0 };
+      bucket.answered += answered;
+      bucket.correct += correct;
+      bucket.errors += answered - correct;
+      buckets.set(dateKey, bucket);
+    }
   }
-
-  const disciplineMap = new Map(disciplines.map((discipline) => [discipline.id, discipline.name]));
-  const grouped = new Map();
-  for (const record of [...completedBlocks, ...sessionRecords]) {
-    const minutes = Number(record.actualMinutes) || 0;
-    const disciplineId = record.subjectId || record.disciplineId;
-    if (!minutes || !disciplineId) continue;
-    grouped.set(disciplineId, (grouped.get(disciplineId) || 0) + minutes);
-  }
-  const distributedMinutes = [...grouped.values()].reduce((sum, minutes) => sum + minutes, 0);
-  const byDiscipline = [...grouped.entries()]
-    .map(([id, minutes]) => ({
-      id,
-      name: disciplineMap.get(id) || 'Outros estudos',
-      minutes,
-      percentage: distributedMinutes ? Math.round((minutes / distributedMinutes) * 100) : 0,
-    }))
-    .sort((a, b) => b.minutes - a.minutes);
-
-  return { totalMinutes, byDiscipline, source, hasDistribution: byDiscipline.length > 0 };
+  return [...buckets.values()]
+    .sort((a, b) => a.dateKey.localeCompare(b.dateKey))
+    .map((point) => ({ ...point, accuracy: (point.correct / point.answered) * 100, value: (point.correct / point.answered) * 100 }))
+    .slice(-30);
 }
 
-function recentEvolution(subtopics, cutoff) {
-  return subtopics
-    .flatMap((subtopic) => (subtopic.attempt_history || []).map((attempt) => ({
-      at: attempt.attemptedAt,
-      value: clampPercent(attempt.percentage),
-      answered: Number(attempt.total) || 0,
-      correct: Number(attempt.correct) || 0,
-      subtopicId: subtopic.id,
-      name: subtopic.name,
-    })))
-    .filter((attempt) => attempt.at && inPeriod(attempt.at, cutoff))
-    .sort((a, b) => new Date(a.at) - new Date(b.at))
-    .slice(-12);
+function validReviewDate(value) {
+  const date = value ? new Date(value) : null;
+  return date && !Number.isNaN(date.getTime()) ? date : null;
 }
 
 function reviewMetrics(verticalized, reviewQueue, cutoff, now) {
-  const completed = verticalized.reduce((sum, item) => sum + (Number(item.review_count) || 0), 0);
-  const active = reviewQueue.filter((item) => item.status !== 'frozen');
+  const totalCompleted = verticalized.reduce((sum, item) => {
+    const count = nonNegative(item?.review_count);
+    return sum + (count == null ? 0 : count);
+  }, 0);
+  const frozen = reviewQueue.filter((item) => item?.status === 'frozen');
+  const active = reviewQueue.filter((item) => item?.status !== 'frozen');
   const due = active.filter((item) => {
-    const next = validDate(item.nextReviewAt);
+    const next = validReviewDate(item?.nextReviewAt);
     return next && next <= now;
   });
-  const completedInPeriod = reviewQueue.reduce((sum, item) => sum + (item.reviewHistory || [])
-    .filter((entry) => entry.reason === 'review' && inPeriod(entry.at, cutoff)).length, 0);
+  const completedInPeriod = reviewQueue.reduce((sum, item) => sum + (Array.isArray(item?.reviewHistory) ? item.reviewHistory : [])
+    .filter((entry) => entry?.reason === 'review' && validReviewDate(entry?.at) && inPeriod(entry.at, cutoff)).length, 0);
   const memory = { quente: 0, morna: 0, fria: 0, congelada: 0 };
   for (const item of reviewQueue) {
-    const key = String(item.memoryState || '').replace(/o$/, 'a');
+    const key = String(item?.memoryState || '').replace(/o$/, 'a');
     if (Object.hasOwn(memory, key)) memory[key] += 1;
   }
-  return { completed, completedInPeriod, pending: active.length, due: due.length, memory };
+  return {
+    completed: totalCompleted,
+    totalCompleted,
+    completedInPeriod,
+    pending: active.length,
+    active: active.length,
+    due: due.length,
+    frozen: frozen.length,
+    memory,
+  };
 }
 
-function summaryText({ edital, totals, disciplines }) {
-  const remaining = Math.max(0, 100 - edital);
-  const evaluated = disciplines.filter((discipline) => discipline.accuracy != null);
-  if (!totals.answered && !edital) {
-    return 'Comece sua jornada para construir um histórico de desempenho deste concurso.';
+function coverageSnapshot(player) {
+  const raw = player?.edital_completion_pct;
+  const numeric = finiteNumber(raw);
+  if (raw == null || numeric == null) {
+    return { coverage: null, remaining: null, source: 'none', quality: 'missing', warnings: raw == null ? [] : ['INVALID_COVERAGE'] };
   }
-  const fragments = [`Você concluiu ${edital.toFixed(0)}% do edital. Restam ${remaining.toFixed(0)}% da jornada.`];
+  const coverage = clampPercent(numeric);
+  return {
+    coverage,
+    remaining: 100 - coverage,
+    source: 'player.edital_completion_pct',
+    quality: numeric === coverage ? 'canonical' : 'normalized',
+    warnings: numeric === coverage ? [] : ['COVERAGE_CLAMPED'],
+  };
+}
+
+function summaryText({ coverage, totals, disciplines }) {
+  if (!totals.answered && coverage == null) return 'Comece sua jornada para construir um histórico de desempenho deste concurso.';
+  const fragments = [];
+  if (coverage != null) fragments.push(`Você percorreu ${coverage.toFixed(0)}% do edital.`);
+  const evaluated = disciplines.filter((discipline) => discipline.accuracy != null && discipline.answered >= 10);
   if (evaluated.length) {
     const strongest = [...evaluated].sort((a, b) => b.accuracy - a.accuracy)[0];
-    const weakest = [...evaluated].sort((a, b) => a.accuracy - b.accuracy)[0];
-    fragments.push(`${strongest.name} é atualmente sua disciplina com melhor desempenho.`);
-    if (weakest.id !== strongest.id) fragments.push(`${weakest.name} necessita de maior atenção.`);
+    fragments.push(`${strongest.name} teve a maior taxa de acertos entre as disciplinas com amostra suficiente no período.`);
+  } else if (totals.answered) {
+    fragments.push(`Você respondeu ${totals.answered} questões no período; continue para formar uma amostra comparável por disciplina.`);
   }
   return fragments.join(' ');
+}
+
+function scopedRepository(repository) {
+  if (typeof repository?.forScope !== 'function') return { repository, context: { userId: null, contestId: null, scopeKey: null } };
+  const userId = repository.userId();
+  const contestId = repository.contestId();
+  const scoped = repository.forScope(userId, contestId);
+  return { repository: scoped, context: { userId, contestId, scopeKey: scoped.scopeKey } };
 }
 
 export class PerformanceService {
@@ -284,52 +449,86 @@ export class PerformanceService {
     this.now = now;
   }
 
-  async getDashboard({ period = '30d' } = {}) {
-    const cutoff = periodCutoff(period, this.now());
+  async getDashboard({ period = '30d', repository: fixedRepository = null } = {}) {
+    const selectedPeriod = Object.hasOwn(PERIOD_DAYS, period) ? period : '30d';
+    const cutoff = periodCutoff(selectedPeriod, this.now());
+    const captured = fixedRepository
+      ? {
+        repository: fixedRepository,
+        context: {
+          userId: fixedRepository.userId || null,
+          contestId: fixedRepository.contestId || null,
+          scopeKey: fixedRepository.scopeKey || null,
+        },
+      }
+      : scopedRepository(this.repository);
+    const repository = captured.repository;
     const [players, disciplines, subtopics, verticalized, reviewQueue, blocks, sessions, dailyStates] = await Promise.all([
-      this.repository.getAll(STORES.player),
-      this.repository.getAll(STORES.disciplines),
-      this.repository.getAll(STORES.subtopics),
-      this.repository.getAll(STORES.verticalized),
-      this.repository.getAll(STORES.reviewQueue),
-      this.repository.getAll(STORES.routineBlocks),
-      this.repository.getAll(STORES.studySessions),
-      this.repository.getAll(STORES.routineDailyStates),
+      repository.getAll(STORES.player),
+      repository.getAll(STORES.disciplines),
+      repository.getAll(STORES.subtopics),
+      repository.getAll(STORES.verticalized),
+      repository.getAll(STORES.reviewQueue),
+      repository.getAll(STORES.routineBlocks),
+      repository.getAll(STORES.studySessions),
+      repository.getAll(STORES.routineDailyStates),
     ]);
-
     const player = players[0] || null;
-    const totals = questionTotals(subtopics, cutoff);
-    const allTotals = questionTotals(subtopics, null);
-    const accuracy = totals.answered ? Math.round((totals.correct / totals.answered) * 100) : null;
-    const edital = clampPercent(player?.edital_completion_pct);
-    const timeRecords = [
-      ...blocks,
-      ...standaloneSessionTimeRecords(sessions, cutoff),
-    ];
-    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, timeRecords);
+    const totals = questionTotalsDetailed(subtopics, cutoff);
+    const allTotals = questionTotalsDetailed(subtopics, null);
+    if (totals.answered > allTotals.answered) totals.warnings.push('PERIOD_EXCEEDS_RELIABLE_HISTORY');
+    const accuracy = totals.answered ? (totals.correct / totals.answered) * 100 : null;
+    const coverage = coverageSnapshot(player);
+    const time = studyTimeSnapshot({ blocks, sessions, dailyStates, disciplines, subtopics, cutoff });
+    const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, time.records);
     const completedTopics = verticalized.filter((item) => item.theory_status === 'concluido').length;
-    const time = studyTime({ blocks, sessions, dailyStates, disciplines, cutoff });
     const reviews = reviewMetrics(verticalized, reviewQueue, cutoff, this.now());
     const evolution = recentEvolution(subtopics, cutoff);
+    const disciplineIds = new Set(disciplines.map((discipline) => discipline.id));
+    const hasOrphanSubtopics = subtopics.some((subtopic) => !disciplineIds.has(subtopic.discipline_id));
+    const warnings = [...new Set([
+      ...coverage.warnings,
+      ...totals.warnings,
+      ...time.warnings,
+      ...(hasOrphanSubtopics ? ['ORPHAN_SUBTOPICS_EXCLUDED_FROM_DISCIPLINES'] : []),
+    ])];
 
     return {
-      period,
+      period: selectedPeriod,
+      context: captured.context,
       player,
       progress: {
-        edital,
-        remaining: Math.max(0, 100 - edital),
+        coverage: coverage.coverage,
+        edital: coverage.coverage,
+        remaining: coverage.remaining,
         completedTopics,
         totalTopics: verticalized.length,
         remainingTopics: Math.max(0, verticalized.length - completedTopics),
+        source: coverage.source,
+        quality: coverage.quality,
       },
-      overview: { ...totals, accuracy, allAnswered: allTotals.answered },
+      overview: {
+        answered: totals.answered,
+        correct: totals.correct,
+        errors: totals.errors,
+        accuracy,
+        allAnswered: allTotals.answered,
+        source: totals.source,
+        hasEnoughData: totals.answered >= 10,
+      },
       disciplines: disciplineRows,
       time,
       reviews,
       evolution,
-      summary: summaryText({ edital, totals, disciplines: disciplineRows }),
+      summary: summaryText({ coverage: coverage.coverage, totals, disciplines: disciplineRows }),
+      quality: {
+        warnings,
+        accuracy: { source: totals.source, hasEnoughData: totals.answered >= 10 },
+        evolution: { source: 'attempt_history_by_local_day', sampleSize: evolution.length, hasEnoughData: evolution.length >= 2 },
+        projection: { available: false, reason: 'COVERAGE_HISTORY_UNAVAILABLE' },
+      },
       hasQuestionData: totals.answered > 0,
-      hasAnyData: edital > 0 || allTotals.answered > 0 || time.totalMinutes > 0 || reviews.completed > 0,
+      hasAnyData: (coverage.coverage || 0) > 0 || allTotals.answered > 0 || time.totalMinutes > 0 || reviews.totalCompleted > 0,
     };
   }
 }

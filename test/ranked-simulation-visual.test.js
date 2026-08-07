@@ -136,7 +136,7 @@ test('CSS ranqueado é isolado, responsivo, acessível e respeita movimento redu
 
 test('cache e carregamento entregam juntos o modelo, CSS e retrato de Kiro', () => {
   assert.ok(indexSource.indexOf('dashboard-jrpg.css') < indexSource.indexOf('ranked-functional.css?v=3'));
-  assert.match(swSource, /detona-v119-study-plan-capacity/);
+  assert.match(swSource, /detona-v120-performance-analytics/);
   assert.match(swSource, /js\/ui\/rankedVisualModel\.js/);
   assert.match(swSource, /assets\/mentors\/kiro-official\.webp/);
   assert.match(modelSource, /Object\.freeze/);

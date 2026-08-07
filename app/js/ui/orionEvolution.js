@@ -27,24 +27,22 @@ export function renderOrionEvolution(model = {}, { direct = false } = {}) {
     ? '<span class="orion-metric__empty">Sem dados suficientes</span>'
     : `${Math.round(model.accuracyWeek)}%`;
   const estimate = model.estimatedDays == null
-    ? '<span class="orion-metric__empty">Ainda calculando</span>'
+    ? '<span class="orion-metric__empty">Sem histórico comparável</span>'
     : model.estimatedDays === 0
       ? 'Concluído'
       : `${model.estimatedDays} dias`;
-  const pace = model.examDays == null
+  const examDeadline = model.examDays == null
     ? '<span class="orion-metric__empty">Defina a data da prova</span>'
-    : model.examDays <= 0
-      ? '<span class="orion-metric__empty">Prazo encerrado</span>'
-      : model.requiredHoursPerDay == null
-        ? '<span class="orion-metric__empty">Ainda calculando</span>'
-        : model.requiredHoursPerDay === 0
-          ? 'Meta concluída'
-          : `${model.requiredHoursPerDay.toLocaleString('pt-BR', { maximumFractionDigits: 1 })}h/dia`;
+    : model.examState === 'past'
+      ? '<span class="orion-metric__empty">Data já passou</span>'
+      : model.examDays <= 0
+      ? '<span class="orion-metric__empty">Prova hoje</span>'
+      : `${model.examDays} dias`;
   const best = model.bestDiscipline
     ? escapeHtml(model.bestDiscipline.name)
     : '<span class="orion-metric__empty">Sem avanço recente</span>';
   const bestDetail = model.bestDiscipline
-    ? `+${Number(model.bestDiscipline.gainPercent).toLocaleString('pt-BR', { maximumFractionDigits: 1 })}% na semana`
+    ? `${Math.round(Number(model.bestDiscipline.accuracy) || 0)}% · ${Number(model.bestDiscipline.answered) || 0} respostas`
     : '';
   const goalDetail = model.dailyGoalMinutes
     ? `Meta: ${formatDuration(model.dailyGoalMinutes)}`
@@ -82,20 +80,20 @@ export function renderOrionEvolution(model = {}, { direct = false } = {}) {
     }),
     metricCard({
       iconName: 'calendar',
-      label: 'Tempo para zerar',
+      label: 'Projeção de conclusão',
       value: estimate,
       detail: model.estimatedDays != null && model.estimatedDays > 0 ? `${Math.round(model.remainingPercent || 0)}% restante` : '',
     }),
     metricCard({
       iconName: 'chartSteps',
-      label: 'Ritmo necessário',
-      value: pace,
-      detail: model.examDays > 0 ? `${model.examDays} dias até a prova` : '',
+      label: 'Prazo até a prova',
+      value: examDeadline,
+      detail: model.examDateSource && model.examDateSource !== 'none' ? 'data registrada' : '',
       tone: 'pace',
     }),
     metricCard({
       iconName: 'bolt',
-      label: 'Melhor avanço recente',
+      label: 'Maior taxa recente',
       value: best,
       detail: escapeHtml(bestDetail),
       tone: 'best',

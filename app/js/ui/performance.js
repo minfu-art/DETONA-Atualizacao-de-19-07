@@ -60,21 +60,22 @@ function compactHeader(contest, period) {
 
 const PERFORMANCE_MENTOR_ART = 'assets/mentor/orion-performance-analyst.webp?v=1';
 
-/** Caixa unificada: domínio do edital no topo + progresso geral + conteúdo restante + herói à esquerda */
+/** Caixa unificada: cobertura do edital no topo + progresso geral + conteúdo restante + herói à esquerda */
 function masteryHeroCard(data) {
-  const edital = Number(data.progress.edital) || 0;
-  const remaining = Number(data.progress.remaining) || Math.max(0, 100 - edital);
+  const hasCoverage = data.progress.coverage != null;
+  const edital = hasCoverage ? Number(data.progress.coverage) : 0;
+  const remaining = hasCoverage ? Number(data.progress.remaining) : null;
   const topicsDetail = data.progress.totalTopics
     ? `${data.progress.completedTopics} concluídos · ${data.progress.remainingTopics} restantes`
     : 'Tópicos do edital';
-  const defeated = remaining <= 0;
+  const defeated = hasCoverage && remaining <= 0;
   return `<section class="ev-mastery-card${defeated ? ' is-defeated' : ''}" aria-labelledby="performance-progress-title">
-    <div class="ev-mastery-card__bar-top" aria-label="Domínio do edital">
+    <div class="ev-mastery-card__bar-top" aria-label="Cobertura do edital">
       <div class="ev-mastery-card__bar-meta">
-        <span>Domínio do edital</span>
-        <strong>${edital.toFixed(1)}%</strong>
+        <span>Cobertura do edital</span>
+        <strong>${hasCoverage ? `${edital.toFixed(1)}%` : '—'}</strong>
       </div>
-      <div class="ev-mastery-card__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(edital)}" aria-label="Domínio do edital">
+      <div class="ev-mastery-card__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(edital)}" aria-label="Cobertura do edital">
         <span style="width:${Math.min(100, edital)}%"></span>
       </div>
     </div>
@@ -88,17 +89,17 @@ function masteryHeroCard(data) {
       </div>
       <div class="ev-mastery-card__stats">
         <div class="ev-mastery-stat ev-mastery-stat--progress">
-          <small>Progresso geral</small>
-          <h2 id="performance-progress-title">Edital dominado</h2>
-          <strong>${edital.toFixed(0)}%</strong>
+          <small>Progresso de cobertura</small>
+          <h2 id="performance-progress-title">Edital percorrido</h2>
+          <strong>${hasCoverage ? `${edital.toFixed(0)}%` : '—'}</strong>
           <p>${escapeHtml(topicsDetail)}</p>
         </div>
         <div class="ev-mastery-stat ev-mastery-stat--rest">
           <small>Conteúdo restante</small>
-          <h2 id="performance-monster-title">${defeated ? 'Edital dominado' : 'Ainda pela frente'}</h2>
-          <strong>${remaining.toFixed(0)}%</strong>
-          <div class="ev-mastery-stat__hp" role="progressbar" aria-label="Conteúdo restante" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(remaining)}">
-            <span style="width:${Math.min(100, remaining)}%"></span>
+          <h2 id="performance-monster-title">${defeated ? 'Edital percorrido' : 'Ainda não percorrido'}</h2>
+          <strong>${hasCoverage ? `${remaining.toFixed(0)}%` : '—'}</strong>
+          <div class="ev-mastery-stat__hp" role="progressbar" aria-label="Conteúdo ainda não percorrido" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(remaining || 0)}">
+            <span style="width:${Math.min(100, remaining || 0)}%"></span>
           </div>
         </div>
       </div>
@@ -107,7 +108,7 @@ function masteryHeroCard(data) {
 }
 
 function overviewCards(data) {
-  const accuracy = data.overview.accuracy == null ? '—' : `${data.overview.accuracy}%`;
+  const accuracy = data.overview.accuracy == null ? '—' : `${Math.round(data.overview.accuracy)}%`;
   const accuracyDetail = data.hasQuestionData ? `${data.overview.correct} acertos` : 'Ainda não há respostas no período';
   return `<section class="performance-overview" aria-labelledby="performance-overview-title">
     <div class="performance-section-heading"><div><span>Resumo do período</span><h2 id="performance-overview-title">Indicadores principais</h2></div></div>
@@ -115,7 +116,7 @@ function overviewCards(data) {
       <article><span>Taxa de acertos</span><strong>${accuracy}</strong><small>${escapeHtml(accuracyDetail)}</small></article>
       <article><span>Questões</span><strong>${data.overview.answered}</strong><small>${data.overview.errors} erros registrados</small></article>
       <article><span>Tempo total</span><strong>${formatMinutes(data.time.totalMinutes)}</strong><small>Estudo registrado</small></article>
-      <article><span>Revisões</span><strong>${data.reviews.completed}</strong><small>Total acumulado · ${data.reviews.pending} na fila</small></article>
+      <article><span>Revisões no período</span><strong>${data.reviews.completedInPeriod}</strong><small>${data.reviews.totalCompleted} no histórico · ${data.reviews.pending} na fila</small></article>
     </div>
   </section>`;
 }
@@ -134,7 +135,7 @@ function subtopicRowsHtml(subtopics = []) {
   return `<ul class="ev-subtopic-list" role="list">
     ${subtopics.map((sub) => {
       const tone = performanceTone(sub.accuracy);
-      const acc = sub.accuracy == null ? '—' : `${sub.accuracy}%`;
+      const acc = sub.accuracy == null ? '—' : `${Math.round(sub.accuracy)}%`;
       const time = sub.minutes ? formatMinutes(sub.minutes) : '—';
       return `<li class="ev-subtopic-card performance-discipline--${tone}" data-subtopic="${escapeHtml(sub.id)}">
         <div class="ev-subtopic-card__head">
@@ -167,7 +168,7 @@ function disciplineRows(rows, mode = 'edital') {
   return ordered.map((discipline) => {
     const tone = performanceTone(discipline.accuracy);
     const value = discipline.accuracy ?? 0;
-    const percent = discipline.accuracy == null ? '—' : `${discipline.accuracy}%`;
+    const percent = discipline.accuracy == null ? '—' : `${Math.round(discipline.accuracy)}%`;
     const timeLabel = discipline.minutes ? formatMinutes(discipline.minutes) : '—';
     const panelId = `ev-disc-panel-${escapeHtml(discipline.id)}`;
     return `<li class="ev-disc-acc performance-discipline--${tone}" data-disc-id="${escapeHtml(discipline.id)}">
@@ -223,7 +224,9 @@ function timeChart(data) {
   }).join(',');
   return `<div class="performance-time-content">
     <div class="performance-donut" style="--time-chart:conic-gradient(${segments})" role="img" aria-label="Distribuição do tempo por disciplina"><div><strong>${formatMinutes(data.time.totalMinutes)}</strong><span>Total</span></div></div>
-    <ul>${data.time.byDiscipline.map((item, index) => `<li><i style="--legend-color:${CHART_COLORS[index % CHART_COLORS.length]}"></i><span>${escapeHtml(item.name)}</span><strong>${item.percentage}%</strong><small>${formatMinutes(item.minutes)}</small></li>`).join('')}</ul>
+    <ul>${data.time.byDiscipline.map((item, index) => `<li><i style="--legend-color:${CHART_COLORS[index % CHART_COLORS.length]}"></i><span>${escapeHtml(item.name)}</span><strong>${item.percentage}%</strong><small>${formatMinutes(item.minutes)}</small></li>`).join('')}
+      ${data.time.undistributedMinutes ? `<li class="performance-time-undistributed"><i style="--legend-color:#64748b"></i><span>Tempo sem disciplina identificada</span><strong>${Math.round((data.time.undistributedMinutes / data.time.totalMinutes) * 100)}%</strong><small>${formatMinutes(data.time.undistributedMinutes)}</small></li>` : ''}
+    </ul>
   </div>`;
 }
 
@@ -246,7 +249,7 @@ function evolutionChart(data) {
     return { ...item, x, y };
   });
   const path = points.map((point) => `${point.x.toFixed(2)},${point.y.toFixed(2)}`).join(' ');
-  const readable = points.map((point) => `${formatDate(point.at)}: ${point.value.toFixed(0)}% em ${point.name}`).join('; ');
+  const readable = points.map((point) => `${formatDate(point.at)}: ${point.value.toFixed(0)}% (${point.correct} de ${point.answered})`).join('; ');
   return `<div class="performance-evolution-chart">
     <svg viewBox="0 -6 100 60" role="img" aria-labelledby="performance-evolution-svg-title performance-evolution-svg-desc" preserveAspectRatio="none">
       <title id="performance-evolution-svg-title">Evolução recente da taxa de acertos</title>
@@ -262,7 +265,7 @@ function evolutionChart(data) {
 
 function evolutionCard(data) {
   return `<section class="performance-panel performance-evolution" aria-labelledby="performance-evolution-title">
-    <div class="performance-section-heading"><div><span>Evolução recente</span><h2 id="performance-evolution-title">Taxa de acertos por tentativa</h2></div></div>
+    <div class="performance-section-heading"><div><span>Evolução recente</span><h2 id="performance-evolution-title">Taxa de acertos por dia</h2></div></div>
     ${evolutionChart(data)}
   </section>`;
 }
@@ -279,7 +282,7 @@ function page(data, contest) {
   const contestRole = contest?.role || contest?.cargo || '';
   return `${compactHeader(contest, data.period)}
     <header class="performance-desktop-header">
-      <div><span>Painel do estudante</span><h1>Desempenho</h1><p>Acompanhe domínio, precisão, tempo e memória · ${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
+      <div><span>Painel do estudante</span><h1>Desempenho</h1><p>Acompanhe cobertura, precisão, tempo e memória · ${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
       <div>${periodFilter(data.period, 'performance-period-desktop')}<button type="button" class="performance-avatar" id="performance-profile-desktop" aria-label="Abrir meu perfil">${ICO.user?.() || 'P'}<span>Meu perfil</span></button></div>
     </header>
     <main class="performance-dashboard">
@@ -329,12 +332,28 @@ function bind(root, navigate, ctx, data, rerender) {
 }
 
 export async function renderPerformance(root, navigate, ctx = {}) {
+  let requestVersion = 0;
+  const initialScope = `${ctx.user?.id || ''}:${ctx.contest?.id || ''}`;
   const renderPeriod = async (period = '30d') => {
+    const version = ++requestVersion;
     root.setAttribute('aria-busy', 'true');
-    const data = await performanceService.getDashboard({ period });
-    root.innerHTML = page(data, ctx.contest);
-    root.setAttribute('aria-busy', 'false');
-    bind(root, navigate, ctx, data, renderPeriod);
+    try {
+      const data = await performanceService.getDashboard({ period });
+      const currentScope = `${ctx.user?.id || ''}:${ctx.contest?.id || ''}`;
+      if (version !== requestVersion || currentScope !== initialScope
+        || (ctx.screen && !['performance', 'grimorio'].includes(ctx.screen))) return;
+      root.innerHTML = page(data, ctx.contest);
+      bind(root, navigate, ctx, data, renderPeriod);
+    } catch (error) {
+      if (version !== requestVersion) return;
+      if (!root.querySelector('.performance-dashboard')) throw error;
+      const existing = root.querySelector('.performance-inline-error');
+      existing?.remove();
+      root.insertAdjacentHTML('afterbegin', `<p class="performance-inline-error" role="alert">Não foi possível atualizar o período. Os dados anteriores foram preservados.</p>`);
+      console.error('[performance] dashboard unavailable', error);
+    } finally {
+      if (version === requestVersion) root.setAttribute('aria-busy', 'false');
+    }
   };
   await renderPeriod('30d');
 }
