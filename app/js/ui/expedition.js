@@ -26,6 +26,19 @@ import { daysUntilExam } from '../core/progression.js';
 import { heroImgHtml } from './heroAssets.js';
 import { getHabitConfiguration } from '../core/wellbeing.js';
 import { habitRoutineEntries } from '../services/kaelyHabitService.js';
+import {
+  buildAvailabilityPresentation,
+  buildBlockPresentation,
+  buildExamJourneyPresentation,
+  buildFocusPresentation,
+  buildMonthPresentation,
+  buildPlanEmptyState,
+  buildPlanErrorPresentation,
+  buildProgressPresentation,
+  buildTodayPresentation,
+  buildWeekPresentation,
+  formatPlanMinutes,
+} from './studyPlanVisualModel.js';
 
 const TABS = [
   { id: 'hoje', label: 'Missões', detail: 'Plano de hoje', icon: 'target' },
@@ -82,24 +95,38 @@ export async function renderExpedition(root, navigate, ctx) {
 
   async function paint() {
     cleanup();
-    if (!profile.setupCompleted) {
-      root.innerHTML = renderSetup(profile);
-      bindSetup();
-      mountShell('Configuração');
-      return;
+    try {
+      if (!profile.setupCompleted) {
+        root.innerHTML = renderSetup(profile);
+        bindSetup();
+        mountShell('Configuração');
+        return;
+      }
+
+      if (tab === 'hoje') await paintHoje();
+      else if (tab === 'semana') await paintSemana();
+      else if (tab === 'mes') await paintMes();
+      else if (tab === 'vida') await paintVida();
+      else if (tab === 'jornada') await paintJornada();
+      else if (tab === 'foco') await paintFoco();
+      else if (tab === 'progresso') await paintProgresso();
+      else if (tab === 'revisao') await paintRevisao();
+
+      mountShell(TABS.find((item) => item.id === tab)?.label || 'Plano');
+      bindTabs();
+    } catch (error) {
+      const failure = buildPlanErrorPresentation(error?.message);
+      root.innerHTML = `
+        ${tabsHtml(tab)}
+        <section class="plan-state plan-state--error" role="alert">
+          <span class="plan-state__symbol" aria-hidden="true">${icon('alertTriangle')}</span>
+          <div><h2>${escapeHtml(failure.title)}</h2><p>${escapeHtml(failure.message)}</p></div>
+          <button type="button" class="btn btn-primary" id="plan-retry">Tentar novamente</button>
+        </section>`;
+      mountShell(TABS.find((item) => item.id === tab)?.label || 'Plano');
+      bindTabs();
+      $('#plan-retry', root)?.addEventListener('click', paint);
     }
-
-    if (tab === 'hoje') await paintHoje();
-    else if (tab === 'semana') await paintSemana();
-    else if (tab === 'mes') await paintMes();
-    else if (tab === 'vida') await paintVida();
-    else if (tab === 'jornada') await paintJornada();
-    else if (tab === 'foco') await paintFoco();
-    else if (tab === 'progresso') await paintProgresso();
-    else if (tab === 'revisao') await paintRevisao();
-
-    mountShell(TABS.find((item) => item.id === tab)?.label || 'Plano');
-    bindTabs();
   }
 
   function mountShell(title) {
@@ -140,7 +167,7 @@ export async function renderExpedition(root, navigate, ctx) {
       <section class="plan-banner" aria-label="Planejamento do edital">
         <div class="plan-banner__copy">
           <span class="plan-banner__kicker">Evi organiza sua próxima missão</span>
-          <h1>${escapeHtml(title || 'Planeje a semana com inteligência')}</h1>
+          <h2>${escapeHtml(title || 'Planeje a semana com inteligência')}</h2>
           <p>${escapeHtml(subtitle || 'Equilibre estudo, trabalho e descanso para sustentar a jornada até a prova.')}</p>
           ${statsHtml ? `<div class="plan-banner__stats">${statsHtml}</div>` : ''}
         </div>
@@ -172,11 +199,19 @@ export async function renderExpedition(root, navigate, ctx) {
 
   /* ───────── Setup ───────── */
   function renderSetup(p) {
+    const empty = buildPlanEmptyState('setup');
     return `
-      <div class="routine-setup ro-window">
-        <div class="ro-title">${icon('clipboard', 'ico--inline')} Configurar plano de estudos</div>
-        <div class="ro-body">
-          <p class="muted mb-8">Escolha um modelo inicial. Você pode ajustar tudo depois — nenhum campo é obrigatório para usar o app.</p>
+      <section class="routine-setup plan-setup" aria-labelledby="plan-setup-title">
+        <div class="plan-setup__intro">
+          <div class="plan-setup__copy">
+            <span class="plan-banner__kicker">Estratégia com Evi</span>
+            <h2 id="plan-setup-title">${escapeHtml(empty.title)}</h2>
+            <p>${escapeHtml(empty.description)}</p>
+          </div>
+          <img src="${PLANNER_ART}" alt="Evi, estrategista do plano de estudos" width="1536" height="1024" decoding="async" />
+        </div>
+        <div class="plan-setup__form">
+          <h3>Escolha seu ponto de partida</h3>
           <div class="routine-models" role="list">
             ${['leve', 'equilibrada', 'intensa'].map((m) => {
               const t = modelTemplate(m);
@@ -201,11 +236,11 @@ export async function renderExpedition(root, navigate, ctx) {
               Rotina flexível (recomendado)
             </label>
           </div>
-          <p class="muted">Dias de estudo padrão: segunda a sexta. Descanso: sábado e domingo (editável depois).</p>
+          <p class="plan-field-note">Dias de estudo padrão: segunda a sexta. Descanso: sábado e domingo. Tudo poderá ser ajustado depois.</p>
           <button type="button" class="btn btn-primary btn-block mt-12" id="rs-save">Começar com este plano</button>
           <button type="button" class="btn btn-ghost btn-block mt-8" id="rs-skip">Pular e usar padrão leve</button>
         </div>
-      </div>`;
+      </section>`;
   }
 
   function bindSetup() {
@@ -271,60 +306,71 @@ export async function renderExpedition(root, navigate, ctx) {
     const pct = planned ? Math.min(100, Math.round((actual / planned) * 100)) : (state.minGoalMet ? 100 : 0);
     const j = journeySnap.journey;
     const bal = familyMinutes(blocks);
-    const nextLabel = next
-      ? `${next.plannedMinutes || 25} min · ${next.title}`
-      : 'Nenhum bloco pendente — adicione na Semana.';
+    const today = buildTodayPresentation({ state, blocks, next, streak, profile, journey: j });
+    const dayEmpty = buildPlanEmptyState('day');
+    const nextModel = next ? buildBlockPresentation(next, {
+      activity: activityLabel(next.activityType),
+      family: activityFamily(next.activityType),
+    }) : null;
 
     root.innerHTML = `
       ${tabsHtml('hoje')}
       ${planBanner({
-        title: `Olá, ${dash.playerName || 'guerreiro'} — foque no agora`,
-        subtitle: j.hasExam
-          ? `Prova em ${j.daysLeft} dia(s). Equilibre estudo e descanso para chegar inteiro.`
-          : 'Monte o dia em blocos de estudo, trabalho e descanso.',
+        title: today.heroTitle,
+        subtitle: today.heroSubtitle,
         stats: [
-          { value: `${streak}d`, label: 'sequência', icon: icon('flame', 'ico--sm') },
-          { value: `${pct}%`, label: 'do plano', icon: icon('target', 'ico--sm') },
-          { value: `${actual}/${planned || profile.minDailyMinutes || 10}`, label: 'min', icon: icon('focus', 'ico--sm') },
+          { value: `${today.progress}%`, label: 'executado', icon: icon('target', 'ico--sm') },
+          { value: `${today.streak}d`, label: 'sequência', icon: icon('flame', 'ico--sm') },
+          { value: `${today.pending}`, label: 'pendentes', icon: icon('clipboard', 'ico--sm') },
         ],
       })}
       ${legendHtml()}
       <div class="plan-today-grid">
-        <section class="plan-card" aria-label="Próxima ação">
-          <h2>Comece por aqui</h2>
-          <p class="muted" style="margin:0 0 10px;font-size:13px">${escapeHtml(nextLabel)}</p>
-          <button type="button" class="btn btn-primary btn-block" id="rt-next" ${next ? '' : 'disabled'}>
-            ▶ Iniciar agora
+        <section class="plan-card plan-next-mission ${nextModel ? `fam-${nextModel.family}` : 'is-empty'}" aria-labelledby="plan-next-title">
+          <span class="plan-card__eyebrow">Próxima missão</span>
+          <h2 id="plan-next-title">${escapeHtml(nextModel?.title || dayEmpty.title)}</h2>
+          <p class="plan-next-mission__meta">${nextModel
+            ? `${escapeHtml(nextModel.activity)} · ${escapeHtml(nextModel.duration)} · ${escapeHtml(nextModel.time)}`
+            : escapeHtml(dayEmpty.description)}</p>
+          ${nextModel?.context ? `<p class="plan-next-mission__context">${escapeHtml(nextModel.context)}</p>` : ''}
+          <button type="button" class="btn btn-primary plan-next-mission__cta" id="rt-next" ${next ? '' : 'disabled'}>
+            ${icon('bolt', 'ico--sm')} ${escapeHtml(today.nextAction)}
           </button>
-          <div class="routine-quick-row mt-8">
-            <button type="button" class="btn" id="rt-add-today">+ Bloco inteligente</button>
-            <button type="button" class="btn btn-ghost" id="rt-little-time">Pouco tempo</button>
-          </div>
         </section>
-        <section class="plan-card" aria-label="Equilíbrio do dia">
-          <h2>Equilíbrio de hoje</h2>
+        <section class="plan-card plan-day-load" aria-labelledby="plan-load-title">
+          <span class="plan-card__eyebrow">Carga do dia</span>
+          <h2 id="plan-load-title">Equilíbrio planejado</h2>
           <div class="plan-balance">
-            <div class="fam-estudo"><small>Estudo</small><strong>${bal.estudo}m</strong></div>
-            <div class="fam-trabalho"><small>Trabalho</small><strong>${bal.trabalho}m</strong></div>
-            <div class="fam-descanso"><small>Descanso</small><strong>${bal.descanso}m</strong></div>
+            <div class="fam-estudo"><small>Estudo</small><strong>${formatPlanMinutes(bal.estudo)}</strong></div>
+            <div class="fam-trabalho"><small>Trabalho</small><strong>${formatPlanMinutes(bal.trabalho)}</strong></div>
+            <div class="fam-descanso"><small>Descanso</small><strong>${formatPlanMinutes(bal.descanso)}</strong></div>
           </div>
-          <p class="muted mt-8" style="font-size:12px">${state.minGoalMet ? 'Meta mínima cumprida.' : 'Meta mínima ainda em aberto.'}
-            · ${icon('shield', 'ico--sm')} ${shields} proteção(ões)</p>
-          ${!j.hasExam ? '<button type="button" class="dj-link" id="rt-goto-jornada" style="margin-top:8px">Definir data da prova →</button>' : ''}
+          <p class="plan-day-load__status">${state.minGoalMet ? 'Meta mínima cumprida.' : 'Meta mínima ainda em aberto.'}
+            <span>${icon('shield', 'ico--sm')} ${shields} proteção(ões)</span></p>
+          ${!j.hasExam ? '<button type="button" class="dj-link plan-inline-action" id="rt-goto-jornada">Definir data da prova →</button>' : ''}
         </section>
       </div>
 
-      <section class="plan-card mb-8">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
-          <h2 style="margin:0">Blocos de hoje</h2>
-          <button type="button" class="btn btn-ghost" id="rt-close-day" style="min-height:36px">Fechar dia</button>
+      <section class="plan-card plan-timeline mb-8" aria-labelledby="plan-blocks-title">
+        <div class="plan-section-heading">
+          <div><span class="plan-card__eyebrow">Agenda operacional</span><h2 id="plan-blocks-title">Blocos de hoje</h2></div>
+          <span class="plan-section-heading__count">${blocks.length} bloco(s)</span>
         </div>
-        ${blocks.length ? blocks.map(blockCard).join('') : '<p class="muted">Nenhum bloco hoje. Use a Semana ou “+ Bloco inteligente”.</p>'}
+        ${blocks.length ? `<div class="plan-timeline__list">${blocks.map(blockCard).join('')}</div>` : `
+          <div class="plan-state plan-state--compact">
+            <span class="plan-state__symbol" aria-hidden="true">${icon('calendar')}</span>
+            <div><h3>${escapeHtml(dayEmpty.title)}</h3><p>${escapeHtml(dayEmpty.description)}</p></div>
+          </div>`}
+        <div class="plan-secondary-actions">
+          <button type="button" class="btn" id="rt-add-today">${icon('plus', 'ico--sm')} Adicionar bloco</button>
+          <button type="button" class="btn btn-ghost" id="rt-little-time">Tenho pouco tempo</button>
+          <button type="button" class="btn btn-ghost" id="rt-close-day">Fechar dia</button>
+        </div>
       </section>
       ${habitReminders.length ? `
         <section class="plan-card mb-8" aria-labelledby="routine-habits-title">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px">
-            <h2 id="routine-habits-title" style="margin:0">Rituais de hoje</h2>
+          <div class="plan-section-heading">
+            <h2 id="routine-habits-title">Rituais de hoje</h2>
             <button type="button" class="btn btn-ghost" id="rt-open-rituals">Abrir Meus Rituais</button>
           </div>
           <div class="pd-routine-list">
@@ -358,26 +404,30 @@ export async function renderExpedition(root, navigate, ctx) {
   }
 
   function blockCard(b) {
-    const statusLabel = {
-      planned: 'Planejado', in_progress: 'Em andamento', completed: 'Concluído',
-      partially_completed: 'Parcial', skipped: 'Ignorado', rescheduled: 'Reagendado', cancelled: 'Cancelado',
-    }[b.status] || b.status;
     const fam = activityFamily(b.activityType);
+    const card = buildBlockPresentation(b, { activity: activityLabel(b.activityType), family: fam });
     return `
-      <article class="routine-block status-${b.status} fam-${fam}" data-block="${b.id}" style="border-left:3px solid ${fam === 'trabalho' ? '#38bdf8' : fam === 'descanso' ? '#34d399' : '#a855f7'}">
+      <article class="routine-block status-${b.status} fam-${fam}" data-block="${b.id}">
+        <span class="routine-block__marker" aria-hidden="true">${card.status.symbol}</span>
         <div class="routine-block__main">
-          <strong>${escapeHtml(b.title)}</strong>
-          <small>${activityLabel(b.activityType)} · ${b.plannedMinutes} min${b.startTime ? ` · ${b.startTime}` : ''} · ${statusLabel}</small>
-          ${b.description ? `<p class="muted routine-block__desc">${escapeHtml(b.description)}</p>` : ''}
+          <div class="routine-block__heading"><strong>${escapeHtml(card.title)}</strong><span class="routine-block__status tone-${card.status.tone}">${escapeHtml(card.status.label)}</span></div>
+          <p class="routine-block__meta">${escapeHtml(card.activity)} · ${escapeHtml(card.duration)} · ${escapeHtml(card.time)}</p>
+          ${card.context ? `<p class="routine-block__context">${escapeHtml(card.context)}</p>` : ''}
+          ${card.description ? `<p class="muted routine-block__desc">${escapeHtml(card.description)}</p>` : ''}
         </div>
         <div class="routine-block__actions">
-          ${['planned', 'in_progress', 'partially_completed'].includes(b.status) ? `
-            <button type="button" class="btn btn-primary" data-act="start" data-id="${b.id}">Iniciar</button>
-            <button type="button" class="btn" data-act="partial" data-id="${b.id}">Parcial</button>
-            <button type="button" class="btn btn-ghost" data-act="reschedule" data-id="${b.id}">Reagendar</button>
-            <button type="button" class="btn btn-ghost" data-act="skip" data-id="${b.id}">Ignorar</button>
-            <button type="button" class="btn btn-ghost" data-act="open" data-id="${b.id}">Abrir módulo</button>
-          ` : `<span class="muted">${statusLabel}${b.actualMinutes ? ` · ${b.actualMinutes} min reais` : ''}</span>`}
+          ${card.canAct ? `
+            <button type="button" class="btn btn-primary" data-act="start" data-id="${b.id}">${escapeHtml(card.primaryLabel)}</button>
+            <details class="routine-block__more">
+              <summary aria-label="Mais ações para ${escapeHtml(card.title)}">Mais ações</summary>
+              <div class="routine-block__menu">
+                <button type="button" class="btn" data-act="open" data-id="${b.id}">Abrir módulo</button>
+                <button type="button" class="btn" data-act="partial" data-id="${b.id}">Concluir parcial</button>
+                <button type="button" class="btn" data-act="reschedule" data-id="${b.id}">Reagendar</button>
+                <button type="button" class="btn btn-ghost" data-act="skip" data-id="${b.id}">Ignorar</button>
+              </div>
+            </details>
+          ` : `<span class="routine-block__actual">${escapeHtml(card.status.label)}${card.actual ? ` · ${escapeHtml(card.actual)} reais` : ''}</span>`}
         </div>
       </article>`;
   }
@@ -428,19 +478,19 @@ export async function renderExpedition(root, navigate, ctx) {
   }
 
   function openLittleTimeModal() {
-    openModal('Tenho pouco tempo hoje', `
-      <div id="lt-panel">
-      <p class="muted mb-8">Montamos um plano reduzido <strong>sem apagar</strong> seu planejamento original.</p>
-      <div class="routine-quick-row" id="lt-actions">
-        <button type="button" class="btn btn-primary" data-lt="10">10 min</button>
-        <button type="button" class="btn btn-primary" data-lt="20">20 min</button>
-        <button type="button" class="btn btn-primary" data-lt="30">30 min</button>
+    openModal('Tenho pouco tempo', `
+      <div id="lt-panel" class="plan-reduced-modal">
+      <p>Vamos montar uma versão possível para hoje sem apagar seu planejamento original.</p>
+      <div class="plan-duration-options" id="lt-actions" role="group" aria-label="Duração do plano reduzido">
+        <button type="button" class="plan-duration-option" data-lt="10"><strong>10</strong><span>min</span></button>
+        <button type="button" class="plan-duration-option" data-lt="20"><strong>20</strong><span>min</span></button>
+        <button type="button" class="plan-duration-option" data-lt="30"><strong>30</strong><span>min</span></button>
       </div>
-      <div class="field mt-12">
+      <div class="field plan-reduced-modal__custom">
         <label for="lt-custom">Personalizar (minutos)</label>
         <input type="number" id="lt-custom" min="10" max="60" value="15" />
       </div>
-      <p id="lt-status" class="muted mt-8" role="status" aria-live="polite"></p>
+      <p id="lt-status" class="plan-operation-status" role="status" aria-live="polite"></p>
       </div>
     `, `<button type="button" class="btn btn-primary" id="lt-go">Criar plano reduzido</button>
         <button type="button" class="btn" id="lt-cancel">Cancelar</button>`);
@@ -453,7 +503,7 @@ export async function renderExpedition(root, navigate, ctx) {
       const controls = [...document.querySelectorAll('[data-lt], #lt-go, #lt-cancel, #lt-custom')];
       panel?.setAttribute('aria-busy', 'true');
       controls.forEach((control) => { control.disabled = true; });
-      if (status) status.textContent = 'Validando conteúdo e disponibilidade...';
+      if (status) status.textContent = 'Verificando sua disponibilidade...';
       try {
         const result = await routineService.activateReducedPlan(minutes);
         if (!result.reduced?.length) {
@@ -516,7 +566,7 @@ export async function renderExpedition(root, navigate, ctx) {
   function openRescheduleModal(blockId) {
     openModal('Reagendar bloco', `
       <p class="muted mb-8">Nada é movido em silêncio — escolha e confirme.</p>
-      <div class="routine-quick-row" style="flex-direction:column;align-items:stretch">
+      <div class="routine-quick-row routine-quick-row--stacked">
         <button type="button" class="btn" data-rs="today">Hoje</button>
         <button type="button" class="btn" data-rs="tomorrow">Amanhã</button>
         <button type="button" class="btn btn-primary" data-rs="find_week">Encontrar espaço nesta semana</button>
@@ -576,6 +626,8 @@ export async function renderExpedition(root, navigate, ctx) {
     const maxDaily = view.maxDaily || 90;
     const rangeLabel = `${view.week[0].slice(8)}/${view.week[0].slice(5, 7)} – ${view.week[6].slice(8)}/${view.week[6].slice(5, 7)}`;
     const weekBlocks = view.blocks || [];
+    const weekUi = buildWeekPresentation(view);
+    const weekEmpty = buildPlanEmptyState('week');
     const hasGeneratedPlan = weekBlocks.some((block) => (
       ['template', 'weakspot', 'review'].includes(block.source)
       && ['planned', 'in_progress', 'partially_completed', 'completed'].includes(block.status)
@@ -585,13 +637,12 @@ export async function renderExpedition(root, navigate, ctx) {
     root.innerHTML = `
       ${tabsHtml('semana')}
       ${planBanner({
-        title: 'Caixa da semana — planeje com equilíbrio',
-        subtitle: 'Toque em um dia para adicionar estudo, trabalho ou descanso com horário.',
+        title: weekUi.title,
+        subtitle: weekUi.subtitle,
         stats: [
-          { value: `${sum.plannedMinutes || 0}m`, label: 'planejados' },
-          { value: `${sum.actualMinutes || 0}m`, label: 'feitos' },
-          { value: `${sum.adherence || 0}%`, label: 'adesão' },
-          { value: `${weekBal.estudo}m`, label: 'estudo' },
+          { value: weekUi.planned, label: 'planejados' },
+          { value: weekUi.actual, label: 'realizados' },
+          { value: weekUi.adherence, label: 'aderência' },
         ],
       })}
       ${legendHtml()}
@@ -622,7 +673,7 @@ export async function renderExpedition(root, navigate, ctx) {
                   <strong>${DAY_NAMES[i] || LIFE_DAY_LABELS[dow]}</strong>
                   <small>${date.slice(8)}/${date.slice(5, 7)} · ${load} min</small>
                 </header>
-                <div class="plan-day-col__load" aria-hidden="true"><span style="width:${loadPct}%"></span></div>
+                <div class="plan-day-col__load" role="progressbar" aria-label="Carga planejada" aria-valuenow="${loadPct}" aria-valuemin="0" aria-valuemax="100"><span style="--plan-progress:${loadPct}%"></span></div>
                 <div class="plan-day-col__blocks">
                   ${dayBlocks.map((b) => {
                     const fam = activityFamily(b.activityType);
@@ -631,7 +682,7 @@ export async function renderExpedition(root, navigate, ctx) {
                         <strong>${escapeHtml(b.title)}</strong>
                         <small>${activityLabel(b.activityType)} · ${b.plannedMinutes}m${b.startTime ? ` · ${b.startTime}` : ''}</small>
                       </button>`;
-                  }).join('') || '<span class="muted" style="font-size:11px">Livre</span>'}
+                  }).join('') || `<span class="plan-day-col__empty">${escapeHtml(isRest ? 'Descanso' : 'Dia livre')}</span>`}
                 </div>
                 <button type="button" class="plan-day-col__add" data-add-date="${date}">+ horário</button>
               </div>`;
@@ -640,8 +691,9 @@ export async function renderExpedition(root, navigate, ctx) {
         ${view.alerts?.length ? `
           <div class="routine-alerts mt-12 plan-suggest" role="status">
             <strong>Sugestões inteligentes</strong>
-            <ul style="margin:6px 0 0;padding-left:18px">${view.alerts.map((a) => `<li>${escapeHtml(a.message)}</li>`).join('')}</ul>
+            <ul class="plan-suggest__list">${view.alerts.map((a) => `<li>${escapeHtml(a.message)}</li>`).join('')}</ul>
           </div>` : ''}
+        ${weekBlocks.length ? '' : `<div class="plan-state plan-state--compact"><span class="plan-state__symbol" aria-hidden="true">${icon('calendar')}</span><div><h3>${escapeHtml(weekEmpty.title)}</h3><p>${escapeHtml(weekEmpty.description)}</p></div></div>`}
         <div class="plan-week__actions">
           <button type="button" class="btn btn-primary" id="wk-add">+ Bloco inteligente</button>
           <button type="button" class="btn" id="wk-regen"${hasGeneratedPlan ? ' disabled aria-disabled="true" title="O plano desta semana já foi gerado"' : ''}>${hasGeneratedPlan ? 'Plano desta semana já gerado' : 'Gerar plano de estudo'}</button>
@@ -719,14 +771,15 @@ export async function renderExpedition(root, navigate, ctx) {
     const view = await routineService.getMonthView(monthCursor.year, monthCursor.monthIndex);
     profile = view.profile;
     monthCursor = { year: view.year, monthIndex: view.monthIndex };
+    const monthUi = buildMonthPresentation(view);
 
     root.innerHTML = `
       ${tabsHtml('mes')}
       ${planBanner({
-        title: 'Caixa do mês — visão macro do edital',
-        subtitle: 'Barras coloridas: estudo, trabalho e descanso. Toque no dia para detalhar ou adicionar horários.',
+        title: monthUi.title,
+        subtitle: monthUi.subtitle,
         stats: [
-          { value: escapeHtml(view.monthName), label: String(view.year) },
+          { value: monthUi.month, label: monthUi.year },
         ],
       })}
       ${legendHtml()}
@@ -791,7 +844,7 @@ export async function renderExpedition(root, navigate, ctx) {
           ${cell.isExam ? ' · <em>Dia da prova</em>' : ''}
           <p class="muted">Estudo ${bal.estudo}m · Trabalho ${bal.trabalho}m · Descanso ${bal.descanso}m</p>
           <ul class="routine-day-detail__list">
-            ${list.map((b) => `<li><span class="plan-chip fam-${activityFamily(b.activityType)}" style="display:inline-block;padding:4px 8px;margin:2px 0">${escapeHtml(b.title)} · ${b.plannedMinutes}m${b.startTime ? ` · ${b.startTime}` : ''}</span></li>`).join('') || '<li class="muted">Sem blocos neste dia.</li>'}
+            ${list.map((b) => `<li><span class="plan-chip plan-chip--detail fam-${activityFamily(b.activityType)}">${escapeHtml(b.title)} · ${b.plannedMinutes}m${b.startTime ? ` · ${b.startTime}` : ''}</span></li>`).join('') || '<li class="muted">Sem blocos neste dia.</li>'}
           </ul>
           <div class="routine-quick-row mt-8">
             <button type="button" class="btn btn-primary" id="mo-add">+ Horário neste dia</button>
@@ -816,6 +869,7 @@ export async function renderExpedition(root, navigate, ctx) {
     const win = profile.dayWindows || {};
     const sampleDow = [...available][0] ?? 1;
     const sample = win[sampleDow] || { start: '19:00', end: '21:00' };
+    const availabilityUi = buildAvailabilityPresentation(profile);
     const work = (profile.fixedCommitments || []).find((c) => c.kind === 'trabalho') || {
       kind: 'trabalho', start: '08:00', end: '17:00',
     };
@@ -823,13 +877,19 @@ export async function renderExpedition(root, navigate, ctx) {
     root.innerHTML = `
       ${tabsHtml('vida')}
       ${planBanner({
-        title: 'Sua vida real entra no plano',
-        subtitle: 'Marque dias de estudo e descanso, defina janela de trabalho e horário preferido de estudo. O gerador da semana respeita isso.',
+        title: availabilityUi.title,
+        subtitle: availabilityUi.subtitle,
+        stats: [
+          { value: `${availabilityUi.availableDays}`, label: 'dias disponíveis' },
+          { value: availabilityUi.weeklyCapacity, label: 'por semana' },
+          { value: availabilityUi.preferredSession, label: 'por sessão' },
+        ],
       })}
       <div class="plan-life">
         <section class="plan-life-card">
-          <h2>Dias da semana</h2>
-          <p>Toque para alternar: estudo ativo (roxo) ou descanso (verde).</p>
+          <span class="plan-card__eyebrow">01 · Dias disponíveis</span>
+          <h2>Escolha seus dias de estudo</h2>
+          <p>Alterne entre estudo e descanso. O estado é sempre indicado por texto, não apenas pela cor.</p>
           <div class="plan-life-days" role="group" aria-label="Dias de estudo e descanso">
             ${LIFE_DAY_LABELS.map((label, dow) => {
               const isRest = rest.has(dow);
@@ -838,8 +898,9 @@ export async function renderExpedition(root, navigate, ctx) {
           </div>
         </section>
         <section class="plan-life-card">
-          <h2>Horários padrão</h2>
-          <p>Usados ao gerar o plano e ao sugerir blocos inteligentes.</p>
+          <span class="plan-card__eyebrow">02 · Janelas de tempo</span>
+          <h2>Trabalho, compromissos e estudo</h2>
+          <p>Esses limites são usados ao gerar o plano e sugerir blocos possíveis.</p>
           <div class="plan-life-fields">
             <label>Trabalho — início
               <input type="time" id="life-work-start" value="${escapeHtml(work.start || '08:00')}" />
@@ -860,11 +921,17 @@ export async function renderExpedition(root, navigate, ctx) {
               <input type="number" id="life-week-h" min="1" max="40" value="${profile.weeklyHoursGoal || 6}" />
             </label>
           </div>
-          <div class="plan-week__actions" style="margin-top:14px">
+          <div class="plan-capacity" aria-label="Capacidade configurada">
+            <div><small>Capacidade diária</small><strong>${escapeHtml(availabilityUi.dailyCapacity)}</strong></div>
+            <div><small>Capacidade semanal</small><strong>${escapeHtml(availabilityUi.weeklyCapacity)}</strong></div>
+            <div><small>Sessão preferida</small><strong>${escapeHtml(availabilityUi.preferredSession)}</strong></div>
+            <div><small>Máximo de blocos</small><strong>${availabilityUi.maxBlocks || '—'}</strong></div>
+          </div>
+          <div class="plan-week__actions plan-life__actions">
             <button type="button" class="btn btn-primary" id="life-save">Salvar e aplicar na semana</button>
             <button type="button" class="btn" id="life-blocks">Gerar blocos de trabalho/descanso</button>
           </div>
-          <p class="plan-suggest" id="life-hint" style="margin-top:12px">Dica: se o trabalho ocupa o dia, o estudo sobra na janela da noite — e o gerador evita sobrecarga.</p>
+          <p class="plan-suggest" id="life-hint">Se o trabalho ocupa o dia, o estudo permanece na janela disponível e o gerador evita sobrecarga.</p>
         </section>
       </div>
     `;
@@ -978,12 +1045,14 @@ export async function renderExpedition(root, navigate, ctx) {
     const win = profile?.dayWindows?.[new Date(`${date}T12:00:00`).getDay()] || { start: '19:00', end: '21:00' };
     openModal('Novo horário no plano', `
       <div class="plan-modal">
-        <p class="muted mb-8">Escolha o tipo e o horário. O app sugere duração com base no seu perfil.</p>
-        <div class="plan-type-row" role="group" aria-label="Tipo de bloco">
-          <button type="button" class="plan-type-btn fam-estudo is-selected" data-fam="estudo">${semanticIcon('study', 'ico--inline')} Estudo<small>Edital / questões</small></button>
-          <button type="button" class="plan-type-btn fam-trabalho" data-fam="trabalho">💼 Trabalho<small>Expediente / afazeres</small></button>
-          <button type="button" class="plan-type-btn fam-descanso" data-fam="descanso">🌙 Descanso<small>Pausa / lazer</small></button>
-        </div>
+        <p class="plan-modal__intro">Defina uma atividade possível. A duração sugerida usa somente as preferências já salvas no seu perfil.</p>
+        <fieldset class="plan-type-fieldset"><legend>Tipo de bloco</legend>
+          <div class="plan-type-row">
+            <button type="button" class="plan-type-btn fam-estudo is-selected" data-fam="estudo">${semanticIcon('study', 'ico--inline')} Estudo<small>Edital e questões</small></button>
+            <button type="button" class="plan-type-btn fam-trabalho" data-fam="trabalho">${icon('briefcase', 'ico--inline')} Trabalho<small>Expediente e compromissos</small></button>
+            <button type="button" class="plan-type-btn fam-descanso" data-fam="descanso">${icon('moon', 'ico--inline')} Descanso<small>Pausa e recuperação</small></button>
+          </div>
+        </fieldset>
         <div class="field"><label for="sb-title">Título</label><input id="sb-title" type="text" maxlength="80" value="Bloco de estudo" /></div>
         <div class="field" id="sb-study-wrap">
           <label for="sb-study-type">Tipo de estudo</label>
@@ -1010,9 +1079,11 @@ export async function renderExpedition(root, navigate, ctx) {
             <option value="">Selecione primeiro a disciplina</option>
           </select>
         </div>
-        <div class="field"><label for="sb-date">Dia</label><input id="sb-date" type="date" value="${escapeHtml(date)}" /></div>
-        <div class="field"><label for="sb-start">Início</label><input id="sb-start" type="time" value="${escapeHtml(win.start || '19:00')}" /></div>
-        <div class="field"><label for="sb-mins">Duração (minutos)</label><input id="sb-mins" type="number" min="5" max="480" value="${profile?.preferredSessionMinutes || 25}" /></div>
+        <div class="plan-modal__schedule">
+          <div class="field"><label for="sb-date">Dia</label><input id="sb-date" type="date" value="${escapeHtml(date)}" /></div>
+          <div class="field"><label for="sb-start">Início</label><input id="sb-start" type="time" value="${escapeHtml(win.start || '19:00')}" /></div>
+          <div class="field"><label for="sb-mins">Duração (minutos)</label><input id="sb-mins" type="number" min="5" max="480" value="${profile?.preferredSessionMinutes || 25}" /></div>
+        </div>
         <div class="field">
           <label><input type="checkbox" id="sb-week" /> Repetir nos dias de estudo desta semana</label>
         </div>
@@ -1148,12 +1219,23 @@ export async function renderExpedition(root, navigate, ctx) {
     const chibi = snap.chibi;
     const reduceMotion = prefersReducedMotion?.() || false;
     const pos = j.hasExam ? Math.min(100, Math.max(0, j.positionPct)) : 0;
+    const journeyUi = buildExamJourneyPresentation(snap);
+    const examEmpty = buildPlanEmptyState('exam');
 
     root.innerHTML = `
       ${tabsHtml('jornada')}
-      <section class="ro-window mb-8 routine-journey" aria-label="Jornada até a prova">
-        <div class="ro-title">Jornada até a prova</div>
-        <div class="ro-body">
+      ${planBanner({
+        title: journeyUi.title,
+        subtitle: journeyUi.subtitle,
+        stats: journeyUi.hasExam ? [
+          { value: `${journeyUi.daysLeft}`, label: 'dias restantes' },
+          { value: `${journeyUi.weeksLeft}`, label: 'semanas restantes' },
+          { value: `${journeyUi.remaining}%`, label: 'tempo restante' },
+        ] : [],
+      })}
+      <section class="plan-card routine-journey mb-8" aria-labelledby="journey-panel-title">
+        <div class="plan-section-heading"><div><span class="plan-card__eyebrow">Linha temporal</span><h2 id="journey-panel-title">Preparação até a prova</h2></div></div>
+        <div class="routine-journey__body">
           ${j.hasExam ? `
             <div class="routine-countdown-panel" role="status">
               <div>
@@ -1168,7 +1250,7 @@ export async function renderExpedition(root, navigate, ctx) {
                 <label>Tempo restante <strong>${j.remainingPct}%</strong>
                   <div class="routine-bar routine-bar--rest" style="--p:${j.remainingPct}" role="progressbar" aria-valuenow="${j.remainingPct}" aria-valuemin="0" aria-valuemax="100"></div>
                 </label>
-                ${j.phase === 'reta_final' || j.phase === 'semana_prova' ? '<p class="routine-final-strip">🏁 Reta final — foque no essencial.</p>' : ''}
+                ${j.phase === 'reta_final' || j.phase === 'semana_prova' ? `<p class="routine-final-strip">${icon('flag', 'ico--sm')} Reta final — foque no essencial.</p>` : ''}
               </div>
             </div>
 
@@ -1176,9 +1258,9 @@ export async function renderExpedition(root, navigate, ctx) {
               <div class="routine-trail__track">
                 <div class="routine-trail__progress" style="width:${pos}%"></div>
                 <div class="routine-trail__chibi pose-${escapeHtml(chibi.pose)}" style="left:${pos}%" aria-hidden="true">
-                  <span class="chibi-face">🚶</span>
+                  <span class="chibi-face">${icon('user', 'ico--sm')}</span>
                 </div>
-                <div class="routine-trail__flag" aria-hidden="true">🏁</div>
+                <div class="routine-trail__flag" aria-hidden="true">${icon('flag', 'ico--sm')}</div>
               </div>
               <p class="routine-chibi-msg" role="status">${escapeHtml(chibi.message)}</p>
               <p class="muted text-center">Indicador visual da distância percorrida até a prova.</p>
@@ -1195,8 +1277,8 @@ export async function renderExpedition(root, navigate, ctx) {
             </div>
           ` : `
             <div class="routine-journey-empty">
-              <p>Defina a data da prova para ativar a contagem regressiva e a trilha com o avatar.</p>
-              <p class="muted">Sem data fechada, você pode usar a rotina normalmente com meta semanal.</p>
+              <span class="plan-state__symbol" aria-hidden="true">${icon('flag')}</span>
+              <div><h3>${escapeHtml(examEmpty.title)}</h3><p>${escapeHtml(examEmpty.description)}</p><p class="muted">Sem data fechada, a rotina continua disponível com meta semanal.</p></div>
             </div>
           `}
 
@@ -1247,12 +1329,13 @@ export async function renderExpedition(root, navigate, ctx) {
   async function paintFoco() {
     const blocks = (await routineService.getBlocksForDate()).filter((b) =>
       ['planned', 'in_progress', 'partially_completed'].includes(b.status));
+    const focusUi = buildFocusPresentation({ blocks, profile });
     root.innerHTML = `
       ${tabsHtml('foco')}
-      <section class="routine-focus ro-window mb-8">
-        <div class="ro-title">Sessão de foco</div>
-        <div class="ro-body">
-          <div class="field">
+      <section class="routine-focus plan-focus mb-8" data-focus-state="ready" aria-labelledby="focus-title">
+        <header class="plan-focus__header"><span class="plan-card__eyebrow">Sessão estratégica</span><h2 id="focus-title">${escapeHtml(focusUi.title)}</h2><p>${escapeHtml(focusUi.subtitle)}</p></header>
+        <div class="plan-focus__body">
+          <div class="field plan-focus__activity">
             <label for="focus-block">Atividade</label>
             <select id="focus-block">
               <option value="">— livre —</option>
@@ -1261,17 +1344,17 @@ export async function renderExpedition(root, navigate, ctx) {
           </div>
           <div class="routine-presets" role="group" aria-label="Duração">
             ${FOCUS_PRESETS.map((m) => `<button type="button" class="btn" data-preset="${m}">${m} min</button>`).join('')}
-            <label class="field" style="margin:0">
+            <label class="field plan-field-inline">
               <span class="sr-only">Personalizado</span>
               <input type="number" id="focus-mins" min="1" max="180" value="${profile.focus?.sessionMinutes || 25}" aria-label="Minutos personalizados" />
             </label>
-            <label class="field" style="margin:0">
+            <label class="field plan-field-inline">
               <input type="checkbox" id="focus-countup" /> Cronômetro crescente
             </label>
           </div>
-          <div class="focus-timer" id="focus-display" aria-live="polite">25:00</div>
-          <p class="muted text-center" id="focus-meta">Pronto para começar</p>
-          <div class="routine-quick-row">
+          <div class="focus-timer" id="focus-display" aria-live="polite">${formatClock(focusUi.defaultMinutes * 60)}</div>
+          <p class="plan-focus__status" id="focus-meta" role="status">Pronto</p>
+          <div class="routine-quick-row plan-focus__controls">
             <button type="button" class="btn btn-primary" id="focus-start">Iniciar</button>
             <button type="button" class="btn" id="focus-pause" disabled>Pausar</button>
             <button type="button" class="btn" id="focus-distract" disabled>Distração</button>
@@ -1309,6 +1392,7 @@ export async function renderExpedition(root, navigate, ctx) {
         date: todayStr(),
       });
       focusCtl.start();
+      root.querySelector('.plan-focus')?.setAttribute('data-focus-state', 'running');
       meta.textContent = blockId ? 'Sessão em andamento' : 'Sessão livre em andamento';
       $('#focus-pause', root).disabled = false;
       $('#focus-distract', root).disabled = false;
@@ -1326,9 +1410,11 @@ export async function renderExpedition(root, navigate, ctx) {
       const s = focusCtl.getSession();
       if (s.status === 'running') {
         focusCtl.pause();
+        root.querySelector('.plan-focus')?.setAttribute('data-focus-state', 'paused');
         $('#focus-pause', root).textContent = 'Continuar';
       } else if (s.status === 'paused') {
         focusCtl.resume();
+        root.querySelector('.plan-focus')?.setAttribute('data-focus-state', 'running');
         $('#focus-pause', root).textContent = 'Pausar';
       }
       tick();
@@ -1355,14 +1441,15 @@ export async function renderExpedition(root, navigate, ctx) {
     $('#focus-end', root)?.addEventListener('click', () => {
       if (!focusCtl) return;
       openModal('Encerrar sessão', `
-        <p>Como foi o foco? (1–5)</p>
-        <input type="number" id="fc-focus" min="1" max="5" value="3" />
-        <p class="mt-8">Dificuldade percebida (1–5)</p>
-        <input type="number" id="fc-diff" min="1" max="5" value="3" />
-        <label class="field mt-8"><input type="checkbox" id="fc-done" checked /> Sessão concluída (desmarque se parcial)</label>
-        <label class="field">Observação<input type="text" id="fc-note" maxlength="200" /></label>
-      `, `<button type="button" class="btn btn-primary" id="fc-save">Salvar tempo real</button>
-          <button type="button" class="btn" id="fc-cancel">Voltar</button>`);
+        <div class="plan-session-close">
+          <p>Registre sua percepção sem alterar o tempo medido pela sessão.</p>
+          <div class="field"><label for="fc-focus">Foco percebido (1–5)</label><input type="number" id="fc-focus" min="1" max="5" value="3" /></div>
+          <div class="field"><label for="fc-diff">Dificuldade percebida (1–5)</label><input type="number" id="fc-diff" min="1" max="5" value="3" /></div>
+          <label class="field plan-check"><input type="checkbox" id="fc-done" checked /> Sessão concluída (desmarque se parcial)</label>
+          <div class="field"><label for="fc-note">Observação</label><input type="text" id="fc-note" maxlength="200" /></div>
+        </div>
+      `, `<button type="button" class="btn btn-primary" id="fc-save">Salvar sessão</button>
+          <button type="button" class="btn" id="fc-cancel">Continuar estudando</button>`);
       document.getElementById('fc-save')?.addEventListener('click', async () => {
         const done = document.getElementById('fc-done')?.checked;
         const focusScore = Number(document.getElementById('fc-focus')?.value) || null;
@@ -1393,37 +1480,46 @@ export async function renderExpedition(root, navigate, ctx) {
     const snap = await routineService.getProgressSnapshot();
     profile = snap.profile;
     const m = snap.metrics;
+    const progressUi = buildProgressPresentation(snap);
+    const historyEmpty = buildPlanEmptyState('history');
+    const hasHistory = Boolean(progressUi.actualHours || m.daysMet || m.distractionsTotal || snap.achievements.length);
     root.innerHTML = `
       ${tabsHtml('progresso')}
-      <section class="ro-window mb-8">
-        <div class="ro-title">Consistência de estudo</div>
-        <div class="ro-body">
-          <div class="routine-kpis">
-            <div><small>Sequência</small><strong>${m.streak}d</strong></div>
-            <div><small>Recorde</small><strong>${m.bestStreak}d</strong></div>
-            <div><small>Semanal</small><strong>${m.weeklyConsistency}%</strong></div>
-            <div><small>Horas</small><strong>${m.actualHours}/${m.plannedHours}h</strong></div>
+      ${planBanner({
+        title: progressUi.title,
+        subtitle: progressUi.subtitle,
+        stats: [
+          { value: `${progressUi.consistency}%`, label: 'consistência' },
+          { value: `${progressUi.actualHours}h`, label: 'tempo real' },
+          { value: `${progressUi.streak}d`, label: 'sequência' },
+        ],
+      })}
+      ${hasHistory ? `
+      <section class="plan-card plan-results mb-8" aria-labelledby="results-summary-title">
+        <div class="plan-section-heading"><div><span class="plan-card__eyebrow">Leitura principal</span><h2 id="results-summary-title">Execução da rotina</h2></div></div>
+          <div class="routine-kpis plan-results__kpis">
+            <div><small>Sequência</small><strong>${progressUi.streak}d</strong></div>
+            <div><small>Recorde</small><strong>${progressUi.bestStreak}d</strong></div>
+            <div><small>Consistência semanal</small><strong>${progressUi.consistency}%</strong></div>
+            <div><small>Planejado x real</small><strong>${progressUi.actualHours}/${progressUi.plannedHours}h</strong></div>
           </div>
-          <p class="muted mt-8">Este painel acompanha a execução da rotina; o domínio continua sendo calculado pelas atividades de estudo.</p>
-          ${snap.loadAdvice?.action !== 'keep' ? `<p class="routine-tip">💡 ${escapeHtml(snap.loadAdvice.reason)} (${snap.loadAdvice.action} ~${snap.loadAdvice.percent}%)</p>` : ''}
-        </div>
+          <p class="plan-field-note">Este painel acompanha a execução da rotina. O domínio acadêmico continua sendo calculado apenas pelas atividades de estudo.</p>
+          ${snap.loadAdvice?.action !== 'keep' ? `<p class="routine-tip">${icon('info', 'ico--sm')} ${escapeHtml(snap.loadAdvice.reason)} (${snap.loadAdvice.action} ~${snap.loadAdvice.percent}%)</p>` : ''}
       </section>
-      <section class="ro-window mb-8">
-        <div class="ro-title">Conquistas de rotina</div>
-        <div class="ro-body">
+      <div class="plan-results__grid">
+      <section class="plan-card mb-8">
+          <span class="plan-card__eyebrow">Indicadores secundários</span><h2>Conquistas de rotina</h2>
           ${snap.achievements.length
-            ? `<ul class="routine-achievements">${snap.achievements.map((a) => `<li>🏅 ${escapeHtml(a.title)}</li>`).join('')}</ul>`
+            ? `<ul class="routine-achievements">${snap.achievements.map((a) => `<li>${icon('award', 'ico--sm')} ${escapeHtml(a.title)}</li>`).join('')}</ul>`
             : '<p class="muted">Execute sessões reais para desbloquear conquistas.</p>'}
-        </div>
       </section>
-      <section class="ro-window mb-8">
-        <div class="ro-title">Precisão de planejamento</div>
-        <div class="ro-body">
+      <section class="plan-card mb-8">
+          <span class="plan-card__eyebrow">Precisão</span><h2>Planejamento e execução</h2>
           <p>Conclusão de blocos: <strong>${m.planning?.completionRate || 0}%</strong></p>
           <p class="muted">Reagendados: ${m.rescheduledBlocks || 0} · Ignorados: ${m.skippedBlocks || 0}</p>
           <p class="muted">Distração mais comum: ${escapeHtml(m.topDistraction || '—')} (${m.distractionsTotal || 0} reg.)</p>
-        </div>
       </section>
+      </div>` : `<section class="plan-state"><span class="plan-state__symbol" aria-hidden="true">${icon('chart')}</span><div><h2>${escapeHtml(historyEmpty.title)}</h2><p>${escapeHtml(historyEmpty.description)}</p></div></section>`}
     `;
   }
 

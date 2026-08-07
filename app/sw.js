@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v117-login-recovery';
+const CACHE = 'detona-v118-study-plan-visual';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -151,6 +151,7 @@ const ASSETS = [
   './js/ui/grimorio.js',
   './js/ui/performance.js',
   './js/ui/expedition.js',
+  './js/ui/studyPlanVisualModel.js',
   './css/plan-edital.css',
   './js/ui/wellbeingUI.js',
   './js/ui/topicTree.js',
