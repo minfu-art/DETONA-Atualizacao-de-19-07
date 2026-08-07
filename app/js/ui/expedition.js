@@ -20,7 +20,12 @@ import {
   WEEKDAY_SHORT,
   dayLoadLevel,
   shiftWeek,
+  weekDatesFrom,
 } from '../core/routine/routineCalendar.js';
+import {
+  dailyCapacityForDate,
+  validateStudyAvailability,
+} from '../core/routine/studyPlanContract.js';
 import { prefersReducedMotion } from './components.js';
 import { daysUntilExam } from '../core/progression.js';
 import { heroImgHtml } from './heroAssets.js';
@@ -869,7 +874,14 @@ export async function renderExpedition(root, navigate, ctx) {
     const win = profile.dayWindows || {};
     const sampleDow = [...available][0] ?? 1;
     const sample = win[sampleDow] || { start: '19:00', end: '21:00' };
-    const availabilityUi = buildAvailabilityPresentation(profile);
+    const today = dateKey();
+    const todayDow = new Date(`${today}T12:00:00`).getDay();
+    const canonicalAvailability = validateStudyAvailability(profile, { weekDates: weekDatesFrom(today) });
+    const availabilityUi = buildAvailabilityPresentation(profile, {
+      todayCapacityMinutes: dailyCapacityForDate(profile, today),
+      weeklyCapacityMinutes: canonicalAvailability.weeklyCapacity,
+      todayIsRestDay: rest.has(todayDow),
+    });
     const work = (profile.fixedCommitments || []).find((c) => c.kind === 'trabalho') || {
       kind: 'trabalho', start: '08:00', end: '17:00',
     };
@@ -922,8 +934,8 @@ export async function renderExpedition(root, navigate, ctx) {
             </label>
           </div>
           <div class="plan-capacity" aria-label="Capacidade configurada">
-            <div><small>Capacidade diária</small><strong>${escapeHtml(availabilityUi.dailyCapacity)}</strong></div>
-            <div><small>Capacidade semanal</small><strong>${escapeHtml(availabilityUi.weeklyCapacity)}</strong></div>
+            <div><small>${escapeHtml(availabilityUi.dailyCapacityLabel)}</small><strong>${escapeHtml(availabilityUi.dailyCapacity)}</strong></div>
+            <div><small>Capacidade da semana</small><strong>${escapeHtml(availabilityUi.weeklyCapacity)}</strong></div>
             <div><small>Sessão preferida</small><strong>${escapeHtml(availabilityUi.preferredSession)}</strong></div>
             <div><small>Máximo de blocos</small><strong>${availabilityUi.maxBlocks || '—'}</strong></div>
           </div>

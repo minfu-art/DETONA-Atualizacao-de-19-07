@@ -13,6 +13,10 @@ import {
   buildWeekPresentation,
   formatPlanMinutes,
 } from '../js/ui/studyPlanVisualModel.js';
+import {
+  dailyCapacityForDate,
+  validateStudyAvailability,
+} from '../js/core/routine/studyPlanContract.js';
 
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = (relativePath) => readFile(path.join(appDir, relativePath), 'utf8');
@@ -36,9 +40,68 @@ test('modelo visual é puro e formata snapshots sem inventar métricas', async (
   );
 
   assert.equal(buildWeekPresentation({ summary: { plannedMinutes: 120, actualMinutes: 60, adherence: 50 } }).planned, '2h');
-  assert.equal(buildAvailabilityPresentation({ availableDays: [1, 2, 3], restDays: [0, 6], weeklyHoursGoal: 6 }).dailyCapacity, '2h');
+  assert.equal(buildAvailabilityPresentation(
+    { availableDays: [1, 2, 3], restDays: [0, 6], weeklyHoursGoal: 6 },
+    { todayCapacityMinutes: 90, weeklyCapacityMinutes: 270 },
+  ).dailyCapacity, '1h 30min');
   assert.equal(buildExamJourneyPresentation({ journey: { hasExam: false } }).hasExam, false);
   assert.equal(buildProgressPresentation({ metrics: { streak: 2, weeklyConsistency: 60 } }).consistency, 60);
+});
+
+test('Disponibilidade apresenta somente capacidades derivadas pelo contrato canônico', () => {
+  const weekDates = [
+    '2026-08-02', '2026-08-03', '2026-08-04', '2026-08-05',
+    '2026-08-06', '2026-08-07', '2026-08-08',
+  ];
+  const baseProfile = {
+    availableDays: [1, 2, 3, 4, 5],
+    restDays: [0, 6],
+    dayWindows: {
+      1: { start: '18:00', end: '19:00' },
+      2: { start: '18:00', end: '20:00' },
+      3: { start: '18:00', end: '21:00' },
+      4: { start: '18:00', end: '20:00' },
+      5: { start: '18:00', end: '19:00' },
+    },
+    minDailyMinutes: 20,
+    maxDailyMinutes: 180,
+    preferredSessionMinutes: 30,
+    maxBlocksPerDay: 4,
+    weeklyHoursGoal: 20,
+  };
+
+  const capacityAboveWindows = validateStudyAvailability(baseProfile, { weekDates });
+  assert.equal(capacityAboveWindows.weeklyCapacity, 540, 'A: soma real das janelas limita a meta semanal maior');
+  assert.equal(buildAvailabilityPresentation(baseProfile, {
+    todayCapacityMinutes: capacityAboveWindows.dailyCapacity['2026-08-03'],
+    weeklyCapacityMinutes: capacityAboveWindows.weeklyCapacity,
+  }).weeklyCapacity, '9h');
+
+  const dailyLimitedProfile = { ...baseProfile, maxDailyMinutes: 90 };
+  assert.equal(dailyCapacityForDate(dailyLimitedProfile, '2026-08-05'), 90, 'B: maxDailyMinutes limita a janela maior');
+
+  assert.equal(dailyCapacityForDate(baseProfile, '2026-08-03'), 60, 'C: janela menor limita a capacidade diária');
+
+  const restPresentation = buildAvailabilityPresentation(baseProfile, {
+    todayCapacityMinutes: dailyCapacityForDate(baseProfile, '2026-08-02'),
+    weeklyCapacityMinutes: capacityAboveWindows.weeklyCapacity,
+    todayIsRestDay: true,
+  });
+  assert.equal(restPresentation.dailyCapacity, 'Hoje é dia de descanso', 'D: descanso não recebe capacidade fictícia');
+
+  assert.deepEqual(
+    ['2026-08-03', '2026-08-04', '2026-08-05'].map((date) => dailyCapacityForDate(baseProfile, date)),
+    [60, 120, 180],
+    'E: janelas diferentes permanecem capacidades diferentes, sem média visual',
+  );
+
+  const weeklyLimitedProfile = { ...baseProfile, weeklyHoursGoal: 3 };
+  const weeklyLimited = validateStudyAvailability(weeklyLimitedProfile, { weekDates });
+  assert.equal(weeklyLimited.weeklyCapacity, 180, 'F: meta semanal limita disponibilidade maior');
+  assert.equal(buildAvailabilityPresentation(weeklyLimitedProfile, {
+    todayCapacityMinutes: weeklyLimited.dailyCapacity['2026-08-03'],
+    weeklyCapacityMinutes: weeklyLimited.weeklyCapacity,
+  }).weeklyCapacity, '3h');
 });
 
 test('cards distinguem todos os estados por texto e símbolo além da cor', () => {

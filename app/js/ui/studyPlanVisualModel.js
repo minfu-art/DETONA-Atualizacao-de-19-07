@@ -86,17 +86,21 @@ export function buildMonthPresentation(view = {}) {
   };
 }
 
-export function buildAvailabilityPresentation(profile = {}) {
+export function buildAvailabilityPresentation(profile = {}, {
+  todayCapacityMinutes = 0,
+  weeklyCapacityMinutes = 0,
+  todayIsRestDay = false,
+} = {}) {
   const availableDays = profile.availableDays || [];
   const restDays = profile.restDays || [];
-  const dailyMinutes = Math.round((Number(profile.weeklyHoursGoal) || 0) * 60 / Math.max(1, availableDays.length));
   return {
     title: 'O plano começa pela sua vida real',
     subtitle: 'Defina seus limites para que o cronograma respeite trabalho, descanso e tempo disponível.',
     availableDays: availableDays.length,
     restDays: restDays.length,
-    dailyCapacity: formatPlanMinutes(dailyMinutes),
-    weeklyCapacity: `${Number(profile.weeklyHoursGoal) || 0}h`,
+    dailyCapacityLabel: todayIsRestDay ? 'Disponibilidade de hoje' : 'Capacidade de hoje',
+    dailyCapacity: todayIsRestDay ? 'Hoje é dia de descanso' : formatPlanMinutes(todayCapacityMinutes),
+    weeklyCapacity: formatPlanMinutes(weeklyCapacityMinutes),
     preferredSession: formatPlanMinutes(profile.preferredSessionMinutes || 0),
     maxBlocks: Number(profile.maxBlocksPerDay) || 0,
   };
