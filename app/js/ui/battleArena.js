@@ -41,10 +41,12 @@ export async function renderBattle(root, navigate, ctx) {
   }
 
   const player = await getPlayer();
-  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
-  const battleHero = (className) => customHero
-    ? `<img src="${escapeAttr(customHero)}" alt="Avatar do concurso" class="${className}" draggable="false">`
-    : heroImgHtml({ className, level: player.level, sprite: player.avatar_sprite });
+  const battleHero = (className) => heroImgHtml({
+    className,
+    level: player.level,
+    sprite: player.avatar_sprite,
+    alt: 'Avatar atual do jogador na batalha',
+  });
   let locked = false;
   ctx.requestBattleExit = (targetScreen) => {
     const modal = openModal(

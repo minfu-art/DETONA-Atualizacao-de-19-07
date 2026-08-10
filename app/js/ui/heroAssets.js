@@ -64,9 +64,29 @@ export function getHeroTier(level = 1, sprite = 'male') {
   return tiers.find((t) => lv >= t.min && lv <= t.max) || tiers[0];
 }
 
+/**
+ * Fonte canônica da identidade visual do jogador.
+ * A progressão continua sendo alimentada exclusivamente pelo nível acadêmico.
+ */
+export function resolveHeroIdentity(level = 1, sprite = 'male') {
+  const gender = normalizeSprite(sprite);
+  const normalizedLevel = Math.max(1, Math.min(100, Number(level) || 1));
+  const tiers = getHeroTiers(gender);
+  const tier = getHeroTier(normalizedLevel, gender);
+  const stageIndex = Math.max(0, tiers.indexOf(tier));
+  return Object.freeze({
+    gender,
+    level: normalizedLevel,
+    tier,
+    stageIndex,
+    stageNumber: stageIndex + 1,
+    stageCount: tiers.length,
+    src: `${tier.file}?${HERO_VER}`,
+  });
+}
+
 export function heroSrcForLevel(level = 1, sprite = 'male') {
-  const tier = getHeroTier(level, sprite);
-  return `${tier.file}?${HERO_VER}`;
+  return resolveHeroIdentity(level, sprite).src;
 }
 
 /**
@@ -82,13 +102,13 @@ export function heroImgHtml(opts = {}) {
     sprite = 'male',
     flip = false,
   } = opts;
-  const gender = normalizeSprite(sprite);
-  const src = heroSrcForLevel(level, gender);
+  const identity = resolveHeroIdentity(level, sprite);
+  const { gender, src } = identity;
   const label = alt || (gender === 'female' ? 'Heroína Estudante' : 'Herói Estudante');
   const aura = level >= 90 ? ' hero-aura-legend' : level >= 50 ? ' hero-aura-mid' : '';
   // Não espelhar o feminino: já tem arte própria. flip só se pedido explicitamente em male.
   const flipCls = flip && gender !== 'female' ? ' hero-flip' : '';
-  return `<img src="${src}" alt="${label}" class="${className}${aura}${flipCls}" draggable="false" data-hero-sprite="${gender}" data-hero-level="${Math.max(1, Math.min(100, Number(level) || 1))}" />`;
+  return `<img src="${src}" alt="${label}" class="${className}${aura}${flipCls}" draggable="false" data-hero-sprite="${gender}" data-hero-level="${identity.level}" data-hero-stage="${identity.stageNumber}" />`;
 }
 
 /** XP total acumulado aproximado */

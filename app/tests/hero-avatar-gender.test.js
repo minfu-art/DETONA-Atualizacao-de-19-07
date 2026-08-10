@@ -11,6 +11,7 @@ import {
   HERO_TIERS_MALE,
   HERO_TIERS_FEMALE,
   normalizeSprite,
+  resolveHeroIdentity,
 } from '../js/ui/heroAssets.js';
 
 test('normalizeSprite só aceita male/female', () => {
@@ -76,4 +77,26 @@ test('HTML masculino no nivel 1 aponta o primeiro estagio v2', () => {
   const html = heroImgHtml({ level: 1, sprite: 'male' });
   assert.ok(html.includes('tiers-v2/male/stage-01.png'));
   assert.ok(html.includes('data-hero-sprite="male"'));
+});
+
+test('resolver canônico mantém dez estágios exatos para os dois gêneros', () => {
+  for (const gender of ['male', 'female']) {
+    for (let stage = 1; stage <= 10; stage += 1) {
+      const level = stage === 1 ? 1 : stage * 10 - 10;
+      const identity = resolveHeroIdentity(level, gender);
+      assert.equal(identity.gender, gender);
+      assert.equal(identity.stageNumber, stage);
+      assert.equal(identity.stageCount, 10);
+      assert.match(identity.src, new RegExp(`/${gender}/stage-${String(stage).padStart(2, '0')}\\.png`));
+    }
+  }
+});
+
+test('trocar gênero preserva estágio e trocar estágio preserva gênero', () => {
+  const male = resolveHeroIdentity(47, 'male');
+  const female = resolveHeroIdentity(47, 'female');
+  assert.equal(male.stageNumber, female.stageNumber);
+  assert.notEqual(male.src, female.src);
+  assert.equal(resolveHeroIdentity(87, 'female').gender, female.gender);
+  assert.notEqual(resolveHeroIdentity(87, 'female').stageNumber, female.stageNumber);
 });

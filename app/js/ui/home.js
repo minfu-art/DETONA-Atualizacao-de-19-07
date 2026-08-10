@@ -553,10 +553,12 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     phrase = '', wbState = null, emblemState = null,
     orionEvolution = emptyOrionEvolutionModel(),
   } = data;
-  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
-  const missionHero = customHero
-    ? `<img class="hero-img dj-mission__hero" src="${escapeHtml(customHero)}" alt="Avatar do concurso">`
-    : heroImgHtml({ className: 'hero-img dj-mission__hero', level: player.level, sprite: player.avatar_sprite });
+  const missionHero = heroImgHtml({
+    className: 'hero-img dj-mission__hero',
+    level: player.level,
+    sprite: player.avatar_sprite,
+    alt: 'Avatar atual do jogador',
+  });
   const firstName = String(player.name || 'Guerreiro').trim().split(/\s+/)[0];
   const hudInsignias = (emblemState?.insignias || []).slice(0, 5);
   const insigniaHud = hudInsignias.map((progress) => emblemArt(progress.currentInsignia, {

@@ -24,11 +24,9 @@ export async function renderOnboarding(root, navigate, ctx) {
   const contestName = ctx?.contest?.name || EXAM_META.name;
   const contestRole = ctx?.contest?.role || EXAM_META.cargo;
   const defaultExamDate = ctx?.contest?.examDate || EXAM_META.default_exam_date;
-  const customHero = ctx?.contentPackage?.visualConfig?.battle_avatar || null;
   let examDate = player.exam_date || defaultExamDate;
 
   function previewHero(sprite) {
-    if (customHero) return `<img class="hero-img hero-img--onboard" src="${escapeHtml(customHero)}" alt="Avatar do concurso">`;
     return heroImgHtml({ className: 'hero-img hero-img--onboard', level: 1, sprite });
   }
 
