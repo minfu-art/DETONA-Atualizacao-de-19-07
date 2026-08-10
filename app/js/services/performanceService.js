@@ -405,26 +405,26 @@ function reviewMetrics(verticalized, reviewQueue, cutoff, now) {
   };
 }
 
-function coverageSnapshot(player) {
+function completionSnapshot(player) {
   const raw = player?.edital_completion_pct;
   const numeric = finiteNumber(raw);
   if (raw == null || numeric == null) {
-    return { coverage: null, remaining: null, source: 'none', quality: 'missing', warnings: raw == null ? [] : ['INVALID_COVERAGE'] };
+    return { completion: null, remainingCompletion: null, source: 'none', quality: 'missing', warnings: raw == null ? [] : ['INVALID_EDITAL_COMPLETION'] };
   }
-  const coverage = clampPercent(numeric);
+  const completion = clampPercent(numeric);
   return {
-    coverage,
-    remaining: 100 - coverage,
+    completion,
+    remainingCompletion: 100 - completion,
     source: 'player.edital_completion_pct',
-    quality: numeric === coverage ? 'canonical' : 'normalized',
-    warnings: numeric === coverage ? [] : ['COVERAGE_CLAMPED'],
+    quality: numeric === completion ? 'canonical' : 'normalized',
+    warnings: numeric === completion ? [] : ['EDITAL_COMPLETION_CLAMPED'],
   };
 }
 
-function summaryText({ coverage, totals, disciplines }) {
-  if (!totals.answered && coverage == null) return 'Comece sua jornada para construir um histórico de desempenho deste concurso.';
+function summaryText({ completion, totals, disciplines }) {
+  if (!totals.answered && completion == null) return 'Comece sua jornada para construir um histórico de desempenho deste concurso.';
   const fragments = [];
-  if (coverage != null) fragments.push(`Você percorreu ${coverage.toFixed(0)}% do edital.`);
+  if (completion != null) fragments.push(`Você concluiu integralmente ${completion.toFixed(0)}% do edital.`);
   const evaluated = disciplines.filter((discipline) => discipline.accuracy != null && discipline.answered >= 10);
   if (evaluated.length) {
     const strongest = [...evaluated].sort((a, b) => b.accuracy - a.accuracy)[0];
@@ -478,7 +478,7 @@ export class PerformanceService {
     const allTotals = questionTotalsDetailed(subtopics, null);
     if (totals.answered > allTotals.answered) totals.warnings.push('PERIOD_EXCEEDS_RELIABLE_HISTORY');
     const accuracy = totals.answered ? (totals.correct / totals.answered) * 100 : null;
-    const coverage = coverageSnapshot(player);
+    const completion = completionSnapshot(player);
     const time = studyTimeSnapshot({ blocks, sessions, dailyStates, disciplines, subtopics, cutoff });
     const disciplineRows = disciplinePerformance(disciplines, subtopics, cutoff, time.records);
     const completedTopics = verticalized.filter((item) => item.theory_status === 'concluido').length;
@@ -487,7 +487,7 @@ export class PerformanceService {
     const disciplineIds = new Set(disciplines.map((discipline) => discipline.id));
     const hasOrphanSubtopics = subtopics.some((subtopic) => !disciplineIds.has(subtopic.discipline_id));
     const warnings = [...new Set([
-      ...coverage.warnings,
+      ...completion.warnings,
       ...totals.warnings,
       ...time.warnings,
       ...(hasOrphanSubtopics ? ['ORPHAN_SUBTOPICS_EXCLUDED_FROM_DISCIPLINES'] : []),
@@ -498,14 +498,14 @@ export class PerformanceService {
       context: captured.context,
       player,
       progress: {
-        coverage: coverage.coverage,
-        edital: coverage.coverage,
-        remaining: coverage.remaining,
+        completion: completion.completion,
+        remainingCompletion: completion.remainingCompletion,
+        edital: completion.completion,
         completedTopics,
         totalTopics: verticalized.length,
         remainingTopics: Math.max(0, verticalized.length - completedTopics),
-        source: coverage.source,
-        quality: coverage.quality,
+        source: completion.source,
+        quality: completion.quality,
       },
       overview: {
         answered: totals.answered,
@@ -520,15 +520,15 @@ export class PerformanceService {
       time,
       reviews,
       evolution,
-      summary: summaryText({ coverage: coverage.coverage, totals, disciplines: disciplineRows }),
+      summary: summaryText({ completion: completion.completion, totals, disciplines: disciplineRows }),
       quality: {
         warnings,
         accuracy: { source: totals.source, hasEnoughData: totals.answered >= 10 },
         evolution: { source: 'attempt_history_by_local_day', sampleSize: evolution.length, hasEnoughData: evolution.length >= 2 },
-        projection: { available: false, reason: 'COVERAGE_HISTORY_UNAVAILABLE' },
+        projection: { available: false, reason: 'EDITAL_COMPLETION_HISTORY_UNAVAILABLE' },
       },
       hasQuestionData: totals.answered > 0,
-      hasAnyData: (coverage.coverage || 0) > 0 || allTotals.answered > 0 || time.totalMinutes > 0 || reviews.totalCompleted > 0,
+      hasAnyData: (completion.completion || 0) > 0 || allTotals.answered > 0 || time.totalMinutes > 0 || reviews.totalCompleted > 0,
     };
   }
 }

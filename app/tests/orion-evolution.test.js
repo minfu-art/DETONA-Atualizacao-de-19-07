@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   buildOrionEvolutionModel,
+  completionProjection,
   coverageProjection,
   dailyMinutesGoal,
   daysUntilExamDate,
@@ -69,9 +70,9 @@ test('análise recente mede taxa ponderada e nomeia maior taxa, não ganho de do
   assert.deepEqual(analysis.bestDiscipline, { id: 'penal', name: 'Direito Penal', answered: 10, correct: 8, accuracy: 80 });
 });
 
-test('erro de grandeza: ganho de domínio não projeta cobertura restante', () => {
+test('erro de grandeza: ganho de domínio não projeta conclusão restante', () => {
   const model = buildOrionEvolutionModel({
-    weeklyDashboard: { overview: { answered: 50, correct: 30, errors: 20 }, progress: { coverage: 50 }, time: { totalMinutes: 420 } },
+    weeklyDashboard: { overview: { answered: 50, correct: 30, errors: 20 }, progress: { completion: 50 }, time: { totalMinutes: 420 } },
     recentProgress: { globalGainPercent: 70, bestDiscipline: null },
   });
   assert.equal(model.remainingPercent, 50);
@@ -81,28 +82,32 @@ test('erro de grandeza: ganho de domínio não projeta cobertura restante', () =
   assert.doesNotMatch(model.recommendation, /zera|concluir em|h por dia/i);
 });
 
-test('projeção aceita somente snapshots temporais equivalentes de cobertura', () => {
-  assert.deepEqual(coverageProjection([{ date: '2026-08-01', coverage: 10 }], { currentCoverage: 10 }), {
-    available: false, estimatedDays: null, reason: 'INSUFFICIENT_COMPARABLE_COVERAGE_HISTORY',
+test('projeção aceita somente snapshots temporais equivalentes de conclusão integral', () => {
+  assert.deepEqual(completionProjection([{ date: '2026-08-01', completion: 10 }], { currentCompletion: 10 }), {
+    available: false, estimatedDays: null, reason: 'INSUFFICIENT_COMPARABLE_COMPLETION_HISTORY',
   });
-  const valid = coverageProjection([
-    { date: '2026-08-01', coverage: 10, contestId: 'c1' },
-    { date: '2026-08-11', coverage: 20, contestId: 'c1' },
-  ], { currentCoverage: 20 });
+  const valid = completionProjection([
+    { date: '2026-08-01', completion: 10, contestId: 'c1' },
+    { date: '2026-08-11', completion: 20, contestId: 'c1' },
+  ], { currentCompletion: 20 });
   assert.equal(valid.available, true);
   assert.equal(valid.estimatedDays, 80);
-  assert.equal(valid.metric, 'coverage');
+  assert.equal(valid.metric, 'edital_completion_pct');
+  assert.equal(completionProjection([
+    { date: '2026-08-01', completion: 10, contestId: 'c1' },
+    { date: '2026-08-11', completion: 20, contestId: 'c2' },
+  ]).available, false);
   assert.equal(coverageProjection([
     { date: '2026-08-01', coverage: 10, contestId: 'c1' },
-    { date: '2026-08-11', coverage: 20, contestId: 'c2' },
-  ]).available, false);
+    { date: '2026-08-11', coverage: 20, contestId: 'c1' },
+  ], { currentCoverage: 20 }).metric, 'edital_completion_pct');
 });
 
 test('modelo usa meta real, accuracy factual e deixa progresso indisponível sem meta', () => {
   const model = buildOrionEvolutionModel({
     now: new Date('2026-07-29T12:00:00-03:00'), todayMinutes: 155, dailyGoalMinutes: 240,
     dailyGoalSource: 'routineProfile.minGoal.minutes', examDate: '2026-08-18', examDateSource: 'player.exam_date',
-    weeklyDashboard: { overview: { answered: 50, correct: 30, errors: 20 }, progress: { coverage: 50 }, reviews: { due: 0 } },
+    weeklyDashboard: { overview: { answered: 50, correct: 30, errors: 20 }, progress: { completion: 50 }, reviews: { due: 0 } },
   });
   assert.equal(model.questionsWeek, 50);
   assert.equal(model.accuracyWeek, 60);
@@ -110,6 +115,15 @@ test('modelo usa meta real, accuracy factual e deixa progresso indisponível sem
   assert.equal(model.examDays, 20);
   assert.equal(model.estimatedDays, null);
   assert.equal(buildOrionEvolutionModel({ todayMinutes: 10 }).dailyGoalProgress, null);
+});
+
+test('meta diária preserva 150% no modelo e limita apresentação e ARIA a 100%', () => {
+  const model = buildOrionEvolutionModel({ todayMinutes: 30, dailyGoalMinutes: 20 });
+  assert.equal(model.dailyGoalProgress, 150);
+  const html = renderOrionEvolution(model);
+  assert.match(html, /aria-label="Progresso da meta diária"[^>]+aria-valuenow="100"/);
+  assert.match(html, /style="width:100%"/);
+  assert.doesNotMatch(html, /width:150%|aria-valuenow="150"/);
 });
 
 test('recomendações exigem amostra mínima e permanecem rastreáveis', () => {
@@ -141,7 +155,7 @@ test('OrionEvolutionService é somente leitura e captura meta/data com precedên
     forScope: () => ({ getAll: async (store) => rows[store] || [], put: (...args) => writes.push(args) }),
   };
   const performance = { getDashboard: async () => ({
-    player: { exam_date: '2026-12-10' }, overview: { answered: 0, correct: 0, errors: 0 }, progress: { coverage: 0 }, time: {}, reviews: {}, quality: {},
+    player: { exam_date: '2026-12-10' }, overview: { answered: 0, correct: 0, errors: 0 }, progress: { completion: 0 }, time: {}, reviews: {}, quality: {},
   }) };
   const snapshot = await new OrionEvolutionService({ repository, performance, now: () => new Date('2026-08-07T12:00:00-03:00') }).getSnapshot();
   assert.equal(snapshot.dailyGoalMinutes, 20);

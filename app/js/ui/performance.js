@@ -60,22 +60,28 @@ function compactHeader(contest, period) {
 
 const PERFORMANCE_MENTOR_ART = 'assets/mentor/orion-performance-analyst.webp?v=1';
 
-/** Caixa unificada: cobertura do edital no topo + progresso geral + conteúdo restante + herói à esquerda */
-function masteryHeroCard(data) {
-  const hasCoverage = data.progress.coverage != null;
-  const edital = hasCoverage ? Number(data.progress.coverage) : 0;
-  const remaining = hasCoverage ? Number(data.progress.remaining) : null;
+/** Caixa unificada: conclusão integral do edital + teoria concluída + herói à esquerda. */
+export function masteryHeroCard(data) {
+  const hasCompletion = data.progress.completion != null;
+  const edital = hasCompletion ? Number(data.progress.completion) : 0;
+  const remaining = hasCompletion ? Number(data.progress.remainingCompletion) : null;
   const topicsDetail = data.progress.totalTopics
-    ? `${data.progress.completedTopics} concluídos · ${data.progress.remainingTopics} restantes`
+    ? `${data.progress.completedTopics} com teoria concluída · ${data.progress.remainingTopics} com teoria pendente`
     : 'Tópicos do edital';
-  const defeated = hasCoverage && remaining <= 0;
+  const defeated = hasCompletion && remaining <= 0;
+  const completionAria = hasCompletion
+    ? `aria-valuenow="${Math.round(edital)}"`
+    : 'aria-valuetext="Conclusão do edital indisponível"';
+  const remainingAria = hasCompletion
+    ? `aria-valuenow="${Math.round(remaining)}"`
+    : 'aria-valuetext="Percentual ainda não concluído indisponível"';
   return `<section class="ev-mastery-card${defeated ? ' is-defeated' : ''}" aria-labelledby="performance-progress-title">
-    <div class="ev-mastery-card__bar-top" aria-label="Cobertura do edital">
+    <div class="ev-mastery-card__bar-top" aria-label="Conclusão do edital">
       <div class="ev-mastery-card__bar-meta">
-        <span>Cobertura do edital</span>
-        <strong>${hasCoverage ? `${edital.toFixed(1)}%` : '—'}</strong>
+        <span>Conclusão do edital</span>
+        <strong>${hasCompletion ? `${edital.toFixed(1)}%` : '—'}</strong>
       </div>
-      <div class="ev-mastery-card__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(edital)}" aria-label="Cobertura do edital">
+      <div class="ev-mastery-card__track" role="progressbar" aria-valuemin="0" aria-valuemax="100" ${completionAria} aria-label="Conclusão do edital">
         <span style="width:${Math.min(100, edital)}%"></span>
       </div>
     </div>
@@ -89,16 +95,16 @@ function masteryHeroCard(data) {
       </div>
       <div class="ev-mastery-card__stats">
         <div class="ev-mastery-stat ev-mastery-stat--progress">
-          <small>Progresso de cobertura</small>
-          <h2 id="performance-progress-title">Edital percorrido</h2>
-          <strong>${hasCoverage ? `${edital.toFixed(0)}%` : '—'}</strong>
+          <small>Progresso de conclusão</small>
+          <h2 id="performance-progress-title">Progresso integral do edital</h2>
+          <strong>${hasCompletion ? `${edital.toFixed(0)}%` : '—'}</strong>
           <p>${escapeHtml(topicsDetail)}</p>
         </div>
         <div class="ev-mastery-stat ev-mastery-stat--rest">
-          <small>Conteúdo restante</small>
-          <h2 id="performance-monster-title">${defeated ? 'Edital percorrido' : 'Ainda não percorrido'}</h2>
-          <strong>${hasCoverage ? `${remaining.toFixed(0)}%` : '—'}</strong>
-          <div class="ev-mastery-stat__hp" role="progressbar" aria-label="Conteúdo ainda não percorrido" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(remaining || 0)}">
+          <small>Conclusão restante</small>
+          <h2 id="performance-monster-title">${defeated ? 'Edital concluído' : 'Ainda não concluído'}</h2>
+          <strong>${hasCompletion ? `${remaining.toFixed(0)}%` : '—'}</strong>
+          <div class="ev-mastery-stat__hp" role="progressbar" aria-label="Percentual ainda não concluído" aria-valuemin="0" aria-valuemax="100" ${remainingAria}>
             <span style="width:${Math.min(100, remaining || 0)}%"></span>
           </div>
         </div>
@@ -282,7 +288,7 @@ function page(data, contest) {
   const contestRole = contest?.role || contest?.cargo || '';
   return `${compactHeader(contest, data.period)}
     <header class="performance-desktop-header">
-      <div><span>Painel do estudante</span><h1>Desempenho</h1><p>Acompanhe cobertura, precisão, tempo e memória · ${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
+      <div><span>Painel do estudante</span><h1>Desempenho</h1><p>Acompanhe conclusão, precisão, tempo e memória · ${escapeHtml(contestName)}${contestRole ? ` · ${escapeHtml(contestRole)}` : ''}</p></div>
       <div>${periodFilter(data.period, 'performance-period-desktop')}<button type="button" class="performance-avatar" id="performance-profile-desktop" aria-label="Abrir meu perfil">${ICO.user?.() || 'P'}<span>Meu perfil</span></button></div>
     </header>
     <main class="performance-dashboard">

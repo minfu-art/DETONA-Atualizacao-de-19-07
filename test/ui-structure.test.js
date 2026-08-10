@@ -140,7 +140,9 @@ test('desempenho possui rota e serviço próprios derivados apenas de dados reai
   for (const store of ['player', 'disciplines', 'subtopics', 'verticalized', 'reviewQueue', 'routineBlocks', 'studySessions']) {
     assert.match(service, new RegExp(`STORES\\.${store}`));
   }
-  assert.match(performance, /Cobertura do edital/);
+  assert.match(performance, /Conclusão do edital/);
+  assert.match(performance, /com teoria concluída/);
+  assert.doesNotMatch(performance, /Cobertura do edital|Edital percorrido|Ainda não percorrido|Progresso de cobertura/);
   assert.doesNotMatch(performance, /Domínio do edital|Edital dominado/);
   assert.doesNotMatch(performance + service, /ranking|moeda|checkout|applyXp/i);
 });

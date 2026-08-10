@@ -118,34 +118,45 @@ export function daysUntilExamDate(examDate, now = new Date()) {
   return examDateStatus(examDate, now).days;
 }
 
-export function coverageProjection(coverageHistory = [], { currentCoverage = null } = {}) {
-  const points = (Array.isArray(coverageHistory) ? coverageHistory : [])
+export function completionProjection(completionHistory = [], { currentCompletion = null } = {}) {
+  const points = (Array.isArray(completionHistory) ? completionHistory : [])
     .map((item) => ({
       date: safeLocalDate(item?.at || item?.date),
-      coverage: finiteNumber(item?.coverage),
+      completion: finiteNumber(item?.completion ?? item?.edital_completion_pct),
       contestId: item?.contestId || null,
     }))
-    .filter((item) => item.date && item.coverage != null && item.coverage >= 0 && item.coverage <= 100)
+    .filter((item) => item.date && item.completion != null && item.completion >= 0 && item.completion <= 100)
     .sort((a, b) => a.date - b.date);
-  if (points.length < 2) return { available: false, estimatedDays: null, reason: 'INSUFFICIENT_COMPARABLE_COVERAGE_HISTORY' };
+  if (points.length < 2) return { available: false, estimatedDays: null, reason: 'INSUFFICIENT_COMPARABLE_COMPLETION_HISTORY' };
   const first = points[0];
   const last = points.at(-1);
   if (first.contestId && last.contestId && first.contestId !== last.contestId) {
     return { available: false, estimatedDays: null, reason: 'CONTEST_SCOPE_MISMATCH' };
   }
   const elapsedDays = Math.round((last.date - first.date) / DAY_MS);
-  const gain = last.coverage - first.coverage;
-  const current = finiteNumber(currentCoverage ?? last.coverage);
+  const gain = last.completion - first.completion;
+  const current = finiteNumber(currentCompletion ?? last.completion);
   if (elapsedDays < 1 || gain <= 0 || current == null || current < 0 || current > 100) {
-    return { available: false, estimatedDays: null, reason: 'NON_POSITIVE_OR_UNSTABLE_COVERAGE_PACE' };
+    return { available: false, estimatedDays: null, reason: 'NON_POSITIVE_OR_UNSTABLE_COMPLETION_PACE' };
   }
   return {
     available: true,
     estimatedDays: Math.ceil((100 - current) / (gain / elapsedDays)),
     reason: null,
     sampleSize: points.length,
-    metric: 'coverage',
+    metric: 'edital_completion_pct',
   };
+}
+
+/** @deprecated Use completionProjection with edital_completion_pct snapshots. */
+export function coverageProjection(coverageHistory = [], { currentCoverage = null } = {}) {
+  return completionProjection(
+    (Array.isArray(coverageHistory) ? coverageHistory : []).map((item) => ({
+      ...item,
+      completion: item?.completion ?? item?.edital_completion_pct ?? item?.coverage,
+    })),
+    { currentCompletion: currentCoverage },
+  );
 }
 
 export function buildOrionEvolutionModel({
@@ -157,7 +168,7 @@ export function buildOrionEvolutionModel({
   recentProgress = {},
   examDate = null,
   examDateSource = 'none',
-  coverageHistory = [],
+  completionHistory = [],
 } = {}) {
   const overview = weeklyDashboard.overview || {};
   const progress = weeklyDashboard.progress || {};
@@ -166,9 +177,9 @@ export function buildOrionEvolutionModel({
   const correctWeek = Math.max(0, Math.min(questionsWeek, finiteNumber(overview.correct) || 0));
   const wrongWeek = Math.max(0, questionsWeek - correctWeek);
   const accuracyWeek = questionsWeek ? (correctWeek / questionsWeek) * 100 : null;
-  const coverage = finiteNumber(progress.coverage ?? progress.edital);
-  const remainingPercent = coverage == null ? null : Math.max(0, Math.min(100, 100 - coverage));
-  const projection = coverageProjection(coverageHistory, { currentCoverage: coverage });
+  const completion = finiteNumber(progress.completion ?? progress.edital);
+  const remainingPercent = completion == null ? null : Math.max(0, Math.min(100, 100 - completion));
+  const projection = completionProjection(completionHistory, { currentCompletion: completion });
   const exam = examDateStatus(examDate, now);
   const examDays = exam.days;
   const goal = finiteNumber(dailyGoalMinutes);
@@ -184,7 +195,7 @@ export function buildOrionEvolutionModel({
     correctWeek,
     wrongWeek,
     accuracyWeek,
-    coverage,
+    completion,
     remainingPercent,
     estimatedDays: projection.available ? projection.estimatedDays : null,
     examDays,
@@ -267,7 +278,7 @@ export class OrionEvolutionService {
       recentProgress: recentProgressAnalysis({ subtopics, disciplines, cutoff }),
       examDate,
       examDateSource,
-      coverageHistory: [],
+      completionHistory: [],
     });
   }
 }

@@ -23,6 +23,10 @@ function metricCard({ iconName, label, value, detail = '', tone = '', extra = ''
 }
 
 export function renderOrionEvolution(model = {}, { direct = false } = {}) {
+  const rawGoalProgress = Number(model.dailyGoalProgress);
+  const displayedProgress = Number.isFinite(rawGoalProgress)
+    ? Math.max(0, Math.min(100, rawGoalProgress))
+    : 0;
   const accuracy = model.accuracyWeek == null
     ? '<span class="orion-metric__empty">Sem dados suficientes</span>'
     : `${Math.round(model.accuracyWeek)}%`;
@@ -56,7 +60,7 @@ export function renderOrionEvolution(model = {}, { direct = false } = {}) {
       detail: escapeHtml(goalDetail),
       tone: 'time',
       extra: model.dailyGoalMinutes
-        ? `<div class="orion-metric__progress" role="progressbar" aria-label="Progresso da meta diária" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${model.dailyGoalProgress || 0}"><span style="width:${model.dailyGoalProgress || 0}%"></span></div>`
+        ? `<div class="orion-metric__progress" role="progressbar" aria-label="Progresso da meta diária" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${displayedProgress}"><span style="width:${displayedProgress}%"></span></div>`
         : '',
     }),
     metricCard({

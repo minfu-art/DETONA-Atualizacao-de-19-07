@@ -11,7 +11,7 @@ import {
   studyTimeSnapshot,
   subtopicQuestionTotalsDetailed,
 } from '../app/js/services/performanceService.js';
-import { sortDisciplines } from '../app/js/ui/performance.js';
+import { masteryHeroCard, sortDisciplines } from '../app/js/ui/performance.js';
 
 const root = fileURLToPath(new URL('../app/', import.meta.url));
 
@@ -60,25 +60,43 @@ function repositoryFor(rows, writes = []) {
   };
 }
 
-test('edital_completion_pct é tratado como cobertura e complemento exato', async () => {
+test('edital_completion_pct é tratado como conclusão integral e complemento exato', async () => {
   const service = new PerformanceService({ repository: repositoryFor(dataset()), now: () => new Date('2026-07-17T12:00:00-03:00') });
   const result = await service.getDashboard({ period: '30d' });
-  assert.equal(result.progress.coverage, 72);
-  assert.equal(result.progress.remaining, 28);
-  assert.equal(result.progress.coverage + result.progress.remaining, 100);
+  assert.equal(result.progress.completion, 72);
+  assert.equal(result.progress.remainingCompletion, 28);
+  assert.equal(result.progress.completion + result.progress.remainingCompletion, 100);
+  assert.equal(result.progress.edital, 72);
+  assert.equal(Object.hasOwn(result.progress, 'coverage'), false);
   assert.equal(result.progress.source, 'player.edital_completion_pct');
+  assert.match(result.summary, /concluiu integralmente 72% do edital/);
 });
 
-test('cobertura ausente é diferente de zero observado e valor corrompido é normalizado sem escrita', async () => {
+test('conclusão ausente é diferente de zero observado e valor corrompido é normalizado sem escrita', async () => {
   const writes = [];
   const missing = await new PerformanceService({ repository: repositoryFor(dataset({ player: [{}] }), writes) }).getDashboard();
   const corrupt = await new PerformanceService({ repository: repositoryFor(dataset({ player: [{ edital_completion_pct: 140 }] }), writes) }).getDashboard();
-  assert.equal(missing.progress.coverage, null);
-  assert.equal(missing.progress.remaining, null);
-  assert.equal(corrupt.progress.coverage, 100);
-  assert.equal(corrupt.progress.remaining, 0);
-  assert.ok(corrupt.quality.warnings.includes('COVERAGE_CLAMPED'));
+  assert.equal(missing.progress.completion, null);
+  assert.equal(missing.progress.remainingCompletion, null);
+  assert.equal(corrupt.progress.completion, 100);
+  assert.equal(corrupt.progress.remainingCompletion, 0);
+  assert.ok(corrupt.quality.warnings.includes('EDITAL_COMPLETION_CLAMPED'));
   assert.equal(writes.length, 0);
+});
+
+test('UI distingue conclusão ausente de 0% observado e identifica teoria concluída', () => {
+  const base = { completedTopics: 1, remainingTopics: 1, totalTopics: 2 };
+  const missing = masteryHeroCard({ progress: { ...base, completion: null, remainingCompletion: null } });
+  const observedZero = masteryHeroCard({ progress: { ...base, completion: 0, remainingCompletion: 100 } });
+
+  assert.match(missing, /Conclusão do edital/);
+  assert.match(missing, /Progresso integral do edital/);
+  assert.match(missing, /Ainda não concluído/);
+  assert.match(missing, /1 com teoria concluída/);
+  assert.match(missing, /aria-valuetext="Conclusão do edital indisponível"/);
+  assert.doesNotMatch(missing, /aria-valuenow="0"[^>]*aria-label="Conclusão do edital"/);
+  assert.match(observedZero, /aria-valuenow="0"[^>]*aria-label="Conclusão do edital"/);
+  assert.match(observedZero, />0\.0%<|>0%</);
 });
 
 test('fonte moderna, tentativa e IDs legados têm precedência explícita sem soma dupla', () => {
@@ -252,9 +270,11 @@ test('ordenação mantém edital determinístico e null não vira 0%', () => {
 
 test('UI corrige semântica, expõe indistribuído e protege resposta assíncrona antiga', async () => {
   const performance = await readFile(path.join(root, 'js/ui/performance.js'), 'utf8');
-  assert.match(performance, /Cobertura do edital/);
-  assert.match(performance, /Edital percorrido/);
-  assert.match(performance, /Ainda não percorrido/);
+  assert.match(performance, /Conclusão do edital/);
+  assert.match(performance, /Progresso integral do edital/);
+  assert.match(performance, /Ainda não concluído/);
+  assert.match(performance, /com teoria concluída/);
+  assert.doesNotMatch(performance, /Cobertura do edital|Edital percorrido|Ainda não percorrido|Progresso de cobertura/);
   assert.doesNotMatch(performance, /Domínio do edital|Edital dominado/);
   assert.match(performance, /Tempo sem disciplina identificada/);
   assert.match(performance, /requestVersion/);
