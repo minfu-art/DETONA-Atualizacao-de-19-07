@@ -159,21 +159,22 @@ test('painel de desempenho usa Orion e identidade visual própria sem renomear a
   assert.match(performance, /Orion analisando o desempenho do estudante/);
   assert.match(navigation, /screen: 'performance'.+label: 'Desempenho'/);
   assert.match(css, /--performance-blue:#38bdf8/);
-  assert.match(mobileCss, /\.ev-mastery-card__mentor/);
+  assert.match(mobileCss, /--perf-cyan:\s*#22d3ee/);
+  assert.match(mobileCss, /\.performance-orion__art/);
   assert.doesNotMatch(performance, /hero-evolution-dynamic/);
 });
 
-test('desempenho remove o painel lateral de revisões e amplia a leitura das disciplinas', async () => {
-  const [performance, css, mobileCss] = await Promise.all([
+test('desempenho organiza disciplinas, evolução, tempo e revisões em hierarquia analítica', async () => {
+  const [performance, mobileCss] = await Promise.all([
     readFile(performanceUrl, 'utf8'),
-    readFile(cssUrl, 'utf8'),
     readFile(performanceCssUrl, 'utf8'),
   ]);
-  assert.match(performance, /performance-middle-grid performance-middle-grid--single/);
-  assert.doesNotMatch(performance, /performance-reviews|performance-review-metrics|id="performance-review"/);
-  assert.match(css, /\.performance-middle-grid--single\s*\{\s*grid-template-columns:minmax\(0,1fr\)/);
-  assert.match(mobileCss, /\.performance-middle-grid--single \.ev-disc-accordion[^{]*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
-  assert.match(mobileCss, /\.performance-middle-grid--single \.ev-disc-acc\.is-open[^{]*\{[^}]*grid-column:\s*1 \/ -1/s);
+  for (const marker of ['performance-disciplines', 'performance-evolution', 'performance-time', 'performance-reviews']) {
+    assert.match(performance, new RegExp(marker));
+  }
+  assert.match(mobileCss, /\.performance-discipline-list\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
+  assert.match(mobileCss, /\.performance-discipline-row\.is-open\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.match(mobileCss, /\.performance-analytics-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
 });
 
 test('edital verticalizado mostra taxa de acerto e permite enfrentar subtópico', async () => {

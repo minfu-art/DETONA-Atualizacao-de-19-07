@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v121-edital-semantics';
+const CACHE = 'detona-v122-performance-visual';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -150,6 +150,7 @@ const ASSETS = [
   './js/ui/reviewPresentation.js',
   './js/ui/grimorio.js',
   './js/ui/performance.js',
+  './js/ui/performanceVisualModel.js',
   './js/ui/expedition.js',
   './js/ui/studyPlanVisualModel.js',
   './css/plan-edital.css',
