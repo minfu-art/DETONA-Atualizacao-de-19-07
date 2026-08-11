@@ -133,6 +133,22 @@ test('categoria vazia permanece representável', () => {
   assert.equal(CAREER_AREAS.armed_forces.name, 'Militar e Defesa');
 });
 
+test('cards de area contam somente ofertas e mantem curso adquirido em Meus cursos', async () => {
+  const owned = item({ id: 'pc_al_2026', careerArea: 'police_security', owned: true });
+  const offer = item({ id: 'pp_pe_2027', careerArea: 'police_security', owned: false });
+  const entitlement = { id: 'entitlement-a', status: 'active' };
+  owned.entitlement = entitlement;
+  const { partitionLibrary } = await import('../js/services/studentEntryModel.js');
+  const { owned: ownedItems, offers } = partitionLibrary([owned, offer]);
+  const counts = countLibraryItemsByArea(offers);
+  assert.equal(counts.police_security, 1);
+  assert.deepEqual(filterLibraryItems(offers, { area: 'police_security' }), [offer]);
+  assert.deepEqual(ownedItems, [owned]);
+  assert.equal(owned.entitlement, entitlement);
+  const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
+  assert.match(ui, /const areaCounts = countLibraryItemsByArea\(offers\)/);
+});
+
 test('prioridade do botão respeita propriedade, prontidão e progresso', () => {
   assert.equal(contestPrimaryAction(pcAl).label, 'Continuar jornada');
   assert.equal(contestPrimaryAction({ ...pcAl, summary: null }).label, 'Começar jornada');

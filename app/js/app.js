@@ -46,6 +46,11 @@ import {
   snoozeHabitReminder,
 } from './services/habitReminderService.js';
 import { localPersonalRepository } from './repositories/localPersonalRepository.js';
+import {
+  clearRuntimeRecoveryMarker,
+  initializationFailure,
+  recoverStaleRuntime,
+} from './core/runtimeRecovery.js';
 
 const ctx = {
   battleSession: null,
@@ -523,7 +528,16 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
 
   let activeContestId = getActiveContestId();
   if (!activeContestId) {
-    const libraryState = await libraryService.getLibraryState(ctx.user);
+    let libraryState;
+    try {
+      libraryState = await libraryService.getLibraryState(ctx.user);
+    } catch (error) {
+      if (error?.code !== 'CATALOG_UNAVAILABLE') throw error;
+      // A Biblioteca possui erro recuperável e nova tentativa próprios.
+      // Não rotule uma falha remota do catálogo como falha do IndexedDB.
+      await showLibrary({ refresh: true });
+      return;
+    }
     const readyJourneys = libraryState.items
       .filter((item) => item.owned && item.contest.contentStatus === 'ready');
     if (readyJourneys.length === 1) activeContestId = readyJourneys[0].contest.id;
@@ -574,13 +588,18 @@ async function init() {
     const restored = await authService.restoreSession();
     if (restored) await initializeAuthenticatedApp();
     else showAuth();
+    clearRuntimeRecoveryMarker();
   } catch (err) {
     console.error('Init failed', err);
-    document.getElementById('screen').innerHTML = `
-      <div class="ro-window"><div class="ro-body">
-        <p>Falha ao iniciar o IndexedDB: ${err.message}</p>
-        <p class="muted mt-8">Use um navegador moderno (Chrome/Edge/Firefox) e abra via http:// (não file://).</p>
-      </div></div>`;
+    if (await recoverStaleRuntime(err)) return;
+    const failure = initializationFailure(err);
+    const root = document.getElementById('screen');
+    root.innerHTML = errorState({
+      title: failure.title,
+      description: failure.description,
+      action: '<button type="button" class="btn btn-primary" id="boot-retry">Tentar novamente</button>',
+    });
+    root.querySelector('#boot-retry')?.addEventListener('click', () => globalThis.location?.reload?.());
   }
 }
 

@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v123-library-discovery-fase10a';
+const CACHE = 'detona-v124-library-storage-repair-fase10a';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -46,6 +46,8 @@ const ASSETS = [
   './assets/library/areas/education-health.webp',
   './assets/library/areas/military.webp',
   './js/core/types.js',
+  './js/core/indexedDb.js',
+  './js/core/runtimeRecovery.js',
   './js/core/db.js',
   './js/core/ssot.js',
   './js/core/memory.js',

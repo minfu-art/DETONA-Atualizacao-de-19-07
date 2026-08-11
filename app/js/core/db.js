@@ -7,6 +7,7 @@ import { requireActiveUserId } from '../auth/activeUser.js';
 import { requireActiveContestId } from '../contest/activeContest.js';
 import { createBackupEnvelope, prepareRestoreCollections, normalizeBackupPayload, BACKUP_COLLECTIONS } from './backupSchema.js';
 import { normalizeQuestion } from './questionSchema.js';
+import { openIndexedDatabase } from './indexedDb.js';
 
 const openDatabases = new Map();
 
@@ -18,29 +19,8 @@ export function contestDatabaseName(userId, contestId) {
   return `${legacyUserDatabaseName(userId)}__contest__${encodeURIComponent(contestId)}`;
 }
 
-function openDB(userId = requireActiveUserId(), contestId = requireActiveContestId()) {
-  const contextKey = `${userId}:${contestId}`;
-  const existing = openDatabases.get(contextKey);
-  if (existing) {
-    if (existing.version === DB_VERSION) return Promise.resolve(existing);
-    try { existing.close(); } catch { /* ignore */ }
-    openDatabases.delete(contextKey);
-  }
-  return new Promise((resolve, reject) => {
-    const req = indexedDB.open(contestDatabaseName(userId, contestId), DB_VERSION);
-    req.onerror = () => reject(req.error);
-    req.onsuccess = () => {
-      const db = req.result;
-      openDatabases.set(contextKey, db);
-      db.onversionchange = () => {
-        try { db.close(); } catch { /* ignore */ }
-        openDatabases.delete(contextKey);
-      };
-      resolve(db);
-    };
-    req.onupgradeneeded = (e) => {
-      const db = e.target.result;
-      if (!db.objectStoreNames.contains(STORES.player)) {
+export function upgradeContestDatabase(db) {
+  if (!db.objectStoreNames.contains(STORES.player)) {
         db.createObjectStore(STORES.player, { keyPath: 'id' });
       }
       if (!db.objectStoreNames.contains(STORES.disciplines)) {
@@ -85,7 +65,6 @@ function openDB(userId = requireActiveUserId(), contestId = requireActiveContest
       if (!db.objectStoreNames.contains(STORES.meta)) {
         db.createObjectStore(STORES.meta, { keyPath: 'key' });
       }
-      // Rotina Inteligente V2 (DB_VERSION >= 4)
       if (!db.objectStoreNames.contains(STORES.routineProfiles)) {
         db.createObjectStore(STORES.routineProfiles, { keyPath: 'id' });
       }
@@ -115,10 +94,35 @@ function openDB(userId = requireActiveUserId(), contestId = requireActiveContest
         dist.createIndex('sessionId', 'sessionId', { unique: false });
         dist.createIndex('date', 'at', { unique: false });
       }
-      if (!db.objectStoreNames.contains(STORES.routineReminderSettings)) {
-        db.createObjectStore(STORES.routineReminderSettings, { keyPath: 'id' });
-      }
+  if (!db.objectStoreNames.contains(STORES.routineReminderSettings)) {
+    db.createObjectStore(STORES.routineReminderSettings, { keyPath: 'id' });
+  }
+}
+
+function openDB(userId = requireActiveUserId(), contestId = requireActiveContestId()) {
+  const contextKey = `${userId}:${contestId}`;
+  const existing = openDatabases.get(contextKey);
+  if (existing) {
+    if (existing.version === DB_VERSION) return Promise.resolve(existing);
+    try { existing.close(); } catch { /* ignore */ }
+    openDatabases.delete(contextKey);
+  }
+  return openIndexedDatabase({
+    name: contestDatabaseName(userId, contestId),
+    version: DB_VERSION,
+    upgrade: upgradeContestDatabase,
+    onBlocked: () => {
+      const current = openDatabases.get(contextKey);
+      try { current?.close?.(); } catch { /* a conexao pode ja estar fechada */ }
+      openDatabases.delete(contextKey);
+    },
+  }).then((db) => {
+    openDatabases.set(contextKey, db);
+    db.onversionchange = () => {
+      try { db.close(); } catch { /* ignore */ }
+      openDatabases.delete(contextKey);
     };
+    return db;
   });
 }
 

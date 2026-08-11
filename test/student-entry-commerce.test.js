@@ -127,4 +127,6 @@ test('primeiro acesso abre biblioteca sem exigir concurso ativo', async () => {
   const app = await source('app/js/app.js');
   assert.match(app, /const libraryPlayer = activeContestId \? await getPlayer\(\) : null/);
   assert.match(app, /reason === 'register'[\s\S]*clearActiveContestId\(\)[\s\S]*showLibrary\(\)/);
+  assert.doesNotMatch(app, /Falha ao iniciar o IndexedDB/);
+  assert.match(app, /error\?\.code !== 'CATALOG_UNAVAILABLE'[\s\S]*showLibrary\(\{ refresh: true \}\)/);
 });

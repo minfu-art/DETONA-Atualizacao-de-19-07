@@ -131,7 +131,7 @@ export function renderLibrary(root, {
   const ownedOrdered = activeJourney
     ? [activeJourney, ...owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)]
     : owned;
-  const areaCounts = countLibraryItemsByArea(items);
+  const areaCounts = countLibraryItemsByArea(offers);
   const notice = resolveCheckoutReturn(commerceReturn, items);
   const state = { area: 'all', search: '' };
 

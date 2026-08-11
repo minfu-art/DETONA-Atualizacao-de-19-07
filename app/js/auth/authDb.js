@@ -1,14 +1,15 @@
+import { openIndexedDatabase } from '../core/indexedDb.js';
+
 const AUTH_DB_NAME = 'DetonaConcursosAuthDB';
 const AUTH_DB_VERSION = 2;
 let authDb = null;
 
 export function openAuthDB() {
   if (authDb) return Promise.resolve(authDb);
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(AUTH_DB_NAME, AUTH_DB_VERSION);
-    request.onerror = () => reject(request.error);
-    request.onupgradeneeded = () => {
-      const db = request.result;
+  return openIndexedDatabase({
+    name: AUTH_DB_NAME,
+    version: AUTH_DB_VERSION,
+    upgrade: (db) => {
       if (!db.objectStoreNames.contains('users')) {
         const users = db.createObjectStore('users', { keyPath: 'id' });
         users.createIndex('email', 'email', { unique: true });
@@ -29,12 +30,11 @@ export function openAuthDB() {
         const purchases = db.createObjectStore('purchases', { keyPath: 'id' });
         purchases.createIndex('userId', 'userId', { unique: false });
       }
-    };
-    request.onsuccess = () => {
-      authDb = request.result;
-      authDb.onversionchange = () => { authDb.close(); authDb = null; };
-      resolve(authDb);
-    };
+    },
+  }).then((database) => {
+    authDb = database;
+    authDb.onversionchange = () => { authDb.close(); authDb = null; };
+    return authDb;
   });
 }
 

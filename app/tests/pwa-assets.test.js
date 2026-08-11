@@ -23,3 +23,11 @@ test('falha isolada de pré-cache não usa cache.addAll', () => {
   assert.match(sw, /ASSETS\.map/);
   assert.match(sw, /catch \(error\)/);
 });
+
+test('service worker atualiza shell sem apagar cache de conteudo ou IndexedDB', () => {
+  const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
+  assert.match(sw, /detona-v124-library-storage-repair-fase10a/);
+  assert.match(sw, /!key\.startsWith\(CONTENT_CACHE_PREFIX\)/);
+  assert.match(sw, /cache:\s*'reload'/);
+  assert.doesNotMatch(sw, /deleteDatabase|indexedDB\.deleteDatabase|unregister\s*\(/);
+});

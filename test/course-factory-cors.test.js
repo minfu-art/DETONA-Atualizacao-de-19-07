@@ -168,3 +168,9 @@ test('verify_jwt permanece habilitado nas quatro funÃ§Ãµes', async () => {
     assert.match(config, new RegExp(`\\[functions\\.${name}\\]\\s+verify_jwt = true`), name);
   }
 });
+
+test('student-content usa a mesma allowlist segura no preflight e no POST', async () => {
+  const text = await source('../supabase/functions/student-content/index.ts');
+  assert.match(text, /isAllowedOrigin\(origin, allowedOrigins\)/);
+  assert.doesNotMatch(text, /allowedOrigins\.has\(origin\)/);
+});
