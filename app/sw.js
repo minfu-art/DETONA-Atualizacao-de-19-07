@@ -1,6 +1,7 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v130-safe-text-layout';
+const CACHE = 'detona-v131-performance-shell';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
+const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
   './',
   './index.html',
@@ -253,18 +254,52 @@ const ASSETS = [
   './assets/insignias/domain-tier-06.webp',
 ];
 
+const ESSENTIAL_ART = new Set([
+  './assets/ui/login-command-hall.webp',
+  './assets/hero/hero-warrior.png',
+  './assets/mentor/orion-evolution.png',
+  './assets/mentors/evi.webp',
+  './assets/mentors/kiro-official.webp',
+  './assets/battle/arena-bg.jpg',
+]);
+
+function shouldPrecache(asset) {
+  if (asset.includes('?')) return false;
+  return asset === './'
+    || asset.endsWith('.html')
+    || asset.endsWith('.js')
+    || asset.endsWith('.css')
+    || asset === './manifest.json'
+    || asset.startsWith('./assets/icons/')
+    || ESSENTIAL_ART.has(asset);
+}
+
+const PRECACHE_ASSETS = [...new Set(ASSETS.filter(shouldPrecache))];
+
+async function putInCache(request, response) {
+  if (!response || response.status !== 200 || response.type !== 'basic') return;
+  const cache = await caches.open(CACHE);
+  await cache.put(request, response);
+}
+
+async function precacheShell() {
+  const cache = await caches.open(CACHE);
+  for (let index = 0; index < PRECACHE_ASSETS.length; index += PRECACHE_BATCH_SIZE) {
+    const batch = PRECACHE_ASSETS.slice(index, index + PRECACHE_BATCH_SIZE);
+    await Promise.all(batch.map(async (asset) => {
+      try {
+        await cache.add(asset);
+      } catch (error) {
+        // Uma falha isolada não deve impedir os demais recursos essenciais.
+        console.warn('[sw] asset não armazenado no pré-cache', asset, error);
+      }
+    }));
+  }
+}
+
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE)
-      .then((cache) => Promise.all(ASSETS.map(async (asset) => {
-        try {
-          await cache.add(asset);
-        } catch (error) {
-          // A CI garante que os caminhos existem. Em runtime, uma falha de rede
-          // isolada não deve impedir que os demais assets fiquem disponíveis.
-          console.warn('[sw] asset não armazenado no pré-cache', asset, error);
-        }
-      })))
+    precacheShell()
       .then(() => self.skipWaiting())
   );
 });
@@ -280,39 +315,31 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  const appCode = e.request.mode === 'navigate'
-    || url.pathname.endsWith('.js')
-    || url.pathname.endsWith('.css')
-    || url.pathname.endsWith('.json')
-    || url.pathname.endsWith('/manifest.json');
+  if (url.origin !== self.location.origin) return;
 
-  if (appCode) {
+  if (e.request.mode === 'navigate') {
+    const fetched = fetch(e.request);
+    e.waitUntil(
+      fetched
+        .then((res) => putInCache(e.request, res.clone()))
+        .catch(() => undefined)
+    );
     e.respondWith(
-      fetch(new Request(e.request, { cache: 'reload' }))
-        .then(async (res) => {
-          if (res && res.status === 200 && res.type === 'basic') {
-            const clone = res.clone();
-            await caches.open(CACHE).then((c) => c.put(e.request, clone));
-          }
-          return res;
-        })
-        .catch(() => caches.match(e.request))
+      fetched
+        .catch(async () => (await caches.match(e.request)) || caches.match('./index.html'))
     );
     return;
   }
 
+  const fetched = fetch(e.request);
+  e.waitUntil(
+    fetched
+      .then((res) => putInCache(e.request, res.clone()))
+      .catch(() => undefined)
+  );
   e.respondWith(
     caches.match(e.request).then((cached) => {
-      const fetched = fetch(e.request)
-        .then((res) => {
-          if (res && res.status === 200 && res.type === 'basic') {
-            const clone = res.clone();
-            caches.open(CACHE).then((c) => c.put(e.request, clone));
-          }
-          return res;
-        })
-        .catch(() => cached);
-      return cached || fetched;
+      return cached || fetched.catch(() => cached);
     })
   );
 });

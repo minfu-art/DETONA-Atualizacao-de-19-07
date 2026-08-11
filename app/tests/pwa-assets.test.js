@@ -17,17 +17,32 @@ test('todos os assets obrigatórios do service worker existem', () => {
   assert.deepEqual(missing, [], `assets obrigatórios ausentes: ${missing.join(', ')}`);
 });
 
-test('falha isolada de pré-cache não usa cache.addAll', () => {
+test('pré-cache é limitado ao shell essencial e processado em lotes', () => {
   const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
   assert.doesNotMatch(sw, /\.addAll\s*\(/);
-  assert.match(sw, /ASSETS\.map/);
+  assert.match(sw, /const PRECACHE_BATCH_SIZE = 12/);
+  assert.match(sw, /ASSETS\.filter\(shouldPrecache\)/);
+  assert.match(sw, /PRECACHE_ASSETS\.slice\(index, index \+ PRECACHE_BATCH_SIZE\)/);
+  assert.match(sw, /batch\.map/);
+  assert.match(sw, /asset\.includes\('\?'\)/);
   assert.match(sw, /catch \(error\)/);
 });
 
-test('service worker atualiza shell sem apagar cache de conteudo ou IndexedDB', () => {
+test('service worker não bloqueia respostas em gravações e preserva dados locais', () => {
   const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
-  assert.match(sw, /detona-v130-safe-text-layout/);
+  assert.match(sw, /detona-v131-performance-shell/);
   assert.match(sw, /!key\.startsWith\(CONTENT_CACHE_PREFIX\)/);
-  assert.match(sw, /cache:\s*'reload'/);
+  assert.doesNotMatch(sw, /cache:\s*'reload'/);
+  assert.match(sw, /e\.waitUntil\([\s\S]*putInCache\(e\.request, res\.clone\(\)\)/);
+  assert.doesNotMatch(sw, /await putInCache/);
+  assert.match(sw, /url\.origin !== self\.location\.origin/);
   assert.doesNotMatch(sw, /deleteDatabase|indexedDB\.deleteDatabase|unregister\s*\(/);
+});
+
+test('bancos de questões e galerias pesadas ficam sob demanda', () => {
+  const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
+  const shouldPrecacheSource = sw.slice(sw.indexOf('function shouldPrecache'), sw.indexOf('const PRECACHE_ASSETS'));
+  assert.doesNotMatch(shouldPrecacheSource, /data\/questions|tiers-v2|assets\/enemies|assets\/insignias/);
+  assert.match(shouldPrecacheSource, /asset\.endsWith\('\.js'\)/);
+  assert.match(shouldPrecacheSource, /ESSENTIAL_ART\.has\(asset\)/);
 });
