@@ -1,6 +1,12 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { createAllowedOrigins, handleCorsPreflight, isAllowedOrigin, jsonResponse } from '../_shared/cors.js';
-import { assertPurchasableContest, checkoutPreference, selectCheckoutUrl, validateCheckoutRequest } from './core.js';
+import {
+  assertPurchasableContest,
+  checkoutPreference,
+  resolveReservedCheckout,
+  selectCheckoutUrl,
+  validateCheckoutRequest,
+} from './core.js';
 
 const url = Deno.env.get('SUPABASE_URL')!;
 const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
@@ -40,70 +46,82 @@ Deno.serve(async (request) => {
     if (contestError) throw contestError;
     const contest = assertPurchasableContest(rawContest);
 
-    let { data: order, error: orderError } = await admin.from('commerce_orders').select('*')
-      .eq('user_id', auth.user.id).eq('idempotency_key', body.requestId).maybeSingle();
-    if (orderError) throw orderError;
-    if (order && order.contest_id !== contest.id) return respond(409, { error: 'IDEMPOTENCY_CONFLICT' }, origin);
-    if (!order) {
-      const recent = await admin.from('commerce_orders').select('*')
-        .eq('user_id', auth.user.id).eq('contest_id', contest.id).eq('status', 'pending')
-        .gte('created_at', new Date(Date.now() - 5 * 60 * 1000).toISOString())
-        .order('created_at', { ascending: false }).limit(1).maybeSingle();
-      if (recent.error) throw recent.error;
-      order = recent.data;
-    }
-    if (order?.checkout_url && order.status === 'pending') {
-      return respond(200, { checkout: { id: order.id, status: 'redirect', redirectUrl: order.checkout_url } }, origin);
-    }
-    if (!order) {
-      const created = await admin.from('commerce_orders').insert({
-        user_id: auth.user.id,
-        contest_id: contest.id,
-        provider: 'mercado_pago',
-        idempotency_key: body.requestId,
-        amount_cents: contest.price_cents,
-        currency: contest.currency,
-        status: 'pending',
-      }).select('*').single();
-      if (created.error) throw created.error;
-      order = created.data;
+    const reserved = await admin.rpc('reserve_commerce_order', {
+      p_user_id: auth.user.id,
+      p_contest_id: contest.id,
+      p_provider: 'mercado_pago',
+      p_idempotency_key: body.requestId,
+      p_amount_cents: contest.price_cents,
+      p_currency: contest.currency,
+    });
+    if (reserved.error) {
+      if (String(reserved.error.message || '').includes('idempotency_conflict')) {
+        return respond(409, { error: 'IDEMPOTENCY_CONFLICT' }, origin);
+      }
+      throw reserved.error;
     }
 
-    const preferenceResponse = await fetch('https://api.mercadopago.com/checkout/preferences', {
-      method: 'POST',
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-        'content-type': 'application/json',
-        'x-idempotency-key': body.requestId,
+    const checkout = await resolveReservedCheckout(reserved.data, {
+      readOrder: async (orderId) => {
+        const result = await admin.from('commerce_orders').select('*').eq('id', orderId).single();
+        if (result.error) throw result.error;
+        return result.data;
       },
-      body: JSON.stringify(checkoutPreference({
-        order,
-        contest,
-        payerEmail: auth.user.email || '',
-        returnBaseUrl,
-        notificationUrl,
-      })),
+      createPreference: async (order) => {
+        const preferenceResponse = await fetch('https://api.mercadopago.com/checkout/preferences', {
+          method: 'POST',
+          headers: {
+            authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            // Todas as chamadas concorrentes do mesmo pedido usam a mesma chave no provedor.
+            'x-idempotency-key': order.id,
+          },
+          body: JSON.stringify(checkoutPreference({
+            order,
+            contest,
+            payerEmail: auth.user.email || '',
+            returnBaseUrl,
+            notificationUrl,
+          })),
+        });
+        const preference = await preferenceResponse.json();
+        if (!preferenceResponse.ok) throw new Error('PROVIDER_CHECKOUT_FAILED');
+        return {
+          id: String(preference.id),
+          redirectUrl: selectCheckoutUrl(preference, mode),
+          expiresAt: preference.expiration_date_to || null,
+        };
+      },
+      savePreference: async (orderId, preference) => {
+        const saved = await admin.from('commerce_orders').update({
+          provider_preference_id: preference.id,
+          checkout_url: preference.redirectUrl,
+          expires_at: preference.expiresAt,
+          preference_claim_token: null,
+          preference_claimed_at: null,
+        }).eq('id', orderId).eq('status', 'pending')
+          .eq('preference_claim_token', body.requestId).select('id').single();
+        if (saved.error) throw saved.error;
+      },
+      releaseClaim: async (orderId) => {
+        await admin.from('commerce_orders').update({
+          preference_claim_token: null,
+          preference_claimed_at: null,
+        }).eq('id', orderId).eq('preference_claim_token', body.requestId);
+      },
     });
-    const preference = await preferenceResponse.json();
-    if (!preferenceResponse.ok) throw new Error('PROVIDER_CHECKOUT_FAILED');
-    const redirectUrl = selectCheckoutUrl(preference, mode);
-    const saved = await admin.from('commerce_orders').update({
-      provider_preference_id: String(preference.id),
-      checkout_url: redirectUrl,
-      expires_at: preference.expiration_date_to || null,
-    }).eq('id', order.id).eq('status', 'pending');
-    if (saved.error) throw saved.error;
-    return respond(200, { checkout: { id: order.id, status: 'redirect', redirectUrl } }, origin);
+    return respond(200, { checkout }, origin);
   } catch (error) {
     const code = error instanceof Error ? error.message : 'CHECKOUT_FAILED';
     const publicCodes = new Set([
       'CONTEST_NOT_FOUND', 'CONTEST_NOT_AVAILABLE', 'CONTEST_PRICE_INVALID',
       'INVALID_JSON', 'INVALID_CONTEST', 'INVALID_REQUEST_ID',
       'RETURN_URL_INVALID', 'WEBHOOK_URL_INVALID', 'CHECKOUT_URL_INVALID',
-      'PROVIDER_CHECKOUT_FAILED',
+      'PROVIDER_CHECKOUT_FAILED', 'ORDER_NOT_PENDING', 'CHECKOUT_INITIALIZING',
     ]);
     const safeCode = publicCodes.has(code) ? code : 'CHECKOUT_FAILED';
     const status = safeCode === 'CONTEST_NOT_FOUND' ? 404
+      : ['ORDER_NOT_PENDING', 'CHECKOUT_INITIALIZING'].includes(safeCode) ? 409
       : safeCode.startsWith('CONTEST_') || safeCode.startsWith('INVALID_') ? 400 : 502;
     return respond(status, { error: safeCode }, origin);
   }

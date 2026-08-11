@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import {
   assertPurchasableContest,
   checkoutPreference,
+  resolveReservedCheckout,
   selectCheckoutUrl,
   validateCheckoutRequest,
 } from '../supabase/functions/commercial-checkout/core.js';
@@ -53,12 +54,56 @@ test('webhook exige HMAC oficial e normaliza somente estados conhecidos', async 
   assert.equal(normalizePaymentStatus('refunded'), 'refunded');
 });
 
+test('duas solicitações simultâneas reutilizam um pedido e criam uma preferência', async () => {
+  const activeOrder = {
+    id: 'order-shared', status: 'pending', checkout_url: null,
+  };
+  let reservationCount = 0;
+  let preferenceCount = 0;
+  const requestIds = ['request-concurrent-a', 'request-concurrent-b'];
+  const reservedRequestIds = [];
+  const reserve = async (requestId) => {
+    reservedRequestIds.push(requestId);
+    return ({
+    order: { ...activeOrder },
+    preferenceClaimed: reservationCount++ === 0,
+    });
+  };
+  const execute = async (requestId) => resolveReservedCheckout(await reserve(requestId), {
+    pollAttempts: 20,
+    pollIntervalMs: 1,
+    wait: () => new Promise((resolve) => setTimeout(resolve, 1)),
+    readOrder: async () => ({ ...activeOrder }),
+    createPreference: async () => {
+      preferenceCount += 1;
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      return { id: 'preference-shared', redirectUrl: 'https://www.mercadopago.com.br/shared', expiresAt: null };
+    },
+    savePreference: async (_orderId, preference) => {
+      activeOrder.checkout_url = preference.redirectUrl;
+    },
+    releaseClaim: async () => {},
+  });
+
+  const [first, second] = await Promise.all(requestIds.map(execute));
+  assert.equal(first.id, 'order-shared');
+  assert.equal(second.id, 'order-shared');
+  assert.equal(first.redirectUrl, second.redirectUrl);
+  assert.equal(preferenceCount, 1);
+  assert.deepEqual(reservedRequestIds.sort(), requestIds);
+});
+
 test('migration mantém webhook privado, idempotente e entitlement server-side', async () => {
   const migration = await source('supabase/migrations/20260811193000_secure_commercial_checkout.sql');
   assert.match(migration, /enable row level security/gi);
   assert.match(migration, /revoke all on table public\.payment_webhook_events from public, anon, authenticated/i);
   assert.match(migration, /unique \(user_id, idempotency_key\)/i);
   assert.match(migration, /commerce_orders_provider_preference_uidx/i);
+  assert.match(migration, /commerce_orders_one_pending_per_contest_uidx[\s\S]*where status = 'pending'/i);
+  assert.match(migration, /pg_advisory_xact_lock/i);
+  assert.match(migration, /preference_claim_token/i);
+  assert.match(migration, /now\(\) - interval '5 minutes'/i);
+  assert.match(migration, /reserve_commerce_order[\s\S]*to service_role/i);
   assert.match(migration, /on conflict \(provider, event_id\) do nothing/i);
   assert.match(migration, /security definer/i);
   assert.match(migration, /mercado_pago_checkout/i);

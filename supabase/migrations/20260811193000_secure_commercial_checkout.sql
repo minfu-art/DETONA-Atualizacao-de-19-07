@@ -11,6 +11,8 @@ create table if not exists public.commerce_orders (
   provider_preference_id text,
   provider_payment_id text,
   checkout_url text,
+  preference_claim_token text,
+  preference_claimed_at timestamptz,
   amount_cents integer not null check (amount_cents > 0),
   currency text not null check (currency ~ '^[A-Z]{3}$'),
   status text not null default 'pending'
@@ -28,6 +30,24 @@ create unique index if not exists commerce_orders_provider_payment_uidx
 create unique index if not exists commerce_orders_provider_preference_uidx
   on public.commerce_orders(provider, provider_preference_id)
   where provider_preference_id is not null;
+with pending_ranked as (
+  select id,
+         row_number() over (
+           partition by user_id, contest_id
+           order by created_at desc, id desc
+         ) as pending_rank
+    from public.commerce_orders
+   where status = 'pending'
+)
+update public.commerce_orders orders
+   set status = 'expired',
+       updated_at = now()
+  from pending_ranked ranked
+ where orders.id = ranked.id
+   and ranked.pending_rank > 1;
+create unique index if not exists commerce_orders_one_pending_per_contest_uidx
+  on public.commerce_orders(user_id, contest_id)
+  where status = 'pending';
 create index if not exists commerce_orders_user_created_idx
   on public.commerce_orders(user_id, created_at desc);
 create index if not exists commerce_orders_contest_status_idx
@@ -64,6 +84,103 @@ create policy commerce_orders_select_own
 drop trigger if exists set_updated_at on public.commerce_orders;
 create trigger set_updated_at before update on public.commerce_orders
   for each row execute function public.set_updated_at();
+
+create or replace function public.reserve_commerce_order(
+  p_user_id uuid,
+  p_contest_id text,
+  p_provider text,
+  p_idempotency_key text,
+  p_amount_cents integer,
+  p_currency text
+)
+returns jsonb
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  v_order public.commerce_orders%rowtype;
+  v_claimed boolean := false;
+begin
+  if p_provider <> 'mercado_pago'
+     or char_length(p_idempotency_key) not between 16 and 100
+     or p_amount_cents <= 0
+     or p_currency !~ '^[A-Z]{3}$' then
+    raise exception 'invalid_commerce_order' using errcode = '22023';
+  end if;
+
+  -- Serializa toda reserva do mesmo aluno/concurso, inclusive requestIds diferentes.
+  perform pg_catalog.pg_advisory_xact_lock(
+    pg_catalog.hashtextextended('commerce:' || p_user_id::text || ':' || p_contest_id, 0)
+  );
+
+  update public.commerce_orders orders
+     set status = 'expired',
+         preference_claim_token = null,
+         preference_claimed_at = null,
+         updated_at = now()
+   where orders.user_id = p_user_id
+     and orders.contest_id = p_contest_id
+     and orders.status = 'pending'
+     and (
+       (orders.expires_at is not null and orders.expires_at <= now())
+       or (orders.expires_at is null and orders.created_at < now() - interval '5 minutes')
+     );
+
+  select * into v_order
+    from public.commerce_orders orders
+   where orders.user_id = p_user_id
+     and orders.idempotency_key = p_idempotency_key
+   for update;
+
+  if found and v_order.contest_id <> p_contest_id then
+    raise exception 'idempotency_conflict' using errcode = '23505';
+  end if;
+
+  if not found then
+    select * into v_order
+      from public.commerce_orders orders
+     where orders.user_id = p_user_id
+       and orders.contest_id = p_contest_id
+       and orders.status = 'pending'
+     for update;
+  end if;
+
+  if not found then
+    insert into public.commerce_orders (
+      user_id, contest_id, provider, idempotency_key, amount_cents, currency,
+      status, preference_claim_token, preference_claimed_at
+    ) values (
+      p_user_id, p_contest_id, p_provider, p_idempotency_key, p_amount_cents, p_currency,
+      'pending', p_idempotency_key, now()
+    ) returning * into v_order;
+    v_claimed := true;
+  elsif v_order.status = 'pending'
+        and v_order.checkout_url is null
+        and (
+          v_order.preference_claimed_at is null
+          or v_order.preference_claimed_at < now() - interval '30 seconds'
+        ) then
+    update public.commerce_orders orders
+       set preference_claim_token = p_idempotency_key,
+           preference_claimed_at = now(),
+           updated_at = now()
+     where orders.id = v_order.id
+     returning * into v_order;
+    v_claimed := true;
+  end if;
+
+  return pg_catalog.jsonb_build_object(
+    'order', pg_catalog.to_jsonb(v_order),
+    'preferenceClaimed', v_claimed
+  );
+end;
+$$;
+
+revoke all on function public.reserve_commerce_order(uuid, text, text, text, integer, text)
+  from public, anon, authenticated;
+grant execute on function public.reserve_commerce_order(uuid, text, text, text, integer, text)
+  to service_role;
 
 create or replace function public.apply_verified_commerce_payment(
   p_provider text,

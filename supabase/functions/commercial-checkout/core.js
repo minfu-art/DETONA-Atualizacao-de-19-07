@@ -62,3 +62,38 @@ export function selectCheckoutUrl(preference, mode) {
   }
   return url.toString();
 }
+
+export async function resolveReservedCheckout(reservation, {
+  createPreference,
+  readOrder,
+  savePreference,
+  releaseClaim,
+  wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds)),
+  pollAttempts = 20,
+  pollIntervalMs = 250,
+}) {
+  let order = reservation?.order;
+  if (!order?.id || order.status !== 'pending') throw new Error('ORDER_NOT_PENDING');
+  if (order.checkout_url) {
+    return { id: order.id, status: 'redirect', redirectUrl: order.checkout_url };
+  }
+  if (!reservation.preferenceClaimed) {
+    for (let attempt = 0; attempt < pollAttempts; attempt += 1) {
+      await wait(pollIntervalMs);
+      order = await readOrder(order.id);
+      if (order?.checkout_url) {
+        return { id: order.id, status: 'redirect', redirectUrl: order.checkout_url };
+      }
+      if (order?.status !== 'pending') throw new Error('ORDER_NOT_PENDING');
+    }
+    throw new Error('CHECKOUT_INITIALIZING');
+  }
+  try {
+    const preference = await createPreference(order);
+    await savePreference(order.id, preference);
+    return { id: order.id, status: 'redirect', redirectUrl: preference.redirectUrl };
+  } catch (error) {
+    await releaseClaim(order.id);
+    throw error;
+  }
+}
