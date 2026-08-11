@@ -1,5 +1,6 @@
 import { PurchaseRepository } from '../repositories/entitlementRepository.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
+import { getSupabaseClient } from '../supabase/client.js';
 
 /** Adapter demonstrativo. Substituir por um gateway remoto sem alterar LibraryService. */
 export class LocalDemoCheckoutGateway {
@@ -41,6 +42,36 @@ export class CheckoutUnavailableGateway {
 
   capability() {
     return { configured: false, provider: null, reason: 'gateway_not_configured' };
+  }
+}
+
+export class MercadoPagoCheckoutGateway {
+  constructor({
+    getClient = getSupabaseClient,
+    idFactory = () => globalThis.crypto?.randomUUID?.() || '',
+  } = {}) {
+    this.getClient = getClient;
+    this.idFactory = idFactory;
+  }
+
+  async checkout({ contest }) {
+    const client = await this.getClient();
+    if (!client) throw new Error('Checkout indisponível neste ambiente.');
+    const requestId = this.idFactory();
+    if (!requestId) throw new Error('Não foi possível criar uma solicitação segura de compra.');
+    const { data, error } = await client.functions.invoke('commercial-checkout', {
+      body: { contestId: contest.id, requestId },
+    });
+    if (error) throw new Error('Não foi possível iniciar o pagamento. Tente novamente.');
+    if (data?.error) throw new Error(data.error === 'ALREADY_ENTITLED'
+      ? 'Este curso já está liberado para sua conta.'
+      : 'Não foi possível iniciar o pagamento. Tente novamente.');
+    if (!data?.checkout) throw new Error('O servidor não retornou uma sessão de pagamento válida.');
+    return data.checkout;
+  }
+
+  capability() {
+    return { configured: true, provider: 'mercado_pago', reason: null };
   }
 }
 

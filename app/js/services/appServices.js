@@ -10,8 +10,14 @@ import { hybridProgressAdapter } from '../supabase/hybridProgressAdapter.js';
 import * as localDb from '../core/db.js';
 import { isLocalDevelopment, requiresRemoteBackend } from '../config/appEnvironment.js';
 import { SupabaseEntitlementRepository } from '../supabase/entitlementRepository.js';
-import { CheckoutService, CheckoutUnavailableGateway, LocalDemoCheckoutGateway } from './checkoutService.js';
+import {
+  CheckoutService,
+  CheckoutUnavailableGateway,
+  LocalDemoCheckoutGateway,
+  MercadoPagoCheckoutGateway,
+} from './checkoutService.js';
 import { contestContentService } from './contestContentService.js';
+import { ENV } from '../config/env.js';
 
 const localAuth = new AuthService({
   migrationService: isLocalDevelopment() ? new LegacyDataMigrationService() : null,
@@ -22,8 +28,11 @@ export const authService = new CloudAwareAuthService({ localAuth });
 
 const commercialMode = requiresRemoteBackend();
 const entitlementRepository = commercialMode ? new SupabaseEntitlementRepository() : undefined;
+const remoteCheckoutGateway = ENV.CHECKOUT_PROVIDER === 'mercado_pago'
+  ? new MercadoPagoCheckoutGateway()
+  : new CheckoutUnavailableGateway();
 const checkout = new CheckoutService({
-  gateway: commercialMode ? new CheckoutUnavailableGateway() : new LocalDemoCheckoutGateway(),
+  gateway: commercialMode ? remoteCheckoutGateway : new LocalDemoCheckoutGateway(),
 });
 
 export const libraryService = new LibraryService({

@@ -31,6 +31,13 @@ verify_jwt = true
 [functions.student-content]
 verify_jwt = true
 
+[functions.commercial-checkout]
+verify_jwt = true
+
+# Webhook público do provedor; a origem é autenticada por HMAC x-signature.
+[functions.commercial-webhook]
+verify_jwt = false
+
 [functions.ranked-events]
 verify_jwt = true
 

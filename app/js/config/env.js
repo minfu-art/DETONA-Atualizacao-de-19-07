@@ -26,4 +26,6 @@ export const ENV = Object.freeze({
   SUPABASE_JS_URL:
     String(injected.SUPABASE_JS_URL || '').trim()
     || 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm',
+  /** disabled | mercado_pago. Não contém credenciais. */
+  CHECKOUT_PROVIDER: String(injected.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase(),
 });

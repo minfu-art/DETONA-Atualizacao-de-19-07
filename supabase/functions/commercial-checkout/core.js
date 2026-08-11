@@ -1,0 +1,64 @@
+const CONTEST_ID = /^[a-z0-9][a-z0-9_-]{0,79}$/i;
+const REQUEST_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+export function validateCheckoutRequest(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('INVALID_JSON');
+  const contestId = String(value.contestId || '').trim();
+  const requestId = String(value.requestId || '').trim();
+  if (!CONTEST_ID.test(contestId)) throw new Error('INVALID_CONTEST');
+  if (!REQUEST_ID.test(requestId)) throw new Error('INVALID_REQUEST_ID');
+  return { contestId, requestId };
+}
+
+export function assertPurchasableContest(contest) {
+  if (!contest) throw new Error('CONTEST_NOT_FOUND');
+  if (contest.content_status !== 'ready' || contest.sales_status !== 'available') {
+    throw new Error('CONTEST_NOT_AVAILABLE');
+  }
+  if (!Number.isInteger(contest.price_cents) || contest.price_cents <= 0 || contest.currency !== 'BRL') {
+    throw new Error('CONTEST_PRICE_INVALID');
+  }
+  return contest;
+}
+
+export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, notificationUrl }) {
+  const base = new URL(returnBaseUrl);
+  if (base.protocol !== 'https:') throw new Error('RETURN_URL_INVALID');
+  const notify = new URL(notificationUrl);
+  if (notify.protocol !== 'https:') throw new Error('WEBHOOK_URL_INVALID');
+  const returnUrl = (state) => {
+    const url = new URL(base);
+    url.searchParams.set('checkout', state);
+    url.searchParams.set('contest', contest.id);
+    return url.toString();
+  };
+  return {
+    items: [{
+      id: contest.id,
+      title: contest.name,
+      quantity: 1,
+      currency_id: contest.currency,
+      unit_price: order.amount_cents / 100,
+    }],
+    payer: { email: payerEmail },
+    external_reference: order.id,
+    notification_url: notify.toString(),
+    back_urls: {
+      success: returnUrl('success'),
+      failure: returnUrl('cancelled'),
+      pending: returnUrl('pending'),
+    },
+    auto_return: 'approved',
+    binary_mode: false,
+    metadata: { contest_id: contest.id },
+  };
+}
+
+export function selectCheckoutUrl(preference, mode) {
+  const candidate = mode === 'production' ? preference?.init_point : preference?.sandbox_init_point;
+  const url = new URL(String(candidate || ''));
+  if (url.protocol !== 'https:' || !/(^|\.)mercadopago\.com(?:\.br)?$/i.test(url.hostname)) {
+    throw new Error('CHECKOUT_URL_INVALID');
+  }
+  return url.toString();
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
-import { CheckoutService } from '../app/js/services/checkoutService.js';
+import { CheckoutService, MercadoPagoCheckoutGateway } from '../app/js/services/checkoutService.js';
 import { ContestCatalogService } from '../app/js/services/contestCatalogService.js';
 import { LibraryService } from '../app/js/services/libraryService.js';
 import { LibrarySnapshotRepository } from '../app/js/repositories/librarySnapshotRepository.js';
@@ -90,6 +90,26 @@ test('checkout aceita apenas redirect HTTPS e não o persiste como pagamento', a
   assert.equal(writes, 0);
   const unsafe = new CheckoutService({ gateway: { checkout: async () => ({ status: 'redirect', redirectUrl: 'http://example.test' }) } });
   await assert.rejects(() => unsafe.purchase({}), /inseguro/);
+});
+
+test('gateway remoto envia somente concurso e idempotência e não concede acesso', async () => {
+  let request;
+  const gateway = new MercadoPagoCheckoutGateway({
+    idFactory: () => '11111111-1111-4111-8111-111111111111',
+    getClient: async () => ({
+      functions: { invoke: async (name, options) => {
+        request = { name, options };
+        return { data: { checkout: { id: 'order-1', status: 'redirect', redirectUrl: 'https://www.mercadopago.com.br/test' } } };
+      } },
+    }),
+  });
+  const result = await gateway.checkout({ userId: 'ignored', contest: { id: 'curso-a', priceCents: 1 } });
+  assert.equal(request.name, 'commercial-checkout');
+  assert.deepEqual(request.options.body, {
+    contestId: 'curso-a', requestId: '11111111-1111-4111-8111-111111111111',
+  });
+  assert.equal(result.status, 'redirect');
+  assert.equal(gateway.capability().provider, 'mercado_pago');
 });
 
 test('troca de curso limpa somente contexto transitório', () => {

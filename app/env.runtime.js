@@ -6,4 +6,5 @@ globalThis.__DETONA_ENV__ = Object.freeze({
   CLOUD_MODE: 'off',
   SUPABASE_URL: '',
   SUPABASE_ANON_KEY: '',
+  CHECKOUT_PROVIDER: 'disabled',
 });

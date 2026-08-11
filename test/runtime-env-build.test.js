@@ -55,6 +55,7 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
     SUPABASE_JS_URL: '',
+    CHECKOUT_PROVIDER: 'disabled',
   });
 });
 
@@ -94,6 +95,7 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     SUPABASE_URL: fakeUrl,
     SUPABASE_ANON_KEY: fakePublicKey,
     SUPABASE_JS_URL: '',
+    CHECKOUT_PROVIDER: 'disabled',
   });
   assert.doesNotMatch(result.stdout, new RegExp(fakePublicKey));
   assert.doesNotMatch(result.runtime, /service_role/i);
@@ -108,6 +110,7 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     CLOUD_MODE: 'off',
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
+    CHECKOUT_PROVIDER: 'disabled',
   });
 });
 

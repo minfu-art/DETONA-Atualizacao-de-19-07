@@ -10,6 +10,8 @@ if (!['development', 'staging', 'production'].includes(appEnv)) throw new Error(
 const cloudMode = appEnv === 'development' ? String(process.env.CLOUD_MODE || 'off') : 'hybrid';
 const url = String(process.env.SUPABASE_URL || '');
 const anonKey = String(process.env.SUPABASE_ANON_KEY || '');
+const checkoutProvider = String(process.env.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase();
+if (!['disabled', 'mercado_pago'].includes(checkoutProvider)) throw new Error('CHECKOUT_PROVIDER inválido.');
 if (appEnv !== 'development' && (!url.startsWith('https://') || !anonKey)) {
   throw new Error('Staging/produção exigem SUPABASE_URL e SUPABASE_ANON_KEY.');
 }
@@ -20,6 +22,7 @@ const values = {
   SUPABASE_URL: url,
   SUPABASE_ANON_KEY: anonKey,
   SUPABASE_JS_URL: String(process.env.SUPABASE_JS_URL || ''),
+  CHECKOUT_PROVIDER: checkoutProvider,
 };
 const output = `/* Gerado no build; não adicionar segredos. */\nglobalThis.__DETONA_ENV__ = Object.freeze(${JSON.stringify(values, null, 2)});\n`;
 writeFileSync(resolve(import.meta.dirname, '../env.runtime.js'), output, 'utf8');
