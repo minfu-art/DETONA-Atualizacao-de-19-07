@@ -7,7 +7,7 @@ import {
 import { escapeHtml } from '../ui/helpers.js';
 
 const LABELS = Object.freeze({
-  battle_avatar: 'Avatar principal da batalha',
+  battle_avatar: 'Arte temática do concurso (legado)',
   success: 'Reação de acerto',
   error: 'Reação de erro',
   attention: 'Reação de atenção',
@@ -30,7 +30,7 @@ export async function renderAdminMediaScreen(root, ctx) {
   const visual = Object.fromEntries(CONTEST_VISUAL_TYPES.map((type) => [type, current.visual?.[COLUMN[type]] || null]));
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica · Aparência</span><h1>Identidade da batalha</h1>
-      <p>Configure somente o avatar principal, três reações e a capa deste concurso.</p></div></header>
+      <p>Configure as reações e a capa do concurso. O avatar evolutivo do aluno usa o sistema canônico tiers-v2.</p></div></header>
     <section class="admin-visual-grid">
       ${CONTEST_VISUAL_TYPES.map((type) => {
         const asset = assets.get(visual[type]);
@@ -40,7 +40,11 @@ export async function renderAdminMediaScreen(root, ctx) {
             ? `<img src="${escapeHtml(asset.preview_url)}" alt="Prévia de ${escapeHtml(LABELS[type])}">`
             : '<span>Nenhuma arte selecionada</span>'}</div>
           <label class="admin-button admin-button--secondary">Escolher PNG/WebP<input type="file" accept="image/png,image/webp" hidden></label>
-          <small>${type === 'cover' ? 'Capa pode ser opaca.' : 'Transparência real obrigatória.'}</small>
+          <small>${type === 'cover'
+            ? 'Capa pode ser opaca.'
+            : type === 'battle_avatar'
+              ? 'Compatibilidade visual legada. Este asset não controla o avatar evolutivo do aluno.'
+              : 'Transparência real obrigatória.'}</small>
           <div role="status" class="admin-visual-feedback"></div>
         </article>`;
       }).join('')}

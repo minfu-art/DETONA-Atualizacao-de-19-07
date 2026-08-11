@@ -1,12 +1,14 @@
 import { escapeHtml } from './helpers.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import { icon } from './icons.js?v=74';
+import { getStudentEntryLinks } from '../services/studentEntryLinks.js';
 
 const AUTH_MODES = Object.freeze({
   LOGIN: 'login',
   REGISTER: 'register',
   FORGOT: 'forgot',
   FORGOT_SENT: 'forgot-sent',
+  VERIFY_EMAIL: 'verify-email',
   RESET: 'reset',
 });
 
@@ -58,6 +60,11 @@ function modeCopy(mode) {
     title: 'Crie uma nova senha',
     description: 'Escolha uma senha forte e diferente da anterior.',
   };
+  if (mode === AUTH_MODES.VERIFY_EMAIL) return {
+    kicker: 'Cadastro concluído',
+    title: 'Confirme seu e-mail',
+    description: 'Enviamos as instruções de confirmação. Depois disso, volte para entrar e abrir sua biblioteca.',
+  };
   return {
     kicker: 'Área do aluno',
     title: 'Bem-vindo de volta',
@@ -79,11 +86,13 @@ function passwordField({ id = 'auth-password', name = 'password', placeholder = 
 export function renderAuth(root, { authService, onAuthenticated }) {
   let mode = authService.isPasswordRecoveryLocation?.() ? AUTH_MODES.RESET : AUTH_MODES.LOGIN;
   let draftEmail = '';
+  const links = getStudentEntryLinks();
 
   const draw = ({ message = '', messageType = 'error' } = {}) => {
     const register = mode === AUTH_MODES.REGISTER;
     const forgot = mode === AUTH_MODES.FORGOT;
     const forgotSent = mode === AUTH_MODES.FORGOT_SENT;
+    const verifyEmail = mode === AUTH_MODES.VERIFY_EMAIL;
     const reset = mode === AUTH_MODES.RESET;
     const login = mode === AUTH_MODES.LOGIN;
     const copy = modeCopy(mode);
@@ -115,11 +124,11 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                 <h1 id="auth-title">${copy.title}</h1>
                 <p>${copy.description}</p>
               </header>
-              ${forgotSent ? `
+              ${(forgotSent || verifyEmail) ? `
                 <div class="auth-sent" role="status">
                   <span aria-hidden="true">${icon('mail', 'ico--control')}</span>
-                  <strong>Confira também o spam</strong>
-                  <p>Por segurança, não informamos se o endereço está cadastrado.</p>
+                  <strong>${verifyEmail ? 'Ative sua conta para continuar' : 'Confira também o spam'}</strong>
+                  <p>${verifyEmail ? 'Ao confirmar, entre normalmente para acessar Meus cursos ou conhecer o catálogo.' : 'Por segurança, não informamos se o endereço está cadastrado.'}</p>
                 </div>
                 <button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-back-login" type="button"><strong>VOLTAR PARA ENTRAR</strong></button>
               ` : `
@@ -136,8 +145,9 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                 </form>
                 <button class="auth-switch" id="auth-switch" type="button">${register ? 'Já possui conta? <strong>ENTRAR</strong>' : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>'}</button>
               `}
-              ${(!forgotSent && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
-              <p class="auth-legal">Ao continuar, você concorda com os <strong>Termos de Uso</strong> e a <strong>Política de Privacidade</strong>.</p>
+              ${(!(forgotSent || verifyEmail) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
+              <p class="auth-legal">Ao continuar, você concorda com os <a href="${escapeHtml(links.terms)}" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e a <a href="${escapeHtml(links.privacy)}" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
+              <a class="auth-support" href="${escapeHtml(links.support)}">Contato e suporte</a>
             </div>
           </div>
         </div>
@@ -209,8 +219,13 @@ export function renderAuth(root, { authService, onAuthenticated }) {
         }
         const input = { name: form.get('name'), email: draftEmail, password: form.get('password') };
         if (register) await authService.register(input); else await authService.login(input);
-        await onAuthenticated();
+        await onAuthenticated({ reason: register ? 'register' : 'login' });
       } catch (error) {
+        if (error?.code === 'EMAIL_CONFIRMATION_REQUIRED') {
+          mode = AUTH_MODES.VERIFY_EMAIL;
+          draw();
+          return;
+        }
         draw({ message: error.message || 'Não foi possível concluir esta operação.' });
       }
     });

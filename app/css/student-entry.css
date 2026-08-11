@@ -1,0 +1,193 @@
+/* DETONA — entrada do aluno e fronteira comercial */
+.student-library {
+  --entry-cyan: #39d5ff;
+  --entry-indigo: #6977ff;
+  --entry-orange: #ff8a1f;
+  display: grid;
+  gap: 28px;
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+}
+
+.student-library .library-hero {
+  border: 1px solid color-mix(in srgb, var(--entry-cyan) 28%, #29314a);
+  background: linear-gradient(125deg, #080d1c 0%, #0c1630 58%, #12102a 100%);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+}
+
+.student-library .library-section {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid #27304a;
+  border-radius: 24px;
+  background: rgb(10 14 29 / 84%);
+}
+
+.student-library .library-section--owned {
+  border-color: color-mix(in srgb, var(--entry-cyan) 34%, #27304a);
+  background: linear-gradient(145deg, rgb(10 22 40 / 94%), rgb(10 14 29 / 92%));
+}
+
+.student-library .library-section--catalog {
+  border-color: color-mix(in srgb, var(--entry-indigo) 28%, #27304a);
+}
+
+.student-library .library-section__title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.student-library .library-section__title h2 { margin: 3px 0 0; }
+.student-library .library-section__title > p { margin: 0; color: var(--text-muted); }
+
+.student-library .contest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  gap: 18px;
+}
+
+.student-library .contest-grid--owned {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+}
+
+.student-library .contest-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--contest, #6977ff) 28%, #29314a);
+  border-radius: 20px;
+  background: linear-gradient(155deg, #11182d, #0a0f20 72%);
+  box-shadow: 0 14px 38px rgb(0 0 0 / 22%);
+}
+
+.student-library .contest-card--owned {
+  border-color: color-mix(in srgb, var(--contest-accent, #39d5ff) 52%, #29314a);
+}
+
+.student-library .contest-card__body { padding: 18px; }
+.student-library .contest-card__body h3 { overflow-wrap: anywhere; }
+
+.student-library .contest-card__commerce-detail {
+  display: none;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #0b1327;
+  color: var(--text-muted);
+}
+
+.student-library .contest-card--details .contest-card__commerce-detail { display: block; }
+.student-library .contest-card__commerce-detail p { margin: 5px 0 0; }
+
+.student-library .contest-card__footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.student-library .contest-card__footer .btn,
+.student-library .library-network-state .btn,
+.student-library .library-commerce-notice .btn {
+  min-height: 44px;
+}
+
+.student-library .career-filters button { min-height: 44px; }
+
+.student-library .contest-card__price { display: grid; gap: 2px; }
+.student-library .contest-card__price small { color: var(--text-muted); }
+.student-library .contest-card__price strong { color: var(--entry-orange); font-size: 1.2rem; }
+.student-library .contest-card__feedback { min-height: 1.4em; margin: 10px 0 0; color: #ffb0b5; }
+
+.student-library .library-network-state,
+.student-library .library-commerce-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid #43506e;
+  border-radius: 16px;
+  background: #10172a;
+}
+
+.student-library .library-network-state span,
+.student-library .library-commerce-notice p { margin: 3px 0 0; color: var(--text-muted); }
+.student-library .library-commerce-notice--success { border-color: #277a68; }
+.student-library .library-commerce-notice--warning { border-color: #a76431; }
+.student-library .library-commerce-notice--info { border-color: #326f9b; }
+
+.student-entry-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 4px;
+  color: var(--text-muted);
+}
+
+.student-entry-footer nav { display: flex; flex-wrap: wrap; gap: 16px; }
+.student-entry-footer a,
+.auth-legal a,
+.auth-support { color: #8edfff; text-underline-offset: 3px; }
+.student-entry-footer a:focus-visible,
+.auth-legal a:focus-visible,
+.auth-support:focus-visible { outline: 3px solid #ff9b42; outline-offset: 4px; }
+
+.auth-support {
+  display: block;
+  width: fit-content;
+  min-height: 44px;
+  margin: 2px auto 0;
+  padding: 12px;
+  text-align: center;
+}
+
+.detona-login-card .auth-forgot,
+.detona-login-card .auth-switch,
+.detona-login-card .auth-install-wrap button { min-height: 44px; }
+
+.student-legal-page {
+  min-height: 100dvh;
+  padding: clamp(20px, 5vw, 64px);
+  color: #eff4ff;
+  background: radial-gradient(circle at 80% 0, #18255b 0, transparent 38%), #070b17;
+}
+
+.student-legal { width: min(860px, 100%); margin: auto; }
+.student-legal header,
+.student-legal section {
+  margin-bottom: 20px;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid #293759;
+  border-radius: 20px;
+  background: rgb(12 18 36 / 92%);
+}
+.student-legal h1 { margin: 8px 0; }
+.student-legal h2 { scroll-margin-top: 24px; }
+.student-legal p,
+.student-legal li { color: #bdc7dc; line-height: 1.65; }
+.student-legal a { color: #72dfff; }
+
+@media (max-width: 760px) {
+  .student-library { gap: 18px; }
+  .student-library .library-section { padding: 16px; border-radius: 18px; }
+  .student-library .library-section__title,
+  .student-library .library-network-state,
+  .student-library .library-commerce-notice,
+  .student-entry-footer { align-items: stretch; flex-direction: column; }
+  .student-library .contest-card__footer { align-items: stretch; flex-direction: column; }
+  .student-library .contest-card__footer .btn { width: 100%; }
+  .student-entry-footer nav { flex-direction: column; gap: 2px; }
+  .student-entry-footer a { min-height: 44px; padding: 12px 0; }
+  .saas-auth__panel { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+  .auth-form input { scroll-margin-bottom: 160px; }
+}
+
+@media (max-width: 360px) {
+  .student-library .library-section { padding: 13px; }
+  .student-library .contest-card__body { padding: 15px; }
+  .student-library .library-search input { font-size: 16px; }
+}

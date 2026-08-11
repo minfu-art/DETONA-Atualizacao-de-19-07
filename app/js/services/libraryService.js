@@ -2,11 +2,14 @@ import { EntitlementRepository } from '../repositories/entitlementRepository.js'
 import { CheckoutService } from './checkoutService.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
 import { contestCatalogService } from './contestCatalogService.js';
+import { LibrarySnapshotRepository } from '../repositories/librarySnapshotRepository.js';
+import { checkoutActionFor } from './studentEntryModel.js';
 
 export class LibraryService {
   constructor({
     entitlements = new EntitlementRepository(), checkout = new CheckoutService(), summaries = null,
     now = () => new Date(), allowLocalGrants = isLocalDevelopment, catalog = contestCatalogService,
+    snapshots = new LibrarySnapshotRepository(),
   } = {}) {
     this.entitlements = entitlements;
     this.checkout = checkout;
@@ -14,6 +17,7 @@ export class LibraryService {
     this.now = now;
     this.allowLocalGrants = allowLocalGrants;
     this.catalog = catalog;
+    this.snapshots = snapshots;
   }
 
   async ensureLegacyEntitlements(user) {
@@ -25,19 +29,51 @@ export class LibraryService {
     }
   }
 
-  async getLibrary(user) {
-    await this.ensureLegacyEntitlements(user);
-    const rights = await this.entitlements.listByUser(user.id);
-    const byContest = new Map(rights.filter((right) => right.status === 'active').map((right) => [right.contestId, right]));
-    const contests = await this.catalog.list();
-    return Promise.all(contests.map(async (contest) => ({
-      contest,
-      owned: byContest.has(contest.id),
-      entitlement: byContest.get(contest.id) || null,
-      summary: byContest.has(contest.id) && contest.contentStatus === 'ready' && this.summaries
-        ? await this.summaries.get(user.id, contest.id)
-        : null,
-    })));
+  async getLibraryState(user, { refresh = false } = {}) {
+    try {
+      await this.ensureLegacyEntitlements(user);
+      const [rights, contests] = await Promise.all([
+        this.entitlements.listByUser(user.id),
+        this.catalog.list({ refresh }),
+      ]);
+      const byContest = new Map(rights.filter((right) => right.status === 'active').map((right) => [right.contestId, right]));
+      const capability = this.getCheckoutCapability();
+      const items = await Promise.all(contests.map(async (contest) => {
+        const owned = byContest.has(contest.id);
+        let summary = null;
+        if (owned && contest.contentStatus === 'ready' && this.summaries) {
+          try { summary = await this.summaries.get(user.id, contest.id); }
+          catch { summary = null; }
+        }
+        const item = {
+          contest,
+          owned,
+          entitlement: byContest.get(contest.id) || null,
+          summary,
+        };
+        return { ...item, checkoutAction: checkoutActionFor(item, capability) };
+      }));
+      this.snapshots?.save?.(user.id, items);
+      return { items, offline: false, stale: false, checkout: capability };
+    } catch (error) {
+      const snapshot = this.snapshots?.read?.(user.id);
+      if (!snapshot?.items?.length) throw error;
+      const capability = this.getCheckoutCapability();
+      const items = snapshot.items.map((cached) => {
+        const item = {
+          ...cached,
+          entitlement: null,
+          summary: null,
+          accessVerificationRequired: true,
+        };
+        return { ...item, checkoutAction: checkoutActionFor(item, capability) };
+      });
+      return { items, offline: true, stale: true, checkout: capability, error };
+    }
+  }
+
+  async getLibrary(user, options) {
+    return (await this.getLibraryState(user, options)).items;
   }
 
   async purchase(user, contestId) {
@@ -45,8 +81,14 @@ export class LibraryService {
     if (!contest) throw new Error('Concurso nao encontrado.');
     const existing = await this.entitlements.find(user.id, contestId);
     if (existing?.status === 'active') return existing;
+    const localGrantAllowed = this.allowLocalGrants();
+    if (!localGrantAllowed) {
+      if (contest.contentStatus !== 'ready' || contest.salesStatus !== 'available') {
+        throw new Error('Este curso ainda não está disponível para aquisição.');
+      }
+    }
     const purchase = await this.checkout.purchase({ userId: user.id, contest });
-    if (!this.allowLocalGrants()) {
+    if (!localGrantAllowed) {
       return { ...purchase, entitlementPending: true };
     }
     const entitlement = this.#entitlement(user.id, contestId, 'purchase_demo');
@@ -62,6 +104,14 @@ export class LibraryService {
 
   getContest(contestId, options) {
     return this.catalog.getById(contestId, options);
+  }
+
+  getCheckoutCapability() {
+    return this.checkout?.capability?.() || {
+      configured: false,
+      provider: null,
+      reason: 'gateway_not_configured',
+    };
   }
 
   #entitlement(userId, contestId, source) {

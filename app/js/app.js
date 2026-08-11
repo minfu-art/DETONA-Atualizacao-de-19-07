@@ -33,7 +33,9 @@ import { isCloudEnabled } from './config/cloudConfig.js';
 import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
-import { resetAcademicSessionContext } from './auth/academicSessionContext.js';
+import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
+import { getStudentEntryLinks } from './services/studentEntryLinks.js';
+import { readCheckoutReturn } from './services/studentEntryModel.js';
 import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
@@ -74,6 +76,7 @@ const ctx = {
 };
 
 let shellInitialized = false;
+let contestOpenGeneration = 0;
 
 const ROUTES = {
   library: renderLibrary,
@@ -331,10 +334,23 @@ function showAuth() {
   }
 }
 
-async function showLibrary() {
+function clearCheckoutReturnUrl() {
+  if (!globalThis.history?.replaceState || !globalThis.location) return;
+  const url = new URL(globalThis.location.href);
+  url.searchParams.delete('checkout');
+  url.searchParams.delete('contest');
+  globalThis.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+async function showLibrary({ libraryState = null, refresh = false } = {}) {
+  const generation = ++contestOpenGeneration;
   const activeContestId = getActiveContestId();
   clearActiveContestContent();
-  ctx.contest = activeContestId ? await libraryService.getContest(activeContestId) : null;
+  ctx.contest = null;
+  if (activeContestId) {
+    try { ctx.contest = await libraryService.getContest(activeContestId); }
+    catch { /* a biblioteca offline usa o snapshot visual, nunca este contexto */ }
+  }
   ctx.contentPackage = null;
   ctx.screen = 'library';
   const app = document.getElementById('app');
@@ -347,38 +363,76 @@ async function showLibrary() {
   root.dataset.theme = 'library';
   const user = authService.getCurrentUser();
   ctx.user = user;
-  const items = await libraryService.getLibrary(user);
-  renderLibrary(root, {
-    user,
-    items,
-    activeContestId,
-    onOpen: openContest,
-    onLogout: logout,
-    embedded: true,
-  });
-  updateAppShell({ screen: 'library', player: await getPlayer(), contest: ctx.contest, user });
+  root.innerHTML = skeleton(5, 'Carregando sua biblioteca');
+  try {
+    const state = libraryState || await libraryService.getLibraryState(user, { refresh });
+    if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
+    const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
+    renderLibrary(root, {
+      user,
+      items: state.items,
+      activeContestId,
+      commerceReturn,
+      offline: state.offline,
+      links: getStudentEntryLinks(),
+      onOpen: openContest,
+      onPurchase: async (contestId) => {
+        const purchase = await libraryService.purchase(authService.getCurrentUser(), contestId);
+        if (purchase?.redirectUrl) {
+          const target = new URL(purchase.redirectUrl);
+          if (target.protocol !== 'https:') throw new Error('Destino de checkout inválido.');
+          globalThis.location.assign(target.toString());
+          return;
+        }
+        await showLibrary({ refresh: true });
+      },
+      onRefreshAccess: () => showLibrary({ refresh: true }),
+      onLogout: logout,
+      embedded: true,
+    });
+    if (commerceReturn) clearCheckoutReturnUrl();
+  } catch (error) {
+    if (generation !== contestOpenGeneration) return;
+    root.innerHTML = errorState({
+      title: 'Não foi possível carregar sua biblioteca',
+      description: error?.message || 'Verifique sua conexão e tente novamente.',
+      action: '<button type="button" class="btn btn-primary" id="library-retry">Tentar novamente</button><button type="button" class="btn btn-ghost" id="library-error-logout">Sair da conta</button>',
+    });
+    root.querySelector('#library-retry')?.addEventListener('click', () => showLibrary({ refresh: true }));
+    root.querySelector('#library-error-logout')?.addEventListener('click', logout);
+  }
+  const libraryPlayer = activeContestId ? await getPlayer() : null;
+  updateAppShell({ screen: 'library', player: libraryPlayer, contest: ctx.contest, user });
   root.focus({ preventScroll: true });
   window.scrollTo(0, 0);
 }
 
 async function openContest(contestId) {
   const user = authService.getCurrentUser();
+  if (!user) throw new Error('Sua sessão expirou. Entre novamente.');
+  const generation = ++contestOpenGeneration;
+  const assertCurrent = () => {
+    if (generation !== contestOpenGeneration || user.id !== authService.getCurrentUser()?.id) {
+      const error = new Error('A navegação anterior foi cancelada.');
+      error.code = 'STALE_CONTEXT';
+      throw error;
+    }
+  };
   const contestChanged = getActiveContestId() !== contestId;
   if (getActiveContestId() !== contestId) resetHabitReminderRuntime();
-  if (contestChanged) {
-    ctx.reviewSession = null;
-    ctx.reviewFilters = null;
-    ctx.clearRankedTimer?.();
-    ctx.rankedEventSession = null;
-    ctx.rankedEventResult = null;
-    ctx.rankedEventId = null;
-  }
   if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
+  assertCurrent();
   const contest = await libraryService.getContest(contestId, { refresh: true });
+  assertCurrent();
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
   const loadedContent = await contestContentService.load(user.id, contestId);
+  assertCurrent();
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
+  if (contestChanged) {
+    resetContestTransientContext(ctx);
+    ctx.rankedEventSession = null;
+  }
   setActiveContestId(contestId);
   resetHabitReminderRuntime(habitReminderScopeKey(user.id, contestId));
   setActiveContestContent(contentPackage);
@@ -386,17 +440,21 @@ async function openContest(contestId) {
   ctx.contentPackage = contentPackage;
   document.getElementById('app')?.classList.remove('app-shell--library');
   await contestDataMigrationService.ensureCompatibility(user.id, contestId);
+  assertCurrent();
   await openDB();
   // Nuvem híbrida: pull antes do seed para não sobrescrever progresso remoto com seed vazio
   if (isCloudEnabled()) {
     try {
       await syncOnContestOpen(user.id, contestId);
+      assertCurrent();
     } catch (err) {
+      if (err?.code === 'STALE_CONTEXT') throw err;
       console.warn('[cloud] sync on open failed', err?.message || err);
     }
   }
   await ensureSeed({ contentPackage });
   await recalculateEditalSSOT();
+  assertCurrent();
   // Push inicial uma vez (local → nuvem) quando ainda não houve push
   if (isCloudEnabled()) {
     try {
@@ -408,10 +466,13 @@ async function openContest(contestId) {
         }
       }
     } catch (err) {
+      if (err?.code === 'STALE_CONTEXT') throw err;
       console.warn('[cloud] initial push failed', err?.message || err);
     }
   }
+  assertCurrent();
   const player = await getPlayer();
+  assertCurrent();
   setMuted(player?.sound_enabled === false);
   if (!player?.onboarded) {
     document.getElementById('bottom-nav')?.classList.add('hidden');
@@ -424,6 +485,7 @@ async function openContest(contestId) {
 }
 
 async function logout() {
+  contestOpenGeneration += 1;
   resetHabitReminderRuntime();
   await authService.logout();
   clearActiveContestId();
@@ -436,7 +498,7 @@ ctx.logout = logout;
 ctx.openContest = openContest;
 ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitReminderScope());
 
-async function initializeAuthenticatedApp() {
+async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
   if (isDeveloperUser(authenticatedUser)) {
     redirectForRole(authenticatedUser);
@@ -453,11 +515,22 @@ async function initializeAuthenticatedApp() {
     shellInitialized = true;
   }
 
+  if (reason === 'register') {
+    clearActiveContestId();
+    await showLibrary();
+    return;
+  }
+
   let activeContestId = getActiveContestId();
   if (!activeContestId) {
-    const readyJourneys = (await libraryService.getLibrary(ctx.user))
+    const libraryState = await libraryService.getLibraryState(ctx.user);
+    const readyJourneys = libraryState.items
       .filter((item) => item.owned && item.contest.contentStatus === 'ready');
     if (readyJourneys.length === 1) activeContestId = readyJourneys[0].contest.id;
+    if (!activeContestId) {
+      await showLibrary({ libraryState });
+      return;
+    }
   }
   if (activeContestId) {
     const contest = await libraryService.getContest(activeContestId);

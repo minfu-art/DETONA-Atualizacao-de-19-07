@@ -28,11 +28,19 @@ export class LocalDemoCheckoutGateway {
       createdAt: this.now().toISOString(),
     };
   }
+
+  capability() {
+    return { configured: false, provider: 'local_demo', reason: 'development_only' };
+  }
 }
 
 export class CheckoutUnavailableGateway {
   async checkout() {
     throw new Error('Checkout comercial ainda não configurado. Nenhuma compra foi concluída.');
+  }
+
+  capability() {
+    return { configured: false, provider: null, reason: 'gateway_not_configured' };
   }
 }
 
@@ -49,9 +57,26 @@ export class CheckoutService {
 
   async purchase(input) {
     const purchase = await this.gateway.checkout(input);
+    if (purchase?.status === 'redirect') {
+      let redirect;
+      try { redirect = new URL(purchase.redirectUrl); }
+      catch { throw new Error('O checkout retornou um destino inválido.'); }
+      if (redirect.protocol !== 'https:') throw new Error('O checkout retornou um destino inseguro.');
+      return { ...purchase, redirectUrl: redirect.toString() };
+    }
+    if (purchase?.status === 'pending') return purchase;
     const demoAllowed = purchase.status === 'demo_completed' && isLocalDevelopment();
     if (purchase.status !== 'paid' && !demoAllowed) throw new Error('Pagamento nao confirmado.');
     if (this.persistLocally()) await this.purchases.save(purchase);
     return purchase;
+  }
+
+  capability() {
+    const value = this.gateway?.capability?.() || { configured: false, provider: null, reason: 'gateway_not_configured' };
+    return Object.freeze({
+      configured: value.configured === true,
+      provider: value.provider || null,
+      reason: value.reason || null,
+    });
   }
 }

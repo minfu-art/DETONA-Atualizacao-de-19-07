@@ -1,5 +1,6 @@
 import { CONTEST_CATALOG } from '../contest/contestCatalog.js';
 import { getSupabaseClient } from '../supabase/client.js';
+import { isLocalDevelopment } from '../config/appEnvironment.js';
 
 export function normalizeDynamicContest(contest) {
   const normalized = {
@@ -33,9 +34,14 @@ export function normalizeDynamicContest(contest) {
 }
 
 export class ContestCatalogService {
-  constructor({ getClient = getSupabaseClient, fallback = CONTEST_CATALOG } = {}) {
+  constructor({
+    getClient = getSupabaseClient,
+    fallback = CONTEST_CATALOG,
+    allowFallback = isLocalDevelopment,
+  } = {}) {
     this.getClient = getClient;
     this.fallback = fallback.map((contest) => ({ ...contest, source: 'static_fallback' }));
+    this.allowFallback = allowFallback;
     this.cache = null;
   }
 
@@ -49,8 +55,13 @@ export class ContestCatalogService {
       this.cache = data.contests.map(normalizeDynamicContest)
         .filter((contest) => !['draft', 'archived'].includes(contest.contentStatus));
       return structuredClone(this.cache);
-    } catch {
-      return structuredClone(this.fallback);
+    } catch (error) {
+      if (this.cache) return structuredClone(this.cache);
+      if (this.allowFallback()) return structuredClone(this.fallback);
+      const unavailable = new Error('Catálogo temporariamente indisponível. Verifique sua conexão e tente novamente.');
+      unavailable.code = 'CATALOG_UNAVAILABLE';
+      unavailable.cause = error;
+      throw unavailable;
     }
   }
 

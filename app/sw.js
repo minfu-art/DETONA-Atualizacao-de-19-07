@@ -1,13 +1,15 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v122-performance-visual';
+const CACHE = 'detona-v122-performance-visual-fase10';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
   './index.html',
+  './legal.html',
   './env.runtime.js',
   './css/main.css',
   './css/design-system.css',
   './css/profile-evolution.css',
+  './css/student-entry.css',
   './css/review.css',
   './css/ranked-functional.css',
   './css/dashboard-jrpg.css',
@@ -76,6 +78,7 @@ const ASSETS = [
   './js/contest/contestCatalog.js',
   './js/contest/contestRuntime.js',
   './js/repositories/entitlementRepository.js',
+  './js/repositories/librarySnapshotRepository.js',
   './js/repositories/progressRepository.js',
   './js/repositories/userRepository.js',
   './js/supabase/client.js',
@@ -89,6 +92,8 @@ const ASSETS = [
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
   './js/services/libraryService.js',
+  './js/services/studentEntryLinks.js',
+  './js/services/studentEntryModel.js',
   './js/services/careerLibraryService.js',
   './js/services/contestCatalogService.js',
   './js/services/contestContentService.js',
