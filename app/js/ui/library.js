@@ -1,15 +1,14 @@
 import { escapeHtml, formatDate } from './helpers.js';
 import { emptyState, progressBar, statusBadge } from './components.js';
-import { heroSrcForLevel } from './heroAssets.js';
 import {
   CAREER_AREAS,
   CAREER_AREA_ORDER,
+  countLibraryItemsByArea,
   filterLibraryItems,
   getCareerArea,
   getCareerSubareaLabel,
-  groupLibraryItems,
+  resolveContestArea,
   selectActiveJourney,
-  summarizeArea,
 } from '../services/careerLibraryService.js';
 import {
   formatCanonicalPrice,
@@ -20,16 +19,16 @@ import {
 const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singular : multiple}`;
 
 function statusFor(item) {
-  if (item.accessVerificationRequired) return ['Conexão necessária', 'warning'];
-  if (item.owned && item.contest.contentStatus === 'ready') return ['Seu curso', 'success'];
-  if (item.contest.salesStatus === 'available' && item.contest.contentStatus === 'ready') return ['Disponível', 'info'];
-  if (item.contest.salesStatus === 'suspended') return ['Indisponível', 'warning'];
-  return ['Em preparação', 'warning'];
+  if (item.accessVerificationRequired) return ['CONEXÃO NECESSÁRIA', 'warning'];
+  if (item.owned) return ['MEU CURSO', 'success'];
+  if (item.contest.salesStatus === 'available' && item.contest.contentStatus === 'ready') return ['DISPONÍVEL', 'info'];
+  if (['suspended', 'unavailable'].includes(item.contest.salesStatus)) return ['INDISPONÍVEL', 'warning'];
+  return ['EM PREPARAÇÃO', 'warning'];
 }
 
 function contestCard(item, { active = false } = {}) {
   const { contest, owned, summary } = item;
-  const area = getCareerArea(contest.careerArea);
+  const area = getCareerArea(resolveContestArea(contest));
   const subarea = getCareerSubareaLabel(area.id, contest.careerSubarea);
   const action = item.checkoutAction || { label: 'Indisponível', action: 'none', disabled: true };
   const [status, statusTone] = statusFor(item);
@@ -74,49 +73,35 @@ function contestCard(item, { active = false } = {}) {
     </article>`;
 }
 
-function areaHeader(areaId, items) {
+function areaDiscoveryCard(areaId, amount) {
   const area = CAREER_AREAS[areaId];
-  const stats = summarizeArea(items);
-  const art = area.art
-    ? `<img src="${area.art}" alt="" loading="lazy" decoding="async" data-area-art>`
-    : '';
   return `
-    <header class="career-area__header">
-      <div class="career-area__art ${area.art ? '' : 'career-area__art--fallback'}" aria-hidden="true">${art}<span>${escapeHtml(area.filterLabel.slice(0, 2).toUpperCase())}</span></div>
-      <div class="career-area__copy">
-        <span class="saas-kicker">Área de carreira</span>
-        <h3>${escapeHtml(area.name)}</h3>
+    <button class="library-area-card" type="button" data-career-filter="${areaId}" aria-pressed="false" aria-controls="library-area-results">
+      <img src="${area.art}" alt="" width="1672" height="941" loading="lazy" decoding="async" data-area-art>
+      <span class="library-area-card__shade" aria-hidden="true"></span>
+      <span class="library-area-card__selection" aria-hidden="true">✓</span>
+      <span class="library-area-card__copy">
+        <strong>${escapeHtml(area.name)}</strong>
         <p>${escapeHtml(area.description)}</p>
-      </div>
-      <dl class="career-area__stats">
-        <div><dt>Concursos</dt><dd>${stats.total}</dd></div>
-        <div><dt>Ativos</dt><dd>${stats.active}</dd></div>
-        <div><dt>Em preparação</dt><dd>${stats.preparing}</dd></div>
-      </dl>
-    </header>`;
+        <small>${plural(amount, 'concurso no catálogo', 'concursos no catálogo')}</small>
+      </span>
+    </button>`;
 }
 
-function renderAreaSections(items, area, search) {
+function renderCatalogResults(items, area, search) {
   const filtered = filterLibraryItems(items, { area, search });
-  const grouped = groupLibraryItems(filtered);
-  const visibleAreas = area === 'all'
-    ? [...CAREER_AREA_ORDER, 'other'].filter((areaId) => grouped.get(areaId).length)
-    : [area];
   if (!filtered.length) {
-    return emptyState({
-      title: search ? 'Nenhum curso encontrado' : 'Novos cursos estão em preparação',
-      description: search ? 'Tente outro termo ou selecione uma área diferente.' : 'As próximas jornadas aparecerão aqui com dados oficiais do catálogo.',
-    });
+    return `<div class="library-filter-empty" role="status">
+      <span aria-hidden="true">⌕</span>
+      <h3>Nenhum concurso encontrado para estes filtros.</h3>
+      <p>Limpe a busca ou a área selecionada para consultar novamente o catálogo completo.</p>
+      <div>
+        ${search ? '<button class="btn btn-ghost" type="button" data-clear-search>Limpar busca</button>' : ''}
+        ${area !== 'all' ? '<button class="btn btn-ghost" type="button" data-clear-area>Limpar área</button>' : ''}
+      </div>
+    </div>`;
   }
-  return visibleAreas.map((areaId) => {
-    const areaItems = grouped.get(areaId) || [];
-    return `<section class="career-area" data-career-area="${areaId}">
-      ${areaHeader(areaId, areaItems)}
-      ${areaItems.length
-        ? `<div class="contest-grid">${areaItems.map((item) => contestCard(item)).join('')}</div>`
-        : emptyState({ title: 'Área em preparação', description: 'Novos concursos serão apresentados aqui.' })}
-    </section>`;
-  }).join('');
+  return `<div class="contest-grid">${filtered.map((item) => contestCard(item)).join('')}</div>`;
 }
 
 function supportLinks(links = {}) {
@@ -146,7 +131,7 @@ export function renderLibrary(root, {
   const ownedOrdered = activeJourney
     ? [activeJourney, ...owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)]
     : owned;
-  const guideLevel = activeJourney?.summary?.level || 20;
+  const areaCounts = countLibraryItemsByArea(items);
   const notice = resolveCheckoutReturn(commerceReturn, items);
   const state = { area: 'all', search: '' };
 
@@ -156,12 +141,22 @@ export function renderLibrary(root, {
         <div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div>
         <div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div>
       </header>`}
-      <section class="library-hero">
-        <div class="library-hero__copy"><span class="saas-kicker">Central do aluno</span><p class="library-greeting">Olá, <strong>${escapeHtml(user.name.split(' ')[0])}</strong>.</p><h1>Seus cursos, no lugar certo.</h1><p>Continue uma jornada que já é sua ou conheça os próximos concursos do catálogo oficial.</p><div class="library-summary"><strong>${owned.length}</strong><span>${owned.length === 1 ? 'curso adquirido' : 'cursos adquiridos'}</span></div></div>
-        <div class="library-guide" aria-hidden="true"><span class="library-guide__orbit"></span><img src="${heroSrcForLevel(guideLevel)}" alt="" width="560" height="560" decoding="async"><div><small>Sua preparação continua</small><strong>Escolha uma jornada.</strong></div></div>
+      <section class="library-hero" aria-labelledby="library-title">
+        <div class="library-hero__copy"><span class="saas-kicker">Portal de preparação</span><p class="library-greeting">Olá, <strong>${escapeHtml(user.name.split(' ')[0])}</strong>.</p><h1 id="library-title">BIBLIOTECA DE CONCURSOS</h1><p>Escolha sua área, encontre seu concurso e continue sua preparação.</p></div>
+        <div class="library-summary" aria-label="Resumo dos seus cursos"><strong>${owned.length}</strong><span>${owned.length === 1 ? 'curso adquirido' : 'cursos adquiridos'}</span></div>
       </section>
       ${offline ? `<aside class="library-network-state" role="status"><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e consultar ofertas atuais.</span><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${notice ? `<aside class="library-commerce-notice library-commerce-notice--${notice.tone}" role="status" aria-live="polite"><div><strong>${escapeHtml(notice.title)}</strong><p>${escapeHtml(notice.description)}</p></div>${notice.pending ? '<button class="btn btn-ghost" type="button" data-refresh-access>Atualizar acesso</button>' : notice.retryAllowed ? `<button class="btn btn-ghost" type="button" data-retry-checkout="${escapeHtml(notice.contestId)}">Tentar novamente</button>` : ''}</aside>` : ''}
+      <section class="library-search-panel" aria-labelledby="library-search-title">
+        <div><span class="saas-kicker">Encontre sua próxima jornada</span><h2 id="library-search-title">O que você quer estudar?</h2></div>
+        <label class="library-search"><span>Pesquisar no catálogo</span><input id="library-search" type="search" autocomplete="off" placeholder="Pesquisar concurso, órgão, cargo ou banca"></label>
+      </section>
+      <section class="library-areas" aria-labelledby="library-areas-title">
+        <div class="library-section__title"><div><span class="saas-kicker">Navegação visual</span><h2 id="library-areas-title">Explore por área</h2></div><button class="library-area-reset active" type="button" data-career-filter="all" aria-pressed="true" aria-controls="library-area-results">Todos os concursos</button></div>
+        <div class="library-area-grid">
+          ${CAREER_AREA_ORDER.map((areaId) => areaDiscoveryCard(areaId, areaCounts[areaId])).join('')}
+        </div>
+      </section>
       <section class="library-section library-section--owned" aria-labelledby="owned-courses-title">
         <div class="library-section__title"><div><span class="saas-kicker">Acesso liberado</span><h2 id="owned-courses-title">Meus cursos</h2></div><p>${plural(owned.length, 'jornada disponível', 'jornadas disponíveis')}</p></div>
         ${ownedOrdered.length
@@ -169,14 +164,7 @@ export function renderLibrary(root, {
           : emptyState({ title: 'Sua biblioteca está pronta', description: 'Você ainda não possui um curso. Explore o catálogo oficial abaixo para conhecer as jornadas disponíveis.' })}
       </section>
       <section class="library-section library-section--catalog" aria-labelledby="catalog-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Catálogo oficial</span><h2 id="catalog-title">Outros cursos</h2></div><p>${plural(offers.length, 'curso no catálogo', 'cursos no catálogo')}</p></div>
-        <div class="library-discovery">
-          <label class="library-search"><span>Buscar curso</span><input id="library-search" type="search" autocomplete="off" placeholder="Nome, sigla, órgão, cargo, área ou subárea"></label>
-          <nav class="career-filters" aria-label="Filtrar concursos por área">
-            <button type="button" class="active" data-career-filter="all" aria-pressed="true">Todos</button>
-            ${CAREER_AREA_ORDER.map((areaId) => `<button type="button" data-career-filter="${areaId}" aria-pressed="false">${escapeHtml(CAREER_AREAS[areaId].filterLabel)}</button>`).join('')}
-          </nav>
-        </div>
+        <div class="library-section__title"><div><span class="saas-kicker">Catálogo oficial</span><h2 id="catalog-title" data-catalog-heading>Concursos disponíveis</h2></div><p data-catalog-count>${plural(offers.length, 'curso encontrado', 'cursos encontrados')}</p></div>
         <div id="library-area-results" aria-live="polite"></div>
       </section>
       <footer class="student-entry-footer"><span>Precisa de ajuda para entrar ou recuperar seu acesso?</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
@@ -185,7 +173,7 @@ export function renderLibrary(root, {
   const bindCards = (scope) => {
     scope.querySelectorAll('[data-area-art]').forEach((image) => image.addEventListener('error', () => {
       image.hidden = true;
-      image.parentElement.classList.add('career-area__art--fallback');
+      image.closest('.library-area-card')?.classList.add('library-area-card--fallback');
     }, { once: true }));
     scope.querySelectorAll('[data-open-contest]').forEach((button) => button.addEventListener('click', async () => {
       button.disabled = true;
@@ -219,9 +207,40 @@ export function renderLibrary(root, {
   };
 
   const results = root.querySelector('#library-area-results');
+  const searchInput = root.querySelector('#library-search');
+  const catalogHeading = root.querySelector('[data-catalog-heading]');
+  const catalogCount = root.querySelector('[data-catalog-count]');
+
+  const syncAreaSelection = () => {
+    root.querySelectorAll('[data-career-filter]').forEach((candidate) => {
+      const selected = candidate.dataset.careerFilter === state.area;
+      candidate.classList.toggle('active', selected);
+      candidate.setAttribute('aria-pressed', String(selected));
+    });
+  };
+
+  const clearSearch = () => {
+    state.search = '';
+    searchInput.value = '';
+    updateResults();
+    searchInput.focus();
+  };
+
+  const clearArea = () => {
+    state.area = 'all';
+    syncAreaSelection();
+    updateResults();
+  };
+
   const updateResults = () => {
-    results.innerHTML = renderAreaSections(offers, state.area, state.search);
+    const filtered = filterLibraryItems(offers, state);
+    const selectedArea = state.area === 'all' ? null : CAREER_AREAS[state.area];
+    catalogHeading.textContent = selectedArea ? `CONCURSOS — ${selectedArea.name.toLocaleUpperCase('pt-BR')}` : 'CONCURSOS DISPONÍVEIS';
+    catalogCount.textContent = plural(filtered.length, 'curso encontrado', 'cursos encontrados');
+    results.innerHTML = renderCatalogResults(offers, state.area, state.search);
     bindCards(results);
+    results.querySelector('[data-clear-search]')?.addEventListener('click', clearSearch);
+    results.querySelector('[data-clear-area]')?.addEventListener('click', clearArea);
   };
 
   root.querySelector('#library-logout')?.addEventListener('click', onLogout);
@@ -240,19 +259,16 @@ export function renderLibrary(root, {
       button.setAttribute('aria-busy', 'false');
     }
   });
-  root.querySelector('#library-search')?.addEventListener('input', (event) => {
+  searchInput?.addEventListener('input', (event) => {
     state.search = event.currentTarget.value;
     updateResults();
   });
   root.querySelectorAll('[data-career-filter]').forEach((button) => button.addEventListener('click', () => {
     state.area = button.dataset.careerFilter;
-    root.querySelectorAll('[data-career-filter]').forEach((candidate) => {
-      const selected = candidate === button;
-      candidate.classList.toggle('active', selected);
-      candidate.setAttribute('aria-pressed', String(selected));
-    });
+    syncAreaSelection();
     updateResults();
   }));
+  bindCards(root.querySelector('.library-areas'));
   bindCards(root.querySelector('.library-section--owned'));
   updateResults();
 }

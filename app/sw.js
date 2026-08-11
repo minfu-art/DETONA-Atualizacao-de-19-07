@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v122-performance-visual-fase10';
+const CACHE = 'detona-v123-library-discovery-fase10a';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const ASSETS = [
   './',
@@ -39,6 +39,12 @@ const ASSETS = [
   './assets/icons/icon-256.png',
   './assets/icons/icon-512.png',
   './assets/icons/apple-touch-icon.png',
+  './assets/library/areas/security.webp',
+  './assets/library/areas/judiciary.webp',
+  './assets/library/areas/administrative.webp',
+  './assets/library/areas/fiscal-control.webp',
+  './assets/library/areas/education-health.webp',
+  './assets/library/areas/military.webp',
   './js/core/types.js',
   './js/core/db.js',
   './js/core/ssot.js',

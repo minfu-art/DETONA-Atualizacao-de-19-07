@@ -1,8 +1,8 @@
 export const CAREER_AREA_ORDER = Object.freeze([
   'police_security',
+  'courts_legal',
   'administrative',
   'fiscal_control',
-  'courts_legal',
   'health_education',
   'armed_forces',
 ]);
@@ -10,10 +10,10 @@ export const CAREER_AREA_ORDER = Object.freeze([
 export const CAREER_AREAS = Object.freeze({
   police_security: {
     id: 'police_security',
-    name: 'Área Policial e Segurança',
-    filterLabel: 'Policial',
-    description: 'Carreiras de investigação, patrulhamento, perícia, custódia e segurança pública.',
-    art: 'assets/library/police-security.webp',
+    name: 'Segurança Pública',
+    filterLabel: 'Segurança Pública',
+    description: 'Polícias, perícia, segurança e carreiras relacionadas.',
+    art: 'assets/library/areas/security.webp',
     subareas: {
       federal_police: 'Polícia Federal',
       federal_highway_police: 'Polícia Rodoviária Federal',
@@ -27,10 +27,10 @@ export const CAREER_AREAS = Object.freeze({
   },
   administrative: {
     id: 'administrative',
-    name: 'Área Administrativa',
+    name: 'Administrativa',
     filterLabel: 'Administrativa',
     description: 'Cargos de apoio, gestão, atendimento e funcionamento dos órgãos públicos.',
-    art: 'assets/library/administrative.webp',
+    art: 'assets/library/areas/administrative.webp',
     subareas: {
       general_administration: 'Administração geral',
       social_security: 'Previdência',
@@ -42,10 +42,10 @@ export const CAREER_AREAS = Object.freeze({
   },
   fiscal_control: {
     id: 'fiscal_control',
-    name: 'Área Fiscal e de Controle',
-    filterLabel: 'Fiscal',
+    name: 'Fiscal e Controle',
+    filterLabel: 'Fiscal e Controle',
     description: 'Carreiras de arrecadação, fiscalização, orçamento e controle dos recursos públicos.',
-    art: 'assets/library/fiscal-control.webp',
+    art: 'assets/library/areas/fiscal-control.webp',
     subareas: {
       federal_revenue: 'Receita Federal',
       state_revenue: 'Sefaz',
@@ -56,10 +56,10 @@ export const CAREER_AREAS = Object.freeze({
   },
   courts_legal: {
     id: 'courts_legal',
-    name: 'Área de Tribunais e Jurídica',
-    filterLabel: 'Tribunais',
+    name: 'Tribunais e Jurídica',
+    filterLabel: 'Tribunais e Jurídica',
     description: 'Cargos técnicos, administrativos e jurídicos do sistema de Justiça.',
-    art: 'assets/library/courts-legal.webp',
+    art: 'assets/library/areas/judiciary.webp',
     subareas: {
       state_courts: 'Tribunais de Justiça',
       federal_courts: 'Justiça Federal',
@@ -73,10 +73,10 @@ export const CAREER_AREAS = Object.freeze({
   },
   health_education: {
     id: 'health_education',
-    name: 'Área da Saúde e Educação',
-    filterLabel: 'Saúde e Educação',
+    name: 'Educação e Saúde',
+    filterLabel: 'Educação e Saúde',
     description: 'Carreiras públicas voltadas ao cuidado, ensino, ciência e desenvolvimento social.',
-    art: 'assets/library/health-education.webp',
+    art: 'assets/library/areas/education-health.webp',
     subareas: {
       health: 'Saúde',
       basic_education: 'Educação básica',
@@ -88,10 +88,10 @@ export const CAREER_AREAS = Object.freeze({
   },
   armed_forces: {
     id: 'armed_forces',
-    name: 'Área Militar — Forças Armadas',
-    filterLabel: 'Militar',
+    name: 'Militar e Defesa',
+    filterLabel: 'Militar e Defesa',
     description: 'Concursos e escolas de formação do Exército, Aeronáutica e Marinha.',
-    art: 'assets/library/armed-forces.webp',
+    art: 'assets/library/areas/military.webp',
     subareas: {
       army: 'Exército',
       air_force: 'Aeronáutica',
@@ -108,6 +108,14 @@ export const CAREER_AREAS = Object.freeze({
   },
 });
 
+const KNOWN_CONTEST_AREA_BY_ID = Object.freeze({
+  pc_al_2026: 'police_security',
+  pf_2026: 'police_security',
+  prf_2026: 'police_security',
+  pp_rn_2026: 'police_security',
+  pp_pe_2027: 'police_security',
+});
+
 const normalizeSearch = (value) => String(value || '')
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g, '')
@@ -116,6 +124,19 @@ const normalizeSearch = (value) => String(value || '')
 
 export function normalizeCareerArea(value) {
   return CAREER_AREA_ORDER.includes(value) ? value : 'other';
+}
+
+export function resolveContestArea(contest = {}) {
+  const metadata = contest.metadata && typeof contest.metadata === 'object' ? contest.metadata : {};
+  const explicitCandidates = [
+    metadata.careerArea,
+    metadata.career_area,
+    contest.careerArea,
+    contest.career_area,
+  ];
+  const explicit = explicitCandidates.find((value) => CAREER_AREA_ORDER.includes(value));
+  if (explicit) return explicit;
+  return KNOWN_CONTEST_AREA_BY_ID[String(contest.id || '').toLocaleLowerCase('pt-BR')] || 'other';
 }
 
 export function getCareerArea(value) {
@@ -141,16 +162,24 @@ export function selectActiveJourney(items, activeContestId = null) {
 export function filterLibraryItems(items, { area = 'all', search = '' } = {}) {
   const needle = normalizeSearch(search);
   return items.filter(({ contest }) => {
-    const careerArea = normalizeCareerArea(contest.careerArea);
+    const careerArea = resolveContestArea(contest);
     if (area !== 'all' && careerArea !== area) return false;
     if (!needle) return true;
     const areaInfo = getCareerArea(careerArea);
     const subarea = getCareerSubareaLabel(careerArea, contest.careerSubarea);
+    const metadata = contest.metadata && typeof contest.metadata === 'object' ? contest.metadata : {};
     return normalizeSearch([
       contest.name,
       contest.code,
       contest.organization,
       contest.role,
+      contest.examBoard,
+      contest.exam_board,
+      contest.board,
+      contest.banca,
+      metadata.examBoard,
+      metadata.exam_board,
+      metadata.banca,
       areaInfo.name,
       areaInfo.filterLabel,
       subarea,
@@ -161,8 +190,14 @@ export function filterLibraryItems(items, { area = 'all', search = '' } = {}) {
 export function groupLibraryItems(items) {
   const grouped = new Map();
   for (const areaId of [...CAREER_AREA_ORDER, 'other']) grouped.set(areaId, []);
-  for (const item of items) grouped.get(normalizeCareerArea(item.contest.careerArea)).push(item);
+  for (const item of items) grouped.get(resolveContestArea(item.contest)).push(item);
   return grouped;
+}
+
+export function countLibraryItemsByArea(items) {
+  const counts = Object.fromEntries([...CAREER_AREA_ORDER, 'other'].map((areaId) => [areaId, 0]));
+  for (const { contest } of items) counts[resolveContestArea(contest)] += 1;
+  return counts;
 }
 
 export function summarizeArea(items) {

@@ -82,13 +82,15 @@ test('design system cobre mobile, desktop, toque, foco e movimento reduzido', as
 });
 
 test('autenticacao e biblioteca integram arte aprovada sem usar os mockups como tela', async () => {
-  const [auth, library] = await Promise.all([
+  const [auth, library, careerLibrary] = await Promise.all([
     readFile(new URL('../app/js/ui/auth.js', import.meta.url), 'utf8'),
     readFile(new URL('../app/js/ui/library.js', import.meta.url), 'utf8'),
+    readFile(new URL('../app/js/services/careerLibraryService.js', import.meta.url), 'utf8'),
   ]);
   assert.match(auth, /login-command-hall\.webp/);
   assert.match(auth, /auth-backdrop/);
-  assert.match(library, /library-guide/);
+  assert.match(library, /library-area-card/);
+  assert.match(careerLibrary, /assets\/library\/areas/);
   assert.doesNotMatch(auth + library, /ref-dashboard\.png|DETONA_UI_CONCEITO/);
 });
 
