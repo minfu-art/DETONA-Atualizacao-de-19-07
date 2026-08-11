@@ -801,7 +801,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
           <div><small>XP total</small><strong>${formatNum(totalXp)}</strong></div>
         </div>
         <div class="dj-hud__pill dj-hud__pill--lv">
-          <span class="dj-hud__ico dj-hud__ico--lv">${player.level}</span>
+          <span class="dj-hud__ico dj-hud__ico--lv" aria-hidden="true">${icon('shield')}</span>
           <div><small>Nível</small><strong>${player.level}</strong></div>
         </div>
       </div>

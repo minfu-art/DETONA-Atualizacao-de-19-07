@@ -169,6 +169,8 @@ test('interface contém HUD de quatro blocos e galeria de insígnias premium', a
   ]);
   assert.match(home, /today-emblems/);
   assert.match(home, /hudInsignias/);
+  assert.match(home, /dj-hud__ico--lv" aria-hidden="true">\$\{icon\('shield'\)\}<\/span>/);
+  assert.doesNotMatch(home, /dj-hud__ico--lv">\$\{player\.level\}<\/span>/);
   assert.match(profile, /profile-emblems/);
   assert.match(profile, /insignia-line__track/);
   assert.match(art, /assets\/insignias/);
