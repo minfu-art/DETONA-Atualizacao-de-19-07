@@ -176,14 +176,18 @@ export function renderLibrary(root, {
       image.closest('.library-area-card')?.classList.add('library-area-card--fallback');
     }, { once: true }));
     scope.querySelectorAll('[data-open-contest]').forEach((button) => button.addEventListener('click', async () => {
+      const originalLabel = button.textContent;
       button.disabled = true;
       button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Preparando jornada...';
       const feedback = button.closest('[data-contest-card]')?.querySelector('[data-card-feedback]');
+      if (feedback) feedback.textContent = 'Carregando o curso e sincronizando seu progresso. Isso pode levar alguns segundos.';
       try { await onOpen(button.dataset.openContest); }
       catch (error) {
         if (feedback) feedback.textContent = error?.code === 'STALE_CONTEXT' ? '' : (error?.message || 'Não foi possível abrir este curso.');
         button.disabled = false;
         button.setAttribute('aria-busy', 'false');
+        button.textContent = originalLabel;
       }
     }));
     scope.querySelectorAll('[data-purchase-contest]').forEach((button) => button.addEventListener('click', async () => {

@@ -36,6 +36,7 @@ import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { readCheckoutReturn } from './services/studentEntryModel.js';
+import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
@@ -282,11 +283,12 @@ async function navigate(screen) {
     return;
   }
   if (!getActiveContestId()) {
-    await showLibrary();
+    await openPreferredJourney(screen);
     return;
   }
   if (!(await libraryService.canAccess(authService.getCurrentUser().id, getActiveContestId()))) {
-    await showLibrary();
+    clearActiveContestId();
+    await openPreferredJourney(screen);
     return;
   }
   ctx.screen = screen;
@@ -325,6 +327,46 @@ async function navigate(screen) {
     });
   }
   checkHabitReminders();
+}
+
+async function openPreferredJourney(screen) {
+  const user = authService.getCurrentUser();
+  if (!user) {
+    showAuth();
+    return false;
+  }
+
+  let libraryState;
+  try {
+    libraryState = await libraryService.getLibraryState(user);
+  } catch {
+    await showLibrary({ refresh: true });
+    return false;
+  }
+
+  const preferred = selectActiveJourney(libraryState.items);
+  if (!preferred) {
+    await showLibrary({ libraryState });
+    return false;
+  }
+
+  const root = document.getElementById('screen');
+  if (root) {
+    root.setAttribute('aria-busy', 'true');
+    root.innerHTML = skeleton(5, `Preparando ${preferred.contest.code || 'sua jornada'}`);
+  }
+
+  try {
+    await openContest(preferred.contest.id, { initialScreen: screen });
+    return true;
+  } catch (error) {
+    await showLibrary({ libraryState });
+    const feedback = document.querySelector(`[data-contest-card="${CSS.escape(preferred.contest.id)}"] [data-card-feedback]`);
+    if (feedback) feedback.textContent = error?.message || 'Nao foi possivel abrir sua jornada.';
+    return false;
+  } finally {
+    root?.removeAttribute('aria-busy');
+  }
 }
 
 function showAuth() {
@@ -412,7 +454,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
   window.scrollTo(0, 0);
 }
 
-async function openContest(contestId) {
+async function openContest(contestId, { initialScreen = null } = {}) {
   const user = authService.getCurrentUser();
   if (!user) throw new Error('Sua sessão expirou. Entre novamente.');
   const generation = ++contestOpenGeneration;
@@ -485,7 +527,10 @@ async function openContest(contestId) {
   } else {
     document.getElementById('bottom-nav')?.classList.remove('hidden');
     const requestedScreen = new URLSearchParams(window.location.search).get('screen');
-    await navigate(requestedScreen === 'wellbeing' ? 'wellbeing' : 'home');
+    const destination = initialScreen && ROUTES[initialScreen] && initialScreen !== 'library'
+      ? initialScreen
+      : requestedScreen === 'wellbeing' ? 'wellbeing' : 'home';
+    await navigate(destination);
   }
 }
 
