@@ -32,6 +32,11 @@ test('a coleÃ§Ã£o compartilha altura visual e baseline tÃ©cnica consistent
   }
 });
 
+test('a colecao masculina usa a versao com silhueta corporal completa', async () => {
+  const heroAssets = await readFile(path.join(appRoot, 'js/ui/heroAssets.js'), 'utf8');
+  assert.match(heroAssets, /v60-complete-male-body/);
+});
+
 test('Perfil usa canvas quadrado, base ancorada e frame consistente na trilha', async () => {
   const [ui, css] = await Promise.all([
     readFile(path.join(appRoot, 'js/ui/profile.js'), 'utf8'),

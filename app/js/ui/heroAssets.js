@@ -4,7 +4,7 @@
  */
 
 /** Cache-bust ao trocar artes */
-const HERO_VER = 'v59-complete-body';
+const HERO_VER = 'v60-complete-male-body';
 
 /** Tiers masculinos — evolução tática DETONA v2 */
 export const HERO_TIERS_MALE = Object.freeze([
