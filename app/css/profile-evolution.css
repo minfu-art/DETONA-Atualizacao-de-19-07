@@ -186,8 +186,8 @@
 .profile-hero-art__pedestal { background: radial-gradient(ellipse, rgba(56, 217, 255, .46), transparent 68%); bottom: -10px; filter: blur(8px); height: 54px; left: 8%; position: absolute; right: 8%; }
 .profile-hero-art__image {
   filter: drop-shadow(0 26px 24px rgba(0, 0, 0, .48));
-  bottom: -23px;
-  height: 560px;
+  bottom: 0;
+  height: 540px;
   left: 50%;
   max-width: none;
   object-fit: contain;
@@ -218,10 +218,10 @@
 .profile-stage-card { background: rgba(7, 14, 30, .88); border: 1px solid rgba(101, 114, 138, .28); border-radius: 18px; min-width: 0; overflow: hidden; position: relative; }
 .profile-stage-card.is-current { border-color: var(--profile-cyan); box-shadow: 0 0 0 1px rgba(56, 217, 255, .16), 0 18px 36px rgba(31, 137, 209, .16); }
 .profile-stage-card.is-achieved { border-color: rgba(73, 230, 168, .42); }
-.profile-stage-card__art { background: radial-gradient(circle at 50% 42%, rgba(89, 116, 255, .2), transparent 62%); height: 250px; overflow: hidden; position: relative; }
-.profile-stage-card__art img { bottom: -9px; height: 225px; left: 50%; max-width: none; object-fit: contain; object-position: center bottom; position: absolute; transform: translateX(-50%); width: 225px; }
-.profile-stage-card.is-locked .profile-stage-card__art::after { background: linear-gradient(180deg, rgba(7, 14, 30, .08), rgba(7, 14, 30, .28)); content: ''; inset: 0; pointer-events: none; position: absolute; }
-.profile-stage-card.is-locked .profile-stage-card__art img { filter: grayscale(.45) brightness(.82); opacity: .62; }
+.profile-stage-card__art { background: radial-gradient(circle at 50% 76%, rgba(56, 217, 255, .19), transparent 34%), radial-gradient(circle at 50% 38%, rgba(89, 116, 255, .24), transparent 65%); height: 250px; overflow: hidden; position: relative; }
+.profile-stage-card__art img { bottom: 0; height: 225px; left: 50%; max-width: none; object-fit: contain; object-position: center bottom; position: absolute; transform: translateX(-50%); width: 225px; }
+.profile-stage-card.is-locked .profile-stage-card__art::after { background: linear-gradient(180deg, rgba(7, 14, 30, .04), rgba(7, 14, 30, .16)); content: ''; inset: 0; pointer-events: none; position: absolute; }
+.profile-stage-card.is-locked .profile-stage-card__art img { filter: grayscale(.35) brightness(.96); opacity: .78; }
 .profile-stage-card__copy { padding: 14px; }
 .profile-stage-card__copy > span { color: var(--profile-cyan); font-size: 12px; font-weight: 800; }
 .profile-stage-card__copy h3 { font-size: 15px; line-height: 1.28; margin: 7px 0; }
@@ -308,7 +308,7 @@
   .profile-identity__copy { padding: 24px 20px 0; }
   .profile-identity__copy h2 { font-size: clamp(2rem, 11vw, 3.5rem); }
   .profile-hero-art { min-height: clamp(352px, 110vw, 470px); order: -1; }
-  .profile-hero-art__image { bottom: clamp(-17px, -4.2vw, -14px); height: clamp(350px, 103vw, 410px); width: clamp(350px, 103vw, 410px); }
+  .profile-hero-art__image { bottom: 0; height: clamp(340px, 100vw, 400px); width: clamp(340px, 100vw, 400px); }
   .profile-hero-art::before { height: clamp(230px, 68vw, 300px); top: clamp(72px, 20vw, 98px); width: clamp(230px, 68vw, 300px); }
   .profile-hero-art__halo { height: clamp(180px, 52vw, 230px); top: clamp(98px, 27vw, 128px); width: clamp(180px, 52vw, 230px); }
   .profile-gender { margin-bottom: 24px; }
@@ -324,7 +324,7 @@
   .profile-evolution__mobile .ds-button { margin-top: 14px; width: 100%; }
   .profile-mobile-stage-pair .profile-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .profile-stage-card__art { height: 220px; }
-  .profile-stage-card__art img { bottom: -8px; height: 205px; width: 205px; }
+  .profile-stage-card__art img { bottom: 0; height: 205px; width: 205px; }
   .profile-achievement-grid { grid-template-columns: 1fr; padding: 12px; }
   .profile-insight__grid { grid-template-columns: 1fr; }
   .profile-radar { min-height: 220px; }
@@ -344,7 +344,7 @@
   .profile-mobile-stage-pair .profile-stage-grid,
   .profile-evolution-modal .profile-stage-grid { grid-template-columns: 1fr; }
   .profile-stage-card__art { height: 270px; }
-  .profile-stage-card__art img { bottom: -10px; height: 250px; width: 250px; }
+  .profile-stage-card__art img { bottom: 0; height: 250px; width: 250px; }
   .profile-achievement-card { grid-template-columns: 72px 1fr; }
 }
 

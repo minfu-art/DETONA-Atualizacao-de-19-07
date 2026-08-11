@@ -40,10 +40,10 @@ test('Perfil usa canvas quadrado, base ancorada e frame consistente na trilha', 
   assert.match(ui, /width="1024"\s+height="1024"/);
   assert.match(ui, /data-avatar-frame="profile"/);
   assert.match(ui, /data-avatar-frame="trail"/);
-  assert.match(css, /\.profile-hero-art__image\s*\{[^}]*bottom:\s*-23px;[^}]*height:\s*560px;[^}]*max-width:\s*none;/s);
+  assert.match(css, /\.profile-hero-art__image\s*\{[^}]*bottom:\s*0;[^}]*height:\s*540px;[^}]*max-width:\s*none;/s);
   assert.match(css, /\.profile-stage-card__art\s*\{[^}]*height:\s*250px;[^}]*position:\s*relative;/s);
-  assert.match(css, /\.profile-stage-card__art img\s*\{[^}]*bottom:\s*-9px;[^}]*height:\s*225px;[^}]*max-width:\s*none;/s);
-  assert.match(css, /opacity:\s*\.62/);
+  assert.match(css, /\.profile-stage-card__art img\s*\{[^}]*bottom:\s*0;[^}]*height:\s*225px;[^}]*max-width:\s*none;/s);
+  assert.match(css, /opacity:\s*\.78/);
 });
 
 test('Home e Arena usam frames quadrados sem limitar o canvas pela largura do slot', async () => {
@@ -59,5 +59,5 @@ test('Home e Arena usam frames quadrados sem limitar o canvas pela largura do sl
   assert.match(arenaUi, /hero-img battle-duel__image/);
   assert.match(mainCss, /\.hero-img--home\s*\{[^}]*height:\s*286px;[^}]*max-width:\s*none;[^}]*width:\s*286px;/s);
   assert.match(homeCss, /\.dj-mission__hero\s*\{[^}]*width:\s*220px;[^}]*max-width:\s*none;[^}]*height:\s*220px;/s);
-  assert.match(arenaCss, /\.battle-duel__fighter--hero \.battle-duel__image\s*\{[^}]*height:\s*150px;[^}]*max-width:none;[^}]*width:150px;/s);
+  assert.match(arenaCss, /\.battle-duel__fighter--hero \.battle-duel__image\s*\{[^}]*bottom:0;[^}]*height:\s*144px;[^}]*max-width:none;[^}]*width:144px;/s);
 });
