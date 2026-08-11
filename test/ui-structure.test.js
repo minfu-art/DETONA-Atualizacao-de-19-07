@@ -26,6 +26,7 @@ const performanceServiceUrl = new URL('../app/js/services/performanceService.js'
 const navigationUrl = new URL('../app/js/ui/navigation.js', import.meta.url);
 const adminAppUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
 const adminHtmlUrl = new URL('../app/admin.html', import.meta.url);
+const contestContentServiceUrl = new URL('../app/js/services/contestContentService.js', import.meta.url);
 
 test('navegação principal usa uma única fonte sem renomear rotas internas', async () => {
   const [navigation, shell, html, app] = await Promise.all([
@@ -122,10 +123,16 @@ test('autenticacao remove o recuo da sidebar e troca para coluna unica antes de 
 });
 
 test('rotas academicas continuam protegidas e developer e separado antes da jornada', async () => {
-  const [source, admin] = await Promise.all([readFile(appUrl, 'utf8'), readFile(adminAppUrl, 'utf8')]);
+  const [source, admin, contentService] = await Promise.all([
+    readFile(appUrl, 'utf8'),
+    readFile(adminAppUrl, 'utf8'),
+    readFile(contestContentServiceUrl, 'utf8'),
+  ]);
   assert.match(source, /canAccessInternalRoute\(authService\)/);
   assert.match(source, /getActiveContestId\(\)/);
-  assert.match(source, /libraryService\.canAccess/);
+  assert.match(source, /ctx\.contest\?\.id !== getActiveContestId\(\)/);
+  assert.match(source, /contestContentService\.load\(user\.id, contestId\)/);
+  assert.match(contentService, /allowLegacyFallback = isLocalDevelopment/);
   assert.match(source, /isDeveloperUser\(authenticatedUser\)/);
   assert.match(source, /redirectForRole\(authenticatedUser\)/);
   assert.match(admin, /isDeveloperUser\(authService\.getCurrentUser\(\)\)/);

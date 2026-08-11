@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '../supabase/client.js';
+import { isLocalDevelopment } from '../config/appEnvironment.js';
 
 const CACHE_PREFIX = 'detona-contest-content';
 
@@ -7,9 +8,14 @@ function cacheName(userId, contestId, version) {
 }
 
 export class ContestContentService {
-  constructor({ getClient = getSupabaseClient, cacheStorage = globalThis.caches } = {}) {
+  constructor({
+    getClient = getSupabaseClient,
+    cacheStorage = globalThis.caches,
+    allowLegacyFallback = isLocalDevelopment,
+  } = {}) {
     this.getClient = getClient;
     this.cacheStorage = cacheStorage;
+    this.allowLegacyFallback = allowLegacyFallback;
   }
 
   async #cachePackage(userId, contentPackage) {
@@ -27,14 +33,14 @@ export class ContestContentService {
   async load(userId, contestId) {
     const client = await this.getClient();
     if (!client) {
-      if (contestId === 'pc_al_2026') return { legacyStatic: true, contestId };
+      if (contestId === 'pc_al_2026' && this.allowLegacyFallback()) return { legacyStatic: true, contestId };
       throw new Error('Conteúdo dinâmico indisponível.');
     }
     const { data, error } = await client.functions.invoke('student-content', {
       body: { action: 'get_published_package', contestId },
     });
     if (error || data?.error) {
-      if (contestId === 'pc_al_2026') return { legacyStatic: true, contestId };
+      if (contestId === 'pc_al_2026' && this.allowLegacyFallback()) return { legacyStatic: true, contestId };
       throw new Error(data?.error || error?.message || 'Pacote publicado indisponível.');
     }
     if (data.legacyStatic) return data;

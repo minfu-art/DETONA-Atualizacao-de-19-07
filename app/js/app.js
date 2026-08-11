@@ -286,7 +286,7 @@ async function navigate(screen) {
     await openPreferredJourney(screen);
     return;
   }
-  if (!(await libraryService.canAccess(authService.getCurrentUser().id, getActiveContestId()))) {
+  if (ctx.contest?.id !== getActiveContestId()) {
     clearActiveContestId();
     await openPreferredJourney(screen);
     return;
@@ -357,7 +357,7 @@ async function openPreferredJourney(screen) {
   }
 
   try {
-    await openContest(preferred.contest.id, { initialScreen: screen });
+    await openContest(preferred.contest.id, { initialScreen: screen, contestHint: preferred.contest });
     return true;
   } catch (error) {
     await showLibrary({ libraryState });
@@ -422,7 +422,9 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       commerceReturn,
       offline: state.offline,
       links: getStudentEntryLinks(),
-      onOpen: openContest,
+      onOpen: (contestId) => openContest(contestId, {
+        contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null,
+      }),
       onPurchase: async (contestId) => {
         const purchase = await libraryService.purchase(authService.getCurrentUser(), contestId);
         if (purchase?.redirectUrl) {
@@ -454,7 +456,42 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
   window.scrollTo(0, 0);
 }
 
-async function openContest(contestId, { initialScreen = null } = {}) {
+function scheduleContestMaintenance({ userId, contestId, generation, syncInBackground }) {
+  const interactiveScreens = new Set(['battle', 'review', 'rankedEvent']);
+  const schedule = globalThis.requestIdleCallback
+    ? (callback) => globalThis.requestIdleCallback(callback, { timeout: 2000 })
+    : (callback) => globalThis.setTimeout(callback, 100);
+
+  schedule(async () => {
+    const isCurrent = () => generation === contestOpenGeneration
+      && userId === authService.getCurrentUser()?.id
+      && contestId === getActiveContestId();
+    const isInteractive = () => interactiveScreens.has(ctx.screen);
+    if (!isCurrent()) return;
+    try {
+      if (syncInBackground) {
+        await syncOnContestOpen(userId, contestId);
+        if (!isCurrent() || isInteractive()) return;
+        await recalculateEditalSSOT();
+        if (!isCurrent() || isInteractive()) return;
+        updateAppShell({ screen: ctx.screen, player: await getPlayer(), contest: ctx.contest, user: ctx.user });
+      }
+
+      if (!isCurrent() || isInteractive()) return;
+      const last = await progressRepository.getMeta('cloud_last_push_at');
+      if (!last && isCurrent()) {
+        const result = await pushAllLocalProgress(userId, contestId);
+        if (result?.pushed > 0 && isCurrent()) {
+          await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
+        }
+      }
+    } catch (error) {
+      if (isCurrent()) console.warn('[cloud] background contest maintenance failed', error?.message || error);
+    }
+  });
+}
+
+async function openContest(contestId, { initialScreen = null, contestHint = null } = {}) {
   const user = authService.getCurrentUser();
   if (!user) throw new Error('Sua sessão expirou. Entre novamente.');
   const generation = ++contestOpenGeneration;
@@ -467,13 +504,14 @@ async function openContest(contestId, { initialScreen = null } = {}) {
   };
   const contestChanged = getActiveContestId() !== contestId;
   if (getActiveContestId() !== contestId) resetHabitReminderRuntime();
-  if (!(await libraryService.canAccess(user.id, contestId))) throw new Error('Acesso nao liberado.');
-  assertCurrent();
-  const contest = await libraryService.getContest(contestId, { refresh: true });
+  const [contest, loadedContent] = await Promise.all([
+    contestHint?.id === contestId
+      ? Promise.resolve(contestHint)
+      : libraryService.getContest(contestId, { refresh: true }),
+    contestContentService.load(user.id, contestId),
+  ]);
   assertCurrent();
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
-  const loadedContent = await contestContentService.load(user.id, contestId);
-  assertCurrent();
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
   if (contestChanged) {
@@ -489,34 +527,23 @@ async function openContest(contestId, { initialScreen = null } = {}) {
   await contestDataMigrationService.ensureCompatibility(user.id, contestId);
   assertCurrent();
   await openDB();
-  // Nuvem híbrida: pull antes do seed para não sobrescrever progresso remoto com seed vazio
+  const localPlayer = await getPlayer();
+  const syncInBackground = isCloudEnabled() && Boolean(localPlayer);
+  // Dispositivo novo ainda bloqueia no primeiro pull para restaurar o progresso remoto.
+  // Quem já possui base local abre imediatamente e sincroniza depois da primeira tela.
   if (isCloudEnabled()) {
-    try {
-      await syncOnContestOpen(user.id, contestId);
-      assertCurrent();
-    } catch (err) {
-      if (err?.code === 'STALE_CONTEXT') throw err;
-      console.warn('[cloud] sync on open failed', err?.message || err);
+    if (!syncInBackground) {
+      try {
+        await syncOnContestOpen(user.id, contestId);
+        assertCurrent();
+      } catch (err) {
+        if (err?.code === 'STALE_CONTEXT') throw err;
+        console.warn('[cloud] sync on open failed', err?.message || err);
+      }
     }
   }
   await ensureSeed({ contentPackage });
   await recalculateEditalSSOT();
-  assertCurrent();
-  // Push inicial uma vez (local → nuvem) quando ainda não houve push
-  if (isCloudEnabled()) {
-    try {
-      const last = await progressRepository.getMeta('cloud_last_push_at');
-      if (!last) {
-        const result = await pushAllLocalProgress(user.id, contestId);
-        if (result?.pushed > 0) {
-          await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
-        }
-      }
-    } catch (err) {
-      if (err?.code === 'STALE_CONTEXT') throw err;
-      console.warn('[cloud] initial push failed', err?.message || err);
-    }
-  }
   assertCurrent();
   const player = await getPlayer();
   assertCurrent();
@@ -531,6 +558,14 @@ async function openContest(contestId, { initialScreen = null } = {}) {
       ? initialScreen
       : requestedScreen === 'wellbeing' ? 'wellbeing' : 'home';
     await navigate(destination);
+  }
+  if (isCloudEnabled()) {
+    scheduleContestMaintenance({
+      userId: user.id,
+      contestId,
+      generation,
+      syncInBackground,
+    });
   }
 }
 
@@ -572,6 +607,7 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   }
 
   let activeContestId = getActiveContestId();
+  let activeContestHint = null;
   if (!activeContestId) {
     let libraryState;
     try {
@@ -585,20 +621,21 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
     }
     const readyJourneys = libraryState.items
       .filter((item) => item.owned && item.contest.contentStatus === 'ready');
-    if (readyJourneys.length === 1) activeContestId = readyJourneys[0].contest.id;
+    if (readyJourneys.length === 1) {
+      activeContestId = readyJourneys[0].contest.id;
+      activeContestHint = readyJourneys[0].contest;
+    }
     if (!activeContestId) {
       await showLibrary({ libraryState });
       return;
     }
   }
   if (activeContestId) {
-    const contest = await libraryService.getContest(activeContestId);
-    const user = authService.getCurrentUser();
-    const canRestore = contest?.contentStatus === 'ready'
-      && await libraryService.canAccess(user.id, activeContestId);
-    if (canRestore) {
-      await openContest(activeContestId);
+    try {
+      await openContest(activeContestId, { contestHint: activeContestHint });
       return;
+    } catch (error) {
+      console.warn('[contest] automatic restore failed', error?.message || error);
     }
     clearActiveContestId();
     resetHabitReminderRuntime();

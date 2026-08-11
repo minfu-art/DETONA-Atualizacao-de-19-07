@@ -8,7 +8,7 @@ const source = (path) => readFile(new URL(path, import.meta.url), 'utf8');
 test('menu academico abre a jornada preferida quando ainda nao existe concurso ativo', async () => {
   const app = await source('../js/app.js');
   assert.match(app, /if \(!getActiveContestId\(\)\) \{\s*await openPreferredJourney\(screen\)/);
-  assert.match(app, /openContest\(preferred\.contest\.id, \{ initialScreen: screen \}\)/);
+  assert.match(app, /openContest\(preferred\.contest\.id, \{ initialScreen: screen, contestHint: preferred\.contest \}\)/);
 });
 
 test('destino solicitado pelo menu e preservado depois de preparar o concurso', async () => {
@@ -36,5 +36,5 @@ test('botao do curso informa imediatamente que a jornada esta sendo preparada', 
 
 test('cache do PWA muda para distribuir o reparo', async () => {
   const sw = await source('../sw.js');
-  assert.match(sw, /detona-v125-library-navigation-repair/);
+  assert.match(sw, /detona-v126-progressive-contest-open/);
 });
