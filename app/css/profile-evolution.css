@@ -95,7 +95,7 @@
   letter-spacing: -.045em;
   line-height: .98;
   margin: 10px 0 14px;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 .profile-identity__journey {
   color: #dbe7fb;
@@ -265,7 +265,7 @@
 .profile-account-letter { background: linear-gradient(135deg, var(--profile-indigo), var(--profile-violet)); border-radius: 14px; display: grid; font-size: 22px; font-weight: 800; height: 52px; place-items: center; width: 52px; }
 .profile-settings__account strong,
 .profile-settings__account span { display: block; }
-.profile-settings__account div > span { color: var(--profile-muted); font-size: 13px; margin-top: 2px; overflow-wrap: anywhere; }
+.profile-settings__account div > span { color: var(--profile-muted); font-size: 13px; margin-top: 2px; overflow-wrap:break-word; }
 .profile-settings__grid { display: grid; gap: 16px; grid-template-columns: minmax(220px, 1fr) minmax(180px, .5fr); margin-top: 16px; }
 .profile-settings .field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
 .profile-settings .field input { min-height: 48px; width: 100%; }

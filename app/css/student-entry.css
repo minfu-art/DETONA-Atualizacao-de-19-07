@@ -66,7 +66,7 @@
 }
 
 .student-library .contest-card__body { padding: 18px; }
-.student-library .contest-card__body h3 { overflow-wrap: anywhere; }
+.student-library .contest-card__body h3 { overflow-wrap:break-word; }
 
 .student-library .contest-card__commerce-detail {
   display: none;

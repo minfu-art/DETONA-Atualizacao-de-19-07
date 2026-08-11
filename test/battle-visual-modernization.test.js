@@ -167,7 +167,11 @@ test('CSS da Arena protege legibilidade, alvos, responsividade e movimento reduz
   assert.ok(start >= 0 && end > start);
   assert.match(arena, /min-height:var\(--ds-touch-target\)/);
   assert.match(arena, /font-size:var\(--ds-type-(?:label|micro)\)/);
-  assert.match(arena, /overflow-wrap:anywhere/);
+  assert.match(arena, /\.battle-answers \.answer-btn \{[^}]*flex-wrap:wrap/);
+  assert.match(arena, /\.battle-answers \.answer-text \{[^}]*flex:1 1 16rem[^}]*word-break:normal[^}]*overflow-wrap:break-word/);
+  assert.match(arena, /\.answer-result-label \{[^}]*max-width:100%[^}]*flex:0 1 auto[^}]*word-break:normal[^}]*overflow-wrap:break-word/);
+  assert.match(arena, /@media \(max-width:620px\)[\s\S]*\.battle-answers \.answer-text \{ flex-basis:calc\(100% - 42px\); \}/);
+  assert.match(arena, /\.answer-result-label \{ width:auto; max-width:calc\(100% - 42px\); margin-left:42px; margin-right:auto; flex:0 0 auto; \}/);
   assert.match(arena, /@media \(max-width:620px\)/);
   assert.match(arena, /grid-template-columns:1fr/);
   assert.match(arena, /env\(safe-area-inset-bottom/);

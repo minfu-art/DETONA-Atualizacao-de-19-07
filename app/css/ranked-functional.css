@@ -293,7 +293,7 @@
 }
 
 .ranked-event-card__copy h2 {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-family: var(--display);
   font-size: clamp(20px, 2vw, 30px);
   line-height: 1.12;
@@ -332,7 +332,7 @@
 
 .ranked-event-card__facts dd,
 .ranked-preparation__facts dd {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: var(--ds-text-1);
   font-size: var(--ds-font-size-sm);
   font-weight: 700;
@@ -373,7 +373,7 @@
 
 .ranked-preparation__hero h1,
 .ranked-result-hero h1 {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-family: var(--display);
   font-size: clamp(30px, 4vw, 50px);
   letter-spacing: var(--ds-letter-title);
@@ -764,7 +764,7 @@
 
 .ranked-question legend > strong {
   max-width: var(--ds-reading);
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-size: clamp(17px, 1.7vw, 21px);
   font-weight: 650;
 }
@@ -842,7 +842,7 @@
   min-width: 0;
   display: grid;
   gap: 3px;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-size: var(--ds-font-size-md);
   line-height: 1.55;
 }
@@ -979,7 +979,7 @@
 }
 
 .ranked-scoreboard strong {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: var(--ds-text-1);
   font-family: var(--display);
   font-size: clamp(26px, 3vw, 42px);
@@ -1016,7 +1016,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-size: var(--ds-font-size-sm);
 }
 
@@ -1110,7 +1110,7 @@
 
 .ranked-state h1,
 .ranked-state h2 {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   font-family: var(--display);
   font-size: clamp(28px, 3.8vw, 48px);
   line-height: 1.08;

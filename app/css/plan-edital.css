@@ -212,7 +212,7 @@
   color: #fff;
   font: 800 clamp(25px, 3.4vw, 42px) / 1.08 var(--display, Sora, sans-serif);
   letter-spacing: -0.035em;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .plan-banner p {
@@ -304,7 +304,7 @@
   margin: 5px 0 8px;
   color: var(--plan-text);
   font: 780 clamp(18px, 2vw, 22px) / 1.25 var(--display, Sora, sans-serif);
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .plan-card p,
@@ -589,7 +589,7 @@
 .plan-balance strong {
   margin-top: 5px;
   font-size: 16px;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .plan-balance .fam-estudo strong { color: var(--plan-violet-soft); }
@@ -652,7 +652,7 @@
   min-width: 0;
   font-size: 15px;
   line-height: 1.35;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .routine-block__status {
@@ -675,7 +675,7 @@
   color: var(--plan-muted);
   font-size: 13px;
   line-height: 1.45;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .routine-block__context {
@@ -823,7 +823,7 @@
 .plan-day-col header strong,
 .plan-day-col header small {
   display: block;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .plan-day-col header strong {
@@ -885,7 +885,7 @@
 .plan-chip strong,
 .plan-chip small {
   display: block;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 
 .plan-chip strong {
@@ -1485,7 +1485,7 @@
 }
 
 .routine-kpis small { color: var(--plan-muted); }
-.routine-kpis strong { margin-top: 5px; font-size: 22px; overflow-wrap: anywhere; }
+.routine-kpis strong { margin-top: 5px; font-size: 22px; overflow-wrap:break-word; }
 
 .plan-results__grid {
   display: grid;

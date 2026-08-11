@@ -160,7 +160,7 @@ test('tipografia, alvos e movimento cumprem o contrato visual', async () => {
   assert.match(css, /min-height:\s*44px/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
-  assert.match(css, /overflow-wrap:\s*anywhere/);
+  assert.match(css, /overflow-wrap:\s*break-word/);
 });
 
 test('estados vazios são factuais e não contêm dados simulados', () => {

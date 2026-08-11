@@ -130,7 +130,7 @@ test('nomes longos permanecem completos no HTML e CSS permite quebra', async () 
   assert.match(html, new RegExp(data.disciplines[4].name.trim()));
   assert.match(html, new RegExp(data.disciplines[0].subtopics[0].name.trim()));
   const css = await readFile(path.join(appRoot, 'css/performance-mobile.css'), 'utf8');
-  assert.match(css, /overflow-wrap:\s*anywhere/);
+  assert.match(css, /overflow-wrap:\s*break-word/);
 });
 
 test('subtópicos distinguem null, zero, domínio, estrelas e memória', () => {

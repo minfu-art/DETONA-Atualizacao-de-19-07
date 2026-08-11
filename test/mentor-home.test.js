@@ -189,5 +189,5 @@ test('layout móvel limita texto e impede overflow horizontal', () => {
   assert.match(css, /\.dj-mentor[\s\S]*overflow:\s*hidden/);
   assert.match(css, /@media \(max-width: 620px\)[\s\S]*\.dj-mentor__message[\s\S]*-webkit-line-clamp:\s*4/);
   assert.match(css, /grid-template-columns:\s*clamp\(105px,\s*30vw,\s*135px\)/);
-  assert.match(css, /\.dj-mentor__message[\s\S]*overflow-wrap:\s*anywhere/);
+  assert.match(css, /\.dj-mentor__message[\s\S]*overflow-wrap:\s*break-word/);
 });

@@ -1148,7 +1148,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 .dj-mentor__context {
   margin: 7px 0 0;
@@ -1177,7 +1177,7 @@
 .dj-announcement-modal__suggestions {
   min-width: 0;
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
 }
 .dj-announcement-modal__badges {
   display: flex;

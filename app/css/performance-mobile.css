@@ -501,7 +501,7 @@
 }
 
 .performance-discipline-trigger__copy strong {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: var(--perf-text);
   font-size: 14px;
   line-height: 1.35;
@@ -646,7 +646,7 @@
 
 .performance-subtopic__heading h4 {
   margin: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: #e4edf9;
   font: 700 13px/1.4 var(--font, Outfit, sans-serif);
 }
@@ -816,7 +816,7 @@
 }
 
 .performance-time-content li span {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: #d9e8fb;
   font-size: 13px;
 }

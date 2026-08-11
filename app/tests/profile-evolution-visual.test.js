@@ -111,7 +111,7 @@ test('Perfil possui um h1, loading estável, modal acessível e CSS mobile-first
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /@media \(max-width: 760px\)/);
   assert.match(css, /@media \(max-width: 370px\)/);
-  assert.match(css, /overflow-wrap:\s*anywhere/);
+  assert.match(css, /overflow-wrap:\s*break-word/);
   assert.doesNotMatch(css, /!important/);
   assert.doesNotMatch(ui, /style=/);
   const fontSizes = [...css.matchAll(/font-size:\s*([0-9.]+)px/g)].map((match) => Number(match[1]));

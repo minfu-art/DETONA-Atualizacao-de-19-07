@@ -1117,7 +1117,7 @@ body {
 .study-subtopic { display:grid; grid-template-columns:minmax(220px,1.3fr) minmax(300px,1fr) minmax(220px,.8fr); align-items:center; gap:18px; border:1px solid var(--ds-border); border-radius:var(--ds-radius-lg); padding:16px; background:var(--ds-surface-2); }
 .study-subtopic__main { display:flex; align-items:flex-start; gap:12px; min-width:0; }
 .study-subtopic__number { min-width:42px; min-height:32px; display:grid; place-items:center; border-radius:var(--ds-radius-sm); background:color-mix(in srgb,var(--ds-theme-accent) 12%,transparent); color:var(--ds-theme-accent); font:800 var(--ds-type-label)/1 var(--body); }
-.study-subtopic h3 { margin:0 0 7px; font:750 var(--ds-font-size-md)/var(--ds-line-normal) var(--body); overflow-wrap:anywhere; }
+.study-subtopic h3 { margin:0 0 7px; font:750 var(--ds-font-size-md)/var(--ds-line-normal) var(--body); overflow-wrap:break-word; }
 .study-subtopic__metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
 .study-subtopic__metrics > span { min-width:0; }
 .study-subtopic__metrics small,.study-subtopic__metrics strong { display:block; }
@@ -1225,7 +1225,7 @@ body {
 }
 .admin-access-card__identity span,
 .admin-access-card__status small {
-  overflow-wrap: anywhere;
+  overflow-wrap:break-word;
   color: var(--text-dim);
   font-size: 12px;
 }
