@@ -93,6 +93,62 @@ test('duas solicitações simultâneas reutilizam um pedido e criam uma preferê
   assert.deepEqual(reservedRequestIds.sort(), requestIds);
 });
 
+test('checkout antigo com URL e sem expiração explícita continua sendo reutilizado', async () => {
+  let preferenceCount = 0;
+  const result = await resolveReservedCheckout({
+    order: {
+      id: 'order-existing',
+      status: 'pending',
+      checkout_url: 'https://www.mercadopago.com.br/existing',
+      provider_preference_id: 'preference-existing',
+      expires_at: null,
+      created_at: '2020-01-01T00:00:00.000Z',
+    },
+    preferenceClaimed: false,
+  }, {
+    createPreference: async () => {
+      preferenceCount += 1;
+      throw new Error('UNEXPECTED_PROVIDER_CALL');
+    },
+    readOrder: async () => { throw new Error('UNEXPECTED_ORDER_POLL'); },
+    savePreference: async () => {},
+    releaseClaim: async () => {},
+  });
+
+  assert.equal(result.id, 'order-existing');
+  assert.equal(result.redirectUrl, 'https://www.mercadopago.com.br/existing');
+  assert.equal(preferenceCount, 0);
+});
+
+test('migration separa reserva stale de checkout criado e respeita expires_at', async () => {
+  const migration = await source('supabase/migrations/20260811193000_secure_commercial_checkout.sql');
+  const expiryRule = migration.match(/update public\.commerce_orders orders[\s\S]*?where orders\.user_id = p_user_id[\s\S]*?\n\s*\);/i)?.[0] || '';
+
+  assert.match(expiryRule, /expires_at is not null and orders\.expires_at <= now\(\)/i);
+  assert.match(expiryRule, /expires_at is null[\s\S]*checkout_url is null[\s\S]*provider_preference_id is null[\s\S]*created_at < now\(\) - interval '5 minutes'/i);
+  assert.doesNotMatch(expiryRule, /expires_at is null\s+and orders\.created_at/i);
+});
+
+test('matriz de validade cobre reserva abandonada, preferência ativa e expiração explícita', () => {
+  const now = Date.parse('2026-08-11T12:00:00.000Z');
+  const isExpired = (order) => order.status === 'pending' && (
+    (order.expires_at != null && Date.parse(order.expires_at) <= now)
+    || (
+      order.expires_at == null
+      && order.checkout_url == null
+      && order.provider_preference_id == null
+      && Date.parse(order.created_at) < now - (5 * 60 * 1000)
+    )
+  );
+  const old = '2026-08-11T11:54:59.000Z';
+
+  assert.equal(isExpired({ status: 'pending', created_at: old, checkout_url: null, provider_preference_id: null, expires_at: null }), true);
+  assert.equal(isExpired({ status: 'pending', created_at: old, checkout_url: 'https://www.mercadopago.com.br/active', provider_preference_id: null, expires_at: null }), false);
+  assert.equal(isExpired({ status: 'pending', created_at: old, checkout_url: null, provider_preference_id: 'preference-active', expires_at: null }), false);
+  assert.equal(isExpired({ status: 'pending', created_at: old, checkout_url: 'https://www.mercadopago.com.br/active', provider_preference_id: 'preference-active', expires_at: '2026-08-11T12:01:00.000Z' }), false);
+  assert.equal(isExpired({ status: 'pending', created_at: old, checkout_url: 'https://www.mercadopago.com.br/expired', provider_preference_id: 'preference-expired', expires_at: '2026-08-11T11:59:59.000Z' }), true);
+});
+
 test('migration mantém webhook privado, idempotente e entitlement server-side', async () => {
   const migration = await source('supabase/migrations/20260811193000_secure_commercial_checkout.sql');
   assert.match(migration, /enable row level security/gi);

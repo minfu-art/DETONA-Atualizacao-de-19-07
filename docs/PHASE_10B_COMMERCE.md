@@ -4,7 +4,7 @@ O DETONA usa Mercado Pago Checkout Pro por redirecionamento. O navegador envia s
 
 O retorno do navegador nunca concede acesso. A Edge Function `commercial-webhook` valida a assinatura HMAC, consulta o pagamento diretamente no Mercado Pago e chama a função transacional `apply_verified_commerce_payment`. Somente o estado `approved` cria ou reativa o entitlement.
 
-Pedidos concorrentes do mesmo aluno e concurso são serializados no PostgreSQL. Existe somente um pedido `pending` válido, e um lease recuperável determina qual chamada cria a preferência; as demais aguardam e reutilizam a mesma URL. Pedidos expirados ou sem preferência há mais de cinco minutos deixam de bloquear uma tentativa nova.
+Pedidos concorrentes do mesmo aluno e concurso são serializados no PostgreSQL. Existe somente um pedido `pending` válido, e um lease recuperável determina qual chamada cria a preferência; as demais aguardam e reutilizam a mesma URL. Uma reserva ainda sem URL e sem preferência pode ser recuperada após cinco minutos. Depois que o checkout existe, ele continua sendo reutilizado e só expira quando o `expires_at` explícito do provedor for alcançado.
 
 ## Configuração de staging (não versionar valores)
 

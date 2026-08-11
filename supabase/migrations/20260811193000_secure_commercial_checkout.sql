@@ -124,7 +124,12 @@ begin
      and orders.status = 'pending'
      and (
        (orders.expires_at is not null and orders.expires_at <= now())
-       or (orders.expires_at is null and orders.created_at < now() - interval '5 minutes')
+       or (
+         orders.expires_at is null
+         and orders.checkout_url is null
+         and orders.provider_preference_id is null
+         and orders.created_at < now() - interval '5 minutes'
+       )
      );
 
   select * into v_order
