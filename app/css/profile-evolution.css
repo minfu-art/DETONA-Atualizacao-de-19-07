@@ -169,7 +169,7 @@
     linear-gradient(145deg, rgba(4, 9, 21, .1), rgba(3, 8, 19, .82));
   display: flex;
   justify-content: center;
-  min-height: 560px;
+  min-height: 580px;
   overflow: hidden;
   position: relative;
 }
@@ -177,20 +177,24 @@
   background: conic-gradient(from 0deg, transparent, rgba(56, 217, 255, .14), transparent 22%);
   border: 1px solid rgba(56, 217, 255, .16);
   border-radius: 50%;
-  height: 420px;
-  inset: 70px auto auto 50%;
+  height: 340px;
+  inset: 126px auto auto 50%;
   transform: translateX(-50%);
-  width: 420px;
+  width: 340px;
 }
-.profile-hero-art__halo { border: 1px solid rgba(155, 108, 255, .3); border-radius: 50%; height: 330px; left: 50%; position: absolute; top: 120px; transform: translateX(-50%); width: 330px; }
-.profile-hero-art__pedestal { background: radial-gradient(ellipse, rgba(56, 217, 255, .46), transparent 68%); bottom: -10px; filter: blur(8px); height: 54px; left: 10%; position: absolute; right: 10%; }
+.profile-hero-art__halo { border: 1px solid rgba(155, 108, 255, .24); border-radius: 50%; height: 260px; left: 50%; opacity: .78; position: absolute; top: 158px; transform: translateX(-50%); width: 260px; }
+.profile-hero-art__pedestal { background: radial-gradient(ellipse, rgba(56, 217, 255, .46), transparent 68%); bottom: -10px; filter: blur(8px); height: 54px; left: 8%; position: absolute; right: 8%; }
 .profile-hero-art__image {
   filter: drop-shadow(0 26px 24px rgba(0, 0, 0, .48));
-  height: min(520px, 92%);
+  bottom: -23px;
+  height: 560px;
+  left: 50%;
+  max-width: none;
   object-fit: contain;
   object-position: center bottom;
-  position: relative;
-  width: min(430px, 100%);
+  position: absolute;
+  transform: translateX(-50%);
+  width: 560px;
   z-index: 1;
 }
 
@@ -214,9 +218,10 @@
 .profile-stage-card { background: rgba(7, 14, 30, .88); border: 1px solid rgba(101, 114, 138, .28); border-radius: 18px; min-width: 0; overflow: hidden; position: relative; }
 .profile-stage-card.is-current { border-color: var(--profile-cyan); box-shadow: 0 0 0 1px rgba(56, 217, 255, .16), 0 18px 36px rgba(31, 137, 209, .16); }
 .profile-stage-card.is-achieved { border-color: rgba(73, 230, 168, .42); }
-.profile-stage-card__art { background: radial-gradient(circle at 50% 42%, rgba(89, 116, 255, .2), transparent 62%); height: 220px; overflow: hidden; }
-.profile-stage-card__art img { height: 100%; object-fit: contain; object-position: center bottom; width: 100%; }
-.profile-stage-card.is-locked .profile-stage-card__art img { filter: grayscale(.72) brightness(.55); opacity: .68; }
+.profile-stage-card__art { background: radial-gradient(circle at 50% 42%, rgba(89, 116, 255, .2), transparent 62%); height: 250px; overflow: hidden; position: relative; }
+.profile-stage-card__art img { bottom: -9px; height: 225px; left: 50%; max-width: none; object-fit: contain; object-position: center bottom; position: absolute; transform: translateX(-50%); width: 225px; }
+.profile-stage-card.is-locked .profile-stage-card__art::after { background: linear-gradient(180deg, rgba(7, 14, 30, .08), rgba(7, 14, 30, .28)); content: ''; inset: 0; pointer-events: none; position: absolute; }
+.profile-stage-card.is-locked .profile-stage-card__art img { filter: grayscale(.45) brightness(.82); opacity: .62; }
 .profile-stage-card__copy { padding: 14px; }
 .profile-stage-card__copy > span { color: var(--profile-cyan); font-size: 12px; font-weight: 800; }
 .profile-stage-card__copy h3 { font-size: 15px; line-height: 1.28; margin: 7px 0; }
@@ -302,10 +307,10 @@
   .profile-identity { display: flex; flex-direction: column; min-height: 0; }
   .profile-identity__copy { padding: 24px 20px 0; }
   .profile-identity__copy h2 { font-size: clamp(2rem, 11vw, 3.5rem); }
-  .profile-hero-art { min-height: clamp(300px, 95vw, 430px); order: -1; }
-  .profile-hero-art__image { height: clamp(290px, 88vw, 420px); max-width: 92%; }
-  .profile-hero-art::before { height: 310px; top: 40px; width: 310px; }
-  .profile-hero-art__halo { height: 250px; top: 74px; width: 250px; }
+  .profile-hero-art { min-height: clamp(352px, 110vw, 470px); order: -1; }
+  .profile-hero-art__image { bottom: clamp(-17px, -4.2vw, -14px); height: clamp(350px, 103vw, 410px); width: clamp(350px, 103vw, 410px); }
+  .profile-hero-art::before { height: clamp(230px, 68vw, 300px); top: clamp(72px, 20vw, 98px); width: clamp(230px, 68vw, 300px); }
+  .profile-hero-art__halo { height: clamp(180px, 52vw, 230px); top: clamp(98px, 27vw, 128px); width: clamp(180px, 52vw, 230px); }
   .profile-gender { margin-bottom: 24px; }
   .profile-section { border-radius: 20px; padding: 20px 16px; }
   .profile-section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
@@ -318,7 +323,8 @@
   .profile-evolution__mobile { display: block; }
   .profile-evolution__mobile .ds-button { margin-top: 14px; width: 100%; }
   .profile-mobile-stage-pair .profile-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .profile-stage-card__art { height: 190px; }
+  .profile-stage-card__art { height: 220px; }
+  .profile-stage-card__art img { bottom: -8px; height: 205px; width: 205px; }
   .profile-achievement-grid { grid-template-columns: 1fr; padding: 12px; }
   .profile-insight__grid { grid-template-columns: 1fr; }
   .profile-radar { min-height: 220px; }
@@ -337,7 +343,8 @@
   .profile-stats { grid-template-columns: 1fr; }
   .profile-mobile-stage-pair .profile-stage-grid,
   .profile-evolution-modal .profile-stage-grid { grid-template-columns: 1fr; }
-  .profile-stage-card__art { height: 240px; }
+  .profile-stage-card__art { height: 270px; }
+  .profile-stage-card__art img { bottom: -10px; height: 250px; width: 250px; }
   .profile-achievement-card { grid-template-columns: 72px 1fr; }
 }
 

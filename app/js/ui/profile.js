@@ -25,11 +25,12 @@ function stageTrailHtml(model, { modal = false } = {}) {
             <img
               src="${stage.src}"
               alt=""
-              width="360"
-              height="480"
+              width="1024"
+              height="1024"
               loading="lazy"
               decoding="async"
               draggable="false"
+              data-avatar-frame="trail"
               data-profile-stage-image="${stage.stageNumber}"
             />
           </div>
@@ -89,12 +90,13 @@ function currentHeroHtml(model) {
         class="profile-hero-art__image"
         src="${model.current.src}"
         alt="${escapeHtml(model.current.alt)}"
-        width="720"
-        height="960"
+        width="1024"
+        height="1024"
         loading="eager"
         fetchpriority="high"
         decoding="async"
         draggable="false"
+        data-avatar-frame="profile"
         data-profile-current-hero
         data-hero-sprite="${model.identity.sprite}"
         data-hero-stage="${model.current.stageNumber}"

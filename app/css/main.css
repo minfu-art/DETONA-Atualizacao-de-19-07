@@ -1484,13 +1484,13 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 218px; /* ~30% maior que 168 */
+  height: 286px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 .dash-hero-stage {
-  min-height: 250px;
+  min-height: 326px;
 }
 .hero-img {
   max-height: 100%;
@@ -1504,7 +1504,10 @@ body {
   pointer-events: none;
 }
 .hero-img--home {
-  height: 218px; /* +30% vs 168px */
+  flex: 0 0 286px;
+  height: 286px;
+  max-width: none;
+  width: 286px;
   animation: heroIdle 2.6s ease-in-out infinite;
 }
 .hero-img--profile {
@@ -3483,6 +3486,12 @@ svg {
 .dash-hero-row--solo { grid-template-columns:1fr !important; }
 .dash-hero-row--solo .dash-hero-stage { width:100%; max-width:680px; margin-inline:auto; }
 .dash-edital-card[hidden] { display:none !important; }
+
+@media (max-width: 620px) {
+  .dash-hero-figure { height: 252px; }
+  .dash-hero-stage { min-height: 292px; }
+  .hero-img--home { flex-basis: 252px; height: 252px; width: 252px; }
+}
 
 /* FASE 2 — Shell e Navegação v1 */
 .skip-link {

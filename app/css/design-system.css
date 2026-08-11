@@ -1826,13 +1826,13 @@ body.has-open-modal { overflow:hidden; }
 .battle-focus__progress-copy { display:flex; justify-content:space-between; gap:12px; margin-top:7px; color:var(--ds-text-3); font-size:var(--ds-type-micro); }
 .battle-focus__progress-copy strong { color:var(--ds-text-1); }
 
-.battle-stage { position:relative; isolation:isolate; display:grid; grid-template-columns:112px minmax(180px,1fr) 112px; align-items:center; min-height:108px; overflow:hidden; margin-bottom:12px; border:1px solid rgba(56,189,248,.2); border-radius:var(--ds-radius-lg); background:#070c1c; }
+.battle-stage { position:relative; isolation:isolate; display:grid; grid-template-columns:142px minmax(180px,1fr) 142px; align-items:center; min-height:150px; overflow:hidden; margin-bottom:12px; border:1px solid rgba(56,189,248,.2); border-radius:var(--ds-radius-lg); background:#070c1c; }
 .battle-duel__bg { position:absolute; z-index:-2; inset:0; background-image:linear-gradient(90deg,rgba(4,8,20,.96),rgba(8,17,36,.68),rgba(4,8,20,.96)),var(--arena-bg); background-position:center; background-size:cover; opacity:.78; }
 .battle-stage::after { position:absolute; z-index:-1; inset:0; background:radial-gradient(circle at 18% 90%,rgba(56,189,248,.15),transparent 34%),radial-gradient(circle at 82% 90%,rgba(251,113,133,.14),transparent 34%); content:""; }
 .battle-duel__fighter { position:relative; align-self:stretch; overflow:hidden; }
 .battle-duel__fighter>span { position:absolute; z-index:2; right:7px; bottom:7px; left:7px; overflow:hidden; padding:5px 7px; border-radius:8px; background:rgba(3,7,17,.8); font-size:var(--ds-type-micro); font-weight:800; text-align:center; text-overflow:ellipsis; white-space:nowrap; }
 .battle-duel__image { position:absolute; width:116%; height:122%; left:-8%; bottom:-8%; object-fit:contain; object-position:center bottom; }
-.battle-duel__fighter--hero .battle-duel__image { width:120%; height:132%; left:-10%; bottom:2%; object-position:center 88%; }
+.battle-duel__fighter--hero .battle-duel__image { bottom:-6px; height:150px; left:50%; max-width:none; object-position:center bottom; transform:translateX(-50%); width:150px; }
 .battle-duel__fighter--enemy .battle-duel__image { width:110%; height:120%; left:-5%; bottom:-4%; }
 .battle-duel__center { display:flex; justify-content:center; align-items:center; gap:12px; }
 .battle-duel__center>span,.battle-duel__center>strong { display:inline-flex; align-items:center; gap:6px; font-size:var(--ds-type-label); font-weight:750; }
@@ -2003,7 +2003,8 @@ body.has-open-modal { overflow:hidden; }
   .battle-header { gap:10px; padding:12px; }
   .battle-header__identity h1 { max-width:calc(100vw - 150px); font-size:19px; }
   .battle-session-state { display:none; }
-  .battle-stage { grid-template-columns:72px minmax(120px,1fr) 72px; min-height:88px; }
+  .battle-stage { grid-template-columns:86px minmax(120px,1fr) 86px; min-height:112px; }
+  .battle-duel__fighter--hero .battle-duel__image { bottom:-5px; height:112px; width:112px; }
   .battle-duel__fighter>span { display:none; }
   .battle-duel__center { flex-direction:column; gap:2px; }
   .battle-duel__center>span,.battle-duel__center>strong { font-size:var(--ds-type-micro); }
