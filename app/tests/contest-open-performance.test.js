@@ -31,8 +31,10 @@ test('usuario com base local recebe a primeira tela antes da sincronizacao remot
   assert.match(app, /const syncInBackground = isCloudEnabled\(\) && Boolean\(localPlayer\)/);
   assert.match(app, /scheduleContestMaintenance\([\s\S]*syncInBackground/);
   assert.match(app, /requestIdleCallback/);
-  assert.match(app, /interactiveScreens = new Set\(\['battle', 'review', 'rankedEvent'\]\)/);
-  assert.match(app, /if \(!isCurrent\(\) \|\| isInteractive\(\)\) return/);
+  assert.match(app, /INTERACTIVE_SCREENS = new Set\(\['battle', 'review', 'rankedEvent'\]\)/);
+  assert.match(app, /createDeferredSyncTask\(\{/);
+  assert.match(app, /shouldDefer: isInteractiveScreen/);
+  assert.match(app, /resumeDeferredCloudWork\(\)/);
 });
 
 test('dispositivo novo continua bloqueando no pull para restaurar a nuvem antes do seed', async () => {

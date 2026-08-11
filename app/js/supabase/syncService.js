@@ -12,6 +12,59 @@ import { getActiveContestId } from '../contest/activeContest.js';
 let lastSyncAt = null;
 const activeSyncs = new Map();
 
+/**
+ * Agenda uma tarefa remota que pode ser adiada enquanto uma tela interativa
+ * estiver ativa. A retomada e deliberadamente orientada por eventos: quem
+ * controla a navegacao chama request() novamente quando o contexto fica seguro.
+ */
+export function createDeferredSyncTask({ schedule, isCurrent, shouldDefer, run, onError = () => {} }) {
+  let pending = true;
+  let scheduled = false;
+  let running = false;
+
+  const request = () => {
+    if (!pending || scheduled || running) return false;
+    if (!isCurrent()) {
+      pending = false;
+      return false;
+    }
+    if (shouldDefer()) return false;
+
+    scheduled = true;
+    schedule(async () => {
+      scheduled = false;
+      if (!pending) return;
+      if (!isCurrent()) {
+        pending = false;
+        return;
+      }
+      if (shouldDefer()) return;
+
+      running = true;
+      try {
+        const completed = await run();
+        if (!isCurrent() || completed !== false) pending = false;
+      } catch (error) {
+        pending = false;
+        onError(error);
+      } finally {
+        running = false;
+      }
+    });
+    return true;
+  };
+
+  return {
+    request,
+    cancel() {
+      pending = false;
+    },
+    isPending: () => pending,
+    isScheduled: () => scheduled,
+    isRunning: () => running,
+  };
+}
+
 export function getLastSyncAt() {
   return lastSyncAt;
 }
@@ -63,13 +116,66 @@ export async function pushAllLocalProgress(userId, contestId) {
   return { pushed: total, at: lastSyncAt };
 }
 
-export function bindOnlineFlush() {
-  if (typeof window === 'undefined') return () => {};
-  const handler = () => {
-    const userId = getActiveUserId();
-    const contestId = getActiveContestId();
-    if (userId && contestId) flushOutbox({ userId, contestId }).catch(() => {});
+export function bindOnlineFlush({
+  canFlush = () => true,
+  getScope = () => ({ userId: getActiveUserId(), contestId: getActiveContestId() }),
+  flush = flushOutbox,
+  windowRef = typeof window === 'undefined' ? null : window,
+} = {}) {
+  let pendingScope = null;
+  const activeFlushes = new Map();
+
+  const scopeKey = (scope) => `${scope?.userId || ''}\u0000${scope?.contestId || ''}`;
+  const validScope = (scope) => Boolean(scope?.userId && scope?.contestId);
+  const runFlush = (scope) => {
+    const key = scopeKey(scope);
+    if (activeFlushes.has(key)) return activeFlushes.get(key);
+    const promise = Promise.resolve().then(() => flush(scope)).finally(() => {
+      if (activeFlushes.get(key) === promise) activeFlushes.delete(key);
+    });
+    activeFlushes.set(key, promise);
+    return promise;
   };
-  window.addEventListener('online', handler);
-  return () => window.removeEventListener('online', handler);
+
+  const requestFlush = () => {
+    const scope = getScope();
+    if (!validScope(scope)) {
+      pendingScope = null;
+      return Promise.resolve({ skipped: true });
+    }
+    if (!canFlush()) {
+      pendingScope = { ...scope };
+      return Promise.resolve({ deferred: true });
+    }
+    pendingScope = null;
+    return runFlush(scope);
+  };
+
+  const flushWhenSafe = () => {
+    if (!pendingScope) return Promise.resolve({ skipped: true });
+    const currentScope = getScope();
+    if (!validScope(currentScope) || scopeKey(currentScope) !== scopeKey(pendingScope)) {
+      pendingScope = null;
+      return Promise.resolve({ skipped: true, stale: true });
+    }
+    if (!canFlush()) return Promise.resolve({ deferred: true });
+    const scope = pendingScope;
+    pendingScope = null;
+    return runFlush(scope);
+  };
+
+  const handler = () => requestFlush().catch(() => {});
+  windowRef?.addEventListener('online', handler);
+
+  return {
+    flushWhenSafe,
+    cancelPending() {
+      pendingScope = null;
+    },
+    isPending: () => Boolean(pendingScope),
+    dispose() {
+      pendingScope = null;
+      windowRef?.removeEventListener('online', handler);
+    },
+  };
 }

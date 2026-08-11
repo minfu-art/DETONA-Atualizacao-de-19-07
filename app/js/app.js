@@ -30,7 +30,12 @@ import { clearActiveContestContent, setActiveContestContent } from './contest/co
 import { errorState, skeleton } from './ui/components.js';
 import { isBottomNavigationVisible } from './ui/navigation.js?v=73';
 import { isCloudEnabled } from './config/cloudConfig.js';
-import { bindOnlineFlush, pushAllLocalProgress, syncOnContestOpen } from './supabase/syncService.js';
+import {
+  bindOnlineFlush,
+  createDeferredSyncTask,
+  pushAllLocalProgress,
+  syncOnContestOpen,
+} from './supabase/syncService.js';
 import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
@@ -83,6 +88,17 @@ const ctx = {
 
 let shellInitialized = false;
 let contestOpenGeneration = 0;
+const INTERACTIVE_SCREENS = new Set(['battle', 'review', 'rankedEvent']);
+let pendingContestMaintenance = null;
+let onlineFlushBinding = null;
+
+const isInteractiveScreen = () => INTERACTIVE_SCREENS.has(ctx.screen);
+
+function resumeDeferredCloudWork() {
+  if (isInteractiveScreen()) return;
+  pendingContestMaintenance?.request();
+  onlineFlushBinding?.flushWhenSafe().catch(() => {});
+}
 
 const ROUTES = {
   library: renderLibrary,
@@ -280,6 +296,7 @@ async function navigate(screen) {
   }
   if (screen === 'library') {
     await showLibrary();
+    resumeDeferredCloudWork();
     return;
   }
   if (!getActiveContestId()) {
@@ -327,6 +344,7 @@ async function navigate(screen) {
     });
   }
   checkHabitReminders();
+  resumeDeferredCloudWork();
 }
 
 async function openPreferredJourney(screen) {
@@ -457,38 +475,70 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
 }
 
 function scheduleContestMaintenance({ userId, contestId, generation, syncInBackground }) {
-  const interactiveScreens = new Set(['battle', 'review', 'rankedEvent']);
   const schedule = globalThis.requestIdleCallback
     ? (callback) => globalThis.requestIdleCallback(callback, { timeout: 2000 })
     : (callback) => globalThis.setTimeout(callback, 100);
+  const isCurrent = () => generation === contestOpenGeneration
+    && userId === authService.getCurrentUser()?.id
+    && contestId === getActiveContestId();
+  const isSafe = () => isCurrent() && !isInteractiveScreen();
+  const steps = {
+    sync: !syncInBackground,
+    ssot: !syncInBackground,
+    shell: !syncInBackground,
+    readLastPush: false,
+    push: false,
+    writeLastPush: false,
+  };
+  let shouldPush = false;
+  let pushResult = null;
 
-  schedule(async () => {
-    const isCurrent = () => generation === contestOpenGeneration
-      && userId === authService.getCurrentUser()?.id
-      && contestId === getActiveContestId();
-    const isInteractive = () => interactiveScreens.has(ctx.screen);
-    if (!isCurrent()) return;
-    try {
-      if (syncInBackground) {
+  pendingContestMaintenance?.cancel();
+  pendingContestMaintenance = createDeferredSyncTask({
+    schedule,
+    isCurrent,
+    shouldDefer: isInteractiveScreen,
+    run: async () => {
+      if (!isSafe()) return false;
+      if (!steps.sync) {
         await syncOnContestOpen(userId, contestId);
-        if (!isCurrent() || isInteractive()) return;
+        steps.sync = true;
+        if (!isSafe()) return false;
+      }
+      if (!steps.ssot) {
         await recalculateEditalSSOT();
-        if (!isCurrent() || isInteractive()) return;
-        updateAppShell({ screen: ctx.screen, player: await getPlayer(), contest: ctx.contest, user: ctx.user });
+        steps.ssot = true;
+        if (!isSafe()) return false;
       }
-
-      if (!isCurrent() || isInteractive()) return;
-      const last = await progressRepository.getMeta('cloud_last_push_at');
-      if (!last && isCurrent()) {
-        const result = await pushAllLocalProgress(userId, contestId);
-        if (result?.pushed > 0 && isCurrent()) {
-          await progressRepository.setMeta('cloud_last_push_at', result.at || new Date().toISOString());
-        }
+      if (!steps.shell) {
+        const player = await getPlayer();
+        if (!isSafe()) return false;
+        updateAppShell({ screen: ctx.screen, player, contest: ctx.contest, user: ctx.user });
+        steps.shell = true;
       }
-    } catch (error) {
+      if (!steps.readLastPush) {
+        const last = await progressRepository.getMeta('cloud_last_push_at');
+        steps.readLastPush = true;
+        shouldPush = !last;
+        if (!isSafe()) return false;
+      }
+      if (!shouldPush) return true;
+      if (!steps.push) {
+        pushResult = await pushAllLocalProgress(userId, contestId);
+        steps.push = true;
+        if (!isSafe()) return false;
+      }
+      if (!steps.writeLastPush && pushResult?.pushed > 0) {
+        await progressRepository.setMeta('cloud_last_push_at', pushResult.at || new Date().toISOString());
+        steps.writeLastPush = true;
+      }
+      return true;
+    },
+    onError: (error) => {
       if (isCurrent()) console.warn('[cloud] background contest maintenance failed', error?.message || error);
-    }
+    },
   });
+  pendingContestMaintenance.request();
 }
 
 async function openContest(contestId, { initialScreen = null, contestHint = null } = {}) {
@@ -571,6 +621,9 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
 
 async function logout() {
   contestOpenGeneration += 1;
+  pendingContestMaintenance?.cancel();
+  pendingContestMaintenance = null;
+  onlineFlushBinding?.cancelPending();
   resetHabitReminderRuntime();
   await authService.logout();
   clearActiveContestId();
@@ -661,7 +714,7 @@ async function init() {
       console.warn('PWA install init failed', e);
     }
 
-    bindOnlineFlush();
+    onlineFlushBinding = bindOnlineFlush({ canFlush: () => !isInteractiveScreen() });
 
     if (authService.isPasswordRecoveryLocation()) {
       showAuth();
