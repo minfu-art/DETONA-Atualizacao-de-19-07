@@ -48,6 +48,17 @@ export async function renderBattle(root, navigate, ctx) {
     alt: 'Avatar atual do jogador na batalha',
   });
   let locked = false;
+
+  function revealReadingTarget(target, block = 'start') {
+    if (!target) return;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'auto', block, inline: 'nearest' });
+        target.focus({ preventScroll: true });
+      });
+    });
+  }
+
   ctx.requestBattleExit = (targetScreen) => {
     const modal = openModal(
       'Encerrar esta sessão?',
@@ -208,7 +219,7 @@ export async function renderBattle(root, navigate, ctx) {
       if (selectedButton) onAnswer(selectedButton);
     });
     $('#battle-exit', root)?.addEventListener('click', () => navigate(ctx.returnToTree ? 'topicTree' : 'map'));
-    requestAnimationFrame(() => $('#battle-statement', root)?.focus({ preventScroll: true }));
+    revealReadingTarget($('#battle-statement', root));
   }
 
   function renderAnswers(q) {
@@ -330,7 +341,7 @@ export async function renderBattle(root, navigate, ctx) {
     const next = $('#btn-next', root);
     next.classList.remove('hidden');
     next.innerHTML = result.isLast ? `Ver resultado ${icon('chart', 'ico--sm')}` : `Próxima questão ${icon('bolt', 'ico--sm')}`;
-    fb.focus({ preventScroll: true });
+    revealReadingTarget(fb);
     next.onclick = async () => {
       SFX.click();
       locked = false;

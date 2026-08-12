@@ -18,8 +18,6 @@ import {
   studySessionErrorMessage,
 } from './studyPresentation.js';
 
-const STARS_TO_UNLOCK_NEXT = 1;
-
 function topicProgress(subtopics = []) {
   return Math.max(0, Math.min(100, Math.round(averageSubtopicMastery(subtopics) * 100) / 100));
 }
@@ -53,9 +51,10 @@ export async function renderTopicTree(root, navigate, ctx) {
   const topics = buildDisciplineTopics(discipline, subs, curriculum);
   const availabilityBySubtopic = buildQuestionAvailabilityBySubtopic({ questions, subtopics: subs });
   const nodeById = new Map();
-  subs.forEach((subtopic, index) => {
-    const previous = index > 0 ? subs[index - 1] : null;
-    const unlocked = index === 0 || effectiveStars(previous) >= STARS_TO_UNLOCK_NEXT;
+  subs.forEach((subtopic) => {
+    // O edital pode ser estudado em qualquer ordem. A disponibilidade real de
+    // questoes continua sendo validada antes de criar a sessao.
+    const unlocked = true;
     const availability = availabilityBySubtopic[subtopic.id] || {
       eligibleIds: [], total: 0, answeredEligibleIds: [], answeredTotal: 0, unseenEligibleIds: [], unseenTotal: 0,
     };
@@ -221,7 +220,7 @@ export async function renderTopicTree(root, navigate, ctx) {
     $('#study-unavailable-close')?.addEventListener('click', closeModal);
     $('#study-unavailable-other')?.addEventListener('click', () => {
       const target = [...nodeById.values()].find((candidate) => (
-        candidate.unlocked && candidate.availability.total >= MIN_QUESTIONS_BATTLE
+        candidate.availability.total >= MIN_QUESTIONS_BATTLE
       ));
       closeModal();
       if (!target) return;
@@ -235,7 +234,7 @@ export async function renderTopicTree(root, navigate, ctx) {
 
   function openPreparation(sid) {
     const node = nodeById.get(String(sid));
-    if (!node || !node.unlocked) return;
+    if (!node) return;
     ctx.studySubtopicId = sid;
     ctx.studyTopicId = topics.find((topic) => topic.subtopics.some((item) => item.id === sid))?.id || expandedTopicId;
     if (!resolveQuestionBankState(node.questionCount, MIN_QUESTIONS_BATTLE).ready) {

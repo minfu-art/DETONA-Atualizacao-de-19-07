@@ -87,8 +87,9 @@ export function openModal(title, bodyHtml, actionsHtml = '', options = {}) {
   closeModal();
   modalReturnFocus = document.activeElement;
   const variant = ['default', 'confirm', 'form', 'critical', 'alert', 'editor'].includes(options.variant) ? options.variant : 'default';
+  const compactClass = options.compact === true ? ' ds-modal-overlay--compact' : '';
   const overlay = el(`
-    <div class="modal-overlay ds-modal-overlay" id="modal-root">
+    <div class="modal-overlay ds-modal-overlay${compactClass}" id="modal-root">
       <div class="modal ro-window ds-modal ds-modal--${variant}" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
         <div class="ds-modal__header">
           <div class="ds-modal__title" id="modal-title">${escapeHtml(title)}</div>

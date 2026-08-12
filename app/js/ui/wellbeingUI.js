@@ -576,6 +576,8 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         }
         if (formError) formError.hidden = true;
         saveButton.disabled = true;
+        saveButton.setAttribute('aria-busy', 'true');
+        saveButton.textContent = 'Salvando...';
         await saveHabitConfiguration({
           selections,
           minimumPercent: Number(document.getElementById('hb-minimum-percent')?.value) || 60,
@@ -601,6 +603,8 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           habitId: error?.habitId || null,
         });
         saveButton.disabled = false;
+        saveButton.removeAttribute('aria-busy');
+        saveButton.textContent = 'Salvar hábitos';
         const messages = {
           HABIT_DUPLICATE: 'O mesmo hábito foi selecionado mais de uma vez.',
           HABIT_ACTIVE_DAYS_REQUIRED: 'Selecione pelo menos um dia da semana para cada hábito.',
@@ -654,10 +658,12 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         `}
         <label>Observação opcional<textarea id="hb-record-note" maxlength="500" rows="3"></textarea></label>
         ${definition.habitId === 'medication' ? '<p class="hb-medical-note">Este registro serve apenas como lembrete e não substitui orientação profissional.</p>' : ''}
-      </div>`, '<button type="button" class="btn btn-primary" id="hb-record-save">Salvar registro</button>');
+      </div>`, '<button type="button" class="btn btn-primary" id="hb-record-save">Salvar registro</button>', { variant: 'form', compact: true });
     document.getElementById('hb-record-save')?.addEventListener('click', async (event) => {
       const saveButton = event.currentTarget;
       saveButton.disabled = true;
+      saveButton.setAttribute('aria-busy', 'true');
+      saveButton.textContent = 'Salvando...';
       const sleep = document.getElementById('hb-record-sleep')?.value;
       const wake = document.getElementById('hb-record-wake')?.value;
       const actualTime = document.getElementById('hb-record-time')?.value;
@@ -685,6 +691,8 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         await paint();
       } catch (error) {
         saveButton.disabled = false;
+        saveButton.removeAttribute('aria-busy');
+        saveButton.textContent = 'Salvar registro';
         toast(error?.message || 'Não foi possível salvar o registro. Tente novamente.');
       }
     });
@@ -703,20 +711,32 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
       <div class="hb-record-form">
         <p>O horário original será preservado no histórico. Os outros dias não serão alterados.</p>
         <label>Novo horário<input type="time" id="hb-postpone-time" value="${escapeHtml(originalTime)}" required></label>
-      </div>`, '<button type="button" class="btn btn-primary" id="hb-postpone-save">Salvar novo horário</button>');
-    document.getElementById('hb-postpone-save')?.addEventListener('click', async () => {
+      </div>`, '<button type="button" class="btn btn-primary" id="hb-postpone-save">Salvar novo horário</button>', { variant: 'form', compact: true });
+    document.getElementById('hb-postpone-save')?.addEventListener('click', async (event) => {
       const plannedTime = document.getElementById('hb-postpone-time')?.value;
       if (!plannedTime) return toast('Informe o novo horário.');
-      await recordHabitDetails(definitionId, {
-        actualValue: card.done,
-        plannedTime,
-        originalPlannedTime: originalTime || null,
-        status: card.status === 'planned' ? 'planned' : card.status,
-        note: card.log?.note || null,
-      }, selectedDate);
-      closeModal();
-      toast('Horário alterado somente para este dia.');
-      await paint();
+      const saveButton = event.currentTarget;
+      if (saveButton.disabled) return;
+      saveButton.disabled = true;
+      saveButton.setAttribute('aria-busy', 'true');
+      saveButton.textContent = 'Salvando...';
+      try {
+        await recordHabitDetails(definitionId, {
+          actualValue: card.done,
+          plannedTime,
+          originalPlannedTime: originalTime || null,
+          status: card.status === 'planned' ? 'planned' : card.status,
+          note: card.log?.note || null,
+        }, selectedDate);
+        closeModal();
+        toast('Horário alterado somente para este dia.');
+        await paint();
+      } catch (error) {
+        saveButton.disabled = false;
+        saveButton.removeAttribute('aria-busy');
+        saveButton.textContent = 'Salvar novo horário';
+        toast(error?.message || 'Não foi possível salvar o novo horário. Tente novamente.');
+      }
     });
   }
 

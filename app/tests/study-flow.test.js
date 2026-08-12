@@ -249,6 +249,9 @@ test('interface usa botões, accordion semântico, modal explícito e retorno à
   assert.match(tree, /createSingleSessionStarter/);
   assert.match(tree, /buildQuestionAvailabilityBySubtopic/);
   assert.match(tree, /eligibleReviewItems/);
+  assert.match(tree, /const unlocked = true/);
+  assert.doesNotMatch(tree, /STARS_TO_UNLOCK_NEXT/);
+  assert.doesNotMatch(tree, /if \(!node \|\| !node\.unlocked\) return/);
   assert.match(tree, /studySessionErrorMessage\(sessionError\)/);
   assert.match(tree, /ctx\.returnToTree = discId/);
   assert.match(tree, /ctx\.studySubtopicId = sid/);

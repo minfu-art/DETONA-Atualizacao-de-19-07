@@ -151,6 +151,10 @@ test('Arena V4 contém estados acessíveis, saída segura e resultado persistido
   assert.match(source, /answerQuestion\(session/);
   assert.match(source, /finalizeBattle\(session\)/);
   assert.match(source, /getBattleResult\(session\.id\)/);
+  assert.match(source, /function revealReadingTarget\(target, block = 'start'\)/);
+  assert.match(source, /target\.scrollIntoView\(\{ behavior: 'auto', block, inline: 'nearest' \}\)/);
+  assert.match(source, /revealReadingTarget\(\$\('#battle-statement', root\)\)/);
+  assert.match(source, /revealReadingTarget\(fb\)/);
   assert.match(source, /summary\.stars/);
   assert.match(source, /summary\.xpEarned > 0/);
   assert.match(source, /summary\.newCard/);
@@ -176,6 +180,8 @@ test('CSS da Arena protege legibilidade, alvos, responsividade e movimento reduz
   assert.match(arena, /grid-template-columns:1fr/);
   assert.match(arena, /env\(safe-area-inset-bottom/);
   assert.match(arena, /@media \(prefers-reduced-motion:reduce\)/);
+  assert.match(arena, /\.battle-question__statement p \{[^}]*scroll-margin-top:112px/);
+  assert.match(arena, /\.battle-feedback-wrap \{[^}]*scroll-margin-top:112px/);
   assert.doesNotMatch(arena, /font-size:\s*(?:[0-9]|1[01])px/);
   assert.doesNotMatch(arena, /!important/);
 });

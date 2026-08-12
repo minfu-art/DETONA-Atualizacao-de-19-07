@@ -31,6 +31,19 @@ async function source(relative) {
   return readFile(path.join(rootDir, relative), 'utf8');
 }
 
+test('registros e horários usam salvamento compacto e estado local', async () => {
+  const [ui, helpers, css] = await Promise.all([
+    source('js/ui/wellbeingUI.js'),
+    source('js/ui/helpers.js'),
+    source('css/design-system.css'),
+  ]);
+  assert.ok((ui.match(/compact: true/g) || []).length >= 2);
+  assert.match(ui, /saveButton\.setAttribute\('aria-busy', 'true'\)/);
+  assert.match(ui, /saveButton\.textContent = 'Salvando\.\.\.'/);
+  assert.match(helpers, /ds-modal-overlay--compact/);
+  assert.match(css, /\.ds-modal-overlay--compact \{[^}]*align-items:flex-end/);
+});
+
 function definition(habitId, overrides = {}) {
   return createHabitDefinition({
     habitId,
