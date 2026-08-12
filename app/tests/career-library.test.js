@@ -194,18 +194,35 @@ test('seis artes WebP oficiais existem, mantêm 1672x941 e estão otimizadas', a
   }
 });
 
-test('Meus cursos permanece separado do catálogo e curso sem entitlement não recebe CTA de continuar', async () => {
+test('Meus cursos vem antes da descoberta e curso sem entitlement não recebe CTA de continuar', async () => {
   const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
+  const searchPosition = ui.indexOf('<section class="library-search-panel"');
   const areasPosition = ui.indexOf('<section class="library-areas"');
   const ownedPosition = ui.indexOf('<section class="library-section library-section--owned"');
   const catalogPosition = ui.indexOf('<section class="library-section library-section--catalog"');
-  assert.ok(areasPosition < ownedPosition);
+  assert.ok(ownedPosition < searchPosition);
+  assert.ok(ownedPosition < areasPosition);
   assert.ok(ownedPosition < catalogPosition);
   assert.equal(contestPrimaryAction(ppPe).action, 'details');
   assert.doesNotMatch(contestPrimaryAction(ppPe).label, /continuar/i);
   assert.match(ui, /MEU CURSO/);
   assert.match(ui, /INDISPONÍVEL/);
   assert.match(ui, /EM PREPARAÇÃO/);
+});
+
+test('jornada ativa tem CTA direto, contexto e bloqueio de abertura concorrente', async () => {
+  const [ui, css] = await Promise.all([
+    readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
+    readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
+  ]);
+  assert.match(ui, /class="library-primary-journey" data-open-contest/);
+  assert.match(ui, /Continuar minha jornada/);
+  assert.match(ui, /Sua jornada \$\{escapeHtml\(activeJourney\.contest\.code\)\} está pronta/);
+  assert.match(ui, /const openingContests = new Set\(\)/);
+  assert.match(ui, /if \(openingContests\.has\(contestId\)\) return/);
+  assert.match(ui, /relatedButtons\.forEach/);
+  assert.match(css, /\.student-library \.library-primary-journey/);
+  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.library-primary-journey \{ width: 100%/s);
 });
 
 test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE', async () => {

@@ -31,10 +31,11 @@ test('botao do curso informa imediatamente que a jornada esta sendo preparada', 
   const library = await source('../js/ui/library.js');
   assert.match(library, /Preparando jornada\.\.\./);
   assert.match(library, /sincronizando seu progresso/);
-  assert.match(library, /button\.textContent = originalLabel/);
+  assert.match(library, /candidate\.textContent = originalLabels\.get\(candidate\)/);
+  assert.match(library, /if \(openingContests\.has\(contestId\)\) return/);
 });
 
 test('cache do PWA muda para distribuir o reparo', async () => {
   const sw = await source('../sw.js');
-  assert.match(sw, /detona-v137-startup-performance/);
+  assert.match(sw, /detona-v138-library-journey-first/);
 });

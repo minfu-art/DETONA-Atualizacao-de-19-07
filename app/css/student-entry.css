@@ -178,7 +178,8 @@
 }
 
 .student-library .library-hero__copy,
-.student-library .library-summary { position: relative; z-index: 1; }
+.student-library .library-summary,
+.student-library .library-primary-journey { position: relative; z-index: 1; }
 .student-library .library-greeting { margin: 0 0 8px; }
 .student-library .library-hero h1 {
   max-width: 850px;
@@ -188,6 +189,31 @@
 }
 .student-library .library-hero__copy > p:last-child { max-width: 720px; margin: 0; color: #bdc9e5; font-size: clamp(15px, 1.4vw, 18px); }
 .student-library .library-summary { min-width: 176px; justify-content: center; }
+.student-library .library-primary-journey {
+  grid-column: 1 / -1;
+  display: flex;
+  width: min(520px, 100%);
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 18px;
+  border: 1px solid #ffb05f;
+  border-radius: 17px;
+  color: #170b02;
+  background: linear-gradient(135deg, #ffba58, #ff8d28);
+  box-shadow: 0 16px 34px rgb(255 137 35 / 20%);
+  cursor: pointer;
+  text-align: left;
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+}
+.student-library .library-primary-journey > span:first-child { display: grid; gap: 2px; }
+.student-library .library-primary-journey small { font-size: 12px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.student-library .library-primary-journey strong { font: 750 17px var(--display); }
+.student-library .library-primary-journey > span:last-child { font-size: 25px; }
+.student-library .library-primary-journey:hover { filter: brightness(1.07); transform: translateY(-2px); box-shadow: 0 20px 42px rgb(255 137 35 / 27%); }
+.student-library .library-primary-journey:focus-visible { outline: 3px solid #7ee7ff; outline-offset: 4px; }
+.student-library .library-primary-journey:disabled { cursor: wait; filter: saturate(.7); transform: none; }
 
 .student-library .library-search-panel {
   display: grid;
@@ -405,6 +431,7 @@
   .student-library .library-hero { grid-template-columns: 1fr; gap: 18px; padding: 28px 20px; border-radius: 22px; }
   .student-library .library-hero h1 { font-size: clamp(30px, 11vw, 44px); }
   .student-library .library-summary { width: 100%; min-width: 0; padding: 14px 18px; }
+  .student-library .library-primary-journey { width: 100%; min-height: 60px; }
   .student-library .library-search-panel { grid-template-columns: 1fr; align-items: stretch; padding: 20px 16px; border-radius: 18px; }
   .student-library .library-search-panel h2 { font-size: 22px; }
   .student-library .library-search input { min-height: 52px; font-size: 16px; }
@@ -437,6 +464,10 @@
   .student-entry-footer a { min-height: 44px; padding: 12px 0; }
   .saas-auth__panel { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
   .auth-form input { scroll-margin-bottom: 160px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-library .library-primary-journey { transition: none; }
 }
 
 @media (max-width: 360px) {
