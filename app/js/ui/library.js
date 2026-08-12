@@ -12,7 +12,7 @@ import {
 } from '../services/careerLibraryService.js';
 import {
   formatCanonicalPrice,
-  partitionLibrary,
+  partitionCommercialLibrary,
   resolveCheckoutReturn,
 } from '../services/studentEntryModel.js';
 
@@ -22,6 +22,7 @@ function statusFor(item) {
   if (item.accessVerificationRequired) return ['CONEXÃO NECESSÁRIA', 'warning'];
   if (item.owned) return ['MEU CURSO', 'success'];
   if (item.contest.salesStatus === 'available' && item.contest.contentStatus === 'ready') return ['DISPONÍVEL', 'info'];
+  if (item.contest.salesStatus === 'monitoring') return ['EM ACOMPANHAMENTO', 'info'];
   if (['suspended', 'unavailable'].includes(item.contest.salesStatus)) return ['INDISPONÍVEL', 'warning'];
   return ['EM PREPARAÇÃO', 'warning'];
 }
@@ -32,17 +33,28 @@ function contestCard(item, { active = false } = {}) {
   const subarea = getCareerSubareaLabel(area.id, contest.careerSubarea);
   const action = item.checkoutAction || { label: 'Indisponível', action: 'none', disabled: true };
   const [status, statusTone] = statusFor(item);
-  const price = !owned && !item.accessVerificationRequired ? formatCanonicalPrice(contest) : null;
+  const isDemand = !owned && ['monitoring', 'coming_soon'].includes(contest.salesStatus);
+  const price = !owned && !isDemand && !item.accessVerificationRequired ? formatCanonicalPrice(contest) : null;
   const cover = contest.coverAsset
     ? `<img src="${escapeHtml(contest.coverAsset)}" alt="" loading="lazy" decoding="async">`
     : `<span class="contest-card__emblem" aria-hidden="true">${escapeHtml(contest.icon)}</span>`;
-  const actionAttribute = action.action === 'open'
+  const actionAttribute = isDemand
+    ? `data-interest-contest="${escapeHtml(contest.id)}" data-interested="${contest.interested === true}" aria-pressed="${contest.interested === true}"`
+    : action.action === 'open'
     ? `data-open-contest="${escapeHtml(contest.id)}"`
     : action.action === 'purchase'
       ? `data-purchase-contest="${escapeHtml(contest.id)}"`
       : action.action === 'details'
         ? `data-view-details="${escapeHtml(contest.id)}"`
         : '';
+  const actionLabel = isDemand
+    ? contest.interested === true
+      ? '✓ Interesse registrado'
+      : contest.salesStatus === 'monitoring' ? 'Tenho interesse' : 'Quero ser avisado'
+    : action.label;
+  const interestText = Number(contest.interestCount || 0) > 0
+    ? `${Number(contest.interestCount)} candidatos demonstraram interesse`
+    : 'Seja um dos primeiros interessados';
   return `
     <article class="contest-card ${owned ? 'contest-card--owned' : 'contest-card--offer'} ${active ? 'contest-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" style="--contest:${escapeHtml(contest.color)};--contest-accent:${escapeHtml(contest.accent)}">
       <div class="contest-card__visual">
@@ -59,14 +71,18 @@ function contestCard(item, { active = false } = {}) {
           <div><dt>Subtópicos</dt><dd>${Number(contest.subtopicCount || 0)}</dd></div>
           <div><dt>Questões</dt><dd>${Number(contest.questionCount || 0)}</dd></div>
         </dl>
+        ${contest.examBoard ? `<p class="contest-card__fact"><strong>Banca:</strong> ${escapeHtml(contest.examBoard)}</p>` : ''}
+        ${contest.examDate ? `<p class="contest-card__fact"><strong>Prova:</strong> ${escapeHtml(formatDate(contest.examDate))}</p>` : ''}
+        ${isDemand ? `<div class="contest-card__interest"><strong data-interest-count>${escapeHtml(interestText)}</strong>${contest.interestGoal ? `<span data-interest-goal="${Number(contest.interestGoal)}">${Number(contest.interestCount || 0)} / ${Number(contest.interestGoal)} interessados</span>` : ''}</div>` : ''}
         ${owned && !item.accessVerificationRequired ? `<div class="contest-card__progress">${progressBar({ value: summary?.editalCompletionPct || 0, label: 'Progresso do edital', tone: 'plasma' })}<span class="contest-card__last">${summary?.lastAccessAt ? `Última atividade em ${formatDate(summary.lastAccessAt)}` : 'Sua jornada está pronta para começar.'}</span></div>` : ''}
-        ${!owned ? `<div class="contest-card__commerce-detail" data-commerce-detail>
+        ${!owned && !isDemand ? `<div class="contest-card__commerce-detail" data-commerce-detail>
           <strong>Como funciona o acesso</strong>
           <p>A compra é confirmada pelo servidor. Depois da confirmação, o curso aparece em Meus cursos sem alterar seu progresso em outras jornadas.</p>
         </div>` : ''}
+        ${isDemand ? '<p class="contest-card__interest-note">Seu interesse indica demanda por este curso. Nenhuma comunicação externa é enviada nesta fase.</p>' : ''}
         <div class="contest-card__footer">
           ${price ? `<div class="contest-card__price"><small>Investimento</small><strong>${escapeHtml(price)}</strong></div>` : '<span></span>'}
-          <button type="button" class="btn ${action.action === 'open' || action.action === 'purchase' ? 'btn-primary' : 'btn-ghost'}" ${actionAttribute} ${action.action === 'details' ? 'aria-expanded="false"' : ''} ${action.disabled ? 'disabled' : ''}>${escapeHtml(action.label)}</button>
+          <button type="button" class="btn ${isDemand || action.action === 'open' || action.action === 'purchase' ? 'btn-primary' : 'btn-ghost'}" ${actionAttribute} ${action.action === 'details' ? 'aria-expanded="false"' : ''} ${item.accessVerificationRequired || (!isDemand && action.disabled) ? 'disabled' : ''}>${escapeHtml(actionLabel)}</button>
         </div>
         <p class="contest-card__feedback" data-card-feedback role="status" aria-live="polite"></p>
       </div>
@@ -76,7 +92,7 @@ function contestCard(item, { active = false } = {}) {
 function areaDiscoveryCard(areaId, amount) {
   const area = CAREER_AREAS[areaId];
   return `
-    <button class="library-area-card" type="button" data-career-filter="${areaId}" aria-pressed="false" aria-controls="library-area-results">
+    <button class="library-area-card" type="button" data-career-filter="${areaId}" aria-pressed="false" aria-controls="library-available-results library-upcoming-results">
       <img src="${area.art}" alt="" width="1672" height="941" loading="lazy" decoding="async" data-area-art>
       <span class="library-area-card__shade" aria-hidden="true"></span>
       <span class="library-area-card__selection" aria-hidden="true">✓</span>
@@ -122,11 +138,13 @@ export function renderLibrary(root, {
   links = {},
   onOpen,
   onPurchase = async () => {},
+  onInterest = async () => {},
   onRefreshAccess = async () => {},
   onLogout,
   embedded = false,
 }) {
-  const { owned, offers } = partitionLibrary(items);
+  const { owned, available, upcoming } = partitionCommercialLibrary(items);
+  const offers = [...available, ...upcoming];
   const activeJourney = selectActiveJourney(owned, activeContestId);
   const ownedOrdered = activeJourney
     ? [activeJourney, ...owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)]
@@ -152,7 +170,7 @@ export function renderLibrary(root, {
         <label class="library-search"><span>Pesquisar no catálogo</span><input id="library-search" type="search" autocomplete="off" placeholder="Pesquisar concurso, órgão, cargo ou banca"></label>
       </section>
       <section class="library-areas" aria-labelledby="library-areas-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Navegação visual</span><h2 id="library-areas-title">Explore por área</h2></div><button class="library-area-reset active" type="button" data-career-filter="all" aria-pressed="true" aria-controls="library-area-results">Todos os concursos</button></div>
+        <div class="library-section__title"><div><span class="saas-kicker">Navegação visual</span><h2 id="library-areas-title">Explore por área</h2></div><button class="library-area-reset active" type="button" data-career-filter="all" aria-pressed="true" aria-controls="library-available-results library-upcoming-results">Todos os concursos</button></div>
         <div class="library-area-grid">
           ${CAREER_AREA_ORDER.map((areaId) => areaDiscoveryCard(areaId, areaCounts[areaId])).join('')}
         </div>
@@ -164,8 +182,12 @@ export function renderLibrary(root, {
           : emptyState({ title: 'Sua biblioteca está pronta', description: 'Você ainda não possui um curso. Explore o catálogo oficial abaixo para conhecer as jornadas disponíveis.' })}
       </section>
       <section class="library-section library-section--catalog" aria-labelledby="catalog-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Catálogo oficial</span><h2 id="catalog-title" data-catalog-heading>Concursos disponíveis</h2></div><p data-catalog-count>${plural(offers.length, 'curso encontrado', 'cursos encontrados')}</p></div>
-        <div id="library-area-results" aria-live="polite"></div>
+        <div class="library-section__title"><div><span class="saas-kicker">Catálogo oficial</span><h2 id="catalog-title">Cursos disponíveis</h2></div><p data-available-count>${plural(available.length, 'curso encontrado', 'cursos encontrados')}</p></div>
+        <div id="library-available-results" aria-live="polite"></div>
+      </section>
+      <section class="library-section library-section--upcoming" aria-labelledby="upcoming-title">
+        <div class="library-section__title"><div><span class="saas-kicker">Descubra o que vem a seguir</span><h2 id="upcoming-title">Próximos concursos</h2></div><p data-upcoming-count>${plural(upcoming.length, 'concurso acompanhado', 'concursos acompanhados')}</p></div>
+        <div id="library-upcoming-results" aria-live="polite"></div>
       </section>
       <footer class="student-entry-footer"><span>Precisa de ajuda para entrar ou recuperar seu acesso?</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
     </div>`;
@@ -201,6 +223,34 @@ export function renderLibrary(root, {
         button.setAttribute('aria-busy', 'false');
       }
     }));
+    scope.querySelectorAll('[data-interest-contest]').forEach((button) => button.addEventListener('click', async () => {
+      const current = button.dataset.interested === 'true';
+      const card = button.closest('[data-contest-card]');
+      const feedback = card?.querySelector('[data-card-feedback]');
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      try {
+        const result = await onInterest(button.dataset.interestContest, !current);
+        button.dataset.interested = String(result.interested);
+        button.setAttribute('aria-pressed', String(result.interested));
+        button.textContent = result.interested
+          ? '✓ Interesse registrado'
+          : card?.querySelector('.ds-badge')?.textContent?.includes('ACOMPANHAMENTO')
+            ? 'Tenho interesse' : 'Quero ser avisado';
+        const count = card?.querySelector('[data-interest-count]');
+        if (count) count.textContent = result.interestCount > 0
+          ? `${result.interestCount} candidatos demonstraram interesse`
+          : 'Seja um dos primeiros interessados';
+        const goal = card?.querySelector('[data-interest-goal]');
+        if (goal) goal.textContent = `${result.interestCount} / ${goal.dataset.interestGoal} interessados`;
+        if (feedback) feedback.textContent = result.interested ? 'Interesse registrado.' : 'Interesse removido.';
+      } catch (error) {
+        if (feedback) feedback.textContent = error?.message || 'Não foi possível atualizar seu interesse.';
+      } finally {
+        button.disabled = false;
+        button.setAttribute('aria-busy', 'false');
+      }
+    }));
     scope.querySelectorAll('[data-view-details]').forEach((button) => button.addEventListener('click', () => {
       const card = button.closest('[data-contest-card]');
       card.classList.toggle('contest-card--details');
@@ -210,10 +260,11 @@ export function renderLibrary(root, {
     }));
   };
 
-  const results = root.querySelector('#library-area-results');
+  const availableResults = root.querySelector('#library-available-results');
+  const upcomingResults = root.querySelector('#library-upcoming-results');
   const searchInput = root.querySelector('#library-search');
-  const catalogHeading = root.querySelector('[data-catalog-heading]');
-  const catalogCount = root.querySelector('[data-catalog-count]');
+  const availableCount = root.querySelector('[data-available-count]');
+  const upcomingCount = root.querySelector('[data-upcoming-count]');
 
   const syncAreaSelection = () => {
     root.querySelectorAll('[data-career-filter]').forEach((candidate) => {
@@ -237,14 +288,17 @@ export function renderLibrary(root, {
   };
 
   const updateResults = () => {
-    const filtered = filterLibraryItems(offers, state);
-    const selectedArea = state.area === 'all' ? null : CAREER_AREAS[state.area];
-    catalogHeading.textContent = selectedArea ? `CONCURSOS — ${selectedArea.name.toLocaleUpperCase('pt-BR')}` : 'CONCURSOS DISPONÍVEIS';
-    catalogCount.textContent = plural(filtered.length, 'curso encontrado', 'cursos encontrados');
-    results.innerHTML = renderCatalogResults(offers, state.area, state.search);
-    bindCards(results);
-    results.querySelector('[data-clear-search]')?.addEventListener('click', clearSearch);
-    results.querySelector('[data-clear-area]')?.addEventListener('click', clearArea);
+    const filteredAvailable = filterLibraryItems(available, state);
+    const filteredUpcoming = filterLibraryItems(upcoming, state);
+    availableCount.textContent = plural(filteredAvailable.length, 'curso encontrado', 'cursos encontrados');
+    upcomingCount.textContent = plural(filteredUpcoming.length, 'concurso acompanhado', 'concursos acompanhados');
+    availableResults.innerHTML = renderCatalogResults(available, state.area, state.search);
+    upcomingResults.innerHTML = renderCatalogResults(upcoming, state.area, state.search);
+    [availableResults, upcomingResults].forEach((results) => {
+      bindCards(results);
+      results.querySelector('[data-clear-search]')?.addEventListener('click', clearSearch);
+      results.querySelector('[data-clear-area]')?.addEventListener('click', clearArea);
+    });
   };
 
   root.querySelector('#library-logout')?.addEventListener('click', onLogout);

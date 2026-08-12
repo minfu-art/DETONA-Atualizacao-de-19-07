@@ -1,6 +1,6 @@
 import { assertExactKeys, assertPlainObject, safeId } from '../_shared/adminValidation.js';
 
-export const STUDENT_CONTENT_ACTIONS = Object.freeze(['list_catalog', 'get_published_package']);
+export const STUDENT_CONTENT_ACTIONS = Object.freeze(['list_catalog', 'set_interest', 'get_published_package']);
 
 export function validateStudentContentRequest(input) {
   const body = assertPlainObject(input);
@@ -9,11 +9,16 @@ export function validateStudentContentRequest(input) {
     assertExactKeys(body, ['action']);
     return { action: body.action };
   }
+  if (body.action === 'set_interest') {
+    assertExactKeys(body, ['action', 'contestId', 'interested'], ['contestId', 'interested']);
+    if (typeof body.interested !== 'boolean') throw new Error('interested_invalid');
+    return { action: body.action, contestId: safeId(body.contestId, 'contest_id'), interested: body.interested };
+  }
   assertExactKeys(body, ['action', 'contestId'], ['contestId']);
   return { action: body.action, contestId: safeId(body.contestId, 'contest_id') };
 }
 
-export function normalizeCatalogContest(contest) {
+export function normalizeCatalogContest(contest, { interestCount = 0, interested = false } = {}) {
   return {
     id: contest.id,
     code: contest.code,
@@ -25,7 +30,7 @@ export function normalizeCatalogContest(contest) {
     icon: contest.icon,
     priceCents: Number(contest.price_cents || 0),
     currency: contest.currency,
-    contentStatus: contest.content_status === 'ready' ? 'ready' : 'preparing',
+    contentStatus: ['draft', 'preparing', 'ready'].includes(contest.content_status) ? contest.content_status : 'preparing',
     salesStatus: contest.sales_status,
     examDate: contest.exam_date,
     coverAsset: contest.cover_asset,
@@ -34,5 +39,9 @@ export function normalizeCatalogContest(contest) {
     careerSubarea: contest.career_subarea || null,
     subtopicCount: Number(contest.subtopic_count || 0),
     questionCount: Number(contest.question_count || 0),
+    interestCount: Math.max(0, Number(interestCount) || 0),
+    interested: interested === true,
+    interestGoal: Number.isInteger(Number(contest.interest_goal)) && Number(contest.interest_goal) > 0
+      ? Number(contest.interest_goal) : null,
   };
 }

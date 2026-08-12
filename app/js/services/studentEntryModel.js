@@ -7,6 +7,15 @@ export function partitionLibrary(items = []) {
   };
 }
 
+export function partitionCommercialLibrary(items = []) {
+  const { owned, offers } = partitionLibrary(items);
+  return {
+    owned,
+    available: offers.filter(({ contest }) => contest?.salesStatus === 'available'),
+    upcoming: offers.filter(({ contest }) => ['monitoring', 'coming_soon'].includes(contest?.salesStatus)),
+  };
+}
+
 export function formatCanonicalPrice(contest) {
   const amount = Number(contest?.priceCents);
   const currency = String(contest?.currency || 'BRL');
@@ -96,10 +105,17 @@ export function sanitizeLibrarySnapshot(items = []) {
       salesStatus: contest.salesStatus,
       coverAsset: contest.coverAsset,
       organization: contest.organization,
+      examBoard: contest.examBoard,
+      examDate: contest.examDate,
+      priceCents: contest.priceCents,
+      currency: contest.currency,
       careerArea: contest.careerArea,
       careerSubarea: contest.careerSubarea,
       subtopicCount: contest.subtopicCount,
       questionCount: contest.questionCount,
+      interestCount: contest.interestCount,
+      interested: contest.interested === true,
+      interestGoal: contest.interestGoal ?? null,
     },
     owned: Boolean(owned),
   }));

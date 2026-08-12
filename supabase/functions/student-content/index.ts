@@ -25,11 +25,19 @@ Deno.serve(async (request) => {
     if (authError || !auth.user) return respond(401, { error: 'invalid_session' }, origin);
     const body = validateStudentContentRequest(await request.json());
     if (body.action === 'list_catalog') {
-      const { data, error } = await admin.from('admin_contests').select('*')
-        .neq('content_status', 'archived')
-        .in('sales_status', ['available', 'coming_soon'])
-        .order('created_at');
+      const [{ data, error }, countsResult, ownResult] = await Promise.all([
+        admin.from('admin_contests').select('*')
+          .neq('content_status', 'archived')
+          .in('sales_status', ['available', 'coming_soon', 'monitoring'])
+          .order('created_at'),
+        admin.from('contest_interest_counts').select('contest_id,interest_count'),
+        admin.from('contest_interests').select('contest_id').eq('user_id', auth.user.id),
+      ]);
       if (error) throw error;
+      if (countsResult.error) throw countsResult.error;
+      if (ownResult.error) throw ownResult.error;
+      const countByContest = new Map((countsResult.data || []).map((row: { contest_id: string; interest_count: number }) => [row.contest_id, Number(row.interest_count) || 0]));
+      const interestedIds = new Set((ownResult.data || []).map((row: { contest_id: string }) => row.contest_id));
       const contests = await Promise.all((data || []).map(async (contest: { id: string }) => {
         const [subtopics, questions] = await Promise.all([
           admin.from('admin_curriculum_nodes').select('id', { count: 'exact', head: true })
@@ -44,9 +52,31 @@ Deno.serve(async (request) => {
           ...contest,
           subtopic_count: subtopics.count || 0,
           question_count: questions.data?.item_count || 0,
-        });
+        }, { interestCount: countByContest.get(contest.id) || 0, interested: interestedIds.has(contest.id) });
       }));
       return respond(200, { contests }, origin);
+    }
+    if (body.action === 'set_interest') {
+      const { data: contest, error: contestError } = await admin.from('admin_contests')
+        .select('id,content_status,sales_status').eq('id', body.contestId).maybeSingle();
+      if (contestError) throw contestError;
+      if (!contest || contest.content_status === 'archived') return respond(404, { error: 'contest_not_found' }, origin);
+      if (body.interested && !['monitoring', 'coming_soon'].includes(contest.sales_status)) {
+        return respond(409, { error: 'interest_not_available' }, origin);
+      }
+      const mutation = body.interested
+        ? admin.from('contest_interests').upsert({ user_id: auth.user.id, contest_id: body.contestId }, { onConflict: 'user_id,contest_id', ignoreDuplicates: true })
+        : admin.from('contest_interests').delete().eq('user_id', auth.user.id).eq('contest_id', body.contestId);
+      const { error: mutationError } = await mutation;
+      if (mutationError) throw mutationError;
+      const { data: countRow, error: countError } = await admin.from('contest_interest_counts')
+        .select('interest_count').eq('contest_id', body.contestId).maybeSingle();
+      if (countError) throw countError;
+      return respond(200, {
+        contestId: body.contestId,
+        interested: body.interested,
+        interestCount: Number(countRow?.interest_count || 0),
+      }, origin);
     }
     const { data: entitlement } = await admin.from('contest_entitlements').select('status')
       .eq('user_id', auth.user.id).eq('contest_id', body.contestId).eq('status', 'active').maybeSingle();

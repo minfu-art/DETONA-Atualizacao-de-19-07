@@ -540,6 +540,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
         }
         await showLibrary({ refresh: true });
       },
+      onInterest: (contestId, interested) => libraryService.setInterest(contestId, interested, { offline: state.offline }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
       onLogout: logout,
       embedded: true,

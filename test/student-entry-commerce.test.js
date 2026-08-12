@@ -133,7 +133,7 @@ test('contratos visuais e administrativos da entrada permanecem explícitos', as
   assert.match(auth, /autocomplete: 'new-password'/);
   assert.match(auth, /Se existir uma conta/);
   assert.match(library, /Meus cursos/);
-  assert.match(library, /Concursos disponíveis/);
+  assert.match(library, /Cursos disponíveis/);
   assert.match(model, /Estamos confirmando seu acesso/);
   assert.match(admin, /Arte temática do concurso \(legado\)/);
   assert.match(admin, /tiers-v2/);

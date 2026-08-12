@@ -31,6 +31,11 @@
   border-color: color-mix(in srgb, var(--entry-indigo) 28%, #27304a);
 }
 
+.student-library .library-section--upcoming {
+  border-color: color-mix(in srgb, #a855f7 34%, #27304a);
+  background: linear-gradient(145deg, rgb(25 15 43 / 90%), rgb(10 14 29 / 92%));
+}
+
 .student-library .library-section__title {
   display: flex;
   align-items: end;
@@ -100,6 +105,20 @@
 .student-library .contest-card__price small { color: var(--text-muted); }
 .student-library .contest-card__price strong { color: var(--entry-orange); font-size: 1.2rem; }
 .student-library .contest-card__feedback { min-height: 1.4em; margin: 10px 0 0; color: #ffb0b5; }
+.student-library .contest-card__fact { min-height: 0; margin: 8px 0 0; color: var(--text-muted); }
+.student-library .contest-card__interest {
+  display: grid;
+  gap: 4px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--contest-accent, #a855f7) 35%, #27304a);
+  border-radius: 12px;
+  background: rgb(10 15 32 / 74%);
+}
+.student-library .contest-card__interest strong { color: #f0e8ff; font-size: 13px; }
+.student-library .contest-card__interest span { color: var(--text-muted); font-size: 12px; }
+.student-library .contest-card__interest-note { min-height: 0; margin: 10px 0 0; color: var(--text-muted); font-size: 12px; }
+.student-library [data-interest-contest][aria-pressed="true"] { border-color: #65d6b5; color: #bff8e7; }
 
 .student-library .library-network-state,
 .student-library .library-commerce-notice {

@@ -3,7 +3,7 @@ import { getSupabaseClient } from '../supabase/client.js';
 import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const CONTENT_STATUSES = Object.freeze(['draft', 'preparing', 'ready', 'archived']);
-export const SALES_STATUSES = Object.freeze(['unavailable', 'coming_soon', 'available', 'suspended']);
+export const SALES_STATUSES = Object.freeze(['unavailable', 'monitoring', 'coming_soon', 'available', 'suspended']);
 export const CAREER_AREAS = Object.freeze([
   'police_security', 'administrative', 'fiscal_control',
   'courts_legal', 'health_education', 'armed_forces',
@@ -79,6 +79,8 @@ function staticContest(contest) {
     career_area: contest.careerArea || null,
     career_subarea: contest.careerSubarea || null,
     source: 'static_catalog',
+    interest_goal: null,
+    interest_count: 0,
   };
 }
 
@@ -106,9 +108,11 @@ export function validateAdminContest(input = {}) {
   const id = required(input.id, 'ID', 80);
   const careerArea = String(input.career_area || '').trim() || null;
   const careerSubarea = String(input.career_subarea || '').trim() || null;
+  const interestGoal = input.interest_goal == null || input.interest_goal === '' ? null : Number(input.interest_goal);
   if (!/^[a-z0-9][a-z0-9_-]*$/i.test(id) || !/^[a-z0-9][a-z0-9_-]*$/i.test(slug)) throw new Error('ID ou slug inválido.');
   if (careerArea && !CAREER_AREAS.includes(careerArea)) throw new Error('Área de carreira inválida.');
   if (careerSubarea && !/^[a-z0-9][a-z0-9_-]*$/i.test(careerSubarea)) throw new Error('Subárea inválida.');
+  if (interestGoal != null && (!Number.isInteger(interestGoal) || interestGoal <= 0 || interestGoal > 100_000_000)) throw new Error('Meta de interessados inválida.');
   return {
     id,
     code: required(input.code, 'Código', 30),
@@ -127,6 +131,7 @@ export function validateAdminContest(input = {}) {
     exam_date: examDate,
     career_area: careerArea,
     career_subarea: careerSubarea,
+    interest_goal: interestGoal,
   };
 }
 

@@ -28,6 +28,7 @@ const validContest = {
   exam_date: '2027-05-10',
   career_area: null,
   career_subarea: null,
+  interest_goal: null,
 };
 
 test('fábrica sugere identidade estável e valida todos os campos do concurso', () => {

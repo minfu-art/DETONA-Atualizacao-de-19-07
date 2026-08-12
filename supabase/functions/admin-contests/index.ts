@@ -96,19 +96,29 @@ Deno.serve(async (request) => {
     if (action === 'list_contests') {
       let query = admin.from('admin_contests').select('*').order('created_at');
       if (body.search) query = query.or(`code.ilike.%${body.search}%,name.ilike.%${body.search}%,role.ilike.%${body.search}%`);
-      const { data, error } = await query;
+      const [{ data, error }, countsResult] = await Promise.all([
+        query,
+        admin.from('contest_interest_counts').select('contest_id,interest_count'),
+      ]);
       if (error) throw error;
-      return json(200, { contests: data, capabilities: OPERATIONAL_CAPABILITIES }, origin);
+      if (countsResult.error) throw countsResult.error;
+      const countByContest = new Map((countsResult.data || []).map((row: { contest_id: string; interest_count: number }) => [row.contest_id, Number(row.interest_count) || 0]));
+      const contests = (data || []).map((contest: { id: string }) => ({ ...contest, interest_count: countByContest.get(contest.id) || 0 }));
+      return json(200, { contests, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }
     if (action === 'get_contest') {
-      const [{ data: contest, error }, curriculum, questions] = await Promise.all([
+      const [{ data: contest, error }, curriculum, questions, interest] = await Promise.all([
         admin.from('admin_contests').select('*').eq('id', body.contestId).single(),
         admin.from('admin_curriculum_nodes').select('id', { count: 'exact', head: true }).eq('contest_id', body.contestId),
         admin.from('editorial_questions').select('id', { count: 'exact', head: true }).eq('contest_id', body.contestId),
+        admin.from('contest_interest_counts').select('interest_count').eq('contest_id', body.contestId).maybeSingle(),
       ]);
       if (error) throw error;
+      if (curriculum.error) throw curriculum.error;
+      if (questions.error) throw questions.error;
+      if (interest.error) throw interest.error;
       return json(200, {
-        contest,
+        contest: { ...contest, interest_count: Number(interest.data?.interest_count || 0) },
         counts: { curriculum: curriculum.count || 0, questions: questions.count || 0 },
         capabilities: OPERATIONAL_CAPABILITIES,
       }, origin);
@@ -287,7 +297,12 @@ Deno.serve(async (request) => {
         action,
         targetType: 'contest',
         targetId: contest.id,
-        metadata: { code: contest.code, content_status: contest.content_status, sales_status: contest.sales_status },
+        metadata: {
+          code: contest.code,
+          content_status: contest.content_status,
+          sales_status: contest.sales_status,
+          interest_goal: contest.interest_goal,
+        },
       });
       return json(action === 'create_contest' ? 201 : 200, { contest, capabilities: OPERATIONAL_CAPABILITIES }, origin);
     }

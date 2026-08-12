@@ -25,6 +25,12 @@ export function normalizeDynamicContest(contest) {
     metadata: contest.metadata && typeof contest.metadata === 'object' ? structuredClone(contest.metadata) : null,
     subtopicCount: Number(contest.subtopicCount ?? contest.subtopic_count ?? 0),
     questionCount: Number(contest.questionCount ?? contest.question_count ?? 0),
+    interestCount: Math.max(0, Number(contest.interestCount ?? contest.interest_count ?? 0) || 0),
+    interested: contest.interested === true,
+    interestGoal: (() => {
+      const value = Number(contest.interestGoal ?? contest.interest_goal);
+      return Number.isInteger(value) && value > 0 ? value : null;
+    })(),
     source: contest.source || 'dynamic_catalog',
   };
   if (normalized.id === 'pc_al_2026') {
@@ -55,7 +61,8 @@ export class ContestCatalogService {
       const { data, error } = await client.functions.invoke('student-content', { body: { action: 'list_catalog' } });
       if (error || data?.error || !Array.isArray(data?.contests)) throw new Error(data?.error || 'backend_unavailable');
       this.cache = data.contests.map(normalizeDynamicContest)
-        .filter((contest) => !['draft', 'archived'].includes(contest.contentStatus));
+        .filter((contest) => contest.contentStatus !== 'archived'
+          && (contest.salesStatus === 'monitoring' || contest.contentStatus !== 'draft'));
       return structuredClone(this.cache);
     } catch (error) {
       if (this.cache) return structuredClone(this.cache);
@@ -69,6 +76,27 @@ export class ContestCatalogService {
 
   async getById(contestId, options) {
     return (await this.list(options)).find(({ id }) => id === contestId) || null;
+  }
+
+  async setInterest(contestId, interested) {
+    const client = await this.getClient();
+    if (!client) throw new Error('backend_unavailable');
+    const { data, error } = await client.functions.invoke('student-content', {
+      body: { action: 'set_interest', contestId: String(contestId), interested: interested === true },
+    });
+    if (error || data?.error) {
+      const reason = data?.error || 'interest_unavailable';
+      throw new Error(reason === 'interest_not_available'
+        ? 'Este concurso não aceita novos interesses no momento.'
+        : 'Não foi possível registrar seu interesse agora.');
+    }
+    if (!data || data.contestId !== contestId || typeof data.interested !== 'boolean') throw new Error('interest_response_invalid');
+    this.cache = null;
+    return {
+      contestId: data.contestId,
+      interested: data.interested,
+      interestCount: Math.max(0, Number(data.interestCount) || 0),
+    };
   }
 
   clear() {

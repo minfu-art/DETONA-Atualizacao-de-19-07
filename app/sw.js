@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v134-mobile-mission-framing';
+const CACHE = 'detona-v135-contest-interest-demand';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [

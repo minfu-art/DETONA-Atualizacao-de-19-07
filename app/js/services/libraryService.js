@@ -102,6 +102,15 @@ export class LibraryService {
     return entitlement?.status === 'active';
   }
 
+  async setInterest(contestId, interested, { offline = false } = {}) {
+    if (offline || globalThis.navigator?.onLine === false) {
+      const error = new Error('Conecte-se para registrar seu interesse.');
+      error.code = 'OFFLINE_INTEREST_UNAVAILABLE';
+      throw error;
+    }
+    return this.catalog.setInterest(contestId, interested === true);
+  }
+
   getContest(contestId, options) {
     return this.catalog.getById(contestId, options);
   }

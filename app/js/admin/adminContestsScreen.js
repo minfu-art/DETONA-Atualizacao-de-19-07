@@ -58,9 +58,10 @@ function contestForm(contest = {}, capabilities = {}) {
           ${['draft', 'preparing', 'ready', 'archived'].map((status) => `<option ${contest.content_status === status ? 'selected' : ''}>${status}</option>`).join('')}
         </select></label>
         <label>Comercial<select name="sales_status">
-          ${['unavailable', 'coming_soon', 'available', 'suspended'].map((status) => `<option ${contest.sales_status === status ? 'selected' : ''}>${status}</option>`).join('')}
+          ${['unavailable', 'monitoring', 'coming_soon', 'available', 'suspended'].map((status) => `<option ${contest.sales_status === status ? 'selected' : ''}>${status}</option>`).join('')}
         </select></label>
       </div>
+      <label>Meta de interessados (opcional)<input name="interest_goal" type="number" min="1" max="100000000" value="${value('interest_goal')}" placeholder="Ex.: 300"></label>
       <div class="admin-form__actions">
         <button class="admin-button" type="submit" ${writeEnabled ? '' : 'disabled'}>${contest.id ? 'Salvar alterações' : 'Criar rascunho'}</button>
         ${contest.id && capabilities?.create === true ? '<button class="admin-button admin-button--secondary" type="button" id="admin-new-contest">Novo concurso</button>' : ''}
@@ -78,6 +79,9 @@ export async function renderAdminContestsScreen(root, ctx) {
   const catalog = await adminContestService.listContests();
   const capabilities = catalog.capabilities || {};
   const selected = catalog.rows.find(({ id }) => id === ctx.adminSelectedContestId) || null;
+  const demand = catalog.rows
+    .filter(({ sales_status: status }) => ['monitoring', 'coming_soon'].includes(status))
+    .sort((a, b) => Number(b.interest_count || 0) - Number(a.interest_count || 0));
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica de concursos</span><h1>Workspace operacional</h1>
       <p>Configure um concurso, importe o conteúdo e publique versões sem misturar jornadas.</p></div>
@@ -90,10 +94,18 @@ export async function renderAdminContestsScreen(root, ctx) {
         <div class="admin-contest-list">${catalog.rows.map((contest) => `
           <button type="button" data-select-contest="${escapeHtml(contest.id)}" class="${contest.id === selected?.id ? 'active' : ''}">
             <span style="background:${escapeHtml(contest.color)}">${escapeHtml(contest.icon)}</span>
-            <strong>${escapeHtml(contest.code)}</strong><small>${escapeHtml(contest.name)}</small>
+            <strong>${escapeHtml(contest.code)}</strong><small>${escapeHtml(contest.name)}</small><em>${Number(contest.interest_count || 0)} interessados</em>
           </button>`).join('')}</div>
         ${catalog.writable ? '' : `<div class="admin-prepared">${COURSE_FACTORY_UNAVAILABLE_MESSAGE}</div>`}
       </aside>
+    </section>
+    <section class="admin-panel admin-demand" aria-labelledby="admin-demand-title">
+      <span class="admin-panel__eyebrow">Inteligência comercial</span><h2 id="admin-demand-title">Demanda dos alunos</h2>
+      <div class="admin-demand__list">${demand.length ? demand.map((contest) => {
+        const count = Number(contest.interest_count || 0);
+        const goal = contest.interest_goal == null ? null : Number(contest.interest_goal);
+        return `<button type="button" data-select-contest="${escapeHtml(contest.id)}"><strong>${escapeHtml(contest.code)} · ${escapeHtml(contest.name)}</strong><span>${escapeHtml(contest.sales_status)}</span><b>${goal ? `${count} / ${goal}` : count} interessados</b>${goal && count >= goal ? '<em>META DE DEMANDA ATINGIDA</em>' : ''}</button>`;
+      }).join('') : '<p>Nenhum concurso em acompanhamento ou preparação.</p>'}</div>
     </section>`;
 
   const mountForm = (contest = {}) => {
