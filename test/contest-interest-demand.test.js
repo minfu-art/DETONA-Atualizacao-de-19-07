@@ -33,6 +33,16 @@ test('10C migration agrega contagens em lote e protege a view', async () => {
   assert.match(sql, /grant select on table public\.contest_interest_counts to service_role/i);
 });
 
+test('10C migration agrega subtópicos e última publicação sem expor conteúdo', async () => {
+  const sql = await source('supabase/migrations/20260811234500_contest_interest_demand.sql');
+  assert.match(sql, /create or replace view public\.contest_catalog_subtopic_counts\s+with \(security_invoker = true\)[\s\S]*type = 'subtopic'[\s\S]*status <> 'archived'[\s\S]*group by contest_id/i);
+  assert.match(sql, /create or replace view public\.contest_catalog_question_counts\s+with \(security_invoker = true\)[\s\S]*distinct on \(contest_id\)[\s\S]*status in \('generated', 'published'\)[\s\S]*order by contest_id, created_at desc/i);
+  for (const view of ['contest_catalog_subtopic_counts', 'contest_catalog_question_counts']) {
+    assert.match(sql, new RegExp(`revoke all on table public\\.${view} from public, anon, authenticated`, 'i'));
+    assert.match(sql, new RegExp(`grant select on table public\\.${view} to service_role`, 'i'));
+  }
+});
+
 test('10C migration aceita monitoring e meta positiva opcional', async () => {
   const sql = await source('supabase/migrations/20260811234500_contest_interest_demand.sql');
   assert.match(sql, /'unavailable', 'monitoring', 'coming_soon', 'available', 'suspended'/);
@@ -68,8 +78,28 @@ test('catálogo inclui monitoring e carrega contagens sem uma query por card', a
   const edge = await source('supabase/functions/student-content/index.ts');
   assert.match(edge, /\['available', 'coming_soon', 'monitoring'\]/);
   assert.equal((edge.match(/from\('contest_interest_counts'\)/g) || []).length, 2);
-  assert.match(edge, /countByContest/);
+  assert.match(edge, /interestCountByContest/);
+  assert.match(edge, /subtopicCountByContest/);
+  assert.match(edge, /questionCountByContest/);
   assert.match(edge, /interestedIds/);
+});
+
+test('catálogo de 200 concursos mantém cinco fontes em lote e normalização síncrona', async () => {
+  const edge = await source('supabase/functions/student-content/index.ts');
+  const listBranch = edge.slice(edge.indexOf("if (body.action === 'list_catalog')"), edge.indexOf("if (body.action === 'set_interest')"));
+  assert.equal((listBranch.match(/admin\.from\(/g) || []).length, 5);
+  assert.doesNotMatch(listBranch, /\.map\(async\b|admin_curriculum_nodes|question_publication_versions/);
+  assert.match(listBranch, /contest_catalog_subtopic_counts/);
+  assert.match(listBranch, /contest_catalog_question_counts/);
+
+  const contests = Array.from({ length: 200 }, (_, index) => ({ id: `monitoring_${index}`, sales_status: 'monitoring' }));
+  const normalized = contests.map((contest) => normalizeCatalogContest({
+    ...contest,
+    subtopic_count: 0,
+    question_count: 0,
+  }, { interestCount: 0, interested: false }));
+  assert.equal(normalized.length, 200);
+  assert.ok(normalized.every((contest) => contest.subtopicCount === 0 && contest.questionCount === 0));
 });
 
 test('normalização preserva estado, contagem e meta reais', () => {

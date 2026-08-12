@@ -25,35 +25,30 @@ Deno.serve(async (request) => {
     if (authError || !auth.user) return respond(401, { error: 'invalid_session' }, origin);
     const body = validateStudentContentRequest(await request.json());
     if (body.action === 'list_catalog') {
-      const [{ data, error }, countsResult, ownResult] = await Promise.all([
+      const [{ data, error }, countsResult, ownResult, subtopicCountsResult, questionCountsResult] = await Promise.all([
         admin.from('admin_contests').select('*')
           .neq('content_status', 'archived')
           .in('sales_status', ['available', 'coming_soon', 'monitoring'])
           .order('created_at'),
         admin.from('contest_interest_counts').select('contest_id,interest_count'),
         admin.from('contest_interests').select('contest_id').eq('user_id', auth.user.id),
+        admin.from('contest_catalog_subtopic_counts').select('contest_id,subtopic_count'),
+        admin.from('contest_catalog_question_counts').select('contest_id,question_count'),
       ]);
       if (error) throw error;
       if (countsResult.error) throw countsResult.error;
       if (ownResult.error) throw ownResult.error;
-      const countByContest = new Map((countsResult.data || []).map((row: { contest_id: string; interest_count: number }) => [row.contest_id, Number(row.interest_count) || 0]));
+      if (subtopicCountsResult.error) throw subtopicCountsResult.error;
+      if (questionCountsResult.error) throw questionCountsResult.error;
+      const interestCountByContest = new Map((countsResult.data || []).map((row: { contest_id: string; interest_count: number }) => [row.contest_id, Number(row.interest_count) || 0]));
+      const subtopicCountByContest = new Map((subtopicCountsResult.data || []).map((row: { contest_id: string; subtopic_count: number }) => [row.contest_id, Number(row.subtopic_count) || 0]));
+      const questionCountByContest = new Map((questionCountsResult.data || []).map((row: { contest_id: string; question_count: number }) => [row.contest_id, Number(row.question_count) || 0]));
       const interestedIds = new Set((ownResult.data || []).map((row: { contest_id: string }) => row.contest_id));
-      const contests = await Promise.all((data || []).map(async (contest: { id: string }) => {
-        const [subtopics, questions] = await Promise.all([
-          admin.from('admin_curriculum_nodes').select('id', { count: 'exact', head: true })
-            .eq('contest_id', contest.id).eq('type', 'subtopic').neq('status', 'archived'),
-          admin.from('question_publication_versions').select('item_count')
-            .eq('contest_id', contest.id).in('status', ['generated', 'published'])
-            .order('created_at', { ascending: false }).limit(1).maybeSingle(),
-        ]);
-        if (subtopics.error) throw subtopics.error;
-        if (questions.error) throw questions.error;
-        return normalizeCatalogContest({
-          ...contest,
-          subtopic_count: subtopics.count || 0,
-          question_count: questions.data?.item_count || 0,
-        }, { interestCount: countByContest.get(contest.id) || 0, interested: interestedIds.has(contest.id) });
-      }));
+      const contests = (data || []).map((contest: { id: string }) => normalizeCatalogContest({
+        ...contest,
+        subtopic_count: subtopicCountByContest.get(contest.id) || 0,
+        question_count: questionCountByContest.get(contest.id) || 0,
+      }, { interestCount: interestCountByContest.get(contest.id) || 0, interested: interestedIds.has(contest.id) }));
       return respond(200, { contests }, origin);
     }
     if (body.action === 'set_interest') {

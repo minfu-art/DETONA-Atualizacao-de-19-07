@@ -42,6 +42,31 @@ group by contest_id;
 revoke all on table public.contest_interest_counts from public, anon, authenticated;
 grant select on table public.contest_interest_counts to service_role;
 
+create or replace view public.contest_catalog_subtopic_counts
+with (security_invoker = true)
+as
+select contest_id, count(*)::bigint as subtopic_count
+from public.admin_curriculum_nodes
+where type = 'subtopic'
+  and status <> 'archived'
+group by contest_id;
+
+revoke all on table public.contest_catalog_subtopic_counts from public, anon, authenticated;
+grant select on table public.contest_catalog_subtopic_counts to service_role;
+
+create or replace view public.contest_catalog_question_counts
+with (security_invoker = true)
+as
+select distinct on (contest_id)
+  contest_id,
+  item_count::bigint as question_count
+from public.question_publication_versions
+where status in ('generated', 'published')
+order by contest_id, created_at desc;
+
+revoke all on table public.contest_catalog_question_counts from public, anon, authenticated;
+grant select on table public.contest_catalog_question_counts to service_role;
+
 comment on table public.contest_interests is
   'Sinal de demanda do produto. Nao representa entitlement nem consentimento de marketing externo.';
 comment on column public.admin_contests.interest_goal is
