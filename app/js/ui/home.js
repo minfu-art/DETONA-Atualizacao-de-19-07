@@ -971,6 +971,10 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     ctx.habitNavigationIntent = { type: 'record', definitionId: nextPrepCard.definition.id };
     navigate('wellbeing');
   });
+  $('#orion-open-performance', root)?.addEventListener('click', () => {
+    SFX.click();
+    navigate('performance');
+  });
   $('#mentor-action', root)?.addEventListener('click', () => {
     SFX.click();
     if (automaticMentor.actionType === 'start_daily_mission') startPrimaryMission();

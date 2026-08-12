@@ -123,6 +123,13 @@ export function renderOrionEvolution(model = {}, { direct = false } = {}) {
             ? escapeHtml(model.recommendation || 'Comece hoje para gerar sua análise.')
             : 'Indicadores calculados a partir das atividades acadêmicas registradas.'}
         </p>
+        <div class="orion-evolution__actions">
+          <button type="button" class="orion-evolution__performance" id="orion-open-performance" aria-label="Ver meu desempenho e estatísticas completas">
+            <span class="orion-evolution__performance-icon" aria-hidden="true">${icon('chartSteps', 'ico--sm')}</span>
+            <span class="orion-evolution__performance-copy"><strong>Ver meu desempenho</strong><small>Estatísticas, evolução e tempo de estudo</small></span>
+            <span class="orion-evolution__performance-arrow" aria-hidden="true">${icon('chevronRight', 'ico--sm')}</span>
+          </button>
+        </div>
       </div>
       <div class="orion-evolution__art" aria-hidden="true">
         <span class="orion-evolution__scan"></span>

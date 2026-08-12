@@ -177,6 +177,9 @@ test('estado vazio e renderização não inventam previsão e expõem sete métr
   assert.match(html, /Prazo até a prova/);
   assert.doesNotMatch(html, /Tempo para zerar|Ritmo necessário/);
   assert.match(html, /aria-labelledby="orion-evolution-title"/);
+  assert.match(html, /id="orion-open-performance"/);
+  assert.match(html, /Ver meu desempenho/);
+  assert.match(html, /Estatísticas, evolução e tempo de estudo/);
 });
 
 test('Home, CSS responsivo e PWA preservam painel e asset do Orion', async () => {
@@ -187,7 +190,9 @@ test('Home, CSS responsivo e PWA preservam painel e asset do Orion', async () =>
   ]);
   assert.match(home, /orionEvolutionService\.getSnapshot/);
   assert.match(home, /renderOrionEvolution\(orionEvolution\)/);
+  assert.match(home, /orion-open-performance[\s\S]*navigate\('performance'\)/);
   assert.match(css, /\.orion-evolution__metrics/);
+  assert.match(css, /\.orion-evolution__performance/);
   assert.match(css, /@media \(max-width:620px\)/);
   assert.match(sw, /orionEvolutionService\.js/);
   assert.match(sw, /assets\/mentor\/orion-evolution\.png/);
