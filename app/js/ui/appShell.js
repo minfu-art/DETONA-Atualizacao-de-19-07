@@ -12,6 +12,10 @@ import {
 
 let shellController = null;
 
+export function shouldDeferMobileMoreNavigation({ fromMore = false, historyActive = false } = {}) {
+  return Boolean(fromMore && historyActive);
+}
+
 function icon(name) {
   return ICO[name]?.() || '';
 }
@@ -134,6 +138,7 @@ export function initAppShell(navigate, { onLogout, onActivate } = {}) {
   const morePanel = document.getElementById('mobile-more-panel');
   const moreButton = document.getElementById('mobile-more-button');
   let moreHistoryActive = false;
+  let pendingMoreScreen = null;
 
   const setBackgroundInert = (inert) => {
     [sidebar, topbar, bottomNav, document.getElementById('screen')].forEach((element) => {
@@ -173,8 +178,14 @@ export function initAppShell(navigate, { onLogout, onActivate } = {}) {
   const activateScreen = (button, { fromMore = false } = {}) => {
     if (!button?.dataset.shellScreen) return;
     onActivate?.();
+    const screen = button.dataset.shellScreen;
+    if (shouldDeferMobileMoreNavigation({ fromMore, historyActive: moreHistoryActive })) {
+      pendingMoreScreen = screen;
+      closeMore({ restoreFocus: false });
+      return;
+    }
     if (fromMore) closeMore({ restoreFocus: false });
-    navigate(button.dataset.shellScreen);
+    navigate(screen);
   };
 
   const activate = (event) => activateScreen(event.target.closest('[data-shell-screen]'));
@@ -218,6 +229,11 @@ export function initAppShell(navigate, { onLogout, onActivate } = {}) {
   });
   window.addEventListener('popstate', () => {
     if (!more.hidden) closeMore({ fromHistory: true });
+    if (pendingMoreScreen) {
+      const screen = pendingMoreScreen;
+      pendingMoreScreen = null;
+      queueMicrotask(() => navigate(screen));
+    }
   });
   document.getElementById('shell-logout')?.addEventListener('click', () => onLogout?.());
   more.querySelector('[data-mobile-logout]')?.addEventListener('click', () => {
