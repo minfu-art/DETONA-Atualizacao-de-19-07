@@ -64,5 +64,6 @@ test('Home e Arena usam frames quadrados sem limitar o canvas pela largura do sl
   assert.match(arenaUi, /hero-img battle-duel__image/);
   assert.match(mainCss, /\.hero-img--home\s*\{[^}]*height:\s*286px;[^}]*max-width:\s*none;[^}]*width:\s*286px;/s);
   assert.match(homeCss, /\.dj-mission__hero\s*\{[^}]*width:\s*220px;[^}]*max-width:\s*none;[^}]*height:\s*220px;/s);
+  assert.match(homeCss, /@media \(max-width: 620px\)[\s\S]*?\.dj-mission__hero\s*\{[^}]*position:\s*absolute;[^}]*right:\s*-46px;[^}]*bottom:\s*-22px;[^}]*width:\s*252px;[^}]*height:\s*252px;/);
   assert.match(arenaCss, /\.battle-duel__fighter--hero \.battle-duel__image\s*\{[^}]*bottom:0;[^}]*height:\s*144px;[^}]*max-width:none;[^}]*width:144px;/s);
 });

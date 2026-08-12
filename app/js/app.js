@@ -7,7 +7,7 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
-import { renderHome } from './ui/home.js?v=82';
+import { renderHome } from './ui/home.js?v=83';
 import { renderWorldMap } from './ui/worldMap.js?v=74';
 import { renderBattle } from './ui/battleArena.js?v=77';
 import { renderGrimorio } from './ui/grimorio.js?v=69';

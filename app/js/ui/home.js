@@ -587,7 +587,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       reason: fragileName
         ? `Você precisa reforçar “${shortLabel(fragileName, 42)}” antes que a memória esfrie.`
         : 'Conteúdos vencidos estão perdendo força na memória. Revise agora.',
-      label: 'Começar missão',
+      label: 'Iniciar revisão',
       amount: reviewData.due,
     };
   } else if (!meta.complete && !meta.idle && routine?.enabled !== false) {
@@ -610,7 +610,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
       icon: 'refresh',
       title: `Consolidar ${reviewData.pending} revisões pendentes`,
       reason: 'Meta diária resolvida. Use o próximo bloco para fixar o que já estudou.',
-      label: 'Começar missão',
+      label: 'Iniciar revisão',
       amount: reviewData.pending,
     };
   }
@@ -819,8 +819,8 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
             <span>${icon('focus', 'ico--sm')} Duração estimada <strong>${estMin} minutos</strong></span>
             ${dailyEnemyDiscId ? `<span class="dj-mission__enemy-tag">${discIcon(dailyEnemyDiscId, 'ico--sm')} ${escapeHtml(missionFocus || '')}</span>` : ''}
           </div>
-          <button type="button" class="dj-cta" id="today-primary">
-            Começar missão ${icon('bolt', 'ico--sm')}
+          <button type="button" class="dj-cta" id="today-primary" aria-busy="false">
+            ${escapeHtml(mission.label)} ${icon('bolt', 'ico--sm')}
           </button>
         </div>
         <div class="dj-mission__art" aria-hidden="true">
@@ -885,11 +885,36 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
   assertSingleDirectMentorCommunication(root);
   mountPageContainer(root, { variant: 'today' });
 
-  const startReview = async () => {
+  const openReviewPlan = () => {
+    ctx.reviewSession = null;
+    navigate('review');
+  };
+  let reviewStarting = false;
+  const startRecommendedReview = async () => {
+    if (reviewStarting) return;
+    const button = $('#today-primary', root);
+    reviewStarting = true;
+    if (button) {
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Preparando revisão…';
+    }
     try {
-      ctx.reviewSession = null;
+      const session = await createReviewSession(ctx.reviewFilters || {});
+      if (!session) throw new Error('REVIEW_EMPTY');
+      ctx.reviewSession = session;
       navigate('review');
-    } catch (error) { toast(error.message || 'Não foi possível iniciar a revisão.'); }
+    } catch (error) {
+      reviewStarting = false;
+      if (button) {
+        button.disabled = false;
+        button.setAttribute('aria-busy', 'false');
+        button.innerHTML = `${escapeHtml(mission.label)} ${icon('bolt', 'ico--sm')}`;
+      }
+      toast(error.message === 'REVIEW_EMPTY'
+        ? 'Nenhuma revisão está disponível agora.'
+        : 'Não foi possível iniciar a revisão. Tente novamente.');
+    }
   };
   const startBattle = async () => {
     try {
@@ -901,7 +926,7 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
 
   const startPrimaryMission = () => {
     SFX.click();
-    if (mission.type === 'review') startReview();
+    if (mission.type === 'review') startRecommendedReview();
     else if (mission.type === 'battle') startBattle();
     else {
       if (dailyEnemyDiscId) {
@@ -911,9 +936,9 @@ async function renderTodayCommandCenter(root, navigate, ctx, data) {
     }
   };
   $('#today-primary', root)?.addEventListener('click', startPrimaryMission);
-  $('#today-review', root)?.addEventListener('click', () => { SFX.click(); startReview(); });
+  $('#today-review', root)?.addEventListener('click', () => { SFX.click(); openReviewPlan(); });
   root.querySelectorAll('[data-review-go]').forEach((btn) => {
-    btn.addEventListener('click', () => { SFX.click(); startReview(); });
+    btn.addEventListener('click', () => { SFX.click(); openReviewPlan(); });
   });
   $('#evi-daily-action', root)?.addEventListener('click', () => {
     SFX.click();

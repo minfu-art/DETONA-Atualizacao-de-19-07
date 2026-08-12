@@ -803,17 +803,29 @@
     gap: 10px;
   }
   .dj-mission {
-    grid-template-columns: minmax(0, 1fr) 118px;
-    min-height: 196px;
+    grid-template-columns: minmax(0, 1fr) 128px;
+    min-height: 224px;
     padding: 14px 12px 12px;
   }
+  .dj-mission__body {
+    position: relative;
+    z-index: 3;
+  }
   .dj-mission__hero {
-    width: 182px;
+    position: absolute;
+    right: -46px;
+    bottom: -22px;
+    width: 252px;
     max-width: none;
-    height: 182px;
+    height: 252px;
   }
   .dj-mission__art {
-    min-height: 160px;
+    align-self: stretch;
+    min-height: 198px;
+  }
+  .dj-mission__foe {
+    right: -2px;
+    bottom: 2px;
   }
   .dj-split {
     grid-template-columns: 1fr;
@@ -932,16 +944,18 @@
     max-width: none;
   }
   .dj-mission {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 108px;
   }
   .dj-mission__art {
-    min-height: 210px;
-    order: -1;
+    min-height: 196px;
+    order: initial;
   }
   .dj-mission__hero {
-    width: 230px;
+    right: -54px;
+    bottom: -20px;
+    width: 244px;
     max-width: none;
-    height: 230px;
+    height: 244px;
   }
   .dj-hud {
     gap: 6px;

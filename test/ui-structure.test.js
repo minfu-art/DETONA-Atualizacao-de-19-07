@@ -323,5 +323,7 @@ test('review presents a strategic plan without changing the queue engine', async
     assert.match(css, new RegExp(marker));
   }
   assert.match(ui, /review-state__signals/);
-  assert.match(home, /today-review.*addEventListener\('click'.*startReview\(\)/s);
+  assert.match(home, /label: 'Iniciar revisão'/);
+  assert.match(home, /createReviewSession\(ctx\.reviewFilters \|\| \{\}\)/);
+  assert.match(home, /today-review.*addEventListener\('click'.*openReviewPlan\(\)/s);
 });
