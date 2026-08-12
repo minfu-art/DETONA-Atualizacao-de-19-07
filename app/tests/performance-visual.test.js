@@ -233,6 +233,10 @@ test('acessibilidade, toque, responsividade e movimento reduzido têm contratos 
   assert.match(css, /env\(safe-area-inset-bottom\)/);
   assert.match(css, /@media \(max-width: 340px\)/);
   assert.match(css, /@media \(min-width: 768px\)/);
+  assert.match(css, /\.performance-section-heading\s*\{[^}]*display:\s*grid;/s);
+  assert.match(css, /@media \(max-width: 767px\)[\s\S]*\.performance-evolution-chart svg\s*\{[^}]*height:\s*170px;/);
+  assert.match(ui, /performance-section-heading"><div><span>Tendência real<\/span>/);
+  assert.match(ui, /performance-section-heading"><div><span>Tempo acadêmico real<\/span>/);
   assert.doesNotMatch(css, /!important/);
   const sizes = [...css.matchAll(/font-size:\s*([0-9.]+)px/g)].map((match) => Number(match[1]));
   assert.equal(sizes.some((size) => size < 12), false);

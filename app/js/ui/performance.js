@@ -113,7 +113,7 @@ function timeKpi(model) {
 
 function kpiSection(model) {
   return `<section class="performance-kpis" aria-labelledby="performance-kpis-title">
-    <div class="performance-section-heading"><span>Visão geral</span><h2 id="performance-kpis-title">Indicadores principais</h2></div>
+    <div class="performance-section-heading"><div><span>Visão geral</span><h2 id="performance-kpis-title">Indicadores principais</h2><p>Leitura rápida do seu progresso acadêmico no período.</p></div></div>
     <div class="performance-kpi-grid">${completionKpi(model)}${accuracyKpi(model)}${questionsKpi(model)}${timeKpi(model)}</div>
   </section>`;
 }
@@ -254,7 +254,7 @@ function evolutionChart(model) {
 
 function evolutionSection(model) {
   return `<section class="performance-panel performance-evolution" aria-labelledby="performance-evolution-title">
-    <div class="performance-section-heading"><span>Tendência real</span><h2 id="performance-evolution-title">Evolução</h2><p>Taxa de acertos ponderada pelo volume de respostas de cada dia.</p></div>
+    <div class="performance-section-heading"><div><span>Tendência real</span><h2 id="performance-evolution-title">Evolução</h2><p>Taxa de acertos ponderada pelo volume de respostas de cada dia.</p></div></div>
     ${evolutionChart(model)}
   </section>`;
 }
@@ -288,7 +288,7 @@ function timeChart(model) {
 
 function timeSection(model) {
   return `<section class="performance-panel performance-time" aria-labelledby="performance-time-title">
-    <div class="performance-section-heading"><span>Tempo acadêmico real</span><h2 id="performance-time-title">Foco por disciplina</h2><p>Distribuição das sessões registradas no período.</p></div>
+    <div class="performance-section-heading"><div><span>Tempo acadêmico real</span><h2 id="performance-time-title">Foco por disciplina</h2><p>Distribuição das sessões registradas no período.</p></div></div>
     ${timeChart(model)}
   </section>`;
 }
@@ -296,7 +296,7 @@ function timeSection(model) {
 function reviewsSection(model) {
   const memory = model.reviews.memory;
   return `<section class="performance-panel performance-reviews" aria-labelledby="performance-reviews-title">
-    <div class="performance-section-heading"><span>Retenção</span><h2 id="performance-reviews-title">Memória e revisões</h2><p>Estado da fila de revisão, sem equivaler memória a domínio.</p></div>
+    <div class="performance-section-heading"><div><span>Retenção</span><h2 id="performance-reviews-title">Memória e revisões</h2><p>Estado da fila de revisão, sem equivaler memória a domínio.</p></div></div>
     <div class="performance-review-grid">
       <article><span>No período</span><strong>${model.reviews.completedInPeriod}</strong><small>revisões realizadas</small></article>
       <article><span>Total histórico</span><strong>${model.reviews.totalCompleted}</strong><small>revisões registradas</small></article>
