@@ -213,11 +213,12 @@ export async function migrateStoredQuestions() {
  */
 export async function removeDemoQuestions() {
   const already = await getMeta('demo_questions_purged_v1');
+  if (already) return 0;
   const all = await getAll(STORES.questions);
   const demos = all.filter((question) => isDemoQuestion(question));
   if (!demos.length) {
     await setMeta('demo_questions', false);
-    if (!already) await setMeta('demo_questions_purged_v1', true);
+    await setMeta('demo_questions_purged_v1', true);
     return 0;
   }
   for (const question of demos) await remove(STORES.questions, question.id);

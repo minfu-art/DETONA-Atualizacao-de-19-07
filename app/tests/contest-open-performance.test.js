@@ -19,6 +19,15 @@ test('catalogo e pacote protegido carregam em paralelo', async () => {
   assert.match(app, /contestHint\?\.id === contestId[\s\S]*Promise\.resolve\(contestHint\)/);
 });
 
+test('telas secundarias ficam sob demanda e nao pesam na abertura', async () => {
+  const app = await source('../js/app.js');
+  for (const moduleName of ['worldMap', 'battleArena', 'grimorio', 'performance', 'expedition', 'wellbeingUI', 'profile', 'review', 'rankedEvent']) {
+    assert.doesNotMatch(app, new RegExp(`^import .*\\./ui/${moduleName}\\.js`, 'm'));
+    assert.match(app, new RegExp(`lazyRoute\\(\\(\\) => import\\('\\./ui/${moduleName}\\.js\\?v=`));
+  }
+  assert.match(app, /rendererPromise \|\|= load\(\)/);
+});
+
 test('restauracao automatica nao repete consulta de entitlement e catalogo', async () => {
   const app = await source('../js/app.js');
   const restoreSource = app.slice(app.indexOf("let activeContestId = getActiveContestId()"), app.indexOf('async function init()'));

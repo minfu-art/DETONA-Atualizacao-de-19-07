@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v136-orion-performance-entry';
+const CACHE = 'detona-v137-startup-performance';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -326,8 +326,10 @@ self.addEventListener('fetch', (e) => {
         .catch(() => undefined)
     );
     e.respondWith(
-      fetched
-        .catch(async () => (await caches.match(e.request)) || caches.match('./index.html'))
+      caches.match(e.request).then(async (cached) => {
+        const shell = cached || await caches.match('./index.html');
+        return shell || fetched;
+      })
     );
     return;
   }

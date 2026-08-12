@@ -8,17 +8,6 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { renderOnboarding } from './ui/onboarding.js?v=70';
 import { renderHome } from './ui/home.js?v=84';
-import { renderWorldMap } from './ui/worldMap.js?v=74';
-import { renderBattle } from './ui/battleArena.js?v=77';
-import { renderGrimorio } from './ui/grimorio.js?v=69';
-import { renderPerformance } from './ui/performance.js?v=76';
-import { renderExpedition } from './ui/expedition.js?v=77';
-import { renderWellbeing } from './ui/wellbeingUI.js?v=74';
-import { renderProfile } from './ui/profile.js?v=97';
-import { renderCelebration } from './ui/celebration.js?v=68';
-import { renderTopicTree } from './ui/topicTree.js?v=73';
-import { renderReview } from './ui/review.js?v=86';
-import { renderRankedEvent } from './ui/rankedEvent.js?v=87';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
 import { renderAuth } from './ui/auth.js?v=75';
 import { renderLibrary } from './ui/library.js';
@@ -64,6 +53,35 @@ import {
   shouldReturnHomeFromHistory,
   studentHistoryTransition,
 } from './core/studentHistory.js';
+
+function lazyRoute(load, exportName) {
+  let rendererPromise = null;
+  return async (...args) => {
+    rendererPromise ||= load()
+      .then((module) => {
+        const renderer = module[exportName];
+        if (typeof renderer !== 'function') throw new Error(`Rota indisponível: ${exportName}`);
+        return renderer;
+      })
+      .catch((error) => {
+        rendererPromise = null;
+        throw error;
+      });
+    return (await rendererPromise)(...args);
+  };
+}
+
+const renderWorldMap = lazyRoute(() => import('./ui/worldMap.js?v=74'), 'renderWorldMap');
+const renderBattle = lazyRoute(() => import('./ui/battleArena.js?v=77'), 'renderBattle');
+const renderGrimorio = lazyRoute(() => import('./ui/grimorio.js?v=69'), 'renderGrimorio');
+const renderPerformance = lazyRoute(() => import('./ui/performance.js?v=76'), 'renderPerformance');
+const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'renderExpedition');
+const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=74'), 'renderWellbeing');
+const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile');
+const renderCelebration = lazyRoute(() => import('./ui/celebration.js?v=68'), 'renderCelebration');
+const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=73'), 'renderTopicTree');
+const renderReview = lazyRoute(() => import('./ui/review.js?v=86'), 'renderReview');
+const renderRankedEvent = lazyRoute(() => import('./ui/rankedEvent.js?v=87'), 'renderRankedEvent');
 
 const ctx = {
   battleSession: null,

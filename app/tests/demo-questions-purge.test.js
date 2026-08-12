@@ -3,6 +3,7 @@
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { isDemoQuestion, isQuestionEligible } from '../js/core/questionSchema.js';
 import { buildDemoQuestions, buildSeedEntities } from '../js/data/editalSeed.js';
 import { createQuestionRepository } from '../js/repositories/questionRepository.js';
@@ -46,4 +47,10 @@ test('repositório listar exclui demo por padrão', async () => {
   assert.deepEqual(normal.map((q) => q.id), ['real_leg']);
   const withDemo = await repo.listar({ includeDemo: true });
   assert.equal(withDemo.length, 2);
+});
+
+test('limpeza concluída não relê milhares de questões na abertura seguinte', async () => {
+  const source = await readFile(new URL('../js/core/questionImport.js', import.meta.url), 'utf8');
+  const purge = source.slice(source.indexOf('export async function removeDemoQuestions'), source.indexOf('export async function removeDemoQuestions') + 500);
+  assert.match(purge, /const already = await getMeta\('demo_questions_purged_v1'\);\s*if \(already\) return 0;\s*const all = await getAll\(STORES\.questions\);/);
 });
