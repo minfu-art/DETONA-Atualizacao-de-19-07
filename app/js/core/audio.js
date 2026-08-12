@@ -6,7 +6,7 @@ let muted = false;
 
 function ac() {
   if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
-  if (ctx.state === 'suspended') ctx.resume();
+  if (ctx.state === 'suspended') ctx.resume().catch(() => {});
   return ctx;
 }
 
@@ -70,5 +70,11 @@ export const SFX = {
     tone(200, 0.05, 'square', 0.07);
     tone(300, 0.05, 'square', 0.06, 0.06);
     tone(400, 0.08, 'triangle', 0.05, 0.12);
+  },
+  reminder() {
+    // Aviso curto e reconhecível, sem manter um alarme em loop.
+    tone(659, 0.16, 'sine', 0.07);
+    tone(880, 0.18, 'sine', 0.065, 0.2);
+    tone(659, 0.2, 'sine', 0.06, 0.42);
   },
 };

@@ -103,6 +103,19 @@ test('fila mantém ordem, deduplica e só apresenta um lembrete por vez', () => 
   assert.equal(queue.current(), second);
 });
 
+test('fila remove o alerta visível quando o último lembrete avança', () => {
+  const presented = [];
+  const queue = createHabitReminderQueue({
+    onPresent: (reminder, state) => presented.push({ reminder, state }),
+  });
+  queue.setScope('u1:c1');
+  queue.enqueue({ scopeKey: 'u1:c1', habitDefinitionId: 'habit:planning', deliveryKey: 'planning:1' });
+  queue.advance();
+  assert.equal(queue.pendingCount(), 0);
+  assert.equal(presented.at(-1).reminder, null);
+  assert.deepEqual(presented.at(-1).state, { pendingCount: 0, markPresented: false });
+});
+
 test('lembrete enfileirado invisível não é marcado como entregue', async () => {
   let stored = [normalizeHabitReminder({
     habitDefinitionId: 'habit:water', enabled: true, time: '10:00', activeDays: [4],

@@ -655,7 +655,9 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
         <label>Observação opcional<textarea id="hb-record-note" maxlength="500" rows="3"></textarea></label>
         ${definition.habitId === 'medication' ? '<p class="hb-medical-note">Este registro serve apenas como lembrete e não substitui orientação profissional.</p>' : ''}
       </div>`, '<button type="button" class="btn btn-primary" id="hb-record-save">Salvar registro</button>');
-    document.getElementById('hb-record-save')?.addEventListener('click', async () => {
+    document.getElementById('hb-record-save')?.addEventListener('click', async (event) => {
+      const saveButton = event.currentTarget;
+      saveButton.disabled = true;
       const sleep = document.getElementById('hb-record-sleep')?.value;
       const wake = document.getElementById('hb-record-wake')?.value;
       const actualTime = document.getElementById('hb-record-time')?.value;
@@ -666,20 +668,25 @@ export async function renderWellbeing(root, navigate, ctx = {}) {
           : isScale
             ? Number(document.getElementById('hb-record-scale')?.value) || 0
           : Number(document.getElementById('hb-record-value')?.value) || 0;
-      await recordHabitDetails(definition.id, {
-        actualValue,
-        actualTime: actualTime || wake || null,
-        actualSleepTime: sleep || null,
-        actualWakeTime: wake || null,
-        durationMinutes: isSleep ? minutesBetween(sleep, wake) : null,
-        plannedTime: definition.reminderTime || definition.desiredWakeTime || definition.desiredSleepTime,
-        status: document.getElementById('hb-record-status')?.value || (actualValue >= definition.target ? 'completed' : 'partial'),
-        quality: Number(document.getElementById('hb-record-quality')?.value) || null,
-        note: document.getElementById('hb-record-note')?.value || null,
-      }, selectedDate);
-      closeModal();
-      toast('Registro salvo.');
-      await paint();
+      try {
+        await recordHabitDetails(definition.id, {
+          actualValue,
+          actualTime: actualTime || wake || null,
+          actualSleepTime: sleep || null,
+          actualWakeTime: wake || null,
+          durationMinutes: isSleep ? minutesBetween(sleep, wake) : null,
+          plannedTime: definition.reminderTime || definition.desiredWakeTime || definition.desiredSleepTime,
+          status: document.getElementById('hb-record-status')?.value || (actualValue >= definition.target ? 'completed' : 'partial'),
+          quality: Number(document.getElementById('hb-record-quality')?.value) || null,
+          note: document.getElementById('hb-record-note')?.value || null,
+        }, selectedDate);
+        closeModal();
+        toast('Registro salvo.');
+        await paint();
+      } catch (error) {
+        saveButton.disabled = false;
+        toast(error?.message || 'Não foi possível salvar o registro. Tente novamente.');
+      }
     });
   }
 

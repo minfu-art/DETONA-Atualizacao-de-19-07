@@ -129,7 +129,10 @@ export function createHabitReminderQueue({ onPresent = () => {} } = {}) {
     reminder.deliveryKey || reminder.snoozedUntil || reminder.time,
   ].join(':');
   const present = (markPresented) => {
-    if (!entries.length) return;
+    if (!entries.length) {
+      onPresent(null, { pendingCount: 0, markPresented: false });
+      return;
+    }
     onPresent(entries[0], { pendingCount: entries.length, markPresented });
   };
   const clear = () => {
@@ -225,6 +228,7 @@ export async function deliverDueHabitReminders({
           body: content.body,
           tag: `detona-habit-${reminder.habitDefinitionId}`,
           renotify: false,
+          silent: false,
           data: { route: 'wellbeing' },
           actions: [{ action: 'open-habits', title: 'Abrir Hábitos' }],
         });

@@ -57,6 +57,13 @@ import {
   initializationFailure,
   recoverStaleRuntime,
 } from './core/runtimeRecovery.js';
+import {
+  STUDENT_HISTORY_HOME,
+  STUDENT_HISTORY_INTERNAL,
+  STUDENT_HISTORY_KEY,
+  shouldReturnHomeFromHistory,
+  studentHistoryTransition,
+} from './core/studentHistory.js';
 
 const ctx = {
   battleSession: null,
@@ -121,6 +128,74 @@ const ROUTES = {
 let habitReminderRuntimeBound = false;
 let habitReminderCheckPromise = null;
 let habitReminderRuntimeGeneration = 0;
+let studentBackNavigationBound = false;
+
+function studentHistoryLevel() {
+  return globalThis.history?.state?.[STUDENT_HISTORY_KEY] || null;
+}
+
+function writeStudentHistory(level, mode = 'replace') {
+  if (!globalThis.history || !globalThis.location) return;
+  const state = { ...(globalThis.history.state || {}), [STUDENT_HISTORY_KEY]: level };
+  globalThis.history[mode === 'push' ? 'pushState' : 'replaceState'](state, '', globalThis.location.href);
+}
+
+function shouldUseStudentHistory() {
+  return Boolean(authService.getCurrentUser() && getActiveContestId());
+}
+
+function prepareStudentHistoryNavigation(screen, { fromHistory = false } = {}) {
+  if (!shouldUseStudentHistory() || screen === 'onboarding') return false;
+  const transition = studentHistoryTransition({
+    screen,
+    currentScreen: ctx.screen,
+    currentLevel: studentHistoryLevel(),
+    fromHistory,
+  });
+  if (transition.action !== 'back') return false;
+  globalThis.history.back();
+  return true;
+}
+
+function commitStudentHistoryNavigation(screen, { fromHistory = false } = {}) {
+  if (!shouldUseStudentHistory() || screen === 'onboarding') return;
+  const transition = studentHistoryTransition({
+    screen,
+    currentScreen: ctx.screen,
+    currentLevel: studentHistoryLevel(),
+    fromHistory,
+  });
+  if (transition.action === 'seed') {
+    writeStudentHistory(STUDENT_HISTORY_HOME);
+    writeStudentHistory(STUDENT_HISTORY_INTERNAL, 'push');
+  } else if (transition.action === 'push' || transition.action === 'replace') {
+    writeStudentHistory(transition.level, transition.action);
+  }
+}
+
+function bindStudentBackNavigation() {
+  if (studentBackNavigationBound) return;
+  studentBackNavigationBound = true;
+  globalThis.addEventListener('popstate', async (event) => {
+    if (!shouldUseStudentHistory() || !shouldReturnHomeFromHistory({
+      level: event.state?.[STUDENT_HISTORY_KEY],
+      currentScreen: ctx.screen,
+    })) return;
+    const previousScreen = ctx.screen;
+    await navigate('home', { fromHistory: true });
+    // Se uma atividade bloqueou a saída, restaura o nível interno.
+    if (ctx.screen === previousScreen && previousScreen !== 'home') {
+      writeStudentHistory(STUDENT_HISTORY_INTERNAL, 'push');
+    }
+  });
+}
+
+function resetStudentHistory() {
+  if (!globalThis.history?.replaceState || !globalThis.location) return;
+  const state = { ...(globalThis.history.state || {}) };
+  delete state[STUDENT_HISTORY_KEY];
+  globalThis.history.replaceState(state, '', globalThis.location.href);
+}
 
 function currentHabitReminderScope() {
   return habitReminderScopeKey(authService.getCurrentUser()?.id, getActiveContestId());
@@ -156,8 +231,8 @@ function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented
   const notice = document.createElement('aside');
   notice.id = 'habit-local-reminder';
   notice.className = 'habit-local-reminder';
-  notice.setAttribute('role', 'status');
-  notice.setAttribute('aria-live', 'polite');
+  notice.setAttribute('role', 'alert');
+  notice.setAttribute('aria-live', 'assertive');
   notice.innerHTML = `
     <div><strong data-reminder-title></strong><p data-reminder-body></p><small data-reminder-count></small></div>
     <div class="habit-local-reminder__actions">
@@ -170,18 +245,25 @@ function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented
   notice.querySelector('[data-reminder-count]').textContent = pendingCount > 1
     ? `${pendingCount} lembretes pendentes`
     : '1 lembrete pendente';
-  notice.querySelector('[data-reminder-open]').addEventListener('click', async () => {
-    const repository = currentHabitReminderRepository();
-    const result = await executeScopedHabitReminderAction({
-      reminder,
-      currentScope: reminderMatchesCurrentScope(reminder) ? currentHabitReminderScope() : null,
-      action: () => dismissHabitReminder(reminder, repository),
-      onMismatch: discardOutOfScopeReminder,
-    });
-    if (!result.executed) return;
-    habitReminderQueue.advance();
-    ctx.habitNavigationIntent = { type: 'record', definitionId: reminder.habitDefinitionId };
-    navigate('wellbeing');
+  notice.querySelector('[data-reminder-open]').addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    button.disabled = true;
+    try {
+      const repository = currentHabitReminderRepository();
+      const result = await executeScopedHabitReminderAction({
+        reminder,
+        currentScope: reminderMatchesCurrentScope(reminder) ? currentHabitReminderScope() : null,
+        action: () => dismissHabitReminder(reminder, repository),
+        onMismatch: discardOutOfScopeReminder,
+      });
+      if (!result.executed) return;
+      ctx.habitNavigationIntent = { type: 'record', definitionId: reminder.habitDefinitionId };
+      habitReminderQueue.advance();
+      await navigate('wellbeing');
+    } catch (error) {
+      button.disabled = false;
+      console.warn('[habits] reminder action unavailable', error?.message || error);
+    }
   });
   notice.querySelector('[data-reminder-snooze]').addEventListener('click', async () => {
     const repository = currentHabitReminderRepository();
@@ -206,6 +288,7 @@ function renderInternalHabitReminder(reminder, { pendingCount = 1, markPresented
     habitReminderQueue.advance();
   });
   document.body.append(notice);
+  SFX.reminder();
   const repository = currentHabitReminderRepository();
   if (markPresented && reminderMatchesCurrentScope(reminder) && repository) markHabitReminderPresented(reminder, repository).catch((error) => {
     console.warn('[habits] reminder checkpoint unavailable', error?.message || error);
@@ -261,7 +344,7 @@ function bindHabitReminderRuntime() {
   window.setInterval(checkHabitReminders, 60000);
 }
 
-async function navigate(screen) {
+async function navigate(screen, options = {}) {
   if (ctx.screen === 'battle' && screen !== 'battle' && ctx.battleFinalizing) return;
   if (ctx.screen === 'battle'
     && screen !== 'battle'
@@ -286,6 +369,7 @@ async function navigate(screen) {
     ctx.requestRankedExit?.(screen);
     return;
   }
+  if (prepareStudentHistoryNavigation(screen, options)) return;
   ctx.allowBattleExit = false;
   ctx.allowReviewExit = false;
   ctx.allowRankedExit = false;
@@ -331,6 +415,8 @@ async function navigate(screen) {
     });
     document.getElementById('err-home')?.addEventListener('click', () => navigate('home'));
   }
+
+  commitStudentHistoryNavigation(screen, options);
 
   updateAppShell({ screen, player: await getPlayer(), contest: ctx.contest, user: ctx.user });
   root.focus({ preventScroll: true });
@@ -389,6 +475,7 @@ async function openPreferredJourney(screen) {
 
 function showAuth() {
   resetHabitReminderRuntime();
+  resetStudentHistory();
   document.getElementById('app')?.classList.add('app-shell--auth');
   document.getElementById('app')?.classList.remove('app-shell--library');
   document.getElementById('bottom-nav')?.classList.add('hidden');
@@ -404,7 +491,7 @@ function clearCheckoutReturnUrl() {
   const url = new URL(globalThis.location.href);
   url.searchParams.delete('checkout');
   url.searchParams.delete('contest');
-  globalThis.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  globalThis.history.replaceState(globalThis.history.state || {}, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
 async function showLibrary({ libraryState = null, refresh = false } = {}) {
@@ -470,6 +557,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
   }
   const libraryPlayer = activeContestId ? await getPlayer() : null;
   updateAppShell({ screen: 'library', player: libraryPlayer, contest: ctx.contest, user });
+  commitStudentHistoryNavigation('library');
   root.focus({ preventScroll: true });
   window.scrollTo(0, 0);
 }
@@ -707,6 +795,7 @@ async function init() {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
     bindHabitReminderRuntime();
+    bindStudentBackNavigation();
     try {
       const { initPwaInstall } = await import('./core/pwaInstall.js');
       initPwaInstall();

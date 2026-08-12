@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v131-performance-shell';
+const CACHE = 'detona-v132-mobile-habits-navigation';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -56,6 +56,7 @@ const ASSETS = [
   './js/core/mastery.js',
   './js/core/kafra.js',
   './js/core/audio.js',
+  './js/core/studentHistory.js',
   './js/core/seed.js',
   './js/core/battle.js',
   './js/core/questionImport.js',
