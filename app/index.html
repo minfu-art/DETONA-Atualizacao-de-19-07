@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/main.css?v=78" />
+  <link rel="stylesheet" href="css/main.css?v=79" />
   <link rel="stylesheet" href="css/design-system.css?v=90" />
   <link rel="stylesheet" href="css/student-entry.css?v=7" />
 </head>
@@ -35,7 +35,16 @@
     <div class="app-shell__main">
       <header class="app-topbar" id="app-topbar" aria-label="Resumo do estudante"></header>
       <div class="app-content">
-        <main id="screen" tabindex="-1"></main>
+        <main id="screen" tabindex="-1">
+          <div class="app-boot" role="status" aria-live="polite" aria-busy="true">
+            <img src="assets/icons/icon-192.png" alt="" width="64" height="64" decoding="async" />
+            <div>
+              <strong>Preparando sua jornada</strong>
+              <span>Restaurando sua sessão e seu progresso neste dispositivo.</span>
+            </div>
+            <i aria-hidden="true"></i>
+          </div>
+        </main>
       </div>
     </div>
 
@@ -45,6 +54,6 @@
   </div>
 
   <script src="env.runtime.js"></script>
-  <script type="module" src="js/app.js?v=108"></script>
+  <script type="module" src="js/app.js?v=109"></script>
 </body>
 </html>

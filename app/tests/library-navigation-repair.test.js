@@ -37,5 +37,5 @@ test('botao do curso informa imediatamente que a jornada esta sendo preparada', 
 
 test('cache do PWA muda para distribuir o reparo', async () => {
   const sw = await source('../sw.js');
-  assert.match(sw, /detona-v139-candidate-performance/);
+  assert.match(sw, /detona-v140-candidate-readiness/);
 });
