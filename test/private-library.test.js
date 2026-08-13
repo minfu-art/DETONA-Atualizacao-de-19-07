@@ -36,6 +36,13 @@ test('Adicionar Cursos existe', async () => {
   assert.match(await source('app/js/ui/library.js'), /\+ ADICIONAR CURSOS/);
 });
 
+test('identificador do curso permanece em uma linha no fallback visual', async () => {
+  const css = await source('app/css/student-entry.css');
+  assert.match(css, /\.owned-course-art__fallback span[^}]*min-width:\s*72px/);
+  assert.match(css, /\.owned-course-art__fallback span[^}]*white-space:\s*nowrap/);
+  assert.match(css, /\.owned-course-art__fallback strong[^}]*white-space:\s*nowrap/);
+});
+
 test('destino é URL pública segura e isolada da sessão', async () => {
   const [links, ui] = await Promise.all([source('app/js/services/studentEntryLinks.js'), source('app/js/ui/library.js')]);
   assert.match(links, /https:\/\/detonaconcursos\.com\/cursos/);

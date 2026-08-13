@@ -558,8 +558,8 @@
 .owned-course-card--active { border-color: color-mix(in srgb, var(--contest-accent, #62ddff) 60%, #273654); }
 .owned-course-card__art { overflow: hidden; aspect-ratio: 16 / 9; border-bottom: 1px solid #273654; background: #080d19; }
 .owned-course-art__fallback { width: 100%; height: 100%; display: grid; place-content: center; justify-items: center; gap: 3px; color: #fff; background: radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--contest-accent, #62ddff) 34%, transparent), transparent 42%), linear-gradient(135deg, color-mix(in srgb, var(--contest, #6840dc) 26%, #07101f), #080d19); }
-.owned-course-art__fallback span { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid var(--contest-accent, #62ddff); border-radius: 15px; font: 900 24px var(--display); box-shadow: 0 0 26px color-mix(in srgb, var(--contest-accent, #62ddff) 34%, transparent); }
-.owned-course-art__fallback strong { font: 900 15px var(--display); letter-spacing: .15em; }
+.owned-course-art__fallback span { display: grid; min-width: 72px; height: 52px; padding-inline: 10px; place-items: center; border: 1px solid var(--contest-accent, #62ddff); border-radius: 15px; font: 900 24px/1 var(--display); white-space: nowrap; box-shadow: 0 0 26px color-mix(in srgb, var(--contest-accent, #62ddff) 34%, transparent); }
+.owned-course-art__fallback strong { max-width: calc(100% - 24px); font: 900 15px/1.2 var(--display); letter-spacing: .15em; overflow-wrap: normal; white-space: nowrap; }
 .owned-course-art__fallback small { color: #93a1bd; font-size: 9px; letter-spacing: .18em; }
 .owned-course-card__body { display: grid; gap: 10px; padding: 20px; }
 .owned-course-card__body h3 { overflow-wrap: break-word; margin: 0; font: 800 clamp(18px, 1.65vw, 23px)/1.15 var(--display); }
