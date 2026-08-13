@@ -1,123 +1,67 @@
 import { escapeHtml, formatDate } from './helpers.js';
-import { emptyState, progressBar, statusBadge } from './components.js';
-import {
-  CAREER_AREAS,
-  CAREER_AREA_ORDER,
-  countLibraryItemsByArea,
-  filterLibraryItems,
-  getCareerArea,
-  getCareerSubareaLabel,
-  resolveContestArea,
-  selectActiveJourney,
-} from '../services/careerLibraryService.js';
-import {
-  formatCanonicalPrice,
-  partitionCommercialLibrary,
-  resolveCheckoutReturn,
-} from '../services/studentEntryModel.js';
+import { progressBar } from './components.js';
+import { selectActiveJourney } from '../services/careerLibraryService.js';
+import { partitionLibrary, resolveCheckoutReturn } from '../services/studentEntryModel.js';
 
 const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singular : multiple}`;
+const safePercent = (value) => Math.max(0, Math.min(100, Number(value) || 0));
 
-function statusFor(item) {
-  if (item.accessVerificationRequired) return ['CONEXÃO NECESSÁRIA', 'warning'];
-  if (item.owned) return ['MEU CURSO', 'success'];
-  if (item.contest.salesStatus === 'available' && item.contest.contentStatus === 'ready') return ['DISPONÍVEL', 'info'];
-  if (item.contest.salesStatus === 'monitoring') return ['EM ACOMPANHAMENTO', 'info'];
-  if (['suspended', 'unavailable'].includes(item.contest.salesStatus)) return ['INDISPONÍVEL', 'warning'];
-  return ['EM PREPARAÇÃO', 'warning'];
+function courseArt(contest, { eager = false } = {}) {
+  if (contest.coverAsset) {
+    return `<img src="${escapeHtml(contest.coverAsset)}" alt="" loading="${eager ? 'eager' : 'lazy'}" decoding="async">`;
+  }
+  return `<div class="owned-course-art__fallback" aria-hidden="true"><span>${escapeHtml(contest.icon || 'D')}</span><strong>${escapeHtml(contest.code)}</strong><small>DETONA CONCURSOS</small></div>`;
 }
 
-function contestCard(item, { active = false } = {}) {
-  const { contest, owned, summary } = item;
-  const area = getCareerArea(resolveContestArea(contest));
-  const subarea = getCareerSubareaLabel(area.id, contest.careerSubarea);
-  const action = item.checkoutAction || { label: 'Indisponível', action: 'none', disabled: true };
-  const [status, statusTone] = statusFor(item);
-  const isDemand = !owned && ['monitoring', 'coming_soon'].includes(contest.salesStatus);
-  const price = !owned && !isDemand && !item.accessVerificationRequired ? formatCanonicalPrice(contest) : null;
-  const cover = contest.coverAsset
-    ? `<img src="${escapeHtml(contest.coverAsset)}" alt="" loading="lazy" decoding="async">`
-    : `<span class="contest-card__emblem" aria-hidden="true">${escapeHtml(contest.icon)}</span>`;
-  const actionAttribute = isDemand
-    ? `data-interest-contest="${escapeHtml(contest.id)}" data-interested="${contest.interested === true}" aria-pressed="${contest.interested === true}"`
-    : action.action === 'open'
-    ? `data-open-contest="${escapeHtml(contest.id)}"`
-    : action.action === 'purchase'
-      ? `data-purchase-contest="${escapeHtml(contest.id)}"`
-      : action.action === 'details'
-        ? `data-view-details="${escapeHtml(contest.id)}"`
-        : '';
-  const actionLabel = isDemand
-    ? contest.interested === true
-      ? '✓ Interesse registrado'
-      : contest.salesStatus === 'monitoring' ? 'Tenho interesse' : 'Quero ser avisado'
-    : action.label;
-  const interestText = Number(contest.interestCount || 0) > 0
-    ? `${Number(contest.interestCount)} candidatos demonstraram interesse`
-    : 'Seja um dos primeiros interessados';
+function contestTheme(contest) {
+  return `style="--contest:${escapeHtml(contest.color)};--contest-accent:${escapeHtml(contest.accent)}"`;
+}
+
+function publicCoursesAction({ href, offline, label = '+ ADICIONAR CURSOS', className = '' }) {
+  const classes = `library-public-courses ${className}`.trim();
+  if (offline || !href) {
+    return `<button type="button" class="${classes}" data-public-courses disabled aria-describedby="library-offline-courses">${escapeHtml(label)}</button>`;
+  }
+  return `<a class="${classes}" data-public-courses href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`;
+}
+
+function continueJourney(item) {
+  const { contest, summary } = item;
+  const progress = safePercent(summary?.editalCompletionPct);
   return `
-    <article class="contest-card ${owned ? 'contest-card--owned' : 'contest-card--offer'} ${active ? 'contest-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" style="--contest:${escapeHtml(contest.color)};--contest-accent:${escapeHtml(contest.accent)}">
-      <div class="contest-card__visual">
-        ${cover}
-        ${statusBadge(status, statusTone)}
+    <section class="active-journey" aria-labelledby="active-journey-title" ${contestTheme(contest)}>
+      <div class="active-journey__art">${courseArt(contest, { eager: true })}</div>
+      <div class="active-journey__content">
+        <span class="library-kicker">CONTINUAR ESTUDANDO</span>
+        <div><strong class="active-journey__code">${escapeHtml(contest.code)}</strong><h2 id="active-journey-title">${escapeHtml(contest.name)}</h2><p>${escapeHtml(contest.role)}</p></div>
+        <div class="active-journey__progress">${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}</div>
+        ${summary?.lastAccessAt ? `<small>Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}</small>` : '<small>Sua jornada está pronta para começar.</small>'}
       </div>
-      <div class="contest-card__body">
-        <div class="contest-card__identity"><span class="contest-card__code">${escapeHtml(contest.code)}</span><span>${escapeHtml(subarea || area.name)}</span></div>
+      <button type="button" class="active-journey__action" data-open-contest="${escapeHtml(contest.id)}">CONTINUAR <span aria-hidden="true">→</span></button>
+      <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
+    </section>`;
+}
+
+function ownedCourseCard(item, { active = false } = {}) {
+  const { contest, summary } = item;
+  const progress = safePercent(summary?.editalCompletionPct);
+  const contentUnavailable = contest.contentStatus !== 'ready';
+  const disabled = item.accessVerificationRequired === true || contentUnavailable;
+  return `
+    <article class="owned-course-card ${active ? 'owned-course-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" ${contestTheme(contest)}>
+      <div class="owned-course-card__art">${courseArt(contest)}</div>
+      <div class="owned-course-card__body">
+        <span class="owned-course-card__code">${escapeHtml(contest.code)}</span>
         <h3>${escapeHtml(contest.name)}</h3>
-        <p class="contest-card__role">${escapeHtml(contest.role)}</p>
-        <p class="contest-card__description">${escapeHtml(contest.description)}</p>
-        <dl class="contest-card__metrics">
-          <div><dt>Área</dt><dd>${escapeHtml(area.filterLabel)}</dd></div>
-          <div><dt>Subtópicos</dt><dd>${Number(contest.subtopicCount || 0)}</dd></div>
-          <div><dt>Questões</dt><dd>${Number(contest.questionCount || 0)}</dd></div>
-        </dl>
-        ${contest.examBoard ? `<p class="contest-card__fact"><strong>Banca:</strong> ${escapeHtml(contest.examBoard)}</p>` : ''}
-        ${contest.examDate ? `<p class="contest-card__fact"><strong>Prova:</strong> ${escapeHtml(formatDate(contest.examDate))}</p>` : ''}
-        ${isDemand ? `<div class="contest-card__interest"><strong data-interest-count>${escapeHtml(interestText)}</strong>${contest.interestGoal ? `<span data-interest-goal="${Number(contest.interestGoal)}">${Number(contest.interestCount || 0)} / ${Number(contest.interestGoal)} interessados</span>` : ''}</div>` : ''}
-        ${owned && !item.accessVerificationRequired ? `<div class="contest-card__progress">${progressBar({ value: summary?.editalCompletionPct || 0, label: 'Progresso do edital', tone: 'plasma' })}<span class="contest-card__last">${summary?.lastAccessAt ? `Última atividade em ${formatDate(summary.lastAccessAt)}` : 'Sua jornada está pronta para começar.'}</span></div>` : ''}
-        ${!owned && !isDemand ? `<div class="contest-card__commerce-detail" data-commerce-detail>
-          <strong>Como funciona o acesso</strong>
-          <p>A compra é confirmada pelo servidor. Depois da confirmação, o curso aparece em Meus cursos sem alterar seu progresso em outras jornadas.</p>
-        </div>` : ''}
-        ${isDemand ? '<p class="contest-card__interest-note">Seu interesse indica demanda por este curso. Nenhuma comunicação externa é enviada nesta fase.</p>' : ''}
-        <div class="contest-card__footer">
-          ${price ? `<div class="contest-card__price"><small>Investimento</small><strong>${escapeHtml(price)}</strong></div>` : '<span></span>'}
-          <button type="button" class="btn ${isDemand || action.action === 'open' || action.action === 'purchase' ? 'btn-primary' : 'btn-ghost'}" ${actionAttribute} ${action.action === 'details' ? 'aria-expanded="false"' : ''} ${item.accessVerificationRequired || (!isDemand && action.disabled) ? 'disabled' : ''}>${escapeHtml(actionLabel)}</button>
-        </div>
-        <p class="contest-card__feedback" data-card-feedback role="status" aria-live="polite"></p>
+        <p>${escapeHtml(contest.role)}</p>
+        <div class="owned-course-card__mastery"><span>DOMÍNIO DO EDITAL</span><strong>${progress}%</strong></div>
+        ${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}
+        <p class="owned-course-card__counts">${Number(contest.subtopicCount || 0)} subtópicos <span aria-hidden="true">·</span> ${Number(contest.questionCount || 0).toLocaleString('pt-BR')} questões</p>
+        <p class="owned-course-card__last">${summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Ainda sem atividade registrada.'}</p>
+        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? 'CONTEÚDO EM PREPARAÇÃO' : 'CONTINUAR'}</button>
+        <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
       </div>
     </article>`;
-}
-
-function areaDiscoveryCard(areaId, amount) {
-  const area = CAREER_AREAS[areaId];
-  return `
-    <button class="library-area-card" type="button" data-career-filter="${areaId}" aria-pressed="false" aria-controls="library-available-results library-upcoming-results">
-      <img src="${area.art}" alt="" width="1672" height="941" loading="lazy" decoding="async" data-area-art>
-      <span class="library-area-card__shade" aria-hidden="true"></span>
-      <span class="library-area-card__selection" aria-hidden="true">✓</span>
-      <span class="library-area-card__copy">
-        <strong>${escapeHtml(area.name)}</strong>
-        <p>${escapeHtml(area.description)}</p>
-        <small>${plural(amount, 'concurso no catálogo', 'concursos no catálogo')}</small>
-      </span>
-    </button>`;
-}
-
-function renderCatalogResults(items, area, search) {
-  const filtered = filterLibraryItems(items, { area, search });
-  if (!filtered.length) {
-    return `<div class="library-filter-empty" role="status">
-      <span aria-hidden="true">⌕</span>
-      <h3>Nenhum concurso encontrado para estes filtros.</h3>
-      <p>Limpe a busca ou a área selecionada para consultar novamente o catálogo completo.</p>
-      <div>
-        ${search ? '<button class="btn btn-ghost" type="button" data-clear-search>Limpar busca</button>' : ''}
-        ${area !== 'all' ? '<button class="btn btn-ghost" type="button" data-clear-area>Limpar área</button>' : ''}
-      </div>
-    </div>`;
-  }
-  return `<div class="contest-grid">${filtered.map((item) => contestCard(item)).join('')}</div>`;
 }
 
 function supportLinks(links = {}) {
@@ -137,180 +81,68 @@ export function renderLibrary(root, {
   offline = false,
   links = {},
   onOpen,
-  onPurchase = async () => {},
-  onInterest = async () => {},
   onRefreshAccess = async () => {},
   onLogout,
   embedded = false,
 }) {
-  const { owned, available, upcoming } = partitionCommercialLibrary(items);
-  const offers = [...available, ...upcoming];
+  const { owned } = partitionLibrary(items);
   const activeJourney = selectActiveJourney(owned, activeContestId);
   const ownedOrdered = activeJourney
     ? [activeJourney, ...owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)]
     : owned;
-  const areaCounts = countLibraryItemsByArea(offers);
   const notice = resolveCheckoutReturn(commerceReturn, items);
-  const state = { area: 'all', search: '' };
   const openingContests = new Set();
 
   root.innerHTML = `
-    <div class="library-page student-library ${embedded ? 'library-page--embedded' : ''}">
-      ${embedded ? '' : `<header class="library-header">
-        <div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div>
-        <div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div>
-      </header>`}
-      <section class="library-hero" aria-labelledby="library-title">
-        <div class="library-hero__copy"><span class="saas-kicker">Portal de preparação</span><p class="library-greeting">Olá, <strong>${escapeHtml(user.name.split(' ')[0])}</strong>.</p><h1 id="library-title">BIBLIOTECA DE CONCURSOS</h1><p>${activeJourney ? `Sua jornada ${escapeHtml(activeJourney.contest.code)} está pronta. Continue de onde parou ou explore novos concursos.` : 'Escolha sua área, encontre seu concurso e comece sua preparação.'}</p></div>
-        <div class="library-summary" aria-label="Resumo dos seus cursos"><strong>${owned.length}</strong><span>${owned.length === 1 ? 'curso adquirido' : 'cursos adquiridos'}</span></div>
-        ${activeJourney && !activeJourney.accessVerificationRequired ? `<button type="button" class="library-primary-journey" data-open-contest="${escapeHtml(activeJourney.contest.id)}"><span><small>Jornada ativa</small><strong>Continuar minha jornada</strong></span><span aria-hidden="true">→</span></button>` : ''}
-      </section>
-      ${offline ? `<aside class="library-network-state" role="status"><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e consultar ofertas atuais.</span><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
-      ${notice ? `<aside class="library-commerce-notice library-commerce-notice--${notice.tone}" role="status" aria-live="polite"><div><strong>${escapeHtml(notice.title)}</strong><p>${escapeHtml(notice.description)}</p></div>${notice.pending ? '<button class="btn btn-ghost" type="button" data-refresh-access>Atualizar acesso</button>' : notice.retryAllowed ? `<button class="btn btn-ghost" type="button" data-retry-checkout="${escapeHtml(notice.contestId)}">Tentar novamente</button>` : ''}</aside>` : ''}
-      <section class="library-section library-section--owned" aria-labelledby="owned-courses-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Acesso liberado</span><h2 id="owned-courses-title">Meus cursos</h2></div><p>${plural(owned.length, 'jornada disponível', 'jornadas disponíveis')}</p></div>
-        ${ownedOrdered.length
-          ? `<div class="contest-grid contest-grid--owned">${ownedOrdered.map((item) => contestCard(item, { active: item === activeJourney })).join('')}</div>`
-          : emptyState({ title: 'Sua biblioteca está pronta', description: 'Você ainda não possui um curso. Explore o catálogo oficial abaixo para conhecer as jornadas disponíveis.' })}
-      </section>
-      <section class="library-search-panel" aria-labelledby="library-search-title">
-        <div><span class="saas-kicker">Encontre sua próxima jornada</span><h2 id="library-search-title">O que você quer estudar?</h2></div>
-        <label class="library-search"><span>Pesquisar no catálogo</span><input id="library-search" type="search" autocomplete="off" placeholder="Pesquisar concurso, órgão, cargo ou banca"></label>
-      </section>
-      <section class="library-areas" aria-labelledby="library-areas-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Navegação visual</span><h2 id="library-areas-title">Explore por área</h2></div><button class="library-area-reset active" type="button" data-career-filter="all" aria-pressed="true" aria-controls="library-available-results library-upcoming-results">Todos os concursos</button></div>
-        <div class="library-area-grid">
-          ${CAREER_AREA_ORDER.map((areaId) => areaDiscoveryCard(areaId, areaCounts[areaId])).join('')}
-        </div>
-      </section>
-      <section class="library-section library-section--catalog" aria-labelledby="catalog-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Catálogo oficial</span><h2 id="catalog-title">Cursos disponíveis</h2></div><p data-available-count>${plural(available.length, 'curso encontrado', 'cursos encontrados')}</p></div>
-        <div id="library-available-results" aria-live="polite"></div>
-      </section>
-      <section class="library-section library-section--upcoming" aria-labelledby="upcoming-title">
-        <div class="library-section__title"><div><span class="saas-kicker">Descubra o que vem a seguir</span><h2 id="upcoming-title">Próximos concursos</h2></div><p data-upcoming-count>${plural(upcoming.length, 'concurso acompanhado', 'concursos acompanhados')}</p></div>
-        <div id="library-upcoming-results" aria-live="polite"></div>
-      </section>
+    <div class="library-page student-library student-library--private ${embedded ? 'library-page--embedded' : ''}">
+      ${embedded ? '' : `<header class="library-header"><div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div><div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div></header>`}
+      <header class="private-library-header">
+        <div><span class="library-kicker">ÁREA PRIVADA</span><h1 id="library-title">BIBLIOTECA</h1><p>Suas jornadas de preparação.</p></div>
+        ${publicCoursesAction({ href: links.courses, offline })}
+      </header>
+      ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
+      ${notice ? `<aside class="library-commerce-notice library-commerce-notice--${notice.tone}" role="status" aria-live="polite"><div><strong>${escapeHtml(notice.title)}</strong><p>${escapeHtml(notice.description)}</p></div>${notice.pending ? '<button class="btn btn-ghost" type="button" data-refresh-access>Atualizar acesso</button>' : ''}</aside>` : ''}
+      ${activeJourney && !activeJourney.accessVerificationRequired ? continueJourney(activeJourney) : ''}
+      ${ownedOrdered.length ? `
+        <section class="private-owned-courses" aria-labelledby="owned-courses-title">
+          <div class="private-owned-courses__title"><div><span class="library-kicker">ACESSO LIBERADO</span><h2 id="owned-courses-title">Meus Cursos</h2></div><p>${plural(owned.length, 'jornada disponível', 'jornadas disponíveis')}</p></div>
+          <div class="private-owned-grid">${ownedOrdered.map((item) => ownedCourseCard(item, { active: item === activeJourney })).join('')}</div>
+        </section>` : `
+        <section class="private-library-empty" aria-labelledby="private-library-empty-title">
+          <span class="private-library-empty__mark" aria-hidden="true">D</span>
+          <div><span class="library-kicker">SUA PRÓXIMA CONQUISTA</span><h2 id="private-library-empty-title">Sua primeira jornada começa aqui.</h2><p>Escolha o concurso que você quer conquistar e conheça as jornadas DETONA.</p></div>
+          ${publicCoursesAction({ href: links.courses, offline, label: 'EXPLORAR CURSOS', className: 'private-library-empty__action' })}
+        </section>`}
       <footer class="student-entry-footer"><span>Precisa de ajuda para entrar ou recuperar seu acesso?</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
     </div>`;
 
-  const bindCards = (scope) => {
-    scope.querySelectorAll('[data-area-art]').forEach((image) => image.addEventListener('error', () => {
-      image.hidden = true;
-      image.closest('.library-area-card')?.classList.add('library-area-card--fallback');
-    }, { once: true }));
+  const bindOpenActions = (scope) => {
+    if (!scope) return;
     scope.querySelectorAll('[data-open-contest]').forEach((button) => button.addEventListener('click', async () => {
       const contestId = button.dataset.openContest;
       if (openingContests.has(contestId)) return;
       openingContests.add(contestId);
       const relatedButtons = [...root.querySelectorAll(`[data-open-contest="${CSS.escape(contestId)}"]`)];
-      const originalLabels = new Map(relatedButtons.map((candidate) => [candidate, candidate.textContent]));
+      const originalLabels = new Map(relatedButtons.map((candidate) => [candidate, candidate.innerHTML]));
       relatedButtons.forEach((candidate) => {
         candidate.disabled = true;
         candidate.setAttribute('aria-busy', 'true');
-        if (!candidate.classList.contains('library-primary-journey')) candidate.textContent = 'Preparando jornada...';
+        candidate.textContent = 'PREPARANDO JORNADA...';
       });
-      const feedback = button.closest('[data-contest-card]')?.querySelector('[data-card-feedback]');
-      if (feedback) feedback.textContent = 'Carregando o curso e sincronizando seu progresso. Isso pode levar alguns segundos.';
+      const feedback = button.closest('[data-contest-card], .active-journey')?.querySelector('[data-card-feedback]');
+      if (feedback) feedback.textContent = 'Carregando o curso e sincronizando seu progresso.';
       try { await onOpen(contestId); }
       catch (error) {
         if (feedback) feedback.textContent = error?.code === 'STALE_CONTEXT' ? '' : (error?.message || 'Não foi possível abrir este curso.');
         relatedButtons.forEach((candidate) => {
           candidate.disabled = false;
           candidate.setAttribute('aria-busy', 'false');
-          candidate.textContent = originalLabels.get(candidate);
+          candidate.innerHTML = originalLabels.get(candidate);
         });
       } finally {
         openingContests.delete(contestId);
       }
     }));
-    scope.querySelectorAll('[data-purchase-contest]').forEach((button) => button.addEventListener('click', async () => {
-      button.disabled = true;
-      button.setAttribute('aria-busy', 'true');
-      const feedback = button.closest('[data-contest-card]')?.querySelector('[data-card-feedback]');
-      try { await onPurchase(button.dataset.purchaseContest); }
-      catch (error) {
-        if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar a compra. Tente novamente.';
-        button.disabled = false;
-        button.setAttribute('aria-busy', 'false');
-      }
-    }));
-    scope.querySelectorAll('[data-interest-contest]').forEach((button) => button.addEventListener('click', async () => {
-      const current = button.dataset.interested === 'true';
-      const card = button.closest('[data-contest-card]');
-      const feedback = card?.querySelector('[data-card-feedback]');
-      button.disabled = true;
-      button.setAttribute('aria-busy', 'true');
-      try {
-        const result = await onInterest(button.dataset.interestContest, !current);
-        button.dataset.interested = String(result.interested);
-        button.setAttribute('aria-pressed', String(result.interested));
-        button.textContent = result.interested
-          ? '✓ Interesse registrado'
-          : card?.querySelector('.ds-badge')?.textContent?.includes('ACOMPANHAMENTO')
-            ? 'Tenho interesse' : 'Quero ser avisado';
-        const count = card?.querySelector('[data-interest-count]');
-        if (count) count.textContent = result.interestCount > 0
-          ? `${result.interestCount} candidatos demonstraram interesse`
-          : 'Seja um dos primeiros interessados';
-        const goal = card?.querySelector('[data-interest-goal]');
-        if (goal) goal.textContent = `${result.interestCount} / ${goal.dataset.interestGoal} interessados`;
-        if (feedback) feedback.textContent = result.interested ? 'Interesse registrado.' : 'Interesse removido.';
-      } catch (error) {
-        if (feedback) feedback.textContent = error?.message || 'Não foi possível atualizar seu interesse.';
-      } finally {
-        button.disabled = false;
-        button.setAttribute('aria-busy', 'false');
-      }
-    }));
-    scope.querySelectorAll('[data-view-details]').forEach((button) => button.addEventListener('click', () => {
-      const card = button.closest('[data-contest-card]');
-      card.classList.toggle('contest-card--details');
-      const expanded = card.classList.contains('contest-card--details');
-      button.textContent = expanded ? 'Ocultar detalhes' : 'Ver curso';
-      button.setAttribute('aria-expanded', String(expanded));
-    }));
-  };
-
-  const availableResults = root.querySelector('#library-available-results');
-  const upcomingResults = root.querySelector('#library-upcoming-results');
-  const searchInput = root.querySelector('#library-search');
-  const availableCount = root.querySelector('[data-available-count]');
-  const upcomingCount = root.querySelector('[data-upcoming-count]');
-
-  const syncAreaSelection = () => {
-    root.querySelectorAll('[data-career-filter]').forEach((candidate) => {
-      const selected = candidate.dataset.careerFilter === state.area;
-      candidate.classList.toggle('active', selected);
-      candidate.setAttribute('aria-pressed', String(selected));
-    });
-  };
-
-  const clearSearch = () => {
-    state.search = '';
-    searchInput.value = '';
-    updateResults();
-    searchInput.focus();
-  };
-
-  const clearArea = () => {
-    state.area = 'all';
-    syncAreaSelection();
-    updateResults();
-  };
-
-  const updateResults = () => {
-    const filteredAvailable = filterLibraryItems(available, state);
-    const filteredUpcoming = filterLibraryItems(upcoming, state);
-    availableCount.textContent = plural(filteredAvailable.length, 'curso encontrado', 'cursos encontrados');
-    upcomingCount.textContent = plural(filteredUpcoming.length, 'concurso acompanhado', 'concursos acompanhados');
-    availableResults.innerHTML = renderCatalogResults(available, state.area, state.search);
-    upcomingResults.innerHTML = renderCatalogResults(upcoming, state.area, state.search);
-    [availableResults, upcomingResults].forEach((results) => {
-      bindCards(results);
-      results.querySelector('[data-clear-search]')?.addEventListener('click', clearSearch);
-      results.querySelector('[data-clear-area]')?.addEventListener('click', clearArea);
-    });
   };
 
   root.querySelector('#library-logout')?.addEventListener('click', onLogout);
@@ -319,27 +151,5 @@ export function renderLibrary(root, {
     button.setAttribute('aria-busy', 'true');
     await onRefreshAccess();
   }));
-  root.querySelector('[data-retry-checkout]')?.addEventListener('click', async (event) => {
-    const button = event.currentTarget;
-    button.disabled = true;
-    button.setAttribute('aria-busy', 'true');
-    try { await onPurchase(button.dataset.retryCheckout); }
-    catch {
-      button.disabled = false;
-      button.setAttribute('aria-busy', 'false');
-    }
-  });
-  searchInput?.addEventListener('input', (event) => {
-    state.search = event.currentTarget.value;
-    updateResults();
-  });
-  root.querySelectorAll('[data-career-filter]').forEach((button) => button.addEventListener('click', () => {
-    state.area = button.dataset.careerFilter;
-    syncAreaSelection();
-    updateResults();
-  }));
-  bindCards(root.querySelector('.library-areas'));
-  bindCards(root.querySelector('.library-section--owned'));
-  bindCards(root.querySelector('.library-hero'));
-  updateResults();
+  bindOpenActions(root);
 }

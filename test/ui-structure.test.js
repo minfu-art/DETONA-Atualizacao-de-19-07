@@ -90,7 +90,8 @@ test('autenticacao e biblioteca integram arte aprovada sem usar os mockups como 
   ]);
   assert.match(auth, /login-command-hall\.webp/);
   assert.match(auth, /auth-backdrop/);
-  assert.match(library, /library-area-card/);
+  assert.match(library, /student-library--private/);
+  assert.match(library, /owned-course-card/);
   assert.match(careerLibrary, /assets\/library\/areas/);
   assert.doesNotMatch(auth + library, /ref-dashboard\.png|DETONA_UI_CONCEITO/);
 });

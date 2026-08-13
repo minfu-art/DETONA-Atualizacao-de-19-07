@@ -3560,6 +3560,14 @@ main:focus-visible { outline:3px solid var(--ds-theme-accent); outline-offset:-3
 }
 #app .app-sidebar__item.active { border-color:var(--ds-theme-border); background:var(--ds-theme-wash); color:var(--ds-text-1); box-shadow:none; }
 .app-sidebar__session { padding-top:12px; border-top:1px solid var(--ds-border); }
+.app-sidebar__active-journey { display:grid; gap:6px; margin-bottom:10px; padding:12px; border:1px solid var(--ds-theme-border); border-radius:var(--ds-radius-md); background:var(--ds-theme-wash); }
+.app-sidebar__active-journey[hidden] { display:none; }
+.app-sidebar__active-journey small { color:var(--ds-text-4); font:800 9px/1.2 var(--sans); letter-spacing:.12em; }
+.app-sidebar__active-journey strong { color:var(--ds-text-1); font:800 15px/1.2 var(--display); }
+#app .app-sidebar__active-journey button { min-height:var(--ds-touch-target); padding:0; border:0; color:var(--ds-theme-accent); background:transparent; text-align:left; font:750 12px/1.2 var(--sans); cursor:pointer; }
+.app-shell--private-library .app-topbar__stats,
+.app-shell--private-library .app-sidebar__group[data-nav-group="journey"],
+.app-shell--private-library .app-sidebar__group[data-nav-group="evolution"] { display:none; }
 #app .app-sidebar__logout {
   width:100%;
   min-height:var(--ds-touch-target);

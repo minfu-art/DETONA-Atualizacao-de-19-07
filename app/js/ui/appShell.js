@@ -28,7 +28,7 @@ function navigationButton(item, className, extra = '') {
 
 function desktopNavigation() {
   return DESKTOP_NAVIGATION_GROUPS.map((group) => `
-    <section class="app-sidebar__group" aria-labelledby="sidebar-group-${escapeHtml(group.id)}">
+    <section class="app-sidebar__group" data-nav-group="${escapeHtml(group.id)}" aria-labelledby="sidebar-group-${escapeHtml(group.id)}">
       <h2 class="app-sidebar__section" id="sidebar-group-${escapeHtml(group.id)}">${escapeHtml(group.label)}</h2>
       ${group.items.map((item) => navigationButton(item, 'app-sidebar__item')).join('')}
     </section>`).join('');
@@ -116,11 +116,16 @@ export function initAppShell(navigate, { onLogout, onActivate } = {}) {
     </div>
     <nav class="app-sidebar__nav" aria-label="Navegação principal">${desktopNavigation()}</nav>
     <div class="app-sidebar__session">
+      <div class="app-sidebar__active-journey" id="shell-active-journey" hidden>
+        <small>JORNADA ATIVA</small>
+        <strong id="shell-active-code">—</strong>
+        <button type="button" data-shell-screen="home">Entrar na jornada <span aria-hidden="true">→</span></button>
+      </div>
       <button type="button" class="app-sidebar__logout" id="shell-logout">${icon('logout')}<span>Sair da conta</span></button>
     </div>`;
 
   topbar.innerHTML = `
-    <button type="button" class="app-topbar__contest" data-shell-screen="library" aria-label="Abrir Biblioteca"><small>Jornada ativa</small><strong id="shell-contest">Biblioteca</strong></button>
+    <button type="button" class="app-topbar__contest" data-shell-screen="library" aria-label="Abrir Biblioteca"><small id="shell-context-label">Jornada ativa</small><strong id="shell-contest">Biblioteca</strong></button>
     <div class="app-topbar__stats" aria-label="Status do estudante">
       <span><small>Nível</small><strong id="shell-level">—</strong></span>
       <span><small>XP</small><strong id="shell-xp">—</strong></span>
@@ -252,6 +257,7 @@ export function updateAppShell({ screen, player, contest }) {
   const immersive = screen === 'onboarding' || screen === 'celebration';
   shellController?.closeMore({ restoreFocus: false });
   app?.classList.toggle('app-shell--immersive', immersive);
+  app?.classList.toggle('app-shell--private-library', screen === 'library');
   if (app) {
     app.dataset.activeScreen = activeScreen;
     app.dataset.theme = themeForScreen(screen);
@@ -298,7 +304,11 @@ export function updateAppShell({ screen, player, contest }) {
   setText('shell-streak', player ? `${player.streak_days || 0} dias` : '—');
   setText('shell-player', player?.name || 'Detonador');
   setText('shell-avatar', (player?.name || 'D').trim().charAt(0).toUpperCase());
-  setText('shell-contest', contest?.code || 'Biblioteca');
+  setText('shell-context-label', screen === 'library' ? 'Área' : 'Jornada ativa');
+  setText('shell-contest', screen === 'library' ? 'Biblioteca' : (contest?.code || 'Biblioteca'));
+  setText('shell-active-code', contest?.code || '—');
+  const activeJourney = document.getElementById('shell-active-journey');
+  if (activeJourney) activeJourney.hidden = !(screen === 'library' && contest?.code);
   document.title = `${titleForScreen(screen)} — ${contest?.code || 'DETONA'}`;
   const announcer = document.getElementById('shell-announcer');
   if (announcer) announcer.textContent = `${titleForScreen(screen)} carregado`;

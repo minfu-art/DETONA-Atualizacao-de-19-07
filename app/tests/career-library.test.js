@@ -133,7 +133,7 @@ test('categoria vazia permanece representável', () => {
   assert.equal(CAREER_AREAS.armed_forces.name, 'Militar e Defesa');
 });
 
-test('cards de area contam somente ofertas e mantem curso adquirido em Meus cursos', async () => {
+test('serviço continua separando ofertas e UI privada usa somente adquiridos', async () => {
   const owned = item({ id: 'pc_al_2026', careerArea: 'police_security', owned: true });
   const offer = item({ id: 'pp_pe_2027', careerArea: 'police_security', owned: false });
   const entitlement = { id: 'entitlement-a', status: 'active' };
@@ -146,7 +146,8 @@ test('cards de area contam somente ofertas e mantem curso adquirido em Meus curs
   assert.deepEqual(ownedItems, [owned]);
   assert.equal(owned.entitlement, entitlement);
   const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
-  assert.match(ui, /const areaCounts = countLibraryItemsByArea\(offers\)/);
+  assert.match(ui, /const \{ owned \} = partitionLibrary\(items\)/);
+  assert.doesNotMatch(ui, /countLibraryItemsByArea|filterLibraryItems|partitionCommercialLibrary/);
 });
 
 test('prioridade do botão respeita propriedade, prontidão e progresso', () => {
@@ -163,22 +164,19 @@ test('filtragem não concede acesso nem altera entitlement ou progresso', () => 
   assert.equal(ppPe.owned, false);
 });
 
-test('interface mantém seis filtros visuais acessíveis, limpeza e rolagem horizontal no celular', async () => {
+test('interface privada remove descoberta e mantém responsividade e acessibilidade', async () => {
   const [ui, css] = await Promise.all([
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(ui, /BIBLIOTECA DE CONCURSOS/);
-  assert.match(ui, /Pesquisar concurso, órgão, cargo ou banca/);
-  assert.match(ui, /Explore por área/);
-  assert.match(ui, /data-career-filter/);
-  assert.match(ui, /aria-pressed/);
-  assert.match(ui, /data-clear-search/);
-  assert.match(ui, /data-clear-area/);
-  assert.match(css, /\.student-library \.library-area-grid[\s\S]*grid-template-columns:\s*repeat\(3/s);
-  assert.match(css, /@media \(max-width: 760px\)[\s\S]*scroll-snap-type:\s*x mandatory/s);
-  assert.match(css, /\.student-library \.library-area-card:focus-visible/);
-  assert.match(css, /min-height:\s*44px/);
+  assert.match(ui, /<h1 id="library-title">BIBLIOTECA<\/h1>/);
+  assert.match(ui, /\+ ADICIONAR CURSOS/);
+  assert.match(ui, /rel="noopener noreferrer"/);
+  assert.doesNotMatch(ui, /Pesquisar concurso|Explore por área|data-career-filter|data-interest-contest/);
+  assert.match(css, /\.private-owned-grid \{ display: grid; grid-template-columns: repeat\(3/);
+  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.private-owned-grid \{ grid-template-columns: 1fr/s);
+  assert.match(css, /:focus-visible/);
+  assert.match(css, /min-height: 48px/);
 });
 
 test('seis artes WebP oficiais existem, mantêm 1672x941 e estão otimizadas', async () => {
@@ -194,20 +192,14 @@ test('seis artes WebP oficiais existem, mantêm 1672x941 e estão otimizadas', a
   }
 });
 
-test('Meus cursos vem antes da descoberta e curso sem entitlement não recebe CTA de continuar', async () => {
+test('Meus Cursos é a única coleção e curso sem entitlement não recebe CTA de continuar', async () => {
   const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
-  const searchPosition = ui.indexOf('<section class="library-search-panel"');
-  const areasPosition = ui.indexOf('<section class="library-areas"');
-  const ownedPosition = ui.indexOf('<section class="library-section library-section--owned"');
-  const catalogPosition = ui.indexOf('<section class="library-section library-section--catalog"');
-  assert.ok(ownedPosition < searchPosition);
-  assert.ok(ownedPosition < areasPosition);
-  assert.ok(ownedPosition < catalogPosition);
+  const ownedPosition = ui.indexOf('<section class="private-owned-courses"');
+  assert.ok(ownedPosition > 0);
   assert.equal(contestPrimaryAction(ppPe).action, 'details');
   assert.doesNotMatch(contestPrimaryAction(ppPe).label, /continuar/i);
-  assert.match(ui, /MEU CURSO/);
-  assert.match(ui, /INDISPONÍVEL/);
-  assert.match(ui, /EM PREPARAÇÃO/);
+  assert.match(ui, /const \{ owned \} = partitionLibrary\(items\)/);
+  assert.doesNotMatch(ui, /Cursos disponíveis|Próximos concursos|Tenho interesse|Quero ser avisado/);
 });
 
 test('jornada ativa tem CTA direto, contexto e bloqueio de abertura concorrente', async () => {
@@ -215,14 +207,13 @@ test('jornada ativa tem CTA direto, contexto e bloqueio de abertura concorrente'
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(ui, /class="library-primary-journey" data-open-contest/);
-  assert.match(ui, /Continuar minha jornada/);
-  assert.match(ui, /Sua jornada \$\{escapeHtml\(activeJourney\.contest\.code\)\} está pronta/);
+  assert.match(ui, /class="active-journey__action" data-open-contest/);
+  assert.match(ui, /CONTINUAR ESTUDANDO/);
   assert.match(ui, /const openingContests = new Set\(\)/);
   assert.match(ui, /if \(openingContests\.has\(contestId\)\) return/);
   assert.match(ui, /relatedButtons\.forEach/);
-  assert.match(css, /\.student-library \.library-primary-journey/);
-  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.library-primary-journey \{ width: 100%/s);
+  assert.match(css, /\.active-journey/);
+  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.active-journey \{ grid-template-columns: 1fr/s);
 });
 
 test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE', async () => {

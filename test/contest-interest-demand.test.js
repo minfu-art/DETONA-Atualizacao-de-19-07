@@ -153,21 +153,17 @@ test('biblioteca separa adquiridos, disponíveis e próximos concursos', () => {
   assert.deepEqual([result.owned.length, result.available.length, result.upcoming.length], [1, 1, 2]);
 });
 
-test('UI distingue monitoring, preparação e estado pressionado', async () => {
+test('UI privada não expõe demanda, mas backend 10C permanece separado', async () => {
   const ui = await source('app/js/ui/library.js');
-  for (const label of ['Meus cursos', 'Cursos disponíveis', 'Próximos concursos', 'EM ACOMPANHAMENTO', 'Tenho interesse', 'Quero ser avisado', '✓ Interesse registrado']) assert.match(ui, new RegExp(label));
-  assert.match(ui, /aria-pressed=/);
-  assert.match(ui, /Seja um dos primeiros interessados/);
-  assert.match(ui, /data-interest-count/);
+  assert.match(ui, /Meus Cursos/);
+  assert.doesNotMatch(ui, /Cursos disponíveis|Próximos concursos|Tenho interesse|Quero ser avisado|data-interest-count|aria-pressed=/);
 });
 
-test('erro do backend não altera contador nem estado confirmado', async () => {
+test('infraestrutura de interesse permanece fora da UI privada', async () => {
   const ui = await source('app/js/ui/library.js');
-  const handler = ui.slice(ui.indexOf("scope.querySelectorAll('[data-interest-contest]')"), ui.indexOf("scope.querySelectorAll('[data-view-details]')"));
-  assert.match(handler, /const result = await onInterest/);
-  assert.match(handler, /button\.dataset\.interested = String\(result\.interested\)/);
-  assert.match(handler, /catch \(error\)/);
-  assert.doesNotMatch(handler.slice(0, handler.indexOf('const result = await onInterest')), /interestCount|aria-pressed/);
+  const service = await source('app/js/services/libraryService.js');
+  assert.doesNotMatch(ui, /onInterest|data-interest-contest|interestCount/);
+  assert.match(service, /async setInterest/);
 });
 
 test('admin aceita monitoring e valida meta opcional positiva', () => {
@@ -353,24 +349,24 @@ test('snapshot offline não habilita escrita de interesse', async () => {
   await assert.rejects(() => service.setInterest('prf_2027', true, { offline: true }), /Conecte-se/);
 });
 
-test('seção Meus cursos é preservada', async () => {
-  assert.match(await source('app/js/ui/library.js'), /<h2 id="owned-courses-title">Meus cursos<\/h2>/);
+test('seção Meus Cursos é preservada', async () => {
+  assert.match(await source('app/js/ui/library.js'), /<h2 id="owned-courses-title">Meus Cursos<\/h2>/);
 });
 
-test('seção Cursos disponíveis é independente', async () => {
-  assert.match(await source('app/js/ui/library.js'), /<h2 id="catalog-title">Cursos disponíveis<\/h2>/);
+test('Cursos disponíveis não aparece na biblioteca privada', async () => {
+  assert.doesNotMatch(await source('app/js/ui/library.js'), /Cursos disponíveis|catalog-title/);
 });
 
-test('seção Próximos concursos é independente', async () => {
-  assert.match(await source('app/js/ui/library.js'), /<h2 id="upcoming-title">Próximos concursos<\/h2>/);
+test('Próximos concursos não aparece na biblioteca privada', async () => {
+  assert.doesNotMatch(await source('app/js/ui/library.js'), /Próximos concursos|upcoming-title/);
 });
 
-test('monitoring oferece Tenho interesse', async () => {
+test('monitoring não oferece Tenho interesse na biblioteca privada', async () => {
   const ui = await source('app/js/ui/library.js');
-  assert.match(ui, /salesStatus === 'monitoring' \? 'Tenho interesse'/);
+  assert.doesNotMatch(ui, /Tenho interesse|salesStatus === 'monitoring'/);
 });
 
-test('coming_soon oferece Quero ser avisado', async () => {
+test('coming_soon não oferece Quero ser avisado na biblioteca privada', async () => {
   const ui = await source('app/js/ui/library.js');
-  assert.match(ui, /: 'Quero ser avisado'/);
+  assert.doesNotMatch(ui, /Quero ser avisado/);
 });

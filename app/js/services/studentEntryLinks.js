@@ -14,6 +14,7 @@ function safeSupportEmail(value) {
 
 export function getStudentEntryLinks() {
   return Object.freeze({
+    courses: safePublicUrl(ENV.PUBLIC_COURSES_URL, 'https://detonaconcursos.com/cursos'),
     support: safeSupportEmail(ENV.SUPPORT_EMAIL || 'adm@detonaconcursos.com'),
     terms: safePublicUrl(ENV.TERMS_URL, 'legal.html#termos'),
     privacy: safePublicUrl(ENV.PRIVACY_URL, 'legal.html#privacidade'),

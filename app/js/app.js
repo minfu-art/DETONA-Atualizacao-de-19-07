@@ -548,17 +548,6 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       onOpen: (contestId) => openContest(contestId, {
         contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null,
       }),
-      onPurchase: async (contestId) => {
-        const purchase = await libraryService.purchase(authService.getCurrentUser(), contestId);
-        if (purchase?.redirectUrl) {
-          const target = new URL(purchase.redirectUrl);
-          if (target.protocol !== 'https:') throw new Error('Destino de checkout inválido.');
-          globalThis.location.assign(target.toString());
-          return;
-        }
-        await showLibrary({ refresh: true });
-      },
-      onInterest: (contestId, interested) => libraryService.setInterest(contestId, interested, { offline: state.offline }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
       onLogout: logout,
       embedded: true,

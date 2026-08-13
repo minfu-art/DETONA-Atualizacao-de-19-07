@@ -29,9 +29,9 @@ test('jornada recente e valida e escolhida sem conceder acesso', () => {
 
 test('botao do curso informa imediatamente que a jornada esta sendo preparada', async () => {
   const library = await source('../js/ui/library.js');
-  assert.match(library, /Preparando jornada\.\.\./);
+  assert.match(library, /PREPARANDO JORNADA\.\.\./);
   assert.match(library, /sincronizando seu progresso/);
-  assert.match(library, /candidate\.textContent = originalLabels\.get\(candidate\)/);
+  assert.match(library, /candidate\.innerHTML = originalLabels\.get\(candidate\)/);
   assert.match(library, /if \(openingContests\.has\(contestId\)\) return/);
 });
 
