@@ -6,8 +6,6 @@ import { openDB } from './core/db.js';
 import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
-import { renderOnboarding } from './ui/onboarding.js?v=70';
-import { renderHome } from './ui/home.js?v=84';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
 import { renderAuth } from './ui/auth.js?v=75';
 import { renderLibrary } from './ui/library.js';
@@ -54,11 +52,34 @@ import {
   studentHistoryTransition,
 } from './core/studentHistory.js';
 
-function lazyRoute(load, exportName) {
+function loadRouteStyle(href) {
+  if (!href || typeof document === 'undefined') return Promise.resolve();
+  const existing = document.querySelector(`link[data-route-style="${href}"]`);
+  if (existing?.dataset.loaded === 'true' || existing?.sheet) return Promise.resolve();
+  if (existing?._loadPromise) return existing._loadPromise;
+  const link = existing || document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  link.dataset.routeStyle = href;
+  link._loadPromise = new Promise((resolve, reject) => {
+    link.addEventListener('load', () => {
+      link.dataset.loaded = 'true';
+      resolve();
+    }, { once: true });
+    link.addEventListener('error', () => {
+      link.remove();
+      reject(new Error(`Estilo indisponivel: ${href}`));
+    }, { once: true });
+  });
+  if (!existing) document.head.append(link);
+  return link._loadPromise;
+}
+
+function lazyRoute(load, exportName, styles = []) {
   let rendererPromise = null;
   return async (...args) => {
-    rendererPromise ||= load()
-      .then((module) => {
+    rendererPromise ||= Promise.all([load(), ...styles.map(loadRouteStyle)])
+      .then(([module]) => {
         const renderer = module[exportName];
         if (typeof renderer !== 'function') throw new Error(`Rota indisponível: ${exportName}`);
         return renderer;
@@ -71,17 +92,19 @@ function lazyRoute(load, exportName) {
   };
 }
 
+const renderOnboarding = lazyRoute(() => import('./ui/onboarding.js?v=71'), 'renderOnboarding');
+const renderHome = lazyRoute(() => import('./ui/home.js?v=85'), 'renderHome', ['./css/dashboard-jrpg.css?v=81']);
 const renderWorldMap = lazyRoute(() => import('./ui/worldMap.js?v=74'), 'renderWorldMap');
 const renderBattle = lazyRoute(() => import('./ui/battleArena.js?v=77'), 'renderBattle');
 const renderGrimorio = lazyRoute(() => import('./ui/grimorio.js?v=69'), 'renderGrimorio');
-const renderPerformance = lazyRoute(() => import('./ui/performance.js?v=76'), 'renderPerformance');
-const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'renderExpedition');
+const renderPerformance = lazyRoute(() => import('./ui/performance.js?v=76'), 'renderPerformance', ['./css/performance-mobile.css?v=5']);
+const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'renderExpedition', ['./css/plan-edital.css?v=4']);
 const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=74'), 'renderWellbeing');
-const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile');
+const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile', ['./css/profile-evolution.css?v=2']);
 const renderCelebration = lazyRoute(() => import('./ui/celebration.js?v=68'), 'renderCelebration');
 const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=73'), 'renderTopicTree');
-const renderReview = lazyRoute(() => import('./ui/review.js?v=86'), 'renderReview');
-const renderRankedEvent = lazyRoute(() => import('./ui/rankedEvent.js?v=87'), 'renderRankedEvent');
+const renderReview = lazyRoute(() => import('./ui/review.js?v=86'), 'renderReview', ['./css/review.css?v=1']);
+const renderRankedEvent = lazyRoute(() => import('./ui/rankedEvent.js?v=87'), 'renderRankedEvent', ['./css/ranked-functional.css?v=3']);
 
 const ctx = {
   battleSession: null,

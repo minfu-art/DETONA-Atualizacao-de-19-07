@@ -18,6 +18,7 @@ const uiSource = readFileSync(new URL('../app/js/ui/rankedEvent.js', import.meta
 const modelSource = readFileSync(new URL('../app/js/ui/rankedVisualModel.js', import.meta.url), 'utf8');
 const cssSource = readFileSync(new URL('../app/css/ranked-functional.css', import.meta.url), 'utf8');
 const indexSource = readFileSync(new URL('../app/index.html', import.meta.url), 'utf8');
+const appSource = readFileSync(new URL('../app/js/app.js', import.meta.url), 'utf8');
 const swSource = readFileSync(new URL('../app/sw.js', import.meta.url), 'utf8');
 
 function event(id, status, startsAt) {
@@ -135,7 +136,8 @@ test('CSS ranqueado é isolado, responsivo, acessível e respeita movimento redu
 });
 
 test('cache e carregamento entregam juntos o modelo, CSS e retrato de Kiro', () => {
-  assert.ok(indexSource.indexOf('dashboard-jrpg.css') < indexSource.indexOf('ranked-functional.css?v=3'));
+  assert.doesNotMatch(indexSource, /ranked-functional\.css/);
+  assert.match(appSource, /ranked-functional\.css\?v=3/);
   assert.match(swSource, /const CACHE = 'detona-v\d+-/);
   assert.match(swSource, /js\/ui\/rankedVisualModel\.js/);
   assert.match(swSource, /assets\/mentors\/kiro-official\.webp/);

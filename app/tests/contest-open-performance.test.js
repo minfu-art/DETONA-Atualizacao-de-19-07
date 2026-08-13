@@ -25,7 +25,24 @@ test('telas secundarias ficam sob demanda e nao pesam na abertura', async () => 
     assert.doesNotMatch(app, new RegExp(`^import .*\\./ui/${moduleName}\\.js`, 'm'));
     assert.match(app, new RegExp(`lazyRoute\\(\\(\\) => import\\('\\./ui/${moduleName}\\.js\\?v=`));
   }
-  assert.match(app, /rendererPromise \|\|= load\(\)/);
+  assert.match(app, /rendererPromise \|\|= Promise\.all\(\[load\(\), \.\.\.styles\.map\(loadRouteStyle\)\]\)/);
+});
+
+test('Home e onboarding tambem ficam sob demanda na Biblioteca', async () => {
+  const app = await source('../js/app.js');
+  assert.doesNotMatch(app, /^import .*\.\/ui\/(?:home|onboarding)\.js/m);
+  assert.match(app, /lazyRoute\(\(\) => import\('\.\/ui\/home\.js\?v=/);
+  assert.match(app, /lazyRoute\(\(\) => import\('\.\/ui\/onboarding\.js\?v=/);
+});
+
+test('estilos exclusivos carregam junto da rota e nao bloqueiam a Biblioteca', async () => {
+  const [app, index] = await Promise.all([source('../js/app.js'), source('../index.html')]);
+  for (const stylesheet of ['review.css', 'dashboard-jrpg.css', 'ranked-functional.css', 'plan-edital.css', 'performance-mobile.css', 'profile-evolution.css']) {
+    assert.doesNotMatch(index, new RegExp(`href="css/${stylesheet.replace('.', '\\.')}`));
+    assert.match(app, new RegExp(`'\\./css/${stylesheet.replace('.', '\\.')}\\?v=`));
+  }
+  assert.match(app, /function loadRouteStyle\(href\)/);
+  assert.match(app, /Promise\.all\(\[load\(\), \.\.\.styles\.map\(loadRouteStyle\)\]\)/);
 });
 
 test('restauracao automatica nao repete consulta de entitlement e catalogo', async () => {

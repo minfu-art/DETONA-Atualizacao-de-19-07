@@ -192,15 +192,16 @@ test('ordem das folhas PWA permanece estável', async () => {
   const ordered = [
     'css/main.css',
     'css/design-system.css',
-    'css/dashboard-jrpg.css',
-    'css/plan-edital.css',
-    'css/performance-mobile.css',
+    'css/student-entry.css',
   ];
   let cursor = -1;
   for (const stylesheet of ordered) {
     const next = html.indexOf(stylesheet);
     assert.ok(next > cursor, stylesheet);
     cursor = next;
+  }
+  for (const deferred of ['dashboard-jrpg.css', 'plan-edital.css', 'performance-mobile.css']) {
+    assert.doesNotMatch(html, new RegExp(`href="css/${deferred.replace('.', '\\.')}`));
   }
   assert.match(html, /rel="manifest"\s+href="manifest\.json"/);
 });
