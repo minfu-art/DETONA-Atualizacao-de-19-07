@@ -45,7 +45,7 @@ test('identificador do curso permanece em uma linha no fallback visual', async (
 
 test('destino é URL pública segura e isolada da sessão', async () => {
   const [links, ui] = await Promise.all([source('app/js/services/studentEntryLinks.js'), source('app/js/ui/library.js')]);
-  assert.match(links, /https:\/\/detonaconcursos\.com\/cursos/);
+  assert.match(links, /https:\/\/detonaconcursos\.com\//);
   assert.match(ui, /target="_blank" rel="noopener noreferrer"/);
   assert.doesNotMatch(ui, /access_token|refresh_token|user_id/);
 });

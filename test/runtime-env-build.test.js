@@ -56,7 +56,7 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     SUPABASE_ANON_KEY: '',
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
 });
 
@@ -97,7 +97,7 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     SUPABASE_ANON_KEY: fakePublicKey,
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
   assert.doesNotMatch(result.stdout, new RegExp(fakePublicKey));
   assert.doesNotMatch(result.runtime, /service_role/i);
@@ -113,7 +113,7 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
     CHECKOUT_PROVIDER: 'disabled',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
 });
 

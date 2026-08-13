@@ -7,5 +7,5 @@ globalThis.__DETONA_ENV__ = Object.freeze({
   SUPABASE_URL: '',
   SUPABASE_ANON_KEY: '',
   CHECKOUT_PROVIDER: 'disabled',
-  PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos',
+  PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
 });
