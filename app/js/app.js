@@ -27,7 +27,7 @@ import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
-import { readCheckoutReturn } from './services/studentEntryModel.js';
+import { readCheckoutReturn, readCommercialIntent } from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
   createHabitReminderQueue,
@@ -561,17 +561,24 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
     const state = libraryState || await libraryService.getLibraryState(user, { refresh });
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
+    const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
     renderLibrary(root, {
       user,
       items: state.items,
       activeContestId,
       commerceReturn,
+      commercialIntent,
       offline: state.offline,
       links: getStudentEntryLinks(),
       onOpen: (contestId) => openContest(contestId, {
         contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null,
       }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
+      onPurchase: async (contestId) => {
+        const purchase = await libraryService.purchase(user, contestId);
+        if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
+        globalThis.location.assign(purchase.redirectUrl);
+      },
       onLogout: logout,
       embedded: true,
     });
@@ -775,6 +782,25 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   if (reason === 'register') {
     clearActiveContestId();
     await showLibrary();
+    return;
+  }
+
+  const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
+  if (commercialIntent) {
+    let libraryState;
+    try {
+      libraryState = await libraryService.getLibraryState(ctx.user);
+    } catch (error) {
+      if (error?.code !== 'CATALOG_UNAVAILABLE') throw error;
+      await showLibrary({ refresh: true });
+      return;
+    }
+    const intended = libraryState.items.find(({ contest }) => contest.id === commercialIntent.contestId);
+    if (intended?.owned && intended.contest.contentStatus === 'ready') {
+      await openContest(intended.contest.id, { contestHint: intended.contest });
+      return;
+    }
+    await showLibrary({ libraryState });
     return;
   }
 

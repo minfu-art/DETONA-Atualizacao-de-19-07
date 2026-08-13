@@ -1,4 +1,33 @@
 const CHECKOUT_RETURN_VALUES = new Set(['success', 'cancelled']);
+const COMMERCIAL_SOURCE = 'detona-site';
+const SAFE_CONTEST_ID = /^[a-z0-9][a-z0-9_-]{1,79}$/;
+
+export function readCommercialIntent(search = '') {
+  const params = search instanceof URLSearchParams ? search : new URLSearchParams(String(search || ''));
+  if (params.get('source') !== COMMERCIAL_SOURCE) return null;
+  const contestId = String(params.get('contestId') || '').trim();
+  if (!SAFE_CONTEST_ID.test(contestId)) return null;
+  const courseId = String(params.get('courseId') || '').trim();
+  const salesPage = String(params.get('salesPage') || '').trim();
+  return Object.freeze({
+    source: COMMERCIAL_SOURCE,
+    contestId,
+    courseId: SAFE_CONTEST_ID.test(courseId) ? courseId : null,
+    salesPage: SAFE_CONTEST_ID.test(salesPage) ? salesPage : null,
+  });
+}
+
+export function resolveCommercialIntent(intent, items = []) {
+  if (!intent) return null;
+  const item = items.find(({ contest }) => contest?.id === intent.contestId);
+  if (!item) return { state: 'unavailable', item: null };
+  if (item.owned) return { state: 'owned', item };
+  if (item.accessVerificationRequired) return { state: 'offline', item };
+  if (item.checkoutAction?.action === 'purchase' && item.checkoutAction.disabled !== true) {
+    return { state: 'ready', item };
+  }
+  return { state: 'unavailable', item };
+}
 
 export function partitionLibrary(items = []) {
   return {

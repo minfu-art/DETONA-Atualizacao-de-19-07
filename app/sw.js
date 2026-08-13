@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v140-candidate-readiness';
+const CACHE = 'detona-v141-commercial-handoff';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -266,6 +266,7 @@ const ESSENTIAL_ART = new Set([
 
 function shouldPrecache(asset) {
   if (asset.includes('?')) return false;
+  if (asset === './env.runtime.js') return false;
   return asset === './'
     || asset.endsWith('.html')
     || asset.endsWith('.js')
@@ -319,18 +320,22 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== self.location.origin) return;
 
   if (e.request.mode === 'navigate') {
-    const fetched = fetch(e.request);
-    e.waitUntil(
-      fetched
-        .then((res) => putInCache(e.request, res.clone()))
-        .catch(() => undefined)
-    );
-    e.respondWith(
-      caches.match(e.request).then(async (cached) => {
-        const shell = cached || await caches.match('./index.html');
-        return shell || fetched;
+    e.respondWith(fetch(e.request)
+      .then((response) => {
+        e.waitUntil(putInCache(e.request, response.clone()));
+        return response;
       })
-    );
+      .catch(async () => await caches.match(e.request) || await caches.match('./index.html')));
+    return;
+  }
+
+  if (url.pathname.endsWith('/env.runtime.js')) {
+    e.respondWith(fetch(e.request, { cache: 'no-store' })
+      .then((response) => {
+        e.waitUntil(putInCache(e.request, response.clone()));
+        return response;
+      })
+      .catch(() => caches.match(e.request)));
     return;
   }
 

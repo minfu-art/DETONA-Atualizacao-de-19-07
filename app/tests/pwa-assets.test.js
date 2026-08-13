@@ -30,7 +30,7 @@ test('pré-cache é limitado ao shell essencial e processado em lotes', () => {
 
 test('service worker não bloqueia respostas em gravações e preserva dados locais', () => {
   const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
-  assert.match(sw, /detona-v140-candidate-readiness/);
+  assert.match(sw, /detona-v141-commercial-handoff/);
   assert.match(sw, /!key\.startsWith\(CONTENT_CACHE_PREFIX\)/);
   assert.doesNotMatch(sw, /cache:\s*'reload'/);
   assert.match(sw, /e\.waitUntil\([\s\S]*putInCache\(e\.request, res\.clone\(\)\)/);
@@ -39,13 +39,14 @@ test('service worker não bloqueia respostas em gravações e preserva dados loc
   assert.doesNotMatch(sw, /deleteDatabase|indexedDB\.deleteDatabase|unregister\s*\(/);
 });
 
-test('abertura instalada usa o shell local sem aguardar a rede', () => {
+test('abertura instalada prioriza a versao atual e preserva fallback offline', () => {
   const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
   const navigation = sw.slice(sw.indexOf("if (e.request.mode === 'navigate')"), sw.indexOf("self.addEventListener('notificationclick'"));
+  assert.match(navigation, /e\.respondWith\(fetch\(e\.request\)/);
   assert.match(navigation, /caches\.match\(e\.request\)/);
-  assert.match(navigation, /cached \|\| await caches\.match\('\.\/index\.html'\)/);
-  assert.match(navigation, /e\.waitUntil\([\s\S]*putInCache/);
-  assert.doesNotMatch(navigation, /e\.respondWith\(\s*fetched/);
+  assert.match(navigation, /caches\.match\('\.\/index\.html'\)/);
+  assert.match(navigation, /e\.waitUntil\(putInCache/);
+  assert.match(navigation, /env\.runtime\.js[\s\S]*cache: 'no-store'/);
 });
 
 test('bancos de questões e galerias pesadas ficam sob demanda', () => {

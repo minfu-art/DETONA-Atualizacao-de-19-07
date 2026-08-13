@@ -525,6 +525,30 @@
 .owned-course-card__action:disabled { border-color: #36415c; color: #78839e; background: #151b2b; cursor: not-allowed; transform: none; }
 .student-library--private .library-network-state { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .student-library--private .library-network-state > div { display: grid; gap: 4px; }
+.commercial-intent {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--contest-accent, #62ddff) 55%, #33415f);
+  border-radius: 22px;
+  background: linear-gradient(112deg, #0d1529 0 58%, color-mix(in srgb, var(--contest, #6840dc) 25%, #0a1020));
+  box-shadow: 0 22px 52px rgb(0 0 0 / 24%);
+}
+.commercial-intent__art { overflow: hidden; aspect-ratio: 16 / 9; border: 1px solid #344462; border-radius: 15px; background: #080d19; }
+.commercial-intent__art img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.commercial-intent__content { min-width: 0; display: grid; gap: 7px; }
+.commercial-intent__content h2 { margin: 0; font: 850 clamp(22px, 2.5vw, 34px)/1.08 var(--display); }
+.commercial-intent__content p,
+.commercial-intent__action p { margin: 0; color: #aeb9d2; }
+.commercial-intent__price { margin-top: 5px; color: #fff; font: 850 24px/1 var(--display); }
+.commercial-intent__price small { color: #aeb9d2; font: 600 12px/1.2 var(--font); }
+.commercial-intent__action { min-width: 210px; display: grid; gap: 9px; }
+.commercial-intent__action button,
+.commercial-intent__action > a { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #8358f4; border-radius: 12px; padding-inline: 20px; color: #fff; background: #6840dc; font: 850 12px/1 var(--display); text-decoration: none; cursor: pointer; }
+.commercial-intent__action button:disabled { color: #cad0df; background: #3d315f; cursor: wait; }
 .active-journey {
   position: relative;
   display: grid;
@@ -586,6 +610,8 @@
   .private-library-header h1 { font-size: 31px; }
   .private-library-header .library-public-courses { width: 100%; }
   .student-library--private .library-network-state { align-items: stretch; flex-direction: column; }
+  .commercial-intent { grid-template-columns: 1fr; padding: 14px; border-radius: 18px; }
+  .commercial-intent__action { min-width: 0; }
   .active-journey { grid-template-columns: 1fr; gap: 15px; padding: 14px; border-radius: 18px; }
   .active-journey__art { max-height: 230px; }
   .active-journey__action { grid-column: 1; width: 100%; justify-self: stretch; }

@@ -1,7 +1,12 @@
 import { escapeHtml, formatDate } from './helpers.js';
 import { progressBar } from './components.js';
 import { selectActiveJourney } from '../services/careerLibraryService.js';
-import { partitionLibrary, resolveCheckoutReturn } from '../services/studentEntryModel.js';
+import {
+  formatCanonicalPrice,
+  partitionLibrary,
+  resolveCheckoutReturn,
+  resolveCommercialIntent,
+} from '../services/studentEntryModel.js';
 
 const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singular : multiple}`;
 const safePercent = (value) => Math.max(0, Math.min(100, Number(value) || 0));
@@ -73,15 +78,49 @@ function supportLinks(links = {}) {
   return entries.map(([label, href]) => `<a href="${escapeHtml(href)}" ${href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`).join('');
 }
 
+function commercialIntentCard(resolution, links = {}) {
+  if (!resolution) return '';
+  const fallback = links.courses
+    ? `<a href="${escapeHtml(links.courses)}" target="_blank" rel="noopener noreferrer">Voltar aos cursos</a>`
+    : '';
+  if (!resolution.item) {
+    return `<aside class="commercial-intent commercial-intent--unavailable" role="status"><div><span class="library-kicker">CURSO SELECIONADO</span><h2>Esta jornada não está disponível neste app.</h2><p>Volte ao site oficial para conferir os cursos atuais.</p></div>${fallback}</aside>`;
+  }
+  const { contest } = resolution.item;
+  if (resolution.state === 'owned') {
+    return `<aside class="commercial-intent commercial-intent--owned" role="status"><div><span class="library-kicker">ACESSO JÁ LIBERADO</span><h2>${escapeHtml(contest.name)}</h2><p>Esta jornada já pertence à sua conta e aparece em Meus Cursos.</p></div></aside>`;
+  }
+  const price = formatCanonicalPrice(contest);
+  const actionable = resolution.state === 'ready' && price;
+  return `
+    <aside class="commercial-intent ${actionable ? 'commercial-intent--ready' : 'commercial-intent--unavailable'}" ${contestTheme(contest)} aria-labelledby="commercial-intent-title">
+      <div class="commercial-intent__art">${courseArt(contest, { eager: true })}</div>
+      <div class="commercial-intent__content">
+        <span class="library-kicker">CURSO SELECIONADO NO SITE</span>
+        <h2 id="commercial-intent-title">${escapeHtml(contest.name)}</h2>
+        <p>${escapeHtml(contest.role || contest.description || 'Jornada DETONA')}</p>
+        ${price ? `<strong class="commercial-intent__price">${escapeHtml(price)} <small>pagamento único</small></strong>` : ''}
+      </div>
+      <div class="commercial-intent__action">
+        ${actionable
+          ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">ADQUIRIR ACESSO</button>`
+          : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
+        <p class="library-action-feedback" data-commercial-feedback role="status" aria-live="polite"></p>
+      </div>
+    </aside>`;
+}
+
 export function renderLibrary(root, {
   user,
   items,
   activeContestId = null,
   commerceReturn = null,
+  commercialIntent = null,
   offline = false,
   links = {},
   onOpen,
   onRefreshAccess = async () => {},
+  onPurchase = async () => {},
   onLogout,
   embedded = false,
 }) {
@@ -91,6 +130,7 @@ export function renderLibrary(root, {
     ? [activeJourney, ...owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)]
     : owned;
   const notice = resolveCheckoutReturn(commerceReturn, items);
+  const intentResolution = resolveCommercialIntent(commercialIntent, items);
   const openingContests = new Set();
 
   root.innerHTML = `
@@ -102,6 +142,7 @@ export function renderLibrary(root, {
       </header>
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${notice ? `<aside class="library-commerce-notice library-commerce-notice--${notice.tone}" role="status" aria-live="polite"><div><strong>${escapeHtml(notice.title)}</strong><p>${escapeHtml(notice.description)}</p></div>${notice.pending ? '<button class="btn btn-ghost" type="button" data-refresh-access>Atualizar acesso</button>' : ''}</aside>` : ''}
+      ${commercialIntentCard(intentResolution, links)}
       ${activeJourney && !activeJourney.accessVerificationRequired ? continueJourney(activeJourney) : ''}
       ${ownedOrdered.length ? `
         <section class="private-owned-courses" aria-labelledby="owned-courses-title">
@@ -151,5 +192,23 @@ export function renderLibrary(root, {
     button.setAttribute('aria-busy', 'true');
     await onRefreshAccess();
   }));
+  root.querySelector('[data-commercial-intent]')?.addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    const contestId = button.dataset.commercialIntent;
+    if (!contestId || button.disabled) return;
+    button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
+    button.textContent = 'ABRINDO PAGAMENTO...';
+    const feedback = root.querySelector('[data-commercial-feedback]');
+    if (feedback) feedback.textContent = 'Criando uma sessão segura no provedor de pagamento.';
+    try {
+      await onPurchase(contestId);
+    } catch (error) {
+      button.disabled = false;
+      button.setAttribute('aria-busy', 'false');
+      button.textContent = 'ADQUIRIR ACESSO';
+      if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar o pagamento.';
+    }
+  });
   bindOpenActions(root);
 }
