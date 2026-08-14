@@ -16,6 +16,7 @@ import {
   resolveMerchantOrderPayments,
   signatureManifest,
   verifyMercadoPagoSignature,
+  webhookErrorCode,
 } from '../supabase/functions/commercial-webhook/core.js';
 
 const root = new URL('../', import.meta.url);
@@ -121,6 +122,13 @@ test('caminho legado usa external_reference do pagamento e evento idempotente', 
   assert.match(webhook, /const orderId = String\(payment\.external_reference \|\| ''\)/);
   assert.doesNotMatch(webhook, /p_order_id:\s*notification\.merchantOrderId/);
   assert.match(webhook, /merchant_order:\$\{notification\.merchantOrderId\}:payment:\$\{String\(payment\.id\)\}/);
+});
+
+test('telemetria do webhook registra somente códigos seguros', () => {
+  assert.equal(webhookErrorCode(new Error('MERCHANT_ORDER_LOOKUP_FAILED')), 'MERCHANT_ORDER_LOOKUP_FAILED');
+  assert.equal(webhookErrorCode(new Error('PAYMENT_RPC_FAILED')), 'PAYMENT_RPC_FAILED');
+  assert.equal(webhookErrorCode(new Error('secret provider payload')), 'UNEXPECTED_ERROR');
+  assert.equal(webhookErrorCode({ message: 'PAYMENT_LOOKUP_FAILED' }), 'UNEXPECTED_ERROR');
 });
 
 test('duas solicitações simultâneas reutilizam um pedido e criam uma preferência', async () => {

@@ -4,6 +4,7 @@ import {
   parseMercadoPagoNotification,
   resolveMerchantOrderPayments,
   verifyMercadoPagoSignature,
+  webhookErrorCode,
 } from './core.js';
 
 const url = Deno.env.get('SUPABASE_URL')!;
@@ -19,12 +20,12 @@ const response = (status: number, payload: unknown) => new Response(JSON.stringi
 const sha256 = async (value: string) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value)))]
   .map((byte) => byte.toString(16).padStart(2, '0')).join('');
 
-const providerJson = async (path: string) => {
+const providerJson = async (path: string, failureCode: string) => {
   const providerResponse = await fetch(`https://api.mercadopago.com${path}`, {
     headers: { authorization: `Bearer ${accessToken}` },
   });
   const payload = await providerResponse.json();
-  if (!providerResponse.ok) throw new Error('PROVIDER_LOOKUP_FAILED');
+  if (!providerResponse.ok) throw new Error(failureCode);
   return payload;
 };
 
@@ -47,7 +48,7 @@ const applyPayment = async (payment: Record<string, unknown>, event: {
     p_currency: String(payment.currency_id || ''),
     p_payload_sha256: event.payloadSha256,
   });
-  if (error) throw error;
+  if (error) throw new Error('PAYMENT_RPC_FAILED');
   return data?.[0] || null;
 };
 
@@ -72,7 +73,10 @@ Deno.serve(async (request) => {
       });
       if (!valid) return response(401, { error: 'INVALID_SIGNATURE' });
 
-      const payment = await providerJson(`/v1/payments/${encodeURIComponent(notification.dataId)}`);
+      const payment = await providerJson(
+        `/v1/payments/${encodeURIComponent(notification.dataId)}`,
+        'PAYMENT_LOOKUP_FAILED',
+      );
       const result = await applyPayment(payment, {
         id: String(body.id || `${body.action || 'payment'}:${notification.dataId}:${payment.date_last_updated || ''}`),
         type: String(body.action || 'payment.updated'),
@@ -84,8 +88,14 @@ Deno.serve(async (request) => {
     // Legacy IPN is only a lookup hint. Access is based exclusively on canonical,
     // authenticated payment responses fetched below, never on merchant_order fields.
     const payments = await resolveMerchantOrderPayments(notification.merchantOrderId, {
-      fetchMerchantOrder: (merchantOrderId: string) => providerJson(`/merchant_orders/${encodeURIComponent(merchantOrderId)}`),
-      fetchPayment: (paymentId: string) => providerJson(`/v1/payments/${encodeURIComponent(paymentId)}`),
+      fetchMerchantOrder: (merchantOrderId: string) => providerJson(
+        `/merchant_orders/${encodeURIComponent(merchantOrderId)}`,
+        'MERCHANT_ORDER_LOOKUP_FAILED',
+      ),
+      fetchPayment: (paymentId: string) => providerJson(
+        `/v1/payments/${encodeURIComponent(paymentId)}`,
+        'PAYMENT_LOOKUP_FAILED',
+      ),
     });
     const results = [];
     for (const payment of payments) {
@@ -96,7 +106,8 @@ Deno.serve(async (request) => {
       }));
     }
     return response(200, { received: true, payments: payments.length, results });
-  } catch {
+  } catch (error) {
+    console.error('commercial-webhook', webhookErrorCode(error));
     return response(500, { error: 'WEBHOOK_PROCESSING_FAILED' });
   }
 });

@@ -84,6 +84,21 @@ export async function resolveMerchantOrderPayments(merchantOrderId, { fetchMerch
   return payments;
 }
 
+const SAFE_WEBHOOK_ERROR_CODES = new Set([
+  'INVALID_NOTIFICATION_ID',
+  'INVALID_SIGNATURE',
+  'INVALID_SIGNATURE_INPUT',
+  'MERCHANT_ORDER_LOOKUP_FAILED',
+  'PAYMENT_LOOKUP_FAILED',
+  'PAYMENT_ENVIRONMENT_MISMATCH',
+  'PAYMENT_RPC_FAILED',
+]);
+
+export function webhookErrorCode(error) {
+  const code = error instanceof Error ? error.message : '';
+  return SAFE_WEBHOOK_ERROR_CODES.has(code) ? code : 'UNEXPECTED_ERROR';
+}
+
 export function normalizePaymentStatus(status, statusDetail = '') {
   const value = String(status || '').toLowerCase();
   if (value === 'approved') return 'approved';
