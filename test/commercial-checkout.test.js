@@ -11,6 +11,9 @@ import {
 import {
   hmacSha256Hex,
   normalizePaymentStatus,
+  parseMercadoPagoNotification,
+  paymentIdsFromMerchantOrder,
+  resolveMerchantOrderPayments,
   signatureManifest,
   verifyMercadoPagoSignature,
 } from '../supabase/functions/commercial-webhook/core.js';
@@ -36,6 +39,7 @@ test('preferência usa URLs HTTPS fixas e referência interna do pedido', () => 
   });
   assert.equal(value.external_reference, 'order-id');
   assert.equal(value.items[0].unit_price, 149.9);
+  assert.equal(new URL(value.notification_url).searchParams.get('source_news'), 'webhooks');
   assert.match(value.back_urls.success, /checkout=success/);
   assert.equal(selectCheckoutUrl({ sandbox_init_point: 'https://www.mercadopago.com.br/test' }, 'test'), 'https://www.mercadopago.com.br/test');
   assert.throws(() => selectCheckoutUrl({ sandbox_init_point: 'https://evil.example/test' }, 'test'), /CHECKOUT_URL_INVALID/);
@@ -52,6 +56,71 @@ test('webhook exige HMAC oficial e normaliza somente estados conhecidos', async 
   assert.equal(normalizePaymentStatus('approved'), 'approved');
   assert.equal(normalizePaymentStatus('in_process'), 'pending');
   assert.equal(normalizePaymentStatus('refunded'), 'refunded');
+  await assert.rejects(() => verifyMercadoPagoSignature({
+    xSignature: '', xRequestId: 'request-1', dataId: '999', secret,
+  }), /INVALID_SIGNATURE/);
+});
+
+test('webhook distingue payment moderno de merchant_order legado e rejeita IDs inválidos', () => {
+  assert.deepEqual(parseMercadoPagoNotification({
+    requestUrl: 'https://project.supabase.co/functions/v1/commercial-webhook?data.id=123',
+    body: { type: 'payment' },
+  }), { kind: 'payment', dataId: '123' });
+  assert.deepEqual(parseMercadoPagoNotification({
+    requestUrl: 'https://project.supabase.co/functions/v1/commercial-webhook?id=456&topic=merchant_order',
+    body: {},
+  }), { kind: 'merchant_order', merchantOrderId: '456' });
+  assert.deepEqual(parseMercadoPagoNotification({
+    requestUrl: 'https://project.supabase.co/functions/v1/commercial-webhook',
+    body: { type: 'unknown' },
+  }), { kind: 'ignored' });
+  assert.throws(() => parseMercadoPagoNotification({
+    requestUrl: 'https://project.supabase.co/functions/v1/commercial-webhook?id=456x&topic=merchant_order',
+    body: {},
+  }), /INVALID_NOTIFICATION_ID/);
+  assert.throws(() => parseMercadoPagoNotification({
+    requestUrl: 'https://project.supabase.co/functions/v1/commercial-webhook?data.id=../123',
+    body: { type: 'payment' },
+  }), /INVALID_NOTIFICATION_ID/);
+});
+
+test('merchant_order filtra pagamentos e consulta cada pagamento canônico antes da RPC', async () => {
+  assert.deepEqual(paymentIdsFromMerchantOrder({
+    payments: [{ id: 11 }, { id: '11' }, { id: '12' }, { id: 'invalid' }, null],
+  }), ['11', '12']);
+
+  const calls = [];
+  const payments = await resolveMerchantOrderPayments('43630046030', {
+    fetchMerchantOrder: async (id) => {
+      calls.push(`merchant_order:${id}`);
+      return { id, external_reference: 'must-not-be-used', payments: [{ id: 11 }, { id: '11' }, { id: 12 }] };
+    },
+    fetchPayment: async (id) => {
+      calls.push(`payment:${id}`);
+      return { id, external_reference: `canonical-order-${id}` };
+    },
+  });
+
+  assert.deepEqual(calls, ['merchant_order:43630046030', 'payment:11', 'payment:12']);
+  assert.deepEqual(payments.map((payment) => payment.external_reference), ['canonical-order-11', 'canonical-order-12']);
+});
+
+test('merchant_order sem pagamentos termina sem consultar payment', async () => {
+  let paymentLookups = 0;
+  const payments = await resolveMerchantOrderPayments('43630046030', {
+    fetchMerchantOrder: async () => ({ payments: [] }),
+    fetchPayment: async () => { paymentLookups += 1; },
+  });
+  assert.deepEqual(payments, []);
+  assert.equal(paymentLookups, 0);
+});
+
+test('caminho legado usa external_reference do pagamento e evento idempotente', async () => {
+  const webhook = await source('supabase/functions/commercial-webhook/index.ts');
+  assert.match(webhook, /p_order_id:\s*orderId/);
+  assert.match(webhook, /const orderId = String\(payment\.external_reference \|\| ''\)/);
+  assert.doesNotMatch(webhook, /p_order_id:\s*notification\.merchantOrderId/);
+  assert.match(webhook, /merchant_order:\$\{notification\.merchantOrderId\}:payment:\$\{String\(payment\.id\)\}/);
 });
 
 test('duas solicitações simultâneas reutilizam um pedido e criam uma preferência', async () => {

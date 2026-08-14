@@ -32,6 +32,58 @@ export async function verifyMercadoPagoSignature({ xSignature, xRequestId, dataI
   return constantTimeEqual(signature, expected);
 }
 
+const NUMERIC_ID = /^\d+$/;
+
+function requiredNumericId(value) {
+  const id = String(value ?? '').trim();
+  if (!NUMERIC_ID.test(id)) throw new Error('INVALID_NOTIFICATION_ID');
+  return id;
+}
+
+export function parseMercadoPagoNotification({ requestUrl, body }) {
+  const url = requestUrl instanceof URL ? requestUrl : new URL(String(requestUrl));
+  const topic = String(url.searchParams.get('topic') || body?.topic || '').toLowerCase();
+
+  if (topic === 'merchant_order') {
+    return {
+      kind: 'merchant_order',
+      merchantOrderId: requiredNumericId(url.searchParams.get('id') || body?.id),
+    };
+  }
+
+  const type = String(body?.type || url.searchParams.get('type') || '').toLowerCase();
+  if (type === 'payment') {
+    return {
+      kind: 'payment',
+      dataId: requiredNumericId(url.searchParams.get('data.id') || body?.data?.id),
+    };
+  }
+
+  return { kind: 'ignored' };
+}
+
+export function paymentIdsFromMerchantOrder(merchantOrder) {
+  const ids = [];
+  const seen = new Set();
+  for (const payment of Array.isArray(merchantOrder?.payments) ? merchantOrder.payments : []) {
+    const id = String(payment?.id ?? '').trim();
+    if (!NUMERIC_ID.test(id) || seen.has(id)) continue;
+    seen.add(id);
+    ids.push(id);
+  }
+  return ids;
+}
+
+export async function resolveMerchantOrderPayments(merchantOrderId, { fetchMerchantOrder, fetchPayment }) {
+  const canonicalMerchantOrderId = requiredNumericId(merchantOrderId);
+  const merchantOrder = await fetchMerchantOrder(canonicalMerchantOrderId);
+  const payments = [];
+  for (const paymentId of paymentIdsFromMerchantOrder(merchantOrder)) {
+    payments.push(await fetchPayment(paymentId));
+  }
+  return payments;
+}
+
 export function normalizePaymentStatus(status, statusDetail = '') {
   const value = String(status || '').toLowerCase();
   if (value === 'approved') return 'approved';

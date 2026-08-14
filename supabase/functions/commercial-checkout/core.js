@@ -26,6 +26,8 @@ export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, 
   if (base.protocol !== 'https:') throw new Error('RETURN_URL_INVALID');
   const notify = new URL(notificationUrl);
   if (notify.protocol !== 'https:') throw new Error('WEBHOOK_URL_INVALID');
+  // Mercado Pago uses this flag to send the modern Webhooks payload instead of legacy IPN.
+  notify.searchParams.set('source_news', 'webhooks');
   const returnUrl = (state) => {
     const url = new URL(base);
     url.searchParams.set('checkout', state);
