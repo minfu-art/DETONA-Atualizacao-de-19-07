@@ -12,6 +12,45 @@ const adminUrl = new URL('../app/js/admin/adminApp.js', import.meta.url);
 const swUrl = new URL('../app/sw.js', import.meta.url);
 const artUrl = new URL('../app/assets/ui/login-command-hall.webp', import.meta.url);
 
+test('cadastro fixa a confirmação no app atual e preserva a intenção comercial', async () => {
+  const calls = [];
+  const adapter = new SupabaseAuthAdapter({
+    getLocation: () => ({
+      href: 'https://app.detonaconcursos.com/?courseId=pc-al-2026&source=detona-site#cadastro',
+    }),
+    getClient: async () => ({
+      auth: {
+        signUp: async (payload) => {
+          calls.push(payload);
+          return {
+            data: {
+              user: { id: 'user-pendente', email: payload.email },
+              session: null,
+            },
+            error: null,
+          };
+        },
+      },
+    }),
+  });
+
+  const result = await adapter.register({
+    name: 'Maria',
+    email: ' MARIA@EXEMPLO.COM ',
+    password: 'SenhaSegura2026',
+  });
+
+  assert.equal(result.pendingEmailConfirmation, true);
+  assert.deepEqual(calls, [{
+    email: 'maria@exemplo.com',
+    password: 'SenhaSegura2026',
+    options: {
+      data: { name: 'Maria' },
+      emailRedirectTo: 'https://app.detonaconcursos.com/?courseId=pc-al-2026&source=detona-site',
+    },
+  }]);
+});
+
 test('Supabase solicita recuperação com e-mail normalizado e redirect explícito', async () => {
   const calls = [];
   const adapter = new SupabaseAuthAdapter({

@@ -35,6 +35,18 @@ function isRecoveryLocation(location = globalThis.location) {
     || hash.get('type') === 'recovery';
 }
 
+function emailConfirmationRedirectUrl(location = globalThis.location) {
+  if (!location?.href) return null;
+  try {
+    const target = new URL(location.href);
+    if (!['http:', 'https:'].includes(target.protocol)) return null;
+    target.hash = '';
+    return target.toString();
+  } catch {
+    return null;
+  }
+}
+
 function mapProfileToUser(profile, authUser) {
   return {
     id: profile?.id || authUser.id,
@@ -55,8 +67,9 @@ function mapProfileToUser(profile, authUser) {
 }
 
 export class SupabaseAuthAdapter {
-  constructor({ getClient = getSupabaseClient } = {}) {
+  constructor({ getClient = getSupabaseClient, getLocation = () => globalThis.location } = {}) {
     this.getClient = getClient;
+    this.getLocation = getLocation;
   }
 
   isAvailable() {
@@ -114,10 +127,14 @@ export class SupabaseAuthAdapter {
     if (/\s/.test(cleanPassword)) throw new Error('A senha nao pode conter espacos.');
 
     const client = await this.#client();
+    const emailRedirectTo = emailConfirmationRedirectUrl(this.getLocation());
     const { data, error } = await client.auth.signUp({
       email: cleanEmail,
       password: cleanPassword,
-      options: { data: { name: cleanName } },
+      options: {
+        data: { name: cleanName },
+        ...(emailRedirectTo ? { emailRedirectTo } : {}),
+      },
     });
     if (error) throw new Error(error.message || 'Falha no cadastro.');
     if (!data.user) throw new Error('Cadastro criado. Verifique o e-mail se a confirmação estiver ativa.');
