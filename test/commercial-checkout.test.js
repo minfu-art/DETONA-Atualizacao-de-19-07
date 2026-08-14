@@ -12,6 +12,7 @@ import {
   hmacSha256Hex,
   normalizePaymentStatus,
   parseMercadoPagoNotification,
+  paymentMatchesCheckoutMode,
   paymentIdsFromMerchantOrder,
   resolveMerchantOrderPayments,
   signatureManifest,
@@ -129,6 +130,23 @@ test('telemetria do webhook registra somente códigos seguros', () => {
   assert.equal(webhookErrorCode(new Error('PAYMENT_RPC_FAILED')), 'PAYMENT_RPC_FAILED');
   assert.equal(webhookErrorCode(new Error('secret provider payload')), 'UNEXPECTED_ERROR');
   assert.equal(webhookErrorCode({ message: 'PAYMENT_LOOKUP_FAILED' }), 'UNEXPECTED_ERROR');
+});
+
+test('ambiente aceita conta oficial de teste sem liberar comprador de teste em produção', () => {
+  assert.equal(paymentMatchesCheckoutMode({ live_mode: false }, 'test'), true);
+  assert.equal(paymentMatchesCheckoutMode({
+    live_mode: true, payer: { email: 'test_user_123@testuser.com' },
+  }, 'test'), true);
+  assert.equal(paymentMatchesCheckoutMode({
+    live_mode: true, payer: { email: 'buyer@example.com' },
+  }, 'test'), false);
+  assert.equal(paymentMatchesCheckoutMode({
+    live_mode: true, payer: { email: 'buyer@example.com' },
+  }, 'production'), true);
+  assert.equal(paymentMatchesCheckoutMode({
+    live_mode: true, payer: { email: 'test@testuser.com' },
+  }, 'production'), false);
+  assert.equal(paymentMatchesCheckoutMode({ live_mode: false }, 'production'), false);
 });
 
 test('duas solicitações simultâneas reutilizam um pedido e criam uma preferência', async () => {

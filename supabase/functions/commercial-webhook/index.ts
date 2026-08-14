@@ -2,6 +2,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import {
   normalizePaymentStatus,
   parseMercadoPagoNotification,
+  paymentMatchesCheckoutMode,
   resolveMerchantOrderPayments,
   verifyMercadoPagoSignature,
   webhookErrorCode,
@@ -34,7 +35,7 @@ const applyPayment = async (payment: Record<string, unknown>, event: {
   type: string;
   payloadSha256: string;
 }) => {
-  if ((mode === 'production') !== Boolean(payment.live_mode)) throw new Error('PAYMENT_ENVIRONMENT_MISMATCH');
+  if (!paymentMatchesCheckoutMode(payment, mode)) throw new Error('PAYMENT_ENVIRONMENT_MISMATCH');
   const orderId = String(payment.external_reference || '');
   const amountCents = Math.round(Number(payment.transaction_amount) * 100);
   const { data, error } = await admin.rpc('apply_verified_commerce_payment', {

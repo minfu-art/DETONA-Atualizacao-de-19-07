@@ -99,6 +99,14 @@ export function webhookErrorCode(error) {
   return SAFE_WEBHOOK_ERROR_CODES.has(code) ? code : 'UNEXPECTED_ERROR';
 }
 
+export function paymentMatchesCheckoutMode(payment, mode) {
+  const liveMode = payment?.live_mode === true;
+  const payerEmail = String(payment?.payer?.email || '').trim().toLowerCase();
+  const testBuyer = /^[^@]+@testuser\.com$/.test(payerEmail);
+  if (mode === 'production') return liveMode && !testBuyer;
+  return !liveMode || testBuyer;
+}
+
 export function normalizePaymentStatus(status, statusDetail = '') {
   const value = String(status || '').toLowerCase();
   if (value === 'approved') return 'approved';
