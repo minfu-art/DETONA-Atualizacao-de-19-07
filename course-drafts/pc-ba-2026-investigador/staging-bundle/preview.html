@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC BA Investigador — Prévia local</title>
+  <link rel="stylesheet" href="./preview.css">
+</head>
+<body>
+  <div class="preview-ribbon">MODO TESTE LOCAL · CURSO NÃO PUBLICADO</div>
+  <header class="hero">
+    <img class="hero__cover" src="./assets/cover.png" alt="">
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <img class="hero__avatar" src="./assets/battle-avatar.png" alt="Avatar do curso PC BA Investigador">
+      <div>
+        <p class="eyebrow">DETONA · POLÍCIA CIVIL DA BAHIA</p>
+        <h1>Investigador de Polícia Civil</h1>
+        <p id="course-description">Carregando estrutura do curso…</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="stats" aria-label="Resumo do curso">
+      <article><strong id="discipline-count">—</strong><span>disciplinas</span></article>
+      <article><strong id="topic-count">—</strong><span>tópicos</span></article>
+      <article><strong id="subtopic-count">—</strong><span>subtópicos</span></article>
+      <article><strong id="question-count">—</strong><span>questões piloto</span></article>
+    </section>
+
+    <nav class="tabs" aria-label="Áreas de teste">
+      <button class="tab is-active" type="button" data-tab="curriculum">Mapa do edital</button>
+      <button class="tab" type="button" data-tab="questions">Treinar questões</button>
+      <button class="tab" type="button" data-tab="status">Status técnico</button>
+    </nav>
+
+    <section id="curriculum-panel" class="panel is-active">
+      <div class="curriculum-layout">
+        <aside class="discipline-list">
+          <label class="search-label" for="curriculum-search">Buscar no edital</label>
+          <input id="curriculum-search" type="search" placeholder="Ex.: licitações, português…">
+          <div id="discipline-buttons"></div>
+        </aside>
+        <div class="curriculum-content">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CONTEÚDO PROGRAMÁTICO</p>
+              <h2 id="selected-discipline">Selecione uma disciplina</h2>
+            </div>
+            <span id="discipline-summary" class="pill"></span>
+          </div>
+          <div id="topic-list" class="topic-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions-panel" class="panel">
+      <div class="quiz-toolbar">
+        <div>
+          <p class="eyebrow">LOTE PILOTO · DIREITO ADMINISTRATIVO</p>
+          <h2>Treino AOCP — alternativas A a E</h2>
+        </div>
+        <div class="quiz-progress"><span id="quiz-position">1/20</span><span id="quiz-score">0 acertos</span></div>
+      </div>
+      <article id="question-card" class="question-card" aria-live="polite"></article>
+      <div class="quiz-actions">
+        <button id="previous-question" class="button button--ghost" type="button">Anterior</button>
+        <button id="next-question" class="button" type="button">Próxima questão</button>
+      </div>
+    </section>
+
+    <section id="status-panel" class="panel">
+      <div class="status-grid">
+        <article class="status-card status-card--ok">
+          <span>ESTRUTURA</span><strong>Pronta para homologação</strong>
+          <p>IDs canônicos, currículo, mapa de conhecimentos, assets e lote piloto validados.</p>
+        </article>
+        <article class="status-card status-card--warning">
+          <span>QUESTÕES</span><strong>Revisão editorial pendente</strong>
+          <p>Este ambiente contém somente o primeiro lote piloto com 20 questões.</p>
+        </article>
+        <article class="status-card status-card--blocked">
+          <span>PUBLICAÇÃO</span><strong>Bloqueada com segurança</strong>
+          <p>O motor V2 e o isolamento por oferta precisam ser concluídos antes do Supabase.</p>
+        </article>
+      </div>
+      <pre id="technical-status" class="technical-status">Carregando manifesto…</pre>
+    </section>
+  </main>
+
+  <footer>Prévia exclusivamente local · nenhuma resposta altera o progresso da sua conta.</footer>
+  <script type="module" src="./preview.js"></script>
+</body>
+</html>
