@@ -1,0 +1,222 @@
+{
+  "schema_version": "detona_source_catalog_v2",
+  "catalog_id": "pc_ba_2026_investigador_source_catalog",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "version": "2.0.0-draft.1",
+  "status": "draft",
+  "generated_at": "2026-08-15T00:00:00-03:00",
+  "privacy": {
+    "private_materials_must_not_be_published": true,
+    "personal_watermarks_must_not_be_extracted_or_logged": true,
+    "questions_must_be_original": true,
+    "verbatim_reproduction_of_third_party_questions": false
+  },
+  "sources": [
+    {
+      "source_id": "pc_ba_2026_edital_abertura_saeb_02_2026",
+      "source_type": "official_notice",
+      "title": "Edital de Abertura de Inscrições SAEB nº 02/2026",
+      "file_name": "edital-pc-ba-2026.pdf",
+      "sha256": "5b6c9aa9ebcc5da5d0adf34143e66772aef9feb3eacf5865ef8952bbc6fe884d",
+      "page_count": 16,
+      "authority": "SAEB e Polícia Civil do Estado da Bahia",
+      "approved_uses": ["scope", "exam_profile", "curriculum_validation"],
+      "question_factual_basis_sufficient_alone": false,
+      "availability": "local_private"
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_00",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 00",
+      "file_name": "curso-396534-aula-00-2947-completo.pdf",
+      "sha256": "77a0c9deba5a6abebe656eeca0bc400188f33c067c7050ca4113916d28da05ef",
+      "page_count": 130,
+      "coverage_sections": [
+        { "title": "Regime jurídico-administrativo", "pages": "5-13" },
+        { "title": "Princípios expressos", "pages": "14-27" },
+        { "title": "Princípios implícitos ou reconhecidos", "pages": "28-54" },
+        { "title": "Jurisprudência sobre princípios", "pages": "55-57" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_01",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 01",
+      "file_name": "curso-396534-aula-01-b215-completo.pdf",
+      "sha256": "e170bed04c3872275806390ebc2c5a3cd75eefafe3dc1f157b503d3dfd405022",
+      "page_count": 122,
+      "coverage_sections": [
+        { "title": "Organização administrativa — conceitos iniciais", "pages": "3-24" },
+        { "title": "Administração direta e indireta", "pages": "25-33" },
+        { "title": "Autarquias", "pages": "34-61" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_02",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 02",
+      "file_name": "curso-396534-aula-02-f268-completo.pdf",
+      "sha256": "2c5501ebcb70703a162f3dcf43a0407fb21f89a77c5b7dad44677de8168e2c7d",
+      "page_count": 78,
+      "coverage_sections": [
+        { "title": "Empresas públicas e sociedades de economia mista", "pages": "3-37" },
+        { "title": "Fundações públicas", "pages": "38-45" },
+        { "title": "Jurisprudência sobre organização administrativa", "pages": "46-50" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_03",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 03",
+      "file_name": "curso-396534-aula-03-feaa-completo.pdf",
+      "sha256": "8c0e5fbd66468856d4e368f6f18d8e5ca67347e839b792ca233ec61e60ca0384",
+      "page_count": 153,
+      "coverage_sections": [
+        { "title": "Deveres e poderes administrativos", "pages": "3-9" },
+        { "title": "Poder vinculado e poder discricionário", "pages": "10-13" },
+        { "title": "Poderes hierárquico, disciplinar, regulamentar e de polícia", "pages": "14-57" },
+        { "title": "Uso e abuso de poder", "pages": "58-59" },
+        { "title": "Jurisprudência sobre poderes administrativos", "pages": "60-62" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_04",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 04",
+      "file_name": "curso-396534-aula-04-a74c-completo.pdf",
+      "sha256": "f521a5abb6097326660827fc339cfbfaa1e8d117eece311744f8993938e37316",
+      "page_count": 271,
+      "coverage_sections": [
+        { "title": "Atos administrativos: conceito e atributos", "pages": "3-30" },
+        { "title": "Elementos e vícios", "pages": "31-68" },
+        { "title": "Mérito, classificação e espécies", "pages": "69-115" },
+        { "title": "Extinção e convalidação", "pages": "116-153" },
+        { "title": "Jurisprudência sobre atos administrativos", "pages": "154-155" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_05",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 05",
+      "file_name": "curso-396534-aula-05-099d-completo.pdf",
+      "sha256": "5b7af003243eb514834103fd51ae900ded17d2b12f1d5457eec381d8ec8b087c",
+      "page_count": 171,
+      "coverage_sections": [
+        { "title": "Lei 14.133/2021: introdução, princípios e objetivos", "pages": "3-52" },
+        { "title": "Agentes, modalidades e critérios de julgamento", "pages": "53-113" },
+        { "title": "Jurisprudência sobre licitações — parte 1", "pages": "114-116" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "pc_ba_2026_inv_dadm_aula_06",
+      "source_type": "authorized_didactic_material",
+      "title": "Noções de Direito Administrativo — Aula 06",
+      "file_name": "curso-396534-aula-06-743f-completo.pdf",
+      "sha256": "97f393b9d987e14d464925d3d375db489f29312e31e0643581e1ab361a354a0b",
+      "page_count": 191,
+      "coverage_sections": [
+        { "title": "Contratação direta e alienações", "pages": "3-70" },
+        { "title": "Fases e instrumentos auxiliares", "pages": "71-138" },
+        { "title": "Disposições setoriais", "pages": "139-159" },
+        { "title": "Jurisprudência sobre licitações — parte 2", "pages": "160" }
+      ],
+      "approved_uses": ["private_authoring_reference", "technical_review"],
+      "availability": "local_private",
+      "publish_source_file": false
+    },
+    {
+      "source_id": "br_constituicao_1988_compilada",
+      "source_type": "official_normative_source",
+      "title": "Constituição da República Federativa do Brasil de 1988 — texto compilado",
+      "authority": "Presidência da República — Casa Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["official_normative_validation", "question_basis"]
+    },
+    {
+      "source_id": "br_lei_14133_2021_compilada",
+      "source_type": "official_normative_source",
+      "title": "Lei nº 14.133/2021 — Licitações e Contratos Administrativos",
+      "authority": "Presidência da República — Casa Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["official_normative_validation", "question_basis"]
+    },
+    {
+      "source_id": "br_codigo_penal_compilado",
+      "source_type": "official_normative_source",
+      "title": "Decreto-Lei nº 2.848/1940 — Código Penal, texto compilado",
+      "authority": "Presidência da República — Casa Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["official_normative_validation", "question_basis"]
+    },
+    {
+      "source_id": "br_codigo_processo_penal_compilado",
+      "source_type": "official_normative_source",
+      "title": "Decreto-Lei nº 3.689/1941 — Código de Processo Penal, texto compilado",
+      "authority": "Presidência da República — Casa Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["official_normative_validation", "question_basis"]
+    },
+    {
+      "source_id": "br_lei_15358_2026",
+      "source_type": "official_normative_source",
+      "title": "Lei nº 15.358/2026 — Marco Legal do Combate ao Crime Organizado",
+      "authority": "Presidência da República — Casa Civil",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15358.htm",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["official_normative_validation", "question_basis"]
+    },
+    {
+      "source_id": "stf_jurisprudencia_oficial",
+      "source_type": "official_case_law_source",
+      "title": "Pesquisa de Jurisprudência do STF",
+      "authority": "Supremo Tribunal Federal",
+      "url": "https://jurisprudencia.stf.jus.br/",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["case_law_validation"]
+    },
+    {
+      "source_id": "stj_jurisprudencia_oficial",
+      "source_type": "official_case_law_source",
+      "title": "Pesquisa de Jurisprudência do STJ",
+      "authority": "Superior Tribunal de Justiça",
+      "url": "https://scon.stj.jus.br/SCON/",
+      "verified_at": "2026-08-15",
+      "availability": "public_web",
+      "approved_uses": ["case_law_validation"]
+    }
+  ],
+  "authorization": {
+    "authoring_authorized": true,
+    "staging_import_authorized": false,
+    "production_publication_authorized": false
+  }
+}

@@ -1,0 +1,1207 @@
+{
+  "schema_version": "detona_question_batch_v2",
+  "batch_id": "pcba_inv_dadm_08_01_lote_001",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo",
+  "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_8_regime_juridico_administrativo",
+  "canonical_scope": "subtopic",
+  "curriculum_node_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_8_1_conceito",
+  "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_8_1_conceito",
+  "exam_board": "instituto_aocp",
+  "question_type": "multiple_choice",
+  "status": "rascunho_revisar",
+  "question_count": 20,
+  "source_catalog_version": "2.0.0-draft.1",
+  "questions": [
+    {
+      "question_id": "pcba_inv_dadm_08_01_q001",
+      "sequence": 1,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_aec3ec59036f06",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "diagnostic",
+      "competence": "conceituar",
+      "reasoning_type": "recognition",
+      "statement": "No estudo do Direito Administrativo, a expressão regime jurídico designa uma estrutura normativa aplicável a determinadas relações jurídicas.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Um conjunto de normas que disciplina relações jurídicas."
+        },
+        {
+          "label": "B",
+          "text": "Uma relação de atos administrativos sem efeitos externos."
+        },
+        {
+          "label": "C",
+          "text": "Um catálogo facultativo de recomendações aos agentes públicos."
+        },
+        {
+          "label": "D",
+          "text": "Uma lista exclusiva de sanções aplicáveis aos particulares."
+        },
+        {
+          "label": "E",
+          "text": "Um sistema formado apenas por precedentes judiciais vinculantes."
+        }
+      ],
+      "correct_option": "A",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "O conceito geral de regime jurídico parte de um conjunto de normas aplicáveis a relações jurídicas.",
+        "correct_option_analysis": "A alternativa A apresenta o núcleo conceitual sem reduzir o regime a uma única fonte ou função.",
+        "option_analysis": {
+          "A": "Correta: regime jurídico é o conjunto de normas que disciplina relações jurídicas.",
+          "B": "Incorreta: o conceito não se limita a atos administrativos nem exclui efeitos externos.",
+          "C": "Incorreta: normas jurídicas não são simples recomendações facultativas.",
+          "D": "Incorreta: o regime também organiza direitos, deveres, poderes e restrições.",
+          "E": "Incorreta: a jurisprudência pode integrar a interpretação, mas não esgota o conceito."
+        },
+        "trap": "Confundir regime jurídico com uma lista de atos, sanções ou precedentes.",
+        "added_knowledge": "O conteúdo concreto do regime varia conforme a relação e a disciplina normativa aplicável.",
+        "learning_takeaway": "Regime jurídico é uma estrutura normativa, não um ato isolado."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-6",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q002",
+      "sequence": 2,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_aec3ec59036f06",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "teaching",
+      "competence": "distinguir",
+      "reasoning_type": "conceptual_understanding",
+      "statement": "A doutrina diferencia regime de direito público e regime de direito privado pela posição dos sujeitos e pelos interesses protegidos.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O direito público sempre coloca todos os sujeitos em absoluta igualdade formal."
+        },
+        {
+          "label": "B",
+          "text": "O direito privado é caracterizado, em regra, pela horizontalidade entre as partes."
+        },
+        {
+          "label": "C",
+          "text": "O direito privado concede à Administração poderes unilaterais desconhecidos dos particulares."
+        },
+        {
+          "label": "D",
+          "text": "O direito público exclui deveres e restrições para o Estado."
+        },
+        {
+          "label": "E",
+          "text": "Os dois regimes são idênticos e a distinção não possui utilidade conceitual."
+        }
+      ],
+      "correct_option": "B",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "A horizontalidade é característica geral das relações privadas, enquanto o regime público admite verticalidade.",
+        "correct_option_analysis": "A alternativa B identifica corretamente a igualdade de posições como regra nas relações privadas.",
+        "option_analysis": {
+          "A": "Incorreta: o regime público pode produzir relações verticais em razão das prerrogativas estatais.",
+          "B": "Correta: nas relações privadas, a regra é a coordenação ou horizontalidade entre as partes.",
+          "C": "Incorreta: poderes unilaterais especiais são associados ao regime de direito público.",
+          "D": "Incorreta: o regime público combina prerrogativas com sujeições e controles.",
+          "E": "Incorreta: embora coexistam na prática, os regimes conservam diferenças conceituais relevantes."
+        },
+        "trap": "Trocar horizontalidade e verticalidade entre os regimes.",
+        "added_knowledge": "A presença da Administração não basta, sozinha, para definir qual regime predomina no caso.",
+        "learning_takeaway": "Direito privado tende à horizontalidade; direito público pode conferir posição de supremacia funcional."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-6",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q003",
+      "sequence": 3,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_aec3ec59036f06",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "reinforcement",
+      "competence": "conceituar",
+      "reasoning_type": "recognition",
+      "statement": "O regime jurídico-administrativo possui sentido mais específico do que o regime jurídico da Administração Pública.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Abrange somente as relações privadas mantidas por empresas estatais."
+        },
+        {
+          "label": "B",
+          "text": "Reúne regras eleitorais aplicáveis aos agentes políticos."
+        },
+        {
+          "label": "C",
+          "text": "Corresponde aos traços de direito público que conferem prerrogativas e impõem sujeições à Administração."
+        },
+        {
+          "label": "D",
+          "text": "Elimina a incidência dos princípios constitucionais administrativos."
+        },
+        {
+          "label": "E",
+          "text": "Autoriza o agente público a escolher livremente os fins da atuação estatal."
+        }
+      ],
+      "correct_option": "C",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "O regime jurídico-administrativo é um regime de direito público marcado por poderes e restrições especiais.",
+        "correct_option_analysis": "A alternativa C expressa a bipolaridade entre prerrogativas e sujeições.",
+        "option_analysis": {
+          "A": "Incorreta: o regime jurídico-administrativo não é sinônimo de regime privado das estatais.",
+          "B": "Incorreta: regras eleitorais não definem o conceito examinado.",
+          "C": "Correta: prerrogativas e sujeições especiais formam o núcleo do regime jurídico-administrativo.",
+          "D": "Incorreta: princípios constitucionais condicionam a atuação administrativa.",
+          "E": "Incorreta: a finalidade pública e a legalidade limitam a escolha do agente."
+        },
+        "trap": "Tratar a expressão como sinônimo de qualquer norma aplicável à Administração.",
+        "added_knowledge": "A expressão regime jurídico da Administração é mais ampla e pode abranger direito público e privado.",
+        "learning_takeaway": "Regime jurídico-administrativo é o recorte de direito público baseado em prerrogativas e sujeições."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q004",
+      "sequence": 4,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_aec3ec59036f06",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "retention",
+      "competence": "reconhecer",
+      "reasoning_type": "recognition",
+      "statement": "As prerrogativas administrativas existem para permitir que o Estado alcance finalidades definidas pelo ordenamento jurídico.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "São vantagens pessoais concedidas ao agente público."
+        },
+        {
+          "label": "B",
+          "text": "São imunidades absolutas contra o controle judicial."
+        },
+        {
+          "label": "C",
+          "text": "São dispensas gerais do dever de motivar os atos."
+        },
+        {
+          "label": "D",
+          "text": "São poderes instrumentais orientados à realização do interesse público."
+        },
+        {
+          "label": "E",
+          "text": "São faculdades destinadas a aumentar o patrimônio particular do gestor."
+        }
+      ],
+      "correct_option": "D",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "Prerrogativas são poderes funcionais, vinculados ao alcance de finalidades públicas.",
+        "correct_option_analysis": "A alternativa D conecta corretamente o poder especial à sua natureza instrumental.",
+        "option_analysis": {
+          "A": "Incorreta: a prerrogativa pertence à função administrativa, não à pessoa do agente.",
+          "B": "Incorreta: a Administração continua submetida a controle e limites jurídicos.",
+          "C": "Incorreta: a motivação pode ser exigida e não é afastada genericamente.",
+          "D": "Correta: os poderes especiais são instrumentos para cumprir finalidades públicas.",
+          "E": "Incorreta: o benefício privado do gestor é incompatível com a finalidade pública."
+        },
+        "trap": "Personalizar a prerrogativa como privilégio do ocupante do cargo.",
+        "added_knowledge": "O desvio da finalidade pode tornar ilegítimo o uso de uma competência administrativa.",
+        "learning_takeaway": "A prerrogativa serve à coletividade e não ao agente."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-8",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q005",
+      "sequence": 5,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_aec3ec59036f06",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "diagnostic",
+      "competence": "reconhecer",
+      "reasoning_type": "conceptual_understanding",
+      "statement": "A indisponibilidade do interesse público limita a atuação administrativa porque o gestor não é titular dos bens e interesses que administra.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Permite renúncia livre a direitos públicos sempre que houver conveniência pessoal."
+        },
+        {
+          "label": "B",
+          "text": "Transforma todo bem estatal em bem livremente alienável."
+        },
+        {
+          "label": "C",
+          "text": "Afasta a necessidade de licitação e de concurso público."
+        },
+        {
+          "label": "D",
+          "text": "Concede autonomia privada plena ao agente público."
+        },
+        {
+          "label": "E",
+          "text": "Impõe sujeições para proteger interesses pertencentes à coletividade."
+        }
+      ],
+      "correct_option": "E",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "A Administração gere interesses alheios e, por isso, sofre restrições especiais.",
+        "correct_option_analysis": "A alternativa E associa corretamente indisponibilidade, coletividade e sujeição administrativa.",
+        "option_analysis": {
+          "A": "Incorreta: interesses públicos não podem ser renunciados por conveniência pessoal.",
+          "B": "Incorreta: a alienação de bens públicos está sujeita a requisitos e limites.",
+          "C": "Incorreta: licitação e concurso são exemplos de sujeições administrativas.",
+          "D": "Incorreta: o agente atua segundo competência e finalidade legal, não por autonomia privada plena.",
+          "E": "Correta: a indisponibilidade protege aquilo que pertence à coletividade."
+        },
+        "trap": "Interpretar indisponibilidade como poder de disposição ampliado.",
+        "added_knowledge": "A legalidade administrativa é uma manifestação importante das sujeições do regime.",
+        "learning_takeaway": "O gestor administra interesses da sociedade; não pode tratá-los como patrimônio próprio."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q006",
+      "sequence": 6,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_de71cb2a46e005",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "teaching",
+      "competence": "identificar elementos",
+      "reasoning_type": "recognition",
+      "statement": "A estrutura clássica do regime jurídico-administrativo é explicada por dois polos complementares.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prerrogativas e sujeições."
+        },
+        {
+          "label": "B",
+          "text": "Receitas e despesas."
+        },
+        {
+          "label": "C",
+          "text": "Jurisdição e legislação."
+        },
+        {
+          "label": "D",
+          "text": "Capacidade civil e capacidade eleitoral."
+        },
+        {
+          "label": "E",
+          "text": "Prescrição e coisa julgada."
+        }
+      ],
+      "correct_option": "A",
+      "difficulty": "facil",
+      "explanation": {
+        "summary": "O regime equilibra poderes funcionais e limitações impostas à Administração.",
+        "correct_option_analysis": "A alternativa A nomeia os dois elementos estruturantes reconhecidos pela doutrina.",
+        "option_analysis": {
+          "A": "Correta: poderes especiais e restrições especiais formam os dois polos do regime.",
+          "B": "Incorreta: receitas e despesas pertencem à gestão financeira, não ao conceito solicitado.",
+          "C": "Incorreta: jurisdição e legislação não compõem essa bipolaridade.",
+          "D": "Incorreta: capacidades civil e eleitoral tratam de outros ramos jurídicos.",
+          "E": "Incorreta: prescrição e coisa julgada não definem os polos do regime."
+        },
+        "trap": "Escolher pares jurídicos conhecidos, mas estranhos ao conceito pedido.",
+        "added_knowledge": "As prerrogativas não anulam as sujeições; ambas coexistem no exercício da função.",
+        "learning_takeaway": "Poder e limite são inseparáveis no regime jurídico-administrativo."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q007",
+      "sequence": 7,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_de71cb2a46e005",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_aec3ec59036f06"
+      ],
+      "pedagogical_role": "discrimination",
+      "competence": "distinguir",
+      "reasoning_type": "discrimination",
+      "statement": "Considere as expressões regime jurídico da Administração e regime jurídico-administrativo. Elas não possuem extensão idêntica.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A primeira se limita ao direito público; a segunda inclui apenas o direito privado."
+        },
+        {
+          "label": "B",
+          "text": "A primeira abrange regimes público e privado; a segunda enfatiza o regime de direito público administrativo."
+        },
+        {
+          "label": "C",
+          "text": "Ambas designam exclusivamente normas de contratação de servidores."
+        },
+        {
+          "label": "D",
+          "text": "A segunda é mais ampla porque inclui toda relação privada da Administração."
+        },
+        {
+          "label": "E",
+          "text": "A primeira é categoria processual; a segunda, categoria penal."
+        }
+      ],
+      "correct_option": "B",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A expressão ampla alcança diferentes regimes; a específica destaca prerrogativas e sujeições publicísticas.",
+        "correct_option_analysis": "A alternativa B preserva a diferença de extensão entre os dois conceitos.",
+        "option_analysis": {
+          "A": "Incorreta: a relação entre as expressões foi invertida.",
+          "B": "Correta: regime da Administração é amplo; regime jurídico-administrativo identifica traços publicísticos.",
+          "C": "Incorreta: as expressões não se restringem à gestão de pessoal.",
+          "D": "Incorreta: o regime jurídico-administrativo é mais específico, não mais amplo.",
+          "E": "Incorreta: a distinção pertence ao Direito Administrativo."
+        },
+        "trap": "Inverter qual expressão é mais ampla.",
+        "added_knowledge": "A Administração pode usar formas privadas sem se desligar completamente de deveres públicos.",
+        "learning_takeaway": "Regime da Administração é gênero amplo; regime jurídico-administrativo é recorte publicístico."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q008",
+      "sequence": 8,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_de71cb2a46e005",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "reinforcement",
+      "competence": "classificar",
+      "reasoning_type": "conceptual_understanding",
+      "statement": "Em um contrato administrativo, a possibilidade legal de alteração unilateral pela Administração exemplifica elemento do regime jurídico-administrativo.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sujeição decorrente da horizontalidade privada."
+        },
+        {
+          "label": "B",
+          "text": "Renúncia ao interesse público."
+        },
+        {
+          "label": "C",
+          "text": "Prerrogativa administrativa condicionada pela lei e pela finalidade pública."
+        },
+        {
+          "label": "D",
+          "text": "Direito pessoal do gestor do contrato."
+        },
+        {
+          "label": "E",
+          "text": "Imunidade contra recomposição do equilíbrio contratual."
+        }
+      ],
+      "correct_option": "C",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A alteração unilateral é exemplo de prerrogativa, desde que exercida nos limites legais.",
+        "correct_option_analysis": "A alternativa C classifica o instituto e preserva seus limites.",
+        "option_analysis": {
+          "A": "Incorreta: alteração unilateral expressa verticalidade, não horizontalidade.",
+          "B": "Incorreta: o exercício regular da competência busca realizar a finalidade pública.",
+          "C": "Correta: trata-se de poder especial, mas juridicamente condicionado.",
+          "D": "Incorreta: a competência pertence à Administração, não ao gestor em caráter pessoal.",
+          "E": "Incorreta: prerrogativa não significa afastamento de todos os direitos do contratado."
+        },
+        "trap": "Tratar prerrogativa como poder pessoal e ilimitado.",
+        "added_knowledge": "O mesmo regime que concede poderes também impõe deveres de finalidade, legalidade e controle.",
+        "learning_takeaway": "Prerrogativa é poder funcional condicionado, nunca arbitrariedade."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-8",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q009",
+      "sequence": 9,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_de71cb2a46e005",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "teaching",
+      "competence": "classificar",
+      "reasoning_type": "application",
+      "statement": "Uma autoridade pretende vender, sem observar requisitos legais, prédio público utilizado por uma escola. A limitação à conduta decorre do regime jurídico-administrativo.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Da autonomia da vontade do agente."
+        },
+        {
+          "label": "B",
+          "text": "Da liberdade contratual irrestrita do Estado."
+        },
+        {
+          "label": "C",
+          "text": "Da supremacia patrimonial pessoal do gestor."
+        },
+        {
+          "label": "D",
+          "text": "Da sujeição ligada à indisponibilidade do interesse público."
+        },
+        {
+          "label": "E",
+          "text": "Da inexistência de finalidade pública para bens estatais."
+        }
+      ],
+      "correct_option": "D",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A indisponibilidade impede que o gestor trate o patrimônio público como bem particular.",
+        "correct_option_analysis": "A alternativa D identifica a sujeição que protege o interesse coletivo.",
+        "option_analysis": {
+          "A": "Incorreta: o agente público não atua com a mesma autonomia privada do proprietário.",
+          "B": "Incorreta: a liberdade estatal é juridicamente limitada.",
+          "C": "Incorreta: o gestor não é proprietário do patrimônio público.",
+          "D": "Correta: a destinação coletiva impõe requisitos e impede disposição pessoal do bem.",
+          "E": "Incorreta: o uso escolar evidencia finalidade pública relevante."
+        },
+        "trap": "Aplicar autonomia privada a um bem afetado a serviço público.",
+        "added_knowledge": "A inobservância das sujeições pode produzir invalidade do ato e responsabilização.",
+        "learning_takeaway": "Bens e interesses públicos são administrados, não apropriados pelo gestor."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-8",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q010",
+      "sequence": 10,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_de71cb2a46e005",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "retention",
+      "competence": "relacionar",
+      "reasoning_type": "conceptual_understanding",
+      "statement": "A doutrina relaciona as prerrogativas e sujeições do regime jurídico-administrativo a princípios estruturantes.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Publicidade e continuidade, exclusivamente."
+        },
+        {
+          "label": "B",
+          "text": "Eficiência e especialidade, exclusivamente."
+        },
+        {
+          "label": "C",
+          "text": "Moralidade e autotutela, sem relação com interesse público."
+        },
+        {
+          "label": "D",
+          "text": "Legalidade penal e liberdade contratual."
+        },
+        {
+          "label": "E",
+          "text": "Supremacia do interesse público e indisponibilidade do interesse público."
+        }
+      ],
+      "correct_option": "E",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A construção clássica conecta supremacia a poderes e indisponibilidade a limites.",
+        "correct_option_analysis": "A alternativa E apresenta o par de princípios associado aos dois polos do regime.",
+        "option_analysis": {
+          "A": "Incorreta: esses princípios são relevantes, mas não formam o par estrutural clássico pedido.",
+          "B": "Incorreta: eficiência e especialidade não substituem o par indicado pela doutrina clássica.",
+          "C": "Incorreta: moralidade e autotutela não afastam o fundamento no interesse público.",
+          "D": "Incorreta: liberdade contratual privada não explica as sujeições administrativas.",
+          "E": "Correta: supremacia fundamenta prerrogativas e indisponibilidade fundamenta restrições."
+        },
+        "trap": "Escolher princípios administrativos verdadeiros, mas que não respondem à relação estrutural perguntada.",
+        "added_knowledge": "Parte da doutrina usa a legalidade para evidenciar o polo das sujeições, sem eliminar a ideia de indisponibilidade.",
+        "learning_takeaway": "Supremacia explica poderes; indisponibilidade explica limites."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q011",
+      "sequence": 11,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_338caadd9f1da1",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "discrimination",
+      "competence": "distinguir regimes",
+      "reasoning_type": "discrimination",
+      "statement": "Uma empresa pública exploradora de atividade econômica celebra contrato de financiamento com cliente e, simultaneamente, realiza concurso para admitir empregados.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A situação demonstra coexistência de regras privadas e públicas na mesma entidade."
+        },
+        {
+          "label": "B",
+          "text": "A realização de concurso converte todos os contratos da empresa em contratos administrativos."
+        },
+        {
+          "label": "C",
+          "text": "O contrato privado elimina qualquer dever público da empresa."
+        },
+        {
+          "label": "D",
+          "text": "Empresas públicas jamais se submetem a regras de direito privado."
+        },
+        {
+          "label": "E",
+          "text": "A personalidade privada da entidade torna inconstitucional o concurso."
+        }
+      ],
+      "correct_option": "A",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "Regimes público e privado podem coexistir, com predomínio variável conforme a relação.",
+        "correct_option_analysis": "A alternativa A evita a falsa escolha de um regime único e absoluto para toda a entidade.",
+        "option_analysis": {
+          "A": "Correta: o exemplo mostra predomínio privado em uma relação e incidência pública em outra.",
+          "B": "Incorreta: um dever público específico não altera automaticamente a natureza de todas as relações.",
+          "C": "Incorreta: entidades privadas da Administração continuam sujeitas a deveres públicos.",
+          "D": "Incorreta: empresas estatais podem atuar sob regime predominantemente privado.",
+          "E": "Incorreta: a exigência de concurso é compatível com a submissão a controles públicos."
+        },
+        "trap": "Generalizar a natureza de uma relação para todas as atividades da entidade.",
+        "added_knowledge": "Mesmo modelos privatísticos da Administração recebem incidência de regras públicas.",
+        "learning_takeaway": "A natureza da entidade não resolve, isoladamente, o regime de cada relação."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-7",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q012",
+      "sequence": 12,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_338caadd9f1da1",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "teaching",
+      "competence": "identificar limites",
+      "reasoning_type": "exception_handling",
+      "statement": "A Administração utiliza instrumento tipicamente privado para contratar seguro de veículo oficial. Quanto ao regime aplicável, a solução correta exige nuance.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O direito privado afasta toda norma de direito público."
+        },
+        {
+          "label": "B",
+          "text": "Pode haver predomínio de regras privadas, sem submissão integral e isolada ao direito privado."
+        },
+        {
+          "label": "C",
+          "text": "O contrato é nulo porque a Administração não pode usar formas privadas."
+        },
+        {
+          "label": "D",
+          "text": "A mera presença estatal cria poderes ilimitados sobre a seguradora."
+        },
+        {
+          "label": "E",
+          "text": "O agente pode contratar sem competência ou finalidade, pois a forma é privada."
+        }
+      ],
+      "correct_option": "B",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "O uso de forma privada não significa submissão absoluta e exclusiva ao direito privado.",
+        "correct_option_analysis": "A alternativa B reconhece o predomínio privado e a permanência de condicionamentos públicos.",
+        "option_analysis": {
+          "A": "Incorreta: deveres públicos permanecem incidentes sobre a Administração.",
+          "B": "Correta: o modelo pode ser privado, mas não rompe todos os vínculos publicísticos.",
+          "C": "Incorreta: a Administração pode utilizar institutos de direito privado quando admitidos.",
+          "D": "Incorreta: a presença do Estado não cria poderes sem base jurídica.",
+          "E": "Incorreta: competência e finalidade continuam obrigatórias."
+        },
+        "trap": "Adotar uma visão de tudo ou nada entre os dois regimes.",
+        "added_knowledge": "A Constituição e as leis definem a incidência e a intensidade de cada regime.",
+        "learning_takeaway": "Predomínio privado não equivale a ausência total de direito público."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-7",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q013",
+      "sequence": 13,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_338caadd9f1da1",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "reinforcement",
+      "competence": "identificar efeitos",
+      "reasoning_type": "application",
+      "statement": "Em relação contratual exclusivamente privada, uma parte pretende alterar unilateralmente obrigação essencial sem concordância da outra e sem previsão jurídica.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A alteração é válida por força da supremacia do interesse público."
+        },
+        {
+          "label": "B",
+          "text": "A alteração é prerrogativa ordinária de qualquer contratante privado."
+        },
+        {
+          "label": "C",
+          "text": "A horizontalidade privada impede reconhecer, como regra, poder unilateral equivalente ao administrativo."
+        },
+        {
+          "label": "D",
+          "text": "A outra parte deve aceitar porque todo contrato possui natureza vertical."
+        },
+        {
+          "label": "E",
+          "text": "O caso comprova que regimes público e privado são idênticos."
+        }
+      ],
+      "correct_option": "C",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A horizontalidade privada contrasta com prerrogativas unilaterais atribuídas legalmente à Administração.",
+        "correct_option_analysis": "A alternativa C aplica a distinção estrutural ao caso apresentado.",
+        "option_analysis": {
+          "A": "Incorreta: não há atuação administrativa nem fundamento publicístico no caso.",
+          "B": "Incorreta: contratantes privados não possuem, em regra, poder unilateral geral.",
+          "C": "Correta: a coordenação entre particulares exige acordo ou fundamento contratual/legal válido.",
+          "D": "Incorreta: contratos privados são, em regra, horizontais.",
+          "E": "Incorreta: o contraste evidencia diferenças entre os regimes."
+        },
+        "trap": "Transportar prerrogativa administrativa para uma relação entre particulares.",
+        "added_knowledge": "A verticalidade administrativa depende de fundamento jurídico e de finalidade pública.",
+        "learning_takeaway": "Poder unilateral especial não é característica geral das relações privadas."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-6",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q014",
+      "sequence": 14,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_338caadd9f1da1",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "diagnostic",
+      "competence": "avaliar limites",
+      "reasoning_type": "exception_handling",
+      "statement": "A supremacia do interesse público integra a explicação clássica do regime jurídico-administrativo, mas não autoriza qualquer conduta estatal.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Autoriza o agente a afastar a lei sempre que alegar conveniência."
+        },
+        {
+          "label": "B",
+          "text": "Elimina direitos fundamentais quando houver interesse arrecadatório."
+        },
+        {
+          "label": "C",
+          "text": "Transforma toda vontade do governante em interesse público."
+        },
+        {
+          "label": "D",
+          "text": "Fundamenta prerrogativas voltadas a fins públicos, exercidas dentro de competência e limites jurídicos."
+        },
+        {
+          "label": "E",
+          "text": "Impede controle judicial sobre atos administrativos."
+        }
+      ],
+      "correct_option": "D",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "Supremacia fundamenta poderes funcionais, não um cheque em branco para a autoridade.",
+        "correct_option_analysis": "A alternativa D combina finalidade, competência e limites, evitando leitura autoritária do princípio.",
+        "option_analysis": {
+          "A": "Incorreta: a supremacia não afasta legalidade e competência.",
+          "B": "Incorreta: o regime também protege direitos fundamentais.",
+          "C": "Incorreta: interesse público não se confunde com vontade pessoal do governante.",
+          "D": "Correta: poderes especiais são instrumentais e juridicamente condicionados.",
+          "E": "Incorreta: atos administrativos permanecem sujeitos a controle."
+        },
+        "trap": "Confundir interesse público com preferência do agente ou do governo.",
+        "added_knowledge": "As sujeições contrabalançam as prerrogativas e preservam direitos e patrimônio público.",
+        "learning_takeaway": "Supremacia é instrumento finalístico e controlável."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q015",
+      "sequence": 15,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_338caadd9f1da1",
+      "secondary_microknowledge_ids": [],
+      "pedagogical_role": "retention",
+      "competence": "distinguir sujeitos",
+      "reasoning_type": "conceptual_understanding",
+      "statement": "A indisponibilidade do interesse público decorre da posição institucional da Administração perante a coletividade.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O Estado é proprietário absoluto de todo interesse social."
+        },
+        {
+          "label": "B",
+          "text": "O agente recebe titularidade pessoal dos bens sob sua gestão."
+        },
+        {
+          "label": "C",
+          "text": "A coletividade perde a titularidade quando um gestor toma posse."
+        },
+        {
+          "label": "D",
+          "text": "A autoridade pode renunciar a competências obrigatórias sem autorização."
+        },
+        {
+          "label": "E",
+          "text": "A Administração exerce função de gestão e proteção de interesses que não lhe pertencem livremente."
+        }
+      ],
+      "correct_option": "E",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A indisponibilidade nasce da ausência de propriedade privada do gestor sobre o interesse administrado.",
+        "correct_option_analysis": "A alternativa E traduz a natureza funcional e vinculada da atuação administrativa.",
+        "option_analysis": {
+          "A": "Incorreta: o interesse público pertence à coletividade, não ao Estado como proprietário privado.",
+          "B": "Incorreta: a investidura não transfere propriedade ao agente.",
+          "C": "Incorreta: a titularidade coletiva não desaparece com a mudança de gestor.",
+          "D": "Incorreta: competências-dever não são livremente renunciáveis.",
+          "E": "Correta: a função administrativa implica gestão vinculada de interesses alheios."
+        },
+        "trap": "Atribuir ao Estado ou ao agente a mesma liberdade do proprietário privado.",
+        "added_knowledge": "A competência administrativa pode assumir natureza de poder-dever quando a lei exige atuação.",
+        "learning_takeaway": "Administrar não é dispor livremente; é agir em nome da coletividade."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q016",
+      "sequence": 16,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_73d3a36f80c00d",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_de71cb2a46e005"
+      ],
+      "pedagogical_role": "integration",
+      "competence": "aplicar em caso",
+      "reasoning_type": "case_analysis",
+      "statement": "Para contratar fornecimento comum, gestor escolhe empresa de amigo sem procedimento competitivo e sem hipótese legal de contratação direta.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A conduta viola sujeições do regime, pois a escolha administrativa depende de competência, finalidade e procedimento legal."
+        },
+        {
+          "label": "B",
+          "text": "A amizade substitui a necessidade de fundamento legal."
+        },
+        {
+          "label": "C",
+          "text": "A supremacia permite escolher qualquer contratado sem controle."
+        },
+        {
+          "label": "D",
+          "text": "A liberdade contratual privada aplica-se integralmente ao gestor."
+        },
+        {
+          "label": "E",
+          "text": "A indisponibilidade do interesse público autoriza preferência pessoal."
+        }
+      ],
+      "correct_option": "A",
+      "difficulty": "intermediaria",
+      "explanation": {
+        "summary": "A contratação pública evidencia como sujeições limitam a liberdade decisória do gestor.",
+        "correct_option_analysis": "A alternativa A aplica corretamente o conceito ao caso e identifica o desvio pessoal.",
+        "option_analysis": {
+          "A": "Correta: a escolha pessoal sem base legal afronta as restrições que protegem o interesse coletivo.",
+          "B": "Incorreta: relação pessoal não cria competência nem hipótese de contratação direta.",
+          "C": "Incorreta: supremacia não elimina procedimentos e controles.",
+          "D": "Incorreta: o gestor não contrata como particular usando patrimônio próprio.",
+          "E": "Incorreta: indisponibilidade restringe preferências pessoais."
+        },
+        "trap": "Usar supremacia como justificativa para afastar a legalidade.",
+        "added_knowledge": "A licitação é um exemplo de sujeição administrativa; exceções dependem de previsão legal.",
+        "learning_takeaway": "A Administração não possui liberdade privada para escolher parceiros com recursos coletivos."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 5-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        },
+        {
+          "source_id": "br_constituicao_1988_compilada",
+          "location": "art. 37, caput",
+          "used_for": "Validação normativa do regime constitucional da Administração.",
+          "verified_at": "2026-08-15"
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q017",
+      "sequence": 17,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_73d3a36f80c00d",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_338caadd9f1da1"
+      ],
+      "pedagogical_role": "discrimination",
+      "competence": "resolver caso concreto",
+      "reasoning_type": "case_analysis",
+      "statement": "Banco público explorador de atividade econômica invoca sua personalidade de direito privado para negar todo dever de concurso, controle e impessoalidade.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A tese é correta, pois personalidade privada exclui qualquer norma pública."
+        },
+        {
+          "label": "B",
+          "text": "A tese é incorreta: o predomínio privado em certas relações convive com deveres públicos incidentes sobre a entidade."
+        },
+        {
+          "label": "C",
+          "text": "A tese é correta apenas porque atividade econômica equivale a serviço sem interesse coletivo."
+        },
+        {
+          "label": "D",
+          "text": "A tese é incorreta porque todas as relações do banco são necessariamente administrativas."
+        },
+        {
+          "label": "E",
+          "text": "A tese é correta se aprovada internamente pela diretoria."
+        }
+      ],
+      "correct_option": "B",
+      "difficulty": "dificil",
+      "explanation": {
+        "summary": "Empresas estatais de direito privado não vivem sob regime exclusivamente privado.",
+        "correct_option_analysis": "A alternativa B resolve a tensão sem absolutizar nenhum dos regimes.",
+        "option_analysis": {
+          "A": "Incorreta: entidades estatais privadas permanecem sujeitas a condicionamentos públicos.",
+          "B": "Correta: a coexistência de regimes impede tanto a imunidade pública quanto a publicização absoluta.",
+          "C": "Incorreta: a natureza econômica não elimina deveres constitucionais aplicáveis.",
+          "D": "Incorreta: algumas relações podem seguir regime predominantemente privado.",
+          "E": "Incorreta: deliberação interna não afasta normas superiores."
+        },
+        "trap": "Escolher entre privatização total e publicização total das relações.",
+        "added_knowledge": "O regime aplicável deve ser identificado por relação e por norma, não apenas pelo rótulo da entidade.",
+        "learning_takeaway": "Personalidade privada da estatal não significa ausência de controles públicos."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-7",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        },
+        {
+          "source_id": "br_constituicao_1988_compilada",
+          "location": "art. 37, caput",
+          "used_for": "Validação normativa do regime constitucional da Administração.",
+          "verified_at": "2026-08-15"
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q018",
+      "sequence": 18,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_73d3a36f80c00d",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_de71cb2a46e005"
+      ],
+      "pedagogical_role": "teaching",
+      "competence": "avaliar validade",
+      "reasoning_type": "exception_handling",
+      "statement": "Autoridade possui competência legal para requisitar bem em situação prevista, mas usa o poder para favorecer empreendimento particular de familiar.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O ato é válido porque toda prerrogativa é discricionária e sem finalidade vinculada."
+        },
+        {
+          "label": "B",
+          "text": "O ato é válido porque a competência formal torna irrelevante o objetivo real."
+        },
+        {
+          "label": "C",
+          "text": "O ato é inválido somente se o bem pertencer a outro ente público."
+        },
+        {
+          "label": "D",
+          "text": "O uso da prerrogativa é ilegítimo por desvio da finalidade pública, apesar da existência abstrata da competência."
+        },
+        {
+          "label": "E",
+          "text": "O parentesco converte o interesse particular em interesse público."
+        }
+      ],
+      "correct_option": "D",
+      "difficulty": "dificil",
+      "explanation": {
+        "summary": "A existência de uma prerrogativa não legitima seu uso para finalidade estranha à lei.",
+        "correct_option_analysis": "A alternativa D distingue competência abstrata de exercício concreto legítimo.",
+        "option_analysis": {
+          "A": "Incorreta: prerrogativas são poderes finalísticos e controláveis.",
+          "B": "Incorreta: competência não sana desvio de finalidade.",
+          "C": "Incorreta: o problema central é o uso do poder para fim privado.",
+          "D": "Correta: a finalidade integra os limites jurídicos do exercício da prerrogativa.",
+          "E": "Incorreta: interesse familiar permanece particular."
+        },
+        "trap": "Supor que possuir o poder basta para validar qualquer uso dele.",
+        "added_knowledge": "Poder administrativo é instrumento; seu uso desviado pode produzir nulidade e responsabilização.",
+        "learning_takeaway": "Prerrogativa sem finalidade pública converte-se em abuso, não em atuação legítima."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q019",
+      "sequence": 19,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_73d3a36f80c00d",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_338caadd9f1da1"
+      ],
+      "pedagogical_role": "integration",
+      "competence": "integrar conceitos",
+      "reasoning_type": "case_analysis",
+      "statement": "Município celebra seguro de frota por instrumento privado. Depois, o prefeito afirma que a forma privada o libera de competência, finalidade e controle.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A afirmação é correta porque contratos privados anulam princípios administrativos."
+        },
+        {
+          "label": "B",
+          "text": "A afirmação é correta se o valor do contrato for reduzido."
+        },
+        {
+          "label": "C",
+          "text": "A afirmação é correta porque o prefeito atua como proprietário do patrimônio municipal."
+        },
+        {
+          "label": "D",
+          "text": "A afirmação é incorreta apenas se a seguradora for empresa estatal."
+        },
+        {
+          "label": "E",
+          "text": "A afirmação é incorreta: a forma privada pode predominar, mas não elimina condicionamentos públicos da atuação municipal."
+        }
+      ],
+      "correct_option": "E",
+      "difficulty": "dificil",
+      "explanation": {
+        "summary": "O uso de instrumento privado não descaracteriza a função administrativa do contratante público.",
+        "correct_option_analysis": "A alternativa E reconhece a incidência combinada dos regimes no caso concreto.",
+        "option_analysis": {
+          "A": "Incorreta: princípios e competências não são anulados pela forma contratual.",
+          "B": "Incorreta: o valor não cria liberdade pessoal do gestor.",
+          "C": "Incorreta: o prefeito não é proprietário privado dos bens municipais.",
+          "D": "Incorreta: a identidade da seguradora não é o ponto decisivo do enunciado.",
+          "E": "Correta: regimes podem coexistir e deveres públicos permanecem aplicáveis."
+        },
+        "trap": "Confundir forma privada com liberdade privada integral do agente.",
+        "added_knowledge": "Competência, finalidade, impessoalidade e controle acompanham a atuação administrativa mesmo em modelos privados.",
+        "learning_takeaway": "A Administração pode contratar sob forma privada, mas nunca deixa de ser Administração."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 6-7",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        },
+        {
+          "source_id": "br_constituicao_1988_compilada",
+          "location": "art. 37, caput",
+          "used_for": "Validação normativa do regime constitucional da Administração.",
+          "verified_at": "2026-08-15"
+        }
+      ],
+      "status": "rascunho_revisar"
+    },
+    {
+      "question_id": "pcba_inv_dadm_08_01_q020",
+      "sequence": 20,
+      "primary_microknowledge_id": "pc_ba_2026_inv_mk_73d3a36f80c00d",
+      "secondary_microknowledge_ids": [
+        "pc_ba_2026_inv_mk_aec3ec59036f06",
+        "pc_ba_2026_inv_mk_de71cb2a46e005",
+        "pc_ba_2026_inv_mk_338caadd9f1da1"
+      ],
+      "pedagogical_role": "integration",
+      "competence": "sintetizar e aplicar",
+      "reasoning_type": "case_analysis",
+      "statement": "Em operação administrativa, a lei autoriza medida coercitiva para proteger a coletividade e exige motivação, proporcionalidade e respeito a direitos. A autoridade adota a medida e documenta seus fundamentos.",
+      "command": "Assinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A exigência de proporcionalidade converte a atuação em relação exclusivamente privada."
+        },
+        {
+          "label": "B",
+          "text": "A exigência de motivação elimina a prerrogativa coercitiva."
+        },
+        {
+          "label": "C",
+          "text": "O caso demonstra a coexistência de prerrogativa e sujeição no mesmo ato administrativo."
+        },
+        {
+          "label": "D",
+          "text": "A medida somente seria administrativa se não houvesse qualquer controle."
+        },
+        {
+          "label": "E",
+          "text": "O caso pertence exclusivamente ao regime privado por conter dever de documentação."
+        }
+      ],
+      "correct_option": "C",
+      "difficulty": "dificil",
+      "explanation": {
+        "summary": "O regime jurídico-administrativo combina poder para agir e limites sobre como agir.",
+        "correct_option_analysis": "A alternativa C sintetiza a bipolaridade do regime em uma única situação concreta.",
+        "option_analysis": {
+          "A": "Incorreta: proporcionalidade é limite jurídico compatível com o exercício da função pública.",
+          "B": "Incorreta: sujeição não destrói o poder; disciplina seu exercício.",
+          "C": "Correta: o poder coercitivo e os deveres de justificativa e limite operam conjuntamente.",
+          "D": "Incorreta: controle é compatível e necessário à atuação administrativa.",
+          "E": "Incorreta: documentação e motivação evidenciam condicionamentos públicos."
+        },
+        "trap": "Imaginar que prerrogativa e sujeição são mutuamente excludentes.",
+        "added_knowledge": "A legitimidade da atuação depende tanto da existência do poder quanto do atendimento aos limites de seu exercício.",
+        "learning_takeaway": "No regime administrativo, poder e controle coexistem para realizar e proteger o interesse público."
+      },
+      "source_references": [
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento doutrinário e revisão técnica."
+        },
+        {
+          "source_id": "br_constituicao_1988_compilada",
+          "location": "art. 37, caput",
+          "used_for": "Validação normativa do regime constitucional da Administração.",
+          "verified_at": "2026-08-15"
+        }
+      ],
+      "status": "rascunho_revisar"
+    }
+  ],
+  "validation": {
+    "reviewed": false,
+    "blocking_errors": [
+      "Revisão editorial humana pendente antes de qualquer importação ou publicação."
+    ],
+    "warnings": [],
+    "duplicate_check": "passed",
+    "schema_check": "passed",
+    "source_check": "passed",
+    "microknowledge_check": "passed"
+  }
+}

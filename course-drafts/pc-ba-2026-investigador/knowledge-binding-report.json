@@ -1,0 +1,137 @@
+{
+  "schema_version": "detona_knowledge_binding_report_v1",
+  "status": "complete_with_documented_exceptions",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "offering_id": "pc_ba_2026_investigador",
+  "source_hashes": {
+    "master_knowledge_map_v1_sha256": "48137bfff15f0d46597a74121e95d0a3a0f45357b42e393aa0071a54be80dde2",
+    "fragment_bindings_sha256": "729da34095177e4ef3de84a9b691c830e89f5cb926629a29aba1b7f5bd095d60"
+  },
+  "criteria": {
+    "microknowledges": {
+      "expected": 2545,
+      "actual": 2545,
+      "passed": true
+    },
+    "microknowledges_linked": {
+      "expected": 2545,
+      "actual": 2545,
+      "passed": true
+    },
+    "orphan_microknowledges": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "fragments_represented": {
+      "expected": 420,
+      "actual": 420,
+      "passed": true
+    },
+    "canonical_topics_preserved": {
+      "expected": 161,
+      "actual": 161,
+      "passed": true
+    },
+    "canonical_subtopics_preserved": {
+      "expected": 296,
+      "actual": 296,
+      "passed": true
+    },
+    "canonical_ids_created": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "canonical_ids_modified": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "duplicate_microknowledge_ids": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "invalid_fragment_ids": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "topic_scoped_fragments": {
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    "subtopic_scoped_fragments": {
+      "expected": 418,
+      "actual": 418,
+      "passed": true
+    },
+    "classifications_preserved": {
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    "import_authorized": {
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    "publication_authorized": {
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    "question_generation_authorized": {
+      "expected": false,
+      "actual": false,
+      "passed": true
+    }
+  },
+  "coverage": {
+    "disciplines": 14,
+    "topics": 161,
+    "subtopics": 296,
+    "fragments": 420,
+    "microknowledges": 2545,
+    "topic_scoped_fragments": 2,
+    "topic_scoped_microknowledges": 18
+  },
+  "classification_counts": {
+    "validation_status": {
+      "editorial_validation_required": 1945,
+      "requires_official_normative_validation": 576,
+      "requires_current_affairs_source_snapshot": 24
+    },
+    "origin": {
+      "pedagogical_decomposition_model": 1945,
+      "normative_pedagogical_decomposition_requires_official_validation": 434,
+      "edital_axis_dynamic": 24,
+      "normative_verticalization_pending_official_source": 112,
+      "dynamic_normative_validation_required": 30
+    },
+    "question_generation_allowed": {
+      "false": 2545
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "code": "ACCOUNTING_SHARED_CANONICAL_SUBTOPIC",
+      "affected_fragments": [
+        "pc_ba_2026_inv_frag_5722df3298ce",
+        "pc_ba_2026_inv_frag_2b3b0150d1ee"
+      ]
+    },
+    {
+      "code": "PENAL_TOPIC_SCOPE_WITHOUT_CANONICAL_SUBTOPIC",
+      "affected_fragments": [
+        "pc_ba_2026_inv_frag_7dc2a42f47d8",
+        "pc_ba_2026_inv_frag_f3bc1712a223"
+      ],
+      "affected_microknowledges": 18
+    }
+  ]
+}

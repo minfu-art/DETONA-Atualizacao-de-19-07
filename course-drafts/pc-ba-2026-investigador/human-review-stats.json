@@ -1,0 +1,250 @@
+{
+  "schema_version": "detona_human_review_stats_v1",
+  "status": "draft_review_preparation",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "source_counts": {
+    "complex_microknowledges": 19,
+    "broad_scope_microknowledges": 48,
+    "apparent_duplicate_groups": 96,
+    "apparent_duplicate_members": 239,
+    "normative_microknowledges": 576,
+    "dynamic_microknowledges": 24,
+    "moderate_microknowledges": 444,
+    "simple_atomic_sample": 236
+  },
+  "deduplicated_queue_microknowledges": 1176,
+  "overlap_counts": {
+    "complex__official_normative_validation": 1,
+    "complex__dynamic_verified_source": 2,
+    "broad_scope__apparent_duplicate_members": 25,
+    "broad_scope__official_normative_validation": 38,
+    "broad_scope__dynamic_verified_source": 10,
+    "broad_scope__moderate": 19,
+    "broad_scope__simple_atomic_sample": 8,
+    "apparent_duplicate_members__official_normative_validation": 112,
+    "apparent_duplicate_members__dynamic_verified_source": 1,
+    "apparent_duplicate_members__moderate": 41,
+    "apparent_duplicate_members__simple_atomic_sample": 25,
+    "official_normative_validation__moderate": 139,
+    "official_normative_validation__simple_atomic_sample": 57,
+    "dynamic_verified_source__moderate": 22
+  },
+  "sampling": {
+    "policy": "10_percent_rounded_up_with_minimum_5_per_available_discipline_and_complexity",
+    "source_order_preserved": true,
+    "strata": [
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_lingua_portuguesa",
+        "complexity": "simple",
+        "population": 139,
+        "target": 14,
+        "selected": 14,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_lingua_portuguesa",
+        "complexity": "atomic",
+        "population": 123,
+        "target": 13,
+        "selected": 13,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_raciocinio_logico",
+        "complexity": "simple",
+        "population": 59,
+        "target": 6,
+        "selected": 6,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_raciocinio_logico",
+        "complexity": "atomic",
+        "population": 44,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_informatica",
+        "complexity": "simple",
+        "population": 119,
+        "target": 12,
+        "selected": 12,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_informatica",
+        "complexity": "atomic",
+        "population": 74,
+        "target": 8,
+        "selected": 8,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_promocao_da_igualdade_racial_e_de_genero",
+        "complexity": "simple",
+        "population": 105,
+        "target": 11,
+        "selected": 11,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_promocao_da_igualdade_racial_e_de_genero",
+        "complexity": "atomic",
+        "population": 35,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_medicina_legal",
+        "complexity": "simple",
+        "population": 92,
+        "target": 10,
+        "selected": 10,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_medicina_legal",
+        "complexity": "atomic",
+        "population": 34,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_geral",
+        "complexity": "simple",
+        "population": 15,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_geral",
+        "complexity": "atomic",
+        "population": 6,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_contabilidade",
+        "complexity": "atomic",
+        "population": 108,
+        "target": 11,
+        "selected": 11,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_contabilidade",
+        "complexity": "simple",
+        "population": 184,
+        "target": 19,
+        "selected": 19,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo",
+        "complexity": "simple",
+        "population": 117,
+        "target": 12,
+        "selected": 12,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo",
+        "complexity": "atomic",
+        "population": 94,
+        "target": 10,
+        "selected": 10,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_constitucional",
+        "complexity": "simple",
+        "population": 64,
+        "target": 7,
+        "selected": 7,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_constitucional",
+        "complexity": "atomic",
+        "population": 35,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal",
+        "complexity": "atomic",
+        "population": 126,
+        "target": 13,
+        "selected": 13,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal",
+        "complexity": "simple",
+        "population": 110,
+        "target": 11,
+        "selected": 11,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_processual_penal",
+        "complexity": "atomic",
+        "population": 77,
+        "target": 8,
+        "selected": 8,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_processual_penal",
+        "complexity": "simple",
+        "population": 69,
+        "target": 7,
+        "selected": 7,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_penal_e_processual_extravagante",
+        "complexity": "simple",
+        "population": 172,
+        "target": 18,
+        "selected": 18,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_penal_e_processual_extravagante",
+        "complexity": "atomic",
+        "population": 54,
+        "target": 6,
+        "selected": 6,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_estatistica",
+        "complexity": "simple",
+        "population": 15,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      },
+      {
+        "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_estatistica",
+        "complexity": "atomic",
+        "population": 12,
+        "target": 5,
+        "selected": 5,
+        "method": "systematic_even_spacing_in_source_order"
+      }
+    ]
+  },
+  "decisions_applied": 0,
+  "contracts_changed": 0,
+  "questions_generated": 0
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "detona_test_baseline_report_v1",
+  "status": "documented_preexisting_baseline_failure",
+  "observed_on": "2026-08-15",
+  "repository_head": "4951e9dc3451b9cd8ac5a53bfd81301e110ec164",
+  "branch_observed": "fix/p0-foundation",
+  "classification": "preexisting_at_clean_head",
+  "scope": "app/tests/study-plan-hardening.test.js",
+  "evidence": {
+    "workspace_run": {
+      "command": "node --test app/tests/study-plan-hardening.test.js",
+      "result": {
+        "tests": 12,
+        "passed": 10,
+        "failed": 2
+      }
+    },
+    "clean_head_snapshot_run": {
+      "preparation": "git archive do HEAD contendo package.json, app/js e somente o teste; extração em diretório temporário fora do workspace",
+      "command": "node --test <clean-head-snapshot>/app/tests/study-plan-hardening.test.js",
+      "result": {
+        "tests": 12,
+        "passed": 10,
+        "failed": 2
+      },
+      "pc_ba_phase_files_present": false
+    },
+    "tracked_diff_for_test_and_runtime": "empty",
+    "pc_ba_relationship": "O snapshot limpo não contém course-drafts nem scripts/testes PC BA e reproduz as mesmas falhas."
+  },
+  "failures": [
+    {
+      "test_name": "geração usa conteúdo elegível, respeita capacidade e é idempotente",
+      "location": "app/tests/study-plan-hardening.test.js:210",
+      "assertion_location": "app/tests/study-plan-hardening.test.js:217",
+      "error_type": "AssertionError",
+      "error_message": "Expected values to be strictly equal: false !== true",
+      "observed_field": "first.created",
+      "expected": true,
+      "actual": false,
+      "classification": "preexisting_at_clean_head"
+    },
+    {
+      "test_name": "falha de persistência mantém journal recuperável e retry cria um único plano",
+      "location": "app/tests/study-plan-hardening.test.js:238",
+      "assertion_location": "app/tests/study-plan-hardening.test.js:243",
+      "error_type": "AssertionError",
+      "error_message": "Missing expected rejection.",
+      "expected_error_pattern": "SIMULATED_LOCAL_WRITE_FAILURE",
+      "actual": "promise_resolved_without_expected_rejection",
+      "classification": "preexisting_at_clean_head"
+    }
+  ],
+  "conclusion": {
+    "introduced_by_pc_ba_phase_3": false,
+    "fix_included_in_phase_3_5": false,
+    "rationale": "Falhas idênticas foram reproduzidas no código versionado do HEAD sem os artefatos PC BA.",
+    "follow_up": "Diagnosticar em tarefa própria; não alterar o runtime durante a preparação editorial PC BA."
+  }
+}

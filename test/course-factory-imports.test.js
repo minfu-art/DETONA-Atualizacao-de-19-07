@@ -59,6 +59,16 @@ test('currículo rejeita concurso trocado, campos inesperados, duplicidade e pai
   }), /parent_missing/);
 });
 
+test('currículo aceita IDs canônicos longos sem relaxar o alfabeto permitido', () => {
+  const longId = `pc_ba_2026_${'subtopic_'.repeat(12)}final`;
+  const input = structuredClone(curriculum);
+  input.roles[0].disciplines[0].topics[0].subtopics[0].id = longId;
+  input.roles[0].disciplines[0].topics[0].subtopics[0].name = 'Descrição curricular oficial extensa. '.repeat(10);
+  assert.equal(parseCurriculumImport(input, 'pc_pe_2027').nodes.at(-1).source_id, longId);
+  input.roles[0].disciplines[0].topics[0].subtopics[0].id = `${longId}!`;
+  assert.throws(() => parseCurriculumImport(input, 'pc_pe_2027'), /inválido/);
+});
+
 test('questões aceitam array, questions e questoes, mas preservam isolamento', () => {
   assert.equal(parseQuestionItems([question]).length, 1);
   assert.equal(parseQuestionItems({ questions: [question] }).length, 1);

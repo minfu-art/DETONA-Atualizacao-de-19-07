@@ -17,6 +17,12 @@ export function safeId(value, label = 'id') {
   return clean;
 }
 
+export function safeCurriculumId(value, label = 'curriculum_id') {
+  const clean = String(value || '').trim();
+  if (!/^[a-z0-9][a-z0-9_-]{0,159}$/i.test(clean)) throw new Error(`${label}_invalid`);
+  return clean;
+}
+
 export function safeUuid(value, label = 'id') {
   const clean = String(value || '').trim();
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(clean)) {
