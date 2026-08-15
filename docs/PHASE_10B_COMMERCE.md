@@ -11,9 +11,11 @@ Pedidos concorrentes do mesmo aluno e concurso são serializados no PostgreSQL. 
 Segredos das Edge Functions:
 
 - `MERCADO_PAGO_ACCESS_TOKEN` — credencial de teste;
-- `MERCADO_PAGO_WEBHOOK_SECRET` — assinatura secreta do webhook de teste;
+- `MERCADO_PAGO_WEBHOOK_SECRET_TEST` — assinatura secreta do webhook de teste;
+- `MERCADO_PAGO_WEBHOOK_SECRET_PRODUCTION` — assinatura secreta do webhook de produção;
+- `MERCADO_PAGO_WEBHOOK_SECRET` — fallback temporário para instalações antigas;
 - `CHECKOUT_MODE=test`;
-- `CHECKOUT_RETURN_BASE_URL` — URL HTTPS do Preview de staging;
+- `CHECKOUT_RETURN_BASE_URL=https://app.detonaconcursos.com/` — retorno oficial do app;
 - `CHECKOUT_WEBHOOK_URL` — URL da função `commercial-webhook`;
 - `STUDENT_ALLOWED_ORIGINS` — origens autorizadas do app.
 

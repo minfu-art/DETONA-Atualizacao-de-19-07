@@ -4,14 +4,18 @@ import {
   parseMercadoPagoNotification,
   paymentMatchesCheckoutMode,
   resolveMerchantOrderPayments,
-  verifyMercadoPagoSignature,
+  verifyMercadoPagoSignatures,
   webhookErrorCode,
 } from './core.js';
 
 const url = Deno.env.get('SUPABASE_URL')!;
 const serviceRole = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
-const webhookSecret = Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET') || '';
+const legacyWebhookSecret = Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET') || '';
+const webhookSecrets = [
+  Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET_TEST') || legacyWebhookSecret,
+  Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET_PRODUCTION') || legacyWebhookSecret,
+].filter(Boolean);
 const mode = Deno.env.get('CHECKOUT_MODE') === 'production' ? 'production' : 'test';
 const admin = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
 const response = (status: number, payload: unknown) => new Response(JSON.stringify(payload), {
@@ -55,7 +59,7 @@ const applyPayment = async (payment: Record<string, unknown>, event: {
 
 Deno.serve(async (request) => {
   if (request.method !== 'POST') return response(405, { error: 'METHOD_NOT_ALLOWED' });
-  if (!accessToken || !webhookSecret) return response(503, { error: 'WEBHOOK_NOT_CONFIGURED' });
+  if (!accessToken || webhookSecrets.length === 0) return response(503, { error: 'WEBHOOK_NOT_CONFIGURED' });
   try {
     const requestUrl = new URL(request.url);
     const raw = await request.text();
@@ -66,11 +70,11 @@ Deno.serve(async (request) => {
 
     if (notification.kind === 'payment') {
       const requestId = request.headers.get('x-request-id') || '';
-      const valid = await verifyMercadoPagoSignature({
+      const valid = await verifyMercadoPagoSignatures({
         xSignature: request.headers.get('x-signature') || '',
         xRequestId: requestId,
         dataId: notification.dataId,
-        secret: webhookSecret,
+        secrets: webhookSecrets,
       });
       if (!valid) return response(401, { error: 'INVALID_SIGNATURE' });
 

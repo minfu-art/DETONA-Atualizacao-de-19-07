@@ -17,6 +17,7 @@ import {
   resolveMerchantOrderPayments,
   signatureManifest,
   verifyMercadoPagoSignature,
+  verifyMercadoPagoSignatures,
   webhookErrorCode,
 } from '../supabase/functions/commercial-webhook/core.js';
 
@@ -61,6 +62,24 @@ test('webhook exige HMAC oficial e normaliza somente estados conhecidos', async 
   await assert.rejects(() => verifyMercadoPagoSignature({
     xSignature: '', xRequestId: 'request-1', dataId: '999', secret,
   }), /INVALID_SIGNATURE/);
+});
+
+test('webhook aceita assinaturas separadas de teste e producao durante a transicao', async () => {
+  const timestamp = '1704908010';
+  const manifest = signatureManifest('999', 'request-1', timestamp);
+  const productionSignature = await hmacSha256Hex('production-secret', manifest);
+  assert.equal(await verifyMercadoPagoSignatures({
+    xSignature: `ts=${timestamp},v1=${productionSignature}`,
+    xRequestId: 'request-1',
+    dataId: '999',
+    secrets: ['test-secret', 'production-secret'],
+  }), true);
+  assert.equal(await verifyMercadoPagoSignatures({
+    xSignature: `ts=${timestamp},v1=${productionSignature}`,
+    xRequestId: 'request-1',
+    dataId: '999',
+    secrets: ['test-secret'],
+  }), false);
 });
 
 test('webhook distingue payment moderno de merchant_order legado e rejeita IDs inválidos', () => {

@@ -32,6 +32,16 @@ export async function verifyMercadoPagoSignature({ xSignature, xRequestId, dataI
   return constantTimeEqual(signature, expected);
 }
 
+export async function verifyMercadoPagoSignatures({ xSignature, xRequestId, dataId, secrets }) {
+  const candidates = [...new Set((Array.isArray(secrets) ? secrets : [])
+    .map((secret) => String(secret || '').trim())
+    .filter(Boolean))];
+  for (const secret of candidates) {
+    if (await verifyMercadoPagoSignature({ xSignature, xRequestId, dataId, secret })) return true;
+  }
+  return false;
+}
+
 const NUMERIC_ID = /^\d+$/;
 
 function requiredNumericId(value) {
