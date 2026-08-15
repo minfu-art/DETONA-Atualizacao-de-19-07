@@ -22,17 +22,25 @@ test('bundle de staging preserva currículo e adapta o lote rico sem perder micr
   )));
 });
 
-test('bundle permanece indisponível enquanto o runtime V2 e a revisão editorial não estiverem prontos', async () => {
+test('base funciona no runtime dinâmico legado sem liberar vendas nem publicação comercial', async () => {
   const canonical = JSON.parse(await readFile(new URL('sources/curriculum.canonical.json', root), 'utf8'));
   const authoringBatch = JSON.parse(await readFile(new URL('question-authoring/pcba_inv_dadm_08_01_lote_001.v2.json', root), 'utf8'));
   const result = buildStagingArtifacts({ canonical, authoringBatch });
   assert.equal(result.contest.contest.sales_status, 'unavailable');
   assert.equal(result.contest.contest.price_cents, 0);
-  assert.equal(result.learningEngine.learning_engine_version, 'knowledge_engine_v2');
-  assert.equal(result.learningEngine.runtime_ready, false);
-  assert.equal(result.learningEngine.staging_import_allowed, false);
+  assert.equal(result.contest.contest.exam_date, '2026-12-06');
+  assert.equal(result.learningEngine.learning_engine_version, 'legacy_dynamic_compat_v1');
+  assert.equal(result.learningEngine.target_learning_engine_version, 'knowledge_engine_v2');
+  assert.equal(result.learningEngine.runtime_ready, true);
+  assert.equal(result.learningEngine.staging_import_allowed, true);
   assert.equal(result.learningEngine.production_publication_allowed, false);
-  assert.ok(result.learningEngine.blockers.length >= 4);
+  assert.equal(result.learningEngine.questions_scope, 'pilot_validation_only');
+  assert.equal(result.learningEngine.question_bank_status, 'awaiting_owner_bank');
+  assert.deepEqual(result.learningEngine.blockers, [
+    'learning_engine_v2_runtime_not_implemented',
+    'microknowledge_progress_tracking_not_implemented',
+    'full_question_bank_not_imported',
+  ]);
 });
 
 test('bundle materializado passa no validador local e equilibra gabaritos A-E', async () => {

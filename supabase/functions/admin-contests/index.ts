@@ -95,7 +95,7 @@ Deno.serve(async (request) => {
 
     if (action === 'list_contests') {
       let query = admin.from('admin_contests').select('*').order('created_at');
-      if (body.search) query = query.or(`code.ilike.%${body.search}%,name.ilike.%${body.search}%,role.ilike.%${body.search}%`);
+      if (body.search) query = query.or(`id.ilike.%${body.search}%,code.ilike.%${body.search}%,name.ilike.%${body.search}%,role.ilike.%${body.search}%`);
       const [{ data, error }, countsResult] = await Promise.all([
         query,
         admin.from('contest_interest_counts').select('contest_id,interest_count'),

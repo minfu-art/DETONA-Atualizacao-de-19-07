@@ -28,7 +28,7 @@ export function buildStagingArtifacts({ canonical, authoringBatch }) {
       sales_status: 'unavailable',
       price_cents: 0,
       currency: 'BRL',
-      exam_date: null,
+      exam_date: '2026-12-06',
       color: '#24104f',
       accent: '#37d6ff',
       icon: 'PCBA',
@@ -94,17 +94,19 @@ export function buildStagingArtifacts({ canonical, authoringBatch }) {
     offering_id: 'pc_ba_2026_investigador',
     contest_id: canonical.contest_id,
     position_id: canonical.position_id,
-    learning_engine_version: 'knowledge_engine_v2',
+    learning_engine_version: 'legacy_dynamic_compat_v1',
+    target_learning_engine_version: 'knowledge_engine_v2',
     knowledge_map_version: 'knowledge-map.bound.v2',
     question_schema_version: 'detona_question_batch_v2',
-    runtime_ready: false,
-    staging_import_allowed: false,
+    runtime_ready: true,
+    staging_import_allowed: true,
     production_publication_allowed: false,
+    questions_scope: 'pilot_validation_only',
+    question_bank_status: 'awaiting_owner_bank',
     blockers: [
       'learning_engine_v2_runtime_not_implemented',
-      'offering_scoped_progress_and_entitlement_not_implemented',
-      'topic_scoped_question_contract_not_implemented',
-      'question_batch_pending_human_editorial_review'
+      'microknowledge_progress_tracking_not_implemented',
+      'full_question_bank_not_imported'
     ]
   };
   return { contest, curriculum, questions, learningEngine };
