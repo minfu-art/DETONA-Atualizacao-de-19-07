@@ -8,6 +8,7 @@ const MAX_QUESTIONS_PER_BATCH = 1_000;
 const MAX_QUESTION_FILES = 500;
 const MAX_JSON_BYTES = 2_000_000;
 const SAFE_ID = /^[a-z0-9][a-z0-9_-]{0,79}$/i;
+const SAFE_CURRICULUM_ID = /^[a-z0-9][a-z0-9_-]{0,159}$/i;
 const SAFE_OPERATION_ID = /^[a-z0-9][a-z0-9._:-]{2,127}$/i;
 const SAFE_FILE = /^[a-zA-Z0-9][a-zA-Z0-9._-]*$/;
 const HTML = /<\/?[a-z][^>]*>/i;
@@ -54,6 +55,12 @@ function text(value, label, max) {
 function safeId(value, label) {
   const clean = text(value, label, 80);
   if (!SAFE_ID.test(clean)) fail(`${label} inválido.`);
+  return clean;
+}
+
+function safeCurriculumId(value, label) {
+  const clean = text(value, label, 160);
+  if (!SAFE_CURRICULUM_ID.test(clean)) fail(`${label} inválido.`);
   return clean;
 }
 
@@ -163,7 +170,7 @@ export function validateCurriculum(raw, contestId) {
       const node = plainObject(rawNode, type);
       const childCollection = LEVELS[depth + 1]?.[0];
       exactKeys(node, ['id', 'name', 'description', 'order', ...(childCollection ? [childCollection] : [])], ['id', 'name'], type);
-      const id = safeId(node.id, `${type}.id`);
+      const id = safeCurriculumId(node.id, `${type}.id`);
       if (ids.has(id)) fail(`ID curricular duplicado: ${id}.`);
       ids.add(id);
       const order = Number(node.order ?? index);
@@ -172,7 +179,7 @@ export function validateCurriculum(raw, contestId) {
         source_id: id,
         parent_source_id: parentSourceId,
         type,
-        name: text(node.name, `${type}.name`, 240),
+        name: text(node.name, `${type}.name`, 500),
         description: node.description ? text(node.description, `${type}.description`, 1000) : null,
         order_index: order,
       });
@@ -204,6 +211,7 @@ function answerKind(value) {
   const clean = String(value ?? '').trim().toLowerCase();
   if (['c', 'certo', 'true'].includes(clean)) return 'C';
   if (['e', 'errado', 'false'].includes(clean)) return 'E';
+  if (['a', 'b', 'c', 'd', 'e'].includes(clean)) return clean.toUpperCase();
   return null;
 }
 
@@ -213,15 +221,25 @@ function normalizeQuestion(raw, contestId, subtopicIds, filename, index, allIds)
   if (allIds.has(id)) fail(`ID de questão duplicado entre lotes: ${id}.`);
   allIds.add(id);
   if (item.contest_id && String(item.contest_id) !== contestId) fail(`${filename}#${index + 1}: contest_id incorreto.`);
-  const subtopicId = safeId(item.subtopic_id || item.topicoEditalId, `${filename}#${index + 1}.subtopic_id`);
+  const subtopicId = safeCurriculumId(item.subtopic_id || item.topicoEditalId, `${filename}#${index + 1}.subtopic_id`);
   if (!subtopicIds.has(subtopicId)) fail(`${filename}#${index + 1}: subtópico inexistente (${subtopicId}).`);
   const statement = text(item.statement || item.enunciado, `${filename}#${index + 1}.statement`, 10_000);
   const explanation = text(item.explanation || item.explicacao, `${filename}#${index + 1}.explanation`, 20_000);
   const answer = item.correct_answer ?? item.respostaCorreta;
   const kind = answerKind(answer);
-  if (!kind) fail(`${filename}#${index + 1}: gabarito C/E inválido.`);
+  if (!kind) fail(`${filename}#${index + 1}: gabarito C/E ou A-E inválido.`);
   const options = item.options || item.alternativas || [];
   if (!Array.isArray(options)) fail(`${filename}#${index + 1}: options deve ser uma lista.`);
+  const isMultipleChoice = options.length === 5 || ['A', 'B', 'D'].includes(kind);
+  if (isMultipleChoice) {
+    if (options.length !== 5) fail(`${filename}#${index + 1}: questão A-E deve possuir cinco alternativas.`);
+    const labels = options.map((option, optionIndex) => (
+      typeof option === 'object' && option !== null
+        ? String(option.label || '').trim().toUpperCase()
+        : String.fromCharCode(65 + optionIndex)
+    ));
+    if (labels.join('') !== 'ABCDE') fail(`${filename}#${index + 1}: alternativas A-E inválidas.`);
+  }
   return Object.freeze({
     ...item,
     id,
@@ -339,7 +357,7 @@ export async function loadCourseBundle(bundlePath, { mode = 'validate' } = {}) {
   const questionCount = questions.reduce((sum, batch) => sum + batch.questions.length, 0);
   const distribution = questions.flatMap(({ questions: rows }) => rows)
     .reduce((result, question) => {
-      result[question._answer_kind] += 1;
+      result[question._answer_kind] = (result[question._answer_kind] || 0) + 1;
       return result;
     }, { C: 0, E: 0 });
   const hashInput = {

@@ -27,6 +27,7 @@ function transparentPngHeader() {
 
 async function fixtureBundle(overrides = {}) {
   const root = await mkdtemp(path.join(os.tmpdir(), 'detona-course-bundle-'));
+  const subtopicId = overrides.subtopicId || 'subtopic_test';
   await mkdir(path.join(root, 'questions'));
   await mkdir(path.join(root, 'assets'));
   const contest = {
@@ -61,7 +62,7 @@ async function fixtureBundle(overrides = {}) {
         topics: [{
           id: 'topic_test',
           name: 'Tópico',
-          subtopics: [{ id: 'subtopic_test', name: 'Subtópico' }],
+          subtopics: [{ id: subtopicId, name: 'Subtópico' }],
         }],
       }],
     }],
@@ -72,11 +73,12 @@ async function fixtureBundle(overrides = {}) {
     questions: [{
       id: 'question_test_001',
       contest_id: 'test_course_2027',
-      subtopic_id: 'subtopic_test',
+      subtopic_id: subtopicId,
       statement: 'O provisionador é isolado do motor acadêmico.',
       correct_answer: true,
       explanation: 'A ferramenta fica fora dos diretórios do aplicativo.',
       options: ['Certo', 'Errado'],
+      ...overrides.question,
     }],
   }));
   await writeFile(path.join(root, 'assets', 'battle-avatar.png'), transparentPngHeader());
@@ -127,6 +129,23 @@ test('bundle rejeita currículo pertencente a outro concurso', async () => {
     loadCourseBundle(await fixtureBundle({ curriculumContestId: 'other_course' })),
     /outro concurso/i,
   );
+});
+
+test('bundle aceita IDs curriculares canônicos de até 160 caracteres', async () => {
+  const longId = `pc_ba_2026_${'subtopic_'.repeat(12)}final`;
+  assert.ok(longId.length > 80 && longId.length <= 160);
+  const bundle = await loadCourseBundle(await fixtureBundle({ subtopicId: longId }));
+  assert.equal(bundle.questionBatches[0].questions[0].subtopic_id, longId);
+});
+
+test('bundle aceita questão AOCP de múltipla escolha A-E', async () => {
+  const options = ['A', 'B', 'C', 'D', 'E'].map((label) => ({ label, text: `Alternativa ${label}` }));
+  const bundle = await loadCourseBundle(await fixtureBundle({
+    question: { correct_answer: 'D', options },
+  }));
+  assert.equal(bundle.questionBatches[0].questions[0].correct_answer, 'D');
+  assert.equal(bundle.questionBatches[0].questions[0].options.length, 5);
+  assert.equal(bundle.distribution.D, 1);
 });
 
 test('CLI bloqueia produção e aceita os três modos de staging', () => {

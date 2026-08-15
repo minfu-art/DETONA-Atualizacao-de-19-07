@@ -1,0 +1,151 @@
+{
+  "schema_version": "detona_fragment_binding_report_v1",
+  "status": "draft_with_documented_topic_scope_exception",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "offering_id": "pc_ba_2026_investigador",
+  "source_hashes": {
+    "canonical_sha256": "f95b8d565fbe9afc95edecf399c334f95ef0d5ca8532e4cd0a9e94f311c1e580",
+    "overlay_sha256": "0c99ed3f28e5822663887e6e28dc0bc2a87a5332b8014f83ade77554fe05a21b",
+    "edital_sha256": "5b6c9aa9ebcc5da5d0adf34143e66772aef9feb3eacf5865ef8952bbc6fe884d"
+  },
+  "criteria": {
+    "canonical_disciplines": {
+      "expected": 14,
+      "actual": 14,
+      "passed": true
+    },
+    "canonical_topics": {
+      "expected": 161,
+      "actual": 161,
+      "passed": true
+    },
+    "canonical_subtopics": {
+      "expected": 296,
+      "actual": 296,
+      "passed": true
+    },
+    "fragments": {
+      "expected": 420,
+      "actual": 420,
+      "passed": true
+    },
+    "fragments_linked": {
+      "expected": 420,
+      "actual": 420,
+      "passed": true
+    },
+    "orphan_fragments": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "canonical_ids_created": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "canonical_ids_removed": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "canonical_ids_changed": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "improper_duplicates": {
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    "import_authorized": {
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    "publication_authorized": {
+      "expected": false,
+      "actual": false,
+      "passed": true
+    }
+  },
+  "coverage": {
+    "disciplines_with_fragments": 14,
+    "topics_with_fragments": 161,
+    "subtopics_with_fragments": 296,
+    "fragments_bound_to_subtopic": 418,
+    "fragments_bound_to_topic_scope": 2
+  },
+  "aliases": [
+    {
+      "overlay_name": "NOÇÕES DIREITO ADMINISTRATIVO",
+      "canonical_name": "NOÇÕES DE DIREITO ADMINISTRATIVO",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo"
+    },
+    {
+      "overlay_name": "NOÇÕES DIREITO CONSTITUCIONAL",
+      "canonical_name": "NOÇÕES DE DIREITO CONSTITUCIONAL",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_constitucional"
+    },
+    {
+      "overlay_name": "NOÇÕES DIREITO PENAL",
+      "canonical_name": "NOÇÕES DE DIREITO PENAL",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal"
+    },
+    {
+      "overlay_name": "NOÇÕES DIREITO PROCESSUAL PENAL",
+      "canonical_name": "NOÇÕES DE DIREITO PROCESSUAL PENAL",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_processual_penal"
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "accounting_3_1_3_2_shared_canonical_subtopic",
+      "status": "resolved_without_canonical_id_change",
+      "canonical_subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_3_1_conceitos_3_2atos_administrativos_e_fatos_contabeis",
+      "fragment_ids": [
+        "pc_ba_2026_inv_frag_5722df3298ce",
+        "pc_ba_2026_inv_frag_2b3b0150d1ee"
+      ],
+      "explanation": "Os itens 3.1 e 3.2 permanecem como fragmentos distintos vinculados ao único subtopic_id aprovado na V2."
+    },
+    {
+      "id": "penal_principles_and_application_topic_scope",
+      "status": "documented_topic_scope_pending_future_canonical_decision",
+      "canonical_topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+      "fragment_ids": [
+        "pc_ba_2026_inv_frag_7dc2a42f47d8",
+        "pc_ba_2026_inv_frag_f3bc1712a223"
+      ],
+      "explanation": "A V2 não possui subtopic_id próprio para os dois conhecimentos diretos; nenhum ID foi criado e nenhum filho arbitrário foi escolhido."
+    }
+  ],
+  "ambiguities": [
+    {
+      "fragment_id": "pc_ba_2026_inv_frag_7dc2a42f47d8",
+      "type": "canonical_subtopic_absent",
+      "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+      "subtopic_id": null,
+      "candidate_subtopic_ids": [
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_1_lei_penal_no_tempo_e_no_espaco",
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_2_tempo_e_lugar_do_crime",
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_3_territorialidade_e_extraterritorialidade_da_lei_penal"
+      ],
+      "resolution": "Preservado em escopo de tópico; é proibido inventar ou escolher um subtopic_id semanticamente incorreto."
+    },
+    {
+      "fragment_id": "pc_ba_2026_inv_frag_f3bc1712a223",
+      "type": "canonical_subtopic_absent",
+      "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+      "subtopic_id": null,
+      "candidate_subtopic_ids": [
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_1_lei_penal_no_tempo_e_no_espaco",
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_2_tempo_e_lugar_do_crime",
+        "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_3_territorialidade_e_extraterritorialidade_da_lei_penal"
+      ],
+      "resolution": "Preservado em escopo de tópico; é proibido inventar ou escolher um subtopic_id semanticamente incorreto."
+    }
+  ]
+}

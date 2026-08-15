@@ -1,0 +1,76 @@
+{
+  "schema_version": "detona_knowledge_coverage_stats_reviewed_v1_1",
+  "status": "draft_human_review_in_progress",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "totals": {
+    "disciplines": 14,
+    "topics": 161,
+    "subtopics": 296,
+    "fragments": 420,
+    "microknowledges": 2545,
+    "human_reviewed": 19,
+    "question_generation_blocked": 2545,
+    "questions_generated": 0
+  },
+  "by_discipline": {
+    "pc_ba_2026_investigador_policia_civil_discipline_atualidades": 24,
+    "pc_ba_2026_investigador_policia_civil_discipline_estatistica": 39,
+    "pc_ba_2026_investigador_policia_civil_discipline_informatica": 249,
+    "pc_ba_2026_investigador_policia_civil_discipline_legislacao_geral": 38,
+    "pc_ba_2026_investigador_policia_civil_discipline_legislacao_penal_e_processual_extravagante": 288,
+    "pc_ba_2026_investigador_policia_civil_discipline_lingua_portuguesa": 283,
+    "pc_ba_2026_investigador_policia_civil_discipline_medicina_legal": 133,
+    "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_contabilidade": 361,
+    "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo": 268,
+    "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_constitucional": 103,
+    "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal": 274,
+    "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_processual_penal": 179,
+    "pc_ba_2026_investigador_policia_civil_discipline_promocao_da_igualdade_racial_e_de_genero": 180,
+    "pc_ba_2026_investigador_policia_civil_discipline_raciocinio_logico": 126
+  },
+  "by_knowledge_type": {
+    "calculation": 59,
+    "case_application": 68,
+    "classification": 37,
+    "concept": 1989,
+    "distinction": 53,
+    "dynamic_context": 24,
+    "interpretation": 20,
+    "procedure": 105,
+    "rule_condition": 190
+  },
+  "by_complexity": {
+    "atomic": 822,
+    "complex": 7,
+    "moderate": 456,
+    "simple": 1260
+  },
+  "by_editorial_status": {
+    "pending_dynamic_source": 24,
+    "pending_official_source": 579,
+    "review_required": 1942
+  },
+  "by_source_requirement": {
+    "dynamic_verified_source": 24,
+    "official_normative_source": 579,
+    "provided_map_and_course_sources": 1942
+  },
+  "by_assessment_dimension": {
+    "application": 422,
+    "calculation": 59,
+    "case_analysis": 173,
+    "conceptual_understanding": 2545,
+    "discrimination": 90,
+    "exception_handling": 91,
+    "interpretation": 44,
+    "recognition": 2545
+  },
+  "future_coverage_plan": {
+    "recommended_minimum_exposures_total": 7886,
+    "recommended_question_diversity_total": 7283,
+    "requires_case_question": 173,
+    "requires_exception_question": 91,
+    "requires_integration_question": 41
+  }
+}

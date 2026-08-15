@@ -1,0 +1,18 @@
+{
+  "schema_version": "detona_learning_engine_binding_v1",
+  "offering_id": "pc_ba_2026_investigador",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "learning_engine_version": "knowledge_engine_v2",
+  "knowledge_map_version": "knowledge-map.bound.v2",
+  "question_schema_version": "detona_question_batch_v2",
+  "runtime_ready": false,
+  "staging_import_allowed": false,
+  "production_publication_allowed": false,
+  "blockers": [
+    "learning_engine_v2_runtime_not_implemented",
+    "offering_scoped_progress_and_entitlement_not_implemented",
+    "topic_scoped_question_contract_not_implemented",
+    "question_batch_pending_human_editorial_review"
+  ]
+}

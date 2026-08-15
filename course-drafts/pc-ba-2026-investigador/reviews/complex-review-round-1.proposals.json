@@ -1,0 +1,277 @@
+{
+  "schema_version": "detona_complex_human_review_proposals_v1",
+  "status": "proposal_only_pending_human_approval",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "source": "human-review-queue.v1.json",
+  "scope": "priority_1_complex_microknowledges",
+  "reviewed_microknowledges": 19,
+  "review_method": {
+    "separability_test": "Se o aluno dominar esta unidade e errar outra parte do mesmo fragmento, o DETONA deve conseguir distinguir as evidências.",
+    "sibling_comparison": true,
+    "normative_facts_added": false,
+    "dynamic_facts_added": false,
+    "contracts_changed": false
+  },
+  "summary": {
+    "recommendations": {
+      "keep": 8,
+      "merge_candidate": 1,
+      "split_candidate": 0,
+      "rename_candidate": 3,
+      "source_required": 6,
+      "human_decision_required": 1
+    },
+    "complexity_assessment": {
+      "remain_complex": 7,
+      "moderate_candidate": 12
+    },
+    "contract_revision_required_before_freeze": 19,
+    "decisions_applied": 0
+  },
+  "proposals": [
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_3e4aed8e0e86c5",
+      "knowledge_name": "relação entre texto e contexto",
+      "discipline": "LÍNGUA PORTUGUESA",
+      "fragment": "Interpretação de texto",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Unidade integrativa distinta de inferência, tese e pressupostos, mas o contrato atual precisa explicitar interpretação contextual e evidência de aplicação com base nas fontes.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_339c8e4256ff69",
+      "knowledge_name": "relação entre finalidade comunicativa e gênero",
+      "discipline": "LÍNGUA PORTUGUESA",
+      "fragment": "Gêneros textuais",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Mede relação funcional diferente de estrutura, marcas linguísticas e circulação; competências avaliáveis precisam ir além de reconhecer e identificar.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_6fd01892b8c8ca",
+      "knowledge_name": "relação entre função sintática e efeito semântico",
+      "discipline": "LÍNGUA PORTUGUESA",
+      "fragment": "Relações sintático-semânticas",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É a unidade integradora dos valores semânticos do fragmento e deve produzir evidência de análise e aplicação, não apenas reconhecimento.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_ca2e9cfb6bd0bc",
+      "knowledge_name": "correlação entre conectivos e valores semânticos",
+      "discipline": "LÍNGUA PORTUGUESA",
+      "fragment": "Período composto por subordinação",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É separável da classificação das orações e da pontuação; o contrato deve exigir interpretação e aplicação contextual dos conectivos.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_47b42ba5dc7942",
+      "knowledge_name": "identificação da relação entre grandezas",
+      "discipline": "RACIOCÍNIO LÓGICO",
+      "fragment": "Regras de três simples e compostas",
+      "recommendation": "human_decision_required",
+      "separability_assessment": "conditional_pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É uma etapa diagnóstica útil antes da regra de três, mas o contrato atual seleciona calcular sem refletir cálculo e aplicação nas dimensões avaliativas. Revisar antes de manter.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9327fc16344e22",
+      "knowledge_name": "conflitos geopolíticos em âmbito internacional, nacional e seus reflexos para o Brasil e a Bahia",
+      "discipline": "ATUALIDADES",
+      "fragment": "Conflitos geopolíticos e temas contemporâneos",
+      "recommendation": "source_required",
+      "separability_assessment": "conditional_pass",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Pode funcionar como unidade integradora, desde que exista recorte temporal e geográfico datado. Não congelar conteúdo factual sem snapshot dinâmico verificado.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_75e3bab6311756",
+      "knowledge_name": "implicações da comunicação em acontecimentos contemporâneos",
+      "discipline": "ATUALIDADES",
+      "fragment": "Conceitos, efeitos e implicações da comunicação",
+      "recommendation": "source_required",
+      "separability_assessment": "conditional_pass",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Integra os efeitos sociais, econômicos, políticos e culturais, mas depende de acontecimentos e fontes datadas para se tornar avaliável.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_8b8b36d783808b",
+      "knowledge_name": "integração desses objetos na apresentação",
+      "discipline": "INFORMÁTICA",
+      "fragment": "Uso de tabelas, gráficos, planilhas e organogramas",
+      "recommendation": "rename_candidate",
+      "proposed_name": "integração de tabelas, gráficos, planilhas e organogramas em apresentações",
+      "separability_assessment": "pass_after_rename",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "A expressão 'desses objetos' depende do contexto e reduz a autonomia semântica do microconhecimento. A unidade integrativa é útil se o nome for autossuficiente.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_954ae40cdb8847",
+      "knowledge_name": "riscos e implicações de segurança",
+      "discipline": "INFORMÁTICA",
+      "fragment": "Deep Web e Dark Web",
+      "recommendation": "rename_candidate",
+      "proposed_name": "riscos e implicações de segurança associados à Deep Web e à Dark Web",
+      "separability_assessment": "pass_after_rename",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "O nome atual não identifica sozinho o objeto avaliado. Preservar a unidade, mas torná-la autossuficiente e sustentada pelas fontes do curso.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_865b4b3c75744e",
+      "knowledge_name": "integração latino-americana",
+      "discipline": "PROMOÇÃO DA IGUALDADE RACIAL E DE GÊNERO",
+      "fragment": "Constituição da República Federativa do Brasil de 1988 — artigo 4º",
+      "recommendation": "source_required",
+      "separability_assessment": "pass_after_source_validation",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É uma unidade normativa separável dos demais princípios, mas não deve ser congelada sem validação na fonte constitucional oficial.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_d4ba457a960ed7",
+      "knowledge_name": "implicações médico-legais",
+      "discipline": "MEDICINA LEGAL",
+      "fragment": "Cronotanatognose, comoriência e premoriência",
+      "recommendation": "rename_candidate",
+      "proposed_name": "implicações médico-legais da cronotanatognose, comoriência e premoriência",
+      "separability_assessment": "pass_after_rename",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "A unidade integra os conceitos do fragmento, mas o nome atual é genérico fora dele. O conteúdo deverá ser detalhado pelas apostilas ou bibliografia validada.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_3eb7aa29ca4cc3",
+      "knowledge_name": "integração entre local, cadáver e dinâmica do evento",
+      "discipline": "MEDICINA LEGAL",
+      "fragment": "Exame e preservação de locais de crime",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É uma unidade integradora distinta das etapas operacionais de preservação, documentação e coleta. O contrato precisa definir evidência de integração sustentada pelas fontes.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_17bf4792dc0c24",
+      "knowledge_name": "comparação entre razão e extrato bancário",
+      "discipline": "NOÇÕES DE CONTABILIDADE",
+      "fragment": "Conciliação bancária",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É a operação central que permite identificar as divergências tratadas pelos demais microconhecimentos do fragmento. Deve avaliar discriminação e aplicação.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_3b3541bc03569c",
+      "knowledge_name": "relação entre notas e demonstrações",
+      "discipline": "NOÇÕES DE CONTABILIDADE",
+      "fragment": "Notas Explicativas",
+      "recommendation": "merge_candidate",
+      "merge_candidate_with": [
+        "pc_ba_2026_inv_mk_9afa6a99e8c965"
+      ],
+      "separability_assessment": "possible_overlap",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Pode duplicar 'complementação das demonstrações'. Revisar as fontes para decidir se existe evidência avaliativa distinta antes de manter ambos.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_3964fcb439cf1c",
+      "knowledge_name": "relação entre ativo e passivo circulante",
+      "discipline": "NOÇÕES DE CONTABILIDADE",
+      "fragment": "Capital de giro",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Pode medir compreensão relacional distinta do conceito de capital circulante líquido e da necessidade de recursos, desde que o contrato explicite a evidência esperada.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_dfeb17e69bf8bb",
+      "knowledge_name": "comparação entre tipos de orçamento",
+      "discipline": "NOÇÕES DE CONTABILIDADE",
+      "fragment": "Tipos de orçamento",
+      "recommendation": "keep",
+      "separability_assessment": "pass",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "Integra os quatro tipos individualizados no fragmento e produz evidência diferente do reconhecimento isolado de cada tipo.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_400a167ffb81e7",
+      "knowledge_name": "relação entre direitos, deveres e responsabilidade",
+      "discipline": "NOÇÕES DIREITO CONSTITUCIONAL",
+      "fragment": "Deveres individuais",
+      "recommendation": "source_required",
+      "separability_assessment": "conditional_pass",
+      "proposed_complexity": "moderate",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "A formulação é juridicamente ampla e está marcada apenas para revisão editorial. Exige fonte normativa oficial antes de confirmar escopo e contrato.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_c50b04e0fa87e3",
+      "knowledge_name": "limites da integração no processo penal",
+      "discipline": "NOÇÕES DIREITO PROCESSUAL PENAL",
+      "fragment": "Interpretação e integração da lei processual",
+      "recommendation": "source_required",
+      "separability_assessment": "pass_after_source_validation",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É separável de interpretação extensiva, analogia e princípios gerais, mas envolve limites normativos. Validar em fontes oficiais antes do congelamento.",
+      "automatic_action_authorized": false
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_0af86819c385a2",
+      "knowledge_name": "correlação entre acusação e sentença",
+      "discipline": "NOÇÕES DIREITO PROCESSUAL PENAL",
+      "fragment": "Sentença penal",
+      "recommendation": "source_required",
+      "separability_assessment": "pass_after_source_validation",
+      "proposed_complexity": "complex",
+      "contract_assessment": "revision_required_before_freeze",
+      "review_notes": "É unidade integradora distinta de emendatio, mutatio e estrutura da sentença, mas depende de validação normativa oficial para definir condições e limites.",
+      "automatic_action_authorized": false
+    }
+  ],
+  "operational_safety": {
+    "contract_changes_authorized": false,
+    "merge_authorized": false,
+    "split_authorized": false,
+    "rename_authorized": false,
+    "source_status_change_authorized": false,
+    "question_generation_authorized": false,
+    "publication_authorized": false
+  }
+}

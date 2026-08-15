@@ -45,7 +45,7 @@ export function parseCurriculumImport(raw, expectedContestId) {
       const node = object(rawNode, type);
       const childCollection = LEVELS[depth + 1]?.[0];
       exact(node, ['id', 'name', 'description', 'order', ...(childCollection ? [childCollection] : [])], type);
-      const id = text(node.id, `${type}.id`, 80);
+      const id = text(node.id, `${type}.id`, 160);
       if (!/^[a-z0-9][a-z0-9_-]*$/i.test(id)) throw new Error(`${type}.id inválido.`);
       if (ids.has(id)) throw new Error(`ID curricular duplicado: ${id}.`);
       ids.add(id);
@@ -55,7 +55,7 @@ export function parseCurriculumImport(raw, expectedContestId) {
         source_id: id,
         parent_source_id: parentSourceId,
         type,
-        name: text(node.name, `${type}.name`),
+        name: text(node.name, `${type}.name`, 500),
         description: node.description ? text(node.description, `${type}.description`, 1000) : null,
         order_index: order,
       });

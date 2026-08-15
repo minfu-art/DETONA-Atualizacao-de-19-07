@@ -1,0 +1,2500 @@
+{
+  "schema_version": "detona_knowledge_coverage_exceptions_v1",
+  "status": "draft",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "summary": {
+    "accepted_topic_scoped_microknowledges": 18,
+    "apparent_redundancy_groups": 96,
+    "broad_scope_review": 48,
+    "non_assessable_without_human_review": 24,
+    "missing_evaluable_competencies": 0
+  },
+  "accepted_structural_exceptions": [
+    {
+      "code": "PENAL_TOPIC_SCOPE_WITHOUT_CANONICAL_SUBTOPIC",
+      "status": "accepted_not_orphan",
+      "affected_microknowledges": [
+        "pc_ba_2026_inv_mk_2f13212f5b9f7d",
+        "pc_ba_2026_inv_mk_b1d1d967c0f4ff",
+        "pc_ba_2026_inv_mk_8183cceb657b35",
+        "pc_ba_2026_inv_mk_a76b63671a62fb",
+        "pc_ba_2026_inv_mk_81bb2c85c2b4ed",
+        "pc_ba_2026_inv_mk_734dc21725b29b",
+        "pc_ba_2026_inv_mk_2f66e02d0946fb",
+        "pc_ba_2026_inv_mk_a76409a0934cc0",
+        "pc_ba_2026_inv_mk_0ad2c644ae6e01",
+        "pc_ba_2026_inv_mk_cb82efe7060d48",
+        "pc_ba_2026_inv_mk_362abb1d793371",
+        "pc_ba_2026_inv_mk_889e71645600af",
+        "pc_ba_2026_inv_mk_d323134a535ae9",
+        "pc_ba_2026_inv_mk_34270d557b98f9",
+        "pc_ba_2026_inv_mk_0aeb08158ce61d",
+        "pc_ba_2026_inv_mk_676ecad2160cc9",
+        "pc_ba_2026_inv_mk_cce61f7111833e",
+        "pc_ba_2026_inv_mk_6eba598bcb4948"
+      ],
+      "affected_fragments": [
+        "pc_ba_2026_inv_frag_7dc2a42f47d8",
+        "pc_ba_2026_inv_frag_f3bc1712a223"
+      ],
+      "resolution": "Mantidos no topic_id canônico com subtopic_id null; nenhum ID foi criado ou inferido."
+    }
+  ],
+  "planning_constraints": [
+    {
+      "code": "PREREQUISITE_GRAPH_NOT_INFERRED",
+      "affected_microknowledges": 2545,
+      "resolution": "prerequisites permanece vazio até existir uma relação de dependência validada por revisão humana."
+    }
+  ],
+  "apparent_redundancies": [
+    {
+      "normalized_name": "comparacao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_de72512cf1afb6",
+          "fragment_id": "pc_ba_2026_inv_frag_9f6433126e2d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d881337ec5d4d6",
+          "fragment_id": "pc_ba_2026_inv_frag_4c075c914c95",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes"
+        }
+      ]
+    },
+    {
+      "normalized_name": "anafora",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_22fbbc34b50ad6",
+          "fragment_id": "pc_ba_2026_inv_frag_9f6433126e2d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_0ea6f138cfb3c2",
+          "fragment_id": "pc_ba_2026_inv_frag_2a599e1a43a9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_7_elementos_coesao_funcoes_texto",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_7_elementos_coesao_funcoes_texto"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conjuncao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8da8d334b50a0d",
+          "fragment_id": "pc_ba_2026_inv_frag_244bff2cf988",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_3_morfologia_estrutura_formacao_palavras",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_3_morfologia_estrutura_formacao_palavras"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b7fd5447e6676e",
+          "fragment_id": "pc_ba_2026_inv_frag_5f820b7215f7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_10_logica_sentencial_ou_proposicional",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "finalidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d23dc910ba1662",
+          "fragment_id": "pc_ba_2026_inv_frag_4c075c914c95",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_559673a7b59ecf",
+          "fragment_id": "pc_ba_2026_inv_frag_1174b2fa229f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_12_atos_administrativos_requisitos_elementos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conjuncao integrante",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_571eb4fbef1964",
+          "fragment_id": "pc_ba_2026_inv_frag_55405da29aa1",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_88d2461d824296",
+          "fragment_id": "pc_ba_2026_inv_frag_8f2ecd5aaa8b",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes"
+        }
+      ]
+    },
+    {
+      "normalized_name": "leitura e interpretacao de graficos",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c0555291fba562",
+          "fragment_id": "pc_ba_2026_inv_frag_6a70eb410563",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_5_funcoes_e_graficos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dd304bbf66a3b8",
+          "fragment_id": "pc_ba_2026_inv_frag_a96328cb60f2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_1_estatistica_descritiva_analise_exploratoria",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_1_estatistica_descritiva_analise_exploratoria"
+        }
+      ]
+    },
+    {
+      "normalized_name": "contraposicao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a938b8ede91720",
+          "fragment_id": "pc_ba_2026_inv_frag_8cee40b57177",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_10_logica_sentencial_ou_proposicional",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c1559939802836",
+          "fragment_id": "pc_ba_2026_inv_frag_599a6c349fa4",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_12_atos_administrativos_requisitos_elementos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "evento complementar",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_198b8e17264f18",
+          "fragment_id": "pc_ba_2026_inv_frag_ce909fc49a43",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_43425e23c0ad54",
+          "fragment_id": "pc_ba_2026_inv_frag_9500abe19c26",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_2_probabilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_2_1_definicoes_basicas_e_axiomas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "uniao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_fc6db71c4c050f",
+          "fragment_id": "pc_ba_2026_inv_frag_d1f24b2829ce",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_13_operacoes_com_conjuntos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_df54fae9c1e956",
+          "fragment_id": "pc_ba_2026_inv_frag_5639dc5e071a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_constitucional_2_organizacao_politico_administrativa_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_2_1_estado_federal_brasileiro_uniao"
+        }
+      ]
+    },
+    {
+      "normalized_name": "educacao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e0a460575fc5ca",
+          "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_atualidades_1_atualidades_ambito_internacional_nacional",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_atualidades_1_atualidades_ambito_internacional_nacional"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d68e0f5830c910",
+          "fragment_id": "pc_ba_2026_inv_frag_6d8d7f244306",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_6_decreto_federal_n_4_377",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_6_decreto_federal_n_4_377"
+        }
+      ]
+    },
+    {
+      "normalized_name": "fontes",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c355ff37281904",
+          "fragment_id": "pc_ba_2026_inv_frag_8ab4bd68f673",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_1_sistema_operacional_windows_11_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_1_3_configuracoes_basicas_windows_resolucao"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_2f3f0cd61e498e",
+          "fragment_id": "pc_ba_2026_inv_frag_4fdc2c5ec1e4",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_3_formatacao_planilhas_numero_alinhamento"
+        }
+      ]
+    },
+    {
+      "normalized_name": "faixa de opcoes e guias",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4ae19117c37636",
+          "fragment_id": "pc_ba_2026_inv_frag_ed497e77ca07",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_processador_textos_word_area"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5c47a14c5ff789",
+          "fragment_id": "pc_ba_2026_inv_frag_7a91ae33015e",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_planilha_eletronica_excel_area"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_09b0b9edf79179",
+          "fragment_id": "pc_ba_2026_inv_frag_3586638de1ee",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_1_barras_de_ferramentas_botoes_e_menus_do_powerpoint"
+        }
+      ]
+    },
+    {
+      "normalized_name": "barra de acesso rapido",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3c43260cd193ae",
+          "fragment_id": "pc_ba_2026_inv_frag_ed497e77ca07",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_processador_textos_word_area"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_79912c2ed18a93",
+          "fragment_id": "pc_ba_2026_inv_frag_3586638de1ee",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_1_barras_de_ferramentas_botoes_e_menus_do_powerpoint"
+        }
+      ]
+    },
+    {
+      "normalized_name": "configuracao de margens no documento",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_29e1424df2c4ab",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_317fde5d43763b",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_25abad55e3ae96",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_bbc9db51cb3170",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_7937139a318d50",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "tabulacoes",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4125b3b7f9858f",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6b69fd99324191",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1f96f34a79c49c",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_99b011c99c75ae",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_523b7bbc01e49c",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "recuos de paragrafo",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e674b636a1e021",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ce2d33668bb650",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a76ef3501b6a49",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_89caa53e5ad8a1",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d5a42e2a7cad1e",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "espacamento horizontal e entre caracteres",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_63acf9196c05d8",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_286175ac690450",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_cb23aeea54268b",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_fa2b50aa5ac14b",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ccbb3ee3e18126",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "espacamento entre linhas e paragrafos",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_edd14aafd22259",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8ca7d919bb9410",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d7f09e5bac94d7",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_91f42b7762f8af",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dd37a4a659a97f",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "selecao e formatacao de fontes",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_220aaa91909f62",
+          "fragment_id": "pc_ba_2026_inv_frag_3ab00f302999",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c2124ed3aa1adb",
+          "fragment_id": "pc_ba_2026_inv_frag_c35869c3c994",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_2e4b6008b9105c",
+          "fragment_id": "pc_ba_2026_inv_frag_82e5d3b5a64f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_09181785b4efad",
+          "fragment_id": "pc_ba_2026_inv_frag_87cb2a9b34b0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3eaae51012bd49",
+          "fragment_id": "pc_ba_2026_inv_frag_30b8b5eff8cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens"
+        }
+      ]
+    },
+    {
+      "normalized_name": "listas com marcadores",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4b7ce3d10e45d9",
+          "fragment_id": "pc_ba_2026_inv_frag_8803578e31ee",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_2_organizacao_do_texto_em_listas_e_colunas"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e317091d03ae00",
+          "fragment_id": "pc_ba_2026_inv_frag_daf1c3276607",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_4_listas_numeradas_listas_com_marcadores_e_objetos_de_desenho"
+        }
+      ]
+    },
+    {
+      "normalized_name": "listas numeradas",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d875e110f7dbf9",
+          "fragment_id": "pc_ba_2026_inv_frag_8803578e31ee",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_2_organizacao_do_texto_em_listas_e_colunas"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_9407d192172dc4",
+          "fragment_id": "pc_ba_2026_inv_frag_daf1c3276607",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_4_listas_numeradas_listas_com_marcadores_e_objetos_de_desenho"
+        }
+      ]
+    },
+    {
+      "normalized_name": "legalidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_783ab4237a5bf4",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6948017b71ee26",
+          "fragment_id": "pc_ba_2026_inv_frag_16b63edc1fe2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_8_regime_juridico_administrativo",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_2f13212f5b9f7d",
+          "fragment_id": "pc_ba_2026_inv_frag_7dc2a42f47d8",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+          "subtopic_id": null
+        }
+      ]
+    },
+    {
+      "normalized_name": "liberdade de reuniao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_46fba27b2921da",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8205c5865479fc",
+          "fragment_id": "pc_ba_2026_inv_frag_a8a2ad9732fb",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "liberdade de associacao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_329d63f3abfe0f",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a5460ce601b110",
+          "fragment_id": "pc_ba_2026_inv_frag_a8a2ad9732fb",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "direito de propriedade e funcao social",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3a9a619ded57a3",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_0e66f406708504",
+          "fragment_id": "pc_ba_2026_inv_frag_26abfd48f4b4",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "direito de peticao e certidoes",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e55f5daaeab6dc",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_9cc289cb734dd3",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "juiz natural",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_47b785801e857f",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8351162d7ccb19",
+          "fragment_id": "pc_ba_2026_inv_frag_f315fc5b0a97",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "devido processo legal",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_def47215d14278",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a0004f351a6be3",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_787e6437682d7e",
+          "fragment_id": "pc_ba_2026_inv_frag_f315fc5b0a97",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "contraditorio e ampla defesa",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4aca2d0052cfb8",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_7485e58cb124c8",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_028828f557f95c",
+          "fragment_id": "pc_ba_2026_inv_frag_f315fc5b0a97",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "presuncao de inocencia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a393eefedf0659",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6691b41407b4ed",
+          "fragment_id": "pc_ba_2026_inv_frag_f315fc5b0a97",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "habeas corpus",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_946ef2417ef4c5",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b0b5a5a87921e8",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6a504173c6c624",
+          "fragment_id": "pc_ba_2026_inv_frag_1b8d72f6db3d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_13_sentenca_penal_recursos_acoes",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_13_sentenca_penal_recursos_acoes"
+        }
+      ]
+    },
+    {
+      "normalized_name": "mandado de injuncao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ffe2b65fa43444",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ce029191ec599c",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "habeas data",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_598ec2e5534644",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_44e363427dd80d",
+          "fragment_id": "pc_ba_2026_inv_frag_00ed5ebd6da9",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "acao popular",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_544fabe69b0574",
+          "fragment_id": "pc_ba_2026_inv_frag_2508a317ac7a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_604d7289e008d8",
+          "fragment_id": "pc_ba_2026_inv_frag_7593d09a04ca",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "finalidade e ambito de aplicacao da lei maria da penha",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_14fa06482d83f8",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_aade8e17f85092",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conceito de violencia domestica e familiar contra a mulher",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5a37d61af08904",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a474333753d852",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "formas de violencia fisica psicologica sexual patrimonial e moral",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_aa21cbccdc3789",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e239f4907ef18e",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "sujeitos e relacoes abrangidas pela lei",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_28d3ecb665a752",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6aebf12a8de25a",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "medidas integradas de prevencao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c0633aa8a0ada8",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_47e4a6a76ade33",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "assistencia a mulher em situacao de violencia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1fb5cdb139baae",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_34c3594a932a13",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "atendimento pela autoridade policial",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b5b61d8f4eb55a",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_620a1f5271f8bd",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6008c11a2ad09e",
+          "fragment_id": "pc_ba_2026_inv_frag_5621f0ab166b",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_32_lei_federal_14_344",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_32_lei_federal_14_344"
+        }
+      ]
+    },
+    {
+      "normalized_name": "medidas protetivas de urgencia que obrigam o agressor",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f8071a09ac0d3d",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a9e28615b94a52",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "medidas protetivas de urgencia a ofendida",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_2d002219c5e95b",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c7a7f7b557b74a",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "procedimentos judiciais e atuacao do ministerio publico",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f512ed07f95343",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1001c062bd430a",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "equipe de atendimento multidisciplinar",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6070a8bd4a9de5",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_25f70573e163ff",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "crime de descumprimento de medida protetiva e demais disposicoes penais aplicaveis",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_68f9768d6b19a3",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e74ac33ecd2904",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "competencia e juizados de violencia domestica e familiar",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d04e8052c0e7b0",
+          "fragment_id": "pc_ba_2026_inv_frag_2f16338273c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e3ae866c840818",
+          "fragment_id": "pc_ba_2026_inv_frag_b443fd158952",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340"
+        }
+      ]
+    },
+    {
+      "normalized_name": "dolo e consumacao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f876da8a2d50d5",
+          "fragment_id": "pc_ba_2026_inv_frag_45a7cad8a4fb",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_8_codigo_penal_brasileiro_artigo_140",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_8_codigo_penal_brasileiro_artigo_140"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c0735ff3b908cb",
+          "fragment_id": "pc_ba_2026_inv_frag_c61d68088f3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_26_lei_federal_9_613",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_26_lei_federal_9_613"
+        }
+      ]
+    },
+    {
+      "normalized_name": "precedentes vinculantes e temas de repercussao geral relacionados aos topicos da disciplina",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_265b331cbca69a",
+          "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_35d8da33871e0e",
+          "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8441dc9c2c765f",
+          "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f2c02fe2d076f5",
+          "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_7119d6d6f7089d",
+          "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_57c58f058b1fd9",
+          "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores"
+        }
+      ]
+    },
+    {
+      "normalized_name": "sumulas vinculantes e sumulas relevantes relacionadas aos topicos da disciplina",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b3de38383c6281",
+          "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c9dfcca5c13ca9",
+          "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_403649ae172eca",
+          "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_54731a136ced97",
+          "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e7f38d4232d0ef",
+          "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_0d9bf4fcd9b7a3",
+          "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores"
+        }
+      ]
+    },
+    {
+      "normalized_name": "jurisprudencia dominante do stf relacionada aos topicos da disciplina",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8a5b6272c304c2",
+          "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1ccf9cb6d375b8",
+          "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dc8a22a532da44",
+          "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3378141363ace3",
+          "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_fc953fd803414d",
+          "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5bae9d01b8c555",
+          "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores"
+        }
+      ]
+    },
+    {
+      "normalized_name": "jurisprudencia dominante do stj relacionada aos topicos da disciplina",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_0b1bd1ba64078e",
+          "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_779ab241eb1fbe",
+          "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_70a573dac8c4fd",
+          "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_97e9b9703fdc90",
+          "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ea32a35d0f0851",
+          "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6995b9e3880b56",
+          "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores"
+        }
+      ]
+    },
+    {
+      "normalized_name": "alteracoes legislativas aplicaveis dentro da data limite definida pelo edital",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_8c78e451ab131c",
+          "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d41fdb098d475b",
+          "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ef62442247a7af",
+          "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_aefa1d71ca560a",
+          "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1f1c19336d359c",
+          "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ad38d58dd29212",
+          "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores"
+        }
+      ]
+    },
+    {
+      "normalized_name": "objeto finalidade e ambito de aplicacao lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ccb27b862785fc",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_09bb148f635982",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conceitos e definicoes essenciais lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_23f1134371b630",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b80988ed0ff833",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "sujeitos competencias direitos e deveres lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4a2f7dd8319509",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_480a94edff4d78",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "regras procedimentos e requisitos lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_9aa7d9dc917d44",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f7ab56e0ac275b",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "infracoes crimes ou sancoes quando previstos lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_fd28cb4cc0795d",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_94fcebd63608e3",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "prazos excecoes e efeitos juridicos relevantes lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_889eb618261b25",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_36d1c4611e95d9",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "alteracoes legislativas e jurisprudencia aplicavel ate a data limite do edital lei estadual n 6 677 1994 estatuto do servidor publico do estado da bahia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dc6e7f770d7547",
+          "fragment_id": "pc_ba_2026_inv_frag_ea2e211939db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d392e95847153e",
+          "fragment_id": "pc_ba_2026_inv_frag_a2db503c0e3f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677"
+        }
+      ]
+    },
+    {
+      "normalized_name": "classificacao entre circulante e nao circulante",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_38d6996e6d2579",
+          "fragment_id": "pc_ba_2026_inv_frag_615b5f4c76cf",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d3d75311d26fc8",
+          "fragment_id": "pc_ba_2026_inv_frag_274e0540b92f",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conceito de patrimonio liquido",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_395d09dd856192",
+          "fragment_id": "pc_ba_2026_inv_frag_3c571c696ddd",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_1bcda7333c4a0c",
+          "fragment_id": "pc_ba_2026_inv_frag_0d9465158f9d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_10_demonstracoes_contabeis",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_3_patrimonio_liquido"
+        }
+      ]
+    },
+    {
+      "normalized_name": "equacao residual ativo menos passivo",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a9af872403af80",
+          "fragment_id": "pc_ba_2026_inv_frag_3c571c696ddd",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_e25deab84efc50",
+          "fragment_id": "pc_ba_2026_inv_frag_0d9465158f9d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_10_demonstracoes_contabeis",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_3_patrimonio_liquido"
+        }
+      ]
+    },
+    {
+      "normalized_name": "componentes do patrimonio liquido",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c90a922986ee9b",
+          "fragment_id": "pc_ba_2026_inv_frag_3c571c696ddd",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_66922ef412034e",
+          "fragment_id": "pc_ba_2026_inv_frag_0d9465158f9d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_10_demonstracoes_contabeis",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_3_patrimonio_liquido"
+        }
+      ]
+    },
+    {
+      "normalized_name": "natureza credora e variacoes do patrimonio liquido",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3b0500f8bb64bc",
+          "fragment_id": "pc_ba_2026_inv_frag_3c571c696ddd",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ec9db4995d6450",
+          "fragment_id": "pc_ba_2026_inv_frag_0d9465158f9d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_10_demonstracoes_contabeis",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_3_patrimonio_liquido"
+        }
+      ]
+    },
+    {
+      "normalized_name": "identificacao de tributos incidentes sobre compras e vendas",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_17942bbdf0b86b",
+          "fragment_id": "pc_ba_2026_inv_frag_6b535f9053d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_3_tributos_incidentes_sobre_operacoes_empresariais"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_bcd584e6fc1dfe",
+          "fragment_id": "pc_ba_2026_inv_frag_1f9e76ae65ed",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_14_nocoes_de_tributos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_2_tributos_incidentes_sobre_operacoes_empresariais"
+        }
+      ]
+    },
+    {
+      "normalized_name": "tributos recuperaveis e nao recuperaveis em nivel conceitual",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ce43214a5e4cab",
+          "fragment_id": "pc_ba_2026_inv_frag_6b535f9053d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_3_tributos_incidentes_sobre_operacoes_empresariais"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_85fd2ee72e81d4",
+          "fragment_id": "pc_ba_2026_inv_frag_1f9e76ae65ed",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_14_nocoes_de_tributos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_2_tributos_incidentes_sobre_operacoes_empresariais"
+        }
+      ]
+    },
+    {
+      "normalized_name": "efeitos dos tributos no custo e na receita",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_77100c38141ebc",
+          "fragment_id": "pc_ba_2026_inv_frag_6b535f9053d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_3_tributos_incidentes_sobre_operacoes_empresariais"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_3530d53302a667",
+          "fragment_id": "pc_ba_2026_inv_frag_1f9e76ae65ed",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_14_nocoes_de_tributos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_2_tributos_incidentes_sobre_operacoes_empresariais"
+        }
+      ]
+    },
+    {
+      "normalized_name": "registro basico de tributos em operacoes",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b72289a1bb7a40",
+          "fragment_id": "pc_ba_2026_inv_frag_6b535f9053d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_3_tributos_incidentes_sobre_operacoes_empresariais"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_23060a1833e5b3",
+          "fragment_id": "pc_ba_2026_inv_frag_1f9e76ae65ed",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_14_nocoes_de_tributos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_2_tributos_incidentes_sobre_operacoes_empresariais"
+        }
+      ]
+    },
+    {
+      "normalized_name": "apropriacao por competencia",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a566e06def0add",
+          "fragment_id": "pc_ba_2026_inv_frag_1f1e9521f690",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_4_alugueis_e_receitas_despesas_antecipadas"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_add12c83cecdb0",
+          "fragment_id": "pc_ba_2026_inv_frag_5877c3ac8583",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_8_analise_e_conciliacao_contabil",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_8_4_ajustes_e_regularizacoes_contabeis"
+        }
+      ]
+    },
+    {
+      "normalized_name": "devolucoes e abatimentos",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4b4c2235cd9f82",
+          "fragment_id": "pc_ba_2026_inv_frag_9683a195bb0b",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_7_compras_de_mercadorias_e_controle_de_estoques"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_9b97c261ab223f",
+          "fragment_id": "pc_ba_2026_inv_frag_5bf93d469f31",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_7_8_vendas_mercadorias_deducoes_receita"
+        }
+      ]
+    },
+    {
+      "normalized_name": "capital taxa e prazo",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b22a11af7a8e8b",
+          "fragment_id": "pc_ba_2026_inv_frag_1bb53013401c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_11_matematica_financeira_aplicada",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_1_juros_simples_e_compostos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_eb515a4f8f278f",
+          "fragment_id": "pc_ba_2026_inv_frag_95125d3ce4b8",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_11_matematica_financeira_aplicada",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_1_juros_simples_e_compostos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "calculo do montante",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b0bd5774250fe1",
+          "fragment_id": "pc_ba_2026_inv_frag_1bb53013401c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_11_matematica_financeira_aplicada",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_1_juros_simples_e_compostos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4e08e113fe14eb",
+          "fragment_id": "pc_ba_2026_inv_frag_95125d3ce4b8",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_11_matematica_financeira_aplicada",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_1_juros_simples_e_compostos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conceito e fundamento",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a3b3428c8e2fb1",
+          "fragment_id": "pc_ba_2026_inv_frag_ee6c5f419194",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_4_poderes_administrativos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_4_1_hierarquico_disciplinar_regulamentar_policia"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_13c6709f3f58a4",
+          "fragment_id": "pc_ba_2026_inv_frag_67d0db8f5624",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_4_poderes_administrativos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_4_1_hierarquico_disciplinar_regulamentar_policia"
+        }
+      ]
+    },
+    {
+      "normalized_name": "habilitacao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_9ac1fcc9e7d86a",
+          "fragment_id": "pc_ba_2026_inv_frag_b1f90507ca49",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_5_licitacao_e_contratos_administrativos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_5_5_procedimento"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_df9c6c691e400c",
+          "fragment_id": "pc_ba_2026_inv_frag_cab4bbce7a12",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_5_licitacao_e_contratos_administrativos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_5_6_lei_federal_14_133"
+        }
+      ]
+    },
+    {
+      "normalized_name": "autotutela",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d11d29fb7eb189",
+          "fragment_id": "pc_ba_2026_inv_frag_9de8f8ba71c2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_6_controle_da_administracao_publica",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_6_1_controle_exercido_pela_administracao_publica"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f3989dd6da3894",
+          "fragment_id": "pc_ba_2026_inv_frag_16b63edc1fe2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_8_regime_juridico_administrativo",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao"
+        }
+      ]
+    },
+    {
+      "normalized_name": "controle de legalidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5d92f2cbe43b0d",
+          "fragment_id": "pc_ba_2026_inv_frag_b8fb07129b19",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_6_controle_da_administracao_publica",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_6_2_controle_judicial"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_b1734975804f62",
+          "fragment_id": "pc_ba_2026_inv_frag_b2357f64cbf1",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_12_atos_administrativos_requisitos_elementos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "fundamento constitucional",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f10e1bd743942d",
+          "fragment_id": "pc_ba_2026_inv_frag_7becf2cb5b3a",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_1_responsabilidade_civil_estado_direito"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_22e55abe643bbf",
+          "fragment_id": "pc_ba_2026_inv_frag_72499a254035",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_2_investigacao_preliminar_inquerito_policial",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_2_investigacao_preliminar_inquerito_policial"
+        }
+      ]
+    },
+    {
+      "normalized_name": "dano",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6e028648c671e0",
+          "fragment_id": "pc_ba_2026_inv_frag_f16b3075ab19",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_1_1_responsabilidade_ato_comissivo_estado"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_122c8e29a296e4",
+          "fragment_id": "pc_ba_2026_inv_frag_151b8b0122be",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_2_requisitos_demonstracao_responsabilidade_estado"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ea5ae9add8ea6b",
+          "fragment_id": "pc_ba_2026_inv_frag_8f06417732db",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_11_crimes_em_especie_previstos_no_codigo_penal",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_2_crimes_contra_o_patrimonio"
+        }
+      ]
+    },
+    {
+      "normalized_name": "nexo causal",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4aef8404706349",
+          "fragment_id": "pc_ba_2026_inv_frag_f16b3075ab19",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_1_1_responsabilidade_ato_comissivo_estado"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ce1aeb4d557f0a",
+          "fragment_id": "pc_ba_2026_inv_frag_151b8b0122be",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_2_requisitos_demonstracao_responsabilidade_estado"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_bb383833534e6d",
+          "fragment_id": "pc_ba_2026_inv_frag_f3e4608af016",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_4_teoria_geral_do_crime",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_1_fato_tipico_e_seus_elementos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "ambito e sujeitos da improbidade administrativa",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_188d6ada581a61",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_7fa1950abdf5e0",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "elemento subjetivo conforme legislacao vigente",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dd113a133b9a0a",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_fb489221a88d0c",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "atos de enriquecimento ilicito",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_0f8c17acee1029",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5d11d35ee0c2f5",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "atos que causam prejuizo ao erario",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_22ab757acb26e5",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_cb02e336e20242",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "atos que atentam contra principios da administracao nos limites legais",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_4afb2420512f97",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_030e8a822e0349",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "sancoes por improbidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_d17a36a8a9210e",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_dffa7aabc40de4",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "prescricao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_a44e386d124a0c",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_727bd663e789ce",
+          "fragment_id": "pc_ba_2026_inv_frag_532a8eb10e74",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_10_extincao_da_punibilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_10_1_causas_de_extincao_da_punibilidade"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_cc4bd9b3b97527",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "indisponibilidade de bens",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_20ce9b0edbfcf1",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c27437d9f544c8",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "acordo de nao persecucao civil",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_f09b4636e3b843",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_05caaecfe227ad",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "procedimento e acao de improbidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5c3ec49878a0ce",
+          "fragment_id": "pc_ba_2026_inv_frag_957c0a5018d2",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_63923701a58e3c",
+          "fragment_id": "pc_ba_2026_inv_frag_0cb6c5d9e3d0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429"
+        }
+      ]
+    },
+    {
+      "normalized_name": "tipicidade",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ee5e1fc0b7a5d5",
+          "fragment_id": "pc_ba_2026_inv_frag_40c43b34cb76",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_12_atos_administrativos_requisitos_elementos"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5608495a3f40a4",
+          "fragment_id": "pc_ba_2026_inv_frag_f3e4608af016",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_4_teoria_geral_do_crime",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_1_fato_tipico_e_seus_elementos"
+        }
+      ]
+    },
+    {
+      "normalized_name": "abolitio criminis",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_2ac4a666bcf443",
+          "fragment_id": "pc_ba_2026_inv_frag_69bdbcb6e50d",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_1_lei_penal_no_tempo_e_no_espaco"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_67ca1bb6c0b671",
+          "fragment_id": "pc_ba_2026_inv_frag_532a8eb10e74",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_10_extincao_da_punibilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_10_1_causas_de_extincao_da_punibilidade"
+        }
+      ]
+    },
+    {
+      "normalized_name": "conceito",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_32ae51f9621bae",
+          "fragment_id": "pc_ba_2026_inv_frag_4856fc011ca5",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_6_culpabilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_3_potencial_consciencia_da_ilicitude"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6d0695a3ce967e",
+          "fragment_id": "pc_ba_2026_inv_frag_46809cb8dc0b",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_6_culpabilidade",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_4_exigibilidade_de_conduta_diversa"
+        }
+      ]
+    },
+    {
+      "normalized_name": "sistema acusatorio",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_c53589521bc739",
+          "fragment_id": "pc_ba_2026_inv_frag_f315fc5b0a97",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_ecf82a196e9fb6",
+          "fragment_id": "pc_ba_2026_inv_frag_64d093839324",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas"
+        }
+      ]
+    },
+    {
+      "normalized_name": "procedimento sumarissimo",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_6dc566106a6753",
+          "fragment_id": "pc_ba_2026_inv_frag_80325db3de7c",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_11_procedimento_comum_ordinario_sumario",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_11_procedimento_comum_ordinario_sumario"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_aa7bb4f635ced3",
+          "fragment_id": "pc_ba_2026_inv_frag_9b39433159f0",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_12_lei_federal_9_099",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_12_lei_federal_9_099"
+        }
+      ]
+    },
+    {
+      "normalized_name": "medidas de protecao",
+      "status": "human_context_review_required_no_merge_authorized",
+      "occurrences": [
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_48579b6052fb2c",
+          "fragment_id": "pc_ba_2026_inv_frag_1da0f3f33478",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_16_lei_federal_8_069",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_16_lei_federal_8_069"
+        },
+        {
+          "microknowledge_id": "pc_ba_2026_inv_mk_5cecf1983c3a54",
+          "fragment_id": "pc_ba_2026_inv_frag_be85af3f99e6",
+          "topic_id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_29_lei_federal_9_807",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_29_lei_federal_9_807"
+        }
+      ]
+    }
+  ],
+  "broad_scope_review": [
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_88cdad6361c28f",
+      "knowledge_name": "desigualdades sociais",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_dbf502fcd08a7a",
+      "knowledge_name": "meio ambiente",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_0b47f50552a339",
+      "knowledge_name": "mudanças climáticas",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_f04a9a969ec990",
+      "knowledge_name": "saúde pública",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_e0a460575fc5ca",
+      "knowledge_name": "educação",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_26e9be87463d97",
+      "knowledge_name": "economia",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_e1e7d8bb6e5201",
+      "knowledge_name": "violência",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_68f034d628a314",
+      "knowledge_name": "cultura",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_75c5db3f56ab76",
+      "knowledge_name": "problemas urbanos",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_d7269ab134a320",
+      "knowledge_name": "segurança pública",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "review_reason": "Escopo dinâmico amplo; exige recorte temporal, geográfico e documental humano."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_7ae9327e91152d",
+      "knowledge_name": "alterações legislativas e jurisprudência aplicável até a data-limite do edital — Lei Estadual n° 14.521/2022 - Secretaria de Promoção da Igualdade Racial e dos Povos e Comunidades Tradicionais",
+      "fragment_id": "pc_ba_2026_inv_frag_f9a60b760184",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9d8fa1740fd395",
+      "knowledge_name": "alterações legislativas e jurisprudência aplicável até a data-limite do edital — Lei Estadual nº 13.182/2014 - Estatuto da Igualdade Racial e de Combate à Intolerância Religiosa do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_eca9d4fbee7c",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_265b331cbca69a",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_b3de38383c6281",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_8a5b6272c304c2",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_0b1bd1ba64078e",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_f4f6485c9246",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_60ac6f42b955d9",
+      "knowledge_name": "sujeitos, competências, direitos e deveres — Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito da Administração Pública do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_9278f65163b9",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9de7c5b42b4b4a",
+      "knowledge_name": "infrações, crimes ou sanções, quando previstos — Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito da Administração Pública do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_9278f65163b9",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_20bd4b82df0caf",
+      "knowledge_name": "prazos, exceções e efeitos jurídicos relevantes — Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito da Administração Pública do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_9278f65163b9",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_5f39a40d586cca",
+      "knowledge_name": "alterações legislativas e jurisprudência aplicável até a data-limite do edital — Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito da Administração Pública do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_9278f65163b9",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_79f10e777ea617",
+      "knowledge_name": "objeto, finalidade e âmbito de aplicação — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_ec460a79134099",
+      "knowledge_name": "conceitos e definições essenciais — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_ad2049001b4785",
+      "knowledge_name": "sujeitos, competências, direitos e deveres — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_25bd2c79a257ae",
+      "knowledge_name": "regras, procedimentos e requisitos — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9f5f413970e91c",
+      "knowledge_name": "infrações, crimes ou sanções, quando previstos — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_2a0f5af1456077",
+      "knowledge_name": "prazos, exceções e efeitos jurídicos relevantes — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_4c300938c14595",
+      "knowledge_name": "alterações legislativas e jurisprudência aplicável até a data-limite do edital — Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências",
+      "fragment_id": "pc_ba_2026_inv_frag_d2543c374d47",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_35d8da33871e0e",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_c9dfcca5c13ca9",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_1ccf9cb6d375b8",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_779ab241eb1fbe",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_543cc8a2554c",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_8441dc9c2c765f",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_403649ae172eca",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_dc8a22a532da44",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_70a573dac8c4fd",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_3e6cba857eac",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_f2c02fe2d076f5",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_54731a136ced97",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_3378141363ace3",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_97e9b9703fdc90",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_ea19a8d1cd69",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_7119d6d6f7089d",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_e7f38d4232d0ef",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_fc953fd803414d",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_ea32a35d0f0851",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_c79d02478db5",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_29a52ae78795c5",
+      "knowledge_name": "alterações legislativas e jurisprudência aplicável até a data-limite do edital — Lei Federal nº 7.716/1989 - Crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional)",
+      "fragment_id": "pc_ba_2026_inv_frag_55302d195f70",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_57c58f058b1fd9",
+      "knowledge_name": "precedentes vinculantes e temas de repercussão geral relacionados aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_0d9bf4fcd9b7a3",
+      "knowledge_name": "súmulas vinculantes e súmulas relevantes relacionadas aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_5bae9d01b8c555",
+      "knowledge_name": "jurisprudência dominante do STF relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_6995b9e3880b56",
+      "knowledge_name": "jurisprudência dominante do STJ relacionada aos tópicos da disciplina",
+      "fragment_id": "pc_ba_2026_inv_frag_0b37ec2b10b7",
+      "review_reason": "Formulação ampla ou dependente do contexto do fragmento; revisar antes de gerar questões."
+    }
+  ],
+  "non_assessable_without_human_review": [
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9327fc16344e22",
+      "knowledge_name": "conflitos geopolíticos em âmbito internacional, nacional e seus reflexos para o Brasil e a Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_d8facdfeeac07c",
+      "knowledge_name": "relações internacionais e atuação do Brasil",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_96ad580e622ab2",
+      "knowledge_name": "direitos humanos em fatos contemporâneos",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_7e97675cf5eb6e",
+      "knowledge_name": "democracia e instituições em fatos contemporâneos",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_7950aedbc4fd33",
+      "knowledge_name": "cidadania e participação social",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_88cdad6361c28f",
+      "knowledge_name": "desigualdades sociais",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_dbf502fcd08a7a",
+      "knowledge_name": "meio ambiente",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_0b47f50552a339",
+      "knowledge_name": "mudanças climáticas",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_f04a9a969ec990",
+      "knowledge_name": "saúde pública",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_e0a460575fc5ca",
+      "knowledge_name": "educação",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_ead9d2105d1d82",
+      "knowledge_name": "trabalho e emprego",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_26e9be87463d97",
+      "knowledge_name": "economia",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_e1e7d8bb6e5201",
+      "knowledge_name": "violência",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_f6f026d9bdf05a",
+      "knowledge_name": "tecnologia da informação e seus impactos sociais",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_68f034d628a314",
+      "knowledge_name": "cultura",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_75c5db3f56ab76",
+      "knowledge_name": "problemas urbanos",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_d7269ab134a320",
+      "knowledge_name": "segurança pública",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_df4dfddcfa94cd",
+      "knowledge_name": "relações entre acontecimentos internacionais, nacionais e do Estado da Bahia",
+      "fragment_id": "pc_ba_2026_inv_frag_ca60e86205ab",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_44d8032b50b488",
+      "knowledge_name": "conceitos de comunicação",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_2c25b207c0fd55",
+      "knowledge_name": "efeitos sociais da comunicação",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_9673c1bf6b6bcf",
+      "knowledge_name": "efeitos econômicos da comunicação",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_497a7b4c7ad25c",
+      "knowledge_name": "efeitos políticos da comunicação",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_a215b284955c4f",
+      "knowledge_name": "efeitos culturais da comunicação",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    },
+    {
+      "microknowledge_id": "pc_ba_2026_inv_mk_75e3bab6311756",
+      "knowledge_name": "implicações da comunicação em acontecimentos contemporâneos",
+      "fragment_id": "pc_ba_2026_inv_frag_f24204d30b43",
+      "status": "blocked_until_verified_dated_source_snapshot"
+    }
+  ],
+  "missing_evaluable_competencies": []
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "detona_knowledge_map_exceptions_v1",
+  "status": "draft",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "exception_count": 3,
+  "exceptions": [
+    {
+      "id": "accounting_3_1_3_2_shared_canonical_subtopic",
+      "type": "two_fragments_share_one_approved_canonical_subtopic",
+      "status": "resolved_without_canonical_id_change",
+      "fragments": [
+        {
+          "fragment_id": "pc_ba_2026_inv_frag_5722df3298ce",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_3_1_conceitos_3_2atos_administrativos_e_fatos_contabeis",
+          "canonical_scope": "subtopic",
+          "microknowledge_ids": [
+            "pc_ba_2026_inv_mk_bc93e588f3462d",
+            "pc_ba_2026_inv_mk_7d7c0ca1611883",
+            "pc_ba_2026_inv_mk_272344154723d4",
+            "pc_ba_2026_inv_mk_b74f93c4266341"
+          ]
+        },
+        {
+          "fragment_id": "pc_ba_2026_inv_frag_2b3b0150d1ee",
+          "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_3_1_conceitos_3_2atos_administrativos_e_fatos_contabeis",
+          "canonical_scope": "subtopic",
+          "microknowledge_ids": [
+            "pc_ba_2026_inv_mk_c2603896df82e8",
+            "pc_ba_2026_inv_mk_95bb13bbf0f643",
+            "pc_ba_2026_inv_mk_6ff6aeb9cca4e3",
+            "pc_ba_2026_inv_mk_4a77860763e43e"
+          ]
+        }
+      ],
+      "resolution": "Os dois fragmentos pedagógicos permanecem distintos e herdam o mesmo subtopic_id V2."
+    },
+    {
+      "id": "penal_topic_scope_pc_ba_2026_inv_frag_7dc2a42f47d8",
+      "type": "canonical_subtopic_absent",
+      "status": "accepted_topic_scope_not_orphan",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal",
+      "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+      "subtopic_id": null,
+      "fragment_id": "pc_ba_2026_inv_frag_7dc2a42f47d8",
+      "canonical_scope": "topic",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2f13212f5b9f7d",
+        "pc_ba_2026_inv_mk_b1d1d967c0f4ff",
+        "pc_ba_2026_inv_mk_8183cceb657b35",
+        "pc_ba_2026_inv_mk_a76b63671a62fb",
+        "pc_ba_2026_inv_mk_81bb2c85c2b4ed",
+        "pc_ba_2026_inv_mk_734dc21725b29b",
+        "pc_ba_2026_inv_mk_2f66e02d0946fb",
+        "pc_ba_2026_inv_mk_a76409a0934cc0",
+        "pc_ba_2026_inv_mk_0ad2c644ae6e01",
+        "pc_ba_2026_inv_mk_cb82efe7060d48",
+        "pc_ba_2026_inv_mk_362abb1d793371",
+        "pc_ba_2026_inv_mk_889e71645600af"
+      ],
+      "resolution": "Mantido no topic_id canônico; nenhum subtopic_id foi criado ou inferido."
+    },
+    {
+      "id": "penal_topic_scope_pc_ba_2026_inv_frag_f3bc1712a223",
+      "type": "canonical_subtopic_absent",
+      "status": "accepted_topic_scope_not_orphan",
+      "discipline_id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal",
+      "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+      "subtopic_id": null,
+      "fragment_id": "pc_ba_2026_inv_frag_f3bc1712a223",
+      "canonical_scope": "topic",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d323134a535ae9",
+        "pc_ba_2026_inv_mk_34270d557b98f9",
+        "pc_ba_2026_inv_mk_0aeb08158ce61d",
+        "pc_ba_2026_inv_mk_676ecad2160cc9",
+        "pc_ba_2026_inv_mk_cce61f7111833e",
+        "pc_ba_2026_inv_mk_6eba598bcb4948"
+      ],
+      "resolution": "Mantido no topic_id canônico; nenhum subtopic_id foi criado ou inferido."
+    }
+  ]
+}

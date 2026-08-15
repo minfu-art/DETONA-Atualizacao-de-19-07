@@ -2,6 +2,7 @@ import {
   OPERATIONAL_CAPABILITIES,
   assertExactKeys,
   assertPlainObject,
+  safeCurriculumId,
   safeEnum,
   safeId,
   safePagination,
@@ -134,16 +135,16 @@ export function validateAdminContestRequest(input) {
       const node = assertExactKeys(raw, [
         'source_id', 'parent_source_id', 'type', 'name', 'description', 'order_index',
       ], ['source_id', 'parent_source_id', 'type', 'name', 'order_index']);
-      const sourceId = safeId(node.source_id, 'source_id');
+      const sourceId = safeCurriculumId(node.source_id, 'source_id');
       if (ids.has(sourceId)) throw new Error('curriculum_source_id_duplicate');
       ids.add(sourceId);
       const orderIndex = Number(node.order_index);
       if (!Number.isInteger(orderIndex) || orderIndex < 0 || orderIndex > 100_000) throw new Error('order_index_invalid');
       return {
         source_id: sourceId,
-        parent_source_id: node.parent_source_id ? safeId(node.parent_source_id, 'parent_source_id') : null,
+        parent_source_id: node.parent_source_id ? safeCurriculumId(node.parent_source_id, 'parent_source_id') : null,
         type: safeEnum(node.type, ['role', 'discipline', 'topic', 'subtopic'], 'type'),
-        name: safeText(rejectMarkup(node.name, 'name'), 'name', 240),
+        name: safeText(rejectMarkup(node.name, 'name'), 'name', 500),
         description: node.description ? safeText(rejectMarkup(node.description, 'description'), 'description', 1000) : null,
         order_index: orderIndex,
       };
@@ -190,7 +191,7 @@ export function validateAdminContestRequest(input) {
         id: node.id ? safeUuid(node.id) : null,
         parent_id: node.parent_id ? safeUuid(node.parent_id, 'parent_id') : null,
         type: safeEnum(node.type, ['role', 'discipline', 'topic', 'subtopic'], 'type'),
-        name: safeText(rejectMarkup(node.name, 'name'), 'name', 240),
+        name: safeText(rejectMarkup(node.name, 'name'), 'name', 500),
         description: safeText(rejectMarkup(node.description, 'description'), 'description', 1000, { optional: true }),
         order_index: orderIndex,
         status: safeEnum(node.status || 'draft', ['draft', 'active', 'inactive', 'archived'], 'status'),
