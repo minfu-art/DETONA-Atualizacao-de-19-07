@@ -1,0 +1,21 @@
+{
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "offering_id": "pc_ba_2026_investigador",
+  "branch": "content/pc-ba-2026-question-bank",
+  "mode": "cyclic_incremental_10",
+  "status": "awaiting_required_inputs",
+  "batch_size": 10,
+  "last_completed_batch": 1,
+  "last_global_question_sequence": 10,
+  "next_expected_batch_id": "pc_ba_2026_inv_batch_000002",
+  "next_expected_question_sequence": 11,
+  "publication_authorized": false,
+  "supabase_import_authorized": false,
+  "deploy_authorized": false,
+  "pc_al_modification_authorized": false,
+  "notes": [
+    "O lote editorial 000001 foi criado nesta conversa, mas ainda precisa ser persistido nesta branch junto com os artefatos obrigatórios antes da automação poder continuar com segurança.",
+    "Não gerar lote 000002 se o banco cumulativo e os artefatos do Mapa Mestre não estiverem disponíveis na branch."
+  ]
+}
