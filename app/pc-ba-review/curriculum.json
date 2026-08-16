@@ -1,0 +1,2719 @@
+{
+  "schema_version": 1,
+  "contest_id": "pc_ba_2026",
+  "roles": [
+    {
+      "id": "pc_ba_2026_investigador_policia_civil",
+      "name": "Investigador de Polícia Civil",
+      "description": "Cargo 403 do edital SAEB nº 02/2026.",
+      "order": 0,
+      "disciplines": [
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_lingua_portuguesa",
+          "name": "LÍNGUA PORTUGUESA",
+          "order": 0,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_1_compreensao_interpretacao_texto_tipologia",
+              "name": "Compreensão e interpretação de texto; tipologia e gêneros textuais; elementos da comunicação e funções da linguagem.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_1_compreensao_interpretacao_texto_tipologia",
+                  "name": "Compreensão e interpretação de texto; tipologia e gêneros textuais; elementos da comunicação e funções da linguagem.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+              "name": "Semântica: significação de palavras e expressões; relações de sinonímia e de antonímia; figuras de linguagem; reescrita de frases (substituição, deslocamento, paralelismo).",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+                  "name": "Semântica: significação de palavras e expressões; relações de sinonímia e de antonímia; figuras de linguagem; reescrita de frases (substituição, deslocamento, paralelismo).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_3_morfologia_estrutura_formacao_palavras",
+              "name": "Morfologia: estrutura e formação de palavras; ortografia; acentuação gráfica; classes de palavras variáveis e invariáveis e seus empregos no texto.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_3_morfologia_estrutura_formacao_palavras",
+                  "name": "Morfologia: estrutura e formação de palavras; ortografia; acentuação gráfica; classes de palavras variáveis e invariáveis e seus empregos no texto.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+              "name": "Sintaxe: termos da oração e relações sintático-semânticas estabelecidas entre termos, orações, períodos ou parágrafos (período simples e período composto por coordenação e por subordinação); concordância verbal e nominal; regência verbal e nominal; uso da crase; colocação pronominal; funções do “que” e do “se”.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_4_sintaxe_termos_oracao_relacoes",
+                  "name": "Sintaxe: termos da oração e relações sintático-semânticas estabelecidas entre termos, orações, períodos ou parágrafos (período simples e período composto por coordenação e por subordinação); concordância verbal e nominal; regência verbal e nominal; uso da crase; colocação pronominal; funções do “que” e do “se”.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_5_reescrita_de_oracoes_periodos_frases_e_paragrafos",
+              "name": "Reescrita de orações, períodos, frases e parágrafos.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_5_reescrita_de_oracoes_periodos_frases_e_paragrafos",
+                  "name": "Reescrita de orações, períodos, frases e parágrafos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_6_emprego_dos_sinais_de_pontuacao_e_sua_funcao_no_texto",
+              "name": "Emprego dos sinais de pontuação e sua função no texto.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_6_emprego_dos_sinais_de_pontuacao_e_sua_funcao_no_texto",
+                  "name": "Emprego dos sinais de pontuação e sua função no texto.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_7_elementos_coesao_funcoes_texto",
+              "name": "Elementos de coesão e suas funções no texto (referenciação, sequenciação).",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_7_elementos_coesao_funcoes_texto",
+                  "name": "Elementos de coesão e suas funções no texto (referenciação, sequenciação).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_8_funcao_textual_dos_vocabulos",
+              "name": "Função textual dos vocábulos.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_8_funcao_textual_dos_vocabulos",
+                  "name": "Função textual dos vocábulos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_9_redacao_oficial_manual_redacao",
+              "name": "Redação Oficial (conforme Manual de Redação da Presidência da República): aspectos gerais, gêneros textuais, finalidade dos principais modelos; níveis de linguagem, adequação linguística, análise de atos oficiais.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_9_redacao_oficial_manual_redacao",
+                  "name": "Redação Oficial (conforme Manual de Redação da Presidência da República): aspectos gerais, gêneros textuais, finalidade dos principais modelos; níveis de linguagem, adequação linguística, análise de atos oficiais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_lingua_portuguesa_10_variacao_linguistica_norma_culta",
+              "name": "Variação linguística: norma culta.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_10_variacao_linguistica_norma_culta",
+                  "name": "Variação linguística: norma culta.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_raciocinio_logico",
+          "name": "RACIOCÍNIO LÓGICO",
+          "order": 1,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_1_conjuntos_numericos",
+              "name": "Conjuntos numéricos:",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+                  "name": "Números inteiros, racionais e reais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_2_sistema_legal_de_medidas",
+              "name": "Sistema Legal de medidas.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+                  "name": "Sistema Legal de medidas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_3_razoes_e_proporcoes",
+              "name": "Razões e proporções.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+                  "name": "Divisão proporcional.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+                  "name": "Regras de três simples e compostas.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+                  "name": "Porcentagens. Equações e inequações de 1 0 e de 2 0 graus.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_4_sistemas_lineares",
+              "name": "Sistemas lineares.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+                  "name": "Sistemas lineares.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_5_funcoes_e_graficos",
+              "name": "Funções e gráficos.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+                  "name": "Funções e gráficos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_6_principios_de_contagem",
+              "name": "Princípios de contagem.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+                  "name": "Princípios de contagem.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+              "name": "Progressões aritméticas e geométricas.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+                  "name": "Progressões aritméticas e geométricas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+              "name": "Compreensão de estruturas lógicas.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+                  "name": "Compreensão de estruturas lógicas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+              "name": "Lógica de argumentação: analogias, inferências, deduções e conclusões.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+                  "name": "Lógica de argumentação: analogias, inferências, deduções e conclusões.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_10_logica_sentencial_ou_proposicional",
+              "name": "Lógica sentencial (ou proposicional).",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+                  "name": "Proposições simples e compostas.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+                  "name": "Tabelas-verdade.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+                  "name": "Equivalências.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+                  "name": "Leis de Morgan.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+                  "name": "Diagramas lógicos.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_11_logica_de_primeira_ordem",
+              "name": "Lógica de primeira ordem.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+                  "name": "Lógica de primeira ordem.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+              "name": "Princípios de contagem e probabilidade.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+                  "name": "Princípios de contagem e probabilidade.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_13_operacoes_com_conjuntos",
+              "name": "Operações com conjuntos.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+                  "name": "Operações com conjuntos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+              "name": "Raciocínio lógico envolvendo problemas aritméticos, geométricos e matriciais.",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+                  "name": "Raciocínio lógico envolvendo problemas aritméticos, geométricos e matriciais.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_atualidades",
+          "name": "ATUALIDADES",
+          "order": 2,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_atualidades_1_atualidades_ambito_internacional_nacional",
+              "name": "Atualidades em âmbito internacional, nacional e do Estado da Bahia: Conflitos geopolíticos, relações internacionais, direitos humanos, democracia, cidadania, desigualdades sociais, meio ambiente, mudanças climáticas, saúde pública, educação, trabalho, economia, violência, tecnologia de informação, cultura, problemas urbanos, segurança pública.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_atualidades_1_atualidades_ambito_internacional_nacional",
+                  "name": "Atualidades em âmbito internacional, nacional e do Estado da Bahia: Conflitos geopolíticos, relações internacionais, direitos humanos, democracia, cidadania, desigualdades sociais, meio ambiente, mudanças climáticas, saúde pública, educação, trabalho, economia, violência, tecnologia de informação, cultura, problemas urbanos, segurança pública.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_atualidades_2_comunicacao_conceitos_efeitos_implicacoes",
+              "name": "Comunicação: conceitos, efeitos e implicações sociais, econômicas, políticas e culturais.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_atualidades_2_comunicacao_conceitos_efeitos_implicacoes",
+                  "name": "Comunicação: conceitos, efeitos e implicações sociais, econômicas, políticas e culturais.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_informatica",
+          "name": "INFORMÁTICA",
+          "order": 3,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_informatica_1_sistema_operacional_windows_11_em_portugues",
+              "name": "Sistema Operacional Windows 11 em português:",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_1_1_fundamentos_windows_operacoes_janelas",
+                  "name": "Fundamentos do Windows; operações com janelas, menus, barra de tarefas e área de trabalho.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_1_2_trabalho_pastas_arquivos_localizacao",
+                  "name": "Trabalho com pastas e arquivos: localização de arquivos e pastas; movimentação e cópia de arquivos e pastas; criação e exclusão de arquivos e pastas.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_1_3_configuracoes_basicas_windows_resolucao",
+                  "name": "Configurações básicas do Windows: resolução da tela, cores, fontes, impressoras, aparência, plano de fundo e proteção de tela.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_1_4_windows_explorer",
+                  "name": "Windows Explorer.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_informatica_2_pacote_office_365_em_portugues",
+              "name": "Pacote office 365 em português:",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_processador_textos_word_area",
+                  "name": "Processador de Textos Word: área de trabalho, barras de ferramentas, botões e menus do Word.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_1_formatacao_documentos_recursos_margens",
+                  "name": "Formatação de documentos: recursos de margens, tabulação, recuo e espaçamento horizontal, espaçamento vertical, fontes e estilos (negrito, sublinhado, itálico, subscrito, sobrescrito etc.).",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_2_organizacao_do_texto_em_listas_e_colunas",
+                  "name": "Organização do texto em listas e colunas.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_3_estilos_e_modelos",
+                  "name": "Estilos e modelos.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_4_cabecalhos_e_rodapes",
+                  "name": "Cabeçalhos e rodapés.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_1_5_configuracao_de_pagina",
+                  "name": "Configuração de página.",
+                  "order": 5
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_planilha_eletronica_excel_area",
+                  "name": "Planilha Eletrônica - Excel: área de trabalho, barras de ferramentas, botões e menus do Excel; deslocamento do cursor na planilha; seleção de células, linhas e colunas.",
+                  "order": 6
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_1_introducao_numeros_textos_formulas",
+                  "name": "Introdução de números, textos, fórmulas e datas na planilha; referência absoluta e relativa.",
+                  "order": 7
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_2_principais_funcoes_excel_matematicas",
+                  "name": "Principais funções do Excel: matemáticas, estatísticas, data e hora, financeiras e de texto.",
+                  "order": 8
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_3_formatacao_planilhas_numero_alinhamento",
+                  "name": "Formatação de planilhas: número, alinhamento, bordas, fontes e padrões.",
+                  "order": 9
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_4_edicao_planilha_operacoes_copiar",
+                  "name": "Edição da planilha: operações de copiar, colar, recortar, limpar e selecionar.",
+                  "order": 10
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_5_classificacao_de_dados_nas_planilhas",
+                  "name": "Classificação de dados nas planilhas.",
+                  "order": 11
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_2_6_graficos",
+                  "name": "Gráficos.",
+                  "order": 12
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_software_de_apresentacao_powerpoint",
+                  "name": "Software de Apresentação PowerPoint.",
+                  "order": 13
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_1_barras_de_ferramentas_botoes_e_menus_do_powerpoint",
+                  "name": "Barras de ferramentas, botões e menus do PowerPoint.",
+                  "order": 14
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_2_criacao_apresentacoes_insercao_slides",
+                  "name": "Criação de apresentações e inserção de slides; elementos da tela e modos de visualização.",
+                  "order": 15
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_3_objetos_de_texto_formatar_mover_copiar_e_excluir_objetos",
+                  "name": "Objetos de texto: formatar, mover, copiar e excluir objetos.",
+                  "order": 16
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_4_listas_numeradas_listas_com_marcadores_e_objetos_de_desenho",
+                  "name": "Listas numeradas, listas com marcadores e objetos de desenho.",
+                  "order": 17
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_5_uso_tabelas_graficos_planilhas",
+                  "name": "Uso de tabelas, gráficos, planilhas e organogramas; layout, esquema de cores, segundo plano e slide mestre; montagem de slides animados.",
+                  "order": 18
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_2_3_6_integracao_com_word_e_excel",
+                  "name": "Integração com Word e Excel.",
+                  "order": 19
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_informatica_3_redes_de_computadores",
+              "name": "Redes de Computadores:",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_1_conceitos_basicos_ferramentas_aplicativos",
+                  "name": "conceitos básicos, ferramentas, aplicativos e procedimentos de Internet e Intranet.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_2_conceitos_basicos_de_computacao_em_nuvem",
+                  "name": "Conceitos básicos de computação em nuvem.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_3_programas_de_navegacao_edge_chrome_e_firefox",
+                  "name": "Programas de navegação: Edge, Chrome e Firefox.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_4_deep_web_e_dark_web",
+                  "name": "Deep Web e Dark Web.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_5_correio_eletronico_enderecos_utilizacao_e_recursos_tipicos",
+                  "name": "Correio eletrônico: endereços, utilização e recursos típicos.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_6_conceitos_seguranca_informacao_procedimentos",
+                  "name": "Conceitos de segurança da informação: procedimentos de segurança; programas maliciosos, ferramentas antivírus e criptografia.",
+                  "order": 5
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_informatica_3_7_procedimentos_de_backup_armazenamento_de_dados_em_nuvem",
+                  "name": "Procedimentos de backup; armazenamento de dados em nuvem.",
+                  "order": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_promocao_da_igualdade_racial_e_de_genero",
+          "name": "PROMOÇÃO DA IGUALDADE RACIAL E DE GÊNERO",
+          "order": 4,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+              "name": "Constituição da República Federativa do Brasil de 1988 (Artigos 1º, 3º, 4° e 5°).",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_1_constituicao_republica_federativa_brasil",
+                  "name": "Constituição da República Federativa do Brasil de 1988 (Artigos 1º, 3º, 4° e 5°).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_2_constituicao_estado_bahia_capitulo",
+              "name": "Constituição do Estado da Bahia (Capítulo XXIII - “Do Negro”).",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_2_constituicao_estado_bahia_capitulo",
+                  "name": "Constituição do Estado da Bahia (Capítulo XXIII - “Do Negro”).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_3_lei_federal_n_12",
+              "name": "Lei Federal n° 12.288/2010 - Estatuto da Igualdade Racial.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_3_lei_federal_n_12",
+                  "name": "Lei Federal n° 12.288/2010 - Estatuto da Igualdade Racial.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_4_lei_federal_7_716",
+              "name": "Lei Federal nº 7.716/1989 - Define os crimes resultantes de preconceito de raça ou de cor.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_4_lei_federal_7_716",
+                  "name": "Lei Federal nº 7.716/1989 - Define os crimes resultantes de preconceito de raça ou de cor.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_5_decreto_federal_n_65",
+              "name": "Decreto Federal n° 65.810/1969 - Convenção internacional sobre a eliminação de todas as formas de discriminação racial.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_5_decreto_federal_n_65",
+                  "name": "Decreto Federal n° 65.810/1969 - Convenção internacional sobre a eliminação de todas as formas de discriminação racial.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_6_decreto_federal_n_4_377",
+              "name": "Decreto Federal n° 4.377/2002 - Convenção sobre a eliminação de todas as formas de discriminação contra a mulher.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_6_decreto_federal_n_4_377",
+                  "name": "Decreto Federal n° 4.377/2002 - Convenção sobre a eliminação de todas as formas de discriminação contra a mulher.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_7_lei_federal_11_340",
+              "name": "Lei Federal nº 11.340/2006 - Lei Maria da Penha.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_7_lei_federal_11_340",
+                  "name": "Lei Federal nº 11.340/2006 - Lei Maria da Penha.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_8_codigo_penal_brasileiro_artigo_140",
+              "name": "Código Penal Brasileiro (Artigo 140).",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_8_codigo_penal_brasileiro_artigo_140",
+                  "name": "Código Penal Brasileiro (Artigo 140).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_9_lei_federal_n_9_455",
+              "name": "Lei Federal n° 9.455/1997 - Crimes de Tortura.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_9_lei_federal_n_9_455",
+                  "name": "Lei Federal n° 9.455/1997 - Crimes de Tortura.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_10_lei_federal_n_2_889",
+              "name": "Lei Federal n° 2.889/1956 - Define e pune o Crime de Genocídio.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_10_lei_federal_n_2_889",
+                  "name": "Lei Federal n° 2.889/1956 - Define e pune o Crime de Genocídio.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_11_lei_federal_no_7_437_1985_lei_cao",
+              "name": "Lei Federal nº 7.437/1985 - Lei Caó.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_11_lei_federal_no_7_437_1985_lei_cao",
+                  "name": "Lei Federal nº 7.437/1985 - Lei Caó.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_12_lei_estadual_n_14",
+              "name": "Lei Estadual n° 14.521/2022 - Secretaria de Promoção da Igualdade Racial e dos Povos e Comunidades Tradicionais.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_12_lei_estadual_n_14",
+                  "name": "Lei Estadual n° 14.521/2022 - Secretaria de Promoção da Igualdade Racial e dos Povos e Comunidades Tradicionais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_13_lei_estadual_13_182",
+              "name": "Lei Estadual nº 13.182/2014 - Estatuto da Igualdade Racial e de Combate à Intolerância Religiosa do Estado da Bahia.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_13_lei_estadual_13_182",
+                  "name": "Lei Estadual nº 13.182/2014 - Estatuto da Igualdade Racial e de Combate à Intolerância Religiosa do Estado da Bahia.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_14_lei_federal_10_678",
+              "name": "Lei Federal nº 10.678/2003 e suas alterações.",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_14_lei_federal_10_678",
+                  "name": "Lei Federal nº 10.678/2003 e suas alterações.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_15_lei_federal_no_13_341_2016",
+              "name": "Lei Federal nº 13.341/2016.",
+              "order": 14,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_15_lei_federal_no_13_341_2016",
+                  "name": "Lei Federal nº 13.341/2016.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_16_lei_federal_14_600_2023",
+              "name": "Lei Federal 14.600/2023.",
+              "order": 15,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_16_lei_federal_14_600_2023",
+                  "name": "Lei Federal 14.600/2023.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_da_igualdade_racial_e_de_genero_17_decreto_federal_no_4_886_03",
+              "name": "Decreto Federal nº 4.886/03.",
+              "order": 16,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_da_igualdade_racial_e_de_genero_17_decreto_federal_no_4_886_03",
+                  "name": "Decreto Federal nº 4.886/03.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 17,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_promocao_igualdade_18_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_medicina_legal",
+          "name": "MEDICINA LEGAL",
+          "order": 5,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_1_conceito_importancia_e_divisoes",
+              "name": "Conceito, importância e divisões.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_1_1_corpo_de_delito_pericia_e_peritos",
+                  "name": "Corpo de Delito, perícia e peritos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_2_documentos_medico_legais",
+              "name": "Documentos médico-legais.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_2_1_conceitos_de_identidade_de_identificacao_e_de_reconhecimento",
+                  "name": "Conceitos de identidade, de identificação e de reconhecimento.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_3_principais_metodos_de_identificacao",
+              "name": "Principais métodos de identificação.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_3_principais_metodos_de_identificacao",
+                  "name": "Principais métodos de identificação.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_4_lesoes_mortes_acao_contundente",
+              "name": "Lesões e mortes por ação contundente, por instrumentos cortantes, perfurantes, perfurocortantes e corto contundentes; Lesões e mortes por projéteis de arma de fogo, incluindo aspectos médico-legais dos orifícios de entrada e saída, trajetória, distância de disparo e efeitos lesionais relacionados à energia do projétil.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_4_lesoes_mortes_acao_contundente",
+                  "name": "Lesões e mortes por ação contundente, por instrumentos cortantes, perfurantes, perfurocortantes e corto contundentes; Lesões e mortes por projéteis de arma de fogo, incluindo aspectos médico-legais dos orifícios de entrada e saída, trajetória, distância de disparo e efeitos lesionais relacionados à energia do projétil.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_5_conceito_e_diagnostico_da_morte",
+              "name": "Conceito e diagnóstico da morte.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_5_1_fenomenos_cadavericos",
+                  "name": "Fenômenos cadavéricos.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_5_2_cronotanatognose_comoriencia_e_premoriencia",
+                  "name": "Cronotanatognose, comoriência e premoriência.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_5_3_exumacao",
+                  "name": "Exumação.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_5_4_causa_juridica_da_morte",
+                  "name": "Causa jurídica da morte.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_5_5_morte_subita_e_morte_suspeita",
+                  "name": "Morte súbita e morte suspeita.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_6_exame_preservacao_locais_crime",
+              "name": "Exame e preservação de locais de crime; Aspectos médico-legais das toxicomanias e da embriaguez; Lesões e morte por ação térmica, por ação elétrica, por baropatias e por ação química.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_6_exame_preservacao_locais_crime",
+                  "name": "Exame e preservação de locais de crime; Aspectos médico-legais das toxicomanias e da embriaguez; Lesões e morte por ação térmica, por ação elétrica, por baropatias e por ação química.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_7_aspectos_medico_legais_dos_crimes_contra_a_dignidade_sexual",
+              "name": "Aspectos médico-legais dos crimes contra a dignidade sexual:",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_7_1_violencia_sexual_estupro_estupro",
+                  "name": "Violência sexual, estupro, estupro de vulnerável, importunação sexual, assédio sexual e coleta/preservação de vestígios.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_8_asfixias_constricao_cervical_sufocacao",
+              "name": "Asfixias por constrição cervical, por sufocação, por restrição aos movimentos do tórax e por modificações do meio ambiente.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_8_asfixias_constricao_cervical_sufocacao",
+                  "name": "Asfixias por constrição cervical, por sufocação, por restrição aos movimentos do tórax e por modificações do meio ambiente.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_9_aspectos_medico_legais_aborto",
+              "name": "Aspectos médico-legais do aborto, infanticídio e abandono de recém-nascido.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_9_aspectos_medico_legais_aborto",
+                  "name": "Aspectos médico-legais do aborto, infanticídio e abandono de recém-nascido.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_10_modificadores_avaliacao_pericial_imputabilidade",
+              "name": "Modificadores e avaliação pericial da imputabilidade penal e da capacidade civil; Doença mental, desenvolvimento mental incompleto ou retardado, perturbação mental.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_10_modificadores_avaliacao_pericial_imputabilidade",
+                  "name": "Modificadores e avaliação pericial da imputabilidade penal e da capacidade civil; Doença mental, desenvolvimento mental incompleto ou retardado, perturbação mental.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_11_aspectos_medico_legais_do_testemunho_da_confissao_e_da_acareacao",
+              "name": "Aspectos médico-legais do testemunho, da confissão e da acareação.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_11_aspectos_medico_legais_testemunho",
+                  "name": "Aspectos médico-legais do testemunho, da confissão e da acareação.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_12_cadeia_de_custodia_vestigios_e_evidencias",
+              "name": "Cadeia de custódia, vestígios e evidências.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_12_cadeia_de_custodia_vestigios_e_evidencias",
+                  "name": "Cadeia de custódia, vestígios e evidências.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_medicina_legal_13_aspectos_medico_legais_violencia",
+              "name": "Aspectos médico-legais da violência doméstica e familiar e da violência contra mulheres, crianças, adolescentes, idosos e pessoas com deficiência.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_medicina_legal_13_aspectos_medico_legais_violencia",
+                  "name": "Aspectos médico-legais da violência doméstica e familiar e da violência contra mulheres, crianças, adolescentes, idosos e pessoas com deficiência.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_geral",
+          "name": "LEGISLAÇÃO GERAL",
+          "order": 6,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_1_lei_estadual_6_677",
+              "name": "Lei Estadual nº 6.677/1994 - Estatuto do Servidor Público do Estado da Bahia.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_1_lei_estadual_6_677",
+                  "name": "Lei Estadual nº 6.677/1994 - Estatuto do Servidor Público do Estado da Bahia.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_2_lei_estadual_14_634",
+              "name": "Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito daAdministração Pública do Estado da Bahia.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_2_lei_estadual_14_634",
+                  "name": "Lei Estadual nº 14.634/2023 - Normas de licitações e contratos administrativos aplicáveis no âmbito daAdministração Pública do Estado da Bahia.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_3_lei_estadual_12_209",
+              "name": "Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_3_lei_estadual_12_209",
+                  "name": "Lei Estadual nº 12.209/2011 - Dispõe sobre o processo administrativo, no âmbito da Administração direta e das entidades da Administração indireta, regidas pelo regime de direito público, do Estado da Bahia, e dá outras providências.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_4_lei_estadual_11_370",
+              "name": "Lei Estadual nº 11.370/2009 - Lei Orgânica da Polícia Civil do Estado da Bahia e alterações.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_4_lei_estadual_11_370",
+                  "name": "Lei Estadual nº 11.370/2009 - Lei Orgânica da Polícia Civil do Estado da Bahia e alterações.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_geral_5_lei_federal_no_8_906_1994_estatuto_da_advocacia",
+              "name": "Lei Federal nº 8.906/1994 - Estatuto da Advocacia.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_geral_5_lei_federal_no_8_906_1994_estatuto_da_advocacia",
+                  "name": "Lei Federal nº 8.906/1994 - Estatuto da Advocacia.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_contabilidade",
+          "name": "NOÇÕES DE CONTABILIDADE",
+          "order": 7,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_1_fundamentos_da_contabilidade",
+              "name": "Fundamentos da Contabilidade:",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_1_1_conceitos_objeto_objetivos_finalidades",
+                  "name": "Conceitos, objeto, objetivos e finalidades da Contabilidade.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_1_2_usuarios_da_informacao_contabil",
+                  "name": "Usuários da informação contábil.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_1_3_principios_caracteristicas_qualitativas_informacao",
+                  "name": "Princípios e características qualitativas da informação contábil.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_1_4_estrutura_conceitual_para_relatorio_financeiro",
+                  "name": "Estrutura Conceitual para Relatório Financeiro.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_2_patrimonio",
+              "name": "Patrimônio:",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_2_1_conceito_componentes_patrimoniais_ativo",
+                  "name": "Conceito e componentes patrimoniais: ativo, passivo e patrimônio líquido.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_2_2_equacao_fundamental_do_patrimonio",
+                  "name": "Equação fundamental do patrimônio.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_2_3_situacao_liquida_patrimonial",
+                  "name": "Situação líquida patrimonial.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_2_4_representacao_grafica_do_patrimonio",
+                  "name": "Representação gráfica do patrimônio.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_2_5_origens_e_aplicacoes_de_recursos",
+                  "name": "Origens e aplicações de recursos.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_3_atos_e_fatos_administrativos",
+              "name": "Atos e Fatos Administrativos:",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_3_1_conceitos_3_2atos_administrativos_e_fatos_contabeis",
+                  "name": "Conceitos. 3.2Atos administrativos e fatos contábeis.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_3_3_fatos_permutativos_modificativos_e_mistos",
+                  "name": "Fatos permutativos, modificativos e mistos.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_4_contas_contabeis",
+              "name": "Contas Contábeis:",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_4_1_conceito_e_classificacao_das_contas",
+                  "name": "Conceito e classificação das contas.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_4_2_contas_patrimoniais_e_de_resultado",
+                  "name": "Contas patrimoniais e de resultado.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_4_3_debito_credito_e_saldo",
+                  "name": "Débito, crédito e saldo.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_4_4_funcionamento_das_contas",
+                  "name": "Funcionamento das contas.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_5_plano_de_contas",
+              "name": "Plano de Contas:",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_5_1_conceito_e_finalidade",
+                  "name": "Conceito e finalidade.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_5_2_elenco_e_codificacao_das_contas",
+                  "name": "Elenco e codificação das contas.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_5_3_funcao_e_funcionamento_das_contas",
+                  "name": "Função e funcionamento das contas.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_5_4_sistemas_de_contas",
+                  "name": "Sistemas de contas.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_6_escrituracao_contabil",
+              "name": "Escrituração Contábil:",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_6_1_conceito_e_metodos_de_escrituracao",
+                  "name": "Conceito e métodos de escrituração.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_6_2_partidas_dobradas",
+                  "name": "Partidas dobradas.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_6_3_lancamentos_contabeis_elementos_essenciais",
+                  "name": "Lançamentos contábeis: elementos essenciais e fórmulas de lançamento.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_6_4_livros_contabeis_obrigatorios_e_facultativos",
+                  "name": "Livros contábeis obrigatórios e facultativos.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_6_5_erros_de_escrituracao_e_formas_de_retificacao",
+                  "name": "Erros de escrituração e formas de retificação.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_7_operacoes_contabeis_diversas",
+              "name": "Operações Contábeis Diversas:",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_1_juros_simples_e_compostos_aplicados_a_contabilidade",
+                  "name": "Juros simples e compostos aplicados à contabilidade.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_2_descontos_comerciais_e_financeiros",
+                  "name": "Descontos comerciais e financeiros.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_3_tributos_incidentes_sobre_operacoes_empresariais",
+                  "name": "Tributos incidentes sobre operações empresariais.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_4_alugueis_e_receitas_despesas_antecipadas",
+                  "name": "Aluguéis e receitas/despesas antecipadas.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_5_variacao_monetaria_e_cambial",
+                  "name": "Variação monetária e cambial.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_6_folha_de_pagamento_e_encargos_sociais",
+                  "name": "Folha de pagamento e encargos sociais.",
+                  "order": 5
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_7_compras_de_mercadorias_e_controle_de_estoques",
+                  "name": "Compras de mercadorias e controle de estoques.",
+                  "order": 6
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_contabilidade_7_8_vendas_mercadorias_deducoes_receita",
+                  "name": "Vendas de mercadorias, deduções da receita bruta e custo das mercadorias vendidas (CMV).",
+                  "order": 7
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_9_depreciacao_amortizacao_e_exaustao",
+                  "name": "Depreciação, amortização e exaustão.",
+                  "order": 8
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_7_10_baixa_e_alienacao_de_bens",
+                  "name": "Baixa e alienação de bens.",
+                  "order": 9
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_8_analise_e_conciliacao_contabil",
+              "name": "Análise e Conciliação Contábil:",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_8_1_conceitos_e_objetivos",
+                  "name": "Conceitos e objetivos.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_8_2_composicao_e_analise_de_contas",
+                  "name": "Composição e análise de contas.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_8_3_conciliacao_bancaria",
+                  "name": "Conciliação bancária.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_8_4_ajustes_e_regularizacoes_contabeis",
+                  "name": "Ajustes e regularizações contábeis.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_9_balancete_de_verificacao",
+              "name": "Balancete de Verificação:",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_9_1_conceito_e_finalidade",
+                  "name": "Conceito e finalidade.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_9_2_estrutura_e_modelos",
+                  "name": "Estrutura e modelos.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_9_3_tecnicas_de_elaboracao_e_analise",
+                  "name": "Técnicas de elaboração e análise.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_10_demonstracoes_contabeis",
+              "name": "Demonstrações Contábeis:",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_balanco_patrimonial",
+                  "name": "Balanço Patrimonial:",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_1_conceito_finalidade_e_estrutura",
+                  "name": "Conceito, finalidade e estrutura.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_2_classificacao_de_ativos_e_passivos",
+                  "name": "Classificação de ativos e passivos.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_1_3_patrimonio_liquido",
+                  "name": "Patrimônio líquido.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_2_demonstracao_do_resultado_do_exercicio_dre",
+                  "name": "Demonstração do Resultado do Exercício (DRE):",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_2_1_conceito_objetivo_e_estrutura",
+                  "name": "Conceito, objetivo e estrutura.",
+                  "order": 5
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_2_2_receitas_custos_e_despesas",
+                  "name": "Receitas, custos e despesas.",
+                  "order": 6
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_2_3_apuracao_do_resultado_do_exercicio",
+                  "name": "Apuração do resultado do exercício.",
+                  "order": 7
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_3_notas_explicativas",
+                  "name": "Notas Explicativas:",
+                  "order": 8
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_10_3_1_conceito_finalidade_e_elaboracao",
+                  "name": "Conceito, finalidade e elaboração.",
+                  "order": 9
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_11_matematica_financeira_aplicada",
+              "name": "Matemática Financeira Aplicada:",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_1_juros_simples_e_compostos",
+                  "name": "Juros simples e compostos.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_2_descontos",
+                  "name": "Descontos.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_11_3_taxas_equivalentes_e_proporcionais",
+                  "name": "Taxas equivalentes e proporcionais.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_12_nocoes_de_financas",
+              "name": "Noções de Finanças:",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_12_1_conceitos_basicos_de_administracao_financeira",
+                  "name": "Conceitos básicos de administração financeira.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_12_2_fluxo_de_caixa",
+                  "name": "Fluxo de caixa.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_12_3_capital_de_giro",
+                  "name": "Capital de giro.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_12_4_indicadores_financeiros_basicos",
+                  "name": "Indicadores financeiros básicos.",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_13_nocoes_de_orcamento_publico_e_privado",
+              "name": "Noções de Orçamento Público e Privado:",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_13_1_conceito_e_finalidade_do_orcamento",
+                  "name": "Conceito e finalidade do orçamento.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_13_2_planejamento_e_controle_orcamentario",
+                  "name": "Planejamento e controle orçamentário.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_13_3_tipos_de_orcamento",
+                  "name": "Tipos de orçamento.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_contabilidade_14_nocoes_de_tributos",
+              "name": "Noções de Tributos:",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_1_conceito_e_especies_tributarias",
+                  "name": "Conceito e espécies tributárias.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_2_tributos_incidentes_sobre_operacoes_empresariais",
+                  "name": "Tributos incidentes sobre operações empresariais.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_contabilidade_14_3_impactos_tributarios_nas_atividades_das_empresas",
+                  "name": "Impactos tributários nas atividades das empresas.",
+                  "order": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_administrativo",
+          "name": "NOÇÕES DE DIREITO ADMINISTRATIVO",
+          "order": 8,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_1_nocoes_de_organizacao_administrativa",
+              "name": "Noções de organização administrativa.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_1_1_centralizacao_descentralizacao_concentracao_bc825c73",
+                  "name": "Centralização, descentralização, concentração e desconcentração.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_1_2_administracao_direta_e_indireta",
+                  "name": "Administração direta e indireta.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_1_3_autarquias_fundacoes_empresas_publicas",
+                  "name": "Autarquias, fundações, empresas públicas e sociedades de economia mista.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_2_ato_administrativo",
+              "name": "Ato administrativo.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_2_1_conceito_requisitos_atributos_classificacao",
+                  "name": "Conceito, requisitos, atributos, classificação e espécies.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_3_agentes_publicos",
+              "name": "Agentes públicos.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_3_1_disposicoes_constitucionais_aplicaveis",
+                  "name": "Disposições constitucionais aplicáveis.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_3_2_disposicoes_doutrinarias",
+                  "name": "Disposições doutrinárias.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_3_2_1_conceito",
+                  "name": "Conceito.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_3_2_2_especies",
+                  "name": "Espécies.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_3_2_3_cargo_emprego_e_funcao_publica",
+                  "name": "Cargo, emprego e função pública.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_4_poderes_administrativos",
+              "name": "Poderes administrativos.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_4_1_hierarquico_disciplinar_regulamentar_policia",
+                  "name": "Hierárquico, disciplinar, regulamentar e de polícia.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_4_2_uso_e_abuso_do_poder",
+                  "name": "Uso e abuso do poder.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_5_licitacao_e_contratos_administrativos",
+              "name": "Licitação e contratos administrativos.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_5_1_principios",
+                  "name": "Princípios.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_5_2_contratacao_direta_dispensa_inexigibilidade",
+                  "name": "Contratação direta: dispensa e inexigibilidade.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_5_3_modalidades",
+                  "name": "Modalidades.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_5_4_tipos",
+                  "name": "Tipos.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_5_5_procedimento",
+                  "name": "Procedimento.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_5_6_lei_federal_14_133",
+                  "name": "Lei Federal nº 14.133/2021 - Lei de Licitações e Contratos Administrativos.",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_6_controle_da_administracao_publica",
+              "name": "Controle da Administração Pública.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_6_1_controle_exercido_pela_administracao_publica",
+                  "name": "Controle exercido pela Administração Pública.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_6_2_controle_judicial",
+                  "name": "Controle judicial.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_6_3_controle_legislativo",
+                  "name": "Controle legislativo.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_7_responsabilidade_civil_do_estado",
+              "name": "Responsabilidade civil do Estado.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_1_responsabilidade_civil_estado_direito",
+                  "name": "Responsabilidade civil do Estado no direito brasileiro.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_1_1_responsabilidade_ato_comissivo_estado",
+                  "name": "Responsabilidade por ato comissivo do Estado.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_7_1_2_responsabilidade_por_omissao_do_estado",
+                  "name": "Responsabilidade por omissão do Estado.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_2_requisitos_demonstracao_responsabilidade_estado",
+                  "name": "Requisitos para a demonstração da responsabilidade do Estado.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_7_3_causas_excludentes_atenuantes_responsabilidade",
+                  "name": "Causas excludentes e atenuantes da responsabilidade do Estado.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_8_regime_juridico_administrativo",
+              "name": "Regime jurídico-administrativo.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_8_1_conceito",
+                  "name": "Conceito.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+                  "name": "Princípios expressos e implícitos da Administração Pública.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_9_lei_estadual_11_370",
+              "name": "Lei Estadual nº 11.370/2009 - Lei Orgânica da Polícia Civil do Estado da Bahia.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_9_lei_estadual_11_370",
+                  "name": "Lei Estadual nº 11.370/2009 - Lei Orgânica da Polícia Civil do Estado da Bahia.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_10_lei_estadual_6_677",
+              "name": "Lei Estadual nº 6.677/1994 - Estatuto do Servidor Público do Estado da Bahia.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_10_lei_estadual_6_677",
+                  "name": "Lei Estadual nº 6.677/1994 - Estatuto do Servidor Público do Estado da Bahia.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+              "name": "Lei de Improbidade Administrativa.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_administrativo_11_lei_de_improbidade_administrativa",
+                  "name": "Lei de Improbidade Administrativa.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+              "name": "Atos administrativos: requisitos ou elementos; atributos; classificação; atos administrativos em espécie; extinção dos atos administrativos; convalidação; vinculação e discricionariedade; atos administrativos nulos, anuláveis e inexistentes; decadência administrativa.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_12_atos_administrativos_requisitos_elementos",
+                  "name": "Atos administrativos: requisitos ou elementos; atributos; classificação; atos administrativos em espécie; extinção dos atos administrativos; convalidação; vinculação e discricionariedade; atos administrativos nulos, anuláveis e inexistentes; decadência administrativa.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_13_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_constitucional",
+          "name": "NOÇÕES DE DIREITO CONSTITUCIONAL",
+          "order": 9,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+              "name": "Direitos e garantias fundamentais: direitos e deveres individuais e coletivos; direito à vida, à liberdade, à igualdade, à segurança e à propriedade; direitos sociais; nacionalidade; cidadania e direitos políticos; partidos políticos; garantias constitucionais individuais; garantias dos direitos coletivos, sociais e políticos.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_1_direitos_garantias_fundamentais_direitos",
+                  "name": "Direitos e garantias fundamentais: direitos e deveres individuais e coletivos; direito à vida, à liberdade, à igualdade, à segurança e à propriedade; direitos sociais; nacionalidade; cidadania e direitos políticos; partidos políticos; garantias constitucionais individuais; garantias dos direitos coletivos, sociais e políticos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_constitucional_2_organizacao_politico_administrativa_do_estado",
+              "name": "Organização político-administrativa do Estado.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_2_1_estado_federal_brasileiro_uniao",
+                  "name": "Estado federal brasileiro, União, estados, Distrito Federal, municípios e territórios.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_constitucional_3_administracao_publica",
+              "name": "Administração pública.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_constitucional_3_1_disposicoes_gerais_servidores_publicos",
+                  "name": "Disposições gerais, servidores públicos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_constitucional_4_poder_executivo_legislativo_e_judiciario",
+              "name": "Poder executivo, legislativo e Judiciário.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_constitucional_4_poder_executivo_legislativo_e_judiciario",
+                  "name": "Poder executivo, legislativo e Judiciário.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_4_seq_2_defesa_estado_instituicoes_democraticas",
+              "name": "Defesa do Estado e das instituições democráticas, segurança pública e organização da segurança pública.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_4_seq_2_defesa_estado_instituicoes_democraticas",
+                  "name": "Defesa do Estado e das instituições democráticas, segurança pública e organização da segurança pública.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_constitucional_5_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_penal",
+          "name": "NOÇÕES DE DIREITO PENAL",
+          "order": 10,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+              "name": "Princípios do Direito Penal. 2.Aplicação da lei penal.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_1_lei_penal_no_tempo_e_no_espaco",
+                  "name": "Lei penal no tempo e no espaço.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_2_tempo_e_lugar_do_crime",
+                  "name": "Tempo e lugar do crime.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_2_3_territorialidade_e_extraterritorialidade_da_lei_penal",
+                  "name": "Territorialidade e extraterritorialidade da lei penal.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_3_infracao_penal",
+              "name": "Infração penal.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_3_1_conceito_elementos_e_especies",
+                  "name": "Conceito, elementos e espécies.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_3_2_sujeito_ativo_e_sujeito_passivo",
+                  "name": "Sujeito ativo e sujeito passivo.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_4_teoria_geral_do_crime",
+              "name": "Teoria geral do crime.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_1_fato_tipico_e_seus_elementos",
+                  "name": "Fato típico e seus elementos.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_2_conduta_resultado_nexo_causal_e_tipicidade",
+                  "name": "Conduta, resultado, nexo causal e tipicidade.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_3_crime_doloso_e_crime_culposo",
+                  "name": "Crime doloso e crime culposo.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_4_erro_de_tipo",
+                  "name": "Erro de tipo.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_4_5_crime_consumado_e_crime_tentado",
+                  "name": "Crime consumado e crime tentado.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_4_6_desistencia_voluntaria_arrependimento_eficaz",
+                  "name": "Desistência voluntária, arrependimento eficaz, arrependimento posterior e crime impossível.",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_5_ilicitude",
+              "name": "Ilicitude.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_5_1_causas_de_exclusao_da_ilicitude",
+                  "name": "Causas de exclusão da ilicitude.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_5_2_estado_necessidade_legitima_defesa",
+                  "name": "Estado de necessidade, legítima defesa, estrito cumprimento do dever legal e exercício regular de direito.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_5_3_excesso_punivel",
+                  "name": "Excesso punível.",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_6_culpabilidade",
+              "name": "Culpabilidade.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_1_elementos_e_causas_de_exclusao",
+                  "name": "Elementos e causas de exclusão.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_2_imputabilidade_penal",
+                  "name": "Imputabilidade penal.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_3_potencial_consciencia_da_ilicitude",
+                  "name": "Potencial consciência da ilicitude.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_4_exigibilidade_de_conduta_diversa",
+                  "name": "Exigibilidade de conduta diversa.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_6_5_erro_de_proibicao",
+                  "name": "Erro de proibição.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_7_concurso_de_pessoas",
+              "name": "Concurso de pessoas.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_7_1_autoria_coautoria_e_participacao",
+                  "name": "Autoria, coautoria e participação.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_7_2_comunicabilidade_de_elementares_e_circunstancias",
+                  "name": "Comunicabilidade de elementares e circunstâncias.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_8_concurso_de_crimes",
+              "name": "Concurso de crimes.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_8_1_concurso_material_concurso_formal_e_crime_continuado",
+                  "name": "Concurso material, concurso formal e crime continuado.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_9_pena",
+              "name": "Pena.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_9_1_especies_de_pena",
+                  "name": "Espécies de pena.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_9_2_aplicacao_da_pena",
+                  "name": "Aplicação da pena.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_9_3_regimes_de_cumprimento_de_pena",
+                  "name": "Regimes de cumprimento de pena.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_9_4_substituicao_pena_privativa_liberdade",
+                  "name": "Substituição da pena privativa de liberdade por penas restritivas de direitos.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_9_5_suspensao_condicional_pena_livramento",
+                  "name": "Suspensão condicional da pena e livramento condicional.",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_10_extincao_da_punibilidade",
+              "name": "Extinção da punibilidade.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_10_1_causas_de_extincao_da_punibilidade",
+                  "name": "Causas de extinção da punibilidade.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_10_2_prescricao",
+                  "name": "Prescrição.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_11_crimes_em_especie_previstos_no_codigo_penal",
+              "name": "Crimes em espécie previstos no Código Penal.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_1_crimes_contra_a_pessoa",
+                  "name": "Crimes contra a pessoa.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_2_crimes_contra_o_patrimonio",
+                  "name": "Crimes contra o patrimônio.",
+                  "order": 1
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_3_crimes_contra_a_dignidade_sexual",
+                  "name": "Crimes contra a dignidade sexual.",
+                  "order": 2
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_4_crimes_contra_a_incolumidade_publica",
+                  "name": "Crimes contra a incolumidade pública.",
+                  "order": 3
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_5_crimes_contra_a_paz_publica",
+                  "name": "Crimes contra a paz pública.",
+                  "order": 4
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_6_crimes_contra_a_fe_publica",
+                  "name": "Crimes contra a fé pública.",
+                  "order": 5
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_7_crimes_contra_a_administracao_publica",
+                  "name": "Crimes contra a Administração Pública.",
+                  "order": 6
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_penal_11_8_crimes_contra_o_estado_democratico_de_direito",
+                  "name": "Crimes contra o Estado Democrático de Direito.",
+                  "order": 7
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_penal_12_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_nocoes_de_direito_processual_penal",
+          "name": "NOÇÕES DE DIREITO PROCESSUAL PENAL",
+          "order": 11,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+              "name": "Noções introdutórias: princípios; sistemas processuais; lei processual penal no tempo, no espaço e em relação às pessoas; fontes; interpretação e integração da lei processual.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_1_nocoes_introdutorias_principios_sistemas",
+                  "name": "Noções introdutórias: princípios; sistemas processuais; lei processual penal no tempo, no espaço e em relação às pessoas; fontes; interpretação e integração da lei processual.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_2_investigacao_preliminar_inquerito_policial",
+              "name": "Investigação preliminar: inquérito policial e demais investigações preliminares; acordo de não persecução penal; controle externo da atividade policial.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_2_investigacao_preliminar_inquerito_policial",
+                  "name": "Investigação preliminar: inquérito policial e demais investigações preliminares; acordo de não persecução penal; controle externo da atividade policial.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_processual_penal_3_acao_penal_e_acao_civil_ex_delicto",
+              "name": "Ação penal e ação civil ex delicto.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_processual_penal_3_acao_penal_e_acao_civil_ex_delicto",
+                  "name": "Ação penal e ação civil ex delicto.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_processual_penal_4_jurisdicao_e_competencia_criminal",
+              "name": "Jurisdição e competência criminal.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_processual_penal_4_jurisdicao_e_competencia_criminal",
+                  "name": "Jurisdição e competência criminal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_5_provas_teoria_geral_provas",
+              "name": "Provas: teoria geral das provas; meios de prova e meios de obtenção de prova em espécie.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_5_provas_teoria_geral_provas",
+                  "name": "Provas: teoria geral das provas; meios de prova e meios de obtenção de prova em espécie.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_6_medidas_cautelares_natureza_pessoal",
+              "name": "Medidas cautelares de natureza pessoal: aspectos gerais; prisões e medidas cautelares diversas da prisão.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_6_medidas_cautelares_natureza_pessoal",
+                  "name": "Medidas cautelares de natureza pessoal: aspectos gerais; prisões e medidas cautelares diversas da prisão.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_processual_penal_7_liberdade_provisoria",
+              "name": "Liberdade provisória.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_processual_penal_7_liberdade_provisoria",
+                  "name": "Liberdade provisória.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_processual_penal_8_questoes_e_processos_incidentes",
+              "name": "Questões e processos incidentes.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_processual_penal_8_questoes_e_processos_incidentes",
+                  "name": "Questões e processos incidentes.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_9_medidas_cautelares_natureza_real",
+              "name": "Medidas cautelares de natureza real (medidas assecuratórias).",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_9_medidas_cautelares_natureza_real",
+                  "name": "Medidas cautelares de natureza real (medidas assecuratórias).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_10_sujeitos_processo_comunicacao_atos",
+              "name": "Sujeitos do processo e comunicação dos atos processuais.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_10_sujeitos_processo_comunicacao_atos",
+                  "name": "Sujeitos do processo e comunicação dos atos processuais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_11_procedimento_comum_ordinario_sumario",
+              "name": "Procedimento comum: ordinário, sumário e sumaríssimo.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_11_procedimento_comum_ordinario_sumario",
+                  "name": "Procedimento comum: ordinário, sumário e sumaríssimo.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_processual_penal_12_nulidades",
+              "name": "Nulidades.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_nocoes_de_direito_processual_penal_12_nulidades",
+                  "name": "Nulidades.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_13_sentenca_penal_recursos_acoes",
+              "name": "Sentença penal, recursos e ações autônomas de impugnação.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_13_sentenca_penal_recursos_acoes",
+                  "name": "Sentença penal, recursos e ações autônomas de impugnação.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_processual_14_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_legislacao_penal_e_processual_extravagante",
+          "name": "LEGISLAÇÃO PENAL E PROCESSUAL EXTRAVAGANTE",
+          "order": 12,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_1_lei_federal_5_553",
+              "name": "Lei Federal nº 5.553/1968 - Apresentação e uso de documentos de identificação pessoal.",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_1_lei_federal_5_553",
+                  "name": "Lei Federal nº 5.553/1968 - Apresentação e uso de documentos de identificação pessoal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_2_lei_federal_13_869",
+              "name": "Lei Federal nº 13.869/2019 - Lei de Abuso de Autoridade.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_2_lei_federal_13_869",
+                  "name": "Lei Federal nº 13.869/2019 - Lei de Abuso de Autoridade.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_3_lei_federal_7_716",
+              "name": "Lei Federal nº 7.716/1989 - Crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional).",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_3_lei_federal_7_716",
+                  "name": "Lei Federal nº 7.716/1989 - Crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_4_lei_federal_8_072",
+              "name": "Lei Federal nº 8.072/1990 - Lei dos Crimes Hediondos.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_4_lei_federal_8_072",
+                  "name": "Lei Federal nº 8.072/1990 - Lei dos Crimes Hediondos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_5_lei_federal_9_503",
+              "name": "Lei Federal nº 9.503/1997 - Código de Trânsito Brasileiro - crimes de trânsito.",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_5_lei_federal_9_503",
+                  "name": "Lei Federal nº 9.503/1997 - Código de Trânsito Brasileiro - crimes de trânsito.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_6_lei_federal_9_455",
+              "name": "Lei Federal nº 9.455/1997 - Lei de Tortura.",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_6_lei_federal_9_455",
+                  "name": "Lei Federal nº 9.455/1997 - Lei de Tortura.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_7_lei_federal_9_605",
+              "name": "Lei Federal nº 9.605/1998 - Lei dos Crimes Ambientais.",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_7_lei_federal_9_605",
+                  "name": "Lei Federal nº 9.605/1998 - Lei dos Crimes Ambientais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_8_lei_federal_10_826",
+              "name": "Lei Federal nº 10.826/2003 - Estatuto do Desarmamento.",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_8_lei_federal_10_826",
+                  "name": "Lei Federal nº 10.826/2003 - Estatuto do Desarmamento.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_9_lei_federal_11_340",
+              "name": "Lei Federal nº 11.340/2006 - Lei Maria da Penha.",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_9_lei_federal_11_340",
+                  "name": "Lei Federal nº 11.340/2006 - Lei Maria da Penha.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_10_lei_federal_11_343",
+              "name": "Lei Federal nº 11.343/2006 - Lei de Drogas.",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_10_lei_federal_11_343",
+                  "name": "Lei Federal nº 11.343/2006 - Lei de Drogas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_11_lei_federal_7_960",
+              "name": "Lei Federal nº 7.960/1989 - Lei de Prisão Temporária.",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_11_lei_federal_7_960",
+                  "name": "Lei Federal nº 7.960/1989 - Lei de Prisão Temporária.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_12_lei_federal_9_099",
+              "name": "Lei Federal nº 9.099/1995 - Juizados Especiais Criminais.",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_12_lei_federal_9_099",
+                  "name": "Lei Federal nº 9.099/1995 - Juizados Especiais Criminais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_13_lei_federal_10_259",
+              "name": "Lei Federal nº 10.259/2001 - Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal.",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_13_lei_federal_10_259",
+                  "name": "Lei Federal nº 10.259/2001 - Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_14_lei_federal_9_296",
+              "name": "Lei Federal nº 9.296/1996 - Interceptação de comunicações telefônicas.",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_14_lei_federal_9_296",
+                  "name": "Lei Federal nº 9.296/1996 - Interceptação de comunicações telefônicas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_15_lei_federal_12_850",
+              "name": "Lei Federal nº 12.850/2013 - Lei das Organizações Criminosas.",
+              "order": 14,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_15_lei_federal_12_850",
+                  "name": "Lei Federal nº 12.850/2013 - Lei das Organizações Criminosas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_16_lei_federal_8_069",
+              "name": "Lei Federal nº 8.069/1990 - Estatuto da Criança e do Adolescente.",
+              "order": 15,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_16_lei_federal_8_069",
+                  "name": "Lei Federal nº 8.069/1990 - Estatuto da Criança e do Adolescente.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_17_lei_federal_10_741",
+              "name": "Lei Federal nº 10.741/2003 - Estatuto da Pessoa Idosa.",
+              "order": 16,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_17_lei_federal_10_741",
+                  "name": "Lei Federal nº 10.741/2003 - Estatuto da Pessoa Idosa.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_18_lei_federal_7_492",
+              "name": "Lei Federal nº 7.492/1986 - Crimes contra o Sistema Financeiro Nacional.",
+              "order": 17,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_18_lei_federal_7_492",
+                  "name": "Lei Federal nº 7.492/1986 - Crimes contra o Sistema Financeiro Nacional.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_19_lei_federal_4_737",
+              "name": "Lei Federal nº 4.737/1965 - Código Eleitoral.",
+              "order": 18,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_19_lei_federal_4_737",
+                  "name": "Lei Federal nº 4.737/1965 - Código Eleitoral.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_20_lei_federal_7_210",
+              "name": "Lei Federal nº 7.210/1984 - Lei de Execução Penal.",
+              "order": 19,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_20_lei_federal_7_210",
+                  "name": "Lei Federal nº 7.210/1984 - Lei de Execução Penal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_21_lei_federal_8_137",
+              "name": "Lei Federal nº 8.137/1990 - Crimes contra a ordem tributária, econômica e contra as relações de consumo.",
+              "order": 20,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_21_lei_federal_8_137",
+                  "name": "Lei Federal nº 8.137/1990 - Crimes contra a ordem tributária, econômica e contra as relações de consumo.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_22_lei_federal_8_078",
+              "name": "Lei Federal nº 8.078/1990 (Título II) - Infrações penais previstas no Código de Defesa do Consumidor.",
+              "order": 21,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_22_lei_federal_8_078",
+                  "name": "Lei Federal nº 8.078/1990 (Título II) - Infrações penais previstas no Código de Defesa do Consumidor.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_23_lei_federal_8_429",
+              "name": "Lei Federal nº 8.429/1992 - Lei de Improbidade Administrativa.",
+              "order": 22,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_23_lei_federal_8_429",
+                  "name": "Lei Federal nº 8.429/1992 - Lei de Improbidade Administrativa.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_24_resolucao_217_iii_1948",
+              "name": "Resolução nº 217-A (III) 1948 - Declaração Universal dos Direitos Humanos.",
+              "order": 23,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_24_resolucao_217_iii_1948",
+                  "name": "Resolução nº 217-A (III) 1948 - Declaração Universal dos Direitos Humanos.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_25_decreto_lei_federal_3_688",
+              "name": "Decreto-Lei Federal nº 3.688/1941 - Lei das Contravenções Penais.",
+              "order": 24,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_25_decreto_lei_federal_3_688",
+                  "name": "Decreto-Lei Federal nº 3.688/1941 - Lei das Contravenções Penais.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_26_lei_federal_9_613",
+              "name": "Lei Federal nº 9.613/1998 - Lei de Lavagem de Dinheiro.",
+              "order": 25,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_26_lei_federal_9_613",
+                  "name": "Lei Federal nº 9.613/1998 - Lei de Lavagem de Dinheiro.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_27_lei_federal_12_037",
+              "name": "Lei Federal nº 12.037/2009 - Lei de Identificação Criminal.",
+              "order": 26,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_27_lei_federal_12_037",
+                  "name": "Lei Federal nº 12.037/2009 - Lei de Identificação Criminal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_28_lei_federal_12_830",
+              "name": "Lei Federal nº 12.830/2013 - Lei da Investigação Criminal.",
+              "order": 27,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_28_lei_federal_12_830",
+                  "name": "Lei Federal nº 12.830/2013 - Lei da Investigação Criminal.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_29_lei_federal_9_807",
+              "name": "Lei Federal nº 9.807/1999 - Lei de Proteção a Vítimas e Testemunhas.",
+              "order": 28,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_29_lei_federal_9_807",
+                  "name": "Lei Federal nº 9.807/1999 - Lei de Proteção a Vítimas e Testemunhas.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_30_lei_federal_14_597",
+              "name": "Lei Federal nº 14.597/2023 - Lei Geral do Esporte (no tocante às infrações penais nela previstas).",
+              "order": 29,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_30_lei_federal_14_597",
+                  "name": "Lei Federal nº 14.597/2023 - Lei Geral do Esporte (no tocante às infrações penais nela previstas).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_31_lei_federal_13_146",
+              "name": "Lei Federal nº 13.146/2015 - Estatuto da Pessoa com Deficiência (especialmente quanto aos crimes previstos em seu texto).",
+              "order": 30,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_31_lei_federal_13_146",
+                  "name": "Lei Federal nº 13.146/2015 - Estatuto da Pessoa com Deficiência (especialmente quanto aos crimes previstos em seu texto).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_32_lei_federal_14_344",
+              "name": "Lei Federal nº 14.344/2022 - Lei Henry Borel (referente à prevenção e ao enfrentamento da violência doméstica e familiar contra a criança e o adolescente).",
+              "order": 31,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_32_lei_federal_14_344",
+                  "name": "Lei Federal nº 14.344/2022 - Lei Henry Borel (referente à prevenção e ao enfrentamento da violência doméstica e familiar contra a criança e o adolescente).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_33_lei_federal_15_358",
+              "name": "Lei Federal nº 15.358/2026 - Marco Legal de Combate ao Crime Organizado no Brasil.",
+              "order": 32,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_33_lei_federal_15_358",
+                  "name": "Lei Federal nº 15.358/2026 - Marco Legal de Combate ao Crime Organizado no Brasil.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+              "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+              "order": 33,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_legislacao_penal_34_jurisprudencia_aplicada_tribunais_superiores",
+                  "name": "Jurisprudência aplicada dos tribunais superiores e legislação aplicável a cada um dos tópicos do edital.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_ba_2026_investigador_policia_civil_discipline_estatistica",
+          "name": "ESTATÍSTICA",
+          "order": 13,
+          "topics": [
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_1_estatistica_descritiva_analise_exploratoria",
+              "name": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas posição, dispersão, assimetria e curtose).",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_1_estatistica_descritiva_analise_exploratoria",
+                  "name": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas posição, dispersão, assimetria e curtose).",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_2_probabilidade",
+              "name": "Probabilidade.",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_2_1_definicoes_basicas_e_axiomas",
+                  "name": "Definições básicas e axiomas.",
+                  "order": 0
+                },
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_2_2_probabilidade_condicional_e_independencia",
+                  "name": "Probabilidade condicional e independência.",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_3_tecnicas_amostragem_amostragem_aleatoria",
+              "name": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados.",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_3_1_tamanho_amostral",
+                  "name": "Tamanho amostral.",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_ba_2026_investigador_policia_civil_topic_estatistica_4_teorema_de_bayes",
+              "name": "Teorema de Bayes.",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_ba_2026_investigador_policia_civil_subtopic_estatistica_4_teorema_de_bayes",
+                  "name": "Teorema de Bayes.",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
