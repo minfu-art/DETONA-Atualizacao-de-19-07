@@ -19,6 +19,7 @@ const versionedRuntime = join(root, 'app', 'env.runtime.js');
 const vercelIgnore = join(root, 'app', '.vercelignore');
 const fakeUrl = 'https://staging-example.supabase.co';
 const fakePublicKey = 'test-public-anon-key-not-a-secret';
+const fixedBuildTime = '2026-08-16T14:30:00.000Z';
 
 function runGenerator(overrides = {}) {
   const tempRoot = mkdtempSync(join(tmpdir(), 'detona-runtime-'));
@@ -28,6 +29,7 @@ function runGenerator(overrides = {}) {
   const env = {
     PATH: process.env.PATH,
     SYSTEMROOT: process.env.SYSTEMROOT,
+    DETONA_BUILD_TIME: fixedBuildTime,
     ...overrides,
   };
   const result = spawnSync(process.execPath, [join(scriptsDir, 'generate-runtime-env.mjs')], {
@@ -57,6 +59,10 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    BUILD_ENVIRONMENT: 'local',
+    BUILD_COMMIT_SHA: '',
+    BUILD_GIT_REF: '',
+    BUILD_TIME: fixedBuildTime,
   });
 });
 
@@ -98,9 +104,40 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    BUILD_ENVIRONMENT: 'local',
+    BUILD_COMMIT_SHA: '',
+    BUILD_GIT_REF: '',
+    BUILD_TIME: fixedBuildTime,
   });
   assert.doesNotMatch(result.stdout, new RegExp(fakePublicKey));
   assert.doesNotMatch(result.runtime, /service_role/i);
+});
+
+test('Preview da Vercel registra ambiente, commit, branch e horário públicos', () => {
+  const commitSha = 'A'.repeat(40);
+  const result = runGenerator({
+    VERCEL_ENV: 'preview',
+    VERCEL_GIT_COMMIT_SHA: commitSha,
+    VERCEL_GIT_COMMIT_REF: 'feat/admin-course-factory-v1',
+  });
+  assert.equal(result.status, 0, result.stderr);
+  const runtime = parseRuntime(result.runtime);
+  assert.equal(runtime.BUILD_ENVIRONMENT, 'preview');
+  assert.equal(runtime.BUILD_COMMIT_SHA, commitSha.toLowerCase());
+  assert.equal(runtime.BUILD_GIT_REF, 'feat/admin-course-factory-v1');
+  assert.equal(runtime.BUILD_TIME, fixedBuildTime);
+});
+
+test('produção da Vercel é identificada sem inferir pela branch', () => {
+  const result = runGenerator({ VERCEL_ENV: 'production' });
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(parseRuntime(result.runtime).BUILD_ENVIRONMENT, 'production');
+});
+
+test('horário de build inválido causa falha explícita', () => {
+  const result = runGenerator({ DETONA_BUILD_TIME: 'data-inválida' });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /DETONA_BUILD_TIME inválido/i);
 });
 
 test('valores fictícios de teste não permanecem no runtime versionado', () => {
@@ -112,8 +149,13 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     CLOUD_MODE: 'off',
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
+    SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    BUILD_ENVIRONMENT: 'local',
+    BUILD_COMMIT_SHA: '',
+    BUILD_GIT_REF: '',
+    BUILD_TIME: '',
   });
 });
 

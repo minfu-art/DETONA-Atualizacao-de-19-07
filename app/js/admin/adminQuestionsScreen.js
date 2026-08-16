@@ -7,6 +7,7 @@ import {
   validateEditorialBatch,
 } from '../services/adminQuestionService.js';
 import { escapeHtml } from '../ui/helpers.js';
+import { readAdminBuildIdentity } from './adminBuildIdentity.js';
 
 const STATUS_LABELS = Object.freeze({
   draft: 'Rascunho',
@@ -121,6 +122,13 @@ async function readFiles(files) {
 
 export async function renderAdminQuestionsScreen(root, ctx) {
   const contestId = ctx.adminSelectedContestId;
+  const build = readAdminBuildIdentity();
+  const pcBaPreviewCallout = build.environment === 'preview' ? `
+    <aside class="admin-publication-guide">
+      <strong>PC BA Investigador disponível para revisão isolada</strong>
+      <span>Confira o currículo e as 1.247 questões elaboradas sem gravar no Supabase.</span>
+      <a class="admin-button" href="pc-ba-review/preview.html" target="_blank" rel="noopener">Abrir revisão completa do PC BA</a>
+    </aside>` : '';
   const [summary, curriculum, batches, questionList, approvedList, versionList] = await Promise.all([
     adminQuestionService.getPublishedSummary(contestId),
     adminCurriculumService.listNodes(contestId),
@@ -142,6 +150,7 @@ export async function renderAdminQuestionsScreen(root, ctx) {
   root.innerHTML = `
     <header class="admin-page-header"><div><span>Fábrica · Questões</span><h1>Banco editorial por concurso</h1>
       <p>Valide, revise e aprove questões isoladas antes de gerar um snapshot imutável.</p></div></header>
+    ${pcBaPreviewCallout}
     <section class="admin-metrics">
       <article class="admin-metric admin-metric--orange"><span>Publicadas</span><strong>${summary.count}</strong></article>
       <article class="admin-metric"><span>Questões editoriais</span><strong id="question-total">${questionList.total ?? questions.length}</strong></article>

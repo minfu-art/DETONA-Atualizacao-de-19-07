@@ -1,0 +1,25 @@
+{
+  "schema_version": "detona_learning_engine_binding_v1",
+  "offering_id": "pc_ba_2026_investigador",
+  "contest_id": "pc_ba_2026",
+  "position_id": "pc_ba_2026_investigador_policia_civil",
+  "learning_engine_version": "legacy_dynamic_compat_v1",
+  "target_learning_engine_version": "knowledge_engine_v2",
+  "knowledge_map_version": "knowledge-map.bound.v2",
+  "question_schema_version": "detona_question_batch_v2",
+  "runtime_ready": true,
+  "staging_import_allowed": true,
+  "production_publication_allowed": false,
+  "questions_scope": "pilot_plus_complete_raciocinio_logico_plus_validated_portuguese_drafts",
+  "question_bank_status": "staging_draft_import",
+  "counts": {
+    "preserved_pilot_questions": 20,
+    "raciocinio_logico_batches": 28,
+    "raciocinio_logico_questions": 378,
+    "lingua_portuguesa_batches": 51,
+    "lingua_portuguesa_questions": 849,
+    "total_bundle_questions": 1247
+  },
+  "publication_authorized": false,
+  "entitlement_authorized": false
+}
