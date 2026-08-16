@@ -1,4 +1,5 @@
 import { escapeHtml } from '../ui/helpers.js';
+import { readAdminBuildIdentity } from './adminBuildIdentity.js';
 import { adjacentWorkspaceScreen, CONTEST_WORKSPACE_TABS } from './adminWorkspaceNavigation.js';
 
 export const ADMIN_NAV_ITEMS = Object.freeze([
@@ -20,6 +21,7 @@ let shellOptions = null;
 
 function renderTopbar() {
   const { ctx } = shellOptions;
+  const build = readAdminBuildIdentity();
   const topbar = document.getElementById('admin-topbar');
   if (!topbar) return;
   topbar.innerHTML = `
@@ -34,7 +36,11 @@ function renderTopbar() {
       </select>
     </label>
     <div class="admin-account">
-      <span class="admin-status" aria-label="Ambiente de homologação ativo">STAGING</span>
+      <div class="admin-build-identity" data-environment="${escapeHtml(build.environment)}" aria-label="Ambiente ${escapeHtml(build.environmentLabel)}, commit ${escapeHtml(build.shortCommit)}, build ${escapeHtml(build.buildTimeLabel)}">
+        <span class="admin-build-identity__environment">${escapeHtml(build.environmentLabel)}</span>
+        <small>commit <code>${escapeHtml(build.shortCommit)}</code></small>
+        <time datetime="${escapeHtml(build.buildTime)}">build ${escapeHtml(build.buildTimeLabel)}</time>
+      </div>
       <span><small>Conta developer</small><strong>${escapeHtml(ctx.user?.name || 'Administrador')}</strong></span>
     </div>`;
   document.getElementById('admin-menu-open')?.addEventListener('click', () => document.body.classList.add('admin-menu-open'));
@@ -47,6 +53,7 @@ function renderTopbar() {
 
 function renderWorkspace(screen) {
   const { ctx, navigate } = shellOptions;
+  const build = readAdminBuildIdentity();
   const root = document.getElementById('admin-workspace');
   if (!root) return;
   const contest = ctx.availableContests.find(({ id }) => id === ctx.adminSelectedContestId);
@@ -66,7 +73,7 @@ function renderWorkspace(screen) {
         <p>${escapeHtml(contest.role)}</p>
       </div>
       <dl>
-        <div><dt>Ambiente</dt><dd>STAGING</dd></div>
+        <div><dt>Ambiente</dt><dd>${escapeHtml(build.environmentLabel)}</dd></div>
         <div><dt>Status</dt><dd>${escapeHtml(contest.content_status)}</dd></div>
       </dl>
     </section>
@@ -96,6 +103,7 @@ function renderWorkspace(screen) {
 export function mountAdminShell(options) {
   shellOptions = options;
   const { navigate, onLogout } = options;
+  const build = readAdminBuildIdentity();
   const sidebar = document.getElementById('admin-sidebar');
   if (!sidebar) return;
   sidebar.innerHTML = `
@@ -111,7 +119,7 @@ export function mountAdminShell(options) {
         </button>`).join('')}
     </nav>
     <div class="admin-sidebar__footer">
-      <span>Ambiente</span><strong>STAGING</strong>
+      <span>Ambiente</span><strong>${escapeHtml(build.environmentLabel)}</strong>
       <button type="button" id="admin-logout">Sair da conta</button>
     </div>`;
   sidebar.addEventListener('click', (event) => {
