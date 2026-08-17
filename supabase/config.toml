@@ -31,6 +31,9 @@ verify_jwt = true
 [functions.course-factory-ai]
 verify_jwt = true
 
+[functions.course-factory-assisted]
+verify_jwt = true
+
 [functions.student-content]
 verify_jwt = true
 

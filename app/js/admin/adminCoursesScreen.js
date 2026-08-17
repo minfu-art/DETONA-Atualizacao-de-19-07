@@ -67,10 +67,10 @@ export async function renderAdminCoursesScreen(root, ctx) {
       </div>` : ''}
     </section>
     <section class="admin-panel admin-course-factory-new">
-      <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Course Factory V2</span><h2>Criação assistida</h2></div>
-        <strong class="admin-readonly-badge">${capabilityResult.status === 'rejected' ? 'BACKEND INDISPONÍVEL' : capabilities?.aiConfigured ? `${escapeHtml(capabilities.provider)} · ${escapeHtml(capabilities.model)}` : 'IA NÃO CONFIGURADA'}</strong></div>
-      <p>Envie o edital e materiais complementares, gere uma proposta rastreável e aprove o mapa sem publicar o curso.</p>
-      <div class="admin-prepared">Fontes privadas no staging · aprovação humana obrigatória · publicação e questões bloqueadas.</div>
+      <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Course Factory · Modo assistido</span><h2>Criação por pacote estruturado</h2></div>
+        <strong class="admin-readonly-badge">${capabilityResult.status === 'rejected' ? 'BACKEND INDISPONÍVEL' : 'MODO ASSISTIDO'}</strong></div>
+      <p>Envie fontes e importe o pacote genérico produzido externamente por ChatGPT/Codex para validar currículo, mapa, microconhecimentos e questões.</p>
+      <div class="admin-prepared">IA automática desativada · OPENAI_API_KEY não necessária · fontes privadas no staging · publicação bloqueada.</div>
     </section>
     ${renderCourseFactoryDraftCards(drafts)}`;
   root.querySelector('#course-factory-new').addEventListener('click', () => {

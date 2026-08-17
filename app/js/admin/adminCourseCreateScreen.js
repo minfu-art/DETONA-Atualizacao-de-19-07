@@ -1,19 +1,16 @@
 import {
   adminCourseFactoryService,
+  assembleAssistedCoursePackage,
   COURSE_FACTORY_SOURCE_CATEGORIES,
 } from '../services/adminCourseFactoryService.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 const STATUS_LABELS = Object.freeze({
-  sources: 'FONTES', analyzing: 'ANALISANDO', proposed: 'PROPOSTA DA IA',
-  analysis_failed: 'ANÁLISE COM PENDÊNCIA', map_approved: 'MAPA APROVADO',
+  sources: 'FONTES', analyzing: 'LEGADO V2', proposed: 'LEGADO V2', analysis_failed: 'LEGADO V2',
+  package_validated: 'PACOTE VALIDADO', package_imported: 'PACOTE IMPORTADO',
+  validation_failed: 'PACOTE COM ERROS', map_approved: 'MAPA APROVADO',
   awaiting_upload: 'ENVIANDO', uploaded: 'ARMAZENADO', extracted: 'EXTRAÍDO', extraction_error: 'ERRO DE EXTRAÇÃO',
 });
-
-const MAP_ARRAY_FIELDS = Object.freeze([
-  ['essential_concepts', 'Conceitos essenciais'], ['rules', 'Regras'], ['exceptions', 'Exceções'],
-  ['applications', 'Aplicações'], ['competencies', 'Competências exigidas'], ['required_knowledge', 'Conhecimentos necessários'],
-]);
 
 function formatBytes(value) {
   const bytes = Number(value || 0);
@@ -23,405 +20,283 @@ function formatBytes(value) {
 }
 
 function traceList(traces = []) {
-  if (!traces.length) return '<span class="admin-trace admin-trace--human">Edição humana</span>';
+  if (!traces.length) return '<span class="admin-trace admin-trace--human">Sem rastreabilidade</span>';
   return `<ul class="admin-trace-list">${traces.map((trace) => `<li>
     <strong>${escapeHtml(trace.source_type === 'official_edital' ? 'EDITAL OFICIAL' : 'MATERIAL COMPLEMENTAR')}</strong>
-    <span>${escapeHtml(trace.source_name)} · página ${Number(trace.page_number)}</span>
+    <span>${escapeHtml(trace.source_name || trace.source_id)} · página ${Number(trace.page_number)}</span>
     <q>${escapeHtml(trace.excerpt)}</q>
   </li>`).join('')}</ul>`;
 }
 
-function confidenceField(value, attributes, editable) {
-  const numeric = Number.isFinite(Number(value)) ? Number(value) : 1;
-  return `<label class="admin-confidence-field"><span>Confiança</span><input type="number" min="0" max="1" step="0.01" value="${numeric}" ${attributes} ${editable ? '' : 'disabled'}></label>`;
-}
-
-function firstTrace(...candidates) {
-  for (const candidate of candidates) if (Array.isArray(candidate) && candidate.length) return structuredClone(candidate);
-  return [];
-}
-
-function summaryCounts(draft) {
-  const curriculum = Array.isArray(draft.curriculum) ? draft.curriculum : [];
-  const editalMap = Array.isArray(draft.edital_map) ? draft.edital_map : [];
-  return {
-    disciplines: curriculum.length,
-    topics: curriculum.reduce((sum, discipline) => sum + (discipline.topics?.length || 0), 0),
-    subtopics: curriculum.reduce((sum, discipline) => sum + (discipline.topics || []).reduce((total, topic) => total + (topic.subtopics?.length || 0), 0), 0),
-    knowledges: editalMap.reduce((sum, item) => sum + (item.microknowledges?.length || 0), 0),
-  };
-}
-
-function findMapItem(draft, disciplineTitle, topicTitle, subtopicTitle) {
-  return (draft.edital_map || []).find((item) => item.discipline_title === disciplineTitle
-    && item.topic_title === topicTitle && item.subtopic_title === subtopicTitle);
-}
-
-function renderSources(draft, sources, capabilities, busy) {
+function renderSources(draft, sources, busy) {
   const official = sources.find(({ source_type: type }) => type === 'official_edital');
   const complements = sources.filter(({ source_type: type }) => type === 'complementary');
-  const locked = busy || draft.status === 'analyzing' || draft.status === 'map_approved';
+  const locked = busy || ['package_imported', 'map_approved'].includes(draft.status);
   const row = (source) => `<article class="admin-source-row">
     <span class="admin-source-row__icon" aria-hidden="true">PDF</span>
-    <div><strong>${escapeHtml(source.file_name)}</strong><span>${escapeHtml(source.source_type === 'official_edital' ? 'Edital oficial' : COURSE_FACTORY_SOURCE_CATEGORIES.find(([id]) => id === source.category)?.[1] || source.category)} · ${formatBytes(source.byte_size)}</span>
-      ${source.extraction_error ? `<small class="admin-source-error">${escapeHtml(source.extraction_error)}</small>` : ''}</div>
+    <div><strong>${escapeHtml(source.file_name)}</strong><span>${escapeHtml(source.source_type === 'official_edital' ? 'Edital oficial' : COURSE_FACTORY_SOURCE_CATEGORIES.find(([id]) => id === source.category)?.[1] || source.category)} · ${formatBytes(source.byte_size)}</span></div>
     <b class="admin-source-status admin-source-status--${escapeHtml(source.status)}">${escapeHtml(STATUS_LABELS[source.status] || source.status)}</b>
     ${locked ? '' : `<button type="button" class="admin-button admin-button--secondary" data-remove-source="${escapeHtml(source.id)}">Remover</button>`}
   </article>`;
   return `<section class="admin-panel admin-factory-sources">
-    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Etapa 1</span><h2>Fontes</h2></div><strong class="admin-readonly-badge">PERSISTÊNCIA PRIVADA</strong></div>
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">1. Fontes</span><h2>FONTES</h2><p>Edital e materiais usados pelo ChatGPT/Codex para construir o pacote.</p></div><strong class="admin-readonly-badge">STAGING PRIVADO</strong></div>
     <div class="admin-source-upload-grid">
       <label class="admin-upload-field"><strong>Edital oficial *</strong><span>PDF obrigatório · até 20 MB</span>
         <input id="factory-official-file" type="file" accept="application/pdf,.pdf" ${official || locked ? 'disabled' : ''}>
       </label>
-      <div class="admin-upload-field"><strong>Materiais complementares</strong><span>Múltiplos PDFs · apoio sem ampliar o edital</span>
-        <label><span class="sr-only">Categoria do material</span><select id="factory-complement-category" ${locked ? 'disabled' : ''}>
+      <div class="admin-upload-field"><strong>Materiais complementares</strong><span>Múltiplos PDFs, com categoria explícita</span>
+        <label><span class="sr-only">Categoria</span><select id="factory-complement-category" ${locked ? 'disabled' : ''}>
           ${COURSE_FACTORY_SOURCE_CATEGORIES.map(([id, label]) => `<option value="${id}">${escapeHtml(label)}</option>`).join('')}
         </select></label>
         <input id="factory-complement-files" type="file" accept="application/pdf,.pdf" multiple ${locked ? 'disabled' : ''}>
       </div>
     </div>
     <div class="admin-source-list">
-      ${official ? row(official) : '<div class="admin-empty admin-empty--compact"><strong>Edital oficial ainda não enviado.</strong><span>A análise permanece bloqueada.</span></div>'}
+      ${official ? row(official) : '<div class="admin-empty admin-empty--compact"><strong>Edital oficial ainda não enviado.</strong><span>A validação do pacote apontará essa pendência.</span></div>'}
       ${complements.map(row).join('')}
     </div>
-    <div class="admin-factory-analysis-action">
-      <div><strong>${capabilities.aiConfigured ? `${escapeHtml(capabilities.provider)} · ${escapeHtml(capabilities.model)}` : 'IA NÃO CONFIGURADA'}</strong>
-        <span>${capabilities.aiConfigured ? 'Análise server-side com saída estruturada e validação de negócio.' : 'Configure OPENAI_API_KEY no ambiente server-side do staging.'}</span></div>
-      <button type="button" class="admin-button" id="factory-analyze" ${!official || !capabilities.aiConfigured || locked ? 'disabled' : ''}>
-        ${draft.status === 'proposed' || draft.status === 'analysis_failed' ? 'REANALISAR COM IA' : 'ANALISAR COM IA'}
-      </button>
-    </div>
   </section>`;
 }
 
-function renderIdentity(draft, editable) {
+function reportIssues(items, tone) {
+  if (!items?.length) return '';
+  return `<div class="admin-factory-issues admin-factory-issues--${tone}"><strong>${tone === 'error' ? 'Erros' : 'Avisos'} (${items.length})</strong><ol>
+    ${items.slice(0, 100).map((item) => `<li><code>${escapeHtml(item.code)}</code><span>${escapeHtml(item.path)}</span><p>${escapeHtml(item.message)}</p></li>`).join('')}
+  </ol>${items.length > 100 ? `<p>Mais ${items.length - 100} ocorrência(s) não exibida(s).</p>` : ''}</div>`;
+}
+
+function renderValidation(report) {
+  if (!report) return '<div class="admin-empty admin-empty--compact"><strong>Pacote ainda não validado.</strong><span>Carregue os JSONs e execute a validação server-side.</span></div>';
+  const counts = report.counts || {};
+  return `<section class="admin-factory-validation ${report.valid ? 'is-valid' : 'is-invalid'}">
+    <div><strong>${report.valid ? 'PACOTE VÁLIDO' : 'PACOTE COM ERROS'}</strong><code>${escapeHtml(report.package_hash || '—')}</code></div>
+    <div class="admin-factory-summary">
+      <strong>${Number(counts.disciplines || 0)}<span>disciplinas</span></strong>
+      <strong>${Number(counts.topics || 0)}<span>tópicos</span></strong>
+      <strong>${Number(counts.subtopics || 0)}<span>subtópicos</span></strong>
+      <strong>${Number(counts.microknowledges || 0)}<span>microconhecimentos</span></strong>
+      <strong>${Number(counts.questions || 0)}<span>questões</span></strong>
+    </div>
+    ${reportIssues(report.errors, 'error')}${reportIssues(report.warnings, 'warning')}
+  </section>`;
+}
+
+function renderPackagePanel(draft, pendingPackage, report, busy) {
+  const locked = draft.status === 'map_approved';
+  const effectiveReport = report || (draft.validation_report?.valid != null ? draft.validation_report : null);
+  return `<section class="admin-panel admin-factory-package">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">2. Importação assistida</span><h2>PACOTE DO CURSO</h2><p>Produzido externamente por ChatGPT/Codex e validado dentro do DETONA.</p></div><strong class="admin-readonly-badge">IA AUTOMÁTICA: DESATIVADA</strong></div>
+    <div class="admin-prepared">OPENAI_API_KEY não é necessária · nenhuma chamada paga de IA · contrato genérico schema_version 1.</div>
+    <div class="admin-source-upload-grid">
+      <label class="admin-upload-field"><strong>Pacote JSON único</strong><span>Estrutura canônica completa</span>
+        <input id="factory-package-files" type="file" accept="application/json,.json" multiple ${locked || busy ? 'disabled' : ''}>
+      </label>
+      <label class="admin-upload-field"><strong>Pasta estruturada</strong><span>course.json, curriculum.json, edital-map.json, microknowledge.json, sources.json e questions/*.json</span>
+        <input id="factory-package-folder" type="file" accept="application/json,.json" webkitdirectory multiple ${locked || busy ? 'disabled' : ''}>
+      </label>
+    </div>
+    <label class="admin-factory-json"><span>Ou cole o pacote canônico JSON</span><textarea id="factory-package-json" rows="10" placeholder='{"schema_version":1,"operation_id":"...","course":{...}}' ${locked || busy ? 'disabled' : ''}></textarea></label>
+    <div class="admin-form__actions">
+      <button type="button" class="admin-button admin-button--secondary" id="factory-load-json" ${locked || busy ? 'disabled' : ''}>CARREGAR JSON COLADO</button>
+      <button type="button" class="admin-button admin-button--secondary" id="factory-validate" ${!pendingPackage || locked || busy ? 'disabled' : ''}>VALIDAR PACOTE</button>
+      <button type="button" class="admin-button" id="factory-import" ${!pendingPackage || !report?.valid || locked || busy ? 'disabled' : ''}>IMPORTAR PACOTE</button>
+    </div>
+    ${pendingPackage ? `<div class="admin-factory-package-ready"><strong>Pacote carregado localmente</strong><span>${escapeHtml(pendingPackage.operation_id || 'operation_id ausente')}</span></div>` : ''}
+    ${renderValidation(effectiveReport)}
+  </section>`;
+}
+
+function renderIdentity(draft) {
   const identity = draft.identity || {};
   return `<section class="admin-panel">
-    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Etapa 2</span><h2>Identificação do curso</h2></div><strong class="admin-readonly-badge">${editable ? 'PROPOSTA DA IA' : 'MAPA APROVADO'}</strong></div>
-    <div class="admin-form-grid admin-factory-identity">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">3. Identificação</span><h2>${escapeHtml(identity.contest_name || 'Curso importado')}</h2></div><strong class="admin-readonly-badge">PACOTE ASSISTIDO</strong></div>
+    <dl class="admin-course-identity">
       ${[
-    ['contest_name', 'Concurso'], ['organization', 'Órgão'], ['position', 'Cargo'], ['board', 'Banca'],
-    ['year', 'Ano'], ['exam_date', 'Data da prova'], ['exam_format', 'Formato da prova'],
-  ].map(([field, label]) => `<label><span>${label}</span><input data-identity-field="${field}" value="${escapeHtml(identity[field] || '')}" ${editable ? '' : 'disabled'}></label>`).join('')}
-    </div>
-    ${confidenceField(identity.confidence, 'data-identity-confidence', editable)}
-    <div class="admin-form-grid admin-factory-generated-ids">
-      ${['contest_id', 'position_id', 'offering_id', 'slug'].map((field) => `<label><span>${field}</span><input data-identity-field="${field}" value="${escapeHtml(identity[field] || '')}" ${editable ? '' : 'disabled'}></label>`).join('')}
-    </div>
-    <details class="admin-trace-details"><summary>Ver rastreabilidade da identificação</summary>${traceList(identity.traces)}</details>
+    ['contest_id', identity.contest_id], ['position_id', identity.position_id], ['offering_id', identity.offering_id],
+    ['Órgão', identity.organization], ['Cargo', identity.position], ['Banca', identity.board || '—'],
+    ['Ano', identity.year || '—'], ['Data', identity.exam_date || '—'],
+  ].map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd><code>${escapeHtml(value || '—')}</code></dd></div>`).join('')}
+    </dl>
   </section>`;
 }
 
-function nodeControls(type, d, t = -1, s = -1) {
-  const attrs = `data-node-type="${type}" data-d="${d}" data-t="${t}" data-s="${s}"`;
-  return `<span class="admin-tree-actions">
-    <button type="button" aria-label="Mover para cima" data-tree-action="up" ${attrs}>↑</button>
-    <button type="button" aria-label="Mover para baixo" data-tree-action="down" ${attrs}>↓</button>
-    <button type="button" aria-label="Excluir" data-tree-action="delete" ${attrs}>×</button>
-  </span>`;
-}
-
-function renderCurriculum(draft, editable) {
+function renderCurriculum(draft) {
   return `<section class="admin-panel">
-    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Etapa 3</span><h2>Currículo proposto pela IA</h2></div>
-      ${editable ? '<button type="button" class="admin-button admin-button--secondary" data-tree-action="add-discipline">+ Disciplina</button>' : ''}</div>
-    <div class="admin-factory-tree">${(draft.curriculum || []).map((discipline, d) => `<details class="admin-factory-discipline" open>
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">4. Currículo</span><h2>Currículo importado</h2></div></div>
+    <div class="admin-factory-tree">${(draft.curriculum || []).map((discipline, d) => `<details class="admin-factory-discipline" ${d === 0 ? 'open' : ''}>
       <summary><span>${d + 1}</span><strong>${escapeHtml(discipline.title)}</strong><small>${discipline.topics?.length || 0} tópicos</small></summary>
-      <div class="admin-factory-node-editor"><input data-tree-title="discipline" data-d="${d}" value="${escapeHtml(discipline.title)}" ${editable ? '' : 'disabled'}>${confidenceField(discipline.confidence, `data-tree-confidence="discipline" data-d="${d}"`, editable)}${editable ? nodeControls('discipline', d) : ''}</div>
-      <details class="admin-trace-details"><summary>Fonte da disciplina</summary>${traceList(discipline.traces)}</details>
+      <details class="admin-trace-details"><summary>Rastreabilidade da disciplina</summary>${traceList(discipline.traces)}</details>
       <div class="admin-factory-topic-list">${(discipline.topics || []).map((topic, t) => `<details class="admin-factory-topic">
         <summary><span>${d + 1}.${t + 1}</span><strong>${escapeHtml(topic.title)}</strong><small>${topic.subtopics?.length || 0} subtópicos</small></summary>
-        <div class="admin-factory-node-editor"><input data-tree-title="topic" data-d="${d}" data-t="${t}" value="${escapeHtml(topic.title)}" ${editable ? '' : 'disabled'}>${confidenceField(topic.confidence, `data-tree-confidence="topic" data-d="${d}" data-t="${t}"`, editable)}${editable ? nodeControls('topic', d, t) : ''}</div>
-        <details class="admin-trace-details"><summary>Fonte do tópico</summary>${traceList(topic.traces)}</details>
-        <div class="admin-factory-subtopic-list">${(topic.subtopics || []).map((subtopic, s) => `<article class="admin-factory-subtopic">
-          <div class="admin-factory-node-editor"><input data-tree-title="subtopic" data-d="${d}" data-t="${t}" data-s="${s}" value="${escapeHtml(subtopic.title)}" ${editable ? '' : 'disabled'}>${confidenceField(subtopic.confidence, `data-tree-confidence="subtopic" data-d="${d}" data-t="${t}" data-s="${s}"`, editable)}${editable ? nodeControls('subtopic', d, t, s) : ''}</div>
-          <details class="admin-trace-details"><summary>Fonte do subtópico</summary>${traceList(subtopic.traces)}</details>
-        </article>`).join('')}</div>
-        ${editable ? `<button type="button" class="admin-inline-add" data-tree-action="add-subtopic" data-d="${d}" data-t="${t}">+ Subtópico</button>` : ''}
+        <details class="admin-trace-details"><summary>Rastreabilidade do tópico</summary>${traceList(topic.traces)}</details>
+        <div class="admin-factory-subtopic-list">${(topic.subtopics || []).map((subtopic) => `<article class="admin-factory-subtopic"><strong>${escapeHtml(subtopic.title)}</strong>
+          <details class="admin-trace-details"><summary>Fonte do subtópico</summary>${traceList(subtopic.traces)}</details></article>`).join('')}</div>
       </details>`).join('')}</div>
-      ${editable ? `<button type="button" class="admin-inline-add" data-tree-action="add-topic" data-d="${d}">+ Tópico</button>` : ''}
     </details>`).join('')}</div>
   </section>`;
 }
 
-function renderMap(draft, editable) {
+function renderMap(draft) {
   return `<section class="admin-panel">
-    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Etapa 4</span><h2>Mapa do Edital proposto</h2><p>Conhecimentos complementares são identificados explicitamente.</p></div></div>
-    <div class="admin-factory-map">${(draft.edital_map || []).map((item, mapIndex) => `<details class="admin-factory-map-item">
-      <summary><span>${mapIndex + 1}</span><strong>${escapeHtml(item.subtopic_title)}</strong><small>${item.microknowledges?.length || 0} conhecimentos</small></summary>
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">5. Mapa do Edital</span><h2>Cadeia curricular e conhecimentos</h2><p>Edital → disciplina → tópico → subtópico → microconhecimento → questão.</p></div></div>
+    <div class="admin-factory-map">${(draft.edital_map || []).map((item, index) => `<details class="admin-factory-map-item">
+      <summary><span>${index + 1}</span><strong>${escapeHtml(item.subtopic_title)}</strong><small>${item.microknowledges?.length || 0} microconhecimentos</small></summary>
       <div class="admin-factory-map-path">${escapeHtml(item.discipline_title)} → ${escapeHtml(item.topic_title)} → ${escapeHtml(item.subtopic_title)}</div>
-      ${confidenceField(item.confidence, `data-map-confidence data-map="${mapIndex}"`, editable)}
-      <label class="admin-factory-wide-field"><span>Escopo</span><input data-map-field="scope" data-map="${mapIndex}" value="${escapeHtml(item.scope)}" ${editable ? '' : 'disabled'}></label>
-      <div class="admin-form-grid">${MAP_ARRAY_FIELDS.map(([field, label]) => `<label><span>${label}</span><textarea data-map-array="${field}" data-map="${mapIndex}" ${editable ? '' : 'disabled'}>${escapeHtml((item[field] || []).join('\n'))}</textarea></label>`).join('')}</div>
-      <h3>Possíveis microconhecimentos</h3>
-      <div class="admin-microknowledge-list">${(item.microknowledges || []).map((knowledge, knowledgeIndex) => `<article>
-        <input data-knowledge-title data-map="${mapIndex}" data-k="${knowledgeIndex}" value="${escapeHtml(knowledge.title)}" ${editable ? '' : 'disabled'}>
-        <select data-knowledge-origin data-map="${mapIndex}" data-k="${knowledgeIndex}" ${editable ? '' : 'disabled'}>
-          <option value="official" ${knowledge.scope_origin === 'official' ? 'selected' : ''}>ESCOPO OFICIAL</option>
-          <option value="complementary" ${knowledge.scope_origin === 'complementary' ? 'selected' : ''}>CONHECIMENTO COMPLEMENTAR</option>
-        </select>
-        ${confidenceField(knowledge.confidence, `data-knowledge-confidence data-map="${mapIndex}" data-k="${knowledgeIndex}"`, editable)}
-        ${editable ? `<button type="button" data-remove-knowledge data-map="${mapIndex}" data-k="${knowledgeIndex}" aria-label="Excluir conhecimento">×</button>` : ''}
-        <details class="admin-trace-details"><summary>Fonte do conhecimento</summary>${traceList(knowledge.traces)}</details>
+      <p class="admin-factory-scope">${escapeHtml(item.scope)}</p>
+      <div class="admin-microknowledge-list">${(item.microknowledges || []).map((knowledge) => `<article>
+        <strong>${escapeHtml(knowledge.title)}</strong><span class="admin-source-status">${escapeHtml(knowledge.scope_origin === 'official' ? 'ESCOPO OFICIAL' : 'COMPLEMENTAR')}</span>
+        <details class="admin-trace-details"><summary>Rastreabilidade</summary>${traceList(knowledge.traces)}</details>
       </article>`).join('')}</div>
-      ${editable ? `<button type="button" class="admin-inline-add" data-add-knowledge="${mapIndex}">+ Conhecimento</button>` : ''}
       <details class="admin-trace-details"><summary>Rastreabilidade do mapa</summary>${traceList(item.traces)}</details>
     </details>`).join('')}</div>
   </section>`;
 }
 
-function renderApproval(draft, editable) {
-  const counts = summaryCounts(draft);
-  return `<section class="admin-panel admin-factory-approval">
-    <div><span class="admin-panel__eyebrow">Resumo da análise</span><h2>${draft.status === 'map_approved' ? 'MAPA APROVADO' : 'Aprovação humana obrigatória'}</h2>
-      <p>A aprovação encerra esta V2 e não publica curso, questões ou venda.</p></div>
+function renderCoverage(draft) {
+  const coverage = draft.coverage || {};
+  return `<section class="admin-panel">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">6. Cobertura</span><h2>Cobertura calculada</h2></div></div>
     <div class="admin-factory-summary">
-      <strong>${counts.disciplines}<span>disciplinas</span></strong><strong>${counts.topics}<span>tópicos</span></strong>
-      <strong>${counts.subtopics}<span>subtópicos</span></strong><strong>${counts.knowledges}<span>conhecimentos</span></strong>
+      <strong>${Number(coverage.edital_map_pct || 0)}%<span>Mapa do Edital</span></strong>
+      <strong>${Number(coverage.microknowledge_question_pct || 0)}%<span>Microconhecimentos com questão</span></strong>
+      <strong>${Number(coverage.subtopic_question_pct || 0)}%<span>Subtópicos com questão</span></strong>
+      <strong>${Number(coverage.questions_total || draft.question_count || 0)}<span>Questões no rascunho</span></strong>
     </div>
-    ${editable ? `<div class="admin-form__actions"><button type="button" class="admin-button admin-button--secondary" id="factory-save">SALVAR EDIÇÕES</button>
-      <button type="button" class="admin-button" id="factory-approve">APROVAR MAPA</button></div>` : '<div class="admin-prepared">Próxima fase liberada futuramente: cobertura → plano de questões → geração por IA.</div>'}
   </section>`;
 }
 
-function mapPathSnapshot(draft, d, t, s) {
-  const discipline = draft.curriculum[d];
-  const topic = discipline?.topics?.[t];
-  const subtopic = topic?.subtopics?.[s];
-  return { discipline, topic, subtopic };
+function renderQuestions(draft, samples) {
+  return `<section class="admin-panel">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">7. Banco</span><h2>Questões importadas no rascunho</h2></div><strong class="admin-readonly-badge">${Number(draft.question_count || 0)} QUESTÕES</strong></div>
+    <div class="admin-question-sample-list">${samples.length ? samples.map((row, index) => `<article><span>${index + 1}</span><div><strong>${escapeHtml(row.payload?.statement || row.source_question_id)}</strong>
+      <small>${escapeHtml(row.subtopic_id)} · ${escapeHtml(row.batch_name)}</small><p>${escapeHtml(row.payload?.explanation || '')}</p></div></article>`).join('') : '<div class="admin-empty admin-empty--compact"><strong>Sem questões neste pacote.</strong><span>A cobertura permanece calculada e o banco pode entrar em pacote posterior.</span></div>'}</div>
+  </section>`;
 }
 
-function removeMapByPath(draft, disciplineTitle, topicTitle = null, subtopicTitle = null) {
-  draft.edital_map = (draft.edital_map || []).filter((item) => {
-    if (item.discipline_title !== disciplineTitle) return true;
-    if (topicTitle != null && item.topic_title !== topicTitle) return true;
-    if (subtopicTitle != null && item.subtopic_title !== subtopicTitle) return true;
-    return false;
-  });
+function renderAudit(events) {
+  return `<section class="admin-panel">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">8. Auditoria</span><h2>Histórico imutável do rascunho</h2></div></div>
+    <div class="admin-course-stage-list">${events.length ? events.map((event) => `<article class="admin-course-stage admin-course-stage--ok"><span>✓</span><strong>${escapeHtml(event.action === 'package_imported' ? 'PACOTE IMPORTADO' : 'MAPA APROVADO')}</strong><small>${new Date(event.created_at).toLocaleString('pt-BR')} · ${escapeHtml((event.package_hash || '').slice(0, 12))}</small></article>`).join('') : '<div class="admin-empty admin-empty--compact"><strong>Nenhum evento persistido.</strong></div>'}</div>
+  </section>`;
 }
 
-function renameMapPath(draft, previous, next, type) {
-  for (const item of draft.edital_map || []) {
-    if (type === 'discipline' && item.discipline_title === previous.discipline.title) item.discipline_title = next;
-    if (type === 'topic' && item.discipline_title === previous.discipline.title && item.topic_title === previous.topic.title) item.topic_title = next;
-    if (type === 'subtopic' && item.discipline_title === previous.discipline.title && item.topic_title === previous.topic.title && item.subtopic_title === previous.subtopic.title) item.subtopic_title = next;
-  }
+function renderStudentPreview(draft, samples) {
+  const first = samples[0]?.payload;
+  return `<section class="admin-panel admin-student-preview-card">
+    <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Prévia do aluno</span><h2>${escapeHtml(draft.identity?.contest_name || 'Curso')}</h2><p>${escapeHtml(draft.identity?.position || '')}</p></div><strong class="admin-readonly-badge">NÃO PUBLICADO</strong></div>
+    <div class="admin-factory-summary"><strong>${draft.curriculum?.length || 0}<span>disciplinas</span></strong><strong>${draft.question_count || 0}<span>questões</span></strong></div>
+    ${first ? `<article class="admin-preview-question"><span>Questão de amostra</span><h3>${escapeHtml(first.statement)}</h3><ul>${(first.options || []).map((option) => `<li>${escapeHtml(typeof option === 'string' ? option : `${option.label || ''} ${option.text || ''}`)}</li>`).join('')}</ul></article>` : ''}
+  </section>`;
 }
 
-function proposalPayload(draft) {
-  return {
-    identity: draft.identity,
-    curriculum: draft.curriculum,
-    edital_map: draft.edital_map,
-    relevant_observations: draft.analysis_summary?.relevant_observations || [],
-  };
+function renderApproval(draft) {
+  if (draft.status === 'map_approved') return '<section class="admin-panel admin-factory-approval"><div><span class="admin-panel__eyebrow">9. Homologação</span><h2>MAPA APROVADO</h2><p>Preparado para a etapa futura de publicação. Nenhum conteúdo foi publicado.</p></div></section>';
+  return `<section class="admin-panel admin-factory-approval"><div><span class="admin-panel__eyebrow">9. Homologação</span><h2>Aprovação humana</h2><p>A aprovação não publica curso, questões ou acesso.</p></div>
+    <button type="button" class="admin-button" id="factory-approve">APROVAR MAPA</button></section>`;
 }
 
 export async function renderAdminCourseCreateScreen(root, ctx, { draftId = null, createNew = false } = {}) {
-  root.innerHTML = '<div class="admin-loading" role="status">Preparando rascunho seguro…</div>';
+  root.innerHTML = '<div class="admin-loading" role="status">Preparando rascunho assistido…</div>';
   let capabilities;
   let envelope;
   try {
     capabilities = await adminCourseFactoryService.capabilities();
-    envelope = createNew || !draftId
-      ? await adminCourseFactoryService.createDraft()
-      : await adminCourseFactoryService.getDraft(draftId);
+    envelope = createNew || !draftId ? await adminCourseFactoryService.createDraft() : await adminCourseFactoryService.getDraft(draftId);
   } catch (error) {
-    root.innerHTML = `<section class="admin-panel admin-empty"><h1>Novo curso</h1><div class="admin-alert" role="alert">${escapeHtml(error.message)}</div>
-      <button type="button" class="admin-button admin-button--secondary" id="factory-back">Voltar para Cursos</button></section>`;
+    root.innerHTML = `<section class="admin-panel admin-empty"><h1>Novo curso</h1><div class="admin-alert" role="alert">${escapeHtml(error.message)}</div><button type="button" class="admin-button admin-button--secondary" id="factory-back">Voltar</button></section>`;
     root.querySelector('#factory-back')?.addEventListener('click', () => globalThis.__DETONA_ADMIN?.navigate?.('contests'));
     return;
   }
-
   let draft = structuredClone(envelope.draft);
   let sources = structuredClone(envelope.sources || []);
+  let questionSamples = structuredClone(envelope.question_samples || []);
+  let auditEvents = structuredClone(envelope.audit_events || []);
+  let pendingPackage = null;
+  let validationReport = null;
   let busy = false;
   let feedback = '';
+  let studentMode = false;
 
-  const refresh = async () => {
-    envelope = await adminCourseFactoryService.getDraft(draft.id);
-    draft = structuredClone(envelope.draft);
-    sources = structuredClone(envelope.sources || []);
+  const setEnvelope = (next) => {
+    envelope = next;
+    draft = structuredClone(next.draft);
+    sources = structuredClone(next.sources || []);
+    questionSamples = structuredClone(next.question_samples || []);
+    auditEvents = structuredClone(next.audit_events || []);
   };
+  const refresh = async () => setEnvelope(await adminCourseFactoryService.getDraft(draft.id));
 
   const draw = () => {
-    const proposed = ['proposed', 'map_approved'].includes(draft.status);
-    const editable = draft.status === 'proposed' && !busy;
-    root.innerHTML = `
-      <header class="admin-page-header admin-page-header--courses"><div><span>Course Factory V2</span><h1>Novo curso</h1>
-        <p>Fontes → análise por IA → identificação → currículo → Mapa do Edital → aprovação humana.</p></div>
-        <button type="button" class="admin-button admin-button--secondary" id="factory-back">← Cursos</button>
-      </header>
-      <section class="admin-factory-draft-bar"><div><span>course_draft_id</span><code>${escapeHtml(draft.id)}</code></div>
-        <strong>${escapeHtml(STATUS_LABELS[draft.status] || draft.status)}</strong><span>Revisão ${Number(draft.revision || 0)}</span></section>
+    const imported = ['package_imported', 'map_approved'].includes(draft.status);
+    root.innerHTML = `<header class="admin-page-header admin-page-header--courses"><div><span>Course Factory · Modo assistido</span><h1>Novo curso</h1>
+      <p>Fontes → pacote ChatGPT/Codex → validação → currículo → mapa → banco → cobertura → auditoria.</p></div><button type="button" class="admin-button admin-button--secondary" id="factory-back">← Cursos</button></header>
+      <section class="admin-factory-draft-bar"><div><span>course_draft_id</span><code>${escapeHtml(draft.id)}</code></div><strong>${escapeHtml(STATUS_LABELS[draft.status] || draft.status)}</strong><span>Revisão ${Number(draft.revision || 0)}</span></section>
+      <div class="admin-factory-mode-banner"><strong>IA AUTOMÁTICA: DESATIVADA</strong><span>Fluxo oficial: proprietário → ChatGPT/Codex → pacote estruturado → Course Factory.</span></div>
       ${feedback ? `<div class="${feedback.startsWith('Erro:') ? 'admin-alert' : 'admin-prepared'}" role="status">${escapeHtml(feedback)}</div>` : ''}
-      ${renderSources(draft, sources, capabilities, busy)}
-      ${proposed ? renderIdentity(draft, editable) + renderCurriculum(draft, editable) + renderMap(draft, editable) + renderApproval(draft, editable) : `
-        <section class="admin-panel admin-empty"><h2>Aguardando análise</h2><p>O currículo e o mapa só aparecerão após extração, resposta estruturada da IA e validação server-side.</p></section>`}
-    `;
+      ${renderSources(draft, sources, busy)}
+      ${renderPackagePanel(draft, pendingPackage, validationReport, busy)}
+      ${imported ? `<div class="admin-form__actions"><button type="button" class="admin-button admin-button--secondary" id="factory-student-preview">${studentMode ? 'VOLTAR À ADM' : 'VER COMO ALUNO'}</button></div>
+        ${studentMode ? renderStudentPreview(draft, questionSamples) : renderIdentity(draft) + renderCurriculum(draft) + renderMap(draft) + renderQuestions(draft, questionSamples) + renderCoverage(draft) + renderAudit(auditEvents) + renderApproval(draft)}` : '<section class="admin-panel admin-empty"><h2>Aguardando pacote válido</h2><p>Os dados do curso só serão persistidos após validação server-side sem erros.</p></section>'}`;
     bind();
   };
 
   const run = async (message, operation) => {
     if (busy) return;
-    busy = true;
-    feedback = message;
-    draw();
-    try {
-      await operation();
-    } catch (error) {
+    busy = true; feedback = message; draw();
+    try { await operation(); } catch (error) {
+      validationReport = error.report || validationReport;
       feedback = `Erro: ${error.message || 'Operação indisponível.'}`;
-    } finally {
-      busy = false;
-      draw();
-    }
+    } finally { busy = false; draw(); }
   };
-
   const uploadFiles = async (files, settings) => {
     for (const file of files) {
-      feedback = `Enviando ${file.name}…`;
-      draw();
+      feedback = `Enviando ${file.name}…`; draw();
       await adminCourseFactoryService.uploadSource(draft.id, file, settings);
     }
-    await refresh();
-    feedback = `${files.length} PDF(s) armazenado(s) com segurança.`;
+    await refresh(); feedback = `${files.length} PDF(s) armazenado(s) no staging.`;
   };
-
-  const bindProposalInputs = () => {
-    root.querySelectorAll('[data-identity-field]').forEach((input) => input.addEventListener('input', () => {
-      draft.identity[input.dataset.identityField] = input.value;
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelector('[data-identity-confidence]')?.addEventListener('input', (event) => {
-      draft.identity.confidence = Number(event.target.value); globalThis.__DETONA_ADMIN?.markDirty?.();
-    });
-    root.querySelectorAll('[data-tree-confidence]').forEach((input) => input.addEventListener('input', () => {
-      const { discipline, topic, subtopic } = mapPathSnapshot(draft, Number(input.dataset.d), Number(input.dataset.t), Number(input.dataset.s));
-      const node = input.dataset.treeConfidence === 'discipline' ? discipline : input.dataset.treeConfidence === 'topic' ? topic : subtopic;
-      node.confidence = Number(input.value); globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-map-confidence]').forEach((input) => input.addEventListener('input', () => {
-      draft.edital_map[Number(input.dataset.map)].confidence = Number(input.value); globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-knowledge-confidence]').forEach((input) => input.addEventListener('input', () => {
-      draft.edital_map[Number(input.dataset.map)].microknowledges[Number(input.dataset.k)].confidence = Number(input.value);
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-tree-title]').forEach((input) => input.addEventListener('change', () => {
-      const d = Number(input.dataset.d); const t = Number(input.dataset.t); const s = Number(input.dataset.s);
-      const previous = structuredClone(mapPathSnapshot(draft, d, t, s));
-      const type = input.dataset.treeTitle;
-      if (type === 'discipline') draft.curriculum[d].title = input.value;
-      if (type === 'topic') draft.curriculum[d].topics[t].title = input.value;
-      if (type === 'subtopic') draft.curriculum[d].topics[t].subtopics[s].title = input.value;
-      renameMapPath(draft, previous, input.value, type);
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-map-field]').forEach((input) => input.addEventListener('input', () => {
-      draft.edital_map[Number(input.dataset.map)][input.dataset.mapField] = input.value;
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-map-array]').forEach((input) => input.addEventListener('input', () => {
-      draft.edital_map[Number(input.dataset.map)][input.dataset.mapArray] = input.value.split('\n').map((value) => value.trim()).filter(Boolean);
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-knowledge-title]').forEach((input) => input.addEventListener('input', () => {
-      draft.edital_map[Number(input.dataset.map)].microknowledges[Number(input.dataset.k)].title = input.value;
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-    root.querySelectorAll('[data-knowledge-origin]').forEach((input) => input.addEventListener('change', () => {
-      draft.edital_map[Number(input.dataset.map)].microknowledges[Number(input.dataset.k)].scope_origin = input.value;
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
-  };
-
-  const bindTreeActions = () => {
-    root.querySelectorAll('[data-tree-action]').forEach((button) => button.addEventListener('click', () => {
-      const action = button.dataset.treeAction;
-      const type = button.dataset.nodeType;
-      const d = Number(button.dataset.d); const t = Number(button.dataset.t); const s = Number(button.dataset.s);
-      if (action === 'add-discipline') {
-        draft.curriculum.push({ title: 'Nova disciplina', order: draft.curriculum.length + 1, confidence: 1, traces: firstTrace(draft.identity.traces), topics: [] });
-      } else if (action === 'add-topic') {
-        const discipline = draft.curriculum[d];
-        discipline.topics.push({ title: 'Novo tópico', order: discipline.topics.length + 1, confidence: 1, traces: firstTrace(discipline.traces, draft.identity.traces), subtopics: [] });
-      } else if (action === 'add-subtopic') {
-        const { discipline, topic } = mapPathSnapshot(draft, d, t, -1);
-        const subtopic = { title: 'Novo subtópico', order: topic.subtopics.length + 1, confidence: 1, traces: firstTrace(topic.traces, discipline.traces) };
-        topic.subtopics.push(subtopic);
-        draft.edital_map.push({ discipline_title: discipline.title, topic_title: topic.title, subtopic_title: subtopic.title, confidence: 1, scope: 'Definir escopo', essential_concepts: [], rules: [], exceptions: [], applications: [], competencies: [], required_knowledge: [], microknowledges: [], traces: firstTrace(subtopic.traces) });
-      } else if (type) {
-        const snapshot = mapPathSnapshot(draft, d, t, s);
-        const collection = type === 'discipline' ? draft.curriculum : type === 'topic' ? snapshot.discipline.topics : snapshot.topic.subtopics;
-        const index = type === 'discipline' ? d : type === 'topic' ? t : s;
-        if (action === 'delete') {
-          removeMapByPath(draft, snapshot.discipline.title, type === 'discipline' ? null : snapshot.topic.title, type === 'subtopic' ? snapshot.subtopic.title : null);
-          collection.splice(index, 1);
-        } else {
-          const target = action === 'up' ? index - 1 : index + 1;
-          if (target >= 0 && target < collection.length) [collection[index], collection[target]] = [collection[target], collection[index]];
-        }
-      }
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-      draw();
-    }));
+  const loadFiles = async (files) => {
+    pendingPackage = await assembleAssistedCoursePackage(files);
+    validationReport = null;
+    feedback = `Pacote ${pendingPackage.operation_id || 'sem operation_id'} carregado. Execute a validação.`;
+    globalThis.__DETONA_ADMIN?.markDirty?.();
   };
 
   function bind() {
     root.querySelector('#factory-back')?.addEventListener('click', () => globalThis.__DETONA_ADMIN?.navigate?.('contests'));
-    root.querySelector('#factory-official-file')?.addEventListener('change', (event) => run('Enviando edital oficial…', async () => {
-      await uploadFiles([...event.target.files], { sourceType: 'official_edital', category: 'edital' });
-    }));
-    root.querySelector('#factory-complement-files')?.addEventListener('change', (event) => run('Enviando materiais complementares…', async () => {
-      const category = root.querySelector('#factory-complement-category').value;
-      await uploadFiles([...event.target.files], { sourceType: 'complementary', category });
-    }));
+    root.querySelector('#factory-official-file')?.addEventListener('change', (event) => run('Enviando edital…', () => uploadFiles([...event.target.files], { sourceType: 'official_edital', category: 'edital' })));
+    root.querySelector('#factory-complement-files')?.addEventListener('change', (event) => run('Enviando materiais…', () => uploadFiles([...event.target.files], { sourceType: 'complementary', category: root.querySelector('#factory-complement-category').value })));
     root.querySelectorAll('[data-remove-source]').forEach((button) => button.addEventListener('click', () => run('Removendo fonte…', async () => {
-      await adminCourseFactoryService.removeSource(draft.id, button.dataset.removeSource);
-      await refresh(); feedback = 'Fonte removida.';
+      await adminCourseFactoryService.removeSource(draft.id, button.dataset.removeSource); await refresh(); feedback = 'Fonte removida.';
     })));
-    root.querySelector('#factory-analyze')?.addEventListener('click', () => run('Extraindo páginas e analisando com IA…', async () => {
-      await adminCourseFactoryService.analyzeSources(draft.id);
-      await refresh(); feedback = 'Análise estruturada concluída. Revise a proposta antes de aprovar.';
+    for (const id of ['factory-package-files', 'factory-package-folder']) root.querySelector(`#${id}`)?.addEventListener('change', (event) => run('Lendo pacote…', () => loadFiles(event.target.files)));
+    root.querySelector('#factory-load-json')?.addEventListener('click', () => run('Lendo JSON…', async () => {
+      try { pendingPackage = JSON.parse(root.querySelector('#factory-package-json').value); } catch { throw new Error('O texto colado não contém JSON válido.'); }
+      validationReport = null; feedback = `Pacote ${pendingPackage.operation_id || 'sem operation_id'} carregado.`; globalThis.__DETONA_ADMIN?.markDirty?.();
     }));
-    bindProposalInputs();
-    bindTreeActions();
-    root.querySelectorAll('[data-add-knowledge]').forEach((button) => button.addEventListener('click', () => {
-      const item = draft.edital_map[Number(button.dataset.addKnowledge)];
-      const traces = firstTrace(item.traces);
-      item.microknowledges.push({ title: 'Novo conhecimento', scope_origin: traces.some(({ source_type: type }) => type === 'complementary') ? 'complementary' : 'official', confidence: 1, traces });
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-      draw();
+    root.querySelector('#factory-validate')?.addEventListener('click', () => run('Validando contrato, vínculos, rastreabilidade e cobertura…', async () => {
+      validationReport = await adminCourseFactoryService.validatePackage(draft.id, pendingPackage);
+      feedback = validationReport.valid ? 'Pacote válido. A importação foi liberada.' : `Validação encontrou ${validationReport.errors.length} erro(s).`;
     }));
-    root.querySelectorAll('[data-remove-knowledge]').forEach((button) => button.addEventListener('click', () => {
-      draft.edital_map[Number(button.dataset.map)].microknowledges.splice(Number(button.dataset.k), 1);
-      globalThis.__DETONA_ADMIN?.markDirty?.();
-      draw();
-    }));
-    root.querySelector('#factory-save')?.addEventListener('click', () => run('Validando e salvando edições…', async () => {
-      const result = await adminCourseFactoryService.saveProposal(draft.id, proposalPayload(draft));
-      draft = structuredClone(result.draft); feedback = 'Edições humanas salvas e IDs determinísticos atualizados.';
+    root.querySelector('#factory-import')?.addEventListener('click', () => run('Importando pacote validado no rascunho privado…', async () => {
+      setEnvelope(await adminCourseFactoryService.importPackage(draft.id, pendingPackage));
+      validationReport = draft.validation_report; feedback = 'Pacote importado e auditado. Nenhum conteúdo foi publicado.';
       globalThis.__DETONA_ADMIN?.markSaved?.();
     }));
+    root.querySelector('#factory-student-preview')?.addEventListener('click', () => { studentMode = !studentMode; draw(); });
     root.querySelector('#factory-approve')?.addEventListener('click', () => {
-      if (!globalThis.confirm?.('Aprovar este Mapa do Edital? Isso não publica o curso e não gera questões.')) return;
+      if (!globalThis.confirm?.('Aprovar este Mapa do Edital? Isso não publica o curso nem as questões.')) return;
       run('Aprovando mapa…', async () => {
-        const result = await adminCourseFactoryService.approveMap(draft.id);
-        draft = structuredClone(result.draft); feedback = 'MAPA APROVADO. Publicação e geração de questões continuam bloqueadas.';
-        globalThis.__DETONA_ADMIN?.markSaved?.();
+        await adminCourseFactoryService.approveMap(draft.id); await refresh(); feedback = 'MAPA APROVADO. Publicação continua bloqueada.'; globalThis.__DETONA_ADMIN?.markSaved?.();
       });
     });
   }
-
+  if (capabilities.automaticAI !== false || capabilities.openAIKeyRequired !== false) feedback = 'Erro: configuração assistida inconsistente.';
   draw();
 }
 
 export function renderCourseFactoryDraftCards(drafts = []) {
   if (!drafts.length) return '';
   return `<section class="admin-panel admin-factory-resume"><div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Rascunhos persistentes</span><h2>Continuar criação</h2></div></div>
-    <div class="admin-course-draft-list">${drafts.map((draft) => `<button type="button" data-resume-draft="${escapeHtml(draft.id)}">
-      <span><strong>${escapeHtml(draft.identity?.contest_name || 'Novo curso')}</strong><small>${escapeHtml(draft.identity?.position || draft.id)}</small></span>
-      <b>${escapeHtml(STATUS_LABELS[draft.status] || draft.status)}</b>
-    </button>`).join('')}</div></section>`;
+    <div class="admin-course-draft-list">${drafts.map((draft) => `<button type="button" data-resume-draft="${escapeHtml(draft.id)}"><span><strong>${escapeHtml(draft.identity?.contest_name || 'Novo curso')}</strong><small>${escapeHtml(draft.identity?.position || draft.id)}</small></span><b>${escapeHtml(STATUS_LABELS[draft.status] || draft.status)}</b></button>`).join('')}</div></section>`;
 }

@@ -199,7 +199,9 @@ Deno.serve(async (request) => {
 
     if (body.action === 'capabilities') {
       return response(200, {
-        aiConfigured: Boolean(Deno.env.get('OPENAI_API_KEY')),
+        aiConfigured: false,
+        automaticAI: false,
+        paidAIRequestsEnabled: false,
         provider: COURSE_FACTORY_AI_PROVIDER,
         model: safeModel(),
         persistence: 'supabase_staging_private',
@@ -285,6 +287,9 @@ Deno.serve(async (request) => {
       return response(200, { draft: updated, publicationEnabled: false, nextPhase: 'question_planning' }, origin);
     }
     if (body.action === 'analyze_sources') {
+      throw new Error('automatic_ai_disabled');
+      /* Arquitetura preservada para eventual decisão futura do proprietário.
+         O fluxo oficial atual usa course-factory-assisted e nunca alcança o provedor. */
       if (draft.status === 'analyzing' || draft.status === 'map_approved') throw new Error('draft_locked');
       if (!Deno.env.get('OPENAI_API_KEY')) throw new Error('ai_not_configured');
       const { data: sourceData, error: sourceError } = await admin.from('course_factory_sources').select('*')

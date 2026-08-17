@@ -135,23 +135,28 @@ test('persistência staging é privada e não altera tabelas publicadas', async 
   for (const column of ['created_by', 'approved_by', 'uploaded_by', 'requested_by']) assert.match(indexes, new RegExp(`\\(${column}\\)`));
 });
 
-test('Edge Function mantém chave no servidor, extrai páginas e bloqueia publicação', async () => {
+test('Edge Function legado mantém arquitetura preparada, mas bloqueia IA automática e publicação', async () => {
   const edge = await readFile(new URL('../supabase/functions/course-factory-ai/index.ts', import.meta.url), 'utf8');
   assert.match(edge, /Deno\.env\.get\('OPENAI_API_KEY'\)/);
   assert.match(edge, /getDocument\(\{ data: bytes/);
   assert.match(edge, /course_factory_source_pages/);
   assert.match(edge, /input_file/);
   assert.match(edge, /json_schema/);
+  assert.match(edge, /automaticAI: false/);
+  assert.match(edge, /paidAIRequestsEnabled: false/);
+  assert.match(edge, /if \(body\.action === 'analyze_sources'\) \{\s*throw new Error\('automatic_ai_disabled'\)/);
   assert.match(edge, /publicationEnabled: false/);
   assert.doesNotMatch(edge, /admin_publish_content_package/);
 });
 
-test('Área ADM oferece upload, edição, reanálise e Aprovar Mapa', async () => {
+test('Área ADM oferece fontes, pacote assistido, validação, prévia e Aprovar Mapa', async () => {
   const ui = await readFile(new URL('../app/js/admin/adminCourseCreateScreen.js', import.meta.url), 'utf8');
   assert.match(ui, /factory-official-file/);
   assert.match(ui, /factory-complement-files[\s\S]*multiple/);
-  assert.match(ui, /REANALISAR COM IA/);
-  assert.match(ui, /data-tree-action/);
-  assert.match(ui, /data-knowledge-title/);
+  assert.match(ui, /PACOTE DO CURSO/);
+  assert.match(ui, /factory-validate/);
+  assert.match(ui, /factory-import/);
+  assert.match(ui, /IA AUTOMÁTICA: DESATIVADA/);
+  assert.match(ui, /VER COMO ALUNO/);
   assert.match(ui, /APROVAR MAPA/);
 });

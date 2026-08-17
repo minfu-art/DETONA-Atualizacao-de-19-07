@@ -393,3 +393,43 @@
   .admin-factory-node-editor { grid-template-columns: 1fr; }
   .admin-microknowledge-list .admin-trace-details { grid-column: 1; }
 }
+
+/* Course Factory — modo assistido por pacote ChatGPT/Codex. */
+.admin-factory-mode-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; padding: 14px 16px; border: 1px solid #287454; border-radius: 12px; background: #0b2c22; color: #8cf3c7; }
+.admin-factory-mode-banner span { color: #b7dbc9; font-size: .82rem; text-align: right; }
+.admin-factory-json { display: grid; gap: 8px; margin: 16px 0; color: var(--admin-muted); font-size: .82rem; }
+.admin-factory-json textarea { width: 100%; box-sizing: border-box; border: 1px solid #3d4a72; border-radius: 10px; padding: 12px; background: #080d1d; color: var(--admin-text); font: .78rem/1.5 ui-monospace, monospace; resize: vertical; }
+.admin-factory-package-ready { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 11px 13px; border: 1px solid #287454; border-radius: 9px; background: #0b2c22; }
+.admin-factory-package-ready span { overflow-wrap: break-word; color: #8cf3c7; font-family: ui-monospace, monospace; font-size: .78rem; }
+.admin-factory-validation { display: grid; gap: 14px; margin-top: 16px; padding: 16px; border: 1px solid var(--admin-line); border-radius: 12px; background: #080d1d; }
+.admin-factory-validation.is-valid { border-color: #287454; }
+.admin-factory-validation.is-invalid { border-color: #873e4b; }
+.admin-factory-validation > div:first-child { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.admin-factory-validation.is-valid > div:first-child strong { color: #72efbd; }
+.admin-factory-validation.is-invalid > div:first-child strong { color: #ffc1cb; }
+.admin-factory-validation code { max-width: 60%; overflow: hidden; color: var(--admin-muted); font-size: .7rem; text-overflow: ellipsis; white-space: nowrap; }
+.admin-factory-issues { display: grid; gap: 8px; padding: 12px; border-radius: 9px; }
+.admin-factory-issues--error { background: #3b1d24; color: #ffc1cb; }
+.admin-factory-issues--warning { background: #3a2812; color: #ffca81; }
+.admin-factory-issues ol { display: grid; gap: 8px; margin: 0; padding-left: 22px; }
+.admin-factory-issues li { padding-left: 4px; }
+.admin-factory-issues li code, .admin-factory-issues li span { margin-right: 8px; font-size: .7rem; }
+.admin-factory-issues li p { margin: 3px 0 0; color: inherit; }
+.admin-factory-scope { margin: 0 14px 12px; color: #d9dff5; }
+.admin-question-sample-list { display: grid; gap: 9px; }
+.admin-question-sample-list > article { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 13px; border: 1px solid var(--admin-line); border-radius: 10px; background: #090e20; }
+.admin-question-sample-list > article > span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #26304e; color: #cbd7ff; font-weight: 800; }
+.admin-question-sample-list > article div { display: grid; gap: 5px; }
+.admin-question-sample-list small, .admin-question-sample-list p { margin: 0; color: var(--admin-muted); }
+.admin-student-preview-card { display: block; }
+.admin-preview-question { margin-top: 16px; padding: 18px; border: 1px solid #3d4a72; border-radius: 12px; background: #090e20; }
+.admin-preview-question > span { color: var(--admin-orange); font-size: .72rem; font-weight: 800; text-transform: uppercase; }
+.admin-preview-question h3 { margin: 10px 0; line-height: 1.45; }
+.admin-preview-question ul { display: grid; gap: 7px; padding-left: 22px; color: var(--admin-muted); }
+.admin-microknowledge-list > article > strong { overflow-wrap: break-word; }
+
+@media (max-width: 680px) {
+  .admin-factory-mode-banner, .admin-factory-package-ready, .admin-factory-validation > div:first-child { align-items: flex-start; flex-direction: column; }
+  .admin-factory-mode-banner span { text-align: left; }
+  .admin-factory-validation code { max-width: 100%; }
+}
