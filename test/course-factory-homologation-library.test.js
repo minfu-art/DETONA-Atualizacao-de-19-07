@@ -114,6 +114,33 @@ test('developer vê curso publicado no Preview sem receber entitlement real', as
   assert.equal(item.contest.previewOnly, undefined);
 });
 
+test('draft homologado substitui somente a projeção administrativa do mesmo concurso', async () => {
+  const catalogContest = {
+    ...PC_AL,
+    id: GENERIC_DRAFT.contestId,
+    code: 'DCT-ANTIGO',
+    name: 'Catálogo anterior',
+    questionCount: 20,
+  };
+  const service = new LibraryService({
+    allowLocalGrants: () => false,
+    catalog: { list: async () => [catalogContest] },
+    entitlements: { listByUser: async () => [] },
+    checkout: { capability: () => ({ configured: false }) },
+    snapshots: { save: () => {}, read: () => null },
+    homologations: {
+      canList: () => true,
+      listForAdmin: async () => [normalizeHomologationCourse(GENERIC_DRAFT)],
+    },
+  });
+  const [item] = (await service.getLibraryState(DEVELOPER)).items;
+  assert.equal(item.contest.code, 'DCT');
+  assert.equal(item.contest.questionCount, 5);
+  assert.equal(item.contest.previewOnly, true);
+  assert.equal(item.adminPreview, undefined);
+  assert.equal(item.homologation, true);
+});
+
 test('card de homologação abre o pacote pelo draft sem endpoint publicado', async () => {
   const calls = [];
   const previewPackage = { contestId: 'detona_contract_test', previewOnly: true };

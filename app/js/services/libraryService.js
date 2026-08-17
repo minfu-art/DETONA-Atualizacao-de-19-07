@@ -75,7 +75,8 @@ export class LibraryService {
           const previewContests = await this.homologations.listForAdmin(user);
           const byContestId = new Map(adminItems.map((item) => [item.contest.id, item]));
           for (const contest of previewContests) {
-            if (byContestId.get(contest.id)?.owned) continue;
+            const existing = byContestId.get(contest.id);
+            if (existing?.owned && !existing.adminPreview) continue;
             const item = {
               contest,
               owned: true,
