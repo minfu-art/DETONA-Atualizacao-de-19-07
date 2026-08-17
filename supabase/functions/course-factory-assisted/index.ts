@@ -83,6 +83,20 @@ function previewCurriculum(draft: any) {
   return rows;
 }
 
+function previewQuestionSource(payload: any) {
+  const rawEntries = Array.isArray(payload?.traces) && payload.traces.length
+    ? payload.traces
+    : (Array.isArray(payload?.source) ? payload.source : [payload?.source]);
+  return rawEntries.map((entry: any) => {
+    if (typeof entry === 'string') return entry.trim();
+    if (!entry || typeof entry !== 'object') return '';
+    const name = entry.source_name || entry.title || entry.source_id || '';
+    const location = entry.location || (entry.page_number ? `página ${entry.page_number}` : '');
+    const traceStatus = entry.trace_status === 'missing' ? 'rastreabilidade ausente declarada' : '';
+    return [name, location, traceStatus].filter(Boolean).join(' · ');
+  }).filter(Boolean).join(' | ');
+}
+
 async function draftPreviewPackage(admin: any, draftId: string, userId: string) {
   const draft = await ownedDraft(admin, draftId, userId);
   if (!['package_imported', 'map_approved'].includes(draft.status) || draft.validation_report?.valid !== true) {
@@ -94,17 +108,22 @@ async function draftPreviewPackage(admin: any, draftId: string, userId: string) 
       .select('payload,order_index').eq('course_draft_id', draftId)
       .order('order_index').range(from, from + 999);
     if (error) throw error;
-    questions.push(...(data || []).map(({ payload }: any) => ({
-      ...payload,
-      concursoId: draft.identity.contest_id,
-      contest_id: draft.identity.contest_id,
-      topicoEditalId: payload.subtopic_id,
-      enunciado: payload.statement,
-      alternativas: payload.options,
-      respostaCorreta: payload.correct_answer,
-      explicacao: payload.explanation,
-      situacao: 'draft',
-    })));
+    questions.push(...(data || []).map(({ payload }: any) => {
+      const source = previewQuestionSource(payload);
+      return {
+        ...payload,
+        source,
+        fonte: source,
+        concursoId: draft.identity.contest_id,
+        contest_id: draft.identity.contest_id,
+        topicoEditalId: payload.subtopic_id,
+        enunciado: payload.statement,
+        alternativas: payload.options,
+        respostaCorreta: payload.correct_answer,
+        explicacao: payload.explanation,
+        situacao: 'draft',
+      };
+    }));
   }
   const course = draft.package_metadata?.course || {};
   return {

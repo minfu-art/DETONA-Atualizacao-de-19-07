@@ -179,3 +179,11 @@ test('ADM preserva o JSON colado antes de redesenhar o formulário', async () =>
   assert.match(ui, /JSON\.parse\(packageText\)/);
   assert.doesNotMatch(ui, /JSON\.parse\(root\.querySelector\('#factory-package-json'\)\.value\)/);
 });
+
+test('prévia transforma rastreabilidade estruturada em fonte legível no motor', async () => {
+  const edge = await readFile(new URL('../supabase/functions/course-factory-assisted/index.ts', import.meta.url), 'utf8');
+  assert.match(edge, /function previewQuestionSource\(payload: any\)/);
+  assert.match(edge, /entry\.source_name \|\| entry\.title \|\| entry\.source_id/);
+  assert.match(edge, /trace_status === 'missing' \? 'rastreabilidade ausente declarada'/);
+  assert.match(edge, /source,\s*fonte: source,/);
+});
