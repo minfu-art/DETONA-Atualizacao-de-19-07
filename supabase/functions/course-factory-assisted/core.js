@@ -7,7 +7,7 @@ import {
 } from '../_shared/adminValidation.js';
 
 export const ASSISTED_FACTORY_ACTIONS = Object.freeze([
-  'capabilities', 'list_drafts', 'create_draft', 'get_draft',
+  'capabilities', 'list_drafts', 'list_homologation_courses', 'create_draft', 'get_draft',
   'get_preview_package',
   'create_signed_upload', 'complete_upload', 'remove_source',
   'validate_package', 'import_package', 'approve_map',
@@ -48,7 +48,7 @@ function integer(value, label, min, max) {
 export function validateAssistedFactoryRequest(input) {
   const body = assertPlainObject(input);
   const action = safeEnum(body.action, ASSISTED_FACTORY_ACTIONS, 'action');
-  if (['capabilities', 'list_drafts', 'create_draft'].includes(action)) {
+  if (['capabilities', 'list_drafts', 'list_homologation_courses', 'create_draft'].includes(action)) {
     assertExactKeys(body, ['action']);
     return { action };
   }

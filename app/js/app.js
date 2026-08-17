@@ -689,12 +689,17 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
     contestHint?.id === contestId
       ? Promise.resolve(contestHint)
       : libraryService.getContest(contestId, { refresh: true }),
-    contestContentService.load(user.id, contestId),
+    contestContentService.load(user.id, contestId, {
+      previewDraftId: contestHint?.previewOnly === true ? contestHint.courseDraftId : null,
+    }),
   ]);
   assertCurrent();
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
+  if (contestHint?.previewOnly === true && contentPackage?.previewOnly !== true) {
+    throw new Error('Pacote de homologação inválido.');
+  }
   if (contestChanged) {
     resetContestTransientContext(ctx);
     ctx.rankedEventSession = null;
@@ -709,7 +714,9 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   assertCurrent();
   await openDB();
   const localPlayer = await getPlayer();
-  const cloudSyncEnabled = isCloudEnabled() && !isCourseFactoryStudentPreview();
+  const cloudSyncEnabled = isCloudEnabled()
+    && !isCourseFactoryStudentPreview()
+    && contentPackage?.previewOnly !== true;
   const syncInBackground = cloudSyncEnabled && Boolean(localPlayer);
   // Dispositivo novo ainda bloqueia no primeiro pull para restaurar o progresso remoto.
   // Quem já possui base local abre imediatamente e sincroniza depois da primeira tela.
@@ -772,8 +779,8 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
   const coursePreview = isCourseFactoryStudentPreview();
   if (isDeveloperUser(authenticatedUser) && !coursePreview) {
-    redirectForRole(authenticatedUser);
-    return;
+    const redirect = redirectForRole(authenticatedUser);
+    if (redirect) return;
   }
   if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
     resetHabitReminderRuntime();

@@ -132,7 +132,7 @@ test('rotas academicas continuam protegidas e developer e separado antes da jorn
   assert.match(source, /canAccessInternalRoute\(authService\)/);
   assert.match(source, /getActiveContestId\(\)/);
   assert.match(source, /ctx\.contest\?\.id !== getActiveContestId\(\)/);
-  assert.match(source, /contestContentService\.load\(user\.id, contestId\)/);
+  assert.match(source, /contestContentService\.load\(user\.id, contestId, \{/);
   assert.match(contentService, /allowLegacyFallback = isLocalDevelopment/);
   assert.match(source, /isDeveloperUser\(authenticatedUser\)/);
   assert.match(source, /redirectForRole\(authenticatedUser\)/);

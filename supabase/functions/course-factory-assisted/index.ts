@@ -162,6 +162,36 @@ function publicValidation(report: any) {
   };
 }
 
+function homologationCourseSummary(draft: any) {
+  const curriculum = Array.isArray(draft.curriculum) ? draft.curriculum : [];
+  const course = draft.package_metadata?.course || {};
+  let topicCount = 0;
+  let subtopicCount = 0;
+  for (const discipline of curriculum) {
+    const topics = Array.isArray(discipline?.topics) ? discipline.topics : [];
+    topicCount += topics.length;
+    for (const topic of topics) subtopicCount += Array.isArray(topic?.subtopics) ? topic.subtopics.length : 0;
+  }
+  return {
+    draftId: draft.id,
+    contestId: draft.identity?.contest_id,
+    code: course.code || draft.identity?.contest_id,
+    name: draft.identity?.contest_name || course.name,
+    role: draft.identity?.position || course.position,
+    description: course.description || 'Curso em homologação na Course Factory.',
+    organization: draft.identity?.organization || course.organization,
+    examBoard: draft.identity?.board || course.board,
+    examDate: draft.identity?.exam_date || course.exam_date,
+    disciplineCount: curriculum.length,
+    topicCount,
+    subtopicCount,
+    questionCount: Number(draft.question_count || 0),
+    previewOnly: true,
+    publicationStatus: 'testing',
+    salesStatus: 'unavailable',
+  };
+}
+
 function errorStatus(message: string) {
   if (message === 'course_factory_unavailable') return 503;
   if (message === 'invalid_session') return 401;
@@ -212,6 +242,25 @@ Deno.serve(async (request) => {
         .eq('created_by', user.id).order('updated_at', { ascending: false }).limit(50);
       if (error) throw error;
       return response(200, { drafts: data || [] }, origin);
+    }
+    if (body.action === 'list_homologation_courses') {
+      const { data, error } = await admin.from('course_factory_drafts')
+        .select('id,status,identity,curriculum,package_metadata,validation_report,question_count,updated_at')
+        .eq('created_by', user.id)
+        .in('status', ['package_imported', 'map_approved'])
+        .order('updated_at', { ascending: false })
+        .limit(50);
+      if (error) throw error;
+      const seen = new Set();
+      const courses = (data || [])
+        .filter((draft: any) => draft.validation_report?.valid === true)
+        .map(homologationCourseSummary)
+        .filter((course: any) => {
+          if (!course.contestId || seen.has(course.contestId)) return false;
+          seen.add(course.contestId);
+          return true;
+        });
+      return response(200, { courses }, origin);
     }
     if (body.action === 'create_draft') {
       const { data, error } = await admin.from('course_factory_drafts').insert({ created_by: user.id, status: 'sources' }).select('*').single();

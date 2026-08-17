@@ -22,6 +22,11 @@ function contestTheme(contest) {
   return `style="--contest:${escapeHtml(contest.color)};--contest-accent:${escapeHtml(contest.accent)}"`;
 }
 
+function homologationStatus(contest) {
+  if (contest.previewOnly !== true) return '';
+  return '<div class="owned-course-card__testing" role="status"><strong>EM TESTE</strong><span>NÃO PUBLICADO</span></div>';
+}
+
 function publicCoursesAction({ href, offline, label = '+ ADICIONAR CURSOS', className = '' }) {
   const classes = `library-public-courses ${className}`.trim();
   if (offline || !href) {
@@ -38,11 +43,11 @@ function continueJourney(item) {
       <div class="active-journey__art">${courseArt(contest, { eager: true })}</div>
       <div class="active-journey__content">
         <span class="library-kicker">CONTINUAR ESTUDANDO</span>
-        <div><strong class="active-journey__code">${escapeHtml(contest.code)}</strong><h2 id="active-journey-title">${escapeHtml(contest.name)}</h2><p>${escapeHtml(contest.role)}</p></div>
+        <div><strong class="active-journey__code">${escapeHtml(contest.code)}</strong>${homologationStatus(contest)}<h2 id="active-journey-title">${escapeHtml(contest.name)}</h2><p>${escapeHtml(contest.role)}</p></div>
         <div class="active-journey__progress">${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}</div>
         ${summary?.lastAccessAt ? `<small>Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}</small>` : '<small>Sua jornada está pronta para começar.</small>'}
       </div>
-      <button type="button" class="active-journey__action" data-open-contest="${escapeHtml(contest.id)}">CONTINUAR <span aria-hidden="true">→</span></button>
+      <button type="button" class="active-journey__action" data-open-contest="${escapeHtml(contest.id)}">${contest.previewOnly === true ? 'TESTAR CURSO' : 'CONTINUAR'} <span aria-hidden="true">→</span></button>
       <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
     </section>`;
 }
@@ -57,13 +62,14 @@ function ownedCourseCard(item, { active = false } = {}) {
       <div class="owned-course-card__art">${courseArt(contest)}</div>
       <div class="owned-course-card__body">
         <span class="owned-course-card__code">${escapeHtml(contest.code)}</span>
+        ${homologationStatus(contest)}
         <h3>${escapeHtml(contest.name)}</h3>
         <p>${escapeHtml(contest.role)}</p>
         <div class="owned-course-card__mastery"><span>DOMÍNIO DO EDITAL</span><strong>${progress}%</strong></div>
         ${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}
         <p class="owned-course-card__counts">${Number(contest.subtopicCount || 0)} subtópicos <span aria-hidden="true">·</span> ${Number(contest.questionCount || 0).toLocaleString('pt-BR')} questões</p>
         <p class="owned-course-card__last">${summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Ainda sem atividade registrada.'}</p>
-        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? 'CONTEÚDO EM PREPARAÇÃO' : 'CONTINUAR'}</button>
+        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? 'CONTEÚDO EM PREPARAÇÃO' : contest.previewOnly === true ? 'TESTAR CURSO' : 'CONTINUAR'}</button>
         <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
       </div>
     </article>`;

@@ -9,11 +9,16 @@ import * as localDb from '../core/db.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { progressCloud, recordKeyFor, SYNC_COLLECTIONS } from './progressCloud.js';
 import { shouldSyncCloudOperation, shouldSyncCloudRecord } from './collectionKeys.js';
+import { getActiveContestContent } from '../contest/contestRuntime.js';
 
 const OUTBOX_STORAGE = 'detona.sync.outbox';
 
 function isOnline() {
   return typeof navigator === 'undefined' || navigator.onLine !== false;
+}
+
+export function isCloudProgressAllowed(cloudEnabled = isCloudEnabled, activeContent = getActiveContestContent) {
+  return cloudEnabled() && activeContent()?.previewOnly !== true;
 }
 
 function readOutbox() {
@@ -63,7 +68,7 @@ async function cloudWriteSafe(fn, onFailure) {
 export function createHybridProgressAdapter({
   local = localDb,
   cloud = progressCloud,
-  cloudEnabled = isCloudEnabled,
+  cloudEnabled = isCloudProgressAllowed,
   online = isOnline,
   enqueue = enqueueOutbox,
 } = {}) {

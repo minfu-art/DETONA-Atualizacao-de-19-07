@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v144-course-factory-assisted-packages';
+const CACHE = 'detona-v145-course-factory-homologation-library';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -102,6 +102,7 @@ const ASSETS = [
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
   './js/services/libraryService.js',
+  './js/services/homologationCourseService.js',
   './js/services/studentEntryLinks.js',
   './js/services/studentEntryModel.js',
   './js/services/careerLibraryService.js',

@@ -4,12 +4,14 @@ import { isLocalDevelopment } from '../config/appEnvironment.js';
 import { contestCatalogService } from './contestCatalogService.js';
 import { LibrarySnapshotRepository } from '../repositories/librarySnapshotRepository.js';
 import { checkoutActionFor } from './studentEntryModel.js';
+import { homologationCourseService } from './homologationCourseService.js';
 
 export class LibraryService {
   constructor({
     entitlements = new EntitlementRepository(), checkout = new CheckoutService(), summaries = null,
     now = () => new Date(), allowLocalGrants = isLocalDevelopment, catalog = contestCatalogService,
     snapshots = new LibrarySnapshotRepository(),
+    homologations = homologationCourseService,
   } = {}) {
     this.entitlements = entitlements;
     this.checkout = checkout;
@@ -18,6 +20,7 @@ export class LibraryService {
     this.allowLocalGrants = allowLocalGrants;
     this.catalog = catalog;
     this.snapshots = snapshots;
+    this.homologations = homologations;
   }
 
   async ensureLegacyEntitlements(user) {
@@ -38,7 +41,7 @@ export class LibraryService {
       ]);
       const byContest = new Map(rights.filter((right) => right.status === 'active').map((right) => [right.contestId, right]));
       const capability = this.getCheckoutCapability();
-      const items = await Promise.all(contests.map(async (contest) => {
+      const baseItems = await Promise.all(contests.map(async (contest) => {
         const owned = byContest.has(contest.id);
         let summary = null;
         if (owned && contest.contentStatus === 'ready' && this.summaries) {
@@ -53,7 +56,28 @@ export class LibraryService {
         };
         return { ...item, checkoutAction: checkoutActionFor(item, capability) };
       }));
-      this.snapshots?.save?.(user.id, items);
+      this.snapshots?.save?.(user.id, baseItems);
+      let items = baseItems;
+      if (this.homologations?.canList?.(user)) {
+        try {
+          const previewContests = await this.homologations.listForAdmin(user);
+          const byContestId = new Map(baseItems.map((item) => [item.contest.id, item]));
+          for (const contest of previewContests) {
+            if (byContestId.get(contest.id)?.owned) continue;
+            const item = {
+              contest,
+              owned: true,
+              entitlement: null,
+              summary: null,
+              homologation: true,
+            };
+            byContestId.set(contest.id, { ...item, checkoutAction: checkoutActionFor(item, capability) });
+          }
+          items = [...byContestId.values()];
+        } catch {
+          items = baseItems;
+        }
+      }
       return { items, offline: false, stale: false, checkout: capability };
     } catch (error) {
       const snapshot = this.snapshots?.read?.(user.id);

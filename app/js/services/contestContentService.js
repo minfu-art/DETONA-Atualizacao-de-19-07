@@ -16,10 +16,14 @@ export class ContestContentService {
     getClient = getSupabaseClient,
     cacheStorage = globalThis.caches,
     allowLegacyFallback = isLocalDevelopment,
+    previewService = courseFactoryPreviewService,
+    previewRequested = isCourseFactoryStudentPreview,
   } = {}) {
     this.getClient = getClient;
     this.cacheStorage = cacheStorage;
     this.allowLegacyFallback = allowLegacyFallback;
+    this.previewService = previewService;
+    this.previewRequested = previewRequested;
   }
 
   async #cachePackage(userId, contentPackage) {
@@ -34,9 +38,12 @@ export class ContestContentService {
     }));
   }
 
-  async load(userId, contestId) {
-    if (isCourseFactoryStudentPreview()) {
-      return courseFactoryPreviewService.loadRuntimePackage(contestId);
+  async load(userId, contestId, { previewDraftId = null } = {}) {
+    if (previewDraftId) {
+      return this.previewService.loadRuntimePackage(contestId, { draftId: previewDraftId });
+    }
+    if (this.previewRequested()) {
+      return this.previewService.loadRuntimePackage(contestId);
     }
     const client = await this.getClient();
     if (!client) {

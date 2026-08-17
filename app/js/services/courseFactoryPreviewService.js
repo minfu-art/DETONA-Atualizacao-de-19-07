@@ -78,8 +78,7 @@ export class CourseFactoryPreviewService {
     return structuredClone(await this.manifestPromise);
   }
 
-  async loadRuntimePackage(contestId) {
-    const draftId = requestedCourseDraft();
+  async loadRuntimePackage(contestId, { draftId = requestedCourseDraft() } = {}) {
     if (draftId) {
       if (!this.draftRuntimePromises.has(draftId)) this.draftRuntimePromises.set(draftId, (async () => {
         const { getSupabaseClient } = await import('../supabase/client.js');
@@ -106,8 +105,8 @@ export class CourseFactoryPreviewService {
     return structuredClone(runtime);
   }
 
-  async loadStudentContest(contestId) {
-    const runtime = await this.loadRuntimePackage(contestId);
+  async loadStudentContest(contestId, options = {}) {
+    const runtime = await this.loadRuntimePackage(contestId, options);
     const disciplines = runtime.curriculum.filter(({ type }) => type === 'discipline').length;
     const subtopics = runtime.curriculum.filter(({ type }) => type === 'subtopic').length;
     return {
