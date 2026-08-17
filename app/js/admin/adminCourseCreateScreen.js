@@ -271,10 +271,13 @@ export async function renderAdminCourseCreateScreen(root, ctx, { draftId = null,
       await adminCourseFactoryService.removeSource(draft.id, button.dataset.removeSource); await refresh(); feedback = 'Fonte removida.';
     })));
     for (const id of ['factory-package-files', 'factory-package-folder']) root.querySelector(`#${id}`)?.addEventListener('change', (event) => run('Lendo pacote…', () => loadFiles(event.target.files)));
-    root.querySelector('#factory-load-json')?.addEventListener('click', () => run('Lendo JSON…', async () => {
-      try { pendingPackage = JSON.parse(root.querySelector('#factory-package-json').value); } catch { throw new Error('O texto colado não contém JSON válido.'); }
-      validationReport = null; feedback = `Pacote ${pendingPackage.operation_id || 'sem operation_id'} carregado.`; globalThis.__DETONA_ADMIN?.markDirty?.();
-    }));
+    root.querySelector('#factory-load-json')?.addEventListener('click', () => {
+      const packageText = root.querySelector('#factory-package-json').value;
+      run('Lendo JSON…', async () => {
+        try { pendingPackage = JSON.parse(packageText); } catch { throw new Error('O texto colado não contém JSON válido.'); }
+        validationReport = null; feedback = `Pacote ${pendingPackage.operation_id || 'sem operation_id'} carregado.`; globalThis.__DETONA_ADMIN?.markDirty?.();
+      });
+    });
     root.querySelector('#factory-validate')?.addEventListener('click', () => run('Validando contrato, vínculos, rastreabilidade e cobertura…', async () => {
       validationReport = await adminCourseFactoryService.validatePackage(draft.id, pendingPackage);
       feedback = validationReport.valid ? 'Pacote válido. A importação foi liberada.' : `Validação encontrou ${validationReport.errors.length} erro(s).`;

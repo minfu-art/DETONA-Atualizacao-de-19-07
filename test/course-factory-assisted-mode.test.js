@@ -172,3 +172,10 @@ test('ADM declara as duas áreas e todas as etapas assistidas solicitadas', asyn
   ]) assert.match(ui, new RegExp(marker));
   assert.doesNotMatch(ui, /analyzeSources|OPENAI_API_KEY necessária|PUBLICAR CURSO/);
 });
+
+test('ADM preserva o JSON colado antes de redesenhar o formulário', async () => {
+  const ui = await readFile(new URL('../app/js/admin/adminCourseCreateScreen.js', import.meta.url), 'utf8');
+  assert.match(ui, /const packageText = root\.querySelector\('#factory-package-json'\)\.value;\s*run\('Lendo JSON…'/);
+  assert.match(ui, /JSON\.parse\(packageText\)/);
+  assert.doesNotMatch(ui, /JSON\.parse\(root\.querySelector\('#factory-package-json'\)\.value\)/);
+});
