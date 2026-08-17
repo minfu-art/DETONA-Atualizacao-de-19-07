@@ -1,5 +1,10 @@
 import { getSupabaseClient } from '../supabase/client.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
+import {
+  isCourseFactoryStudentPreview,
+  PC_BA_CONTEST_ID,
+  courseFactoryPreviewService,
+} from './courseFactoryPreviewService.js';
 
 const CACHE_PREFIX = 'detona-contest-content';
 
@@ -31,6 +36,9 @@ export class ContestContentService {
   }
 
   async load(userId, contestId) {
+    if (contestId === PC_BA_CONTEST_ID && isCourseFactoryStudentPreview()) {
+      return courseFactoryPreviewService.loadRuntimePackage(contestId);
+    }
     const client = await this.getClient();
     if (!client) {
       if (contestId === 'pc_al_2026' && this.allowLegacyFallback()) return { legacyStatic: true, contestId };

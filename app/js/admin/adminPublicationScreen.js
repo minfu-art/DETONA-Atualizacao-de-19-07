@@ -3,6 +3,7 @@ import {
   validatePackageConfirmation,
 } from '../services/adminPublicationService.js';
 import { escapeHtml } from '../ui/helpers.js';
+import { PC_BA_CONTEST_ID } from '../services/courseFactoryPreviewService.js';
 
 const LABELS = Object.freeze({
   general: 'Dados gerais',
@@ -22,6 +23,26 @@ export function packageActionsForStatus(status) {
 }
 
 export async function renderAdminPublicationScreen(root, ctx) {
+  if (ctx.adminSelectedContestId === PC_BA_CONTEST_ID) {
+    root.innerHTML = `
+      <header class="admin-page-header"><div><span>Course Factory · Publicação</span><h1>PC BA não publicada</h1>
+        <p>A etapa existe para transparência operacional, mas permanece bloqueada durante a homologação.</p></div></header>
+      <section class="admin-grid admin-grid--2">
+        <article class="admin-panel"><span class="admin-panel__eyebrow">Estado</span><h2>NÃO PUBLICADO / EM TESTE</h2>
+          <dl class="admin-status-list">
+            <div><dt>Mapa do edital</dt><dd class="is-ok">Carregado</dd></div>
+            <div><dt>Banco de questões</dt><dd class="is-ok">Validado estruturalmente</dd></div>
+            <div><dt>Validação do proprietário</dt><dd>Pendente</dd></div>
+            <div><dt>Venda / checkout</dt><dd>Desativado</dd></div>
+          </dl>
+        </article>
+        <article class="admin-panel admin-publication-locked"><span aria-hidden="true">×</span><h2>PUBLICAÇÃO BLOQUEADA</h2>
+          <p>Nenhuma ação desta tela publica conteúdo, concede acesso, ativa checkout ou modifica produção.</p>
+          <button class="admin-button" type="button" disabled>PUBLICAR CURSO</button>
+        </article>
+      </section>`;
+    return;
+  }
   const [validation, history] = await Promise.all([
     adminPublicationService.validate(ctx.adminSelectedContestId).catch(() => ({ ready: false, checklist: {} })),
     adminPublicationService.list(ctx.adminSelectedContestId).catch(() => ({ packages: [] })),

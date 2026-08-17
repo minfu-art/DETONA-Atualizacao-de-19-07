@@ -121,7 +121,7 @@ export function normalizeSituacao(raw, { structurallyValid = true, forceReview =
 
 export function normalizeQuestion(item = {}, context = {}) {
   const rawFormat = item.format || item.tipo || '';
-  const format = rawFormat === 'multipla_escolha' || String(rawFormat).includes('multipla')
+  const format = rawFormat === 'multipla_escolha' || /multipla|multiple_choice/i.test(String(rawFormat))
     ? 'multipla_escolha'
     : 'certo_errado';
   const statementResult = sanitizeSensitiveText(item.enunciado ?? item.statement ?? '');

@@ -18,6 +18,7 @@ import {
 } from './checkoutService.js';
 import { contestContentService } from './contestContentService.js';
 import { ENV } from '../config/env.js';
+import { isCourseFactoryStudentPreview } from './courseFactoryPreviewService.js';
 
 const localAuth = new AuthService({
   migrationService: isLocalDevelopment() ? new LegacyDataMigrationService() : null,
@@ -48,7 +49,7 @@ export { contestContentService };
  * Leituras sempre do IndexedDB; escritas espelham no Supabase.
  */
 export function createAppProgressRepository() {
-  const adapter = isCloudEnabled() ? hybridProgressAdapter : localDb;
+  const adapter = isCloudEnabled() && !isCourseFactoryStudentPreview() ? hybridProgressAdapter : localDb;
   return new ProgressRepository({ adapter });
 }
 

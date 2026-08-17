@@ -30,6 +30,11 @@ import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { readCheckoutReturn, readCommercialIntent } from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
+  courseFactoryPreviewService,
+  isCourseFactoryStudentPreview,
+  PC_BA_CONTEST_ID,
+} from './services/courseFactoryPreviewService.js';
+import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
   dismissHabitReminder,
@@ -704,10 +709,11 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   assertCurrent();
   await openDB();
   const localPlayer = await getPlayer();
-  const syncInBackground = isCloudEnabled() && Boolean(localPlayer);
+  const cloudSyncEnabled = isCloudEnabled() && !isCourseFactoryStudentPreview();
+  const syncInBackground = cloudSyncEnabled && Boolean(localPlayer);
   // Dispositivo novo ainda bloqueia no primeiro pull para restaurar o progresso remoto.
   // Quem já possui base local abre imediatamente e sincroniza depois da primeira tela.
-  if (isCloudEnabled()) {
+  if (cloudSyncEnabled) {
     if (!syncInBackground) {
       try {
         await syncOnContestOpen(user.id, contestId);
@@ -735,7 +741,7 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
       : requestedScreen === 'wellbeing' ? 'wellbeing' : 'home';
     await navigate(destination);
   }
-  if (isCloudEnabled()) {
+  if (cloudSyncEnabled) {
     scheduleContestMaintenance({
       userId: user.id,
       contestId,
@@ -764,7 +770,8 @@ ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitRemi
 
 async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
-  if (isDeveloperUser(authenticatedUser)) {
+  const coursePreview = isCourseFactoryStudentPreview();
+  if (isDeveloperUser(authenticatedUser) && !coursePreview) {
     redirectForRole(authenticatedUser);
     return;
   }
@@ -777,6 +784,13 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   if (!shellInitialized) {
     initAppShell(navigate, { onLogout: logout, onActivate: () => SFX.click() });
     shellInitialized = true;
+  }
+
+  if (coursePreview && isDeveloperUser(authenticatedUser)) {
+    await openContest(PC_BA_CONTEST_ID, {
+      contestHint: courseFactoryPreviewService.studentContest(),
+    });
+    return;
   }
 
   if (reason === 'register') {

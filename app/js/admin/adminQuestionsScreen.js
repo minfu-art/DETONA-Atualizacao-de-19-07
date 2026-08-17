@@ -7,6 +7,10 @@ import {
   validateEditorialBatch,
 } from '../services/adminQuestionService.js';
 import { escapeHtml } from '../ui/helpers.js';
+import {
+  courseFactoryPreviewService,
+  PC_BA_CONTEST_ID,
+} from '../services/courseFactoryPreviewService.js';
 
 const STATUS_LABELS = Object.freeze({
   draft: 'Rascunho',
@@ -110,6 +114,34 @@ function renderVersionHistory(versions) {
     </article>`).join('');
 }
 
+async function renderPcBaQuestionBank(root) {
+  const manifest = await courseFactoryPreviewService.loadManifest();
+  const stats = manifest.stats;
+  root.innerHTML = `
+    <header class="admin-page-header"><div><span>Course Factory · Banco de Questões</span><h1>Auditoria PC BA</h1>
+      <p>Banco validado contra o currículo canônico. Conteúdo em modo somente leitura e ainda não publicado.</p></div></header>
+    <section class="admin-question-audit-grid">
+      <article class="admin-metric admin-metric--orange"><span>Questões encontradas</span><strong>${stats.questions_found}</strong></article>
+      <article class="admin-metric"><span>Questões válidas</span><strong>${stats.questions_valid}</strong></article>
+      <article class="admin-metric"><span>Questões inválidas</span><strong>${stats.questions_invalid}</strong></article>
+      <article class="admin-metric"><span>Questões duplicadas</span><strong>${stats.questions_duplicated}</strong></article>
+      <article class="admin-metric"><span>Questões sem vínculo</span><strong>${stats.questions_unlinked}</strong></article>
+    </section>
+    <section class="admin-panel">
+      <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Amostra auditável</span><h2>Primeiras questões do pacote</h2></div>
+        <strong class="admin-readonly-badge">SOMENTE LEITURA</strong></div>
+      <div class="admin-table-wrap"><table class="admin-table admin-question-table"><thead><tr><th>ID</th><th>Enunciado</th><th>Disciplina</th><th>Subtópico</th><th>Gabarito</th></tr></thead>
+        <tbody>${manifest.question_samples.map((question) => `<tr>
+          <td data-label="ID"><code>${escapeHtml(question.id)}</code></td>
+          <td data-label="Enunciado"><span class="admin-question-statement">${escapeHtml(question.statement)}</span></td>
+          <td data-label="Disciplina"><code>${escapeHtml(question.discipline_id)}</code></td>
+          <td data-label="Subtópico"><code>${escapeHtml(question.subtopic_id)}</code></td>
+          <td data-label="Gabarito"><strong>${escapeHtml(question.correct_answer)}</strong></td>
+        </tr>`).join('')}</tbody></table></div>
+      <p class="admin-course-note">${stats.batches} lotes inventariados. Nenhum lote foi importado no Supabase e nenhuma questão foi publicada.</p>
+    </section>`;
+}
+
 async function readFiles(files) {
   const questions = [];
   for (const file of files) {
@@ -121,6 +153,10 @@ async function readFiles(files) {
 
 export async function renderAdminQuestionsScreen(root, ctx) {
   const contestId = ctx.adminSelectedContestId;
+  if (contestId === PC_BA_CONTEST_ID) {
+    await renderPcBaQuestionBank(root);
+    return;
+  }
   const [summary, curriculum, batches, questionList, approvedList, versionList] = await Promise.all([
     adminQuestionService.getPublishedSummary(contestId),
     adminCurriculumService.listNodes(contestId),

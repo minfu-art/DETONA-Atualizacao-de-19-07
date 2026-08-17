@@ -1,9 +1,9 @@
 export const CONTEST_WORKSPACE_TABS = Object.freeze([
-  Object.freeze({ screen: 'contests', module: 'general', label: 'Geral' }),
-  Object.freeze({ screen: 'curriculum', module: 'curriculum', label: 'Currículo' }),
-  Object.freeze({ screen: 'questions', module: 'questions', label: 'Questões' }),
-  Object.freeze({ screen: 'media', module: 'appearance', label: 'Aparência' }),
-  Object.freeze({ screen: 'students', module: 'students', label: 'Alunos' }),
+  Object.freeze({ screen: 'contests', module: 'general', label: 'Identificação' }),
+  Object.freeze({ screen: 'curriculum', module: 'curriculum', label: 'Mapa do Edital' }),
+  Object.freeze({ screen: 'questions', module: 'questions', label: 'Banco de Questões' }),
+  Object.freeze({ screen: 'courseAudit', module: 'course-audit', label: 'Auditoria' }),
+  Object.freeze({ screen: 'studentPreview', module: 'student-preview', label: 'Testar como Aluno' }),
   Object.freeze({ screen: 'publication', module: 'publication', label: 'Publicação' }),
 ]);
 
