@@ -1,4 +1,9 @@
 import { courseFactoryStudentPreviewUrl, PC_BA_CONTEST_ID } from '../services/courseFactoryPreviewService.js';
+import { adminCourseFactoryService } from '../services/adminCourseFactoryService.js';
+import {
+  renderAdminCourseCreateScreen,
+  renderCourseFactoryDraftCards,
+} from './adminCourseCreateScreen.js';
 import { escapeHtml } from '../ui/helpers.js';
 
 const STATUS_COPY = Object.freeze({
@@ -21,6 +26,12 @@ function stageRows(contest) {
 }
 
 export async function renderAdminCoursesScreen(root, ctx) {
+  const [draftResult, capabilityResult] = await Promise.allSettled([
+    adminCourseFactoryService.listDrafts(),
+    adminCourseFactoryService.capabilities(),
+  ]);
+  const drafts = draftResult.status === 'fulfilled' ? draftResult.value : [];
+  const capabilities = capabilityResult.status === 'fulfilled' ? capabilityResult.value : null;
   const courses = ctx.availableContests.filter(({ id }) => id === 'pc_al_2026' || id === PC_BA_CONTEST_ID);
   const selected = courses.find(({ id }) => id === ctx.adminSelectedContestId) || courses[0];
   root.innerHTML = `
@@ -55,16 +66,19 @@ export async function renderAdminCoursesScreen(root, ctx) {
         <a class="admin-button admin-button--secondary" href="${courseFactoryStudentPreviewUrl()}">VER COMO ALUNO</a>
       </div>` : ''}
     </section>
-    <section class="admin-panel admin-course-factory-new" id="course-factory-new-panel" hidden>
-      <span class="admin-panel__eyebrow">Estrutura inicial</span><h2>Novo curso</h2>
-      <p>A fundação está pronta para receber identificação, mapa do edital, banco de questões, auditoria, teste como aluno e publicação.</p>
-      <div class="admin-prepared">Criação persistente permanece desabilitada nesta etapa. Nenhum dado será gravado no Supabase.</div>
-    </section>`;
+    <section class="admin-panel admin-course-factory-new">
+      <div class="admin-panel-heading"><div><span class="admin-panel__eyebrow">Course Factory V2</span><h2>Criação assistida</h2></div>
+        <strong class="admin-readonly-badge">${capabilityResult.status === 'rejected' ? 'BACKEND INDISPONÍVEL' : capabilities?.aiConfigured ? `${escapeHtml(capabilities.provider)} · ${escapeHtml(capabilities.model)}` : 'IA NÃO CONFIGURADA'}</strong></div>
+      <p>Envie o edital e materiais complementares, gere uma proposta rastreável e aprove o mapa sem publicar o curso.</p>
+      <div class="admin-prepared">Fontes privadas no staging · aprovação humana obrigatória · publicação e questões bloqueadas.</div>
+    </section>
+    ${renderCourseFactoryDraftCards(drafts)}`;
   root.querySelector('#course-factory-new').addEventListener('click', () => {
-    const panel = root.querySelector('#course-factory-new-panel');
-    panel.hidden = !panel.hidden;
-    if (!panel.hidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    renderAdminCourseCreateScreen(root, ctx, { createNew: true });
   });
+  root.querySelectorAll('[data-resume-draft]').forEach((button) => button.addEventListener('click', () => {
+    renderAdminCourseCreateScreen(root, ctx, { draftId: button.dataset.resumeDraft });
+  }));
   root.querySelectorAll('[data-select-course]').forEach((button) => button.addEventListener('click', async () => {
     await globalThis.__DETONA_ADMIN?.selectContest?.(button.dataset.selectCourse);
   }));

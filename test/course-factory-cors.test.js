@@ -18,6 +18,7 @@ const functionSources = [
   '../supabase/functions/admin-editorial/index.ts',
   '../supabase/functions/admin-media/index.ts',
   '../supabase/functions/student-content/index.ts',
+  '../supabase/functions/course-factory-ai/index.ts',
 ];
 
 async function source(relative) {
@@ -36,6 +37,10 @@ test('Previews Vercel do projeto detona-staging são permitidos sem aceitar proj
   );
   assert.equal(
     isAllowedOrigin('https://detona-staging-git-fix-p0-foundation-min-fu-projetos.vercel.app', allowedOrigins),
+    true,
+  );
+  assert.equal(
+    isAllowedOrigin('https://detona-staging-git-feat-detona-course-factory-min-fu-projetos.vercel.app', allowedOrigins),
     true,
   );
   assert.equal(
@@ -127,7 +132,7 @@ test('corsHeaders nunca usa wildcard nem reflete origem desconhecida', () => {
   assert.doesNotMatch(JSON.stringify(headers), /\*/);
 });
 
-test('quatro funÃ§Ãµes usam o utilitÃ¡rio e rejeitam mÃ©todos fora de POST e OPTIONS', async () => {
+test('funÃ§Ãµes usam o utilitÃ¡rio e rejeitam mÃ©todos fora de POST e OPTIONS', async () => {
   for (const relative of functionSources) {
     const text = await source(relative);
     assert.match(text, /from '\.\.\/_shared\/cors\.js'/, relative);
@@ -138,15 +143,15 @@ test('quatro funÃ§Ãµes usam o utilitÃ¡rio e rejeitam mÃ©todos fora de PO
   }
 });
 
-test('quatro funÃ§Ãµes nÃ£o possuem preflight 204 com objeto JSON', async () => {
+test('funÃ§Ãµes nÃ£o possuem preflight 204 com objeto JSON', async () => {
   const forbidden = /\b(?:respond|response|json)\s*\(\s*204\s*,\s*\{\s*\}/;
   for (const relative of functionSources) {
     assert.doesNotMatch(await source(relative), forbidden, relative);
   }
 });
 
-test('autenticaÃ§Ã£o developer permanece nas trÃªs funÃ§Ãµes administrativas', async () => {
-  for (const relative of functionSources.slice(0, 3)) {
+test('autenticaÃ§Ã£o developer permanece nas funÃ§Ãµes administrativas', async () => {
+  for (const relative of functionSources.filter((relative) => relative !== '../supabase/functions/student-content/index.ts')) {
     const text = await source(relative);
     assert.match(text, /\.auth\.getUser\(\)/, relative);
     assert.match(text, /profile\?\.role !== 'developer'/, relative);
@@ -162,9 +167,9 @@ test('student-content preserva sessÃ£o, entitlement e fallback PC\/AL', async 
   assert.match(text, /body\.contestId === 'pc_al_2026'/);
 });
 
-test('verify_jwt permanece habilitado nas quatro funÃ§Ãµes', async () => {
+test('verify_jwt permanece habilitado nas funÃ§Ãµes', async () => {
   const config = await source('../supabase/config.toml');
-  for (const name of ['admin-contests', 'admin-editorial', 'admin-media', 'student-content']) {
+  for (const name of ['admin-contests', 'admin-editorial', 'admin-media', 'student-content', 'course-factory-ai']) {
     assert.match(config, new RegExp(`\\[functions\\.${name}\\]\\s+verify_jwt = true`), name);
   }
 });

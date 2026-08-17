@@ -47,6 +47,10 @@ function markSaved() {
   hasUnsavedChanges = false;
 }
 
+function markDirty() {
+  hasUnsavedChanges = true;
+}
+
 function canLeaveCurrentScreen() {
   return !hasUnsavedChanges || globalThis.confirm?.(UNSAVED_MESSAGE) === true;
 }
@@ -198,6 +202,7 @@ globalThis.__DETONA_ADMIN = Object.freeze({
   navigate,
   selectContest,
   markSaved,
+  markDirty,
   getContext: () => ({
     screen: adminContext.screen,
     adminSelectedContestId: adminContext.adminSelectedContestId,
