@@ -1,0 +1,755 @@
+{
+  "name": "pcba_inv_rl_14_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_14_01_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ed017b5c7a3c05"
+      ],
+      "statement": "Ao modelar um problema aritmético, a etapa inicial mais segura é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "definir a incógnita e traduzir as relações do enunciado."
+        },
+        {
+          "label": "B",
+          "text": "somar todos os números apresentados."
+        },
+        {
+          "label": "C",
+          "text": "ignorar as unidades."
+        },
+        {
+          "label": "D",
+          "text": "testar fórmulas geométricas."
+        },
+        {
+          "label": "E",
+          "text": "escolher a alternativa de maior valor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige modelar problemas aritméticos com relações adequadas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: organiza o texto em uma estrutura calculável. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: organiza o texto em uma estrutura calculável.\n\nB: Incorreta: números podem representar papéis diferentes.\n\nC: Incorreta: unidades ajudam a validar o modelo.\n\nD: Incorreta: o problema pode não ser geométrico.\n\nE: Incorreta: não há fundamento lógico.\n\nArmadilha: Escolher uma operação por palavra-chave sem identificar grandezas, incógnitas e restrições.\n\nConhecimento adicional: Modelar significa converter relações verbais em expressões ou equações antes de calcular.\n\nAprendizado essencial: Defina a incógnita, traduza cada relação e só então resolva e confira.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ed017b5c7a3c05"
+      ],
+      "statement": "A soma de um número com seu dobro é 36. Esse número vale\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "9."
+        },
+        {
+          "label": "B",
+          "text": "12."
+        },
+        {
+          "label": "C",
+          "text": "18."
+        },
+        {
+          "label": "D",
+          "text": "24."
+        },
+        {
+          "label": "E",
+          "text": "30."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige modelar problemas aritméticos com relações adequadas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: x+2x=36 implica 3x=36 e x=12. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: 9+18=27.\n\nB: Correta: x+2x=36 implica 3x=36 e x=12.\n\nC: Incorreta: 18 mais seu dobro é 54.\n\nD: Incorreta: 24 mais 48 é 72.\n\nE: Incorreta: 30 mais 60 é 90.\n\nArmadilha: Escolher uma operação por palavra-chave sem identificar grandezas, incógnitas e restrições.\n\nConhecimento adicional: Modelar significa converter relações verbais em expressões ou equações antes de calcular.\n\nAprendizado essencial: Defina a incógnita, traduza cada relação e só então resolva e confira.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ed017b5c7a3c05"
+      ],
+      "statement": "Um resultado x=−4 foi obtido para a quantidade de pessoas em um grupo. Qual avaliação é adequada?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Aceitar sempre, pois toda solução algébrica resolve o problema real."
+        },
+        {
+          "label": "B",
+          "text": "Dobrar o valor e usar −8."
+        },
+        {
+          "label": "C",
+          "text": "Rejeitar ou revisar o modelo, pois a restrição contextual exige quantidade não negativa."
+        },
+        {
+          "label": "D",
+          "text": "Trocar o sinal sem verificar a equação."
+        },
+        {
+          "label": "E",
+          "text": "Arredondar para −5."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige modelar problemas aritméticos com relações adequadas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: validação semântica detecta a incompatibilidade. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: a solução precisa respeitar o domínio contextual.\n\nB: Incorreta: a transformação é arbitrária.\n\nC: Correta: validação semântica detecta a incompatibilidade.\n\nD: Incorreta: trocar o sinal pode deixar de satisfazer a equação.\n\nE: Incorreta: o arredondamento mantém a impossibilidade.\n\nArmadilha: Escolher uma operação por palavra-chave sem identificar grandezas, incógnitas e restrições.\n\nConhecimento adicional: Modelar significa converter relações verbais em expressões ou equações antes de calcular.\n\nAprendizado essencial: Defina a incógnita, traduza cada relação e só então resolva e confira.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_717b619d310bbc"
+      ],
+      "statement": "Na sequência 3, 6, 12, 24, ..., cada termo após o primeiro é obtido por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "elevar ao quadrado."
+        },
+        {
+          "label": "B",
+          "text": "somar 2."
+        },
+        {
+          "label": "C",
+          "text": "somar 3."
+        },
+        {
+          "label": "D",
+          "text": "multiplicar por 2."
+        },
+        {
+          "label": "E",
+          "text": "multiplicar por 3."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige identificar padrões e sequências numéricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a razão constante é 2. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: 6² não produz 12.\n\nB: Incorreta: 3+2 não produz 6 e a regra falha depois.\n\nC: Incorreta: 6+3 produz 9, não 12.\n\nD: Correta: a razão constante é 2.\n\nE: Incorreta: 3×3 já produziria 9.\n\nArmadilha: Inferir uma regra com poucos termos sem conferir se ela se mantém nas transições seguintes.\n\nConhecimento adicional: Uma sequência pode ser definida por termo geral ou recorrência; a regra deve explicar todas as posições fornecidas.\n\nAprendizado essencial: Compare diferenças, razões e alternâncias e valide a regra em mais de uma passagem.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 3-9",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 3-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_717b619d310bbc"
+      ],
+      "statement": "Qual é o próximo termo da sequência 2, 5, 10, 17, 26, ...?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "40."
+        },
+        {
+          "label": "B",
+          "text": "32."
+        },
+        {
+          "label": "C",
+          "text": "35."
+        },
+        {
+          "label": "D",
+          "text": "36."
+        },
+        {
+          "label": "E",
+          "text": "37."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige identificar padrões e sequências numéricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: as diferenças são 3,5,7,9 e depois 11: 26+11=37. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: acrescenta 14 sem padrão.\n\nB: Incorreta: não acompanha os incrementos.\n\nC: Incorreta: usa incremento constante 9.\n\nD: Incorreta: omite uma unidade.\n\nE: Correta: as diferenças são 3,5,7,9 e depois 11: 26+11=37.\n\nArmadilha: Inferir uma regra com poucos termos sem conferir se ela se mantém nas transições seguintes.\n\nConhecimento adicional: Uma sequência pode ser definida por termo geral ou recorrência; a regra deve explicar todas as posições fornecidas.\n\nAprendizado essencial: Compare diferenças, razões e alternâncias e valide a regra em mais de uma passagem.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 3-9",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 3-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_717b619d310bbc"
+      ],
+      "statement": "Os termos 1, 2, 4 permitem concluir unicamente que o próximo termo é 8?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Não, diferentes regras podem reproduzir os três termos e divergir depois."
+        },
+        {
+          "label": "B",
+          "text": "Não, porque o próximo termo deve ser menor."
+        },
+        {
+          "label": "C",
+          "text": "Sim, porque 1+2+4=7 e se soma 1."
+        },
+        {
+          "label": "D",
+          "text": "Sim, toda sequência crescente dobra."
+        },
+        {
+          "label": "E",
+          "text": "Sim, três termos determinam qualquer regra."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige identificar padrões e sequências numéricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: destaca a necessidade de regra ou contexto adicional. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: destaca a necessidade de regra ou contexto adicional.\n\nB: Incorreta: não há essa obrigação.\n\nC: Incorreta: apresenta apenas uma regra possível, não única.\n\nD: Incorreta: crescimento não implica duplicação.\n\nE: Incorreta: um prefixo finito pode admitir várias leis.\n\nArmadilha: Inferir uma regra com poucos termos sem conferir se ela se mantém nas transições seguintes.\n\nConhecimento adicional: Uma sequência pode ser definida por termo geral ou recorrência; a regra deve explicar todas as posições fornecidas.\n\nAprendizado essencial: Compare diferenças, razões e alternâncias e valide a regra em mais de uma passagem.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 3-9",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 3-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f28a83f7831604"
+      ],
+      "statement": "Duas retas distintas de um mesmo plano que nunca se encontram são chamadas de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "perpendiculares."
+        },
+        {
+          "label": "B",
+          "text": "paralelas."
+        },
+        {
+          "label": "C",
+          "text": "coincidentes."
+        },
+        {
+          "label": "D",
+          "text": "secantes oblíquas."
+        },
+        {
+          "label": "E",
+          "text": "concorrentes."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige resolver relações geométricas e espaciais e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: mantêm distância e não possuem ponto comum. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: encontram-se formando 90 graus.\n\nB: Correta: mantêm distância e não possuem ponto comum.\n\nC: Incorreta: teriam todos os pontos em comum.\n\nD: Incorreta: encontram-se com ângulo diferente de 90 graus.\n\nE: Incorreta: encontram-se em um ponto.\n\nArmadilha: Confundir orientação do observador com posição absoluta ou aplicar propriedades de uma figura a outra.\n\nConhecimento adicional: Relações espaciais devem conservar adjacência, direção, ângulos e dimensões informadas.\n\nAprendizado essencial: Faça um esboço, marque referências e acompanhe cada transformação espacial.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f28a83f7831604"
+      ],
+      "statement": "Uma pessoa olha para o norte, gira 90° à direita e depois 180°. Para qual direção passa a olhar?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Para a direção sul."
+        },
+        {
+          "label": "B",
+          "text": "Para a direção leste."
+        },
+        {
+          "label": "C",
+          "text": "Para a direção oeste."
+        },
+        {
+          "label": "D",
+          "text": "Para a direção nordeste."
+        },
+        {
+          "label": "E",
+          "text": "Para a direção norte."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige resolver relações geométricas e espaciais e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: norte→leste→oeste. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: seria resultado de apenas 180° desde o norte.\n\nB: Incorreta: é a direção após o primeiro giro.\n\nC: Correta: norte→leste→oeste.\n\nD: Incorreta: os giros são múltiplos de 90 graus.\n\nE: Incorreta: não considera os giros.\n\nArmadilha: Confundir orientação do observador com posição absoluta ou aplicar propriedades de uma figura a outra.\n\nConhecimento adicional: Relações espaciais devem conservar adjacência, direção, ângulos e dimensões informadas.\n\nAprendizado essencial: Faça um esboço, marque referências e acompanhe cada transformação espacial.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f28a83f7831604"
+      ],
+      "statement": "Um quadrado é girado 90° em torno de seu centro. Qual propriedade necessariamente permanece?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A coordenada horizontal de cada ponto."
+        },
+        {
+          "label": "B",
+          "text": "A posição absoluta de cada vértice."
+        },
+        {
+          "label": "C",
+          "text": "A orientação original de todos os lados."
+        },
+        {
+          "label": "D",
+          "text": "As distâncias entre quaisquer pares de pontos do quadrado."
+        },
+        {
+          "label": "E",
+          "text": "O nome atribuído a cada vértice na posição original."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige resolver relações geométricas e espaciais e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: rotações são isometrias e preservam distâncias. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: coordenadas geralmente mudam.\n\nB: Incorreta: os vértices mudam de posição.\n\nC: Incorreta: lados horizontais podem tornar-se verticais.\n\nD: Correta: rotações são isometrias e preservam distâncias.\n\nE: Incorreta: rótulos acompanham pontos, mas não permanecem em posições originais.\n\nArmadilha: Confundir orientação do observador com posição absoluta ou aplicar propriedades de uma figura a outra.\n\nConhecimento adicional: Relações espaciais devem conservar adjacência, direção, ângulos e dimensões informadas.\n\nAprendizado essencial: Faça um esboço, marque referências e acompanhe cada transformação espacial.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ea151398961a96"
+      ],
+      "statement": "Um retângulo de lados 8 m e 5 m possui área igual a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "40 m."
+        },
+        {
+          "label": "B",
+          "text": "80 m²."
+        },
+        {
+          "label": "C",
+          "text": "13 m²."
+        },
+        {
+          "label": "D",
+          "text": "26 m²."
+        },
+        {
+          "label": "E",
+          "text": "40 m²."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige calcular áreas, perímetros e relações métricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 8×5=40 m². O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: o valor da área exige unidade quadrada.\n\nB: Incorreta: duplica o produto.\n\nC: Incorreta: soma os lados e ainda usa unidade errada.\n\nD: Incorreta: é o perímetro.\n\nE: Correta: 8×5=40 m².\n\nArmadilha: Trocar unidades lineares por quadradas ou usar perímetro quando o problema pede superfície.\n\nConhecimento adicional: Perímetro mede contorno em unidade linear; área mede superfície em unidade quadrada.\n\nAprendizado essencial: Identifique a grandeza pedida, escolha a fórmula e confira a unidade final.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 9-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 9-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ea151398961a96"
+      ],
+      "statement": "Um terreno quadrado tem perímetro de 36 m. Sua área é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "81 m²."
+        },
+        {
+          "label": "B",
+          "text": "108 m²."
+        },
+        {
+          "label": "C",
+          "text": "1296 m²."
+        },
+        {
+          "label": "D",
+          "text": "36 m²."
+        },
+        {
+          "label": "E",
+          "text": "72 m²."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige calcular áreas, perímetros e relações métricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o lado mede 36/4=9 m e a área é 9²=81 m². O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: o lado mede 36/4=9 m e a área é 9²=81 m².\n\nB: Incorreta: não corresponde a uma relação métrica do quadrado.\n\nC: Incorreta: eleva o perímetro ao quadrado sem achar o lado.\n\nD: Incorreta: confunde perímetro e área.\n\nE: Incorreta: duplica o perímetro.\n\nArmadilha: Trocar unidades lineares por quadradas ou usar perímetro quando o problema pede superfície.\n\nConhecimento adicional: Perímetro mede contorno em unidade linear; área mede superfície em unidade quadrada.\n\nAprendizado essencial: Identifique a grandeza pedida, escolha a fórmula e confira a unidade final.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 9-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 9-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ea151398961a96"
+      ],
+      "statement": "Ao duplicar todos os comprimentos de uma figura plana semelhante, o perímetro e a área ficam, respectivamente,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "quatro vezes e duas vezes maiores."
+        },
+        {
+          "label": "B",
+          "text": "duas vezes e quatro vezes maiores."
+        },
+        {
+          "label": "C",
+          "text": "quatro vezes e quatro vezes maiores."
+        },
+        {
+          "label": "D",
+          "text": "inalterados."
+        },
+        {
+          "label": "E",
+          "text": "duas vezes e duas vezes maiores."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige calcular áreas, perímetros e relações métricas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: medidas lineares escalam por 2 e áreas por 2². O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: inverte os fatores.\n\nB: Correta: medidas lineares escalam por 2 e áreas por 2².\n\nC: Incorreta: o perímetro não escala por 4.\n\nD: Incorreta: ambas mudam.\n\nE: Incorreta: área escala com o quadrado do fator.\n\nArmadilha: Trocar unidades lineares por quadradas ou usar perímetro quando o problema pede superfície.\n\nConhecimento adicional: Perímetro mede contorno em unidade linear; área mede superfície em unidade quadrada.\n\nAprendizado essencial: Identifique a grandeza pedida, escolha a fórmula e confira a unidade final.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 9-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 9-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_37d6db93e823fe"
+      ],
+      "statement": "Em uma matriz A=[aᵢⱼ], o elemento a₂₃ ocupa\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "a primeira linha e a quinta coluna."
+        },
+        {
+          "label": "B",
+          "text": "a linha 3 e a coluna 2."
+        },
+        {
+          "label": "C",
+          "text": "a linha 2 e a coluna 3."
+        },
+        {
+          "label": "D",
+          "text": "a segunda diagonal."
+        },
+        {
+          "label": "E",
+          "text": "a terceira linha e qualquer coluna."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige ler e manipular informações em matrizes e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o primeiro índice é a linha e o segundo é a coluna. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não corresponde aos índices.\n\nB: Incorreta: troca a ordem dos índices.\n\nC: Correta: o primeiro índice é a linha e o segundo é a coluna.\n\nD: Incorreta: a notação não designa diagonal.\n\nE: Incorreta: a coluna é especificamente 3.\n\nArmadilha: Trocar linha por coluna ou combinar matrizes de ordens incompatíveis.\n\nConhecimento adicional: Em A=[aᵢⱼ], o primeiro índice indica a linha e o segundo indica a coluna.\n\nAprendizado essencial: Determine a ordem da matriz e localize cada entrada por linha e coluna.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_37d6db93e823fe"
+      ],
+      "statement": "Considere A=[[2,1],[3,4]] e B=[[5,0],[1,2]]. O elemento da linha 2, coluna 1 de A+B é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "6."
+        },
+        {
+          "label": "B",
+          "text": "8."
+        },
+        {
+          "label": "C",
+          "text": "3."
+        },
+        {
+          "label": "D",
+          "text": "4."
+        },
+        {
+          "label": "E",
+          "text": "5."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige ler e manipular informações em matrizes e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 3+1=4 na posição (2,1). O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: soma posições incompatíveis.\n\nB: Incorreta: é a soma da segunda linha de A.\n\nC: Incorreta: é apenas o elemento de A.\n\nD: Correta: 3+1=4 na posição (2,1).\n\nE: Incorreta: é outro elemento de B.\n\nArmadilha: Trocar linha por coluna ou combinar matrizes de ordens incompatíveis.\n\nConhecimento adicional: Em A=[aᵢⱼ], o primeiro índice indica a linha e o segundo indica a coluna.\n\nAprendizado essencial: Determine a ordem da matriz e localize cada entrada por linha e coluna.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_01_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_37d6db93e823fe"
+      ],
+      "statement": "Por que não se pode somar diretamente uma matriz 2×3 com uma matriz 3×2?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque matrizes retangulares nunca podem ser usadas."
+        },
+        {
+          "label": "B",
+          "text": "Porque ambas possuem seis elementos."
+        },
+        {
+          "label": "C",
+          "text": "Porque somente matrizes 1×1 podem ser somadas."
+        },
+        {
+          "label": "D",
+          "text": "Porque a soma exigiria multiplicar todos os elementos."
+        },
+        {
+          "label": "E",
+          "text": "Porque suas ordens são diferentes e não há correspondência posição a posição."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige ler e manipular informações em matrizes e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a adição requer igual número de linhas e colunas. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: matrizes retangulares podem ser operadas quando as regras permitem.\n\nB: Incorreta: ter a mesma quantidade total não iguala as posições.\n\nC: Incorreta: matrizes maiores também podem ser somadas.\n\nD: Incorreta: adição não é multiplicação.\n\nE: Correta: a adição requer igual número de linhas e colunas.\n\nArmadilha: Trocar linha por coluna ou combinar matrizes de ordens incompatíveis.\n\nConhecimento adicional: Em A=[aᵢⱼ], o primeiro índice indica a linha e o segundo indica a coluna.\n\nAprendizado essencial: Determine a ordem da matriz e localize cada entrada por linha e coluna.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

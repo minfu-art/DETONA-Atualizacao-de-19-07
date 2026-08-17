@@ -1,0 +1,55 @@
+{
+  "name": "pcba_inv_rl_01_01_lote_002_complemento",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_01_01_q021",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_648ba4b6b867c9"
+      ],
+      "statement": "Ao resolver 20 - 2 × 3² + 4, um candidato obteve 166 porque efetuou as operações apenas da esquerda para a direita.\n\nAssinale a alternativa que apresenta o resultado correto e identifica a regra aplicável.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O resultado é 2, pois a multiplicação antecede a potência."
+        },
+        {
+          "label": "B",
+          "text": "O resultado é -6, pois toda subtração torna negativos os termos seguintes."
+        },
+        {
+          "label": "C",
+          "text": "O resultado é 6, pois potência antecede multiplicação, que antecede adição e subtração."
+        },
+        {
+          "label": "D",
+          "text": "O resultado é 12, pois 3² equivale a 3 × 2."
+        },
+        {
+          "label": "E",
+          "text": "O resultado é 166, pois operações sempre seguem apenas da esquerda para a direita."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A hierarquia operacional exige calcular potência, depois multiplicação e por fim subtração e adição.\n\nAnálise da resposta: Correta: 3² = 9, então 2 × 9 = 18 e 20 - 18 + 4 = 6.\n\nA: Incorreta: a potência deve ser calculada antes da multiplicação e da subtração.\n\nB: Incorreta: o sinal negativo externo não integra a base quando não há parênteses.\n\nC: Correta: 3² = 9, então 2 × 9 = 18 e 20 - 18 + 4 = 6.\n\nD: Incorreta: o resultado decorre de tratar 3² como 3 × 2.\n\nE: Incorreta: a expressão não pode ser resolvida apenas da esquerda para a direita.\n\nArmadilha: Aplicar a regra da esquerda para a direita entre operações de prioridades diferentes.\n\nConhecimento adicional: A leitura da esquerda para a direita vale somente entre operações situadas no mesmo nível de prioridade.\n\nAprendizado essencial: Primeiro potências; depois multiplicações e divisões; por último adições e subtrações.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-31",
+          "used_for": "Hierarquia das operações, potenciação e resolução de expressões numéricas."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

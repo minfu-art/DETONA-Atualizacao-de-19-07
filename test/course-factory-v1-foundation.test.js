@@ -67,10 +67,11 @@ test('pacote de aluno alimenta o mesmo seed dinâmico do motor DETONA', async ()
   assert.equal(runtime.metadata.exam_date, '2026-12-06');
 });
 
-test('modo Ver como aluno é explícito, restrito à PC BA e libera developer sem abrir app paralelo', () => {
+test('modo Ver como aluno é explícito, genérico e libera developer sem abrir app paralelo', () => {
   assert.equal(courseFactoryStudentPreviewUrl(), 'index.html?coursePreview=pc_ba_2026');
   assert.equal(requestedCoursePreview('?coursePreview=pc_ba_2026'), PC_BA_CONTEST_ID);
-  assert.equal(requestedCoursePreview('?coursePreview=outro'), null);
+  assert.equal(requestedCoursePreview('?coursePreview=outro'), 'outro');
+  assert.equal(requestedCoursePreview('?coursePreview=inválido'), null);
   assert.equal(isCourseFactoryStudentPreview('?coursePreview=pc_ba_2026'), true);
   let redirected = null;
   assert.equal(redirectForRole({ role: 'developer' }, {

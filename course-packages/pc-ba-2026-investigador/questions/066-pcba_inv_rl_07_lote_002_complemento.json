@@ -1,0 +1,55 @@
+{
+  "name": "pcba_inv_rl_07_lote_002_complemento",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_07_q021",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bb53e2d5538082"
+      ],
+      "statement": "Um valor de R$ 100,00 triplica a cada período e R$ 100,00 é o valor do primeiro período. No quarto período, o valor será\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 2.700,00, pois ocorreram três multiplicações por 3."
+        },
+        {
+          "label": "B",
+          "text": "R$ 8.100,00, pois o expoente deve ser 4."
+        },
+        {
+          "label": "C",
+          "text": "R$ 1.200,00, pois se soma R$ 300,00 por período."
+        },
+        {
+          "label": "D",
+          "text": "R$ 900,00, pois ocorreram somente duas multiplicações."
+        },
+        {
+          "label": "E",
+          "text": "R$ 400,00, pois o crescimento é linear."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Em problemas de crescimento geométrico, a posição inicial já conta como primeiro termo.\n\nAnálise da resposta: Correta: a4=100·3^(4−1)=2.700.\n\nA: Correta: a4=100·3^(4−1)=2.700.\n\nB: Incorreta: 8.100 é o quinto termo, não o quarto.\n\nC: Incorreta: triplicar descreve multiplicação, não soma constante.\n\nD: Incorreta: duas multiplicações produzem o terceiro termo.\n\nE: Incorreta: o crescimento é geométrico, e não linear.\n\nArmadilha: Usar o número da posição como expoente e avançar um período a mais.\n\nConhecimento adicional: A sequência é 100, 300, 900 e 2.700.\n\nAprendizado essencial: Converta o texto em uma lista curta para conferir a indexação.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

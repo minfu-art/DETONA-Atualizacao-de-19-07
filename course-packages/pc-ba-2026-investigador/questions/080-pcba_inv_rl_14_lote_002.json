@@ -1,0 +1,305 @@
+{
+  "name": "pcba_inv_rl_14_lote_002",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_14_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a240fe7eb2fe4c"
+      ],
+      "statement": "Uma matriz é especialmente útil para organizar informações quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "há dois critérios de classificação associados a linhas e colunas."
+        },
+        {
+          "label": "B",
+          "text": "existe apenas um número sem contexto."
+        },
+        {
+          "label": "C",
+          "text": "os dados não possuem qualquer relação."
+        },
+        {
+          "label": "D",
+          "text": "é proibido comparar categorias."
+        },
+        {
+          "label": "E",
+          "text": "todas as células precisam ser iguais."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige reconhecer padrões matriciais e organizar informações e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a estrutura bidimensional cruza os dois critérios. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: a estrutura bidimensional cruza os dois critérios.\n\nB: Incorreta: uma matriz seria desnecessária.\n\nC: Incorreta: a organização pressupõe relações identificáveis.\n\nD: Incorreta: comparações são uma finalidade da estrutura.\n\nE: Incorreta: igualdade não é requisito.\n\nArmadilha: Analisar cada célula isoladamente e ignorar regras simultâneas por linha e por coluna.\n\nConhecimento adicional: Matrizes organizam dados por dois critérios; padrões podem atuar horizontal, vertical ou diagonalmente.\n\nAprendizado essencial: Teste a regularidade nas linhas e nas colunas antes de preencher uma posição ausente.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a240fe7eb2fe4c"
+      ],
+      "statement": "Na matriz [[2,4,6],[3,6,9],[5,10,?]], cada linha contém um número, seu dobro e seu triplo. O valor ausente é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "14."
+        },
+        {
+          "label": "B",
+          "text": "15."
+        },
+        {
+          "label": "C",
+          "text": "20."
+        },
+        {
+          "label": "D",
+          "text": "12."
+        },
+        {
+          "label": "E",
+          "text": "13."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige reconhecer padrões matriciais e organizar informações e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o terceiro valor é 3×5=15. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é menor que 3×5.\n\nB: Correta: o terceiro valor é 3×5=15.\n\nC: Incorreta: é quatro vezes 5.\n\nD: Incorreta: não é o triplo de 5.\n\nE: Incorreta: não segue a regra declarada.\n\nArmadilha: Analisar cada célula isoladamente e ignorar regras simultâneas por linha e por coluna.\n\nConhecimento adicional: Matrizes organizam dados por dois critérios; padrões podem atuar horizontal, vertical ou diagonalmente.\n\nAprendizado essencial: Teste a regularidade nas linhas e nas colunas antes de preencher uma posição ausente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a240fe7eb2fe4c"
+      ],
+      "statement": "Uma regra parece funcionar nas duas primeiras linhas de uma matriz, mas falha em uma coluna já preenchida. A conclusão adequada é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "aceitar a regra porque duas linhas bastam."
+        },
+        {
+          "label": "B",
+          "text": "ignorar a coluna divergente."
+        },
+        {
+          "label": "C",
+          "text": "revisar a hipótese, pois um padrão válido deve explicar todos os dados relevantes."
+        },
+        {
+          "label": "D",
+          "text": "alterar o dado da coluna sem autorização."
+        },
+        {
+          "label": "E",
+          "text": "usar sempre a soma dos elementos."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige reconhecer padrões matriciais e organizar informações e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a falha funciona como contraexemplo à hipótese. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: evidência parcial não supera o contraexemplo.\n\nB: Incorreta: o padrão deve ser global ao escopo proposto.\n\nC: Correta: a falha funciona como contraexemplo à hipótese.\n\nD: Incorreta: dados não podem ser mudados para salvar a regra.\n\nE: Incorreta: a operação depende do padrão observado.\n\nArmadilha: Analisar cada célula isoladamente e ignorar regras simultâneas por linha e por coluna.\n\nConhecimento adicional: Matrizes organizam dados por dois critérios; padrões podem atuar horizontal, vertical ou diagonalmente.\n\nAprendizado essencial: Teste a regularidade nas linhas e nas colunas antes de preencher uma posição ausente.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "location": "páginas 1-4",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "utfpr_matrizes_determinantes_sistemas_lineares",
+          "trace_status": "missing",
+          "location": "páginas 1-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ccc4fab6743570"
+      ],
+      "statement": "Em um problema com várias etapas, qual estratégia é mais confiável?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Arredondar todos os valores no início."
+        },
+        {
+          "label": "B",
+          "text": "Escolher a alternativa mais próxima sem calcular."
+        },
+        {
+          "label": "C",
+          "text": "Aplicar uma única fórmula a todos os dados."
+        },
+        {
+          "label": "D",
+          "text": "Decompor em subproblemas, resolver e verificar a compatibilidade dos resultados."
+        },
+        {
+          "label": "E",
+          "text": "Descartar condições textuais."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige integrar etapas na resolução de problemas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: mantém o encadeamento e permite validação. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: arredondamento precoce acumula erro.\n\nB: Incorreta: proximidade não prova correção.\n\nC: Incorreta: ferramentas diferentes podem ser necessárias.\n\nD: Correta: mantém o encadeamento e permite validação.\n\nE: Incorreta: as condições definem o modelo.\n\nArmadilha: Resolver etapas isoladas corretamente, mas combinar resultados com unidades ou premissas incompatíveis.\n\nConhecimento adicional: Problemas integrados exigem decomposição, escolha de ferramentas e verificação conjunta das restrições.\n\nAprendizado essencial: Separe o problema em etapas, registre resultados intermediários e valide a resposta no contexto completo.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-55",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ccc4fab6743570"
+      ],
+      "statement": "Uma sala retangular de 6 m por 4 m será coberta por placas de 0,5 m², sem perdas. Quantas placas são necessárias?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "60."
+        },
+        {
+          "label": "B",
+          "text": "12."
+        },
+        {
+          "label": "C",
+          "text": "24."
+        },
+        {
+          "label": "D",
+          "text": "36."
+        },
+        {
+          "label": "E",
+          "text": "48."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige integrar etapas na resolução de problemas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a área é 24 m² e 24/0,5=48. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: superestima a cobertura necessária.\n\nB: Incorreta: divide apenas um lado pela área.\n\nC: Incorreta: é a área da sala, não a quantidade de placas.\n\nD: Incorreta: não corresponde à razão das áreas.\n\nE: Correta: a área é 24 m² e 24/0,5=48.\n\nArmadilha: Resolver etapas isoladas corretamente, mas combinar resultados com unidades ou premissas incompatíveis.\n\nConhecimento adicional: Problemas integrados exigem decomposição, escolha de ferramentas e verificação conjunta das restrições.\n\nAprendizado essencial: Separe o problema em etapas, registre resultados intermediários e valide a resposta no contexto completo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-55",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_14_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_14_raciocinio_logico_envolvendo_problemas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ccc4fab6743570"
+      ],
+      "statement": "Uma solução integrada obteve 20,4 pessoas e arredondou para 20 sem analisar a exigência de capacidade mínima. Qual é o problema?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A decisão de arredondamento depende da restrição; para capacidade mínima pode ser necessário usar 21."
+        },
+        {
+          "label": "B",
+          "text": "O valor correto é sempre 22."
+        },
+        {
+          "label": "C",
+          "text": "Basta retirar a unidade “pessoas”."
+        },
+        {
+          "label": "D",
+          "text": "Nenhum, todo decimal deve ser arredondado para baixo."
+        },
+        {
+          "label": "E",
+          "text": "Pessoas podem ser fracionadas nesse contexto."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige integrar etapas na resolução de problemas e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a validação contextual determina o inteiro admissível. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: a validação contextual determina o inteiro admissível.\n\nB: Incorreta: não há base para acrescentar duas unidades.\n\nC: Incorreta: remover a unidade não corrige o modelo.\n\nD: Incorreta: arredondar para baixo pode violar a capacidade.\n\nE: Incorreta: a contagem final exige inteiro.\n\nArmadilha: Resolver etapas isoladas corretamente, mas combinar resultados com unidades ou premissas incompatíveis.\n\nConhecimento adicional: Problemas integrados exigem decomposição, escolha de ferramentas e verificação conjunta das restrições.\n\nAprendizado essencial: Separe o problema em etapas, registre resultados intermediários e valide a resposta no contexto completo.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "location": "páginas 3-55",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_21",
+          "trace_status": "missing",
+          "location": "páginas 3-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

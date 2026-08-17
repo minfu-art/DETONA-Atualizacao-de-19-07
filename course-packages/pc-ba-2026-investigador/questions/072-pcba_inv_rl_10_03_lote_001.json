@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_10_03_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_03_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48674a33efb542"
+      ],
+      "statement": "A condicional p→q é logicamente equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A disjunção ¬p∨q."
+        },
+        {
+          "label": "B",
+          "text": "A conjunção p∧q."
+        },
+        {
+          "label": "C",
+          "text": "A disjunção p∨¬q."
+        },
+        {
+          "label": "D",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "E",
+          "text": "A conjunção ¬p∧q."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A equivalência fundamental da condicional troca a seta por “ou” e nega o antecedente.\n\nAnálise da resposta: Correta: ambas são falsas somente quando p=V e q=F.\n\nA: Correta: ambas são falsas somente quando p=V e q=F.\n\nB: Incorreta: a conjunção possui outra tabela.\n\nC: Incorreta: os sinais foram aplicados às parcelas erradas.\n\nD: Incorreta: a conversa não é equivalente em geral.\n\nE: Incorreta: essa fórmula exige p falsa e q verdadeira.\n\nArmadilha: Negar o consequente em vez do antecedente.\n\nConhecimento adicional: A contrapositiva ¬q→¬p é outra equivalência da mesma condicional.\n\nAprendizado essencial: Memorize: nega a primeira, mantém a segunda e troca por ou.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 10-15",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 10-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48674a33efb542"
+      ],
+      "statement": "Uma forma equivalente a “Se João estuda, então João é aprovado” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "João estuda e não é aprovado."
+        },
+        {
+          "label": "B",
+          "text": "João não estuda e é aprovado."
+        },
+        {
+          "label": "C",
+          "text": "João não estuda ou é aprovado."
+        },
+        {
+          "label": "D",
+          "text": "João é aprovado somente se estuda."
+        },
+        {
+          "label": "E",
+          "text": "João estuda se e somente se é aprovado."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A condicional material pode ser expressa como a alternativa entre não ocorrer o antecedente e ocorrer o consequente.\n\nAnálise da resposta: Correta: corresponde a ¬p∨q.\n\nA: Incorreta: essa é a negação da condicional.\n\nB: Incorreta: exige simultaneamente um caso que a condicional apenas admite.\n\nC: Correta: corresponde a ¬p∨q.\n\nD: Incorreta: traduz q→p, direção inversa.\n\nE: Incorreta: acrescenta reciprocidade.\n\nArmadilha: Inverter a expressão “somente se”.\n\nConhecimento adicional: A forma equivalente preserva exatamente as quatro linhas da tabela.\n\nAprendizado essencial: Associe p a estudar e q a ser aprovado antes de transformar.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 10-15",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 10-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48674a33efb542"
+      ],
+      "statement": "Qual fórmula NÃO é equivalente a p→q?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬q→¬p."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬(p∧¬q)."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula q∨¬p."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p→¬q."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Equivalências da condicional preservam seu único caso de falsidade.\n\nAnálise da resposta: Correta: é a inversa e equivale a q→p, não à condicional original.\n\nA: Incorreta: é equivalência fundamental.\n\nB: Incorreta: é a contrapositiva.\n\nC: Incorreta: negar o único caso falso gera a condicional.\n\nD: Incorreta: apenas reordena a disjunção ¬p∨q.\n\nE: Correta: é a inversa e equivale a q→p, não à condicional original.\n\nArmadilha: Confundir inversa ¬p→¬q com contrapositiva ¬q→¬p.\n\nConhecimento adicional: A comutatividade da disjunção permite q∨¬p.\n\nAprendizado essencial: Compare a posição e a negação de cada termo.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 7-15",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 7-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d7e9d1fab64f08"
+      ],
+      "statement": "A bicondicional p↔q é equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula (p→q)∧(q→p)."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∧¬q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula ¬p∨q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p→q apenas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Bicondicional combina necessidade e suficiência em duas direções.\n\nAnálise da resposta: Correta: a equivalência exige simultaneamente as duas implicações.\n\nA: Incorreta: a disjunção aceita valores diferentes.\n\nB: Correta: a equivalência exige simultaneamente as duas implicações.\n\nC: Incorreta: essa fórmula descreve discordância.\n\nD: Incorreta: contém somente uma direção condicional.\n\nE: Incorreta: uma única implicação não garante reciprocidade.\n\nArmadilha: Unir as condicionais com “ou” em vez de “e”.\n\nConhecimento adicional: Outra forma é (p∧q)∨(¬p∧¬q).\n\nAprendizado essencial: Expanda “se e somente se” em ida e volta.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 35-51",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 35-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d7e9d1fab64f08"
+      ],
+      "statement": "Uma forma equivalente a p↔q que evidencia valores iguais é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula (p∧¬q)∨(¬p∧q)."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula (p∧q)∨(¬p∧¬q)."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p∧q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A bicondicional é verdadeira quando ambas são verdadeiras ou ambas são falsas.\n\nAnálise da resposta: Correta: reúne os dois cenários de concordância V,V e F,F.\n\nA: Incorreta: essa fórmula representa valores diferentes.\n\nB: Incorreta: o caso V,F também seria verdadeiro.\n\nC: Incorreta: omite o caso F,F.\n\nD: Correta: reúne os dois cenários de concordância V,V e F,F.\n\nE: Incorreta: descreve apenas F,V.\n\nArmadilha: Lembrar apenas do caso em que as duas são verdadeiras.\n\nConhecimento adicional: A negação da bicondicional corresponde à disjunção exclusiva.\n\nAprendizado essencial: Liste os casos de concordância antes de montar a fórmula.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 35-51",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 35-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d7e9d1fab64f08"
+      ],
+      "statement": "A fórmula p∨q não equivale a p↔q porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p∨q é falsa em V,V."
+        },
+        {
+          "label": "B",
+          "text": "p↔q é verdadeira em V,F."
+        },
+        {
+          "label": "C",
+          "text": "p∨q é verdadeira em V,F, enquanto p↔q é falsa."
+        },
+        {
+          "label": "D",
+          "text": "ambas são sempre falsas."
+        },
+        {
+          "label": "E",
+          "text": "ambas possuem exatamente a mesma tabela."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Fórmulas são equivalentes somente se coincidirem em todas as valorações.\n\nAnálise da resposta: Correta: uma única linha divergente já refuta a equivalência.\n\nA: Incorreta: p∨q é verdadeira em V,V.\n\nB: Incorreta: valores diferentes tornam a bicondicional falsa.\n\nC: Correta: uma única linha divergente já refuta a equivalência.\n\nD: Incorreta: ambas possuem linhas verdadeiras.\n\nE: Incorreta: V,F é um contraexemplo.\n\nArmadilha: Comparar apenas a linha V,V.\n\nConhecimento adicional: Um contraexemplo basta para provar não equivalência.\n\nAprendizado essencial: Procure uma linha em que os resultados sejam diferentes.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 35-51",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 35-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a2759ce6177b43"
+      ],
+      "statement": "A lei da dupla negação estabelece que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "¬¬p é equivalente a p."
+        },
+        {
+          "label": "B",
+          "text": "¬¬p é equivalente a ¬p."
+        },
+        {
+          "label": "C",
+          "text": "¬p é sempre verdadeira."
+        },
+        {
+          "label": "D",
+          "text": "p e ¬p são equivalentes."
+        },
+        {
+          "label": "E",
+          "text": "¬¬p não possui valor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Negar duas vezes não altera as condições de verdade da proposição.\n\nAnálise da resposta: Correta: duas inversões restauram o valor original.\n\nA: Correta: duas inversões restauram o valor original.\n\nB: Incorreta: isso valeria para quantidade ímpar de negações.\n\nC: Incorreta: depende do valor de p.\n\nD: Incorreta: possuem valores opostos.\n\nE: Incorreta: a fórmula é plenamente avaliável.\n\nArmadilha: Tratar duas negações como reforço linguístico de uma negação.\n\nConhecimento adicional: A regra vale para fórmulas simples ou compostas.\n\nAprendizado essencial: Elimine negações aos pares.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a2759ce6177b43"
+      ],
+      "statement": "A expressão ¬¬(p∧q) simplifica-se para\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∧¬q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p∧q."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O bloco entre parênteses funciona como uma única proposição para a dupla negação.\n\nAnálise da resposta: Correta: a dupla negação se aplica à fórmula inteira.\n\nA: Incorreta: nega individualmente as parcelas sem necessidade.\n\nB: Incorreta: troca o conectivo indevidamente.\n\nC: Incorreta: corresponde à negação simples da conjunção.\n\nD: Incorreta: nega apenas uma parcela.\n\nE: Correta: a dupla negação se aplica à fórmula inteira.\n\nArmadilha: Aplicar De Morgan mesmo havendo duas negações externas.\n\nConhecimento adicional: Primeiro reconheça o par de negações no mesmo escopo.\n\nAprendizado essencial: Remova ¬¬ e preserve integralmente a fórmula interna.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a2759ce6177b43"
+      ],
+      "statement": "A negação de “não é verdade que Ana faltou” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ana não faltou."
+        },
+        {
+          "label": "B",
+          "text": "Ana faltou."
+        },
+        {
+          "label": "C",
+          "text": "Ana talvez tenha faltado."
+        },
+        {
+          "label": "D",
+          "text": "Ana faltou e não faltou."
+        },
+        {
+          "label": "E",
+          "text": "Ninguém faltou."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "É preciso distinguir a frase original ¬p de sua negação ¬¬p.\n\nAnálise da resposta: Correta: negar ¬p produz ¬¬p, que se simplifica para p: Ana faltou.\n\nA: Incorreta: esta é a simplificação da frase original, não a negação solicitada.\n\nB: Correta: negar ¬p produz ¬¬p, que se simplifica para p: Ana faltou.\n\nC: Incorreta: possibilidade não é negação exata.\n\nD: Incorreta: a conjunção é contraditória.\n\nE: Incorreta: amplia indevidamente para outras pessoas.\n\nArmadilha: Perder o escopo de “não é verdade que”.\n\nConhecimento adicional: A negação solicitada adiciona um operador externo antes de simplificar.\n\nAprendizado essencial: Represente simbolicamente antes de voltar à linguagem natural.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a938b8ede91720"
+      ],
+      "statement": "A contrapositiva de p→q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A condicional p→¬q."
+        },
+        {
+          "label": "B",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "C",
+          "text": "A condicional ¬p→¬q."
+        },
+        {
+          "label": "D",
+          "text": "A condicional ¬q→¬p."
+        },
+        {
+          "label": "E",
+          "text": "A bicondicional p↔q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A contrapositiva é logicamente equivalente à condicional original.\n\nAnálise da resposta: Correta: troca as posições e nega os dois termos.\n\nA: Incorreta: nega somente o consequente.\n\nB: Incorreta: é a conversa.\n\nC: Incorreta: é a inversa.\n\nD: Correta: troca as posições e nega os dois termos.\n\nE: Incorreta: acrescenta reciprocidade.\n\nArmadilha: Trocar apenas as posições ou negar sem trocar.\n\nConhecimento adicional: A conversa e a inversa são equivalentes entre si, mas não à original em geral.\n\nAprendizado essencial: Troque e negue ambos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 6-10",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 6-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a938b8ede91720"
+      ],
+      "statement": "A contrapositiva de “Se há perícia, então existe laudo” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Se não há perícia, então não existe laudo."
+        },
+        {
+          "label": "B",
+          "text": "Se existe laudo, então há perícia."
+        },
+        {
+          "label": "C",
+          "text": "Se não existe laudo, então não há perícia."
+        },
+        {
+          "label": "D",
+          "text": "Há perícia se e somente se existe laudo."
+        },
+        {
+          "label": "E",
+          "text": "Não há perícia ou existe laudo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A negação da existência do laudo implica ausência de perícia sob a premissa original.\n\nAnálise da resposta: Correta: nega o consequente, coloca-o como antecedente e nega o antecedente.\n\nA: Incorreta: é a inversa.\n\nB: Incorreta: é a conversa.\n\nC: Correta: nega o consequente, coloca-o como antecedente e nega o antecedente.\n\nD: Incorreta: acrescenta a direção inversa.\n\nE: Incorreta: embora equivalente à original, não está na forma contrapositiva solicitada.\n\nArmadilha: Produzir a inversa na mesma ordem.\n\nConhecimento adicional: A contrapositiva preserva a equivalência sem afirmar causalidade inversa.\n\nAprendizado essencial: Marque antecedente e consequente antes de transformar.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 6-10",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 6-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a938b8ede91720"
+      ],
+      "statement": "Por que ¬p→¬q não é, em geral, equivalente a p→q?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque nenhuma condicional possui equivalente."
+        },
+        {
+          "label": "B",
+          "text": "Porque é a inversa; a equivalente é ¬q→¬p."
+        },
+        {
+          "label": "C",
+          "text": "Porque negações não podem aparecer em condicionais."
+        },
+        {
+          "label": "D",
+          "text": "Porque p→q é sempre falsa."
+        },
+        {
+          "label": "E",
+          "text": "Porque as duas são bicondicionais."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Negar ambos sem trocar produz a inversa, não a contrapositiva.\n\nAnálise da resposta: Correta: a contraposição exige também inverter a ordem.\n\nA: Incorreta: condicionais possuem equivalências conhecidas.\n\nB: Correta: a contraposição exige também inverter a ordem.\n\nC: Incorreta: negações podem compor qualquer fórmula.\n\nD: Incorreta: a condicional é contingente em geral.\n\nE: Incorreta: nenhuma delas exige reciprocidade.\n\nArmadilha: Memorizar apenas “nega os dois”.\n\nConhecimento adicional: Um exemplo com p=F e q=V mostra valores diferentes entre as fórmulas.\n\nAprendizado essencial: Para contraposição, execute duas operações: troca e negação.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 6-10",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 6-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f69548a52bf40"
+      ],
+      "statement": "A negação de p∧q é equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p→q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p↔q."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Negar uma conjunção significa que pelo menos uma parcela não ocorre.\n\nAnálise da resposta: Correta: De Morgan troca “e” por “ou” e nega as parcelas.\n\nA: Correta: De Morgan troca “e” por “ou” e nega as parcelas.\n\nB: Incorreta: exige ambas falsas, condição mais forte.\n\nC: Incorreta: não nega as parcelas.\n\nD: Incorreta: condicional não é a negação da conjunção.\n\nE: Incorreta: bicondicional possui outra tabela.\n\nArmadilha: Negar parcelas sem trocar o conectivo.\n\nConhecimento adicional: A regra generaliza para conjunções com mais termos.\n\nAprendizado essencial: Distribua a negação e troque ∧ por ∨.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-28",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-28",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f69548a52bf40"
+      ],
+      "statement": "A negação lógica da disjunção p∨q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p→q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p↔q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A negação da disjunção exige que nenhuma das alternativas ocorra.\n\nAnálise da resposta: Correta: para o “ou” ser falso, ambas devem ser falsas.\n\nA: Incorreta: não nega as parcelas.\n\nB: Incorreta: essa é a negação da conjunção.\n\nC: Incorreta: não representa ausência das duas alternativas.\n\nD: Correta: para o “ou” ser falso, ambas devem ser falsas.\n\nE: Incorreta: equivalência de valores não é a negação.\n\nArmadilha: Manter o conectivo “ou” após distribuir a negação.\n\nConhecimento adicional: A regra corresponde a “nem p nem q”.\n\nAprendizado essencial: Troque ∨ por ∧ ao negar as parcelas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-28",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-28",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f69548a52bf40"
+      ],
+      "statement": "A negação da condicional p→q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A condicional ¬p→¬q."
+        },
+        {
+          "label": "B",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "C",
+          "text": "A conjunção p∧¬q."
+        },
+        {
+          "label": "D",
+          "text": "A disjunção ¬p∨q."
+        },
+        {
+          "label": "E",
+          "text": "A condicional ¬q→¬p."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Negar uma condicional mantém o antecedente e nega o consequente em conjunção.\n\nAnálise da resposta: Correta: afirma exatamente o único caso que torna a condicional falsa.\n\nA: Incorreta: é a inversa.\n\nB: Incorreta: é a conversa.\n\nC: Correta: afirma exatamente o único caso que torna a condicional falsa.\n\nD: Incorreta: essa é a própria condicional em forma equivalente.\n\nE: Incorreta: contrapositiva equivale à original, não à negação.\n\nArmadilha: Aplicar contraposição pensando que ela produz negação.\n\nConhecimento adicional: A fórmula p∧¬q é incompatível com p→q em todas as linhas.\n\nAprendizado essencial: Para negar, descreva a violação da promessa condicional.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 25-29",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 25-29",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_359387d3719da2"
+      ],
+      "statement": "Ao eliminar a seta de p→(q∧r), obtém-se\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨(q∧r)."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∧q∧r."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula (¬p∨q)∧r."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∨¬q∨¬r."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p∧(q∨r)."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Transformações devem preservar os parênteses que definem antecedente e consequente.\n\nAnálise da resposta: Correta: aplica ¬antecedente∨consequente preservando o bloco.\n\nA: Correta: aplica ¬antecedente∨consequente preservando o bloco.\n\nB: Incorreta: troca a condicional por conjunção.\n\nC: Incorreta: retira r do consequente completo.\n\nD: Incorreta: nega parcelas do consequente.\n\nE: Incorreta: usa conjunção e troca o bloco interno.\n\nArmadilha: Aplicar a equivalência apenas à primeira parcela do consequente.\n\nConhecimento adicional: Depois da eliminação da seta, outras leis podem simplificar a fórmula.\n\nAprendizado essencial: Trate q∧r como uma unidade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 10-15",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 10-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_359387d3719da2"
+      ],
+      "statement": "A expansão correta de p↔q por condicionais é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula (p→q)∨(q→p)."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula (p→q)∧(q→p)."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p→(q∧p)."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula ¬p∨q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p∧q."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Expandir conectivos complexos ajuda a comparar e simplificar fórmulas.\n\nAnálise da resposta: Correta: a reciprocidade exige as duas direções simultâneas.\n\nA: Incorreta: uma das direções verdadeira não basta.\n\nB: Correta: a reciprocidade exige as duas direções simultâneas.\n\nC: Incorreta: não expressa a volta q→p.\n\nD: Incorreta: representa apenas p→q.\n\nE: Incorreta: omite o caso F,F.\n\nArmadilha: Usar “ou” entre as duas direções.\n\nConhecimento adicional: Cada condicional expandida pode depois virar uma disjunção.\n\nAprendizado essencial: Preserve a exigência conjunta de ida e volta.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 35-51",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 35-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_03_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_3_equivalencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_359387d3719da2"
+      ],
+      "statement": "A fórmula ¬(¬p∨q) simplifica-se para\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∧q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∨¬q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∧¬q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p→q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A transformação combina De Morgan e dupla negação.\n\nAnálise da resposta: Correta: por De Morgan, ¬¬p∧¬q=p∧¬q.\n\nA: Incorreta: não inverte corretamente as parcelas.\n\nB: Incorreta: mantém disjunção após negar o bloco.\n\nC: Incorreta: ¬(¬p) deve virar p.\n\nD: Correta: por De Morgan, ¬¬p∧¬q=p∧¬q.\n\nE: Incorreta: p→q equivale à fórmula interna, não à sua negação.\n\nArmadilha: Negar o bloco sem simplificar ¬¬p.\n\nConhecimento adicional: O resultado também é a negação de p→q.\n\nAprendizado essencial: Distribua a negação e depois elimine pares.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-29",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-29",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,755 @@
+{
+  "name": "pcba_inv_rl_10_05_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_05_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cb7e02baf07167"
+      ],
+      "statement": "Na representação por diagramas, a proposição “todo investigador é servidor” exige que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o conjunto dos investigadores esteja inteiramente dentro do conjunto dos servidores."
+        },
+        {
+          "label": "B",
+          "text": "os conjuntos tenham apenas uma parte em comum."
+        },
+        {
+          "label": "C",
+          "text": "os dois conjuntos sejam idênticos."
+        },
+        {
+          "label": "D",
+          "text": "o conjunto dos servidores esteja dentro do conjunto dos investigadores."
+        },
+        {
+          "label": "E",
+          "text": "os conjuntos sejam necessariamente disjuntos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica representar proposições categóricas por diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: preserva a inclusão de todos os investigadores entre os servidores.\n\nA: Correta: preserva a inclusão de todos os investigadores entre os servidores.\n\nB: Incorreta: permite investigadores fora do conjunto dos servidores.\n\nC: Incorreta: acrescenta que todo servidor seria investigador.\n\nD: Incorreta: inverte a inclusão expressa pela frase.\n\nE: Incorreta: contraria a existência de investigadores que são servidores.\n\nArmadilha: Confundir sobreposição possível com inclusão obrigatória entre os conjuntos.\n\nConhecimento adicional: A posição relativa das regiões registra exatamente o que as premissas obrigam, sem acrescentar relações não dadas.\n\nAprendizado essencial: Traduza “todo”, “nenhum” e “algum” antes de escolher a posição dos conjuntos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cb7e02baf07167"
+      ],
+      "statement": "Considere “alguns peritos são professores”. Qual diagrama traduz apenas essa informação?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dois conjuntos necessariamente coincidentes."
+        },
+        {
+          "label": "B",
+          "text": "Dois conjuntos com ao menos um elemento marcado na interseção."
+        },
+        {
+          "label": "C",
+          "text": "O conjunto dos peritos totalmente contido no dos professores."
+        },
+        {
+          "label": "D",
+          "text": "Dois conjuntos sem qualquer interseção."
+        },
+        {
+          "label": "E",
+          "text": "O conjunto dos professores totalmente contido no dos peritos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica representar proposições categóricas por diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: a interseção não vazia registra a existência afirmada.\n\nA: Incorreta: impõe equivalência entre as classes.\n\nB: Correta: a interseção não vazia registra a existência afirmada.\n\nC: Incorreta: transforma “alguns” em “todos”.\n\nD: Incorreta: representa “nenhum”.\n\nE: Incorreta: também transforma uma existência parcial em inclusão total.\n\nArmadilha: Confundir sobreposição possível com inclusão obrigatória entre os conjuntos.\n\nConhecimento adicional: A posição relativa das regiões registra exatamente o que as premissas obrigam, sem acrescentar relações não dadas.\n\nAprendizado essencial: Traduza “todo”, “nenhum” e “algum” antes de escolher a posição dos conjuntos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cb7e02baf07167"
+      ],
+      "statement": "A frase “nenhum escrivão é delegado” é corretamente representada por dois conjuntos\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "com interseção obrigatoriamente não vazia."
+        },
+        {
+          "label": "B",
+          "text": "um contido no outro."
+        },
+        {
+          "label": "C",
+          "text": "disjuntos."
+        },
+        {
+          "label": "D",
+          "text": "com um único elemento comum."
+        },
+        {
+          "label": "E",
+          "text": "coincidentes."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica representar proposições categóricas por diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: impede qualquer elemento comum, como exige “nenhum”.\n\nA: Incorreta: afirmaria a existência de alguém nas duas classes.\n\nB: Incorreta: faria todos de uma classe pertencerem à outra.\n\nC: Correta: impede qualquer elemento comum, como exige “nenhum”.\n\nD: Incorreta: contradiz a exclusão total.\n\nE: Incorreta: afirmaria igualdade entre as classes.\n\nArmadilha: Confundir sobreposição possível com inclusão obrigatória entre os conjuntos.\n\nConhecimento adicional: A posição relativa das regiões registra exatamente o que as premissas obrigam, sem acrescentar relações não dadas.\n\nAprendizado essencial: Traduza “todo”, “nenhum” e “algum” antes de escolher a posição dos conjuntos.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5ff5573e7a55c4"
+      ],
+      "statement": "Se A⊆B, então é necessariamente verdadeiro que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "B é subconjunto próprio de A."
+        },
+        {
+          "label": "B",
+          "text": "todo elemento de B pertence a A."
+        },
+        {
+          "label": "C",
+          "text": "A e B não têm elementos comuns."
+        },
+        {
+          "label": "D",
+          "text": "todo elemento de A pertence a B."
+        },
+        {
+          "label": "E",
+          "text": "A possui mais elementos que B."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica interpretar inclusão e exclusão entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: expressa exatamente o significado de A estar contido em B.\n\nA: Incorreta: inverte a direção indicada.\n\nB: Incorreta: é a conversa da inclusão e pode ser falsa.\n\nC: Incorreta: contradiz a própria inclusão quando A não é vazio.\n\nD: Correta: expressa exatamente o significado de A estar contido em B.\n\nE: Incorreta: a inclusão não autoriza essa comparação e, em conjuntos finitos, ocorre o oposto ou igualdade.\n\nArmadilha: Converter indevidamente uma inclusão, concluindo que todo elemento do conjunto maior pertence ao menor.\n\nConhecimento adicional: A inclusão A⊆B possui direção: ela garante A dentro de B, mas não determina a parte de B que fica fora de A.\n\nAprendizado essencial: Leia A⊆B como “todo A é B” e nunca inverta a relação sem outra premissa.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5ff5573e7a55c4"
+      ],
+      "statement": "Sabe-se que todo papiloscopista é policial e nenhum policial é menor de idade. Logo, o conjunto dos papiloscopistas\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "contém todos os policiais."
+        },
+        {
+          "label": "B",
+          "text": "coincide necessariamente com o dos policiais."
+        },
+        {
+          "label": "C",
+          "text": "intersecta obrigatoriamente o dos menores de idade."
+        },
+        {
+          "label": "D",
+          "text": "pode ter elementos menores de idade."
+        },
+        {
+          "label": "E",
+          "text": "está contido no dos policiais e excluído do dos menores de idade."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica interpretar inclusão e exclusão entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: combina corretamente inclusão e exclusão.\n\nA: Incorreta: inverte a primeira premissa.\n\nB: Incorreta: acrescenta uma igualdade não informada.\n\nC: Incorreta: contradiz que nenhum policial é menor.\n\nD: Incorreta: violaria a exclusão transmitida pela segunda premissa.\n\nE: Correta: combina corretamente inclusão e exclusão.\n\nArmadilha: Converter indevidamente uma inclusão, concluindo que todo elemento do conjunto maior pertence ao menor.\n\nConhecimento adicional: A inclusão A⊆B possui direção: ela garante A dentro de B, mas não determina a parte de B que fica fora de A.\n\nAprendizado essencial: Leia A⊆B como “todo A é B” e nunca inverta a relação sem outra premissa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5ff5573e7a55c4"
+      ],
+      "statement": "De “todo A é B” e “algum B é C”, pode-se concluir que algum A é C?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Não necessariamente, pois os elementos de B que são C podem estar fora de A."
+        },
+        {
+          "label": "B",
+          "text": "Não, porque A e B são disjuntos."
+        },
+        {
+          "label": "C",
+          "text": "Sim, porque toda inclusão pode ser invertida."
+        },
+        {
+          "label": "D",
+          "text": "Sim, porque a interseção B∩C deve estar dentro de A."
+        },
+        {
+          "label": "E",
+          "text": "Sim, desde que B não seja vazio."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica interpretar inclusão e exclusão entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: apresenta um diagrama possível que funciona como contraexemplo.\n\nA: Correta: apresenta um diagrama possível que funciona como contraexemplo.\n\nB: Incorreta: contradiz a premissa de inclusão.\n\nC: Incorreta: usa uma regra inválida.\n\nD: Incorreta: a interseção pode ocupar a parte de B externa a A.\n\nE: Incorreta: a não vacuidade de B não localiza B∩C dentro de A.\n\nArmadilha: Converter indevidamente uma inclusão, concluindo que todo elemento do conjunto maior pertence ao menor.\n\nConhecimento adicional: A inclusão A⊆B possui direção: ela garante A dentro de B, mas não determina a parte de B que fica fora de A.\n\nAprendizado essencial: Leia A⊆B como “todo A é B” e nunca inverta a relação sem outra premissa.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_212a8fde166851"
+      ],
+      "statement": "Em um diagrama de Venn, a região A∩B contém\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todo o universo, independentemente de A e B."
+        },
+        {
+          "label": "B",
+          "text": "os elementos que pertencem a A e a B simultaneamente."
+        },
+        {
+          "label": "C",
+          "text": "somente os elementos exclusivos de A."
+        },
+        {
+          "label": "D",
+          "text": "todos os elementos que estão fora de A."
+        },
+        {
+          "label": "E",
+          "text": "os elementos exclusivos de B."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica interpretar união e interseção em diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: define a interseção dos dois conjuntos.\n\nA: Incorreta: ignora as condições de pertinência.\n\nB: Correta: define a interseção dos dois conjuntos.\n\nC: Incorreta: descreve A−B.\n\nD: Incorreta: descreve o complementar de A.\n\nE: Incorreta: descreve B−A.\n\nArmadilha: Trocar união por interseção e desconsiderar as partes exclusivas dos conjuntos.\n\nConhecimento adicional: A união reúne todas as regiões pertencentes a pelo menos um conjunto; a interseção conserva somente a região comum.\n\nAprendizado essencial: Use “ou” para união e “simultaneamente” para interseção.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_212a8fde166851"
+      ],
+      "statement": "Se A representa aprovados na prova objetiva e B representa aprovados no teste físico, A∪B representa candidatos que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "não foram aprovados em nenhuma etapa."
+        },
+        {
+          "label": "B",
+          "text": "foram aprovados somente na objetiva."
+        },
+        {
+          "label": "C",
+          "text": "foram aprovados em pelo menos uma das duas etapas."
+        },
+        {
+          "label": "D",
+          "text": "foram reprovados exatamente em uma etapa."
+        },
+        {
+          "label": "E",
+          "text": "foram aprovados apenas nas duas etapas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica interpretar união e interseção em diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: inclui as duas partes exclusivas e também a interseção.\n\nA: Incorreta: isso é o exterior da união.\n\nB: Incorreta: omite os aprovados apenas em B e os aprovados em ambas.\n\nC: Correta: inclui as duas partes exclusivas e também a interseção.\n\nD: Incorreta: não corresponde à definição da união.\n\nE: Incorreta: isso descreve a interseção.\n\nArmadilha: Trocar união por interseção e desconsiderar as partes exclusivas dos conjuntos.\n\nConhecimento adicional: A união reúne todas as regiões pertencentes a pelo menos um conjunto; a interseção conserva somente a região comum.\n\nAprendizado essencial: Use “ou” para união e “simultaneamente” para interseção.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_212a8fde166851"
+      ],
+      "statement": "Assinale a descrição que diferencia corretamente A∪B de A∩B.\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A união contém apenas a região comum."
+        },
+        {
+          "label": "B",
+          "text": "A interseção contém tudo que pertence a pelo menos um conjunto."
+        },
+        {
+          "label": "C",
+          "text": "As duas operações sempre produzem a mesma região."
+        },
+        {
+          "label": "D",
+          "text": "A união inclui regiões exclusivas e comum; a interseção inclui somente a comum."
+        },
+        {
+          "label": "E",
+          "text": "A união exclui a região comum, enquanto a interseção a inclui."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica interpretar união e interseção em diagramas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: explicita corretamente as regiões de cada operação.\n\nA: Incorreta: essa é a interseção.\n\nB: Incorreta: essa é a união.\n\nC: Incorreta: só coincidem em casos particulares.\n\nD: Correta: explicita corretamente as regiões de cada operação.\n\nE: Incorreta: a união inclusiva não exclui a região comum.\n\nArmadilha: Trocar união por interseção e desconsiderar as partes exclusivas dos conjuntos.\n\nConhecimento adicional: A união reúne todas as regiões pertencentes a pelo menos um conjunto; a interseção conserva somente a região comum.\n\nAprendizado essencial: Use “ou” para união e “simultaneamente” para interseção.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e5a910204899c2"
+      ],
+      "statement": "Na classificação categórica, a proposição “algum A não é B” afirma que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todo A está fora de B."
+        },
+        {
+          "label": "B",
+          "text": "todo B está dentro de A."
+        },
+        {
+          "label": "C",
+          "text": "A está inteiramente dentro de B."
+        },
+        {
+          "label": "D",
+          "text": "A e B são disjuntos."
+        },
+        {
+          "label": "E",
+          "text": "existe ao menos um elemento de A fora de B."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica resolver classificações lógicas por relações entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: localiza ao menos uma testemunha em A−B.\n\nA: Incorreta: troca “algum” por “todo”.\n\nB: Incorreta: não decorre da proposição.\n\nC: Incorreta: contradiz a testemunha fora de B.\n\nD: Incorreta: é mais forte que a existência indicada.\n\nE: Correta: localiza ao menos uma testemunha em A−B.\n\nArmadilha: Tratar afirmações existenciais como universais ou atribuir ao mesmo indivíduo existências diferentes.\n\nConhecimento adicional: Premissas com “algum” asseguram testemunhas, mas duas testemunhas existenciais podem ser pessoas diferentes.\n\nAprendizado essencial: Marque no diagrama somente as existências e inclusões realmente impostas pelas premissas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e5a910204899c2"
+      ],
+      "statement": "Considere: todo analista é servidor; alguns analistas são músicos. Qual conclusão é necessária?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Alguns servidores são músicos."
+        },
+        {
+          "label": "B",
+          "text": "Todos os servidores são músicos."
+        },
+        {
+          "label": "C",
+          "text": "Nenhum músico é servidor."
+        },
+        {
+          "label": "D",
+          "text": "Todos os músicos são analistas."
+        },
+        {
+          "label": "E",
+          "text": "Nenhum analista é servidor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica resolver classificações lógicas por relações entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: as testemunhas que são analistas também pertencem ao conjunto dos servidores.\n\nA: Correta: as testemunhas que são analistas também pertencem ao conjunto dos servidores.\n\nB: Incorreta: generaliza indevidamente para todos os servidores.\n\nC: Incorreta: contradiz a testemunha obtida.\n\nD: Incorreta: inverte a relação entre músicos e analistas.\n\nE: Incorreta: contradiz a primeira premissa.\n\nArmadilha: Tratar afirmações existenciais como universais ou atribuir ao mesmo indivíduo existências diferentes.\n\nConhecimento adicional: Premissas com “algum” asseguram testemunhas, mas duas testemunhas existenciais podem ser pessoas diferentes.\n\nAprendizado essencial: Marque no diagrama somente as existências e inclusões realmente impostas pelas premissas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e5a910204899c2"
+      ],
+      "statement": "De “algum A é B” e “algum B é C”, qual conclusão NÃO é garantida?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Existe ao menos um elemento em B∩C."
+        },
+        {
+          "label": "B",
+          "text": "Algum A é C."
+        },
+        {
+          "label": "C",
+          "text": "A e B não são disjuntos."
+        },
+        {
+          "label": "D",
+          "text": "O conjunto B possui pelo menos um elemento."
+        },
+        {
+          "label": "E",
+          "text": "Existe ao menos um elemento em A∩B."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica resolver classificações lógicas por relações entre classes sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: as duas ocorrências de “algum” podem indicar elementos distintos de B.\n\nA: Incorreta: repete a segunda premissa.\n\nB: Correta: as duas ocorrências de “algum” podem indicar elementos distintos de B.\n\nC: Incorreta: decorre da primeira premissa.\n\nD: Incorreta: decorre de qualquer uma das existências.\n\nE: Incorreta: repete a primeira premissa em linguagem de conjuntos.\n\nArmadilha: Tratar afirmações existenciais como universais ou atribuir ao mesmo indivíduo existências diferentes.\n\nConhecimento adicional: Premissas com “algum” asseguram testemunhas, mas duas testemunhas existenciais podem ser pessoas diferentes.\n\nAprendizado essencial: Marque no diagrama somente as existências e inclusões realmente impostas pelas premissas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a9227ea5d199b3"
+      ],
+      "statement": "Uma conclusão é validada pelo método dos diagramas quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é verdadeira em ao menos um desenho compatível."
+        },
+        {
+          "label": "B",
+          "text": "parece plausível no contexto cotidiano."
+        },
+        {
+          "label": "C",
+          "text": "é verdadeira em todos os diagramas que satisfazem as premissas."
+        },
+        {
+          "label": "D",
+          "text": "usa as mesmas palavras das premissas."
+        },
+        {
+          "label": "E",
+          "text": "os conjuntos desenhados têm o mesmo tamanho."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica validar conclusões por todos os diagramas admissíveis sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: essa é a condição de necessidade lógica.\n\nA: Incorreta: um único desenho favorável não prova necessidade.\n\nB: Incorreta: plausibilidade não substitui consequência lógica.\n\nC: Correta: essa é a condição de necessidade lógica.\n\nD: Incorreta: vocabulário comum não assegura validade.\n\nE: Incorreta: tamanho gráfico não determina a relação lógica.\n\nArmadilha: Aceitar uma conclusão porque ela aparece em um desenho possível, embora não ocorra em todos os desenhos compatíveis.\n\nConhecimento adicional: Uma conclusão é necessária apenas quando nenhum diagrama que satisfaça as premissas consegue torná-la falsa.\n\nAprendizado essencial: Procure um contraexemplo gráfico: se houver um, a conclusão não é necessária.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a9227ea5d199b3"
+      ],
+      "statement": "Se todo A é B e todo B é C, o diagrama permite concluir necessariamente que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum A é C."
+        },
+        {
+          "label": "B",
+          "text": "algum C não é B."
+        },
+        {
+          "label": "C",
+          "text": "A, B e C são idênticos."
+        },
+        {
+          "label": "D",
+          "text": "todo A é C."
+        },
+        {
+          "label": "E",
+          "text": "todo C é A."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica validar conclusões por todos os diagramas admissíveis sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: a inclusão é transitiva: A fica dentro de B, que fica dentro de C.\n\nA: Incorreta: contradiz a cadeia de inclusões.\n\nB: Incorreta: pode ocorrer, mas não é obrigatório.\n\nC: Incorreta: igualdade é mais forte que as premissas.\n\nD: Correta: a inclusão é transitiva: A fica dentro de B, que fica dentro de C.\n\nE: Incorreta: inverte as duas inclusões.\n\nArmadilha: Aceitar uma conclusão porque ela aparece em um desenho possível, embora não ocorra em todos os desenhos compatíveis.\n\nConhecimento adicional: Uma conclusão é necessária apenas quando nenhum diagrama que satisfaça as premissas consegue torná-la falsa.\n\nAprendizado essencial: Procure um contraexemplo gráfico: se houver um, a conclusão não é necessária.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_05_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_5_diagramas_logicos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a9227ea5d199b3"
+      ],
+      "statement": "Sabe-se apenas que nenhum A é B e que algum C é B. Qual conclusão é obrigatória?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nenhum C é A."
+        },
+        {
+          "label": "B",
+          "text": "Todo B é C."
+        },
+        {
+          "label": "C",
+          "text": "Algum A é C."
+        },
+        {
+          "label": "D",
+          "text": "Todo C é A."
+        },
+        {
+          "label": "E",
+          "text": "Algum C não é A."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica validar conclusões por todos os diagramas admissíveis sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: a testemunha de C∩B não pode pertencer a A, pois A e B são disjuntos.\n\nA: Incorreta: outros elementos de C podem pertencer a A.\n\nB: Incorreta: a existência em C∩B não inclui todo B em C.\n\nC: Incorreta: não há premissa que force interseção entre A e C.\n\nD: Incorreta: contradiria a existência de um C que pertence a B.\n\nE: Correta: a testemunha de C∩B não pode pertencer a A, pois A e B são disjuntos.\n\nArmadilha: Aceitar uma conclusão porque ela aparece em um desenho possível, embora não ocorra em todos os desenhos compatíveis.\n\nConhecimento adicional: Uma conclusão é necessária apenas quando nenhum diagrama que satisfaça as premissas consegue torná-la falsa.\n\nAprendizado essencial: Procure um contraexemplo gráfico: se houver um, a conclusão não é necessária.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "location": "páginas 18-44",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_03",
+          "trace_status": "missing",
+          "location": "páginas 18-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

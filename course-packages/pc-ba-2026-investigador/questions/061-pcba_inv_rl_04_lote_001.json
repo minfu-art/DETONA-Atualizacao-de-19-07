@@ -1,0 +1,755 @@
+{
+  "name": "pcba_inv_rl_04_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_04_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_aa7acccfbfe2eb"
+      ],
+      "statement": "Qual expressão é uma equação linear nas incógnitas x e y?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x² + y = 5."
+        },
+        {
+          "label": "B",
+          "text": "2x − 3y = 5."
+        },
+        {
+          "label": "C",
+          "text": "xy = 6."
+        },
+        {
+          "label": "D",
+          "text": "1/x + y = 2."
+        },
+        {
+          "label": "E",
+          "text": "y = x³."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Equações lineares apresentam incógnitas apenas no primeiro grau, sem produtos entre elas.\n\nAnálise da resposta: Correta: x e y aparecem apenas no primeiro grau e não são multiplicados entre si.\n\nA: Incorreta: x aparece elevado ao quadrado.\n\nB: Correta: x e y aparecem apenas no primeiro grau e não são multiplicados entre si.\n\nC: Incorreta: o produto xy torna a expressão não linear.\n\nD: Incorreta: a incógnita x aparece no denominador.\n\nE: Incorreta: o termo x³ possui grau superior a um.\n\nArmadilha: Classificar como linear apenas porque a igualdade possui duas incógnitas.\n\nConhecimento adicional: Uma forma geral em duas variáveis é ax+by=c, com a e b não ambos nulos.\n\nAprendizado essencial: Observe expoentes, denominadores e produtos entre incógnitas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-8",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-8",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_aa7acccfbfe2eb"
+      ],
+      "statement": "Na equação linear 3x + 2y = 12, sabendo que x = 2, o valor de y é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1."
+        },
+        {
+          "label": "B",
+          "text": "2."
+        },
+        {
+          "label": "C",
+          "text": "2,5."
+        },
+        {
+          "label": "D",
+          "text": "3."
+        },
+        {
+          "label": "E",
+          "text": "4."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Um par ordenado satisfaz a equação quando sua substituição torna verdadeira a igualdade.\n\nAnálise da resposta: Correta: 6+2y=12 implica 2y=6 e y=3.\n\nA: Incorreta: 3×2+2×1 resulta em 8.\n\nB: Incorreta: o primeiro membro seria 10.\n\nC: Incorreta: o primeiro membro seria 11.\n\nD: Correta: 6+2y=12 implica 2y=6 e y=3.\n\nE: Incorreta: o primeiro membro seria 14.\n\nArmadilha: Substituir x por 2, mas esquecer que o coeficiente 3 também o multiplica.\n\nConhecimento adicional: O par (2,3) é um dos infinitos pontos da reta 3x+2y=12.\n\nAprendizado essencial: Substitua o valor conhecido e resolva a equação restante.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_aa7acccfbfe2eb"
+      ],
+      "statement": "Sobre a equação linear x + y = 6 considerada isoladamente no plano real, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "possui infinitos pares solução, como (0,6), (1,5) e (2,4)."
+        },
+        {
+          "label": "B",
+          "text": "possui apenas a solução x=3 e y=3."
+        },
+        {
+          "label": "C",
+          "text": "não possui solução porque há duas incógnitas."
+        },
+        {
+          "label": "D",
+          "text": "possui exatamente seis soluções inteiras."
+        },
+        {
+          "label": "E",
+          "text": "todo par real é solução."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Uma única equação linear com duas incógnitas normalmente não determina um único par.\n\nAnálise da resposta: Correta: cada escolha real de x determina y=6−x, formando uma reta de soluções.\n\nA: Correta: cada escolha real de x determina y=6−x, formando uma reta de soluções.\n\nB: Incorreta: (3,3) é apenas um entre infinitos pares.\n\nC: Incorreta: uma equação em duas incógnitas pode ter infinitas soluções.\n\nD: Incorreta: mesmo entre inteiros existem infinitos pares se não houver restrição adicional.\n\nE: Incorreta: os pares precisam respeitar a soma igual a seis.\n\nArmadilha: Supor que simetria da equação obriga x e y a serem iguais.\n\nConhecimento adicional: Uma segunda equação independente é necessária para localizar um único ponto em geral.\n\nAprendizado essencial: Diferencie solução particular de conjunto completo de soluções.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_956e5743c6b129"
+      ],
+      "statement": "O sistema x+y=11 e x−y=3 possui solução\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x=6 e y=5."
+        },
+        {
+          "label": "B",
+          "text": "x=8 e y=3."
+        },
+        {
+          "label": "C",
+          "text": "x=7 e y=4."
+        },
+        {
+          "label": "D",
+          "text": "x=4 e y=7."
+        },
+        {
+          "label": "E",
+          "text": "x=5 e y=6."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Resolver um sistema significa encontrar valores que satisfazem todas as equações simultaneamente.\n\nAnálise da resposta: Correta: somando as equações, 2x=14 e x=7; então y=4.\n\nA: Incorreta: a diferença entre 6 e 5 é 1.\n\nB: Incorreta: a soma é 11, mas a diferença é 5.\n\nC: Correta: somando as equações, 2x=14 e x=7; então y=4.\n\nD: Incorreta: a segunda equação teria resultado −3.\n\nE: Incorreta: a diferença seria −1.\n\nArmadilha: Verificar apenas uma das equações do sistema.\n\nConhecimento adicional: A soma membro a membro elimina y imediatamente neste exemplo.\n\nAprendizado essencial: Depois de calcular o par, substitua-o em todas as equações.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-10",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_956e5743c6b129"
+      ],
+      "statement": "Considere o sistema x+y+z=6, x−y=0 e z=2. O valor de x é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0."
+        },
+        {
+          "label": "B",
+          "text": "1."
+        },
+        {
+          "label": "C",
+          "text": "1,5."
+        },
+        {
+          "label": "D",
+          "text": "3."
+        },
+        {
+          "label": "E",
+          "text": "2."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Sistemas podem envolver três ou mais incógnitas, desde que haja informação suficiente para determiná-las.\n\nAnálise da resposta: Correta: x=y e z=2; logo 2x+2=6, de onde x=2.\n\nA: Incorreta: com x=0, a soma das três incógnitas não chega a seis.\n\nB: Incorreta: x=y=1 e z=2 somariam apenas quatro.\n\nC: Incorreta: x=y=1,5 e z=2 somariam cinco.\n\nD: Incorreta: x=y=3 e z=2 somariam oito.\n\nE: Correta: x=y e z=2; logo 2x+2=6, de onde x=2.\n\nArmadilha: Usar apenas a primeira equação e distribuir a soma igualmente sem considerar z.\n\nConhecimento adicional: A segunda equação estabelece igualdade entre x e y.\n\nAprendizado essencial: Use primeiro as equações mais simples para reduzir o número de incógnitas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 8-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 8-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_956e5743c6b129"
+      ],
+      "statement": "Qual par ordenado resolve simultaneamente 2x+y=7 e x−y=2?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "(2,3)."
+        },
+        {
+          "label": "B",
+          "text": "(3,1)."
+        },
+        {
+          "label": "C",
+          "text": "(4,-1)."
+        },
+        {
+          "label": "D",
+          "text": "(1,5)."
+        },
+        {
+          "label": "E",
+          "text": "(5,-3)."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução de um sistema é a interseção dos conjuntos solução de todas as suas equações.\n\nAnálise da resposta: Correta: 2×3+1=7 e 3−1=2.\n\nA: Incorreta: satisfaz a primeira equação, mas 2−3 não é 2.\n\nB: Correta: 2×3+1=7 e 3−1=2.\n\nC: Incorreta: 2×4−1=7, mas 4−(−1)=5.\n\nD: Incorreta: a segunda equação resulta em −4.\n\nE: Incorreta: a primeira equação resulta em 7, mas a segunda em 8.\n\nArmadilha: Aceitar um par que satisfaz somente a primeira igualdade.\n\nConhecimento adicional: A verificação direta é uma forma rápida de testar alternativas em sistemas pequenos.\n\nAprendizado essencial: Substitua cada par nas duas equações antes de concluir.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-10",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_75544178228f87"
+      ],
+      "statement": "No método da substituição para sistemas lineares, deve-se\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "somar sempre todas as equações sem modificá-las."
+        },
+        {
+          "label": "B",
+          "text": "multiplicar todas as incógnitas entre si."
+        },
+        {
+          "label": "C",
+          "text": "transformar as equações em inequações."
+        },
+        {
+          "label": "D",
+          "text": "isolar uma incógnita e substituir sua expressão em outra equação."
+        },
+        {
+          "label": "E",
+          "text": "apagar uma das equações e resolver apenas a restante."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Substituição reduz o sistema ao expressar uma variável em função das demais.\n\nAnálise da resposta: Correta: a expressão isolada substitui a mesma variável em outra equação.\n\nA: Incorreta: a soma caracteriza outra estratégia e nem sempre elimina uma variável sem ajustes.\n\nB: Incorreta: produtos entre incógnitas destruiriam a linearidade.\n\nC: Incorreta: sistemas de equações preservam relações de igualdade.\n\nD: Correta: a expressão isolada substitui a mesma variável em outra equação.\n\nE: Incorreta: ambas as informações precisam ser preservadas.\n\nArmadilha: Isolar uma variável e não utilizar a expressão obtida na outra equação.\n\nConhecimento adicional: Escolher uma equação em que o isolamento seja simples costuma reduzir cálculos.\n\nAprendizado essencial: Isole, substitua, resolva e retorne para encontrar as demais incógnitas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 8-10",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 8-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_75544178228f87"
+      ],
+      "statement": "Aplicando o método da adição ao sistema 2x+y=9 e 3x−y=6, obtém-se\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x=3 e y=3."
+        },
+        {
+          "label": "B",
+          "text": "x=2 e y=5."
+        },
+        {
+          "label": "C",
+          "text": "x=4 e y=1."
+        },
+        {
+          "label": "D",
+          "text": "x=5 e y=−1."
+        },
+        {
+          "label": "E",
+          "text": "x=1 e y=7."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "No método da adição, coeficientes opostos permitem eliminar uma incógnita ao somar as equações.\n\nAnálise da resposta: Correta: somando as equações, 5x=15 e x=3; então y=3.\n\nA: Correta: somando as equações, 5x=15 e x=3; então y=3.\n\nB: Incorreta: 2×2+5=9, mas 3×2−5=1.\n\nC: Incorreta: a primeira equação daria 9, mas a segunda 11.\n\nD: Incorreta: a primeira equação resultaria em 9, mas a segunda em 16.\n\nE: Incorreta: a segunda equação resultaria em −4.\n\nArmadilha: Somar somente os lados esquerdos ou esquecer de somar os termos independentes.\n\nConhecimento adicional: Aqui os coeficientes de y já são +1 e −1, dispensando multiplicações prévias.\n\nAprendizado essencial: Alinhe termos semelhantes e procure coeficientes opostos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 9-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 9-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_75544178228f87"
+      ],
+      "statement": "Durante um escalonamento, qual operação preserva necessariamente o conjunto solução de um sistema linear?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Substituir uma equação por seu quadrado."
+        },
+        {
+          "label": "B",
+          "text": "Multiplicar apenas um termo da equação por 2."
+        },
+        {
+          "label": "C",
+          "text": "Substituir uma equação por ela somada a um múltiplo de outra equação."
+        },
+        {
+          "label": "D",
+          "text": "Apagar uma equação sem verificar dependência."
+        },
+        {
+          "label": "E",
+          "text": "Trocar o sinal de somente um lado da igualdade."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Operações elementares reversíveis geram sistemas equivalentes durante o escalonamento.\n\nAnálise da resposta: Correta: somar um múltiplo de outra equação é uma operação elementar reversível.\n\nA: Incorreta: elevar ao quadrado pode introduzir soluções estranhas.\n\nB: Incorreta: alterar somente um termo modifica a igualdade original.\n\nC: Correta: somar um múltiplo de outra equação é uma operação elementar reversível.\n\nD: Incorreta: remover uma equação independente perde informação.\n\nE: Incorreta: os dois membros devem sofrer a mesma operação.\n\nArmadilha: Modificar apenas parte de uma equação e assumir que a solução permanece.\n\nConhecimento adicional: Também preservam soluções a troca de equações e a multiplicação de uma equação por escalar não nulo.\n\nAprendizado essencial: Use apenas operações aplicadas à equação inteira e que possam ser desfeitas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 9-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 9-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c1001fd5566cd7"
+      ],
+      "statement": "O sistema x+y=4 e 2x+2y=8 é classificado como\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "impossível, sem solução."
+        },
+        {
+          "label": "B",
+          "text": "possível e determinado, com uma solução."
+        },
+        {
+          "label": "C",
+          "text": "não linear."
+        },
+        {
+          "label": "D",
+          "text": "possível apenas nos números inteiros."
+        },
+        {
+          "label": "E",
+          "text": "possível e indeterminado, com infinitas soluções."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Equações proporcionais e compatíveis representam a mesma restrição e geram infinitas soluções.\n\nAnálise da resposta: Correta: a segunda equação é o dobro da primeira, representando a mesma reta.\n\nA: Incorreta: as duas equações são compatíveis.\n\nB: Incorreta: a segunda equação não fornece informação independente.\n\nC: Incorreta: ambas as equações são lineares.\n\nD: Incorreta: existem também infinitas soluções reais não inteiras.\n\nE: Correta: a segunda equação é o dobro da primeira, representando a mesma reta.\n\nArmadilha: Contar duas equações e concluir automaticamente que há uma solução única.\n\nConhecimento adicional: O escalonamento desse sistema produz uma linha nula 0=0.\n\nAprendizado essencial: Verifique se as equações são independentes ou apenas múltiplas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c1001fd5566cd7"
+      ],
+      "statement": "O sistema x+y=4 e 2x+2y=10 possui\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "solução única (2,2)."
+        },
+        {
+          "label": "B",
+          "text": "nenhuma solução."
+        },
+        {
+          "label": "C",
+          "text": "infinitas soluções."
+        },
+        {
+          "label": "D",
+          "text": "solução única (3,1)."
+        },
+        {
+          "label": "E",
+          "text": "solução única (1,3)."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Coeficientes proporcionais com termos independentes incompatíveis caracterizam sistema impossível.\n\nAnálise da resposta: Correta: dobrar a primeira equação daria 2x+2y=8, incompatível com 10.\n\nA: Incorreta: o par (2,2) produz 8, não 10, na segunda equação.\n\nB: Correta: dobrar a primeira equação daria 2x+2y=8, incompatível com 10.\n\nC: Incorreta: as retas são paralelas distintas, não coincidentes.\n\nD: Incorreta: (3,1) também produz 8 na segunda equação.\n\nE: Incorreta: (1,3) também produz 8 na segunda equação.\n\nArmadilha: Observar somente os coeficientes de x e y e ignorar os termos independentes.\n\nConhecimento adicional: Ao subtrair o dobro da primeira equação da segunda, surge a contradição 0=2.\n\nAprendizado essencial: No escalonamento, uma igualdade impossível revela ausência de solução.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c1001fd5566cd7"
+      ],
+      "statement": "Considere os sistemas I: x+y=4 e 2x+2y=8; II: x+y=4 e x−y=0. A classificação correta é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "I e II têm infinitas soluções."
+        },
+        {
+          "label": "B",
+          "text": "I e II não têm solução."
+        },
+        {
+          "label": "C",
+          "text": "I tem solução única e II tem infinitas."
+        },
+        {
+          "label": "D",
+          "text": "I tem infinitas soluções e II tem solução única."
+        },
+        {
+          "label": "E",
+          "text": "I não tem solução e II tem solução única."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O número de equações não basta para classificar o sistema; importa sua independência e compatibilidade.\n\nAnálise da resposta: Correta: I repete a mesma reta; II cruza duas retas no ponto (2,2).\n\nA: Incorreta: as equações de II são independentes.\n\nB: Incorreta: ambos são compatíveis.\n\nC: Incorreta: as classificações foram invertidas.\n\nD: Correta: I repete a mesma reta; II cruza duas retas no ponto (2,2).\n\nE: Incorreta: I é compatível porque a segunda equação é o dobro exato da primeira.\n\nArmadilha: Tratar todo sistema com duas equações e duas incógnitas como determinado.\n\nConhecimento adicional: Geometricamente, retas coincidentes dão infinitas soluções e retas secantes dão uma.\n\nAprendizado essencial: Compare coeficientes e termos independentes antes de classificar.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e81ebe6059f8ea"
+      ],
+      "statement": "Em um estacionamento há 20 veículos entre carros e motos, totalizando 56 rodas, sem contar estepes. Quantos carros há?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "8."
+        },
+        {
+          "label": "B",
+          "text": "10."
+        },
+        {
+          "label": "C",
+          "text": "12."
+        },
+        {
+          "label": "D",
+          "text": "14."
+        },
+        {
+          "label": "E",
+          "text": "16."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Contagens de objetos com características diferentes podem ser modeladas por duas equações lineares.\n\nAnálise da resposta: Correta: c+m=20 e 4c+2m=56; substituindo m=20−c, obtém-se c=8.\n\nA: Correta: c+m=20 e 4c+2m=56; substituindo m=20−c, obtém-se c=8.\n\nB: Incorreta: dez carros e dez motos teriam 60 rodas.\n\nC: Incorreta: doze carros e oito motos teriam 64 rodas.\n\nD: Incorreta: quatorze carros gerariam ainda mais rodas.\n\nE: Incorreta: dezesseis carros e quatro motos totalizariam 72 rodas.\n\nArmadilha: Dividir 56 por quatro e supor que todos os veículos são carros.\n\nConhecimento adicional: Depois de encontrar oito carros, o sistema indica doze motos.\n\nAprendizado essencial: Defina uma incógnita para cada tipo e traduza total de itens e atributos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-9",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e81ebe6059f8ea"
+      ],
+      "statement": "Foram vendidos 18 ingressos, alguns a R$ 20,00 e outros a R$ 12,00, arrecadando R$ 288,00. Quantos ingressos de R$ 20,00 foram vendidos?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "6."
+        },
+        {
+          "label": "B",
+          "text": "8."
+        },
+        {
+          "label": "C",
+          "text": "9."
+        },
+        {
+          "label": "D",
+          "text": "10."
+        },
+        {
+          "label": "E",
+          "text": "12."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O sistema combina a quantidade total de ingressos e a arrecadação ponderada pelos preços.\n\nAnálise da resposta: Correta: a+c=18 e 20a+12c=288; substituindo c=18−a, resulta a=9.\n\nA: Incorreta: seis ingressos caros levariam a arrecadação de R$ 264,00.\n\nB: Incorreta: oito ingressos caros produziriam R$ 280,00.\n\nC: Correta: a+c=18 e 20a+12c=288; substituindo c=18−a, resulta a=9.\n\nD: Incorreta: dez ingressos caros produziriam R$ 296,00.\n\nE: Incorreta: doze ingressos caros produziriam R$ 312,00.\n\nArmadilha: Dividir a arrecadação por um preço médio escolhido sem justificativa.\n\nConhecimento adicional: A solução completa é nove ingressos de cada preço.\n\nAprendizado essencial: Monte uma equação de contagem e outra de valor total.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_04_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_4_sistemas_lineares",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e81ebe6059f8ea"
+      ],
+      "statement": "Três canetas e dois cadernos custam R$ 24,00, enquanto uma caneta e um caderno custam R$ 9,00. A modelagem e a solução corretas são\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3c+2d=24 e c+d=9; c=3 e d=6."
+        },
+        {
+          "label": "B",
+          "text": "3c+d=24 e c+2d=9; c=6 e d=3."
+        },
+        {
+          "label": "C",
+          "text": "3c+2d=9 e c+d=24; c=6 e d=3."
+        },
+        {
+          "label": "D",
+          "text": "3c+2d=24 e c+d=9; c=5 e d=4."
+        },
+        {
+          "label": "E",
+          "text": "3c+2d=24 e c+d=9; c=6 e d=3."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Modelar corretamente exige associar cada coeficiente à quantidade do respectivo produto.\n\nAnálise da resposta: Correta: subtraindo duas vezes c+d=9 da primeira, obtém-se c=6 e depois d=3.\n\nA: Incorreta: c=3 e d=6 satisfaz a segunda, mas custa R$ 21,00 na primeira.\n\nB: Incorreta: as quantidades foram associadas aos objetos errados.\n\nC: Incorreta: os totais monetários das duas situações foram trocados.\n\nD: Incorreta: 3×5+2×4 resulta em R$ 23,00.\n\nE: Correta: subtraindo duas vezes c+d=9 da primeira, obtém-se c=6 e depois d=3.\n\nArmadilha: Trocar coeficientes ou totais antes mesmo de resolver o sistema.\n\nConhecimento adicional: A verificação fornece 18+6=24 e 6+3=9.\n\nAprendizado essencial: Valide tanto a tradução do enunciado quanto o par encontrado.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento algébrico e conferência editorial do sistema linear."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

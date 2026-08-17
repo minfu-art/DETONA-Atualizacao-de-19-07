@@ -32,7 +32,7 @@ import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
   courseFactoryPreviewService,
   isCourseFactoryStudentPreview,
-  PC_BA_CONTEST_ID,
+  requestedCoursePreview,
 } from './services/courseFactoryPreviewService.js';
 import {
   createHabitReminderQueue,
@@ -787,8 +787,9 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   }
 
   if (coursePreview && isDeveloperUser(authenticatedUser)) {
-    await openContest(PC_BA_CONTEST_ID, {
-      contestHint: courseFactoryPreviewService.studentContest(),
+    const previewContestId = requestedCoursePreview();
+    await openContest(previewContestId, {
+      contestHint: await courseFactoryPreviewService.loadStudentContest(previewContestId),
     });
     return;
   }

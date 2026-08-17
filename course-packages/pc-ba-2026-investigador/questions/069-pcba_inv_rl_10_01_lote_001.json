@@ -1,0 +1,1005 @@
+{
+  "name": "pcba_inv_rl_10_01_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_01_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1439fc90a17aa0"
+      ],
+      "statement": "Em lógica proposicional, uma proposição é uma sentença\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "declarativa à qual se pode atribuir exatamente um valor lógico, verdadeiro ou falso."
+        },
+        {
+          "label": "B",
+          "text": "interrogativa que admite várias respostas."
+        },
+        {
+          "label": "C",
+          "text": "imperativa que expressa uma ordem."
+        },
+        {
+          "label": "D",
+          "text": "exclamativa que expressa emoção."
+        },
+        {
+          "label": "E",
+          "text": "aberta que contém variável sem quantificação."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Proposição é uma sentença declarativa fechada que admite um único valor entre verdadeiro e falso.\n\nAnálise da resposta: Correta: declaratividade e bivalência caracterizam a proposição no modelo clássico.\n\nA: Correta: declaratividade e bivalência caracterizam a proposição no modelo clássico.\n\nB: Incorreta: perguntas não afirmam algo avaliável como verdadeiro ou falso.\n\nC: Incorreta: ordens não possuem valor lógico.\n\nD: Incorreta: exclamações não constituem proposições lógicas.\n\nE: Incorreta: sentença aberta não tem valor lógico definido sem atribuição ou quantificação.\n\nArmadilha: Chamar de proposição qualquer frase gramaticalmente completa.\n\nConhecimento adicional: Sentenças paradoxais também ficam fora do modelo quando não admitem valor único.\n\nAprendizado essencial: Verifique simultaneamente forma declarativa e possibilidade de avaliação bivalente.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 6-18",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 6-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1439fc90a17aa0"
+      ],
+      "statement": "Qual das sentenças abaixo é uma proposição lógica?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Feche a porta."
+        },
+        {
+          "label": "B",
+          "text": "Que bela investigação!"
+        },
+        {
+          "label": "C",
+          "text": "Salvador é a capital da Bahia."
+        },
+        {
+          "label": "D",
+          "text": "Quem elaborou o laudo?"
+        },
+        {
+          "label": "E",
+          "text": "x+3=8."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A natureza declarativa permite julgar a frase sobre Salvador como verdadeira ou falsa.\n\nAnálise da resposta: Correta: é declarativa e possui valor lógico definido.\n\nA: Incorreta: é uma sentença imperativa.\n\nB: Incorreta: é uma sentença exclamativa.\n\nC: Correta: é declarativa e possui valor lógico definido.\n\nD: Incorreta: é uma pergunta.\n\nE: Incorreta: sem valor de x ou quantificador, é sentença aberta.\n\nArmadilha: Confundir uma equação com variável livre com proposição pronta.\n\nConhecimento adicional: Uma proposição continua sendo proposição mesmo quando seu conteúdo for falso.\n\nAprendizado essencial: Classifique a forma da sentença antes de investigar sua verdade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 6-18",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 6-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1439fc90a17aa0"
+      ],
+      "statement": "A expressão “x é maior que 10”, sem informação adicional sobre x, não é proposição porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é obrigatoriamente falsa."
+        },
+        {
+          "label": "B",
+          "text": "é uma ordem disfarçada."
+        },
+        {
+          "label": "C",
+          "text": "possui dois conectivos."
+        },
+        {
+          "label": "D",
+          "text": "é sempre verdadeira."
+        },
+        {
+          "label": "E",
+          "text": "seu valor lógico depende da variável livre."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Sentenças abertas tornam-se proposições após substituição da variável ou uso de quantificador.\n\nAnálise da resposta: Correta: a variável livre impede atribuição de valor lógico único.\n\nA: Incorreta: pode tornar-se verdadeira para certos valores.\n\nB: Incorreta: a frase não ordena uma ação.\n\nC: Incorreta: não há dois conectivos compondo a expressão.\n\nD: Incorreta: há valores que a tornam falsa.\n\nE: Correta: a variável livre impede atribuição de valor lógico único.\n\nArmadilha: Avaliar a expressão com um valor imaginado para x que não foi fornecido.\n\nConhecimento adicional: “Para todo x real, x é maior que 10” já é uma proposição, embora falsa.\n\nAprendizado essencial: Procure variáveis livres antes de atribuir V ou F.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 16-20",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 16-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b3fdb703c74066"
+      ],
+      "statement": "No princípio clássico da bivalência, uma proposição bem formada assume\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "simultaneamente V e F."
+        },
+        {
+          "label": "B",
+          "text": "exatamente um entre V e F."
+        },
+        {
+          "label": "C",
+          "text": "sempre o valor V."
+        },
+        {
+          "label": "D",
+          "text": "sempre o valor F."
+        },
+        {
+          "label": "E",
+          "text": "nenhum valor lógico."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A bivalência restringe os valores lógicos clássicos a verdadeiro e falso.\n\nAnálise da resposta: Correta: cada proposição é verdadeira ou falsa, de modo exclusivo.\n\nA: Incorreta: uma proposição não assume os dois valores ao mesmo tempo.\n\nB: Correta: cada proposição é verdadeira ou falsa, de modo exclusivo.\n\nC: Incorreta: proposições falsas existem.\n\nD: Incorreta: proposições verdadeiras existem.\n\nE: Incorreta: ausência de valor caracteriza sentenças que não são proposições neste contexto.\n\nArmadilha: Confundir a possibilidade de qualquer dos valores com atribuição simultânea.\n\nConhecimento adicional: O valor lógico pertence à proposição, não ao gosto do avaliador.\n\nAprendizado essencial: Após confirmar que é proposição, atribua apenas V ou F.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 10-18",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 10-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b3fdb703c74066"
+      ],
+      "statement": "A sentença declarativa “2+2=5” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "não proposicional porque é falsa."
+        },
+        {
+          "label": "B",
+          "text": "uma pergunta matemática."
+        },
+        {
+          "label": "C",
+          "text": "uma sentença aberta."
+        },
+        {
+          "label": "D",
+          "text": "uma proposição falsa."
+        },
+        {
+          "label": "E",
+          "text": "uma proposição verdadeira."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Ser proposição não significa ser verdadeira; significa admitir avaliação lógica.\n\nAnálise da resposta: Correta: é declarativa e seu conteúdo matemático é falso.\n\nA: Incorreta: falsidade é um valor possível de uma proposição.\n\nB: Incorreta: a frase afirma uma igualdade.\n\nC: Incorreta: não há variável livre.\n\nD: Correta: é declarativa e seu conteúdo matemático é falso.\n\nE: Incorreta: 2+2 é igual a 4.\n\nArmadilha: Descartar frases falsas da categoria das proposições.\n\nConhecimento adicional: Classificação sintática e valor lógico são etapas diferentes.\n\nAprendizado essencial: Primeiro decida se é proposição; depois determine V ou F.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 10-18",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 10-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b3fdb703c74066"
+      ],
+      "statement": "Sobre o valor lógico de “Brasília é a capital do Brasil”, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é verdadeiro e continua sendo proposição por admitir avaliação objetiva."
+        },
+        {
+          "label": "B",
+          "text": "não existe valor lógico em afirmações geográficas."
+        },
+        {
+          "label": "C",
+          "text": "é falso porque toda proposição deve conter conectivo."
+        },
+        {
+          "label": "D",
+          "text": "é verdadeiro, mas por isso deixa de ser proposição."
+        },
+        {
+          "label": "E",
+          "text": "depende da preferência do leitor."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Valor lógico resulta do confronto entre a afirmação e os fatos ou regras do domínio.\n\nAnálise da resposta: Correta: a sentença é declarativa, objetiva e factualmente verdadeira.\n\nA: Correta: a sentença é declarativa, objetiva e factualmente verdadeira.\n\nB: Incorreta: afirmações geográficas podem ter valor lógico.\n\nC: Incorreta: proposições simples não precisam de conectivo.\n\nD: Incorreta: verdade não elimina seu caráter proposicional.\n\nE: Incorreta: a verdade factual não depende de opinião.\n\nArmadilha: Exigir conectivo para que uma proposição simples exista.\n\nConhecimento adicional: Proposição simples possui uma única ideia lógica, ainda que sua frase seja longa.\n\nAprendizado essencial: Não confunda objetividade do valor com complexidade gramatical.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 10-20",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 10-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_dfc3eee7de6760"
+      ],
+      "statement": "Se p é verdadeira, então a negação ¬p é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Também é verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "Possui valor indeterminado."
+        },
+        {
+          "label": "C",
+          "text": "Assume o valor falso."
+        },
+        {
+          "label": "D",
+          "text": "É equivalente a p∧p."
+        },
+        {
+          "label": "E",
+          "text": "Torna-se uma sentença aberta."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A negação possui tabela com valores opostos aos da proposição original.\n\nAnálise da resposta: Correta: ¬p assume valor oposto ao de p.\n\nA: Incorreta: negação inverte o valor lógico.\n\nB: Incorreta: o valor de p já foi informado.\n\nC: Correta: ¬p assume valor oposto ao de p.\n\nD: Incorreta: p∧p é equivalente a p, não à sua negação.\n\nE: Incorreta: negar uma proposição produz outra proposição.\n\nArmadilha: Tratar negação como mera ênfase sem mudança de valor.\n\nConhecimento adicional: A dupla negação devolve a proposição original.\n\nAprendizado essencial: Inverta V para F e F para V.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 22-29",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 22-29",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_dfc3eee7de6760"
+      ],
+      "statement": "A negação de “Maria não participou da reunião” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Maria talvez tenha participado."
+        },
+        {
+          "label": "B",
+          "text": "Maria nunca participa de reuniões."
+        },
+        {
+          "label": "C",
+          "text": "Maria participou ou chegou atrasada."
+        },
+        {
+          "label": "D",
+          "text": "Maria não deixou de participar."
+        },
+        {
+          "label": "E",
+          "text": "Maria participou da reunião."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Negar uma sentença já negativa produz a afirmação correspondente.\n\nAnálise da resposta: Correta: remove-se a negação da sentença declarativa negativa.\n\nA: Incorreta: possibilidade não é negação exata.\n\nB: Incorreta: introduz generalização temporal.\n\nC: Incorreta: acrescenta alternativa não presente.\n\nD: Incorreta: embora possa soar semelhante, a forma é linguisticamente menos direta e pode gerar ambiguidade.\n\nE: Correta: remove-se a negação da sentença declarativa negativa.\n\nArmadilha: Acrescentar outro “não” sem simplificar a dupla negação.\n\nConhecimento adicional: ¬(¬p) é equivalente a p.\n\nAprendizado essencial: Procure a sentença que seja verdadeira exatamente quando a original for falsa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 22-29",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 22-29",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_dfc3eee7de6760"
+      ],
+      "statement": "A expressão ¬¬¬p é logicamente equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A proposição p."
+        },
+        {
+          "label": "B",
+          "text": "A negação ¬p."
+        },
+        {
+          "label": "C",
+          "text": "A conjunção p∧¬p."
+        },
+        {
+          "label": "D",
+          "text": "A disjunção p∨¬p."
+        },
+        {
+          "label": "E",
+          "text": "Uma proposição sem valor."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Pares de negações podem ser eliminados sucessivamente.\n\nAnálise da resposta: Correta: ¬¬¬p=¬(¬¬p)=¬p.\n\nA: Incorreta: duas negações se cancelam, mas resta a terceira.\n\nB: Correta: ¬¬¬p=¬(¬¬p)=¬p.\n\nC: Incorreta: conjunção com a própria negação é contradição.\n\nD: Incorreta: disjunção com a própria negação é tautologia.\n\nE: Incorreta: a expressão possui valor determinado a partir de p.\n\nArmadilha: Cancelar todas as negações sem observar que a quantidade é ímpar.\n\nConhecimento adicional: Número par de negações preserva p; número ímpar equivale a ¬p.\n\nAprendizado essencial: Conte a paridade das negações encadeadas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 22-29",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 22-29",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b7fd5447e6676e"
+      ],
+      "statement": "A conjunção p∧q é verdadeira somente quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p é falsa e q verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "ao menos uma parcela é verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "as parcelas têm valores diferentes."
+        },
+        {
+          "label": "D",
+          "text": "p e q são ambas verdadeiras."
+        },
+        {
+          "label": "E",
+          "text": "p e q são ambas falsas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A conjunção expressa cumprimento simultâneo de todas as parcelas.\n\nAnálise da resposta: Correta: o conectivo “e” exige simultaneamente as duas verdades.\n\nA: Incorreta: uma parcela falsa torna a conjunção falsa.\n\nB: Incorreta: essa regra pertence à disjunção inclusiva.\n\nC: Incorreta: valores diferentes tornam a conjunção falsa.\n\nD: Correta: o conectivo “e” exige simultaneamente as duas verdades.\n\nE: Incorreta: duas falsidades não satisfazem a conjunção.\n\nArmadilha: Aplicar à conjunção a regra mais permissiva da disjunção.\n\nConhecimento adicional: Uma única parcela falsa basta para tornar toda a conjunção falsa.\n\nAprendizado essencial: Leia ∧ como exigência cumulativa.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 34-41",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 34-41",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b7fd5447e6676e"
+      ],
+      "statement": "Se p é verdadeira e q é falsa, o valor de p∧q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O valor é falso."
+        },
+        {
+          "label": "B",
+          "text": "O valor é verdadeiro."
+        },
+        {
+          "label": "C",
+          "text": "O valor é igual apenas a p."
+        },
+        {
+          "label": "D",
+          "text": "O valor é indefinido."
+        },
+        {
+          "label": "E",
+          "text": "O valor é verdadeiro e falso."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A linha V,F da tabela da conjunção produz F.\n\nAnálise da resposta: Correta: a falsidade de q impede a verdade conjunta.\n\nA: Correta: a falsidade de q impede a verdade conjunta.\n\nB: Incorreta: seriam necessárias duas parcelas verdadeiras.\n\nC: Incorreta: a conjunção depende das duas parcelas.\n\nD: Incorreta: os valores de entrada estão definidos.\n\nE: Incorreta: a lógica clássica não atribui ambos os valores.\n\nArmadilha: Olhar apenas para a primeira parcela verdadeira.\n\nConhecimento adicional: A conjunção é sensível a qualquer falha entre seus componentes.\n\nAprendizado essencial: Confirme todas as parcelas antes de marcar V.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 34-41",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 34-41",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b7fd5447e6676e"
+      ],
+      "statement": "Na linguagem lógica usual, “Ana é perita, mas trabalha no interior” traduz-se por p∧q porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "“mas” representa disjunção exclusiva."
+        },
+        {
+          "label": "B",
+          "text": "a segunda oração nega a primeira."
+        },
+        {
+          "label": "C",
+          "text": "apesar do contraste linguístico, ambas as afirmações são apresentadas como verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "a frase é uma condicional."
+        },
+        {
+          "label": "E",
+          "text": "nenhuma das orações possui valor lógico."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Conectivos naturais como “mas”, “porém” e “todavia” costumam ter valor lógico de conjunção.\n\nAnálise da resposta: Correta: o contraste pragmático não altera a função conjuntiva.\n\nA: Incorreta: “mas” não escolhe apenas uma das orações.\n\nB: Incorreta: não há negação entre as ideias.\n\nC: Correta: o contraste pragmático não altera a função conjuntiva.\n\nD: Incorreta: não existe relação “se... então”.\n\nE: Incorreta: ambas são sentenças declarativas.\n\nArmadilha: Traduzir o tom de contraste como exclusão lógica.\n\nConhecimento adicional: A lógica proposicional abstrai nuances retóricas e preserva condições de verdade.\n\nAprendizado essencial: Pergunte se a frase exige as duas orações simultaneamente.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 3-10",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 3-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_09bb180c761200"
+      ],
+      "statement": "A disjunção inclusiva p∨q é falsa somente quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p é verdadeira e q falsa."
+        },
+        {
+          "label": "B",
+          "text": "p é falsa e q verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "ambas são verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "os valores são diferentes."
+        },
+        {
+          "label": "E",
+          "text": "ambas são falsas."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O “ou” inclusivo exige pelo menos uma parcela verdadeira e permite ambas.\n\nAnálise da resposta: Correta: sem qualquer parcela verdadeira, a disjunção é falsa.\n\nA: Incorreta: ao menos p é verdadeira.\n\nB: Incorreta: ao menos q é verdadeira.\n\nC: Incorreta: a disjunção inclusiva aceita as duas parcelas verdadeiras.\n\nD: Incorreta: valores diferentes ainda fornecem uma parcela verdadeira.\n\nE: Correta: sem qualquer parcela verdadeira, a disjunção é falsa.\n\nArmadilha: Aplicar a regra do “ou exclusivo” e rejeitar o caso V,V.\n\nConhecimento adicional: A inclusão da possibilidade conjunta distingue ∨ de ⊕.\n\nAprendizado essencial: Procure ao menos uma verdade entre as parcelas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 41-47",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 41-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_09bb180c761200"
+      ],
+      "statement": "Se p é falsa e q é verdadeira, então p∨q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "falsa porque p é falsa."
+        },
+        {
+          "label": "B",
+          "text": "verdadeira porque ao menos q é verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "falsa porque os valores são diferentes."
+        },
+        {
+          "label": "D",
+          "text": "indeterminada."
+        },
+        {
+          "label": "E",
+          "text": "equivalente a p∧q."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A disjunção inclusiva agrega alternativas sem exigir exclusividade.\n\nAnálise da resposta: Correta: a linha F,V da tabela de ∨ resulta V.\n\nA: Incorreta: basta uma parcela verdadeira para a disjunção.\n\nB: Correta: a linha F,V da tabela de ∨ resulta V.\n\nC: Incorreta: valores diferentes tornam o “ou exclusivo” verdadeiro, e também o inclusivo.\n\nD: Incorreta: os valores estão definidos.\n\nE: Incorreta: a conjunção seria falsa nesse caso.\n\nArmadilha: Dar prioridade à parcela falsa e ignorar a verdadeira.\n\nConhecimento adicional: Somente F∨F resulta F.\n\nAprendizado essencial: Verifique se existe pelo menos uma parcela V.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 41-47",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 41-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_09bb180c761200"
+      ],
+      "statement": "Se p e q são ambas verdadeiras, p∨q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "falsa por excesso de condições."
+        },
+        {
+          "label": "B",
+          "text": "indeterminada."
+        },
+        {
+          "label": "C",
+          "text": "equivalente a ¬p."
+        },
+        {
+          "label": "D",
+          "text": "verdadeira, pois o “ou” inclusivo admite ambas."
+        },
+        {
+          "label": "E",
+          "text": "uma contradição."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "No “ou” inclusivo, as alternativas podem ocorrer simultaneamente.\n\nAnálise da resposta: Correta: o símbolo ∨ inclui a situação conjunta V,V.\n\nA: Incorreta: duas verdades satisfazem a condição de ao menos uma.\n\nB: Incorreta: a tabela fornece valor definido.\n\nC: Incorreta: ¬p seria falsa.\n\nD: Correta: o símbolo ∨ inclui a situação conjunta V,V.\n\nE: Incorreta: a expressão pode ser verdadeira.\n\nArmadilha: Importar para ∨ a exclusividade comum em certos usos coloquiais.\n\nConhecimento adicional: Quando a exclusão for necessária, deve ser explicitada ou representada por conectivo próprio.\n\nAprendizado essencial: Diferencie “pelo menos uma” de “exatamente uma”.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 41-47",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 41-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0369455ee53b31"
+      ],
+      "statement": "A disjunção exclusiva entre p e q é verdadeira quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "exatamente uma das parcelas é verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "ambas são verdadeiras."
+        },
+        {
+          "label": "C",
+          "text": "ambas são falsas."
+        },
+        {
+          "label": "D",
+          "text": "p é sempre verdadeira."
+        },
+        {
+          "label": "E",
+          "text": "q é sempre falsa."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O “ou exclusivo” aceita uma alternativa ou a outra, mas não as duas.\n\nAnálise da resposta: Correta: a exclusividade exige valores lógicos diferentes.\n\nA: Correta: a exclusividade exige valores lógicos diferentes.\n\nB: Incorreta: a ocorrência simultânea viola a exclusão.\n\nC: Incorreta: nenhuma alternativa ocorre.\n\nD: Incorreta: o resultado depende também de q.\n\nE: Incorreta: o resultado depende também de p.\n\nArmadilha: Confundir “exatamente uma” com “ao menos uma”.\n\nConhecimento adicional: Sua tabela é verdadeira nas linhas V,F e F,V.\n\nAprendizado essencial: Compare os valores: diferentes produzem V.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 47-51",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 47-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0369455ee53b31"
+      ],
+      "statement": "Se p e q são verdadeiras, o valor de “ou p ou q, mas não ambos” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "verdadeiro por haver p."
+        },
+        {
+          "label": "B",
+          "text": "verdadeiro por haver q."
+        },
+        {
+          "label": "C",
+          "text": "verdadeiro duas vezes."
+        },
+        {
+          "label": "D",
+          "text": "indeterminado."
+        },
+        {
+          "label": "E",
+          "text": "falso, pois ambas ocorreram."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A disjunção exclusiva rejeita tanto F,F quanto V,V.\n\nAnálise da resposta: Correta: o caso V,V viola “mas não ambos”.\n\nA: Incorreta: a cláusula de exclusão impede aceitar p junto com q.\n\nB: Incorreta: a mesma exclusão impede aceitar q junto com p.\n\nC: Incorreta: valores lógicos não se acumulam dessa forma.\n\nD: Incorreta: a condição está completamente definida.\n\nE: Correta: o caso V,V viola “mas não ambos”.\n\nArmadilha: Avaliar somente a primeira parte “ou p ou q” e ignorar a exclusão final.\n\nConhecimento adicional: A formulação natural explicita a diferença em relação ao “ou” inclusivo.\n\nAprendizado essencial: Teste se exatamente uma alternativa ocorreu.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 47-51",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 47-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0369455ee53b31"
+      ],
+      "statement": "Qual expressão representa corretamente a disjunção exclusiva de p e q?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula (p∨q)∧¬(p∧q)."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p→q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O “ou exclusivo” pode ser decomposto em inclusão de alternativas e exclusão da conjunção.\n\nAnálise da resposta: Correta: exige ao menos uma verdadeira e proíbe a ocorrência conjunta.\n\nA: Incorreta: a conjunção exige ambas verdadeiras.\n\nB: Incorreta: a disjunção inclusiva admite o caso V,V.\n\nC: Incorreta: essa expressão exige ambas falsas.\n\nD: Correta: exige ao menos uma verdadeira e proíbe a ocorrência conjunta.\n\nE: Incorreta: a condicional possui outra tabela-verdade.\n\nArmadilha: Usar apenas p∨q e esquecer de eliminar V,V.\n\nConhecimento adicional: Outra forma equivalente é (p∧¬q)∨(¬p∧q).\n\nAprendizado essencial: Expresse separadamente “ao menos uma” e “não ambas”.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 47-51",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 47-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7e53eafc3debb8"
+      ],
+      "statement": "A condicional p→q é falsa somente na situação\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p falsa e q falsa."
+        },
+        {
+          "label": "B",
+          "text": "p falsa e q verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "p e q verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "p verdadeira e q falsa."
+        },
+        {
+          "label": "E",
+          "text": "em todas as situações."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A condicional falha apenas quando uma condição suficiente ocorre sem sua consequência.\n\nAnálise da resposta: Correta: o antecedente ocorre, mas o consequente prometido falha.\n\nA: Incorreta: antecedente falso torna a condicional verdadeira.\n\nB: Incorreta: antecedente falso também torna a condicional verdadeira.\n\nC: Incorreta: a promessa condicional é cumprida.\n\nD: Correta: o antecedente ocorre, mas o consequente prometido falha.\n\nE: Incorreta: a condicional é verdadeira em três das quatro linhas.\n\nArmadilha: Tratar antecedente falso como causa de falsidade da condicional.\n\nConhecimento adicional: A equivalência ¬p∨q confirma as três linhas verdadeiras.\n\nAprendizado essencial: Procure especificamente o caso em que ocorre V→F.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 51-61",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 51-61",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7e53eafc3debb8"
+      ],
+      "statement": "Se p é falsa e q é falsa, então p→q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "falsa porque q é falsa."
+        },
+        {
+          "label": "B",
+          "text": "verdadeira porque o antecedente não ocorreu."
+        },
+        {
+          "label": "C",
+          "text": "indeterminada."
+        },
+        {
+          "label": "D",
+          "text": "igual a p∧q."
+        },
+        {
+          "label": "E",
+          "text": "uma disjunção exclusiva."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Condicionais com antecedente falso são verdadeiras na lógica material.\n\nAnálise da resposta: Correta: com antecedente falso, não há violação da implicação.\n\nA: Incorreta: a falsidade do consequente só derruba a condicional quando p é verdadeira.\n\nB: Correta: com antecedente falso, não há violação da implicação.\n\nC: Incorreta: a tabela define o resultado.\n\nD: Incorreta: p∧q seria falsa, mas a condicional é verdadeira.\n\nE: Incorreta: os conectivos possuem tabelas diferentes.\n\nArmadilha: Julgar a condicional apenas pelo valor falso do consequente.\n\nConhecimento adicional: A condicional não afirma que p efetivamente ocorrerá.\n\nAprendizado essencial: Avalie primeiro se houve o caso proibido V,F.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 51-61",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 51-61",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

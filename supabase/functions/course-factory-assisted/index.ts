@@ -61,6 +61,77 @@ async function draftEnvelope(admin: any, draftId: string, userId: string) {
   };
 }
 
+function previewCurriculum(draft: any) {
+  const roleId = draft.identity?.position_id || `role_${draft.identity?.contest_id || 'course'}`;
+  const rows = [{
+    id: roleId, source_id: roleId, parent_id: null, parent_source_id: null,
+    type: 'role', name: draft.identity?.position || 'Cargo', description: '', order_index: 0, status: 'draft',
+  }];
+  const append = (node: any, parentId: string, type: string) => {
+    rows.push({
+      id: node.id, source_id: node.id, parent_id: parentId, parent_source_id: parentId,
+      type, name: node.title, description: node.description || '', order_index: node.order || 0, status: 'draft',
+    });
+  };
+  for (const discipline of draft.curriculum || []) {
+    append(discipline, roleId, 'discipline');
+    for (const topic of discipline.topics || []) {
+      append(topic, discipline.id, 'topic');
+      for (const subtopic of topic.subtopics || []) append(subtopic, topic.id, 'subtopic');
+    }
+  }
+  return rows;
+}
+
+async function draftPreviewPackage(admin: any, draftId: string, userId: string) {
+  const draft = await ownedDraft(admin, draftId, userId);
+  if (!['package_imported', 'map_approved'].includes(draft.status) || draft.validation_report?.valid !== true) {
+    throw new Error('package_not_ready');
+  }
+  const questions = [];
+  for (let from = 0; from < Number(draft.question_count || 0); from += 1000) {
+    const { data, error } = await admin.from('course_factory_draft_questions')
+      .select('payload,order_index').eq('course_draft_id', draftId)
+      .order('order_index').range(from, from + 999);
+    if (error) throw error;
+    questions.push(...(data || []).map(({ payload }: any) => ({
+      ...payload,
+      concursoId: draft.identity.contest_id,
+      contest_id: draft.identity.contest_id,
+      topicoEditalId: payload.subtopic_id,
+      enunciado: payload.statement,
+      alternativas: payload.options,
+      respostaCorreta: payload.correct_answer,
+      explicacao: payload.explanation,
+      situacao: 'draft',
+    })));
+  }
+  const course = draft.package_metadata?.course || {};
+  return {
+    id: `${draft.identity.contest_id}-assisted-preview`,
+    contestId: draft.identity.contest_id,
+    version: `assisted-${draft.revision}-${String(draft.package_hash).slice(0, 12)}`,
+    contentHash: draft.package_hash,
+    metadata: {
+      ...(draft.package_metadata?.metadata || {}),
+      contest_id: draft.identity.contest_id,
+      position_id: draft.identity.position_id,
+      offering_id: draft.identity.offering_id,
+      exam_date: draft.identity.exam_date,
+      code: course.code || draft.identity.contest_id,
+      name: draft.identity.contest_name,
+      role: draft.identity.position,
+      description: course.description || 'Curso importado pela Course Factory.',
+      icon: course.code || 'DT',
+      course_draft_id: draft.id,
+    },
+    curriculum: previewCurriculum(draft),
+    questions,
+    previewOnly: true,
+    publicationBlocked: true,
+  };
+}
+
 function publicValidation(report: any) {
   return {
     valid: report.valid,
@@ -129,6 +200,9 @@ Deno.serve(async (request) => {
       return response(201, { draft: data, sources: [], question_samples: [], audit_events: [] }, origin);
     }
     if (body.action === 'get_draft') return response(200, await draftEnvelope(admin, body.draftId, user.id), origin);
+    if (body.action === 'get_preview_package') {
+      return response(200, { package: await draftPreviewPackage(admin, body.draftId, user.id) }, origin);
+    }
 
     const draft = await ownedDraft(admin, body.draftId, user.id);
     if (body.action === 'create_signed_upload') {

@@ -1,0 +1,1005 @@
+{
+  "name": "pcba_inv_rl_01_01_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_01_01_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_262bb545e3f43f"
+      ],
+      "statement": "Considere os números -4, 0, 3/5, √2 e 7. Sobre sua classificação,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-4 é inteiro e real."
+        },
+        {
+          "label": "B",
+          "text": "3/5 é irracional."
+        },
+        {
+          "label": "C",
+          "text": "√2 é racional."
+        },
+        {
+          "label": "D",
+          "text": "0 não é inteiro."
+        },
+        {
+          "label": "E",
+          "text": "7 não é natural."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Os conjuntos numéricos são inclusivos: naturais estão nos inteiros, que estão nos racionais e reais.\n\nAnálise da resposta: Correta: todo inteiro pertence também ao conjunto dos números reais.\n\nA: Correta: todo inteiro pertence também ao conjunto dos números reais.\n\nB: Incorreta: 3/5 é razão entre inteiros e, portanto, racional.\n\nC: Incorreta: √2 é irracional.\n\nD: Incorreta: zero pertence ao conjunto dos inteiros.\n\nE: Incorreta: sete é número natural.\n\nArmadilha: Confundir número negativo com número não real.\n\nConhecimento adicional: Irracionais também são reais, embora não possam ser escritos como razão de inteiros.\n\nAprendizado essencial: Classifique pelo menor conjunto ao qual o número pertence.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_262bb545e3f43f"
+      ],
+      "statement": "Um sistema registra saldo negativo, quantidade inteira de ocorrências e média decimal exata. Os valores -12, 8 e 2,75 pertencem simultaneamente ao conjunto dos\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "números naturais."
+        },
+        {
+          "label": "B",
+          "text": "números racionais."
+        },
+        {
+          "label": "C",
+          "text": "números inteiros."
+        },
+        {
+          "label": "D",
+          "text": "números irracionais."
+        },
+        {
+          "label": "E",
+          "text": "números primos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O conjunto comum mais específico aos três valores apresentados é o dos racionais, contido nos reais.\n\nAnálise da resposta: Correta: inteiros e decimais exatos podem ser escritos como razão de inteiros.\n\nA: Incorreta: -12 e 2,75 não são naturais.\n\nB: Correta: inteiros e decimais exatos podem ser escritos como razão de inteiros.\n\nC: Incorreta: 2,75 não é inteiro.\n\nD: Incorreta: todos são racionais, não irracionais.\n\nE: Incorreta: primo é classificação restrita a certos naturais positivos.\n\nArmadilha: Escolher inteiros porque dois dos três números são inteiros.\n\nConhecimento adicional: Decimal exato sempre pode ser convertido em fração com denominador potência de dez.\n\nAprendizado essencial: Verifique todos os elementos antes de escolher o conjunto comum.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-16",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_262bb545e3f43f"
+      ],
+      "statement": "Assinale a relação de inclusão correta entre conjuntos numéricos.\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R ⊂ Q ⊂ Z."
+        },
+        {
+          "label": "B",
+          "text": "Irracionais ⊂ Q."
+        },
+        {
+          "label": "C",
+          "text": "N ⊂ Z ⊂ Q ⊂ R."
+        },
+        {
+          "label": "D",
+          "text": "Z ⊂ N."
+        },
+        {
+          "label": "E",
+          "text": "Q e R não possuem elementos comuns."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A cadeia clássica de inclusão é N contido em Z, contido em Q, contido em R.\n\nAnálise da resposta: Correta: naturais, inteiros, racionais e reais formam essa cadeia de inclusão.\n\nA: Incorreta: os reais contêm os racionais, e não o contrário.\n\nB: Incorreta: irracionais são reais não racionais.\n\nC: Correta: naturais, inteiros, racionais e reais formam essa cadeia de inclusão.\n\nD: Incorreta: inteiros negativos não pertencem aos naturais.\n\nE: Incorreta: todo racional é também real.\n\nArmadilha: Inverter o símbolo de inclusão ao ler do conjunto maior para o menor.\n\nConhecimento adicional: A diferença R menos Q corresponde ao conjunto dos irracionais.\n\nAprendizado essencial: Conjunto menor fica à esquerda do símbolo de inclusão.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-16",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_35b1134c3dae54"
+      ],
+      "statement": "Na expressão 18 - 3 × 4 + 2, a ordem correta das operações produz\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "58."
+        },
+        {
+          "label": "B",
+          "text": "8."
+        },
+        {
+          "label": "C",
+          "text": "20."
+        },
+        {
+          "label": "D",
+          "text": "36."
+        },
+        {
+          "label": "E",
+          "text": "4."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Multiplicações e divisões antecedem adições e subtrações.\n\nAnálise da resposta: Correta: primeiro 3 × 4 = 12; depois 18 - 12 + 2 = 8.\n\nA: Incorreta: o resultado decorre de operar apenas da esquerda para a direita.\n\nB: Incorreta: houve subtração inadequada após a multiplicação.\n\nC: Incorreta: a adição foi antecipada.\n\nD: Correta: primeiro 3 × 4 = 12; depois 18 - 12 + 2 = 8.\n\nE: Incorreta: o valor não respeita toda a expressão.\n\nArmadilha: Executar automaticamente todas as operações da esquerda para a direita.\n\nConhecimento adicional: Operações de mesma prioridade são resolvidas da esquerda para a direita.\n\nAprendizado essencial: Respeite prioridade antes de efetuar os cálculos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_35b1134c3dae54"
+      ],
+      "statement": "Uma equipe divide 84 itens igualmente entre 7 agentes e cada agente utiliza 3 itens. O total que permanece com cada agente é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "7 itens."
+        },
+        {
+          "label": "B",
+          "text": "8 itens."
+        },
+        {
+          "label": "C",
+          "text": "10 itens."
+        },
+        {
+          "label": "D",
+          "text": "11 itens."
+        },
+        {
+          "label": "E",
+          "text": "9 itens."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O problema combina divisão exata e subtração em etapas sucessivas.\n\nAnálise da resposta: Correta: 84 ÷ 7 = 12 e 12 - 3 = 9.\n\nA: Incorreta: foram subtraídos cinco itens.\n\nB: Incorreta: o quociente foi calculado incorretamente.\n\nC: Incorreta: apenas dois itens foram retirados.\n\nD: Incorreta: somente um item foi retirado.\n\nE: Correta: 84 ÷ 7 = 12 e 12 - 3 = 9.\n\nArmadilha: Subtrair antes de distribuir os itens.\n\nConhecimento adicional: Traduzir a narrativa em operações evita misturar total e quantidade individual.\n\nAprendizado essencial: Calcule primeiro a cota individual e depois o consumo.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_35b1134c3dae54"
+      ],
+      "statement": "A igualdade que exemplifica corretamente a propriedade distributiva é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "5 × (3 + 2) = 5 × 3 + 5 × 2."
+        },
+        {
+          "label": "B",
+          "text": "5 + (3 × 2) = (5 + 3) × (5 + 2)."
+        },
+        {
+          "label": "C",
+          "text": "5 × (3 + 2) = 5 × 3 + 2."
+        },
+        {
+          "label": "D",
+          "text": "5 - (3 + 2) = 5 - 3 + 2."
+        },
+        {
+          "label": "E",
+          "text": "5 ÷ (3 + 2) = 5 ÷ 3 + 5 ÷ 2."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A multiplicação é distributiva em relação à adição e à subtração.\n\nAnálise da resposta: Correta: o fator externo multiplica cada parcela da soma.\n\nA: Correta: o fator externo multiplica cada parcela da soma.\n\nB: Incorreta: a soma não se distribui sobre a multiplicação dessa forma.\n\nC: Incorreta: o segundo termo também deve ser multiplicado por cinco.\n\nD: Incorreta: ao retirar parênteses após sinal negativo, ambos os sinais mudam.\n\nE: Incorreta: divisão não é distributiva sobre soma.\n\nArmadilha: Aplicar distributividade a qualquer operação.\n\nConhecimento adicional: A propriedade vale nos dois sentidos e permite colocar fator comum em evidência.\n\nAprendizado essencial: Distribua o fator por todas as parcelas internas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e43a43cb5d07a"
+      ],
+      "statement": "Na reta numérica, qual sequência está em ordem crescente?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-1, -3, 0, 2."
+        },
+        {
+          "label": "B",
+          "text": "0, -1, 2, 3."
+        },
+        {
+          "label": "C",
+          "text": "-3, -1, 0, 2."
+        },
+        {
+          "label": "D",
+          "text": "2, 0, -1, -3."
+        },
+        {
+          "label": "E",
+          "text": "-3, 0, -1, 2."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Na reta, números mais à esquerda são menores.\n\nAnálise da resposta: Correta: os valores crescem da esquerda para a direita.\n\nA: Incorreta: -3 é menor que -1.\n\nB: Incorreta: -1 deveria anteceder zero.\n\nC: Correta: os valores crescem da esquerda para a direita.\n\nD: Incorreta: a sequência está decrescente.\n\nE: Incorreta: -1 é menor que zero.\n\nArmadilha: Achar que o número negativo de maior módulo é maior.\n\nConhecimento adicional: Entre negativos, o mais distante de zero à esquerda é o menor.\n\nAprendizado essencial: Visualize a posição na reta antes de comparar.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e43a43cb5d07a"
+      ],
+      "statement": "Às 6h, a temperatura era -2,5 °C; ao meio-dia, era 1,25 °C. A elevação foi de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1,25 °C."
+        },
+        {
+          "label": "B",
+          "text": "2,5 °C."
+        },
+        {
+          "label": "C",
+          "text": "2,75 °C."
+        },
+        {
+          "label": "D",
+          "text": "3,75 °C."
+        },
+        {
+          "label": "E",
+          "text": "4,75 °C."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Variação é valor final menos valor inicial.\n\nAnálise da resposta: Correta: 1,25 - (-2,5) = 3,75.\n\nA: Incorreta: considera apenas a temperatura final.\n\nB: Incorreta: considera apenas o módulo inicial.\n\nC: Incorreta: soma os valores com sinal inadequado.\n\nD: Correta: 1,25 - (-2,5) = 3,75.\n\nE: Incorreta: acrescenta um grau ao resultado.\n\nArmadilha: Somar diretamente números de sinais diferentes sem interpretar a variação.\n\nConhecimento adicional: Subtrair um número negativo equivale a adicionar seu oposto.\n\nAprendizado essencial: Use final menos inicial e preserve os sinais.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 6-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 6-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e43a43cb5d07a"
+      ],
+      "statement": "Sobre os números -0,8 e -3/4, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-0,8 é maior porque 8 é maior que 3."
+        },
+        {
+          "label": "B",
+          "text": "-3/4 é igual a -0,8."
+        },
+        {
+          "label": "C",
+          "text": "ambos são positivos."
+        },
+        {
+          "label": "D",
+          "text": "não podem ser comparados."
+        },
+        {
+          "label": "E",
+          "text": "-0,8 < -3/4."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Converter fração em decimal facilita a comparação.\n\nAnálise da resposta: Correta: -0,8 está à esquerda de -0,75 na reta.\n\nA: Incorreta: comparação exige considerar sinais e valores equivalentes.\n\nB: Incorreta: -3/4 = -0,75.\n\nC: Incorreta: ambos possuem sinal negativo.\n\nD: Incorreta: racionais podem ser comparados.\n\nE: Correta: -0,8 está à esquerda de -0,75 na reta.\n\nArmadilha: Comparar apenas algarismos, ignorando sinal e posição decimal.\n\nConhecimento adicional: Entre negativos, o valor de maior módulo é o menor.\n\nAprendizado essencial: Converta para a mesma representação e use a reta.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 6-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 6-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bc0258e4adfdf2"
+      ],
+      "statement": "A fração irredutível correspondente ao decimal 0,375 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3/8."
+        },
+        {
+          "label": "B",
+          "text": "3/5."
+        },
+        {
+          "label": "C",
+          "text": "5/8."
+        },
+        {
+          "label": "D",
+          "text": "15/20."
+        },
+        {
+          "label": "E",
+          "text": "37/50."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Decimal exato vira fração sobre potência de dez, seguida de simplificação.\n\nAnálise da resposta: Correta: 0,375 = 375/1000 = 3/8.\n\nA: Correta: 0,375 = 375/1000 = 3/8.\n\nB: Incorreta: 3/5 corresponde a 0,6.\n\nC: Incorreta: 5/8 corresponde a 0,625.\n\nD: Incorreta: 15/20 corresponde a 0,75.\n\nE: Incorreta: 37/50 corresponde a 0,74.\n\nArmadilha: Usar apenas os algarismos sem considerar casas decimais.\n\nConhecimento adicional: O número de casas determina inicialmente o denominador 10, 100, 1000 e assim por diante.\n\nAprendizado essencial: Escreva sobre potência de dez e simplifique.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bc0258e4adfdf2"
+      ],
+      "statement": "De um arquivo, 2/5 foi analisado pela manhã e 0,35 à tarde. A parcela total analisada foi\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,40."
+        },
+        {
+          "label": "B",
+          "text": "0,75."
+        },
+        {
+          "label": "C",
+          "text": "0,55."
+        },
+        {
+          "label": "D",
+          "text": "0,70."
+        },
+        {
+          "label": "E",
+          "text": "0,85."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Representações diferentes devem ser convertidas para a mesma forma antes da soma.\n\nAnálise da resposta: Correta: 2/5 = 0,40 e 0,40 + 0,35 = 0,75.\n\nA: Incorreta: representa apenas 2/5.\n\nB: Correta: 2/5 = 0,40 e 0,40 + 0,35 = 0,75.\n\nC: Incorreta: houve soma incorreta.\n\nD: Incorreta: faltaram cinco centésimos.\n\nE: Incorreta: foram acrescentados dez centésimos.\n\nArmadilha: Somar numerador e parte decimal diretamente.\n\nConhecimento adicional: Também seria possível escrever 0,35 como 7/20 e somar as frações.\n\nAprendizado essencial: Converta, some e valide se o resultado é plausível.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bc0258e4adfdf2"
+      ],
+      "statement": "Qual igualdade entre fração e decimal está incorreta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/2 = 0,5."
+        },
+        {
+          "label": "B",
+          "text": "1/4 = 0,25."
+        },
+        {
+          "label": "C",
+          "text": "3/5 = 0,6."
+        },
+        {
+          "label": "D",
+          "text": "7/8 = 0,78."
+        },
+        {
+          "label": "E",
+          "text": "9/10 = 0,9."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Dividir numerador pelo denominador produz a representação decimal.\n\nAnálise da resposta: Correta: 7/8 = 0,875, e não 0,78.\n\nA: Incorreta como resposta: a igualdade é verdadeira.\n\nB: Incorreta como resposta: a igualdade é verdadeira.\n\nC: Incorreta como resposta: a igualdade é verdadeira.\n\nD: Correta: 7/8 = 0,875, e não 0,78.\n\nE: Incorreta como resposta: a igualdade é verdadeira.\n\nArmadilha: Interromper ou arredondar a divisão sem indicação.\n\nConhecimento adicional: Decimais exatos preservam integralmente o valor da fração.\n\nAprendizado essencial: Confira a divisão antes de aceitar a equivalência.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 3-20",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 3-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bd29174a1173a6"
+      ],
+      "statement": "O valor de |-7| e o significado geométrico do módulo são, respectivamente,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-7 e posição à esquerda."
+        },
+        {
+          "label": "B",
+          "text": "0 e origem."
+        },
+        {
+          "label": "C",
+          "text": "7 e distância até zero."
+        },
+        {
+          "label": "D",
+          "text": "7 e número oposto sempre negativo."
+        },
+        {
+          "label": "E",
+          "text": "-7 e distância orientada."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Valor absoluto mede distância até zero e nunca é negativo.\n\nAnálise da resposta: Correta: módulo é a distância não negativa até a origem.\n\nA: Incorreta: módulo não é negativo.\n\nB: Incorreta: a distância de -7 a zero não é zero.\n\nC: Correta: módulo é a distância não negativa até a origem.\n\nD: Incorreta: o oposto de -7 é positivo.\n\nE: Incorreta: distância usual não possui sinal.\n\nArmadilha: Preservar automaticamente o sinal que está dentro das barras.\n\nConhecimento adicional: Números opostos possuem o mesmo valor absoluto.\n\nAprendizado essencial: Leia módulo como distância não negativa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bd29174a1173a6"
+      ],
+      "statement": "A condição |x - 4| ≤ 2 descreve os valores de x no intervalo\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x ≤ 2."
+        },
+        {
+          "label": "B",
+          "text": "x ≥ 6."
+        },
+        {
+          "label": "C",
+          "text": "2 < x < 6."
+        },
+        {
+          "label": "D",
+          "text": "2 ≤ x ≤ 6."
+        },
+        {
+          "label": "E",
+          "text": "-2 ≤ x ≤ 2."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Desigualdade modular representa intervalo centrado no valor de referência.\n\nAnálise da resposta: Correta: a distância entre x e 4 é no máximo 2.\n\nA: Incorreta: representa somente valores à esquerda.\n\nB: Incorreta: representa somente valores à direita.\n\nC: Incorreta: os extremos também satisfazem a desigualdade.\n\nD: Correta: a distância entre x e 4 é no máximo 2.\n\nE: Incorreta: o intervalo foi centralizado em zero.\n\nArmadilha: Ignorar o centro 4 e usar apenas o raio 2.\n\nConhecimento adicional: O símbolo ≤ inclui os extremos; o símbolo < os exclui.\n\nAprendizado essencial: Centro menos raio até centro mais raio.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bd29174a1173a6"
+      ],
+      "statement": "Assinale a interpretação correta do intervalo (-1, 3].\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-1 ≤ x < 3."
+        },
+        {
+          "label": "B",
+          "text": "-1 < x ≤ 3."
+        },
+        {
+          "label": "C",
+          "text": "-1 < x < 3."
+        },
+        {
+          "label": "D",
+          "text": "x ≤ -1 ou x > 3."
+        },
+        {
+          "label": "E",
+          "text": "-1 ≤ x ≤ 3."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Parêntese indica extremo aberto; colchete, extremo fechado.\n\nAnálise da resposta: Correta: parêntese exclui -1 e colchete inclui 3.\n\nA: Incorreta: troca a inclusão dos extremos.\n\nB: Correta: parêntese exclui -1 e colchete inclui 3.\n\nC: Incorreta: três deve ser incluído.\n\nD: Incorreta: descreve o exterior do intervalo.\n\nE: Incorreta: -1 não pertence ao intervalo.\n\nArmadilha: Ler os dois tipos de delimitador como equivalentes.\n\nConhecimento adicional: Intervalos também podem ser representados por desigualdades e na reta real.\n\nAprendizado essencial: Traduza cada extremidade separadamente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "location": "páginas 3-19",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_09",
+          "trace_status": "missing",
+          "location": "páginas 3-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_86dc6022dccf75"
+      ],
+      "statement": "O valor de 2³ × 2⁴ é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2¹²."
+        },
+        {
+          "label": "B",
+          "text": "4⁷."
+        },
+        {
+          "label": "C",
+          "text": "2¹."
+        },
+        {
+          "label": "D",
+          "text": "2⁷."
+        },
+        {
+          "label": "E",
+          "text": "4¹²."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Produto de potências de mesma base soma os expoentes.\n\nAnálise da resposta: Correta: conserva-se a base e somam-se os expoentes: 2⁷.\n\nA: Incorreta: os expoentes não são multiplicados em produto de bases iguais.\n\nB: Incorreta: a base não deve ser duplicada.\n\nC: Incorreta: houve subtração dos expoentes.\n\nD: Correta: conserva-se a base e somam-se os expoentes: 2⁷.\n\nE: Incorreta: base e expoente foram alterados sem propriedade válida.\n\nArmadilha: Multiplicar expoentes em vez de somá-los.\n\nConhecimento adicional: Na divisão de potências de mesma base, os expoentes são subtraídos.\n\nAprendizado essencial: Mantenha a base e aplique a operação correta aos expoentes.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 21-31",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 21-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_86dc6022dccf75"
+      ],
+      "statement": "O valor de √144 + ∛27 - 2⁴ é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "-5."
+        },
+        {
+          "label": "B",
+          "text": "-1."
+        },
+        {
+          "label": "C",
+          "text": "1."
+        },
+        {
+          "label": "D",
+          "text": "15."
+        },
+        {
+          "label": "E",
+          "text": "17."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Raízes e potências são calculadas antes da adição e subtração.\n\nAnálise da resposta: Correta: 12 + 3 - 16 = -1.\n\nA: Incorreta: houve erro no cálculo da raiz ou potência.\n\nB: Correta: 12 + 3 - 16 = -1.\n\nC: Incorreta: a soma intermediária foi tratada incorretamente.\n\nD: Incorreta: a potência não foi subtraída.\n\nE: Incorreta: os três resultados foram somados.\n\nArmadilha: Interpretar 2⁴ como 2 × 4.\n\nConhecimento adicional: Radiciação é operação inversa da potenciação no domínio adequado.\n\nAprendizado essencial: Resolva cada potência ou raiz e só depois combine os termos.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 21-31",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 21-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_86dc6022dccf75"
+      ],
+      "statement": "Qual afirmação sobre potenciação e radiciação é correta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "(-2)² = -4."
+        },
+        {
+          "label": "B",
+          "text": "√25 = ±5 como valor da raiz principal."
+        },
+        {
+          "label": "C",
+          "text": "2⁰ = 0."
+        },
+        {
+          "label": "D",
+          "text": "√(9 + 16) = √9 + √16."
+        },
+        {
+          "label": "E",
+          "text": "∛(-8) = -2."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Raízes de índice ímpar admitem radicandos negativos no conjunto real.\n\nAnálise da resposta: Correta: (-2)³ = -8, logo a raiz cúbica real é -2.\n\nA: Incorreta: (-2)² = 4.\n\nB: Incorreta: o símbolo √ indica a raiz principal não negativa, igual a 5.\n\nC: Incorreta: toda base não nula elevada a zero resulta em 1.\n\nD: Incorreta: raiz não se distribui sobre adição.\n\nE: Correta: (-2)³ = -8, logo a raiz cúbica real é -2.\n\nArmadilha: Confundir solução de equação x² = 25 com valor da raiz principal √25.\n\nConhecimento adicional: Parênteses alteram o sinal incluído na base da potência.\n\nAprendizado essencial: Observe índice, sinal, parênteses e domínio.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 21-31",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 21-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_648ba4b6b867c9"
+      ],
+      "statement": "Na expressão 6 + 2 × [5 - (3 - 1)²], qual operação deve ser realizada primeiro?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A soma 6 + 2."
+        },
+        {
+          "label": "B",
+          "text": "A multiplicação 2 × 5."
+        },
+        {
+          "label": "C",
+          "text": "A subtração 3 - 1."
+        },
+        {
+          "label": "D",
+          "text": "A subtração dentro dos colchetes."
+        },
+        {
+          "label": "E",
+          "text": "A potência externa aos parênteses antes de seu conteúdo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Agrupadores internos antecedem potências e operações externas.\n\nAnálise da resposta: Correta: resolve-se primeiro o conteúdo do agrupador mais interno.\n\nA: Incorreta: a soma externa tem prioridade posterior.\n\nB: Incorreta: o colchete deve ser resolvido antes.\n\nC: Correta: resolve-se primeiro o conteúdo do agrupador mais interno.\n\nD: Incorreta: antes é necessário calcular o parêntese e sua potência.\n\nE: Incorreta: a base da potência depende do parêntese.\n\nArmadilha: Olhar apenas para a hierarquia dos operadores e ignorar agrupadores.\n\nConhecimento adicional: A sequência usual é parênteses, colchetes e chaves, sempre do interior para o exterior.\n\nAprendizado essencial: Comece pelo agrupador mais interno.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-31",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_01_01_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_1_1_numeros_inteiros_racionais_e_reais",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_648ba4b6b867c9"
+      ],
+      "statement": "O resultado de {18 ÷ [3 × (2 + 1)]} + 5 × 2 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "8."
+        },
+        {
+          "label": "B",
+          "text": "10."
+        },
+        {
+          "label": "C",
+          "text": "11."
+        },
+        {
+          "label": "D",
+          "text": "12."
+        },
+        {
+          "label": "E",
+          "text": "16."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A expressão exige resolver agrupadores, multiplicações ou divisões e soma final.\n\nAnálise da resposta: Correta: 2 + 1 = 3; 3 × 3 = 9; 18 ÷ 9 = 2; e 2 + 10 = 12.\n\nA: Incorreta: a parcela multiplicativa foi calculada incorretamente.\n\nB: Incorreta: apenas 5 × 2 foi considerado.\n\nC: Incorreta: a divisão foi tratada como 18 ÷ 3 ÷ 3.\n\nD: Correta: 2 + 1 = 3; 3 × 3 = 9; 18 ÷ 9 = 2; e 2 + 10 = 12.\n\nE: Incorreta: os agrupadores não foram respeitados.\n\nArmadilha: Remover colchetes sem preservar o agrupamento do divisor.\n\nConhecimento adicional: Uma verificação por estimativa mostra que 18/9 é pequeno e o total deve ficar próximo de 10.\n\nAprendizado essencial: Resolva de dentro para fora e valide o tamanho do resultado.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "location": "páginas 3-31",
+          "used_for": "Fundamento matemático e conferência editorial da solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_10",
+          "trace_status": "missing",
+          "location": "páginas 3-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

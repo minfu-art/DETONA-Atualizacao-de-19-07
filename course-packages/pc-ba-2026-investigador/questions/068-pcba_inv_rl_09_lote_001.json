@@ -1,0 +1,755 @@
+{
+  "name": "pcba_inv_rl_09_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_09_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99692505ed23e3"
+      ],
+      "statement": "Um raciocínio por analogia procura sustentar uma conclusão com base em\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "semelhanças relevantes entre casos comparados."
+        },
+        {
+          "label": "B",
+          "text": "uma tabela-verdade completa obrigatória."
+        },
+        {
+          "label": "C",
+          "text": "uma contradição entre todas as premissas."
+        },
+        {
+          "label": "D",
+          "text": "uma identidade absoluta entre os objetos."
+        },
+        {
+          "label": "E",
+          "text": "uma fórmula matemática universal apenas."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Analogias são inferências indutivas cuja força depende da relevância das semelhanças.\n\nAnálise da resposta: Correta: a analogia transfere uma expectativa a partir de características compartilhadas relevantes.\n\nA: Correta: a analogia transfere uma expectativa a partir de características compartilhadas relevantes.\n\nB: Incorreta: tabelas-verdade não são requisito de toda analogia.\n\nC: Incorreta: premissas contraditórias enfraquecem qualquer suporte.\n\nD: Incorreta: casos análogos não precisam ser idênticos.\n\nE: Incorreta: analogias podem ocorrer em muitos domínios não matemáticos.\n\nArmadilha: Considerar suficiente qualquer semelhança superficial.\n\nConhecimento adicional: Diferenças relevantes podem enfraquecer ou destruir uma analogia.\n\nAprendizado essencial: Avalie a ligação entre as características comparadas e a conclusão.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 14-20",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 14-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99692505ed23e3"
+      ],
+      "statement": "Qual analogia oferece apoio mais forte para prever que um novo sistema suportará alta demanda?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Tem a mesma cor da interface de um sistema antigo."
+        },
+        {
+          "label": "B",
+          "text": "Foi criado no mesmo mês que outro sistema."
+        },
+        {
+          "label": "C",
+          "text": "Usa a mesma arquitetura e foi testado sob carga equivalente à do sistema bem-sucedido."
+        },
+        {
+          "label": "D",
+          "text": "Possui nome parecido com um sistema estável."
+        },
+        {
+          "label": "E",
+          "text": "Foi apresentado pela mesma pessoa."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Analogias fortes compartilham propriedades causalmente ou tecnicamente relacionadas ao resultado previsto.\n\nAnálise da resposta: Correta: arquitetura e testes de carga são propriedades diretamente ligadas à conclusão.\n\nA: Incorreta: cor da interface não se relaciona com capacidade de processamento.\n\nB: Incorreta: mês de criação é característica irrelevante para desempenho.\n\nC: Correta: arquitetura e testes de carga são propriedades diretamente ligadas à conclusão.\n\nD: Incorreta: semelhança nominal não sustenta estabilidade.\n\nE: Incorreta: o apresentador não determina a capacidade técnica.\n\nArmadilha: Dar o mesmo peso a semelhanças estéticas e funcionais.\n\nConhecimento adicional: Quantidade de semelhanças importa menos que sua relevância para a conclusão.\n\nAprendizado essencial: Escolha critérios conectados ao fenômeno que se deseja prever.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 16-20",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 16-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99692505ed23e3"
+      ],
+      "statement": "O argumento “dois investigadores usam a mesma marca de caneta; logo terão desempenho profissional semelhante” é fraco porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "a conclusão é necessariamente verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "canetas nunca podem ser comparadas."
+        },
+        {
+          "label": "C",
+          "text": "todo argumento analógico é dedutivo."
+        },
+        {
+          "label": "D",
+          "text": "a premissa é uma tautologia."
+        },
+        {
+          "label": "E",
+          "text": "a semelhança citada é irrelevante para o desempenho."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma analogia falha quando a característica comum não sustenta o atributo projetado.\n\nAnálise da resposta: Correta: a marca da caneta não possui relação relevante com competência profissional.\n\nA: Incorreta: a conclusão não é garantida pela premissa.\n\nB: Incorreta: objetos podem ser comparados, mas a comparação deve ser pertinente.\n\nC: Incorreta: analogia é tipicamente indutiva.\n\nD: Incorreta: a premissa é contingente, não tautológica.\n\nE: Correta: a marca da caneta não possui relação relevante com competência profissional.\n\nArmadilha: Aceitar a conclusão porque a premissa relata uma semelhança real.\n\nConhecimento adicional: Semelhanças superficiais podem coexistir com diferenças decisivas.\n\nAprendizado essencial: Pergunte por que a semelhança aumentaria a probabilidade da conclusão.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 16-20",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 16-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_89bea922ad9e25"
+      ],
+      "statement": "Inferência lógica é o processo de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "atribuir valores aleatórios às proposições."
+        },
+        {
+          "label": "B",
+          "text": "obter uma conclusão a partir de informações tomadas como premissas."
+        },
+        {
+          "label": "C",
+          "text": "negar toda proposição composta."
+        },
+        {
+          "label": "D",
+          "text": "substituir argumentos por opiniões."
+        },
+        {
+          "label": "E",
+          "text": "eliminar qualquer relação entre frases."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Inferências conectam evidências ou hipóteses a uma conclusão.\n\nAnálise da resposta: Correta: inferir é passar das premissas a uma conclusão segundo uma regra.\n\nA: Incorreta: valores devem respeitar as condições do raciocínio.\n\nB: Correta: inferir é passar das premissas a uma conclusão segundo uma regra.\n\nC: Incorreta: negação é apenas uma operação possível.\n\nD: Incorreta: uma inferência exige suporte racional, não mera opinião.\n\nE: Incorreta: ela depende justamente de relações entre proposições.\n\nArmadilha: Tratar qualquer sequência de frases como inferência válida.\n\nConhecimento adicional: A inferência pode ser dedutiva, indutiva ou abdutiva conforme seu suporte.\n\nAprendizado essencial: Identifique a regra que liga premissas e conclusão.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 4-18",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 4-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_89bea922ad9e25"
+      ],
+      "statement": "Das premissas “se o alarme dispara, a equipe é avisada” e “o alarme disparou”, infere-se que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "a equipe não foi avisada."
+        },
+        {
+          "label": "B",
+          "text": "o alarme não disparou."
+        },
+        {
+          "label": "C",
+          "text": "a equipe provocou o alarme."
+        },
+        {
+          "label": "D",
+          "text": "a equipe foi avisada."
+        },
+        {
+          "label": "E",
+          "text": "todo aviso dispara alarme."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Modus ponens permite afirmar a consequência quando a condição suficiente ocorre.\n\nAnálise da resposta: Correta: é a conclusão obtida por modus ponens.\n\nA: Incorreta: contradiz a consequência com antecedente afirmado.\n\nB: Incorreta: contradiz a segunda premissa.\n\nC: Incorreta: não foi dada relação causal nessa direção.\n\nD: Correta: é a conclusão obtida por modus ponens.\n\nE: Incorreta: converte indevidamente a condicional.\n\nArmadilha: Transformar consequência em causa ou inverter a seta.\n\nConhecimento adicional: A validade depende da forma p→q, p, logo q.\n\nAprendizado essencial: Represente a inferência simbolicamente antes de concluir.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_89bea922ad9e25"
+      ],
+      "statement": "Considere: “Se há mandado, então a busca é autorizada. A busca foi autorizada. Logo, há mandado.” A inferência é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "inválida, pois afirma o consequente."
+        },
+        {
+          "label": "B",
+          "text": "válida por modus ponens."
+        },
+        {
+          "label": "C",
+          "text": "válida por modus tollens."
+        },
+        {
+          "label": "D",
+          "text": "válida por contraposição."
+        },
+        {
+          "label": "E",
+          "text": "uma equivalência lógica."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A afirmação do consequente é uma forma inválida de inferência condicional.\n\nAnálise da resposta: Correta: a autorização pode decorrer de outra hipótese; q não garante p.\n\nA: Correta: a autorização pode decorrer de outra hipótese; q não garante p.\n\nB: Incorreta: modus ponens exigiria afirmar o mandado.\n\nC: Incorreta: modus tollens exigiria negar a autorização.\n\nD: Incorreta: contraposição seria partir da ausência de autorização.\n\nE: Incorreta: a premissa fornece apenas uma direção.\n\nArmadilha: Confundir a presença da consequência com prova exclusiva de sua condição suficiente.\n\nConhecimento adicional: Uma bicondicional adicional tornaria a conversão permitida.\n\nAprendizado essencial: Considere causas alternativas para testar a conclusão.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48e303b9bfce47"
+      ],
+      "statement": "No raciocínio dedutivo válido, se as premissas forem verdadeiras, a conclusão\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "será apenas provável."
+        },
+        {
+          "label": "B",
+          "text": "poderá ser escolhida livremente."
+        },
+        {
+          "label": "C",
+          "text": "será necessariamente verdadeira."
+        },
+        {
+          "label": "D",
+          "text": "deverá ser mais geral que as premissas."
+        },
+        {
+          "label": "E",
+          "text": "será sempre uma opinião."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Validade dedutiva impede premissas verdadeiras acompanhadas de conclusão falsa.\n\nAnálise da resposta: Correta: essa preservação necessária da verdade define validade dedutiva.\n\nA: Incorreta: mera probabilidade caracteriza suporte não dedutivo.\n\nB: Incorreta: a conclusão é restringida pela forma lógica.\n\nC: Correta: essa preservação necessária da verdade define validade dedutiva.\n\nD: Incorreta: dedução pode partir de regra geral para caso particular.\n\nE: Incorreta: conclusões dedutivas são proposições sustentadas pela forma.\n\nArmadilha: Confundir validade com plausibilidade ou probabilidade elevada.\n\nConhecimento adicional: A validade não garante que as premissas sejam realmente verdadeiras.\n\nAprendizado essencial: Avalie o que ocorreria assumindo todas as premissas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48e303b9bfce47"
+      ],
+      "statement": "Todos os peritos são servidores. Carla é perita. Portanto,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Carla não é servidora."
+        },
+        {
+          "label": "B",
+          "text": "nenhum servidor é perito."
+        },
+        {
+          "label": "C",
+          "text": "Carla é a única perita."
+        },
+        {
+          "label": "D",
+          "text": "todo servidor é perito."
+        },
+        {
+          "label": "E",
+          "text": "Carla é servidora."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma dedução categórica aplica uma inclusão universal ao indivíduo classificado.\n\nAnálise da resposta: Correta: aplica a regra geral ao caso particular de Carla.\n\nA: Incorreta: contradiz a inclusão dada.\n\nB: Incorreta: a premissa afirma que peritos pertencem ao conjunto de servidores.\n\nC: Incorreta: não há informação sobre exclusividade.\n\nD: Incorreta: inverte a relação entre os conjuntos.\n\nE: Correta: aplica a regra geral ao caso particular de Carla.\n\nArmadilha: Converter “todo perito é servidor” em “todo servidor é perito”.\n\nConhecimento adicional: Diagramas de inclusão também mostram que Carla deve estar no conjunto maior.\n\nAprendizado essencial: Respeite a direção da relação universal.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 40-50",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 40-50",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_48e303b9bfce47"
+      ],
+      "statement": "“Os cinco relatórios examinados continham falhas; logo, todos os relatórios do órgão contêm falhas.” Esse raciocínio é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "dedutivo válido por regra universal."
+        },
+        {
+          "label": "B",
+          "text": "dedutivo válido por contraposição."
+        },
+        {
+          "label": "C",
+          "text": "uma tautologia."
+        },
+        {
+          "label": "D",
+          "text": "indutivo, pois generaliza a partir de casos observados."
+        },
+        {
+          "label": "E",
+          "text": "uma combinação sem conclusão."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Generalizar observações particulares caracteriza indução, não dedução necessária.\n\nAnálise da resposta: Correta: passa de amostra particular para afirmação geral, com suporte apenas provável.\n\nA: Incorreta: nenhuma regra universal foi apresentada como premissa.\n\nB: Incorreta: não há condicional contraposta.\n\nC: Incorreta: a conclusão pode ser falsa em outras situações.\n\nD: Correta: passa de amostra particular para afirmação geral, com suporte apenas provável.\n\nE: Incorreta: há conclusão explícita após “logo”.\n\nArmadilha: Tomar repetição observada como prova lógica de universalidade.\n\nConhecimento adicional: Uma amostra maior e representativa pode fortalecer, mas não tornar dedutiva, a generalização.\n\nAprendizado essencial: Observe a direção entre casos particulares e regra geral.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 11-18",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 11-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0d3a540e1ce5d1"
+      ],
+      "statement": "Uma conclusão é válida em relação às premissas quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é mais longa que todas elas."
+        },
+        {
+          "label": "B",
+          "text": "parece verdadeira isoladamente."
+        },
+        {
+          "label": "C",
+          "text": "usa as mesmas palavras."
+        },
+        {
+          "label": "D",
+          "text": "foi apresentada primeiro."
+        },
+        {
+          "label": "E",
+          "text": "não pode ser falsa sob qualquer situação em que todas as premissas sejam verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Conclusão válida é preservada em todos os modelos das premissas.\n\nAnálise da resposta: Correta: essa é a condição semântica de consequência válida.\n\nA: Incorreta: extensão textual não determina validade.\n\nB: Incorreta: verdade isolada não prova consequência lógica.\n\nC: Incorreta: repetir palavras não garante relação necessária.\n\nD: Incorreta: posição no texto é irrelevante.\n\nE: Correta: essa é a condição semântica de consequência válida.\n\nArmadilha: Avaliar somente se a conclusão parece factual ou razoável.\n\nConhecimento adicional: Um contraexemplo com premissas verdadeiras e conclusão falsa refuta a validade.\n\nAprendizado essencial: Procure uma situação que satisfaça premissas e negue a conclusão.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0d3a540e1ce5d1"
+      ],
+      "statement": "Se o arquivo está íntegro, então pode ser aberto. O arquivo não pode ser aberto. Conclui-se validamente que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o arquivo está íntegro."
+        },
+        {
+          "label": "B",
+          "text": "o arquivo não está íntegro."
+        },
+        {
+          "label": "C",
+          "text": "o programa está sempre defeituoso."
+        },
+        {
+          "label": "D",
+          "text": "todo arquivo abre."
+        },
+        {
+          "label": "E",
+          "text": "nenhuma conclusão é possível."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Negar o consequente de uma condicional autoriza negar seu antecedente.\n\nAnálise da resposta: Correta: por modus tollens, de p→q e ¬q conclui-se ¬p.\n\nA: Incorreta: isso produziria a consequência de poder abrir.\n\nB: Correta: por modus tollens, de p→q e ¬q conclui-se ¬p.\n\nC: Incorreta: a premissa não menciona defeito de programa.\n\nD: Incorreta: a afirmação universal não decorre do caso.\n\nE: Incorreta: a contraposição permite conclusão necessária.\n\nArmadilha: Confundir modus tollens com a negação inválida do antecedente.\n\nConhecimento adicional: A forma é equivalente à contrapositiva ¬q→¬p.\n\nAprendizado essencial: Ao receber a negação de q, percorra a contraposição.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0d3a540e1ce5d1"
+      ],
+      "statement": "De “todo delegado é bacharel em Direito” e “Marcos é bacharel em Direito”, conclui-se necessariamente que Marcos é delegado?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sim, por modus ponens."
+        },
+        {
+          "label": "B",
+          "text": "Sim, por contraposição."
+        },
+        {
+          "label": "C",
+          "text": "Não, pois a inclusão não autoriza converter bacharel em delegado."
+        },
+        {
+          "label": "D",
+          "text": "Não, porque nenhum delegado é bacharel."
+        },
+        {
+          "label": "E",
+          "text": "Sim, porque as categorias são equivalentes."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Uma propriedade necessária de uma categoria não é suficiente para pertencer a ela.\n\nAnálise da resposta: Correta: Marcos pode ser bacharel sem pertencer ao subconjunto dos delegados.\n\nA: Incorreta: a premissa não afirma que Marcos é delegado.\n\nB: Incorreta: contraposição trataria quem não é bacharel.\n\nC: Correta: Marcos pode ser bacharel sem pertencer ao subconjunto dos delegados.\n\nD: Incorreta: contradiz a premissa universal.\n\nE: Incorreta: foi dada inclusão em uma direção, não equivalência.\n\nArmadilha: Converter uma proposição universal afirmativa.\n\nConhecimento adicional: Um diagrama coloca delegados dentro dos bacharéis, deixando bacharéis fora do subconjunto.\n\nAprendizado essencial: Não inverta relações de inclusão.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 40-50",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 40-50",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2622a4a94e38cd"
+      ],
+      "statement": "A validade de um argumento e a verdade de suas proposições são propriedades\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "idênticas e inseparáveis."
+        },
+        {
+          "label": "B",
+          "text": "aplicáveis apenas a conclusões."
+        },
+        {
+          "label": "C",
+          "text": "definidas pela quantidade de premissas."
+        },
+        {
+          "label": "D",
+          "text": "sempre opostas."
+        },
+        {
+          "label": "E",
+          "text": "distintas: validade pertence à relação inferencial; verdade, às proposições."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Validade avalia preservação da verdade; veracidade avalia proposições individualmente.\n\nAnálise da resposta: Correta: a forma do argumento e os valores das sentenças devem ser avaliados separadamente.\n\nA: Incorreta: um argumento válido pode conter premissas falsas.\n\nB: Incorreta: premissas e conclusões podem ser verdadeiras ou falsas.\n\nC: Incorreta: número de premissas não define validade.\n\nD: Incorreta: podem coexistir validade e proposições verdadeiras.\n\nE: Correta: a forma do argumento e os valores das sentenças devem ser avaliados separadamente.\n\nArmadilha: Chamar de inválido todo argumento que menciona uma premissa falsa.\n\nConhecimento adicional: Argumento sólido é o argumento válido cujas premissas são verdadeiras.\n\nAprendizado essencial: Analise primeiro a forma e depois a verdade factual das premissas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2622a4a94e38cd"
+      ],
+      "statement": "Considere: “Todos os peixes são mamíferos. Todo mamífero voa. Logo, todos os peixes voam.” O argumento é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "inválido porque a conclusão é falsa."
+        },
+        {
+          "label": "B",
+          "text": "válido quanto à forma, embora as premissas sejam factualmente falsas."
+        },
+        {
+          "label": "C",
+          "text": "válido e com premissas verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "inválido porque possui duas premissas."
+        },
+        {
+          "label": "E",
+          "text": "uma analogia forte."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Validade formal pode existir mesmo em argumentos com conteúdo factualmente falso.\n\nAnálise da resposta: Correta: se as premissas fossem verdadeiras, a conclusão seguiria necessariamente.\n\nA: Incorreta: falsidade factual da conclusão não determina invalidade formal.\n\nB: Correta: se as premissas fossem verdadeiras, a conclusão seguiria necessariamente.\n\nC: Incorreta: as premissas não correspondem aos fatos.\n\nD: Incorreta: argumentos podem ter duas ou mais premissas.\n\nE: Incorreta: trata-se de dedução categórica, não analogia.\n\nArmadilha: Avaliar a forma apenas pela plausibilidade do assunto.\n\nConhecimento adicional: A estrutura é A⊆B e B⊆C, logo A⊆C.\n\nAprendizado essencial: Substitua o conteúdo por símbolos para enxergar a forma.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_09_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_9_logica_argumentacao_analogias_inferencias",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2622a4a94e38cd"
+      ],
+      "statement": "O argumento “Alguns servidores são professores; Joana é servidora; logo, Joana é professora” é inválido porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum servidor pode ser professor."
+        },
+        {
+          "label": "B",
+          "text": "a primeira premissa é necessariamente falsa."
+        },
+        {
+          "label": "C",
+          "text": "a conclusão é sempre verdadeira."
+        },
+        {
+          "label": "D",
+          "text": "Joana pode estar entre os servidores que não são professores."
+        },
+        {
+          "label": "E",
+          "text": "a palavra “alguns” significa “todos”."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Um contraexemplo prova invalidade ao preservar premissas e tornar a conclusão falsa.\n\nAnálise da resposta: Correta: as premissas podem ser verdadeiras sem que Joana pertença à interseção.\n\nA: Incorreta: a primeira premissa afirma que há sobreposição possível.\n\nB: Incorreta: a proposição pode ser verdadeira.\n\nC: Incorreta: existe contraexemplo compatível com as premissas.\n\nD: Correta: as premissas podem ser verdadeiras sem que Joana pertença à interseção.\n\nE: Incorreta: “alguns” não universaliza a classe.\n\nArmadilha: Tratar uma afirmação existencial sobre parte da classe como universal.\n\nConhecimento adicional: Diagramas com interseção parcial deixam elementos fora da área comum.\n\nAprendizado essencial: Observe o alcance dos quantificadores nas premissas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 40-50",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 40-50",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

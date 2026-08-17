@@ -124,6 +124,7 @@ export class AdminCourseFactoryService {
   async listDrafts() { return (await this.#invoke('list_drafts')).data.drafts || []; }
   async createDraft() { return (await this.#invoke('create_draft')).data; }
   async getDraft(draftId) { return (await this.#invoke('get_draft', { draftId })).data; }
+  async getPreviewPackage(draftId) { return (await this.#invoke('get_preview_package', { draftId })).data.package; }
 
   async uploadSource(draftId, file, { sourceType, category }) {
     const checked = precheckCourseFactoryPdf(file);

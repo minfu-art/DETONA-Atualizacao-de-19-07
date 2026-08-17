@@ -7,21 +7,30 @@ import {
   validateAssistedFactoryRequest,
 } from '../supabase/functions/course-factory-assisted/core.js';
 import { assembleAssistedCoursePackage } from '../app/js/services/adminCourseFactoryService.js';
+import {
+  courseFactoryStudentPreviewUrl,
+  isCourseFactoryStudentPreview,
+  requestedCourseDraft,
+  requestedCoursePreview,
+} from '../app/js/services/courseFactoryPreviewService.js';
 
 const uploadedSources = [{ file_name: 'edital-pc-x.pdf', status: 'uploaded' }];
-const trace = [{ source_id: 'src_edital', page_number: 12, excerpt: 'Língua Portuguesa: emprego da crase.' }];
+const trace = [{ source_id: 'src_edital', trace_status: 'available', page_number: 12, excerpt: 'Língua Portuguesa: emprego da crase.' }];
 
 function validPackage() {
   return {
     schema_version: 1,
-    operation_id: 'pc-x-2027-portugues-v1',
+    operation_id: 'detona-contract-test-v1',
     course: {
-      contest_id: 'pc_x_2027', position_id: 'pc_x_2027_investigador', offering_id: 'pc_x_2027_investigador',
-      code: 'PC X', slug: 'pc-x-2027-investigador', name: 'Polícia Civil de X — Investigador',
-      organization: 'Polícia Civil de X', position: 'Investigador', board: 'Banca X', year: '2027',
+      contest_id: 'detona_contract_test', position_id: 'detona_contract_test_role', offering_id: 'detona_contract_test_offering',
+      code: 'TESTE', slug: 'detona-contract-test', name: 'Curso fictício do contrato',
+      organization: 'Organização fictícia', position: 'Cargo fictício', board: 'Banca X', year: '2027',
       exam_date: '2027-06-12', exam_format: 'Prova objetiva', description: 'Curso preparatório genérico.',
     },
-    sources: [{ id: 'src_edital', source_type: 'official_edital', category: 'edital', file_name: 'edital-pc-x.pdf', page_count: 40 }],
+    sources: [{
+      id: 'src_edital', source_type: 'official_edital', category: 'edital', title: 'Edital fictício',
+      file_name: 'edital-pc-x.pdf', page_count: 40, availability: 'uploaded_pdf', url: '', sha256: '',
+    }],
     curriculum: { nodes: [
       { id: 'role_investigador', parent_id: null, type: 'role', title: 'Investigador', description: '', order: 1, confidence: 1, traces: trace },
       { id: 'disc_portugues', parent_id: 'role_investigador', type: 'discipline', title: 'Língua Portuguesa', description: '', order: 1, confidence: 1, traces: trace },
@@ -53,7 +62,7 @@ test('contrato genérico assistido valida a cadeia completa e calcula cobertura'
   assert.equal(result.valid, true, JSON.stringify(result.errors));
   assert.deepEqual(result.counts, {
     roles: 1, disciplines: 1, topics: 1, subtopics: 1, microknowledges: 1,
-    question_batches: 1, questions: 1, sources: 1,
+    question_batches: 1, questions: 1, sources: 1, missing_trace_records: 0,
   });
   assert.equal(result.coverage.edital_map_pct, 100);
   assert.equal(result.coverage.microknowledge_question_pct, 100);
@@ -94,7 +103,7 @@ test('montador aceita o pacote canônico único e a pasta estruturada genérica'
     name, webkitRelativePath: path, type: 'application/json', size: JSON.stringify(value).length,
     text: async () => JSON.stringify(value),
   });
-  assert.equal((await assembleAssistedCoursePackage([jsonFile('package.json', canonical)])).course.contest_id, 'pc_x_2027');
+  assert.equal((await assembleAssistedCoursePackage([jsonFile('package.json', canonical)])).course.contest_id, 'detona_contract_test');
   const split = await assembleAssistedCoursePackage([
     jsonFile('course.json', { schema_version: 1, operation_id: canonical.operation_id, course: canonical.course }, 'curso/course.json'),
     jsonFile('sources.json', canonical.sources, 'curso/sources.json'),
@@ -104,7 +113,7 @@ test('montador aceita o pacote canônico único e a pasta estruturada genérica'
     jsonFile('metadata.json', canonical.metadata, 'curso/metadata.json'),
     jsonFile('lote-01.json', canonical.question_batches[0], 'curso/questions/lote-01.json'),
   ]);
-  assert.equal(split.course.contest_id, 'pc_x_2027');
+  assert.equal(split.course.contest_id, 'detona_contract_test');
   assert.equal(split.curriculum.nodes.length, 4);
   assert.equal(split.edital_map.length, 1);
   assert.equal(split.microknowledges.length, 1);
@@ -117,6 +126,22 @@ test('ações assistidas são estritas e não incluem análise automática ou pu
   assert.throws(() => validateAssistedFactoryRequest({ action: 'publish_course' }), /action_invalid/);
 });
 
+test('curso fictício não-PC-BA usa o mesmo contrato e a mesma prévia genérica', async () => {
+  const input = validPackage();
+  const result = await validateAssistedCoursePackage(input, { uploadedSources });
+  assert.equal(result.valid, true, JSON.stringify(result.errors));
+  assert.equal(result.identity.contest_id, 'detona_contract_test');
+  assert.deepEqual(validateAssistedFactoryRequest({ action: 'get_preview_package', draftId: '123e4567-e89b-42d3-a456-426614174000' }), {
+    action: 'get_preview_package', draftId: '123e4567-e89b-42d3-a456-426614174000',
+  });
+  const url = courseFactoryStudentPreviewUrl({
+    contestId: 'detona_contract_test', draftId: '123e4567-e89b-42d3-a456-426614174000',
+  });
+  assert.equal(requestedCoursePreview(url.split('?')[1]), 'detona_contract_test');
+  assert.equal(requestedCourseDraft(url.split('?')[1]), '123e4567-e89b-42d3-a456-426614174000');
+  assert.equal(isCourseFactoryStudentPreview(url.split('?')[1]), true);
+});
+
 test('persistência é privada, transacional, auditável e isolada das tabelas publicadas', async () => {
   const sql = await readFile(new URL('../supabase/migrations/20260817022750_course_factory_assisted_packages.sql', import.meta.url), 'utf8');
   assert.match(sql, /course_factory_draft_questions/);
@@ -126,6 +151,7 @@ test('persistência é privada, transacional, auditável e isolada das tabelas p
   assert.match(sql, /revoke all[\s\S]*authenticated/);
   assert.match(sql, /grant execute[\s\S]*service_role/);
   assert.doesNotMatch(sql, /(?:insert into|update|delete from)\s+public\.(?:admin_contests|editorial_questions|contest_entitlements|profiles)/i);
+  assert.doesNotMatch(sql, /pc_ba_2026/i);
 });
 
 test('runtime assistido não usa chave OpenAI, não chama provedor e mantém publicação bloqueada', async () => {

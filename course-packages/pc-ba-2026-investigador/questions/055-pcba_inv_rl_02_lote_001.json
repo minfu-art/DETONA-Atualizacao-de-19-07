@@ -1,0 +1,1005 @@
+{
+  "name": "pcba_inv_rl_02_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_586bb8a5b030e3"
+      ],
+      "statement": "A distância de 3,4 km corresponde a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3.400 m."
+        },
+        {
+          "label": "B",
+          "text": "340 m."
+        },
+        {
+          "label": "C",
+          "text": "34.000 m."
+        },
+        {
+          "label": "D",
+          "text": "0,34 m."
+        },
+        {
+          "label": "E",
+          "text": "34 m."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Quilômetro para metro exige multiplicação por mil.\n\nAnálise da resposta: Correta: um quilômetro possui mil metros, então 3,4 × 1.000 = 3.400.\n\nA: Correta: um quilômetro possui mil metros, então 3,4 × 1.000 = 3.400.\n\nB: Incorreta: o fator empregado foi 100, não 1.000.\n\nC: Incorreta: houve multiplicação por 10.000.\n\nD: Incorreta: a conversão deslocou a vírgula no sentido oposto.\n\nE: Incorreta: o resultado equivale à multiplicação por apenas 10.\n\nArmadilha: Contar apenas duas casas entre km e m.\n\nConhecimento adicional: Os prefixos quilo, hecto e deca representam 10³, 10² e 10¹ da unidade básica.\n\nAprendizado essencial: Em medida linear, cada salto da tabela vale fator 10.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 10-11",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 10-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_586bb8a5b030e3"
+      ],
+      "statement": "Uma equipe percorreu 1,25 km e depois mais 750 m. A distância total foi de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.750 m."
+        },
+        {
+          "label": "B",
+          "text": "2.000 m."
+        },
+        {
+          "label": "C",
+          "text": "2.750 m."
+        },
+        {
+          "label": "D",
+          "text": "875 m."
+        },
+        {
+          "label": "E",
+          "text": "1.325 m."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Grandezas só devem ser somadas depois de expressas na mesma unidade.\n\nAnálise da resposta: Correta: 1,25 km = 1.250 m; somando 750 m, obtêm-se 2.000 m.\n\nA: Incorreta: 1,25 km não corresponde a 1.000 m.\n\nB: Correta: 1,25 km = 1.250 m; somando 750 m, obtêm-se 2.000 m.\n\nC: Incorreta: houve soma sem conversão coerente.\n\nD: Incorreta: o valor corresponde a uma média inadequada.\n\nE: Incorreta: foram somados números escritos em unidades diferentes.\n\nArmadilha: Somar 1,25 diretamente a 750.\n\nConhecimento adicional: Dois mil metros também correspondem a dois quilômetros.\n\nAprendizado essencial: Converta primeiro; some depois.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 10-11",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 10-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_586bb8a5b030e3"
+      ],
+      "statement": "Qual equivalência de comprimento está correta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,45 m = 4,5 cm."
+        },
+        {
+          "label": "B",
+          "text": "7,2 km = 720 m."
+        },
+        {
+          "label": "C",
+          "text": "0,45 m = 45 cm."
+        },
+        {
+          "label": "D",
+          "text": "38 mm = 3,8 m."
+        },
+        {
+          "label": "E",
+          "text": "5 dm = 0,05 m."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A tabela métrica linear aplica fator dez em cada mudança de prefixo.\n\nAnálise da resposta: Correta: metro para centímetro avança duas casas e multiplica por 100.\n\nA: Incorreta: faltou um fator 10; 0,45 m possui 45 cm.\n\nB: Incorreta: 7,2 km equivalem a 7.200 m.\n\nC: Correta: metro para centímetro avança duas casas e multiplica por 100.\n\nD: Incorreta: 38 mm equivalem a 0,038 m.\n\nE: Incorreta: 5 dm equivalem a 0,5 m.\n\nArmadilha: Deslocar a vírgula sem contar os saltos.\n\nConhecimento adicional: A unidade de destino determina o sentido da multiplicação ou divisão.\n\nAprendizado essencial: Conte os saltos e confira a ordem de grandeza.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 10-11",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 10-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_be362b15544f53"
+      ],
+      "statement": "A área de 2,5 m² equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "250 cm²."
+        },
+        {
+          "label": "B",
+          "text": "2.500 cm²."
+        },
+        {
+          "label": "C",
+          "text": "250.000 cm²."
+        },
+        {
+          "label": "D",
+          "text": "25.000 cm²."
+        },
+        {
+          "label": "E",
+          "text": "25 cm²."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A conversão de área eleva ao quadrado o fator da medida linear.\n\nAnálise da resposta: Correta: 1 m² = 10.000 cm²; assim, 2,5 m² = 25.000 cm².\n\nA: Incorreta: foi usado fator 100 uma única vez de forma insuficiente.\n\nB: Incorreta: o fator empregado não corresponde ao quadrado da conversão linear.\n\nC: Incorreta: houve um zero excedente.\n\nD: Correta: 1 m² = 10.000 cm²; assim, 2,5 m² = 25.000 cm².\n\nE: Incorreta: a conversão reduziu indevidamente o valor numérico.\n\nArmadilha: Usar o mesmo fator da conversão de comprimento.\n\nConhecimento adicional: De metro quadrado para centímetro quadrado, o fator é 100².\n\nAprendizado essencial: Em áreas, cada salto vale fator 100.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 15-16",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 15-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_be362b15544f53"
+      ],
+      "statement": "Uma sala retangular mede 12 m por 7,5 m. Sua área é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "19,5 m²."
+        },
+        {
+          "label": "B",
+          "text": "39 m²."
+        },
+        {
+          "label": "C",
+          "text": "78 m²."
+        },
+        {
+          "label": "D",
+          "text": "82,5 m²."
+        },
+        {
+          "label": "E",
+          "text": "90 m²."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Área retangular é o produto do comprimento pela largura.\n\nAnálise da resposta: Correta: a área do retângulo é 12 × 7,5 = 90 m².\n\nA: Incorreta: foram somadas as dimensões.\n\nB: Incorreta: o valor não resulta do produto das medidas.\n\nC: Incorreta: houve redução indevida do produto.\n\nD: Incorreta: faltaram 7,5 m².\n\nE: Correta: a área do retângulo é 12 × 7,5 = 90 m².\n\nArmadilha: Calcular perímetro quando a pergunta solicita área.\n\nConhecimento adicional: A unidade do produto de duas medidas lineares é quadrada.\n\nAprendizado essencial: Identifique a grandeza antes de escolher a fórmula.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 15-16",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 15-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_be362b15544f53"
+      ],
+      "statement": "Sabendo que 1 hectare corresponde a 10.000 m², três hectares equivalem a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "30.000 m²."
+        },
+        {
+          "label": "B",
+          "text": "3.000 m²."
+        },
+        {
+          "label": "C",
+          "text": "300 m²."
+        },
+        {
+          "label": "D",
+          "text": "300.000 m²."
+        },
+        {
+          "label": "E",
+          "text": "30 m²."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Hectare é unidade de área, igual a um hectômetro quadrado.\n\nAnálise da resposta: Correta: 3 × 10.000 = 30.000 m².\n\nA: Correta: 3 × 10.000 = 30.000 m².\n\nB: Incorreta: o hectare foi tratado como mil metros quadrados.\n\nC: Incorreta: foram omitidos dois fatores de dez.\n\nD: Incorreta: foi acrescentado um fator de dez.\n\nE: Incorreta: o valor é incompatível com a dimensão de um hectare.\n\nArmadilha: Interpretar o prefixo hecto sem considerar o quadrado.\n\nConhecimento adicional: Um are equivale a 100 m²; cem ares formam um hectare.\n\nAprendizado essencial: Memorize: 1 ha = 10.000 m².",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 15-16",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 15-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_edb07b6984bbd8"
+      ],
+      "statement": "Um recipiente de 2.500 cm³ possui capacidade de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,25 L."
+        },
+        {
+          "label": "B",
+          "text": "2,5 L."
+        },
+        {
+          "label": "C",
+          "text": "25 L."
+        },
+        {
+          "label": "D",
+          "text": "250 L."
+        },
+        {
+          "label": "E",
+          "text": "2.500 L."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A ponte entre volume e capacidade usa 1 cm³ = 1 mL.\n\nAnálise da resposta: Correta: 1 cm³ = 1 mL; logo, 2.500 cm³ = 2.500 mL = 2,5 L.\n\nA: Incorreta: houve divisão por 10.000.\n\nB: Correta: 1 cm³ = 1 mL; logo, 2.500 cm³ = 2.500 mL = 2,5 L.\n\nC: Incorreta: houve divisão por apenas 100.\n\nD: Incorreta: a conversão usou fator inverso.\n\nE: Incorreta: centímetros cúbicos não equivalem diretamente a litros.\n\nArmadilha: Tratar cm³ como se fosse litro.\n\nConhecimento adicional: Também vale 1 dm³ = 1 L.\n\nAprendizado essencial: Converta cm³ para mL e depois para L.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 17-19",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 17-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_edb07b6984bbd8"
+      ],
+      "statement": "Um reservatório contém 0,75 m³ de água. Esse volume corresponde a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "75 L."
+        },
+        {
+          "label": "B",
+          "text": "7.500 L."
+        },
+        {
+          "label": "C",
+          "text": "750 L."
+        },
+        {
+          "label": "D",
+          "text": "0,75 L."
+        },
+        {
+          "label": "E",
+          "text": "75.000 L."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Um metro cúbico contém mil decímetros cúbicos, equivalentes a mil litros.\n\nAnálise da resposta: Correta: 1 m³ = 1.000 L; portanto, 0,75 m³ = 750 L.\n\nA: Incorreta: foi usado fator 100.\n\nB: Incorreta: foi usado fator 10.000.\n\nC: Correta: 1 m³ = 1.000 L; portanto, 0,75 m³ = 750 L.\n\nD: Incorreta: metro cúbico e litro não possuem o mesmo valor numérico.\n\nE: Incorreta: foi usado fator 100.000.\n\nArmadilha: Aplicar fator linear 10 em grandeza cúbica.\n\nConhecimento adicional: Para água, 750 L também correspondem aproximadamente a 750 kg nas condições usuais adotadas.\n\nAprendizado essencial: Use sempre a equivalência fundamental de 1 m³ = 1.000 L.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 17-20",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 17-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_edb07b6984bbd8"
+      ],
+      "statement": "Assinale a equivalência correta entre unidades cúbicas.\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1 m³ = 100 cm³."
+        },
+        {
+          "label": "B",
+          "text": "1 m³ = 1.000 cm³."
+        },
+        {
+          "label": "C",
+          "text": "1 m³ = 10.000 cm³."
+        },
+        {
+          "label": "D",
+          "text": "1 m³ = 1.000.000 cm³."
+        },
+        {
+          "label": "E",
+          "text": "1 m³ = 100.000 cm³."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O fator linear deve ser elevado à terceira potência em volumes.\n\nAnálise da resposta: Correta: como 1 m = 100 cm, então 1 m³ = 100³ cm³ = 1.000.000 cm³.\n\nA: Incorreta: o fator 100 é próprio de dois saltos lineares, não do cubo.\n\nB: Incorreta: 1.000 é insuficiente para a passagem de m³ a cm³.\n\nC: Incorreta: o fator está duas ordens abaixo.\n\nD: Correta: como 1 m = 100 cm, então 1 m³ = 100³ cm³ = 1.000.000 cm³.\n\nE: Incorreta: falta um fator 10.\n\nArmadilha: Usar o fator da área ou do comprimento.\n\nConhecimento adicional: Cada salto entre unidades cúbicas consecutivas vale 1.000.\n\nAprendizado essencial: Em volume, converta o fator linear ao cubo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 17-18",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 17-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d70a7bc1a85550"
+      ],
+      "statement": "Uma massa de 2,35 kg corresponde a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "23,5 g."
+        },
+        {
+          "label": "B",
+          "text": "235 g."
+        },
+        {
+          "label": "C",
+          "text": "23.500 g."
+        },
+        {
+          "label": "D",
+          "text": "0,235 g."
+        },
+        {
+          "label": "E",
+          "text": "2.350 g."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Quilo representa mil vezes a unidade básica.\n\nAnálise da resposta: Correta: quilograma para grama multiplica por 1.000.\n\nA: Incorreta: o fator utilizado foi 10.\n\nB: Incorreta: o fator utilizado foi 100.\n\nC: Incorreta: foi acrescentado um fator 10.\n\nD: Incorreta: a conversão ocorreu no sentido inverso.\n\nE: Correta: quilograma para grama multiplica por 1.000.\n\nArmadilha: Confundir quilograma com hectograma.\n\nConhecimento adicional: A mesma lógica de prefixos vale para metro, grama e litro.\n\nAprendizado essencial: De kg para g, multiplique por mil.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 11-13",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 11-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d70a7bc1a85550"
+      ],
+      "statement": "Dezoito pacotes têm 250 g cada. A massa total é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4,5 kg."
+        },
+        {
+          "label": "B",
+          "text": "45 kg."
+        },
+        {
+          "label": "C",
+          "text": "0,45 kg."
+        },
+        {
+          "label": "D",
+          "text": "6,8 kg."
+        },
+        {
+          "label": "E",
+          "text": "18,25 kg."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Multiplica-se a massa unitária pela quantidade e converte-se ao final.\n\nAnálise da resposta: Correta: 18 × 250 = 4.500 g = 4,5 kg.\n\nA: Correta: 18 × 250 = 4.500 g = 4,5 kg.\n\nB: Incorreta: houve divisão incorreta por 100.\n\nC: Incorreta: houve divisão por 10.000.\n\nD: Incorreta: o valor não corresponde ao produto.\n\nE: Incorreta: foram somadas quantidade e massa.\n\nArmadilha: Somar números que representam grandezas diferentes.\n\nConhecimento adicional: Manter gramas durante o produto reduz o risco de erro decimal.\n\nAprendizado essencial: Calcule em uma unidade e converta depois.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 11-13",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 11-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d70a7bc1a85550"
+      ],
+      "statement": "Sobre tonelada e quilograma, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,08 t = 8 kg."
+        },
+        {
+          "label": "B",
+          "text": "0,08 t = 80 kg."
+        },
+        {
+          "label": "C",
+          "text": "0,08 t = 800 kg."
+        },
+        {
+          "label": "D",
+          "text": "8 t = 800 kg."
+        },
+        {
+          "label": "E",
+          "text": "80 kg = 8 t."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Uma tonelada corresponde a mil quilogramas.\n\nAnálise da resposta: Correta: 0,08 × 1.000 = 80 kg.\n\nA: Incorreta: uma tonelada foi tratada como cem quilogramas.\n\nB: Correta: 0,08 × 1.000 = 80 kg.\n\nC: Incorreta: houve multiplicação por 10.000.\n\nD: Incorreta: 8 t equivalem a 8.000 kg.\n\nE: Incorreta: 80 kg equivalem a 0,08 t.\n\nArmadilha: Mover a vírgula sem aplicar o fator 1.000.\n\nConhecimento adicional: Tonelada não pertence à sequência decimal imediata kg-hg-dag-g, mas possui equivalência definida.\n\nAprendizado essencial: Multiplique toneladas por mil para obter quilogramas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 12-13",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 12-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_baa5b6d2996a64"
+      ],
+      "statement": "Duas horas e trinta e cinco minutos correspondem a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "125 min."
+        },
+        {
+          "label": "B",
+          "text": "145 min."
+        },
+        {
+          "label": "C",
+          "text": "155 min."
+        },
+        {
+          "label": "D",
+          "text": "175 min."
+        },
+        {
+          "label": "E",
+          "text": "235 min."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Hora é unidade sexagesimal: cada hora possui sessenta minutos.\n\nAnálise da resposta: Correta: 2 × 60 + 35 = 155 minutos.\n\nA: Incorreta: duas horas foram convertidas como noventa minutos.\n\nB: Incorreta: faltaram dez minutos.\n\nC: Correta: 2 × 60 + 35 = 155 minutos.\n\nD: Incorreta: foram acrescentados vinte minutos.\n\nE: Incorreta: horas e minutos foram apenas concatenados.\n\nArmadilha: Tratar 2h35 como número decimal 2,35 ou como 235 minutos.\n\nConhecimento adicional: A conversão inversa usa quociente e resto da divisão por 60.\n\nAprendizado essencial: Multiplique as horas por 60 e some os minutos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_baa5b6d2996a64"
+      ],
+      "statement": "Uma atividade começou às 8h47 e terminou às 11h22. Sua duração foi de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2h15."
+        },
+        {
+          "label": "B",
+          "text": "2h25."
+        },
+        {
+          "label": "C",
+          "text": "2h45."
+        },
+        {
+          "label": "D",
+          "text": "2h35."
+        },
+        {
+          "label": "E",
+          "text": "3h35."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na subtração de horários, uma hora pode ser convertida em sessenta minutos.\n\nAnálise da resposta: Correta: 11h22 pode ser escrito como 10h82; subtraindo 8h47, obtêm-se 2h35.\n\nA: Incorreta: foram perdidos vinte minutos no empréstimo.\n\nB: Incorreta: faltaram dez minutos.\n\nC: Incorreta: foram somados dez minutos.\n\nD: Correta: 11h22 pode ser escrito como 10h82; subtraindo 8h47, obtêm-se 2h35.\n\nE: Incorreta: as horas foram subtraídas sem ajustar os minutos.\n\nArmadilha: Subtrair 47 de 22 como se o resultado negativo pudesse ser ignorado.\n\nConhecimento adicional: Converter ambos os horários para minutos também produz 682 - 527 = 155 minutos.\n\nAprendizado essencial: Faça empréstimo de 60 minutos ou converta tudo para minutos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 22-23",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 22-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_baa5b6d2996a64"
+      ],
+      "statement": "O tempo decimal de 2,4 horas equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2h04."
+        },
+        {
+          "label": "B",
+          "text": "2h40."
+        },
+        {
+          "label": "C",
+          "text": "2h14."
+        },
+        {
+          "label": "D",
+          "text": "2h20."
+        },
+        {
+          "label": "E",
+          "text": "2h24."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Parte decimal de hora deve ser multiplicada por sessenta para virar minutos.\n\nAnálise da resposta: Correta: 0,4 × 60 = 24 minutos.\n\nA: Incorreta: a parte decimal não representa quatro minutos.\n\nB: Incorreta: 0,4 h não corresponde a quarenta minutos.\n\nC: Incorreta: houve multiplicação incorreta por 60.\n\nD: Incorreta: foram obtidos vinte minutos em vez de vinte e quatro.\n\nE: Correta: 0,4 × 60 = 24 minutos.\n\nArmadilha: Ler 0,4 hora como quarenta minutos.\n\nConhecimento adicional: Da mesma forma, parte decimal de minuto multiplica-se por 60 para obter segundos.\n\nAprendizado essencial: Separe a parte inteira e converta a parte decimal.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 23-24",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 23-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cdf423aa06f75e"
+      ],
+      "statement": "Na conversão entre unidades lineares consecutivas do sistema métrico, cada avanço para a direita implica\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "multiplicar por 10."
+        },
+        {
+          "label": "B",
+          "text": "dividir por 10."
+        },
+        {
+          "label": "C",
+          "text": "multiplicar por 100."
+        },
+        {
+          "label": "D",
+          "text": "dividir por 100."
+        },
+        {
+          "label": "E",
+          "text": "multiplicar por 1.000."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O fator por salto depende da dimensão: 10 linear, 100 quadrada, 1.000 cúbica.\n\nAnálise da resposta: Correta: para unidades lineares, cada passo rumo a uma unidade menor multiplica por 10.\n\nA: Correta: para unidades lineares, cada passo rumo a uma unidade menor multiplica por 10.\n\nB: Incorreta: divisão ocorre no avanço para a esquerda.\n\nC: Incorreta: fator 100 por passo é usado em áreas.\n\nD: Incorreta: além do sentido errado, o fator é de área.\n\nE: Incorreta: fator 1.000 por passo é usado em volumes.\n\nArmadilha: Aplicar um único fator a comprimento, área e volume.\n\nConhecimento adicional: O expoente da unidade determina a potência do fator de conversão.\n\nAprendizado essencial: Observe se a unidade está elevada a 1, 2 ou 3.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 10-18",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 10-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cdf423aa06f75e"
+      ],
+      "statement": "A área de 0,032 km², expressa em metros quadrados, é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3.200 m²."
+        },
+        {
+          "label": "B",
+          "text": "32.000 m²."
+        },
+        {
+          "label": "C",
+          "text": "320.000 m²."
+        },
+        {
+          "label": "D",
+          "text": "32 m²."
+        },
+        {
+          "label": "E",
+          "text": "3.200.000 m²."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Quilômetro para metro tem fator mil; em área, o fator torna-se um milhão.\n\nAnálise da resposta: Correta: 1 km² = 1.000.000 m²; logo, 0,032 × 1.000.000 = 32.000.\n\nA: Incorreta: foi usado fator 100.000.\n\nB: Correta: 1 km² = 1.000.000 m²; logo, 0,032 × 1.000.000 = 32.000.\n\nC: Incorreta: houve um fator 10 excedente.\n\nD: Incorreta: o expoente quadrado foi ignorado.\n\nE: Incorreta: houve dois fatores 10 excedentes.\n\nArmadilha: Multiplicar 0,032 por apenas mil.\n\nConhecimento adicional: Notação científica ajuda: 0,032 × 10⁶ = 3,2 × 10⁴.\n\nAprendizado essencial: Eleve o fator linear ao quadrado.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 15-16",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 15-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cdf423aa06f75e"
+      ],
+      "statement": "A conversão correta de 4,5 dm³ para centímetros cúbicos é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "45 cm³."
+        },
+        {
+          "label": "B",
+          "text": "450 cm³."
+        },
+        {
+          "label": "C",
+          "text": "4.500 cm³."
+        },
+        {
+          "label": "D",
+          "text": "45.000 cm³."
+        },
+        {
+          "label": "E",
+          "text": "4,5 cm³."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "De dm³ para cm³ há um salto cúbico, equivalente a fator mil.\n\nAnálise da resposta: Correta: um salto entre unidades cúbicas vale 1.000; 4,5 × 1.000 = 4.500.\n\nA: Incorreta: foi usado fator 10.\n\nB: Incorreta: foi usado fator 100.\n\nC: Correta: um salto entre unidades cúbicas vale 1.000; 4,5 × 1.000 = 4.500.\n\nD: Incorreta: houve fator 10.000.\n\nE: Incorreta: foi mantido o valor numérico apesar da mudança de unidade.\n\nArmadilha: Usar o fator linear dez em unidade cúbica.\n\nConhecimento adicional: Como 1 dm³ = 1 L, 4,5 dm³ também equivalem a 4,5 L.\n\nAprendizado essencial: Um salto cúbico vale três casas decimais.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 17-18",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 17-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8c8e2b90d7d24b"
+      ],
+      "statement": "Uma tinta cobre 8 m² por litro. Para uma superfície de 48 m², sem perdas, serão necessários\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4 L."
+        },
+        {
+          "label": "B",
+          "text": "5 L."
+        },
+        {
+          "label": "C",
+          "text": "5,5 L."
+        },
+        {
+          "label": "D",
+          "text": "6 L."
+        },
+        {
+          "label": "E",
+          "text": "8 L."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A taxa de cobertura relaciona diretamente área e quantidade de tinta.\n\nAnálise da resposta: Correta: 48 ÷ 8 = 6 litros.\n\nA: Incorreta: quatro litros cobrem apenas 32 m².\n\nB: Incorreta: cinco litros cobrem 40 m².\n\nC: Incorreta: 5,5 litros cobrem 44 m².\n\nD: Correta: 48 ÷ 8 = 6 litros.\n\nE: Incorreta: oito litros cobririam 64 m².\n\nArmadilha: Multiplicar área pela taxa quando a taxa já está em metros quadrados por litro.\n\nConhecimento adicional: Análise dimensional indica 48 m² ÷ 8 m²/L = 6 L.\n\nAprendizado essencial: Divida a área total pela cobertura de cada litro.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 3 e 26",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 3 e 26",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_02_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8c8e2b90d7d24b"
+      ],
+      "statement": "Uma bomba transfere 600 L em 8 minutos, com vazão constante. Para transferir 1,5 m³, o tempo será de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "12 min."
+        },
+        {
+          "label": "B",
+          "text": "16 min."
+        },
+        {
+          "label": "C",
+          "text": "18 min."
+        },
+        {
+          "label": "D",
+          "text": "18,5 min."
+        },
+        {
+          "label": "E",
+          "text": "20 min."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O problema exige conversão de volume e proporcionalidade de vazão.\n\nAnálise da resposta: Correta: 1,5 m³ = 1.500 L; a vazão é 75 L/min, então 1.500 ÷ 75 = 20 min.\n\nA: Incorreta: em 12 minutos seriam transferidos 900 L.\n\nB: Incorreta: em 16 minutos seriam transferidos 1.200 L.\n\nC: Incorreta: em 18 minutos seriam transferidos 1.350 L.\n\nD: Incorreta: o valor não corresponde à proporção exata.\n\nE: Correta: 1,5 m³ = 1.500 L; a vazão é 75 L/min, então 1.500 ÷ 75 = 20 min.\n\nArmadilha: Montar a proporção antes de uniformizar litros e metros cúbicos.\n\nConhecimento adicional: Vazão é volume dividido pelo tempo.\n\nAprendizado essencial: Converta as unidades, calcule a taxa e encontre o tempo.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 17-20 e 26",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 17-20 e 26",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_port_02_bulk_006",
+  "questions": [
+    {
+      "id": "pcba_inv_port_rewrite_006_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6e1860cde8df0f"
+      ],
+      "statement": "“A equipe revisou os documentos antes de enviá-los.”\n\nFoco específico: O pronome “los” retoma\n\nO pronome “los” retoma",
+      "options": [
+        {
+          "label": "A",
+          "text": "a equipe."
+        },
+        {
+          "label": "B",
+          "text": "o período anterior."
+        },
+        {
+          "label": "C",
+          "text": "os documentos."
+        },
+        {
+          "label": "D",
+          "text": "a revisão."
+        },
+        {
+          "label": "E",
+          "text": "o destinatário."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Substituição pronominal exige antecedente claro e compatibilidade de gênero, número e função.\n\nAnálise da resposta: Correta: concordância masculina plural e função de objeto confirmam.\n\nA: Incorreta: é sujeito.\n\nB: Incorreta: não há retomada de oração.\n\nC: Correta: concordância masculina plural e função de objeto confirmam.\n\nD: Incorreta: não é referente nominal compatível.\n\nE: Incorreta: não está expresso.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Substituição pronominal exige antecedente claro e compatibilidade de gênero, número e função.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6e1860cde8df0f"
+      ],
+      "statement": "“A diretora entregou o relatório ao secretário.”\n\nFoco específico: Qual substituição pronominal está correta?\n\nQual substituição pronominal está correta?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A diretora entregou-lhe o relatório."
+        },
+        {
+          "label": "B",
+          "text": "A diretora entregou-o ao relatório."
+        },
+        {
+          "label": "C",
+          "text": "A diretora lhe entregou ao secretário."
+        },
+        {
+          "label": "D",
+          "text": "A diretora entregou ele o relatório."
+        },
+        {
+          "label": "E",
+          "text": "A diretora entregou-a o relatório."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "“O/a/os/as” tendem a substituir objeto direto; “lhe/lhes”, objeto indireto de pessoa.\n\nAnálise da resposta: Correta: “lhe” substitui objeto indireto “ao secretário”.\n\nA: Correta: “lhe” substitui objeto indireto “ao secretário”.\n\nB: Incorreta: “o” deveria retomar relatório, não destinatário.\n\nC: Incorreta: duplica o objeto indireto sem função enfática prevista.\n\nD: Incorreta: pronome reto não exerce essa função na norma padrão.\n\nE: Incorreta: gênero e função não correspondem.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: “O/a/os/as” tendem a substituir objeto direto; “lhe/lhes”, objeto indireto de pessoa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6e1860cde8df0f"
+      ],
+      "statement": "“Joana avisou Marta de que seu pedido havia sido aceito.”\n\nFoco específico: Qual reescrita elimina a ambiguidade e informa que o pedido era de Marta?\n\nQual reescrita elimina a ambiguidade e informa que o pedido era de Marta?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Joana lhe avisou de que seu pedido havia sido aceito."
+        },
+        {
+          "label": "B",
+          "text": "Joana avisou-a de que seu pedido havia sido aceito."
+        },
+        {
+          "label": "C",
+          "text": "Joana avisou Marta de que o pedido dela havia sido aceito."
+        },
+        {
+          "label": "D",
+          "text": "Joana avisou Marta de que o pedido de Marta havia sido aceito."
+        },
+        {
+          "label": "E",
+          "text": "Joana a avisou de que o pedido dela havia sido aceito."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Às vezes, repetir o nome é preferível a empregar pronome ambíguo.\n\nAnálise da resposta: Correta: a repetição elimina a dúvida, embora menos elegante.\n\nA: Incorreta: “seu” permanece ambíguo e a regência é problemática.\n\nB: Incorreta: “seu” permanece.\n\nC: Incorreta: “dela” ainda pode depender do contexto com duas mulheres.\n\nD: Correta: a repetição elimina a dúvida, embora menos elegante.\n\nE: Incorreta: “dela” ainda pode ser ambíguo.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Às vezes, repetir o nome é preferível a empregar pronome ambíguo.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a223fbca4ba035"
+      ],
+      "statement": "“Embora estivesse cansado, o servidor concluiu a tarefa.”\n\nFoco específico: Sem alterar a relação, “Embora estivesse cansado” pode ser substituído por\n\nSem alterar a relação, “Embora estivesse cansado” pode ser substituído por",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque estava cansado."
+        },
+        {
+          "label": "B",
+          "text": "Ainda que estivesse cansado."
+        },
+        {
+          "label": "C",
+          "text": "Portanto estava cansado."
+        },
+        {
+          "label": "D",
+          "text": "Assim que estivesse cansado."
+        },
+        {
+          "label": "E",
+          "text": "Desde que estivesse cansado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Substituir conectivo requer preservar a relação lógico-semântica.\n\nAnálise da resposta: Correta: mantém concessão.\n\nA: Incorreta: é causal.\n\nB: Correta: mantém concessão.\n\nC: Incorreta: é conclusivo.\n\nD: Incorreta: é temporal.\n\nE: Incorreta: é condicional.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Substituir conectivo requer preservar a relação lógico-semântica.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a223fbca4ba035"
+      ],
+      "statement": "“O sistema estava indisponível; por isso, o atendimento foi suspenso.”\n\nFoco específico: Qual reescrita preserva a relação causal/consecutiva?\n\nQual reescrita preserva a relação causal/consecutiva?",
+      "options": [
+        {
+          "label": "A",
+          "text": "O sistema estava indisponível, embora o atendimento fosse suspenso."
+        },
+        {
+          "label": "B",
+          "text": "O atendimento foi suspenso, mas o sistema estava indisponível."
+        },
+        {
+          "label": "C",
+          "text": "O sistema estava indisponível, caso o atendimento fosse suspenso."
+        },
+        {
+          "label": "D",
+          "text": "O atendimento foi suspenso, ainda que o sistema estivesse disponível."
+        },
+        {
+          "label": "E",
+          "text": "Como o sistema estava indisponível, o atendimento foi suspenso."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A mesma relação pode ser expressa por conectivos e ordem diferentes.\n\nAnálise da resposta: Correta: a causa é antecipada por “como”.\n\nA: Incorreta: muda para concessão.\n\nB: Incorreta: adversidade não explicita causa.\n\nC: Incorreta: muda para condição.\n\nD: Incorreta: introduz concessão e altera fato.\n\nE: Correta: a causa é antecipada por “como”.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: A mesma relação pode ser expressa por conectivos e ordem diferentes.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a223fbca4ba035"
+      ],
+      "statement": "“O projeto é econômico, mas exige manutenção especializada.”\n\nFoco específico: A troca que altera indevidamente o sentido é\n\nA troca que altera indevidamente o sentido é",
+      "options": [
+        {
+          "label": "A",
+          "text": "porém exige manutenção especializada."
+        },
+        {
+          "label": "B",
+          "text": "contudo exige manutenção especializada."
+        },
+        {
+          "label": "C",
+          "text": "portanto exige manutenção especializada."
+        },
+        {
+          "label": "D",
+          "text": "todavia exige manutenção especializada."
+        },
+        {
+          "label": "E",
+          "text": "entretanto exige manutenção especializada."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Conectivos próximos formalmente podem pertencer a relações discursivas distintas.\n\nAnálise da resposta: Correta: transforma contraste em conclusão.\n\nA: Incorreta: mantém adversidade.\n\nB: Incorreta: mantém contraste.\n\nC: Correta: transforma contraste em conclusão.\n\nD: Incorreta: mantém adversidade.\n\nE: Incorreta: mantém adversidade.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Conectivos próximos formalmente podem pertencer a relações discursivas distintas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0bd232ba0337e1"
+      ],
+      "statement": "“A comissão aprovou a proposta.”\n\nFoco específico: A passagem correta para a voz passiva, sem mudança do fato, é\n\nA passagem correta para a voz passiva, sem mudança do fato, é",
+      "options": [
+        {
+          "label": "A",
+          "text": "A proposta aprovou a comissão."
+        },
+        {
+          "label": "B",
+          "text": "A comissão foi aprovada pela proposta."
+        },
+        {
+          "label": "C",
+          "text": "A proposta estava aprovando a comissão."
+        },
+        {
+          "label": "D",
+          "text": "A proposta foi aprovada pela comissão."
+        },
+        {
+          "label": "E",
+          "text": "Aprovou-se a comissão pela proposta."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Estruturas ativa e passiva podem ser equivalentes se preservarem participantes e papéis semânticos.\n\nAnálise da resposta: Correta: paciente torna-se sujeito e agente aparece na passiva.\n\nA: Incorreta: inverte agentes.\n\nB: Incorreta: inverte funções.\n\nC: Incorreta: não é passiva equivalente.\n\nD: Correta: paciente torna-se sujeito e agente aparece na passiva.\n\nE: Incorreta: objeto foi alterado.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Estruturas ativa e passiva podem ser equivalentes se preservarem participantes e papéis semânticos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0bd232ba0337e1"
+      ],
+      "statement": "“Ao terminar a reunião, os participantes deixaram a sala.”\n\nFoco específico: Qual forma desenvolvida preserva a relação temporal?\n\nQual forma desenvolvida preserva a relação temporal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Quando terminaram a reunião, os participantes deixaram a sala."
+        },
+        {
+          "label": "B",
+          "text": "Porque terminaram a reunião, os participantes deixaram a sala."
+        },
+        {
+          "label": "C",
+          "text": "Embora terminassem a reunião, os participantes deixaram a sala."
+        },
+        {
+          "label": "D",
+          "text": "Se terminassem a reunião, os participantes deixariam a sala."
+        },
+        {
+          "label": "E",
+          "text": "Para terminarem a reunião, os participantes deixaram a sala."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Orações reduzidas podem ser desenvolvidas desde que se preserve valor e correlação verbal.\n\nAnálise da resposta: Correta: “quando” explicita temporalidade.\n\nA: Correta: “quando” explicita temporalidade.\n\nB: Incorreta: muda para causa.\n\nC: Incorreta: muda para concessão.\n\nD: Incorreta: muda modalidade/condição.\n\nE: Incorreta: muda para finalidade.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Orações reduzidas podem ser desenvolvidas desde que se preserve valor e correlação verbal.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0bd232ba0337e1"
+      ],
+      "statement": "“A divulgação dos resultados ocorreu ontem.”\n\nFoco específico: Qual reescrita NÃO é sintaticamente equivalente?\n\nQual reescrita NÃO é sintaticamente equivalente?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Os resultados foram divulgados ontem."
+        },
+        {
+          "label": "B",
+          "text": "Os resultados divulgaram a equipe ontem."
+        },
+        {
+          "label": "C",
+          "text": "Divulgaram-se os resultados ontem."
+        },
+        {
+          "label": "D",
+          "text": "A equipe divulgou os resultados ontem, se ela for o agente recuperado."
+        },
+        {
+          "label": "E",
+          "text": "Ontem ocorreu a divulgação dos resultados."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Equivalência sintática exige conservar papéis temáticos, não somente vocabulário.\n\nAnálise da resposta: Correta: resultados passam indevidamente a agente e surge novo objeto.\n\nA: Incorreta: nominalização vira passiva.\n\nB: Correta: resultados passam indevidamente a agente e surge novo objeto.\n\nC: Incorreta: passiva sintética preserva fato.\n\nD: Incorreta: pode explicitar agente contextual.\n\nE: Incorreta: apenas desloca adjunto.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Equivalência sintática exige conservar papéis temáticos, não somente vocabulário.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fcbd1a66244a56"
+      ],
+      "statement": "Original: “Poucos servidores compareceram.” Proposta: “Servidores compareceram pouco.”\n\nFoco específico: A substituição/deslocamento altera o sentido porque\n\nA substituição/deslocamento altera o sentido porque",
+      "options": [
+        {
+          "label": "A",
+          "text": "as frases possuem sujeito inexistente."
+        },
+        {
+          "label": "B",
+          "text": "“poucos” e “pouco” são sempre sinônimos."
+        },
+        {
+          "label": "C",
+          "text": "a proposta mantém exatamente a quantidade de servidores."
+        },
+        {
+          "label": "D",
+          "text": "a primeira fala da duração do comparecimento."
+        },
+        {
+          "label": "E",
+          "text": "a primeira quantifica servidores; a segunda modifica o modo ou grau de comparecer."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Mudança de posição pode alterar classe, escopo e interpretação.\n\nAnálise da resposta: Correta: a posição/classe altera o elemento modificado.\n\nA: Incorreta: há sujeito.\n\nB: Incorreta: classes e escopos diferem.\n\nC: Incorreta: não mantém.\n\nD: Incorreta: fala de quantidade.\n\nE: Correta: a posição/classe altera o elemento modificado.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Mudança de posição pode alterar classe, escopo e interpretação.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fcbd1a66244a56"
+      ],
+      "statement": "Compare: I. “Só Ana revisou o relatório.” II. “Ana revisou só o relatório.”\n\nFoco específico: A diferença é que\n\nA diferença é que",
+      "options": [
+        {
+          "label": "A",
+          "text": "I e II negam que Ana tenha revisado algo."
+        },
+        {
+          "label": "B",
+          "text": "em I, “só” modifica relatório; em II, Ana."
+        },
+        {
+          "label": "C",
+          "text": "em I, apenas Ana realizou a revisão; em II, o único objeto revisado foi o relatório."
+        },
+        {
+          "label": "D",
+          "text": "as frases são idênticas em qualquer contexto."
+        },
+        {
+          "label": "E",
+          "text": "II informa que ninguém revisou o relatório."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Partículas focalizadoras mudam o sentido conforme o constituinte sob seu escopo.\n\nAnálise da resposta: Correta: o foco de “só” depende da posição.\n\nA: Incorreta: ambas afirmam revisão.\n\nB: Incorreta: está invertido.\n\nC: Correta: o foco de “só” depende da posição.\n\nD: Incorreta: há diferença de escopo.\n\nE: Incorreta: Ana revisou.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Partículas focalizadoras mudam o sentido conforme o constituinte sob seu escopo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fcbd1a66244a56"
+      ],
+      "statement": "Original: “Os alunos que estudaram foram aprovados.” Proposta: “Os alunos, que estudaram, foram aprovados.”\n\nFoco específico: Assinale a avaliação correta.\n\nAssinale a avaliação correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A pontuação muda de restrição a explicação: no original, apenas os que estudaram; na proposta, atribui-se estudo ao conjunto dos alunos."
+        },
+        {
+          "label": "B",
+          "text": "As vírgulas são opcionais e jamais interferem no sentido."
+        },
+        {
+          "label": "C",
+          "text": "A proposta mantém exatamente o mesmo recorte."
+        },
+        {
+          "label": "D",
+          "text": "O original afirma que todos estudaram."
+        },
+        {
+          "label": "E",
+          "text": "A proposta restringe ainda mais o grupo."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Alteração gramatical de uma relativa pode modificar o conjunto referido.\n\nAnálise da resposta: Correta: a oração relativa muda de valor e alcance.\n\nA: Correta: a oração relativa muda de valor e alcance.\n\nB: Incorreta: a pontuação é semântica.\n\nC: Incorreta: o recorte muda.\n\nD: Incorreta: isso é sugerido pela versão explicativa.\n\nE: Incorreta: faz o oposto.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Alteração gramatical de uma relativa pode modificar o conjunto referido.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_423fe18e4e6aaa"
+      ],
+      "statement": "“A equipe concluirá a revisão na próxima semana.”\n\nFoco específico: Qual versão apenas antecipa o adjunto temporal?\n\nQual versão apenas antecipa o adjunto temporal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A próxima equipe concluirá a revisão na semana."
+        },
+        {
+          "label": "B",
+          "text": "Na próxima semana, a equipe concluirá a revisão."
+        },
+        {
+          "label": "C",
+          "text": "A equipe da próxima semana concluirá a revisão."
+        },
+        {
+          "label": "D",
+          "text": "A revisão concluirá a equipe na próxima semana."
+        },
+        {
+          "label": "E",
+          "text": "Concluirá a próxima semana a revisão da equipe."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Deslocamento preserva função quando o constituinte permanece íntegro e ligado ao mesmo predicado.\n\nAnálise da resposta: Correta: o adjunto é deslocado e isolado.\n\nA: Incorreta: muda o núcleo nominal.\n\nB: Correta: o adjunto é deslocado e isolado.\n\nC: Incorreta: torna “próxima semana” modificador de equipe.\n\nD: Incorreta: troca papéis.\n\nE: Incorreta: estrutura muda relações.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Deslocamento preserva função quando o constituinte permanece íntegro e ligado ao mesmo predicado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_423fe18e4e6aaa"
+      ],
+      "statement": "“Se houver recursos, o projeto será ampliado.”\n\nFoco específico: O deslocamento da oração condicional para o final resulta em\n\nO deslocamento da oração condicional para o final resulta em",
+      "options": [
+        {
+          "label": "A",
+          "text": "O projeto, se houver, recursos será ampliado."
+        },
+        {
+          "label": "B",
+          "text": "Será, se houver recursos o projeto, ampliado."
+        },
+        {
+          "label": "C",
+          "text": "Recursos serão ampliados se houver projeto."
+        },
+        {
+          "label": "D",
+          "text": "O projeto será ampliado se houver recursos."
+        },
+        {
+          "label": "E",
+          "text": "Se o projeto for ampliado, haverá recursos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Orações adverbiais podem mudar de posição sem inverter condição e consequência.\n\nAnálise da resposta: Correta: mantém condição e consequência.\n\nA: Incorreta: fragmenta a oração.\n\nB: Incorreta: pontuação e encaixe são inadequados.\n\nC: Incorreta: troca condição e participantes.\n\nD: Correta: mantém condição e consequência.\n\nE: Incorreta: inverte a relação lógica.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Orações adverbiais podem mudar de posição sem inverter condição e consequência.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_423fe18e4e6aaa"
+      ],
+      "statement": "Original: “O diretor afirmou ontem que o contrato seria revisto.”\n\nFoco específico: Qual deslocamento cria maior risco de ambiguidade sobre o alcance de “ontem”?\n\nQual deslocamento cria maior risco de ambiguidade sobre o alcance de “ontem”?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ontem, o diretor afirmou que o contrato seria revisto."
+        },
+        {
+          "label": "B",
+          "text": "O diretor, ontem, afirmou que o contrato seria revisto."
+        },
+        {
+          "label": "C",
+          "text": "O diretor afirmou que ontem o contrato seria revisto."
+        },
+        {
+          "label": "D",
+          "text": "O diretor afirmou, ontem, que o contrato seria revisto."
+        },
+        {
+          "label": "E",
+          "text": "Ontem o diretor afirmou que o contrato seria revisto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Deslocar adjunto pode alterar seu escopo entre oração principal e subordinada.\n\nAnálise da resposta: Correta: passa a poder modificar “seria revisto”, mudando tempo do evento subordinado.\n\nA: Incorreta: associa claramente à afirmação.\n\nB: Incorreta: intercala junto ao verbo afirmar.\n\nC: Correta: passa a poder modificar “seria revisto”, mudando tempo do evento subordinado.\n\nD: Incorreta: continua junto a afirmar.\n\nE: Incorreta: tende a modificar afirmou.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Deslocar adjunto pode alterar seu escopo entre oração principal e subordinada.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58f58f665ba871"
+      ],
+      "statement": "Assinale a frase corretamente pontuada após o deslocamento do adjunto adverbial longo.\n\nFoco específico: ",
+      "options": [
+        {
+          "label": "A",
+          "text": "Depois de três horas de análise detalhada dos documentos, a comissão encerrou a reunião."
+        },
+        {
+          "label": "B",
+          "text": "Depois de três horas de análise detalhada dos documentos a comissão, encerrou a reunião."
+        },
+        {
+          "label": "C",
+          "text": "Depois de três horas, de análise detalhada dos documentos a comissão encerrou a reunião."
+        },
+        {
+          "label": "D",
+          "text": "A comissão, encerrou a reunião depois de três horas de análise."
+        },
+        {
+          "label": "E",
+          "text": "A comissão encerrou, a reunião depois de três horas de análise."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Adjunto adverbial longo antecipado deve ser delimitado sem romper relações essenciais.\n\nAnálise da resposta: Correta: a vírgula delimita o adjunto anteposto longo.\n\nA: Correta: a vírgula delimita o adjunto anteposto longo.\n\nB: Incorreta: separa sujeito e verbo e não isola o adjunto.\n\nC: Incorreta: fragmenta a locução.\n\nD: Incorreta: separa sujeito e predicado.\n\nE: Incorreta: separa verbo e objeto.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Adjunto adverbial longo antecipado deve ser delimitado sem romper relações essenciais.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58f58f665ba871"
+      ],
+      "statement": "Original: “Os técnicos apresentarão o relatório quando a auditoria terminar.”\n\nFoco específico: Ao antecipar a oração temporal, a forma adequada é\n\nAo antecipar a oração temporal, a forma adequada é",
+      "options": [
+        {
+          "label": "A",
+          "text": "Quando, a auditoria terminar os técnicos apresentarão o relatório."
+        },
+        {
+          "label": "B",
+          "text": "Quando a auditoria, terminar, os técnicos apresentarão o relatório."
+        },
+        {
+          "label": "C",
+          "text": "Quando a auditoria terminar os técnicos, apresentarão o relatório."
+        },
+        {
+          "label": "D",
+          "text": "Os técnicos, quando a auditoria terminar apresentarão, o relatório."
+        },
+        {
+          "label": "E",
+          "text": "Quando a auditoria terminar, os técnicos apresentarão o relatório."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O deslocamento de oração adverbial para o início exige vírgula ao final do bloco.\n\nAnálise da resposta: Correta: delimita corretamente a subordinada anteposta.\n\nA: Incorreta: vírgula após conjunção rompe oração.\n\nB: Incorreta: separa sujeito e verbo.\n\nC: Incorreta: separa sujeito da principal.\n\nD: Incorreta: pontuação incompleta/indevida.\n\nE: Correta: delimita corretamente a subordinada anteposta.\n\nArmadilha: Mover ou substituir termos sem conferir funções sintáticas e pontuação.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: O deslocamento de oração adverbial para o início exige vírgula ao final do bloco.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_port_rewrite_006_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_lingua_portuguesa_2_semantica_significacao_palavras_expressoes",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58f58f665ba871"
+      ],
+      "statement": "“Na manhã de segunda-feira, chegaram os novos equipamentos.”\n\nFoco específico: Assinale a análise inadequada.\n\nAssinale a análise inadequada.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A vírgula isola o adjunto temporal anteposto."
+        },
+        {
+          "label": "B",
+          "text": "A vírgula separa o sujeito “os novos equipamentos” do verbo “chegaram”."
+        },
+        {
+          "label": "C",
+          "text": "O sujeito aparece depois do verbo."
+        },
+        {
+          "label": "D",
+          "text": "Retirar a vírgula pode ser possível em adjuntos curtos, mas aqui o isolamento favorece clareza."
+        },
+        {
+          "label": "E",
+          "text": "A ordem pode ser reescrita como “Os novos equipamentos chegaram na manhã de segunda-feira”."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Para avaliar a vírgula, é preciso localizar os constituintes após o deslocamento, não confiar apenas na proximidade visual.\n\nAnálise da resposta: Correta: o sujeito está posposto e não é separado por essa vírgula; ela vem antes do verbo.\n\nA: Incorreta: é a função da vírgula.\n\nB: Correta: o sujeito está posposto e não é separado por essa vírgula; ela vem antes do verbo.\n\nC: Incorreta: a ordem é verbo-sujeito.\n\nD: Incorreta: a extensão justifica.\n\nE: Incorreta: preserva o fato.\n\nArmadilha: Aceitar reescrita parecida na superfície que troca escopo, referente ou relação lógica.\n\nConhecimento adicional: Equivalência de reescrita combina correção gramatical, preservação dos papéis e manutenção do sentido.\n\nAprendizado essencial: Para avaliar a vírgula, é preciso localizar os constituintes após o deslocamento, não confiar apenas na proximidade visual.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "used_for": "Base didática para elaboração autoral e revisão conceitual."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_lingua_portuguesa_collection",
+          "trace_status": "missing",
+          "location": "Aulas 10 e 11: reescrita e substituições; Aula 07: pontuação de termos deslocados",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "pcba_inv_rl_02_lote_002_complemento",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_02_q021",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_2_sistema_legal_de_medidas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8c8e2b90d7d24b"
+      ],
+      "statement": "Um candidato afirmou que um piso quadrado de lado 2 m possui 400 cm² porque converteu 2 m em 200 cm e multiplicou 200 por 2.\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O cálculo está correto porque apenas um lado deve ser convertido."
+        },
+        {
+          "label": "B",
+          "text": "O cálculo está errado: a área é 4 m², equivalente a 40.000 cm²."
+        },
+        {
+          "label": "C",
+          "text": "O cálculo está errado: a área é 4.000 cm²."
+        },
+        {
+          "label": "D",
+          "text": "O cálculo está correto porque 1 m² = 100 cm²."
+        },
+        {
+          "label": "E",
+          "text": "O cálculo está errado: a área é 400.000 cm²."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O erro mistura um lado em centímetros com outro ainda tratado numericamente em metros.\n\nAnálise da resposta: Correta: 2 m × 2 m = 4 m² e cada m² contém 10.000 cm².\n\nA: Incorreta: ambos os lados devem usar a mesma unidade antes do produto.\n\nB: Correta: 2 m × 2 m = 4 m² e cada m² contém 10.000 cm².\n\nC: Incorreta: falta um fator 10.\n\nD: Incorreta: 1 m² = 10.000 cm², não 100 cm².\n\nE: Incorreta: foi acrescentado um fator 10.\n\nArmadilha: Converter apenas uma dimensão ou usar fator linear em área.\n\nConhecimento adicional: Também se pode calcular 200 cm × 200 cm = 40.000 cm².\n\nAprendizado essencial: Uniformize todas as dimensões e respeite o expoente da unidade.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "location": "páginas 15-16",
+          "used_for": "Fundamento matemático e conferência editorial da conversão ou solução."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_11",
+          "trace_status": "missing",
+          "location": "páginas 15-16",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

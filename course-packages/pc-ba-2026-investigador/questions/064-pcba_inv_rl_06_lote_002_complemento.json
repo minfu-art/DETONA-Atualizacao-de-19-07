@@ -1,0 +1,205 @@
+{
+  "name": "pcba_inv_rl_06_lote_002_complemento",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_06_q021",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ab1f988c84424a"
+      ],
+      "statement": "Usando os algarismos 0,1,2,3,4,5, quantos números de quatro algarismos distintos podem ser formados?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "120."
+        },
+        {
+          "label": "B",
+          "text": "180."
+        },
+        {
+          "label": "C",
+          "text": "240."
+        },
+        {
+          "label": "D",
+          "text": "360."
+        },
+        {
+          "label": "E",
+          "text": "300."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Números de vários algarismos não podem começar por zero.\n\nAnálise da resposta: Correta: 5 opções não nulas para a primeira posição e 5·4·3 para as demais, totalizando 300.\n\nA: Incorreta: considera escolhas insuficientes após a primeira posição.\n\nB: Incorreta: subestima as permutações possíveis.\n\nC: Incorreta: não trata corretamente a restrição do zero inicial.\n\nD: Incorreta: 6·5·4·3 permite zero na primeira posição.\n\nE: Correta: 5 opções não nulas para a primeira posição e 5·4·3 para as demais, totalizando 300.\n\nArmadilha: Aplicar 6·5·4·3 sem excluir os casos com zero inicial.\n\nConhecimento adicional: Depois da primeira escolha, o zero volta a ser uma opção válida se ainda não foi usado.\n\nAprendizado essencial: Trate primeiro a posição com restrição especial.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 26-45",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 26-45",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q022",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0cdaaef322ae9f"
+      ],
+      "statement": "Em um problema combinatório, a pergunta “a ordem dos escolhidos altera o resultado?” serve principalmente para decidir entre\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "soma e subtração."
+        },
+        {
+          "label": "B",
+          "text": "arranjo e combinação."
+        },
+        {
+          "label": "C",
+          "text": "fração e porcentagem."
+        },
+        {
+          "label": "D",
+          "text": "PA e PG."
+        },
+        {
+          "label": "E",
+          "text": "equação e inequação."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A relevância da ordem é uma decisão central na escolha da técnica de seleção.\n\nAnálise da resposta: Correta: arranjo considera ordem; combinação não considera.\n\nA: Incorreta: soma e subtração não são classificadas pela ordem dos escolhidos.\n\nB: Correta: arranjo considera ordem; combinação não considera.\n\nC: Incorreta: esses temas não dependem da posição dos escolhidos.\n\nD: Incorreta: progressões tratam padrões de sucessão, não seleção.\n\nE: Incorreta: igualdade e desigualdade não resolvem essa decisão combinatória.\n\nArmadilha: Associar toda seleção à combinação sem verificar cargos ou posições.\n\nConhecimento adicional: Se todos os elementos forem usados e ordenados, o caso pode ser uma permutação.\n\nAprendizado essencial: Antes da fórmula, identifique seleção, ordem, repetição e restrições.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 3-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 3-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q023",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0cdaaef322ae9f"
+      ],
+      "statement": "Dez candidatos estão disponíveis para formar uma equipe de três pessoas, sem cargos. O número de equipes é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "90."
+        },
+        {
+          "label": "B",
+          "text": "360."
+        },
+        {
+          "label": "C",
+          "text": "540."
+        },
+        {
+          "label": "D",
+          "text": "120."
+        },
+        {
+          "label": "E",
+          "text": "720."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Equipes sem funções internas são grupos não ordenados.\n\nAnálise da resposta: Correta: C(10,3)=10·9·8/(3·2·1)=120.\n\nA: Incorreta: não corresponde à combinação de três candidatos.\n\nB: Incorreta: ainda contém parte da contagem ordenada.\n\nC: Incorreta: usa uma correção inadequada.\n\nD: Correta: C(10,3)=10·9·8/(3·2·1)=120.\n\nE: Incorreta: conta seis ordens para cada uma das 120 equipes.\n\nArmadilha: Multiplicar 10·9·8 e esquecer de dividir pelas seis ordens do trio.\n\nConhecimento adicional: A contagem pode ser conferida pela simetria C(10,3)=C(10,7).\n\nAprendizado essencial: Use combinação quando apenas a composição do grupo importa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 48-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 48-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q024",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0cdaaef322ae9f"
+      ],
+      "statement": "Um código de três letras deve conter exatamente uma vogal e duas consoantes distintas. Considerando 5 vogais, 21 consoantes e ordem relevante, há\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "6.300 códigos."
+        },
+        {
+          "label": "B",
+          "text": "2.100 códigos."
+        },
+        {
+          "label": "C",
+          "text": "630 códigos."
+        },
+        {
+          "label": "D",
+          "text": "1.995 códigos."
+        },
+        {
+          "label": "E",
+          "text": "13.230 códigos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Problemas mistos podem combinar escolha de posição, escolha de categoria e restrição de repetição.\n\nAnálise da resposta: Correta: escolhe-se a posição da vogal de 3 formas, a vogal de 5 formas e as consoantes ordenadas de 21·20 formas: 6.300.\n\nA: Correta: escolhe-se a posição da vogal de 3 formas, a vogal de 5 formas e as consoantes ordenadas de 21·20 formas: 6.300.\n\nB: Incorreta: omite o fator das três posições possíveis para a vogal.\n\nC: Incorreta: usa apenas uma escolha efetiva de consoante.\n\nD: Incorreta: aplica fatores incompatíveis com a distinção das consoantes.\n\nE: Incorreta: permite escolhas além das três posições especificadas.\n\nArmadilha: Escolher uma vogal e duas consoantes sem decidir onde a vogal aparece.\n\nConhecimento adicional: Se as consoantes pudessem repetir, o fator final seria 21·21.\n\nAprendizado essencial: Decomponha cada restrição em uma etapa explícita.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

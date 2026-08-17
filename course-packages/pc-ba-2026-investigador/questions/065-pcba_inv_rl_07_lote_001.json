@@ -1,0 +1,1005 @@
+{
+  "name": "pcba_inv_rl_07_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_07_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b752b3a0f7bb7b"
+      ],
+      "statement": "Se uma progressão aritmética possui primeiro termo a1 e razão r, seu termo geral é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "an=a1+(n−1)r."
+        },
+        {
+          "label": "B",
+          "text": "an=a1+nr."
+        },
+        {
+          "label": "C",
+          "text": "an=a1·r^(n−1)."
+        },
+        {
+          "label": "D",
+          "text": "an=n(a1+r)."
+        },
+        {
+          "label": "E",
+          "text": "an=a1−(n+1)r."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O termo geral da PA parte de a1 e acrescenta a razão em cada um dos n−1 passos.\n\nAnálise da resposta: Correta: há n−1 intervalos entre o primeiro e o enésimo termo.\n\nA: Correta: há n−1 intervalos entre o primeiro e o enésimo termo.\n\nB: Incorreta: essa expressão soma uma razão a mais.\n\nC: Incorreta: essa é a estrutura de uma progressão geométrica.\n\nD: Incorreta: o índice não multiplica a soma dessa forma.\n\nE: Incorreta: o deslocamento e o sinal não representam a recorrência da PA.\n\nArmadilha: Usar n no lugar de n−1 e deslocar todos os termos da sequência.\n\nConhecimento adicional: A fórmula também pode ser escrita como an=ak+(n−k)r a partir de qualquer termo conhecido.\n\nAprendizado essencial: Conte quantos intervalos separam o termo conhecido do termo procurado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-13",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b752b3a0f7bb7b"
+      ],
+      "statement": "Na progressão aritmética (4,7,10,...), o 15º termo é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "43."
+        },
+        {
+          "label": "B",
+          "text": "44."
+        },
+        {
+          "label": "C",
+          "text": "46."
+        },
+        {
+          "label": "D",
+          "text": "49."
+        },
+        {
+          "label": "E",
+          "text": "52."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O termo de ordem quinze fica quatorze razões depois do primeiro termo.\n\nAnálise da resposta: Correta: a15=4+(15−1)·3=46.\n\nA: Incorreta: corresponde a somar apenas treze razões ao primeiro termo.\n\nB: Incorreta: não respeita a razão três da sequência.\n\nC: Correta: a15=4+(15−1)·3=46.\n\nD: Incorreta: resulta do uso indevido de quinze razões.\n\nE: Incorreta: excede o termo calculado por duas razões.\n\nArmadilha: Multiplicar a razão por quinze, esquecendo que a1 já ocupa a primeira posição.\n\nConhecimento adicional: A substituição dos primeiros índices é uma verificação rápida da fórmula.\n\nAprendizado essencial: Use n−1 quando a referência fornecida for o primeiro termo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-13",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b752b3a0f7bb7b"
+      ],
+      "statement": "Na PA cujo primeiro termo é 7 e cuja razão é 5, o termo 52 ocupa a posição\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "8ª."
+        },
+        {
+          "label": "B",
+          "text": "9ª."
+        },
+        {
+          "label": "C",
+          "text": "12ª."
+        },
+        {
+          "label": "D",
+          "text": "11ª."
+        },
+        {
+          "label": "E",
+          "text": "10ª."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A posição pode ser encontrada resolvendo a equação do termo geral para n.\n\nAnálise da resposta: Correta: 52=7+(n−1)5 implica n−1=9 e n=10.\n\nA: Incorreta: a8=42.\n\nB: Incorreta: a9=47.\n\nC: Incorreta: a12=62.\n\nD: Incorreta: a11=57.\n\nE: Correta: 52=7+(n−1)5 implica n−1=9 e n=10.\n\nArmadilha: Parar em n−1=9 e responder nona posição.\n\nConhecimento adicional: O índice de uma sequência começa em um neste modelo, por isso há o ajuste final.\n\nAprendizado essencial: Depois de isolar n−1, some uma unidade para obter a posição.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-13",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f2c1e4040487b4"
+      ],
+      "statement": "A razão de uma progressão aritmética é obtida, para termos consecutivos, por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "somar os dois termos."
+        },
+        {
+          "label": "B",
+          "text": "subtrair o termo anterior do termo seguinte."
+        },
+        {
+          "label": "C",
+          "text": "dividir o termo seguinte pelo anterior."
+        },
+        {
+          "label": "D",
+          "text": "multiplicar os termos."
+        },
+        {
+          "label": "E",
+          "text": "calcular a média dos termos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A PA é caracterizada por uma diferença constante entre termos consecutivos.\n\nAnálise da resposta: Correta: r=a(n+1)−an.\n\nA: Incorreta: a soma não mede a variação constante entre termos.\n\nB: Correta: r=a(n+1)−an.\n\nC: Incorreta: o quociente constante caracteriza progressão geométrica.\n\nD: Incorreta: produtos não permanecem constantes em uma PA geral.\n\nE: Incorreta: a média pode ajudar em termos equidistantes, mas não define a razão.\n\nArmadilha: Confundir diferença constante da PA com quociente constante da PG.\n\nConhecimento adicional: Razão positiva produz PA crescente, negativa produz PA decrescente e zero produz PA constante.\n\nAprendizado essencial: Calcule sempre termo seguinte menos termo anterior.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-11",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f2c1e4040487b4"
+      ],
+      "statement": "Em uma PA, a1=5 e a4=17. A razão é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2."
+        },
+        {
+          "label": "B",
+          "text": "3."
+        },
+        {
+          "label": "C",
+          "text": "3,5."
+        },
+        {
+          "label": "D",
+          "text": "4."
+        },
+        {
+          "label": "E",
+          "text": "6."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Entre o primeiro e o quarto termo existem três aplicações da razão.\n\nAnálise da resposta: Correta: 17=5+3r, logo r=4.\n\nA: Incorreta: três intervalos de dois levariam a onze.\n\nB: Incorreta: três intervalos de três levariam a quatorze.\n\nC: Incorreta: não satisfaz exatamente o quarto termo informado.\n\nD: Correta: 17=5+3r, logo r=4.\n\nE: Incorreta: divide a variação por dois, e não pelos três intervalos existentes.\n\nArmadilha: Dividir a diferença 12 pelo índice quatro em vez do número de intervalos três.\n\nConhecimento adicional: A diferença entre posições deve acompanhar a diferença entre termos.\n\nAprendizado essencial: Conte os saltos, não a quantidade total de posições.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-13",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-13",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f2c1e4040487b4"
+      ],
+      "statement": "A sequência (10,7,4,1,...) é uma PA\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "decrescente, de razão −3."
+        },
+        {
+          "label": "B",
+          "text": "crescente, de razão 3."
+        },
+        {
+          "label": "C",
+          "text": "decrescente, de razão 3."
+        },
+        {
+          "label": "D",
+          "text": "geométrica, de razão −3."
+        },
+        {
+          "label": "E",
+          "text": "constante, de razão zero."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O sinal da diferença constante determina a direção de uma PA.\n\nAnálise da resposta: Correta: 7−10=4−7=1−4=−3.\n\nA: Correta: 7−10=4−7=1−4=−3.\n\nB: Incorreta: os termos diminuem e a diferença tem sinal negativo.\n\nC: Incorreta: a classificação está correta, mas o sinal da razão está errado.\n\nD: Incorreta: os quocientes entre termos não são constantes.\n\nE: Incorreta: os termos não permanecem iguais.\n\nArmadilha: Informar apenas o módulo da razão e perder o sinal negativo.\n\nConhecimento adicional: Uma razão negativa na PA significa subtrair sempre o mesmo valor.\n\nAprendizado essencial: Preserve o sinal ao calcular termo seguinte menos termo anterior.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-11",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_490b154c8b3781"
+      ],
+      "statement": "A soma dos n primeiros termos de uma PA pode ser calculada por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sn=n(a1−an)."
+        },
+        {
+          "label": "B",
+          "text": "Sn=(a1+an)/n."
+        },
+        {
+          "label": "C",
+          "text": "Sn=n(a1+an)/2."
+        },
+        {
+          "label": "D",
+          "text": "Sn=a1·an·n."
+        },
+        {
+          "label": "E",
+          "text": "Sn=(n−1)(a1+an)."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A soma da PA é o número de termos vezes a média aritmética dos termos extremos.\n\nAnálise da resposta: Correta: multiplica-se a quantidade de termos pela média do primeiro e do último.\n\nA: Incorreta: falta a média entre os extremos e o sinal está inadequado.\n\nB: Incorreta: a soma não é obtida dividindo os extremos pelo número de termos.\n\nC: Correta: multiplica-se a quantidade de termos pela média do primeiro e do último.\n\nD: Incorreta: produto dos extremos não representa a soma da sequência.\n\nE: Incorreta: devem ser usados n termos e a divisão por dois.\n\nArmadilha: Esquecer o fator um meio ou trocar n por n−1.\n\nConhecimento adicional: Pares equidistantes dos extremos possuem a mesma soma.\n\nAprendizado essencial: Identifique a1, an e n antes de aplicar a fórmula.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 13-17",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 13-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_490b154c8b3781"
+      ],
+      "statement": "A soma dos vinte primeiros números naturais positivos, de 1 a 20, é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "190."
+        },
+        {
+          "label": "B",
+          "text": "200."
+        },
+        {
+          "label": "C",
+          "text": "205."
+        },
+        {
+          "label": "D",
+          "text": "215."
+        },
+        {
+          "label": "E",
+          "text": "210."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Os naturais de um a vinte formam PA de razão um.\n\nAnálise da resposta: Correta: S20=20(1+20)/2=210.\n\nA: Incorreta: corresponde à soma até dezenove.\n\nB: Incorreta: resulta de uma média incorreta.\n\nC: Incorreta: não é múltiplo da média 10,5 pelo total vinte.\n\nD: Incorreta: excede o valor correto em cinco.\n\nE: Correta: S20=20(1+20)/2=210.\n\nArmadilha: Usar dezenove como quantidade de termos por observar apenas a diferença entre os extremos.\n\nConhecimento adicional: A média dos extremos é 10,5 e existem vinte parcelas.\n\nAprendizado essencial: Diferencie número de intervalos de número de termos na fórmula da soma.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 13-17",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 13-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_490b154c8b3781"
+      ],
+      "statement": "Os dez primeiros termos da PA (3,7,11,...) somam\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "190."
+        },
+        {
+          "label": "B",
+          "text": "210."
+        },
+        {
+          "label": "C",
+          "text": "220."
+        },
+        {
+          "label": "D",
+          "text": "230."
+        },
+        {
+          "label": "E",
+          "text": "240."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Quando o último termo não é fornecido, ele deve ser calculado antes da soma.\n\nAnálise da resposta: Correta: a10=3+9·4=39 e S10=10(3+39)/2=210.\n\nA: Incorreta: decorre de usar um último termo menor que o correto.\n\nB: Correta: a10=3+9·4=39 e S10=10(3+39)/2=210.\n\nC: Incorreta: acrescenta dez unidades sem justificativa.\n\nD: Incorreta: usa quarenta e três como décimo termo.\n\nE: Incorreta: não corresponde à média dos extremos da PA.\n\nArmadilha: Tratar a11=43 como se fosse o décimo termo.\n\nConhecimento adicional: A soma também pode ser conferida pareando 3+39, 7+35 e assim por diante.\n\nAprendizado essencial: Calcule e confira o índice do último termo antes de somar.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-17",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a953e720a33102"
+      ],
+      "statement": "Para uma progressão geométrica de primeiro termo a1 e razão q, o termo geral é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "an=a1+(n−1)q."
+        },
+        {
+          "label": "B",
+          "text": "an=nq+a1."
+        },
+        {
+          "label": "C",
+          "text": "an=a1·q^n."
+        },
+        {
+          "label": "D",
+          "text": "an=a1·q^(n−1)."
+        },
+        {
+          "label": "E",
+          "text": "an=(a1+q)^(n−1)."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na PG, cada avanço de posição multiplica o termo pela razão.\n\nAnálise da resposta: Correta: existem n−1 multiplicações pela razão desde o primeiro termo.\n\nA: Incorreta: essa estrutura é aditiva e corresponde a PA.\n\nB: Incorreta: crescimento linear não representa multiplicações sucessivas.\n\nC: Incorreta: utiliza uma multiplicação adicional e não reproduz a1 quando n=1.\n\nD: Correta: existem n−1 multiplicações pela razão desde o primeiro termo.\n\nE: Incorreta: primeiro termo e razão não são somados dentro de uma potência.\n\nArmadilha: Usar expoente n e deslocar toda a sequência uma posição.\n\nConhecimento adicional: Substituir n=1 deve sempre devolver o primeiro termo.\n\nAprendizado essencial: Teste a fórmula no primeiro e no segundo termos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a953e720a33102"
+      ],
+      "statement": "Na PG (3,6,12,...), o sexto termo é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "96."
+        },
+        {
+          "label": "B",
+          "text": "48."
+        },
+        {
+          "label": "C",
+          "text": "64."
+        },
+        {
+          "label": "D",
+          "text": "128."
+        },
+        {
+          "label": "E",
+          "text": "192."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Do primeiro ao sexto termo ocorrem cinco multiplicações pela razão dois.\n\nAnálise da resposta: Correta: a6=3·2^5=96.\n\nA: Correta: a6=3·2^5=96.\n\nB: Incorreta: quarenta e oito é o quinto termo.\n\nC: Incorreta: esse valor não preserva o primeiro termo três.\n\nD: Incorreta: corresponde a uma sequência iniciada em quatro.\n\nE: Incorreta: equivale a uma multiplicação pela razão além da necessária.\n\nArmadilha: Usar expoente seis e obter o termo seguinte.\n\nConhecimento adicional: A enumeração 3,6,12,24,48,96 confirma o resultado.\n\nAprendizado essencial: O expoente é a quantidade de intervalos desde a referência.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a953e720a33102"
+      ],
+      "statement": "Em uma PG com a1=2 e q=−3, o quarto termo é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "54."
+        },
+        {
+          "label": "B",
+          "text": "-18."
+        },
+        {
+          "label": "C",
+          "text": "-54."
+        },
+        {
+          "label": "D",
+          "text": "162."
+        },
+        {
+          "label": "E",
+          "text": "-162."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Razão negativa faz os sinais alternarem; a potência deve conservar a paridade do expoente.\n\nAnálise da resposta: Correta: a4=2·(−3)^3=−54.\n\nA: Incorreta: perdeu-se o sinal negativo gerado pelo expoente ímpar.\n\nB: Incorreta: esse é o terceiro termo da PG.\n\nC: Correta: a4=2·(−3)^3=−54.\n\nD: Incorreta: além do sinal, foi usada uma potência excessiva.\n\nE: Incorreta: corresponde a multiplicar pela razão uma vez a mais.\n\nArmadilha: Calcular o módulo corretamente e descartar o sinal da potência ímpar.\n\nConhecimento adicional: Os termos são 2, −6, 18 e −54.\n\nAprendizado essencial: Mantenha parênteses ao elevar uma razão negativa.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_93e287b0866d6c"
+      ],
+      "statement": "A razão de uma PG, quando o termo anterior é não nulo, é obtida por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "diferença entre termos consecutivos."
+        },
+        {
+          "label": "B",
+          "text": "soma dos termos consecutivos."
+        },
+        {
+          "label": "C",
+          "text": "produto dos termos consecutivos."
+        },
+        {
+          "label": "D",
+          "text": "média dos termos consecutivos."
+        },
+        {
+          "label": "E",
+          "text": "quociente do termo seguinte pelo anterior."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A PG é caracterizada por um fator multiplicativo constante.\n\nAnálise da resposta: Correta: q=a(n+1)/an, desde que an seja diferente de zero.\n\nA: Incorreta: diferença constante define PA.\n\nB: Incorreta: a soma não permanece constante em uma PG geral.\n\nC: Incorreta: o produto não define a recorrência da PG.\n\nD: Incorreta: a média não é a razão geométrica.\n\nE: Correta: q=a(n+1)/an, desde que an seja diferente de zero.\n\nArmadilha: Aplicar a subtração usada para encontrar a razão de uma PA.\n\nConhecimento adicional: A restrição do denominador explica por que o termo anterior deve ser não nulo.\n\nAprendizado essencial: Divida o termo seguinte pelo termo imediatamente anterior.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-22",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-22",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_93e287b0866d6c"
+      ],
+      "statement": "A razão da PG (81,27,9,3,...) é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3."
+        },
+        {
+          "label": "B",
+          "text": "1/3."
+        },
+        {
+          "label": "C",
+          "text": "-3."
+        },
+        {
+          "label": "D",
+          "text": "-1/3."
+        },
+        {
+          "label": "E",
+          "text": "9."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Uma razão entre zero e um produz PG positiva decrescente.\n\nAnálise da resposta: Correta: 27/81=9/27=3/9=1/3.\n\nA: Incorreta: três é o inverso da razão quando a sequência é lida na ordem dada.\n\nB: Correta: 27/81=9/27=3/9=1/3.\n\nC: Incorreta: os termos têm todos sinal positivo.\n\nD: Incorreta: o sinal negativo produziria alternância.\n\nE: Incorreta: nove não é o quociente entre termos consecutivos.\n\nArmadilha: Inverter a divisão e encontrar três em vez de um terço.\n\nConhecimento adicional: O sentido da sequência importa no cálculo do quociente.\n\nAprendizado essencial: Use sempre seguinte dividido pelo anterior.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-22",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-22",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_93e287b0866d6c"
+      ],
+      "statement": "Na sequência (5,−10,20,−40,...), a razão e o comportamento dos sinais são\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "q=2, com sinais sempre positivos."
+        },
+        {
+          "label": "B",
+          "text": "q=−1/2, com sinais alternados."
+        },
+        {
+          "label": "C",
+          "text": "q=1/2, com termos decrescentes."
+        },
+        {
+          "label": "D",
+          "text": "q=−2, com sinais alternados."
+        },
+        {
+          "label": "E",
+          "text": "q=−5, com sinais alternados."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Razão negativa alterna sinais e seu módulo controla a variação dos valores absolutos.\n\nAnálise da resposta: Correta: cada termo é o anterior multiplicado por −2.\n\nA: Incorreta: o módulo dobra, mas o sinal também muda.\n\nB: Incorreta: o quociente −10/5 é −2, não −1/2.\n\nC: Incorreta: razão positiva não alternaria sinais.\n\nD: Correta: cada termo é o anterior multiplicado por −2.\n\nE: Incorreta: o primeiro quociente não vale −5.\n\nArmadilha: Perceber a alternância, mas escolher o inverso da razão correta.\n\nConhecimento adicional: Como |q|>1, os módulos dos termos aumentam.\n\nAprendizado essencial: Analise separadamente o sinal e o módulo do quociente.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_06cbe05a4c73e9"
+      ],
+      "statement": "Para q diferente de 1, a soma dos n primeiros termos de uma PG é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sn=a1(q^n−1)/(q−1)."
+        },
+        {
+          "label": "B",
+          "text": "Sn=n(a1+an)/2."
+        },
+        {
+          "label": "C",
+          "text": "Sn=a1+(n−1)q."
+        },
+        {
+          "label": "D",
+          "text": "Sn=a1q^(n−1)."
+        },
+        {
+          "label": "E",
+          "text": "Sn=(a1+q)^n."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A soma finita da PG resulta da subtração entre a soma e sua multiplicação por q.\n\nAnálise da resposta: Correta: é uma forma equivalente a a1(1−q^n)/(1−q).\n\nA: Correta: é uma forma equivalente a a1(1−q^n)/(1−q).\n\nB: Incorreta: essa é a fórmula da soma de uma PA.\n\nC: Incorreta: essa expressão calcula termo de uma sequência aditiva.\n\nD: Incorreta: essa é a fórmula do termo geral da PG.\n\nE: Incorreta: a soma não é potência da soma entre primeiro termo e razão.\n\nArmadilha: Trocar a fórmula de soma pela fórmula do termo geral.\n\nConhecimento adicional: As duas formas da fórmula são equivalentes pela troca simultânea dos sinais.\n\nAprendizado essencial: Antes de usar, confirme a quantidade de termos e se q é diferente de um.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 29-34",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 29-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_06cbe05a4c73e9"
+      ],
+      "statement": "A soma 2+6+18+54 é igual a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "72."
+        },
+        {
+          "label": "B",
+          "text": "76."
+        },
+        {
+          "label": "C",
+          "text": "80."
+        },
+        {
+          "label": "D",
+          "text": "82."
+        },
+        {
+          "label": "E",
+          "text": "108."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em listas curtas, a soma direta também verifica a fórmula da PG.\n\nAnálise da resposta: Correta: a PG tem quatro termos e a soma direta é 80.\n\nA: Incorreta: omite parte do valor dos termos.\n\nB: Incorreta: resulta de uma adição incompleta.\n\nC: Correta: a PG tem quatro termos e a soma direta é 80.\n\nD: Incorreta: acrescenta duas unidades indevidas.\n\nE: Incorreta: confunde soma com o dobro do último termo.\n\nArmadilha: Usar apenas o último termo e a razão para estimar a soma.\n\nConhecimento adicional: Pela fórmula, 2(3^4−1)/(3−1)=80.\n\nAprendizado essencial: Faça uma conferência por adição quando houver poucos termos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 29-34",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 29-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_06cbe05a4c73e9"
+      ],
+      "statement": "Uma PG constante possui cinco termos iguais a 4. Sua soma é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4."
+        },
+        {
+          "label": "B",
+          "text": "5."
+        },
+        {
+          "label": "C",
+          "text": "16."
+        },
+        {
+          "label": "D",
+          "text": "25."
+        },
+        {
+          "label": "E",
+          "text": "20."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Quando q=1, a fórmula com denominador q−1 não pode ser usada, mas a soma é n·a1.\n\nAnálise da resposta: Correta: para q=1, soma-se diretamente 5·4=20.\n\nA: Incorreta: considera apenas um dos cinco termos.\n\nB: Incorreta: confunde quantidade de termos com soma.\n\nC: Incorreta: corresponde a apenas quatro parcelas.\n\nD: Incorreta: multiplica incorretamente cinco por si mesmo.\n\nE: Correta: para q=1, soma-se diretamente 5·4=20.\n\nArmadilha: Substituir q=1 na fórmula geral e ignorar a divisão por zero.\n\nConhecimento adicional: Uma PG de razão um é constante e todos os termos coincidem.\n\nAprendizado essencial: Trate separadamente o caso q=1.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 21-34",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 21-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bb53e2d5538082"
+      ],
+      "statement": "Qual situação é modelada naturalmente por uma progressão geométrica?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uma fileira ganha duas cadeiras a cada nova posição."
+        },
+        {
+          "label": "B",
+          "text": "Uma população dobra a cada período."
+        },
+        {
+          "label": "C",
+          "text": "Uma taxa fixa de R$ 5 é somada por mês."
+        },
+        {
+          "label": "D",
+          "text": "A idade de uma pessoa aumenta um ano a cada ano."
+        },
+        {
+          "label": "E",
+          "text": "Uma sequência perde três unidades por etapa."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Variações multiplicativas constantes geram PG; variações aditivas constantes geram PA.\n\nAnálise da resposta: Correta: dobrar corresponde a multiplicar cada termo por razão dois.\n\nA: Incorreta: acréscimo constante caracteriza PA.\n\nB: Correta: dobrar corresponde a multiplicar cada termo por razão dois.\n\nC: Incorreta: soma fixa caracteriza comportamento aritmético.\n\nD: Incorreta: a variação anual é aditiva.\n\nE: Incorreta: subtração constante também é PA.\n\nArmadilha: Classificar todo crescimento como geométrico sem observar como ele ocorre.\n\nConhecimento adicional: Porcentagens iguais aplicadas sucessivamente também produzem comportamento geométrico.\n\nAprendizado essencial: Procure os verbos somar e multiplicar para identificar o modelo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 3-24",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 3-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_07_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_7_progressoes_aritmeticas_e_geometricas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_bb53e2d5538082"
+      ],
+      "statement": "Um auditório tem 20 fileiras. A primeira possui 15 lugares e cada fileira seguinte tem 2 lugares a mais. O total de lugares é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "620."
+        },
+        {
+          "label": "B",
+          "text": "640."
+        },
+        {
+          "label": "C",
+          "text": "660."
+        },
+        {
+          "label": "D",
+          "text": "680."
+        },
+        {
+          "label": "E",
+          "text": "700."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O problema combina termo geral e soma de uma PA.\n\nAnálise da resposta: Correta: a20=15+19·2=53 e S20=20(15+53)/2=680.\n\nA: Incorreta: usa último termo ou média abaixo do correto.\n\nB: Incorreta: não considera adequadamente as vinte fileiras.\n\nC: Incorreta: fica vinte lugares abaixo do total calculado.\n\nD: Correta: a20=15+19·2=53 e S20=20(15+53)/2=680.\n\nE: Incorreta: excede o total em vinte lugares.\n\nArmadilha: Multiplicar o primeiro termo por vinte e somar apenas uma razão por fileira.\n\nConhecimento adicional: O total pode ser visto como vinte vezes a média entre 15 e 53.\n\nAprendizado essencial: Determine o último termo antes de aplicar a fórmula da soma.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "location": "páginas 10-17",
+          "used_for": "Fundamento teórico e conferência dos cálculos de progressões."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_20",
+          "trace_status": "missing",
+          "location": "páginas 10-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

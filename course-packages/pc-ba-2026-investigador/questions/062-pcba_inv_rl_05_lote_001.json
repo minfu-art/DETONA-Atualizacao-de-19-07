@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_05_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_05_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ef64919f46b177"
+      ],
+      "statement": "Para que uma relação de A em B seja uma função, é necessário que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "cada elemento de A esteja associado a exatamente um elemento de B."
+        },
+        {
+          "label": "B",
+          "text": "cada elemento de B esteja associado a exatamente um elemento de A."
+        },
+        {
+          "label": "C",
+          "text": "todos os elementos de B sejam imagens distintas."
+        },
+        {
+          "label": "D",
+          "text": "A e B tenham obrigatoriamente a mesma quantidade de elementos."
+        },
+        {
+          "label": "E",
+          "text": "nenhum elemento de A possua imagem em B."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Função é uma relação que atribui exatamente uma imagem a cada elemento do domínio.\n\nAnálise da resposta: Correta: cada elemento do domínio deve possuir uma única imagem no contradomínio.\n\nA: Correta: cada elemento do domínio deve possuir uma única imagem no contradomínio.\n\nB: Incorreta: elementos de B podem não ser imagens ou podem receber mais de um elemento de A.\n\nC: Incorreta: elementos distintos do domínio podem ter a mesma imagem.\n\nD: Incorreta: domínio e contradomínio não precisam ter a mesma cardinalidade.\n\nE: Incorreta: uma função exige imagem definida para todo elemento do domínio.\n\nArmadilha: Inverter os papéis de domínio e contradomínio ao verificar a definição.\n\nConhecimento adicional: A unicidade exigida é da imagem de cada entrada, não do antecedente de cada saída.\n\nAprendizado essencial: Verifique se toda entrada possui uma, e somente uma, saída.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "location": "páginas 19-23",
+          "used_for": "Fundamento conceitual e conferência editorial sobre funções."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "trace_status": "missing",
+          "location": "páginas 19-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ef64919f46b177"
+      ],
+      "statement": "Considerando a função real f(x)=√(x−2), seu domínio é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x<2."
+        },
+        {
+          "label": "B",
+          "text": "x≤2."
+        },
+        {
+          "label": "C",
+          "text": "x≥2."
+        },
+        {
+          "label": "D",
+          "text": "x>2."
+        },
+        {
+          "label": "E",
+          "text": "todos os números reais."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O domínio reúne os valores de entrada para os quais a expressão da função está definida.\n\nAnálise da resposta: Correta: em números reais, o radicando x−2 deve ser maior ou igual a zero.\n\nA: Incorreta: valores menores que dois tornam o radicando negativo.\n\nB: Incorreta: valores menores que dois continuam incluídos nessa condição.\n\nC: Correta: em números reais, o radicando x−2 deve ser maior ou igual a zero.\n\nD: Incorreta: x=2 é permitido e produz f(2)=0.\n\nE: Incorreta: nem todo real gera uma raiz quadrada real.\n\nArmadilha: Excluir o valor que zera o radicando por confundir ≥ com >.\n\nConhecimento adicional: Para raízes de índice par no conjunto real, o radicando deve ser não negativo.\n\nAprendizado essencial: Determine as restrições algébricas antes de declarar o domínio.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "location": "páginas 24-30",
+          "used_for": "Fundamento conceitual e conferência editorial sobre funções."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "trace_status": "missing",
+          "location": "páginas 24-30",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ef64919f46b177"
+      ],
+      "statement": "Se A={1,2,3}, B={2,4,6,8} e f é dada por f(1)=2, f(2)=4 e f(3)=4, então\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o domínio é {2,4}."
+        },
+        {
+          "label": "B",
+          "text": "o contradomínio é {1,2,3}."
+        },
+        {
+          "label": "C",
+          "text": "a imagem é {2,4,6,8}."
+        },
+        {
+          "label": "D",
+          "text": "a relação não é função porque 2 e 3 têm a mesma imagem."
+        },
+        {
+          "label": "E",
+          "text": "o domínio é A, o contradomínio é B e a imagem é {2,4}."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Imagem é a parte do contradomínio efetivamente atingida pelos valores da função.\n\nAnálise da resposta: Correta: distingue corretamente os três conjuntos envolvidos.\n\nA: Incorreta: {2,4} é o conjunto imagem, não o domínio.\n\nB: Incorreta: {1,2,3} é o domínio.\n\nC: Incorreta: 6 e 8 pertencem ao contradomínio, mas não são imagens dadas.\n\nD: Incorreta: uma função pode associar entradas distintas à mesma saída.\n\nE: Correta: distingue corretamente os três conjuntos envolvidos.\n\nArmadilha: Tratar contradomínio e imagem como sinônimos ou exigir imagens diferentes.\n\nConhecimento adicional: Nem todo elemento do contradomínio precisa pertencer à imagem.\n\nAprendizado essencial: Leia domínio, contradomínio e imagem como conjuntos com papéis diferentes.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "location": "páginas 19-23",
+          "used_for": "Fundamento conceitual e conferência editorial sobre funções."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "trace_status": "missing",
+          "location": "páginas 19-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a3a02d468d409e"
+      ],
+      "statement": "A função f(x)=3x−2 é uma função afim cujo gráfico é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "uma parábola com concavidade para cima."
+        },
+        {
+          "label": "B",
+          "text": "uma reta crescente."
+        },
+        {
+          "label": "C",
+          "text": "uma reta decrescente."
+        },
+        {
+          "label": "D",
+          "text": "uma circunferência."
+        },
+        {
+          "label": "E",
+          "text": "uma reta horizontal."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Toda função afim f(x)=ax+b possui gráfico retilíneo; o sinal de a define seu crescimento.\n\nAnálise da resposta: Correta: o gráfico é uma reta e o coeficiente angular 3 é positivo.\n\nA: Incorreta: parábolas representam funções quadráticas, não afins com coeficiente linear não nulo.\n\nB: Correta: o gráfico é uma reta e o coeficiente angular 3 é positivo.\n\nC: Incorreta: a função seria decrescente se o coeficiente de x fosse negativo.\n\nD: Incorreta: uma circunferência não é o gráfico dessa expressão.\n\nE: Incorreta: a reta seria horizontal se o coeficiente de x fosse zero.\n\nArmadilha: Olhar apenas para o termo independente negativo e concluir que a função decresce.\n\nConhecimento adicional: O coeficiente b indica o ponto onde a reta cruza o eixo y.\n\nAprendizado essencial: Para classificar a reta, identifique primeiro o coeficiente de x.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a3a02d468d409e"
+      ],
+      "statement": "Para a função f(x)=−2x+8, o zero da função e sua classificação quanto ao crescimento são, respectivamente,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "−4 e crescente."
+        },
+        {
+          "label": "B",
+          "text": "4 e crescente."
+        },
+        {
+          "label": "C",
+          "text": "−4 e decrescente."
+        },
+        {
+          "label": "D",
+          "text": "4 e decrescente."
+        },
+        {
+          "label": "E",
+          "text": "8 e constante."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O zero da função afim resolve ax+b=0, enquanto o sinal de a determina crescimento ou decrescimento.\n\nAnálise da resposta: Correta: f(4)=0 e o coeficiente angular −2 torna a função decrescente.\n\nA: Incorreta: resolver −2x+8=0 fornece x=4, e não −4.\n\nB: Incorreta: o zero está correto, mas o coeficiente angular negativo indica decrescimento.\n\nC: Incorreta: a classificação está correta, mas o zero tem sinal positivo.\n\nD: Correta: f(4)=0 e o coeficiente angular −2 torna a função decrescente.\n\nE: Incorreta: o termo independente não é o zero da função, e a função não é constante.\n\nArmadilha: Confundir o termo independente com a raiz ou ignorar o sinal do coeficiente angular.\n\nConhecimento adicional: Geometricamente, a raiz é a abscissa da interseção da reta com o eixo x.\n\nAprendizado essencial: Resolva f(x)=0 e analise o coeficiente angular separadamente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 32-47",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 32-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a3a02d468d409e"
+      ],
+      "statement": "Uma função afim passa pelos pontos (0,3) e (2,7). Sua expressão é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(x)=2x+3."
+        },
+        {
+          "label": "B",
+          "text": "f(x)=4x+3."
+        },
+        {
+          "label": "C",
+          "text": "f(x)=2x+7."
+        },
+        {
+          "label": "D",
+          "text": "f(x)=3x+2."
+        },
+        {
+          "label": "E",
+          "text": "f(x)=−2x+3."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Dois pontos distintos determinam uma reta e permitem calcular os coeficientes da função afim.\n\nAnálise da resposta: Correta: a=(7−3)/(2−0)=2 e f(0)=3 determina b=3.\n\nA: Correta: a=(7−3)/(2−0)=2 e f(0)=3 determina b=3.\n\nB: Incorreta: o coeficiente angular foi obtido sem dividir a variação de y pela de x.\n\nC: Incorreta: o valor sete é uma ordenada do segundo ponto, não o termo independente.\n\nD: Incorreta: os coeficientes angular e linear foram trocados.\n\nE: Incorreta: a reta cresce entre os pontos, portanto o coeficiente angular não pode ser negativo.\n\nArmadilha: Usar apenas a variação vertical como coeficiente angular.\n\nConhecimento adicional: Quando um dos pontos tem x=0, sua ordenada fornece diretamente o coeficiente linear.\n\nAprendizado essencial: Calcule a razão Δy/Δx e depois determine o termo independente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 13-32",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 13-32",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0c7521c91e122c"
+      ],
+      "statement": "O gráfico da função f(x)=x²−4x+3 possui\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "forma de reta crescente."
+        },
+        {
+          "label": "B",
+          "text": "concavidade voltada para baixo."
+        },
+        {
+          "label": "C",
+          "text": "concavidade voltada para cima."
+        },
+        {
+          "label": "D",
+          "text": "forma de circunferência."
+        },
+        {
+          "label": "E",
+          "text": "apenas um ponto no plano."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O sinal do coeficiente quadrático determina a orientação da concavidade da parábola.\n\nAnálise da resposta: Correta: o coeficiente principal é a=1>0.\n\nA: Incorreta: a presença do termo x² caracteriza função quadrática.\n\nB: Incorreta: a concavidade seria para baixo se o coeficiente de x² fosse negativo.\n\nC: Correta: o coeficiente principal é a=1>0.\n\nD: Incorreta: o gráfico de função quadrática é uma parábola.\n\nE: Incorreta: a expressão define um valor para cada x real.\n\nArmadilha: Usar o sinal do coeficiente de x, em vez do coeficiente de x², para decidir a concavidade.\n\nConhecimento adicional: Funções quadráticas têm a forma ax²+bx+c, com a diferente de zero.\n\nAprendizado essencial: Observe o coeficiente do termo de maior grau.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "location": "páginas 3-11",
+          "used_for": "Fundamento algébrico e gráfico sobre função quadrática."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "trace_status": "missing",
+          "location": "páginas 3-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0c7521c91e122c"
+      ],
+      "statement": "O vértice da parábola f(x)=x²−6x+5 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "(-3,32)."
+        },
+        {
+          "label": "B",
+          "text": "(1,0)."
+        },
+        {
+          "label": "C",
+          "text": "(5,0)."
+        },
+        {
+          "label": "D",
+          "text": "(6,5)."
+        },
+        {
+          "label": "E",
+          "text": "(3,-4)."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O vértice é obtido por xv=−b/(2a) e yv=f(xv).\n\nAnálise da resposta: Correta: xv=−b/(2a)=3 e f(3)=9−18+5=−4.\n\nA: Incorreta: o sinal de b foi utilizado incorretamente no cálculo da abscissa.\n\nB: Incorreta: (1,0) é uma raiz, não o vértice.\n\nC: Incorreta: (5,0) é a outra raiz.\n\nD: Incorreta: a abscissa do vértice não é igual ao módulo de b.\n\nE: Correta: xv=−b/(2a)=3 e f(3)=9−18+5=−4.\n\nArmadilha: Confundir as raízes, onde a parábola cruza o eixo x, com o vértice.\n\nConhecimento adicional: Como a parábola tem concavidade para cima, o vértice representa seu valor mínimo.\n\nAprendizado essencial: Calcule primeiro a abscissa e substitua-a na função.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "location": "páginas 27-51",
+          "used_for": "Fundamento algébrico e gráfico sobre função quadrática."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "trace_status": "missing",
+          "location": "páginas 27-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_0c7521c91e122c"
+      ],
+      "statement": "Sobre f(x)=−x²+4x, assinale a descrição integralmente correta.\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Tem raízes −4 e 0, vértice (−2,4) e concavidade para cima."
+        },
+        {
+          "label": "B",
+          "text": "Tem raízes 0 e 4, vértice (2,4) e concavidade para baixo."
+        },
+        {
+          "label": "C",
+          "text": "Tem raiz dupla 2, vértice (2,0) e concavidade para baixo."
+        },
+        {
+          "label": "D",
+          "text": "Tem raízes 0 e 4, vértice (4,2) e concavidade para cima."
+        },
+        {
+          "label": "E",
+          "text": "Não possui raízes reais e seu máximo é 4."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Raízes, vértice e concavidade descrevem conjuntamente a posição da parábola.\n\nAnálise da resposta: Correta: f=x(4−x), xv=2, f(2)=4 e a=−1.\n\nA: Incorreta: a fatoração e a concavidade foram avaliadas com sinais errados.\n\nB: Correta: f=x(4−x), xv=2, f(2)=4 e a=−1.\n\nC: Incorreta: dois não é raiz; é a abscissa do vértice.\n\nD: Incorreta: as coordenadas do vértice estão invertidas e a concavidade está errada.\n\nE: Incorreta: a função possui duas raízes reais, embora seu valor máximo seja quatro.\n\nArmadilha: Aceitar uma alternativa que acerta apenas o valor máximo, mas erra as raízes.\n\nConhecimento adicional: A forma fatorada x(4−x) permite localizar rapidamente as raízes.\n\nAprendizado essencial: Confira separadamente raízes, vértice e sinal do coeficiente principal.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "location": "páginas 9-51",
+          "used_for": "Fundamento algébrico e gráfico sobre função quadrática."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "trace_status": "missing",
+          "location": "páginas 9-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_db1e928fb257dd"
+      ],
+      "statement": "Um zero de uma função f é um valor x para o qual\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(x)=1."
+        },
+        {
+          "label": "B",
+          "text": "f(x)=x."
+        },
+        {
+          "label": "C",
+          "text": "f(x)>0."
+        },
+        {
+          "label": "D",
+          "text": "f(x)=0."
+        },
+        {
+          "label": "E",
+          "text": "f(x) não está definida."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Zeros da função correspondem às abscissas onde seu gráfico encontra o eixo x.\n\nAnálise da resposta: Correta: zeros são soluções da equação f(x)=0.\n\nA: Incorreta: o valor um não caracteriza genericamente uma raiz.\n\nB: Incorreta: pontos fixos não são necessariamente zeros.\n\nC: Incorreta: valores positivos ficam acima do eixo x.\n\nD: Correta: zeros são soluções da equação f(x)=0.\n\nE: Incorreta: um zero pertence ao domínio da função.\n\nArmadilha: Confundir zero da função com ponto em que x e y possuem o mesmo valor.\n\nConhecimento adicional: Uma função pode não ter zeros reais, ter um ou possuir vários.\n\nAprendizado essencial: Para encontrar raízes, resolva a equação f(x)=0.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 41-47",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 41-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_db1e928fb257dd"
+      ],
+      "statement": "Quanto ao crescimento e ao zero, a função f(x)=5−x é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "decrescente e possui zero em x=5."
+        },
+        {
+          "label": "B",
+          "text": "crescente e possui zero em x=5."
+        },
+        {
+          "label": "C",
+          "text": "decrescente e possui zero em x=−5."
+        },
+        {
+          "label": "D",
+          "text": "constante e não possui zero."
+        },
+        {
+          "label": "E",
+          "text": "crescente e possui zero em x=−5."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Em função afim, coeficiente angular negativo indica decrescimento.\n\nAnálise da resposta: Correta: o coeficiente angular é −1 e 5−x=0 implica x=5.\n\nA: Correta: o coeficiente angular é −1 e 5−x=0 implica x=5.\n\nB: Incorreta: a raiz está correta, mas a função é decrescente.\n\nC: Incorreta: f(−5)=10, não zero.\n\nD: Incorreta: o coeficiente de x não é zero.\n\nE: Incorreta: tanto o crescimento quanto a raiz estão errados.\n\nArmadilha: Associar o sinal positivo do termo constante ao crescimento da função.\n\nConhecimento adicional: A função cruza o eixo y em cinco e o eixo x também em cinco.\n\nAprendizado essencial: Não confunda o coeficiente linear com o coeficiente angular.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 32-47",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 32-47",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_db1e928fb257dd"
+      ],
+      "statement": "Para f(x)=(x−2)(x−6), é correto afirmar que a função\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "tem zeros −2 e −6 e é sempre crescente."
+        },
+        {
+          "label": "B",
+          "text": "tem zero duplo 4 e é sempre decrescente."
+        },
+        {
+          "label": "C",
+          "text": "tem zeros 2 e 6, decresce até x=4 e cresce depois de x=4."
+        },
+        {
+          "label": "D",
+          "text": "tem zeros 2 e 6, cresce até x=4 e decresce depois de x=4."
+        },
+        {
+          "label": "E",
+          "text": "não possui zeros reais porque o produto é quadrático."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Uma parábola com concavidade para cima decresce até o vértice e cresce após ele.\n\nAnálise da resposta: Correta: a>0, as raízes são 2 e 6 e o eixo de simetria é x=4.\n\nA: Incorreta: os sinais das raízes foram invertidos e a parábola não é sempre crescente.\n\nB: Incorreta: quatro é a abscissa do vértice, não uma raiz.\n\nC: Correta: a>0, as raízes são 2 e 6 e o eixo de simetria é x=4.\n\nD: Incorreta: essa monotonicidade corresponderia a uma parábola com concavidade para baixo.\n\nE: Incorreta: a forma fatorada exibe diretamente duas raízes reais.\n\nArmadilha: Confundir a média das raízes com uma raiz dupla.\n\nConhecimento adicional: A abscissa do vértice também é a média aritmética das raízes reais.\n\nAprendizado essencial: Localize raízes, eixo de simetria e concavidade antes de estudar variação.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "location": "páginas 9-51",
+          "used_for": "Fundamento algébrico e gráfico sobre função quadrática."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "trace_status": "missing",
+          "location": "páginas 9-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c0555291fba562"
+      ],
+      "statement": "Uma tabela apresenta os pares (0,1), (1,3) e (2,5). Se eles pertencem a uma função afim, essa função é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(x)=x+1."
+        },
+        {
+          "label": "B",
+          "text": "f(x)=3x+1."
+        },
+        {
+          "label": "C",
+          "text": "f(x)=2x−1."
+        },
+        {
+          "label": "D",
+          "text": "f(x)=x+3."
+        },
+        {
+          "label": "E",
+          "text": "f(x)=2x+1."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Tabelas permitem ler a taxa de variação e o valor inicial de uma função afim.\n\nAnálise da resposta: Correta: a cada aumento unitário de x, y cresce dois, e f(0)=1.\n\nA: Incorreta: a variação por unidade seria um, mas a tabela cresce dois.\n\nB: Incorreta: a variação vertical seria três.\n\nC: Incorreta: o coeficiente angular está correto, porém f(0) seria −1.\n\nD: Incorreta: f(0) seria três e a variação estaria errada.\n\nE: Correta: a cada aumento unitário de x, y cresce dois, e f(0)=1.\n\nArmadilha: Escolher uma fórmula que passa por apenas um dos pares fornecidos.\n\nConhecimento adicional: Diferenças constantes nos valores de y, para passos iguais de x, indicam comportamento afim.\n\nAprendizado essencial: Confira a fórmula em todos os pontos, não apenas no primeiro.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 13-32",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 13-32",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c0555291fba562"
+      ],
+      "statement": "Uma reta cruza o eixo y no ponto (0,4) e o eixo x no ponto (2,0). A função representada é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(x)=2x+4."
+        },
+        {
+          "label": "B",
+          "text": "f(x)=−2x+4."
+        },
+        {
+          "label": "C",
+          "text": "f(x)=−x+2."
+        },
+        {
+          "label": "D",
+          "text": "f(x)=4x−2."
+        },
+        {
+          "label": "E",
+          "text": "f(x)=2x−4."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Os interceptos de um gráfico fornecem dois pontos suficientes para determinar uma função afim.\n\nAnálise da resposta: Correta: o coeficiente angular é (0−4)/(2−0)=−2 e o termo independente é 4.\n\nA: Incorreta: essa reta não cruza o eixo x em x=2.\n\nB: Correta: o coeficiente angular é (0−4)/(2−0)=−2 e o termo independente é 4.\n\nC: Incorreta: essa expressão teria interceptos diferentes.\n\nD: Incorreta: os interceptos foram tratados como coeficientes sem calcular a inclinação.\n\nE: Incorreta: o cruzamento com o eixo y seria −4.\n\nArmadilha: Usar as coordenadas dos interceptos diretamente como coeficientes.\n\nConhecimento adicional: O ponto no eixo y determina b; o segundo ponto determina a inclinação.\n\nAprendizado essencial: Transforme informações visuais em pares ordenados e calcule Δy/Δx.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 13-32",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 13-32",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_c0555291fba562"
+      ],
+      "statement": "Pelo teste da reta vertical, qual curva NÃO pode representar y como função de x em todo o seu traçado?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uma reta não vertical."
+        },
+        {
+          "label": "B",
+          "text": "A parábola y=x²."
+        },
+        {
+          "label": "C",
+          "text": "O gráfico de y=|x|."
+        },
+        {
+          "label": "D",
+          "text": "Uma circunferência."
+        },
+        {
+          "label": "E",
+          "text": "Uma reta horizontal."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Um gráfico representa função de x quando nenhuma reta vertical o intercepta mais de uma vez.\n\nAnálise da resposta: Correta: há retas verticais que encontram a circunferência em dois pontos.\n\nA: Incorreta: qualquer reta vertical a intercepta no máximo uma vez.\n\nB: Incorreta: para cada x existe um único valor x².\n\nC: Incorreta: o módulo produz uma única saída para cada entrada.\n\nD: Correta: há retas verticais que encontram a circunferência em dois pontos.\n\nE: Incorreta: uma função constante associa uma única ordenada a cada x.\n\nArmadilha: Confundir a simetria da parábola com a existência de duas imagens para um mesmo x.\n\nConhecimento adicional: A parábola vertical pode ter dois valores de x para um y, mas isso não viola a definição de y=f(x).\n\nAprendizado essencial: Aplique o teste no sentido vertical, fixando um valor de x.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "location": "páginas 23-27",
+          "used_for": "Fundamento conceitual e conferência editorial sobre funções."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_17",
+          "trace_status": "missing",
+          "location": "páginas 23-27",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2bd2aa5eda5b90"
+      ],
+      "statement": "Uma corrida de táxi cobra bandeirada de R$ 8,00 e R$ 3,00 por quilômetro. O custo de uma corrida de 7 km é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 29,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 24,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 21,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 32,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 56,00."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Problemas com taxa fixa e taxa por unidade são modelados por função afim.\n\nAnálise da resposta: Correta: C(x)=8+3x e C(7)=8+21=29.\n\nA: Correta: C(x)=8+3x e C(7)=8+21=29.\n\nB: Incorreta: esse valor não inclui corretamente a bandeirada e a distância.\n\nC: Incorreta: considera apenas a parte variável da cobrança.\n\nD: Incorreta: soma uma parcela adicional inexistente.\n\nE: Incorreta: multiplica indevidamente a bandeirada pela distância.\n\nArmadilha: Esquecer a parcela fixa ao calcular o valor total.\n\nConhecimento adicional: A bandeirada é o coeficiente linear; o preço por quilômetro é o coeficiente angular.\n\nAprendizado essencial: Separe custo fixo de custo variável antes de substituir a quantidade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2bd2aa5eda5b90"
+      ],
+      "statement": "Uma atividade tem receita R(q)=50q e custo C(q)=500+30q, em reais. O ponto de equilíbrio ocorre quando são vendidas\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "10 unidades."
+        },
+        {
+          "label": "B",
+          "text": "20 unidades."
+        },
+        {
+          "label": "C",
+          "text": "25 unidades."
+        },
+        {
+          "label": "D",
+          "text": "30 unidades."
+        },
+        {
+          "label": "E",
+          "text": "40 unidades."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O equilíbrio financeiro acontece quando os valores das funções receita e custo são iguais.\n\nAnálise da resposta: Correta: 50q=500+30q implica 20q=500 e q=25.\n\nA: Incorreta: a receita ainda seria inferior ao custo.\n\nB: Incorreta: 1.000 reais de receita não cobrem 1.100 reais de custo.\n\nC: Correta: 50q=500+30q implica 20q=500 e q=25.\n\nD: Incorreta: nesse nível já existe resultado positivo.\n\nE: Incorreta: esse valor excede o ponto de equilíbrio.\n\nArmadilha: Igualar apenas os coeficientes de q e ignorar o custo fixo.\n\nConhecimento adicional: Antes de 25 unidades há prejuízo; depois de 25, a receita supera o custo.\n\nAprendizado essencial: Traduza “ponto de equilíbrio” pela equação R(q)=C(q).",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento algébrico e gráfico sobre função afim."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_18",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_05_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_5_funcoes_e_graficos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2bd2aa5eda5b90"
+      ],
+      "statement": "A altura de um objeto é h(t)=−5t²+20t+1, em metros, com t em segundos. A altura máxima e o instante em que ela ocorre são\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "16 m em 2 s."
+        },
+        {
+          "label": "B",
+          "text": "20 m em 1 s."
+        },
+        {
+          "label": "C",
+          "text": "21 m em 1 s."
+        },
+        {
+          "label": "D",
+          "text": "25 m em 4 s."
+        },
+        {
+          "label": "E",
+          "text": "21 m em 2 s."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Em um modelo quadrático com coeficiente principal negativo, o vértice fornece o valor máximo.\n\nAnálise da resposta: Correta: tv=−20/(2×−5)=2 e h(2)=−20+40+1=21.\n\nA: Incorreta: a abscissa está correta, mas a altura foi calculada sem o termo constante e com operação inadequada.\n\nB: Incorreta: t=1 não é o instante do vértice e a altura também está errada.\n\nC: Incorreta: a altura máxima está correta, porém ocorre em t=2.\n\nD: Incorreta: t=4 é uma referência associada à simetria das raízes da parte sem o termo constante, não ao máximo.\n\nE: Correta: tv=−20/(2×−5)=2 e h(2)=−20+40+1=21.\n\nArmadilha: Calcular corretamente a altura, mas associá-la ao instante errado.\n\nConhecimento adicional: O domínio físico começa em t=0 e deve ser compatível com o intervalo em que o fenômeno ocorre.\n\nAprendizado essencial: Use o vértice da parábola e interprete suas coordenadas no contexto.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "location": "páginas 27-51",
+          "used_for": "Fundamento algébrico e gráfico sobre função quadrática."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_19",
+          "trace_status": "missing",
+          "location": "páginas 27-51",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

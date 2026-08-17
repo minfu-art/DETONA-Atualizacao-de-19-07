@@ -1,0 +1,143 @@
+{
+  "generated_at": "2026-08-17T03:18:49.030Z",
+  "source_artifacts": {
+    "runtime": "pc-ba-2026-investigador-runtime.json",
+    "knowledge_map": "knowledge-map.bound.v2.json",
+    "source_catalog": "source-catalog.v2.json"
+  },
+  "curriculum": {
+    "roles": 1,
+    "disciplines": 14,
+    "topics": 161,
+    "subtopics": 296,
+    "duplicate_ids": 0,
+    "orphan_nodes": 0
+  },
+  "microknowledges": {
+    "found": 2545,
+    "valid": 2527,
+    "orphan": 18,
+    "duplicate": 0,
+    "orphan_items": [
+      {
+        "id": "pc_ba_2026_inv_mk_2f13212f5b9f7d",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "legalidade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_b1d1d967c0f4ff",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "anterioridade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_8183cceb657b35",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "intervenção mínima",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_a76b63671a62fb",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "fragmentariedade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_81bb2c85c2b4ed",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "subsidiariedade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_734dc21725b29b",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "ofensividade/lesividade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_2f66e02d0946fb",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "culpabilidade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_a76409a0934cc0",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "humanidade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_0ad2c644ae6e01",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "individualização da pena",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_cb82efe7060d48",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "proporcionalidade",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_362abb1d793371",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "intranscendência da pena",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_889e71645600af",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "insignificância em perspectiva jurisprudencial",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_d323134a535ae9",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "interpretação da lei penal",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_34270d557b98f9",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "analogia e seus limites",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_0aeb08158ce61d",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "conflito aparente de normas",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_676ecad2160cc9",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "lei penal no tempo",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_cce61f7111833e",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "lei penal no espaço",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      },
+      {
+        "id": "pc_ba_2026_inv_mk_6eba598bcb4948",
+        "topic_id": "pc_ba_2026_investigador_policia_civil_topic_nocoes_de_direito_penal_1_principios_do_direito_penal_2_aplicacao_da_lei_penal",
+        "title": "contagem de prazo penal em nível introdutório",
+        "reason": "Artefato legado vinculado apenas ao tópico; contrato canônico exige subtópico."
+      }
+    ]
+  },
+  "questions": {
+    "found": 1247,
+    "valid": 1247,
+    "invalid": 0,
+    "duplicate": 0,
+    "unlinked": 0
+  },
+  "sources": {
+    "found": 72,
+    "explicit_missing_traceability": true
+  }
+}

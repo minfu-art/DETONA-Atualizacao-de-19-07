@@ -8,6 +8,7 @@ import {
 
 export const ASSISTED_FACTORY_ACTIONS = Object.freeze([
   'capabilities', 'list_drafts', 'create_draft', 'get_draft',
+  'get_preview_package',
   'create_signed_upload', 'complete_upload', 'remove_source',
   'validate_package', 'import_package', 'approve_map',
 ]);
@@ -52,7 +53,7 @@ export function validateAssistedFactoryRequest(input) {
     return { action };
   }
   const draftId = safeUuid(body.draftId, 'course_draft_id');
-  if (['get_draft', 'approve_map'].includes(action)) {
+  if (['get_draft', 'get_preview_package', 'approve_map'].includes(action)) {
     assertExactKeys(body, ['action', 'draftId'], ['draftId']);
     return { action, draftId };
   }
@@ -137,19 +138,30 @@ function sourceTraces(raw, path, audit, sourceIndex, { required = true } = {}) {
   return raw.slice(0, 50).map((entry, index) => {
     const tracePath = `${path}[${index}]`;
     const value = object(entry, tracePath, audit);
-    exact(value, ['source_id', 'page_number', 'excerpt'], tracePath, audit);
+    exact(value, ['source_id', 'trace_status', 'page_number', 'excerpt', 'location', 'note'], tracePath, audit);
     const sourceId = id(value.source_id, `${tracePath}.source_id`, audit);
     const source = sourceIndex.get(sourceId);
     if (!source) audit.error('TRACE_SOURCE_UNKNOWN', `${tracePath}.source_id`, 'A fonte não existe em sources.json.');
+    const traceStatus = ['available', 'missing'].includes(value.trace_status) ? value.trace_status : 'invalid';
+    if (traceStatus === 'invalid') audit.error('TRACE_STATUS_INVALID', `${tracePath}.trace_status`, 'Use available ou missing.');
     const page = Number(value.page_number);
-    if (!Number.isInteger(page) || page < 1 || page > 5000) audit.error('TRACE_PAGE_INVALID', `${tracePath}.page_number`, 'Página inválida.');
-    if (source?.page_count && page > source.page_count) audit.error('TRACE_PAGE_OUT_OF_RANGE', `${tracePath}.page_number`, 'Página acima do total declarado.');
+    if (traceStatus === 'available' && (!Number.isInteger(page) || page < 1 || page > 5000)) {
+      audit.error('TRACE_PAGE_INVALID', `${tracePath}.page_number`, 'Rastreabilidade disponível exige uma página válida.');
+    }
+    if (Number.isInteger(page) && source?.page_count && page > source.page_count) audit.error('TRACE_PAGE_OUT_OF_RANGE', `${tracePath}.page_number`, 'Página acima do total declarado.');
+    const excerpt = text(value.excerpt, `${tracePath}.excerpt`, audit, 600, { optional: traceStatus === 'missing' });
+    const location = text(value.location, `${tracePath}.location`, audit, 300, { optional: true });
+    const note = text(value.note, `${tracePath}.note`, audit, 600, { optional: traceStatus !== 'missing' });
+    if (traceStatus === 'missing' && !note) audit.error('TRACE_MISSING_NOTE_REQUIRED', `${tracePath}.note`, 'Explique por que a rastreabilidade está ausente.');
     return {
       source_id: sourceId,
       source_name: source?.file_name || sourceId,
       source_type: source?.source_type || 'unknown',
-      page_number: Number.isInteger(page) ? page : 1,
-      excerpt: text(value.excerpt, `${tracePath}.excerpt`, audit, 600),
+      trace_status: traceStatus,
+      page_number: Number.isInteger(page) ? page : null,
+      excerpt,
+      location,
+      note,
     };
   });
 }
@@ -236,33 +248,47 @@ export async function validateAssistedCoursePackage(rawPackage, { uploadedSource
   const sources = sourcesRaw.slice(0, 100).map((entry, index) => {
     const path = `package.sources[${index}]`;
     const value = object(entry, path, audit);
-    exact(value, ['id', 'source_type', 'category', 'file_name', 'page_count'], path, audit);
+    exact(value, ['id', 'source_type', 'category', 'title', 'file_name', 'page_count', 'availability', 'url', 'sha256'], path, audit);
     const sourceId = id(value.id, `${path}.id`, audit);
     if (sourceIds.has(sourceId)) audit.error('SOURCE_ID_DUPLICATE', `${path}.id`, 'ID de fonte duplicado.');
     sourceIds.add(sourceId);
-    const fileName = text(value.file_name, `${path}.file_name`, audit, 180);
-    if (fileName && !/\.pdf$/i.test(fileName)) audit.error('SOURCE_FILE_TYPE_INVALID', `${path}.file_name`, 'A fonte declarada deve ser um PDF.');
+    const availability = ['uploaded_pdf', 'external_reference', 'reference_only'].includes(value.availability) ? value.availability : 'invalid';
+    if (availability === 'invalid') audit.error('SOURCE_AVAILABILITY_INVALID', `${path}.availability`, 'Disponibilidade da fonte inválida.');
+    const fileName = text(value.file_name, `${path}.file_name`, audit, 180, { optional: availability !== 'uploaded_pdf' });
+    if (fileName && !/\.pdf$/i.test(fileName)) audit.error('SOURCE_FILE_TYPE_INVALID', `${path}.file_name`, 'Arquivos de fonte devem ser PDFs.');
+    if (availability === 'uploaded_pdf' && !fileName) audit.error('SOURCE_FILE_REQUIRED', `${path}.file_name`, 'Fonte enviada exige o nome do PDF.');
     const lowered = fileName.toLocaleLowerCase('pt-BR');
-    if (sourceNames.has(lowered)) audit.error('SOURCE_NAME_DUPLICATE', `${path}.file_name`, 'Nome de fonte duplicado.');
-    sourceNames.add(lowered);
+    if (lowered && sourceNames.has(lowered)) audit.error('SOURCE_NAME_DUPLICATE', `${path}.file_name`, 'Nome de fonte duplicado.');
+    if (lowered) sourceNames.add(lowered);
     const sourceType = ['official_edital', 'complementary'].includes(value.source_type) ? value.source_type : 'invalid';
     if (sourceType === 'invalid') audit.error('SOURCE_TYPE_INVALID', `${path}.source_type`, 'Tipo de fonte inválido.');
     const category = ASSISTED_SOURCE_CATEGORIES.includes(value.category) ? value.category : 'outro';
     if (!ASSISTED_SOURCE_CATEGORIES.includes(value.category)) audit.error('SOURCE_CATEGORY_INVALID', `${path}.category`, 'Categoria inválida.');
     const pageCount = value.page_count == null ? null : Number(value.page_count);
     if (pageCount != null && (!Number.isInteger(pageCount) || pageCount < 1 || pageCount > 5000)) audit.error('SOURCE_PAGE_COUNT_INVALID', `${path}.page_count`, 'Total de páginas inválido.');
-    return { id: sourceId, source_type: sourceType, category, file_name: fileName, page_count: pageCount };
+    const url = text(value.url, `${path}.url`, audit, 1000, { optional: true });
+    if (url && !/^https:\/\//i.test(url)) audit.error('SOURCE_URL_INVALID', `${path}.url`, 'Use uma URL HTTPS.');
+    const sourceHash = text(value.sha256, `${path}.sha256`, audit, 64, { optional: true }).toLowerCase();
+    if (sourceHash && !/^[a-f0-9]{64}$/.test(sourceHash)) audit.error('SOURCE_HASH_INVALID', `${path}.sha256`, 'SHA-256 inválido.');
+    return {
+      id: sourceId, source_type: sourceType, category,
+      title: text(value.title, `${path}.title`, audit, 1600),
+      file_name: fileName, page_count: pageCount, availability, url, sha256: sourceHash,
+    };
   });
   if (sources.filter(({ source_type: type }) => type === 'official_edital').length !== 1) {
     audit.error('OFFICIAL_EDITAL_REQUIRED', 'package.sources', 'Declare exatamente um edital oficial.');
   }
   const uploadedNames = new Set(uploadedSources.filter(({ status }) => ['uploaded', 'extracted'].includes(status))
     .map(({ file_name: name }) => String(name).toLocaleLowerCase('pt-BR')));
-  if (!uploadedNames.size) audit.error('UPLOADED_SOURCE_REQUIRED', 'package.sources', 'Envie as fontes em PDF antes de importar o pacote.');
+  if (!uploadedNames.size) audit.error('UPLOADED_SOURCE_REQUIRED', 'package.sources', 'Envie ao menos o edital oficial em PDF antes de importar o pacote.');
   for (const [index, source] of sources.entries()) {
-    if (!uploadedNames.has(source.file_name.toLocaleLowerCase('pt-BR'))) {
+    if (source.availability === 'uploaded_pdf' && !uploadedNames.has(source.file_name.toLocaleLowerCase('pt-BR'))) {
       audit.error('SOURCE_FILE_NOT_UPLOADED', `package.sources[${index}].file_name`, 'O PDF declarado ainda não foi enviado neste rascunho.');
     }
+  }
+  if (!sources.some(({ source_type: type, availability }) => type === 'official_edital' && availability === 'uploaded_pdf')) {
+    audit.error('OFFICIAL_EDITAL_UPLOAD_REQUIRED', 'package.sources', 'O edital oficial deve ser uma fonte uploaded_pdf.');
   }
   const sourceIndex = new Map(sources.map((source) => [source.id, source]));
 
@@ -286,7 +312,7 @@ export async function validateAssistedCoursePackage(rawPackage, { uploadedSource
       id: nodeId,
       parent_id: value.parent_id == null || value.parent_id === '' ? null : id(value.parent_id, `${path}.parent_id`, audit),
       type,
-      title: text(value.title, `${path}.title`, audit, 300),
+      title: text(value.title, `${path}.title`, audit, 1600),
       description: text(value.description, `${path}.description`, audit, 1200, { optional: true }),
       order: Number.isInteger(order) ? order : index,
       confidence: confidence(value.confidence, `${path}.confidence`, audit),
@@ -425,7 +451,7 @@ export async function validateAssistedCoursePackage(rawPackage, { uploadedSource
       const value = object(entryQuestion, questionPath, audit);
       exact(value, [
         'id', 'subtopic_id', 'microknowledge_ids', 'statement', 'options', 'correct_answer',
-        'explanation', 'difficulty', 'source', 'is_trick', 'traces',
+        'explanation', 'difficulty', 'format', 'source', 'is_trick', 'traces',
       ], questionPath, audit);
       const questionId = id(value.id, `${questionPath}.id`, audit);
       if (questionIds.has(questionId)) audit.error('QUESTION_ID_DUPLICATE', `${questionPath}.id`, 'ID de questão duplicado.');
@@ -471,6 +497,7 @@ export async function validateAssistedCoursePackage(rawPackage, { uploadedSource
         correct_answer: normalizeAnswer(value.correct_answer, options, `${questionPath}.correct_answer`, audit),
         explanation: text(value.explanation, `${questionPath}.explanation`, audit, 20_000),
         difficulty: text(value.difficulty, `${questionPath}.difficulty`, audit, 40, { optional: true }),
+        format: text(value.format, `${questionPath}.format`, audit, 60, { optional: true }),
         source: value.source ?? null,
         is_trick: Boolean(value.is_trick),
         traces,
@@ -537,6 +564,18 @@ export async function validateAssistedCoursePackage(rawPackage, { uploadedSource
   if (root.metadata != null && (!root.metadata || typeof root.metadata !== 'object' || Array.isArray(root.metadata))) {
     audit.error('METADATA_INVALID', 'package.metadata', 'Metadados devem formar um objeto JSON.');
   }
+  const missingTraceRecords = [
+    ...nodes.flatMap(({ traces }) => traces),
+    ...microknowledges.flatMap(({ traces }) => traces),
+    ...editalMap.flatMap(({ traces }) => traces),
+    ...questionRows.flatMap(({ traces }) => traces),
+  ].filter(({ trace_status: status }) => status === 'missing').length;
+  counts.missing_trace_records = missingTraceRecords;
+  if (missingTraceRecords) audit.warn(
+    'TRACEABILITY_MISSING_DECLARED',
+    'package',
+    `${missingTraceRecords} vínculo(s) preservado(s) com rastreabilidade ausente explicitamente declarada.`,
+  );
   const packageHash = await sha256(stableJson(normalized));
   return {
     valid: audit.errors.length === 0,

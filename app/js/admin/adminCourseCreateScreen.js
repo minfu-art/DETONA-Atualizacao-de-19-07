@@ -4,6 +4,7 @@ import {
   COURSE_FACTORY_SOURCE_CATEGORIES,
 } from '../services/adminCourseFactoryService.js';
 import { escapeHtml } from '../ui/helpers.js';
+import { courseFactoryStudentPreviewUrl } from '../services/courseFactoryPreviewService.js';
 
 const STATUS_LABELS = Object.freeze({
   sources: 'FONTES', analyzing: 'LEGADO V2', proposed: 'LEGADO V2', analysis_failed: 'LEGADO V2',
@@ -23,8 +24,9 @@ function traceList(traces = []) {
   if (!traces.length) return '<span class="admin-trace admin-trace--human">Sem rastreabilidade</span>';
   return `<ul class="admin-trace-list">${traces.map((trace) => `<li>
     <strong>${escapeHtml(trace.source_type === 'official_edital' ? 'EDITAL OFICIAL' : 'MATERIAL COMPLEMENTAR')}</strong>
-    <span>${escapeHtml(trace.source_name || trace.source_id)} · página ${Number(trace.page_number)}</span>
-    <q>${escapeHtml(trace.excerpt)}</q>
+    <span>${escapeHtml(trace.source_name || trace.source_id)} · ${trace.trace_status === 'missing' ? 'RASTREABILIDADE AUSENTE' : `página ${Number(trace.page_number)}`}</span>
+    ${trace.excerpt ? `<q>${escapeHtml(trace.excerpt)}</q>` : ''}${trace.location ? `<small>${escapeHtml(trace.location)}</small>` : ''}
+    ${trace.note ? `<p>${escapeHtml(trace.note)}</p>` : ''}
   </li>`).join('')}</ul>`;
 }
 
@@ -215,7 +217,6 @@ export async function renderAdminCourseCreateScreen(root, ctx, { draftId = null,
   let validationReport = null;
   let busy = false;
   let feedback = '';
-  let studentMode = false;
 
   const setEnvelope = (next) => {
     envelope = next;
@@ -235,8 +236,8 @@ export async function renderAdminCourseCreateScreen(root, ctx, { draftId = null,
       ${feedback ? `<div class="${feedback.startsWith('Erro:') ? 'admin-alert' : 'admin-prepared'}" role="status">${escapeHtml(feedback)}</div>` : ''}
       ${renderSources(draft, sources, busy)}
       ${renderPackagePanel(draft, pendingPackage, validationReport, busy)}
-      ${imported ? `<div class="admin-form__actions"><button type="button" class="admin-button admin-button--secondary" id="factory-student-preview">${studentMode ? 'VOLTAR À ADM' : 'VER COMO ALUNO'}</button></div>
-        ${studentMode ? renderStudentPreview(draft, questionSamples) : renderIdentity(draft) + renderCurriculum(draft) + renderMap(draft) + renderQuestions(draft, questionSamples) + renderCoverage(draft) + renderAudit(auditEvents) + renderApproval(draft)}` : '<section class="admin-panel admin-empty"><h2>Aguardando pacote válido</h2><p>Os dados do curso só serão persistidos após validação server-side sem erros.</p></section>'}`;
+      ${imported ? `<div class="admin-form__actions"><a class="admin-button admin-button--secondary" href="${courseFactoryStudentPreviewUrl({ contestId: draft.identity.contest_id, draftId: draft.id })}">VER COMO ALUNO</a></div>
+        ${renderIdentity(draft) + renderCurriculum(draft) + renderMap(draft) + renderQuestions(draft, questionSamples) + renderCoverage(draft) + renderAudit(auditEvents) + renderApproval(draft)}` : '<section class="admin-panel admin-empty"><h2>Aguardando pacote válido</h2><p>Os dados do curso só serão persistidos após validação server-side sem erros.</p></section>'}`;
     bind();
   };
 
@@ -283,7 +284,6 @@ export async function renderAdminCourseCreateScreen(root, ctx, { draftId = null,
       validationReport = draft.validation_report; feedback = 'Pacote importado e auditado. Nenhum conteúdo foi publicado.';
       globalThis.__DETONA_ADMIN?.markSaved?.();
     }));
-    root.querySelector('#factory-student-preview')?.addEventListener('click', () => { studentMode = !studentMode; draw(); });
     root.querySelector('#factory-approve')?.addEventListener('click', () => {
       if (!globalThis.confirm?.('Aprovar este Mapa do Edital? Isso não publica o curso nem as questões.')) return;
       run('Aprovando mapa…', async () => {

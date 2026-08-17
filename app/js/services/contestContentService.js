@@ -2,7 +2,6 @@ import { getSupabaseClient } from '../supabase/client.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
 import {
   isCourseFactoryStudentPreview,
-  PC_BA_CONTEST_ID,
   courseFactoryPreviewService,
 } from './courseFactoryPreviewService.js';
 
@@ -36,7 +35,7 @@ export class ContestContentService {
   }
 
   async load(userId, contestId) {
-    if (contestId === PC_BA_CONTEST_ID && isCourseFactoryStudentPreview()) {
+    if (isCourseFactoryStudentPreview()) {
       return courseFactoryPreviewService.loadRuntimePackage(contestId);
     }
     const client = await this.getClient();

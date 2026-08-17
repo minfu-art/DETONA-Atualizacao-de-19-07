@@ -2,6 +2,7 @@ export const PC_BA_CONTEST_ID = 'pc_ba_2026';
 export const PC_BA_POSITION_ID = 'pc_ba_2026_investigador_policia_civil';
 export const PC_BA_OFFERING_ID = 'pc_ba_2026_investigador';
 export const COURSE_FACTORY_PREVIEW_PARAM = 'coursePreview';
+export const COURSE_FACTORY_DRAFT_PARAM = 'courseDraft';
 
 const DATA_VERSION = '758aa86295c6';
 const MANIFEST_URL = `data/course-factory/pc-ba-2026-investigador-manifest.json?v=${DATA_VERSION}`;
@@ -37,15 +38,22 @@ export const PC_BA_ADMIN_CONTEST = Object.freeze({
 export function requestedCoursePreview(search = globalThis.location?.search || '') {
   const params = search instanceof URLSearchParams ? search : new URLSearchParams(String(search || ''));
   const contestId = String(params.get(COURSE_FACTORY_PREVIEW_PARAM) || '').trim();
-  return contestId === PC_BA_CONTEST_ID ? contestId : null;
+  return /^[A-Za-z0-9][A-Za-z0-9_-]{0,159}$/.test(contestId) ? contestId : null;
+}
+
+export function requestedCourseDraft(search = globalThis.location?.search || '') {
+  const params = search instanceof URLSearchParams ? search : new URLSearchParams(String(search || ''));
+  const draftId = String(params.get(COURSE_FACTORY_DRAFT_PARAM) || '').trim();
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(draftId) ? draftId : null;
 }
 
 export function isCourseFactoryStudentPreview(search) {
-  return requestedCoursePreview(search) === PC_BA_CONTEST_ID;
+  return Boolean(requestedCoursePreview(search));
 }
 
-export function courseFactoryStudentPreviewUrl({ screen = 'home' } = {}) {
-  const params = new URLSearchParams({ [COURSE_FACTORY_PREVIEW_PARAM]: PC_BA_CONTEST_ID });
+export function courseFactoryStudentPreviewUrl({ contestId = PC_BA_CONTEST_ID, draftId = null, screen = 'home' } = {}) {
+  const params = new URLSearchParams({ [COURSE_FACTORY_PREVIEW_PARAM]: contestId });
+  if (draftId) params.set(COURSE_FACTORY_DRAFT_PARAM, draftId);
   if (screen && screen !== 'home') params.set('screen', screen);
   return `index.html?${params}`;
 }
@@ -62,6 +70,7 @@ export class CourseFactoryPreviewService {
     this.fetchImpl = fetchImpl;
     this.manifestPromise = null;
     this.runtimePromise = null;
+    this.draftRuntimePromises = new Map();
   }
 
   async loadManifest() {
@@ -70,6 +79,24 @@ export class CourseFactoryPreviewService {
   }
 
   async loadRuntimePackage(contestId) {
+    const draftId = requestedCourseDraft();
+    if (draftId) {
+      if (!this.draftRuntimePromises.has(draftId)) this.draftRuntimePromises.set(draftId, (async () => {
+        const { getSupabaseClient } = await import('../supabase/client.js');
+        const client = await getSupabaseClient();
+        if (!client) throw new Error('Backend da Course Factory indisponível.');
+        const { data, error } = await client.functions.invoke('course-factory-assisted', {
+          body: { action: 'get_preview_package', draftId },
+        });
+        if (error || data?.error) throw new Error(data?.error || error?.message || 'Prévia do curso indisponível.');
+        return data.package;
+      })());
+      const runtime = await this.draftRuntimePromises.get(draftId);
+      if (runtime?.contestId !== contestId || runtime.previewOnly !== true || runtime.publicationBlocked !== true) {
+        throw new Error('Pacote genérico de homologação inválido.');
+      }
+      return structuredClone(runtime);
+    }
     if (contestId !== PC_BA_CONTEST_ID) throw new Error('Curso de homologação desconhecido.');
     this.runtimePromise ||= fetchJson(RUNTIME_URL, this.fetchImpl);
     const runtime = await this.runtimePromise;
@@ -77,6 +104,25 @@ export class CourseFactoryPreviewService {
       throw new Error('Pacote de homologação inválido.');
     }
     return structuredClone(runtime);
+  }
+
+  async loadStudentContest(contestId) {
+    const runtime = await this.loadRuntimePackage(contestId);
+    const disciplines = runtime.curriculum.filter(({ type }) => type === 'discipline').length;
+    const subtopics = runtime.curriculum.filter(({ type }) => type === 'subtopic').length;
+    return {
+      id: contestId,
+      code: runtime.metadata?.code || contestId,
+      name: runtime.metadata?.name || contestId,
+      role: runtime.metadata?.role || '',
+      description: runtime.metadata?.description || 'Curso em homologação na Course Factory.',
+      color: '#24104f', accent: '#37d6ff', icon: runtime.metadata?.icon || 'DT',
+      priceCents: 0, currency: 'BRL', contentStatus: 'ready', salesStatus: 'unavailable',
+      examDate: runtime.metadata?.exam_date || null,
+      careerArea: 'course_factory_preview', careerSubarea: 'assisted',
+      disciplineCount: disciplines, subtopicCount: subtopics, questionCount: runtime.questions.length,
+      previewOnly: true,
+    };
   }
 
   studentContest() {

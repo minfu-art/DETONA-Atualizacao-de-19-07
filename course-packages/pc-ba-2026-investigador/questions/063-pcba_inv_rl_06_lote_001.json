@@ -1,0 +1,1005 @@
+{
+  "name": "pcba_inv_rl_06_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_06_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5d7dc113f76edb"
+      ],
+      "statement": "O princípio fundamental da contagem estabelece que, se uma tarefa sucessiva possui m opções na primeira etapa e n na segunda, o total de realizações é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "m+n-1 possibilidades."
+        },
+        {
+          "label": "B",
+          "text": "m-n possibilidades."
+        },
+        {
+          "label": "C",
+          "text": "m/n possibilidades."
+        },
+        {
+          "label": "D",
+          "text": "m+n possibilidades."
+        },
+        {
+          "label": "E",
+          "text": "m vezes n possibilidades."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Etapas sucessivas ligadas por “e” têm suas quantidades multiplicadas.\n\nAnálise da resposta: Correta: para cada uma das m opções existem n continuações possíveis.\n\nA: Incorreta: não há motivo para subtrair uma unidade.\n\nB: Incorreta: subtração não combina escolhas sucessivas.\n\nC: Incorreta: divisão não conta pares de escolhas.\n\nD: Incorreta: a soma é usada em alternativas mutuamente excludentes.\n\nE: Correta: para cada uma das m opções existem n continuações possíveis.\n\nArmadilha: Somar quantidades de etapas que precisam ocorrer conjuntamente.\n\nConhecimento adicional: O princípio pode ser estendido a qualquer número finito de etapas.\n\nAprendizado essencial: Separe a tarefa em etapas e multiplique as opções disponíveis em cada uma.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-7",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5d7dc113f76edb"
+      ],
+      "statement": "Uma pessoa dispõe de 3 camisas, 4 calças e 2 pares de sapatos. Escolhendo uma peça de cada tipo, pode formar\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "18 combinações."
+        },
+        {
+          "label": "B",
+          "text": "24 combinações."
+        },
+        {
+          "label": "C",
+          "text": "12 combinações."
+        },
+        {
+          "label": "D",
+          "text": "9 combinações."
+        },
+        {
+          "label": "E",
+          "text": "48 combinações."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Cada escolha de camisa pode ser combinada com qualquer calça e qualquer par de sapatos.\n\nAnálise da resposta: Correta: 3·4·2=24 escolhas completas.\n\nA: Incorreta: resulta de soma ou produto incompleto.\n\nB: Correta: 3·4·2=24 escolhas completas.\n\nC: Incorreta: considera apenas camisas e calças.\n\nD: Incorreta: soma as opções em vez de combinar etapas.\n\nE: Incorreta: dobra indevidamente o produto correto.\n\nArmadilha: Somar as quantidades por pensar que se escolhe apenas um item no total.\n\nConhecimento adicional: A independência entre as categorias permite o produto direto.\n\nAprendizado essencial: Use uma etapa para cada categoria obrigatória.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-7",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5d7dc113f76edb"
+      ],
+      "statement": "Uma senha tem duas letras seguidas de três algarismos. Admitindo repetição, 26 letras e 10 algarismos, existem\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "67.600 senhas."
+        },
+        {
+          "label": "B",
+          "text": "175.760 senhas."
+        },
+        {
+          "label": "C",
+          "text": "260.000 senhas."
+        },
+        {
+          "label": "D",
+          "text": "676.000 senhas."
+        },
+        {
+          "label": "E",
+          "text": "1.757.600 senhas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Com repetição, cada posição mantém o número completo de opções de seu alfabeto.\n\nAnálise da resposta: Correta: 26·26·10·10·10=676.000.\n\nA: Incorreta: omite uma das posições numéricas.\n\nB: Incorreta: aplica restrições que não foram dadas.\n\nC: Incorreta: usa uma única escolha de letra efetiva.\n\nD: Correta: 26·26·10·10·10=676.000.\n\nE: Incorreta: combina fatores incompatíveis com as cinco posições.\n\nArmadilha: Reduzir as opções após cada escolha mesmo quando a repetição foi permitida.\n\nConhecimento adicional: A ordem das posições já está incorporada no produto por etapas.\n\nAprendizado essencial: Escreva um fator para cada posição da senha.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-17",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_df6e974205c8ce"
+      ],
+      "statement": "O princípio aditivo é apropriado quando se contam possibilidades que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "pertencem a alternativas mutuamente excludentes."
+        },
+        {
+          "label": "B",
+          "text": "devem acontecer todas em sequência."
+        },
+        {
+          "label": "C",
+          "text": "exigem ordenar todos os elementos."
+        },
+        {
+          "label": "D",
+          "text": "possuem repetição obrigatória."
+        },
+        {
+          "label": "E",
+          "text": "formam sempre pares ordenados."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Alternativas ligadas por “ou”, sem sobreposição, têm suas contagens somadas.\n\nAnálise da resposta: Correta: quando apenas uma entre categorias disjuntas ocorre, somam-se suas quantidades.\n\nA: Correta: quando apenas uma entre categorias disjuntas ocorre, somam-se suas quantidades.\n\nB: Incorreta: etapas sucessivas pedem produto.\n\nC: Incorreta: ordenação é tratada por permutações ou arranjos.\n\nD: Incorreta: repetição, isoladamente, não define o princípio aditivo.\n\nE: Incorreta: pares ordenados normalmente resultam de escolhas sucessivas.\n\nArmadilha: Aplicar soma quando o resultado precisa conter uma escolha de cada grupo.\n\nConhecimento adicional: Se houver sobreposição, deve-se corrigir a soma para não contar casos duas vezes.\n\nAprendizado essencial: Verifique se as categorias são alternativas e disjuntas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_df6e974205c8ce"
+      ],
+      "statement": "Para viajar a uma cidade, há 5 horários de ônibus ou 3 horários de trem, sem viagem combinada. O número de opções é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "5."
+        },
+        {
+          "label": "B",
+          "text": "15."
+        },
+        {
+          "label": "C",
+          "text": "8."
+        },
+        {
+          "label": "D",
+          "text": "2."
+        },
+        {
+          "label": "E",
+          "text": "30."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A pessoa escolhe ônibus ou trem, e não um horário de cada modal.\n\nAnálise da resposta: Correta: 5+3=8 opções mutuamente excludentes.\n\nA: Incorreta: ignora os horários de trem.\n\nB: Incorreta: multiplica alternativas que não serão usadas conjuntamente.\n\nC: Correta: 5+3=8 opções mutuamente excludentes.\n\nD: Incorreta: calcula apenas a diferença entre as categorias.\n\nE: Incorreta: acrescenta um fator sem significado.\n\nArmadilha: Interpretar “ou” como “e” e multiplicar cinco por três.\n\nConhecimento adicional: O resultado aditivo pressupõe que cada horário pertença a uma única categoria.\n\nAprendizado essencial: Some quando apenas um dos caminhos será escolhido.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_df6e974205c8ce"
+      ],
+      "statement": "Uma lanchonete oferece 7 salgados, 4 bolos e 3 tapiocas. Para escolher apenas um alimento, há\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "84 opções."
+        },
+        {
+          "label": "B",
+          "text": "28 opções."
+        },
+        {
+          "label": "C",
+          "text": "21 opções."
+        },
+        {
+          "label": "D",
+          "text": "12 opções."
+        },
+        {
+          "label": "E",
+          "text": "14 opções."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Escolher um único item entre categorias distintas requer soma das opções.\n\nAnálise da resposta: Correta: 7+4+3=14 alimentos possíveis.\n\nA: Incorreta: multiplica as três categorias como se fossem escolhidas simultaneamente.\n\nB: Incorreta: combina apenas duas categorias.\n\nC: Incorreta: usa um produto parcial.\n\nD: Incorreta: omite duas opções do total.\n\nE: Correta: 7+4+3=14 alimentos possíveis.\n\nArmadilha: Multiplicar porque existem três listas, embora somente uma escolha seja feita.\n\nConhecimento adicional: Se a escolha fosse um alimento e uma bebida, haveria soma dentro das categorias e produto entre etapas.\n\nAprendizado essencial: Traduza com precisão quantos itens serão escolhidos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 7-12",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 7-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6895bfc45b31c1"
+      ],
+      "statement": "O princípio multiplicativo deve ser aplicado quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "se escolhe somente uma entre categorias excludentes."
+        },
+        {
+          "label": "B",
+          "text": "a realização completa exige uma escolha em cada etapa sucessiva."
+        },
+        {
+          "label": "C",
+          "text": "a ordem é sempre irrelevante."
+        },
+        {
+          "label": "D",
+          "text": "todos os casos se sobrepõem."
+        },
+        {
+          "label": "E",
+          "text": "há apenas uma possibilidade total."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O produto combina todas as escolhas necessárias para formar um resultado completo.\n\nAnálise da resposta: Correta: as opções de cada etapa combinam-se com as das demais.\n\nA: Incorreta: essa situação é aditiva quando as categorias são disjuntas.\n\nB: Correta: as opções de cada etapa combinam-se com as das demais.\n\nC: Incorreta: relevância da ordem depende do problema, não do princípio isolado.\n\nD: Incorreta: sobreposição exige análise adicional.\n\nE: Incorreta: o princípio também se aplica a quantidades maiores.\n\nArmadilha: Decidir pelo produto apenas porque aparecem números grandes.\n\nConhecimento adicional: A regra vale mesmo quando a quantidade de opções muda conforme escolhas anteriores.\n\nAprendizado essencial: Construa uma árvore mental de etapas sucessivas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-12",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6895bfc45b31c1"
+      ],
+      "statement": "Um almoço é formado por 1 de 4 pratos, 1 de 3 bebidas e 1 de 2 sobremesas. Existem\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "9 almoços."
+        },
+        {
+          "label": "B",
+          "text": "12 almoços."
+        },
+        {
+          "label": "C",
+          "text": "18 almoços."
+        },
+        {
+          "label": "D",
+          "text": "24 almoços."
+        },
+        {
+          "label": "E",
+          "text": "48 almoços."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Cada almoço reúne simultaneamente uma escolha de cada categoria.\n\nAnálise da resposta: Correta: 4·3·2=24 almoços distintos.\n\nA: Incorreta: soma as opções das três etapas.\n\nB: Incorreta: combina apenas prato e bebida.\n\nC: Incorreta: usa um produto incompleto.\n\nD: Correta: 4·3·2=24 almoços distintos.\n\nE: Incorreta: duplica o produto sem nova escolha.\n\nArmadilha: Somar quatro, três e dois por confundir categorias obrigatórias com alternativas.\n\nConhecimento adicional: O método também funciona quando categorias possuem quantidades diferentes.\n\nAprendizado essencial: Multiplique porque todas as etapas aparecem no resultado.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-12",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6895bfc45b31c1"
+      ],
+      "statement": "Com cinco algarismos distintos, quantos números de três algarismos sem repetição podem ser formados, admitindo que nenhum deles seja zero?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "60."
+        },
+        {
+          "label": "B",
+          "text": "125."
+        },
+        {
+          "label": "C",
+          "text": "20."
+        },
+        {
+          "label": "D",
+          "text": "15."
+        },
+        {
+          "label": "E",
+          "text": "10."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Sem repetição, o número de opções diminui após cada escolha.\n\nAnálise da resposta: Correta: há 5 opções na primeira posição, 4 na segunda e 3 na terceira: 60.\n\nA: Correta: há 5 opções na primeira posição, 4 na segunda e 3 na terceira: 60.\n\nB: Incorreta: 5³ permitiria repetição.\n\nC: Incorreta: conta somente duas posições.\n\nD: Incorreta: combina três elementos sem considerar a ordem.\n\nE: Incorreta: corresponde à escolha não ordenada de dois elementos.\n\nArmadilha: Manter cinco opções em todas as posições apesar da proibição de repetir.\n\nConhecimento adicional: Como os algarismos são todos não nulos, não há restrição adicional na primeira posição.\n\nAprendizado essencial: Atualize o número de escolhas disponíveis em cada etapa.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 4-17",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 4-17",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99cf8d9ce063b0"
+      ],
+      "statement": "O número de permutações simples de n elementos distintos é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O quadrado n²."
+        },
+        {
+          "label": "B",
+          "text": "O dobro 2n."
+        },
+        {
+          "label": "C",
+          "text": "O fatorial n!."
+        },
+        {
+          "label": "D",
+          "text": "A expressão n(n−1)/2."
+        },
+        {
+          "label": "E",
+          "text": "A diferença n−1."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Permutação simples ordena todos os elementos distintos disponíveis.\n\nAnálise da resposta: Correta: n!=n·(n−1)·...·1.\n\nA: Incorreta: o quadrado não conta todas as ordens possíveis.\n\nB: Incorreta: dobrar n não representa escolhas sucessivas.\n\nC: Correta: n!=n·(n−1)·...·1.\n\nD: Incorreta: essa expressão conta pares não ordenados.\n\nE: Incorreta: há muito mais ordens que n−1 em geral.\n\nArmadilha: Confundir permutação com escolha de apenas dois elementos.\n\nConhecimento adicional: Por convenção, 0!=1 e 1!=1.\n\nAprendizado essencial: Use n! quando todos os n elementos distintos serão ordenados.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 18-25",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 18-25",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99cf8d9ce063b0"
+      ],
+      "statement": "Cinco livros distintos podem ser organizados em uma prateleira de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "25 maneiras."
+        },
+        {
+          "label": "B",
+          "text": "60 maneiras."
+        },
+        {
+          "label": "C",
+          "text": "100 maneiras."
+        },
+        {
+          "label": "D",
+          "text": "240 maneiras."
+        },
+        {
+          "label": "E",
+          "text": "120 maneiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Cada posição da prateleira recebe um dos livros restantes.\n\nAnálise da resposta: Correta: 5!=5·4·3·2·1=120.\n\nA: Incorreta: calcula apenas 5².\n\nB: Incorreta: corresponde a metade das ordens.\n\nC: Incorreta: não decorre do produto decrescente.\n\nD: Incorreta: duplica o fatorial correto.\n\nE: Correta: 5!=5·4·3·2·1=120.\n\nArmadilha: Usar uma potência e permitir que o mesmo livro ocupe mais de uma posição.\n\nConhecimento adicional: Ordenar todos os itens distintos é o cenário clássico de permutação simples.\n\nAprendizado essencial: Calcule o fatorial do número de objetos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 18-25",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 18-25",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_99cf8d9ce063b0"
+      ],
+      "statement": "O número de anagramas distintos da palavra ARARA é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "120."
+        },
+        {
+          "label": "B",
+          "text": "10."
+        },
+        {
+          "label": "C",
+          "text": "20."
+        },
+        {
+          "label": "D",
+          "text": "30."
+        },
+        {
+          "label": "E",
+          "text": "60."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Permutações com elementos repetidos devem dividir pelas permutações internas de cada grupo idêntico.\n\nAnálise da resposta: Correta: 5!/(3!·2!)=10.\n\nA: Incorreta: 5! conta como diferentes as trocas entre letras iguais.\n\nB: Correta: 5!/(3!·2!)=10.\n\nC: Incorreta: divide o fatorial por apenas uma das repetições.\n\nD: Incorreta: não corrige corretamente as três letras A e duas letras R.\n\nE: Incorreta: considera somente uma das repetições.\n\nArmadilha: Aplicar 5! como se todas as letras fossem distinguíveis.\n\nConhecimento adicional: A soma das multiplicidades três e dois coincide com as cinco posições.\n\nAprendizado essencial: Identifique todas as repetições antes de usar o fatorial.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 23-40",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 23-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5536613728d820"
+      ],
+      "statement": "Um arranjo simples de n elementos tomados k a k é adequado quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum elemento é escolhido."
+        },
+        {
+          "label": "B",
+          "text": "todos os elementos são sempre usados."
+        },
+        {
+          "label": "C",
+          "text": "a ordem nunca altera o resultado."
+        },
+        {
+          "label": "D",
+          "text": "são escolhidos k elementos e a ordem entre eles importa."
+        },
+        {
+          "label": "E",
+          "text": "somente a quantidade escolhida importa."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Arranjo seleciona parte dos elementos e considera diferentes as ordens.\n\nAnálise da resposta: Correta: arranjos distinguem seleções pela identidade e pela posição.\n\nA: Incorreta: o arranjo envolve seleção efetiva de elementos.\n\nB: Incorreta: quando todos são usados, o caso se reduz a permutação.\n\nC: Incorreta: ordem irrelevante caracteriza combinação.\n\nD: Correta: arranjos distinguem seleções pela identidade e pela posição.\n\nE: Incorreta: essa descrição corresponde a combinação.\n\nArmadilha: Usar combinação em situações com cargos, posições ou classificação.\n\nConhecimento adicional: Sua fórmula é n!/(n−k)! para elementos distintos e sem repetição.\n\nAprendizado essencial: Pergunte se trocar a ordem cria outro resultado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 41-48",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 41-48",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5536613728d820"
+      ],
+      "statement": "Em uma corrida com 8 atletas, o pódio de ouro, prata e bronze pode ser formado de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "336 maneiras."
+        },
+        {
+          "label": "B",
+          "text": "56 maneiras."
+        },
+        {
+          "label": "C",
+          "text": "24 maneiras."
+        },
+        {
+          "label": "D",
+          "text": "512 maneiras."
+        },
+        {
+          "label": "E",
+          "text": "720 maneiras."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Cargos ou posições distintas tornam a ordem relevante.\n\nAnálise da resposta: Correta: 8·7·6=336, pois as três posições são distintas.\n\nA: Correta: 8·7·6=336, pois as três posições são distintas.\n\nB: Incorreta: 56 escolheria três atletas sem atribuir medalhas.\n\nC: Incorreta: 4! não tem relação com os oito competidores.\n\nD: Incorreta: 8³ permitiria repetição do mesmo atleta.\n\nE: Incorreta: 6! não representa o arranjo solicitado.\n\nArmadilha: Calcular C(8,3) e esquecer que o mesmo trio admite seis distribuições de medalhas.\n\nConhecimento adicional: O resultado também é A(8,3)=8!/(8−3)!.\n\nAprendizado essencial: Associe um fator decrescente a cada posição do pódio.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 41-48",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 41-48",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5536613728d820"
+      ],
+      "statement": "Entre 6 pessoas serão escolhidos um presidente e um secretário. O número de escolhas é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "12."
+        },
+        {
+          "label": "B",
+          "text": "15."
+        },
+        {
+          "label": "C",
+          "text": "30."
+        },
+        {
+          "label": "D",
+          "text": "36."
+        },
+        {
+          "label": "E",
+          "text": "60."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Escolher pessoas para funções diferentes é uma seleção ordenada.\n\nAnálise da resposta: Correta: 6 opções para presidente e 5 para secretário, totalizando 30.\n\nA: Incorreta: usa apenas o dobro do número de pessoas.\n\nB: Incorreta: C(6,2) ignora a distinção entre os cargos.\n\nC: Correta: 6 opções para presidente e 5 para secretário, totalizando 30.\n\nD: Incorreta: 6² permitiria a mesma pessoa nos dois cargos.\n\nE: Incorreta: duplica a quantidade correta.\n\nArmadilha: Tratar presidente e secretário como membros equivalentes de uma comissão.\n\nConhecimento adicional: Cada dupla não ordenada gera duas designações possíveis de cargos.\n\nAprendizado essencial: Se os papéis têm nomes diferentes, a ordem importa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 41-48",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 41-48",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_986fe2f4baffb9"
+      ],
+      "statement": "A combinação simples é usada quando se escolhem k elementos entre n e\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todos precisam ocupar posições distintas."
+        },
+        {
+          "label": "B",
+          "text": "a repetição é sempre obrigatória."
+        },
+        {
+          "label": "C",
+          "text": "a ordem define resultados diferentes."
+        },
+        {
+          "label": "D",
+          "text": "todos os n elementos são ordenados."
+        },
+        {
+          "label": "E",
+          "text": "a ordem dos escolhidos não altera o grupo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Combinações contam subconjuntos, e não listas ordenadas.\n\nAnálise da resposta: Correta: grupos com os mesmos membros são iguais independentemente da ordem.\n\nA: Incorreta: posições distintas tornam a ordem relevante.\n\nB: Incorreta: combinação simples é feita sem repetição.\n\nC: Incorreta: essa é a característica de um arranjo.\n\nD: Incorreta: ordenar todos os elementos é permutação.\n\nE: Correta: grupos com os mesmos membros são iguais independentemente da ordem.\n\nArmadilha: Escolher combinação somente porque a palavra “escolher” aparece no enunciado.\n\nConhecimento adicional: A fórmula é C(n,k)=n!/[k!(n−k)!].\n\nAprendizado essencial: Teste se trocar dois escolhidos produz realmente outro resultado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 48-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 48-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_986fe2f4baffb9"
+      ],
+      "statement": "De um grupo de 6 policiais, serão escolhidos 2 para um treinamento sem funções distintas. Existem\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "12 pares."
+        },
+        {
+          "label": "B",
+          "text": "15 pares."
+        },
+        {
+          "label": "C",
+          "text": "20 pares."
+        },
+        {
+          "label": "D",
+          "text": "24 pares."
+        },
+        {
+          "label": "E",
+          "text": "30 pares."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Sem funções diferentes, o par {A,B} é o mesmo que {B,A}.\n\nAnálise da resposta: Correta: C(6,2)=6·5/2=15.\n\nA: Incorreta: não corresponde a C(6,2).\n\nB: Correta: C(6,2)=6·5/2=15.\n\nC: Incorreta: é C(6,3), quantidade de trios.\n\nD: Incorreta: usa um produto inadequado.\n\nE: Incorreta: 6·5 conta cada par nas duas ordens.\n\nArmadilha: Usar arranjo e contar cada dupla duas vezes.\n\nConhecimento adicional: A divisão por 2! remove as duas ordens internas de cada par.\n\nAprendizado essencial: Elimine duplicações causadas pela ordem irrelevante.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 48-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 48-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_986fe2f4baffb9"
+      ],
+      "statement": "Uma comissão de 3 pessoas será escolhida entre 8 candidatos. O total de comissões é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "24."
+        },
+        {
+          "label": "B",
+          "text": "48."
+        },
+        {
+          "label": "C",
+          "text": "336."
+        },
+        {
+          "label": "D",
+          "text": "56."
+        },
+        {
+          "label": "E",
+          "text": "512."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Membros de uma comissão sem cargos formam grupo não ordenado.\n\nAnálise da resposta: Correta: C(8,3)=8·7·6/(3·2·1)=56.\n\nA: Incorreta: 4! não considera os oito candidatos.\n\nB: Incorreta: não corresponde à escolha de três entre oito.\n\nC: Incorreta: A(8,3) conta seis ordens para cada comissão.\n\nD: Correta: C(8,3)=8·7·6/(3·2·1)=56.\n\nE: Incorreta: 8³ permitiria repetição e ordem.\n\nArmadilha: Aplicar arranjo porque três pessoas serão selecionadas em etapas.\n\nConhecimento adicional: Cada trio apareceria 3!=6 vezes em uma contagem ordenada.\n\nAprendizado essencial: Divida o arranjo pelas ordens internas quando os cargos não existirem.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 48-55",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 48-55",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ab1f988c84424a"
+      ],
+      "statement": "Ao contar filas em que três pessoas específicas devem permanecer juntas, uma estratégia válida é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "tratar o trio como um bloco e depois considerar as ordens internas permitidas."
+        },
+        {
+          "label": "B",
+          "text": "excluir definitivamente as três pessoas da fila."
+        },
+        {
+          "label": "C",
+          "text": "dividir sempre o total por três."
+        },
+        {
+          "label": "D",
+          "text": "somar três ao fatorial dos demais."
+        },
+        {
+          "label": "E",
+          "text": "fixar todas as pessoas em uma única ordem."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Restrições de adjacência podem ser modeladas agrupando elementos como uma unidade temporária.\n\nAnálise da resposta: Correta: o bloco reduz unidades externas e pode exigir multiplicação pelas ordens internas.\n\nA: Correta: o bloco reduz unidades externas e pode exigir multiplicação pelas ordens internas.\n\nB: Incorreta: as pessoas continuam participando da fila.\n\nC: Incorreta: a correção depende da estrutura, não de uma divisão fixa por três.\n\nD: Incorreta: somar ao fatorial não modela posições.\n\nE: Incorreta: ainda há diversas ordenações possíveis.\n\nArmadilha: Criar o bloco e esquecer que seus integrantes também podem permutar entre si.\n\nConhecimento adicional: Se a ordem interna estiver previamente fixada, não se multiplica pelo fatorial do bloco.\n\nAprendizado essencial: Separe ordenação externa da ordenação interna.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 26-45",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 26-45",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_06_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_6_principios_de_contagem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ab1f988c84424a"
+      ],
+      "statement": "Cinco pessoas distintas formam uma fila. Se Ana e Bia devem ficar juntas, existem\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "24 filas."
+        },
+        {
+          "label": "B",
+          "text": "36 filas."
+        },
+        {
+          "label": "C",
+          "text": "48 filas."
+        },
+        {
+          "label": "D",
+          "text": "60 filas."
+        },
+        {
+          "label": "E",
+          "text": "120 filas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A restrição de proximidade transforma o par em uma unidade para a ordenação externa.\n\nAnálise da resposta: Correta: o bloco AB e as outras três pessoas formam 4! ordens, multiplicadas por 2! dentro do bloco: 48.\n\nA: Incorreta: conta apenas a ordenação dos quatro blocos e ignora a ordem interna.\n\nB: Incorreta: não resulta do método do bloco.\n\nC: Correta: o bloco AB e as outras três pessoas formam 4! ordens, multiplicadas por 2! dentro do bloco: 48.\n\nD: Incorreta: inclui uma quantidade inadequada de casos.\n\nE: Incorreta: é o total sem qualquer restrição.\n\nArmadilha: Calcular somente 4! e esquecer as ordens AB e BA.\n\nConhecimento adicional: Metade das 120 filas não é automaticamente válida; o método do bloco fornece 48.\n\nAprendizado essencial: Conte blocos externos e permutações internas separadamente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "location": "páginas 26-45",
+          "used_for": "Fundamento teórico e conferência do método de contagem."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_22",
+          "trace_status": "missing",
+          "location": "páginas 26-45",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}
