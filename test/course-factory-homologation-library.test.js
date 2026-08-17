@@ -97,6 +97,23 @@ test('aluno comum não recebe overlay mesmo quando há curso homologável', asyn
   assert.deepEqual(state.items.map(({ contest }) => contest.id), ['pc_al_2026']);
 });
 
+test('developer vê curso publicado no Preview sem receber entitlement real', async () => {
+  const service = new LibraryService({
+    allowLocalGrants: () => false,
+    catalog: { list: async () => [PC_AL] },
+    entitlements: { listByUser: async () => [] },
+    checkout: { capability: () => ({ configured: false }) },
+    snapshots: { save: () => {}, read: () => null },
+    homologations: { canList: () => true, listForAdmin: async () => [] },
+  });
+  const [item] = (await service.getLibraryState(DEVELOPER)).items;
+  assert.equal(item.owned, true);
+  assert.equal(item.entitlement, null);
+  assert.equal(item.adminPreview, true);
+  assert.equal(item.contest.adminPreviewAccess, true);
+  assert.equal(item.contest.previewOnly, undefined);
+});
+
 test('card de homologação abre o pacote pelo draft sem endpoint publicado', async () => {
   const calls = [];
   const previewPackage = { contestId: 'detona_contract_test', previewOnly: true };
@@ -109,6 +126,19 @@ test('card de homologação abre o pacote pelo draft sem endpoint publicado', as
     previewDraftId: GENERIC_DRAFT.draftId,
   }), previewPackage);
   assert.deepEqual(calls, [['detona_contract_test', { draftId: GENERIC_DRAFT.draftId }]]);
+});
+
+test('PC AL publicado abre localmente no contexto administrativo sem entitlement', async () => {
+  const service = new ContestContentService({
+    getClient: async () => assert.fail('não deve consultar entitlement do aluno'),
+    previewRequested: () => false,
+  });
+  assert.deepEqual(await service.load('developer-1', 'pc_al_2026', { adminPreviewAccess: true }), {
+    legacyStatic: true,
+    contestId: 'pc_al_2026',
+    previewOnly: true,
+    adminPreviewAccess: true,
+  });
 });
 
 test('progresso previewOnly permanece local e conteúdo normal mantém nuvem', () => {

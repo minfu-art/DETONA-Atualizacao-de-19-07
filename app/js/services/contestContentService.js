@@ -38,9 +38,12 @@ export class ContestContentService {
     }));
   }
 
-  async load(userId, contestId, { previewDraftId = null } = {}) {
+  async load(userId, contestId, { previewDraftId = null, adminPreviewAccess = false } = {}) {
     if (previewDraftId) {
       return this.previewService.loadRuntimePackage(contestId, { draftId: previewDraftId });
+    }
+    if (adminPreviewAccess && contestId === 'pc_al_2026') {
+      return { legacyStatic: true, contestId, previewOnly: true, adminPreviewAccess: true };
     }
     if (this.previewRequested()) {
       return this.previewService.loadRuntimePackage(contestId);

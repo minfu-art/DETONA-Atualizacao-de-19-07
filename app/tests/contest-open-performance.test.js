@@ -54,7 +54,7 @@ test('restauracao automatica nao repete consulta de entitlement e catalogo', asy
 
 test('usuario com base local recebe a primeira tela antes da sincronizacao remota', async () => {
   const app = await source('../js/app.js');
-  assert.match(app, /const cloudSyncEnabled = isCloudEnabled\(\)[\s\S]*&& !isCourseFactoryStudentPreview\(\)[\s\S]*&& contentPackage\?\.previewOnly !== true/);
+  assert.match(app, /const cloudSyncEnabled = isCloudEnabled\(\)[\s\S]*&& !isCourseFactoryStudentPreview\(\)[\s\S]*&& loadedContent\?\.previewOnly !== true/);
   assert.match(app, /const syncInBackground = cloudSyncEnabled && Boolean\(localPlayer\)/);
   assert.match(app, /scheduleContestMaintenance\([\s\S]*syncInBackground/);
   assert.match(app, /requestIdleCallback/);

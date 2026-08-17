@@ -691,13 +691,15 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
       : libraryService.getContest(contestId, { refresh: true }),
     contestContentService.load(user.id, contestId, {
       previewDraftId: contestHint?.previewOnly === true ? contestHint.courseDraftId : null,
+      adminPreviewAccess: contestHint?.adminPreviewAccess === true,
     }),
   ]);
   assertCurrent();
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
-  if (contestHint?.previewOnly === true && contentPackage?.previewOnly !== true) {
+  if ((contestHint?.previewOnly === true || contestHint?.adminPreviewAccess === true)
+    && loadedContent?.previewOnly !== true) {
     throw new Error('Pacote de homologação inválido.');
   }
   if (contestChanged) {
@@ -706,7 +708,7 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   }
   setActiveContestId(contestId);
   resetHabitReminderRuntime(habitReminderScopeKey(user.id, contestId));
-  setActiveContestContent(contentPackage);
+  setActiveContestContent(loadedContent?.previewOnly === true ? loadedContent : contentPackage);
   ctx.contest = contest;
   ctx.contentPackage = contentPackage;
   document.getElementById('app')?.classList.remove('app-shell--library');
@@ -716,7 +718,7 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   const localPlayer = await getPlayer();
   const cloudSyncEnabled = isCloudEnabled()
     && !isCourseFactoryStudentPreview()
-    && contentPackage?.previewOnly !== true;
+    && loadedContent?.previewOnly !== true;
   const syncInBackground = cloudSyncEnabled && Boolean(localPlayer);
   // Dispositivo novo ainda bloqueia no primeiro pull para restaurar o progresso remoto.
   // Quem já possui base local abre imediatamente e sincroniza depois da primeira tela.

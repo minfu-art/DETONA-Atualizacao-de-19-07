@@ -59,9 +59,21 @@ export class LibraryService {
       this.snapshots?.save?.(user.id, baseItems);
       let items = baseItems;
       if (this.homologations?.canList?.(user)) {
+        const adminItems = baseItems.map((item) => {
+          if (item.owned || item.contest.contentStatus !== 'ready') return item;
+          const adminItem = {
+            ...item,
+            contest: { ...item.contest, adminPreviewAccess: true },
+            owned: true,
+            entitlement: null,
+            adminPreview: true,
+          };
+          return { ...adminItem, checkoutAction: checkoutActionFor(adminItem, capability) };
+        });
+        items = adminItems;
         try {
           const previewContests = await this.homologations.listForAdmin(user);
-          const byContestId = new Map(baseItems.map((item) => [item.contest.id, item]));
+          const byContestId = new Map(adminItems.map((item) => [item.contest.id, item]));
           for (const contest of previewContests) {
             if (byContestId.get(contest.id)?.owned) continue;
             const item = {
@@ -75,7 +87,7 @@ export class LibraryService {
           }
           items = [...byContestId.values()];
         } catch {
-          items = baseItems;
+          items = adminItems;
         }
       }
       return { items, offline: false, stale: false, checkout: capability };
