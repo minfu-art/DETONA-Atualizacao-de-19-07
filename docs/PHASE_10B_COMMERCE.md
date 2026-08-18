@@ -12,6 +12,8 @@ Segredos das Edge Functions:
 
 - `MERCADO_PAGO_ACCESS_TOKEN` — credencial de teste;
 - `MERCADO_PAGO_WEBHOOK_SECRET` — assinatura secreta do webhook de teste;
+- `MERCADO_PAGO_WEBHOOK_SECRET_TEST` — assinatura do webhook de teste (preferencial);
+- `MERCADO_PAGO_WEBHOOK_SECRET_PRODUCTION` — assinatura do webhook produtivo (preferencial);
 - `CHECKOUT_MODE=test`;
 - `CHECKOUT_RETURN_BASE_URL` — URL HTTPS do Preview de staging;
 - `CHECKOUT_WEBHOOK_URL` — URL da função `commercial-webhook`;
@@ -22,6 +24,9 @@ Variável pública da Vercel em Preview:
 - `CHECKOUT_PROVIDER=mercado_pago`.
 
 Enquanto essa flag estiver `disabled`, a Biblioteca mantém a compra bloqueada. Não colocar access token, assinatura do webhook ou `service_role` na Vercel/browser.
+
+Em produção, a função seleciona `MERCADO_PAGO_WEBHOOK_SECRET_PRODUCTION`; em teste, seleciona
+`MERCADO_PAGO_WEBHOOK_SECRET_TEST`. O segredo genérico permanece apenas como fallback para instalações antigas.
 
 ## Homologação de staging
 
