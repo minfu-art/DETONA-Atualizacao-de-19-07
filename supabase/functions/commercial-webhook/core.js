@@ -118,3 +118,8 @@ export function normalizePaymentStatus(status, statusDetail = '') {
   if (String(statusDetail).toLowerCase() === 'expired' || value === 'expired') return 'expired';
   return 'pending';
 }
+
+export function selectWebhookSecret({ mode, productionSecret = '', testSecret = '', fallbackSecret = '' }) {
+  const scoped = mode === 'production' ? productionSecret : testSecret;
+  return String(scoped || fallbackSecret || '');
+}

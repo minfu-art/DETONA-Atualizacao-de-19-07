@@ -15,6 +15,7 @@ import {
   paymentMatchesCheckoutMode,
   paymentIdsFromMerchantOrder,
   resolveMerchantOrderPayments,
+  selectWebhookSecret,
   signatureManifest,
   verifyMercadoPagoSignature,
   webhookErrorCode,
@@ -147,6 +148,18 @@ test('ambiente aceita conta oficial de teste sem liberar comprador de teste em p
     live_mode: true, payer: { email: 'test@testuser.com' },
   }, 'production'), false);
   assert.equal(paymentMatchesCheckoutMode({ live_mode: false }, 'production'), false);
+});
+
+test('webhook seleciona o segredo correspondente ao ambiente com fallback legado', () => {
+  const secrets = {
+    productionSecret: 'production-secret',
+    testSecret: 'test-secret',
+    fallbackSecret: 'legacy-secret',
+  };
+  assert.equal(selectWebhookSecret({ mode: 'production', ...secrets }), 'production-secret');
+  assert.equal(selectWebhookSecret({ mode: 'test', ...secrets }), 'test-secret');
+  assert.equal(selectWebhookSecret({ mode: 'production', fallbackSecret: 'legacy-secret' }), 'legacy-secret');
+  assert.equal(selectWebhookSecret({ mode: 'test' }), '');
 });
 
 test('duas solicitações simultâneas reutilizam um pedido e criam uma preferência', async () => {

@@ -4,6 +4,7 @@ import {
   parseMercadoPagoNotification,
   paymentMatchesCheckoutMode,
   resolveMerchantOrderPayments,
+  selectWebhookSecret,
   verifyMercadoPagoSignature,
   webhookErrorCode,
 } from './core.js';
@@ -11,8 +12,13 @@ import {
 const url = Deno.env.get('SUPABASE_URL')!;
 const serviceRole = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
-const webhookSecret = Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET') || '';
 const mode = Deno.env.get('CHECKOUT_MODE') === 'production' ? 'production' : 'test';
+const webhookSecret = selectWebhookSecret({
+  mode,
+  productionSecret: Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET_PRODUCTION'),
+  testSecret: Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET_TEST'),
+  fallbackSecret: Deno.env.get('MERCADO_PAGO_WEBHOOK_SECRET'),
+});
 const admin = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
 const response = (status: number, payload: unknown) => new Response(JSON.stringify(payload), {
   status,
