@@ -25,20 +25,20 @@ export function packageActionsForStatus(status) {
 export async function renderAdminPublicationScreen(root, ctx) {
   if (ctx.adminSelectedContestId === PC_BA_CONTEST_ID) {
     root.innerHTML = `
-      <header class="admin-page-header"><div><span>Course Factory · Publicação</span><h1>PC BA não publicada</h1>
-        <p>A etapa existe para transparência operacional, mas permanece bloqueada durante a homologação.</p></div></header>
+      <header class="admin-page-header"><div><span>Course Factory · Publicação</span><h1>PC BA — Investigador publicada</h1>
+        <p>Pacote canônico inicial liberado para alunos com acesso ativo.</p></div></header>
       <section class="admin-grid admin-grid--2">
-        <article class="admin-panel"><span class="admin-panel__eyebrow">Estado</span><h2>NÃO PUBLICADO / EM TESTE</h2>
+        <article class="admin-panel"><span class="admin-panel__eyebrow">Estado</span><h2>PUBLICADO</h2>
           <dl class="admin-status-list">
-            <div><dt>Mapa do edital</dt><dd class="is-ok">Carregado</dd></div>
-            <div><dt>Banco de questões</dt><dd class="is-ok">Validado estruturalmente</dd></div>
-            <div><dt>Validação do proprietário</dt><dd>Pendente</dd></div>
-            <div><dt>Venda / checkout</dt><dd>Desativado</dd></div>
+            <div><dt>Mapa do edital</dt><dd class="is-ok">296 subtópicos</dd></div>
+            <div><dt>Banco inicial</dt><dd class="is-ok">1.267 questões validadas</dd></div>
+            <div><dt>Validação do proprietário</dt><dd class="is-ok">Aprovada</dd></div>
+            <div><dt>Venda / checkout</dt><dd class="is-ok">R$ 69,90 · Mercado Pago</dd></div>
           </dl>
         </article>
-        <article class="admin-panel admin-publication-locked"><span aria-hidden="true">×</span><h2>PUBLICAÇÃO BLOQUEADA</h2>
-          <p>Nenhuma ação desta tela publica conteúdo, concede acesso, ativa checkout ou modifica produção.</p>
-          <button class="admin-button" type="button" disabled>PUBLICAR CURSO</button>
+        <article class="admin-panel"><span class="admin-panel__eyebrow">Versão</span><h2>2026.08.17.1</h2>
+          <p>Investigador publicado pelo contrato genérico da Course Factory. Escrivão e Delegado permanecem fora desta oferta.</p>
+          <button class="admin-button" type="button" disabled>CURSO PUBLICADO</button>
         </article>
       </section>`;
     return;

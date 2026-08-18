@@ -107,7 +107,7 @@ const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'ren
 const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=74'), 'renderWellbeing');
 const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile', ['./css/profile-evolution.css?v=2']);
 const renderCelebration = lazyRoute(() => import('./ui/celebration.js?v=68'), 'renderCelebration');
-const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=73'), 'renderTopicTree');
+const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=74'), 'renderTopicTree');
 const renderReview = lazyRoute(() => import('./ui/review.js?v=86'), 'renderReview', ['./css/review.css?v=1']);
 const renderRankedEvent = lazyRoute(() => import('./ui/rankedEvent.js?v=87'), 'renderRankedEvent', ['./css/ranked-functional.css?v=3']);
 
@@ -120,6 +120,7 @@ const ctx = {
   returnToTree: null,
   studyTopicId: null,
   studySubtopicId: null,
+  studyReturnContext: null,
   logout: null,
   contest: null,
   openContest: null,
@@ -416,6 +417,7 @@ async function navigate(screen, options = {}) {
     return;
   }
   if (prepareStudentHistoryNavigation(screen, options)) return;
+  if (ctx.screen === 'battle' && screen !== 'topicTree') ctx.studyReturnContext = null;
   ctx.allowBattleExit = false;
   ctx.allowReviewExit = false;
   ctx.allowRankedExit = false;

@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v147-homologation-overlay-priority';
+const CACHE = 'detona-v149-pcba-investigador';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -108,6 +108,7 @@ const ASSETS = [
   './js/services/careerLibraryService.js',
   './js/services/contestCatalogService.js',
   './js/services/contestContentService.js',
+  './js/services/publishedCoursePackageService.js',
   './js/services/contestSummaryService.js',
   './js/services/questionExplanationService.js',
   './js/services/reviewService.js',
@@ -173,6 +174,7 @@ const ASSETS = [
   './css/plan-edital.css',
   './js/ui/wellbeingUI.js',
   './js/ui/topicTree.js',
+  './js/ui/studyAccordionState.js',
   './js/ui/profile.js',
   './js/ui/profileEvolutionModel.js',
   './js/ui/celebration.js',

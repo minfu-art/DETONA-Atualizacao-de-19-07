@@ -17,6 +17,11 @@ import {
   resolveSubtopicPresentation,
   studySessionErrorMessage,
 } from './studyPresentation.js';
+import {
+  consumeStudyReturn,
+  rememberStudyReturn,
+  toggleStudyTopic,
+} from './studyAccordionState.js';
 
 function topicProgress(subtopics = []) {
   return Math.max(0, Math.min(100, Math.round(averageSubtopicMastery(subtopics) * 100) / 100));
@@ -74,15 +79,21 @@ export async function renderTopicTree(root, navigate, ctx) {
     });
   });
 
+  const returnContext = consumeStudyReturn(ctx, {
+    contestId: ctx.contest?.id || null,
+    disciplineId: discId,
+  });
+  ctx.studyTopicId = returnContext?.topicId || null;
+  ctx.studySubtopicId = returnContext?.subtopicId || null;
+
   const continuation = resolveStudyContinuation({
     subtopics: subs,
     nodes: nodeById,
     currentSubtopicId: ctx.studySubtopicId,
   });
-  const initialTopic = topics.find((topic) => topic.subtopics.some((item) => item.id === continuation?.subtopicId))
-    || topics.find((topic) => topic.id === ctx.studyTopicId)
-    || topics[0];
-  let expandedTopicId = initialTopic?.id || null;
+  let expandedTopicId = topics.some((topic) => String(topic.id) === String(returnContext?.topicId))
+    ? returnContext.topicId
+    : null;
   const disciplineProgress = topicProgress(subs);
   const started = subs.filter((item) => Number(item.attempts_count || 0) > 0);
   const disciplineAccuracy = started.length
@@ -154,7 +165,7 @@ export async function renderTopicTree(root, navigate, ctx) {
 
     topicsRoot.querySelectorAll('[data-topic-id]').forEach((button) => {
       button.addEventListener('click', () => {
-        expandedTopicId = button.getAttribute('aria-expanded') === 'true' ? null : button.dataset.topicId;
+        expandedTopicId = toggleStudyTopic(expandedTopicId, button.dataset.topicId);
         ctx.studyTopicId = expandedTopicId;
         paintTopics();
         if (expandedTopicId) topicsRoot.querySelector(`[data-topic-id="${CSS.escape(expandedTopicId)}"]`)?.focus();
@@ -200,6 +211,12 @@ export async function renderTopicTree(root, navigate, ctx) {
     ctx.returnToTree = discId;
     ctx.studySubtopicId = sid;
     ctx.studyTopicId = topics.find((topic) => topic.subtopics.some((item) => item.id === sid))?.id || expandedTopicId;
+    rememberStudyReturn(ctx, {
+      contestId: ctx.contest?.id || null,
+      disciplineId: discId,
+      topicId: ctx.studyTopicId,
+      subtopicId: sid,
+    });
     closeModal();
     navigate('battle');
     return session;
@@ -296,7 +313,7 @@ export async function renderTopicTree(root, navigate, ctx) {
     focusSubtopicAction(sid);
   });
   paintTopics();
-  if (ctx.studySubtopicId) {
-    focusSubtopicAction(ctx.studySubtopicId);
+  if (returnContext?.subtopicId) {
+    focusSubtopicAction(returnContext.subtopicId);
   }
 }

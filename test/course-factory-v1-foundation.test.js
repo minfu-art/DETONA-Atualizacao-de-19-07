@@ -82,7 +82,7 @@ test('modo Ver como aluno é explícito, genérico e libera developer sem abrir 
   assert.equal(redirected, null);
 });
 
-test('arquivos administrativos expõem Cursos, auditoria, teste real e publicação bloqueada', async () => {
+test('arquivos administrativos expõem Cursos, auditoria, teste real e estado publicado', async () => {
   const [app, shell, courses, map, questions, preview, publication, sync] = await Promise.all([
     readFile(new URL('../app/js/admin/adminApp.js', import.meta.url), 'utf8'),
     readFile(new URL('../app/js/admin/adminShell.js', import.meta.url), 'utf8'),
@@ -100,6 +100,7 @@ test('arquivos administrativos expõem Cursos, auditoria, teste real e publicaç
   assert.match(questions, /Questões encontradas/);
   assert.match(app, /renderAdminCourseAuditScreen/);
   assert.match(preview, /motor de questões/i);
-  assert.match(publication, /PUBLICAÇÃO BLOQUEADA/);
+  assert.match(publication, /PC BA — Investigador publicada/);
+  assert.match(publication, /1\.267 questões validadas/);
   assert.match(sync, /isCourseFactoryStudentPreview\(\)/);
 });

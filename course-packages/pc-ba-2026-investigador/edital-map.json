@@ -10635,9 +10635,37 @@
         "autotutela",
         "continuidade do serviço público"
       ],
-      "rules": [],
-      "exceptions": [],
-      "applications": [],
+      "rules": [
+        "A Administração atua conforme a lei e o Direito, enquanto o particular pode fazer o que a lei não proíbe.",
+        "A atuação administrativa deve perseguir a finalidade pública e tratar os administrados sem favorecimentos ou perseguições.",
+        "A moralidade administrativa é requisito autônomo de validade e exige probidade, boa-fé e lealdade institucional.",
+        "A publicidade é regra e cumpre funções de eficácia e transparência, sem afastar as hipóteses legais de sigilo.",
+        "A eficiência exige qualidade, resultado, economicidade e celeridade em harmonia com os demais princípios.",
+        "Prerrogativas administrativas somente se legitimam quando previstas no ordenamento e usadas para atender ao interesse público primário.",
+        "Competências administrativas são poderes-deveres indisponíveis e devem ser exercidas nos limites legais.",
+        "Medidas administrativas devem ser adequadas, necessárias e proporcionais em sentido estrito.",
+        "A motivação deve indicar, de forma clara e congruente, os fundamentos de fato e de direito da decisão.",
+        "A autotutela permite à Administração anular atos ilegais e revogar atos válidos por conveniência ou oportunidade.",
+        "Mudança de interpretação administrativa não deve retroagir para prejudicar situações consolidadas de boa-fé.",
+        "A continuidade protege a prestação regular dos serviços e das demais atividades administrativas essenciais."
+      ],
+      "exceptions": [
+        "A publicidade admite restrição para proteção de dados pessoais e de informações imprescindíveis à segurança da sociedade e do Estado.",
+        "A indisponibilidade do interesse público não impede acordo que, dentro da legalidade, seja a solução mais eficiente para a coletividade.",
+        "A exoneração ad nutum de ocupante de cargo em comissão constitui exceção usual à exigência geral de motivação.",
+        "A autotutela encontra limites na segurança jurídica, na boa-fé, no contraditório, na ampla defesa e nos prazos legais.",
+        "A continuidade não é absoluta: admite interrupção emergencial ou, com prévio aviso, por razões técnicas, de segurança ou inadimplemento do usuário."
+      ],
+      "applications": [
+        "Distinguir legalidade administrativa de autonomia da vontade privada.",
+        "Identificar promoção pessoal, favorecimento, perseguição e desvio de finalidade em casos concretos.",
+        "Avaliar a validade, a eficácia e a transparência de atos administrativos sujeitos à publicidade.",
+        "Controlar sanções e restrições administrativas pelos testes de adequação, necessidade e proporcionalidade em sentido estrito.",
+        "Diferenciar anulação, revogação e controle judicial de legalidade.",
+        "Reconhecer motivação explícita e motivação por remissão a pareceres ou decisões anteriores.",
+        "Resolver conflitos entre autotutela e proteção da confiança em situações consolidadas.",
+        "Aplicar as regras de continuidade a greve, contratos, manutenção técnica e inadimplemento do usuário."
+      ],
       "competencies": [
         "conceituar",
         "identificar_requisitos",
@@ -10681,6 +10709,14 @@
           "trace_status": "missing",
           "location": "Mapa legado vinculado ao subtópico oficial; página individual não registrada.",
           "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        },
+        {
+          "source_id": "pc_ba_2026_inv_dadm_aula_00",
+          "trace_status": "available",
+          "page_number": 14,
+          "excerpt": "Princípios expressos e implícitos da Administração Pública.",
+          "location": "Aula 00, páginas 14–54.",
+          "note": "Material complementar usado para decomposição pedagógica, regras, exceções e aplicações."
         }
       ]
     },
