@@ -38,7 +38,8 @@ test('catálogo vazio mantém fallback e sinaliza bootstrap', async () => {
   assert.equal(result.source, 'static_catalog');
   assert.equal(result.bootstrapRequired, true);
   assert.equal(result.writable, false);
-  assert.equal(result.rows.length, 3);
+  assert.equal(result.rows.length, 4);
+  assert.ok(result.rows.some(({ id }) => id === 'pc_ba_2026'));
 });
 
 test('catálogo administrativo populado substitui fallback sem inventar escrita', async () => {

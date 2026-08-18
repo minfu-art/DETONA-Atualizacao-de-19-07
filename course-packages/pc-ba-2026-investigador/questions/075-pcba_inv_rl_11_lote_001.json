@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_11_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_11_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ec3e82ca7a01aa"
+      ],
+      "statement": "Na expressão P(x): “x é investigador”, P representa\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "um predicado aplicável ao termo x."
+        },
+        {
+          "label": "B",
+          "text": "uma proposição necessariamente verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "o universo de discurso inteiro."
+        },
+        {
+          "label": "D",
+          "text": "um conectivo binário."
+        },
+        {
+          "label": "E",
+          "text": "um quantificador existencial."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica distinguir termos, variáveis e predicados sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: expressa uma propriedade que pode ser atribuída a objetos.\n\nA: Correta: expressa uma propriedade que pode ser atribuída a objetos.\n\nB: Incorreta: sem determinar x, a expressão permanece aberta.\n\nC: Incorreta: o domínio é o conjunto de possíveis valores de x.\n\nD: Incorreta: não liga duas fórmulas.\n\nE: Incorreta: o existencial é indicado por ∃.\n\nArmadilha: Atribuir valor lógico a uma sentença aberta antes de fixar a variável ou quantificá-la.\n\nConhecimento adicional: Um predicado torna-se proposição quando seus termos recebem referentes ou suas variáveis ficam vinculadas por quantificadores.\n\nAprendizado essencial: Antes de julgar verdadeiro ou falso, verifique se todas as variáveis estão determinadas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ec3e82ca7a01aa"
+      ],
+      "statement": "Considere o predicado P(x): “x é par”, no domínio dos inteiros. A expressão que já possui valor lógico é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P(x), sem informação adicional."
+        },
+        {
+          "label": "B",
+          "text": "P(8)."
+        },
+        {
+          "label": "C",
+          "text": "P(y), com y livre."
+        },
+        {
+          "label": "D",
+          "text": "x+2, sem igualdade."
+        },
+        {
+          "label": "E",
+          "text": "o símbolo P isolado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica distinguir termos, variáveis e predicados sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: substituir x por 8 produz a proposição verdadeira “8 é par”.\n\nA: Incorreta: x continua livre.\n\nB: Correta: substituir x por 8 produz a proposição verdadeira “8 é par”.\n\nC: Incorreta: y continua livre.\n\nD: Incorreta: nem sequer constitui uma sentença declarativa completa.\n\nE: Incorreta: designa apenas o predicado.\n\nArmadilha: Atribuir valor lógico a uma sentença aberta antes de fixar a variável ou quantificá-la.\n\nConhecimento adicional: Um predicado torna-se proposição quando seus termos recebem referentes ou suas variáveis ficam vinculadas por quantificadores.\n\nAprendizado essencial: Antes de julgar verdadeiro ou falso, verifique se todas as variáveis estão determinadas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ec3e82ca7a01aa"
+      ],
+      "statement": "Qual expressão ainda é uma sentença aberta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∃x∈ℤ tal que x²=9."
+        },
+        {
+          "label": "B",
+          "text": "P(4), em que P(x) significa “x>0”."
+        },
+        {
+          "label": "C",
+          "text": "x+5=12, sem valor atribuído a x."
+        },
+        {
+          "label": "D",
+          "text": "2+5=7."
+        },
+        {
+          "label": "E",
+          "text": "∀x∈ℤ, x²≥0."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica distinguir termos, variáveis e predicados sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: o valor lógico depende do valor livre de x.\n\nA: Incorreta: x está ligado pelo existencial.\n\nB: Incorreta: o termo 4 fecha a sentença.\n\nC: Correta: o valor lógico depende do valor livre de x.\n\nD: Incorreta: é uma proposição aritmética fechada.\n\nE: Incorreta: x está ligado pelo quantificador universal.\n\nArmadilha: Atribuir valor lógico a uma sentença aberta antes de fixar a variável ou quantificá-la.\n\nConhecimento adicional: Um predicado torna-se proposição quando seus termos recebem referentes ou suas variáveis ficam vinculadas por quantificadores.\n\nAprendizado essencial: Antes de julgar verdadeiro ou falso, verifique se todas as variáveis estão determinadas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7d3755277c5725"
+      ],
+      "statement": "A fórmula ∀x P(x) afirma que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P não possui valor lógico."
+        },
+        {
+          "label": "B",
+          "text": "exatamente um elemento satisfaz P."
+        },
+        {
+          "label": "C",
+          "text": "nenhum elemento satisfaz P."
+        },
+        {
+          "label": "D",
+          "text": "todo elemento do domínio satisfaz P."
+        },
+        {
+          "label": "E",
+          "text": "há pelo menos um elemento que não satisfaz P."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador universal sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: é a leitura do quantificador universal.\n\nA: Incorreta: a fórmula quantificada é fechada.\n\nB: Incorreta: o universal não limita a um elemento.\n\nC: Incorreta: isso corresponde a ∀x¬P(x).\n\nD: Correta: é a leitura do quantificador universal.\n\nE: Incorreta: isso é a negação do universal.\n\nArmadilha: Considerar uma afirmação universal verdadeira depois de examinar somente alguns elementos do domínio.\n\nConhecimento adicional: Uma única testemunha contrária, chamada contraexemplo, basta para tornar falsa uma afirmação universal.\n\nAprendizado essencial: Leia ∀ como “para todo” e teste se a propriedade cobre o domínio inteiro.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7d3755277c5725"
+      ],
+      "statement": "No domínio {1,2,3,4}, qual fórmula é verdadeira?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∀x, x>1."
+        },
+        {
+          "label": "B",
+          "text": "∀x, x²<4."
+        },
+        {
+          "label": "C",
+          "text": "∀x, x=4."
+        },
+        {
+          "label": "D",
+          "text": "∀x, x é par."
+        },
+        {
+          "label": "E",
+          "text": "∀x, x<5."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador universal sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: todos os quatro elementos são menores que 5.\n\nA: Incorreta: x=1 refuta a afirmação.\n\nB: Incorreta: x=2,3,4 refutam a afirmação.\n\nC: Incorreta: apenas um elemento é igual a 4.\n\nD: Incorreta: 1 e 3 são contraexemplos.\n\nE: Correta: todos os quatro elementos são menores que 5.\n\nArmadilha: Considerar uma afirmação universal verdadeira depois de examinar somente alguns elementos do domínio.\n\nConhecimento adicional: Uma única testemunha contrária, chamada contraexemplo, basta para tornar falsa uma afirmação universal.\n\nAprendizado essencial: Leia ∀ como “para todo” e teste se a propriedade cobre o domínio inteiro.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7d3755277c5725"
+      ],
+      "statement": "Para refutar ∀x P(x), é suficiente apresentar\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "um elemento do domínio para o qual P(x) seja falsa."
+        },
+        {
+          "label": "B",
+          "text": "um elemento para o qual P(x) seja verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "todos os elementos do domínio."
+        },
+        {
+          "label": "D",
+          "text": "uma fórmula sem variável."
+        },
+        {
+          "label": "E",
+          "text": "a inexistência de qualquer domínio."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador universal sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: um contraexemplo destrói a universalidade.\n\nA: Correta: um contraexemplo destrói a universalidade.\n\nB: Incorreta: um caso favorável não confirma nem refuta todos.\n\nC: Incorreta: é desnecessário após encontrar um contraexemplo.\n\nD: Incorreta: não enfrenta a propriedade universal.\n\nE: Incorreta: a lógica de primeira ordem trabalha com domínio estabelecido.\n\nArmadilha: Considerar uma afirmação universal verdadeira depois de examinar somente alguns elementos do domínio.\n\nConhecimento adicional: Uma única testemunha contrária, chamada contraexemplo, basta para tornar falsa uma afirmação universal.\n\nAprendizado essencial: Leia ∀ como “para todo” e teste se a propriedade cobre o domínio inteiro.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_52299f7dfcfb80"
+      ],
+      "statement": "A fórmula ∃x P(x) é verdadeira quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todos os elementos deixam de satisfazer P."
+        },
+        {
+          "label": "B",
+          "text": "existe ao menos um elemento do domínio que satisfaz P."
+        },
+        {
+          "label": "C",
+          "text": "exatamente um elemento satisfaz P."
+        },
+        {
+          "label": "D",
+          "text": "P é falsa para um elemento qualquer."
+        },
+        {
+          "label": "E",
+          "text": "o domínio é ignorado."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador existencial sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: uma testemunha já confirma a existência.\n\nA: Incorreta: isso torna o existencial falso.\n\nB: Correta: uma testemunha já confirma a existência.\n\nC: Incorreta: pode haver várias testemunhas.\n\nD: Incorreta: um caso negativo não elimina outros positivos.\n\nE: Incorreta: o domínio define onde a testemunha é procurada.\n\nArmadilha: Interpretar “existe” como “existe exatamente um” ou como afirmação sobre todos os elementos.\n\nConhecimento adicional: Uma testemunha é qualquer elemento do domínio que satisfaz o predicado e confirma a fórmula existencial.\n\nAprendizado essencial: Leia ∃ como “existe pelo menos um”, sem impor unicidade.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_52299f7dfcfb80"
+      ],
+      "statement": "No domínio dos inteiros, qual afirmação existencial é verdadeira?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∃x tal que x²=2."
+        },
+        {
+          "label": "B",
+          "text": "∃x tal que x+1=x."
+        },
+        {
+          "label": "C",
+          "text": "∃x tal que x²=9."
+        },
+        {
+          "label": "D",
+          "text": "∃x tal que x²<0."
+        },
+        {
+          "label": "E",
+          "text": "∃x tal que x é inteiro e não é inteiro."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador existencial sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: x=3 ou x=−3 funciona como testemunha.\n\nA: Incorreta: não há inteiro cujo quadrado seja 2.\n\nB: Incorreta: subtrair x levaria a 1=0.\n\nC: Correta: x=3 ou x=−3 funciona como testemunha.\n\nD: Incorreta: quadrados de inteiros não são negativos.\n\nE: Incorreta: o predicado é contraditório.\n\nArmadilha: Interpretar “existe” como “existe exatamente um” ou como afirmação sobre todos os elementos.\n\nConhecimento adicional: Uma testemunha é qualquer elemento do domínio que satisfaz o predicado e confirma a fórmula existencial.\n\nAprendizado essencial: Leia ∃ como “existe pelo menos um”, sem impor unicidade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_52299f7dfcfb80"
+      ],
+      "statement": "Da afirmação ∃x P(x), NÃO se pode concluir que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P possui pelo menos uma testemunha."
+        },
+        {
+          "label": "B",
+          "text": "há um elemento do domínio que satisfaz P."
+        },
+        {
+          "label": "C",
+          "text": "nem todo elemento necessariamente satisfaz P."
+        },
+        {
+          "label": "D",
+          "text": "exatamente um elemento satisfaz P."
+        },
+        {
+          "label": "E",
+          "text": "é falso que todos os elementos deixem de satisfazer P."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica interpretar e aplicar o quantificador existencial sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: o quantificador não afirma unicidade.\n\nA: Incorreta: é o conteúdo do existencial.\n\nB: Incorreta: é uma paráfrase correta.\n\nC: Incorreta: o existencial sozinho não universaliza.\n\nD: Correta: o quantificador não afirma unicidade.\n\nE: Incorreta: a existência de uma testemunha exclui ∀x¬P(x).\n\nArmadilha: Interpretar “existe” como “existe exatamente um” ou como afirmação sobre todos os elementos.\n\nConhecimento adicional: Uma testemunha é qualquer elemento do domínio que satisfaz o predicado e confirma a fórmula existencial.\n\nAprendizado essencial: Leia ∃ como “existe pelo menos um”, sem impor unicidade.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_eae0afd5e97778"
+      ],
+      "statement": "A negação de ∀x P(x) é logicamente equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∃x P(x)."
+        },
+        {
+          "label": "B",
+          "text": "∀x P(x)."
+        },
+        {
+          "label": "C",
+          "text": "¬P(x), com x livre."
+        },
+        {
+          "label": "D",
+          "text": "∀x ¬P(x)."
+        },
+        {
+          "label": "E",
+          "text": "∃x ¬P(x)."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica negar corretamente proposições quantificadas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: expressa a existência de um contraexemplo.\n\nA: Incorreta: é compatível com o universal.\n\nB: Incorreta: repete a fórmula negada.\n\nC: Incorreta: não fecha a variável nem traduz a negação completa.\n\nD: Incorreta: afirma que ninguém satisfaz P, o que é mais forte.\n\nE: Correta: expressa a existência de um contraexemplo.\n\nArmadilha: Trocar o quantificador sem negar o predicado ou manter o quantificador original.\n\nConhecimento adicional: As equivalências fundamentais são ¬∀xP(x)≡∃x¬P(x) e ¬∃xP(x)≡∀x¬P(x).\n\nAprendizado essencial: Ao negar, troque ∀ por ∃ ou ∃ por ∀ e negue o predicado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_eae0afd5e97778"
+      ],
+      "statement": "A negação de “existe um servidor que conhece o protocolo” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum servidor conhece o protocolo."
+        },
+        {
+          "label": "B",
+          "text": "exatamente um servidor conhece o protocolo."
+        },
+        {
+          "label": "C",
+          "text": "alguns conhecem e outros não."
+        },
+        {
+          "label": "D",
+          "text": "existe um servidor que não conhece o protocolo."
+        },
+        {
+          "label": "E",
+          "text": "todo servidor conhece o protocolo."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica negar corretamente proposições quantificadas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: exclui a propriedade de todos os servidores.\n\nA: Correta: exclui a propriedade de todos os servidores.\n\nB: Incorreta: continua afirmando existência positiva.\n\nC: Incorreta: continua admitindo alguém que conhece.\n\nD: Incorreta: ainda permite uma testemunha positiva.\n\nE: Incorreta: afirma o oposto do necessário.\n\nArmadilha: Trocar o quantificador sem negar o predicado ou manter o quantificador original.\n\nConhecimento adicional: As equivalências fundamentais são ¬∀xP(x)≡∃x¬P(x) e ¬∃xP(x)≡∀x¬P(x).\n\nAprendizado essencial: Ao negar, troque ∀ por ∃ ou ∃ por ∀ e negue o predicado.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_eae0afd5e97778"
+      ],
+      "statement": "“Nem todos os candidatos entregaram o documento” significa que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todos deixaram de entregar."
+        },
+        {
+          "label": "B",
+          "text": "existe ao menos um candidato que não entregou."
+        },
+        {
+          "label": "C",
+          "text": "exatamente um candidato não entregou."
+        },
+        {
+          "label": "D",
+          "text": "algum candidato entregou."
+        },
+        {
+          "label": "E",
+          "text": "nenhum candidato entregou o documento."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica negar corretamente proposições quantificadas sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: é a forma ∃x¬P(x).\n\nA: Incorreta: também transforma uma negação parcial em total.\n\nB: Correta: é a forma ∃x¬P(x).\n\nC: Incorreta: a quantidade de contraexemplos pode ser maior.\n\nD: Incorreta: pode ser verdade, mas não traduz a negação universal.\n\nE: Incorreta: nega mais do que a frase afirma.\n\nArmadilha: Trocar o quantificador sem negar o predicado ou manter o quantificador original.\n\nConhecimento adicional: As equivalências fundamentais são ¬∀xP(x)≡∃x¬P(x) e ¬∃xP(x)≡∀x¬P(x).\n\nAprendizado essencial: Ao negar, troque ∀ por ∃ ou ∃ por ∀ e negue o predicado.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fe9c60d5e3155c"
+      ],
+      "statement": "Qual par apresenta fórmulas logicamente equivalentes?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "¬∃xP(x) e ∃x¬P(x)."
+        },
+        {
+          "label": "B",
+          "text": "¬∀xP(x) e ∀x¬P(x)."
+        },
+        {
+          "label": "C",
+          "text": "¬∃xP(x) e ∀x¬P(x)."
+        },
+        {
+          "label": "D",
+          "text": "∀xP(x) e ∃xP(x) em qualquer domínio."
+        },
+        {
+          "label": "E",
+          "text": "∃xP(x) e ∃x¬P(x)."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica relacionar quantificadores e seus alcances sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: negação do existencial elimina testemunhas em todo o domínio.\n\nA: Incorreta: a segunda admite testemunha negativa sem excluir positivas.\n\nB: Incorreta: a segunda é mais forte que a primeira.\n\nC: Correta: negação do existencial elimina testemunhas em todo o domínio.\n\nD: Incorreta: o existencial é mais fraco que o universal.\n\nE: Incorreta: as fórmulas podem ter valores independentes.\n\nArmadilha: Confundir “não existe” com “existe algum que não” e ignorar a ordem em quantificadores encadeados.\n\nConhecimento adicional: Quantificadores não são intercambiáveis: ∀x∃y pode admitir um y diferente para cada x, enquanto ∃y∀x exige um único y.\n\nAprendizado essencial: Observe o quantificador, sua negação e o trecho exato que está sob seu alcance.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fe9c60d5e3155c"
+      ],
+      "statement": "A fórmula ∀x∃y R(x,y) informa que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum par satisfaz R."
+        },
+        {
+          "label": "B",
+          "text": "todo y se relaciona com todo x."
+        },
+        {
+          "label": "C",
+          "text": "há um único y relacionado a todos os x."
+        },
+        {
+          "label": "D",
+          "text": "para cada x existe ao menos um y, possivelmente diferente, relacionado a ele."
+        },
+        {
+          "label": "E",
+          "text": "existe um x relacionado a todos os y."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A alternativa correta aplica relacionar quantificadores e seus alcances sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: respeita a ordem e o alcance dos quantificadores.\n\nA: Incorreta: contradiz a existência afirmada.\n\nB: Incorreta: universaliza indevidamente também y.\n\nC: Incorreta: isso seria expresso por ∃y∀xR(x,y).\n\nD: Correta: respeita a ordem e o alcance dos quantificadores.\n\nE: Incorreta: troca as variáveis e os quantificadores.\n\nArmadilha: Confundir “não existe” com “existe algum que não” e ignorar a ordem em quantificadores encadeados.\n\nConhecimento adicional: Quantificadores não são intercambiáveis: ∀x∃y pode admitir um y diferente para cada x, enquanto ∃y∀x exige um único y.\n\nAprendizado essencial: Observe o quantificador, sua negação e o trecho exato que está sob seu alcance.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fe9c60d5e3155c"
+      ],
+      "statement": "Por que ∃y∀xR(x,y) é, em geral, mais forte que ∀x∃yR(x,y)?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque elimina o quantificador universal."
+        },
+        {
+          "label": "B",
+          "text": "Porque permite escolher um y diferente para cada x."
+        },
+        {
+          "label": "C",
+          "text": "Porque as duas fórmulas são sempre equivalentes."
+        },
+        {
+          "label": "D",
+          "text": "Porque dispensa qualquer testemunha."
+        },
+        {
+          "label": "E",
+          "text": "Porque exige um mesmo y que funcione para todos os x."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A alternativa correta aplica relacionar quantificadores e seus alcances sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: um único testemunho precisa satisfazer todas as relações.\n\nA: Incorreta: o universal permanece no escopo.\n\nB: Incorreta: essa flexibilidade pertence à outra ordem.\n\nC: Incorreta: a ordem pode mudar o valor lógico.\n\nD: Incorreta: a fórmula começa justamente com uma existência.\n\nE: Correta: um único testemunho precisa satisfazer todas as relações.\n\nArmadilha: Confundir “não existe” com “existe algum que não” e ignorar a ordem em quantificadores encadeados.\n\nConhecimento adicional: Quantificadores não são intercambiáveis: ∀x∃y pode admitir um y diferente para cada x, enquanto ∃y∀x exige um único y.\n\nAprendizado essencial: Observe o quantificador, sua negação e o trecho exato que está sob seu alcance.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f94e67d6f9628"
+      ],
+      "statement": "Com I(x): “x é investigador” e S(x): “x é servidor”, “todo investigador é servidor” traduz-se por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∀x(I(x)→S(x))."
+        },
+        {
+          "label": "B",
+          "text": "∀x(S(x)→I(x))."
+        },
+        {
+          "label": "C",
+          "text": "∃x(I(x)∧S(x))."
+        },
+        {
+          "label": "D",
+          "text": "∀x(I(x)∧S(x))."
+        },
+        {
+          "label": "E",
+          "text": "∃x(I(x)→S(x))."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A alternativa correta aplica traduzir linguagem natural para fórmulas de primeira ordem sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: usa a classe investigador como condição e servidor como consequência.\n\nA: Correta: usa a classe investigador como condição e servidor como consequência.\n\nB: Incorreta: traduz a conversa.\n\nC: Incorreta: afirma apenas a existência de alguém nas duas classes.\n\nD: Incorreta: afirma que todos do domínio são simultaneamente das duas classes.\n\nE: Incorreta: um existencial sobre condicional não expressa universalidade.\n\nArmadilha: Inverter antecedente e consequente ou usar conjunção onde a tradução universal exige condicional.\n\nConhecimento adicional: “Todo A é B” costuma ser ∀x(A(x)→B(x)); “algum A é B” costuma ser ∃x(A(x)∧B(x)).\n\nAprendizado essencial: Identifique domínio, classes, quantificador e conectivo antes de montar a fórmula.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f94e67d6f9628"
+      ],
+      "statement": "Com S(x): “x é servidor” e T(x): “x foi treinado”, “algum servidor não foi treinado” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∀x(S(x)→¬T(x))."
+        },
+        {
+          "label": "B",
+          "text": "∃x(S(x)∧¬T(x))."
+        },
+        {
+          "label": "C",
+          "text": "∃x(S(x)→¬T(x))."
+        },
+        {
+          "label": "D",
+          "text": "∀x(S(x)∧¬T(x))."
+        },
+        {
+          "label": "E",
+          "text": "¬∃x(S(x)∧¬T(x))."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A alternativa correta aplica traduzir linguagem natural para fórmulas de primeira ordem sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: exige uma testemunha que seja servidor e não treinada.\n\nA: Incorreta: afirma isso sobre todos os servidores.\n\nB: Correta: exige uma testemunha que seja servidor e não treinada.\n\nC: Incorreta: a condicional pode ser verdadeira para quem nem é servidor.\n\nD: Incorreta: afirma que todos do domínio são servidores não treinados.\n\nE: Incorreta: nega exatamente a existência solicitada.\n\nArmadilha: Inverter antecedente e consequente ou usar conjunção onde a tradução universal exige condicional.\n\nConhecimento adicional: “Todo A é B” costuma ser ∀x(A(x)→B(x)); “algum A é B” costuma ser ∃x(A(x)∧B(x)).\n\nAprendizado essencial: Identifique domínio, classes, quantificador e conectivo antes de montar a fórmula.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_11_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_11_logica_de_primeira_ordem",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1f94e67d6f9628"
+      ],
+      "statement": "Com P(x): “x é perito” e D(x): “x é delegado”, a tradução de “nenhum perito é delegado” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∃x(P(x)∧D(x))."
+        },
+        {
+          "label": "B",
+          "text": "∀x(P(x)→D(x))."
+        },
+        {
+          "label": "C",
+          "text": "∀x(P(x)→¬D(x))."
+        },
+        {
+          "label": "D",
+          "text": "∃x(P(x)∧¬D(x))."
+        },
+        {
+          "label": "E",
+          "text": "∀x(D(x)→P(x))."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A alternativa correta aplica traduzir linguagem natural para fórmulas de primeira ordem sem acrescentar relações que não foram informadas.\n\nAnálise da resposta: Correta: impede que qualquer perito pertença à classe dos delegados.\n\nA: Incorreta: afirma a interseção que deve ser excluída.\n\nB: Incorreta: inclui peritos entre delegados.\n\nC: Correta: impede que qualquer perito pertença à classe dos delegados.\n\nD: Incorreta: afirma apenas um perito fora da classe.\n\nE: Incorreta: inverte e afirma uma inclusão diferente.\n\nArmadilha: Inverter antecedente e consequente ou usar conjunção onde a tradução universal exige condicional.\n\nConhecimento adicional: “Todo A é B” costuma ser ∀x(A(x)→B(x)); “algum A é B” costuma ser ∃x(A(x)∧B(x)).\n\nAprendizado essencial: Identifique domínio, classes, quantificador e conectivo antes de montar a fórmula.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "location": "páginas 3-14",
+          "used_for": "Fundamento conceitual e conferência da solução lógica apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_04",
+          "trace_status": "missing",
+          "location": "páginas 3-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

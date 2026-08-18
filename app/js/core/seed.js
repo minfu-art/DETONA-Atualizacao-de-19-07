@@ -135,6 +135,7 @@ export async function ensureSeed({ contentPackage = null } = {}) {
   if (!players[0]) {
     const player = defaultPlayer();
     if (contentPackage?.metadata?.exam_date) player.exam_date = contentPackage.metadata.exam_date;
+    if (contentPackage?.previewOnly === true) player.onboarded = true;
     await put(STORES.player, player);
   }
 

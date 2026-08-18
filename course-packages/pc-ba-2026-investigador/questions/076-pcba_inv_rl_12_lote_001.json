@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_12_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_12_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_228d26be469bcf"
+      ],
+      "statement": "No lançamento de um dado comum, o espaço amostral correto é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{1,2,3,4,5,6}."
+        },
+        {
+          "label": "B",
+          "text": "{2,4,6}."
+        },
+        {
+          "label": "C",
+          "text": "{1,3,5}."
+        },
+        {
+          "label": "D",
+          "text": "{6}."
+        },
+        {
+          "label": "E",
+          "text": "∅."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige identificar espaço amostral e eventos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: reúne todas as seis faces possíveis. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: reúne todas as seis faces possíveis.\n\nB: Incorreta: é apenas o evento “resultado par”.\n\nC: Incorreta: é apenas o evento “resultado ímpar”.\n\nD: Incorreta: é um evento elementar.\n\nE: Incorreta: representa um evento impossível.\n\nArmadilha: Confundir um evento, que é subconjunto, com o espaço amostral de todos os resultados possíveis.\n\nConhecimento adicional: Eventos impossível e certo correspondem, respectivamente, ao conjunto vazio e ao próprio espaço amostral.\n\nAprendizado essencial: Liste primeiro todos os resultados possíveis e depois selecione os que atendem ao evento.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 4-7",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 4-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_228d26be469bcf"
+      ],
+      "statement": "Duas moedas são lançadas e a ordem é observada. O evento “exatamente uma cara” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{(coroa,coroa)}."
+        },
+        {
+          "label": "B",
+          "text": "{(cara,coroa),(coroa,cara)}."
+        },
+        {
+          "label": "C",
+          "text": "{(cara,cara),(coroa,coroa)}."
+        },
+        {
+          "label": "D",
+          "text": "todo o espaço amostral."
+        },
+        {
+          "label": "E",
+          "text": "{(cara,cara)}."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige identificar espaço amostral e eventos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: reúne os dois resultados ordenados com uma única cara. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não contém cara.\n\nB: Correta: reúne os dois resultados ordenados com uma única cara.\n\nC: Incorreta: reúne resultados com faces iguais.\n\nD: Incorreta: também inclui zero e duas caras.\n\nE: Incorreta: contém duas caras.\n\nArmadilha: Confundir um evento, que é subconjunto, com o espaço amostral de todos os resultados possíveis.\n\nConhecimento adicional: Eventos impossível e certo correspondem, respectivamente, ao conjunto vazio e ao próprio espaço amostral.\n\nAprendizado essencial: Liste primeiro todos os resultados possíveis e depois selecione os que atendem ao evento.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 4-7",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 4-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_228d26be469bcf"
+      ],
+      "statement": "Em um experimento aleatório, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o espaço amostral é subconjunto de qualquer evento."
+        },
+        {
+          "label": "B",
+          "text": "dois eventos não podem compartilhar resultados."
+        },
+        {
+          "label": "C",
+          "text": "um evento pode ser qualquer subconjunto do espaço amostral."
+        },
+        {
+          "label": "D",
+          "text": "o evento impossível é o próprio espaço amostral."
+        },
+        {
+          "label": "E",
+          "text": "todo evento deve conter exatamente um resultado."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige identificar espaço amostral e eventos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: essa é a definição conjuntista de evento. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: a relação usual é a inversa.\n\nB: Incorreta: eventos podem ter interseção.\n\nC: Correta: essa é a definição conjuntista de evento.\n\nD: Incorreta: o impossível é o conjunto vazio.\n\nE: Incorreta: eventos podem ter zero, um ou vários resultados.\n\nArmadilha: Confundir um evento, que é subconjunto, com o espaço amostral de todos os resultados possíveis.\n\nConhecimento adicional: Eventos impossível e certo correspondem, respectivamente, ao conjunto vazio e ao próprio espaço amostral.\n\nAprendizado essencial: Liste primeiro todos os resultados possíveis e depois selecione os que atendem ao evento.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 4-7",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 4-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ede493ef0a6ba8"
+      ],
+      "statement": "Na definição clássica, sendo os resultados equiprováveis, P(A) é calculada por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "n(A)×n(U)."
+        },
+        {
+          "label": "B",
+          "text": "n(U)/n(A)."
+        },
+        {
+          "label": "C",
+          "text": "n(A)+n(U)."
+        },
+        {
+          "label": "D",
+          "text": "n(A)/n(U)."
+        },
+        {
+          "label": "E",
+          "text": "1−n(U)."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige calcular probabilidade clássica em casos equiprováveis e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: divide casos favoráveis por casos possíveis. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: cresce acima de 1 facilmente.\n\nB: Incorreta: inverte numerador e denominador.\n\nC: Incorreta: não produz uma proporção.\n\nD: Correta: divide casos favoráveis por casos possíveis.\n\nE: Incorreta: não é uma expressão de probabilidade clássica.\n\nArmadilha: Aplicar a razão casos favoráveis/casos possíveis quando os resultados elementares não são equiprováveis.\n\nConhecimento adicional: A definição clássica P(A)=n(A)/n(U) exige espaço amostral finito e resultados igualmente prováveis.\n\nAprendizado essencial: Confirme a equiprobabilidade antes de dividir casos favoráveis pelo total.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ede493ef0a6ba8"
+      ],
+      "statement": "Uma urna contém 3 bolas azuis e 7 vermelhas, indistinguíveis ao tato. A probabilidade de retirar uma azul é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "7/10."
+        },
+        {
+          "label": "B",
+          "text": "3/7."
+        },
+        {
+          "label": "C",
+          "text": "1/3."
+        },
+        {
+          "label": "D",
+          "text": "1/10."
+        },
+        {
+          "label": "E",
+          "text": "3/10."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige calcular probabilidade clássica em casos equiprováveis e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: há 3 casos favoráveis em 10 bolas. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é a probabilidade de retirar vermelha.\n\nB: Incorreta: usa apenas as cores no denominador de modo incorreto.\n\nC: Incorreta: não considera o total de bolas.\n\nD: Incorreta: considera somente uma bola favorável.\n\nE: Correta: há 3 casos favoráveis em 10 bolas.\n\nArmadilha: Aplicar a razão casos favoráveis/casos possíveis quando os resultados elementares não são equiprováveis.\n\nConhecimento adicional: A definição clássica P(A)=n(A)/n(U) exige espaço amostral finito e resultados igualmente prováveis.\n\nAprendizado essencial: Confirme a equiprobabilidade antes de dividir casos favoráveis pelo total.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_ede493ef0a6ba8"
+      ],
+      "statement": "Uma moeda tem P(cara)=0,7. Por que não se pode obter essa probabilidade contando uma cara entre duas faces e fazendo 1/2?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque as faces não são resultados igualmente prováveis nessa moeda."
+        },
+        {
+          "label": "B",
+          "text": "Porque o espaço amostral possui sete elementos."
+        },
+        {
+          "label": "C",
+          "text": "Porque cara não é um evento."
+        },
+        {
+          "label": "D",
+          "text": "Porque 0,7 é maior que 1."
+        },
+        {
+          "label": "E",
+          "text": "Porque probabilidades nunca podem usar frações."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige calcular probabilidade clássica em casos equiprováveis e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a hipótese de equiprobabilidade da definição clássica falha. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: a hipótese de equiprobabilidade da definição clássica falha.\n\nB: Incorreta: continua havendo dois resultados elementares.\n\nC: Incorreta: cara é um evento válido.\n\nD: Incorreta: 0,7 está no intervalo permitido.\n\nE: Incorreta: frações são representações usuais.\n\nArmadilha: Aplicar a razão casos favoráveis/casos possíveis quando os resultados elementares não são equiprováveis.\n\nConhecimento adicional: A definição clássica P(A)=n(A)/n(U) exige espaço amostral finito e resultados igualmente prováveis.\n\nAprendizado essencial: Confirme a equiprobabilidade antes de dividir casos favoráveis pelo total.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58b0c7727f3f64"
+      ],
+      "statement": "Para dois eventos quaisquer A e B, a fórmula geral da união é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P(A)P(B)."
+        },
+        {
+          "label": "B",
+          "text": "P(A)+P(B)−P(A∩B)."
+        },
+        {
+          "label": "C",
+          "text": "P(A∩B)−P(A)."
+        },
+        {
+          "label": "D",
+          "text": "1−P(A)−P(B)."
+        },
+        {
+          "label": "E",
+          "text": "P(A)+P(B)."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige calcular probabilidades de união e interseção e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: corrige a dupla contagem da região comum. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é uma regra de interseção sob condições específicas.\n\nB: Correta: corrige a dupla contagem da região comum.\n\nC: Incorreta: pode produzir valor negativo.\n\nD: Incorreta: não representa a união.\n\nE: Incorreta: só vale sem desconto quando os eventos são mutuamente exclusivos.\n\nArmadilha: Somar probabilidades sem descontar a interseção ou multiplicá-las sem justificar independência.\n\nConhecimento adicional: A regra geral da união é P(A∪B)=P(A)+P(B)−P(A∩B).\n\nAprendizado essencial: Na união, desconte a parte contada duas vezes; na interseção, examine a dependência.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-37",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-37",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58b0c7727f3f64"
+      ],
+      "statement": "Se P(A)=0,5, P(B)=0,4 e P(A∩B)=0,2, então P(A∪B) vale\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,2."
+        },
+        {
+          "label": "B",
+          "text": "0,3."
+        },
+        {
+          "label": "C",
+          "text": "0,7."
+        },
+        {
+          "label": "D",
+          "text": "0,9."
+        },
+        {
+          "label": "E",
+          "text": "1,1."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige calcular probabilidades de união e interseção e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 0,5+0,4−0,2=0,7. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é apenas a interseção.\n\nB: Incorreta: resulta de uma subtração indevida.\n\nC: Correta: 0,5+0,4−0,2=0,7.\n\nD: Incorreta: não desconta a interseção.\n\nE: Incorreta: além do cálculo errado, ultrapassa 1.\n\nArmadilha: Somar probabilidades sem descontar a interseção ou multiplicá-las sem justificar independência.\n\nConhecimento adicional: A regra geral da união é P(A∪B)=P(A)+P(B)−P(A∩B).\n\nAprendizado essencial: Na união, desconte a parte contada duas vezes; na interseção, examine a dependência.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-37",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-37",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58b0c7727f3f64"
+      ],
+      "statement": "Se A e B são mutuamente exclusivos, qual afirmação é correta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P(A∪B)=P(A)P(B)."
+        },
+        {
+          "label": "B",
+          "text": "A e B são necessariamente complementares."
+        },
+        {
+          "label": "C",
+          "text": "P(A∩B)=1."
+        },
+        {
+          "label": "D",
+          "text": "P(A∩B)=0 e P(A∪B)=P(A)+P(B)."
+        },
+        {
+          "label": "E",
+          "text": "P(A)=P(B) obrigatoriamente."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige calcular probabilidades de união e interseção e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a interseção vazia elimina a dupla contagem. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: multiplicação não calcula a união.\n\nB: Incorreta: podem existir resultados fora dos dois eventos.\n\nC: Incorreta: eventos exclusivos não ocorrem juntos.\n\nD: Correta: a interseção vazia elimina a dupla contagem.\n\nE: Incorreta: exclusão não impõe probabilidades iguais.\n\nArmadilha: Somar probabilidades sem descontar a interseção ou multiplicá-las sem justificar independência.\n\nConhecimento adicional: A regra geral da união é P(A∪B)=P(A)+P(B)−P(A∩B).\n\nAprendizado essencial: Na união, desconte a parte contada duas vezes; na interseção, examine a dependência.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-37",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-37",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_198b8e17264f18"
+      ],
+      "statement": "A probabilidade do evento complementar de A é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P(A)²."
+        },
+        {
+          "label": "B",
+          "text": "1/P(A)."
+        },
+        {
+          "label": "C",
+          "text": "P(A)."
+        },
+        {
+          "label": "D",
+          "text": "1+P(A)."
+        },
+        {
+          "label": "E",
+          "text": "1−P(A)."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige usar evento complementar e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: as probabilidades de A e Aᶜ somam 1. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não é a regra do complementar.\n\nB: Incorreta: pode nem estar definida.\n\nC: Incorreta: só coincidiria em caso particular.\n\nD: Incorreta: ultrapassa 1 quando A é possível.\n\nE: Correta: as probabilidades de A e Aᶜ somam 1.\n\nArmadilha: Confundir o complementar de A com um evento apenas disjunto de A, sem cobrir todo o restante do espaço.\n\nConhecimento adicional: A e seu complementar são disjuntos e exaustivos: sua união é o espaço amostral e suas probabilidades somam 1.\n\nAprendizado essencial: Quando “pelo menos um” é trabalhoso, calcule 1 menos a probabilidade de nenhum.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-25",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-25",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_198b8e17264f18"
+      ],
+      "statement": "A probabilidade de um equipamento falhar em um dia é 0,03. A probabilidade de ele não falhar é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,97."
+        },
+        {
+          "label": "B",
+          "text": "1,03."
+        },
+        {
+          "label": "C",
+          "text": "0,03."
+        },
+        {
+          "label": "D",
+          "text": "0,07."
+        },
+        {
+          "label": "E",
+          "text": "0,30."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige usar evento complementar e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 1−0,03=0,97. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: 1−0,03=0,97.\n\nB: Incorreta: probabilidade não pode ultrapassar 1.\n\nC: Incorreta: repete o evento original.\n\nD: Incorreta: subtrai de 0,10, não de 1.\n\nE: Incorreta: confunde decimal e porcentagem.\n\nArmadilha: Confundir o complementar de A com um evento apenas disjunto de A, sem cobrir todo o restante do espaço.\n\nConhecimento adicional: A e seu complementar são disjuntos e exaustivos: sua união é o espaço amostral e suas probabilidades somam 1.\n\nAprendizado essencial: Quando “pelo menos um” é trabalhoso, calcule 1 menos a probabilidade de nenhum.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-25",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-25",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_198b8e17264f18"
+      ],
+      "statement": "Em três lançamentos independentes de uma moeda equilibrada, a forma mais direta de calcular “pelo menos uma cara” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "somar 1/2 três vezes."
+        },
+        {
+          "label": "B",
+          "text": "calcular 1−P(três coroas)."
+        },
+        {
+          "label": "C",
+          "text": "calcular P(três caras) apenas."
+        },
+        {
+          "label": "D",
+          "text": "dividir três por dois."
+        },
+        {
+          "label": "E",
+          "text": "calcular 1−P(uma coroa)."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige usar evento complementar e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o complementar de ao menos uma cara é nenhuma cara. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: produz 1,5 e conta sobreposições.\n\nB: Correta: o complementar de ao menos uma cara é nenhuma cara.\n\nC: Incorreta: considera só um dos casos favoráveis.\n\nD: Incorreta: não representa contagem probabilística.\n\nE: Incorreta: uma coroa não é o complementar do evento.\n\nArmadilha: Confundir o complementar de A com um evento apenas disjunto de A, sem cobrir todo o restante do espaço.\n\nConhecimento adicional: A e seu complementar são disjuntos e exaustivos: sua união é o espaço amostral e suas probabilidades somam 1.\n\nAprendizado essencial: Quando “pelo menos um” é trabalhoso, calcule 1 menos a probabilidade de nenhum.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 19-25",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 19-25",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_607ad1c71839e2"
+      ],
+      "statement": "Ao escolher uma comissão de 2 pessoas entre 5, sem cargos distintos, o total de escolhas é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "5²."
+        },
+        {
+          "label": "B",
+          "text": "5!."
+        },
+        {
+          "label": "C",
+          "text": "C(5,2)=10."
+        },
+        {
+          "label": "D",
+          "text": "A(5,2)=20."
+        },
+        {
+          "label": "E",
+          "text": "2⁵."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige aplicar contagem ao cálculo de probabilidades e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: combinação é adequada porque a ordem não importa. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: permitiria repetição e ordem.\n\nB: Incorreta: ordena todas as cinco pessoas.\n\nC: Correta: combinação é adequada porque a ordem não importa.\n\nD: Incorreta: conta cada dupla duas vezes.\n\nE: Incorreta: não modela a seleção.\n\nArmadilha: Usar permutação quando a ordem não importa ou contar de modo diferente os casos favoráveis e os casos totais.\n\nConhecimento adicional: Numerador e denominador devem empregar o mesmo critério de ordem ao contar seleções equiprováveis.\n\nAprendizado essencial: Defina se a ordem importa e conte favoráveis e totais no mesmo modelo.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 12-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 12-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_607ad1c71839e2"
+      ],
+      "statement": "De 6 agentes, 2 serão sorteados para uma dupla, sem funções distintas. A probabilidade de Ana pertencer à dupla é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2/3."
+        },
+        {
+          "label": "B",
+          "text": "1/6."
+        },
+        {
+          "label": "C",
+          "text": "1/5."
+        },
+        {
+          "label": "D",
+          "text": "1/3."
+        },
+        {
+          "label": "E",
+          "text": "1/2."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige aplicar contagem ao cálculo de probabilidades e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: há C(5,1)=5 duplas com Ana em C(6,2)=15, logo 1/3. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é o dobro do valor correto.\n\nB: Incorreta: seria a chance de ocupar uma única posição específica.\n\nC: Incorreta: não considera corretamente todas as duplas.\n\nD: Correta: há C(5,1)=5 duplas com Ana em C(6,2)=15, logo 1/3.\n\nE: Incorreta: superestima as duplas favoráveis.\n\nArmadilha: Usar permutação quando a ordem não importa ou contar de modo diferente os casos favoráveis e os casos totais.\n\nConhecimento adicional: Numerador e denominador devem empregar o mesmo critério de ordem ao contar seleções equiprováveis.\n\nAprendizado essencial: Defina se a ordem importa e conte favoráveis e totais no mesmo modelo.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 12-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 12-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_607ad1c71839e2"
+      ],
+      "statement": "Em uma razão de contagens para probabilidade, misturar arranjos no numerador e combinações no denominador é inadequado quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "há apenas um caso favorável."
+        },
+        {
+          "label": "B",
+          "text": "a probabilidade é menor que 1."
+        },
+        {
+          "label": "C",
+          "text": "o espaço amostral é finito."
+        },
+        {
+          "label": "D",
+          "text": "os elementos são distintos."
+        },
+        {
+          "label": "E",
+          "text": "o numerador e o denominador descrevem a mesma seleção sem ordem."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige aplicar contagem ao cálculo de probabilidades e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o mesmo resultado seria contado com multiplicidades diferentes nas duas partes. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: um caso favorável não determina o método.\n\nB: Incorreta: o tamanho da probabilidade não resolve a inconsistência.\n\nC: Incorreta: finitude não escolhe entre arranjo e combinação.\n\nD: Incorreta: distinção dos elementos também não basta.\n\nE: Correta: o mesmo resultado seria contado com multiplicidades diferentes nas duas partes.\n\nArmadilha: Usar permutação quando a ordem não importa ou contar de modo diferente os casos favoráveis e os casos totais.\n\nConhecimento adicional: Numerador e denominador devem empregar o mesmo critério de ordem ao contar seleções equiprováveis.\n\nAprendizado essencial: Defina se a ordem importa e conte favoráveis e totais no mesmo modelo.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 12-18",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 12-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b945e5b5f59058"
+      ],
+      "statement": "Qual é a primeira providência segura ao resolver um problema de probabilidade?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Definir o experimento, o espaço amostral e o evento pedido."
+        },
+        {
+          "label": "B",
+          "text": "Arredondar os dados para porcentagens."
+        },
+        {
+          "label": "C",
+          "text": "Pressupor que todos os eventos são independentes."
+        },
+        {
+          "label": "D",
+          "text": "Usar sempre a regra do complementar."
+        },
+        {
+          "label": "E",
+          "text": "Multiplicar todos os números do enunciado."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige modelar e resolver problemas probabilísticos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a modelagem determina quais regras podem ser usadas. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: a modelagem determina quais regras podem ser usadas.\n\nB: Incorreta: arredondar cedo pode gerar erro.\n\nC: Incorreta: independência precisa ser informada ou demonstrada.\n\nD: Incorreta: o complementar é uma estratégia, não uma obrigação.\n\nE: Incorreta: não há justificativa para uma operação automática.\n\nArmadilha: Executar cálculos antes de definir experimento, evento, dependência e condição de equiprobabilidade.\n\nConhecimento adicional: Uma solução robusta explicita o espaço amostral, identifica o evento e verifica se o resultado final pertence ao intervalo [0,1].\n\nAprendizado essencial: Modele, conte, calcule e valide; não escolha uma fórmula apenas por palavras do enunciado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-72",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-72",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b945e5b5f59058"
+      ],
+      "statement": "Um dado honesto é lançado duas vezes. A probabilidade de a soma ser 7 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1/9."
+        },
+        {
+          "label": "B",
+          "text": "1/6."
+        },
+        {
+          "label": "C",
+          "text": "1/4."
+        },
+        {
+          "label": "D",
+          "text": "1/3."
+        },
+        {
+          "label": "E",
+          "text": "1/12."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige modelar e resolver problemas probabilísticos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: há 6 pares favoráveis entre 36, resultando em 1/6. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não corresponde aos 36 pares ordenados.\n\nB: Correta: há 6 pares favoráveis entre 36, resultando em 1/6.\n\nC: Incorreta: superestima a quantidade de pares.\n\nD: Incorreta: corresponderia a doze casos favoráveis.\n\nE: Incorreta: conta apenas três resultados favoráveis.\n\nArmadilha: Executar cálculos antes de definir experimento, evento, dependência e condição de equiprobabilidade.\n\nConhecimento adicional: Uma solução robusta explicita o espaço amostral, identifica o evento e verifica se o resultado final pertence ao intervalo [0,1].\n\nAprendizado essencial: Modele, conte, calcule e valide; não escolha uma fórmula apenas por palavras do enunciado.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-72",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-72",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_12_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_12_principios_de_contagem_e_probabilidade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b945e5b5f59058"
+      ],
+      "statement": "Um cálculo apresentou probabilidade 1,25. A conclusão correta é que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o evento é muito provável e o valor é aceitável."
+        },
+        {
+          "label": "B",
+          "text": "o evento é impossível."
+        },
+        {
+          "label": "C",
+          "text": "houve erro de modelagem ou cálculo, pois probabilidades não excedem 1."
+        },
+        {
+          "label": "D",
+          "text": "deve-se converter o valor para 1250%."
+        },
+        {
+          "label": "E",
+          "text": "basta trocar numerador e denominador sem revisar o modelo."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige modelar e resolver problemas probabilísticos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a faixa admissível é de 0 a 1. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: valores maiores que 1 são inválidos.\n\nB: Incorreta: evento impossível possui probabilidade 0.\n\nC: Correta: a faixa admissível é de 0 a 1.\n\nD: Incorreta: a conversão preservaria o erro.\n\nE: Incorreta: a causa deve ser identificada, não corrigida mecanicamente.\n\nArmadilha: Executar cálculos antes de definir experimento, evento, dependência e condição de equiprobabilidade.\n\nConhecimento adicional: Uma solução robusta explicita o espaço amostral, identifica o evento e verifica se o resultado final pertence ao intervalo [0,1].\n\nAprendizado essencial: Modele, conte, calcule e valide; não escolha uma fórmula apenas por palavras do enunciado.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "location": "páginas 8-72",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_23",
+          "trace_status": "missing",
+          "location": "páginas 8-72",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

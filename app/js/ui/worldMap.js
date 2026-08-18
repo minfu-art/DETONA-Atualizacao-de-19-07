@@ -8,6 +8,7 @@ import {
   filterDisciplines,
   resolveDisciplinePresentation,
 } from './studyPresentation.js';
+import { clearStudyAccordion } from './studyAccordionState.js';
 
 function pendingReviews(rows = []) {
   return rows.filter((item) => item?.status !== 'frozen').length;
@@ -106,8 +107,7 @@ export async function renderWorldMap(root, navigate, ctx) {
     grid.querySelectorAll('[data-discipline-id]').forEach((button) => {
       button.addEventListener('click', () => {
         ctx.disciplineId = button.dataset.disciplineId;
-        ctx.studyTopicId = null;
-        ctx.studySubtopicId = null;
+        clearStudyAccordion(ctx);
         navigate('topicTree');
       });
     });

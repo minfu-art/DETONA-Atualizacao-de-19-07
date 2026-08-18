@@ -30,6 +30,11 @@ import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { readCheckoutReturn, readCommercialIntent } from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
+  courseFactoryPreviewService,
+  isCourseFactoryStudentPreview,
+  requestedCoursePreview,
+} from './services/courseFactoryPreviewService.js';
+import {
   createHabitReminderQueue,
   deliverDueHabitReminders,
   dismissHabitReminder,
@@ -102,7 +107,7 @@ const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'ren
 const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=74'), 'renderWellbeing');
 const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile', ['./css/profile-evolution.css?v=2']);
 const renderCelebration = lazyRoute(() => import('./ui/celebration.js?v=68'), 'renderCelebration');
-const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=73'), 'renderTopicTree');
+const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=74'), 'renderTopicTree');
 const renderReview = lazyRoute(() => import('./ui/review.js?v=86'), 'renderReview', ['./css/review.css?v=1']);
 const renderRankedEvent = lazyRoute(() => import('./ui/rankedEvent.js?v=87'), 'renderRankedEvent', ['./css/ranked-functional.css?v=3']);
 
@@ -115,6 +120,7 @@ const ctx = {
   returnToTree: null,
   studyTopicId: null,
   studySubtopicId: null,
+  studyReturnContext: null,
   logout: null,
   contest: null,
   openContest: null,
@@ -411,6 +417,7 @@ async function navigate(screen, options = {}) {
     return;
   }
   if (prepareStudentHistoryNavigation(screen, options)) return;
+  if (ctx.screen === 'battle' && screen !== 'topicTree') ctx.studyReturnContext = null;
   ctx.allowBattleExit = false;
   ctx.allowReviewExit = false;
   ctx.allowRankedExit = false;
@@ -684,19 +691,26 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
     contestHint?.id === contestId
       ? Promise.resolve(contestHint)
       : libraryService.getContest(contestId, { refresh: true }),
-    contestContentService.load(user.id, contestId),
+    contestContentService.load(user.id, contestId, {
+      previewDraftId: contestHint?.previewOnly === true ? contestHint.courseDraftId : null,
+      adminPreviewAccess: contestHint?.adminPreviewAccess === true,
+    }),
   ]);
   assertCurrent();
   if (!contest || contest.contentStatus !== 'ready') throw new Error('Conteudo em preparacao.');
   const contentPackage = loadedContent?.legacyStatic ? null : loadedContent;
   if (contentPackage && contentPackage.contestId !== contestId) throw new Error('Pacote de concurso incorreto.');
+  if ((contestHint?.previewOnly === true || contestHint?.adminPreviewAccess === true)
+    && loadedContent?.previewOnly !== true) {
+    throw new Error('Pacote de homologação inválido.');
+  }
   if (contestChanged) {
     resetContestTransientContext(ctx);
     ctx.rankedEventSession = null;
   }
   setActiveContestId(contestId);
   resetHabitReminderRuntime(habitReminderScopeKey(user.id, contestId));
-  setActiveContestContent(contentPackage);
+  setActiveContestContent(loadedContent?.previewOnly === true ? loadedContent : contentPackage);
   ctx.contest = contest;
   ctx.contentPackage = contentPackage;
   document.getElementById('app')?.classList.remove('app-shell--library');
@@ -704,10 +718,13 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   assertCurrent();
   await openDB();
   const localPlayer = await getPlayer();
-  const syncInBackground = isCloudEnabled() && Boolean(localPlayer);
+  const cloudSyncEnabled = isCloudEnabled()
+    && !isCourseFactoryStudentPreview()
+    && loadedContent?.previewOnly !== true;
+  const syncInBackground = cloudSyncEnabled && Boolean(localPlayer);
   // Dispositivo novo ainda bloqueia no primeiro pull para restaurar o progresso remoto.
   // Quem já possui base local abre imediatamente e sincroniza depois da primeira tela.
-  if (isCloudEnabled()) {
+  if (cloudSyncEnabled) {
     if (!syncInBackground) {
       try {
         await syncOnContestOpen(user.id, contestId);
@@ -735,7 +752,7 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
       : requestedScreen === 'wellbeing' ? 'wellbeing' : 'home';
     await navigate(destination);
   }
-  if (isCloudEnabled()) {
+  if (cloudSyncEnabled) {
     scheduleContestMaintenance({
       userId: user.id,
       contestId,
@@ -764,9 +781,10 @@ ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitRemi
 
 async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
-  if (isDeveloperUser(authenticatedUser)) {
-    redirectForRole(authenticatedUser);
-    return;
+  const coursePreview = isCourseFactoryStudentPreview();
+  if (isDeveloperUser(authenticatedUser) && !coursePreview) {
+    const redirect = redirectForRole(authenticatedUser);
+    if (redirect) return;
   }
   if (ctx.user?.id && ctx.user.id !== authenticatedUser?.id) {
     resetHabitReminderRuntime();
@@ -777,6 +795,14 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   if (!shellInitialized) {
     initAppShell(navigate, { onLogout: logout, onActivate: () => SFX.click() });
     shellInitialized = true;
+  }
+
+  if (coursePreview && isDeveloperUser(authenticatedUser)) {
+    const previewContestId = requestedCoursePreview();
+    await openContest(previewContestId, {
+      contestHint: await courseFactoryPreviewService.loadStudentContest(previewContestId),
+    });
+    return;
   }
 
   if (reason === 'register') {

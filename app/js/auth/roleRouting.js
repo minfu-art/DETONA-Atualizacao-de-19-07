@@ -1,4 +1,6 @@
 import { isDeveloperUser } from './authService.js';
+import { isCourseFactoryStudentPreview } from '../services/courseFactoryPreviewService.js';
+import { APP_ENVIRONMENTS, getAppEnvironment } from '../config/appEnvironment.js';
 
 export const STUDENT_ENTRY = './index.html';
 export const ADMIN_ENTRY = './admin.html';
@@ -13,10 +15,13 @@ export function isAdminDocument(pathname = globalThis.location?.pathname || '') 
 
 export function redirectForRole(user, {
   pathname = globalThis.location?.pathname || '',
+  search = globalThis.location?.search || '',
+  environment = getAppEnvironment(),
   replace = (target) => globalThis.location?.replace?.(target),
 } = {}) {
   const adminDocument = isAdminDocument(pathname);
-  if (isDeveloperUser(user) && !adminDocument) {
+  const stagingHomologation = isDeveloperUser(user) && environment === APP_ENVIRONMENTS.STAGING;
+  if (isDeveloperUser(user) && !adminDocument && !isCourseFactoryStudentPreview(search) && !stagingHomologation) {
     replace(ADMIN_ENTRY);
     return ADMIN_ENTRY;
   }

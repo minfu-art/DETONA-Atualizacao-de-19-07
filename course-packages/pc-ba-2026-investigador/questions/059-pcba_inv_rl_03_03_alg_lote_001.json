@@ -1,0 +1,916 @@
+{
+  "name": "pcba_inv_rl_03_03_alg_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_03_03_alg_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9aa39c287b66d"
+      ],
+      "statement": "A solução da equação 3x + 7 = 25 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4."
+        },
+        {
+          "label": "B",
+          "text": "5."
+        },
+        {
+          "label": "C",
+          "text": "6."
+        },
+        {
+          "label": "D",
+          "text": "7."
+        },
+        {
+          "label": "E",
+          "text": "8."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Resolver uma equação de primeiro grau significa isolar a incógnita preservando a igualdade.\n\nAnálise da resposta: Correta: 3x = 18 e, portanto, x = 6.\n\nA: Incorreta: 3×4+7 resulta em 19.\n\nB: Incorreta: 3×5+7 resulta em 22.\n\nC: Correta: 3x = 18 e, portanto, x = 6.\n\nD: Incorreta: 3×7+7 resulta em 28.\n\nE: Incorreta: 3×8+7 resulta em 31.\n\nArmadilha: Mover o termo 7 sem trocar seu sinal ou dividir apenas parte da expressão.\n\nConhecimento adicional: A substituição x=6 verifica a igualdade nos dois membros.\n\nAprendizado essencial: Execute a mesma operação nos dois lados e confira a raiz por substituição.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-8",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-8",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9aa39c287b66d"
+      ],
+      "statement": "O triplo de um número, diminuído de 8, é igual a 37. Esse número é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "12."
+        },
+        {
+          "label": "B",
+          "text": "15."
+        },
+        {
+          "label": "C",
+          "text": "18."
+        },
+        {
+          "label": "D",
+          "text": "21."
+        },
+        {
+          "label": "E",
+          "text": "29."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A frase deve ser traduzida para a equação linear 3x−8=37.\n\nAnálise da resposta: Correta: 3x−8=37 implica 3x=45 e x=15.\n\nA: Incorreta: 3×12−8 resulta em 28.\n\nB: Correta: 3x−8=37 implica 3x=45 e x=15.\n\nC: Incorreta: 3×18−8 resulta em 46.\n\nD: Incorreta: o valor excede a solução da equação.\n\nE: Incorreta: foi confundido o número com 37−8.\n\nArmadilha: Interpretar “triplo diminuído de oito” como 3(x−8).\n\nConhecimento adicional: Modelagem correta da linguagem verbal é parte essencial da resolução algébrica.\n\nAprendizado essencial: Defina a incógnita e traduza cada operação na ordem descrita.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9aa39c287b66d"
+      ],
+      "statement": "Para resolver 5(x − 2) = 3x + 10, um candidato concluiu que x = 5. A análise correta é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "a conclusão está correta, pois 5−2=3."
+        },
+        {
+          "label": "B",
+          "text": "a conclusão está correta, pois os coeficientes podem ser cancelados."
+        },
+        {
+          "label": "C",
+          "text": "a conclusão está errada; a equação não possui solução."
+        },
+        {
+          "label": "D",
+          "text": "a conclusão está errada; a solução é x=8."
+        },
+        {
+          "label": "E",
+          "text": "a conclusão está errada; a solução é x=10."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A distributiva deve ser aplicada antes de reunir os termos semelhantes.\n\nAnálise da resposta: Correta: 5x−10=3x+10, logo 2x=20 e x=10.\n\nA: Incorreta: a expressão contém multiplicação distributiva, não simples subtração de coeficientes.\n\nB: Incorreta: 5 e 3 multiplicam expressões diferentes e não podem ser cancelados.\n\nC: Incorreta: a equação tem uma solução real única.\n\nD: Incorreta: x=8 não satisfaz os dois membros.\n\nE: Correta: 5x−10=3x+10, logo 2x=20 e x=10.\n\nArmadilha: Distribuir 5 somente sobre x e esquecer o produto 5×(−2).\n\nConhecimento adicional: Substituindo x=10, ambos os lados valem 40.\n\nAprendizado essencial: Em equações com parênteses, distribua, organize e só então isole a incógnita.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 4-12",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 4-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6a314399dde26c"
+      ],
+      "statement": "O conjunto solução da inequação 2x − 5 ≤ 9 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x ≤ 7."
+        },
+        {
+          "label": "B",
+          "text": "x ≥ 7."
+        },
+        {
+          "label": "C",
+          "text": "x < 2."
+        },
+        {
+          "label": "D",
+          "text": "x ≥ 2."
+        },
+        {
+          "label": "E",
+          "text": "x ≤ 2."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Inequações lineares produzem um conjunto de valores que satisfaz a desigualdade.\n\nAnálise da resposta: Correta: 2x≤14 e, dividindo por 2 positivo, obtém-se x≤7.\n\nA: Correta: 2x≤14 e, dividindo por 2 positivo, obtém-se x≤7.\n\nB: Incorreta: o sentido não deve ser invertido ao dividir por número positivo.\n\nC: Incorreta: o limite foi calculado incorretamente.\n\nD: Incorreta: o número 2 não é o ponto crítico dessa inequação.\n\nE: Incorreta: o resultado restringe indevidamente o conjunto solução.\n\nArmadilha: Trocar o sentido do sinal mesmo quando a divisão é por número positivo.\n\nConhecimento adicional: O valor x=7 está incluído porque o símbolo original contém igualdade.\n\nAprendizado essencial: Isole x e preserve o sinal ao dividir por coeficiente positivo.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 32-36",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 32-36",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6a314399dde26c"
+      ],
+      "statement": "Um serviço cobra taxa fixa de R$ 120,00 mais R$ 18,00 por atendimento. Para não ultrapassar R$ 300,00, o número inteiro máximo de atendimentos é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "8."
+        },
+        {
+          "label": "B",
+          "text": "9."
+        },
+        {
+          "label": "C",
+          "text": "11."
+        },
+        {
+          "label": "D",
+          "text": "10."
+        },
+        {
+          "label": "E",
+          "text": "12."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A expressão “não ultrapassar” traduz-se por uma inequação com o símbolo menor ou igual.\n\nAnálise da resposta: Correta: 120+18x≤300 implica 18x≤180 e x≤10.\n\nA: Incorreta: oito atendimentos não atingem o maior valor permitido.\n\nB: Incorreta: nove atendimentos totalizam apenas R$ 282,00.\n\nC: Incorreta: onze atendimentos totalizam R$ 318,00.\n\nD: Correta: 120+18x≤300 implica 18x≤180 e x≤10.\n\nE: Incorreta: doze atendimentos excedem ainda mais o limite.\n\nArmadilha: Desconsiderar a taxa fixa ou tratar o limite como igualdade sem verificar o domínio inteiro.\n\nConhecimento adicional: Como atendimentos são contagens, usa-se o maior inteiro pertencente ao conjunto x≤10.\n\nAprendizado essencial: Modele o custo total e respeite simultaneamente a desigualdade e o domínio.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 32-44",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 32-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6a314399dde26c"
+      ],
+      "statement": "Ao resolver −3x > 12, qual resultado está correto?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "valores maiores que 4."
+        },
+        {
+          "label": "B",
+          "text": "valores a partir de −4, incluindo o limite."
+        },
+        {
+          "label": "C",
+          "text": "valores menores que −4."
+        },
+        {
+          "label": "D",
+          "text": "valores maiores que −4, sem incluir o limite."
+        },
+        {
+          "label": "E",
+          "text": "valores até −4, incluindo o limite."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Multiplicar ou dividir uma inequação por número negativo exige inverter o sentido da desigualdade.\n\nAnálise da resposta: Correta: dividir por −3 inverte o sentido, produzindo x<−4.\n\nA: Incorreta: além do sinal, o quociente deveria ser negativo.\n\nB: Incorreta: o limite não pertence ao conjunto por se tratar de desigualdade estrita.\n\nC: Correta: dividir por −3 inverte o sentido, produzindo x<−4.\n\nD: Incorreta: o sentido não foi invertido após divisão por número negativo.\n\nE: Incorreta: x=−4 gera igualdade, que não satisfaz o símbolo >.\n\nArmadilha: Aplicar as regras de equação sem considerar a ordem dos números após troca de sinal.\n\nConhecimento adicional: Um teste com x=−5 confirma: −3×(−5)=15, que é maior que 12.\n\nAprendizado essencial: Ao dividir por valor negativo, inverta o sinal e confira um ponto da solução.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 32-44",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 32-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_63dc5e6238fb4d"
+      ],
+      "statement": "Qual expressão é uma equação do segundo grau em x?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "3x + 2 = 0."
+        },
+        {
+          "label": "B",
+          "text": "2x² − 3x + 1 = 0."
+        },
+        {
+          "label": "C",
+          "text": "x³ − x = 0."
+        },
+        {
+          "label": "D",
+          "text": "5/x = 2."
+        },
+        {
+          "label": "E",
+          "text": "x⁴ − 1 = 0."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Uma equação quadrática tem maior expoente igual a dois e coeficiente do termo x² não nulo.\n\nAnálise da resposta: Correta: a equação tem forma ax²+bx+c=0 com a=2 diferente de zero.\n\nA: Incorreta: o maior expoente de x é 1.\n\nB: Correta: a equação tem forma ax²+bx+c=0 com a=2 diferente de zero.\n\nC: Incorreta: o maior expoente é 3.\n\nD: Incorreta: a incógnita aparece no denominador, não na forma quadrática polinomial.\n\nE: Incorreta: o maior expoente é 4.\n\nArmadilha: Classificar pela quantidade de termos em vez do maior expoente da incógnita.\n\nConhecimento adicional: Os coeficientes b ou c podem ser zero sem retirar o caráter quadrático.\n\nAprendizado essencial: Compare a expressão com ax²+bx+c=0 e verifique a≠0.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 13-14",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 13-14",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_63dc5e6238fb4d"
+      ],
+      "statement": "As raízes da equação x² − 7x + 12 = 0 são\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "as raízes 1 e 12."
+        },
+        {
+          "label": "B",
+          "text": "as raízes 2 e 6."
+        },
+        {
+          "label": "C",
+          "text": "duas raízes negativas, −3 e −4."
+        },
+        {
+          "label": "D",
+          "text": "uma raiz negativa e outra positiva, −3 e 4."
+        },
+        {
+          "label": "E",
+          "text": "as raízes positivas 3 e 4."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Fatorar a equação busca dois números cujo produto é 12 e cuja soma é 7.\n\nAnálise da resposta: Correta: (x−3)(x−4)=0, logo x=3 ou x=4.\n\nA: Incorreta: a soma é 13, não 7.\n\nB: Incorreta: o produto é 12, mas a soma é 8.\n\nC: Incorreta: a soma seria −7 e o termo linear teria sinal oposto.\n\nD: Incorreta: o produto seria −12.\n\nE: Correta: (x−3)(x−4)=0, logo x=3 ou x=4.\n\nArmadilha: Considerar apenas o produto das raízes e ignorar a soma.\n\nConhecimento adicional: A forma fatorada torna explícito que um produto é zero quando algum fator é zero.\n\nAprendizado essencial: Confira soma e produto antes de aceitar um par de raízes.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 13-31",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 13-31",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_63dc5e6238fb4d"
+      ],
+      "statement": "A equação x(x − 5) = 14 possui como conjunto de raízes\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{−2, 7}."
+        },
+        {
+          "label": "B",
+          "text": "{2, 7}."
+        },
+        {
+          "label": "C",
+          "text": "{−7, 2}."
+        },
+        {
+          "label": "D",
+          "text": "{−2, 5}."
+        },
+        {
+          "label": "E",
+          "text": "{1, 14}."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Uma equação quadrática pode estar disfarçada em um produto que precisa ser expandido e organizado.\n\nAnálise da resposta: Correta: x²−5x−14=0=(x−7)(x+2), produzindo x=7 e x=−2.\n\nA: Correta: x²−5x−14=0=(x−7)(x+2), produzindo x=7 e x=−2.\n\nB: Incorreta: 2 não satisfaz a equação original.\n\nC: Incorreta: −7 e 2 possuem soma −5, mas não resolvem a forma obtida.\n\nD: Incorreta: 5 torna o lado esquerdo igual a zero.\n\nE: Incorreta: esses números foram retirados diretamente dos termos sem fatoração.\n\nArmadilha: Igualar cada fator diretamente a 14 ou esquecer de levar 14 para o primeiro membro.\n\nConhecimento adicional: As raízes têm soma 5 e produto −14 para a forma monômia encontrada.\n\nAprendizado essencial: Transforme a expressão em forma padrão antes de fatorar ou aplicar a fórmula.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 13-23",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 13-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f150b136ad3014"
+      ],
+      "statement": "Para a equação x² − 6x + 5 = 0, o discriminante Δ é igual a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4."
+        },
+        {
+          "label": "B",
+          "text": "8."
+        },
+        {
+          "label": "C",
+          "text": "12."
+        },
+        {
+          "label": "D",
+          "text": "16."
+        },
+        {
+          "label": "E",
+          "text": "36."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O discriminante de ax²+bx+c=0 é calculado por Δ=b²−4ac.\n\nAnálise da resposta: Correta: Δ=(−6)²−4×1×5=36−20=16.\n\nA: Incorreta: o valor resulta de uma substituição incompleta.\n\nB: Incorreta: não corresponde a b²−4ac.\n\nC: Incorreta: houve erro no produto 4ac.\n\nD: Correta: Δ=(−6)²−4×1×5=36−20=16.\n\nE: Incorreta: foi considerado apenas b².\n\nArmadilha: Esquecer os parênteses ao elevar o coeficiente negativo b ao quadrado.\n\nConhecimento adicional: Como Δ é positivo, a equação possui duas raízes reais distintas.\n\nAprendizado essencial: Identifique a, b e c com seus sinais antes de calcular Δ.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f150b136ad3014"
+      ],
+      "statement": "A equação x² + 4x + 4 = 0 apresenta\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "duas raízes reais distintas, 2 e −2."
+        },
+        {
+          "label": "B",
+          "text": "nenhuma raiz real."
+        },
+        {
+          "label": "C",
+          "text": "uma raiz real dupla, x=−2."
+        },
+        {
+          "label": "D",
+          "text": "uma raiz real dupla, x=2."
+        },
+        {
+          "label": "E",
+          "text": "raízes 0 e −4."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Discriminante zero indica duas raízes reais coincidentes, usualmente chamadas de raiz dupla.\n\nAnálise da resposta: Correta: Δ=16−16=0 e (x+2)²=0, logo x=−2 é raiz dupla.\n\nA: Incorreta: os valores não são ambos raízes da equação.\n\nB: Incorreta: o discriminante não é negativo.\n\nC: Correta: Δ=16−16=0 e (x+2)²=0, logo x=−2 é raiz dupla.\n\nD: Incorreta: substituir x=2 não zera a expressão.\n\nE: Incorreta: o produto das raízes deve ser 4, não zero.\n\nArmadilha: Interpretar Δ=0 como ausência de solução real.\n\nConhecimento adicional: A forma de quadrado perfeito permite reconhecer imediatamente a raiz −2.\n\nAprendizado essencial: Relacione o sinal de Δ ao número de raízes reais.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f150b136ad3014"
+      ],
+      "statement": "Sobre a equação 2x² + x + 3 = 0 no conjunto dos números reais, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "possui duas raízes positivas."
+        },
+        {
+          "label": "B",
+          "text": "não possui raízes reais, pois Δ=−23."
+        },
+        {
+          "label": "C",
+          "text": "possui raiz dupla x=−1/4."
+        },
+        {
+          "label": "D",
+          "text": "possui raízes −1 e −3."
+        },
+        {
+          "label": "E",
+          "text": "possui uma única raiz real x=−3/2."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "O sinal do discriminante decide a existência e a quantidade de raízes reais.\n\nAnálise da resposta: Correta: Δ=1²−4×2×3=1−24=−23, portanto não há solução real.\n\nA: Incorreta: o discriminante negativo impede raízes reais.\n\nB: Correta: Δ=1²−4×2×3=1−24=−23, portanto não há solução real.\n\nC: Incorreta: raiz dupla exigiria Δ=0.\n\nD: Incorreta: a soma e o produto desses valores não correspondem aos coeficientes.\n\nE: Incorreta: equação quadrática não tem exatamente uma raiz real simples.\n\nArmadilha: Tentar aplicar a fórmula e ignorar que a raiz quadrada de número negativo não é real.\n\nConhecimento adicional: No conjunto complexo existiriam duas raízes, mas o enunciado restringe o domínio aos reais.\n\nAprendizado essencial: Calcule Δ antes de procurar raízes reais de uma equação quadrática.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_82c9208206574a"
+      ],
+      "statement": "O conjunto solução de (x − 2)(x − 5) > 0 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 < x < 5."
+        },
+        {
+          "label": "B",
+          "text": "x ≥ 5."
+        },
+        {
+          "label": "C",
+          "text": "x ≤ 2."
+        },
+        {
+          "label": "D",
+          "text": "2 ≤ x ≤ 5."
+        },
+        {
+          "label": "E",
+          "text": "x < 2 ou x > 5."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Inequações quadráticas exigem localizar as raízes e analisar o sinal nos intervalos.\n\nAnálise da resposta: Correta: com concavidade para cima, a expressão é positiva fora das raízes 2 e 5.\n\nA: Incorreta: entre as raízes o produto é negativo.\n\nB: Incorreta: também há solução à esquerda de 2.\n\nC: Incorreta: também há solução à direita de 5.\n\nD: Incorreta: a desigualdade é estrita e o sinal dentro do intervalo é negativo.\n\nE: Correta: com concavidade para cima, a expressão é positiva fora das raízes 2 e 5.\n\nArmadilha: Selecionar automaticamente o intervalo entre as raízes sem observar o sinal desejado.\n\nConhecimento adicional: As raízes não entram porque a desigualdade usa >, e nelas a expressão vale zero.\n\nAprendizado essencial: Considere concavidade, raízes e inclusão dos extremos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 45-49",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 45-49",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_82c9208206574a"
+      ],
+      "statement": "A solução real da inequação x² − 9 ≤ 0 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "−3 ≤ x ≤ 3."
+        },
+        {
+          "label": "B",
+          "text": "x ≤ −3 ou x ≥ 3."
+        },
+        {
+          "label": "C",
+          "text": "−3 < x < 3."
+        },
+        {
+          "label": "D",
+          "text": "x ≥ 9."
+        },
+        {
+          "label": "E",
+          "text": "x ≤ 3."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Para parábola com concavidade para cima, os valores não positivos ficam entre as raízes.\n\nAnálise da resposta: Correta: (x−3)(x+3)≤0 e a parábola é não positiva entre as raízes, incluindo-as.\n\nA: Correta: (x−3)(x+3)≤0 e a parábola é não positiva entre as raízes, incluindo-as.\n\nB: Incorreta: fora das raízes a expressão é positiva.\n\nC: Incorreta: os extremos devem ser incluídos por causa do símbolo ≤.\n\nD: Incorreta: 9 é termo constante, não raiz.\n\nE: Incorreta: a solução também impõe o limite inferior −3.\n\nArmadilha: Excluir raízes quando a desigualdade permite igualdade.\n\nConhecimento adicional: A expressão x²−9 é uma diferença de quadrados com raízes −3 e 3.\n\nAprendizado essencial: Fatore, analise o sinal e observe se os extremos entram.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 45-49",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 45-49",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_82c9208206574a"
+      ],
+      "statement": "O conjunto solução de −x² + 4x − 3 ≥ 0 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x ≤ 1 ou x ≥ 3."
+        },
+        {
+          "label": "B",
+          "text": "1 < x < 3."
+        },
+        {
+          "label": "C",
+          "text": "x ≤ −1 ou x ≥ −3."
+        },
+        {
+          "label": "D",
+          "text": "1 ≤ x ≤ 3."
+        },
+        {
+          "label": "E",
+          "text": "todo número real."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O sinal do coeficiente de x² inverte a posição das regiões positivas e negativas da parábola.\n\nAnálise da resposta: Correta: −x²+4x−3=−(x−1)(x−3), que é não negativa em [1,3].\n\nA: Incorreta: para concavidade voltada para baixo, a região não negativa fica entre as raízes.\n\nB: Incorreta: as raízes devem ser incluídas pelo símbolo ≥.\n\nC: Incorreta: as raízes corretas são positivas 1 e 3.\n\nD: Correta: −x²+4x−3=−(x−1)(x−3), que é não negativa em [1,3].\n\nE: Incorreta: fora do intervalo a expressão assume valores negativos.\n\nArmadilha: Aplicar mecanicamente a regra de concavidade para cima quando a é negativo.\n\nConhecimento adicional: Multiplicar a inequação inteira por −1 também exige inverter ≥ para ≤.\n\nAprendizado essencial: Antes do quadro de sinais, confira a concavidade e o tipo de desigualdade.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 45-53",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 45-53",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13cbe0591be396"
+      ],
+      "statement": "Uma corrida cobra bandeirada de R$ 25,00 mais R$ 5,00 por quilômetro. Se o total foi R$ 60,00, a distância percorrida foi\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "5 km."
+        },
+        {
+          "label": "B",
+          "text": "6 km."
+        },
+        {
+          "label": "C",
+          "text": "7 km."
+        },
+        {
+          "label": "D",
+          "text": "8 km."
+        },
+        {
+          "label": "E",
+          "text": "12 km."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Problemas com parcela fixa e parcela variável são modelados por equações lineares.\n\nAnálise da resposta: Correta: 25+5x=60 implica 5x=35 e x=7 km.\n\nA: Incorreta: 25+5×5 resulta em R$ 50,00.\n\nB: Incorreta: 25+5×6 resulta em R$ 55,00.\n\nC: Correta: 25+5x=60 implica 5x=35 e x=7 km.\n\nD: Incorreta: oito quilômetros totalizariam R$ 65,00.\n\nE: Incorreta: foi dividido o total por cinco sem retirar a parcela fixa.\n\nArmadilha: Dividir o total diretamente pela tarifa quilométrica e esquecer a bandeirada.\n\nConhecimento adicional: A verificação substitui a distância encontrada na expressão de custo.\n\nAprendizado essencial: Separe custos fixos e variáveis ao montar a equação.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 3-12",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 3-12",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13cbe0591be396"
+      ],
+      "statement": "Um retângulo tem área de 48 m². Sua largura mede x metros e seu comprimento mede x+2 metros. O perímetro do retângulo é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "24 m."
+        },
+        {
+          "label": "B",
+          "text": "28 m."
+        },
+        {
+          "label": "C",
+          "text": "30 m."
+        },
+        {
+          "label": "D",
+          "text": "32 m."
+        },
+        {
+          "label": "E",
+          "text": "48 m."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A condição geométrica gera equação quadrática e o contexto elimina a raiz negativa.\n\nAnálise da resposta: Correta: x(x+2)=48 gera x²+2x−48=0, cuja raiz positiva é 6; dimensões 6 e 8 dão perímetro 28.\n\nA: Incorreta: o valor não corresponde às dimensões que produzem área 48.\n\nB: Correta: x(x+2)=48 gera x²+2x−48=0, cuja raiz positiva é 6; dimensões 6 e 8 dão perímetro 28.\n\nC: Incorreta: resultaria de dimensões incompatíveis com a área.\n\nD: Incorreta: confunde parcialmente área e perímetro.\n\nE: Incorreta: 48 é a área, não o perímetro.\n\nArmadilha: Aceitar a raiz negativa como medida ou confundir área com perímetro.\n\nConhecimento adicional: A segunda raiz é −8, matematicamente válida na equação, mas impossível como largura.\n\nAprendizado essencial: Resolva a equação e depois filtre as soluções pelo significado físico.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 13-23",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 13-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_alg_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13cbe0591be396"
+      ],
+      "statement": "Um produto recebe desconto de 20%. Para que o preço final não ultrapasse R$ 240,00, o preço original P deve satisfazer\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "P ≥ R$ 192,00."
+        },
+        {
+          "label": "B",
+          "text": "P ≤ R$ 240,00."
+        },
+        {
+          "label": "C",
+          "text": "P ≥ R$ 288,00."
+        },
+        {
+          "label": "D",
+          "text": "P ≤ R$ 288,00."
+        },
+        {
+          "label": "E",
+          "text": "P ≤ R$ 300,00."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "O problema combina fator de desconto e inequação linear para determinar a maior base admissível.\n\nAnálise da resposta: Correta: 0,80P≤240 implica P≤240/0,80=R$ 300,00.\n\nA: Incorreta: R$ 192,00 é 80% de R$ 240,00, mas não o limite do preço original.\n\nB: Incorreta: preços originais entre 240 e 300 também podem gerar final permitido.\n\nC: Incorreta: o sentido da restrição foi invertido.\n\nD: Incorreta: R$ 288,00 não é o limite exato resultante de 20% de desconto.\n\nE: Correta: 0,80P≤240 implica P≤240/0,80=R$ 300,00.\n\nArmadilha: Calcular 80% do limite final em vez de recuperar a base anterior ao desconto.\n\nConhecimento adicional: Como 0,80 é positivo, dividir por ele preserva o sentido da desigualdade.\n\nAprendizado essencial: Traduza o desconto como fator e só depois resolva a inequação.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 16-32",
+          "used_for": "Fundamento percentual complementar do problema contextualizado."
+        },
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "location": "páginas 32-44",
+          "used_for": "Fundamento algébrico e conferência editorial da equação ou inequação."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 16-32",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        },
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_16",
+          "trace_status": "missing",
+          "location": "páginas 32-44",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

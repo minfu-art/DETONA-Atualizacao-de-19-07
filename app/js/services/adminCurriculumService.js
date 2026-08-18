@@ -1,6 +1,10 @@
 import { DISCIPLINE_DEFS } from '../data/editalSeed.js';
 import { getSupabaseClient } from '../supabase/client.js';
 import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
+import {
+  courseFactoryPreviewService,
+  PC_BA_CONTEST_ID,
+} from './courseFactoryPreviewService.js';
 
 export const CURRICULUM_NODE_TYPES = Object.freeze(['role', 'discipline', 'topic', 'subtopic']);
 export const CURRICULUM_STATUSES = Object.freeze(['draft', 'active', 'inactive', 'archived']);
@@ -114,6 +118,17 @@ export class AdminCurriculumService {
 
   async listNodes(contestId) {
     if (!contestId) throw new Error('contestId é obrigatório.');
+    if (contestId === PC_BA_CONTEST_ID) {
+      const manifest = await courseFactoryPreviewService.loadManifest();
+      return {
+        rows: manifest.curriculum,
+        coverage: manifest.coverage,
+        counts: manifest.counts,
+        source: 'course_factory_preview',
+        capabilities: { ...READ_ONLY_CAPABILITIES },
+        writable: false,
+      };
+    }
     try {
       const result = await this.#invoke('get_curriculum_tree', { contestId });
       const capabilities = normalizeAdminCapabilities(result.capabilities, READ_ONLY_CAPABILITIES);

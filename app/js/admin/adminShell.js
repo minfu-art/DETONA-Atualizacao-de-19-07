@@ -3,7 +3,7 @@ import { adjacentWorkspaceScreen, CONTEST_WORKSPACE_TABS } from './adminWorkspac
 
 export const ADMIN_NAV_ITEMS = Object.freeze([
   ['overview', 'Visão geral'],
-  ['contests', 'Concursos'],
+  ['contests', 'Cursos'],
   ['students', 'Alunos e acessos'],
   ['messages', 'Mensagens'],
   ['settings', 'Configurações'],

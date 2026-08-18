@@ -1,0 +1,605 @@
+{
+  "name": "pcba_inv_rl_03_01_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_03_01_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_85c77c0d7e843c"
+      ],
+      "statement": "Uma quantia de R$ 900,00 deve ser dividida em partes diretamente proporcionais a 2, 3 e 4. A maior parte será de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 200,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 300,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 360,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 400,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 450,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na divisão direta, cada parte é o peso correspondente multiplicado por uma mesma constante.\n\nAnálise da resposta: Correta: a soma dos pesos é 9; cada unidade vale R$ 100,00 e o peso 4 recebe R$ 400,00.\n\nA: Incorreta: R$ 200,00 é a parte associada ao peso 2.\n\nB: Incorreta: R$ 300,00 é a parte associada ao peso 3.\n\nC: Incorreta: esse valor não preserva a razão 2:3:4.\n\nD: Correta: a soma dos pesos é 9; cada unidade vale R$ 100,00 e o peso 4 recebe R$ 400,00.\n\nE: Incorreta: dividir metade do total não respeita os três pesos.\n\nArmadilha: Dividir o total igualmente ou escolher uma fração sem somar os pesos.\n\nConhecimento adicional: As partes completas são R$ 200,00, R$ 300,00 e R$ 400,00, cuja soma devolve R$ 900,00.\n\nAprendizado essencial: Some os pesos, encontre o valor de uma unidade e multiplique pelo peso desejado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 72-74",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 72-74",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_85c77c0d7e843c"
+      ],
+      "statement": "Um bônus de R$ 5.400,00 será repartido entre três equipes na razão direta 2:3:4. Quanto receberá a equipe associada ao peso 3?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 1.200,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 1.500,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 1.800,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 2.100,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 2.400,00."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O total de nove unidades proporcionais faz cada unidade valer R$ 600,00.\n\nAnálise da resposta: Correta: 5.400 ÷ 9 = 600 e 3 × 600 = R$ 1.800,00.\n\nA: Incorreta: esse é o valor da equipe de peso 2.\n\nB: Incorreta: o valor unitário foi calculado incorretamente.\n\nC: Correta: 5.400 ÷ 9 = 600 e 3 × 600 = R$ 1.800,00.\n\nD: Incorreta: a quantia excede a participação do peso 3.\n\nE: Incorreta: esse é o valor da equipe de peso 4.\n\nArmadilha: Aplicar 3/4 do total em vez de usar 3 dividido pela soma dos pesos.\n\nConhecimento adicional: A fração destinada a uma parte direta é seu peso sobre a soma de todos os pesos.\n\nAprendizado essencial: Em razão 2:3:4, a equipe de peso 3 recebe 3/9 do total.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 72-75",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 72-75",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_85c77c0d7e843c"
+      ],
+      "statement": "Ao dividir 840 em partes diretamente proporcionais a 3, 4 e 5, um candidato obteve 210, 280 e 350. Sobre o resultado, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "está errado, pois as três partes deveriam ser iguais."
+        },
+        {
+          "label": "B",
+          "text": "está errado, pois a maior parte deveria ser 420."
+        },
+        {
+          "label": "C",
+          "text": "está correto, pois as partes somam 840 e mantêm a razão 3:4:5."
+        },
+        {
+          "label": "D",
+          "text": "está errado, pois 210/3 é diferente de 280/4."
+        },
+        {
+          "label": "E",
+          "text": "está correto apenas porque todos os valores são múltiplos de 10."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Um rateio direto é validado pela igualdade entre parte e peso, além da conservação do total.\n\nAnálise da resposta: Correta: 210/3 = 280/4 = 350/5 = 70 e a soma é exatamente 840.\n\nA: Incorreta: proporcionalidade direta não significa igualdade quando os pesos são diferentes.\n\nB: Incorreta: 420 corresponderia à metade do total, rompendo a razão dada.\n\nC: Correta: 210/3 = 280/4 = 350/5 = 70 e a soma é exatamente 840.\n\nD: Incorreta: ambos os quocientes são iguais a 70.\n\nE: Incorreta: ser múltiplo de 10 não prova a proporcionalidade.\n\nArmadilha: Conferir apenas a soma ou a aparência numérica das parcelas.\n\nConhecimento adicional: A constante comum de proporcionalidade deste rateio é 70.\n\nAprendizado essencial: Valide simultaneamente a soma das partes e os quocientes parte/peso.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 72-74",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 72-74",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58a4e9dd72ec14"
+      ],
+      "statement": "O número 660 é dividido em partes inversamente proporcionais a 2, 3 e 6. A parte correspondente ao número 2 é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "110."
+        },
+        {
+          "label": "B",
+          "text": "165."
+        },
+        {
+          "label": "C",
+          "text": "220."
+        },
+        {
+          "label": "D",
+          "text": "330."
+        },
+        {
+          "label": "E",
+          "text": "440."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Na divisão inversa, o menor número de referência recebe a maior parte.\n\nAnálise da resposta: Correta: os inversos equivalem à razão 3:2:1; assim, 660 × 3/6 = 330.\n\nA: Incorreta: 110 corresponde ao maior número de referência, 6.\n\nB: Incorreta: o valor não deriva dos inversos 1/2, 1/3 e 1/6.\n\nC: Incorreta: 220 é a parte ligada ao número 3.\n\nD: Correta: os inversos equivalem à razão 3:2:1; assim, 660 × 3/6 = 330.\n\nE: Incorreta: a fração 4/6 não corresponde ao inverso de 2.\n\nArmadilha: Usar os próprios números 2, 3 e 6 como pesos diretos.\n\nConhecimento adicional: Multiplicar 1/2, 1/3 e 1/6 por 6 transforma os pesos em 3, 2 e 1.\n\nAprendizado essencial: Converta os inversos em pesos inteiros equivalentes antes do rateio.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 84-86",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 84-86",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58a4e9dd72ec14"
+      ],
+      "statement": "Uma gratificação de R$ 780,00 será dividida em partes inversamente proporcionais a 4, 6 e 12. Quanto caberá à pessoa associada ao número 6?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 130,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 195,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 260,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 390,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 520,00."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Os inversos de 4, 6 e 12 podem ser escalados para os pesos 3, 2 e 1.\n\nAnálise da resposta: Correta: os inversos resultam na razão 3:2:1; cada unidade vale 130 e o peso 2 recebe R$ 260,00.\n\nA: Incorreta: R$ 130,00 é a parte ligada ao número 12.\n\nB: Incorreta: o valor não preserva os pesos inversos.\n\nC: Correta: os inversos resultam na razão 3:2:1; cada unidade vale 130 e o peso 2 recebe R$ 260,00.\n\nD: Incorreta: R$ 390,00 é a parte ligada ao número 4.\n\nE: Incorreta: esse valor consome quatro das seis unidades proporcionais.\n\nArmadilha: Distribuir diretamente na razão 4:6:12.\n\nConhecimento adicional: Escalar todos os inversos pelo mesmo número não altera a proporção.\n\nAprendizado essencial: Em rateio inverso, transforme 1/a, 1/b e 1/c em uma razão simples.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 84-87",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 84-87",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_58a4e9dd72ec14"
+      ],
+      "statement": "Um prêmio de R$ 700,00 foi repartido inversamente ao número de falhas de três equipes: 2, 4 e 8 falhas. Qual distribuição respeita o critério?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 100,00, R$ 200,00 e R$ 400,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 400,00, R$ 200,00 e R$ 100,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 200,00, R$ 200,00 e R$ 300,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 175,00, R$ 175,00 e R$ 350,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 350,00, R$ 175,00 e R$ 175,00."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Em proporcionalidade inversa, o produto entre a parte e o número de referência deve permanecer constante.\n\nAnálise da resposta: Correta: os inversos 1/2, 1/4 e 1/8 formam a razão 4:2:1, gerando 400, 200 e 100.\n\nA: Incorreta: a ordem é direta às falhas, não inversa.\n\nB: Correta: os inversos 1/2, 1/4 e 1/8 formam a razão 4:2:1, gerando 400, 200 e 100.\n\nC: Incorreta: os produtos parte × falhas não são constantes.\n\nD: Incorreta: a equipe com mais falhas recebeu a maior parcela.\n\nE: Incorreta: os produtos 350×2, 175×4 e 175×8 não são todos iguais.\n\nArmadilha: Interpretar “inversamente” apenas como inverter a ordem das respostas sem calcular os pesos.\n\nConhecimento adicional: Na opção correta, os produtos são 400×2 = 200×4 = 100×8 = 800.\n\nAprendizado essencial: Além da soma, confira se parte multiplicada pelo índice é constante.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 84-88",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 84-88",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_27b4984b3204a6"
+      ],
+      "statement": "Uma quantia de R$ 4.900,00 será dividida diretamente às notas 8, 6 e 4 e inversamente aos tempos 2, 3 e 4. A primeira pessoa receberá\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 700,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 1.400,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 2.100,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 2.450,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 2.800,00."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Na divisão composta, fatores diretos entram multiplicando e fatores inversos entram no denominador.\n\nAnálise da resposta: Correta: os coeficientes são 8/2=4, 6/3=2 e 4/4=1; logo, 4.900×4/7=2.800.\n\nA: Incorreta: R$ 700,00 corresponde ao coeficiente 1.\n\nB: Incorreta: R$ 1.400,00 corresponde ao coeficiente 2.\n\nC: Incorreta: o valor representaria três das sete unidades.\n\nD: Incorreta: dividir o total pela metade ignora os coeficientes.\n\nE: Correta: os coeficientes são 8/2=4, 6/3=2 e 4/4=1; logo, 4.900×4/7=2.800.\n\nArmadilha: Somar separadamente notas e tempos ou ignorar o caráter inverso do tempo.\n\nConhecimento adicional: Os coeficientes combinados 4, 2 e 1 transformam o problema em rateio direto comum.\n\nAprendizado essencial: Calcule um coeficiente direto/inverso para cada participante antes de repartir.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 88-91",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 88-91",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_27b4984b3204a6"
+      ],
+      "statement": "Um recurso de R$ 12.600,00 será rateado diretamente ao número de casos resolvidos, 12, 18 e 24, e inversamente ao tempo médio, 6, 9 e 12 dias. A divisão correta é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 2.100,00, R$ 4.200,00 e R$ 6.300,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 3.150,00, R$ 4.200,00 e R$ 5.250,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 4.200,00 para cada unidade."
+        },
+        {
+          "label": "D",
+          "text": "R$ 6.300,00, R$ 4.200,00 e R$ 2.100,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 5.040,00, R$ 4.200,00 e R$ 3.360,00."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Fatores distintos podem se compensar e produzir coeficientes compostos iguais.\n\nAnálise da resposta: Correta: 12/6 = 18/9 = 24/12 = 2; coeficientes iguais geram três parcelas de R$ 4.200,00.\n\nA: Incorreta: a alternativa usa apenas a ordem dos casos resolvidos.\n\nB: Incorreta: os coeficientes combinados não são diferentes.\n\nC: Correta: 12/6 = 18/9 = 24/12 = 2; coeficientes iguais geram três parcelas de R$ 4.200,00.\n\nD: Incorreta: a ordem inversa isolada também ignora a compensação entre fatores.\n\nE: Incorreta: esses valores não decorrem dos coeficientes todos iguais.\n\nArmadilha: Concluir que mais casos sempre implica parcela maior sem considerar o tempo inverso.\n\nConhecimento adicional: Quando todos os coeficientes combinados coincidem, o rateio final é igualitário.\n\nAprendizado essencial: Compare cada razão fator direto/fator inverso antes de ordenar as parcelas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 88-91",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 88-91",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_27b4984b3204a6"
+      ],
+      "statement": "R$ 3.500,00 serão repartidos diretamente aos anos de serviço 3, 4 e 6 e inversamente às faltas 1, 2 e 3. Um candidato propôs R$ 1.500,00, R$ 1.000,00 e R$ 1.000,00. Essa proposta\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "está correta, pois os coeficientes são 3/1, 4/2 e 6/3, equivalentes a 3:2:2."
+        },
+        {
+          "label": "B",
+          "text": "está errada, pois as parcelas deveriam seguir 3:4:6."
+        },
+        {
+          "label": "C",
+          "text": "está errada, pois as parcelas deveriam seguir 3:8:18."
+        },
+        {
+          "label": "D",
+          "text": "está correta apenas porque as parcelas somam R$ 3.500,00."
+        },
+        {
+          "label": "E",
+          "text": "está errada, pois proporcionalidade inversa exige parcelas em ordem crescente."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O rateio composto exige validar os coeficientes e a soma total, não apenas um desses critérios.\n\nAnálise da resposta: Correta: os coeficientes 3, 2 e 2 somam 7; cada unidade vale R$ 500,00 e as parcelas são 1.500, 1.000 e 1.000.\n\nA: Correta: os coeficientes 3, 2 e 2 somam 7; cada unidade vale R$ 500,00 e as parcelas são 1.500, 1.000 e 1.000.\n\nB: Incorreta: essa razão ignora o fator inverso das faltas.\n\nC: Incorreta: multiplicar pelos números de faltas aplica o sentido oposto.\n\nD: Incorreta: a soma é necessária, mas a correção decorre também da razão composta.\n\nE: Incorreta: não existe regra geral de ordem; prevalecem os coeficientes combinados.\n\nArmadilha: Multiplicar o fator direto pelo fator que deveria ser usado inversamente.\n\nConhecimento adicional: Dois participantes podem receber parcelas iguais mesmo tendo dados originais diferentes.\n\nAprendizado essencial: Reduza cada conjunto de fatores a um único coeficiente comparável.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 88-91",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 88-91",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_858717b971b211"
+      ],
+      "statement": "Três sócios dividirão lucro de R$ 19.800,00 proporcionalmente às cotas 2, 3 e 6. O sócio de 6 cotas receberá\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 3.600,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 5.400,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 7.200,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 9.900,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 10.800,00."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A regra de sociedade é um rateio direto quando o lucro acompanha o capital ou as cotas.\n\nAnálise da resposta: Correta: as 11 cotas valem R$ 1.800,00 cada; 6 cotas recebem R$ 10.800,00.\n\nA: Incorreta: R$ 3.600,00 corresponde ao sócio de 2 cotas.\n\nB: Incorreta: R$ 5.400,00 corresponde ao sócio de 3 cotas.\n\nC: Incorreta: foram atribuídas quatro unidades, não seis.\n\nD: Incorreta: metade do lucro não corresponde a 6/11.\n\nE: Correta: as 11 cotas valem R$ 1.800,00 cada; 6 cotas recebem R$ 10.800,00.\n\nArmadilha: Dividir pelo número de sócios em vez de considerar a quantidade de cotas.\n\nConhecimento adicional: Os outros sócios recebem R$ 3.600,00 e R$ 5.400,00, completando o lucro total.\n\nAprendizado essencial: Converta cotas em unidades do total antes de repartir o lucro.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 74-77",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 74-77",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_858717b971b211"
+      ],
+      "statement": "Uma despesa comum de R$ 6.720,00 será rateada entre três apartamentos proporcionalmente ao número de moradores: 2, 3 e 3. Quanto pagará cada apartamento com três moradores?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 1.680,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 2.100,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 2.240,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 2.520,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 3.360,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Em rateio por moradores, apartamentos com o mesmo número de pessoas recebem parcelas iguais.\n\nAnálise da resposta: Correta: há oito unidades; cada uma vale R$ 840,00 e três unidades totalizam R$ 2.520,00.\n\nA: Incorreta: R$ 1.680,00 é a parcela do apartamento com dois moradores.\n\nB: Incorreta: esse valor seria obtido por divisão inadequada do total.\n\nC: Incorreta: corresponde a um terço do total, mas cada grupo tem 3/8.\n\nD: Correta: há oito unidades; cada uma vale R$ 840,00 e três unidades totalizam R$ 2.520,00.\n\nE: Incorreta: metade da despesa não corresponde ao peso 3 de um total de 8.\n\nArmadilha: Dividir igualmente entre apartamentos embora o critério seja o número de moradores.\n\nConhecimento adicional: A soma 1.680 + 2.520 + 2.520 recompõe exatamente R$ 6.720,00.\n\nAprendizado essencial: Traduza o critério do enunciado em pesos e confira o total ao final.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 72-77",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 72-77",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_01_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_1_divisao_proporcional",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_858717b971b211"
+      ],
+      "statement": "Um orçamento de R$ 18.000,00 será rateado entre três projetos diretamente aos índices de urgência 5, 4 e 3 e inversamente aos custos unitários 2, 1 e 3. Qual resultado está correto?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 7.500,00, R$ 6.000,00 e R$ 4.500,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 6.000,00, R$ 9.600,00 e R$ 2.400,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 9.000,00, R$ 6.000,00 e R$ 3.000,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 5.000,00, R$ 8.000,00 e R$ 5.000,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 4.000,00, R$ 8.000,00 e R$ 6.000,00."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Um problema de rateio pode combinar critérios diretos e inversos antes da divisão do total.\n\nAnálise da resposta: Correta: os coeficientes 5/2, 4/1 e 3/3 equivalem a 5:8:2; as parcelas são 6.000, 9.600 e 2.400.\n\nA: Incorreta: a alternativa usa apenas os índices de urgência.\n\nB: Correta: os coeficientes 5/2, 4/1 e 3/3 equivalem a 5:8:2; as parcelas são 6.000, 9.600 e 2.400.\n\nC: Incorreta: os pesos 3:2:1 não correspondem aos critérios combinados.\n\nD: Incorreta: a primeira e a terceira parcelas não possuem coeficientes iguais.\n\nE: Incorreta: os valores não mantêm a razão composta 5:8:2.\n\nArmadilha: Usar apenas a urgência ou apenas o custo, descartando parte do enunciado.\n\nConhecimento adicional: Multiplicando 5/2, 4 e 1 por 2, obtêm-se os pesos inteiros equivalentes 5, 8 e 2.\n\nAprendizado essencial: Monte os coeficientes combinados, simplifique a razão e só então distribua o total.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "location": "páginas 88-91",
+          "used_for": "Fundamento matemático e conferência editorial da divisão proporcional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_13",
+          "trace_status": "missing",
+          "location": "páginas 88-91",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

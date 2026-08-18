@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_03_02_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_03_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5920b59bcbd2fa"
+      ],
+      "statement": "Cinco operadores, com igual produtividade, conferem 120 registros em uma hora. Mantidas as condições, oito operadores conferirão, em uma hora,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "150 registros."
+        },
+        {
+          "label": "B",
+          "text": "168 registros."
+        },
+        {
+          "label": "C",
+          "text": "192 registros."
+        },
+        {
+          "label": "D",
+          "text": "200 registros."
+        },
+        {
+          "label": "E",
+          "text": "240 registros."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em grandezas diretamente proporcionais, a razão entre valores correspondentes permanece constante.\n\nAnálise da resposta: Correta: operadores e registros, no mesmo tempo, são diretamente proporcionais; 120 × 8/5 = 192.\n\nA: Incorreta: o aumento de operadores não foi aplicado na mesma proporção.\n\nB: Incorreta: o fator 8/5 foi calculado incorretamente.\n\nC: Correta: operadores e registros, no mesmo tempo, são diretamente proporcionais; 120 × 8/5 = 192.\n\nD: Incorreta: o resultado excede a razão direta estabelecida.\n\nE: Incorreta: dobrar a produção exigiria dez operadores.\n\nArmadilha: Somar a diferença entre os números de operadores diretamente à produção.\n\nConhecimento adicional: Cada operador confere 24 registros por hora, o que também conduz a 8 × 24 = 192.\n\nAprendizado essencial: Se uma grandeza cresce por determinado fator, a outra cresce pelo mesmo fator.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-5",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-5",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5920b59bcbd2fa"
+      ],
+      "statement": "Sete impressoras idênticas produzem 840 páginas em dez minutos. Quantas páginas do mesmo tipo doze impressoras produzirão no mesmo intervalo?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.120."
+        },
+        {
+          "label": "B",
+          "text": "1.260."
+        },
+        {
+          "label": "C",
+          "text": "1.320."
+        },
+        {
+          "label": "D",
+          "text": "1.440."
+        },
+        {
+          "label": "E",
+          "text": "1.680."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Mantido o tempo, o número de páginas cresce diretamente com o número de impressoras.\n\nAnálise da resposta: Correta: 840/7 = 120 páginas por impressora; 12 × 120 = 1.440.\n\nA: Incorreta: corresponde a um fator menor que 12/7.\n\nB: Incorreta: foram adicionadas páginas sem preservar a produtividade unitária.\n\nC: Incorreta: o quociente por impressora não foi mantido.\n\nD: Correta: 840/7 = 120 páginas por impressora; 12 × 120 = 1.440.\n\nE: Incorreta: esse resultado representa o dobro da produção original.\n\nArmadilha: Usar a diferença de cinco impressoras como se fosse uma porcentagem fixa.\n\nConhecimento adicional: A produtividade unitária pode ser obtida antes de aplicar a regra de três.\n\nAprendizado essencial: Procure uma taxa por unidade para conferir o cálculo proporcional.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-5",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-5",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_5920b59bcbd2fa"
+      ],
+      "statement": "Um veículo mantém consumo médio constante. A respeito da distância percorrida e da quantidade de combustível consumida, é correto afirmar que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "são inversamente proporcionais, pois mais distância deixa menos combustível no tanque."
+        },
+        {
+          "label": "B",
+          "text": "são diretamente proporcionais: dobrar a distância dobra o consumo."
+        },
+        {
+          "label": "C",
+          "text": "não são proporcionais porque possuem unidades diferentes."
+        },
+        {
+          "label": "D",
+          "text": "são diretamente proporcionais apenas quando a distância diminui."
+        },
+        {
+          "label": "E",
+          "text": "são inversamente proporcionais porque o produto distância × combustível é constante."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A classificação depende das grandezas efetivamente comparadas e das condições mantidas constantes.\n\nAnálise da resposta: Correta: com taxa de consumo constante, combustível consumido por distância é uma razão constante.\n\nA: Incorreta: a quantidade restante no tanque não é a grandeza consumo definida no enunciado.\n\nB: Correta: com taxa de consumo constante, combustível consumido por distância é uma razão constante.\n\nC: Incorreta: grandezas com unidades diferentes podem ser proporcionais.\n\nD: Incorreta: a relação direta vale tanto para aumentos quanto para reduções proporcionais.\n\nE: Incorreta: na relação direta, é a razão, e não o produto, que permanece constante.\n\nArmadilha: Confundir combustível consumido com combustível que ainda resta no tanque.\n\nConhecimento adicional: Uma taxa como litros por quilômetro expressa a constante de proporcionalidade direta.\n\nAprendizado essencial: Defina precisamente as grandezas antes de decidir entre relação direta e inversa.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-6",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-6",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3810cf806a27c8"
+      ],
+      "statement": "Seis agentes concluem uma tarefa em 15 dias, com produtividade constante. Dez agentes, nas mesmas condições, concluirão a tarefa em\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "9 dias."
+        },
+        {
+          "label": "B",
+          "text": "10 dias."
+        },
+        {
+          "label": "C",
+          "text": "12 dias."
+        },
+        {
+          "label": "D",
+          "text": "18 dias."
+        },
+        {
+          "label": "E",
+          "text": "25 dias."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Para uma tarefa fixa, aumentar a equipe reduz o tempo na razão inversa.\n\nAnálise da resposta: Correta: agentes e dias são inversamente proporcionais; 6 × 15 = 10 × d, então d = 9.\n\nA: Correta: agentes e dias são inversamente proporcionais; 6 × 15 = 10 × d, então d = 9.\n\nB: Incorreta: o produto entre agentes e dias não seria preservado.\n\nC: Incorreta: a redução de tempo foi insuficiente.\n\nD: Incorreta: mais agentes não devem aumentar o tempo.\n\nE: Incorreta: esse resultado corresponde à aplicação direta equivocada.\n\nArmadilha: Montar a igualdade como se agentes e dias crescessem juntos.\n\nConhecimento adicional: O trabalho total pode ser medido por 90 agente-dias neste modelo ideal.\n\nAprendizado essencial: Em relação inversa, confira se o produto dos pares permanece constante.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 5-7",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 5-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3810cf806a27c8"
+      ],
+      "statement": "Oito bombas idênticas esvaziam um reservatório em seis horas. Com doze bombas iguais funcionando simultaneamente, o tempo necessário será de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 horas."
+        },
+        {
+          "label": "B",
+          "text": "3 horas."
+        },
+        {
+          "label": "C",
+          "text": "3,5 horas."
+        },
+        {
+          "label": "D",
+          "text": "4,5 horas."
+        },
+        {
+          "label": "E",
+          "text": "4 horas."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Para volume fixo e vazões iguais, quantidade de bombas e tempo são inversamente proporcionais.\n\nAnálise da resposta: Correta: 8 × 6 = 48 bombas-hora; 48/12 = 4 horas.\n\nA: Incorreta: exigiria triplicar a quantidade de bombas.\n\nB: Incorreta: representa metade do tempo sem dobrar as bombas.\n\nC: Incorreta: o produto bombas × horas não coincide com o original.\n\nD: Incorreta: o tempo foi reduzido menos que o necessário.\n\nE: Correta: 8 × 6 = 48 bombas-hora; 48/12 = 4 horas.\n\nArmadilha: Subtrair quatro bombas de seis horas como se as unidades fossem comparáveis.\n\nConhecimento adicional: A medida bombas-hora representa a capacidade total necessária no modelo proporcional.\n\nAprendizado essencial: Multiplique quantidade por tempo e preserve esse produto.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 5-7",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 5-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3810cf806a27c8"
+      ],
+      "statement": "Em uma rota de distância fixa, um percurso feito a 60 km/h dura quatro horas. Qual par velocidade-tempo confirma proporcionalidade inversa?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "70 km/h e 3 horas."
+        },
+        {
+          "label": "B",
+          "text": "75 km/h e 3,5 horas."
+        },
+        {
+          "label": "C",
+          "text": "80 km/h e 3 horas."
+        },
+        {
+          "label": "D",
+          "text": "90 km/h e 3 horas."
+        },
+        {
+          "label": "E",
+          "text": "120 km/h e 3 horas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em distância fixa, o produto entre velocidade e tempo deve permanecer constante.\n\nAnálise da resposta: Correta: 60 × 4 = 80 × 3 = 240 km.\n\nA: Incorreta: 70 × 3 não conserva a distância de 240 km.\n\nB: Incorreta: 75 × 3,5 resulta em 262,5 km.\n\nC: Correta: 60 × 4 = 80 × 3 = 240 km.\n\nD: Incorreta: 90 × 3 resultaria em 270 km.\n\nE: Incorreta: 120 × 3 resultaria em 360 km.\n\nArmadilha: Escolher qualquer alternativa em que a velocidade aumente e o tempo diminua.\n\nConhecimento adicional: Comportamento oposto é necessário, mas somente o produto constante prova proporcionalidade inversa.\n\nAprendizado essencial: Teste a constante matemática, não apenas a direção da variação.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 5-7",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 5-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_331dbbcf961057"
+      ],
+      "statement": "A regra de três simples é o procedimento adequado quando o problema relaciona\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "exatamente duas grandezas proporcionais."
+        },
+        {
+          "label": "B",
+          "text": "sempre três grandezas diretamente proporcionais."
+        },
+        {
+          "label": "C",
+          "text": "duas equações quadráticas independentes."
+        },
+        {
+          "label": "D",
+          "text": "quatro grandezas sem qualquer proporcionalidade."
+        },
+        {
+          "label": "E",
+          "text": "apenas valores percentuais inferiores a cem."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O número de grandezas distingue a regra de três simples da composta.\n\nAnálise da resposta: Correta: a regra de três simples organiza dois pares de valores correspondentes de duas grandezas.\n\nA: Correta: a regra de três simples organiza dois pares de valores correspondentes de duas grandezas.\n\nB: Incorreta: três ou mais grandezas caracterizam regra de três composta.\n\nC: Incorreta: o método não é definido pela presença de equações quadráticas.\n\nD: Incorreta: sem relação proporcional, a regra de três não se aplica.\n\nE: Incorreta: porcentagem não define o número de grandezas envolvidas.\n\nArmadilha: Contar a quantidade de números apresentados em vez das grandezas envolvidas.\n\nConhecimento adicional: Cada grandeza costuma fornecer dois valores correspondentes, mas continua sendo uma única grandeza.\n\nAprendizado essencial: Identifique as colunas conceituais do problema antes de montar a proporção.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-4",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-4",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_331dbbcf961057"
+      ],
+      "statement": "Três quilogramas de determinado material custam R$ 42,00. Mantido o preço por quilograma, cinco quilogramas custarão\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 56,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 60,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 65,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 70,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 84,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Quantidade e preço total são diretamente proporcionais quando o preço unitário é fixo.\n\nAnálise da resposta: Correta: 42/3 = 14 e 5 × 14 = R$ 70,00.\n\nA: Incorreta: corresponde ao custo de quatro quilogramas.\n\nB: Incorreta: o preço unitário foi reduzido indevidamente.\n\nC: Incorreta: o valor não mantém R$ 14,00 por quilograma.\n\nD: Correta: 42/3 = 14 e 5 × 14 = R$ 70,00.\n\nE: Incorreta: esse é o dobro do custo de três quilogramas.\n\nArmadilha: Acrescentar apenas R$ 5,00 ou dobrar o valor inicial sem observar a razão.\n\nConhecimento adicional: A multiplicação cruzada 3x = 42 × 5 também produz x = 70.\n\nAprendizado essencial: Na regra simples direta, mantenha a mesma ordem das grandezas nos dois pares.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-5",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-5",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_331dbbcf961057"
+      ],
+      "statement": "Doze máquinas concluem um lote em cinco horas. Um candidato calculou que quinze máquinas gastariam 6,25 horas porque montou 12/15 = 5/x. O cálculo está\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "correto, pois toda regra de três usa multiplicação cruzada."
+        },
+        {
+          "label": "B",
+          "text": "incorreto: a relação é inversa e o tempo correto é quatro horas."
+        },
+        {
+          "label": "C",
+          "text": "incorreto: o tempo correto é cinco horas."
+        },
+        {
+          "label": "D",
+          "text": "correto, pois mais máquinas sempre aumentam o tempo."
+        },
+        {
+          "label": "E",
+          "text": "incorreto: o tempo correto é três horas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Antes de multiplicar cruzado, é indispensável classificar a relação entre as grandezas.\n\nAnálise da resposta: Correta: para lote fixo, máquinas × horas é constante; 12×5 = 15×x, então x = 4.\n\nA: Incorreta: multiplicação cruzada não corrige uma proporção montada com sentido errado.\n\nB: Correta: para lote fixo, máquinas × horas é constante; 12×5 = 15×x, então x = 4.\n\nC: Incorreta: manter cinco horas ignoraria o aumento de capacidade.\n\nD: Incorreta: mais máquinas reduzem o tempo em condições ideais.\n\nE: Incorreta: quinze máquinas em três horas forneceriam apenas 45 máquinas-hora.\n\nArmadilha: Aplicar mecanicamente a mesma orientação usada em grandezas diretamente proporcionais.\n\nConhecimento adicional: A equação correta para relações inversas preserva o produto dos valores correspondentes.\n\nAprendizado essencial: A montagem lógica da proporção vem antes do procedimento algébrico.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 5-7",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 5-7",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d8c263750fc4a2"
+      ],
+      "statement": "A regra de três composta diferencia-se da simples porque relaciona\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "apenas duas grandezas inversas."
+        },
+        {
+          "label": "B",
+          "text": "somente grandezas monetárias."
+        },
+        {
+          "label": "C",
+          "text": "duas grandezas e uma porcentagem obrigatória."
+        },
+        {
+          "label": "D",
+          "text": "apenas números inteiros positivos."
+        },
+        {
+          "label": "E",
+          "text": "três ou mais grandezas."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Regra de três composta envolve pelo menos três grandezas no mesmo modelo proporcional.\n\nAnálise da resposta: Correta: a regra composta organiza três ou mais grandezas relacionadas.\n\nA: Incorreta: duas grandezas ainda configuram regra simples.\n\nB: Incorreta: a natureza monetária não define o método.\n\nC: Incorreta: porcentagem não é requisito da regra composta.\n\nD: Incorreta: podem aparecer valores racionais e outras medidas.\n\nE: Correta: a regra composta organiza três ou mais grandezas relacionadas.\n\nArmadilha: Confundir quantidade de valores numéricos com quantidade de grandezas.\n\nConhecimento adicional: Cada grandeza deve ser comparada com a grandeza que contém a incógnita.\n\nAprendizado essencial: Conte as grandezas, não os números, para escolher entre regra simples e composta.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d8c263750fc4a2"
+      ],
+      "statement": "Oito servidores processam 360 formulários em seis horas. Com a mesma produtividade, quantos servidores são necessários para processar 600 formulários em cinco horas?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "10."
+        },
+        {
+          "label": "B",
+          "text": "12."
+        },
+        {
+          "label": "C",
+          "text": "16."
+        },
+        {
+          "label": "D",
+          "text": "18."
+        },
+        {
+          "label": "E",
+          "text": "20."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A incógnita servidores cresce com a demanda e cresce quando o prazo disponível diminui.\n\nAnálise da resposta: Correta: servidores são diretos aos formulários e inversos ao tempo; 8×(600/360)×(6/5)=16.\n\nA: Incorreta: dez servidores processariam apenas 375 formulários em cinco horas.\n\nB: Incorreta: doze servidores processariam 450 formulários.\n\nC: Correta: servidores são diretos aos formulários e inversos ao tempo; 8×(600/360)×(6/5)=16.\n\nD: Incorreta: o resultado superestima a necessidade em duas pessoas.\n\nE: Incorreta: vinte servidores excedem a capacidade necessária.\n\nArmadilha: Aplicar os dois fatores no mesmo sentido sem interpretar o papel do tempo.\n\nConhecimento adicional: A produtividade é 360/(8×6)=7,5 formulários por servidor-hora.\n\nAprendizado essencial: Compare cada grandeza separadamente com a coluna da incógnita.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d8c263750fc4a2"
+      ],
+      "statement": "Doze máquinas, operando cinco dias por oito horas diárias, produzem 1.500 peças. Quantas peças serão produzidas por vinte máquinas, durante três dias, a dez horas diárias?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "1.875."
+        },
+        {
+          "label": "B",
+          "text": "2.000."
+        },
+        {
+          "label": "C",
+          "text": "2.250."
+        },
+        {
+          "label": "D",
+          "text": "2.500."
+        },
+        {
+          "label": "E",
+          "text": "3.125."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A produção é diretamente proporcional a máquinas, dias e horas diárias, mantida a produtividade.\n\nAnálise da resposta: Correta: 1.500×(20/12)×(3/5)×(10/8)=1.875 peças.\n\nA: Correta: 1.500×(20/12)×(3/5)×(10/8)=1.875 peças.\n\nB: Incorreta: o resultado ignora parte da redução de dias.\n\nC: Incorreta: foi aplicado um fator de crescimento excedente.\n\nD: Incorreta: a razão entre horas totais não foi calculada corretamente.\n\nE: Incorreta: a produção foi mais que duplicada sem duplicar as máquinas-hora.\n\nArmadilha: Considerar apenas o aumento de máquinas e horas, esquecendo a redução dos dias.\n\nConhecimento adicional: As máquinas-hora passam de 480 para 600, fator 1,25; 1.500×1,25=1.875.\n\nAprendizado essencial: Conferir por unidade de trabalho total reduz erros em regras compostas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_47b42ba5dc7942"
+      ],
+      "statement": "Mantida fixa a quantidade total de trabalho, qual par de grandezas é inversamente proporcional?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Número de produtos e matéria-prima consumida."
+        },
+        {
+          "label": "B",
+          "text": "Distância e combustível consumido a taxa constante."
+        },
+        {
+          "label": "C",
+          "text": "Horas trabalhadas e produção de uma máquina."
+        },
+        {
+          "label": "D",
+          "text": "Número de trabalhadores e tempo de conclusão."
+        },
+        {
+          "label": "E",
+          "text": "Quantidade comprada e preço total unitário fixo."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A condição de manter o trabalho total fixo torna equipe e tempo grandezas inversas.\n\nAnálise da resposta: Correta: mais trabalhadores reduzem o tempo necessário para o mesmo trabalho.\n\nA: Incorreta: mais produtos exigem mais matéria-prima, caracterizando relação direta.\n\nB: Incorreta: distância e consumo crescem juntos com taxa constante.\n\nC: Incorreta: mais horas geram mais produção na mesma máquina.\n\nD: Correta: mais trabalhadores reduzem o tempo necessário para o mesmo trabalho.\n\nE: Incorreta: mais unidades aumentam diretamente o preço total.\n\nArmadilha: Escolher relações em que as duas grandezas apenas possuem nomes ou unidades diferentes.\n\nConhecimento adicional: A proporcionalidade depende das condições do problema, como produtividade constante.\n\nAprendizado essencial: Pergunte o que acontece com uma grandeza quando a outra dobra.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 5-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 5-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_47b42ba5dc7942"
+      ],
+      "statement": "Em uma unidade, analistas têm produtividade individual constante. Comparando o número de analistas com (I) relatórios concluídos no mesmo tempo e (II) tempo para concluir um número fixo de relatórios, as relações são, respectivamente,\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "inversa e direta."
+        },
+        {
+          "label": "B",
+          "text": "direta e inversa."
+        },
+        {
+          "label": "C",
+          "text": "direta e direta."
+        },
+        {
+          "label": "D",
+          "text": "inversa e inversa."
+        },
+        {
+          "label": "E",
+          "text": "não proporcional e direta."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A mesma grandeza pode ter relação direta ou inversa conforme a outra variável e o que permanece fixo.\n\nAnálise da resposta: Correta: mais analistas produzem mais no mesmo tempo, mas gastam menos tempo para uma demanda fixa.\n\nA: Incorreta: as classificações foram trocadas.\n\nB: Correta: mais analistas produzem mais no mesmo tempo, mas gastam menos tempo para uma demanda fixa.\n\nC: Incorreta: o tempo não cresce junto com a equipe para trabalho fixo.\n\nD: Incorreta: a produção no mesmo intervalo cresce, não diminui.\n\nE: Incorreta: sob produtividade constante, ambas as relações podem ser proporcionais.\n\nArmadilha: Classificar a relação apenas pelo nome da grandeza, sem ler as condições.\n\nConhecimento adicional: Fixar tempo leva à produção direta; fixar produção leva ao tempo inverso.\n\nAprendizado essencial: Identifique também as condições constantes, não somente as grandezas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_47b42ba5dc7942"
+      ],
+      "statement": "Considere alimento disponível, número de pessoas e duração do estoque, com consumo diário individual constante. Qual classificação está correta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Alimento e duração são inversos, mantendo pessoas fixas."
+        },
+        {
+          "label": "B",
+          "text": "Pessoas e duração são diretos, mantendo alimento fixo."
+        },
+        {
+          "label": "C",
+          "text": "Alimento e pessoas são inversos, mantendo duração fixa."
+        },
+        {
+          "label": "D",
+          "text": "Todas as relações são sempre diretas."
+        },
+        {
+          "label": "E",
+          "text": "Alimento e duração são diretos com pessoas fixas; pessoas e duração são inversos com alimento fixo."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A identificação da proporcionalidade exige declarar qual terceira grandeza permanece fixa.\n\nAnálise da resposta: Correta: a classificação muda conforme a grandeza mantida constante, exatamente como descrito.\n\nA: Incorreta: mais alimento aumenta, não reduz, a duração com pessoas fixas.\n\nB: Incorreta: mais pessoas reduzem a duração de uma quantidade fixa.\n\nC: Incorreta: para duração fixa, mais pessoas exigem mais alimento.\n\nD: Incorreta: pelo menos pessoas e duração têm relação inversa sob estoque fixo.\n\nE: Correta: a classificação muda conforme a grandeza mantida constante, exatamente como descrito.\n\nArmadilha: Usar uma classificação universal sem condicionar o modelo às variáveis controladas.\n\nConhecimento adicional: Esse raciocínio é a base para orientar as colunas em uma regra de três composta.\n\nAprendizado essencial: Expresse cada comparação mantendo as demais condições constantes.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2ebbb119be7997"
+      ],
+      "statement": "Nove viaturas idênticas percorrem, juntas, 540 km em um turno, com a mesma quilometragem por viatura. Se doze viaturas atuarem nas mesmas condições, a quilometragem conjunta será\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "720 km."
+        },
+        {
+          "label": "B",
+          "text": "690 km."
+        },
+        {
+          "label": "C",
+          "text": "660 km."
+        },
+        {
+          "label": "D",
+          "text": "630 km."
+        },
+        {
+          "label": "E",
+          "text": "600 km."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "O contexto operacional traduz-se em uma regra simples diretamente proporcional.\n\nAnálise da resposta: Correta: cada viatura percorre 60 km; doze viaturas percorrem juntas 720 km.\n\nA: Correta: cada viatura percorre 60 km; doze viaturas percorrem juntas 720 km.\n\nB: Incorreta: o acréscimo de três viaturas foi subestimado.\n\nC: Incorreta: a taxa unitária de 60 km não foi preservada.\n\nD: Incorreta: corresponde a apenas 10,5 viaturas equivalentes.\n\nE: Incorreta: foi somado somente um quilômetro incorreto por unidade.\n\nArmadilha: Somar apenas a diferença numérica 12−9 ao total de quilômetros.\n\nConhecimento adicional: Determinar a produção ou distância por unidade é uma forma segura de validar a resposta.\n\nAprendizado essencial: Extraia a taxa unitária escondida no enunciado contextualizado.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 3-5",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 3-5",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2ebbb119be7997"
+      ],
+      "statement": "Dez analistas, trabalhando seis horas por dia durante oito dias, processam 4.800 registros. Após uma automação que aumenta em 25% a produtividade individual, quantos dias serão necessários para oito analistas, trabalhando cinco horas por dia, processarem 5.000 registros?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "6 dias."
+        },
+        {
+          "label": "B",
+          "text": "8 dias."
+        },
+        {
+          "label": "C",
+          "text": "9 dias."
+        },
+        {
+          "label": "D",
+          "text": "10 dias."
+        },
+        {
+          "label": "E",
+          "text": "12 dias."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O problema combina produtividade, equipe, jornada, tempo e demanda em um único modelo.\n\nAnálise da resposta: Correta: a taxa original é 10 registros por analista-hora; a nova é 12,5, gerando 500 por dia e exigindo 10 dias.\n\nA: Incorreta: seis dias produziriam apenas 3.000 registros na nova taxa.\n\nB: Incorreta: oito dias produziriam 4.000 registros.\n\nC: Incorreta: nove dias produziriam 4.500 registros.\n\nD: Correta: a taxa original é 10 registros por analista-hora; a nova é 12,5, gerando 500 por dia e exigindo 10 dias.\n\nE: Incorreta: doze dias superariam a demanda em mil registros.\n\nArmadilha: Aplicar 25% ao número de dias em vez de atualizar a produtividade por analista-hora.\n\nConhecimento adicional: Transformar o cenário em taxa unitária permite incorporar mudanças de eficiência com clareza.\n\nAprendizado essencial: Nos problemas complexos, calcule primeiro a produtividade por unidade de recurso.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_02_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_2_regras_de_tres_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_2ebbb119be7997"
+      ],
+      "statement": "Quatro máquinas, trabalhando seis horas por dia durante cinco dias, produzem 2.400 componentes. Mantida a produtividade, quantos dias seis máquinas, trabalhando oito horas por dia, levarão para produzir 5.760 componentes?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4 dias."
+        },
+        {
+          "label": "B",
+          "text": "5 dias."
+        },
+        {
+          "label": "C",
+          "text": "6 dias."
+        },
+        {
+          "label": "D",
+          "text": "7 dias."
+        },
+        {
+          "label": "E",
+          "text": "8 dias."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A taxa por máquina-hora permite conferir integralmente uma regra de três composta.\n\nAnálise da resposta: Correta: a taxa é 20 componentes por máquina-hora; seis máquinas por oito horas produzem 960 ao dia e 5.760/960 = 6.\n\nA: Incorreta: quatro dias produziriam somente 3.840 componentes.\n\nB: Incorreta: cinco dias produziriam 4.800 componentes.\n\nC: Correta: a taxa é 20 componentes por máquina-hora; seis máquinas por oito horas produzem 960 ao dia e 5.760/960 = 6.\n\nD: Incorreta: sete dias excederiam a demanda em 960 componentes.\n\nE: Incorreta: oito dias produziriam 7.680 componentes.\n\nArmadilha: Comparar apenas os dias iniciais e finais, ignorando máquinas, jornada e demanda.\n\nConhecimento adicional: O cenário inicial contém 120 máquinas-hora, confirmando 2.400/120 = 20 componentes por máquina-hora.\n\nAprendizado essencial: Valide o resultado recompondo a produção com todas as grandezas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "location": "páginas 8-9",
+          "used_for": "Fundamento matemático e conferência editorial da regra de três."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_14",
+          "trace_status": "missing",
+          "location": "páginas 8-9",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

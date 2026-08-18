@@ -1,5 +1,10 @@
 import { getSupabaseClient } from '../supabase/client.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
+import {
+  isCourseFactoryStudentPreview,
+  courseFactoryPreviewService,
+} from './courseFactoryPreviewService.js';
+import { publishedCoursePackageService } from './publishedCoursePackageService.js';
 
 const CACHE_PREFIX = 'detona-contest-content';
 
@@ -12,10 +17,16 @@ export class ContestContentService {
     getClient = getSupabaseClient,
     cacheStorage = globalThis.caches,
     allowLegacyFallback = isLocalDevelopment,
+    previewService = courseFactoryPreviewService,
+    previewRequested = isCourseFactoryStudentPreview,
+    publishedService = publishedCoursePackageService,
   } = {}) {
     this.getClient = getClient;
     this.cacheStorage = cacheStorage;
     this.allowLegacyFallback = allowLegacyFallback;
+    this.previewService = previewService;
+    this.previewRequested = previewRequested;
+    this.publishedService = publishedService;
   }
 
   async #cachePackage(userId, contentPackage) {
@@ -30,7 +41,16 @@ export class ContestContentService {
     }));
   }
 
-  async load(userId, contestId) {
+  async load(userId, contestId, { previewDraftId = null, adminPreviewAccess = false } = {}) {
+    if (previewDraftId) {
+      return this.previewService.loadRuntimePackage(contestId, { draftId: previewDraftId });
+    }
+    if (adminPreviewAccess && contestId === 'pc_al_2026') {
+      return { legacyStatic: true, contestId, previewOnly: true, adminPreviewAccess: true };
+    }
+    if (this.previewRequested()) {
+      return this.previewService.loadRuntimePackage(contestId);
+    }
     const client = await this.getClient();
     if (!client) {
       if (contestId === 'pc_al_2026' && this.allowLegacyFallback()) return { legacyStatic: true, contestId };
@@ -44,6 +64,11 @@ export class ContestContentService {
       throw new Error(data?.error || error?.message || 'Pacote publicado indisponível.');
     }
     if (data.legacyStatic) return data;
+    if (data.staticPublished === true && data.contestId === contestId) {
+      const contentPackage = await this.publishedService.load(contestId);
+      await this.#cachePackage(userId, contentPackage);
+      return contentPackage;
+    }
     if (!data.package || data.package.contestId !== contestId) throw new Error('Pacote de conteúdo inválido.');
     await this.#cachePackage(userId, data.package);
     return data.package;

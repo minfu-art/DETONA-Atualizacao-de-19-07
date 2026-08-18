@@ -1,0 +1,755 @@
+{
+  "name": "pcba_inv_rl_08_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_08_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a7ed1da9b221e4"
+      ],
+      "statement": "Em um argumento, premissas são proposições que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "oferecem suporte para a conclusão pretendida."
+        },
+        {
+          "label": "B",
+          "text": "aparecem obrigatoriamente depois da conclusão."
+        },
+        {
+          "label": "C",
+          "text": "são sempre falsas por hipótese."
+        },
+        {
+          "label": "D",
+          "text": "não possuem relação com a conclusão."
+        },
+        {
+          "label": "E",
+          "text": "substituem a própria conclusão."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A estrutura básica de um argumento distingue razões apresentadas e tese inferida.\n\nAnálise da resposta: Correta: premissas são as razões ou hipóteses usadas em defesa de uma conclusão.\n\nA: Correta: premissas são as razões ou hipóteses usadas em defesa de uma conclusão.\n\nB: Incorreta: a posição textual não define a função lógica da proposição.\n\nC: Incorreta: na análise de validade, as premissas são consideradas verdadeiras.\n\nD: Incorreta: a função argumentativa é justamente sustentar a conclusão.\n\nE: Incorreta: premissas e conclusão exercem papéis diferentes.\n\nArmadilha: Classificar pela ordem das frases, em vez de observar sua função no raciocínio.\n\nConhecimento adicional: Expressões como “pois” costumam introduzir premissas; “logo” costuma introduzir conclusão.\n\nAprendizado essencial: Pergunte qual afirmação está sendo defendida e quais a sustentam.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 4-10",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 4-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a7ed1da9b221e4"
+      ],
+      "statement": "Considere: “A rua está molhada, pois choveu durante a madrugada.” A conclusão é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Choveu durante a madrugada."
+        },
+        {
+          "label": "B",
+          "text": "A madrugada terminou."
+        },
+        {
+          "label": "C",
+          "text": "A rua está molhada."
+        },
+        {
+          "label": "D",
+          "text": "Toda chuva molha qualquer rua."
+        },
+        {
+          "label": "E",
+          "text": "Não houve chuva durante o dia."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "O conectivo explicativo “pois” introduz a premissa colocada após a conclusão textual.\n\nAnálise da resposta: Correta: é a afirmação sustentada pela premissa de que choveu.\n\nA: Incorreta: após “pois” aparece a razão apresentada.\n\nB: Incorreta: essa informação não foi formulada como proposição do argumento.\n\nC: Correta: é a afirmação sustentada pela premissa de que choveu.\n\nD: Incorreta: essa generalização não consta do argumento.\n\nE: Incorreta: o texto não informa isso.\n\nArmadilha: Presumir que a primeira ou a última oração é sempre a premissa.\n\nConhecimento adicional: A ordem linguística pode ser invertida sem mudar a estrutura lógica.\n\nAprendizado essencial: Use os indicadores linguísticos para reconstruir premissas e conclusão.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 8-11",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 8-11",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a7ed1da9b221e4"
+      ],
+      "statement": "No enunciado “Pedro estudou, portanto será aprovado”, a palavra “portanto” indica\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "uma condição necessária."
+        },
+        {
+          "label": "B",
+          "text": "uma negação."
+        },
+        {
+          "label": "C",
+          "text": "uma premissa oculta."
+        },
+        {
+          "label": "D",
+          "text": "uma equivalência."
+        },
+        {
+          "label": "E",
+          "text": "a introdução da conclusão."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Indicadores de conclusão ajudam a localizar a tese defendida em textos argumentativos.\n\nAnálise da resposta: Correta: “portanto” é indicador típico da conclusão.\n\nA: Incorreta: o termo não expressa necessidade por si só.\n\nB: Incorreta: nenhuma proposição é negada pelo indicador.\n\nC: Incorreta: “portanto” aponta para o resultado inferido, não para uma razão oculta.\n\nD: Incorreta: não há afirmação de equivalência.\n\nE: Correta: “portanto” é indicador típico da conclusão.\n\nArmadilha: Confundir “portanto” com “porque”, que costuma anunciar uma premissa.\n\nConhecimento adicional: Outros indicadores usuais são “logo”, “assim” e “por conseguinte”.\n\nAprendizado essencial: Diferencie palavras que anunciam razão das que anunciam resultado.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "location": "páginas 8-10",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_06",
+          "trace_status": "missing",
+          "location": "páginas 8-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e6b03def864f0"
+      ],
+      "statement": "Se as premissas são p→q e q→r, e p é verdadeira, qual relação permite concluir r?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uma disjunção exclusiva."
+        },
+        {
+          "label": "B",
+          "text": "Uma cadeia de implicações."
+        },
+        {
+          "label": "C",
+          "text": "Uma contradição imediata."
+        },
+        {
+          "label": "D",
+          "text": "Uma analogia sem premissas."
+        },
+        {
+          "label": "E",
+          "text": "Uma negação dupla apenas."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Relações condicionais podem ser encadeadas para transmitir uma consequência.\n\nAnálise da resposta: Correta: p conduz a q e q conduz a r, logo p conduz a r.\n\nA: Incorreta: não há escolha exclusiva entre proposições.\n\nB: Correta: p conduz a q e q conduz a r, logo p conduz a r.\n\nC: Incorreta: as premissas podem ser simultaneamente verdadeiras.\n\nD: Incorreta: o raciocínio é dedutivo e explicitamente apoiado em premissas.\n\nE: Incorreta: a conclusão não depende apenas de dupla negação.\n\nArmadilha: Ler cada condicional isoladamente e não combinar suas consequências.\n\nConhecimento adicional: A cadeia corresponde à transitividade da implicação no contexto dado.\n\nAprendizado essencial: Siga o caminho que parte da informação afirmada.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e6b03def864f0"
+      ],
+      "statement": "Sabendo que “se Ana investiga, então produz relatório” e que Ana investiga, conclui-se validamente que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ana não produz relatório."
+        },
+        {
+          "label": "B",
+          "text": "ninguém produz relatório."
+        },
+        {
+          "label": "C",
+          "text": "Ana investiga somente se não produz relatório."
+        },
+        {
+          "label": "D",
+          "text": "Ana produz relatório."
+        },
+        {
+          "label": "E",
+          "text": "o relatório implica investigação."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A afirmação do antecedente de uma condicional válida autoriza afirmar o consequente.\n\nAnálise da resposta: Correta: aplica-se modus ponens ao afirmar o antecedente.\n\nA: Incorreta: contradiz a consequência da condicional com antecedente verdadeiro.\n\nB: Incorreta: a premissa trata apenas de Ana.\n\nC: Incorreta: essa relação não decorre das premissas.\n\nD: Correta: aplica-se modus ponens ao afirmar o antecedente.\n\nE: Incorreta: inverte a direção da condicional.\n\nArmadilha: Inverter a condicional e tratar conclusão como causa suficiente.\n\nConhecimento adicional: A forma p→q, p, logo q é conhecida como modus ponens.\n\nAprendizado essencial: Mantenha a direção indicada pela seta lógica.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_4e6b03def864f0"
+      ],
+      "statement": "De “se o laudo é conclusivo, então o caso avança” e “o caso avançou”, não se pode concluir necessariamente que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "o laudo é conclusivo."
+        },
+        {
+          "label": "B",
+          "text": "o caso avançou."
+        },
+        {
+          "label": "C",
+          "text": "existe uma condição suficiente declarada."
+        },
+        {
+          "label": "D",
+          "text": "a primeira frase é condicional."
+        },
+        {
+          "label": "E",
+          "text": "um laudo conclusivo faria o caso avançar."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Uma condicional não autoriza inferir o antecedente apenas pela ocorrência do consequente.\n\nAnálise da resposta: Correta: afirmar o consequente não garante o antecedente, pois outras causas podem fazer o caso avançar.\n\nA: Correta: afirmar o consequente não garante o antecedente, pois outras causas podem fazer o caso avançar.\n\nB: Incorreta: isso é uma premissa explícita.\n\nC: Incorreta: o laudo conclusivo foi apresentado como condição suficiente.\n\nD: Incorreta: a estrutura “se... então” é condicional.\n\nE: Incorreta: essa relação é exatamente a primeira premissa.\n\nArmadilha: Cometer a falácia da afirmação do consequente.\n\nConhecimento adicional: A contraposição válida seria: se o caso não avançou, então o laudo não foi conclusivo.\n\nAprendizado essencial: Não converta p→q em q→p sem equivalência adicional.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_9bdd56b9feeb54"
+      ],
+      "statement": "Na condicional “se p, então q”, p é condição\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "necessária e suficiente para q em todos os casos."
+        },
+        {
+          "label": "B",
+          "text": "necessária para q, mas nunca suficiente."
+        },
+        {
+          "label": "C",
+          "text": "suficiente para q, enquanto q é necessária para p."
+        },
+        {
+          "label": "D",
+          "text": "incompatível com q."
+        },
+        {
+          "label": "E",
+          "text": "equivalente à negação de q."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Antecedente é suficiente para o consequente; consequente é necessário para o antecedente.\n\nAnálise da resposta: Correta: a verdade de p garante q, e p não pode ocorrer sem q.\n\nA: Incorreta: suficiência não implica equivalência.\n\nB: Incorreta: p foi apresentado como suficiente para produzir q.\n\nC: Correta: a verdade de p garante q, e p não pode ocorrer sem q.\n\nD: Incorreta: a condicional permite p e q verdadeiros juntos.\n\nE: Incorreta: não há essa equivalência.\n\nArmadilha: Trocar os termos “necessário” e “suficiente” por seguir a ordem da frase.\n\nConhecimento adicional: A condicional pode ser lida como “p somente se q”.\n\nAprendizado essencial: Pergunte o que garante e o que é exigido.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_9bdd56b9feeb54"
+      ],
+      "statement": "Na afirmação “ser múltiplo de 4 é suficiente para ser par”, é correto dizer que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todo número par é múltiplo de 4."
+        },
+        {
+          "label": "B",
+          "text": "nenhum múltiplo de 4 é par."
+        },
+        {
+          "label": "C",
+          "text": "ser par é suficiente para ser múltiplo de 4."
+        },
+        {
+          "label": "D",
+          "text": "as duas condições são equivalentes."
+        },
+        {
+          "label": "E",
+          "text": "ser par é necessário para ser múltiplo de 4."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma condição necessária deve acompanhar sempre a ocorrência da condição suficiente.\n\nAnálise da resposta: Correta: um múltiplo de 4 não pode deixar de ser par.\n\nA: Incorreta: o número 6 é par e não é múltiplo de 4.\n\nB: Incorreta: múltiplos de 4 são pares.\n\nC: Incorreta: a relação foi invertida.\n\nD: Incorreta: existe apenas implicação em uma direção.\n\nE: Correta: um múltiplo de 4 não pode deixar de ser par.\n\nArmadilha: Transformar uma implicação verdadeira em bicondicional.\n\nConhecimento adicional: Exemplos concretos são úteis para testar a conversa da proposição.\n\nAprendizado essencial: Use contraexemplos para verificar se a direção inversa também vale.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_9bdd56b9feeb54"
+      ],
+      "statement": "Se possuir credencial é condição necessária, mas não suficiente, para entrar em uma área, então\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "quem possui credencial entra obrigatoriamente."
+        },
+        {
+          "label": "B",
+          "text": "quem entra possui credencial, mas pode haver outros requisitos."
+        },
+        {
+          "label": "C",
+          "text": "quem não entra certamente não possui credencial."
+        },
+        {
+          "label": "D",
+          "text": "credencial e entrada são equivalentes."
+        },
+        {
+          "label": "E",
+          "text": "a credencial é irrelevante para a entrada."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Necessidade sem suficiência significa requisito obrigatório, porém isoladamente incapaz de garantir o resultado.\n\nAnálise da resposta: Correta: a entrada exige credencial, porém a credencial isolada não garante entrada.\n\nA: Incorreta: falta suficiência; outros requisitos podem impedir a entrada.\n\nB: Correta: a entrada exige credencial, porém a credencial isolada não garante entrada.\n\nC: Incorreta: alguém credenciado pode não entrar por faltar outro requisito.\n\nD: Incorreta: equivalência exigiria necessidade e suficiência.\n\nE: Incorreta: condição necessária é logicamente relevante.\n\nArmadilha: Confundir possuir o requisito com satisfazer todos os requisitos.\n\nConhecimento adicional: Formalmente, entrada→credencial, sem assumir credencial→entrada.\n\nAprendizado essencial: Traduza “necessário” como algo que não pode faltar.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3c1a5762b9ef40"
+      ],
+      "statement": "A negação lógica de uma proposição p deve possuir valor\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "sempre verdadeiro."
+        },
+        {
+          "label": "B",
+          "text": "igual ao de p."
+        },
+        {
+          "label": "C",
+          "text": "indeterminado."
+        },
+        {
+          "label": "D",
+          "text": "oposto ao valor lógico de p."
+        },
+        {
+          "label": "E",
+          "text": "sempre falso."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Negar uma proposição significa inverter seu valor de verdade.\n\nAnálise da resposta: Correta: ¬p é verdadeira exatamente quando p é falsa.\n\nA: Incorreta: se p for verdadeira, sua negação será falsa.\n\nB: Incorreta: negação inverte o valor lógico.\n\nC: Incorreta: proposições bem definidas têm valor lógico determinado.\n\nD: Correta: ¬p é verdadeira exatamente quando p é falsa.\n\nE: Incorreta: se p for falsa, ¬p será verdadeira.\n\nArmadilha: Acrescentar apenas a palavra “não” em posição que produz ambiguidade.\n\nConhecimento adicional: A dupla negação ¬¬p é logicamente equivalente a p.\n\nAprendizado essencial: Confira se a nova sentença é verdadeira exatamente nos casos em que a original é falsa.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3c1a5762b9ef40"
+      ],
+      "statement": "A negação de “Ana estuda e trabalha” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ana não estuda ou não trabalha."
+        },
+        {
+          "label": "B",
+          "text": "Ana não estuda e não trabalha."
+        },
+        {
+          "label": "C",
+          "text": "Ana estuda ou trabalha."
+        },
+        {
+          "label": "D",
+          "text": "Se Ana estuda, então trabalha."
+        },
+        {
+          "label": "E",
+          "text": "Ana estuda se e somente se trabalha."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A negação de uma conjunção afirma que pelo menos uma das parcelas falha.\n\nAnálise da resposta: Correta: pela lei de De Morgan, nega-se cada parcela e troca-se “e” por “ou”.\n\nA: Correta: pela lei de De Morgan, nega-se cada parcela e troca-se “e” por “ou”.\n\nB: Incorreta: exige que as duas parcelas sejam falsas, condição mais forte que a negação.\n\nC: Incorreta: não nega as parcelas.\n\nD: Incorreta: uma condicional não é a negação da conjunção.\n\nE: Incorreta: bicondicional também não inverte o valor em todos os casos.\n\nArmadilha: Negar cada parcela sem trocar o conectivo.\n\nConhecimento adicional: “Não é verdade que p e q” equivale a “não p ou não q”.\n\nAprendizado essencial: Aplique a negação a toda a estrutura, não apenas às palavras.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_3c1a5762b9ef40"
+      ],
+      "statement": "A negação de “se o sistema funciona, então o relatório é emitido” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "se o sistema não funciona, então o relatório não é emitido."
+        },
+        {
+          "label": "B",
+          "text": "o sistema não funciona ou o relatório é emitido."
+        },
+        {
+          "label": "C",
+          "text": "o sistema funciona e o relatório não é emitido."
+        },
+        {
+          "label": "D",
+          "text": "o sistema não funciona e o relatório não é emitido."
+        },
+        {
+          "label": "E",
+          "text": "o relatório é emitido somente se o sistema funciona."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Negar p→q produz p∧¬q, o único cenário em que a condicional é falsa.\n\nAnálise da resposta: Correta: a condicional falha somente com antecedente verdadeiro e consequente falso.\n\nA: Incorreta: negar antecedente e consequente ainda forma outra condicional, não a negação.\n\nB: Incorreta: essa expressão é equivalente à condicional original.\n\nC: Correta: a condicional falha somente com antecedente verdadeiro e consequente falso.\n\nD: Incorreta: antecedente falso torna a condicional original verdadeira.\n\nE: Incorreta: a frase altera a relação, mas não descreve todos e somente os casos de falsidade.\n\nArmadilha: Trocar os sinais internos e manter “se... então”.\n\nConhecimento adicional: A equivalência p→q ≡ ¬p∨q ajuda a confirmar a negação.\n\nAprendizado essencial: Procure o caso exato que viola a promessa condicional.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-35",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-35",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d4884f80f25ae9"
+      ],
+      "statement": "Um conjunto de proposições é logicamente consistente quando\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "todas são tautologias."
+        },
+        {
+          "label": "B",
+          "text": "nenhuma possui conectivo."
+        },
+        {
+          "label": "C",
+          "text": "todas são frases simples."
+        },
+        {
+          "label": "D",
+          "text": "cada uma é verdadeira no mundo real."
+        },
+        {
+          "label": "E",
+          "text": "existe ao menos uma atribuição de valores que torna todas verdadeiras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Consistência significa possibilidade lógica de satisfazer simultaneamente todas as afirmações.\n\nAnálise da resposta: Correta: uma valoração comum satisfatória demonstra ausência de contradição interna.\n\nA: Incorreta: tautologias seriam suficientes, mas não são necessárias.\n\nB: Incorreta: conectivos não impedem consistência.\n\nC: Incorreta: proposições compostas também podem ser consistentes.\n\nD: Incorreta: consistência é propriedade lógica conjunta, não mera comprovação factual.\n\nE: Correta: uma valoração comum satisfatória demonstra ausência de contradição interna.\n\nArmadilha: Exigir que cada proposição seja uma tautologia isoladamente.\n\nConhecimento adicional: Um único modelo que satisfaça o conjunto basta para provar consistência.\n\nAprendizado essencial: Busque uma atribuição comum antes de declarar contradição.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d4884f80f25ae9"
+      ],
+      "statement": "O conjunto {p, p→q, ¬q} é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "consistente com p e q verdadeiros."
+        },
+        {
+          "label": "B",
+          "text": "inconsistente, pois p e p→q forçam q, contrariando ¬q."
+        },
+        {
+          "label": "C",
+          "text": "consistente com p falso."
+        },
+        {
+          "label": "D",
+          "text": "uma tautologia única."
+        },
+        {
+          "label": "E",
+          "text": "equivalente apenas a ¬p."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A consistência pode ser testada propagando as consequências das proposições assumidas.\n\nAnálise da resposta: Correta: modus ponens produz q, que não pode coexistir com ¬q.\n\nA: Incorreta: q verdadeiro contradiz a terceira proposição.\n\nB: Correta: modus ponens produz q, que não pode coexistir com ¬q.\n\nC: Incorreta: a primeira proposição exige p verdadeiro.\n\nD: Incorreta: trata-se de três fórmulas e o conjunto não é sempre verdadeiro.\n\nE: Incorreta: a conjunção das três fórmulas não possui modelo.\n\nArmadilha: Tentar tornar p falsa apesar de p aparecer afirmada como premissa.\n\nConhecimento adicional: Uma contradição derivada impede qualquer valoração satisfatória.\n\nAprendizado essencial: Considere todas as fórmulas simultaneamente.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_08_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_8_compreensao_de_estruturas_logicas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_d4884f80f25ae9"
+      ],
+      "statement": "As proposições p∨q, ¬p e ¬q, consideradas simultaneamente, formam um conjunto\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "coerente se p for verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "coerente se q for verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "coerente se ambas forem falsas."
+        },
+        {
+          "label": "D",
+          "text": "inconsistente, porque ¬p e ¬q tornam p∨q falsa."
+        },
+        {
+          "label": "E",
+          "text": "equivalente a uma bicondicional verdadeira."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Uma disjunção inclusiva exige ao menos uma parcela verdadeira, impedida pelas duas negações.\n\nAnálise da resposta: Correta: não há atribuição que satisfaça as três proposições.\n\nA: Incorreta: p verdadeira viola ¬p.\n\nB: Incorreta: q verdadeira viola ¬q.\n\nC: Incorreta: com ambas falsas, a disjunção p∨q é falsa.\n\nD: Correta: não há atribuição que satisfaça as três proposições.\n\nE: Incorreta: a conjunção das premissas é contraditória, não uma bicondicional verdadeira.\n\nArmadilha: Avaliar cada par de fórmulas separadamente e não o conjunto inteiro.\n\nConhecimento adicional: Inconsistência também pode ser vista como a conjunção global sendo uma contradição.\n\nAprendizado essencial: Monte uma valoração completa e verifique todas as exigências.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "location": "páginas 25-40",
+          "used_for": "Fundamento conceitual e validação da estrutura argumentativa."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_05",
+          "trace_status": "missing",
+          "location": "páginas 25-40",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

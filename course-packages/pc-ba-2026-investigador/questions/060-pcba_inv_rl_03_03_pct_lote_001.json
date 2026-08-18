@@ -1,0 +1,455 @@
+{
+  "name": "pcba_inv_rl_03_03_pct_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_03_03_pct_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_46308c543a6b98"
+      ],
+      "statement": "A forma decimal correspondente a 37% é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0,37."
+        },
+        {
+          "label": "B",
+          "text": "0,037."
+        },
+        {
+          "label": "C",
+          "text": "3,7."
+        },
+        {
+          "label": "D",
+          "text": "37."
+        },
+        {
+          "label": "E",
+          "text": "0,0037."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Porcentagem é uma razão cujo denominador é cem.\n\nAnálise da resposta: Correta: 37% = 37/100 = 0,37.\n\nA: Correta: 37% = 37/100 = 0,37.\n\nB: Incorreta: 0,037 corresponde a 3,7%.\n\nC: Incorreta: 3,7 corresponde a 370%.\n\nD: Incorreta: 37 corresponde a 3.700%.\n\nE: Incorreta: 0,0037 corresponde a 0,37%.\n\nArmadilha: Deslocar a vírgula uma, três ou quatro casas em vez de duas.\n\nConhecimento adicional: A conversão inversa de decimal para percentual multiplica o número por cem.\n\nAprendizado essencial: Para retirar o símbolo de porcentagem, divida o valor por cem.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 3-5",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 3-5",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_46308c543a6b98"
+      ],
+      "statement": "Em uma amostra de 750 registros, 18% apresentaram determinada característica. Quantos registros possuem essa característica?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "90."
+        },
+        {
+          "label": "B",
+          "text": "120."
+        },
+        {
+          "label": "C",
+          "text": "135."
+        },
+        {
+          "label": "D",
+          "text": "150."
+        },
+        {
+          "label": "E",
+          "text": "180."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Calcular uma porcentagem de uma quantidade equivale a multiplicá-la pela forma decimal da taxa.\n\nAnálise da resposta: Correta: 0,18 × 750 = 135 registros.\n\nA: Incorreta: 90 representa apenas 12% de 750.\n\nB: Incorreta: 120 representa 16% de 750.\n\nC: Correta: 0,18 × 750 = 135 registros.\n\nD: Incorreta: 150 corresponde a 20% da amostra.\n\nE: Incorreta: o número percentual foi tratado como quantidade absoluta.\n\nArmadilha: Usar 18 como multiplicador ou confundir 18% com a quinta parte.\n\nConhecimento adicional: Também se pode calcular 10% + 8%: 75 + 60 = 135.\n\nAprendizado essencial: Transforme a taxa em decimal e multiplique pelo total.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 3-15",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 3-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_46308c543a6b98"
+      ],
+      "statement": "Sobre a expressão “125% de 80”, é correto afirmar que seu valor é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "80, pois toda porcentagem está limitada a 100%."
+        },
+        {
+          "label": "B",
+          "text": "90, porque os 25% excedentes valem 10."
+        },
+        {
+          "label": "C",
+          "text": "95, porque se deve somar 15 ao valor inicial."
+        },
+        {
+          "label": "D",
+          "text": "125, pois o símbolo de porcentagem pode ser ignorado."
+        },
+        {
+          "label": "E",
+          "text": "100, pois 1,25 × 80 = 100."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma taxa superior a 100% representa uma quantidade maior que o valor de referência.\n\nAnálise da resposta: Correta: 125/100 = 1,25 e 1,25 × 80 = 100.\n\nA: Incorreta: porcentagens podem superar 100%.\n\nB: Incorreta: 25% de 80 valem 20, não 10.\n\nC: Incorreta: o acréscimo correto é 20.\n\nD: Incorreta: 125% é 1,25, e não 125 como fator.\n\nE: Correta: 125/100 = 1,25 e 1,25 × 80 = 100.\n\nArmadilha: Supor que porcentagens não podem ultrapassar cem por cento.\n\nConhecimento adicional: 125% equivale ao valor inteiro, 100%, somado a mais 25% dele.\n\nAprendizado essencial: Interprete a porcentagem como fator multiplicativo sobre a base.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 3-6",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 3-6",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7c8c5dfc4f4a4e"
+      ],
+      "statement": "Um valor de R$ 250,00 recebe aumento de 20%. O novo valor é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 270,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 300,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 310,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 320,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 350,00."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Aumento percentual utiliza o fator 1 mais a taxa escrita na forma decimal.\n\nAnálise da resposta: Correta: o fator de aumento é 1,20; 250 × 1,20 = R$ 300,00.\n\nA: Incorreta: foram acrescentados apenas R$ 20,00, confundindo taxa com valor.\n\nB: Correta: o fator de aumento é 1,20; 250 × 1,20 = R$ 300,00.\n\nC: Incorreta: o acréscimo foi calculado como R$ 60,00.\n\nD: Incorreta: o resultado equivale a aumento de 28%.\n\nE: Incorreta: o aumento aplicado foi de 40%.\n\nArmadilha: Somar o número 20 ao valor monetário em vez de calcular 20% da base.\n\nConhecimento adicional: Vinte por cento de R$ 250,00 são R$ 50,00.\n\nAprendizado essencial: Para aumento de i%, multiplique por 1 + i/100.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 16-19",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 16-19",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7c8c5dfc4f4a4e"
+      ],
+      "statement": "Uma taxa de R$ 480,00 foi reduzida em 15%. O valor após o desconto é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 336,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 392,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 400,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 408,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 420,00."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Um desconto de 15% preserva 85% do valor inicial.\n\nAnálise da resposta: Correta: 480 × 0,85 = R$ 408,00.\n\nA: Incorreta: corresponde a desconto de 30%.\n\nB: Incorreta: o desconto aplicado foi de R$ 88,00.\n\nC: Incorreta: faltaram R$ 8,00 no valor final.\n\nD: Correta: 480 × 0,85 = R$ 408,00.\n\nE: Incorreta: o desconto considerado foi de apenas R$ 60,00.\n\nArmadilha: Subtrair quinze unidades monetárias em vez de quinze por cento.\n\nConhecimento adicional: O desconto absoluto é 0,15 × 480 = R$ 72,00.\n\nAprendizado essencial: Para desconto de i%, multiplique por 1 − i/100.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 19-21",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 19-21",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7c8c5dfc4f4a4e"
+      ],
+      "statement": "Após um aumento de 25%, qual desconto aplicado sobre o novo valor faz a grandeza retornar exatamente ao valor inicial?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "20%."
+        },
+        {
+          "label": "B",
+          "text": "25%."
+        },
+        {
+          "label": "C",
+          "text": "30%."
+        },
+        {
+          "label": "D",
+          "text": "33,33%."
+        },
+        {
+          "label": "E",
+          "text": "15%."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A taxa de retorno usa como base o valor aumentado, não o valor original.\n\nAnálise da resposta: Correta: se o valor inicial é 100, passa a 125; o desconto necessário é 25/125 = 20%.\n\nA: Correta: se o valor inicial é 100, passa a 125; o desconto necessário é 25/125 = 20%.\n\nB: Incorreta: descontar 25% de 125 produz 93,75.\n\nC: Incorreta: descontar 30% reduz o valor para 87,50.\n\nD: Incorreta: essa taxa reduziria o valor aproximadamente para 83,34.\n\nE: Incorreta: desconto de 15% deixaria o valor em 106,25.\n\nArmadilha: Acreditar que aumentos e descontos de mesma taxa sempre se anulam.\n\nConhecimento adicional: Taxas inversas satisfazem (1 + i)(1 − d) = 1.\n\nAprendizado essencial: Sempre identifique sobre qual base a porcentagem está sendo aplicada.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 16-23",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 16-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_365570dea6bffe"
+      ],
+      "statement": "Um preço de R$ 500,00 sofre aumentos sucessivos de 10% e 20%. O valor final é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "R$ 600,00."
+        },
+        {
+          "label": "B",
+          "text": "R$ 640,00."
+        },
+        {
+          "label": "C",
+          "text": "R$ 660,00."
+        },
+        {
+          "label": "D",
+          "text": "R$ 680,00."
+        },
+        {
+          "label": "E",
+          "text": "R$ 700,00."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Variações sucessivas são compostas por multiplicação de fatores, não por simples soma de taxas.\n\nAnálise da resposta: Correta: 500 × 1,10 × 1,20 = R$ 660,00.\n\nA: Incorreta: corresponde a aumento total de apenas 20%.\n\nB: Incorreta: a composição dos fatores foi calculada incorretamente.\n\nC: Correta: 500 × 1,10 × 1,20 = R$ 660,00.\n\nD: Incorreta: o acréscimo total não é R$ 180,00.\n\nE: Incorreta: representa aumento acumulado de 40%.\n\nArmadilha: Somar 10% e 20% e ignorar que o segundo aumento incide sobre nova base.\n\nConhecimento adicional: O fator acumulado é 1,32, equivalente a aumento total de 32%.\n\nAprendizado essencial: Aplique cada fator percentual na ordem das ocorrências.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 16-24",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 16-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_365570dea6bffe"
+      ],
+      "statement": "Um indicador cai 20% e, em seguida, aumenta 25% sobre o valor reduzido. Em relação ao valor inicial, o resultado final é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "5% menor."
+        },
+        {
+          "label": "B",
+          "text": "4% menor."
+        },
+        {
+          "label": "C",
+          "text": "5% maior."
+        },
+        {
+          "label": "D",
+          "text": "4% maior."
+        },
+        {
+          "label": "E",
+          "text": "igual ao valor inicial."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Uma alta de 25% sobre 80 recompõe exatamente os 20 perdidos de uma base 100.\n\nAnálise da resposta: Correta: 0,80 × 1,25 = 1; portanto, o valor retorna ao nível inicial.\n\nA: Incorreta: a diferença entre as taxas não determina a variação acumulada.\n\nB: Incorreta: o produto dos fatores não é 0,96.\n\nC: Incorreta: o resultado não supera a base.\n\nD: Incorreta: o produto dos fatores não é 1,04.\n\nE: Correta: 0,80 × 1,25 = 1; portanto, o valor retorna ao nível inicial.\n\nArmadilha: Subtrair as taxas e concluir aumento líquido de cinco por cento.\n\nConhecimento adicional: Queda de 20% e alta de 25% são taxas recíprocas porque usam bases diferentes.\n\nAprendizado essencial: Multiplique os fatores acumulados para conhecer a variação final.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 21-26",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 21-26",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_03_03_pct_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_3_3_porcentagens_equacoes_e_inequacoes_de_1_0_e_de_2_0_graus",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_365570dea6bffe"
+      ],
+      "statement": "Um valor recebe aumento de 10% e depois desconto de 10% sobre o resultado. A variação acumulada é de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "0%, pois as taxas iguais se anulam."
+        },
+        {
+          "label": "B",
+          "text": "redução de 1%."
+        },
+        {
+          "label": "C",
+          "text": "aumento de 1%."
+        },
+        {
+          "label": "D",
+          "text": "redução de 10%."
+        },
+        {
+          "label": "E",
+          "text": "aumento de 10%."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Taxas sucessivas de mesmo módulo e sentidos opostos não se anulam, salvo taxa zero.\n\nAnálise da resposta: Correta: 1,10 × 0,90 = 0,99, resultando em redução de 1%.\n\nA: Incorreta: as taxas incidem sobre bases diferentes.\n\nB: Correta: 1,10 × 0,90 = 0,99, resultando em redução de 1%.\n\nC: Incorreta: o fator acumulado é menor, e não maior, que 1.\n\nD: Incorreta: o desconto não incide diretamente sobre a base inicial.\n\nE: Incorreta: o aumento inicial é parcialmente desfeito pelo desconto.\n\nArmadilha: Somar algebricamente +10% e −10% sem compor os fatores.\n\nConhecimento adicional: A perda de 1% corresponde ao produto das taxas decimais: 0,10 × 0,10.\n\nAprendizado essencial: Em variações sucessivas, use fatores multiplicativos e compare o produto com 1.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "location": "páginas 16-26",
+          "used_for": "Fundamento matemático e conferência editorial dos cálculos percentuais."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_15",
+          "trace_status": "missing",
+          "location": "páginas 16-26",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

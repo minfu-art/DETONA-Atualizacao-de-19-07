@@ -571,6 +571,10 @@
 .active-journey__content small { margin: 0; color: #aeb9d2; }
 .active-journey__code,
 .owned-course-card__code { color: var(--contest-accent, #62ddff); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+.owned-course-card__testing { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; width: fit-content; }
+.owned-course-card__testing strong,
+.owned-course-card__testing span { border: 1px solid rgb(255 187 83 / 58%); border-radius: 999px; padding: 4px 8px; color: #ffd38b; background: rgb(116 69 0 / 35%); font-size: 10px; font-weight: 900; letter-spacing: .08em; line-height: 1; }
+.owned-course-card__testing span { border-color: #3c4d6c; color: #bcc8df; background: #151d2d; }
 .active-journey__progress { max-width: 520px; }
 .library-action-feedback { grid-column: 1 / -1; min-height: 0; margin: 0; color: #f0b56b; font-size: 12px; }
 .private-owned-courses { display: grid; gap: 18px; }

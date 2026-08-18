@@ -1,6 +1,6 @@
 const ALLOWED_HEADERS = 'authorization, x-client-info, apikey, content-type';
 const ALLOWED_METHODS = 'POST, OPTIONS';
-const DETONA_STAGING_PREVIEW = /^(?:detona-staging-[a-z0-9]{9}-min-fu-projetos|detona-staging-git-fix-p0-foundation-min-fu-projetos)\.vercel\.app$/;
+const DETONA_STAGING_PREVIEW = /^(?:detona-staging-[a-z0-9]{9}-min-fu-projetos|detona-staging-git-(?:fix-p0-foundation|feat-detona-course-factory)-min-fu-projetos)\.vercel\.app$/;
 
 export function createAllowedOrigins(value = '') {
   const origins = new Set();

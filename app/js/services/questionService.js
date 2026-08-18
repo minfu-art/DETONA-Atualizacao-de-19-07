@@ -40,7 +40,8 @@ export function normalizarQuestao(question) {
   const discipline = legacyDisciplineId(source);
   const topicId = resolveLegacySubtopicId(source);
   const rawTipo = source.tipo || source.format || '';
-  const isCE = rawTipo === 'certo_errado' || (!String(rawTipo).includes('multipla') && !Array.isArray(source.alternativas));
+  const isMultipleChoice = /multipla|multiple_choice/i.test(String(rawTipo)) || Array.isArray(source.alternativas || source.options);
+  const isCE = rawTipo === 'certo_errado' || !isMultipleChoice;
   const alternativas = isCE
     ? []
     : (source.alternativas || source.options || []).map((item) => (typeof item === 'string'
@@ -51,8 +52,8 @@ export function normalizarQuestao(question) {
     disciplina: discipline,
     subtopic_id: topicId,
     topicoEditalId: topicId,
-    format: String(rawTipo).includes('multipla') ? 'multipla_escolha' : 'certo_errado',
-    tipo: String(rawTipo).includes('multipla') ? 'multipla_escolha' : 'certo_errado',
+    format: isMultipleChoice ? 'multipla_escolha' : 'certo_errado',
+    tipo: isMultipleChoice ? 'multipla_escolha' : 'certo_errado',
     statement: source.enunciado || source.statement,
     enunciado: source.enunciado || source.statement,
     options: alternativas,

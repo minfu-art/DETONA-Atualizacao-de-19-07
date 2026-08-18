@@ -8,7 +8,7 @@ import { renderAdminDashboard } from './adminDashboard.js';
 import { renderAdminAccessScreen } from './adminAccessScreen.js';
 import { renderAdminMessagesScreen } from './adminMessagesScreen.js';
 import { renderAdminPreparedScreen } from './adminPreparedScreen.js';
-import { renderAdminContestsScreen } from './adminContestsScreen.js';
+import { renderAdminCoursesScreen } from './adminCoursesScreen.js';
 import { renderAdminCurriculumScreen } from './adminCurriculumScreen.js';
 import { renderAdminQuestionsScreen } from './adminQuestionsScreen.js';
 import { renderAdminMediaScreen } from './adminMediaScreen.js';
@@ -16,14 +16,17 @@ import { renderAdminLandingScreen } from './adminLandingScreen.js';
 import { renderAdminSettingsScreen } from './adminSettingsScreen.js';
 import { renderAdminPublicationScreen } from './adminPublicationScreen.js';
 import { renderAdminEventsScreen } from './adminEventsScreen.js';
+import { renderAdminCourseAuditScreen } from './adminCourseAuditScreen.js';
+import { renderAdminStudentPreviewScreen } from './adminStudentPreviewScreen.js';
 import { adminContestService } from '../services/adminContestService.js';
 import { buildAdminRouteUrl, resolveAdminRoute } from './adminWorkspaceNavigation.js';
+import { PC_BA_ADMIN_CONTEST } from '../services/courseFactoryPreviewService.js';
 
 const ROUTES = Object.freeze({
   overview: renderAdminDashboard,
   students: renderAdminAccessScreen,
   messages: renderAdminMessagesScreen,
-  contests: renderAdminContestsScreen,
+  contests: renderAdminCoursesScreen,
   curriculum: renderAdminCurriculumScreen,
   questions: renderAdminQuestionsScreen,
   media: renderAdminMediaScreen,
@@ -31,6 +34,8 @@ const ROUTES = Object.freeze({
   settings: renderAdminSettingsScreen,
   publication: renderAdminPublicationScreen,
   events: renderAdminEventsScreen,
+  courseAudit: renderAdminCourseAuditScreen,
+  studentPreview: renderAdminStudentPreviewScreen,
 });
 
 const UNSAVED_MESSAGE = 'Existem alterações não salvas. Deseja sair desta etapa e descartá-las?';
@@ -40,6 +45,10 @@ let currentRouteUrl = '';
 
 function markSaved() {
   hasUnsavedChanges = false;
+}
+
+function markDirty() {
+  hasUnsavedChanges = true;
 }
 
 function canLeaveCurrentScreen() {
@@ -121,11 +130,14 @@ async function initializeAuthenticatedAdmin() {
   }
   adminContext.user = user;
   const catalog = await adminContestService.listContests();
-  const route = resolveAdminRoute(globalThis.location, catalog.rows, {
+  const availableCourses = catalog.rows.some(({ id }) => id === PC_BA_ADMIN_CONTEST.id)
+    ? catalog.rows.map((contest) => contest.id === PC_BA_ADMIN_CONTEST.id ? { ...contest, ...PC_BA_ADMIN_CONTEST } : contest)
+    : [...catalog.rows, { ...PC_BA_ADMIN_CONTEST }];
+  const route = resolveAdminRoute(globalThis.location, availableCourses, {
     contestId: adminContext.adminSelectedContestId,
     screen: adminContext.screen,
   });
-  adminContext.restoreContest(catalog.rows, route.contestId);
+  adminContext.restoreContest(availableCourses, route.contestId);
   document.getElementById('admin-auth').hidden = true;
   document.getElementById('admin-app').hidden = false;
   if (!shellMounted) {
@@ -190,6 +202,7 @@ globalThis.__DETONA_ADMIN = Object.freeze({
   navigate,
   selectContest,
   markSaved,
+  markDirty,
   getContext: () => ({
     screen: adminContext.screen,
     adminSelectedContestId: adminContext.adminSelectedContestId,

@@ -1,0 +1,355 @@
+{
+  "name": "pcba_inv_rl_10_01_lote_002_complemento",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_01_q021",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7e53eafc3debb8"
+      ],
+      "statement": "A frase “p somente se q” traduz-se corretamente por\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "B",
+          "text": "A bicondicional p↔q."
+        },
+        {
+          "label": "C",
+          "text": "A condicional ¬p→¬q."
+        },
+        {
+          "label": "D",
+          "text": "A disjunção p∨q."
+        },
+        {
+          "label": "E",
+          "text": "A condicional p→q."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "“P somente se q” afirma que p não ocorre sem q.\n\nAnálise da resposta: Correta: q é condição necessária para p, logo p implica q.\n\nA: Incorreta: inverte condição necessária e suficiente.\n\nB: Incorreta: “somente se” isolado não garante a direção inversa.\n\nC: Incorreta: essa é a inversa, não a contrapositiva correta.\n\nD: Incorreta: não se trata de simples alternativa.\n\nE: Correta: q é condição necessária para p, logo p implica q.\n\nArmadilha: Ler a ordem das palavras como se q fosse antecedente.\n\nConhecimento adicional: A forma equivalente é “se p, então q”.\n\nAprendizado essencial: Localize o evento restringido antes de posicionar a seta.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 51-61",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 51-61",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q022",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e441aaf25812d7"
+      ],
+      "statement": "A bicondicional p↔q é verdadeira quando p e q\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "são ambas falsas apenas."
+        },
+        {
+          "label": "B",
+          "text": "são ambas verdadeiras apenas."
+        },
+        {
+          "label": "C",
+          "text": "têm o mesmo valor lógico."
+        },
+        {
+          "label": "D",
+          "text": "têm valores diferentes."
+        },
+        {
+          "label": "E",
+          "text": "não possuem valor lógico."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A bicondicional expressa concordância lógica entre as duas direções.\n\nAnálise da resposta: Correta: equivalência exige coincidência dos valores.\n\nA: Incorreta: o caso V,V também é verdadeiro.\n\nB: Incorreta: o caso F,F também é verdadeiro.\n\nC: Correta: equivalência exige coincidência dos valores.\n\nD: Incorreta: valores diferentes tornam a bicondicional falsa.\n\nE: Incorreta: as parcelas são proposições avaliáveis.\n\nArmadilha: Lembrar apenas do caso V,V e esquecer F,F.\n\nConhecimento adicional: Ela equivale à conjunção (p→q)∧(q→p).\n\nAprendizado essencial: Compare os valores das parcelas: iguais produzem V.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 61-65",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 61-65",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q023",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e441aaf25812d7"
+      ],
+      "statement": "Se p é verdadeira e q é falsa, p↔q assume valor\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O valor é verdadeiro."
+        },
+        {
+          "label": "B",
+          "text": "O valor é falso."
+        },
+        {
+          "label": "C",
+          "text": "O valor é igual a p."
+        },
+        {
+          "label": "D",
+          "text": "O valor é indefinido."
+        },
+        {
+          "label": "E",
+          "text": "O valor é duplamente verdadeiro."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A linha V,F da tabela da bicondicional produz F.\n\nAnálise da resposta: Correta: valores diferentes tornam a bicondicional falsa.\n\nA: Incorreta: as parcelas discordam.\n\nB: Correta: valores diferentes tornam a bicondicional falsa.\n\nC: Incorreta: o resultado depende também de q.\n\nD: Incorreta: os valores foram informados.\n\nE: Incorreta: não existe essa categoria lógica.\n\nArmadilha: Avaliar somente a parcela verdadeira.\n\nConhecimento adicional: O mesmo resultado falso ocorre na linha F,V.\n\nAprendizado essencial: Bicondicional pede igualdade, não presença isolada de verdade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 61-65",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 61-65",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q024",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e441aaf25812d7"
+      ],
+      "statement": "A proposição p↔q é equivalente a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula (p→q)∧(q→p)."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula (p→q)∨(q→p)."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∧¬q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p∨¬q."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A equivalência lógica exige a validade simultânea das duas direções condicionais.\n\nAnálise da resposta: Correta: as duas implicações garantem necessidade e suficiência recíprocas.\n\nA: Correta: as duas implicações garantem necessidade e suficiência recíprocas.\n\nB: Incorreta: a disjunção entre condicionais é verdadeira em casos além da equivalência.\n\nC: Incorreta: p∨q é verdadeira também quando os valores diferem.\n\nD: Incorreta: essa expressão representa um caso de discordância.\n\nE: Incorreta: essa disjunção não reproduz V,V.\n\nArmadilha: Trocar a conjunção entre direções por disjunção.\n\nConhecimento adicional: Também se pode escrever (p∧q)∨(¬p∧¬q).\n\nAprendizado essencial: Bicondicional combina ida e volta com “e”.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "location": "páginas 61-65",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_00",
+          "trace_status": "missing",
+          "location": "páginas 61-65",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q025",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b4645b7f2631bb"
+      ],
+      "statement": "Se p significa “o sistema funciona” e q “o relatório é emitido”, a frase “se o sistema funciona, então o relatório é emitido” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A conjunção p∧q."
+        },
+        {
+          "label": "B",
+          "text": "A disjunção p∨q."
+        },
+        {
+          "label": "C",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "D",
+          "text": "A bicondicional p↔q."
+        },
+        {
+          "label": "E",
+          "text": "A condicional p→q."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A tradução preserva a ordem entre condição e consequência.\n\nAnálise da resposta: Correta: p é o antecedente e q o consequente.\n\nA: Incorreta: a frase não afirma simplesmente os dois fatos.\n\nB: Incorreta: não apresenta alternativas.\n\nC: Incorreta: antecedente e consequente foram invertidos.\n\nD: Incorreta: não há equivalência nas duas direções.\n\nE: Correta: p é o antecedente e q o consequente.\n\nArmadilha: Colocar primeiro na fórmula a oração que parece mais importante, e não o antecedente.\n\nConhecimento adicional: Expressões “p implica q” e “p, logo q” podem representar a mesma condicional.\n\nAprendizado essencial: Identifique explicitamente a oração após “se” e a após “então”.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 3-10",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 3-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q026",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b4645b7f2631bb"
+      ],
+      "statement": "Se p é “Ana estuda”, q é “Ana trabalha” e r é “Ana viaja”, a frase “Se Ana estuda, então Ana trabalha e viaja” corresponde a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "(p→q)∧r."
+        },
+        {
+          "label": "B",
+          "text": "p∧(q→r)."
+        },
+        {
+          "label": "C",
+          "text": "p→(q∧r)."
+        },
+        {
+          "label": "D",
+          "text": "(p∧q)→r."
+        },
+        {
+          "label": "E",
+          "text": "p↔(q∨r)."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Parênteses registram quais parcelas pertencem ao antecedente e ao consequente.\n\nAnálise da resposta: Correta: o consequente completo é a conjunção q∧r.\n\nA: Incorreta: tornaria r uma afirmação independente da condicional.\n\nB: Incorreta: afirmaria p e uma condicional entre q e r.\n\nC: Correta: o consequente completo é a conjunção q∧r.\n\nD: Incorreta: inclui q no antecedente, alterando a frase.\n\nE: Incorreta: não há equivalência nem disjunção.\n\nArmadilha: Aplicar a precedência padrão sem respeitar o agrupamento indicado pela linguagem.\n\nConhecimento adicional: A conjunção possui precedência sobre a condicional, coerente com essa leitura.\n\nAprendizado essencial: Separe primeiro os grandes blocos da sentença.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 3-10",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 3-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_01_q027",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_1_proposicoes_simples_e_compostas",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b4645b7f2631bb"
+      ],
+      "statement": "Se p é “o candidato foi convocado” e q “o candidato foi aprovado”, a frase “o candidato foi convocado somente se foi aprovado” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A condicional q→p."
+        },
+        {
+          "label": "B",
+          "text": "A bicondicional p↔q."
+        },
+        {
+          "label": "C",
+          "text": "A condicional ¬q→p."
+        },
+        {
+          "label": "D",
+          "text": "A condicional p→q."
+        },
+        {
+          "label": "E",
+          "text": "A disjunção p∨q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "“Somente se” apresenta uma condição necessária para a oração principal.\n\nAnálise da resposta: Correta: convocação p exige aprovação q.\n\nA: Incorreta: diria que aprovação basta para convocação.\n\nB: Incorreta: acrescenta reciprocidade não informada.\n\nC: Incorreta: não representa a condição necessária.\n\nD: Correta: convocação p exige aprovação q.\n\nE: Incorreta: não é uma alternativa inclusiva.\n\nArmadilha: Inverter a seta porque q aparece depois da expressão restritiva.\n\nConhecimento adicional: A contrapositiva equivalente é ¬q→¬p.\n\nAprendizado essencial: Leia como “se foi convocado, então foi aprovado”.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 3-10",
+          "used_for": "Fundamento conceitual e conferência da operação proposicional."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 3-10",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

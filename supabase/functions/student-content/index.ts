@@ -81,6 +81,12 @@ Deno.serve(async (request) => {
     if (packageError) throw packageError;
     if (!contentPackage) {
       if (body.contestId === 'pc_al_2026') return respond(200, { legacyStatic: true, contestId: body.contestId }, origin);
+      const { data: contest, error: contestError } = await admin.from('admin_contests')
+        .select('content_status,content_delivery').eq('id', body.contestId).maybeSingle();
+      if (contestError) throw contestError;
+      if (contest?.content_status === 'ready' && contest?.content_delivery === 'static_bundle') {
+        return respond(200, { staticPublished: true, contestId: body.contestId }, origin);
+      }
       return respond(503, {
         error: 'content_temporarily_unavailable',
         contestId: body.contestId,

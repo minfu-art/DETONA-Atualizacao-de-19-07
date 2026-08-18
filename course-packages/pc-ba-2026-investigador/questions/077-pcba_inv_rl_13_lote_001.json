@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_13_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_13_01_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_61e7175904ed60"
+      ],
+      "statement": "Se A={1,2,3}, a afirmação corretamente escrita é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2∈A."
+        },
+        {
+          "label": "B",
+          "text": "A∈2."
+        },
+        {
+          "label": "C",
+          "text": "4∈A."
+        },
+        {
+          "label": "D",
+          "text": "2⊆A."
+        },
+        {
+          "label": "E",
+          "text": "{2}∈A."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige distinguir pertinência e inclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 2 figura entre os elementos de A. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: 2 figura entre os elementos de A.\n\nB: Incorreta: a notação está invertida e 2 não é conjunto.\n\nC: Incorreta: 4 não pertence à lista.\n\nD: Incorreta: 2 é elemento, não conjunto indicado.\n\nE: Incorreta: o conjunto {2} não aparece como elemento de A.\n\nArmadilha: Usar símbolos de elemento e subconjunto como se representassem a mesma relação.\n\nConhecimento adicional: Pertinência relaciona elemento e conjunto; inclusão relaciona dois conjuntos.\n\nAprendizado essencial: Use ∈ para elemento e ⊆ para conjunto contido em outro conjunto.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 3-15",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 3-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_61e7175904ed60"
+      ],
+      "statement": "Dados A={1,2} e B={1,2,3}, qual relação é verdadeira?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A∈B."
+        },
+        {
+          "label": "B",
+          "text": "A⊆B."
+        },
+        {
+          "label": "C",
+          "text": "3∈A."
+        },
+        {
+          "label": "D",
+          "text": "B⊆A."
+        },
+        {
+          "label": "E",
+          "text": "{3}∈B."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige distinguir pertinência e inclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: todo elemento de A pertence a B. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: B contém números, não o conjunto A como elemento.\n\nB: Correta: todo elemento de A pertence a B.\n\nC: Incorreta: 3 não pertence a A.\n\nD: Incorreta: B possui o elemento adicional 3.\n\nE: Incorreta: B contém 3, não necessariamente o conjunto {3}.\n\nArmadilha: Usar símbolos de elemento e subconjunto como se representassem a mesma relação.\n\nConhecimento adicional: Pertinência relaciona elemento e conjunto; inclusão relaciona dois conjuntos.\n\nAprendizado essencial: Use ∈ para elemento e ⊆ para conjunto contido em outro conjunto.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 3-15",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 3-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_61e7175904ed60"
+      ],
+      "statement": "Se A={{1},2}, qual afirmação evidencia a diferença entre pertinência e inclusão?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O número 2 é subconjunto de A."
+        },
+        {
+          "label": "B",
+          "text": "O número 1 pertence diretamente a A."
+        },
+        {
+          "label": "C",
+          "text": "O conjunto {1} pertence a A, mas não é subconjunto de A."
+        },
+        {
+          "label": "D",
+          "text": "O conjunto {1} não pertence a A e o número 2 também não."
+        },
+        {
+          "label": "E",
+          "text": "O conjunto A pertence ao conjunto {1}."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige distinguir pertinência e inclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: {1} é elemento de A; porém não é subconjunto, pois 1 não pertence diretamente a A. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: 2 foi apresentado como elemento, não como conjunto.\n\nB: Incorreta: 1 está dentro do elemento {1}, mas não aparece diretamente em A.\n\nC: Correta: {1} é elemento de A; porém não é subconjunto, pois 1 não pertence diretamente a A.\n\nD: Incorreta: tanto {1} quanto 2 aparecem como elementos de A.\n\nE: Incorreta: A não aparece como elemento de {1}.\n\nArmadilha: Usar símbolos de elemento e subconjunto como se representassem a mesma relação.\n\nConhecimento adicional: Pertinência relaciona elemento e conjunto; inclusão relaciona dois conjuntos.\n\nAprendizado essencial: Use ∈ para elemento e ⊆ para conjunto contido em outro conjunto.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 3-15",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 3-15",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fc6db71c4c050f"
+      ],
+      "statement": "A união A∪B é formada pelos elementos que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "pertencem somente a A."
+        },
+        {
+          "label": "B",
+          "text": "pertencem somente a B."
+        },
+        {
+          "label": "C",
+          "text": "pertencem simultaneamente a A e B apenas."
+        },
+        {
+          "label": "D",
+          "text": "pertencem a A ou a B, inclusive aos dois."
+        },
+        {
+          "label": "E",
+          "text": "não pertencem a nenhum dos dois."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige calcular e interpretar união de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: é a definição de união inclusiva. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: omite B.\n\nB: Incorreta: omite A.\n\nC: Incorreta: define a interseção.\n\nD: Correta: é a definição de união inclusiva.\n\nE: Incorreta: define o exterior da união.\n\nArmadilha: Excluir a interseção da união ou repetir elementos comuns na representação de um conjunto.\n\nConhecimento adicional: A união A∪B contém cada elemento que pertence a A, a B ou a ambos, sem repetição.\n\nAprendizado essencial: Na união, reúna todos os elementos e escreva cada valor apenas uma vez.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fc6db71c4c050f"
+      ],
+      "statement": "Se A={1,2,3} e B={3,4,5}, então A∪B é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{1,2,3,3,4,5}."
+        },
+        {
+          "label": "B",
+          "text": "∅."
+        },
+        {
+          "label": "C",
+          "text": "{3}."
+        },
+        {
+          "label": "D",
+          "text": "{1,2,4,5}."
+        },
+        {
+          "label": "E",
+          "text": "{1,2,3,4,5}."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige calcular e interpretar união de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: reúne todos os elementos sem repetição. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: conjuntos não registram multiplicidade dessa forma.\n\nB: Incorreta: os conjuntos possuem vários elementos.\n\nC: Incorreta: é apenas a interseção.\n\nD: Incorreta: é a diferença simétrica.\n\nE: Correta: reúne todos os elementos sem repetição.\n\nArmadilha: Excluir a interseção da união ou repetir elementos comuns na representação de um conjunto.\n\nConhecimento adicional: A união A∪B contém cada elemento que pertence a A, a B ou a ambos, sem repetição.\n\nAprendizado essencial: Na união, reúna todos os elementos e escreva cada valor apenas uma vez.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_fc6db71c4c050f"
+      ],
+      "statement": "Se A⊆B, então necessariamente A∪B é igual a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "B."
+        },
+        {
+          "label": "B",
+          "text": "∅."
+        },
+        {
+          "label": "C",
+          "text": "B−A."
+        },
+        {
+          "label": "D",
+          "text": "A∩B."
+        },
+        {
+          "label": "E",
+          "text": "A."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige calcular e interpretar união de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: B já contém todos os elementos de A. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: B já contém todos os elementos de A.\n\nB: Incorreta: só ocorreria se ambos fossem vazios.\n\nC: Incorreta: a diferença exclui A.\n\nD: Incorreta: A∩B=A, que pode ser menor que B.\n\nE: Incorreta: a união também deve incluir a parte de B fora de A.\n\nArmadilha: Excluir a interseção da união ou repetir elementos comuns na representação de um conjunto.\n\nConhecimento adicional: A união A∪B contém cada elemento que pertence a A, a B ou a ambos, sem repetição.\n\nAprendizado essencial: Na união, reúna todos os elementos e escreva cada valor apenas uma vez.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f527698a51f6b9"
+      ],
+      "statement": "A interseção A∩B contém os elementos que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "pertencem apenas a B."
+        },
+        {
+          "label": "B",
+          "text": "pertencem a A e a B simultaneamente."
+        },
+        {
+          "label": "C",
+          "text": "pertencem a pelo menos um conjunto."
+        },
+        {
+          "label": "D",
+          "text": "estão fora de A e B."
+        },
+        {
+          "label": "E",
+          "text": "pertencem apenas a A."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige calcular e interpretar interseção de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: é a definição de interseção. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é B−A.\n\nB: Correta: é a definição de interseção.\n\nC: Incorreta: é a união.\n\nD: Incorreta: é o complementar da união.\n\nE: Incorreta: é A−B.\n\nArmadilha: Incluir partes exclusivas quando a operação exige pertencimento simultâneo.\n\nConhecimento adicional: Conjuntos disjuntos têm interseção vazia, embora possam pertencer ao mesmo universo.\n\nAprendizado essencial: Na interseção, mantenha somente os elementos presentes em todos os conjuntos envolvidos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f527698a51f6b9"
+      ],
+      "statement": "Se A={0,2,4,6} e B={2,3,4,5}, então A∩B é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "∅."
+        },
+        {
+          "label": "B",
+          "text": "{0,6}."
+        },
+        {
+          "label": "C",
+          "text": "{2,4}."
+        },
+        {
+          "label": "D",
+          "text": "{2,3,4}."
+        },
+        {
+          "label": "E",
+          "text": "{0,2,3,4,5,6}."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige calcular e interpretar interseção de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 2 e 4 aparecem nos dois conjuntos. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: há dois elementos comuns.\n\nB: Incorreta: são elementos exclusivos de A.\n\nC: Correta: 2 e 4 aparecem nos dois conjuntos.\n\nD: Incorreta: 3 não pertence a A.\n\nE: Incorreta: é a união.\n\nArmadilha: Incluir partes exclusivas quando a operação exige pertencimento simultâneo.\n\nConhecimento adicional: Conjuntos disjuntos têm interseção vazia, embora possam pertencer ao mesmo universo.\n\nAprendizado essencial: Na interseção, mantenha somente os elementos presentes em todos os conjuntos envolvidos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_f527698a51f6b9"
+      ],
+      "statement": "Se A∩B=A, qual relação é necessariamente verdadeira?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A∪B=A em todos os casos."
+        },
+        {
+          "label": "B",
+          "text": "B=∅."
+        },
+        {
+          "label": "C",
+          "text": "B⊆A."
+        },
+        {
+          "label": "D",
+          "text": "A⊆B."
+        },
+        {
+          "label": "E",
+          "text": "A e B são disjuntos."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige calcular e interpretar interseção de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: todos os elementos de A sobreviveram à interseção, logo estão em B. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: a união vale B quando A⊆B.\n\nB: Incorreta: B deve conter A, não ser necessariamente vazio.\n\nC: Incorreta: pode haver elementos de B fora de A.\n\nD: Correta: todos os elementos de A sobreviveram à interseção, logo estão em B.\n\nE: Incorreta: a interseção seria vazia, salvo A vazio.\n\nArmadilha: Incluir partes exclusivas quando a operação exige pertencimento simultâneo.\n\nConhecimento adicional: Conjuntos disjuntos têm interseção vazia, embora possam pertencer ao mesmo universo.\n\nAprendizado essencial: Na interseção, mantenha somente os elementos presentes em todos os conjuntos envolvidos.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_935094c662211a"
+      ],
+      "statement": "A diferença A−B é o conjunto dos elementos que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "pertencem a B e não pertencem a A."
+        },
+        {
+          "label": "B",
+          "text": "pertencem simultaneamente aos dois."
+        },
+        {
+          "label": "C",
+          "text": "não pertencem a A."
+        },
+        {
+          "label": "D",
+          "text": "pertencem a pelo menos um dos dois."
+        },
+        {
+          "label": "E",
+          "text": "pertencem a A e não pertencem a B."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige calcular diferença entre conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: define a diferença na ordem indicada. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: define B−A.\n\nB: Incorreta: define a interseção.\n\nC: Incorreta: inclui elementos alheios ao universo de A.\n\nD: Incorreta: define a união.\n\nE: Correta: define a diferença na ordem indicada.\n\nArmadilha: Tratar a diferença como comutativa ou confundi-la com a exclusão de todos os elementos comuns e exclusivos.\n\nConhecimento adicional: A−B preserva elementos de A que não pertencem a B; em geral, A−B é diferente de B−A.\n\nAprendizado essencial: Na diferença, comece pelo conjunto escrito à esquerda e retire os elementos do conjunto à direita.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_935094c662211a"
+      ],
+      "statement": "Se A={1,2,3,4} e B={3,4,5}, então A−B é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{1,2}."
+        },
+        {
+          "label": "B",
+          "text": "{1,2,5}."
+        },
+        {
+          "label": "C",
+          "text": "{1,2,3,4,5}."
+        },
+        {
+          "label": "D",
+          "text": "{3,4}."
+        },
+        {
+          "label": "E",
+          "text": "{5}."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige calcular diferença entre conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: retira de A os elementos 3 e 4. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: retira de A os elementos 3 e 4.\n\nB: Incorreta: inclui elemento que não pertence a A.\n\nC: Incorreta: é a união.\n\nD: Incorreta: é a interseção.\n\nE: Incorreta: é B−A.\n\nArmadilha: Tratar a diferença como comutativa ou confundi-la com a exclusão de todos os elementos comuns e exclusivos.\n\nConhecimento adicional: A−B preserva elementos de A que não pertencem a B; em geral, A−B é diferente de B−A.\n\nAprendizado essencial: Na diferença, comece pelo conjunto escrito à esquerda e retire os elementos do conjunto à direita.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_935094c662211a"
+      ],
+      "statement": "Qual afirmação sobre diferença de conjuntos é correta?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A−A=A."
+        },
+        {
+          "label": "B",
+          "text": "A−∅=A."
+        },
+        {
+          "label": "C",
+          "text": "∅−A=A."
+        },
+        {
+          "label": "D",
+          "text": "A−B=A∩B."
+        },
+        {
+          "label": "E",
+          "text": "A−B=B−A para quaisquer conjuntos."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige calcular diferença entre conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: retirar nada preserva A. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: retirar todos os elementos produz ∅.\n\nB: Correta: retirar nada preserva A.\n\nC: Incorreta: o vazio não possui elementos para preservar.\n\nD: Incorreta: a diferença usa o complementar de B.\n\nE: Incorreta: a operação não é comutativa em geral.\n\nArmadilha: Tratar a diferença como comutativa ou confundi-la com a exclusão de todos os elementos comuns e exclusivos.\n\nConhecimento adicional: A−B preserva elementos de A que não pertencem a B; em geral, A−B é diferente de B−A.\n\nAprendizado essencial: Na diferença, comece pelo conjunto escrito à esquerda e retire os elementos do conjunto à direita.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1227d30fa75749"
+      ],
+      "statement": "O complementar de A em relação ao universo U é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A−A."
+        },
+        {
+          "label": "B",
+          "text": "A−U."
+        },
+        {
+          "label": "C",
+          "text": "U−A."
+        },
+        {
+          "label": "D",
+          "text": "A∩U."
+        },
+        {
+          "label": "E",
+          "text": "A∪U."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige calcular complementar de um conjunto e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: preserva exatamente os elementos de U que não estão em A. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é o conjunto vazio.\n\nB: Incorreta: é vazio quando A⊆U.\n\nC: Correta: preserva exatamente os elementos de U que não estão em A.\n\nD: Incorreta: é o próprio A.\n\nE: Incorreta: é o universo.\n\nArmadilha: Calcular complementar sem considerar o universo ou usar como universo apenas os conjuntos citados informalmente.\n\nConhecimento adicional: O complementar de A depende do universo U e pode ser escrito U−A.\n\nAprendizado essencial: Identifique o universo antes de listar os elementos que ficam fora de A.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 20-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 20-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1227d30fa75749"
+      ],
+      "statement": "Se U={1,2,3,4,5,6} e A={2,4,6}, então Aᶜ é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "{4,5,6}."
+        },
+        {
+          "label": "B",
+          "text": "∅."
+        },
+        {
+          "label": "C",
+          "text": "{2,4,6}."
+        },
+        {
+          "label": "D",
+          "text": "{1,3,5}."
+        },
+        {
+          "label": "E",
+          "text": "{1,2,3}."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige calcular complementar de um conjunto e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: reúne os elementos de U ausentes de A. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: inclui 4 e 6, que pertencem a A.\n\nB: Incorreta: A não é igual a U.\n\nC: Incorreta: é o conjunto original.\n\nD: Correta: reúne os elementos de U ausentes de A.\n\nE: Incorreta: inclui 2 e omite 5.\n\nArmadilha: Calcular complementar sem considerar o universo ou usar como universo apenas os conjuntos citados informalmente.\n\nConhecimento adicional: O complementar de A depende do universo U e pode ser escrito U−A.\n\nAprendizado essencial: Identifique o universo antes de listar os elementos que ficam fora de A.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 20-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 20-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_1227d30fa75749"
+      ],
+      "statement": "Por que não se pode determinar Aᶜ conhecendo apenas A?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque complementares não existem."
+        },
+        {
+          "label": "B",
+          "text": "Porque Aᶜ é sempre A."
+        },
+        {
+          "label": "C",
+          "text": "Porque seria necessário conhecer apenas A∩A."
+        },
+        {
+          "label": "D",
+          "text": "Porque todo conjunto é infinito."
+        },
+        {
+          "label": "E",
+          "text": "Porque o complementar depende do universo adotado."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige calcular complementar de um conjunto e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: universos diferentes deixam diferentes elementos fora de A. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: a operação é bem definida após fixar U.\n\nB: Incorreta: isso só ocorreria em situações degeneradas incompatíveis no mesmo universo clássico.\n\nC: Incorreta: A∩A informa apenas A.\n\nD: Incorreta: finitude não é requisito para complementar.\n\nE: Correta: universos diferentes deixam diferentes elementos fora de A.\n\nArmadilha: Calcular complementar sem considerar o universo ou usar como universo apenas os conjuntos citados informalmente.\n\nConhecimento adicional: O complementar de A depende do universo U e pode ser escrito U−A.\n\nAprendizado essencial: Identifique o universo antes de listar os elementos que ficam fora de A.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 20-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 20-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6ec830f16670f9"
+      ],
+      "statement": "A propriedade comutativa da união estabelece que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A∪B=B∪A."
+        },
+        {
+          "label": "B",
+          "text": "A∪B=A∩B."
+        },
+        {
+          "label": "C",
+          "text": "A∪B=A−B."
+        },
+        {
+          "label": "D",
+          "text": "A∪B=∅."
+        },
+        {
+          "label": "E",
+          "text": "A∪B=Aᶜ."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige aplicar leis e propriedades de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: a ordem não altera a união. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: a ordem não altera a união.\n\nB: Incorreta: as operações têm significados distintos.\n\nC: Incorreta: diferença não é comutativa.\n\nD: Incorreta: só seria vazio em caso restrito.\n\nE: Incorreta: complemento depende do universo.\n\nArmadilha: Aplicar leis algébricas sem preservar complementos, parênteses e troca de operações nas leis de De Morgan.\n\nConhecimento adicional: As operações satisfazem comutatividade, associatividade, distributividade e leis de De Morgan.\n\nAprendizado essencial: Transforme uma lei por etapa e confira com regiões ou elementos de teste.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6ec830f16670f9"
+      ],
+      "statement": "Pela lei de De Morgan para conjuntos, (A∪B)ᶜ é igual a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Aᶜ∪Bᶜ."
+        },
+        {
+          "label": "B",
+          "text": "Aᶜ∩Bᶜ."
+        },
+        {
+          "label": "C",
+          "text": "A∩B."
+        },
+        {
+          "label": "D",
+          "text": "A−B."
+        },
+        {
+          "label": "E",
+          "text": "A∪B."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige aplicar leis e propriedades de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: nega cada conjunto e troca união por interseção. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: mantém a operação quando deveria trocá-la.\n\nB: Correta: nega cada conjunto e troca união por interseção.\n\nC: Incorreta: não aplica complementos.\n\nD: Incorreta: é apenas uma região assimétrica.\n\nE: Incorreta: repete o conjunto negado.\n\nArmadilha: Aplicar leis algébricas sem preservar complementos, parênteses e troca de operações nas leis de De Morgan.\n\nConhecimento adicional: As operações satisfazem comutatividade, associatividade, distributividade e leis de De Morgan.\n\nAprendizado essencial: Transforme uma lei por etapa e confira com regiões ou elementos de teste.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_01_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_6ec830f16670f9"
+      ],
+      "statement": "Qual identidade é sempre verdadeira?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A∪∅=∅."
+        },
+        {
+          "label": "B",
+          "text": "A∩U=U."
+        },
+        {
+          "label": "C",
+          "text": "A∩(B∪C)=(A∩B)∪(A∩C)."
+        },
+        {
+          "label": "D",
+          "text": "A−B=B−A."
+        },
+        {
+          "label": "E",
+          "text": "A∩Aᶜ=A."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige aplicar leis e propriedades de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: é a distributividade da interseção sobre a união. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: a união com vazio preserva A.\n\nB: Incorreta: a interseção com o universo preserva A.\n\nC: Correta: é a distributividade da interseção sobre a união.\n\nD: Incorreta: diferença não é comutativa.\n\nE: Incorreta: um conjunto e seu complementar são disjuntos.\n\nArmadilha: Aplicar leis algébricas sem preservar complementos, parênteses e troca de operações nas leis de De Morgan.\n\nConhecimento adicional: As operações satisfazem comutatividade, associatividade, distributividade e leis de De Morgan.\n\nAprendizado essencial: Transforme uma lei por etapa e confira com regiões ou elementos de teste.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-23",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

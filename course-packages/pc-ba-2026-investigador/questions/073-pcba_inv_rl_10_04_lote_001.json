@@ -1,0 +1,605 @@
+{
+  "name": "pcba_inv_rl_10_04_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_04_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b45911c0d424ba"
+      ],
+      "statement": "Segundo De Morgan, ¬(p∧q) equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p→q."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Não ocorrerem ambas significa falhar pelo menos uma.\n\nAnálise da resposta: Correta: nega as parcelas e troca conjunção por disjunção.\n\nA: Correta: nega as parcelas e troca conjunção por disjunção.\n\nB: Incorreta: mantém o conectivo.\n\nC: Incorreta: não nega as parcelas.\n\nD: Incorreta: é a fórmula original.\n\nE: Incorreta: introduz condicional.\n\nArmadilha: Interpretar “não ambos” como “nenhum”.\n\nConhecimento adicional: A negação pode ser aplicada a conjunções com vários termos.\n\nAprendizado essencial: Troque e negue cada parcela.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b45911c0d424ba"
+      ],
+      "statement": "A negação de “Carlos estuda e trabalha” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Carlos não estuda e não trabalha."
+        },
+        {
+          "label": "B",
+          "text": "Carlos não estuda ou não trabalha."
+        },
+        {
+          "label": "C",
+          "text": "Carlos estuda ou trabalha."
+        },
+        {
+          "label": "D",
+          "text": "Carlos trabalha somente se estuda."
+        },
+        {
+          "label": "E",
+          "text": "Carlos estuda se e somente se trabalha."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A negação da conjunção usa “ou” entre as negações.\n\nAnálise da resposta: Correta: pelo menos uma das afirmações deve ser falsa.\n\nA: Incorreta: exige as duas falhas, não apenas uma.\n\nB: Correta: pelo menos uma das afirmações deve ser falsa.\n\nC: Incorreta: não nega as parcelas.\n\nD: Incorreta: condicional não é a negação.\n\nE: Incorreta: bicondicional não corresponde à negação.\n\nArmadilha: Usar “e” por traduzir mecanicamente cada não.\n\nConhecimento adicional: O “ou” empregado é inclusivo.\n\nAprendizado essencial: Negue todo o bloco, não apenas a primeira oração.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_b45911c0d424ba"
+      ],
+      "statement": "Por que ¬p∧¬q não é a negação de p∧q?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Porque é verdadeira somente quando ambas são falsas, mas a negação também deve cobrir V,F e F,V."
+        },
+        {
+          "label": "B",
+          "text": "Porque negações são proibidas."
+        },
+        {
+          "label": "C",
+          "text": "Porque p∧q é tautologia."
+        },
+        {
+          "label": "D",
+          "text": "Porque as fórmulas são idênticas."
+        },
+        {
+          "label": "E",
+          "text": "Porque ¬p∧¬q é sempre verdadeira."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Um contraexemplo como p=V,q=F mostra a diferença.\n\nAnálise da resposta: Correta: a fórmula proposta é restritiva demais.\n\nA: Correta: a fórmula proposta é restritiva demais.\n\nB: Incorreta: negações são operações válidas.\n\nC: Incorreta: p∧q é contingente.\n\nD: Incorreta: diferem em duas linhas.\n\nE: Incorreta: depende dos valores de p e q.\n\nArmadilha: Achar que negar cada parcela basta sem trocar o conectivo.\n\nConhecimento adicional: A equivalência correta precisa reproduzir todas as linhas opostas.\n\nAprendizado essencial: Teste linhas com apenas uma parcela falsa.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8034cd8b1a8d5b"
+      ],
+      "statement": "Segundo De Morgan, ¬(p∨q) equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨¬q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p→q."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Não ocorrer nenhuma alternativa exige as duas negações juntas.\n\nAnálise da resposta: Correta: nega ambas e troca disjunção por conjunção.\n\nA: Incorreta: mantém o conectivo e seria verdadeira com uma única falsidade.\n\nB: Incorreta: não nega as parcelas.\n\nC: Correta: nega ambas e troca disjunção por conjunção.\n\nD: Incorreta: é a fórmula original.\n\nE: Incorreta: introduz condicional.\n\nArmadilha: Manter “ou” ao negar a disjunção.\n\nConhecimento adicional: A expressão natural é “nem p nem q”.\n\nAprendizado essencial: Troque ∨ por ∧ e negue cada termo.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8034cd8b1a8d5b"
+      ],
+      "statement": "A negação de “Ana viaja ou permanece em casa” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ana não viaja ou não permanece em casa."
+        },
+        {
+          "label": "B",
+          "text": "Ana viaja e permanece em casa."
+        },
+        {
+          "label": "C",
+          "text": "Ana não viaja e não permanece em casa."
+        },
+        {
+          "label": "D",
+          "text": "Ana viaja se fica em casa."
+        },
+        {
+          "label": "E",
+          "text": "Ana não viaja somente se sai."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Negar uma alternativa inclusiva equivale a negar cada possibilidade conjuntamente.\n\nAnálise da resposta: Correta: para o “ou” ser falso, ambas precisam falhar.\n\nA: Incorreta: permitiria uma das alternativas originais ocorrer.\n\nB: Incorreta: afirma simultaneamente as parcelas.\n\nC: Correta: para o “ou” ser falso, ambas precisam falhar.\n\nD: Incorreta: condicional não nega a disjunção.\n\nE: Incorreta: altera o conteúdo e a relação.\n\nArmadilha: Usar “ou” entre as negações.\n\nConhecimento adicional: Mesmo que as alternativas pareçam exaustivas no cotidiano, aplica-se a forma lógica dada.\n\nAprendizado essencial: Traduza “não é verdade que p ou q” por “não p e não q”.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_8034cd8b1a8d5b"
+      ],
+      "statement": "A fórmula ¬p∨¬q é a negação de\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula p∨q."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬p∧¬q."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∧q."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula p→q."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p↔q."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Reconhecer a forma resultante permite reconstruir a fórmula original.\n\nAnálise da resposta: Correta: ¬(p∧q)=¬p∨¬q.\n\nA: Incorreta: a negação de p∨q é ¬p∧¬q.\n\nB: Incorreta: negar isso produz p∨q.\n\nC: Correta: ¬(p∧q)=¬p∨¬q.\n\nD: Incorreta: a negação da condicional é p∧¬q.\n\nE: Incorreta: a negação da bicondicional é discordância.\n\nArmadilha: Associar qualquer disjunção de negações à negação de uma disjunção.\n\nConhecimento adicional: As leis de Morgan funcionam nos dois sentidos.\n\nAprendizado essencial: Ao voltar, remova as negações e troque ∨ por ∧.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7f37653e46896d"
+      ],
+      "statement": "A negação de (p∧q)∨r é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula (¬p∨¬q)∧¬r."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula (¬p∧¬q)∨¬r."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬p∨¬q∨¬r."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula (p∨q)∧r."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p∧q∧r."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Aplicações aninhadas seguem a estrutura de fora para dentro.\n\nAnálise da resposta: Correta: nega a disjunção externa e depois a conjunção interna.\n\nA: Correta: nega a disjunção externa e depois a conjunção interna.\n\nB: Incorreta: mantém conectivos em níveis errados.\n\nC: Incorreta: o nível externo deve virar conjunção.\n\nD: Incorreta: não nega as parcelas.\n\nE: Incorreta: não corresponde às trocas sucessivas.\n\nArmadilha: Distribuir a negação em um único passo e perder parênteses.\n\nConhecimento adicional: Cada conectivo atravessado pela negação é trocado.\n\nAprendizado essencial: Preserve os blocos a cada etapa.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7f37653e46896d"
+      ],
+      "statement": "A fórmula ¬[p∨(q∧r)] equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula ¬p∨(¬q∧¬r)."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula ¬p∧(¬q∨¬r)."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula p∧q∧r."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula (¬p∨¬q)∧r."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula ¬p∧¬q∧¬r."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Parênteses internos permanecem até receberem sua própria aplicação de De Morgan.\n\nAnálise da resposta: Correta: primeiro ¬p∧¬(q∧r), depois ¬p∧(¬q∨¬r).\n\nA: Incorreta: a disjunção externa deve virar conjunção.\n\nB: Correta: primeiro ¬p∧¬(q∧r), depois ¬p∧(¬q∨¬r).\n\nC: Incorreta: nenhuma parcela foi negada.\n\nD: Incorreta: o escopo e o sinal de r estão errados.\n\nE: Incorreta: a negação da conjunção interna usa ou, não e.\n\nArmadilha: Trocar todos os conectivos pelo mesmo operador final.\n\nConhecimento adicional: A negação percorre dois níveis, trocando ∨ por ∧ e ∧ por ∨.\n\nAprendizado essencial: Transforme um nível por vez.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_7f37653e46896d"
+      ],
+      "statement": "Ao aplicar De Morgan a uma fórmula composta aninhada, deve-se\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "negar apenas a primeira variável."
+        },
+        {
+          "label": "B",
+          "text": "manter todos os conectivos."
+        },
+        {
+          "label": "C",
+          "text": "trocar apenas o conectivo mais interno."
+        },
+        {
+          "label": "D",
+          "text": "respeitar o escopo e trocar cada ∧ por ∨ ou cada ∨ por ∧ alcançado pela negação."
+        },
+        {
+          "label": "E",
+          "text": "eliminar todos os parênteses antes de negar."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A regra é estrutural e depende do escopo do operador de negação.\n\nAnálise da resposta: Correta: a transformação acompanha a árvore da fórmula.\n\nA: Incorreta: a negação deve alcançar todo o escopo.\n\nB: Incorreta: De Morgan troca conectivos.\n\nC: Incorreta: o conectivo externo também pode estar sob negação.\n\nD: Correta: a transformação acompanha a árvore da fórmula.\n\nE: Incorreta: remover parênteses pode alterar a estrutura.\n\nArmadilha: Fazer substituições visuais sem acompanhar os blocos.\n\nConhecimento adicional: Duplas negações surgidas durante o processo devem ser simplificadas depois.\n\nAprendizado essencial: Marque o alcance de cada negação.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 19-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 19-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cc9280950d79a4"
+      ],
+      "statement": "A negação de “todo investigador apresentou relatório” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum investigador apresentou relatório."
+        },
+        {
+          "label": "B",
+          "text": "algum investigador não apresentou relatório."
+        },
+        {
+          "label": "C",
+          "text": "todo investigador não apresentou relatório."
+        },
+        {
+          "label": "D",
+          "text": "algum investigador apresentou relatório."
+        },
+        {
+          "label": "E",
+          "text": "não existem investigadores."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Negar universal troca “todo” por “existe algum” e nega o predicado.\n\nAnálise da resposta: Correta: basta um contraexemplo ao quantificador universal.\n\nA: Incorreta: isso é mais forte que a negação.\n\nB: Correta: basta um contraexemplo ao quantificador universal.\n\nC: Incorreta: afirma ausência do fato para todos.\n\nD: Incorreta: é compatível com a frase original.\n\nE: Incorreta: a existência da classe não é o ponto negado.\n\nArmadilha: Trocar “todo” por “nenhum”.\n\nConhecimento adicional: Formalmente, ¬∀xP(x) equivale a ∃x¬P(x).\n\nAprendizado essencial: Procure um contraexemplo individual.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cc9280950d79a4"
+      ],
+      "statement": "A negação de “existe servidor que domina o sistema” é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "existe servidor que não domina o sistema."
+        },
+        {
+          "label": "B",
+          "text": "nenhum servidor existe."
+        },
+        {
+          "label": "C",
+          "text": "todo servidor domina o sistema."
+        },
+        {
+          "label": "D",
+          "text": "todo servidor não domina o sistema."
+        },
+        {
+          "label": "E",
+          "text": "alguns servidores dominam e outros não."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Negar existencial troca “existe” por “todo” e nega o predicado.\n\nAnálise da resposta: Correta: não existe testemunha; portanto todos falham no predicado.\n\nA: Incorreta: pode coexistir com alguém que domina.\n\nB: Incorreta: a negação não elimina necessariamente a classe.\n\nC: Incorreta: afirma o oposto do predicado para direção errada.\n\nD: Correta: não existe testemunha; portanto todos falham no predicado.\n\nE: Incorreta: ainda admite servidores que dominam.\n\nArmadilha: Produzir outro existencial negativo, insuficiente para excluir a testemunha positiva.\n\nConhecimento adicional: Formalmente, ¬∃xP(x) equivale a ∀x¬P(x).\n\nAprendizado essencial: Para negar existência, exclua o predicado de todos.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_04_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_4_leis_de_morgan",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_cc9280950d79a4"
+      ],
+      "statement": "A frase “nem todos os candidatos foram aprovados” equivale a\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "nenhum candidato foi aprovado."
+        },
+        {
+          "label": "B",
+          "text": "todos os candidatos foram reprovados."
+        },
+        {
+          "label": "C",
+          "text": "existe ao menos um candidato que não foi aprovado."
+        },
+        {
+          "label": "D",
+          "text": "existe exatamente um reprovado."
+        },
+        {
+          "label": "E",
+          "text": "todos foram aprovados."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "“Nem todos” é uma forma natural da negação do quantificador universal.\n\nAnálise da resposta: Correta: “nem todos” significa que há pelo menos um contraexemplo.\n\nA: Incorreta: a negação universal não exige reprovação de todos.\n\nB: Incorreta: repete a interpretação excessivamente forte.\n\nC: Correta: “nem todos” significa que há pelo menos um contraexemplo.\n\nD: Incorreta: a quantidade pode ser maior que um.\n\nE: Incorreta: é a afirmação negada.\n\nArmadilha: Interpretar “nem todos” como “nenhum”.\n\nConhecimento adicional: Os demais candidatos podem ou não ter sido aprovados.\n\nAprendizado essencial: Converta para “algum não”.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "location": "páginas 21-24",
+          "used_for": "Fundamento e conferência da equivalência lógica aplicada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_02",
+          "trace_status": "missing",
+          "location": "páginas 21-24",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

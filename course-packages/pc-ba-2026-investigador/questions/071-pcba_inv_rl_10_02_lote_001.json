@@ -1,0 +1,905 @@
+{
+  "name": "pcba_inv_rl_10_02_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_10_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_55934729efed41"
+      ],
+      "statement": "Ao construir uma tabela-verdade, depois de identificar as proposições simples distintas, deve-se\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "listar todas as combinações possíveis de seus valores lógicos."
+        },
+        {
+          "label": "B",
+          "text": "atribuir apenas valores verdadeiros."
+        },
+        {
+          "label": "C",
+          "text": "eliminar linhas que produzam falso."
+        },
+        {
+          "label": "D",
+          "text": "escolher uma única combinação provável."
+        },
+        {
+          "label": "E",
+          "text": "ignorar a precedência dos conectivos."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A tabela-verdade é uma enumeração completa das valorações das proposições simples.\n\nAnálise da resposta: Correta: a tabela deve cobrir exaustivamente todas as valorações possíveis.\n\nA: Correta: a tabela deve cobrir exaustivamente todas as valorações possíveis.\n\nB: Incorreta: valores falsos também precisam ser combinados.\n\nC: Incorreta: linhas falsas são necessárias para a análise.\n\nD: Incorreta: uma linha não representa todos os cenários.\n\nE: Incorreta: a ordem das operações é essencial no cálculo das colunas.\n\nArmadilha: Selecionar apenas os casos considerados plausíveis no mundo real.\n\nConhecimento adicional: Após as colunas básicas, calculam-se subfórmulas até chegar à fórmula principal.\n\nAprendizado essencial: Não omita combinações nem etapas intermediárias.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-20",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_55934729efed41"
+      ],
+      "statement": "Na ordem de linhas (V,V), (V,F), (F,V), (F,F), a coluna de p∧q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "V,V,F,F."
+        },
+        {
+          "label": "B",
+          "text": "V,F,V,F."
+        },
+        {
+          "label": "C",
+          "text": "V,F,F,F."
+        },
+        {
+          "label": "D",
+          "text": "F,V,V,F."
+        },
+        {
+          "label": "E",
+          "text": "F,F,F,V."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A coluna da conjunção contém V apenas na linha V,V.\n\nAnálise da resposta: Correta: somente a primeira linha possui ambas as parcelas verdadeiras.\n\nA: Incorreta: a linha V,F não satisfaz a conjunção.\n\nB: Incorreta: repete os valores de p.\n\nC: Correta: somente a primeira linha possui ambas as parcelas verdadeiras.\n\nD: Incorreta: corresponde ao “ou exclusivo”.\n\nE: Incorreta: a última linha não torna a conjunção verdadeira.\n\nArmadilha: Copiar uma das colunas simples em vez de aplicar o conectivo.\n\nConhecimento adicional: Manter uma ordem fixa de linhas facilita comparar diferentes conectivos.\n\nAprendizado essencial: Avalie o conectivo linha por linha.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-20",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-20",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_55934729efed41"
+      ],
+      "statement": "Para calcular ¬p∨(q∧r) sem ambiguidade, a sequência adequada de colunas auxiliares é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p∨q, depois negar toda a fórmula."
+        },
+        {
+          "label": "B",
+          "text": "p∧q, depois q∨r."
+        },
+        {
+          "label": "C",
+          "text": "p→q, depois q↔r."
+        },
+        {
+          "label": "D",
+          "text": "¬q, ¬r e p∧q."
+        },
+        {
+          "label": "E",
+          "text": "¬p e q∧r, depois a disjunção entre esses resultados."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Colunas auxiliares devem seguir a árvore sintática da fórmula.\n\nAnálise da resposta: Correta: respeita os parênteses e calcula as subfórmulas imediatas.\n\nA: Incorreta: altera a estrutura e o escopo da negação.\n\nB: Incorreta: cria subfórmulas que não aparecem na expressão.\n\nC: Incorreta: introduz conectivos inexistentes.\n\nD: Incorreta: nega parcelas erradas e combina outra conjunção.\n\nE: Correta: respeita os parênteses e calcula as subfórmulas imediatas.\n\nArmadilha: Executar conectivos na ordem em que aparecem visualmente, ignorando parênteses.\n\nConhecimento adicional: Negação e parênteses determinam o escopo antes do conectivo principal.\n\nAprendizado essencial: Identifique primeiro as subfórmulas mais internas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_02fbff15b5c69a"
+      ],
+      "statement": "Se p é verdadeira e q é falsa, o valor de p→q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "O valor é verdadeiro."
+        },
+        {
+          "label": "B",
+          "text": "O valor é falso."
+        },
+        {
+          "label": "C",
+          "text": "O valor é indeterminado."
+        },
+        {
+          "label": "D",
+          "text": "O valor é igual a q∨¬q."
+        },
+        {
+          "label": "E",
+          "text": "O valor é verdadeiro e falso."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A tabela da condicional possui falsidade apenas na linha V,F.\n\nAnálise da resposta: Correta: o antecedente ocorre e o consequente falha.\n\nA: Incorreta: V→F é o único caso falso.\n\nB: Correta: o antecedente ocorre e o consequente falha.\n\nC: Incorreta: os valores foram completamente informados.\n\nD: Incorreta: q∨¬q é sempre verdadeira.\n\nE: Incorreta: a lógica clássica atribui um único valor.\n\nArmadilha: Considerar toda condicional verdadeira por conter “se”.\n\nConhecimento adicional: A equivalência ¬p∨q também produz falso nessa valoração.\n\nAprendizado essencial: Localize a linha correspondente antes de responder.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_02fbff15b5c69a"
+      ],
+      "statement": "Com p verdadeira e q falsa, a fórmula (p∨q)∧¬q assume valor\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "falso, pois p∨q é falso."
+        },
+        {
+          "label": "B",
+          "text": "falso, pois ¬q é falso."
+        },
+        {
+          "label": "C",
+          "text": "indeterminado."
+        },
+        {
+          "label": "D",
+          "text": "verdadeiro."
+        },
+        {
+          "label": "E",
+          "text": "igual ao valor de q."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Fórmulas compostas são calculadas das subfórmulas internas para o conectivo principal.\n\nAnálise da resposta: Correta: p∨q=V e ¬q=V, logo a conjunção é V.\n\nA: Incorreta: p∨q é verdadeira porque p é verdadeira.\n\nB: Incorreta: q falsa torna ¬q verdadeira.\n\nC: Incorreta: todas as parcelas têm valor definido.\n\nD: Correta: p∨q=V e ¬q=V, logo a conjunção é V.\n\nE: Incorreta: q é falsa, mas a fórmula final é verdadeira.\n\nArmadilha: Negar q sem inverter seu valor ou avaliar a conjunção antes das parcelas.\n\nConhecimento adicional: Uma coluna auxiliar para p∨q e outra para ¬q evita erros.\n\nAprendizado essencial: Calcule cada bloco e só então a operação final.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_02fbff15b5c69a"
+      ],
+      "statement": "Se p e q são falsas, o valor de p↔¬q é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "falso, pois p=F e ¬q=V têm valores diferentes."
+        },
+        {
+          "label": "B",
+          "text": "verdadeiro, pois p e q são iguais."
+        },
+        {
+          "label": "C",
+          "text": "verdadeiro, pois toda negação é falsa."
+        },
+        {
+          "label": "D",
+          "text": "falso, pois bicondicionais são sempre falsas."
+        },
+        {
+          "label": "E",
+          "text": "indefinido por conter negação."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A bicondicional deve comparar os valores já calculados das parcelas completas.\n\nAnálise da resposta: Correta: q=F implica ¬q=V, e F↔V resulta F.\n\nA: Correta: q=F implica ¬q=V, e F↔V resulta F.\n\nB: Incorreta: a comparação é entre p e ¬q, não entre p e q.\n\nC: Incorreta: negação de uma falsidade é verdadeira.\n\nD: Incorreta: bicondicionais são verdadeiras quando as parcelas coincidem.\n\nE: Incorreta: a negação tem valor definido.\n\nArmadilha: Comparar p diretamente com q e esquecer a negação.\n\nConhecimento adicional: O conectivo principal é avaliado por último.\n\nAprendizado essencial: Resolva ¬q antes de aplicar ↔.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-23",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-23",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_452378f1729ef0"
+      ],
+      "statement": "Uma tautologia é uma proposição composta cuja coluna final é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "É sempre falsa."
+        },
+        {
+          "label": "B",
+          "text": "Alterna valores V e F."
+        },
+        {
+          "label": "C",
+          "text": "É sempre verdadeira."
+        },
+        {
+          "label": "D",
+          "text": "Permanece completamente vazia."
+        },
+        {
+          "label": "E",
+          "text": "É igual apenas à primeira parcela."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Tautologia é verdade lógica independente dos valores das proposições simples.\n\nAnálise da resposta: Correta: nenhuma valoração torna uma tautologia falsa.\n\nA: Incorreta: isso define contradição.\n\nB: Incorreta: presença de ambos os valores define contingência.\n\nC: Correta: nenhuma valoração torna uma tautologia falsa.\n\nD: Incorreta: a tabela possui valores definidos.\n\nE: Incorreta: a classificação considera todas as parcelas e linhas.\n\nArmadilha: Confundir verdade factual de uma linha com verdade em todas as linhas.\n\nConhecimento adicional: A coluna final inteira, e não uma linha isolada, determina a classificação.\n\nAprendizado essencial: Procure somente valores V na coluna principal.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_452378f1729ef0"
+      ],
+      "statement": "A fórmula p∨¬p é uma tautologia porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "p e ¬p são sempre falsas."
+        },
+        {
+          "label": "B",
+          "text": "para qualquer valor de p, uma das duas parcelas é verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "a disjunção exige ambas verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "a negação não altera valores."
+        },
+        {
+          "label": "E",
+          "text": "p precisa ser verdadeira."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A lei do terceiro excluído garante p ou sua negação em toda valoração.\n\nAnálise da resposta: Correta: se p=V, a primeira é V; se p=F, ¬p é V.\n\nA: Incorreta: elas possuem valores opostos.\n\nB: Correta: se p=V, a primeira é V; se p=F, ¬p é V.\n\nC: Incorreta: o “ou” inclusivo exige ao menos uma.\n\nD: Incorreta: negação inverte o valor.\n\nE: Incorreta: a fórmula também é verdadeira quando p é falsa.\n\nArmadilha: Verificar apenas a linha p=V.\n\nConhecimento adicional: O par p e ¬p nunca é simultaneamente falso.\n\nAprendizado essencial: Teste as duas únicas valorações de p.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_452378f1729ef0"
+      ],
+      "statement": "A fórmula (p∧q)→p é tautológica porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "quando p∧q é verdadeira, p é verdadeira; quando é falsa, a condicional permanece verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "p∧q é sempre verdadeira."
+        },
+        {
+          "label": "C",
+          "text": "p é sempre verdadeira."
+        },
+        {
+          "label": "D",
+          "text": "toda condicional é tautologia."
+        },
+        {
+          "label": "E",
+          "text": "q nunca influencia a fórmula."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Uma implicação tautológica pode expressar que a conclusão já está contida na premissa.\n\nAnálise da resposta: Correta: em nenhuma linha ocorre antecedente V com consequente F.\n\nA: Correta: em nenhuma linha ocorre antecedente V com consequente F.\n\nB: Incorreta: a conjunção é falsa em três linhas.\n\nC: Incorreta: p pode ser falsa.\n\nD: Incorreta: condicionais como p→q são contingentes em geral.\n\nE: Incorreta: q afeta o antecedente, embora não destrua a tautologia.\n\nArmadilha: Declarar toda condicional tautológica por ser verdadeira com antecedente falso.\n\nConhecimento adicional: Basta excluir sistematicamente o caso proibido V→F.\n\nAprendizado essencial: Analise quando o antecedente pode ser verdadeiro.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e72aaa5982c140"
+      ],
+      "statement": "Uma contradição lógica apresenta na coluna final da tabela-verdade\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "apenas valores falsos."
+        },
+        {
+          "label": "B",
+          "text": "apenas valores verdadeiros."
+        },
+        {
+          "label": "C",
+          "text": "metade V e metade F obrigatoriamente."
+        },
+        {
+          "label": "D",
+          "text": "um valor indeterminado."
+        },
+        {
+          "label": "E",
+          "text": "nenhuma linha."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "Contradição é impossibilidade lógica de satisfação da fórmula.\n\nAnálise da resposta: Correta: contradição é falsa sob toda valoração.\n\nA: Correta: contradição é falsa sob toda valoração.\n\nB: Incorreta: isso define tautologia.\n\nC: Incorreta: mistura de valores define contingência, sem exigir metade.\n\nD: Incorreta: a lógica clássica atribui valores definidos.\n\nE: Incorreta: a tabela contém todas as valorações.\n\nArmadilha: Confundir falsidade em uma linha com falsidade necessária.\n\nConhecimento adicional: A negação de uma tautologia é uma contradição.\n\nAprendizado essencial: Procure somente valores F na coluna principal.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e72aaa5982c140"
+      ],
+      "statement": "A fórmula p∧¬p é contraditória porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "a conjunção é sempre verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "p e ¬p nunca são simultaneamente verdadeiras."
+        },
+        {
+          "label": "C",
+          "text": "a negação não muda p."
+        },
+        {
+          "label": "D",
+          "text": "p é necessariamente falsa."
+        },
+        {
+          "label": "E",
+          "text": "p é necessariamente verdadeira."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "Uma proposição e sua negação não podem ser satisfeitas em conjunto.\n\nAnálise da resposta: Correta: as parcelas têm sempre valores opostos.\n\nA: Incorreta: a conjunção nunca é verdadeira nesse caso.\n\nB: Correta: as parcelas têm sempre valores opostos.\n\nC: Incorreta: a negação inverte p.\n\nD: Incorreta: p pode assumir V ou F.\n\nE: Incorreta: p pode assumir F ou V.\n\nArmadilha: Fixar um valor para p em vez de testar as duas linhas.\n\nConhecimento adicional: O princípio de não contradição impede p e ¬p simultaneamente.\n\nAprendizado essencial: Observe a incompatibilidade estrutural das parcelas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e72aaa5982c140"
+      ],
+      "statement": "A expressão ¬(p∨¬p) é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "contingente."
+        },
+        {
+          "label": "B",
+          "text": "equivalente a p."
+        },
+        {
+          "label": "C",
+          "text": "tautológica."
+        },
+        {
+          "label": "D",
+          "text": "contraditória."
+        },
+        {
+          "label": "E",
+          "text": "equivalente a ¬p."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "Negar uma tautologia produz uma fórmula falsa em todas as linhas.\n\nAnálise da resposta: Correta: p∨¬p é sempre V, logo sua negação é sempre F.\n\nA: Incorreta: não possui linha verdadeira.\n\nB: Incorreta: p pode ser verdadeira, mas a expressão continua falsa.\n\nC: Incorreta: é a negação de uma tautologia.\n\nD: Correta: p∨¬p é sempre V, logo sua negação é sempre F.\n\nE: Incorreta: quando p é falsa, ¬p é verdadeira, mas a expressão completa é falsa.\n\nArmadilha: Aplicar a negação apenas a p e ignorar o escopo dos parênteses.\n\nConhecimento adicional: Pelas leis de De Morgan, a expressão equivale a ¬p∧p.\n\nAprendizado essencial: Resolva primeiro a fórmula interna.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13e6117a20efdb"
+      ],
+      "statement": "Uma contingência é uma fórmula que\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é sempre verdadeira."
+        },
+        {
+          "label": "B",
+          "text": "é sempre falsa."
+        },
+        {
+          "label": "C",
+          "text": "não possui conectivos."
+        },
+        {
+          "label": "D",
+          "text": "não possui tabela."
+        },
+        {
+          "label": "E",
+          "text": "é verdadeira em algumas valorações e falsa em outras."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Contingência depende dos valores atribuídos às proposições simples.\n\nAnálise da resposta: Correta: sua coluna final contém V e F.\n\nA: Incorreta: isso define tautologia.\n\nB: Incorreta: isso define contradição.\n\nC: Incorreta: fórmulas contingentes podem conter conectivos.\n\nD: Incorreta: toda fórmula finita possui tabela-verdade.\n\nE: Correta: sua coluna final contém V e F.\n\nArmadilha: Usar “contingente” como sinônimo de incerto ou sem valor lógico.\n\nConhecimento adicional: A maioria das fórmulas usuais, como p∧q e p→q, é contingente.\n\nAprendizado essencial: Confirme a presença de pelo menos um V e um F.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13e6117a20efdb"
+      ],
+      "statement": "A fórmula p→q é contingente porque\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "é falsa em todas as linhas."
+        },
+        {
+          "label": "B",
+          "text": "é verdadeira em todas as linhas."
+        },
+        {
+          "label": "C",
+          "text": "p e q nunca podem ser verdadeiras."
+        },
+        {
+          "label": "D",
+          "text": "é falsa apenas em V,F e verdadeira nas demais valorações."
+        },
+        {
+          "label": "E",
+          "text": "não possui valor quando p é falsa."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A presença de resultados diferentes conforme a valoração caracteriza contingência.\n\nAnálise da resposta: Correta: sua coluna final reúne valores V e F.\n\nA: Incorreta: há três linhas verdadeiras.\n\nB: Incorreta: a linha V,F é falsa.\n\nC: Incorreta: o caso V,V é possível.\n\nD: Correta: sua coluna final reúne valores V e F.\n\nE: Incorreta: antecedente falso torna a condicional verdadeira.\n\nArmadilha: Chamar a condicional de tautologia porque possui muitas linhas verdadeiras.\n\nConhecimento adicional: A quantidade de linhas V não importa; basta coexistirem V e F.\n\nAprendizado essencial: Classifique pela coluna inteira.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_13e6117a20efdb"
+      ],
+      "statement": "Qual fórmula é contingente?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A fórmula p∨¬p."
+        },
+        {
+          "label": "B",
+          "text": "A fórmula p∧¬p."
+        },
+        {
+          "label": "C",
+          "text": "A fórmula ¬(p∨¬p)."
+        },
+        {
+          "label": "D",
+          "text": "A fórmula (p∧q)→p."
+        },
+        {
+          "label": "E",
+          "text": "A fórmula p∧q."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A conjunção simples varia de valor conforme as parcelas.\n\nAnálise da resposta: Correta: é verdadeira apenas em V,V e falsa nas outras linhas.\n\nA: Incorreta: é tautologia.\n\nB: Incorreta: é contradição.\n\nC: Incorreta: é contradição.\n\nD: Incorreta: é tautologia.\n\nE: Correta: é verdadeira apenas em V,V e falsa nas outras linhas.\n\nArmadilha: Escolher uma fórmula conhecida sem testar sua coluna final.\n\nConhecimento adicional: Reconhecer padrões clássicos acelera a classificação, mas a tabela confirma.\n\nAprendizado essencial: Busque uma fórmula que admita tanto satisfação quanto falsificação.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 27-34",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 27-34",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_04ddacf76ddc84"
+      ],
+      "statement": "Uma tabela com n proposições simples distintas possui\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "n linhas."
+        },
+        {
+          "label": "B",
+          "text": "n² linhas."
+        },
+        {
+          "label": "C",
+          "text": "2n linhas."
+        },
+        {
+          "label": "D",
+          "text": "2^n linhas."
+        },
+        {
+          "label": "E",
+          "text": "n! linhas."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "O total de valorações é produto de duas possibilidades para cada variável distinta.\n\nAnálise da resposta: Correta: cada uma das n proposições possui duas escolhas independentes, total 2^n.\n\nA: Incorreta: cada proposição dobra as combinações.\n\nB: Incorreta: o quadrado não representa escolhas binárias independentes.\n\nC: Incorreta: 2n só coincide em casos particulares.\n\nD: Correta: cada uma das n proposições possui duas escolhas independentes, total 2^n.\n\nE: Incorreta: fatorial conta ordenações, não valorações.\n\nArmadilha: Contar ocorrências de símbolos em vez de proposições distintas.\n\nConhecimento adicional: Negar uma variável não cria nova proposição simples para esse cálculo.\n\nAprendizado essencial: Conte os símbolos proposicionais diferentes e eleve dois a essa quantidade.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-18",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_04ddacf76ddc84"
+      ],
+      "statement": "Uma fórmula que contém quatro proposições simples distintas exige tabela com\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "8 linhas."
+        },
+        {
+          "label": "B",
+          "text": "12 linhas."
+        },
+        {
+          "label": "C",
+          "text": "16 linhas."
+        },
+        {
+          "label": "D",
+          "text": "20 linhas."
+        },
+        {
+          "label": "E",
+          "text": "24 linhas."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "Quatro escolhas binárias independentes geram dezesseis linhas.\n\nAnálise da resposta: Correta: 2^4=16 combinações.\n\nA: Incorreta: oito corresponde a três variáveis.\n\nB: Incorreta: não é potência de dois adequada.\n\nC: Correta: 2^4=16 combinações.\n\nD: Incorreta: soma cinco por variável sem fundamento.\n\nE: Incorreta: confunde quantidade de ordens com valorações.\n\nArmadilha: Multiplicar quatro por dois e obter apenas oito.\n\nConhecimento adicional: A sequência de totais é 2,4,8,16 para uma a quatro variáveis.\n\nAprendizado essencial: Use a potência, não o produto 2n.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-18",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_10_02_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_10_2_tabelas_verdade",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_04ddacf76ddc84"
+      ],
+      "statement": "Na fórmula (p∨q)→(¬p∧q), quantas linhas deve ter a tabela-verdade?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "2 linhas."
+        },
+        {
+          "label": "B",
+          "text": "3 linhas."
+        },
+        {
+          "label": "C",
+          "text": "8 linhas."
+        },
+        {
+          "label": "D",
+          "text": "16 linhas."
+        },
+        {
+          "label": "E",
+          "text": "4 linhas."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "Repetições e negações de uma variável não aumentam o número de valorações básicas.\n\nAnálise da resposta: Correta: há somente p e q como proposições simples distintas, logo 2²=4.\n\nA: Incorreta: duas linhas seriam usadas para apenas uma variável distinta.\n\nB: Incorreta: o número de ocorrências não determina as linhas.\n\nC: Incorreta: oito exigiria três variáveis distintas.\n\nD: Incorreta: dezesseis exigiria quatro variáveis distintas.\n\nE: Correta: há somente p e q como proposições simples distintas, logo 2²=4.\n\nArmadilha: Contar p duas vezes e q duas vezes como quatro proposições distintas.\n\nConhecimento adicional: As colunas auxiliares aumentam, mas a quantidade de linhas permanece 2^n.\n\nAprendizado essencial: Conte nomes distintos, não aparições.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "location": "páginas 14-18",
+          "used_for": "Fundamento e conferência da tabela-verdade e da classificação lógica."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_01",
+          "trace_status": "missing",
+          "location": "páginas 14-18",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

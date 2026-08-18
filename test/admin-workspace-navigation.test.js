@@ -19,11 +19,11 @@ const contests = [
 test('workspace declara as seis etapas na ordem operacional', () => {
   assert.deepEqual(
     CONTEST_WORKSPACE_TABS.map(({ label }) => label),
-    ['Geral', 'Currículo', 'Questões', 'Aparência', 'Alunos', 'Publicação'],
+    ['Identificação', 'Mapa do Edital', 'Banco de Questões', 'Auditoria', 'Testar como Aluno', 'Publicação'],
   );
   assert.deepEqual(
     CONTEST_WORKSPACE_TABS.map(({ module }) => module),
-    ['general', 'curriculum', 'questions', 'appearance', 'students', 'publication'],
+    ['general', 'curriculum', 'questions', 'course-audit', 'student-preview', 'publication'],
   );
 });
 
@@ -62,7 +62,7 @@ test('anterior e próxima respeitam os limites das seis etapas', () => {
   assert.equal(adjacentWorkspaceScreen('contests', -1), null);
   assert.equal(adjacentWorkspaceScreen('contests', 1), 'curriculum');
   assert.equal(adjacentWorkspaceScreen('questions', -1), 'curriculum');
-  assert.equal(adjacentWorkspaceScreen('questions', 1), 'media');
+  assert.equal(adjacentWorkspaceScreen('questions', 1), 'courseAudit');
   assert.equal(adjacentWorkspaceScreen('publication', 1), null);
 });
 

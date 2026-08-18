@@ -1,0 +1,305 @@
+{
+  "name": "pcba_inv_rl_13_lote_002",
+  "questions": [
+    {
+      "id": "pcba_inv_rl_13_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a1735da510f458"
+      ],
+      "statement": "Em um diagrama de dois conjuntos, a região central sobreposta representa\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "A∩B."
+        },
+        {
+          "label": "B",
+          "text": "Aᶜ."
+        },
+        {
+          "label": "C",
+          "text": "A∪B sem interseção."
+        },
+        {
+          "label": "D",
+          "text": "A−B."
+        },
+        {
+          "label": "E",
+          "text": "B−A."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige usar diagramas de Venn em problemas de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: contém elementos pertencentes aos dois. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: contém elementos pertencentes aos dois.\n\nB: Incorreta: é toda a região fora de A.\n\nC: Incorreta: descreve diferença simétrica.\n\nD: Incorreta: é a parte exclusiva de A.\n\nE: Incorreta: é a parte exclusiva de B.\n\nArmadilha: Preencher regiões sem começar pela interseção ou contar a mesma pessoa em duas regiões exclusivas.\n\nConhecimento adicional: Em problemas numéricos, a interseção deve ser posicionada primeiro; os valores “somente” são obtidos por subtração.\n\nAprendizado essencial: Preencha do centro para as regiões exclusivas e finalize com o exterior.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a1735da510f458"
+      ],
+      "statement": "Em uma turma, 18 estudam Direito, 12 estudam Informática e 5 estudam ambos. Quantos estudam somente Direito?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "7."
+        },
+        {
+          "label": "B",
+          "text": "13."
+        },
+        {
+          "label": "C",
+          "text": "18."
+        },
+        {
+          "label": "D",
+          "text": "25."
+        },
+        {
+          "label": "E",
+          "text": "5."
+        }
+      ],
+      "correct_answer": "B",
+      "explanation": "A solução correta exige usar diagramas de Venn em problemas de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 18−5=13. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: é a parte exclusiva de Informática.\n\nB: Correta: 18−5=13.\n\nC: Incorreta: não desconta quem também estuda Informática.\n\nD: Incorreta: soma dados incompatíveis com “somente”.\n\nE: Incorreta: é a interseção.\n\nArmadilha: Preencher regiões sem começar pela interseção ou contar a mesma pessoa em duas regiões exclusivas.\n\nConhecimento adicional: Em problemas numéricos, a interseção deve ser posicionada primeiro; os valores “somente” são obtidos por subtração.\n\nAprendizado essencial: Preencha do centro para as regiões exclusivas e finalize com o exterior.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_a1735da510f458"
+      ],
+      "statement": "Ao resolver um diagrama com três conjuntos e interseções informadas, qual procedimento reduz dupla contagem?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "Colocar o total do universo na região central."
+        },
+        {
+          "label": "B",
+          "text": "Começar pelas regiões exclusivas sem olhar o centro."
+        },
+        {
+          "label": "C",
+          "text": "Registrar primeiro a interseção tripla e depois ajustar as interseções duplas."
+        },
+        {
+          "label": "D",
+          "text": "Somar diretamente todos os totais dos conjuntos."
+        },
+        {
+          "label": "E",
+          "text": "Ignorar quem pertence a mais de um conjunto."
+        }
+      ],
+      "correct_answer": "C",
+      "explanation": "A solução correta exige usar diagramas de Venn em problemas de conjuntos e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: o centro participa de todas as interseções duplas informadas. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: o universo inclui também regiões externas.\n\nB: Incorreta: pode subtrair interseções ainda não ajustadas.\n\nC: Correta: o centro participa de todas as interseções duplas informadas.\n\nD: Incorreta: conta repetidamente elementos comuns.\n\nE: Incorreta: perde justamente as sobreposições.\n\nArmadilha: Preencher regiões sem começar pela interseção ou contar a mesma pessoa em duas regiões exclusivas.\n\nConhecimento adicional: Em problemas numéricos, a interseção deve ser posicionada primeiro; os valores “somente” são obtidos por subtração.\n\nAprendizado essencial: Preencha do centro para as regiões exclusivas e finalize com o exterior.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 15-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 15-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9ad08f067ded8"
+      ],
+      "statement": "Para conjuntos finitos A e B, a cardinalidade da união é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "n(A)n(B)."
+        },
+        {
+          "label": "B",
+          "text": "n(A)−n(B)."
+        },
+        {
+          "label": "C",
+          "text": "n(A)+n(B)."
+        },
+        {
+          "label": "D",
+          "text": "n(A)+n(B)−n(A∩B)."
+        },
+        {
+          "label": "E",
+          "text": "n(A∩B)−n(A)."
+        }
+      ],
+      "correct_answer": "D",
+      "explanation": "A solução correta exige aplicar cardinalidade e inclusão-exclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: remove a dupla contagem da interseção. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não é a regra de inclusão-exclusão.\n\nB: Incorreta: não calcula a união.\n\nC: Incorreta: só vale quando a interseção é vazia.\n\nD: Correta: remove a dupla contagem da interseção.\n\nE: Incorreta: pode ser negativa.\n\nArmadilha: Somar cardinalidades sem descontar elementos contados em mais de um conjunto.\n\nConhecimento adicional: Para dois conjuntos finitos, n(A∪B)=n(A)+n(B)−n(A∩B).\n\nAprendizado essencial: Some os totais e desconte exatamente as sobreposições já contadas.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 24-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 24-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9ad08f067ded8"
+      ],
+      "statement": "Se n(A)=30, n(B)=25 e n(A∩B)=10, então n(A∪B) é\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "55."
+        },
+        {
+          "label": "B",
+          "text": "65."
+        },
+        {
+          "label": "C",
+          "text": "35."
+        },
+        {
+          "label": "D",
+          "text": "40."
+        },
+        {
+          "label": "E",
+          "text": "45."
+        }
+      ],
+      "correct_answer": "E",
+      "explanation": "A solução correta exige aplicar cardinalidade e inclusão-exclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: 30+25−10=45. O resultado respeita integralmente os dados do enunciado.\n\nA: Incorreta: não desconta a interseção.\n\nB: Incorreta: soma novamente a interseção.\n\nC: Incorreta: desconta a interseção duas vezes.\n\nD: Incorreta: usa um dos totais incorretamente.\n\nE: Correta: 30+25−10=45.\n\nArmadilha: Somar cardinalidades sem descontar elementos contados em mais de um conjunto.\n\nConhecimento adicional: Para dois conjuntos finitos, n(A∪B)=n(A)+n(B)−n(A∩B).\n\nAprendizado essencial: Some os totais e desconte exatamente as sobreposições já contadas.",
+      "difficulty": "intermediaria",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 24-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 24-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    },
+    {
+      "id": "pcba_inv_rl_13_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_raciocinio_logico_13_operacoes_com_conjuntos",
+      "microknowledge_ids": [
+        "pc_ba_2026_inv_mk_e9ad08f067ded8"
+      ],
+      "statement": "Em uma pesquisa, 60 gostam de A, 50 de B e 20 de ambos, dentro de um universo de 100 pessoas. Quantas não gostam de A nem de B?\n\nAssinale a alternativa correta.",
+      "options": [
+        {
+          "label": "A",
+          "text": "10."
+        },
+        {
+          "label": "B",
+          "text": "20."
+        },
+        {
+          "label": "C",
+          "text": "30."
+        },
+        {
+          "label": "D",
+          "text": "70."
+        },
+        {
+          "label": "E",
+          "text": "90."
+        }
+      ],
+      "correct_answer": "A",
+      "explanation": "A solução correta exige aplicar cardinalidade e inclusão-exclusão e a conferência das condições apresentadas no enunciado.\n\nAnálise da resposta: Correta: n(A∪B)=60+50−20=90; fora da união há 100−90=10. O resultado respeita integralmente os dados do enunciado.\n\nA: Correta: n(A∪B)=60+50−20=90; fora da união há 100−90=10.\n\nB: Incorreta: confunde a interseção com o exterior.\n\nC: Incorreta: desconta incorretamente um dos grupos.\n\nD: Incorreta: é a parte apenas de A.\n\nE: Incorreta: é a cardinalidade da união, não do exterior.\n\nArmadilha: Somar cardinalidades sem descontar elementos contados em mais de um conjunto.\n\nConhecimento adicional: Para dois conjuntos finitos, n(A∪B)=n(A)+n(B)−n(A∩B).\n\nAprendizado essencial: Some os totais e desconte exatamente as sobreposições já contadas.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "location": "páginas 24-33",
+          "used_for": "Fundamento matemático e conferência editorial da resolução apresentada."
+        }
+      ],
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "pc_ba_2026_inv_raciocinio_logico_aula_08",
+          "trace_status": "missing",
+          "location": "páginas 24-33",
+          "note": "Rastreabilidade antiga sem página e excerto exatos verificáveis; vínculo histórico preservado sem invenção."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "name": "pcba_inv_dadm_08_02_lote_001",
+  "questions": [
+    {
+      "id": "pcba_inv_dadm_08_02_q001",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_6948017b71ee26"],
+      "statement": "Uma secretaria estadual pretende conceder a seus servidores uma vantagem não prevista nem autorizada por lei, sob o argumento de que nenhuma norma a proíbe expressamente. À luz do princípio da legalidade administrativa, a medida é",
+      "options": [
+        {"label": "A", "text": "válida, porque tudo o que não é proibido é permitido à Administração."},
+        {"label": "B", "text": "válida, desde que exista disponibilidade orçamentária."},
+        {"label": "C", "text": "inválida, porque a Administração precisa de fundamento jurídico autorizador para agir."},
+        {"label": "D", "text": "inválida apenas se a vantagem também for concedida a agentes políticos."},
+        {"label": "E", "text": "válida se for aprovada pela chefia do órgão em ato interno."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A legalidade administrativa não se confunde com a autonomia da vontade privada. Para o particular, em regra, é permitido fazer o que a lei não proíbe; para a Administração, a atuação exige fundamento no ordenamento. A simples ausência de proibição não autoriza a criação da vantagem.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 14, "excerpt": "A Administração só poderá agir quando houver previsão legal.", "location": "Aula 00, princípio da legalidade administrativa."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q002",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_6948017b71ee26"],
+      "statement": "Sobre a relação entre a lei e os atos normativos secundários da Administração, assinale a alternativa correta.",
+      "options": [
+        {"label": "A", "text": "Decretos e portarias podem criar livremente direitos e obrigações não previstos em lei."},
+        {"label": "B", "text": "A Administração só se vincula às leis em sentido formal, nunca a regulamentos."},
+        {"label": "C", "text": "Atos secundários substituem a lei sempre que houver urgência administrativa."},
+        {"label": "D", "text": "Atos secundários podem detalhar a execução da lei, mas não inovar autonomamente na ordem jurídica."},
+        {"label": "E", "text": "O descumprimento de portaria válida não pode repercutir na legalidade do ato administrativo."}
+      ],
+      "correct_answer": "D",
+      "explanation": "Regulamentos, portarias e instruções podem especificar a execução da lei e vinculam a atuação administrativa dentro de sua competência. Eles não podem, contudo, instituir autonomamente direitos ou obrigações sem suporte legal.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 15, "excerpt": "Atos normativos secundários não podem instituir direito novo.", "location": "Aula 00, legalidade e atos normativos secundários."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q003",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_e6da9fb6f8bbbf"],
+      "statement": "A autoridade removeu um servidor para localidade distante com o objetivo real de puni-lo, embora a remoção tenha sido formalmente apresentada como medida de organização do quadro. A conduta viola a impessoalidade porque configura",
+      "options": [
+        {"label": "A", "text": "desvio de finalidade, pois a competência foi usada para fim diverso do previsto."},
+        {"label": "B", "text": "mera irregularidade de eficiência, sem afetar a validade do ato."},
+        {"label": "C", "text": "excesso de publicidade, por revelar a lotação do servidor."},
+        {"label": "D", "text": "delegação imprópria, porque a remoção exige decisão judicial."},
+        {"label": "E", "text": "violação exclusiva da continuidade do serviço público."}
+      ],
+      "correct_answer": "A",
+      "explanation": "A finalidade específica da remoção é ajustar a distribuição de pessoal, não aplicar punição. O uso da competência para perseguir o servidor caracteriza desvio de finalidade e afronta a impessoalidade, tornando o ato inválido.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 17, "excerpt": "O ato deve satisfazer a finalidade específica prevista em lei.", "location": "Aula 00, impessoalidade e finalidade."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q004",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_e6da9fb6f8bbbf", "pc_ba_2026_inv_mk_95e1a1480e737d"],
+      "statement": "Uma campanha institucional custeada pelo Estado destaca o nome, a fotografia e um slogan pessoal do governador, atribuindo-lhe diretamente as obras divulgadas. A situação é incompatível principalmente com",
+      "options": [
+        {"label": "A", "text": "a eficiência, porque toda publicidade oficial é desperdício."},
+        {"label": "B", "text": "a impessoalidade, pois a publicidade oficial não pode servir à promoção pessoal."},
+        {"label": "C", "text": "a continuidade, porque campanhas não podem ser temporárias."},
+        {"label": "D", "text": "a autotutela, porque somente o Judiciário pode controlar campanhas."},
+        {"label": "E", "text": "a supremacia, porque o interesse secundário sempre prevalece."}
+      ],
+      "correct_answer": "B",
+      "explanation": "A publicidade de atos, programas, obras e serviços deve ter caráter educativo, informativo ou de orientação social. Nomes, símbolos ou imagens destinados à promoção pessoal de autoridades afrontam a impessoalidade.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 18, "excerpt": "A publicidade oficial não pode caracterizar promoção pessoal.", "location": "Aula 00, vedação de promoção pessoal."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q005",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_8ed331c273ce75"],
+      "statement": "Um ato administrativo observa literalmente a lei, mas foi praticado com deslealdade e propósito de enganar os administrados. Nessa hipótese, é correto afirmar que",
+      "options": [
+        {"label": "A", "text": "o ato é necessariamente válido, pois moralidade e legalidade são o mesmo princípio."},
+        {"label": "B", "text": "a intenção ética é irrelevante em qualquer análise administrativa."},
+        {"label": "C", "text": "somente haverá vício se ocorrer prejuízo financeiro ao erário."},
+        {"label": "D", "text": "a moralidade não pode ser controlada por ação popular."},
+        {"label": "E", "text": "pode haver invalidade por ofensa autônoma à moralidade administrativa."}
+      ],
+      "correct_answer": "E",
+      "explanation": "A moralidade é princípio autônomo. A conformidade literal com a lei não salva conduta contrária à probidade, à boa-fé e à lealdade institucional. A Constituição também admite ação popular contra ato lesivo à moralidade administrativa.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 21, "excerpt": "Legalidade e moralidade são princípios autônomos.", "location": "Aula 00, moralidade administrativa."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q006",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_95e1a1480e737d"],
+      "statement": "Quanto à publicação oficial dos atos administrativos, assinale a alternativa correta.",
+      "options": [
+        {"label": "A", "text": "A publicação sempre integra a existência do ato e nunca se relaciona à eficácia."},
+        {"label": "B", "text": "Todo ato interno, sem exceção, depende de publicação para ser válido."},
+        {"label": "C", "text": "Em atos gerais de efeitos externos, a publicação pode ser requisito para a produção de efeitos."},
+        {"label": "D", "text": "Atos que gerem ônus ao patrimônio público são dispensados de publicidade."},
+        {"label": "E", "text": "A publicidade impede qualquer hipótese legal de sigilo."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A publicação oficial pode atuar como requisito de eficácia, especialmente para atos gerais de efeitos externos e atos com impacto patrimonial. Isso não significa que todo ato precise ser publicado nem que a publicidade seja absoluta.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 23, "excerpt": "A publicação pode constituir requisito de eficácia.", "location": "Aula 00, duplo sentido da publicidade."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q007",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_95e1a1480e737d"],
+      "statement": "Um portal público divulga espontaneamente despesas e contratos. Em outro caso, entrega uma certidão após pedido de um cidadão. As situações correspondem, respectivamente, a",
+      "options": [
+        {"label": "A", "text": "publicidade interna e publicidade externa."},
+        {"label": "B", "text": "transparência ativa e transparência passiva."},
+        {"label": "C", "text": "motivação direta e motivação indireta."},
+        {"label": "D", "text": "autotutela preventiva e autotutela repressiva."},
+        {"label": "E", "text": "eficiência material e eficiência formal."}
+      ],
+      "correct_answer": "B",
+      "explanation": "Transparência ativa é a divulgação de ofício, sem solicitação. Transparência passiva é o fornecimento de informação em resposta a requerimento do interessado.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 25, "excerpt": "Divulgação de ofício é ativa; por solicitação, passiva.", "location": "Aula 00, transparência ativa e passiva."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q008",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_5af8e7f8694181"],
+      "statement": "Para acelerar uma compra, um gestor contrata diretamente a empresa de um amigo, embora a lei exija licitação. Ele alega que obteve preço baixo e entrega rápida. A justificativa",
+      "options": [
+        {"label": "A", "text": "torna o ato válido, pois a eficiência prevalece sobre os demais princípios."},
+        {"label": "B", "text": "torna o ato válido se não houver dano material comprovado."},
+        {"label": "C", "text": "afasta apenas a violação à impessoalidade."},
+        {"label": "D", "text": "não valida o ato, pois a eficiência deve conviver com legalidade, moralidade e impessoalidade."},
+        {"label": "E", "text": "converte a contratação direta em modalidade licitatória."}
+      ],
+      "correct_answer": "D",
+      "explanation": "Eficiência significa buscar qualidade, resultado, celeridade e economicidade, mas não autoriza descumprir a lei ou favorecer pessoas. Um resultado aparentemente vantajoso não convalida contratação ilegal e impessoal.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 26, "excerpt": "A eficiência deve ocorrer em harmonia com os demais princípios.", "location": "Aula 00, limites do princípio da eficiência."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q009",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_858657d2eb41f2"],
+      "statement": "A supremacia do interesse público, em perspectiva doutrinária, fundamenta prerrogativas administrativas. Isso significa que",
+      "options": [
+        {"label": "A", "text": "a Administração pode restringir direitos sem previsão normativa sempre que alegar interesse público."},
+        {"label": "B", "text": "o interesse financeiro do Estado sempre prevalece sobre o interesse da coletividade."},
+        {"label": "C", "text": "prerrogativas previstas no ordenamento podem colocar a Administração em posição diferenciada para realizar o interesse coletivo."},
+        {"label": "D", "text": "as relações administrativas eliminam todos os direitos individuais."},
+        {"label": "E", "text": "a supremacia se aplica de forma idêntica quando estatal e particular atuam em igualdade no mercado."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A supremacia fundamenta poderes especiais voltados ao interesse público primário, como certas cláusulas exorbitantes e medidas de polícia. Não é autorização genérica para arbitrariedade: a prerrogativa depende do ordenamento e permanece limitada por direitos e princípios.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 28, "excerpt": "As prerrogativas asseguram posição diferenciada em prol da coletividade.", "location": "Aula 00, supremacia do interesse público."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q010",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_401e9d84372b54"],
+      "statement": "Um agente de trânsito presencia infração para a qual a lei lhe atribui o dever de autuar, mas decide ignorá-la por amizade com o condutor. A omissão afronta a indisponibilidade do interesse público porque",
+      "options": [
+        {"label": "A", "text": "toda competência pública é facultativa."},
+        {"label": "B", "text": "a competência constitui poder-dever e não pode ser abandonada por conveniência pessoal."},
+        {"label": "C", "text": "o agente pode dispor do interesse coletivo se não receber vantagem econômica."},
+        {"label": "D", "text": "somente o superior hierárquico pode exercer competências vinculadas."},
+        {"label": "E", "text": "a amizade transforma a infração em hipótese de discricionariedade."}
+      ],
+      "correct_answer": "B",
+      "explanation": "O agente administra interesses pertencentes à coletividade. Quando o ordenamento impõe atuação, a competência é poder-dever: não pode ser renunciada para atender preferência pessoal.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 31, "excerpt": "A competência administrativa representa também um dever de agir.", "location": "Aula 00, indisponibilidade e poder-dever."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q011",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_401e9d84372b54"],
+      "statement": "Sobre a indisponibilidade do interesse público e a celebração de acordos pela Administração, assinale a alternativa correta.",
+      "options": [
+        {"label": "A", "text": "A indisponibilidade proíbe qualquer acordo ou transação, ainda que previsto em lei."},
+        {"label": "B", "text": "Acordos são válidos apenas quando beneficiam financeiramente o agente competente."},
+        {"label": "C", "text": "A Administração pode transacionar sem motivação, pois o consenso exclui o controle."},
+        {"label": "D", "text": "Todo acordo transfere ao particular a titularidade do interesse público."},
+        {"label": "E", "text": "A indisponibilidade pode ser compatível com acordo legal e motivado que melhor realize o interesse coletivo."}
+      ],
+      "correct_answer": "E",
+      "explanation": "Indisponibilidade não significa proibição absoluta de consenso. Dentro da autorização jurídica e mediante motivação, um acordo pode ser a solução mais eficiente para alcançar o interesse coletivo, sem apropriação privada da coisa pública.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 32, "excerpt": "A indisponibilidade não impede acordos que melhor atendam à coletividade.", "location": "Aula 00, relativização da indisponibilidade."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q012",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_17f6328033929e"],
+      "statement": "Na aplicação do princípio da proporcionalidade, a verificação de que não existe outro meio igualmente eficaz e menos gravoso corresponde ao exame da",
+      "options": [
+        {"label": "A", "text": "necessidade."},
+        {"label": "B", "text": "publicidade."},
+        {"label": "C", "text": "moralidade subjetiva."},
+        {"label": "D", "text": "competência."},
+        {"label": "E", "text": "presunção de legitimidade."}
+      ],
+      "correct_answer": "A",
+      "explanation": "A proporcionalidade é examinada por adequação, necessidade e proporcionalidade em sentido estrito. A necessidade exige a escolha do meio eficaz que imponha o menor sacrifício possível aos direitos afetados.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 34, "excerpt": "Necessidade exige inexistência de meio menos gravoso.", "location": "Aula 00, elementos da proporcionalidade."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q013",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_17f6328033929e"],
+      "statement": "O Poder Judiciário anula sanção administrativa manifestamente desproporcional. Nessa situação, o Judiciário",
+      "options": [
+        {"label": "A", "text": "revoga o ato por conveniência e oportunidade."},
+        {"label": "B", "text": "substitui sempre a Administração na escolha da sanção."},
+        {"label": "C", "text": "exerce controle de legalidade e legitimidade, sem invadir opção administrativa juridicamente válida."},
+        {"label": "D", "text": "atua apenas se a sanção tiver sido aplicada por empresa estatal."},
+        {"label": "E", "text": "viola necessariamente a separação dos poderes."}
+      ],
+      "correct_answer": "C",
+      "explanation": "A margem discricionária existe dentro da lei. Excesso manifesto não integra escolha administrativa válida; é vício controlável sob os critérios de legalidade e legitimidade. O Judiciário anula o ato, não o revoga por conveniência.",
+      "difficulty": "dificil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 34, "excerpt": "O controle de proporcionalidade examina legalidade e legitimidade.", "location": "Aula 00, proporcionalidade e controle judicial."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q014",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_4df94c5bd0e6e7"],
+      "statement": "Ao decidir um recurso, a autoridade declara concordar integralmente com parecer jurídico anterior, identifica o documento e o incorpora como razão da decisão. Essa técnica",
+      "options": [
+        {"label": "A", "text": "é sempre inválida, pois a motivação precisa ser repetida palavra por palavra."},
+        {"label": "B", "text": "é admitida como motivação por remissão, desde que os fundamentos incorporados sejam acessíveis, claros e congruentes."},
+        {"label": "C", "text": "dispensa a existência de fundamentos de fato e de direito."},
+        {"label": "D", "text": "somente é possível em decisões judiciais."},
+        {"label": "E", "text": "transforma o parecer em lei formal."}
+      ],
+      "correct_answer": "B",
+      "explanation": "A motivação pode adotar fundamentos de pareceres, informações ou decisões anteriores, que passam a integrar o ato. A remissão não elimina o dever de fundamentar: o material incorporado precisa permitir compreender as razões da decisão.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 40, "excerpt": "A motivação pode incorporar fundamentos de parecer anterior.", "location": "Aula 00, motivação por remissão."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q015",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_4df94c5bd0e6e7"],
+      "statement": "Segundo a orientação geral apresentada no material, constitui exceção usual ao dever de motivar",
+      "options": [
+        {"label": "A", "text": "a aplicação de sanção disciplinar."},
+        {"label": "B", "text": "a decisão de recurso administrativo."},
+        {"label": "C", "text": "a anulação de ato favorável ao administrado."},
+        {"label": "D", "text": "a exoneração ad nutum de ocupante de cargo em comissão."},
+        {"label": "E", "text": "a declaração de inexigibilidade de licitação."}
+      ],
+      "correct_answer": "D",
+      "explanation": "A regra é motivar atos vinculados e discricionários, especialmente os que afetam direitos, impõem sanções, decidem recursos ou desfazem atos. A exoneração ad nutum de cargo em comissão recebe tratamento próprio e é apontada como exceção usual.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 40, "excerpt": "A exoneração ad nutum é exceção à regra geral de motivação.", "location": "Aula 00, abrangência da motivação."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q016",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_f3989dd6da3894"],
+      "statement": "No exercício da autotutela, a Administração verifica dois atos: o primeiro é ilegal; o segundo é válido, mas se tornou inconveniente. Em regra, deverá, respectivamente,",
+      "options": [
+        {"label": "A", "text": "revogar ambos."},
+        {"label": "B", "text": "anular ambos."},
+        {"label": "C", "text": "convalidar o primeiro e anular o segundo."},
+        {"label": "D", "text": "pedir autorização judicial para qualquer providência."},
+        {"label": "E", "text": "anular o primeiro e revogar o segundo."}
+      ],
+      "correct_answer": "E",
+      "explanation": "A anulação retira ato ilegal e decorre do controle de legalidade. A revogação desfaz ato válido por razões supervenientes de conveniência ou oportunidade. A Administração pode exercer ambos os controles diretamente, respeitados os limites jurídicos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 36, "excerpt": "A Administração anula atos ilegais e revoga atos inconvenientes.", "location": "Aula 00, princípio da autotutela."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q017",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_f3989dd6da3894", "pc_ba_2026_inv_mk_ee25f990ec6574"],
+      "statement": "A Administração pretende anular, oito anos depois de sua prática, ato que produziu efeitos favoráveis a destinatário comprovadamente de boa-fé. Considerando a regra geral do art. 54 da Lei nº 9.784/1999, é correto afirmar que",
+      "options": [
+        {"label": "A", "text": "a autotutela é ilimitada no tempo sempre que houver ilegalidade."},
+        {"label": "B", "text": "a segurança jurídica pode impedir a anulação, em razão da decadência quinquenal."},
+        {"label": "C", "text": "o prazo geral é de dez anos, independentemente de boa-fé."},
+        {"label": "D", "text": "o ato deve ser revogado, e não anulado, por ter produzido efeitos favoráveis."},
+        {"label": "E", "text": "a decadência só se aplica a atos desfavoráveis."}
+      ],
+      "correct_answer": "B",
+      "explanation": "A autotutela encontra limite na segurança jurídica. No processo administrativo federal, o direito de anular atos favoráveis decai em cinco anos, salvo comprovada má-fé. No caso, passaram oito anos e o destinatário agiu de boa-fé.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 48, "excerpt": "O prazo de cinco anos protege efeitos favoráveis de boa-fé.", "location": "Aula 00, segurança jurídica e limite da autotutela."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q018",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_ee25f990ec6574"],
+      "statement": "Um órgão muda sua interpretação sobre determinada norma administrativa e pretende aplicar o novo entendimento retroativamente para exigir devoluções de beneficiários de boa-fé. O princípio da segurança jurídica",
+      "options": [
+        {"label": "A", "text": "impede qualquer mudança futura de interpretação."},
+        {"label": "B", "text": "autoriza retroação sempre que houver interesse financeiro do Estado."},
+        {"label": "C", "text": "é aplicável apenas às decisões judiciais transitadas em julgado."},
+        {"label": "D", "text": "admite evolução interpretativa, mas veda a retroação prejudicial da nova interpretação."},
+        {"label": "E", "text": "protege somente quem conhecia a ilegalidade do benefício."}
+      ],
+      "correct_answer": "D",
+      "explanation": "A segurança jurídica não congela a interpretação administrativa. Ela protege a estabilidade das relações: o novo entendimento pode orientar situações futuras, mas não deve retroagir para prejudicar quem confiou de boa-fé na orientação anterior.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 51, "excerpt": "A nova interpretação vale para o futuro, sem retroação prejudicial.", "location": "Aula 00, segurança jurídica e mudança interpretativa."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q019",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_000208e8f31622"],
+      "statement": "Sobre o princípio da continuidade, assinale a alternativa correta.",
+      "options": [
+        {"label": "A", "text": "Aplica-se predominantemente aos serviços públicos, mas também alcança outras atividades administrativas cuja paralisação prejudique a coletividade."},
+        {"label": "B", "text": "Proíbe absolutamente qualquer interrupção do serviço, inclusive em emergência."},
+        {"label": "C", "text": "Impede manutenção técnica previamente comunicada."},
+        {"label": "D", "text": "Afasta o direito de greve de todos os servidores públicos sem exceção."},
+        {"label": "E", "text": "Não possui relação com eficiência ou supremacia do interesse público."}
+      ],
+      "correct_answer": "A",
+      "explanation": "A continuidade incide especialmente nos serviços públicos, mas alcança a atividade administrativa em geral. Não é absoluta: a lei admite interrupções justificadas, como emergência e, após aviso, razões técnicas, de segurança ou inadimplemento.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": true,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 44, "excerpt": "A continuidade não possui caráter absoluto.", "location": "Aula 00, alcance e exceções da continuidade."}]
+    },
+    {
+      "id": "pcba_inv_dadm_08_02_q020",
+      "subtopic_id": "pc_ba_2026_investigador_policia_civil_subtopic_direito_administrativo_8_2_principios_expressos_implicitos_administracao",
+      "microknowledge_ids": ["pc_ba_2026_inv_mk_000208e8f31622"],
+      "statement": "No que se refere especificamente aos policiais civis e à continuidade das atividades de segurança pública, a orientação consolidada apresentada no material é a de que",
+      "options": [
+        {"label": "A", "text": "a greve é livre, sem necessidade de preservar serviço mínimo."},
+        {"label": "B", "text": "o direito de greve depende apenas de autorização do delegado-geral."},
+        {"label": "C", "text": "a greve é permitida exclusivamente durante o estágio probatório."},
+        {"label": "D", "text": "policiais civis seguem exatamente o regime de greve de qualquer trabalhador privado."},
+        {"label": "E", "text": "o exercício do direito de greve é vedado aos policiais civis e aos servidores que atuam diretamente na segurança pública."}
+      ],
+      "correct_answer": "E",
+      "explanation": "Segundo a orientação do STF destacada no material, a greve é vedada aos policiais civis e a quem atua diretamente na segurança pública. A restrição se relaciona à continuidade de atividade estatal essencial e indelegável.",
+      "difficulty": "media",
+      "format": "multipla_escolha",
+      "source": "Questão autoral elaborada no modo assistido ChatGPT/Codex.",
+      "is_trick": false,
+      "traces": [{"source_id": "pc_ba_2026_inv_dadm_aula_00", "trace_status": "available", "page_number": 42, "excerpt": "O direito de greve é vedado aos policiais civis.", "location": "Aula 00, continuidade e segurança pública."}]
+    }
+  ]
+}

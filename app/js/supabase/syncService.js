@@ -8,6 +8,7 @@ import { shouldSyncCloudRecord } from './collectionKeys.js';
 import * as localDb from '../core/db.js';
 import { getActiveUserId } from '../auth/activeUser.js';
 import { getActiveContestId } from '../contest/activeContest.js';
+import { isCourseFactoryStudentPreview } from '../services/courseFactoryPreviewService.js';
 
 let lastSyncAt = null;
 const activeSyncs = new Map();
@@ -73,7 +74,7 @@ export function getLastSyncAt() {
  * Após login + abertura de concurso: traz dados da nuvem e drena outbox.
  */
 export async function syncOnContestOpen(userId, contestId) {
-  if (!isCloudEnabled() || !userId || !contestId) {
+  if (isCourseFactoryStudentPreview() || !isCloudEnabled() || !userId || !contestId) {
     return { skipped: true };
   }
   const scopeKey = `${userId}\u0000${contestId}`;
@@ -101,7 +102,7 @@ export async function syncOnContestOpen(userId, contestId) {
  * Push completo do estado local → nuvem (útil após migração local→cloud).
  */
 export async function pushAllLocalProgress(userId, contestId) {
-  if (!isCloudEnabled()) return { skipped: true };
+  if (isCourseFactoryStudentPreview() || !isCloudEnabled()) return { skipped: true };
   let total = 0;
   for (const collection of SYNC_COLLECTIONS) {
     const localRows = await localDb.getAll(collection, userId, contestId);
@@ -138,6 +139,10 @@ export function bindOnlineFlush({
   };
 
   const requestFlush = () => {
+    if (isCourseFactoryStudentPreview()) {
+      pendingScope = null;
+      return Promise.resolve({ skipped: true, previewIsolated: true });
+    }
     const scope = getScope();
     if (!validScope(scope)) {
       pendingScope = null;
@@ -152,6 +157,10 @@ export function bindOnlineFlush({
   };
 
   const flushWhenSafe = () => {
+    if (isCourseFactoryStudentPreview()) {
+      pendingScope = null;
+      return Promise.resolve({ skipped: true, previewIsolated: true });
+    }
     if (!pendingScope) return Promise.resolve({ skipped: true });
     const currentScope = getScope();
     if (!validScope(currentScope) || scopeKey(currentScope) !== scopeKey(pendingScope)) {

@@ -217,6 +217,7 @@ test('10. troca de conta remove dados acadêmicos transitórios da interface', (
     returnToTree: null,
     studyTopicId: null,
     studySubtopicId: null,
+    studyReturnContext: null,
     requestReviewExit: null,
     allowReviewExit: false,
     rankedEventSession: null,
