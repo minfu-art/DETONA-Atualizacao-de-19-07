@@ -10,6 +10,21 @@ export const QUESTION_REVIEW_OVERRIDES = Object.freeze({
   q_lote_q_import_0443: 'gabarito E incompatível com alternativas A-D',
 });
 
+export function normalizeQuestionFormat(rawFormat) {
+  const format = String(rawFormat || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+  if (
+    format === 'multiple_choice_a_e'
+    || format === 'multiple_choice'
+    || format === 'multipla_escolha'
+    || format.includes('multipla')
+  ) return 'multipla_escolha';
+  return 'certo_errado';
+}
+
 const SENSITIVE_QUERY_KEYS = /^(?:utm_.+|fbclid|gclid|email|e-mail|username|user|userid|user_id|uid|token|access_token|auth|session|sessionid|session_id|code)$/i;
 
 export function normalizeComparableText(value) {
@@ -121,9 +136,7 @@ export function normalizeSituacao(raw, { structurallyValid = true, forceReview =
 
 export function normalizeQuestion(item = {}, context = {}) {
   const rawFormat = item.format || item.tipo || '';
-  const format = rawFormat === 'multipla_escolha' || /multipla|multiple_choice/i.test(String(rawFormat))
-    ? 'multipla_escolha'
-    : 'certo_errado';
+  const format = normalizeQuestionFormat(rawFormat);
   const statementResult = sanitizeSensitiveText(item.enunciado ?? item.statement ?? '');
   const explanationResult = sanitizeSensitiveText(item.explicacao ?? item.explanation ?? item.resolucao ?? 'Sem resolução.');
   const sourceResult = sanitizeSensitiveText(item.fonte ?? item.source ?? '');
@@ -227,9 +240,7 @@ export function isQuestionEligible(question) {
   const subtopicId = question?.subtopic_id || question?.topicoEditalId;
   if (!statement || !subtopicId) return false;
 
-  const format = question?.format === 'multipla_escolha' || question?.tipo === 'multipla_escolha'
-    ? 'multipla_escolha'
-    : 'certo_errado';
+  const format = normalizeQuestionFormat(question?.format || question?.tipo);
   let options = Array.isArray(question?.options) ? question.options : (question?.alternativas || []);
   // Certo/Errado: pool editorial muitas vezes vem sem alternativas
   if (format === 'certo_errado' && options.length < 2) {
