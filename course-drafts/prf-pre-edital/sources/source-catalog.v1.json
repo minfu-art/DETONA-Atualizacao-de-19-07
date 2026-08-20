@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "contest_id": "prf_2026",
+  "baseline_status": "pre_edital",
+  "sources": [
+    {
+      "source_id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "publisher": "PRF e Cebraspe",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "location": "Item 24.2, páginas 36 a 39",
+      "used_for": "Baseline curricular",
+      "authority": "official"
+    },
+    {
+      "source_id": "prf_status_oficial",
+      "source_type": "official_status",
+      "title": "Portal oficial — Concurso PRF",
+      "publisher": "Polícia Rodoviária Federal",
+      "url": "https://www.gov.br/prf/pt-br/concurso-prf",
+      "used_for": "Confirmação do concurso oficial vigente no portal",
+      "authority": "official"
+    }
+  ]
+}
