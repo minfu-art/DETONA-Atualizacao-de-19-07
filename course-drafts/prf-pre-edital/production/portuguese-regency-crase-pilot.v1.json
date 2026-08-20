@@ -1,0 +1,1127 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-regencia-crase-pilot-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 da baseline PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "Estrutura morfossintática do período",
+        "description": "",
+        "order": 4,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Regência verbal e nominal",
+        "description": "",
+        "order": 5,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Crase",
+        "description": "",
+        "order": 6,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_t05_s06_mk01_relacao_regente_regido",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Relação entre termo regente, termo regido e complemento",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk02_transitividade_e_preposicao",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Transitividade verbal e exigência de preposição",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk03_sentido_altera_regencia",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Alteração da regência conforme o sentido do verbo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 41,
+          "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Preposição antes de pronome relativo determinada pela regência",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk05_regencia_nominal",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Regência nominal e complemento preposicionado",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 22,
+          "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk01_fusao_preposicao_artigo",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Crase como fusão da preposição a com artigo feminino a ou as",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk02_crase_demonstrativos",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Crase diante de aquele, aquela, aqueles, aquelas e aquilo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Ausência de crase antes de pronome pessoal e contraste com formas de tratamento que admitem artigo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "scope": "Regência verbal e nominal em relações de complementação e na norma-padrão.",
+      "essential_concepts": [
+        "termo regente e regido",
+        "transitividade",
+        "preposição",
+        "regência nominal"
+      ],
+      "rules": [
+        "A regência depende da acepção e da função sintática.",
+        "A preposição do relativo deriva da regência interna."
+      ],
+      "exceptions": [
+        "Mudanças de sentido podem alterar transitividade e preposição."
+      ],
+      "applications": [
+        "análise sintática",
+        "reescrita",
+        "correção gramatical"
+      ],
+      "competencies": [
+        "identificar o termo regente",
+        "selecionar preposição",
+        "avaliar reescritas"
+      ],
+      "required_knowledge": [
+        "classes de palavras",
+        "complementos verbais",
+        "orações adjetivas"
+      ],
+      "microknowledge_ids": [
+        "prf_d01_t05_s06_mk01_relacao_regente_regido",
+        "prf_d01_t05_s06_mk02_transitividade_e_preposicao",
+        "prf_d01_t05_s06_mk03_sentido_altera_regencia",
+        "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado",
+        "prf_d01_t05_s06_mk05_regencia_nominal"
+      ],
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 2,
+          "excerpt": "O índice separa teoria e questões de regência verbal e nominal."
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "scope": "Emprego do sinal indicativo de crase conforme regência, artigo e pronomes.",
+      "essential_concepts": [
+        "preposição a",
+        "artigo feminino",
+        "fusão",
+        "pronomes demonstrativos"
+      ],
+      "rules": [
+        "A crase exige a coexistência dos elementos que se fundem."
+      ],
+      "exceptions": [
+        "Pronome pessoal não admite artigo.",
+        "Algumas formas de tratamento admitem artigo."
+      ],
+      "applications": [
+        "correção gramatical",
+        "reescrita",
+        "justificativa do acento grave"
+      ],
+      "competencies": [
+        "testar regência",
+        "testar artigo",
+        "distinguir proibição e possibilidade"
+      ],
+      "required_knowledge": [
+        "regência",
+        "artigo",
+        "pronomes"
+      ],
+      "microknowledge_ids": [
+        "prf_d01_t05_s07_mk01_fusao_preposicao_artigo",
+        "prf_d01_t05_s07_mk02_crase_demonstrativos",
+        "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+      ],
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "A teoria apresenta a formação e os testes de crase."
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-regencia-crase-piloto-v1",
+      "questions": [
+        {
+          "id": "prf_port_pilot_001",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "A regência estuda relações de dependência em que um termo exige ou orienta a forma de seu complemento.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O termo regente determina a relação sintática e, quando necessário, a preposição que introduz o termo regido.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_002",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "Na oração “O servidor confia no procedimento”, o segmento “no procedimento” exerce a função de objeto direto do verbo “confiar”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O verbo “confiar”, nessa acepção, rege a preposição “em”; por isso, “no procedimento” é objeto indireto.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_003",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "Todo complemento introduzido por preposição deve ser classificado como objeto indireto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A preposição também pode introduzir complemento nominal e outros termos; objeto indireto é complemento de verbo transitivo indireto.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_004",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "Um verbo transitivo indireto liga-se a seu complemento por meio de preposição exigida por sua regência.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A preposição integra o padrão de complementação do verbo transitivo indireto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_005",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "Em “A equipe assistiu ao treinamento”, o emprego da preposição “a” está de acordo com a regência do verbo “assistir” no sentido de ver.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "No sentido de presenciar ou ver, “assistir” é transitivo indireto e rege a preposição “a”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_006",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "A construção “O candidato prefere estabilidade do que aventura” atende à norma-padrão de regência do verbo “preferir”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na comparação, a norma-padrão recomenda “preferir X a Y”: “prefere estabilidade a aventura”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_007",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "A classificação de um verbo quanto à transitividade pode mudar quando muda o sentido assumido no contexto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A regência não é atributo imutável da forma verbal; depende da acepção e da construção em que o verbo aparece.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_008",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "Nas construções “pensou no problema” e “pensou uma solução”, o verbo “pensar” apresenta exatamente a mesma transitividade.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na primeira construção há complemento preposicionado; na segunda, complemento sem preposição. A transitividade varia.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_009",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "Se um verbo aparece como intransitivo em determinada frase, ele necessariamente será intransitivo em qualquer outro contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Diversos verbos admitem mais de uma regência e transitividade conforme a acepção empregada.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_010",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "A preposição que antecede um pronome relativo deve ser definida pela regência do verbo ou do nome com que o relativo se relaciona.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O pronome relativo retoma o antecedente, mas sua função na oração subordinada determina a preposição necessária.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_011",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "A redação “A norma a que me referi foi alterada” está adequada quanto à regência e ao emprego do pronome relativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Quem se refere, refere-se a algo; por isso, a preposição “a” deve anteceder o relativo “que”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_012",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "Na frase “Este é o cargo que o servidor aspirava”, a ausência de preposição antes de “que” está correta quando “aspirar” significa desejar.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "No sentido de desejar, “aspirar” rege a preposição “a”: “o cargo a que o servidor aspirava”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_013",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "A regência nominal examina a relação entre nomes e os complementos preposicionados exigidos por eles.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Substantivos, adjetivos e advérbios podem atuar como termos regentes e selecionar preposições.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_014",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "Em “A medida é favorável aos usuários”, a preposição empregada está compatível com a regência do adjetivo “favorável”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O adjetivo “favorável” rege a preposição “a”, combinada com o artigo plural em “aos”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_015",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "A construção “O agente está apto de exercer a função” é a única forma admitida pela norma-padrão para complementar o adjetivo “apto”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O adjetivo “apto” admite, entre outras construções consagradas, “apto a” e “apto para”; a afirmação de exclusividade é incorreta.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_016",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "Para que ocorra crase antes de um substantivo feminino, devem coexistir a preposição “a” e o artigo feminino “a” ou “as”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A crase resulta da fusão dos dois elementos; a presença de apenas um deles não autoriza o acento grave.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_017",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "Na frase “O policial dirigiu-se à unidade operacional”, o acento grave pode ser justificado pela regência de “dirigir-se” e pelo artigo de “a unidade”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O verbo exige a preposição “a”, e o substantivo feminino determinado admite artigo “a”: a + a = à.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_018",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "A redação “O relatório foi entregue à uma chefia regional” está correta porque toda palavra feminina admite crase.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Antes do artigo indefinido “uma” não ocorre a fusão a + a; além disso, gênero feminino, isoladamente, não determina crase.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_019",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "Quando um termo exige a preposição “a”, pode ocorrer crase diante de “aquele”, “aquela”, “aqueles”, “aquelas” e “aquilo”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A preposição funde-se com a vogal inicial do demonstrativo, produzindo “àquele”, “àquela”, “àqueles”, “àquelas” ou “àquilo”.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_020",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "Em “A comissão referiu-se àquele procedimento”, o acento grave está de acordo com a regência do verbo e com a forma do demonstrativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Quem se refere, refere-se a algo; a preposição “a” funde-se com “aquele”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_021",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "A forma “O candidato visava aquele cargo” está plenamente adequada quando “visar” significa almejar, não havendo possibilidade de crase.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na norma-padrão, “visar”, no sentido de almejar, rege “a”; diante de “aquele”, forma-se “visava àquele cargo”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_022",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Em regra, não se emprega acento grave antes de pronome pessoal, pois esse pronome não é antecedido de artigo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Pode existir a preposição “a”, mas falta o artigo feminino necessário à fusão que caracteriza a crase.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_023",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Na frase “A chefia entregou a ela o documento”, a ausência de acento grave em “a ela” está correta.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O pronome pessoal “ela” não admite artigo; há somente a preposição “a”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_024",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Na redação formal, toda forma de tratamento impede crase, razão pela qual apenas “dirigiu-se a senhora” pode estar correta.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Formas como “senhora” podem admitir artigo. Se o termo regente exige “a”, é possível “dirigiu-se à senhora”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-20T21:45:20.735Z",
+    "editorial_status": "draft_for_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 8,
+    "question_count": 24,
+    "required_questions_per_microknowledge": 3
+  }
+}

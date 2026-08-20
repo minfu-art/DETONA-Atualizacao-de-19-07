@@ -16,3 +16,19 @@ Não existe novo edital aberto confirmado no portal oficial. A estrutura permane
 O CTB e a lista de resoluções CONTRAN foram preservados como publicados em 2021. Antes de produzir questões definitivas, cada ato deverá ser reconciliado com a consolidação oficial vigente e com o próximo edital.
 
 O avatar incluído no bundle é provisório e serve somente para validação técnica.
+
+## Ingestão autorizada em 20 de agosto de 2026
+
+O pacote `D:/CURSOS/PRF/` foi inventariado integralmente:
+
+- 183 PDFs;
+- 19.676 páginas;
+- 13 das 14 disciplinas canônicas representadas;
+- Língua Estrangeira ainda sem pasta-fonte;
+- um arquivo duplicado;
+- um PDF com nome inválido bloqueado;
+- nenhuma importação ou publicação realizada.
+
+A geração editorial de mapa e questões foi autorizada pelo usuário. A autorização é condicional: conteúdo normativo ou dinâmico só pode gerar lote definitivo após reconciliação com fonte oficial vigente.
+
+O primeiro piloto cobre Regência verbal/nominal e Crase, com 8 microconhecimentos e 24 questões autorais, ainda em revisão humana.

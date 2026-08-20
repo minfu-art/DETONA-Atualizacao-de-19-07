@@ -138,10 +138,12 @@ Neste momento:
 
 - planejamento do mapa: autorizado;
 - geração do mapa completo: ainda não executada;
-- geração de questões: bloqueada;
+- ingestão das 183 apostilas: concluída;
+- geração editorial de questões: autorizada para conteúdo estável ou oficialmente reconciliado;
+- piloto de Português: 8 microconhecimentos e 24 questões autorais em revisão;
 - importação no Supabase: bloqueada;
 - publicação: bloqueada;
 - entitlement: bloqueado;
 - Mercado Pago: não envolvido.
 
-O início da decomposição completa depende do conjunto de apostilas ou de autorização explícita para trabalhar apenas com fontes oficiais abertas.
+O pacote cobre 13 das 14 disciplinas; Língua Estrangeira continua pendente. Legislação de Trânsito e demais conteúdos normativos permanecem condicionados à reconciliação oficial antes de qualquer lote definitivo.

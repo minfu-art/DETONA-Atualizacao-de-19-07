@@ -21,6 +21,19 @@
       "url": "https://www.gov.br/prf/pt-br/concurso-prf",
       "used_for": "Confirmação do concurso oficial vigente no portal",
       "authority": "official"
+    },
+    {
+      "source_id": "prf_local_pdf_pack_20260820",
+      "source_type": "local_commercial_material_pack",
+      "title": "Pacote local de apostilas PRF",
+      "publisher": "Materiais didáticos fornecidos pelo usuário",
+      "path": "D:/CURSOS/PRF/",
+      "used_for": "Decomposição pedagógica, exemplos e padrões de cobrança; nunca como substituto de fonte oficial",
+      "authority": "secondary",
+      "ingestion_report": "source-ingestion-report.v1.json",
+      "pdf_count": 183,
+      "page_count": 19676,
+      "canonical_disciplines_represented": 13
     }
   ]
 }

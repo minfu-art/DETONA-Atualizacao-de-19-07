@@ -6,7 +6,7 @@ import test from 'node:test';
 const root = path.resolve('course-drafts/prf-pre-edital');
 const readJson = async (file) => JSON.parse(await readFile(path.join(root, file), 'utf8'));
 
-test('plano do Mapa Mestre cobre as 14 disciplinas sem autorizar produção', async () => {
+test('plano do Mapa Mestre cobre as 14 disciplinas e mantém produção condicionada', async () => {
   const [plan, curriculum] = await Promise.all([
     readJson('master-knowledge-map-plan.v1.json'),
     readJson('course-bundle/curriculum.json'),
@@ -29,7 +29,9 @@ test('plano do Mapa Mestre cobre as 14 disciplinas sem autorizar produção', as
   assert.deepEqual(microTotals, [plan.planning_range.microknowledges_min, plan.planning_range.microknowledges_max]);
   assert.equal(plan.acceptance_criteria.canonical_subtopics_covered, 246);
   assert.equal(plan.critical_reconciliation.question_generation_blocked_until_complete, true);
-  assert.equal(plan.operational_safety.question_generation_authorized, false);
+  assert.equal(plan.operational_safety.source_ingestion_completed, true);
+  assert.equal(plan.operational_safety.question_generation_authorized, true);
+  assert.equal(plan.operational_safety.question_generation_scope, 'noncritical_or_officially_reconciled_content_only');
   assert.equal(plan.operational_safety.import_authorized, false);
   assert.equal(plan.operational_safety.publication_authorized, false);
 });
