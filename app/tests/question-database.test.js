@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDemoQuestions, buildSeedEntities } from '../js/data/editalSeed.js';
 import { normalizeQuestionCollection } from '../js/core/questionImport.js';
-import { analyzeQuestionCollection, isDemoQuestion, isQuestionEligible } from '../js/core/questionSchema.js';
+import { analyzeQuestionCollection, hasCompleteMultipleChoiceOptions, isDemoQuestion, isQuestionEligible } from '../js/core/questionSchema.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const { subtopics } = buildSeedEntities();
@@ -21,7 +21,6 @@ test('banco real não inclui questões DEMO no seed de contagem', () => {
   assert.equal(normalized.errors.length, 0);
   assert.equal(normalized.questions.length, 842);
   assert.deepEqual(report.duplicateIds, []);
-  assert.equal(report.invalidOptions, 0);
   assert.equal(report.missingTopic, 0);
   assert.ok(normalized.questions.every((q) => !isDemoQuestion(q)));
 });
@@ -34,14 +33,17 @@ test('buildDemoQuestions gera só itens marcados como demo e inelegíveis', () =
   assert.ok(asNormalized.every((q) => !isQuestionEligible(q)));
 });
 
-test('duplicidades e gabaritos incompatíveis ficam em revisão', () => {
+test('duplicidades, gabaritos incompatíveis e alternativas corrompidas ficam em revisão', () => {
   assert.equal(report.duplicateStatements, 2);
   assert.equal(report.invalidAnswers, 2);
-  assert.equal(report.review, 6);
+  assert.equal(report.invalidOptions, 40);
+  assert.equal(report.review, 46);
   const invalid = normalized.questions.filter((question) =>
     question.correct_answer == null
+    || (question.format === 'multipla_escolha' && !hasCompleteMultipleChoiceOptions(question.options))
     || (question.format === 'multipla_escolha' && !question.options.some((option) => String(option).startsWith(`${question.correct_answer})`))));
   assert.ok(invalid.every((question) => question.situacao === 'revisao'));
+  assert.ok(invalid.every((question) => !isQuestionEligible(question)));
 });
 
 test('normalização remove identificador pessoal da versão utilizável', () => {
