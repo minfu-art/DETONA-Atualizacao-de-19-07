@@ -30,3 +30,5 @@ O novo concurso foi anunciado/autorizado em 2026, mas seu edital ainda não foi 
 ## Próxima fase
 
 Receber apostilas, decompor o currículo em microconhecimentos e construir o mapa mestre antes de produzir o banco inteligente de questões.
+
+O contrato, as faixas de capacidade e os critérios de aceite estão definidos em `MASTER_KNOWLEDGE_MAP_PLAN.md` e `master-knowledge-map-plan.v1.json`.
