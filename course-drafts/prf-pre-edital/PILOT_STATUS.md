@@ -24,9 +24,9 @@
 
 Nenhuma questão da apostila foi copiada. O material foi usado para decomposição didática e identificação do padrão de cobrança. O lote permanece como `draft_for_human_review`, com importação e publicação bloqueadas.
 
-## Expansão concluída
+## Expansão em reconstrução editorial
 
-O método do piloto foi expandido para os 22 subtópicos canônicos. O artefato completo está em `production/portuguese-22-subtopics-complete.v1.json`.
+O lote automático que pretendia expandir o método para os 22 subtópicos foi rejeitado: cumpria contagens e vínculos, mas não oferecia desafio ou ensino suficiente. O artefato e seu gerador foram removidos da produção.
 
 ## Onda 1 - cobertura dos 22 subtópicos
 
@@ -39,17 +39,24 @@ A primeira expansão foi concluída como cobertura diagnóstica inicial:
 - contrato canônico validado;
 - importação e publicação ainda bloqueadas.
 
-Essa onda permanece preservada como diagnóstico histórico. Ela foi sucedida pelo mapa completo abaixo.
+Essa onda permanece preservada apenas como diagnóstico histórico e não está aprovada para os alunos.
 
-## Mapa completo dos 22 subtópicos
+## Novo contrato de qualidade
 
-- 22/22 subtópicos;
-- 176 microconhecimentos, oito por subtópico;
-- 528 questões autorais de Certo/Errado;
-- exatamente 3 questões por microconhecimento;
-- reconhecimento, aplicação e discriminação/pegadinha em todas as unidades;
-- 100% de cobertura de subtópicos e microconhecimentos no validador canônico;
-- 0 IDs órfãos ou duplicados e 0 enunciados duplicados;
-- importação e publicação bloqueadas até revisão humana.
+- produção em lotes de exatamente 20 questões;
+- eixo temático coerente dentro de cada lote;
+- textos e situações-base autorais;
+- decisão cognitiva real, sem simples repetição de regra;
+- comentário que identifica a pista, ensina o critério e corrige a armadilha;
+- revisão humana antes de iniciar o lote seguinte;
+- importação e publicação bloqueadas.
 
-A estimativa preliminar de 200 a 300 unidades não era quota. A decomposição editorial fechou em 176 unidades distintas, evitando inflar o mapa com paráfrases do mesmo conhecimento.
+## Lote editorial 01
+
+- subtópico: Compreensão e interpretação de textos de gêneros variados;
+- cinco textos autorais compartilhados;
+- oito microconhecimentos;
+- 20 questões de Certo/Errado;
+- progressão entre localização, inferência, extrapolação, tema, tese, argumento, pressuposto e ponto de vista;
+- arquivo: `production/portuguese-editorial-batch-01.v1.json`;
+- estado: `batch_01_pending_human_review`.

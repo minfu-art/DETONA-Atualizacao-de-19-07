@@ -31,4 +31,4 @@ O pacote `D:/CURSOS/PRF/` foi inventariado integralmente:
 
 A geração editorial de mapa e questões foi autorizada pelo usuário. A autorização é condicional: conteúdo normativo ou dinâmico só pode gerar lote definitivo após reconciliação com fonte oficial vigente.
 
-O piloto de Regência e Crase foi sucedido pelo mapa completo de Língua Portuguesa: 22 subtópicos, 176 microconhecimentos e 528 questões autorais. O contrato técnico está validado, mas o lote continua em revisão humana, sem importação ou publicação.
+O lote mecânico de 528 itens foi rejeitado na revisão por não atingir a qualidade pedagógica exigida e removido da produção. Português passou a ser construído em lotes editoriais de 20 questões. O lote 01 trabalha compreensão e interpretação com cinco textos autorais, oito microconhecimentos e 20 questões comentadas, ainda sem importação ou publicação.
