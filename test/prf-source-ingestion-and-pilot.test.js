@@ -62,3 +62,26 @@ test('piloto de Português fecha microconhecimento, três modos de questão e ra
   assert.equal(validation.coverage.microknowledge_question_pct, 100);
   assert.equal(validation.coverage.subtopic_question_pct, 100);
 });
+
+test('primeira onda de Português cobre os 22 subtópicos sem declarar decomposição final', async () => {
+  const wave = await readJson('production/portuguese-22-subtopics-wave1.v1.json');
+  const subtopics = wave.curriculum.nodes.filter(({ type }) => type === 'subtopic');
+  const questions = wave.question_batches.flatMap(({ questions: items }) => items);
+  assert.equal(subtopics.length, 22);
+  assert.equal(wave.edital_map.length, 22);
+  assert.equal(wave.microknowledges.length, 28);
+  assert.equal(questions.length, 84);
+  assert.equal(wave.metadata.canonical_subtopics_covered, 22);
+  assert.equal(wave.metadata.coverage_status, 'initial_anchor_coverage_not_full_atomic_decomposition');
+  for (const subtopic of subtopics) {
+    const microIds = wave.microknowledges.filter(({ subtopic_id: id }) => id === subtopic.id).map(({ id }) => id);
+    assert.ok(microIds.length >= 1, subtopic.title);
+    assert.ok(questions.filter(({ microknowledge_ids: ids }) => ids.some((id) => microIds.includes(id))).length >= 3, subtopic.title);
+  }
+  assert.ok(wave.sources.some(({ id }) => id === 'mrpr_3ed_oficial'));
+  const validation = await validateAssistedCoursePackage(wave, {
+    uploadedSources: wave.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.subtopic_question_pct, 100);
+});

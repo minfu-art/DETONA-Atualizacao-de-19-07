@@ -27,3 +27,16 @@ Nenhuma questão da apostila foi copiada. O material foi usado para decomposiç�
 ## Próxima expansão
 
 Completar os microconhecimentos restantes de Regência e Crase e, após validar o método, seguir a ordem das aulas de Português até cobrir os 22 subtópicos canônicos da disciplina.
+
+## Onda 1 - cobertura dos 22 subtópicos
+
+A primeira expansão foi concluída como cobertura diagnóstica inicial:
+
+- 22/22 subtópicos com ao menos um microconhecimento;
+- 28 microconhecimentos no total, contando o piloto aprofundado;
+- 84 questões autorais;
+- pelo menos 3 questões vinculadas a cada subtópico;
+- contrato canônico validado;
+- importação e publicação ainda bloqueadas.
+
+Essa cobertura não equivale à decomposição atômica completa de Português. O próximo ciclo deve ampliar cada âncora até a faixa pedagógica prevista de 200 a 300 microconhecimentos.
