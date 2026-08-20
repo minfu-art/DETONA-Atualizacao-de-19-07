@@ -1,10 +1,58 @@
 import { STORES, getAll } from '../core/db.js';
 import { getQuestionSourceMode, QUESTION_INDEX_URL, QUESTION_SOURCE_MODES } from '../config/questionSourceConfig.js';
-import { isDemoQuestion } from '../core/questionSchema.js';
+import {
+  hasCompleteMultipleChoiceOptions,
+  isDemoQuestion,
+  normalizeAnswer,
+  normalizeComparableText,
+  normalizeQuestionFormat,
+} from '../core/questionSchema.js';
 import { isDynamicContestContent } from '../contest/contestRuntime.js';
 
 const clone = (value) => value == null ? value : structuredClone(value);
 const textKey = (value) => String(value ?? '').trim().toLocaleLowerCase('pt-BR');
+
+function canonicalStatementKey(question) {
+  let key = normalizeComparableText(question?.enunciado || question?.statement || '');
+  key = key.replace(/^\d+\s*[.)]\s*/, '');
+  key = key.replace(/^\([^)]*(?:cebraspe|cespe|fgv|fcc|vunesp|ibfc|quadrix|aocp)[^)]*\)\s*/, '');
+  return key.length >= 60 ? key : '';
+}
+
+function questionQuality(question) {
+  const format = normalizeQuestionFormat(question?.tipo || question?.format);
+  const options = question?.alternativas || question?.options || [];
+  let score = Math.min(300, String(question?.enunciado || question?.statement || '').trim().length);
+  if (format === 'multipla_escolha' && hasCompleteMultipleChoiceOptions(options)) score += 1000;
+  if (format === 'certo_errado') score += 1000;
+  if (normalizeAnswer(question?.respostaCorreta ?? question?.correct_answer, format, options).valid) score += 200;
+  for (const field of ['banca', 'ano', 'assunto', 'explicacao', 'explanation']) {
+    if (question?.[field]) score += 10;
+  }
+  return score;
+}
+
+function preferBestStatementVersion(questions = []) {
+  const result = [];
+  const positions = new Map();
+  for (const question of questions) {
+    const contest = textKey(question?.concursoId || question?.contest_id || '');
+    const statement = canonicalStatementKey(question);
+    if (!statement) {
+      result.push(question);
+      continue;
+    }
+    const key = `${contest}|${statement}`;
+    if (!positions.has(key)) {
+      positions.set(key, result.length);
+      result.push(question);
+      continue;
+    }
+    const position = positions.get(key);
+    if (questionQuality(question) > questionQuality(result[position])) result[position] = question;
+  }
+  return result;
+}
 
 export function createQuestionRepository({
   fetchImpl = globalThis.fetch?.bind(globalThis),
@@ -52,7 +100,7 @@ export function createQuestionRepository({
     const unique = new Map();
     // Compatibilidade: no híbrido, um ID legado já existente continua prevalecendo.
     for (const question of [...legacy, ...json]) if (!unique.has(String(question.id))) unique.set(String(question.id), question);
-    let result = [...unique.values()];
+    let result = preferBestStatementVersion([...unique.values()]);
     // Banco real: exclui questões DEMO por padrão (use includeDemo: true só para auditoria).
     if (filtros.includeDemo !== true) {
       result = result.filter((item) => !isDemoQuestion(item));

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeQuestionCollection, isQuestionEligible, normalizeAnswer, normalizeQuestion, sanitizeSensitiveText, stableQuestionId } from '../js/core/questionSchema.js';
+import { analyzeQuestionCollection, hasCompleteMultipleChoiceOptions, isQuestionEligible, normalizeAnswer, normalizeQuestion, sanitizeSensitiveText, stableQuestionId } from '../js/core/questionSchema.js';
 
 const legacy = { id: 'q_legacy_1', subtopic_id: 'port_3', format: 'multipla_escolha', statement: 'Enunciado de teste', options: ['A) Um', 'B) Dois'], correct_answer: 'B', explanation: 'Explicação' };
 
@@ -50,6 +50,34 @@ test('gabarito incompatível entra em revisão e não é elegível', () => {
   const question = normalizeQuestion({ ...legacy, id: 'outro', correct_answer: 'E' });
   assert.equal(question.situacao, 'revisao');
   assert.equal(isQuestionEligible(question), false);
+});
+
+test('alternativas contendo somente a letra são bloqueadas', () => {
+  const malformed = normalizeQuestion({
+    ...legacy,
+    id: 'q_pdf_corrompida',
+    options: undefined,
+    alternativas: [
+      { letra: 'A', texto: 'A)' },
+      { letra: 'B', texto: 'B) Alternativa íntegra' },
+      { letra: 'C', texto: 'C)' },
+      { letra: 'D', texto: 'D)' },
+      { letra: 'E', texto: 'E) Outra alternativa íntegra' },
+    ],
+    respostaCorreta: 'B',
+  });
+  assert.equal(hasCompleteMultipleChoiceOptions(malformed.options), false);
+  assert.equal(malformed.situacao, 'revisao');
+  assert.equal(malformed.metadata.reviewReason, 'alternativas vazias ou corrompidas');
+  assert.equal(isQuestionEligible(malformed), false);
+});
+
+test('texto curto igual a outra letra continua válido no formato PC BA', () => {
+  const options = [
+    { label: 'A', text: 'B.' },
+    { label: 'B', text: 'Conjunto vazio.' },
+  ];
+  assert.equal(hasCompleteMultipleChoiceOptions(options), true);
 });
 
 test('detecta IDs e enunciados duplicados', () => {

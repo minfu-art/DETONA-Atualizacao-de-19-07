@@ -75,6 +75,44 @@ export function normalizeOptions(rawOptions, format) {
   }).filter(Boolean);
 }
 
+function optionParts(option, index) {
+  const fallbackLetter = String.fromCharCode(65 + index);
+  if (typeof option === 'string') {
+    const raw = String(option).trim();
+    const match = raw.match(/^([A-E])(?:\)|\.|\s|-|:)\s*(.*)$/i);
+    return {
+      letter: (match?.[1] || fallbackLetter).toUpperCase(),
+      text: (match?.[2] ?? raw).trim(),
+    };
+  }
+  const letter = String(option?.id || option?.letter || option?.letra || option?.label || fallbackLetter)
+    .trim().toUpperCase();
+  let text = String(option?.text ?? option?.texto ?? option?.value ?? '').trim();
+  if (letter) {
+    const ownLabel = new RegExp(`^${letter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\)|\\.|\\s|-|:)\\s*`, 'i');
+    text = text.replace(ownLabel, '').trim();
+  }
+  return { letter, text };
+}
+
+/**
+ * Impede que extrações de PDF como `A)`, `C)` ou `D)` sejam tratadas como
+ * alternativas válidas só porque o array e o gabarito existem.
+ */
+export function hasCompleteMultipleChoiceOptions(rawOptions = []) {
+  if (!Array.isArray(rawOptions) || rawOptions.length < 2) return false;
+  const letters = new Set();
+  for (let index = 0; index < rawOptions.length; index += 1) {
+    const { letter, text } = optionParts(rawOptions[index], index);
+    if (!text || letters.has(letter)) return false;
+    // Após a normalização editorial, uma opção vazia pode virar `A) A)`.
+    const repeatedOwnLabel = new RegExp(`^${letter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:\\)|\\.|-|:)?$`, 'i');
+    if (repeatedOwnLabel.test(text)) return false;
+    letters.add(letter);
+  }
+  return true;
+}
+
 export function optionLetters(options = []) {
   return options.map((option, index) => {
     const match = String(option).trim().match(/^([A-Z])(?:\)|\.|\s|-)/i);
@@ -146,12 +184,13 @@ export function normalizeQuestion(item = {}, context = {}) {
   const topicId = context.topicoEditalId || item.topicoEditalId || item.subtopic_id || '';
   const discipline = context.disciplina || item.disciplina || item.discipline || item.discipline_id || '';
   const explicitReview = QUESTION_REVIEW_OVERRIDES[id];
+  const completeOptionStructure = format === 'certo_errado' || hasCompleteMultipleChoiceOptions(options);
   // C/E sempre tem Certo/Errado após normalizeOptions; múltipla exige 2+ alternativas
   const structurallyValid = Boolean(
     statementResult.value
     && topicId
     && answer.valid
-    && (format === 'certo_errado' ? options.length >= 2 : options.length >= 2)
+    && completeOptionStructure
   );
   const status = normalizeSituacao(item.situacao || item.status, {
     structurallyValid,
@@ -166,7 +205,8 @@ export function normalizeQuestion(item = {}, context = {}) {
   const metadata = { ...metadataFromOriginal(item), ...(item.metadata || {}) };
   if (explicitReview) metadata.reviewReason = explicitReview;
   else if (!answer.valid) metadata.reviewReason = 'gabarito incompatível ou ausente';
-  else if (!statementResult.value || !topicId || options.length < 2) metadata.reviewReason = 'estrutura obrigatória incompleta';
+  else if (!completeOptionStructure) metadata.reviewReason = 'alternativas vazias ou corrompidas';
+  else if (!statementResult.value || !topicId) metadata.reviewReason = 'estrutura obrigatória incompleta';
 
   return {
     id,
@@ -246,7 +286,7 @@ export function isQuestionEligible(question) {
   if (format === 'certo_errado' && options.length < 2) {
     options = ['Certo', 'Errado'];
   }
-  if (format === 'multipla_escolha' && options.length < 2) return false;
+  if (format === 'multipla_escolha' && !hasCompleteMultipleChoiceOptions(options)) return false;
 
   // Status "revisao" só bloqueia se a estrutura estiver inválida (já coberta acima).
   // Questões com gabarito e enunciado ok entram na batalha.
@@ -268,7 +308,9 @@ export function analyzeQuestionCollection(questions = []) {
     if (key) statements.set(key, (statements.get(key) || 0) + 1);
     if (question.situacao === QUESTION_STATUS.REVIEW) review += 1;
     else if (isQuestionEligible(question)) valid += 1;
-    if (!Array.isArray(question.options) || question.options.length < 2) invalidOptions += 1;
+    if (normalizeQuestionFormat(question.format || question.tipo) === 'multipla_escolha'
+      ? !hasCompleteMultipleChoiceOptions(question.options || question.alternativas)
+      : (!Array.isArray(question.options) || question.options.length < 2)) invalidOptions += 1;
     if (!normalizeAnswer(question.correct_answer, question.format, question.options).valid) invalidAnswers += 1;
     if (!question.disciplina) missingDiscipline += 1;
     if (!question.assunto) missingSubject += 1;
