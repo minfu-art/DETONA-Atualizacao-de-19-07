@@ -137,10 +137,10 @@ Conceitos comuns podem ser usados como referência editorial, mas IDs de PC BA, 
 Neste momento:
 
 - planejamento do mapa: autorizado;
-- geração do mapa completo: ainda não executada;
+- geração do mapa completo: concluída para Língua Portuguesa (22/22 subtópicos, 176 microconhecimentos e 528 questões);
 - ingestão das 183 apostilas: concluída;
 - geração editorial de questões: autorizada para conteúdo estável ou oficialmente reconciliado;
-- piloto de Português: 8 microconhecimentos e 24 questões autorais em revisão;
+- Português: mapa técnico completo em revisão humana; piloto e onda diagnóstica preservados como histórico;
 - importação no Supabase: bloqueada;
 - publicação: bloqueada;
 - entitlement: bloqueado;

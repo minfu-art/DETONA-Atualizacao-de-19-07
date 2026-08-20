@@ -1,7 +1,7 @@
 {
   "schema_version": "detona_master_knowledge_map_plan_v1",
   "artifact_type": "master_knowledge_map_plan",
-  "status": "source_ingested_pilot_in_editorial_review",
+  "status": "portuguese_complete_draft_in_editorial_review",
   "identity": {
     "contest_id": "prf_2026",
     "position_id": "prf_2026_policial_rodoviario_federal",
@@ -47,7 +47,7 @@
     "note": "Faixas de capacidade, não quotas editoriais. A atomicidade determina a contagem final."
   },
   "discipline_plan": [
-    {"order": 1, "name": "Língua Portuguesa", "topics": 7, "subtopics": 22, "fragments_range": [30, 45], "microknowledges_range": [200, 300], "risk": "editorial"},
+    {"order": 1, "name": "Língua Portuguesa", "topics": 7, "subtopics": 22, "fragments_range": [30, 45], "microknowledges_range": [200, 300], "actual_microknowledges": 176, "actual_questions": 528, "status": "complete_draft_pending_human_review", "risk": "editorial"},
     {"order": 2, "name": "Raciocínio Lógico-Matemático", "topics": 10, "subtopics": 27, "fragments_range": [30, 45], "microknowledges_range": [180, 280], "risk": "editorial"},
     {"order": 3, "name": "Informática", "topics": 5, "subtopics": 11, "fragments_range": [25, 40], "microknowledges_range": [150, 250], "risk": "dynamic_software"},
     {"order": 4, "name": "Física", "topics": 9, "subtopics": 9, "fragments_range": [18, 30], "microknowledges_range": [120, 200], "risk": "editorial"},
@@ -100,7 +100,8 @@
     "source_ingestion_completed": true,
     "question_generation_authorized": true,
     "question_generation_scope": "noncritical_or_officially_reconciled_content_only",
-    "portuguese_pilot_status": "22_of_22_subtopics_initially_covered_draft_for_human_review",
+    "portuguese_pilot_status": "superseded_by_complete_22_subtopics_draft",
+    "portuguese_complete_status": "22_subtopics_176_microknowledges_528_questions_pending_human_review",
     "import_authorized": false,
     "publication_authorized": false,
     "entitlement_authorized": false,

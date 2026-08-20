@@ -85,3 +85,48 @@ test('primeira onda de Português cobre os 22 subtópicos sem declarar decomposi
   assert.equal(validation.valid, true, JSON.stringify(validation.errors));
   assert.equal(validation.coverage.subtopic_question_pct, 100);
 });
+
+test('mapa completo de Português fecha os 22 subtópicos com três questões por microconhecimento', async () => {
+  const file = 'production/portuguese-22-subtopics-complete.v1.json';
+  const raw = await readFile(path.join(root, file), 'utf8');
+  const course = JSON.parse(raw);
+  const subtopics = course.curriculum.nodes.filter(({ type }) => type === 'subtopic');
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  const microIds = new Set(course.microknowledges.map(({ id }) => id));
+
+  assert.equal(subtopics.length, 22);
+  assert.equal(course.edital_map.length, 22);
+  assert.equal(course.microknowledges.length, 176);
+  assert.equal(questions.length, 528);
+  assert.equal(course.metadata.coverage_status, 'complete_atomic_decomposition_draft_for_editorial_review');
+  assert.equal(course.metadata.editorial_status, 'draft_complete_pending_human_review');
+  assert.equal(course.metadata.publication_blocked, true);
+  assert.equal(course.metadata.import_blocked, true);
+  assert.equal(course.metadata.source_questions_copied, false);
+  assert.doesNotMatch(raw, /09880248457|thallysson/i);
+  assert.equal(new Set(questions.map(({ id }) => id)).size, questions.length);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, questions.length);
+
+  for (const subtopic of subtopics) {
+    const micros = course.microknowledges.filter(({ subtopic_id }) => subtopic_id === subtopic.id);
+    assert.equal(micros.length, 8, subtopic.title);
+  }
+  for (const micro of course.microknowledges) {
+    const linked = questions.filter(({ microknowledge_ids }) => microknowledge_ids.includes(micro.id));
+    assert.equal(linked.length, 3, micro.id);
+    assert.deepEqual(new Set(linked.map(({ difficulty }) => difficulty)), new Set(['facil', 'media', 'dificil']));
+    assert.equal(linked.filter(({ is_trick }) => is_trick).length, 1);
+    assert.ok(micro.traces.some(({ trace_status }) => trace_status === 'available'));
+  }
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 60));
+  assert.ok(questions.every(({ microknowledge_ids }) => microknowledge_ids.length === 1 && microIds.has(microknowledge_ids[0])));
+
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.counts.microknowledges, 176);
+  assert.equal(validation.counts.questions, 528);
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+  assert.equal(validation.coverage.subtopic_question_pct, 100);
+});

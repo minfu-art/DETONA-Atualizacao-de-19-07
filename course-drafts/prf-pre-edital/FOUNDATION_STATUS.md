@@ -31,4 +31,4 @@ O pacote `D:/CURSOS/PRF/` foi inventariado integralmente:
 
 A geração editorial de mapa e questões foi autorizada pelo usuário. A autorização é condicional: conteúdo normativo ou dinâmico só pode gerar lote definitivo após reconciliação com fonte oficial vigente.
 
-O primeiro piloto cobre Regência verbal/nominal e Crase, com 8 microconhecimentos e 24 questões autorais, ainda em revisão humana.
+O piloto de Regência e Crase foi sucedido pelo mapa completo de Língua Portuguesa: 22 subtópicos, 176 microconhecimentos e 528 questões autorais. O contrato técnico está validado, mas o lote continua em revisão humana, sem importação ou publicação.

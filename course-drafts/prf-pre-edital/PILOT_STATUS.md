@@ -24,9 +24,9 @@
 
 Nenhuma questão da apostila foi copiada. O material foi usado para decomposição didática e identificação do padrão de cobrança. O lote permanece como `draft_for_human_review`, com importação e publicação bloqueadas.
 
-## Próxima expansão
+## Expansão concluída
 
-Completar os microconhecimentos restantes de Regência e Crase e, após validar o método, seguir a ordem das aulas de Português até cobrir os 22 subtópicos canônicos da disciplina.
+O método do piloto foi expandido para os 22 subtópicos canônicos. O artefato completo está em `production/portuguese-22-subtopics-complete.v1.json`.
 
 ## Onda 1 - cobertura dos 22 subtópicos
 
@@ -39,4 +39,17 @@ A primeira expansão foi concluída como cobertura diagnóstica inicial:
 - contrato canônico validado;
 - importação e publicação ainda bloqueadas.
 
-Essa cobertura não equivale à decomposição atômica completa de Português. O próximo ciclo deve ampliar cada âncora até a faixa pedagógica prevista de 200 a 300 microconhecimentos.
+Essa onda permanece preservada como diagnóstico histórico. Ela foi sucedida pelo mapa completo abaixo.
+
+## Mapa completo dos 22 subtópicos
+
+- 22/22 subtópicos;
+- 176 microconhecimentos, oito por subtópico;
+- 528 questões autorais de Certo/Errado;
+- exatamente 3 questões por microconhecimento;
+- reconhecimento, aplicação e discriminação/pegadinha em todas as unidades;
+- 100% de cobertura de subtópicos e microconhecimentos no validador canônico;
+- 0 IDs órfãos ou duplicados e 0 enunciados duplicados;
+- importação e publicação bloqueadas até revisão humana.
+
+A estimativa preliminar de 200 a 300 unidades não era quota. A decomposição editorial fechou em 176 unidades distintas, evitando inflar o mapa com paráfrases do mesmo conhecimento.
