@@ -1,0 +1,1695 @@
+{
+  "schema_version": 1,
+  "contest_id": "pc_pe_2026",
+  "roles": [
+    {
+      "id": "pc_pe_2026_agente_policia",
+      "name": "Agente de Polícia",
+      "order": 0,
+      "disciplines": [
+        {
+          "id": "pc_pe_2026_agente_policia_d01_legislacao_estadua",
+          "name": "Legislação Estadual",
+          "order": 0,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d01_t01_constituicao_do_estado_d",
+              "name": "1. Constituição do Estado de Pernambuco",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d01_t01_s01_artigos_101_a_105_",
+                  "name": "Artigos 101 a 105-B",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d01_t02_lei_estadual_n_6_425_197",
+              "name": "2. Lei Estadual nº 6.425/1972",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d01_t02_s01_estatuto_do_polici",
+                  "name": "Estatuto do Policial Civil de Pernambuco",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d01_t03_lei_estadual_n_6_123_196",
+              "name": "3. Lei Estadual nº 6.123/1968",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d01_t03_s01_estatuto_dos_funci",
+                  "name": "Estatuto dos Funcionários Públicos Civis do Estado de Pernambuco",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d01_t04_lei_complementar_estadua",
+              "name": "4. Lei Complementar Estadual nº 137/2008",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d01_t04_s01_carreira_e_remuner",
+                  "name": "Carreira e remuneração dos policiais civis de Pernambuco",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d01_t05_lei_complementar_estadua",
+              "name": "5. Lei Complementar Estadual nº 317/2015",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d01_t05_s01_organizacao_e_regi",
+                  "name": "Organização e regime jurídico da Polícia Civil de Pernambuco",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d02_nocoes_direito_con",
+          "name": "Noções de Direito Constitucional",
+          "order": 1,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t01_constituicao_da_republic",
+              "name": "1. Constituição da República Federativa do Brasil de 1988",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t01_s01_principios_fundame",
+                  "name": "Princípios fundamentais",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t01_s02_poder_constituinte",
+                  "name": "Poder constituinte originário, derivado e decorrente",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t02_aplicabilidade_das_norma",
+              "name": "2. Aplicabilidade das normas constitucionais",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t02_s01_aplicabilidade_das",
+                  "name": "Aplicabilidade das normas constitucionais",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t03_direitos_e_garantias_fun",
+              "name": "3. Direitos e garantias fundamentais",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t03_s01_direitos_e_garanti",
+                  "name": "Direitos e garantias fundamentais",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t04_organizacao_politico_adm",
+              "name": "4. Organização político-administrativa do Estado",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t04_s01_estado_federal_bra",
+                  "name": "Estado federal brasileiro",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t04_s02_uniao_estados_dist",
+                  "name": "União, estados, Distrito Federal, municípios e territórios",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t05_administracao_publica",
+              "name": "5. Administração pública",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t05_s01_disposicoes_gerais",
+                  "name": "Disposições gerais",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t05_s02_servidores_publico",
+                  "name": "Servidores públicos",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t06_poder_executivo",
+              "name": "6. Poder Executivo",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t06_s01_poder_executivo",
+                  "name": "Poder Executivo",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t07_poder_legislativo",
+              "name": "7. Poder Legislativo",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t07_s01_poder_legislativo",
+                  "name": "Poder Legislativo",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t08_poder_judiciario",
+              "name": "8. Poder Judiciário",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t08_s01_poder_judiciario",
+                  "name": "Poder Judiciário",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d02_t09_funcoes_essenciais_a_jus",
+              "name": "9. Funções essenciais à Justiça e defesa do Estado",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t09_s01_ministerio_publico",
+                  "name": "Ministério Público",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t09_s02_advocacia_publica",
+                  "name": "Advocacia Pública",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t09_s03_defensoria_publica",
+                  "name": "Defensoria Pública",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t09_s04_defesa_do_estado_e",
+                  "name": "Defesa do Estado e das instituições democráticas",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d02_t09_s05_seguranca_publica_",
+                  "name": "Segurança pública na Constituição do Estado de Pernambuco",
+                  "order": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d03_nocoes_direito_adm",
+          "name": "Noções de Direito Administrativo",
+          "order": 2,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t01_estado_governo_e_adminis",
+              "name": "1. Estado, governo e administração pública",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t01_s01_estado_governo_e_a",
+                  "name": "Estado, governo e administração pública",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t02_direito_administrativo",
+              "name": "2. Direito administrativo",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t02_s01_direito_administra",
+                  "name": "Direito administrativo",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t03_ato_administrativo",
+              "name": "3. Ato administrativo",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t03_s01_ato_administrativo",
+                  "name": "Ato administrativo",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t04_poderes_da_administracao",
+              "name": "4. Poderes da administração pública",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t04_s01_poder_hierarquico",
+                  "name": "Poder hierárquico",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t04_s02_poder_disciplinar",
+                  "name": "Poder disciplinar",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t04_s03_poder_regulamentar",
+                  "name": "Poder regulamentar",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t04_s04_poder_de_policia",
+                  "name": "Poder de polícia",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t04_s05_uso_e_abuso_do_pod",
+                  "name": "Uso e abuso do poder",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t05_regime_juridico_administ",
+              "name": "5. Regime jurídico-administrativo",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t05_s01_conceito",
+                  "name": "Conceito",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t05_s02_principios_express",
+                  "name": "Princípios expressos e implícitos da administração pública",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t06_responsabilidade_civil_d",
+              "name": "6. Responsabilidade civil do Estado",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t06_s01_responsabilidade_c",
+                  "name": "Responsabilidade civil do Estado",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t07_servicos_publicos",
+              "name": "7. Serviços públicos",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t07_s01_servicos_publicos",
+                  "name": "Serviços públicos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t08_organizacao_administrati",
+              "name": "8. Organização administrativa",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t08_s01_centralizacao_e_de",
+                  "name": "Centralização e descentralização",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t08_s02_concentracao_e_des",
+                  "name": "Concentração e desconcentração",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t08_s03_administracao_dire",
+                  "name": "Administração direta e indireta",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t09_controle_da_administraca",
+              "name": "9. Controle da administração pública",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t09_s01_controle_administr",
+                  "name": "Controle administrativo",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t09_s02_controle_judicial",
+                  "name": "Controle judicial",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t09_s03_controle_legislati",
+                  "name": "Controle legislativo",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t09_s04_improbidade_admini",
+                  "name": "Improbidade administrativa",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t10_processo_administrativo",
+              "name": "10. Processo administrativo",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t10_s01_processo_administr",
+                  "name": "Processo administrativo",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t11_licitacoes_e_contratos_a",
+              "name": "11. Licitações e contratos administrativos",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t11_s01_licitacoes_e_contr",
+                  "name": "Licitações e contratos administrativos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t12_agentes_publicos",
+              "name": "12. Agentes públicos",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t12_s01_legislacao_pertine",
+                  "name": "Legislação pertinente",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t12_s02_disposicoes_consti",
+                  "name": "Disposições constitucionais aplicáveis",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d03_t13_cargo_emprego_e_funcao_p",
+              "name": "13. Cargo, emprego e função pública",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d03_t13_s01_cargo_emprego_e_fu",
+                  "name": "Cargo, emprego e função pública",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d04_nocoes_direito_pen",
+          "name": "Noções de Direito Penal",
+          "order": 3,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t01_principios_basicos_do_di",
+              "name": "1. Princípios básicos do Direito Penal",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t01_s01_principios_basicos",
+                  "name": "Princípios básicos do Direito Penal",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t02_crime_e_contravencao_pen",
+              "name": "2. Crime e contravenção penal",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t02_s01_crime_e_contravenc",
+                  "name": "Crime e contravenção penal",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t03_aplicacao_da_lei_penal",
+              "name": "3. Aplicação da lei penal",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s01_lei_penal_no_tempo",
+                  "name": "Lei penal no tempo e no espaço",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s02_tempo_e_lugar_do_c",
+                  "name": "Tempo e lugar do crime",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s03_lei_penal_excepcio",
+                  "name": "Lei penal excepcional, especial e temporária",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s04_territorialidade_e",
+                  "name": "Territorialidade e extraterritorialidade",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s05_contagem_de_prazo",
+                  "name": "Contagem de prazo",
+                  "order": 4
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t03_s06_irretroatividade_d",
+                  "name": "Irretroatividade da lei penal",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t04_crimes_contra_a_pessoa",
+              "name": "4. Crimes contra a pessoa",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t04_s01_crimes_contra_a_pe",
+                  "name": "Crimes contra a pessoa",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t05_crimes_contra_o_patrimon",
+              "name": "5. Crimes contra o patrimônio",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t05_s01_crimes_contra_o_pa",
+                  "name": "Crimes contra o patrimônio",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t06_crimes_contra_a_dignidad",
+              "name": "6. Crimes contra a dignidade sexual",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t06_s01_crimes_contra_a_di",
+                  "name": "Crimes contra a dignidade sexual",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t07_crimes_contra_a_administ",
+              "name": "7. Crimes contra a administração pública",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t07_s01_crimes_contra_a_ad",
+                  "name": "Crimes contra a administração pública",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t08_crimes_hediondos",
+              "name": "8. Crimes hediondos",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t08_s01_lei_n_8_072_1990",
+                  "name": "Lei nº 8.072/1990",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t09_crimes_resultantes_de_pr",
+              "name": "9. Crimes resultantes de preconceito de raça ou de cor",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t09_s01_lei_n_7_716_1989",
+                  "name": "Lei nº 7.716/1989",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t10_crimes_de_abuso_de_autor",
+              "name": "10. Crimes de abuso de autoridade",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t10_s01_lei_n_13_869_2019",
+                  "name": "Lei nº 13.869/2019",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t11_crimes_de_tortura",
+              "name": "11. Crimes de tortura",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t11_s01_lei_n_9_455_1997",
+                  "name": "Lei nº 9.455/1997",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t12_estatuto_da_crianca_e_do",
+              "name": "12. Estatuto da Criança e do Adolescente",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t12_s01_lei_n_8_069_1990",
+                  "name": "Lei nº 8.069/1990",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t13_organizacoes_criminosas",
+              "name": "13. Organizações criminosas",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t13_s01_lei_n_12_850_2013",
+                  "name": "Lei nº 12.850/2013",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t14_crimes_de_transito",
+              "name": "14. Crimes de trânsito",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t14_s01_lei_n_9_503_1997",
+                  "name": "Lei nº 9.503/1997",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t15_violencia_domestica_e_fa",
+              "name": "15. Violência doméstica e familiar contra a mulher",
+              "order": 14,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t15_s01_lei_n_11_340_2006",
+                  "name": "Lei nº 11.340/2006",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t16_lei_de_drogas",
+              "name": "16. Lei de Drogas",
+              "order": 15,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t16_s01_lei_n_11_343_2006",
+                  "name": "Lei nº 11.343/2006",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t17_violencia_domestica_e_fa",
+              "name": "17. Violência doméstica e familiar contra a criança e o adolescente",
+              "order": 16,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t17_s01_lei_n_14_344_2022",
+                  "name": "Lei nº 14.344/2022",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t18_crimes_ambientais",
+              "name": "18. Crimes ambientais",
+              "order": 17,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t18_s01_lei_n_9_605_1998",
+                  "name": "Lei nº 9.605/1998",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t19_estatuto_do_desarmamento",
+              "name": "19. Estatuto do Desarmamento",
+              "order": 18,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t19_s01_lei_n_10_826_2003",
+                  "name": "Lei nº 10.826/2003",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d04_t20_disposicoes_constitucion",
+              "name": "20. Disposições constitucionais aplicáveis ao Direito Penal",
+              "order": 19,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d04_t20_s01_disposicoes_consti",
+                  "name": "Disposições constitucionais aplicáveis ao Direito Penal",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d05_nocoes_direito_pro",
+          "name": "Noções de Direito Processual Penal",
+          "order": 4,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t01_aplicacao_da_lei_process",
+              "name": "1. Aplicação da lei processual penal",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t01_s01_lei_processual_no_",
+                  "name": "Lei processual no tempo",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t01_s02_lei_processual_no_",
+                  "name": "Lei processual no espaço",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t01_s03_lei_processual_em_",
+                  "name": "Lei processual em relação às pessoas",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t01_s04_disposicoes_prelim",
+                  "name": "Disposições preliminares do Código de Processo Penal",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t02_inquerito_policial",
+              "name": "2. Inquérito policial",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t02_s01_inquerito_policial",
+                  "name": "Inquérito policial",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t03_prova",
+              "name": "3. Prova",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s01_exame_de_corpo_de_",
+                  "name": "Exame de corpo de delito e perícias em geral",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s02_interrogatorio_do_",
+                  "name": "Interrogatório do acusado",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s03_confissao_e_declar",
+                  "name": "Confissão e declarações do ofendido",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s04_testemunhas",
+                  "name": "Testemunhas",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s05_reconhecimento_de_",
+                  "name": "Reconhecimento de pessoas e coisas",
+                  "order": 4
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s06_acareacao",
+                  "name": "Acareação",
+                  "order": 5
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s07_documentos_e_indic",
+                  "name": "Documentos e indícios",
+                  "order": 6
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t03_s08_busca_e_apreensao",
+                  "name": "Busca e apreensão",
+                  "order": 7
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t04_prisao_e_liberdade_provi",
+              "name": "4. Prisão e liberdade provisória",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t04_s01_prisao_e_liberdade",
+                  "name": "Prisão e liberdade provisória",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t05_medidas_cautelares_diver",
+              "name": "5. Medidas cautelares diversas da prisão",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t05_s01_medidas_cautelares",
+                  "name": "Medidas cautelares diversas da prisão",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t06_prisao_temporaria",
+              "name": "6. Prisão temporária",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t06_s01_lei_n_7_960_1989",
+                  "name": "Lei nº 7.960/1989",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t07_juizados_especiais_crimi",
+              "name": "7. Juizados Especiais Criminais",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t07_s01_lei_n_9_099_1995",
+                  "name": "Lei nº 9.099/1995",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t08_investigacao_criminal",
+              "name": "8. Investigação criminal",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t08_s01_lei_n_12_830_2013",
+                  "name": "Lei nº 12.830/2013",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d05_t09_disposicoes_constitucion",
+              "name": "9. Disposições constitucionais aplicáveis ao Direito Processual Penal",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d05_t09_s01_disposicoes_consti",
+                  "name": "Disposições constitucionais aplicáveis ao Direito Processual Penal",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d06_lingua_portuguesa",
+          "name": "Língua Portuguesa",
+          "order": 5,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t01_compreensao_e_interpreta",
+              "name": "1. Compreensão e interpretação de textos de gêneros variados",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t01_s01_compreensao_e_inte",
+                  "name": "Compreensão e interpretação de textos de gêneros variados",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t02_tipos_e_generos_textuais",
+              "name": "2. Tipos e gêneros textuais",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t02_s01_tipos_e_generos_te",
+                  "name": "Tipos e gêneros textuais",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t03_ortografia_oficial",
+              "name": "3. Ortografia oficial",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t03_s01_ortografia_oficial",
+                  "name": "Ortografia oficial",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t04_mecanismos_de_coesao_tex",
+              "name": "4. Mecanismos de coesão textual",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t04_s01_referenciacao_subs",
+                  "name": "Referenciação, substituição e repetição",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t04_s02_conectores_e_seque",
+                  "name": "Conectores e sequenciação textual",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t04_s03_emprego_de_tempos_",
+                  "name": "Emprego de tempos e modos verbais",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t05_estrutura_morfossintatic",
+              "name": "5. Estrutura morfossintática do período",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s01_classes_de_palavra",
+                  "name": "Classes de palavras",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s02_coordenacao_entre_",
+                  "name": "Coordenação entre orações e termos",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s03_subordinacao_entre",
+                  "name": "Subordinação entre orações e termos",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s04_pontuacao",
+                  "name": "Pontuação",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s05_concordancia_verba",
+                  "name": "Concordância verbal e nominal",
+                  "order": 4
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s06_regencia_verbal_e_",
+                  "name": "Regência verbal e nominal",
+                  "order": 5
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s07_crase",
+                  "name": "Crase",
+                  "order": 6
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t05_s08_colocacao_dos_pron",
+                  "name": "Colocação dos pronomes átonos",
+                  "order": 7
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t06_reescrita_de_frases_e_pa",
+              "name": "6. Reescrita de frases e parágrafos",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t06_s01_significacao_das_p",
+                  "name": "Significação das palavras",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t06_s02_substituicao_de_pa",
+                  "name": "Substituição de palavras ou trechos",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t06_s03_reorganizacao_de_o",
+                  "name": "Reorganização de orações e períodos",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t06_s04_reescrita_em_difer",
+                  "name": "Reescrita em diferentes gêneros e níveis de formalidade",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d06_t07_correspondencia_oficial",
+              "name": "7. Correspondência oficial",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t07_s01_aspectos_gerais_da",
+                  "name": "Aspectos gerais da redação oficial",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t07_s02_finalidade_dos_exp",
+                  "name": "Finalidade dos expedientes oficiais",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t07_s03_adequacao_da_lingu",
+                  "name": "Adequação da linguagem ao documento",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d06_t07_s04_adequacao_do_forma",
+                  "name": "Adequação do formato ao gênero",
+                  "order": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d07_informatica",
+          "name": "Informática",
+          "order": 6,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d07_t01_sistema_operacional_wind",
+              "name": "1. Sistema operacional Windows e aplicativos de escritório",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s01_fundamentos_e_inte",
+                  "name": "Fundamentos e interface do Windows",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s02_pastas_e_arquivos",
+                  "name": "Pastas e arquivos",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s03_configuracoes_basi",
+                  "name": "Configurações básicas e Windows Explorer",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s04_microsoft_word",
+                  "name": "Microsoft Word",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s05_microsoft_excel",
+                  "name": "Microsoft Excel",
+                  "order": 4
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t01_s06_microsoft_powerpoi",
+                  "name": "Microsoft PowerPoint",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d07_t02_redes_de_computadores_e_",
+              "name": "2. Redes de computadores e Internet",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s01_internet_e_intrane",
+                  "name": "Internet e intranet",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s02_grupos_de_discussa",
+                  "name": "Grupos de discussão e redes sociais",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s03_computacao_em_nuve",
+                  "name": "Computação em nuvem",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s04_navegadores",
+                  "name": "Navegadores",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s05_deep_web_e_dark_we",
+                  "name": "Deep Web e Dark Web",
+                  "order": 4
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s06_correio_eletronico",
+                  "name": "Correio eletrônico",
+                  "order": 5
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s07_busca_e_pesquisa_n",
+                  "name": "Busca e pesquisa na Internet",
+                  "order": 6
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s08_seguranca_da_infor",
+                  "name": "Segurança da informação, malware, antivírus e criptografia",
+                  "order": 7
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d07_t02_s09_backup_e_armazenam",
+                  "name": "Backup e armazenamento em nuvem",
+                  "order": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d08_raciocinio_logico",
+          "name": "Raciocínio Lógico",
+          "order": 7,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t01_conjuntos_numericos",
+              "name": "1. Conjuntos numéricos",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t01_s01_numeros_inteiros_r",
+                  "name": "Números inteiros, racionais e reais",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t02_sistema_legal_de_medidas",
+              "name": "2. Sistema legal de medidas",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t02_s01_sistema_legal_de_m",
+                  "name": "Sistema legal de medidas",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t03_razoes_proporcoes_e_porc",
+              "name": "3. Razões, proporções e porcentagens",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t03_s01_divisao_proporcion",
+                  "name": "Divisão proporcional",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t03_s02_regras_de_tres_sim",
+                  "name": "Regras de três simples e compostas",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t03_s03_porcentagens",
+                  "name": "Porcentagens",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t04_equacoes_e_inequacoes_de",
+              "name": "4. Equações e inequações de primeiro e segundo graus",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t04_s01_equacoes_e_inequac",
+                  "name": "Equações e inequações de primeiro e segundo graus",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t05_sistemas_lineares",
+              "name": "5. Sistemas lineares",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t05_s01_sistemas_lineares",
+                  "name": "Sistemas lineares",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t06_funcoes_e_graficos",
+              "name": "6. Funções e gráficos",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t06_s01_funcoes_e_graficos",
+                  "name": "Funções e gráficos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t07_principios_de_contagem",
+              "name": "7. Princípios de contagem",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t07_s01_principios_de_cont",
+                  "name": "Princípios de contagem",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t08_progressoes_aritmeticas_",
+              "name": "8. Progressões aritméticas e geométricas",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t08_s01_progressoes_aritme",
+                  "name": "Progressões aritméticas e geométricas",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t09_estruturas_logicas",
+              "name": "9. Estruturas lógicas",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t09_s01_estruturas_logicas",
+                  "name": "Estruturas lógicas",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t10_logica_de_argumentacao",
+              "name": "10. Lógica de argumentação",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t10_s01_analogias",
+                  "name": "Analogias",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t10_s02_inferencias",
+                  "name": "Inferências",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t10_s03_deducoes_e_conclus",
+                  "name": "Deduções e conclusões",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t11_logica_sentencial_ou_pro",
+              "name": "11. Lógica sentencial ou proposicional",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t11_s01_proposicoes_simple",
+                  "name": "Proposições simples e compostas",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t11_s02_tabelas_verdade",
+                  "name": "Tabelas-verdade",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t11_s03_equivalencias",
+                  "name": "Equivalências",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t11_s04_leis_de_morgan",
+                  "name": "Leis de Morgan",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t11_s05_diagramas_logicos",
+                  "name": "Diagramas lógicos",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t12_logica_de_primeira_ordem",
+              "name": "12. Lógica de primeira ordem",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t12_s01_logica_de_primeira",
+                  "name": "Lógica de primeira ordem",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t13_probabilidade",
+              "name": "13. Probabilidade",
+              "order": 12,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t13_s01_probabilidade",
+                  "name": "Probabilidade",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t14_operacoes_com_conjuntos",
+              "name": "14. Operações com conjuntos",
+              "order": 13,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t14_s01_operacoes_com_conj",
+                  "name": "Operações com conjuntos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d08_t15_problemas_aritmeticos_ge",
+              "name": "15. Problemas aritméticos, geométricos e matriciais",
+              "order": 14,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d08_t15_s01_problemas_aritmeti",
+                  "name": "Problemas aritméticos, geométricos e matriciais",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d09_contabilidade_gera",
+          "name": "Contabilidade Geral",
+          "order": 8,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t01_conceitos_objetivos_e_fi",
+              "name": "1. Conceitos, objetivos e finalidades da contabilidade",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t01_s01_conceitos_objetivo",
+                  "name": "Conceitos, objetivos e finalidades da contabilidade",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t02_patrimonio",
+              "name": "2. Patrimônio",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t02_s01_componentes_patrim",
+                  "name": "Componentes patrimoniais",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t02_s02_equacao_fundamenta",
+                  "name": "Equação fundamental",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t02_s03_situacao_liquida",
+                  "name": "Situação líquida",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t02_s04_representacao_graf",
+                  "name": "Representação gráfica",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t03_atos_e_fatos_administrat",
+              "name": "3. Atos e fatos administrativos",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t03_s01_fatos_permutativos",
+                  "name": "Fatos permutativos",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t03_s02_fatos_modificativo",
+                  "name": "Fatos modificativos",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t03_s03_fatos_mistos",
+                  "name": "Fatos mistos",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t04_contas",
+              "name": "4. Contas",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t04_s01_conceitos",
+                  "name": "Conceitos",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t04_s02_debitos_creditos_e",
+                  "name": "Débitos, créditos e saldos",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t05_plano_de_contas",
+              "name": "5. Plano de contas",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t05_s01_conceito_e_elenco_",
+                  "name": "Conceito e elenco de contas",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t05_s02_funcao_e_funcionam",
+                  "name": "Função e funcionamento das contas",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t06_escrituracao",
+              "name": "6. Escrituração",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t06_s01_lancamentos_e_elem",
+                  "name": "Lançamentos e elementos essenciais",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t06_s02_formulas_de_lancam",
+                  "name": "Fórmulas de lançamentos",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t06_s03_livros_de_escritur",
+                  "name": "Livros de escrituração",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t06_s04_metodos_e_processo",
+                  "name": "Métodos e processos",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t06_s05_regime_de_competen",
+                  "name": "Regime de competência e regime de caixa",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t07_operacoes_contabeis_dive",
+              "name": "7. Operações contábeis diversas",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t07_s01_juros_descontos_e_",
+                  "name": "Juros, descontos e tributos",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t07_s02_alugueis_e_variaco",
+                  "name": "Aluguéis e variações monetária e cambial",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t07_s03_folha_de_pagamento",
+                  "name": "Folha de pagamento",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t07_s04_compras_vendas_e_p",
+                  "name": "Compras, vendas e provisões",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t07_s05_depreciacoes_e_bai",
+                  "name": "Depreciações e baixa de bens",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t08_balancete_de_verificacao",
+              "name": "8. Balancete de verificação",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t08_s01_conceitos_modelos_",
+                  "name": "Conceitos, modelos e elaboração",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t09_balanco_patrimonial",
+              "name": "9. Balanço patrimonial",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t09_s01_conceito_objetivo_",
+                  "name": "Conceito, objetivo e composição",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t10_demonstracao_do_resultad",
+              "name": "10. Demonstração do resultado do exercício",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t10_s01_conceito_objetivo_",
+                  "name": "Conceito, objetivo e composição",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d09_t11_normas_brasileiras_de_co",
+              "name": "11. Normas Brasileiras de Contabilidade",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d09_t11_s01_normas_brasileiras",
+                  "name": "Normas Brasileiras de Contabilidade",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d10_estatistica",
+          "name": "Estatística",
+          "order": 9,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d10_t01_estatistica_descritiva_e",
+              "name": "1. Estatística descritiva e análise exploratória de dados",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t01_s01_graficos_diagramas",
+                  "name": "Gráficos, diagramas e tabelas",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t01_s02_medidas_de_posicao",
+                  "name": "Medidas de posição",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t01_s03_medidas_de_dispers",
+                  "name": "Medidas de dispersão",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t01_s04_assimetria_e_curto",
+                  "name": "Assimetria e curtose",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d10_t02_probabilidade",
+              "name": "2. Probabilidade",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t02_s01_definicoes_basicas",
+                  "name": "Definições básicas e axiomas",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t02_s02_probabilidade_cond",
+                  "name": "Probabilidade condicional",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t02_s03_independencia",
+                  "name": "Independência",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "pc_pe_2026_agente_policia_d10_t03_tecnicas_de_amostragem",
+              "name": "3. Técnicas de amostragem",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t03_s01_amostragem_aleator",
+                  "name": "Amostragem aleatória simples",
+                  "order": 0
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t03_s02_amostragem_estrati",
+                  "name": "Amostragem estratificada",
+                  "order": 1
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t03_s03_amostragem_sistema",
+                  "name": "Amostragem sistemática",
+                  "order": 2
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t03_s04_amostragem_por_con",
+                  "name": "Amostragem por conglomerados",
+                  "order": 3
+                },
+                {
+                  "id": "pc_pe_2026_agente_policia_d10_t03_s05_tamanho_amostral",
+                  "name": "Tamanho amostral",
+                  "order": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pc_pe_2026_agente_policia_d11_atualidades",
+          "name": "Atualidades",
+          "order": 10,
+          "topics": [
+            {
+              "id": "pc_pe_2026_agente_policia_d11_t01_seguranca_publica_na_atu",
+              "name": "1. Segurança pública na atualidade",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "pc_pe_2026_agente_policia_d11_t01_s01_topicos_relevantes",
+                  "name": "Tópicos relevantes e atuais para a prova discursiva",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

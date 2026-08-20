@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "contest_id": "pc_pe_2026",
+  "baseline_status": "pre_edital",
+  "sources": [
+    {
+      "source_id": "pc_pe_2023_edital_abertura",
+      "source_type": "official_edital",
+      "title": "Edital nº 1 — PCPE, de 21 de dezembro de 2023",
+      "publisher": "SAD/PE, SDS/PE, PCPE e Cebraspe",
+      "url": "https://cdn.cebraspe.org.br/concursos/PC_PE_23/arquivos/ED_1_2023_PC_PE_ABERTURA.PDF",
+      "location": "Item 21.2, páginas 59 a 61 do PDF",
+      "used_for": "Baseline do conteúdo programático de Agente de Polícia",
+      "authority": "official"
+    },
+    {
+      "source_id": "pc_pe_2026_autorizacao_reportada",
+      "source_type": "official_announcement_report",
+      "title": "Novo concurso PC PE autorizado com 1.315 vagas",
+      "publisher": "Folha Dirigida / Qconcursos",
+      "url": "https://folha.qconcursos.com/n/concurso-pc-pe-2026-autorizado",
+      "used_for": "Registro do anúncio de 1.200 vagas para Agente, 70 para Escrivão e 45 para Delegado",
+      "authority": "secondary_pending_primary_record"
+    }
+  ]
+}

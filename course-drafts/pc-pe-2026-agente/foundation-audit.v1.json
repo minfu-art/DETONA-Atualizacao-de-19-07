@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "contest_id": "pc_pe_2026",
+  "generated_at": "2026-08-20T05:18:30.620Z",
+  "status": "foundation_ready_pre_edital",
+  "counts": {
+    "roles": 1,
+    "disciplines": 11,
+    "topics": 95,
+    "subtopics": 188
+  },
+  "canonical_ids": {
+    "contest_id": "pc_pe_2026",
+    "position_id": "pc_pe_2026_agente_policia",
+    "offering_id": "pc_pe_2026_agente",
+    "convention": "pc_pe_2026_ids_v1.0.0"
+  },
+  "safeguards": {
+    "import_authorized": false,
+    "publication_authorized": false,
+    "entitlement_authorized": false,
+    "payment_changes_authorized": false
+  },
+  "pending": [
+    "Reconciliar o currículo com o novo edital oficial quando publicado.",
+    "Decompor subtópicos em microconhecimentos antes da geração do banco inteligente.",
+    "Adicionar apostilas e registrar rastreabilidade por página.",
+    "Validar banca, distribuição de questões, datas e regras do novo certame."
+  ]
+}
