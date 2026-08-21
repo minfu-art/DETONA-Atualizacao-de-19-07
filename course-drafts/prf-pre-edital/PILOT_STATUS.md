@@ -520,3 +520,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-35.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_35_pending_human_review`.
+
+## Lote editorial 36 - continuidade de Pontuação
+
+- fonte: Aula 08;
+- matriz de referência: questões comentadas de vírgula 21 a 40, páginas 60 a 73;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: pares correlatos, limite entre períodos, conectores deslocados, vírgula antes de `e`, reduzidas dependentes, zeugma, enumeração, relativas, escopo e ligações sintáticas;
+- pacote: `production/portuguese-editorial-batch-36.v1.json`;
+- matriz: `sources/portuguese-aula08-comma-continuation-editorial-matrix-batch-36.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-36.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_36_pending_human_review`.
