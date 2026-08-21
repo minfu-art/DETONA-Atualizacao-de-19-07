@@ -179,3 +179,30 @@ test('lote editorial 02 possui matriz segura e preview obrigatório com 20 quest
   assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
   assert.doesNotMatch(`${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
 });
+
+test('lote editorial 03 fecha matriz, pacote e preview das questões 41-60', async () => {
+  const [raw, matrixRaw, preview] = await Promise.all([
+    readFile(path.join(root, 'production/portuguese-editorial-batch-03.v1.json'), 'utf8'),
+    readFile(path.join(root, 'sources/portuguese-aula13-editorial-matrix-batch-03.v1.json'), 'utf8'),
+    readFile(path.join(root, 'previews/portuguese-editorial-batch-03.preview.md'), 'utf8'),
+  ]);
+  const course = JSON.parse(raw);
+  const matrix = JSON.parse(matrixRaw);
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  assert.deepEqual(matrix.source_question_range, [41, 60]);
+  assert.deepEqual(matrix.source_pages, [155, 174]);
+  assert.equal(matrix.items.length, 20);
+  assert.equal(course.microknowledges.length, 10);
+  assert.equal(questions.length, 20);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, 20);
+  assert.deepEqual(new Set(questions.map(({ correct_answer }) => correct_answer)), new Set(['C', 'E']));
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 150));
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(`${raw}\n${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});
