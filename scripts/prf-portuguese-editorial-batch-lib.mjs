@@ -13,7 +13,6 @@ export async function buildPortugueseEditorialBatch(config) {
   const discipline = curriculum.roles[0].disciplines.find(({ name }) => name === 'Língua Portuguesa');
   const subtopic = discipline.topics.flatMap(({ subtopics }) => subtopics).find(({ name }) => name === config.subtopic);
   const topic = discipline.topics.find(({ subtopics }) => subtopics.some(({ id }) => id === subtopic.id));
-  const selectedNodeIds = new Set([curriculum.roles[0].id, discipline.id, topic.id, subtopic.id]);
   const source = ingestion.sources.find(({ source_id }) => source_id === config.sourceId);
   const baseTrace = [...base.curriculum.nodes[0].traces, {
     source_id: source.source_id, trace_status: 'available', page_number: config.pages[0],
@@ -37,9 +36,18 @@ export async function buildPortugueseEditorialBatch(config) {
     is_trick: answer === 'E', traces: baseTrace,
   }));
   if (matrix.length !== 20 || questions.length !== 20) throw new Error('Cada ciclo deve conter exatamente 20 matrizes e 20 questões.');
+  const curriculumNodes = [
+    { source: curriculum.roles[0], parent_id: null, type: 'role' },
+    { source: discipline, parent_id: curriculum.roles[0].id, type: 'discipline' },
+    { source: topic, parent_id: discipline.id, type: 'topic' },
+    { source: subtopic, parent_id: topic.id, type: 'subtopic' },
+  ].map(({ source: node, parent_id, type }) => ({
+    id: node.id, parent_id, type, title: node.name, description: node.description ?? '',
+    order: node.order, confidence: 1, traces: baseTrace,
+  }));
   const payload = {
     ...base, operation_id: `prf-2026-portugues-editorial-batch-${String(config.batch).padStart(2,'0')}-v1`,
-    curriculum: { nodes: base.curriculum.nodes.filter(({ id }) => selectedNodeIds.has(id)) },
+    curriculum: { nodes: curriculumNodes },
     microknowledges: [...microByKey.values()],
     edital_map: [{
       id: `map_${subtopic.id}_${config.slug}`, subtopic_id: subtopic.id, scope: config.scope,

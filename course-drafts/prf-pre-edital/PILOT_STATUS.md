@@ -143,3 +143,15 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-08.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-08.preview.md`;
 - estado: `batch_08_pending_human_review`.
+
+## Lote editorial 09 - Tipos e gêneros textuais
+
+- matriz de referência: 20 questões únicas das páginas 51 a 73 da Aula 13;
+- questões repetidas entre as seções temáticas foram deduplicadas;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: narração, descrição, injunção, exposição, argumentação, tese, foco narrativo e gênero;
+- pacote: `production/portuguese-editorial-batch-09.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-09.preview.md`;
+- estado: `batch_09_pending_human_review`.
