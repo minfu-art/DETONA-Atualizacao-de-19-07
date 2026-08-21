@@ -477,3 +477,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-32.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_32_pending_human_review`.
+
+## Lote editorial 33 - Subordinação, reduzidas e palavra QUE
+
+- fonte: Aula 07;
+- matriz de referência: questões 11 a 16 das adverbiais, páginas 60 a 62; quatro questões de orações reduzidas, páginas 63 a 65; três de paralelismo, páginas 66 a 68; sete primeiras questões da palavra `que`, páginas 69 a 72;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: consecutivas, condicionais, reduzidas temporais e causais, sujeito oracional, finalidade, paralelismo, regência, relativo, integrante e expressão expletiva;
+- pacote: `production/portuguese-editorial-batch-33.v1.json`;
+- matriz: `sources/portuguese-aula07-final-subordination-editorial-matrix-batch-33.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-33.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_33_pending_human_review`.
