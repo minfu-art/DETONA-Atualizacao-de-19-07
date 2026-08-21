@@ -248,3 +248,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula11-editorial-matrix-batch-16.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-16.preview.md`;
 - estado: `batch_16_pending_human_review`.
+
+## Lote editorial 17 - Referenciação, substituição e repetição
+
+- fonte: Aula 11;
+- matriz de referência: questões comentadas 42 a 52, páginas 54 a 58;
+- 11 questões-fonte decompostas em 20 operações referenciais atômicas;
+- item 53 reservado para conectores por cobrar relação explicativa;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: demonstrativos anafóricos, oblíquos, hiperônimos, possessivos, elipse nominal e relativos;
+- pacote: `production/portuguese-editorial-batch-17.v1.json`;
+- matriz: `sources/portuguese-aula11-editorial-matrix-batch-17.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-17.preview.md`;
+- estado: `batch_17_pending_human_review`.
