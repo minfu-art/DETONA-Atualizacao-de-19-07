@@ -13,27 +13,26 @@ export async function buildPortugueseEditorialBatch(config) {
   const discipline = curriculum.roles[0].disciplines.find(({ name }) => name === 'Língua Portuguesa');
   const subtopic = discipline.topics.flatMap(({ subtopics }) => subtopics).find(({ name }) => name === config.subtopic);
   const topic = discipline.topics.find(({ subtopics }) => subtopics.some(({ id }) => id === subtopic.id));
-  const source = ingestion.sources.find(({ source_id }) => source_id === config.sourceId);
+  const sourceIds = config.sourceIds ?? [config.sourceId];
+  const sources = sourceIds.map((sourceId) => ingestion.sources.find(({ source_id }) => source_id === sourceId));
+  if (sources.some((source) => !source)) throw new Error('Fonte editorial não encontrada no relatório de ingestão.');
+  const source = sources[0];
   const matrixStem = config.matrixStem ?? 'portuguese-aula13-editorial-matrix';
-  const baseTrace = [...base.curriculum.nodes[0].traces, {
-    source_id: source.source_id, trace_status: 'available', page_number: config.pages[0],
-    excerpt: `Matriz agregada das questões ${config.range[0]}-${config.range[1]}, páginas ${config.pages[0]}-${config.pages[1]}: padrões cognitivos sem cópia textual`,
-  }];
-  const matrix = config.matrix.map(([source_question_number,page,exam,skill,cognitive_operation,trap]) => ({
-    source_question_number, page, exam, skill, cognitive_operation, trap,
+  const baseTrace = [...base.curriculum.nodes[0].traces, ...sources.map((item, index) => ({
+    source_id: item.source_id, trace_status: 'available', page_number: config.sourcePages?.[item.source_id]?.[0] ?? config.pages[0],
+    excerpt: `Matriz editorial ${index + 1}/${sources.length}: padrões cognitivos sem cópia textual`,
+  }))];
+  const matrix = config.matrix.map(([source_question_number,page,exam,skill,cognitive_operation,trap,itemSourceId = source.source_id]) => ({
+    source_id: itemSourceId, source_question_number, page, exam, skill, cognitive_operation, trap,
     source_text_stored: false, source_statement_stored: false, commercial_copy_authorized: false,
   }));
-  const packageSources = base.sources.some(({ id }) => id === source.source_id) ? base.sources : [...base.sources, {
-    id: source.source_id,
-    source_type: 'complementary',
-    category: 'material_curso',
-    title: source.title || source.file_name,
-    file_name: source.file_name,
-    page_count: source.page_count,
-    availability: 'reference_only',
-    url: '',
-    sha256: source.sha256,
-  }];
+  if (matrix.some(({ source_id }) => !sourceIds.includes(source_id))) {
+    throw new Error('Item da matriz referencia fonte não declarada no lote editorial.');
+  }
+  const packageSources = sources.reduce((acc, item) => acc.some(({ id }) => id === item.source_id) ? acc : [...acc, {
+    id: item.source_id, source_type: 'complementary', category: 'material_curso', title: item.title || item.file_name,
+    file_name: item.file_name, page_count: item.page_count, availability: 'reference_only', url: '', sha256: item.sha256,
+  }], base.sources);
   const microByKey = new Map(config.microDefinitions.map(([key,title], index) => [key, {
     id: `prf_d01_${config.slug}_mk_${String(index + 1).padStart(2,'0')}`,
     subtopic_id: subtopic.id, title, scope_origin: 'official', confidence: 0.97, traces: baseTrace,
@@ -82,6 +81,7 @@ export async function buildPortugueseEditorialBatch(config) {
   await writeFile(path.join(root, 'production', `portuguese-editorial-batch-${batchNumber}.v1.json`), `${JSON.stringify(payload,null,2)}\n`, 'utf8');
   await writeFile(path.join(root, 'sources', `${matrixStem}-batch-${batchNumber}.v1.json`), `${JSON.stringify({
     schema_version: 'detona_editorial_source_matrix_v1', source_id: source.source_id, source_file: source.file_name,
+    sources: sources.map(({ source_id, file_name }) => ({ source_id, source_file: file_name, source_pages: config.sourcePages?.[source_id] })),
     source_pages: config.pages, source_question_range: config.range, purpose: 'internal_pattern_analysis_for_authorial_question_creation',
     copyright_safety: { source_text_stored: false, source_statements_stored: false, source_answers_stored: false }, items: matrix,
   },null,2)}\n`, 'utf8');

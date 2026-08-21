@@ -434,3 +434,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-29.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_29_pending_human_review`.
+
+## Lote editorial 30 - fechamento de Advérbios e Preposições
+
+- fontes: Aula 01 e Aula 02, com rastreabilidade individual em cada item da matriz;
+- matriz de referência: quatro questões finais de advérbio e uma de palavras especiais, páginas 106 a 108 da Aula 01; primeiras 15 questões comentadas de preposição, páginas 42 a 48 da Aula 02;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: reformulação, escopo da negação, distinção advérbio/adjetivo, expressão expletiva, contrações, regência e valores semânticos das preposições;
+- pacote: `production/portuguese-editorial-batch-30.v1.json`;
+- matriz: `sources/portuguese-aula01-aula02-adverbs-prepositions-editorial-matrix-batch-30.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-30.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_30_pending_human_review`.
