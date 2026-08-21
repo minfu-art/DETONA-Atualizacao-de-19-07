@@ -534,3 +534,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-36.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_36_pending_human_review`.
+
+## Lote editorial 37 - fechamento do ciclo principal de vírgula
+
+- fonte: Aula 08;
+- matriz de referência: questões comentadas de vírgula 41 a 60, páginas 73 a 86;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: locuções, pares completos, deslocamento, escopo, orações antecipadas, explicação, enumeração, interjeição, adversativas e ligações sintáticas;
+- pacote: `production/portuguese-editorial-batch-37.v1.json`;
+- matriz: `sources/portuguese-aula08-comma-final-editorial-matrix-batch-37.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-37.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_37_pending_human_review`.
