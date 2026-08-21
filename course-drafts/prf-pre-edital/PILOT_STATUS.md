@@ -462,3 +462,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-31.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_31_pending_human_review`.
+
+## Lote editorial 32 - início de Subordinação
+
+- fonte: Aula 07;
+- matriz de referência: primeiras 20 questões comentadas de subordinação, páginas 50 a 60 — duas substantivas, oito adjetivas e dez adverbiais;
+- a seção de orações reduzidas, iniciada na página 63, não foi antecipada;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: sujeito e objeto oracionais, relativo versus integrante, restrição e explicação, desenvolvimento de reduzidas, comparação, proporção, concessão, finalidade, tempo, condição e consequência;
+- pacote: `production/portuguese-editorial-batch-32.v1.json`;
+- matriz: `sources/portuguese-aula07-subordination-editorial-matrix-batch-32.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-32.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_32_pending_human_review`.
