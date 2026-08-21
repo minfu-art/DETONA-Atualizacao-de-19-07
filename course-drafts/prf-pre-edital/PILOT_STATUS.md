@@ -506,3 +506,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-34.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_34_pending_human_review`.
+
+## Lote editorial 35 - início de Pontuação
+
+- fonte: Aula 08;
+- matriz de referência: primeiras 20 questões comentadas de vírgula, páginas 50 a 60;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: ordem direta, adjuntos antecipados e intercalados, orações adverbiais pospostas, adjetivas explicativas, pares aninhados, conectores, aposto, escopo e efeitos de sentido;
+- pacote: `production/portuguese-editorial-batch-35.v1.json`;
+- matriz: `sources/portuguese-aula08-comma-editorial-matrix-batch-35.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-35.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_35_pending_human_review`.
