@@ -276,3 +276,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula02-editorial-matrix-batch-18.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-18.preview.md`;
 - estado: `batch_18_pending_human_review`.
+
+## Lote editorial 19 - Conectores e sequenciação textual
+
+- fonte: Aula 02;
+- matriz de referência: questões comentadas 21 a 40 de conjunções, páginas 59 a 72;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: causa, tempo, condição, concessão, proporção, explicação, conclusão, oposição e conectores polissêmicos;
+- a inconsistência editorial do comentário da questão-fonte 25 foi neutralizada pela leitura do enunciado em contexto, cujo valor de `desde que` é temporal;
+- pacote: `production/portuguese-editorial-batch-19.v1.json`;
+- matriz: `sources/portuguese-aula02-editorial-matrix-batch-19.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-19.preview.md`;
+- estado: `batch_19_pending_human_review`.
