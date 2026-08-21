@@ -132,3 +132,13 @@ test('matriz editorial da Aula 13 analisa 20 questões sem armazenar conteúdo p
     source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
   assert.doesNotMatch(raw, /09880248457|thallysson/i);
 });
+
+test('lote editorial 01 possui preview humano completo antes de qualquer publicação', async () => {
+  const preview = await readFile(path.join(root, 'previews/portuguese-editorial-batch-01.preview.md'), 'utf8');
+  assert.match(preview, /Nada deste lote está importado ou publicado/);
+  assert.equal((preview.match(/^## Texto [A-Z]$/gm) || []).length, 5);
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Gabarito:\*\* (CERTO|ERRADO)/g) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(preview, /09880248457|thallysson/i);
+});

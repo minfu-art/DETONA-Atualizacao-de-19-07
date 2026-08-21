@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = path.resolve('course-drafts/prf-pre-edital');
@@ -140,4 +140,38 @@ await writeFile(path.join(root, 'sources', 'portuguese-aula13-editorial-matrix-b
   copyright_safety: { source_text_stored: false, source_statements_stored: false, source_answers_stored: false },
   items: sourceMatrix,
 }, null, 2)}\n`, 'utf8');
+const previewLines = [
+  '# Preview editorial - PRF Português - Lote 01',
+  '',
+  '> Documento de revisão humana. Nada deste lote está importado ou publicado.',
+  '',
+  `**Subtópico:** ${subtopic.name}  `,
+  `**Questões:** ${questions.length}  `,
+  `**Microconhecimentos:** ${microByKey.size}  `,
+  '**Formato:** CEBRASPE - Certo ou Errado',
+  '',
+];
+let previewQuestion = 0;
+for (const textKey of Object.keys(texts)) {
+  previewLines.push(`## Texto ${textKey.toUpperCase()}`, '', texts[textKey], '');
+  for (const question of questions.filter(({ statement }) => statement.startsWith(`TEXTO ${textKey.toUpperCase()}\n`))) {
+    previewQuestion += 1;
+    const claim = question.statement.split('\n\nJulgue o item: ')[1];
+    const micro = [...microByKey.values()].find(({ id }) => id === question.microknowledge_ids[0]);
+    previewLines.push(
+      `### Questão ${String(previewQuestion).padStart(2, '0')}`,
+      '',
+      claim,
+      '',
+      `- **Gabarito:** ${question.correct_answer === 'C' ? 'CERTO' : 'ERRADO'}`,
+      `- **Dificuldade:** ${question.difficulty}`,
+      `- **Microconhecimento:** ${micro.title}`,
+      '',
+      `**Comentário didático:** ${question.explanation}`,
+      '',
+    );
+  }
+}
+await mkdir(path.join(root, 'previews'), { recursive: true });
+await writeFile(path.join(root, 'previews', 'portuguese-editorial-batch-01.preview.md'), `${previewLines.join('\n')}\n`, 'utf8');
 console.log(JSON.stringify({ batch: 1, subtopic: subtopic.name, microknowledges: microByKey.size, questions: questions.length }, null, 2));

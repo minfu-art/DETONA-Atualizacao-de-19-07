@@ -49,6 +49,7 @@ Essa onda permanece preservada apenas como diagnóstico histórico e não está 
 - decisão cognitiva real, sem simples repetição de regra;
 - comentário que identifica a pista, ensina o critério e corrige a armadilha;
 - revisão humana antes de iniciar o lote seguinte;
+- preview legível obrigatório com texto, questão, gabarito, dificuldade, microconhecimento e comentário;
 - importação e publicação bloqueadas.
 
 ## Lote editorial 01
@@ -59,6 +60,7 @@ Essa onda permanece preservada apenas como diagnóstico histórico e não está 
 - 20 questões de Certo/Errado;
 - progressão entre localização, inferência, extrapolação, tema, tese, argumento, pressuposto e ponto de vista;
 - arquivo: `production/portuguese-editorial-batch-01.v1.json`;
+- preview: `previews/portuguese-editorial-batch-01.preview.md`;
 - estado: `batch_01_pending_human_review`.
 
 O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aula 13, páginas 128 a 140. A matriz registra somente habilidade, operação cognitiva, armadilha, banca e localização; não armazena texto, enunciado ou gabarito das questões-fonte.
