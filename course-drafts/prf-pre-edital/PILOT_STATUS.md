@@ -234,3 +234,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula11-editorial-matrix-batch-15.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-15.preview.md`;
 - estado: `batch_15_pending_human_review`.
+
+## Lote editorial 16 - Referenciação, substituição e repetição
+
+- fonte: Aula 11;
+- matriz de referência: questões comentadas 21 a 38, 40 e 41, páginas 38 a 53;
+- item 39 reservado para o subtema de conectores por cobrar finalidade;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: cadeias anafóricas extensas, dêixis, relativos, elipse nominal e coesão lexical;
+- pacote: `production/portuguese-editorial-batch-16.v1.json`;
+- matriz: `sources/portuguese-aula11-editorial-matrix-batch-16.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-16.preview.md`;
+- estado: `batch_16_pending_human_review`.
