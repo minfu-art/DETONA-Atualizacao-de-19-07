@@ -142,3 +142,40 @@ test('lote editorial 01 possui preview humano completo antes de qualquer publica
   assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
   assert.doesNotMatch(preview, /09880248457|thallysson/i);
 });
+
+test('lote editorial 02 reproduz os padrões cognitivos das questões 21-40 com conteúdo autoral', async () => {
+  const raw = await readFile(path.join(root, 'production/portuguese-editorial-batch-02.v1.json'), 'utf8');
+  const course = JSON.parse(raw);
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  assert.equal(course.microknowledges.length, 10);
+  assert.equal(questions.length, 20);
+  assert.equal(course.metadata.editorial_status, 'batch_02_pending_human_review');
+  assert.equal(course.metadata.source_questions_copied, false);
+  assert.equal(new Set(questions.map(({ id }) => id)).size, 20);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, 20);
+  assert.deepEqual(new Set(questions.map(({ correct_answer }) => correct_answer)), new Set(['E', 'C']));
+  assert.deepEqual(new Set(questions.map(({ difficulty }) => difficulty)), new Set(['facil', 'media', 'dificil']));
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 160));
+  assert.doesNotMatch(raw, /09880248457|thallysson/i);
+
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});
+
+test('lote editorial 02 possui matriz segura e preview obrigatório com 20 questões', async () => {
+  const matrixRaw = await readFile(path.join(root, 'sources/portuguese-aula13-editorial-matrix-batch-02.v1.json'), 'utf8');
+  const matrix = JSON.parse(matrixRaw);
+  const preview = await readFile(path.join(root, 'previews/portuguese-editorial-batch-02.preview.md'), 'utf8');
+  assert.deepEqual(matrix.source_question_range, [21, 40]);
+  assert.deepEqual(matrix.source_pages, [140, 155]);
+  assert.equal(matrix.items.length, 20);
+  assert.ok(matrix.items.every(({ source_text_stored, source_statement_stored, commercial_copy_authorized }) =>
+    source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
+  assert.equal((preview.match(/^## Texto [A-Z]$/gm) || []).length, 5);
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(`${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
+});

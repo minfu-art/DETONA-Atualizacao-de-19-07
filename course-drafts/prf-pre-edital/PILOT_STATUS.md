@@ -64,3 +64,14 @@ Essa onda permanece preservada apenas como diagnóstico histórico e não está 
 - estado: `batch_01_pending_human_review`.
 
 O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aula 13, páginas 128 a 140. A matriz registra somente habilidade, operação cognitiva, armadilha, banca e localização; não armazena texto, enunciado ou gabarito das questões-fonte.
+
+## Lote editorial 02
+
+- matriz de referência: questões 21 a 40 da Aula 13, páginas 140 a 155;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: causalidade, escopo, ponto de vista, modalização, progressão textual, comparação e condição;
+- pacote: `production/portuguese-editorial-batch-02.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-02.preview.md`;
+- estado: `batch_02_pending_human_review`.
