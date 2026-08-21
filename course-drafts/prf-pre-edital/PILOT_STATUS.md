@@ -332,3 +332,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula02-editorial-matrix-batch-22.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-22.preview.md`;
 - estado: `batch_22_pending_human_review`.
+
+## Lote editorial 23 - início de Tempos e modos verbais
+
+- fonte: Aula 04;
+- matriz de referência: primeiras 20 questões comentadas de emprego dos tempos e modos, páginas 69 a 79;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: presente universal, pretérito perfeito composto, mais-que-perfeito, futuro do pretérito, modalidade, presente histórico e correlação condicional;
+- pacote: `production/portuguese-editorial-batch-23.v1.json`;
+- matriz: `sources/portuguese-aula04-editorial-matrix-batch-23.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-23.preview.md`;
+- estado: `batch_23_pending_human_review`.
