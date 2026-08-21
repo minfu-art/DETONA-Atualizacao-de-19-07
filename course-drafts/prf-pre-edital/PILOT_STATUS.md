@@ -389,3 +389,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula04-final-verbal-editorial-matrix-batch-26.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-26.preview.md`;
 - estado: `batch_26_pending_human_review`.
+
+## Lote editorial 27 - início de Classes de palavras
+
+- fonte: Aula 03;
+- matriz de referência: primeiras 20 questões comentadas de pronomes, páginas 37 a 49;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: caso reto e oblíquo, indefinidos, demonstrativos, referenciação, relativos, regência, `onde`, `aonde`, `cujo`, possessivos e interrogativos;
+- pacote: `production/portuguese-editorial-batch-27.v1.json`;
+- matriz: `sources/portuguese-aula03-pronouns-editorial-matrix-batch-27.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-27.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_27_pending_human_review`.
