@@ -208,3 +208,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula00-editorial-matrix-batch-13.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-13.preview.md`;
 - estado: `batch_13_pending_human_review`.
+
+## Lote editorial 14 - Ortografia oficial
+
+- fonte: Aula 00;
+- matriz de referência: 20 questões comentadas únicas, páginas 93 a 101;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: maiúsculas, siglas, porquês, mal/mau, a/há, onde/aonde, a fim/afim e haver/a ver;
+- pacote: `production/portuguese-editorial-batch-14.v1.json`;
+- matriz: `sources/portuguese-aula00-editorial-matrix-batch-14.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-14.preview.md`;
+- estado: `batch_14_pending_human_review`.
