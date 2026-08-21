@@ -130,3 +130,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-07.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-07.preview.md`;
 - estado: `batch_07_pending_human_review`.
+
+## Lote editorial 08 - fechamento da Aula 13
+
+- matriz de referência: questões inéditas restantes 141 a 146, páginas 228 a 231;
+- as seis questões-fonte foram decompostas em 20 operações cognitivas atômicas;
+- a lista sem comentários iniciada na página 232 foi identificada como repetição e não foi duplicada;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: definição, modalização, condição, validade, eficácia, equidade e precisão lexical;
+- pacote: `production/portuguese-editorial-batch-08.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-08.preview.md`;
+- estado: `batch_08_pending_human_review`.
