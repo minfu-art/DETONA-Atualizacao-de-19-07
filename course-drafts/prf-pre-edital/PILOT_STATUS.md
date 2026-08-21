@@ -491,3 +491,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-33.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_33_pending_human_review`.
+
+## Lote editorial 34 - fechamento de Subordinação
+
+- fonte: Aula 07;
+- matriz de referência: duas questões finais da palavra `que`, páginas 72 e 73; 13 questões da palavra `se`, páginas 74 a 80; seis questões da seção `como`, páginas 81 a 83;
+- duas fontes equivalentes de `como` causal/conformativo foram agregadas em uma operação comparativa, representando 21 questões-fonte em 20 matrizes atômicas;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: relativo, explicativo, expletivo, verbos pronominais, conjunção integrante, condição, reflexividade, passiva sintética, indeterminação, exemplificação, causa, conformidade, predicativo e comparação;
+- pacote: `production/portuguese-editorial-batch-34.v1.json`;
+- matriz: `sources/portuguese-aula07-que-se-como-editorial-matrix-batch-34.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-34.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_34_pending_human_review`.
