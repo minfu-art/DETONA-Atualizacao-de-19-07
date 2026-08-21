@@ -419,3 +419,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-28.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_28_pending_human_review`.
+
+## Lote editorial 29 - Substantivo, adjetivo e advérbio
+
+- fonte: Aula 01;
+- matriz de referência: 20 questões comentadas distintas — substantivo, páginas 80; adjetivo, páginas 81 e 82; expressões nominais, página 83; advérbio, questões 1 a 13, páginas 98 a 105;
+- a seção intermediária de pronomes não foi repetida, pois já foi coberta nos lotes 27 e 28;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: substantivação, plural dos compostos, função e formação dos adjetivos, mudança de classe, identificação, escopo, restrição e valor discursivo dos advérbios;
+- pacote: `production/portuguese-editorial-batch-29.v1.json`;
+- matriz: `sources/portuguese-aula01-nouns-adjectives-adverbs-editorial-matrix-batch-29.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-29.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_29_pending_human_review`.
