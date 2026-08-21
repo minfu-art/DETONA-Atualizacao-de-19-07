@@ -345,3 +345,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula04-editorial-matrix-batch-23.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-23.preview.md`;
 - estado: `batch_23_pending_human_review`.
+
+## Lote editorial 24 - fechamento de Emprego dos tempos e modos
+
+- fonte: Aula 04;
+- matriz de referência: 17 questões comentadas finais da seção, números 21 a 37, páginas 80 a 89;
+- três questões-fonte densas foram decompostas em duas operações, totalizando 20 matrizes;
+- a seção `Modo indicativo`, iniciada na página 90 com nova numeração, foi reservada para o próximo ciclo;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: correlação temporal, aspecto verbal, presente histórico, modalidade, concordância e reescrita de formas verbais;
+- pacote: `production/portuguese-editorial-batch-24.v1.json`;
+- matriz: `sources/portuguese-aula04-editorial-matrix-batch-24.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-24.preview.md`;
+- estado: `batch_24_pending_human_review`.
