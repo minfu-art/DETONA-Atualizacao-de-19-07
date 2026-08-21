@@ -221,3 +221,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula00-editorial-matrix-batch-14.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-14.preview.md`;
 - estado: `batch_14_pending_human_review`.
+
+## Lote editorial 15 - Referenciação, substituição e repetição
+
+- fonte: Aula 11;
+- matriz de referência: primeiras 20 questões comentadas únicas de coesão, páginas 24 a 37;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: anáfora, advérbios relativos, elipse, ordenadores, possessivos e referentes concorrentes;
+- pacote: `production/portuguese-editorial-batch-15.v1.json`;
+- matriz: `sources/portuguese-aula11-editorial-matrix-batch-15.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-15.preview.md`;
+- estado: `batch_15_pending_human_review`.
