@@ -97,3 +97,14 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-04.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-04.preview.md`;
 - estado: `batch_04_pending_human_review`.
+
+## Lote editorial 05
+
+- matriz de referência: questões 81 a 100 da Aula 13, páginas 189 a 201;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: relações lógicas, causalidade, escopo, metáfora, modalização, pressuposto, recepção e síntese;
+- pacote: `production/portuguese-editorial-batch-05.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-05.preview.md`;
+- estado: `batch_05_pending_human_review`.
