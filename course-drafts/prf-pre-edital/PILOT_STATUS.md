@@ -448,3 +448,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-30.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_30_pending_human_review`.
+
+## Lote editorial 31 - Coordenação
+
+- fontes: Aula 07 e Aula 02, com rastreabilidade individual em cada item da matriz;
+- matriz de referência: duas questões comentadas exclusivas de orações coordenadas, páginas 48 e 49 da Aula 07; 18 questões de conjunções da Aula 02, reinterpretadas por operação sintática distinta da cobertura semântica dos lotes 18 a 22;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: autonomia, coordenação sindética e assindética, termos coordenados, correlações, adversativas, explicativas, conclusivas e contraste com subordinação;
+- pacote: `production/portuguese-editorial-batch-31.v1.json`;
+- matriz: `sources/portuguese-aula07-aula02-coordination-editorial-matrix-batch-31.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-31.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_31_pending_human_review`.

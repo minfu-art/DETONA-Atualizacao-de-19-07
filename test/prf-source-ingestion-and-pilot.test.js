@@ -1102,3 +1102,40 @@ test('lote editorial 30 fecha advérbios e cobre preposições com rastreabilida
   assert.equal(validation.valid, true, JSON.stringify(validation.errors));
   assert.equal(validation.coverage.microknowledge_question_pct, 100);
 });
+
+test('lote editorial 31 inicia coordenação com foco sintático e rastreabilidade multifonte', async () => {
+  const [raw, matrixRaw, preview] = await Promise.all([
+    readFile(path.join(root, 'production/portuguese-editorial-batch-31.v1.json'), 'utf8'),
+    readFile(path.join(root, 'sources/portuguese-aula07-aula02-coordination-editorial-matrix-batch-31.v1.json'), 'utf8'),
+    readFile(path.join(root, 'previews/portuguese-editorial-batch-31.preview.md'), 'utf8'),
+  ]);
+  const course = JSON.parse(raw);
+  const matrix = JSON.parse(matrixRaw);
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  const sourceIds = new Set(['prf_pdf_dd8c41255dc9', 'prf_pdf_2e7edd5477b7']);
+  assert.equal(course.edital_map[0].subtopic_id, 'prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao');
+  assert.equal(course.metadata.editorial_source_matrix, 'sources/portuguese-aula07-aula02-coordination-editorial-matrix-batch-31.v1.json');
+  assert.deepEqual(matrix.sources.map(({ source_id }) => source_id), [...sourceIds]);
+  assert.deepEqual(matrix.sources.map(({ source_pages }) => source_pages), [[48, 49], [49, 58]]);
+  assert.equal(matrix.items.length, 20);
+  assert.equal(matrix.items.filter(({ source_id }) => source_id === 'prf_pdf_dd8c41255dc9').length, 2);
+  assert.equal(matrix.items.filter(({ source_id }) => source_id === 'prf_pdf_2e7edd5477b7').length, 18);
+  assert.ok(matrix.items.every(({ source_id }) => sourceIds.has(source_id)));
+  assert.equal(course.microknowledges.length, 10);
+  assert.equal(questions.length, 20);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, 20);
+  assert.equal(questions.filter(({ correct_answer }) => correct_answer === 'C').length, 10);
+  assert.equal(questions.filter(({ correct_answer }) => correct_answer === 'E').length, 10);
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 150));
+  assert.ok(matrix.items.every(({ source_text_stored, source_statement_stored, commercial_copy_authorized }) =>
+    source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
+  assert.equal((preview.match(/^## Texto [A-Z]$/gm) || []).length, 5);
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(`${raw}\n${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});
