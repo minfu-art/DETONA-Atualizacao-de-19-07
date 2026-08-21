@@ -360,3 +360,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula04-editorial-matrix-batch-24.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-24.preview.md`;
 - estado: `batch_24_pending_human_review`.
+
+## Lote editorial 25 - Modo indicativo
+
+- fonte: Aula 04;
+- matriz de referência: 18 questões comentadas da seção `Modo indicativo`, páginas 90 a 102;
+- duas questões-fonte foram decompostas em operações complementares, totalizando 20 matrizes;
+- a seção `Modo subjuntivo`, iniciada na página 103, foi reservada para o próximo ciclo;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: presente universal e histórico, pretéritos, futuro do pretérito e contrastes com o subjuntivo;
+- pacote: `production/portuguese-editorial-batch-25.v1.json`;
+- matriz: `sources/portuguese-aula04-indicative-editorial-matrix-batch-25.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-25.preview.md`;
+- estado: `batch_25_pending_human_review`.

@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-25-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_8283a4d35d2b",
+            "trace_status": "available",
+            "page_number": 90,
+            "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_8283a4d35d2b",
+            "trace_status": "available",
+            "page_number": 90,
+            "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "4. Mecanismos de coesão textual",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_8283a4d35d2b",
+            "trace_status": "available",
+            "page_number": 90,
+            "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "type": "subtopic",
+        "title": "Tempos e modos verbais",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_8283a4d35d2b",
+            "trace_status": "available",
+            "page_number": 90,
+            "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b25_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Valores do presente do indicativo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Mais-que-perfeito versus perfeito",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Pretérito perfeito versus imperfeito",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Continuidade até o presente",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Mais-que-perfeito simples e composto",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Narração histórica no indicativo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Distinção entre modos verbais",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Presente narrativo e sucessão",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Subjuntivo em reescritas",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b25_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Futuro do pretérito e hipótese",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo_b25",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "scope": "Valores do modo indicativo: presente universal e histórico, pretéritos, futuro do pretérito e contrastes com o subjuntivo",
+      "essential_concepts": [
+        "Valores do presente do indicativo",
+        "Mais-que-perfeito versus perfeito",
+        "Pretérito perfeito versus imperfeito",
+        "Continuidade até o presente",
+        "Mais-que-perfeito simples e composto",
+        "Narração histórica no indicativo",
+        "Distinção entre modos verbais",
+        "Presente narrativo e sucessão",
+        "Subjuntivo em reescritas",
+        "Futuro do pretérito e hipótese"
+      ],
+      "rules": [
+        "Interpretar o tempo pelo marco temporal e pelo gênero textual",
+        "Distinguir forma verbal de valor discursivo",
+        "Conferir anterioridade antes de substituir pretéritos",
+        "Separar modo indicativo, subjuntivo e imperativo em períodos mistos"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b25_mk_01",
+        "prf_d01_b25_mk_02",
+        "prf_d01_b25_mk_03",
+        "prf_d01_b25_mk_04",
+        "prf_d01_b25_mk_05",
+        "prf_d01_b25_mk_06",
+        "prf_d01_b25_mk_07",
+        "prf_d01_b25_mk_08",
+        "prf_d01_b25_mk_09",
+        "prf_d01_b25_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 90,
+          "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b25",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b25_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_01"
+          ],
+          "statement": "TEXTO A\nA fiscalização preventiva reduz riscos e protege usuários da rodovia. Essa regra vale para operações de qualquer região. O coordenador desejara melhor integração, mas entregou o primeiro plano somente após a reunião. Os novos dados teriam influenciado a decisão?\n\nJulgue o item: “Reduz” e “protege” descrevem exclusivamente ações que ocorriam no exato momento em que o texto foi escrito.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "As formas constroem uma afirmação geral sobre a fiscalização preventiva. Não há marcador de simultaneidade; o presente serve para apresentar propriedades consideradas válidas, não uma cena em andamento.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_01"
+          ],
+          "statement": "TEXTO A\nA fiscalização preventiva reduz riscos e protege usuários da rodovia. Essa regra vale para operações de qualquer região. O coordenador desejara melhor integração, mas entregou o primeiro plano somente após a reunião. Os novos dados teriam influenciado a decisão?\n\nJulgue o item: A frase “Essa regra vale para operações de qualquer região” emprega o presente com valor categórico ou universal.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Vale formula a abrangência geral da regra, aplicável além do instante da enunciação. Esse uso argumentativo do presente transmite convicção na validade da proposição.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_02"
+          ],
+          "statement": "TEXTO A\nA fiscalização preventiva reduz riscos e protege usuários da rodovia. Essa regra vale para operações de qualquer região. O coordenador desejara melhor integração, mas entregou o primeiro plano somente após a reunião. Os novos dados teriam influenciado a decisão?\n\nJulgue o item: “Desejara” e “entregou” estão no mesmo tempo verbal porque ambas as formas se referem ao passado.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Desejara é pretérito mais-que-perfeito e marca desejo anterior; entregou é pretérito perfeito e apresenta ação concluída depois. Referência passada comum não elimina a diferença temporal.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_10"
+          ],
+          "statement": "TEXTO A\nA fiscalização preventiva reduz riscos e protege usuários da rodovia. Essa regra vale para operações de qualquer região. O coordenador desejara melhor integração, mas entregou o primeiro plano somente após a reunião. Os novos dados teriam influenciado a decisão?\n\nJulgue o item: Na pergunta final, substituir “teriam influenciado” por “influenciariam” manteria a correção gramatical e o caráter hipotético.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As duas formas pertencem ao futuro do pretérito e podem construir hipótese. A composta marca mais claramente uma influência anterior já cogitada; a simples é correta, embora possa enfraquecer essa anterioridade.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_03"
+          ],
+          "statement": "TEXTO B\nDurante certo período, a falha foi tratada como evento isolado; em relatórios internos, porém, era descrita como ocorrência recorrente. Novos padrões vêm surgindo desde janeiro e têm aparecido em diferentes trechos. A conclusão fora precipitada, conforme depois demonstraram os dados.\n\nJulgue o item: “Foi tratada” focaliza o tratamento como processo delimitado, enquanto “era descrita” realça duração ou recorrência no passado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O perfeito apresenta o evento globalmente concluído; o imperfeito abre seu interior e constrói pano de fundo habitual. As duas formas são passadas, mas diferem em aspecto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_03"
+          ],
+          "statement": "TEXTO B\nDurante certo período, a falha foi tratada como evento isolado; em relatórios internos, porém, era descrita como ocorrência recorrente. Novos padrões vêm surgindo desde janeiro e têm aparecido em diferentes trechos. A conclusão fora precipitada, conforme depois demonstraram os dados.\n\nJulgue o item: Trocar “foi tratada” por “era tratada” produziria necessariamente erro gramatical, embora ambos concordem com “falha”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Era tratada é gramatical e coerente, mas muda o enfoque para duração ou hábito. A alteração aspectual pode modificar o sentido sem gerar erro de concordância ou estrutura.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_04"
+          ],
+          "statement": "TEXTO B\nDurante certo período, a falha foi tratada como evento isolado; em relatórios internos, porém, era descrita como ocorrência recorrente. Novos padrões vêm surgindo desde janeiro e têm aparecido em diferentes trechos. A conclusão fora precipitada, conforme depois demonstraram os dados.\n\nJulgue o item: “Vêm surgindo” e “têm aparecido” apresentam processos iniciados no passado que alcançam o presente.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Vir mais gerúndio realça progressão, e ter mais particípio no perfeito composto indica repetição ou continuidade. Desde janeiro fornece o intervalo ainda aberto que aproxima os sentidos.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_05"
+          ],
+          "statement": "TEXTO B\nDurante certo período, a falha foi tratada como evento isolado; em relatórios internos, porém, era descrita como ocorrência recorrente. Novos padrões vêm surgindo desde janeiro e têm aparecido em diferentes trechos. A conclusão fora precipitada, conforme depois demonstraram os dados.\n\nJulgue o item: “Fora precipitada” poderia ser substituído por “tinha sido precipitada” sem alterar a anterioridade da conclusão.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Fora é mais-que-perfeito simples do verbo ser, não futuro nem forma do verbo ir nesse contexto. Tinha sido é sua forma composta equivalente e preserva o marco anterior.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_05"
+          ],
+          "statement": "TEXTO C\nAntes de recordar o episódio, o agente já consultara o mapa, anotara as rotas e fora verificar o acesso. Hoje, as equipes variam o percurso; no plantão anterior, passaram pela via secundária. Estudos técnicos demonstram que a fadiga reduz a atenção. Em 2005, a unidade inaugurou o laboratório, ampliou a equipe e adquiriu novos equipamentos.\n\nJulgue o item: “Consultara”, “anotara” e “fora verificar” apresentam ações anteriores ao ato passado de recordar o episódio.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As formas em ra são mais-que-perfeitos simples e se orientam pelo ponto de referência recordar. Converter as duas primeiras resulta em tinha consultado e tinha anotado.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_01"
+          ],
+          "statement": "TEXTO C\nAntes de recordar o episódio, o agente já consultara o mapa, anotara as rotas e fora verificar o acesso. Hoje, as equipes variam o percurso; no plantão anterior, passaram pela via secundária. Estudos técnicos demonstram que a fadiga reduz a atenção. Em 2005, a unidade inaugurou o laboratório, ampliou a equipe e adquiriu novos equipamentos.\n\nJulgue o item: “Variam” e “passaram” estão no mesmo tempo do indicativo, pois descrevem deslocamentos das mesmas equipes.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Variam está no presente e expressa prática atual ou geral; passaram está no pretérito perfeito e se liga ao plantão anterior. A identidade do sujeito não uniformiza os tempos.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_01"
+          ],
+          "statement": "TEXTO C\nAntes de recordar o episódio, o agente já consultara o mapa, anotara as rotas e fora verificar o acesso. Hoje, as equipes variam o percurso; no plantão anterior, passaram pela via secundária. Estudos técnicos demonstram que a fadiga reduz a atenção. Em 2005, a unidade inaugurou o laboratório, ampliou a equipe e adquiriu novos equipamentos.\n\nJulgue o item: O presente em “demonstram” apresenta uma conclusão técnica como válida de modo geral, não como ação iniciada no passado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto formula uma relação tida como estável entre fadiga e atenção. É presente argumentativo ou universal; continuidade desde o passado exigiria apoio contextual ou construção aspectual própria.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_06"
+          ],
+          "statement": "TEXTO C\nAntes de recordar o episódio, o agente já consultara o mapa, anotara as rotas e fora verificar o acesso. Hoje, as equipes variam o percurso; no plantão anterior, passaram pela via secundária. Estudos técnicos demonstram que a fadiga reduz a atenção. Em 2005, a unidade inaugurou o laboratório, ampliou a equipe e adquiriu novos equipamentos.\n\nJulgue o item: “Inaugurou”, “ampliou” e “adquiriu” narram uma série de eventos concluídos em 2005.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As formas estão no pretérito perfeito e o marcador anual situa ações históricas acabadas. O tempo verbal não afirma, por si só, que seus efeitos ainda persistam hoje.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_07"
+          ],
+          "statement": "TEXTO D\nNão ignorem o alerta: os sinais são relevantes, embora ainda exijam confirmação. Na cena reconstruída, o perito entra na sala, observa a janela, recolhe uma amostra e então chama a equipe. O protocolo prevê que o laboratório alinhe os testes aos riscos que a chefia identifica. Não se espera que haja resultado imediato, mas talvez apareça um indício confiável.\n\nJulgue o item: O texto D é construído integralmente no subjuntivo, inclusive nas formas “ignorem”, “são” e “exijam”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Ignorem é imperativo, são está no presente do indicativo e exijam está no subjuntivo por força da concessiva embora. Um mesmo período pode combinar modos diferentes.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_08"
+          ],
+          "statement": "TEXTO D\nNão ignorem o alerta: os sinais são relevantes, embora ainda exijam confirmação. Na cena reconstruída, o perito entra na sala, observa a janela, recolhe uma amostra e então chama a equipe. O protocolo prevê que o laboratório alinhe os testes aos riscos que a chefia identifica. Não se espera que haja resultado imediato, mas talvez apareça um indício confiável.\n\nJulgue o item: Na segunda frase, os presentes “entra”, “observa”, “recolhe” e “chama” organizam ações sucessivas de uma cena reconstruída.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As formas criam presente narrativo: primeiro ocorre a entrada, depois a observação e a coleta, por fim o chamado. Não descrevem hábitos universais, mas etapas encadeadas.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_07"
+          ],
+          "statement": "TEXTO D\nNão ignorem o alerta: os sinais são relevantes, embora ainda exijam confirmação. Na cena reconstruída, o perito entra na sala, observa a janela, recolhe uma amostra e então chama a equipe. O protocolo prevê que o laboratório alinhe os testes aos riscos que a chefia identifica. Não se espera que haja resultado imediato, mas talvez apareça um indício confiável.\n\nJulgue o item: “Prevê”, “alinhe” e “identifica” estão todos no presente do indicativo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Prevê e identifica pertencem ao indicativo. Alinhe está no presente do subjuntivo, selecionado pela oração subordinada introduzida por que após o verbo prever.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_09"
+          ],
+          "statement": "TEXTO D\nNão ignorem o alerta: os sinais são relevantes, embora ainda exijam confirmação. Na cena reconstruída, o perito entra na sala, observa a janela, recolhe uma amostra e então chama a equipe. O protocolo prevê que o laboratório alinhe os testes aos riscos que a chefia identifica. Não se espera que haja resultado imediato, mas talvez apareça um indício confiável.\n\nJulgue o item: Substituir “haja” por “apareça” preservaria o presente do subjuntivo e a ideia de eventual surgimento de resultado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As duas formas estão no presente do subjuntivo e se ajustam a não se espera que. Apareça mantém a eventualidade; formas como aparece ou aparecerá mudariam modo ou tempo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_05"
+          ],
+          "statement": "TEXTO E\nOs moradores diziam que a chuva levara a barreira antes de eles chegarem ao local. Um relatório de 2012 apontava riscos durante todo o período chuvoso. Em 1609, a instituição surge no registro oficial e passa a exercer nova função; a redação também poderia dizer que ela surgiu naquele ano. O investigador formara uma hipótese antes da perícia, mas depois formou outra.\n\nJulgue o item: “Levara” indica que a remoção da barreira ocorreu antes da chegada dos moradores ao local.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O mais-que-perfeito simples estabelece anterioridade entre dois eventos passados. A forma equivale a tinha ou havia levado e toma chegaram como referência posterior.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_03"
+          ],
+          "statement": "TEXTO E\nOs moradores diziam que a chuva levara a barreira antes de eles chegarem ao local. Um relatório de 2012 apontava riscos durante todo o período chuvoso. Em 1609, a instituição surge no registro oficial e passa a exercer nova função; a redação também poderia dizer que ela surgiu naquele ano. O investigador formara uma hipótese antes da perícia, mas depois formou outra.\n\nJulgue o item: Mesmo acompanhado de “em 2012”, “apontava” pode focalizar um intervalo ou estado duradouro, e não um instante pontual.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O pretérito imperfeito não perde seu aspecto por causa do ano. O próprio período chuvoso sugere duração: o relatório mantinha a indicação de risco ao longo daquele intervalo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_06"
+          ],
+          "statement": "TEXTO E\nOs moradores diziam que a chuva levara a barreira antes de eles chegarem ao local. Um relatório de 2012 apontava riscos durante todo o período chuvoso. Em 1609, a instituição surge no registro oficial e passa a exercer nova função; a redação também poderia dizer que ela surgiu naquele ano. O investigador formara uma hipótese antes da perícia, mas depois formou outra.\n\nJulgue o item: Em “a instituição surge... e passa... em 1609”, o presente histórico pode ser substituído por “surgiu” e “passou” para narrar os mesmos fatos passados.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O marco de 1609 fixa a referência passada. Presente histórico e pretérito perfeito oferecem perspectivas narrativas diferentes, mas ambos podem representar os eventos sem incoerência.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b25_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_b25_mk_02"
+          ],
+          "statement": "TEXTO E\nOs moradores diziam que a chuva levara a barreira antes de eles chegarem ao local. Um relatório de 2012 apontava riscos durante todo o período chuvoso. Em 1609, a instituição surge no registro oficial e passa a exercer nova função; a redação também poderia dizer que ela surgiu naquele ano. O investigador formara uma hipótese antes da perícia, mas depois formou outra.\n\nJulgue o item: Trocar “formara” por “formou” preservaria integralmente a relação de anterioridade da primeira hipótese em relação à perícia.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Formara marca que a hipótese já existia antes da perícia. Formou apenas apresenta um evento concluído no passado; a frase pode continuar correta, mas perde a anterioridade explicitamente codificada.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 25",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 90,
+              "excerpt": "Matriz agregada das questões 1-18, páginas 90-102: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T03:34:37.318Z",
+    "editorial_status": "batch_25_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula04-indicative-editorial-matrix-batch-25.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}
