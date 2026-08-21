@@ -317,3 +317,18 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula02-editorial-matrix-batch-21.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-21.preview.md`;
 - estado: `batch_21_pending_human_review`.
+
+## Lote editorial 22 - fechamento de Conectores e sequenciação textual
+
+- fonte: Aula 02;
+- matriz de referência: 15 questões comentadas finais de conjunções, números 81 a 95, páginas 95 a 101;
+- as 15 questões-fonte foram decompostas em 20 operações cognitivas atômicas;
+- a lista iniciada depois da página 101 pertence a outra seção e não foi misturada à sequência de conjunções;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: coordenação negativa, marcadores discursivos, `logo` temporal, finalidade, adversidade, concessão e reescrita sintática;
+- pacote: `production/portuguese-editorial-batch-22.v1.json`;
+- matriz: `sources/portuguese-aula02-editorial-matrix-batch-22.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-22.preview.md`;
+- estado: `batch_22_pending_human_review`.
