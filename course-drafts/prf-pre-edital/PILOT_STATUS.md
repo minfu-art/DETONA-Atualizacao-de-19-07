@@ -375,3 +375,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula04-indicative-editorial-matrix-batch-25.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-25.preview.md`;
 - estado: `batch_25_pending_human_review`.
+
+## Lote editorial 26 - fechamento de Tempos e modos verbais
+
+- fonte: Aula 04;
+- matriz de referência: 20 questões comentadas das seções `Modo subjuntivo`, `Modo imperativo`, `Formas nominais`, `Verbos impessoais` e `Verbos auxiliares`, páginas 103 a 113;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: subjuntivo, imperativo, formas nominais, impessoalidade e semântica dos auxiliares;
+- as seções finais de verbos defectivos e vicários, páginas 114 e 115, foram reservadas para `Classes de palavras`, por tratarem de classificação verbal;
+- pacote: `production/portuguese-editorial-batch-26.v1.json`;
+- matriz: `sources/portuguese-aula04-final-verbal-editorial-matrix-batch-26.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-26.preview.md`;
+- estado: `batch_26_pending_human_review`.
