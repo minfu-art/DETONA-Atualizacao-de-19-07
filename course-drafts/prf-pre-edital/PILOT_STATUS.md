@@ -263,3 +263,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula11-editorial-matrix-batch-17.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-17.preview.md`;
 - estado: `batch_17_pending_human_review`.
+
+## Lote editorial 18 - Conectores e sequenciação textual
+
+- fonte: Aula 02;
+- matriz de referência: primeiras 20 questões comentadas de conjunções, páginas 49 a 59;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: adição, adversidade, concessão, causa, conclusão, comparação, condição e consequência;
+- pacote: `production/portuguese-editorial-batch-18.v1.json`;
+- matriz: `sources/portuguese-aula02-editorial-matrix-batch-18.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-18.preview.md`;
+- estado: `batch_18_pending_human_review`.

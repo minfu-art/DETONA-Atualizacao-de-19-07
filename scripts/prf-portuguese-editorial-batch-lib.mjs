@@ -23,6 +23,17 @@ export async function buildPortugueseEditorialBatch(config) {
     source_question_number, page, exam, skill, cognitive_operation, trap,
     source_text_stored: false, source_statement_stored: false, commercial_copy_authorized: false,
   }));
+  const packageSources = base.sources.some(({ id }) => id === source.source_id) ? base.sources : [...base.sources, {
+    id: source.source_id,
+    source_type: 'complementary',
+    category: 'material_curso',
+    title: source.title || source.file_name,
+    file_name: source.file_name,
+    page_count: source.page_count,
+    availability: 'reference_only',
+    url: '',
+    sha256: source.sha256,
+  }];
   const microByKey = new Map(config.microDefinitions.map(([key,title], index) => [key, {
     id: `prf_d01_${config.slug}_mk_${String(index + 1).padStart(2,'0')}`,
     subtopic_id: subtopic.id, title, scope_origin: 'official', confidence: 0.97, traces: baseTrace,
@@ -47,7 +58,7 @@ export async function buildPortugueseEditorialBatch(config) {
     order: node.order, confidence: 1, traces: baseTrace,
   }));
   const payload = {
-    ...base, operation_id: `prf-2026-portugues-editorial-batch-${String(config.batch).padStart(2,'0')}-v1`,
+    ...base, sources: packageSources, operation_id: `prf-2026-portugues-editorial-batch-${String(config.batch).padStart(2,'0')}-v1`,
     curriculum: { nodes: curriculumNodes },
     microknowledges: [...microByKey.values()],
     edital_map: [{
