@@ -403,3 +403,19 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-27.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_27_pending_human_review`.
+
+## Lote editorial 28 - fechamento de Pronomes
+
+- fonte: Aula 03;
+- matriz de referência: 17 questões comentadas finais de pronomes, números 21 a 37, páginas 49 a 57;
+- três questões-fonte densas foram decompostas em operações complementares, totalizando 20 matrizes;
+- a seção `Colocação pronominal`, iniciada na página 58, foi reservada para seu subtópico próprio;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: relativos, indefinidos, demonstrativos, dêixis, anáfora, catáfora, valor possessivo e combinação de oblíquos;
+- pacote: `production/portuguese-editorial-batch-28.v1.json`;
+- matriz: `sources/portuguese-aula03-final-pronouns-editorial-matrix-batch-28.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-28.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_28_pending_human_review`.
