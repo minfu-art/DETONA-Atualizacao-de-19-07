@@ -386,3 +386,35 @@ test('lote editorial 09 inicia Tipos e gêneros textuais com 20 matrizes únicas
   assert.equal(validation.valid, true, JSON.stringify(validation.errors));
   assert.equal(validation.coverage.microknowledge_question_pct, 100);
 });
+
+test('lote editorial 10 fecha Tipos e gêneros sem repetir a lista da apostila', async () => {
+  const [raw, matrixRaw, preview] = await Promise.all([
+    readFile(path.join(root, 'production/portuguese-editorial-batch-10.v1.json'), 'utf8'),
+    readFile(path.join(root, 'sources/portuguese-aula13-editorial-matrix-batch-10.v1.json'), 'utf8'),
+    readFile(path.join(root, 'previews/portuguese-editorial-batch-10.preview.md'), 'utf8'),
+  ]);
+  const course = JSON.parse(raw);
+  const matrix = JSON.parse(matrixRaw);
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  assert.equal(course.edital_map[0].subtopic_id, 'prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen');
+  assert.deepEqual(matrix.source_question_range, [21, 27]);
+  assert.deepEqual(matrix.source_pages, [73, 79]);
+  assert.equal(matrix.items.length, 20);
+  assert.deepEqual([...new Set(matrix.items.map(({ source_question_number }) => source_question_number))], [21, 22, 23, 24, 25, 26, 27]);
+  assert.equal(course.microknowledges.length, 10);
+  assert.equal(questions.length, 20);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, 20);
+  assert.deepEqual(new Set(questions.map(({ correct_answer }) => correct_answer)), new Set(['C', 'E']));
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 150));
+  assert.ok(matrix.items.every(({ source_text_stored, source_statement_stored, commercial_copy_authorized }) =>
+    source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
+  assert.equal((preview.match(/^## Texto [A-Z]$/gm) || []).length, 5);
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(`${raw}\n${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});

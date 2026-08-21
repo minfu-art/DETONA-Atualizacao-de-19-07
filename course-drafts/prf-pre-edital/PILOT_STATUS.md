@@ -155,3 +155,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-09.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-09.preview.md`;
 - estado: `batch_09_pending_human_review`.
+
+## Lote editorial 10 - fechamento de Tipos e gêneros textuais
+
+- matriz de referência: sete questões únicas finais, páginas 73 a 79 da Aula 13;
+- as sete questões-fonte foram decompostas em 20 operações cognitivas atômicas;
+- listas e questões repetidas entre seções foram descartadas;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: exposição, descrição subordinada, predominância, finalidade, presente universal e objetividade;
+- pacote: `production/portuguese-editorial-batch-10.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-10.preview.md`;
+- estado: `batch_10_pending_human_review`.
