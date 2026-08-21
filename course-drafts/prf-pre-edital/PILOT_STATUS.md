@@ -168,3 +168,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-10.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-10.preview.md`;
 - estado: `batch_10_pending_human_review`.
+
+## Lote editorial 11 - Ortografia oficial
+
+- fonte: Aula 00;
+- matriz de referência: primeiras 20 questões comentadas únicas, páginas 67 a 74;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: letras, fonemas, dígrafos, tonicidade, proparoxítonas, paroxítonas em ditongo, Acordo Ortográfico e til;
+- pacote: `production/portuguese-editorial-batch-11.v1.json`;
+- matriz: `sources/portuguese-aula00-editorial-matrix-batch-11.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-11.preview.md`;
+- estado: `batch_11_pending_human_review`.

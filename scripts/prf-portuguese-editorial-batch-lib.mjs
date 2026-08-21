@@ -14,6 +14,7 @@ export async function buildPortugueseEditorialBatch(config) {
   const subtopic = discipline.topics.flatMap(({ subtopics }) => subtopics).find(({ name }) => name === config.subtopic);
   const topic = discipline.topics.find(({ subtopics }) => subtopics.some(({ id }) => id === subtopic.id));
   const source = ingestion.sources.find(({ source_id }) => source_id === config.sourceId);
+  const matrixStem = config.matrixStem ?? 'portuguese-aula13-editorial-matrix';
   const baseTrace = [...base.curriculum.nodes[0].traces, {
     source_id: source.source_id, trace_status: 'available', page_number: config.pages[0],
     excerpt: `Matriz agregada das questões ${config.range[0]}-${config.range[1]}, páginas ${config.pages[0]}-${config.pages[1]}: padrões cognitivos sem cópia textual`,
@@ -61,14 +62,14 @@ export async function buildPortugueseEditorialBatch(config) {
       ...base.metadata, generated_at: new Date().toISOString(), editorial_status: `batch_${String(config.batch).padStart(2,'0')}_pending_human_review`,
       coverage_status: 'incremental_editorial_batches_of_20', canonical_subtopics_covered: 1,
       microknowledge_count: microByKey.size, question_count: 20,
-      editorial_source_matrix: `sources/portuguese-aula13-editorial-matrix-batch-${String(config.batch).padStart(2,'0')}.v1.json`,
+      editorial_source_matrix: `sources/${matrixStem}-batch-${String(config.batch).padStart(2,'0')}.v1.json`,
       publication_blocked: true, import_blocked: true,
     },
   };
   const batchNumber = String(config.batch).padStart(2,'0');
   await mkdir(path.join(root, 'previews'), { recursive: true });
   await writeFile(path.join(root, 'production', `portuguese-editorial-batch-${batchNumber}.v1.json`), `${JSON.stringify(payload,null,2)}\n`, 'utf8');
-  await writeFile(path.join(root, 'sources', `portuguese-aula13-editorial-matrix-batch-${batchNumber}.v1.json`), `${JSON.stringify({
+  await writeFile(path.join(root, 'sources', `${matrixStem}-batch-${batchNumber}.v1.json`), `${JSON.stringify({
     schema_version: 'detona_editorial_source_matrix_v1', source_id: source.source_id, source_file: source.file_name,
     source_pages: config.pages, source_question_range: config.range, purpose: 'internal_pattern_analysis_for_authorial_question_creation',
     copyright_safety: { source_text_stored: false, source_statements_stored: false, source_answers_stored: false }, items: matrix,
