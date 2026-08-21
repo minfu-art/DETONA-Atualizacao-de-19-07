@@ -181,3 +181,16 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula00-editorial-matrix-batch-11.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-11.preview.md`;
 - estado: `batch_11_pending_human_review`.
+
+## Lote editorial 12 - Ortografia oficial
+
+- fonte: Aula 00;
+- matriz de referência: questões comentadas únicas 21 a 40, páginas 76 a 82;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: quê, hiatos, monossílabos, ênclise, crase, proparoxítonas e regra residual das paroxítonas;
+- pacote: `production/portuguese-editorial-batch-12.v1.json`;
+- matriz: `sources/portuguese-aula00-editorial-matrix-batch-12.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-12.preview.md`;
+- estado: `batch_12_pending_human_review`.
