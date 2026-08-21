@@ -194,3 +194,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - matriz: `sources/portuguese-aula00-editorial-matrix-batch-12.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-12.preview.md`;
 - estado: `batch_12_pending_human_review`.
+
+## Lote editorial 13 - Ortografia oficial
+
+- fonte: Aula 00;
+- matriz de referência: 20 questões comentadas únicas, páginas 83 a 91;
+- duplicatas de `juízo/extraídos/período` e `coexistem` descartadas;
+- cinco textos/conjuntos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: hiatos, acentos diferenciais, variantes oficiais e hífen;
+- pacote: `production/portuguese-editorial-batch-13.v1.json`;
+- matriz: `sources/portuguese-aula00-editorial-matrix-batch-13.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-13.preview.md`;
+- estado: `batch_13_pending_human_review`.
