@@ -42,6 +42,33 @@ const texts = {
   e: `Sistemas capazes de prever pontos de congestionamento ajudam a distribuir equipes e reduzir o tempo de resposta. Essa capacidade, contudo, não transforma previsões em certezas: acidentes, obras emergenciais e mudanças climáticas podem alterar o fluxo em poucos minutos. Usar dados com responsabilidade exige combinar modelos estatísticos, atualização constante e julgamento profissional.`,
 };
 
+// Matriz extraída dos itens 1-20 (p. 128-140), sem transcrever texto ou enunciado protegido.
+const sourceMatrix = [
+  [1,128,'INOVERSASUL 2025','referenciação','identificar o antecedente de expressão resumitiva','trocar o referente'],
+  [2,128,'INOVERSASUL 2025','modalização','avaliar o efeito categórico de advérbio absoluto','ignorar a força do modalizador'],
+  [3,129,'TRF-6 2025','inferência global','integrar partes em uma conclusão sistêmica','ler elementos de forma isolada'],
+  [4,130,'TRF-6 2025','escopo quantitativo','preservar a entidade à qual um percentual se aplica','atribuir o percentual a outra relação'],
+  [5,130,'TRF-6 2025','generalização','distinguir descrição local de propriedade exclusiva','converter ocorrência em particularidade'],
+  [6,130,'TRF-6 2025','inferência temporal','calcular limite temporal a partir de marco e intervalo','ignorar o valor de menos de'],
+  [7,131,'TRF-6 2025','relação causal','distinguir redução de tempo/custo de redução de estoque','trocar a variável afetada'],
+  [8,132,'TRF-6 2025','pressuposto lexical','recuperar relação marcada por expressão inclusiva','não perceber a inclusão pressuposta'],
+  [9,132,'TRF-6 2025','intensidade semântica','comparar possibilidade, risco e impedimento','elevar risco a impossibilidade'],
+  [10,133,'TRF-6 2025','extrapolação avaliativa','separar recomendação de acusação','inferir negligência sem pista'],
+  [11,133,'TRF-6 2025','comparação implícita','interpretar marca de suscetibilidade particular','não recuperar o termo de comparação'],
+  [12,134,'TRF-6 2025','modalização epistêmica','distinguir hipótese de informação categórica','converter possibilidade em fato'],
+  [13,134,'TRF-6 2025','recorrência por paráfrase','preservar especificidade e restrição de acesso','desfigurar condição explícita'],
+  [14,135,'TRF-6 2025','recorte temporal','distinguir início do fenômeno de início do corpus analisado','converter desde em origem histórica'],
+  [15,136,'TRF-6 2025','tema e propósito','não atribuir detalhamento ausente ao texto','ampliar o conteúdo efetivamente desenvolvido'],
+  [16,136,'TRF-6 2025','reescrita de definição','preservar alternativas e condições de uma definição','reduzir definição disjuntiva a uma só hipótese'],
+  [17,138,'PC-DF 2025','extrapolação causal','rejeitar consequência institucional não mencionada','inventar impacto sobre acordos'],
+  [18,139,'PC-DF 2025','mudança de perspectiva','reconstruir contraste entre passado e presente','congelar o ponto de vista inicial'],
+  [19,139,'PC-DF 2025','paráfrase inferencial','relacionar aproximação institucional e cooperação','negar consequência sustentada'],
+  [20,139,'PC-DF 2025','polaridade avaliativa','preservar avaliação negativa expressa no contexto','trocar temor por avaliação positiva'],
+].map(([source_question_number,page,exam,skill,cognitive_operation,trap]) => ({
+  source_question_number, page, exam, skill, cognitive_operation, trap,
+  source_text_stored: false, source_statement_stored: false, commercial_copy_authorized: false,
+}));
+
 const specs = [
   ['a','explicit','O texto informa expressamente que as colisões noturnas diminuíram 18% nos seis meses observados.','C','A informação aparece de modo direto no primeiro período. O item apenas a parafraseia, conservando percentual, tipo de ocorrência e intervalo temporal; por isso, não exige inferência.'],
   ['a','inference','Infere-se do texto que a iluminação foi considerada um dos fatores possivelmente associados à redução das colisões.','C','A conclusão é autorizada pela afirmação de que a iluminação “contribuiu para a melhora”. O texto admite participação da medida, embora rejeite tratá-la como causa exclusiva. Inferir participação não equivale a provar causalidade única.'],
@@ -73,7 +100,10 @@ const questions = specs.map(([textKey, microKey, claim, answer, explanation], in
   options: [], correct_answer: answer, explanation,
   difficulty: index < 6 ? 'facil' : index < 14 ? 'media' : 'dificil',
   format: 'certo_errado', source: 'Autoral DETONA - Lote editorial PRF Português 01',
-  is_trick: answer === 'E', traces,
+  is_trick: answer === 'E', traces: [...traces, {
+    source_id: source.source_id, trace_status: 'available', page_number: 128,
+    excerpt: 'Matriz agregada dos itens 1-20, páginas 128-140: operações cognitivas e armadilhas usadas como referência, sem cópia textual',
+  }],
 }));
 
 const payload = {
@@ -96,10 +126,18 @@ const payload = {
     coverage_status: 'incremental_editorial_batches_of_20', canonical_subtopics_covered: 1,
     microknowledge_count: microByKey.size, question_count: questions.length,
     authorial_questions: true, source_questions_copied: false,
+    editorial_source_matrix: 'sources/portuguese-aula13-editorial-matrix-batch-01.v1.json',
     publication_blocked: true, import_blocked: true,
     quality_contract: ['texto-base autoral', 'decisão interpretativa real', 'distrator plausível', 'comentário que ensina o critério'],
   },
 };
 
 await writeFile(path.join(root, 'production', 'portuguese-editorial-batch-01.v1.json'), `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+await writeFile(path.join(root, 'sources', 'portuguese-aula13-editorial-matrix-batch-01.v1.json'), `${JSON.stringify({
+  schema_version: 'detona_editorial_source_matrix_v1', source_id: source.source_id,
+  source_file: source.file_name, source_pages: [128, 140], source_question_range: [1, 20],
+  purpose: 'internal_pattern_analysis_for_authorial_question_creation',
+  copyright_safety: { source_text_stored: false, source_statements_stored: false, source_answers_stored: false },
+  items: sourceMatrix,
+}, null, 2)}\n`, 'utf8');
 console.log(JSON.stringify({ batch: 1, subtopic: subtopic.name, microknowledges: microByKey.size, questions: questions.length }, null, 2));

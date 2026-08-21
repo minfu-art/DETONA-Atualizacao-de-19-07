@@ -119,3 +119,16 @@ test('lote editorial 01 de Português contém 20 questões contextualizadas e co
   assert.equal(validation.counts.questions, 20);
   assert.equal(validation.coverage.microknowledge_question_pct, 100);
 });
+
+test('matriz editorial da Aula 13 analisa 20 questões sem armazenar conteúdo protegido', async () => {
+  const raw = await readFile(path.join(root, 'sources/portuguese-aula13-editorial-matrix-batch-01.v1.json'), 'utf8');
+  const matrix = JSON.parse(raw);
+  assert.deepEqual(matrix.source_pages, [128, 140]);
+  assert.deepEqual(matrix.source_question_range, [1, 20]);
+  assert.equal(matrix.items.length, 20);
+  assert.equal(new Set(matrix.items.map(({ source_question_number }) => source_question_number)).size, 20);
+  assert.ok(matrix.items.every(({ page, skill, cognitive_operation, trap }) => page >= 128 && page <= 140 && skill && cognitive_operation && trap));
+  assert.ok(matrix.items.every(({ source_text_stored, source_statement_stored, commercial_copy_authorized }) =>
+    source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
+  assert.doesNotMatch(raw, /09880248457|thallysson/i);
+});

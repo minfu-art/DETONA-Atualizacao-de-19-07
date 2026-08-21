@@ -60,3 +60,5 @@ Essa onda permanece preservada apenas como diagnóstico histórico e não está 
 - progressão entre localização, inferência, extrapolação, tema, tese, argumento, pressuposto e ponto de vista;
 - arquivo: `production/portuguese-editorial-batch-01.v1.json`;
 - estado: `batch_01_pending_human_review`.
+
+O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aula 13, páginas 128 a 140. A matriz registra somente habilidade, operação cognitiva, armadilha, banca e localização; não armazena texto, enunciado ou gabarito das questões-fonte.
