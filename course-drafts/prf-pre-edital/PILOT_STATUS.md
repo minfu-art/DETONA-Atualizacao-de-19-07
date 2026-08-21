@@ -119,3 +119,14 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - pacote: `production/portuguese-editorial-batch-06.v1.json`;
 - preview obrigatório: `previews/portuguese-editorial-batch-06.preview.md`;
 - estado: `batch_06_pending_human_review`.
+
+## Lote editorial 07
+
+- matriz de referência: questões 121 a 140 da Aula 13, páginas 213 a 228;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas;
+- foco: precisão factual, pressupostos, comparação, argumentação, metáfora e distinção conceitual;
+- pacote: `production/portuguese-editorial-batch-07.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-07.preview.md`;
+- estado: `batch_07_pending_human_review`.
