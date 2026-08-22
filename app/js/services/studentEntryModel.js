@@ -14,6 +14,7 @@ export function readCommercialIntent(search = '') {
     contestId,
     courseId: SAFE_CONTEST_ID.test(courseId) ? courseId : null,
     salesPage: SAFE_CONTEST_ID.test(salesPage) ? salesPage : null,
+    directCheckout: params.get('action') === 'buy',
   });
 }
 
@@ -27,6 +28,12 @@ export function resolveCommercialIntent(intent, items = []) {
     return { state: 'ready', item };
   }
   return { state: 'unavailable', item };
+}
+
+export function directCheckoutContestId(intent, items = []) {
+  if (intent?.directCheckout !== true) return null;
+  const resolution = resolveCommercialIntent(intent, items);
+  return resolution?.state === 'ready' ? resolution.item.contest.id : null;
 }
 
 export function partitionLibrary(items = []) {

@@ -1,5 +1,9 @@
 const CONTEST_ID = /^[a-z0-9][a-z0-9_-]{0,79}$/i;
 const REQUEST_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+const DETONA_CHECKOUT_BRAND = Object.freeze({
+  statementDescriptor: 'DETONA',
+  pictureUrl: 'https://app.detonaconcursos.com/assets/icons/icon-512.png',
+});
 
 export function validateCheckoutRequest(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('INVALID_JSON');
@@ -34,10 +38,13 @@ export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, 
     url.searchParams.set('contest', contest.id);
     return url.toString();
   };
+  const courseName = String(contest.name || 'Curso DETONA').trim().slice(0, 120);
   return {
     items: [{
       id: contest.id,
-      title: contest.name,
+      title: `DETONA | ${courseName}`,
+      description: `Acesso à jornada DETONA — ${courseName}`,
+      picture_url: DETONA_CHECKOUT_BRAND.pictureUrl,
       quantity: 1,
       currency_id: contest.currency,
       unit_price: order.amount_cents / 100,
@@ -52,7 +59,8 @@ export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, 
     },
     auto_return: 'approved',
     binary_mode: false,
-    metadata: { contest_id: contest.id },
+    statement_descriptor: DETONA_CHECKOUT_BRAND.statementDescriptor,
+    metadata: { contest_id: contest.id, brand: 'detona' },
   };
 }
 

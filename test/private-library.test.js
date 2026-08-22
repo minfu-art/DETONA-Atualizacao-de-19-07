@@ -26,12 +26,13 @@ test('commercial handoff blocks duplicate clicks and requires validated HTTPS re
   assert.match(ui, /button\.disabled = true/);
   assert.match(app, /libraryService\.purchase\(user, contestId\)/);
   assert.match(app, /location\.assign\(purchase\.redirectUrl\)/);
+  assert.match(app, /directCheckoutContestId\(commercialIntent, state\.items\)/);
   assert.match(checkout, /redirect\.protocol !== 'https:'/);
 });
 
 test('service worker refreshes navigation and runtime configuration', async () => {
   const sw = await source('app/sw.js');
-  assert.match(sw, /detona-v151-question-option-integrity/);
+  assert.match(sw, /detona-v152-fast-checkout-mobile-time/);
   assert.match(sw, /asset === '\.\/env\.runtime\.js'/);
   assert.match(sw, /fetch\(e\.request, \{ cache: 'no-store' \}\)/);
   assert.match(sw, /e\.request\.mode === 'navigate'[\s\S]*fetch\(e\.request\)/);

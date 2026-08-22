@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 
 import {
   checkoutActionFor,
+  directCheckoutContestId,
   formatCanonicalPrice,
   readCommercialIntent,
   readCheckoutReturn,
@@ -21,9 +22,21 @@ test('commercial intent accepts only safe source and identifiers', () => {
     courseId: 'pc-al-2026',
     contestId: 'pc_al_2026',
     salesPage: 'pc-al-agente-2026',
+    directCheckout: false,
   });
   assert.equal(readCommercialIntent('?source=outro&contestId=pc_al_2026'), null);
   assert.equal(readCommercialIntent('?source=detona-site&contestId=../../admin'), null);
+});
+
+test('handoff de compra direta elimina a confirmação duplicada sem contornar o catálogo', () => {
+  const contest = { id: 'pc_al_2026', contentStatus: 'ready', salesStatus: 'available', priceCents: 14990 };
+  const available = [{ contest, owned: false, checkoutAction: { action: 'purchase', disabled: false } }];
+  const blocked = [{ contest, owned: false, checkoutAction: { action: 'details', disabled: false } }];
+  const direct = readCommercialIntent('?source=detona-site&contestId=pc_al_2026&action=buy');
+  assert.equal(direct.directCheckout, true);
+  assert.equal(directCheckoutContestId(direct, available), 'pc_al_2026');
+  assert.equal(directCheckoutContestId(direct, blocked), null);
+  assert.equal(directCheckoutContestId(readCommercialIntent('?source=detona-site&contestId=pc_al_2026'), available), null);
 });
 
 test('commercial intent trusts only canonical catalog state', () => {

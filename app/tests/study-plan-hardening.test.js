@@ -70,6 +70,15 @@ function allDaysProfile(overrides = {}) {
   });
 }
 
+function allDaysAvailability() {
+  const profile = allDaysProfile();
+  return {
+    availableDays: profile.availableDays,
+    restDays: profile.restDays,
+    dayWindows: profile.dayWindows,
+  };
+}
+
 async function seedEligibleContent(repository) {
   await repository.put('disciplines', { id: 'discipline-1', name: 'Língua Portuguesa' });
   await repository.put('subtopics', {
@@ -211,7 +220,11 @@ test('geração usa conteúdo elegível, respeita capacidade e é idempotente', 
   const repository = memoryRepo();
   const service = new RoutineService({ repository });
   await seedEligibleContent(repository);
-  await service.completeSetup({ model: 'equilibrada', generatePlan: false });
+  await service.completeSetup({
+    model: 'equilibrada',
+    overrides: allDaysAvailability(),
+    generatePlan: false,
+  });
   const first = await service.regenerateCurrentWeek();
   const second = await service.regenerateCurrentWeek();
   assert.equal(first.created, true);
@@ -229,7 +242,7 @@ test('geração sem configuração ou sem conteúdo preserva estado e não inven
   const service = new RoutineService({ repository });
   const unconfigured = await service.regenerateCurrentWeek();
   assert.equal(unconfigured.reason, 'configuration_required');
-  await service.completeSetup({ generatePlan: false });
+  await service.completeSetup({ overrides: allDaysAvailability(), generatePlan: false });
   const empty = await service.regenerateCurrentWeek();
   assert.equal(empty.reason, 'no_available_content');
   assert.equal((await repository.getAll('routineBlocks')).length, 0);
@@ -239,7 +252,7 @@ test('falha de persistência mantém journal recuperável e retry cria um único
   const repository = memoryRepo('student-a', 'pc_al_2026', { failPutManyOnce: true });
   const service = new RoutineService({ repository });
   await seedEligibleContent(repository);
-  await service.completeSetup({ generatePlan: false });
+  await service.completeSetup({ overrides: allDaysAvailability(), generatePlan: false });
   await assert.rejects(() => service.regenerateCurrentWeek(), /SIMULATED_LOCAL_WRITE_FAILURE/);
   assert.equal((await repository.getAll('routineBlocks')).length, 0);
   const retry = await service.regenerateCurrentWeek();

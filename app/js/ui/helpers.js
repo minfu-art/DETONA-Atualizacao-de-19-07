@@ -42,6 +42,14 @@ export function toast(msg, ms = 2800) {
 
 let modalReturnFocus = null;
 let modalKeyHandler = null;
+const NATIVE_PICKER_SELECTOR = 'input[type="time"],input[type="date"],input[type="datetime-local"],input[type="month"],input[type="week"],input[type="color"],select';
+
+export function shouldCloseModalOnEscape(event, activeElement = globalThis.document?.activeElement) {
+  if (event?.key !== 'Escape' || event?.isComposing) return false;
+  const target = event?.target?.matches ? event.target : activeElement;
+  return !target?.matches?.(NATIVE_PICKER_SELECTOR)
+    && !activeElement?.matches?.(NATIVE_PICKER_SELECTOR);
+}
 
 export function avatarEmoji(sprite, level) {
   const key = level >= 91 ? 'trophy' : level >= 51 ? 'medal' : level >= 11 ? 'sword' : 'user';
@@ -111,7 +119,14 @@ export function openModal(title, bodyHtml, actionsHtml = '', options = {}) {
   const dialog = overlay.querySelector('[role="dialog"]');
   const focusable = () => [...overlay.querySelectorAll('button,input,select,textarea,a[href],[tabindex]:not([tabindex="-1"])')].filter((item) => !item.disabled);
   modalKeyHandler = (event) => {
-    if (event.key === 'Escape') { event.preventDefault(); closeModal(); return; }
+    // Android/iOS podem emitir Escape ao confirmar ou dispensar um seletor
+    // nativo. Nesse caso fechamos somente o seletor do sistema, não o modal.
+    if (event.key === 'Escape') {
+      if (!shouldCloseModalOnEscape(event)) return;
+      event.preventDefault();
+      closeModal();
+      return;
+    }
     if (event.key !== 'Tab') return;
     const items = focusable();
     if (!items.length) { event.preventDefault(); dialog.focus(); return; }

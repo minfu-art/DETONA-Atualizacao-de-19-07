@@ -42,6 +42,11 @@ test('preferência usa URLs HTTPS fixas e referência interna do pedido', () => 
   });
   assert.equal(value.external_reference, 'order-id');
   assert.equal(value.items[0].unit_price, 149.9);
+  assert.equal(value.items[0].title, 'DETONA | PC AL');
+  assert.match(value.items[0].description, /jornada DETONA/i);
+  assert.equal(value.items[0].picture_url, 'https://app.detonaconcursos.com/assets/icons/icon-512.png');
+  assert.equal(value.statement_descriptor, 'DETONA');
+  assert.equal(value.metadata.brand, 'detona');
   assert.equal(new URL(value.notification_url).searchParams.get('source_news'), 'webhooks');
   assert.match(value.back_urls.success, /checkout=success/);
   assert.equal(selectCheckoutUrl({ sandbox_init_point: 'https://www.mercadopago.com.br/test' }, 'test'), 'https://www.mercadopago.com.br/test');

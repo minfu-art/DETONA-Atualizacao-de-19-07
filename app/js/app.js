@@ -27,7 +27,11 @@ import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
-import { readCheckoutReturn, readCommercialIntent } from './services/studentEntryModel.js';
+import {
+  directCheckoutContestId,
+  readCheckoutReturn,
+  readCommercialIntent,
+} from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
   courseFactoryPreviewService,
@@ -104,7 +108,7 @@ const renderBattle = lazyRoute(() => import('./ui/battleArena.js?v=77'), 'render
 const renderGrimorio = lazyRoute(() => import('./ui/grimorio.js?v=69'), 'renderGrimorio');
 const renderPerformance = lazyRoute(() => import('./ui/performance.js?v=76'), 'renderPerformance', ['./css/performance-mobile.css?v=5']);
 const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'renderExpedition', ['./css/plan-edital.css?v=4']);
-const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=74'), 'renderWellbeing');
+const renderWellbeing = lazyRoute(() => import('./ui/wellbeingUI.js?v=75'), 'renderWellbeing');
 const renderProfile = lazyRoute(() => import('./ui/profile.js?v=97'), 'renderProfile', ['./css/profile-evolution.css?v=2']);
 const renderCelebration = lazyRoute(() => import('./ui/celebration.js?v=68'), 'renderCelebration');
 const renderTopicTree = lazyRoute(() => import('./ui/topicTree.js?v=74'), 'renderTopicTree');
@@ -145,6 +149,7 @@ let contestOpenGeneration = 0;
 const INTERACTIVE_SCREENS = new Set(['battle', 'review', 'rankedEvent']);
 let pendingContestMaintenance = null;
 let onlineFlushBinding = null;
+let directCheckoutAttempt = null;
 
 const isInteractiveScreen = () => INTERACTIVE_SCREENS.has(ctx.screen);
 
@@ -542,6 +547,12 @@ function clearCheckoutReturnUrl() {
   globalThis.history.replaceState(globalThis.history.state || {}, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
+async function purchaseAndRedirect(user, contestId) {
+  const purchase = await libraryService.purchase(user, contestId);
+  if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
+  globalThis.location.assign(purchase.redirectUrl);
+}
+
 async function showLibrary({ libraryState = null, refresh = false } = {}) {
   const generation = ++contestOpenGeneration;
   const activeContestId = getActiveContestId();
@@ -581,15 +592,35 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
         contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null,
       }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
-      onPurchase: async (contestId) => {
-        const purchase = await libraryService.purchase(user, contestId);
-        if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
-        globalThis.location.assign(purchase.redirectUrl);
-      },
+      onPurchase: (contestId) => purchaseAndRedirect(user, contestId),
       onLogout: logout,
       embedded: true,
     });
     if (commerceReturn) clearCheckoutReturnUrl();
+    const directContestId = commerceReturn ? null : directCheckoutContestId(commercialIntent, state.items);
+    const attemptKey = directContestId ? `${user.id}:${directContestId}` : null;
+    if (attemptKey && directCheckoutAttempt !== attemptKey) {
+      directCheckoutAttempt = attemptKey;
+      const button = root.querySelector(`[data-commercial-intent="${CSS.escape(directContestId)}"]`);
+      const feedback = root.querySelector('[data-commercial-feedback]');
+      if (button) {
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+        button.textContent = 'ABRINDO PAGAMENTO...';
+      }
+      if (feedback) feedback.textContent = 'Tudo certo. Levando você ao pagamento seguro.';
+      try {
+        await purchaseAndRedirect(user, directContestId);
+      } catch (checkoutError) {
+        directCheckoutAttempt = null;
+        if (button) {
+          button.disabled = false;
+          button.setAttribute('aria-busy', 'false');
+          button.textContent = 'TENTAR PAGAMENTO NOVAMENTE';
+        }
+        if (feedback) feedback.textContent = checkoutError?.message || 'Não foi possível iniciar o pagamento.';
+      }
+    }
   } catch (error) {
     if (generation !== contestOpenGeneration) return;
     root.innerHTML = errorState({
