@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "targets": {
+    "simple": 8,
+    "standard": 12,
+    "complex": 16
+  },
+  "complexity": {
+    "standard_threshold": 1.75,
+    "complex_threshold": 3.5,
+    "weights": {
+      "rules": 1,
+      "exceptions": 2,
+      "applications": 1.25,
+      "competencies": 1.5,
+      "required_knowledge": 0.5
+    }
+  },
+  "coverage_sequence": [
+    "conceito",
+    "compreensao",
+    "aplicacao",
+    "aplicacao",
+    "diferenciacao",
+    "caso_concreto",
+    "excecao",
+    "integracao"
+  ],
+  "difficulty_sequence": [
+    "facil",
+    "media",
+    "media",
+    "media",
+    "media",
+    "dificil",
+    "dificil",
+    "media"
+  ],
+  "format": "multipla_escolha"
+}
