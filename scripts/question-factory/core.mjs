@@ -4,14 +4,15 @@ import path from 'node:path';
 
 export const DEFAULT_POLICY = Object.freeze({
   schema_version: 1,
-  targets: { simple: 8, standard: 12, complex: 16 },
+  strategy: 'coverage_first',
+  targets: { simple: 1, standard: 2, complex: 3 },
   complexity: {
     standard_threshold: 1.75,
     complex_threshold: 3.5,
     weights: { rules: 1, exceptions: 2, applications: 1.25, competencies: 1.5, required_knowledge: 0.5 },
   },
-  coverage_sequence: ['conceito', 'compreensao', 'aplicacao', 'aplicacao', 'diferenciacao', 'caso_concreto', 'excecao', 'integracao'],
-  difficulty_sequence: ['facil', 'media', 'media', 'media', 'media', 'dificil', 'dificil', 'media'],
+  coverage_sequence: ['conceito', 'aplicacao', 'excecao', 'caso_concreto', 'diferenciacao', 'integracao', 'compreensao'],
+  difficulty_sequence: ['facil', 'media', 'dificil', 'dificil', 'media', 'dificil', 'media'],
   format: 'multipla_escolha',
 });
 
