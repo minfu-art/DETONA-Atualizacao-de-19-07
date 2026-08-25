@@ -1,19 +1,19 @@
 name: PC BA Batch 001 Plan
 
 on:
-  push:
+  pull_request:
     branches:
-      - codex/pc-ba-investigador-batch-001
+      - main
 
 permissions:
   contents: write
 
 jobs:
   plan:
-    if: github.actor != 'github-actions[bot]'
+    if: github.head_ref == 'codex/pc-ba-investigador-batch-001' && github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout batch branch
         uses: actions/checkout@v4
         with:
           ref: codex/pc-ba-investigador-batch-001
