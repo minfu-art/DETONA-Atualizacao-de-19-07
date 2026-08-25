@@ -9,27 +9,36 @@ import {
   STATIC_PUBLISHED_PACKAGES,
 } from '../app/js/services/publishedCoursePackageService.js';
 
-const runtimeUrl = new URL('../app/data/course-factory/pc-ba-2026-investigador-runtime.json', import.meta.url);
-const patchUrl = new URL('../app/data/course-factory/published/pc-ba-2026-investigador-patch-001.json', import.meta.url);
+const appRootUrl = new URL('../app/', import.meta.url);
+const publishedEntry = STATIC_PUBLISHED_PACKAGES.pc_ba_2026;
+
+async function readPublishedFixtures() {
+  const readStatic = async (url) => JSON.parse(await readFile(new URL(String(url).split('?')[0], appRootUrl), 'utf8'));
+  const base = await readStatic(publishedEntry.baseUrl);
+  const patches = new Map();
+  for (const url of publishedEntry.patchUrls) patches.set(url, await readStatic(url));
+  return { base, patches };
+}
+
+function fixtureFetch(base, patches, requests = null) {
+  return async (url, options) => {
+    requests?.push({ url, options });
+    const key = String(url);
+    const payload = key === publishedEntry.baseUrl ? base : patches.get(key);
+    if (!payload) return { ok: false, status: 404, json: async () => ({}) };
+    return { ok: true, json: async () => structuredClone(payload) };
+  };
+}
 
 async function runtime() {
-  const [base, patch] = await Promise.all([
-    readFile(runtimeUrl, 'utf8').then(JSON.parse),
-    readFile(patchUrl, 'utf8').then(JSON.parse),
-  ]);
-  const service = new PublishedCoursePackageService({
-    fetchImpl: async (url) => ({
-      ok: true,
-      json: async () => structuredClone(String(url).includes('patch-001') ? patch : base),
-    }),
-  });
-  return service.load('pc_ba_2026');
+  const { base, patches } = await readPublishedFixtures();
+  return new PublishedCoursePackageService({ fetchImpl: fixtureFetch(base, patches) }).load('pc_ba_2026');
 }
 
 test('pacote PC BA publicado é imutável, comercial e alimenta o motor real', async () => {
   const published = await runtime();
   assert.equal(published.contestId, 'pc_ba_2026');
-  assert.equal(published.version, '2026.08.17.1');
+  assert.equal(published.version, publishedEntry.version);
   assert.match(published.contentHash, /^[a-f0-9]{64}$/);
   assert.equal(published.previewOnly, false);
   assert.equal(published.publicationBlocked, false);
@@ -39,37 +48,29 @@ test('pacote PC BA publicado é imutável, comercial e alimenta o motor real', a
   assert.equal(published.metadata.price_cents, 6990);
   assert.equal(published.curriculum.filter(({ type }) => type === 'discipline').length, 14);
   assert.equal(published.curriculum.filter(({ type }) => type === 'topic').length, 161);
-  assert.equal(published.curriculum.filter(({ type }) => type === 'subtopic').length, 296);
-  assert.equal(published.questions.length, 1267);
-  assert.equal(new Set(published.questions.map(({ id }) => id)).size, 1267);
+  assert.equal(published.curriculum.filter(({ type }) => type === 'subtopic').length, publishedEntry.expectedSubtopicCount);
+  assert.equal(published.questions.length, publishedEntry.expectedQuestionCount);
+  assert.equal(new Set(published.questions.map(({ id }) => id)).size, publishedEntry.expectedQuestionCount);
   assert.ok(published.questions.every(({ subtopic_id: subtopicId }) => Boolean(subtopicId)));
 
   const seed = buildDynamicSeedEntities(published);
   assert.equal(seed.disciplines.length, 14);
-  assert.equal(seed.subtopics.length, 296);
-  assert.equal(seed.questions.length, 1267);
+  assert.equal(seed.subtopics.length, publishedEntry.expectedSubtopicCount);
+  assert.equal(seed.questions.length, publishedEntry.expectedQuestionCount);
   assert.ok(seed.questions.every(({ contest_id: contestId }) => contestId === 'pc_ba_2026'));
 });
 
-test('registro genérico carrega apenas pacote publicado válido', async () => {
-  const published = await runtime();
-  const base = JSON.parse(await readFile(runtimeUrl, 'utf8'));
-  const patch = JSON.parse(await readFile(patchUrl, 'utf8'));
+test('registro genérico carrega base e todos os patches publicados', async () => {
+  const { base, patches } = await readPublishedFixtures();
   const requests = [];
-  const service = new PublishedCoursePackageService({
-    fetchImpl: async (url, options) => {
-      requests.push({ url, options });
-      return { ok: true, json: async () => structuredClone(String(url).includes('patch-001') ? patch : base) };
-    },
-  });
+  const service = new PublishedCoursePackageService({ fetchImpl: fixtureFetch(base, patches, requests) });
   assert.equal(service.has('pc_ba_2026'), true);
   assert.equal(service.has('pc_al_2026'), false);
   const loaded = await service.load('pc_ba_2026');
-  assert.equal(loaded.questions.length, 1267);
-  assert.equal(requests.length, 2);
-  assert.equal(requests[0].url, STATIC_PUBLISHED_PACKAGES.pc_ba_2026.baseUrl);
-  assert.equal(requests[1].url, STATIC_PUBLISHED_PACKAGES.pc_ba_2026.patchUrls[0]);
-  assert.deepEqual(requests[0].options, { cache: 'no-store' });
+  assert.equal(loaded.questions.length, publishedEntry.expectedQuestionCount);
+  assert.equal(requests.length, 1 + publishedEntry.patchUrls.length);
+  assert.deepEqual(requests.map(({ url }) => url), [publishedEntry.baseUrl, ...publishedEntry.patchUrls]);
+  assert.ok(requests.every(({ options }) => options?.cache === 'no-store'));
 });
 
 test('conteúdo estático só é aberto após autorização do backend', async () => {
@@ -92,7 +93,7 @@ test('conteúdo estático só é aberto após autorização do backend', async (
     },
   });
   const loaded = await service.load('user-1', 'pc_ba_2026');
-  assert.equal(loaded.questions.length, 1267);
+  assert.equal(loaded.questions.length, publishedEntry.expectedQuestionCount);
   assert.equal(backendCalls, 1);
   assert.equal(packageCalls, 1);
 });
