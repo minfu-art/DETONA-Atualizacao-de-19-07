@@ -8,6 +8,12 @@
     "test:root": "node --test test/*.test.js",
     "check:syntax": "node scripts/check-syntax.mjs",
     "check:secrets": "node scripts/check-secrets.mjs",
-    "course:provision": "node scripts/course-provisioner/index.mjs"
+    "course:provision": "node scripts/course-provisioner/index.mjs",
+    "qf:status": "node scripts/question-factory/cli.mjs status",
+    "qf:plan": "node scripts/question-factory/cli.mjs plan",
+    "qf:validate": "node scripts/question-factory/cli.mjs validate",
+    "qf:qa-template": "node scripts/question-factory/cli.mjs qa-template",
+    "qf:promote": "node scripts/question-factory/cli.mjs promote",
+    "qf:publish": "node scripts/question-factory/cli.mjs publish"
   }
 }
