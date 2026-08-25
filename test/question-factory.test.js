@@ -147,12 +147,13 @@ test('coverage engine encontra lacunas e contratos priorizam microconhecimento m
   assert.equal(byId.get('mk_b').current, 0);
   const summary = coverageSummary(coverage);
   assert.equal(summary.microknowledges, 2);
-  assert.ok(summary.remaining_questions > 0);
+  assert.equal(summary.remaining_questions, 3);
 
   const plan = planContracts(bundle, { limit: 4 });
-  assert.equal(plan.contracts.length, 4);
+  assert.equal(plan.contracts.length, 3);
+  assert.equal(plan.remaining_deficit_before_plan, 3);
   assert.equal(plan.contracts[0].microknowledge_id, 'mk_b');
-  assert.equal(new Set(plan.contracts.map(({ question_id: id }) => id)).size, 4);
+  assert.equal(new Set(plan.contracts.map(({ question_id: id }) => id)).size, 3);
   assert.ok(plan.contracts.every(({ objective }) => objective.includes('sem repetir')));
 });
 
