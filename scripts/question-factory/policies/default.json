@@ -1,9 +1,10 @@
 {
   "schema_version": 1,
+  "strategy": "coverage_first",
   "targets": {
-    "simple": 8,
-    "standard": 12,
-    "complex": 16
+    "simple": 1,
+    "standard": 2,
+    "complex": 3
   },
   "complexity": {
     "standard_threshold": 1.75,
@@ -18,21 +19,19 @@
   },
   "coverage_sequence": [
     "conceito",
-    "compreensao",
     "aplicacao",
-    "aplicacao",
-    "diferenciacao",
-    "caso_concreto",
     "excecao",
-    "integracao"
+    "caso_concreto",
+    "diferenciacao",
+    "integracao",
+    "compreensao"
   ],
   "difficulty_sequence": [
     "facil",
     "media",
-    "media",
-    "media",
-    "media",
     "dificil",
+    "dificil",
+    "media",
     "dificil",
     "media"
   ],
