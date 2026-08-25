@@ -1,10 +1,16 @@
 name: Question Factory Status
 
 on:
-  push:
-    branches:
-      - codex/question-factory-v1
   workflow_dispatch:
+    inputs:
+      course:
+        description: Course package slug
+        required: true
+        default: pc-ba-2026-investigador
+      top:
+        description: Number of priority gaps to show
+        required: true
+        default: '30'
 
 permissions:
   contents: read
@@ -22,90 +28,5 @@ jobs:
         with:
           node-version: 22
 
-      - name: PC BA Investigator coverage status
-        run: npm run qf:status -- --course pc-ba-2026-investigador --top 30
-
-      - name: Coverage calibration diagnostics
-        shell: bash
-        run: |
-          node --input-type=module <<'NODE'
-          import path from 'node:path';
-          import { loadBundle, buildCoverage, coverageSummary, DEFAULT_POLICY } from './scripts/question-factory/core.mjs';
-
-          const bundle = await loadBundle(path.resolve('course-packages/pc-ba-2026-investigador'));
-          const byNode = new Map(bundle.curriculum.map((node) => [node.id, node]));
-          const disciplineFor = (subtopicId) => {
-            let node = byNode.get(subtopicId);
-            while (node) {
-              if (node.type === 'discipline') return node;
-              node = byNode.get(node.parent_id);
-            }
-            return null;
-          };
-
-          function analyze(policy, label) {
-            const rows = buildCoverage(bundle, policy);
-            const summary = coverageSummary(rows);
-            const complexity = {};
-            for (const row of rows) {
-              const key = row.complexity;
-              const bucket = complexity[key] ||= { microknowledges: 0, required: 0, credited: 0, remaining: 0, zero: 0 };
-              bucket.microknowledges += 1;
-              bucket.required += row.target;
-              bucket.credited += Math.min(row.current, row.target);
-              bucket.remaining += row.deficit;
-              if (row.current === 0) bucket.zero += 1;
-            }
-            const currentDistribution = { zero: 0, one: 0, two: 0, three_to_five: 0, six_plus: 0 };
-            for (const row of rows) {
-              if (row.current === 0) currentDistribution.zero += 1;
-              else if (row.current === 1) currentDistribution.one += 1;
-              else if (row.current === 2) currentDistribution.two += 1;
-              else if (row.current <= 5) currentDistribution.three_to_five += 1;
-              else currentDistribution.six_plus += 1;
-            }
-            return { label, targets: policy.targets, summary, complexity, currentDistribution, rows };
-          }
-
-          const policies = [
-            analyze(DEFAULT_POLICY, 'v1_8_12_16'),
-            analyze({ ...DEFAULT_POLICY, targets: { simple: 2, standard: 3, complex: 4 } }, 'lean_2_3_4'),
-            analyze({ ...DEFAULT_POLICY, targets: { simple: 3, standard: 4, complex: 6 } }, 'balanced_3_4_6'),
-            analyze({ ...DEFAULT_POLICY, targets: { simple: 3, standard: 5, complex: 8 } }, 'deep_3_5_8'),
-          ];
-
-          const rows = policies[0].rows;
-          const disciplines = new Map();
-          for (const row of rows) {
-            const discipline = disciplineFor(row.subtopic_id);
-            const id = discipline?.id || 'unknown';
-            const bucket = disciplines.get(id) || {
-              discipline_id: id,
-              discipline: discipline?.title || discipline?.name || 'Unknown',
-              microknowledges: 0,
-              required: 0,
-              credited: 0,
-              remaining: 0,
-              zero: 0,
-            };
-            bucket.microknowledges += 1;
-            bucket.required += row.target;
-            bucket.credited += Math.min(row.current, row.target);
-            bucket.remaining += row.deficit;
-            if (row.current === 0) bucket.zero += 1;
-            disciplines.set(id, bucket);
-          }
-
-          const output = {
-            current_policy: {
-              summary: policies[0].summary,
-              complexity: policies[0].complexity,
-              current_distribution: policies[0].currentDistribution,
-            },
-            policy_simulations: policies.map(({ label, targets, summary }) => ({ label, targets, summary })),
-            disciplines: [...disciplines.values()].sort((a, b) => b.remaining - a.remaining),
-          };
-          console.log('QF_CALIBRATION_JSON_START');
-          console.log(JSON.stringify(output, null, 2));
-          console.log('QF_CALIBRATION_JSON_END');
-          NODE
+      - name: Coverage status
+        run: npm run qf:status -- --course "${{ inputs.course }}" --top "${{ inputs.top }}"
