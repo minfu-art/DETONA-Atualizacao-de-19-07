@@ -3,7 +3,7 @@ import { mkdir, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import {
-  DEFAULT_POLICY, buildCoverage, coverageSummary, loadBundle, planContracts,
+  buildCoverage, coverageSummary, loadBundle, planContracts,
   promoteBatch, readJson, validateQuestionBatch, writeJson,
 } from './core.mjs';
 import { publishPatch } from './publish.mjs';
@@ -40,8 +40,10 @@ async function nextNamedFile(directory, prefix) {
 }
 
 async function policyFrom(options, repoRoot) {
-  if (!options.policy) return DEFAULT_POLICY;
-  return readJson(path.resolve(repoRoot, String(options.policy)));
+  const policyPath = options.policy
+    ? path.resolve(repoRoot, String(options.policy))
+    : path.join(repoRoot, 'scripts/question-factory/policies/default.json');
+  return readJson(policyPath);
 }
 
 function output(value) { console.log(JSON.stringify(value, null, 2)); }
@@ -59,7 +61,7 @@ if (command === 'status') {
   const priorities = rows.filter(({ deficit }) => deficit > 0)
     .sort((a, b) => a.coverage_pct - b.coverage_pct || b.deficit - a.deficit)
     .slice(0, Number(options.top || 20));
-  output({ course: courseSlug, ...summary, priorities });
+  output({ course: courseSlug, policy_strategy: policy.strategy || 'custom', targets: policy.targets, ...summary, priorities });
 } else if (command === 'plan') {
   const plan = planContracts(bundle, { limit: Number(options.limit || 100), policy });
   const directory = path.join(bundlePath, 'factory/contracts');
