@@ -8,6 +8,7 @@ import { supabaseAuthAdapter } from '../supabase/authAdapter.js';
 import { clearActiveUserId } from './activeUser.js';
 import { isLocalDevelopment, requiresRemoteBackend } from '../config/appEnvironment.js';
 import { assertCloudReadyForEnvironment } from '../config/cloudConfig.js';
+import { ENV } from '../config/env.js';
 
 export class CloudAwareAuthService {
   constructor({
@@ -16,12 +17,14 @@ export class CloudAwareAuthService {
     cloudEnabled = isCloudEnabled,
     localFallbackAllowed = isLocalDevelopment,
     cloudRequired = requiresRemoteBackend,
+    googleEnabled = () => ENV.AUTH_GOOGLE_ENABLED,
   } = {}) {
     this.localAuth = localAuth;
     this.cloudAuth = cloudAuth;
     this.cloudEnabled = cloudEnabled;
     this.localFallbackAllowed = localFallbackAllowed;
     this.cloudRequired = cloudRequired;
+    this.googleEnabled = googleEnabled;
     this.currentUser = null;
     this.mode = this.localFallbackAllowed() ? 'local' : 'none';
   }
@@ -72,6 +75,27 @@ export class CloudAwareAuthService {
     this.currentUser = user;
     this.mode = 'local';
     return user;
+  }
+
+  isGoogleLoginEnabled() {
+    return this.googleEnabled() === true && this.#useCloud();
+  }
+
+  async loginWithGoogle(input = {}) {
+    this.#assertAuthAvailable();
+    if (!this.isGoogleLoginEnabled()) {
+      throw new Error('A entrada com Google ainda não está disponível.');
+    }
+    this.mode = 'cloud';
+    return this.cloudAuth.loginWithGoogle(input);
+  }
+
+  async resendSignupConfirmation(input) {
+    this.#assertAuthAvailable();
+    if (!this.#useCloud()) {
+      throw new Error('O reenvio está disponível no ambiente online.');
+    }
+    return this.cloudAuth.resendSignupConfirmation(input);
   }
 
   isPasswordRecoveryLocation(location = globalThis.location) {

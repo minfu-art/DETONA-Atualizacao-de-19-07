@@ -47,6 +47,20 @@ function emailConfirmationRedirectUrl(location = globalThis.location) {
   }
 }
 
+function safeOAuthRedirectUrl(location = globalThis.location, redirectTo = '') {
+  if (!location?.href) return null;
+  try {
+    const base = new URL(location.href);
+    const target = new URL(String(redirectTo || location.href), base);
+    if (!['http:', 'https:'].includes(target.protocol)) return null;
+    if (target.origin !== base.origin) return null;
+    target.hash = '';
+    return target.toString();
+  } catch {
+    return null;
+  }
+}
+
 function mapProfileToUser(profile, authUser) {
   return {
     id: profile?.id || authUser.id,
@@ -165,6 +179,35 @@ export class SupabaseAuthAdapter {
 
     const profile = await this.#ensureProfile(data.user);
     return this.#activate(data.user, profile);
+  }
+
+  async loginWithGoogle({ redirectTo } = {}) {
+    const target = safeOAuthRedirectUrl(this.getLocation(), redirectTo);
+    if (!target) throw new Error('Destino de autenticação inválido.');
+    const client = await this.#client();
+    const { data, error } = await client.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: target,
+        skipBrowserRedirect: false,
+      },
+    });
+    if (error) throw new Error('Não foi possível entrar com o Google agora. Tente novamente.');
+    return { redirecting: true, url: data?.url || null };
+  }
+
+  async resendSignupConfirmation({ email }) {
+    const cleanEmail = normalizeEmail(email);
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) throw new Error('Informe um e-mail válido.');
+    const client = await this.#client();
+    const emailRedirectTo = emailConfirmationRedirectUrl(this.getLocation());
+    const { error } = await client.auth.resend({
+      type: 'signup',
+      email: cleanEmail,
+      ...(emailRedirectTo ? { options: { emailRedirectTo } } : {}),
+    });
+    if (error) throw new Error('Não foi possível reenviar agora. Aguarde um minuto e tente novamente.');
+    return { accepted: true };
   }
 
   isPasswordRecoveryLocation(location = globalThis.location) {

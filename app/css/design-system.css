@@ -2453,7 +2453,15 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 }
 .detona-login-card .auth-forgot:hover { color:#fff; text-decoration:underline; text-underline-offset:3px; }
 .detona-login-card .auth-forgot:focus-visible,
-.detona-login-card .auth-switch:focus-visible { outline:3px solid var(--ds-focus); outline-offset:3px; border-radius:5px; }
+.detona-login-card .auth-switch:focus-visible,
+.detona-login-card .auth-google:focus-visible,
+.detona-login-card .auth-secondary-action:focus-visible { outline:3px solid var(--ds-focus); outline-offset:3px; border-radius:8px; }
+.detona-login-card .auth-google { min-height:52px; display:grid; grid-template-columns:30px 1fr 30px; align-items:center; padding:9px 13px; border:1px solid rgba(226,232,240,.28); border-radius:12px; background:#f8fafc; color:#172033; font-size:12px; letter-spacing:.025em; cursor:pointer; box-shadow:0 10px 24px rgba(0,0,0,.16); transition:transform .18s ease,background .18s ease,border-color .18s ease; }
+.detona-login-card .auth-google:hover { border-color:#fff; background:#fff; transform:translateY(-1px); }
+.detona-login-card .auth-google:disabled { opacity:.62; cursor:wait; transform:none; }
+.auth-google__mark { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 43%,#fbbc05 0 68%,#ea4335 0 84%,#4285f4 0); color:#fff; font:900 16px/1 Arial,sans-serif; text-shadow:0 1px 2px rgba(0,0,0,.3); }
+.auth-divider { display:flex; align-items:center; gap:10px; color:#707b98; font-size:9px; letter-spacing:.04em; text-transform:uppercase; }
+.auth-divider::before,.auth-divider::after { content:""; height:1px; flex:1; background:rgba(143,155,195,.2); }
 .detona-login-card .auth-error { min-height:18px; margin:0; color:#fda4af; font-size:11px; line-height:1.45; text-align:left; }
 .detona-login-card .auth-error.is-success { color:#86efac; }
 .detona-login-card .auth-submit {
@@ -2494,6 +2502,13 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .auth-sent .ico { font-size:25px; }
 .auth-sent strong { display:block; color:#f1f5f9; font-size:14px; }
 .auth-sent p { margin:7px 0 0; color:#9ca6be; font-size:11px; line-height:1.5; }
+.auth-sent p b { color:#e2e8f0; font-weight:750; }
+.auth-confirmation-actions { display:grid; gap:9px; }
+.detona-login-card .auth-secondary-action { min-height:44px; padding:9px 14px; border:1px solid rgba(167,139,250,.3); border-radius:11px; background:rgba(124,92,255,.08); color:#ddd6fe; font-size:11px; font-weight:800; letter-spacing:.035em; cursor:pointer; }
+.detona-login-card .auth-secondary-action:hover { border-color:rgba(196,181,253,.7); background:rgba(124,92,255,.16); color:#fff; }
+.detona-login-card .auth-secondary-action:disabled { opacity:.55; cursor:wait; }
+.auth-confirmation-feedback { margin:0 0 12px; color:#fda4af; font-size:11px; line-height:1.45; text-align:center; }
+.auth-confirmation-feedback.is-success { color:#86efac; }
 
 @media (max-width:760px) {
   .app-shell--auth .saas-auth { align-items:start; padding:8px; }

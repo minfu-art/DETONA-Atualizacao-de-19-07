@@ -22,7 +22,7 @@ Por padrão **`CLOUD_MODE=off`**: nada muda para quem não configurar Supabase.
    `supabase/migrations/001_detona_schema.sql`
 
 3. Em **Authentication → Providers**, deixe **Email** ativo.
-4. (Opcional) Em **Authentication → Settings**, desative *Confirm email* durante testes locais.
+4. Mantenha **Confirm email** ativo em produção. O app oferece reenvio e retomada da compra após a confirmação.
 5. Em **Settings → API**, copie:
    - **Project URL** → `SUPABASE_URL`
    - **anon public** key → `SUPABASE_ANON_KEY`
@@ -121,6 +121,17 @@ window.__DETONA.authService.getAuthMode?.()
 3. Em outro dispositivo: login com a mesma conta → pull restaura o progresso.
 
 Se a confirmação de e-mail estiver ativa, o cadastro pode exigir clicar no link antes do login.
+
+### Login com Google
+
+O botão só aparece quando o provedor estiver realmente pronto, evitando uma opção quebrada para o aluno:
+
+1. Crie um cliente OAuth Web no Google Auth Platform.
+2. Cadastre no cliente Google a callback exibida em **Supabase → Authentication → Providers → Google**.
+3. Informe o Client ID e o Client Secret somente no painel do Supabase e ative o provedor.
+4. No ambiente público da Vercel, defina `AUTH_GOOGLE_ENABLED=true` e publique novamente.
+
+O retorno OAuth usa apenas o mesmo domínio do app e preserva `courseId`, `source` e `action`, para o aluno voltar ao curso e à compra que escolheu.
 
 ---
 

@@ -11,7 +11,9 @@ const cloudMode = appEnv === 'development' ? String(process.env.CLOUD_MODE || 'o
 const url = String(process.env.SUPABASE_URL || '');
 const anonKey = String(process.env.SUPABASE_ANON_KEY || '');
 const checkoutProvider = String(process.env.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase();
+const googleAuthEnabled = String(process.env.AUTH_GOOGLE_ENABLED || 'false').trim().toLowerCase();
 if (!['disabled', 'mercado_pago'].includes(checkoutProvider)) throw new Error('CHECKOUT_PROVIDER inválido.');
+if (!['true', 'false'].includes(googleAuthEnabled)) throw new Error('AUTH_GOOGLE_ENABLED inválido.');
 if (appEnv !== 'development' && (!url.startsWith('https://') || !anonKey)) {
   throw new Error('Staging/produção exigem SUPABASE_URL e SUPABASE_ANON_KEY.');
 }
@@ -21,6 +23,7 @@ const values = {
   CLOUD_MODE: cloudMode,
   SUPABASE_URL: url,
   SUPABASE_ANON_KEY: anonKey,
+  AUTH_GOOGLE_ENABLED: googleAuthEnabled === 'true',
   SUPABASE_JS_URL: String(process.env.SUPABASE_JS_URL || ''),
   CHECKOUT_PROVIDER: checkoutProvider,
   PUBLIC_COURSES_URL: String(process.env.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),

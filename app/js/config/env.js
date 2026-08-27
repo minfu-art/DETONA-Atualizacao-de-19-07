@@ -16,6 +16,8 @@ export const ENV = Object.freeze({
   SUPABASE_URL: String(injected.SUPABASE_URL || '').trim(),
   /** Chave anon (pública, protegida por RLS) */
   SUPABASE_ANON_KEY: String(injected.SUPABASE_ANON_KEY || '').trim(),
+  /** Exibe OAuth Google somente depois que o provedor estiver configurado no Supabase. */
+  AUTH_GOOGLE_ENABLED: String(injected.AUTH_GOOGLE_ENABLED || 'false').trim().toLowerCase() === 'true',
   /**
    * off | hybrid
    * off = comportamento atual (só local)

@@ -95,6 +95,7 @@ export function renderAuth(root, { authService, onAuthenticated }) {
     const verifyEmail = mode === AUTH_MODES.VERIFY_EMAIL;
     const reset = mode === AUTH_MODES.RESET;
     const login = mode === AUTH_MODES.LOGIN;
+    const googleEnabled = authService.isGoogleLoginEnabled?.() === true;
     const copy = modeCopy(mode);
     const passwordRequirement = '<div class="auth-requirements" id="auth-requirements"><span data-rule="length">8 caracteres</span><span data-rule="letter">uma letra</span><span data-rule="number">um número</span><span data-rule="space">sem espaços</span></div>';
 
@@ -128,11 +129,25 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                 <div class="auth-sent" role="status">
                   <span aria-hidden="true">${icon('mail', 'ico--control')}</span>
                   <strong>${verifyEmail ? 'Ative sua conta para continuar' : 'Confira também o spam'}</strong>
-                  <p>${verifyEmail ? 'Ao confirmar, entre normalmente para acessar Meus cursos ou conhecer o catálogo.' : 'Por segurança, não informamos se o endereço está cadastrado.'}</p>
+                  <p>${verifyEmail ? `Enviamos para <b>${escapeHtml(draftEmail)}</b>. Confirme em outra aba e volte aqui para continuar no curso escolhido.` : 'Por segurança, não informamos se o endereço está cadastrado.'}</p>
                 </div>
-                <button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-back-login" type="button"><strong>VOLTAR PARA ENTRAR</strong></button>
+                ${message ? `<p class="auth-confirmation-feedback ${messageType === 'success' ? 'is-success' : ''}" role="status" aria-live="polite">${escapeHtml(message)}</p>` : ''}
+                ${verifyEmail ? `
+                  <div class="auth-confirmation-actions">
+                    <button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-confirmed" type="button"><strong>JÁ CONFIRMEI — CONTINUAR</strong></button>
+                    <button class="auth-secondary-action" id="auth-resend" type="button">REENVIAR E-MAIL</button>
+                    <button class="auth-switch" id="auth-change-email" type="button">E-mail errado? <strong>ALTERAR CADASTRO</strong></button>
+                  </div>
+                ` : '<button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-back-login" type="button"><strong>VOLTAR PARA ENTRAR</strong></button>'}
               ` : `
                 <form id="auth-form" class="auth-form">
+                  ${(googleEnabled && (login || register)) ? `
+                    <button class="auth-google" id="auth-google" type="button" aria-busy="false">
+                      <span class="auth-google__mark" aria-hidden="true">G</span>
+                      <strong>CONTINUAR COM GOOGLE</strong>
+                    </button>
+                    <div class="auth-divider" aria-hidden="true"><span>ou continue com e-mail</span></div>
+                  ` : ''}
                   ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" placeholder="Nome completo" required></div></div>` : ''}
                   ${reset ? '' : `<div class="field auth-field"><label class="sr-only" for="auth-email">E-mail</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('mail', 'ico--control')}</span><input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(draftEmail)}" placeholder="E-mail cadastrado" aria-describedby="auth-error" required></div></div>`}
                   ${login ? passwordField() : ''}
@@ -154,6 +169,50 @@ export function renderAuth(root, { authService, onAuthenticated }) {
       </section>`;
 
     bindInstallButtons(root);
+
+    root.querySelector('#auth-google')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      try {
+        await authService.loginWithGoogle();
+      } catch (error) {
+        draw({ message: error.message || 'Não foi possível entrar com o Google agora.' });
+      }
+    });
+
+    root.querySelector('#auth-resend')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      try {
+        await authService.resendSignupConfirmation({ email: draftEmail });
+        draw({ message: 'Novo e-mail enviado. Confira também a caixa de spam.', messageType: 'success' });
+      } catch (error) {
+        draw({ message: error.message || 'Não foi possível reenviar agora.' });
+      }
+    });
+
+    root.querySelector('#auth-confirmed')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      try {
+        const user = await authService.restoreSession();
+        if (!user) {
+          draw({ message: 'A confirmação ainda não apareceu. Abra o link do e-mail e tente novamente.' });
+          return;
+        }
+        await onAuthenticated({ reason: 'email-confirmation' });
+      } catch (error) {
+        draw({ message: error.message || 'Ainda não foi possível confirmar sua sessão.' });
+      }
+    });
+
+    root.querySelector('#auth-change-email')?.addEventListener('click', () => {
+      mode = AUTH_MODES.REGISTER;
+      draw();
+      root.querySelector('#auth-email')?.focus();
+    });
 
     root.querySelector('#auth-back-login')?.addEventListener('click', () => {
       mode = AUTH_MODES.LOGIN;

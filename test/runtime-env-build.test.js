@@ -54,6 +54,7 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     CLOUD_MODE: 'off',
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
+    AUTH_GOOGLE_ENABLED: false,
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
@@ -95,6 +96,7 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     CLOUD_MODE: 'hybrid',
     SUPABASE_URL: fakeUrl,
     SUPABASE_ANON_KEY: fakePublicKey,
+    AUTH_GOOGLE_ENABLED: false,
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
@@ -112,6 +114,7 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     CLOUD_MODE: 'off',
     SUPABASE_URL: '',
     SUPABASE_ANON_KEY: '',
+    AUTH_GOOGLE_ENABLED: false,
     CHECKOUT_PROVIDER: 'disabled',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });

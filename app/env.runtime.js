@@ -6,6 +6,7 @@ globalThis.__DETONA_ENV__ = Object.freeze({
   CLOUD_MODE: 'off',
   SUPABASE_URL: '',
   SUPABASE_ANON_KEY: '',
+  AUTH_GOOGLE_ENABLED: false,
   CHECKOUT_PROVIDER: 'disabled',
   PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
 });

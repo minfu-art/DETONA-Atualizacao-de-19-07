@@ -76,6 +76,66 @@ test('Supabase solicita recuperação com e-mail normalizado e redirect explíci
   ]]);
 });
 
+test('OAuth Google preserva curso e origem comercial em redirect do mesmo domínio', async () => {
+  const calls = [];
+  const adapter = new SupabaseAuthAdapter({
+    getLocation: () => ({
+      href: 'https://app.detonaconcursos.com/?courseId=pm-ba-2026&source=site&action=buy#oferta',
+      origin: 'https://app.detonaconcursos.com',
+    }),
+    getClient: async () => ({
+      auth: {
+        signInWithOAuth: async (payload) => {
+          calls.push(payload);
+          return { data: { url: 'https://accounts.google.com/o/oauth2/auth' }, error: null };
+        },
+      },
+    }),
+  });
+
+  assert.deepEqual(await adapter.loginWithGoogle(), {
+    redirecting: true,
+    url: 'https://accounts.google.com/o/oauth2/auth',
+  });
+  assert.deepEqual(calls, [{
+    provider: 'google',
+    options: {
+      redirectTo: 'https://app.detonaconcursos.com/?courseId=pm-ba-2026&source=site&action=buy',
+      skipBrowserRedirect: false,
+    },
+  }]);
+  await assert.rejects(
+    () => adapter.loginWithGoogle({ redirectTo: 'https://site-falso.example/roubar-sessao' }),
+    /Destino de autenticação inválido/,
+  );
+});
+
+test('reenvio de confirmação normaliza e-mail e mantém a compra pretendida', async () => {
+  const calls = [];
+  const adapter = new SupabaseAuthAdapter({
+    getLocation: () => ({
+      href: 'https://app.detonaconcursos.com/?courseId=pm-ba-2026&action=buy#cadastro',
+    }),
+    getClient: async () => ({
+      auth: {
+        resend: async (payload) => {
+          calls.push(payload);
+          return { error: null };
+        },
+      },
+    }),
+  });
+
+  assert.deepEqual(await adapter.resendSignupConfirmation({ email: ' ALUNO@EXEMPLO.COM ' }), { accepted: true });
+  assert.deepEqual(calls, [{
+    type: 'signup',
+    email: 'aluno@exemplo.com',
+    options: {
+      emailRedirectTo: 'https://app.detonaconcursos.com/?courseId=pm-ba-2026&action=buy',
+    },
+  }]);
+});
+
 test('redefinição valida a senha, atualiza no Supabase e encerra a sessão temporária', async () => {
   const events = [];
   const adapter = new SupabaseAuthAdapter({
@@ -135,6 +195,30 @@ test('serviço híbrido não faz fallback local para recuperação de senha', as
   ]);
 });
 
+test('serviço híbrido só expõe Google quando provedor e flag pública estão ativos', async () => {
+  const calls = [];
+  const service = new CloudAwareAuthService({
+    localAuth: {},
+    cloudAuth: {
+      isAvailable: () => true,
+      loginWithGoogle: async (input) => { calls.push(['google', input]); return { redirecting: true }; },
+      resendSignupConfirmation: async (input) => { calls.push(['resend', input]); return { accepted: true }; },
+    },
+    cloudEnabled: () => true,
+    googleEnabled: () => true,
+    localFallbackAllowed: () => false,
+    cloudRequired: () => false,
+  });
+
+  assert.equal(service.isGoogleLoginEnabled(), true);
+  assert.deepEqual(await service.loginWithGoogle(), { redirecting: true });
+  assert.deepEqual(await service.resendSignupConfirmation({ email: 'aluno@example.com' }), { accepted: true });
+  assert.deepEqual(calls, [
+    ['google', {}],
+    ['resend', { email: 'aluno@example.com' }],
+  ]);
+});
+
 test('interface oferece fluxo completo e acessível sem botão decorativo desabilitado', async () => {
   const [ui, css, app, admin, sw, art] = await Promise.all([
     readFile(authUiUrl, 'utf8'),
@@ -149,6 +233,10 @@ test('interface oferece fluxo completo e acessível sem botão decorativo desabi
   assert.match(ui, /AUTH_MODES\.RESET/);
   assert.match(ui, /requestPasswordReset/);
   assert.match(ui, /updatePassword/);
+  assert.match(ui, /CONTINUAR COM GOOGLE/);
+  assert.match(ui, /JÁ CONFIRMEI — CONTINUAR/);
+  assert.match(ui, /REENVIAR E-MAIL/);
+  assert.match(ui, /resendSignupConfirmation/);
   assert.match(ui, /Esqueci minha senha/);
   assert.match(ui, /Por segurança, não informamos se o endereço está cadastrado/);
   assert.doesNotMatch(ui, /class="auth-future" disabled/);
