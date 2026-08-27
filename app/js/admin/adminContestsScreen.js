@@ -58,7 +58,7 @@ function contestForm(contest = {}, capabilities = {}) {
           ${['draft', 'preparing', 'ready', 'archived'].map((status) => `<option ${contest.content_status === status ? 'selected' : ''}>${status}</option>`).join('')}
         </select></label>
         <label>Comercial<select name="sales_status">
-          ${['unavailable', 'monitoring', 'coming_soon', 'available', 'suspended'].map((status) => `<option ${contest.sales_status === status ? 'selected' : ''}>${status}</option>`).join('')}
+          ${['unavailable', 'monitoring', 'coming_soon', 'preorder', 'available', 'suspended'].map((status) => `<option ${contest.sales_status === status ? 'selected' : ''}>${status}</option>`).join('')}
         </select></label>
       </div>
       <label>Meta de interessados (opcional)<input name="interest_goal" type="number" min="1" max="100000000" value="${value('interest_goal')}" placeholder="Ex.: 300"></label>

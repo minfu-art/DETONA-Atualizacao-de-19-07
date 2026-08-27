@@ -1,0 +1,34 @@
+{
+  "schema_version": "detona_journey_map_plan_v1",
+  "artifact_type": "journey_map_plan",
+  "status": "foundation_ready_pre_edital",
+  "identity": {
+    "contest_id": "pm_ba_2026",
+    "position_id": "pm_ba_2026_soldado",
+    "offering_id": "pm_ba_2026_soldado",
+    "canonical_id_convention": "pm_ba_2026_ids_v1.0.0"
+  },
+  "baseline": {
+    "status": "pre_edital",
+    "official_edital": "Edital de Abertura SAEB nº 05/2022, de 27 de setembro de 2022",
+    "new_contest_announcement_date": "2026-06-20",
+    "announced_soldier_vacancies": 2500,
+    "new_opening_edital_located": false
+  },
+  "journey_phases": [
+    {"order": 1, "id": "base_prova", "name": "Base de prova", "disciplines": ["Língua Portuguesa", "Matemática"]},
+    {"order": 2, "id": "bahia_brasil", "name": "Bahia e Brasil", "disciplines": ["História do Brasil", "Geografia do Brasil", "Atualidades"]},
+    {"order": 3, "id": "ferramentas", "name": "Ferramentas", "disciplines": ["Informática"]},
+    {"order": 4, "id": "fundamentos_juridicos", "name": "Fundamentos jurídicos", "disciplines": ["Direito Constitucional", "Direitos Humanos", "Direito Administrativo"]},
+    {"order": 5, "id": "atuacao_policial", "name": "Atuação policial", "disciplines": ["Direito Penal", "Igualdade Racial e de Gênero", "Direito Penal Militar"]},
+    {"order": 6, "id": "reta_final", "name": "Reta final", "disciplines": []}
+  ],
+  "operational_safety": {
+    "journey_planning_authorized": true,
+    "question_generation_authorized": false,
+    "import_authorized": false,
+    "publication_authorized": false,
+    "entitlement_authorized": false,
+    "payment_changes_authorized": false
+  }
+}

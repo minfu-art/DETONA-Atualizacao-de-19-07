@@ -47,7 +47,7 @@ export function partitionCommercialLibrary(items = []) {
   const { owned, offers } = partitionLibrary(items);
   return {
     owned,
-    available: offers.filter(({ contest }) => contest?.salesStatus === 'available'),
+    available: offers.filter(({ contest }) => ['available', 'preorder'].includes(contest?.salesStatus)),
     upcoming: offers.filter(({ contest }) => ['monitoring', 'coming_soon'].includes(contest?.salesStatus)),
   };
 }
@@ -86,10 +86,13 @@ export function resolveCheckoutReturn(returnState, items = []) {
     };
   }
   if (item?.owned) {
+    const isPreorder = item.contest.contentStatus !== 'ready';
     return {
       tone: 'success',
-      title: 'Acesso confirmado.',
-      description: `${item.contest.name} já está disponível em Meus cursos.`,
+      title: isPreorder ? 'Pré-venda confirmada.' : 'Acesso confirmado.',
+      description: isPreorder
+        ? `Seu acesso a ${item.contest.name} está garantido. A jornada será liberada em Meus Cursos quando o conteúdo inicial estiver pronto.`
+        : `${item.contest.name} já está disponível em Meus cursos.`,
       contestId: item.contest.id,
       confirmed: true,
     };
@@ -108,8 +111,15 @@ export function checkoutActionFor(item, capability = {}) {
   if (accessVerificationRequired) {
     return { label: 'Conecte-se para validar', action: 'none', disabled: true };
   }
-  if (owned && contest.contentStatus === 'ready') {
-    return { label: item.summary ? 'Continuar' : 'Começar', action: 'open', disabled: false };
+  if (owned) {
+    return contest.contentStatus === 'ready'
+      ? { label: item.summary ? 'Continuar' : 'Começar', action: 'open', disabled: false }
+      : { label: 'Pré-venda confirmada', action: 'none', disabled: true };
+  }
+  if (contest.salesStatus === 'preorder' && contest.contentStatus === 'preparing') {
+    return capability.configured === true
+      ? { label: 'Garantir pré-venda', action: 'purchase', disabled: false }
+      : { label: 'Ver curso', action: 'details', disabled: false };
   }
   if (contest.salesStatus === 'unavailable' || contest.contentStatus !== 'ready') {
     return { label: 'Em preparação', action: 'none', disabled: true };

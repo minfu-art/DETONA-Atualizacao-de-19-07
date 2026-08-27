@@ -76,7 +76,7 @@ test('set_interest é idempotente e remove apenas o próprio voto', async () => 
 
 test('catálogo inclui monitoring e carrega contagens sem uma query por card', async () => {
   const edge = await source('supabase/functions/student-content/index.ts');
-  assert.match(edge, /\['available', 'coming_soon', 'monitoring'\]/);
+  assert.match(edge, /\['available', 'preorder', 'coming_soon', 'monitoring'\]/);
   assert.equal((edge.match(/from\('contest_interest_counts'\)/g) || []).length, 2);
   assert.match(edge, /interestCountByContest/);
   assert.match(edge, /subtopicCountByContest/);
@@ -276,7 +276,7 @@ test('concurso archived não aceita interesse', async () => {
 
 test('monitoring aparece no catálogo autenticado', async () => {
   const edge = await source('supabase/functions/student-content/index.ts');
-  assert.match(edge, /\.in\('sales_status', \['available', 'coming_soon', 'monitoring'\]\)/);
+  assert.match(edge, /\.in\('sales_status', \['available', 'preorder', 'coming_soon', 'monitoring'\]\)/);
 });
 
 test('coming_soon permanece no catálogo autenticado', async () => {

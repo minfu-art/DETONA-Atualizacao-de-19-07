@@ -3,7 +3,7 @@ import { getSupabaseClient } from '../supabase/client.js';
 import { READ_ONLY_CAPABILITIES, hasWriteCapability, normalizeAdminCapabilities } from './adminCapabilities.js';
 
 export const CONTENT_STATUSES = Object.freeze(['draft', 'preparing', 'ready', 'archived']);
-export const SALES_STATUSES = Object.freeze(['unavailable', 'monitoring', 'coming_soon', 'available', 'suspended']);
+export const SALES_STATUSES = Object.freeze(['unavailable', 'monitoring', 'coming_soon', 'preorder', 'available', 'suspended']);
 export const CAREER_AREAS = Object.freeze([
   'police_security', 'administrative', 'fiscal_control',
   'courts_legal', 'health_education', 'armed_forces',

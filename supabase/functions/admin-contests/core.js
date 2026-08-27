@@ -81,7 +81,7 @@ export function validateContestRecord(contest) {
       ? safeText(rejectMarkup(contest.cover_asset, 'cover_asset'), 'cover_asset', 500)
       : null,
     content_status: safeEnum(contest.content_status || 'draft', ['draft', 'preparing', 'ready', 'archived'], 'content_status'),
-    sales_status: safeEnum(contest.sales_status || 'unavailable', ['unavailable', 'monitoring', 'coming_soon', 'available', 'suspended'], 'sales_status'),
+    sales_status: safeEnum(contest.sales_status || 'unavailable', ['unavailable', 'monitoring', 'coming_soon', 'preorder', 'available', 'suspended'], 'sales_status'),
     exam_date: examDate,
     career_area: contest.career_area
       ? safeEnum(contest.career_area, [

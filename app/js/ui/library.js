@@ -56,6 +56,7 @@ function ownedCourseCard(item, { active = false } = {}) {
   const { contest, summary } = item;
   const progress = safePercent(summary?.editalCompletionPct);
   const contentUnavailable = contest.contentStatus !== 'ready';
+  const preorder = contest.salesStatus === 'preorder';
   const disabled = item.accessVerificationRequired === true || contentUnavailable;
   return `
     <article class="owned-course-card ${active ? 'owned-course-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" ${contestTheme(contest)}>
@@ -68,8 +69,8 @@ function ownedCourseCard(item, { active = false } = {}) {
         <div class="owned-course-card__mastery"><span>DOMÍNIO DO EDITAL</span><strong>${progress}%</strong></div>
         ${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}
         <p class="owned-course-card__counts">${Number(contest.subtopicCount || 0)} subtópicos <span aria-hidden="true">·</span> ${Number(contest.questionCount || 0).toLocaleString('pt-BR')} questões</p>
-        <p class="owned-course-card__last">${summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Ainda sem atividade registrada.'}</p>
-        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? 'CONTEÚDO EM PREPARAÇÃO' : contest.previewOnly === true ? 'TESTAR CURSO' : 'CONTINUAR'}</button>
+        <p class="owned-course-card__last">${contentUnavailable && preorder ? 'Seu acesso está garantido. Avisaremos quando a jornada inicial for liberada.' : summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Ainda sem atividade registrada.'}</p>
+        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? preorder ? 'PRÉ-VENDA CONFIRMADA' : 'CONTEÚDO EM PREPARAÇÃO' : contest.previewOnly === true ? 'TESTAR CURSO' : 'CONTINUAR'}</button>
         <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
       </div>
     </article>`;
@@ -98,18 +99,19 @@ function commercialIntentCard(resolution, links = {}) {
   }
   const price = formatCanonicalPrice(contest);
   const actionable = resolution.state === 'ready' && price;
+  const preorder = contest.salesStatus === 'preorder';
   return `
     <aside class="commercial-intent ${actionable ? 'commercial-intent--ready' : 'commercial-intent--unavailable'}" ${contestTheme(contest)} aria-labelledby="commercial-intent-title">
       <div class="commercial-intent__art">${courseArt(contest, { eager: true })}</div>
       <div class="commercial-intent__content">
-        <span class="library-kicker">CURSO SELECIONADO NO SITE</span>
+        <span class="library-kicker">${preorder ? 'PRÉ-VENDA SELECIONADA NO SITE' : 'CURSO SELECIONADO NO SITE'}</span>
         <h2 id="commercial-intent-title">${escapeHtml(contest.name)}</h2>
         <p>${escapeHtml(contest.role || contest.description || 'Jornada DETONA')}</p>
         ${price ? `<strong class="commercial-intent__price">${escapeHtml(price)} <small>pagamento único</small></strong>` : ''}
       </div>
       <div class="commercial-intent__action">
         ${actionable
-          ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">ADQUIRIR ACESSO</button>`
+          ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">${preorder ? 'GARANTIR PRÉ-VENDA' : 'ADQUIRIR ACESSO'}</button>`
           : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
         <p class="library-action-feedback" data-commercial-feedback role="status" aria-live="polite"></p>
       </div>
@@ -201,6 +203,7 @@ export function renderLibrary(root, {
   root.querySelector('[data-commercial-intent]')?.addEventListener('click', async (event) => {
     const button = event.currentTarget;
     const contestId = button.dataset.commercialIntent;
+    const originalLabel = button.textContent;
     if (!contestId || button.disabled) return;
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
@@ -212,7 +215,7 @@ export function renderLibrary(root, {
     } catch (error) {
       button.disabled = false;
       button.setAttribute('aria-busy', 'false');
-      button.textContent = 'ADQUIRIR ACESSO';
+      button.textContent = originalLabel;
       if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar o pagamento.';
     }
   });

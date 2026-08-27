@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "contest_id": "pm_ba_2026",
+  "roles": [
+    {
+      "id": "pm_ba_2026_soldado",
+      "name": "Aluno Soldado da Polícia Militar",
+      "order": 0,
+      "disciplines": [
+        {
+          "id": "pmba_soldado_d01_portugues",
+          "name": "Língua Portuguesa",
+          "order": 0,
+          "topics": [
+            {"id":"pmba_soldado_d01_t01_compreensao_textos","name":"Compreensão e interpretação de textos","order":0,"subtopics":[{"id":"pmba_soldado_d01_t01_s01_compreensao_textos","name":"Compreensão e interpretação de textos","order":0}]},
+            {"id":"pmba_soldado_d01_t02_tipologia_generos","name":"Tipologia textual e gêneros textuais","order":1,"subtopics":[{"id":"pmba_soldado_d01_t02_s01_tipologia_generos","name":"Tipologia textual e gêneros textuais","order":0}]},
+            {"id":"pmba_soldado_d01_t03_ortografia","name":"Ortografia oficial","order":2,"subtopics":[{"id":"pmba_soldado_d01_t03_s01_ortografia","name":"Ortografia oficial","order":0}]},
+            {"id":"pmba_soldado_d01_t04_acentuacao","name":"Acentuação gráfica","order":3,"subtopics":[{"id":"pmba_soldado_d01_t04_s01_acentuacao","name":"Acentuação gráfica","order":0}]},
+            {"id":"pmba_soldado_d01_t05_classes_palavras","name":"Classes de palavras","order":4,"subtopics":[{"id":"pmba_soldado_d01_t05_s01_classes_palavras","name":"Classes de palavras","order":0}]},
+            {"id":"pmba_soldado_d01_t06_crase","name":"Uso do sinal indicativo de crase","order":5,"subtopics":[{"id":"pmba_soldado_d01_t06_s01_crase","name":"Uso do sinal indicativo de crase","order":0}]},
+            {"id":"pmba_soldado_d01_t07_sintaxe","name":"Sintaxe da oração e do período","order":6,"subtopics":[{"id":"pmba_soldado_d01_t07_s01_sintaxe","name":"Sintaxe da oração e do período","order":0}]},
+            {"id":"pmba_soldado_d01_t08_pontuacao","name":"Pontuação","order":7,"subtopics":[{"id":"pmba_soldado_d01_t08_s01_pontuacao","name":"Pontuação","order":0}]},
+            {"id":"pmba_soldado_d01_t09_concordancia","name":"Concordância nominal e verbal","order":8,"subtopics":[{"id":"pmba_soldado_d01_t09_s01_concordancia","name":"Concordância nominal e verbal","order":0}]},
+            {"id":"pmba_soldado_d01_t10_regencia","name":"Regência nominal e verbal","order":9,"subtopics":[{"id":"pmba_soldado_d01_t10_s01_regencia","name":"Regência nominal e verbal","order":0}]},
+            {"id":"pmba_soldado_d01_t11_significacao","name":"Significação das palavras","order":10,"subtopics":[{"id":"pmba_soldado_d01_t11_s01_significacao","name":"Significação das palavras","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d02_historia_brasil",
+          "name": "História do Brasil",
+          "order": 1,
+          "topics": [
+            {"id":"pmba_soldado_d02_t01_descobrimento","name":"Descobrimento do Brasil (1500)","order":0,"subtopics":[{"id":"pmba_soldado_d02_t01_s01_descobrimento","name":"Descobrimento do Brasil em 1500","order":0}]},
+            {"id":"pmba_soldado_d02_t02_brasil_colonia","name":"Brasil Colônia (1530-1815)","order":1,"subtopics":[
+              {"id":"pmba_soldado_d02_t02_s01_capitanias","name":"Capitanias Hereditárias","order":0},
+              {"id":"pmba_soldado_d02_t02_s02_economia","name":"Economia colonial","order":1},
+              {"id":"pmba_soldado_d02_t02_s03_extrativismo_vegetal","name":"Extrativismo vegetal","order":2},
+              {"id":"pmba_soldado_d02_t02_s04_extrativismo_mineral","name":"Extrativismo mineral","order":3},
+              {"id":"pmba_soldado_d02_t02_s05_pecuaria","name":"Pecuária","order":4},
+              {"id":"pmba_soldado_d02_t02_s06_escravidao","name":"Escravidão","order":5},
+              {"id":"pmba_soldado_d02_t02_s07_organizacao_politica","name":"Organização político-administrativa","order":6},
+              {"id":"pmba_soldado_d02_t02_s08_expansao_territorial","name":"Expansão territorial","order":7}
+            ]},
+            {"id":"pmba_soldado_d02_t03_independencia_brasil","name":"Independência do Brasil (1822)","order":2,"subtopics":[
+              {"id":"pmba_soldado_d02_t03_s01_nomeacao_pedro","name":"Nomeação do Príncipe Regente D. Pedro I","order":0},
+              {"id":"pmba_soldado_d02_t03_s02_dia_fico","name":"Dia do Fico","order":1},
+              {"id":"pmba_soldado_d02_t03_s03_independencia","name":"Independência do Brasil","order":2},
+              {"id":"pmba_soldado_d02_t03_s04_reconhecimento","name":"Reconhecimento da Independência do Brasil","order":3}
+            ]},
+            {"id":"pmba_soldado_d02_t04_primeiro_reinado","name":"Primeiro Reinado (1822-1831)","order":3,"subtopics":[{"id":"pmba_soldado_d02_t04_s01_primeiro_reinado","name":"Primeiro Reinado","order":0}]},
+            {"id":"pmba_soldado_d02_t05_segundo_reinado","name":"Segundo Reinado","description":"O edital-base registra o período 1831-1840.","order":4,"subtopics":[{"id":"pmba_soldado_d02_t05_s01_segundo_reinado","name":"Segundo Reinado conforme delimitação do edital-base","order":0}]},
+            {"id":"pmba_soldado_d02_t06_primeira_republica","name":"Primeira República (1889-1930)","order":5,"subtopics":[
+              {"id":"pmba_soldado_d02_t06_s01_governo_provisorio","name":"Primeiro Governo Provisório","order":0},
+              {"id":"pmba_soldado_d02_t06_s02_assembleia_constituinte","name":"Assembleia Constituinte","order":1},
+              {"id":"pmba_soldado_d02_t06_s03_deodoro_fonseca","name":"Presidência de Deodoro da Fonseca","order":2},
+              {"id":"pmba_soldado_d02_t06_s04_politica_governadores","name":"Política dos Governadores","order":3},
+              {"id":"pmba_soldado_d02_t06_s05_coronelismo","name":"Coronelismo","order":4},
+              {"id":"pmba_soldado_d02_t06_s06_tenentismo_coluna","name":"Movimentos tenentistas e Coluna Prestes","order":5},
+              {"id":"pmba_soldado_d02_t06_s07_revolta_armada","name":"Revolta da Armada","order":6}
+            ]},
+            {"id":"pmba_soldado_d02_t07_revolucao_1930","name":"Revolução de 1930","order":6,"subtopics":[{"id":"pmba_soldado_d02_t07_s01_revolucao_1930","name":"Revolução de 1930","order":0}]},
+            {"id":"pmba_soldado_d02_t08_era_vargas","name":"Era Vargas (1930-1945)","order":7,"subtopics":[{"id":"pmba_soldado_d02_t08_s01_era_vargas","name":"Era Vargas","order":0}]},
+            {"id":"pmba_soldado_d02_t09_presidentes_1964","name":"Presidentes do Brasil de 1964 à atualidade","order":8,"subtopics":[{"id":"pmba_soldado_d02_t09_s01_presidentes_1964","name":"Presidentes do Brasil de 1964 à atualidade","order":0}]},
+            {"id":"pmba_soldado_d02_t10_historia_bahia","name":"História da Bahia","order":9,"subtopics":[{"id":"pmba_soldado_d02_t10_s01_historia_bahia","name":"História da Bahia","order":0}]},
+            {"id":"pmba_soldado_d02_t11_independencia_bahia","name":"Independência da Bahia","order":10,"subtopics":[{"id":"pmba_soldado_d02_t11_s01_independencia_bahia","name":"Independência da Bahia","order":0}]},
+            {"id":"pmba_soldado_d02_t12_canudos","name":"Revolta de Canudos","order":11,"subtopics":[{"id":"pmba_soldado_d02_t12_s01_canudos","name":"Revolta de Canudos","order":0}]},
+            {"id":"pmba_soldado_d02_t13_males","name":"Revolta dos Malês","order":12,"subtopics":[{"id":"pmba_soldado_d02_t13_s01_males","name":"Revolta dos Malês","order":0}]},
+            {"id":"pmba_soldado_d02_t14_conjuracao_baiana","name":"Conjuração Baiana","order":13,"subtopics":[{"id":"pmba_soldado_d02_t14_s01_conjuracao_baiana","name":"Conjuração Baiana","order":0}]},
+            {"id":"pmba_soldado_d02_t15_sabinada","name":"Sabinada","order":14,"subtopics":[{"id":"pmba_soldado_d02_t15_s01_sabinada","name":"Sabinada","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d03_geografia_brasil",
+          "name": "Geografia do Brasil",
+          "order": 2,
+          "topics": [
+            {"id":"pmba_soldado_d03_t01_relevo","name":"Relevo brasileiro","order":0,"subtopics":[{"id":"pmba_soldado_d03_t01_s01_relevo","name":"Relevo brasileiro","order":0}]},
+            {"id":"pmba_soldado_d03_t02_urbanizacao","name":"Urbanização","order":1,"subtopics":[
+              {"id":"pmba_soldado_d03_t02_s01_crescimento_urbano","name":"Crescimento urbano e contingente populacional brasileiro","order":0},
+              {"id":"pmba_soldado_d03_t02_s02_problemas_estruturais","name":"Problemas estruturais da urbanização","order":1}
+            ]},
+            {"id":"pmba_soldado_d03_t03_matriz_energetica","name":"Fontes de energia da matriz energética brasileira","order":2,"subtopics":[
+              {"id":"pmba_soldado_d03_t03_s01_eolica","name":"Energia eólica","order":0},
+              {"id":"pmba_soldado_d03_t03_s02_hidraulica","name":"Energia hidráulica","order":1},
+              {"id":"pmba_soldado_d03_t03_s03_biomassa","name":"Biomassa","order":2},
+              {"id":"pmba_soldado_d03_t03_s04_solar","name":"Energia solar","order":3},
+              {"id":"pmba_soldado_d03_t03_s05_mares","name":"Energia das marés","order":4}
+            ]},
+            {"id":"pmba_soldado_d03_t04_problemas_ambientais","name":"Problemas ambientais","order":3,"subtopics":[{"id":"pmba_soldado_d03_t04_s01_problemas_ambientais","name":"Problemas ambientais","order":0}]},
+            {"id":"pmba_soldado_d03_t05_clima","name":"Clima","order":4,"subtopics":[
+              {"id":"pmba_soldado_d03_t05_s01_pressao","name":"Pressão atmosférica","order":0},
+              {"id":"pmba_soldado_d03_t05_s02_umidade_temperatura","name":"Umidade e temperatura","order":1},
+              {"id":"pmba_soldado_d03_t05_s03_fatores_clima","name":"Fatores que determinam o clima","order":2},
+              {"id":"pmba_soldado_d03_t05_s04_mudancas_climaticas","name":"Mudanças climáticas","order":3},
+              {"id":"pmba_soldado_d03_t05_s05_consequencias_clima","name":"Consequências das mudanças climáticas","order":4}
+            ]},
+            {"id":"pmba_soldado_d03_t06_geografia_bahia","name":"Geografia da Bahia","order":5,"subtopics":[
+              {"id":"pmba_soldado_d03_t06_s01_aspectos_politicos","name":"Aspectos políticos","order":0},
+              {"id":"pmba_soldado_d03_t06_s02_aspectos_fisicos","name":"Aspectos físicos","order":1},
+              {"id":"pmba_soldado_d03_t06_s03_aspectos_economicos","name":"Aspectos econômicos","order":2},
+              {"id":"pmba_soldado_d03_t06_s04_aspectos_sociais","name":"Aspectos sociais","order":3},
+              {"id":"pmba_soldado_d03_t06_s05_aspectos_culturais","name":"Aspectos culturais","order":4}
+            ]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d04_matematica",
+          "name": "Matemática",
+          "order": 3,
+          "topics": [
+            {"id":"pmba_soldado_d04_t01_conjuntos_numericos","name":"Conjuntos numéricos","order":0,"subtopics":[
+              {"id":"pmba_soldado_d04_t01_s01_naturais","name":"Números naturais","order":0},
+              {"id":"pmba_soldado_d04_t01_s02_inteiros","name":"Números inteiros","order":1},
+              {"id":"pmba_soldado_d04_t01_s03_racionais","name":"Números racionais","order":2},
+              {"id":"pmba_soldado_d04_t01_s04_reais","name":"Números reais","order":3},
+              {"id":"pmba_soldado_d04_t01_s05_complexos","name":"Números complexos nas formas algébrica e trigonométrica","order":4},
+              {"id":"pmba_soldado_d04_t01_s06_operacoes_propriedades","name":"Operações, propriedades e aplicações","order":5},
+              {"id":"pmba_soldado_d04_t01_s07_sequencias_progressoes","name":"Sequências numéricas, progressão aritmética e progressão geométrica","order":6}
+            ]},
+            {"id":"pmba_soldado_d04_t02_algebra","name":"Álgebra","order":1,"subtopics":[
+              {"id":"pmba_soldado_d04_t02_s01_expressoes","name":"Expressões algébricas","order":0},
+              {"id":"pmba_soldado_d04_t02_s02_polinomios","name":"Polinômios: operações e propriedades","order":1},
+              {"id":"pmba_soldado_d04_t02_s03_equacoes_inequacoes","name":"Equações polinomiais e inequações relacionadas","order":2}
+            ]},
+            {"id":"pmba_soldado_d04_t03_funcoes","name":"Funções","order":2,"subtopics":[
+              {"id":"pmba_soldado_d04_t03_s01_generalidades","name":"Generalidades de funções","order":0},
+              {"id":"pmba_soldado_d04_t03_s02_primeiro_grau","name":"Função de primeiro grau","order":1},
+              {"id":"pmba_soldado_d04_t03_s03_segundo_grau","name":"Função de segundo grau","order":2},
+              {"id":"pmba_soldado_d04_t03_s04_modular","name":"Função modular","order":3},
+              {"id":"pmba_soldado_d04_t03_s05_exponencial","name":"Função exponencial","order":4},
+              {"id":"pmba_soldado_d04_t03_s06_logaritmica","name":"Função logarítmica","order":5},
+              {"id":"pmba_soldado_d04_t03_s07_graficos","name":"Gráficos de funções","order":6},
+              {"id":"pmba_soldado_d04_t03_s08_propriedades","name":"Propriedades de funções","order":7}
+            ]},
+            {"id":"pmba_soldado_d04_t04_sistemas_matrizes","name":"Sistemas lineares, matrizes e determinantes","order":3,"subtopics":[
+              {"id":"pmba_soldado_d04_t04_s01_sistemas_lineares","name":"Sistemas lineares","order":0},
+              {"id":"pmba_soldado_d04_t04_s02_matrizes","name":"Matrizes: propriedades e aplicações","order":1},
+              {"id":"pmba_soldado_d04_t04_s03_determinantes","name":"Determinantes: propriedades e aplicações","order":2}
+            ]},
+            {"id":"pmba_soldado_d04_t05_analise_combinatoria","name":"Análise combinatória e probabilidade","order":4,"subtopics":[
+              {"id":"pmba_soldado_d04_t05_s01_arranjos","name":"Arranjos simples","order":0},
+              {"id":"pmba_soldado_d04_t05_s02_permutacoes","name":"Permutações simples","order":1},
+              {"id":"pmba_soldado_d04_t05_s03_combinacoes","name":"Combinações simples","order":2},
+              {"id":"pmba_soldado_d04_t05_s04_binomio_newton","name":"Binômio de Newton","order":3},
+              {"id":"pmba_soldado_d04_t05_s05_probabilidade","name":"Probabilidade em espaços amostrais finitos","order":4}
+            ]},
+            {"id":"pmba_soldado_d04_t06_geometria_medidas","name":"Geometria e medidas","order":5,"subtopics":[
+              {"id":"pmba_soldado_d04_t06_s01_geometria_plana","name":"Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área","order":0},
+              {"id":"pmba_soldado_d04_t06_s02_geometria_espacial","name":"Geometria espacial","order":1},
+              {"id":"pmba_soldado_d04_t06_s03_retas_planos","name":"Paralelismo e perpendicularismo entre retas e planos","order":2},
+              {"id":"pmba_soldado_d04_t06_s04_prisma_piramide","name":"Áreas e volumes de prisma e pirâmide","order":3},
+              {"id":"pmba_soldado_d04_t06_s05_cilindro_cone_esfera","name":"Áreas e volumes de cilindro, cone e esfera","order":4},
+              {"id":"pmba_soldado_d04_t06_s06_geometria_analitica","name":"Geometria analítica no plano","order":5},
+              {"id":"pmba_soldado_d04_t06_s07_retas_circunferencia","name":"Retas e circunferência","order":6},
+              {"id":"pmba_soldado_d04_t06_s08_distancias","name":"Distâncias no plano","order":7}
+            ]},
+            {"id":"pmba_soldado_d04_t07_trigonometria","name":"Trigonometria","order":6,"subtopics":[
+              {"id":"pmba_soldado_d04_t07_s01_razoes","name":"Razões trigonométricas","order":0},
+              {"id":"pmba_soldado_d04_t07_s02_funcoes","name":"Funções trigonométricas","order":1},
+              {"id":"pmba_soldado_d04_t07_s03_formulas_equacoes","name":"Fórmulas de transformações e equações trigonométricas","order":2},
+              {"id":"pmba_soldado_d04_t07_s04_triangulos","name":"Trigonometria em triângulos","order":3}
+            ]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d05_atualidades",
+          "name": "Atualidades",
+          "order": 4,
+          "topics": [
+            {"id":"pmba_soldado_d05_t01_globalizacao","name":"Globalização","order":0,"subtopics":[{"id":"pmba_soldado_d05_t01_s01_globalizacao","name":"Conceitos, efeitos e implicações sociais, econômicas, políticas e culturais","order":0}]},
+            {"id":"pmba_soldado_d05_t02_diversidade_cultural","name":"Multiculturalidade, pluralidade e diversidade cultural","order":1,"subtopics":[{"id":"pmba_soldado_d05_t02_s01_diversidade_cultural","name":"Multiculturalidade, pluralidade e diversidade cultural","order":0}]},
+            {"id":"pmba_soldado_d05_t03_tecnologias_informacao","name":"Tecnologias de Informação e Comunicação","order":2,"subtopics":[{"id":"pmba_soldado_d05_t03_s01_impactos_tic","name":"Conceitos, efeitos e implicações sociais, econômicas, políticas e culturais","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d06_informatica",
+          "name": "Informática",
+          "order": 5,
+          "topics": [
+            {"id":"pmba_soldado_d06_t01_aplicativos_escritorio","name":"Aplicativos de escritório","order":0,"subtopics":[
+              {"id":"pmba_soldado_d06_t01_s01_editores_texto","name":"Editores de texto: Word e Writer","order":0},
+              {"id":"pmba_soldado_d06_t01_s02_planilhas","name":"Planilhas: Excel e Calc","order":1},
+              {"id":"pmba_soldado_d06_t01_s03_apresentacoes","name":"Apresentações: PowerPoint e Impress","order":2},
+              {"id":"pmba_soldado_d06_t01_s04_microsoft_office","name":"Microsoft Office versão 2007 e superiores","order":3},
+              {"id":"pmba_soldado_d06_t01_s05_libreoffice","name":"LibreOffice versão 5.0 e superiores","order":4}
+            ]},
+            {"id":"pmba_soldado_d06_t02_sistemas_operacionais","name":"Sistemas operacionais","order":1,"subtopics":[
+              {"id":"pmba_soldado_d06_t02_s01_windows_7","name":"Windows 7","order":0},
+              {"id":"pmba_soldado_d06_t02_s02_windows_10","name":"Windows 10","order":1},
+              {"id":"pmba_soldado_d06_t02_s03_linux","name":"Linux","order":2}
+            ]},
+            {"id":"pmba_soldado_d06_t03_gerenciamento_informacoes","name":"Organização e gerenciamento de informações","order":2,"subtopics":[
+              {"id":"pmba_soldado_d06_t03_s01_arquivos","name":"Arquivos","order":0},
+              {"id":"pmba_soldado_d06_t03_s02_pastas","name":"Pastas","order":1},
+              {"id":"pmba_soldado_d06_t03_s03_programas","name":"Programas","order":2},
+              {"id":"pmba_soldado_d06_t03_s04_informacoes","name":"Organização de informações","order":3}
+            ]},
+            {"id":"pmba_soldado_d06_t04_interface_atalhos","name":"Interface e atalhos","order":3,"subtopics":[
+              {"id":"pmba_soldado_d06_t04_s01_atalhos_teclado","name":"Atalhos de teclado","order":0},
+              {"id":"pmba_soldado_d06_t04_s02_icones","name":"Ícones","order":1},
+              {"id":"pmba_soldado_d06_t04_s03_area_trabalho","name":"Área de trabalho","order":2},
+              {"id":"pmba_soldado_d06_t04_s04_lixeira","name":"Lixeira","order":3}
+            ]},
+            {"id":"pmba_soldado_d06_t05_internet_intranet","name":"Internet e intranet","order":4,"subtopics":[
+              {"id":"pmba_soldado_d06_t05_s01_conceitos","name":"Conceitos básicos","order":0},
+              {"id":"pmba_soldado_d06_t05_s02_tecnologias","name":"Tecnologias associadas","order":1},
+              {"id":"pmba_soldado_d06_t05_s03_ferramentas","name":"Ferramentas e aplicativos","order":2},
+              {"id":"pmba_soldado_d06_t05_s04_procedimentos","name":"Procedimentos associados","order":3},
+              {"id":"pmba_soldado_d06_t05_s05_modos_utilizacao","name":"Modos de utilização","order":4}
+            ]},
+            {"id":"pmba_soldado_d06_t06_correio_eletronico","name":"Correio eletrônico","order":5,"subtopics":[{"id":"pmba_soldado_d06_t06_s01_correio_eletronico","name":"Correio eletrônico","order":0}]},
+            {"id":"pmba_soldado_d06_t07_computacao_nuvem","name":"Computação em nuvem","order":6,"subtopics":[{"id":"pmba_soldado_d06_t07_s01_computacao_nuvem","name":"Computação em nuvem","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d07_direito_constitucional",
+          "name": "Direito Constitucional",
+          "order": 6,
+          "topics": [
+            {"id":"pmba_soldado_d07_t01_constituicao_federal","name":"Constituição da República Federativa do Brasil","order":0,"subtopics":[
+              {"id":"pmba_soldado_d07_t01_s01_principios","name":"Princípios fundamentais","order":0},
+              {"id":"pmba_soldado_d07_t01_s02_direitos_garantias","name":"Direitos e garantias fundamentais","order":1},
+              {"id":"pmba_soldado_d07_t01_s03_organizacao_estado","name":"Organização do Estado","order":2},
+              {"id":"pmba_soldado_d07_t01_s04_administracao_publica","name":"Administração Pública","order":3},
+              {"id":"pmba_soldado_d07_t01_s05_militares_estados","name":"Militares dos Estados, do Distrito Federal e dos Territórios","order":4},
+              {"id":"pmba_soldado_d07_t01_s06_seguranca_publica","name":"Segurança Pública","order":5}
+            ]},
+            {"id":"pmba_soldado_d07_t02_constituicao_bahia","name":"Constituição do Estado da Bahia","order":1,"subtopics":[
+              {"id":"pmba_soldado_d07_t02_s01_principios","name":"Princípios fundamentais","order":0},
+              {"id":"pmba_soldado_d07_t02_s02_direitos_garantias","name":"Direitos e garantias fundamentais","order":1},
+              {"id":"pmba_soldado_d07_t02_s03_servidores_militares","name":"Servidores públicos militares","order":2},
+              {"id":"pmba_soldado_d07_t02_s04_seguranca_publica","name":"Segurança Pública","order":3}
+            ]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d08_direitos_humanos",
+          "name": "Direitos Humanos",
+          "order": 7,
+          "topics": [
+            {"id":"pmba_soldado_d08_t01_dudh","name":"Declaração Universal dos Direitos Humanos de 1948","order":0,"subtopics":[{"id":"pmba_soldado_d08_t01_s01_dudh","name":"Declaração Universal dos Direitos Humanos de 1948","order":0}]},
+            {"id":"pmba_soldado_d08_t02_convencao_americana","name":"Convenção Americana sobre Direitos Humanos de 1969","order":1,"subtopics":[{"id":"pmba_soldado_d08_t02_s01_artigos_1_32","name":"Pacto de São José da Costa Rica, artigos 1º ao 32","order":0}]},
+            {"id":"pmba_soldado_d08_t03_pidesc","name":"Pacto Internacional dos Direitos Econômicos, Sociais e Culturais","order":2,"subtopics":[{"id":"pmba_soldado_d08_t03_s01_artigos_1_15","name":"Artigos 1º ao 15","order":0}]},
+            {"id":"pmba_soldado_d08_t04_declaracao_pequim","name":"Declaração de Pequim","order":3,"subtopics":[{"id":"pmba_soldado_d08_t04_s01_acao_igualdade","name":"Ação para Igualdade, Desenvolvimento e Paz","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d09_direito_administrativo",
+          "name": "Direito Administrativo",
+          "order": 8,
+          "topics": [
+            {"id":"pmba_soldado_d09_t01_administracao_publica","name":"Administração Pública","order":0,"subtopics":[{"id":"pmba_soldado_d09_t01_s01_administracao_publica","name":"Administração Pública","order":0}]},
+            {"id":"pmba_soldado_d09_t02_principios","name":"Princípios fundamentais da administração pública","order":1,"subtopics":[{"id":"pmba_soldado_d09_t02_s01_principios","name":"Princípios fundamentais da administração pública","order":0}]},
+            {"id":"pmba_soldado_d09_t03_poderes_deveres","name":"Poderes e deveres dos administradores públicos","order":2,"subtopics":[
+              {"id":"pmba_soldado_d09_t03_s01_uso_abuso","name":"Uso e abuso do poder","order":0},
+              {"id":"pmba_soldado_d09_t03_s02_vinculado","name":"Poder vinculado","order":1},
+              {"id":"pmba_soldado_d09_t03_s03_discricionario","name":"Poder discricionário","order":2},
+              {"id":"pmba_soldado_d09_t03_s04_hierarquico","name":"Poder hierárquico","order":3},
+              {"id":"pmba_soldado_d09_t03_s05_disciplinar","name":"Poder disciplinar","order":4},
+              {"id":"pmba_soldado_d09_t03_s06_regulamentar","name":"Poder regulamentar","order":5},
+              {"id":"pmba_soldado_d09_t03_s07_policia","name":"Poder de polícia","order":6},
+              {"id":"pmba_soldado_d09_t03_s08_deveres","name":"Deveres dos administradores públicos","order":7}
+            ]},
+            {"id":"pmba_soldado_d09_t04_servidores_publicos","name":"Servidores públicos","order":3,"subtopics":[
+              {"id":"pmba_soldado_d09_t04_s01_cargo","name":"Cargo público","order":0},
+              {"id":"pmba_soldado_d09_t04_s02_emprego","name":"Emprego público","order":1},
+              {"id":"pmba_soldado_d09_t04_s03_funcao","name":"Função pública","order":2}
+            ]},
+            {"id":"pmba_soldado_d09_t05_estatuto_pmba","name":"Regime jurídico do militar estadual","order":4,"subtopics":[{"id":"pmba_soldado_d09_t05_s01_lei_7990_arts_1_59","name":"Lei estadual nº 7.990/2001, artigos 1º ao 59","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d10_direito_penal",
+          "name": "Direito Penal",
+          "order": 9,
+          "topics": [
+            {"id":"pmba_soldado_d10_t01_crime","name":"Do crime","order":0,"subtopics":[
+              {"id":"pmba_soldado_d10_t01_s01_elementos","name":"Elementos do crime","order":0},
+              {"id":"pmba_soldado_d10_t01_s02_consumacao_tentativa","name":"Consumação e tentativa","order":1},
+              {"id":"pmba_soldado_d10_t01_s03_desistencia_arrependimento","name":"Desistência voluntária e arrependimento eficaz","order":2},
+              {"id":"pmba_soldado_d10_t01_s04_arrependimento_posterior","name":"Arrependimento posterior","order":3},
+              {"id":"pmba_soldado_d10_t01_s05_crime_impossivel","name":"Crime impossível","order":4},
+              {"id":"pmba_soldado_d10_t01_s06_exclusao","name":"Causas de exclusão de ilicitude e culpabilidade","order":5}
+            ]},
+            {"id":"pmba_soldado_d10_t02_contravencao","name":"Contravenção","order":1,"subtopics":[{"id":"pmba_soldado_d10_t02_s01_contravencao","name":"Contravenção","order":0}]},
+            {"id":"pmba_soldado_d10_t03_crimes_vida","name":"Crimes contra a vida","order":2,"subtopics":[
+              {"id":"pmba_soldado_d10_t03_s01_homicidio","name":"Homicídio","order":0},
+              {"id":"pmba_soldado_d10_t03_s02_lesao_corporal","name":"Lesão corporal","order":1},
+              {"id":"pmba_soldado_d10_t03_s03_rixa","name":"Rixa","order":2}
+            ]},
+            {"id":"pmba_soldado_d10_t04_liberdade_pessoal","name":"Crimes contra a liberdade pessoal","order":3,"subtopics":[
+              {"id":"pmba_soldado_d10_t04_s01_constrangimento","name":"Constrangimento ilegal","order":0},
+              {"id":"pmba_soldado_d10_t04_s02_ameaca","name":"Ameaça","order":1},
+              {"id":"pmba_soldado_d10_t04_s03_perseguicao","name":"Perseguição","order":2},
+              {"id":"pmba_soldado_d10_t04_s04_sequestro_carcere","name":"Sequestro e cárcere privado","order":3}
+            ]},
+            {"id":"pmba_soldado_d10_t05_patrimonio","name":"Crimes contra o patrimônio","order":4,"subtopics":[
+              {"id":"pmba_soldado_d10_t05_s01_furto","name":"Furto","order":0},
+              {"id":"pmba_soldado_d10_t05_s02_roubo","name":"Roubo","order":1},
+              {"id":"pmba_soldado_d10_t05_s03_extorsao","name":"Extorsão","order":2},
+              {"id":"pmba_soldado_d10_t05_s04_apropriacao","name":"Apropriação indébita","order":3},
+              {"id":"pmba_soldado_d10_t05_s05_receptacao","name":"Receptação","order":4}
+            ]},
+            {"id":"pmba_soldado_d10_t06_dignidade_sexual","name":"Crimes contra a dignidade sexual","order":5,"subtopics":[
+              {"id":"pmba_soldado_d10_t06_s01_estupro","name":"Estupro","order":0},
+              {"id":"pmba_soldado_d10_t06_s02_importunacao","name":"Importunação sexual","order":1},
+              {"id":"pmba_soldado_d10_t06_s03_assedio","name":"Assédio sexual","order":2}
+            ]},
+            {"id":"pmba_soldado_d10_t07_corrupcao_ativa","name":"Corrupção ativa","order":6,"subtopics":[{"id":"pmba_soldado_d10_t07_s01_corrupcao_ativa","name":"Corrupção ativa","order":0}]},
+            {"id":"pmba_soldado_d10_t08_corrupcao_passiva","name":"Corrupção passiva","order":7,"subtopics":[{"id":"pmba_soldado_d10_t08_s01_corrupcao_passiva","name":"Corrupção passiva","order":0}]},
+            {"id":"pmba_soldado_d10_t09_tortura","name":"Crimes de tortura","order":8,"subtopics":[{"id":"pmba_soldado_d10_t09_s01_lei_9455","name":"Lei nº 9.455/1997","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d11_igualdade_racial_genero",
+          "name": "Igualdade Racial e de Gênero",
+          "order": 10,
+          "topics": [
+            {"id":"pmba_soldado_d11_t01_constituicao_federal","name":"Constituição da República Federativa do Brasil","order":0,"subtopics":[{"id":"pmba_soldado_d11_t01_s01_artigos_1_3_4_5","name":"Artigos 1º, 3º, 4º e 5º","order":0}]},
+            {"id":"pmba_soldado_d11_t02_constituicao_bahia","name":"Constituição do Estado da Bahia","order":1,"subtopics":[{"id":"pmba_soldado_d11_t02_s01_capitulo_negro","name":"Capítulo XXIII — Do Negro","order":0}]},
+            {"id":"pmba_soldado_d11_t03_estatuto_igualdade","name":"Estatuto da Igualdade Racial","order":2,"subtopics":[{"id":"pmba_soldado_d11_t03_s01_lei_12288","name":"Lei nº 12.288/2010","order":0}]},
+            {"id":"pmba_soldado_d11_t04_crimes_preconceito","name":"Crimes resultantes de preconceito de raça ou de cor","order":3,"subtopics":[
+              {"id":"pmba_soldado_d11_t04_s01_lei_7716","name":"Lei nº 7.716/1989","order":0},
+              {"id":"pmba_soldado_d11_t04_s02_lei_9459","name":"Lei nº 9.459/1997","order":1}
+            ]},
+            {"id":"pmba_soldado_d11_t05_convencao_discriminacao_racial","name":"Convenção sobre eliminação da discriminação racial","order":4,"subtopics":[{"id":"pmba_soldado_d11_t05_s01_decreto_65810","name":"Decreto nº 65.810/1969","order":0}]},
+            {"id":"pmba_soldado_d11_t06_convencao_mulher","name":"Convenção sobre eliminação da discriminação contra a mulher","order":5,"subtopics":[{"id":"pmba_soldado_d11_t06_s01_decreto_4377","name":"Decreto nº 4.377/2002","order":0}]},
+            {"id":"pmba_soldado_d11_t07_maria_penha","name":"Lei Maria da Penha","order":6,"subtopics":[{"id":"pmba_soldado_d11_t07_s01_lei_11340","name":"Lei nº 11.340/2006","order":0}]},
+            {"id":"pmba_soldado_d11_t08_injuria_racial","name":"Código Penal Brasileiro","order":7,"subtopics":[{"id":"pmba_soldado_d11_t08_s01_artigo_140","name":"Artigo 140","order":0}]},
+            {"id":"pmba_soldado_d11_t09_tortura","name":"Crime de tortura","order":8,"subtopics":[{"id":"pmba_soldado_d11_t09_s01_lei_9455","name":"Lei nº 9.455/1997","order":0}]},
+            {"id":"pmba_soldado_d11_t10_lei_cao","name":"Lei Caó","description":"Item 11 do edital-base; a numeração oficial salta o item 10.","order":9,"subtopics":[{"id":"pmba_soldado_d11_t10_s01_lei_7437","name":"Lei nº 7.437/1985","order":0}]},
+            {"id":"pmba_soldado_d11_t11_sepromi","name":"Secretaria de Promoção da Igualdade Racial da Bahia","order":10,"subtopics":[{"id":"pmba_soldado_d11_t11_s01_lei_10549","name":"Lei estadual nº 10.549/2006","order":0}]},
+            {"id":"pmba_soldado_d11_t12_seppir","name":"Secretaria de Políticas de Promoção da Igualdade Racial","order":11,"subtopics":[{"id":"pmba_soldado_d11_t12_s01_lei_10678","name":"Lei nº 10.678/2003","order":0}]}
+          ]
+        },
+        {
+          "id": "pmba_soldado_d12_direito_penal_militar",
+          "name": "Direito Penal Militar",
+          "order": 11,
+          "topics": [
+            {"id":"pmba_soldado_d12_t01_autoridade_disciplina","name":"Crimes contra a autoridade ou disciplina militar","order":0,"subtopics":[
+              {"id":"pmba_soldado_d12_t01_s01_motim","name":"Motim","order":0},
+              {"id":"pmba_soldado_d12_t01_s02_revolta","name":"Revolta","order":1},
+              {"id":"pmba_soldado_d12_t01_s03_conspiracao","name":"Conspiração","order":2},
+              {"id":"pmba_soldado_d12_t01_s04_aliciacao","name":"Aliciação para motim ou revolta","order":3}
+            ]},
+            {"id":"pmba_soldado_d12_t02_violencia_superior","name":"Violência contra superior ou militar de serviço","order":1,"subtopics":[{"id":"pmba_soldado_d12_t02_s01_violencia_superior","name":"Violência contra superior ou militar de serviço","order":0}]},
+            {"id":"pmba_soldado_d12_t03_desrespeito_superior","name":"Desrespeito a superior","order":2,"subtopics":[{"id":"pmba_soldado_d12_t03_s01_desrespeito_superior","name":"Desrespeito a superior","order":0}]},
+            {"id":"pmba_soldado_d12_t04_recusa_obediencia","name":"Recusa de obediência","order":3,"subtopics":[{"id":"pmba_soldado_d12_t04_s01_recusa_obediencia","name":"Recusa de obediência","order":0}]},
+            {"id":"pmba_soldado_d12_t05_reuniao_ilicita","name":"Reunião ilícita","order":4,"subtopics":[{"id":"pmba_soldado_d12_t05_s01_reuniao_ilicita","name":"Reunião ilícita","order":0}]},
+            {"id":"pmba_soldado_d12_t06_publicacao_critica","name":"Publicação ou crítica indevida","order":5,"subtopics":[{"id":"pmba_soldado_d12_t06_s01_publicacao_critica","name":"Publicação ou crítica indevida","order":0}]},
+            {"id":"pmba_soldado_d12_t07_resistencia","name":"Resistência mediante ameaça ou violência","order":6,"subtopics":[{"id":"pmba_soldado_d12_t07_s01_resistencia","name":"Resistência mediante ameaça ou violência","order":0}]},
+            {"id":"pmba_soldado_d12_t08_servico_dever","name":"Crimes contra o serviço militar e o dever militar","order":7,"subtopics":[
+              {"id":"pmba_soldado_d12_t08_s01_desercao","name":"Deserção","order":0},
+              {"id":"pmba_soldado_d12_t08_s02_abandono_posto","name":"Abandono de posto","order":1},
+              {"id":"pmba_soldado_d12_t08_s03_descumprimento_missao","name":"Descumprimento de missão","order":2},
+              {"id":"pmba_soldado_d12_t08_s04_embriaguez_servico","name":"Embriaguez em serviço","order":3},
+              {"id":"pmba_soldado_d12_t08_s05_dormir_servico","name":"Dormir em serviço","order":4}
+            ]},
+            {"id":"pmba_soldado_d12_t09_administracao_militar","name":"Crimes contra a Administração Militar","order":8,"subtopics":[
+              {"id":"pmba_soldado_d12_t09_s01_desacato_superior","name":"Desacato a superior","order":0},
+              {"id":"pmba_soldado_d12_t09_s02_desacato_militar","name":"Desacato a militar","order":1},
+              {"id":"pmba_soldado_d12_t09_s03_desobediencia","name":"Desobediência","order":2},
+              {"id":"pmba_soldado_d12_t09_s04_peculato","name":"Peculato","order":3},
+              {"id":"pmba_soldado_d12_t09_s05_peculato_furto","name":"Peculato-furto","order":4},
+              {"id":"pmba_soldado_d12_t09_s06_concussao","name":"Concussão","order":5}
+            ]},
+            {"id":"pmba_soldado_d12_t10_dever_funcional","name":"Crimes contra o dever funcional","order":9,"subtopics":[{"id":"pmba_soldado_d12_t10_s01_prevaricacao","name":"Prevaricação","order":0}]}
+          ]
+        }
+      ]
+    }
+  ]
+}

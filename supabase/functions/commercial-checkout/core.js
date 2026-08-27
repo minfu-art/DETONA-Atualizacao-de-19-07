@@ -16,7 +16,9 @@ export function validateCheckoutRequest(value) {
 
 export function assertPurchasableContest(contest) {
   if (!contest) throw new Error('CONTEST_NOT_FOUND');
-  if (contest.content_status !== 'ready' || contest.sales_status !== 'available') {
+  const regularSale = contest.content_status === 'ready' && contest.sales_status === 'available';
+  const preorderSale = contest.content_status === 'preparing' && contest.sales_status === 'preorder';
+  if (!regularSale && !preorderSale) {
     throw new Error('CONTEST_NOT_AVAILABLE');
   }
   if (!Number.isInteger(contest.price_cents) || contest.price_cents <= 0 || contest.currency !== 'BRL') {
@@ -39,11 +41,14 @@ export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, 
     return url.toString();
   };
   const courseName = String(contest.name || 'Curso DETONA').trim().slice(0, 120);
+  const preorder = contest.content_status === 'preparing' && contest.sales_status === 'preorder';
   return {
     items: [{
       id: contest.id,
-      title: `DETONA | ${courseName}`,
-      description: `Acesso à jornada DETONA — ${courseName}`,
+      title: `${preorder ? 'PRÉ-VENDA DETONA' : 'DETONA'} | ${courseName}`,
+      description: preorder
+        ? `Pré-venda com acesso liberado quando a jornada inicial de ${courseName} for publicada.`
+        : `Acesso à jornada DETONA — ${courseName}`,
       picture_url: DETONA_CHECKOUT_BRAND.pictureUrl,
       quantity: 1,
       currency_id: contest.currency,
@@ -60,7 +65,7 @@ export function checkoutPreference({ order, contest, payerEmail, returnBaseUrl, 
     auto_return: 'approved',
     binary_mode: false,
     statement_descriptor: DETONA_CHECKOUT_BRAND.statementDescriptor,
-    metadata: { contest_id: contest.id, brand: 'detona' },
+    metadata: { contest_id: contest.id, brand: 'detona', sale_type: preorder ? 'preorder' : 'regular' },
   };
 }
 

@@ -120,7 +120,9 @@ export class LibraryService {
     if (existing?.status === 'active') return existing;
     const localGrantAllowed = this.allowLocalGrants();
     if (!localGrantAllowed) {
-      if (contest.contentStatus !== 'ready' || contest.salesStatus !== 'available') {
+      const regularSale = contest.contentStatus === 'ready' && contest.salesStatus === 'available';
+      const preorderSale = contest.contentStatus === 'preparing' && contest.salesStatus === 'preorder';
+      if (!regularSale && !preorderSale) {
         throw new Error('Este curso ainda não está disponível para aquisição.');
       }
     }

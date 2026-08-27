@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "contest_id": "pm_ba_2026",
+  "baseline_status": "pre_edital",
+  "checked_at": "2026-08-26",
+  "sources": [
+    {
+      "source_id": "pm_ba_2022_edital_abertura",
+      "source_type": "official_edital",
+      "title": "Edital de Abertura de Inscrições SAEB nº 05/2022, de 27 de setembro de 2022",
+      "publisher": "Governo do Estado da Bahia, SAEB, PMBA e CBMBA",
+      "url": "https://www.acheconcursos.com.br/imagens/anexo/45428/edital-pm-ba-05-2022-soldados.pdf",
+      "official_record": "Diário Oficial do Estado da Bahia nº 23.511, de 28 de setembro de 2022",
+      "location": "Anexo II, páginas 31 a 33 da edição; páginas 13 a 15 do PDF",
+      "used_for": "Baseline do conteúdo programático de Aluno Soldado da PMBA",
+      "authority": "official_document_secondary_mirror"
+    },
+    {
+      "source_id": "pm_ba_2026_anuncio_vagas",
+      "source_type": "official_announcement",
+      "title": "Governador anuncia concurso público para a Polícia Militar e Corpo de Bombeiros com mais de 3.300 vagas",
+      "publisher": "SAEB — Secretaria da Administração do Estado da Bahia",
+      "url": "https://www.ba.gov.br/administracao/noticias/2026-06/8805/governador-anuncia-concurso-publico-para-policia-militar-e-corpo-de-bombeiros",
+      "published_at": "2026-06-20",
+      "used_for": "Confirmação de 2.500 vagas anunciadas para Soldado PMBA e 200 para Oficial PMBA",
+      "authority": "official"
+    },
+    {
+      "source_id": "pm_ba_2026_saeb_editais_check",
+      "source_type": "official_registry_check",
+      "title": "Página de editais da SAEB",
+      "publisher": "SAEB — Secretaria da Administração do Estado da Bahia",
+      "url": "https://www.ba.gov.br/administracao/editais",
+      "checked_at": "2026-08-26",
+      "used_for": "Verificação da ausência de novo edital de abertura localizado para Soldado PMBA na data de corte",
+      "authority": "official"
+    }
+  ]
+}

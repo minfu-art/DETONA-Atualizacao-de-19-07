@@ -28,7 +28,7 @@ Deno.serve(async (request) => {
       const [{ data, error }, countsResult, ownResult, subtopicCountsResult, questionCountsResult] = await Promise.all([
         admin.from('admin_contests').select('*')
           .neq('content_status', 'archived')
-          .in('sales_status', ['available', 'coming_soon', 'monitoring'])
+          .in('sales_status', ['available', 'preorder', 'coming_soon', 'monitoring'])
           .order('created_at'),
         admin.from('contest_interest_counts').select('contest_id,interest_count'),
         admin.from('contest_interests').select('contest_id').eq('user_id', auth.user.id),

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "contest_id": "pm_ba_2026",
+  "generated_at": "2026-08-26",
+  "status": "foundation_ready_pre_edital",
+  "bundle_hash": "c9800a6081855aff5c35c8abba66272fc1bd984288e0bfbc35cbeeaa4d06b5db",
+  "counts": {
+    "roles": 1,
+    "disciplines": 12,
+    "topics": 91,
+    "subtopics": 213,
+    "curriculum_nodes": 317,
+    "question_batches": 0,
+    "questions": 0
+  },
+  "canonical_ids": {
+    "contest_id": "pm_ba_2026",
+    "position_id": "pm_ba_2026_soldado",
+    "offering_id": "pm_ba_2026_soldado",
+    "convention": "pm_ba_2026_ids_v1.0.0"
+  },
+  "safeguards": {
+    "content_status": "preparing",
+    "sales_status": "unavailable",
+    "price_cents": 0,
+    "exam_date": null,
+    "import_authorized": false,
+    "publication_authorized": false,
+    "entitlement_authorized": false,
+    "payment_changes_authorized": false
+  },
+  "validation": {
+    "local_bundle_loader": "passed",
+    "asset_transparency": "passed",
+    "duplicate_ids": 0,
+    "orphan_nodes": 0
+  },
+  "pending": [
+    "Reconciliar integralmente o currículo quando o novo edital de abertura for publicado.",
+    "Confirmar banca, distribuição de questões, datas, requisitos e etapas do novo certame.",
+    "Substituir o avatar técnico provisório por uma arte exclusiva da jornada PM BA.",
+    "Decompor os 213 subtópicos em microconhecimentos antes de produzir o banco inteligente.",
+    "Definir e validar o diagnóstico inicial antes de exibi-lo ao aluno.",
+    "Criar uma jornada separada para Oficial da PM BA, sem compartilhar currículo ou progresso com Soldado."
+  ]
+}
