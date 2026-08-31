@@ -44,6 +44,10 @@ export function normalizeDynamicContest(contest) {
   if (normalized.id === 'pm_ba_2026') {
     normalized.subtopicCount ||= 213;
   }
+  if (normalized.id === 'pm_al_2026') {
+    normalized.subtopicCount ||= 161;
+    normalized.questionCount ||= 71;
+  }
   if (!normalized.id || !normalized.code || !normalized.name) throw new Error('Concurso dinâmico inválido.');
   return normalized;
 }

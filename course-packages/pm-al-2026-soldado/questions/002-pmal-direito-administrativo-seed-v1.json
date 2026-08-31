@@ -1,0 +1,525 @@
+{
+  "name": "pmal-direito-administrativo-seed-v1",
+  "questions": [
+    {
+      "id": "qf_f3cae9b824843952",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_001"
+      ],
+      "statement": "Há centralização quando o próprio ente político executa a atividade por seus órgãos, e há descentralização quando a execução é transferida a outra pessoa jurídica ou a um particular delegado.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Centralização ocorre dentro da pessoa política. Descentralização pressupõe outra pessoa, criada ou autorizada por lei, ou um particular que receba delegação.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_01",
+        "page_number": 3
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_01",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "o, conforme veremos nos tópicos seguintes. Vamos iniciar pelas entidades, depois debateremos os conceitos de centralização, descentralização e desconcentração e, finalmente, vamos entender o que são os órgãos. A Lei 9.784/1999 define entidade como “ a unidade de atuação dotada de personalidade jurídica ” (art. 1º, § 2º, II). Possuir personalidade jurídica significa que o"
+        }
+      ]
+    },
+    {
+      "id": "qf_8c8a273789e6c9a6",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_002"
+      ],
+      "statement": "A desconcentração administrativa cria uma nova pessoa jurídica para executar determinada competência pública.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Desconcentração apenas distribui competências entre órgãos da mesma pessoa jurídica. A criação ou utilização de outra pessoa caracteriza descentralização.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_01",
+        "page_number": 3
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_01",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "ntes. Vamos iniciar pelas entidades, depois debateremos os conceitos de centralização, descentralização e desconcentração e, finalmente, vamos entender o que são os órgãos. A Lei 9.784/1999 define entidade como “ a unidade de atuação dotada de personalidade jurídica ” (art. 1º, § 2º, II). Possuir personalidade jurídica significa que o ente pode, em nome próprio, adquiri"
+        }
+      ]
+    },
+    {
+      "id": "qf_ae51a300d2769889",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_003"
+      ],
+      "statement": "Os órgãos da Administração Direta são centros de competências sem personalidade jurídica própria, integrados à pessoa política que os criou.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Órgão é unidade de atuação integrante da estrutura de uma pessoa jurídica. Por isso, em regra, não possui personalidade jurídica própria.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_01",
+        "page_number": 11
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_01",
+          "trace_status": "available",
+          "page_number": 11,
+          "excerpt": "sua estrutura funcional. Comentários: quando os serviços são prestados diretamente pelos órgãos da Administração direta, diz -se que o serviço foi prestado de forma centralizada. Portanto, o quesito está correto. Se, por outro lado, os serviços forem prestados por entidades administrativas ou mediante delegação, aí o serviço será prestado de forma descentralizada. Logo, o item"
+        }
+      ]
+    },
+    {
+      "id": "qf_153a481b724b5ff9",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s02",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_004"
+      ],
+      "statement": "Autarquia é pessoa jurídica de direito privado cuja criação depende apenas de autorização legal e posterior registro de seus atos constitutivos.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Autarquia é pessoa jurídica de direito público e é criada diretamente por lei específica. Autorização legal e registro são características ligadas às entidades de direito privado.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_01",
+        "page_number": 34
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_01",
+          "trace_status": "available",
+          "page_number": 34,
+          "excerpt": "AUTARQUIAS Conceito O Prof. Celso Antônio Bandeira de Mello define autarquia como “ pessoas jurídicas de Direito Público de capacidade exclusivamente administrativa ”. Para José dos Santos Carvalho Filho, pode -se conceituar a autarquia como a “pessoa jurídica de direi"
+        }
+      ]
+    },
+    {
+      "id": "qf_5d18713d2f0227a0",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s02",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_005"
+      ],
+      "statement": "A empresa pública pode adotar formas societárias admitidas em direito, ao passo que a sociedade de economia mista deve assumir a forma de sociedade anônima.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A empresa pública possui capital integralmente público e pode adotar diferentes formas. A sociedade de economia mista tem capital misto, controle estatal e forma obrigatória de sociedade anônima.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_02",
+        "page_number": 3
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_02",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "acionaliza vários programas de distribuição de renda. Por sinal, a Lei das Estatais dispõe ainda que: “a empresa pública e a sociedade de economia mista terão a função social de realização do interesse coletivo ou de atendimento a imperativo da segurança nacional expressa no instrumento de autorização legal para a sua criação”. Portanto, a definição do interesse coletivo e"
+        }
+      ]
+    },
+    {
+      "id": "qf_ee97b64198c10acf",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t08_s02",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_006"
+      ],
+      "statement": "Toda fundação pública possui necessariamente personalidade de direito privado e, por isso, nenhuma delas pode ser criada diretamente por lei.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Fundações públicas podem possuir personalidade de direito público ou privado. A fundação de direito público segue regime autárquico e é criada por lei; a de direito privado tem criação autorizada.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_02",
+        "page_number": 38
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_02",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "FUNDAÇÕES PÚBLICAS Conceito As fundações surgiram no meio privado, em que são definidas como a personificação de um patrimônio ao qual é atribuída uma finalidade social não lucrativa. Assim, as fundações são conhecidas como um patrimônio personalizado destinado a realizar ativi"
+        }
+      ]
+    },
+    {
+      "id": "qf_736b790158b68c7f",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_007"
+      ],
+      "statement": "No poder vinculado, a lei predetermina a atuação administrativa sem margem de escolha; no discricionário, a autoridade decide dentro dos limites legais de conveniência e oportunidade.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A vinculação elimina a margem de decisão quanto aos elementos definidos em lei. A discricionariedade não é liberdade absoluta: deve respeitar competência, finalidade e demais limites jurídicos.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 10
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 10,
+          "excerpt": "Poder vinculado e poder discricionário O poder vinculado ou regrado ocorre quando a lei, ao outorgar determinada competência ao agente público, não deixa nenhuma margem de liberdade para o seu exercício. Assim, quando se deparar com a situação prevista na lei, caberá ao agen"
+        }
+      ]
+    },
+    {
+      "id": "qf_20ded1496c5df0d0",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_008"
+      ],
+      "statement": "O poder hierárquico autoriza a Administração a impor penas criminais aos particulares que não possuam qualquer vínculo especial com ela.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Poder hierárquico organiza, coordena, fiscaliza, delega e avoca funções dentro da estrutura administrativa. Penas criminais pertencem à jurisdição penal, não à hierarquia administrativa.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 14
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 14,
+          "excerpt": "om a distribuição de funções e a gradação de autoridade de cada um. Segundo Hely Lopes Meirelles, o poder hierárquico “é o de que dispõe o Executivo para distribuir e escalonar as funções de seus órgãos, ordenar e rever a atuação de seus agentes, estabelecendo a relação de subordinação entre os servidores do seu quadro de pessoal ”. Apesar de o renomado autor falar do “Execu"
+        }
+      ]
+    },
+    {
+      "id": "qf_742018c77a0dfaf3",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_009"
+      ],
+      "statement": "O poder disciplinar alcança servidores e também particulares sujeitos a uma disciplina administrativa específica, como contratados, sem se confundir com o poder punitivo geral do Estado.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O poder disciplinar permite apurar e punir infrações funcionais ou decorrentes de vínculo especial. A repressão penal e as sanções gerais aos cidadãos possuem fundamento diverso.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 20
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 20,
+          "excerpt": "Poder disciplinar O poder disciplinar é o poder-dever de punir internamente as infrações funcionais dos servidores e demais pessoas sujeitas à disciplina dos órgãos e serviços da Administração. Não podemos confundir poder disciplinar com poder punitivo do Estado. Este último é"
+        }
+      ]
+    },
+    {
+      "id": "qf_1bd5dbbd45434fc3",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_010"
+      ],
+      "statement": "O poder regulamentar permite ao chefe do Poder Executivo criar, por decreto, obrigações contrárias à lei regulamentada.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O regulamento executivo detalha a fiel execução da lei e não pode contrariá-la ou inovar além dos limites constitucionais. Decreto não se sobrepõe à lei.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 26
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 26,
+          "excerpt": "Esse é um conceito amplo1 de poder regulamentar, que alguns autores chamam de poder normativo. Alguns autores utilizam um sentido restrito do poder regulamentar , explicando tratar -se do poder conferido ao chefe do Poder Executivo (presidente, governadores e prefeitos) para a edição de normas complementar"
+        }
+      ]
+    },
+    {
+      "id": "qf_6faf7cb4ad0db845",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_011"
+      ],
+      "statement": "Discricionariedade, autoexecutoriedade e coercibilidade são atributos tradicionalmente associados ao poder de polícia, embora nem todos estejam presentes em todo ato de polícia.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A doutrina aponta esses três atributos, mas a incidência depende do ato. A autoexecutoriedade, por exemplo, exige previsão legal ou situação urgente.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 39
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 39,
+          "excerpt": "administrativa encerra-se em si mesma, mas a polícia judiciária não. Gabarito: errado. Atributos do poder de polícia Segundo Hely Lopes Meirelles, são atributos do poder de polícia: → discricionariedade; → autoexecutoriedade; e → coercibilidade. Herbert Almeida, Equipe Direito Administrativo Aula 03 PM-AL (Soldado) Noções de Direito Administrativo - 2026 (Pós-Edital) www.es"
+        }
+      ]
+    },
+    {
+      "id": "qf_f64d4560370db6e1",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_012"
+      ],
+      "statement": "O excesso de poder ocorre quando o agente atua dentro de sua competência, mas busca finalidade diferente da prevista em lei.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Atuar além dos limites da competência caracteriza excesso de poder. Atuar dentro da competência com finalidade indevida caracteriza desvio de poder ou de finalidade.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_03",
+        "page_number": 58
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_03",
+          "trace_status": "available",
+          "page_number": 58,
+          "excerpt": "espécie de ilegalidade. Nesse contexto, o abuso de poder é gênero que comporta duas categorias: a) excesso de poder: quando o agente público atua fora dos limites de sua esfera de competência; b) desvio de poder (desvio de finalidade) : quando o agente atua dentro de sua esfera de competência, porém de forma contrária à finalidade explícita ou implícita na lei que determin"
+        }
+      ]
+    },
+    {
+      "id": "qf_5a00557f8e796e53",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t05_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_013"
+      ],
+      "statement": "Competência, finalidade, forma, motivo e objeto são elementos tradicionalmente utilizados para examinar a validade do ato administrativo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Esses cinco elementos estruturam o ato administrativo. Vícios em cada um recebem tratamento próprio quanto à nulidade ou possibilidade de convalidação.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_04",
+        "page_number": 31
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_04",
+          "trace_status": "available",
+          "page_number": 31,
+          "excerpt": "io de legalidade, sujeitando-o, em regra, à anulação. Os elementos de formação dos atos administrativos são a competência, finalidade , forma, motivo e objeto. A Lei da Ação Popular adota essa mesma disposição dos elementos de formação. Assim, o seu art. 2º dispõe que são nulos os atos lesivos ao patrimônio nos casos de: incompetência; vício de forma; ilegalidade do ob"
+        }
+      ]
+    },
+    {
+      "id": "qf_0e994306e8997fcc",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t05_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_014"
+      ],
+      "statement": "Imperatividade e autoexecutoriedade estão presentes obrigatoriamente em todos os atos administrativos.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Nem todo ato é imperativo ou autoexecutório. Atos negociais, por exemplo, podem não impor obrigação. A autoexecutoriedade depende de lei ou urgência.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_04",
+        "page_number": 18
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_04",
+          "trace_status": "available",
+          "page_number": 18,
+          "excerpt": "de direito público. Apesar das divergências, existem quatro atributos dos atos administrativos: a) presunção de legitimidade ou veracidade; b) imperatividade; c) autoexecutoriedade; d) tipicidade. Os atributos de imperatividade e autoexecutoriedade são observáveis apenas em alguns tipos de atos administrativos. Por outro lado, a presunção de legitimidade ou veracidade e a tipicidad"
+        }
+      ]
+    },
+    {
+      "id": "qf_e7369d0096dd9650",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t05_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_015"
+      ],
+      "statement": "A anulação desfaz ato ilegal, enquanto a revogação retira ato válido que se tornou inconveniente ou inoportuno para a Administração.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Anulação é controle de legalidade e normalmente produz efeitos retroativos. Revogação é juízo de mérito sobre ato válido e, em regra, produz efeitos prospectivos.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_04",
+        "page_number": 130
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_04",
+          "trace_status": "available",
+          "page_number": 130,
+          "excerpt": "ANULAÇÃO Conceito e características ▪ Desfazimento de ato ilegal ▪ Efeitos retroativos (ex tunc) ▪ Administração (autotutela) ou Judiciário (controle jurisdicional) ▪ Em regra, é um “dever”. Decadência ▪ Perda do direito de anular em virtude do tempo ▪ Âmbito federal:"
+        }
+      ]
+    },
+    {
+      "id": "qf_0043a550c01e31ae",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t05_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_016"
+      ],
+      "statement": "A convalidação pode corrigir qualquer vício do ato administrativo, inclusive defeito de finalidade e objeto ilícito.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Convalidação alcança vícios sanáveis, tradicionalmente ligados à competência não exclusiva e à forma não essencial. Finalidade desviada e objeto ilícito não são convalidáveis.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_04",
+        "page_number": 126
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_04",
+          "trace_status": "available",
+          "page_number": 126,
+          "excerpt": "a anulação. Além disso, existem os atos com vícios sanáveis, ou seja, com vícios que são passíveis de convalidação, ou seja, de correção do vício. Logo, teoricamente, ao invés de desfazer o ato inválido, a administração poderá convalidá-lo, corrigindo o seu vício. Por esse motivo, podemos dizer o seguinte: a) em regra, a anulação é um dever, uma vez que a administração"
+        }
+      ]
+    },
+    {
+      "id": "qf_f465da521111b2d6",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t06_s02",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_017"
+      ],
+      "statement": "A Lei nº 14.133/2021 prevê como modalidades licitatórias pregão, concorrência, concurso, leilão e diálogo competitivo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Essas são as cinco modalidades da nova lei. Convite e tomada de preços não integram esse rol, e não se admite criar ou combinar modalidades por ato administrativo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_05",
+        "page_number": 63
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_05",
+          "trace_status": "available",
+          "page_number": 63,
+          "excerpt": "Tarefa 4: Ao final do Título 5, elabore um texto dissertativo de até quinze linhas, indicando as modalidades de licitação da Nova Lei de Licitações. No seu texto, apresente quando a modalidade poderá ser utilizada, qual o rito procedimental e quais são os critérios de julgamento aplicáveis a cada uma delas. Fique atento, pois este é um dos dois assuntos mais importantes da Lei d"
+        }
+      ]
+    },
+    {
+      "id": "qf_4e7c1c98981902d7",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t06_s02",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_018"
+      ],
+      "statement": "A inexigibilidade ocorre quando a competição é viável, mas a lei autoriza a Administração a não licitar; a dispensa ocorre quando não existe possibilidade de competição.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Os conceitos foram invertidos. Inexigibilidade decorre da inviabilidade de competição. Na dispensa, a competição pode ser possível, mas a lei permite ou determina a contratação direta.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_06",
+        "page_number": 4
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_06",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "ontratação sem licitação. Ademais, o processo de contratação direta se subdivide em duas espécies: a) inexigibilidade; b) dispensa de licitação. No caso de inexigibilidade, há uma situação em que a realização de um processo competitivo é inviável . Por exemplo: se existir um único fornecedor de determinado produto, não há como realizar uma licitação, já que o processo comp"
+        }
+      ]
+    },
+    {
+      "id": "qf_371dc13b34d35efd",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t06_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_019"
+      ],
+      "statement": "A possibilidade de alteração unilateral do contrato pela Administração, dentro dos limites legais, é manifestação das chamadas cláusulas exorbitantes.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Cláusulas exorbitantes concedem prerrogativas especiais à Administração para proteger o interesse público, entre elas a alteração e a extinção unilateral nos casos legais.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_07",
+        "page_number": 5
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_07",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "quanto às prerrogativas. Teoricamente, os contratos administrativos caracterizam-se pela presença das cláusulas exorbitantes, também denominadas cláusulas de privilégios. Tais cláusulas representam poderes especiais que a administração possui nas suas relações contratuais , encontrando fundamento no princípio da supremacia do interesse público sobre o privado. Por exemplo: a admi"
+        }
+      ]
+    },
+    {
+      "id": "qf_ff7f8dac26a39fad",
+      "subtopic_id": "pmal_soldado_d07_direito_administrativo_t10_s01",
+      "microknowledge_ids": [
+        "pmal_dadm_mk_020"
+      ],
+      "statement": "Na ação regressiva contra o agente público causador do dano, a responsabilidade é objetiva, dispensando prova de dolo ou culpa.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Perante o terceiro lesado, a responsabilidade estatal é objetiva nos termos constitucionais. Na ação regressiva contra o agente, exige-se dolo ou culpa, portanto a responsabilidade é subjetiva.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_direito_administrativo_10",
+        "page_number": 25
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_direito_administrativo_10",
+          "trace_status": "available",
+          "page_number": 25,
+          "excerpt": "Analisando o §6º, art. 37, da CF, podemos perceber que existem dois tipos de responsabilidade: a) a responsabilidade objetiva do Estado perante os terceiros lesados; b) a responsabilidade subjetiva dos agentes causadores de dano, amparando o direito de regresso do Estado, nos casos de dolo ou culpa. No primeiro caso, temos a responsabilidade civil do Estado, conforme estudamos ao"
+        }
+      ]
+    }
+  ]
+}

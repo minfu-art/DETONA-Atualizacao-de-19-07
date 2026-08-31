@@ -1,0 +1,499 @@
+{
+  "name": "pmal-informatica-coverage-round2-v1",
+  "questions": [
+    {
+      "id": "qf_40beab8078d1c3fd",
+      "subtopic_id": "pmal_soldado_d03_informatica_t01_s01",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t01_s01_mk01"
+      ],
+      "statement": "No Windows 11, o atalho Windows + E abre o Explorador de Arquivos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O atalho Windows + E abre o Explorador de Arquivos, ferramenta usada para navegar por unidades, pastas e arquivos no Windows 11.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_14",
+        "page_number": 136
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_14",
+          "trace_status": "available",
+          "page_number": 136,
+          "excerpt": "caixa de busca localizada no canto superior direito da janela do Explorador de Arquivos. Para usá -la, abra o Explorador (Windows + E) e clique no ícone de lupa ou pressione F3. Vale lembrar que a busca será feita apenas na pasta e nas subpastas atualmente abertas. Se a intenção for pesquisar em todo o computador, primeiro acesse a opção Este PC e só então digite o termo desejado. Você pode escrever parte ou todo o nome do arquivo ou pasta, a extensão (como"
+        }
+      ]
+    },
+    {
+      "id": "qf_a6c2e61653e6dbbf",
+      "subtopic_id": "pmal_soldado_d03_informatica_t02_s01",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t02_s01_mk01"
+      ],
+      "statement": "No Microsoft Word, Ctrl + Enter exclui a página atual e move seu conteúdo para a página anterior.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Ctrl + Enter insere uma quebra de página. O comando não exclui a página atual nem move automaticamente seu conteúdo para a página anterior.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_12",
+        "page_number": 48
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_12",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "ágrafo. HÍFEN OPCIONAL ¬ Ctrl + - Marca onde uma palavra deve ser hife¬nizada caso fique no fim de uma linha. QUEBRA DE PÁGINA ···Quebra de página··· Ctrl + ↵ Enter Insere uma quebra de página. ···Quebra de página··· CARACTERE DE TABELA ¤ Não existe! Marca o fim da célula¤ QUEBRA DE SEÇÃO :::::Quebra de seção:::: Layout > Quebras > Quebra de Seção Insere uma quebra de seção. :::::Quebra de seção::::: TEXTO OCULTO Texto Oculto Página Inicial > Fonte > Oculto"
+        }
+      ]
+    },
+    {
+      "id": "qf_350d5bf52a93ecce",
+      "subtopic_id": "pmal_soldado_d03_informatica_t02_s02",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t02_s02_mk01"
+      ],
+      "statement": "No Microsoft Excel, uma fórmula pode ser iniciada pelo sinal de igual (=).",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O sinal de igual indica ao Excel que o conteúdo digitado deve ser interpretado como fórmula, e não apenas como texto ou valor literal.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_11",
+        "page_number": 72
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_11",
+          "trace_status": "available",
+          "page_number": 72,
+          "excerpt": "rdem para obter o resultado desejado. As fórmulas calculam valores em uma ordem específica. Uma fórmula sempre começa com um sinal de igual (=). Em outras palavras, o sinal de igual informa ao Excel que os caracteres seguintes constituem uma fórmula. Após o sinal de igual, estão os operandos como números ou referências de célula, que são separados pelos operadores de cálculo (como +, -, *, ou /). O Excel calcula a fórmula da esquerda para a direita, de acordo"
+        }
+      ]
+    },
+    {
+      "id": "qf_26b508ecf91ef43e",
+      "subtopic_id": "pmal_soldado_d03_informatica_t02_s03",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t02_s03_mk01"
+      ],
+      "statement": "No Microsoft PowerPoint, a tecla F5 inicia obrigatoriamente a apresentação a partir do slide atualmente selecionado.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "F5 inicia a apresentação a partir do primeiro slide. Para iniciar do slide atual, utiliza-se Shift + F5.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_13",
+        "page_number": 55
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_13",
+          "trace_status": "available",
+          "page_number": 55,
+          "excerpt": "PROVA: ALTA GRUPO INICIAR APRESENTAÇÃO DE SLIDES GRUPO: INICIAR APRESENTAÇÃO DE SLIDES OPÇÃO ATALHO DESCRIÇÃO DO COMEÇO F5 Iniciar a apresentação a partir do primeiro slide. DO SLIDE ATUAL SHIFT + F5 Iniciar a apresentação diretamente do slide atual. APRESENTAR ONLINE CTRL + F5 Apresente a apresentação de slides online com o serviço de apresentação padrão. APRESENTAÇÃO DE SLIDES PERSONALIZADA - É possível mostrar apenas os slides escolhidos. É uma"
+        }
+      ]
+    },
+    {
+      "id": "qf_a49ead8973247ea2",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s01_mk01"
+      ],
+      "statement": "O DNS permite associar nomes de domínio a endereços IP, facilitando a localização de recursos na Internet.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O sistema DNS realiza a resolução de nomes, relacionando nomes legíveis, como domínios, aos endereços IP utilizados na comunicação de rede.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_01",
+        "page_number": 49
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_01",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "ARP resolve IP para MAC, não MAC para endereço físico (MAC já é o endereço físico); (c) Errado. Essa função é do DNS, que traduz nomes de domínio (FQDN) em endereços IP; (d) Errado. Esse tipo de serviço está associado a protocolos como TLS ou IPsec, não ao ARP; (e) Errado. Refere-se a protocolos de roteamento como OSPF ou RIP, não ao ARP (Letra A). Protocolos da Camada de Transporte Diego Carvalho, Renato da Costa, Equipe Informática e TI Aula 01 (Prof. Diego Carvalho"
+        }
+      ]
+    },
+    {
+      "id": "qf_eeb706cf722915c3",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s02",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s02_mk01"
+      ],
+      "statement": "Nos navegadores usuais, a tecla F6 fecha a guia ativa e apaga seu histórico de navegação.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "F6 pode posicionar o cursor na barra de endereços. A tecla não fecha a guia nem apaga o histórico.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_05",
+        "page_number": 43
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_05",
+          "trace_status": "available",
+          "page_number": 43,
+          "excerpt": "+ SHIFT + DEL Abrir as opções Limpar dados de navegação ALT + HOME Ir para a página inicial. F1 Obter ajuda e suporte. F6 Posiciona o cursor na barra de endereços. F5 OU CTRL + R Atualizar a página atual. F11 Alternar entre a exibição em tela cheia e a exibição comum. CTRL + SHIFT + M Permite abrir o formulário de envio de feedback à equipe do navegador. A tabela acima apresenta os principais atalhos. Para conhecer todos os outros disponíveis para"
+        }
+      ]
+    },
+    {
+      "id": "qf_f5a2d52aed25e20c",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s03",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s03_mk01"
+      ],
+      "statement": "No Microsoft Outlook, a Caixa de Saída pode armazenar temporariamente mensagens que aguardam envio.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A Caixa de Saída reúne mensagens preparadas para transmissão e que ainda aguardam o envio pelo cliente de correio eletrônico.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_06",
+        "page_number": 69
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_06",
+          "trace_status": "available",
+          "page_number": 69,
+          "excerpt": "té marcá-la como lida, no entanto a configuração padrão armazena mensagens recebidas na Caixa de Entrada como não-lida. CAIXA DE SAÍDA Trata-se de uma pasta que armazena temporariamente as mensagens pendentes de envio. Pode acontecer de – no momento da transmissão de um correio eletrônico – a conexão entre Cliente e Servidor de E-Mail falhar. Dessa forma, para que a mensagem não seja perd ida, o Cliente de E-Mail a armazena em um local temporário até que a con"
+        }
+      ]
+    },
+    {
+      "id": "qf_1f8f974746fcf03c",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s04",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s04_mk01"
+      ],
+      "statement": "Em mecanismos de busca, colocar uma expressão entre aspas determina que cada palavra seja pesquisada isoladamente, em qualquer ordem.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "As aspas são usadas para buscar a expressão exata, preservando a sequência dos termos, e não para pesquisar cada palavra isoladamente em qualquer ordem.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_04",
+        "page_number": 50
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_04",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "hetes [ ] não tem função especial para refinar a pesquisa. Para buscar um termo com maior precisão, deve-se colocá-lo entre aspas para encontrar resultados exatos, ou usar operadores como site: e allintitle:. Gabarito: Errado 2. (CEBRASPE / MPE-TO – 2024) A pesquisa por imagens na ferramenta de busca do Google pode ser feita por meio de uma foto ou upload de arquivos, via recurso do Google Lens. Comentários: O Google Lens permite a pesquisa por imagen"
+        }
+      ]
+    },
+    {
+      "id": "qf_3518cd4fc2cc22b0",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s05",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s05_mk01"
+      ],
+      "statement": "Em uma lista de discussão baseada em correio eletrônico, uma mensagem enviada ao endereço central pode ser distribuída aos participantes inscritos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A lista de discussão utiliza um endereço central administrado pelo serviço para distribuir mensagens aos integrantes cadastrados.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_06",
+        "page_number": 42
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_06",
+          "trace_status": "available",
+          "page_number": 42,
+          "excerpt": "xige gestão manual dos destinatários; (b) Correto. Uma lista de discussão é um serviço baseado em e -mail que possui um endereço eletrônico central. Quando um participante envia uma mensagem para esse endereço, o sistema redistribui automaticamente a mensagem para todos os membros inscritos na lista, sem que seja necessário digitar os endereços de cada participante; (c) Errado. Digitar todos os endereços manualmente no campo de destinatário não é o funcionamento típico de"
+        }
+      ]
+    },
+    {
+      "id": "qf_9656cb36db3efe74",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s06",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s06_mk01"
+      ],
+      "statement": "O LinkedIn é uma rede social exclusivamente destinada ao compartilhamento de vídeos de entretenimento e não possui finalidade profissional.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O LinkedIn é voltado principalmente a conexões profissionais, currículos, oportunidades de trabalho e conteúdo relacionado à carreira.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_15",
+        "page_number": 5
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_15",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "mplos? Temos de sobra: o Facebook, que ainda mantém grupos e contatos antigos; o Instagram, voltado para imagens e vídeos curtos; o LinkedIn, pensado para a vida profissional; o X (antigo Twitter), que prioriza mensagens rápidas; e o T ikTok, que dita tendências culturais a uma velocidade impressionante. Todas têm um objetivo em comum: estimular a interação e o engajamento. Com a tecnologia avançando, essas plataformas começaram a usar algoritmos cada ve"
+        }
+      ]
+    },
+    {
+      "id": "qf_5002c39d7f6e328a",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s07",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t03_s07_mk01"
+      ],
+      "statement": "A elasticidade da computação em nuvem permite ampliar ou reduzir recursos conforme a demanda.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Elasticidade é a capacidade de ajustar rapidamente os recursos disponibilizados, aumentando-os ou reduzindo-os de acordo com a necessidade.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_03",
+        "page_number": 17
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_03",
+          "trace_status": "available",
+          "page_number": 17,
+          "excerpt": "Uma pergunta bastante comum dos alunos é: qual é a diferença entre Autosserviço Sob Demanda e Elasticidade Rápida? A primeira característica essencial diz respeito à capacidade do usuário provisionar recursos por conta própria, sem precisar da intervenção humana do provedor de serviços. É como acessar um painel (dashboard) ou API e, com poucos cliques, criar uma máquina virtual, adicionar mais armazenamento, ativar um banco de dados, entre"
+        }
+      ]
+    },
+    {
+      "id": "qf_c86d5a2a11d09a4a",
+      "subtopic_id": "pmal_soldado_d03_informatica_t04_s01",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t04_s01_mk01"
+      ],
+      "statement": "No Windows 11, remover a extensão de um arquivo existente jamais afeta a capacidade de abri-lo, pois o sistema ignora extensões.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A extensão ajuda o sistema a identificar o tipo do arquivo e o aplicativo adequado. Removê-la pode impedir ou dificultar a abertura correta.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_14",
+        "page_number": 117
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_14",
+          "trace_status": "available",
+          "page_number": 117,
+          "excerpt": "E tem mais: se você tentar remover a extensão de um arquivo que já existe, o Windows 11 dá logo um aviso, alertando que isso pode inutilizar o arquivo. E não é exagero — se você não souber qual programa foi usado para criá-lo, pode acabar com um item impos sível de abrir. Por isso, manter a extensão é mais do que recomendável: é uma garantia de que seus dados vão continuar"
+        }
+      ]
+    },
+    {
+      "id": "qf_ce692c086ec15d74",
+      "subtopic_id": "pmal_soldado_d03_informatica_t04_s02",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t04_s02_mk01"
+      ],
+      "statement": "Uma pasta do Windows pode conter simultaneamente arquivos e outras pastas.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Pastas são contêineres de organização e podem reunir arquivos e subpastas em uma estrutura hierárquica.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_14",
+        "page_number": 51
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_14",
+          "trace_status": "available",
+          "page_number": 51,
+          "excerpt": "do da interface que permite acessar rapidamente pastas, unidades de disco, bibliotecas e locais frequentes. Ele exibe a estrutura hierárquica do sistema de arquivos, possibilitando expandir ou recolher diretórios para facilitar a navegação. Além disso, pode incluir atalhos para áreas como \"Acesso Rápido\", \"Este PC\", \"Rede\" e serviços de nuvem como o OneDrive, oferecendo um meio pr ático de mover -se entre diferentes locais de armazenamento. O Painel de Navegação do E"
+        }
+      ]
+    },
+    {
+      "id": "qf_3d8c379fa49d5540",
+      "subtopic_id": "pmal_soldado_d03_informatica_t04_s03",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t04_s03_mk01"
+      ],
+      "statement": "Um atalho do Windows armazena integralmente, dentro do arquivo .lnk, todo o conteúdo do programa de destino.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O arquivo .lnk armazena uma referência ao caminho do destino. Ele não contém integralmente o programa, arquivo ou pasta referenciado.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_14",
+        "page_number": 22
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_14",
+          "trace_status": "available",
+          "page_number": 22,
+          "excerpt": "ho, na Barra de Tarefas e no Menu Iniciar, funcionando como um facilitador de acesso. No Windows, um atalho é apenas um arquivo com extensão .lnk que armazena uma referência ao caminho do objeto original, como um arquivo, pasta ou programa. Ele não contém o conteúdo do item apontado, mas apenas informações como o endereço completo (caminho absoluto ou relativo), o ícone e o aplicativo associado para abertura. Assim, quando um atalho é copiado para outro local ou até mesm"
+        }
+      ]
+    },
+    {
+      "id": "qf_c1461989acba2ce1",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s01",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t05_s01_mk01"
+      ],
+      "statement": "A autenticação de dois fatores acrescenta uma etapa de verificação além da senha e pode reduzir o risco de acesso indevido.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Ao exigir um segundo fator, o mecanismo dificulta o acesso por quem obteve apenas a senha, elevando a proteção da conta.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_07",
+        "page_number": 37
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_07",
+          "trace_status": "available",
+          "page_number": 37,
+          "excerpt": "as plataformas já permitem PINs com mais de quatro dígitos, o que aumenta bastante a segurança. O PIN também costuma ser usado em autenticação de dois fatores. Por exemplo: quando você usa um cartão com chip (SmartCard), o sistema pede o cartão (Algo que você tem) e o PIN (Algo que você sabe). Essa combinação reforça a segurança e reduz muito o risco de acesso indevido. Além disso, muitos dispositivos modernos permitem que você configure um PIN para desbloqueio rápido — é m"
+        }
+      ]
+    },
+    {
+      "id": "qf_7dc52f88b9826c1c",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s02",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t05_s02_mk01"
+      ],
+      "statement": "Um worm somente consegue entrar em uma máquina depois de uma ação manual e específica do usuário.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Worms podem explorar a rede e entrar automaticamente em uma máquina, sem exigir uma ação manual específica do usuário.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_08",
+        "page_number": 22
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_08",
+          "trace_status": "available",
+          "page_number": 22,
+          "excerpt": "m está condicionado como, por exemplo, a inserção de uma mídia removível. Os worms são capazes de entrar em uma máquina sem qualquer interação do usuário . Em geral, podem ser obtidos automaticamente pela rede, recebidos por e-mail, baixados de páginas na web, pelo compartilhamento de arquivos, pelo uso de mídias removíveis infectadas, por meio de redes sociais, por meio de mensagens instantâneas, por conta de uma invasão de um hacker ou pela ação de outro código malicioso. E qu"
+        }
+      ]
+    },
+    {
+      "id": "qf_a6713169e65d295a",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s03",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t05_s03_mk01"
+      ],
+      "statement": "Um anti-spyware é uma ferramenta destinada a identificar e combater programas espiões.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O anti-spyware é voltado à detecção e remoção de softwares que coletam informações ou monitoram atividades de forma indevida.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_09",
+        "page_number": 31
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_09",
+          "trace_status": "available",
+          "page_number": 31,
+          "excerpt": "6 15. (CEBRASPE / TRE-PI – 2016) A remoção de códigos maliciosos de um computador pode ser feita por meio de: a) anti-spyware. b) detecção de intrusão. c) anti-spam. d) anti-phishing. e) filtro de aplicações. Comentários: (a) Correto, forçand a barra, anti-spywares podem remover spywares – que são malwares; (b) Errado, essas são ferramentas de monitoramento e detecção de intrusos em uma rede; (c) Errado, essas ferramentas protegem contra e-mails ind"
+        }
+      ]
+    },
+    {
+      "id": "qf_407fb3acdcd3d1a2",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s04",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t05_s04_mk01"
+      ],
+      "statement": "Manter a única cópia de backup no mesmo dispositivo físico dos dados originais elimina o risco de perda simultânea.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Uma falha, perda, furto ou dano físico pode atingir simultaneamente os dados e a cópia mantida no mesmo dispositivo. Backups devem considerar mídias ou locais distintos.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_10",
+        "page_number": 4
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_10",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "garante que você pode sempre recuperar informações de forma confiável e tempestiva. Em geral, recomenda-se gravar em alguma mídia removível ou em algum local seguro em que nenhum acidente poderia danificar o original e a cópia. O backup pode ser armazenado na própria Diego Carvalho, Renato da Costa, Equipe Informática e TI Aula 10 (Prof. Diego Carvalho e Renato da Costa) PM-AL - Noções de Informática - 2026 (Pós-Edital) www.estrategiaconcursos.com.br"
+        }
+      ]
+    },
+    {
+      "id": "qf_7a7ff974e8d5e985",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s05",
+      "microknowledge_ids": [
+        "pmal_soldado_d03_informatica_t05_s05_mk01"
+      ],
+      "statement": "Google Drive e OneDrive são exemplos de serviços que permitem armazenar dados na nuvem.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Google Drive e OneDrive oferecem armazenamento remoto de arquivos, com acesso e sincronização por meio de serviços de nuvem.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_03",
+        "page_number": 33
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_03",
+          "trace_status": "available",
+          "page_number": 33,
+          "excerpt": "der de HDs, SSDs ou aquele pendrive que a gente sempre esquece em casa, você salva tudo com segurança em plataformas como Google Drive, Dropbox, OneDrive, iCloud, entre outras. Tudo fica sob os cuidados de provedores especializados, que garantem a integridade, a segurança e a disponibilidade dos seus dados. O grande diferencial aqui é a acessibilidade. Com a nuvem, seus arquivos não ficam mais presos a um único computador. Você pode começar um projeto no tra"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "contest_id": "pm_al_2026",
+  "generated_at": "2026-08-30",
+  "status": "materials_phase_1_ready_local",
+  "counts": {
+    "roles": 1,
+    "disciplines": 12,
+    "topics": 85,
+    "subtopics": 161,
+    "microknowledges": 201,
+    "curriculum_nodes": 259,
+    "question_batches": 4,
+    "questions": 71
+  },
+  "canonical_ids": {
+    "contest_id": "pm_al_2026",
+    "position_id": "pm_al_2026_soldado",
+    "offering_id": "pm_al_2026_soldado",
+    "convention": "pm_al_2026_ids_v1.0.0"
+  },
+  "safeguards": {
+    "content_status": "preparing",
+    "sales_status": "unavailable",
+    "price_cents": 0,
+    "import_authorized": false,
+    "publication_authorized": false,
+    "entitlement_authorized": false,
+    "payment_changes_authorized": false
+  },
+  "validation": {
+    "source_sha256": "af24d5abdcd6ed7122b9e71521670b72b5f8f1a99d336dc3213ca91b9b4679e6",
+    "duplicate_ids": 0,
+    "orphan_nodes": 0,
+    "all_subtopics_have_microknowledge": true,
+    "deterministic_question_validation": "passed",
+    "semantic_question_audit": "approved",
+    "approved_questions": 71,
+    "rejected_questions": 0
+  },
+  "notes": [
+    "O cargo de Oficial de Estado-Maior permanece separado desta jornada.",
+    "Atualidades é exclusiva da prova discursiva e deve ser tratada como conteúdo dinâmico.",
+    "A prova ocorreu em 19 de julho de 2026; qualquer oferta comercial exige decisão explícita e atualização de posicionamento.",
+    "Quatro lotes, com 71 questões, foram promovidos somente no pacote canônico local.",
+    "Nenhuma publicação, venda, liberação de acesso ou alteração de pagamento foi executada."
+  ],
+  "materials": {
+    "sources": 27,
+    "pages": 3802,
+    "disciplines_started": [
+      "Noções de Informática",
+      "Noções de Direito Administrativo"
+    ],
+    "traced_microknowledges_added": 40,
+    "question_batches": {
+      "Noções de Informática": 39,
+      "Noções de Direito Administrativo": 32
+    },
+    "question_coverage": {
+      "credited": 71,
+      "required": 364,
+      "remaining": 293,
+      "coverage_pct": 19.51
+    }
+  }
+}

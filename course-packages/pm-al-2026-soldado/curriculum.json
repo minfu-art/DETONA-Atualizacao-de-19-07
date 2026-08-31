@@ -1,0 +1,4666 @@
+{
+  "nodes": [
+    {
+      "id": "pm_al_2026_soldado",
+      "parent_id": null,
+      "type": "role",
+      "title": "Soldado do Quadro de Praças",
+      "description": "Cargo 2 do Edital nº 1 - PMAL, de 19 de março de 2026.",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "2.2 CARGO 2: SOLDADO DO QUADRO DE PRAÇAS",
+          "location": "Edital nº 1 - PMAL/2026, item 2.2, página 3."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Língua Portuguesa",
+      "description": "Conhecimentos básicos",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t01",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Compreensão e interpretação de textos de gêneros variados",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t01_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t01",
+      "type": "subtopic",
+      "title": "Compreensão e interpretação de textos de gêneros variados",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t02",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Reconhecimento de tipos e gêneros textuais",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t02_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t02",
+      "type": "subtopic",
+      "title": "Reconhecimento de tipos e gêneros textuais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t03",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Domínio da ortografia oficial",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t03_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t03",
+      "type": "subtopic",
+      "title": "Domínio da ortografia oficial",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t04",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Domínio dos mecanismos de coesão textual",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t04_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t04",
+      "type": "subtopic",
+      "title": "Emprego de elementos de referenciação, substituição e repetição",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t04_s02",
+      "parent_id": "pmal_soldado_d01_portugues_t04",
+      "type": "subtopic",
+      "title": "Emprego de conectores e de outros elementos de sequenciação textual",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t04_s03",
+      "parent_id": "pmal_soldado_d01_portugues_t04",
+      "type": "subtopic",
+      "title": "Emprego de tempos e modos verbais",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Domínio da estrutura morfossintática do período",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Emprego das classes de palavras",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s02",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Relações de coordenação entre orações e entre termos da oração",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s03",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Relações de subordinação entre orações e entre termos da oração",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s04",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Emprego dos sinais de pontuação",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s05",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Concordância verbal e nominal",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s06",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Regência verbal e nominal",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s07",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Emprego do sinal indicativo de crase",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t05_s08",
+      "parent_id": "pmal_soldado_d01_portugues_t05",
+      "type": "subtopic",
+      "title": "Colocação dos pronomes átonos",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t06",
+      "parent_id": "pmal_soldado_d01_portugues",
+      "type": "topic",
+      "title": "Reescrita de frases e parágrafos do texto",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t06_s01",
+      "parent_id": "pmal_soldado_d01_portugues_t06",
+      "type": "subtopic",
+      "title": "Significação das palavras",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t06_s02",
+      "parent_id": "pmal_soldado_d01_portugues_t06",
+      "type": "subtopic",
+      "title": "Substituição de palavras ou de trechos de texto",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t06_s03",
+      "parent_id": "pmal_soldado_d01_portugues_t06",
+      "type": "subtopic",
+      "title": "Reorganização da estrutura de orações e de períodos do texto",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d01_portugues_t06_s04",
+      "parent_id": "pmal_soldado_d01_portugues_t06",
+      "type": "subtopic",
+      "title": "Reescrita de textos de diferentes gêneros e níveis de formalidade",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "LÍNGUA PORTUGUESA: 1 Compreensão e interpretação de textos de gêneros variados.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Matemática",
+      "description": "Conhecimentos básicos",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t01",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Álgebra linear",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t01_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t01",
+      "type": "subtopic",
+      "title": "Conjunto numérico",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t01_s02",
+      "parent_id": "pmal_soldado_d02_matematica_t01",
+      "type": "subtopic",
+      "title": "Operações com números inteiros",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t01_s03",
+      "parent_id": "pmal_soldado_d02_matematica_t01",
+      "type": "subtopic",
+      "title": "Operações com números fracionários",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t01_s04",
+      "parent_id": "pmal_soldado_d02_matematica_t01",
+      "type": "subtopic",
+      "title": "Operações com números decimais",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t02",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Proporções e divisão proporcional",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t02_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t02",
+      "type": "subtopic",
+      "title": "Proporções",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t02_s02",
+      "parent_id": "pmal_soldado_d02_matematica_t02",
+      "type": "subtopic",
+      "title": "Divisão proporcional",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t03",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Regras de três simples e composta",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t03_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t03",
+      "type": "subtopic",
+      "title": "Regra de três simples",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t03_s02",
+      "parent_id": "pmal_soldado_d02_matematica_t03",
+      "type": "subtopic",
+      "title": "Regra de três composta",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t04",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Porcentagem",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t04_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t04",
+      "type": "subtopic",
+      "title": "Porcentagem",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t05",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Juros, capitalização e descontos",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t05_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t05",
+      "type": "subtopic",
+      "title": "Juros simples",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t05_s02",
+      "parent_id": "pmal_soldado_d02_matematica_t05",
+      "type": "subtopic",
+      "title": "Juros compostos",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t05_s03",
+      "parent_id": "pmal_soldado_d02_matematica_t05",
+      "type": "subtopic",
+      "title": "Capitalização",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t05_s04",
+      "parent_id": "pmal_soldado_d02_matematica_t05",
+      "type": "subtopic",
+      "title": "Descontos",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06",
+      "parent_id": "pmal_soldado_d02_matematica",
+      "type": "topic",
+      "title": "Taxas de juros",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s01",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxa nominal",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s02",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxa efetiva",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s03",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxas equivalentes",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s04",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxas proporcionais",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s05",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxa real",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d02_matematica_t06_s06",
+      "parent_id": "pmal_soldado_d02_matematica_t06",
+      "type": "subtopic",
+      "title": "Taxa aparente",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "MATEMÁTICA: 1 Álgebra linear 1.1 Conjunto numérico: operações com números inteiros, fracionários e decimais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 56."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Informática",
+      "description": "Conhecimentos básicos",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t01",
+      "parent_id": "pmal_soldado_d03_informatica",
+      "type": "topic",
+      "title": "Noções de sistema operacional",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t01_s01",
+      "parent_id": "pmal_soldado_d03_informatica_t01",
+      "type": "subtopic",
+      "title": "Ambiente Windows",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t02",
+      "parent_id": "pmal_soldado_d03_informatica",
+      "type": "topic",
+      "title": "Edição de textos, planilhas e apresentações",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t02_s01",
+      "parent_id": "pmal_soldado_d03_informatica_t02",
+      "type": "subtopic",
+      "title": "Microsoft Word",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t02_s02",
+      "parent_id": "pmal_soldado_d03_informatica_t02",
+      "type": "subtopic",
+      "title": "Microsoft Excel",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t02_s03",
+      "parent_id": "pmal_soldado_d03_informatica_t02",
+      "type": "subtopic",
+      "title": "Microsoft PowerPoint",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03",
+      "parent_id": "pmal_soldado_d03_informatica",
+      "type": "topic",
+      "title": "Redes de computadores",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s01",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Conceitos básicos, ferramentas, aplicativos e procedimentos de Internet e intranet",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s02",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Navegadores Microsoft Edge, Mozilla Firefox, Google Chrome e similares",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s03",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Correio eletrônico Microsoft Outlook",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s04",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Sítios de busca e pesquisa na Internet",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s05",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Grupos de discussão",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s06",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Redes sociais",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t03_s07",
+      "parent_id": "pmal_soldado_d03_informatica_t03",
+      "type": "subtopic",
+      "title": "Computação na nuvem",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t04",
+      "parent_id": "pmal_soldado_d03_informatica",
+      "type": "topic",
+      "title": "Organização e gerenciamento de informações",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t04_s01",
+      "parent_id": "pmal_soldado_d03_informatica_t04",
+      "type": "subtopic",
+      "title": "Arquivos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t04_s02",
+      "parent_id": "pmal_soldado_d03_informatica_t04",
+      "type": "subtopic",
+      "title": "Pastas",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t04_s03",
+      "parent_id": "pmal_soldado_d03_informatica_t04",
+      "type": "subtopic",
+      "title": "Programas",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05",
+      "parent_id": "pmal_soldado_d03_informatica",
+      "type": "topic",
+      "title": "Segurança da informação",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05_s01",
+      "parent_id": "pmal_soldado_d03_informatica_t05",
+      "type": "subtopic",
+      "title": "Procedimentos de segurança",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05_s02",
+      "parent_id": "pmal_soldado_d03_informatica_t05",
+      "type": "subtopic",
+      "title": "Malware, vírus, worms e pragas virtuais",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05_s03",
+      "parent_id": "pmal_soldado_d03_informatica_t05",
+      "type": "subtopic",
+      "title": "Antivírus, firewall, anti-spyware e aplicativos de segurança",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05_s04",
+      "parent_id": "pmal_soldado_d03_informatica_t05",
+      "type": "subtopic",
+      "title": "Procedimentos de backup",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d03_informatica_t05_s05",
+      "parent_id": "pmal_soldado_d03_informatica_t05",
+      "type": "subtopic",
+      "title": "Armazenamento de dados na nuvem",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 56,
+          "excerpt": "NOÇÕES DE INFORMÁTICA: 1 Noções de sistema operacional (ambiente Windows).",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, páginas 56-57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Conhecimentos do Estado de Alagoas",
+      "description": "Conhecimentos básicos",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t01",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Formação histórica de Alagoas",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t01_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t01",
+      "type": "subtopic",
+      "title": "Colonização portuguesa",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t01_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t01",
+      "type": "subtopic",
+      "title": "Economia açucareira",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t01_s03",
+      "parent_id": "pmal_soldado_d04_alagoas_t01",
+      "type": "subtopic",
+      "title": "Emancipação política da Capitania de Pernambuco em 1817",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t01_s04",
+      "parent_id": "pmal_soldado_d04_alagoas_t01",
+      "type": "subtopic",
+      "title": "Elevação à Província em 1821",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t02",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Quilombo dos Palmares",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t02_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t02",
+      "type": "subtopic",
+      "title": "Formação no período colonial",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t02_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t02",
+      "type": "subtopic",
+      "title": "Resistência à escravidão",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t02_s03",
+      "parent_id": "pmal_soldado_d04_alagoas_t02",
+      "type": "subtopic",
+      "title": "Liderança de Zumbi dos Palmares",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t03",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Aspectos geográficos",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t03_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t03",
+      "type": "subtopic",
+      "title": "Litoral, Zona da Mata, Agreste e Sertão",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t03_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t03",
+      "type": "subtopic",
+      "title": "Rio São Francisco",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t04",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Organização político-administrativa",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t04_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t04",
+      "type": "subtopic",
+      "title": "Maceió como capital estadual",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t04_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t04",
+      "type": "subtopic",
+      "title": "Municípios",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t04_s03",
+      "parent_id": "pmal_soldado_d04_alagoas_t04",
+      "type": "subtopic",
+      "title": "Poderes Executivo, Legislativo e Judiciário",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t05",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Economia estadual",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t05_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t05",
+      "type": "subtopic",
+      "title": "Agroindústria canavieira",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t05_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t05",
+      "type": "subtopic",
+      "title": "Turismo",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t05_s03",
+      "parent_id": "pmal_soldado_d04_alagoas_t05",
+      "type": "subtopic",
+      "title": "Setor de serviços",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t06",
+      "parent_id": "pmal_soldado_d04_alagoas",
+      "type": "topic",
+      "title": "Cultura e patrimônio",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t06_s01",
+      "parent_id": "pmal_soldado_d04_alagoas_t06",
+      "type": "subtopic",
+      "title": "Manifestações culturais populares",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d04_alagoas_t06_s02",
+      "parent_id": "pmal_soldado_d04_alagoas_t06",
+      "type": "subtopic",
+      "title": "Patrimônio histórico-cultural alagoano",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "CONHECIMENTOS DO ESTADO DE ALAGOAS: 1 Formação histórica de Alagoas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Atualidades - Prova Discursiva",
+      "description": "Conhecimentos básicos",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01",
+      "parent_id": "pmal_soldado_d05_atualidades",
+      "type": "topic",
+      "title": "Tópicos relevantes e atuais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s01",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Segurança",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s02",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Transportes",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s03",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Política",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s04",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Economia",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s05",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Sociedade",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s06",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Educação",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s07",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Saúde",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s08",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Cultura",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s09",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Tecnologia",
+      "description": "",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s10",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Energia",
+      "description": "",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s11",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Relações internacionais",
+      "description": "",
+      "order": 10,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s12",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Desenvolvimento sustentável",
+      "description": "",
+      "order": 11,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d05_atualidades_t01_s13",
+      "parent_id": "pmal_soldado_d05_atualidades_t01",
+      "type": "subtopic",
+      "title": "Ecologia",
+      "description": "",
+      "order": 12,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 57,
+          "excerpt": "ATUALIDADES (SOMENTE PARA A PROVA DISCURSIVA): 1 Tópicos relevantes e atuais de diversas áreas.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 57."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Legislação Pertinente ao Policial Militar de Alagoas",
+      "description": "Conhecimentos específicos",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei Estadual nº 5.346/1992",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t01_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t01",
+      "type": "subtopic",
+      "title": "Estatuto dos Policiais Militares do Estado de Alagoas",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t02",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Decreto Estadual nº 37.042/1996",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t02_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t02",
+      "type": "subtopic",
+      "title": "Regulamento Disciplinar da Polícia Militar de Alagoas",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t03",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Decreto-Lei nº 2.848/1940 - Parte Geral do Código Penal",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t03_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t03",
+      "type": "subtopic",
+      "title": "Título I - Aplicação da lei penal",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t03_s02",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t03",
+      "type": "subtopic",
+      "title": "Título II - Do crime",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t03_s03",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t03",
+      "type": "subtopic",
+      "title": "Título III - Da imputabilidade penal",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t04",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 7.716/1989",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t04_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t04",
+      "type": "subtopic",
+      "title": "Crimes resultantes de preconceitos de raça ou de cor",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t05",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Leis nº 8.072/1990 e nº 8.930/1994",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t05_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t05",
+      "type": "subtopic",
+      "title": "Crimes hediondos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t06",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 12.850/2013",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t06_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t06",
+      "type": "subtopic",
+      "title": "Organizações criminosas",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t07",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 9.455/1997",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t07_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t07",
+      "type": "subtopic",
+      "title": "Crimes de tortura",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t08",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 9.605/1998",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t08_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t08",
+      "type": "subtopic",
+      "title": "Crimes contra o meio ambiente",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t09",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 10.826/2003",
+      "description": "",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t09_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t09",
+      "type": "subtopic",
+      "title": "Estatuto do Desarmamento",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t10",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 11.343/2006",
+      "description": "",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t10_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t10",
+      "type": "subtopic",
+      "title": "Lei de Drogas",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t11",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 11.340/2006",
+      "description": "",
+      "order": 10,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t11_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t11",
+      "type": "subtopic",
+      "title": "Lei Maria da Penha",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t12",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 9.503/1997",
+      "description": "",
+      "order": 11,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t12_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t12",
+      "type": "subtopic",
+      "title": "Código de Trânsito Brasileiro",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t13",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 8.069/1990",
+      "description": "",
+      "order": 12,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t13_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t13",
+      "type": "subtopic",
+      "title": "Estatuto da Criança e do Adolescente",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t14",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 13.869/2019",
+      "description": "",
+      "order": 13,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t14_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t14",
+      "type": "subtopic",
+      "title": "Abuso de autoridade",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t15",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 7.960/1989",
+      "description": "",
+      "order": 14,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t15_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t15",
+      "type": "subtopic",
+      "title": "Prisão temporária e suas alterações",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t16",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 9.099/1995",
+      "description": "",
+      "order": 15,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t16_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t16",
+      "type": "subtopic",
+      "title": "Juizados Especiais Cíveis e Criminais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t17",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei nº 10.259/2001",
+      "description": "",
+      "order": 16,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t17_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t17",
+      "type": "subtopic",
+      "title": "Juizados Especiais Cíveis e Criminais no âmbito da Justiça Federal",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t18",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal",
+      "type": "topic",
+      "title": "Lei Federal nº 14.751/2023",
+      "description": "",
+      "order": 17,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d06_legislacao_pmal_t18_s01",
+      "parent_id": "pmal_soldado_d06_legislacao_pmal_t18",
+      "type": "subtopic",
+      "title": "Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "LEGISLAÇÃO PERTINENTE AO POLICIAL MILITAR DE ALAGOAS: 1 Lei Estadual nº 5.346/1992.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direito Administrativo",
+      "description": "Conhecimentos específicos",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Princípios da Administração Pública",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t01_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t01",
+      "type": "subtopic",
+      "title": "Princípios da Administração Pública",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t02",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Regime jurídico administrativo",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t02_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t02",
+      "type": "subtopic",
+      "title": "Regime jurídico administrativo",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t03",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Poderes da Administração Pública",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t03_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t03",
+      "type": "subtopic",
+      "title": "Poderes da Administração Pública",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t04",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Serviço público",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t04_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t04",
+      "type": "subtopic",
+      "title": "Serviço público",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t05",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Atos administrativos",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t05_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t05",
+      "type": "subtopic",
+      "title": "Atos administrativos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t06",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Contratos administrativos e licitação",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t06_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t06",
+      "type": "subtopic",
+      "title": "Contratos administrativos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t06_s02",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t06",
+      "type": "subtopic",
+      "title": "Licitação",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t07",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Bens públicos",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t07_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t07",
+      "type": "subtopic",
+      "title": "Bens públicos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t08",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Administração direta e indireta",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t08_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t08",
+      "type": "subtopic",
+      "title": "Administração direta",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t08_s02",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t08",
+      "type": "subtopic",
+      "title": "Administração indireta",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t09",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Controle da Administração Pública",
+      "description": "",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t09_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t09",
+      "type": "subtopic",
+      "title": "Controle da Administração Pública",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t10",
+      "parent_id": "pmal_soldado_d07_direito_administrativo",
+      "type": "topic",
+      "title": "Responsabilidade civil do Estado",
+      "description": "",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d07_direito_administrativo_t10_s01",
+      "parent_id": "pmal_soldado_d07_direito_administrativo_t10",
+      "type": "subtopic",
+      "title": "Responsabilidade civil do Estado",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO ADMINISTRATIVO: 1 Princípios. 2 Regime jurídico administrativo.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direito Constitucional",
+      "description": "Conhecimentos específicos",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t01",
+      "parent_id": "pmal_soldado_d08_direito_constitucional",
+      "type": "topic",
+      "title": "Direitos e garantias fundamentais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t01_s01",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t01",
+      "type": "subtopic",
+      "title": "Direitos fundamentais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t01_s02",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t01",
+      "type": "subtopic",
+      "title": "Garantias fundamentais",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t02",
+      "parent_id": "pmal_soldado_d08_direito_constitucional",
+      "type": "topic",
+      "title": "Estrutura e organização do Estado brasileiro",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t02_s01",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t02",
+      "type": "subtopic",
+      "title": "Estrutura do Estado brasileiro",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t02_s02",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t02",
+      "type": "subtopic",
+      "title": "Organização do Estado brasileiro",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t03",
+      "parent_id": "pmal_soldado_d08_direito_constitucional",
+      "type": "topic",
+      "title": "Defesa do Estado e das instituições democráticas",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t03_s01",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t03",
+      "type": "subtopic",
+      "title": "Defesa do Estado",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t03_s02",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t03",
+      "type": "subtopic",
+      "title": "Defesa das instituições democráticas",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d08_direito_constitucional_t03_s03",
+      "parent_id": "pmal_soldado_d08_direito_constitucional_t03",
+      "type": "subtopic",
+      "title": "Segurança pública",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO CONSTITUCIONAL: 1 Direitos e garantias fundamentais.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d09_processo_penal",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direito Processual Penal",
+      "description": "Conhecimentos específicos",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL: 1 Inquérito policial. 2 Ação penal.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d09_processo_penal_t01",
+      "parent_id": "pmal_soldado_d09_processo_penal",
+      "type": "topic",
+      "title": "Inquérito policial",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL: 1 Inquérito policial. 2 Ação penal.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d09_processo_penal_t01_s01",
+      "parent_id": "pmal_soldado_d09_processo_penal_t01",
+      "type": "subtopic",
+      "title": "Inquérito policial",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL: 1 Inquérito policial. 2 Ação penal.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d09_processo_penal_t02",
+      "parent_id": "pmal_soldado_d09_processo_penal",
+      "type": "topic",
+      "title": "Ação penal",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL: 1 Inquérito policial. 2 Ação penal.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d09_processo_penal_t02_s01",
+      "parent_id": "pmal_soldado_d09_processo_penal_t02",
+      "type": "subtopic",
+      "title": "Ação penal",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL: 1 Inquérito policial. 2 Ação penal.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direito Penal Militar",
+      "description": "Conhecimentos específicos",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t01",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Aplicação da lei penal militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t01_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t01",
+      "type": "subtopic",
+      "title": "Aplicação da lei penal militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t02",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Crime militar",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t02_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t02",
+      "type": "subtopic",
+      "title": "Crime militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t03",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Imputabilidade penal",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t03_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t03",
+      "type": "subtopic",
+      "title": "Imputabilidade penal",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t04",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Concurso de agentes",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t04_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t04",
+      "type": "subtopic",
+      "title": "Concurso de agentes",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t05",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Penas",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t05_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t05",
+      "type": "subtopic",
+      "title": "Penas principais",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t05_s02",
+      "parent_id": "pmal_soldado_d10_penal_militar_t05",
+      "type": "subtopic",
+      "title": "Penas acessórias",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t05_s03",
+      "parent_id": "pmal_soldado_d10_penal_militar_t05",
+      "type": "subtopic",
+      "title": "Aplicação da pena",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t06",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Efeitos da condenação",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t06_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t06",
+      "type": "subtopic",
+      "title": "Efeitos da condenação",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t07",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Medidas de segurança",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t07_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t07",
+      "type": "subtopic",
+      "title": "Medidas de segurança",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t08",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Ação penal militar",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t08_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t08",
+      "type": "subtopic",
+      "title": "Ação penal militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t09",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Extinção da punibilidade",
+      "description": "",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t09_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t09",
+      "type": "subtopic",
+      "title": "Extinção da punibilidade",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t10",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Crimes militares em tempo de paz",
+      "description": "",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t10_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t10",
+      "type": "subtopic",
+      "title": "Crimes militares em tempo de paz",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t11",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Crimes propriamente militares",
+      "description": "",
+      "order": 10,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t11_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t11",
+      "type": "subtopic",
+      "title": "Crimes propriamente militares",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t12",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Crimes impropriamente militares",
+      "description": "",
+      "order": 11,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t12_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t12",
+      "type": "subtopic",
+      "title": "Crimes impropriamente militares",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t13",
+      "parent_id": "pmal_soldado_d10_penal_militar",
+      "type": "topic",
+      "title": "Crimes militares por extensão",
+      "description": "",
+      "order": 12,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d10_penal_militar_t13_s01",
+      "parent_id": "pmal_soldado_d10_penal_militar_t13",
+      "type": "subtopic",
+      "title": "Crimes militares por extensão",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PENAL MILITAR: 1 Aplicação da lei penal militar. 2 Crime.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direito Processual Penal Militar",
+      "description": "Conhecimentos específicos",
+      "order": 10,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Processo Penal Militar e sua aplicação",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t01_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t01",
+      "type": "subtopic",
+      "title": "Processo Penal Militar e sua aplicação",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t02",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Polícia judiciária militar",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t02_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t02",
+      "type": "subtopic",
+      "title": "Polícia judiciária militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t03",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Inquérito policial militar",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t03_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t03",
+      "type": "subtopic",
+      "title": "Inquérito policial militar",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t04",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Ação penal militar e seu exercício",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t04_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t04",
+      "type": "subtopic",
+      "title": "Ação penal militar e seu exercício",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t05",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Prisão em flagrante",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t05_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t05",
+      "type": "subtopic",
+      "title": "Prisão em flagrante",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t06",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Prisão preventiva",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t06_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t06",
+      "type": "subtopic",
+      "title": "Prisão preventiva",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t07",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Menagem",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t07_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t07",
+      "type": "subtopic",
+      "title": "Menagem",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t08",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Liberdade provisória e medidas de segurança",
+      "description": "",
+      "order": 7,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t08_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t08",
+      "type": "subtopic",
+      "title": "Liberdade provisória",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t08_s02",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t08",
+      "type": "subtopic",
+      "title": "Aplicação provisória de medidas de segurança",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t09",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Processos especiais",
+      "description": "",
+      "order": 8,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t09_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t09",
+      "type": "subtopic",
+      "title": "Deserção de praça e de praça especial",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t09_s02",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t09",
+      "type": "subtopic",
+      "title": "Insubmissão",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t10",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar",
+      "type": "topic",
+      "title": "Conselhos de Justiça",
+      "description": "",
+      "order": 9,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t10_s01",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t10",
+      "type": "subtopic",
+      "title": "Composição do Conselho Permanente de Justiça",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d11_processo_penal_militar_t10_s02",
+      "parent_id": "pmal_soldado_d11_processo_penal_militar_t10",
+      "type": "subtopic",
+      "title": "Composição do Conselho Especial de Justiça",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITO PROCESSUAL PENAL MILITAR: 1 Processo Penal Militar e sua aplicação.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos",
+      "parent_id": "pm_al_2026_soldado",
+      "type": "discipline",
+      "title": "Noções de Direitos Humanos",
+      "description": "Conhecimentos específicos",
+      "order": 11,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos",
+      "type": "topic",
+      "title": "Conceito de direitos humanos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t01_s01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t01",
+      "type": "subtopic",
+      "title": "Conceito de direitos humanos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t02",
+      "parent_id": "pmal_soldado_d12_direitos_humanos",
+      "type": "topic",
+      "title": "Evolução dos direitos humanos",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t02_s01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t02",
+      "type": "subtopic",
+      "title": "Evolução dos direitos humanos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t03",
+      "parent_id": "pmal_soldado_d12_direitos_humanos",
+      "type": "topic",
+      "title": "Abrangência dos direitos humanos",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t03_s01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t03",
+      "type": "subtopic",
+      "title": "Abrangência dos direitos humanos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t04",
+      "parent_id": "pmal_soldado_d12_direitos_humanos",
+      "type": "topic",
+      "title": "Sistema de proteção dos direitos humanos",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t04_s01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t04",
+      "type": "subtopic",
+      "title": "Sistema de proteção dos direitos humanos",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t05",
+      "parent_id": "pmal_soldado_d12_direitos_humanos",
+      "type": "topic",
+      "title": "Convenção Americana sobre Direitos Humanos",
+      "description": "",
+      "order": 4,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t05_s01",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t05",
+      "type": "subtopic",
+      "title": "Pacto de São José da Costa Rica",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    },
+    {
+      "id": "pmal_soldado_d12_direitos_humanos_t05_s02",
+      "parent_id": "pmal_soldado_d12_direitos_humanos_t05",
+      "type": "subtopic",
+      "title": "Decreto nº 678/1992",
+      "description": "",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_al_2026_edital_01_abertura",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "NOÇÕES DE DIREITOS HUMANOS: 1 Conceito. 2 Evolução. 3 Abrangência. 4 Sistema de proteção.",
+          "location": "Edital nº 1 - PMAL/2026, item 19.2.1, página 62."
+        }
+      ]
+    }
+  ]
+}

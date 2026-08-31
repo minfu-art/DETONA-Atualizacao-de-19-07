@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v154-fast-auth-google';
+const CACHE = 'detona-v155-pm-al-publicada';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [

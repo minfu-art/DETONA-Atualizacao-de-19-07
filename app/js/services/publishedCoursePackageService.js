@@ -1,4 +1,5 @@
 const DATA_VERSION = '2026.08.17.1';
+const PM_AL_DATA_VERSION = '2026.08.30.1';
 
 export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   pc_ba_2026: Object.freeze({
@@ -10,6 +11,34 @@ export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
     contentHash: '9a9040bfb3db0a5552e8b3cf421a318cf972e56a463493a6e2c2fd16efdfd95a',
     expectedQuestionCount: 1267,
     expectedSubtopicCount: 296,
+    metadataOverride: Object.freeze({
+      code: 'PC BA',
+      name: 'PC BA 2026 — Investigador de Polícia Civil',
+      role: 'Investigador de Polícia Civil',
+      content_status: 'ready',
+      sales_status: 'available',
+      price_cents: 6990,
+      currency: 'BRL',
+      status_label: 'PUBLICADO',
+    }),
+  }),
+  pm_al_2026: Object.freeze({
+    baseUrl: `data/course-factory/pm-al-2026-soldado-runtime.json?v=${PM_AL_DATA_VERSION}`,
+    patchUrls: Object.freeze([]),
+    version: PM_AL_DATA_VERSION,
+    contentHash: '901daaecc2ecbf062ab1a37d625d60500e2121b389cbab1cd4d220cacc66bdf6',
+    expectedQuestionCount: 71,
+    expectedSubtopicCount: 161,
+    metadataOverride: Object.freeze({
+      code: 'PM AL',
+      name: 'PM AL — Jornada de Resgate para Soldado',
+      role: 'Soldado do Quadro de Praças',
+      content_status: 'ready',
+      sales_status: 'available',
+      price_cents: 1499,
+      currency: 'BRL',
+      status_label: 'PUBLICADO · BANCO EM EXPANSÃO',
+    }),
   }),
 });
 
@@ -79,20 +108,13 @@ function composePublishedPackage(contestId, entry, basePackage, patches) {
   }
   return {
     ...structuredClone(basePackage),
-    id: `pc_ba_2026_investigador_${entry.version.replace(/[^a-z0-9]+/gi, '_').toLowerCase()}`,
+    id: `${contestId}_${entry.version.replace(/[^a-z0-9]+/gi, '_').toLowerCase()}`,
     version: entry.version,
     contentHash: entry.contentHash,
     metadata: {
       ...structuredClone(basePackage.metadata || {}),
       id: contestId,
-      code: 'PC BA',
-      name: 'PC BA 2026 — Investigador de Polícia Civil',
-      role: 'Investigador de Polícia Civil',
-      content_status: 'ready',
-      sales_status: 'available',
-      price_cents: 6990,
-      currency: 'BRL',
-      status_label: 'PUBLICADO',
+      ...(entry.metadataOverride || {}),
       question_count: questions.length,
       subtopic_count: subtopicCount,
     },

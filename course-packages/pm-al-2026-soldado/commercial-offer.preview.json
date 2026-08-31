@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "published",
+  "course_id": "pm-al-2026",
+  "contest_id": "pm_al_2026",
+  "offering_id": "pm_al_2026_soldado",
+  "campaign": {
+    "name": "Campanha de Resgate PM AL",
+    "headline": "Use o tempo extra para acelerar sua conquista.",
+    "concept": "Preço de picolé. Preparação de verdade.",
+    "price_cents": 1499,
+    "currency": "BRL",
+    "payment_model": "one_time",
+    "access_duration_months": 12,
+    "guarantee_days": 7
+  },
+  "content_disclosure": {
+    "basis": "Edital nº 1 - PMAL/2026, cuja prova ocorreu em 19 de julho de 2026",
+    "disciplines": 12,
+    "topics": 85,
+    "subtopics": 161,
+    "microknowledges": 201,
+    "approved_questions": 71,
+    "question_bank_status": "expanding"
+  },
+  "safeguards": {
+    "site_preview_authorized": true,
+    "checkout_enabled": true,
+    "publication_authorized": true,
+    "entitlement_authorized": true,
+    "webhook_required_for_entitlement": true,
+    "real_charge_authorized": true
+  }
+}

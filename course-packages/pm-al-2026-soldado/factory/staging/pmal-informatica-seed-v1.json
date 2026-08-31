@@ -1,0 +1,525 @@
+{
+  "name": "pmal-informatica-seed-v1",
+  "questions": [
+    {
+      "id": "qf_7f57e103aed687c0",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_001"
+      ],
+      "statement": "Uma rede LAN é definida por abranger uma cidade inteira, enquanto uma rede MAN fica limitada a uma sala ou edifício.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A afirmação inverte as classificações. LAN cobre uma área local, como uma residência, prédio ou campus. MAN abrange uma região metropolitana, normalmente maior que uma LAN e menor que uma WAN.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_00",
+        "page_number": 20
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_00",
+          "trace_status": "available",
+          "page_number": 20,
+          "excerpt": "omputadores! Vamos falar da classificação quanto à dimensão, cobertura, tamanho ou área geográfica (PAN, LAN, MAN e WAN); quanto à arquitetura de rede ou forma de interação (ponto -a-ponto e cliente/servidor); e quanto à topologia (barramento, anel, estrela e malha). E xistem outras classificações, mas elas não são relevantes para provas de concursos. Quanto à"
+        }
+      ]
+    },
+    {
+      "id": "qf_712dc7aaab159242",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_002"
+      ],
+      "statement": "A topologia lógica descreve como os dados circulam entre os dispositivos, ao passo que a topologia física representa a disposição dos enlaces e equipamentos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A topologia física retrata o arranjo material da rede. A topologia lógica representa o fluxo da informação, e as duas podem não coincidir.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_00",
+        "page_number": 36
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_00",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "possíveis: barramento, estrela, anel e malha. No entanto, vamos primeiro entender a diferença entre topologia física e lógica. A topologia lógica exibe o fluxo de dados na rede, isto é, como as informações percorrem os links e transitam entre dispositivos – lembrando que links são os meios de transmissão de dados. Já a topologia física exibe o layout (disposição) dos links"
+        }
+      ]
+    },
+    {
+      "id": "qf_9f360e26e690e813",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_003"
+      ],
+      "statement": "Na arquitetura ponto a ponto, o compartilhamento de recursos depende necessariamente de um servidor dedicado, e os demais computadores atuam apenas como clientes.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Em uma rede ponto a ponto, os computadores podem assumir funções de cliente e de servidor. Um servidor dedicado é característica típica da arquitetura cliente-servidor, não requisito da arquitetura P2P.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_00",
+        "page_number": 31
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_00",
+          "trace_status": "available",
+          "page_number": 31,
+          "excerpt": "cos e produtoras de filmes. E por que isso nunca deu certo até hoje? Se esse serviço utilizasse um modelo cliente/servidor (que veremos a seguir), bastava derrubar o servidor que estava disponibilizando os arquivos aos usuários; porém, em uma rede P2P, todas as máquinas são servidores e clientes. Imagine que você quer baixar um filme usando o BitTorrent. Nesse caso, você nã"
+        }
+      ]
+    },
+    {
+      "id": "qf_751a6d3ae7ca0819",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_004"
+      ],
+      "statement": "A arquitetura TCP/IP é usualmente apresentada em quatro camadas e não reproduz integralmente as sete camadas do modelo OSI.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "No modelo didático tradicional, TCP/IP possui quatro camadas: acesso à rede, internet, transporte e aplicação. Sessão e apresentação do OSI ficam absorvidas pela camada de aplicação.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_01",
+        "page_number": 29
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_01",
+          "trace_status": "available",
+          "page_number": 29,
+          "excerpt": "s; (b) Errado, ele não possui 7 camadas; (c) Correto; (d) Errado, a camada de sessão não é parte do Modelo TCP/IP; (e) Errado, trata-se da camada de Enlace (Acesso a Rede/Host) (Letra C). (QUADRIX / CRECI11 – 2022) O TCP/IP é um protocolo não hierárquico, que se constitui de um conjunto de protocolos organizados em diferentes camadas, as quais compartilham serviços entre"
+        }
+      ]
+    },
+    {
+      "id": "qf_317af3d9eae7b455",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_005"
+      ],
+      "statement": "O UDP é orientado à conexão e assegura a entrega ordenada dos segmentos, razão pela qual possui maior sobrecarga que o TCP.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O UDP não é orientado à conexão e não garante entrega, ordem ou retransmissão. Sua menor sobrecarga favorece aplicações sensíveis à latência. O TCP é que oferece conexão e confiabilidade.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_01",
+        "page_number": 18
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_01",
+          "trace_status": "available",
+          "page_number": 18,
+          "excerpt": "necessário. A camada de transporte é responsável por implementar os protocolos de transporte, como TCP e UDP. (VUNESP / Prefeitura de Ilhabela -SP – 2020) No modelo de referência OSI, a Camada de Transporte é responsável pelo envio dos dados recebidos pela Camada de Sessão para a Camada de Rede, a) fornecendo o roteamento de quadros entre redes e o controle de"
+        }
+      ]
+    },
+    {
+      "id": "qf_5d83b4afaa76900a",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_006"
+      ],
+      "statement": "O HTTPS acrescenta proteção criptográfica à comunicação HTTP, reduzindo o risco de leitura e alteração indevidas dos dados durante o trânsito.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "HTTPS é HTTP operando sobre um canal protegido, normalmente com TLS. Isso fornece confidencialidade e integridade à comunicação entre cliente e servidor.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_01",
+        "page_number": 55
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_01",
+          "trace_status": "available",
+          "page_number": 55,
+          "excerpt": "ortas... PROTOCOLO (CAMADA DE APLICAÇÃO) PROTOCOLO (CAMADA DE TRANSPORTE) NÚMERO DA PORTA HTTP TCP 80 HTTPS TCP 443 POP3 TCP 110 SMTP TCP 25/5876 IMAP4 TCP 143 FTP TCP 20/21 TELNET TCP 23 SSH TCP 22 DNS TCP/UDP 53 DHCP UDP 67/68 IRC TCP 194 EM VERMELHO, OS PROTOCOLOS CUJO NÚMERO DE PORTA MAIS CAEM EM PROVA! (CESPE / TRE-BA – 2017) O modelo TCP/IP possui uma pilha"
+        }
+      ]
+    },
+    {
+      "id": "qf_081882510c0e8117",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_007"
+      ],
+      "statement": "Uma extranet é uma rede totalmente pública e irrestrita, enquanto uma intranet é, por definição, acessível somente pela Internet aberta.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Intranet é uma rede privada de uma organização que utiliza tecnologias da Internet. Extranet amplia acesso controlado a usuários externos autorizados; ela não é pública e irrestrita.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_02",
+        "page_number": 5
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_02",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "5 INTRANET X EXTRANET X INTERNET Conceitos Básicos INCIDÊNCIA EM PROVA: BAIXÍSSIMA Você já parou para pensar como o acesso às informações varia de acordo com quem está acessando, de onde está acessando e qual o nível de permissão que possui? Ao entrar no site de uma loj"
+        }
+      ]
+    },
+    {
+      "id": "qf_9f0ae0aa5d8a9ca7",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s07",
+      "microknowledge_ids": [
+        "pmal_inf_mk_008"
+      ],
+      "statement": "No modelo SaaS, o usuário consome uma aplicação pronta; no PaaS, utiliza uma plataforma para desenvolver ou executar aplicações; e, no IaaS, contrata recursos de infraestrutura virtualizados.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A descrição corresponde aos três modelos: software como serviço, plataforma como serviço e infraestrutura como serviço.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_03",
+        "page_number": 20
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_03",
+          "trace_status": "available",
+          "page_number": 20,
+          "excerpt": "e virtualização de recursos computacionais, como o hardware, para prover os serviços é a: a) AaaS. b) IaaS. c) NaaS. d) PaaS. e) SaaS. _______________________ Comentários: a capacidade que o provedor tem de oferecer uma infraestrutura de processamento e armazenamento de forma transparente é a IaaS. Nesse cenário, o usuário não tem o controle da infraestrutura fí"
+        }
+      ]
+    },
+    {
+      "id": "qf_952cfdb9646592da",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s07",
+      "microknowledge_ids": [
+        "pmal_inf_mk_009"
+      ],
+      "statement": "A elasticidade rápida da computação em nuvem exige que a capacidade contratada permaneça fixa, mesmo quando a demanda do usuário aumenta ou diminui.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Elasticidade é justamente a capacidade de ampliar ou reduzir recursos conforme a demanda, frequentemente de forma rápida e automatizada.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_03",
+        "page_number": 17
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_03",
+          "trace_status": "available",
+          "page_number": 17,
+          "excerpt": "Uma pergunta bastante comum dos alunos é: qual é a diferença entre Autosserviço Sob Demanda e Elasticidade Rápida? A primeira característica essencial diz respeito à capacidade do usuário provisionar recursos por conta própria, sem precisar da intervenção humana do provedor de serviços. É como acessar um painel (dashboard) ou API e, com poucos cliqu"
+        }
+      ]
+    },
+    {
+      "id": "qf_038b291390c8dc41",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s04",
+      "microknowledge_ids": [
+        "pmal_inf_mk_010"
+      ],
+      "statement": "Em um mecanismo de busca, o operador site: pode restringir os resultados a um domínio ou sítio específico.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O operador site: limita a pesquisa ao endereço indicado. Por exemplo, site:gov.br seguido dos termos desejados restringe os resultados ao domínio gov.br.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_04",
+        "page_number": 25
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_04",
+          "trace_status": "available",
+          "page_number": 25,
+          "excerpt": "site INCIDÊNCIA EM PROVA: MÉDIA OPERADOR UTILIZAÇÃO site Esse operador permite pesquisar palavras em um site específico. Por exemplo: site:youtube.com flamengo (a palavra buscada pode vir antes ou depois). Pode haver um momento em que você precise pesquisar artigos ou conteúdo no Google, mas você de"
+        }
+      ]
+    },
+    {
+      "id": "qf_6c25158dbd4f5218",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s02",
+      "microknowledge_ids": [
+        "pmal_inf_mk_011"
+      ],
+      "statement": "A limpeza do cache de um navegador elimina necessariamente os favoritos e todas as senhas salvas pelo usuário.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Cache armazena cópias temporárias de recursos. Favoritos e senhas são categorias distintas de dados; a exclusão do cache, isoladamente, não implica apagar ambos.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_05",
+        "page_number": 18
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_05",
+          "trace_status": "available",
+          "page_number": 18,
+          "excerpt": "no Mozilla Firefox, é possível excluir informações do histórico de navegação, como páginas visitadas, cookies, cache, senhas e dados de formulários, acessando as configurações de privacidade ou utilizando o atalho Ctrl + Shift + Del (Correto). (IDECAN / Colégio Pedro II – 2014) As teclas de atalho utilizadas para exibir o histórico de navegação no navegador Interne"
+        }
+      ]
+    },
+    {
+      "id": "qf_fa852093708df789",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s02",
+      "microknowledge_ids": [
+        "pmal_inf_mk_012"
+      ],
+      "statement": "A navegação privada reduz o armazenamento local de histórico e cookies após a sessão, mas não torna o usuário invisível ao provedor de acesso, à rede corporativa ou aos sítios visitados.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O modo privado limita registros locais da sessão. Ele não oferece anonimato absoluto nem impede que redes, provedores e serviços remotos observem a comunicação.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_05",
+        "page_number": 65
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_05",
+          "trace_status": "available",
+          "page_number": 65,
+          "excerpt": "que ele visitou anteriormente – exceto os sites visitados em uma guia ou janela de navegação privada. NAVEGAÇÃO ANÔNIMA Essa funcionalidade permite navegar com privacidade, sem guardar histórico de páginas visitadas, sem salvar buscas realizadas na barra de pesquisa, sem salvar cookies e dados de sites, sem salvar informações fornecidas em formulários, entre outros. IMPRIMIR"
+        }
+      ]
+    },
+    {
+      "id": "qf_6bcbde7936f5c384",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s03",
+      "microknowledge_ids": [
+        "pmal_inf_mk_013"
+      ],
+      "statement": "Os destinatários inseridos no campo Cc ficam ocultos entre si, da mesma forma que os destinatários do campo Cco.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Cc envia cópia visível. Cco envia cópia oculta, impedindo que os demais destinatários vejam os endereços inseridos nesse campo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_06",
+        "page_number": 23
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_06",
+          "trace_status": "available",
+          "page_number": 23,
+          "excerpt": "os destinatários são visíveis uns aos outros. A opção em que os destinatários não ficam visíveis é a “CCO...” (Com Cópia Oculta) (Errado). (VUNESP / CRBio – 2017) O usuário de correio eletrônico Paulo preparou e enviou uma mensagem colocando no campo Para o destinatário João. Algum tempo depois, Paulo recebeu uma resposta da sua mensagem original, da usuária Maria. Iss"
+        }
+      ]
+    },
+    {
+      "id": "qf_e38f492734497cd2",
+      "subtopic_id": "pmal_soldado_d03_informatica_t03_s03",
+      "microknowledge_ids": [
+        "pmal_inf_mk_014"
+      ],
+      "statement": "SMTP é usado principalmente para envio de mensagens, enquanto POP3 e IMAP são empregados no acesso ou recebimento de mensagens armazenadas no servidor.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "SMTP cuida do envio. POP3 e IMAP tratam do recebimento ou sincronização; o IMAP normalmente mantém a organização das mensagens no servidor.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_06",
+        "page_number": 3
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_06",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "uina local. Espaço de armazenamento é limitado pelo provedor de e-mail. Utiliza diretamente os protocolos SMTP, POP3 e IMAP. Utiliza diretamente o protocolo HTTP. E-mails podem ficar disponíveis offline, isto é, sem acesso à internet. E-mails jamais ficam disponíveis offline, isto é, sem acesso à internet. Possui mais recursos e funcionalidades que webmails. Pos"
+        }
+      ]
+    },
+    {
+      "id": "qf_373b0495148e62ff",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_015"
+      ],
+      "statement": "Confidencialidade protege a informação contra alteração não autorizada, enquanto integridade impede que pessoas sem permissão tenham acesso ao conteúdo.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Os conceitos foram invertidos. Confidencialidade restringe o acesso a autorizados; integridade protege contra alterações indevidas; disponibilidade garante acesso quando necessário.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_07",
+        "page_number": 12
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_07",
+          "trace_status": "available",
+          "page_number": 12,
+          "excerpt": "Princípios Fundamentais Confidencialidade INCIDÊNCIA EM PROVA: ALTÍSSIMA Confidencialidade é, basicamente, a capacidade de proteger uma informação contra acessos não autorizados. Em outras palavras , é garantir que apenas quem tem permissão possa ver ou acessar determinados dados — sejam eles pessoas"
+        }
+      ]
+    },
+    {
+      "id": "qf_e0b7329f93e3f8d2",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s02",
+      "microknowledge_ids": [
+        "pmal_inf_mk_016"
+      ],
+      "statement": "Um vírus normalmente depende de um arquivo ou programa hospedeiro para se propagar, ao passo que um worm pode se autorreplicar e disseminar pela rede sem se anexar a outro programa.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Vírus associa seu código a um hospedeiro e costuma depender de execução. Worm é um programa autônomo capaz de autorreplicação e propagação, frequentemente explorando redes.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_08",
+        "page_number": 38
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_08",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "erados mediante pagamento de resgate denomina-se: a) ransomware. b) trojan. c) spyware. d) backdoor. e) vírus. _______________________ Comentários: (a) Correto. Ransomware é um tipo de malware que criptografa os arquivos da vítima e exige pagamento de resgate para a liberação do acesso, sendo amplamente usado em ataques recentes; (b) Errado. Trojan disfarça-se co"
+        }
+      ]
+    },
+    {
+      "id": "qf_bbeb1ba66e55dc9f",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s03",
+      "microknowledge_ids": [
+        "pmal_inf_mk_017"
+      ],
+      "statement": "A simples instalação de um firewall garante a eliminação de qualquer malware já presente no computador e dispensa o uso de outras medidas de segurança.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Firewall controla e filtra tráfego segundo regras, mas não garante remover malware instalado nem substitui antivírus, atualização, backup e boas práticas.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_09",
+        "page_number": 45
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_09",
+          "trace_status": "available",
+          "page_number": 45,
+          "excerpt": "de Lista de Controle de Acesso (Access Control List). Vejamos as principais técnicas utilizadas por firewalls: TÉCNICA DESCRIÇÃO CONTROLE DE SERVIÇOS Determina os tipos de serviços de internet que podem ser acessados, de entrada ou saída. O firewall pode filtrar o tráfego com base no endereço IP e número de porta TCP; pode oferecer software de proxy que recebe e int"
+        }
+      ]
+    },
+    {
+      "id": "qf_6926815242cf4008",
+      "subtopic_id": "pmal_soldado_d03_informatica_t05_s04",
+      "microknowledge_ids": [
+        "pmal_inf_mk_018"
+      ],
+      "statement": "O backup incremental copia as alterações desde o último backup realizado, enquanto o diferencial acumula as alterações desde o último backup completo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "No incremental, cada execução considera o último backup, completo ou incremental. No diferencial, todas as mudanças são comparadas com o último backup completo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_10",
+        "page_number": 9
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_10",
+          "trace_status": "available",
+          "page_number": 9,
+          "excerpt": "nhecida como backups. A forma mais simples (menor sofisticação) para fazê-lo é: a) Backup diferencial. b) Backup completo. c) Backup incremental. d) Backup delta. _______________________ Comentários: backup completo é a forma mais simples e direta de realizar cópias de segurança, pois envolve copiar todos os dados selecionados, independentemente de terem sido modificados o"
+        }
+      ]
+    },
+    {
+      "id": "qf_df911d0e82a53b38",
+      "subtopic_id": "pmal_soldado_d03_informatica_t02_s02",
+      "microknowledge_ids": [
+        "pmal_inf_mk_019"
+      ],
+      "statement": "No Microsoft Excel, a referência A1 é absoluta porque mantém linha e coluna fixas quando a fórmula é copiada.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A1 é referência relativa e pode se ajustar durante a cópia. A forma $A$1 fixa simultaneamente coluna e linha, sendo uma referência absoluta.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_11",
+        "page_number": 85
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_11",
+          "trace_status": "available",
+          "page_number": 85,
+          "excerpt": "çam a ocorrer quando é realizada uma cópia de uma fórmula que contenha tanto referência relativa quanto referência absoluta. Mover/recortar não ocasiona modificações; cópia pode ocasionar modificações. Como assim, professor? Galera, existem três tipos de referência: TIPO DE REFERÊNCIA EXEMPLO DESCRIÇÃO RELATIVA A1 Ao copiar, tanto os valores da coluna quanto da linha serão atu"
+        }
+      ]
+    },
+    {
+      "id": "qf_e8f8a02878674046",
+      "subtopic_id": "pmal_soldado_d03_informatica_t01_s01",
+      "microknowledge_ids": [
+        "pmal_inf_mk_020"
+      ],
+      "statement": "No Windows, o uso de Shift+Delete na exclusão de um arquivo normalmente ignora a Lixeira, embora ainda possa haver uma solicitação de confirmação.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Shift+Delete realiza a exclusão sem encaminhar o arquivo para a Lixeira. Isso difere do uso comum de Delete, que em condições normais envia o arquivo para a Lixeira.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": {
+        "source_id": "pmal_2026_informatica_14",
+        "page_number": 135
+      },
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "pmal_2026_informatica_14",
+          "trace_status": "available",
+          "page_number": 135,
+          "excerpt": "Excluir, pressionar a tecla DELETE (ou CTRL+D) no teclado ou simplesmente arrastar o arquivo para a Lixeira. Se a intenção for apagar um arquivo definitivamente, sem que ele passe pela Lixeira, é preciso usar a tecla SHIFT durante a exclusão. Existem duas formas para isso: a mais comum é pressionar SHIFT + DELETE, que ainda exibe uma tela de confirmação antes de co"
+        }
+      ]
+    }
+  ]
+}
