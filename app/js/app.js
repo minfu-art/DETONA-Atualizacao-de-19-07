@@ -103,7 +103,7 @@ function lazyRoute(load, exportName, styles = []) {
 const renderOnboarding = lazyRoute(() => import('./ui/onboarding.js?v=71'), 'renderOnboarding');
 const renderHome = lazyRoute(() => import('./ui/home.js?v=85'), 'renderHome', ['./css/dashboard-jrpg.css?v=81']);
 const renderWorldMap = lazyRoute(() => import('./ui/worldMap.js?v=74'), 'renderWorldMap');
-const renderBattle = lazyRoute(() => import('./ui/battleArena.js?v=77'), 'renderBattle');
+const renderBattle = lazyRoute(() => import('./ui/battleArena.js?v=78'), 'renderBattle');
 const renderGrimorio = lazyRoute(() => import('./ui/grimorio.js?v=69'), 'renderGrimorio');
 const renderPerformance = lazyRoute(() => import('./ui/performance.js?v=76'), 'renderPerformance', ['./css/performance-mobile.css?v=5']);
 const renderExpedition = lazyRoute(() => import('./ui/expedition.js?v=77'), 'renderExpedition', ['./css/plan-edital.css?v=4']);

@@ -8,10 +8,51 @@ import { heroImgHtml } from './heroAssets.js';
 import { enemyImgHtml, BATTLE_BG } from './enemyAssets.js';
 import { icon } from './icons.js?v=66';
 import { buildQuestionExplanation } from '../services/questionExplanationService.js';
+import { resolveQuestionReferenceText } from '../services/questionReferenceService.js';
 
 /**
  * Arena de Quiz gamificada — fundo artístico + inimigos estilo avatar
  */
+export function renderQuestionReference(referenceText) {
+  if (!referenceText) return '';
+  return `
+    <section class="battle-reference is-collapsed" data-question-reference aria-labelledby="battle-reference-title">
+      <header class="battle-reference__header">
+        <div>
+          <span class="battle-kicker">Material para análise</span>
+          <h2 id="battle-reference-title">Texto de referência</h2>
+        </div>
+        <div class="battle-reference__actions">
+          <button type="button" class="battle-reference__button" data-reference-toggle aria-expanded="false" aria-controls="battle-reference-content">Expandir texto</button>
+          <button type="button" class="battle-reference__button battle-reference__button--maximize" data-reference-maximize aria-label="Abrir texto de referência em tela ampliada">Ampliar</button>
+        </div>
+      </header>
+      <div class="battle-reference__content" id="battle-reference-content" tabindex="0">${escapeHtml(referenceText)}</div>
+    </section>`;
+}
+
+export function bindQuestionReferenceControls(root, referenceText) {
+  if (!root || !referenceText) return;
+  const referenceCard = root.querySelector('[data-question-reference]');
+  const referenceToggle = root.querySelector('[data-reference-toggle]');
+  referenceToggle?.addEventListener('click', () => {
+    const expanded = referenceCard?.classList.toggle('is-expanded') === true;
+    referenceCard?.classList.toggle('is-collapsed', !expanded);
+    referenceToggle.setAttribute('aria-expanded', String(expanded));
+    referenceToggle.textContent = expanded ? 'Recolher texto' : 'Expandir texto';
+  });
+  root.querySelector('[data-reference-maximize]')?.addEventListener('click', () => {
+    const modal = openModal(
+      'Texto de referência',
+      `<article class="battle-reference-modal__text">${escapeHtml(referenceText)}</article>`,
+      '<button type="button" class="btn btn-primary" data-reference-close autofocus>Voltar à questão</button>',
+      { variant: 'editor' },
+    );
+    modal.classList.add('battle-reference-dialog');
+    modal.querySelector('[data-reference-close]')?.addEventListener('click', closeModal);
+  });
+}
+
 export async function renderBattle(root, navigate, ctx) {
   const session = ctx.battleSession;
   if (!session || !session.questions?.length) {
@@ -95,6 +136,7 @@ export async function renderBattle(root, navigate, ctx) {
     const total = session.questions.length;
     const subjectLabel = sub?.name || sub?.enemy_name || 'Missão diária';
     const progress = Math.round((questionNumber / total) * 100);
+    const referenceText = resolveQuestionReferenceText(q);
     root.innerHTML = `
       <div class="battle-shell battle-focus" data-battle-state="question">
         <header class="battle-header battle-focus__header">
@@ -144,6 +186,7 @@ export async function renderBattle(root, navigate, ctx) {
               ${/DETONA INÉDITA/i.test(`${q.fonte || ''} ${q.metadata?.colecao || ''}`) ? '<span class="is-detona">Questão DETONA inédita</span>' : ''}
               <span>Questão ${questionNumber} de ${total}</span>
             </div>
+            ${renderQuestionReference(referenceText)}
             <div class="battle-question__statement">
               <span class="battle-kicker battle-question__label">Enunciado</span>
               <p id="battle-statement" tabindex="-1">${escapeHtml(q.statement)}</p>
@@ -195,6 +238,7 @@ export async function renderBattle(root, navigate, ctx) {
     let selectedButton = null;
     const submit = $('#btn-answer', root);
     const hint = $('#battle-selection-hint', root);
+    bindQuestionReferenceControls(root, referenceText);
     $('#answers', root).querySelectorAll('.answer-btn').forEach((btn) => {
       btn.setAttribute('aria-pressed', 'false');
       btn.addEventListener('click', () => {

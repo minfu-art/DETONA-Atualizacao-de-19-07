@@ -5,6 +5,11 @@ import { readFile } from 'node:fs/promises';
 import { answerQuestion, validateBattleSession } from '../app/js/core/battle.js';
 import { buildQuestionExplanation } from '../app/js/services/questionExplanationService.js';
 import {
+  questionReferenceId,
+  questionRequiresReferenceText,
+  resolveQuestionReferenceText,
+} from '../app/js/services/questionReferenceService.js';
+import {
   classifyBattleResult,
   deduplicateBattleExplanation,
   renderBattleFeedback,
@@ -184,4 +189,45 @@ test('CSS da Arena protege legibilidade, alvos, responsividade e movimento reduz
   assert.match(arena, /\.battle-feedback-wrap \{[^}]*scroll-margin-top:112px/);
   assert.doesNotMatch(arena, /font-size:\s*(?:[0-9]|1[01])px/);
   assert.doesNotMatch(arena, /!important/);
+});
+
+test('questões do texto 1A11-I recuperam a referência oficial e oferecem leitura ampliada', async () => {
+  const questionWithMissingContext = {
+    id: 'PCAL-LP-10-088',
+    statement: 'No texto 1A11-I, com o emprego da expressão “(hoje)” (L.2) entre parênteses, o autor',
+    metadata: { fonteProva: 'CEBRASPE / SEFAZ-RS / 2019' },
+  };
+  assert.equal(questionReferenceId(questionWithMissingContext), '1A11-I');
+  assert.equal(questionRequiresReferenceText(questionWithMissingContext), true);
+  const reference = resolveQuestionReferenceText(questionWithMissingContext);
+  assert.match(reference, /^Texto 1A11-I/);
+  assert.match(reference, /Pixis foi um músico medíocre/);
+  assert.match(reference, /erro tipográfico invertera/);
+  assert.match(reference, /Charles Kiefer/);
+
+  const arena = await readFile(arenaUrl, 'utf8');
+  assert.match(arena, /Material para análise/);
+  assert.match(arena, /Texto de referência/);
+  assert.match(arena, /data-reference-toggle/);
+  assert.match(arena, /data-reference-maximize/);
+  assert.match(arena, /aria-expanded="false"/);
+  assert.match(arena, /Abrir texto de referência em tela ampliada/);
+
+  const bank = JSON.parse(await readFile(new URL('../app/data/questions/lingua_portuguesa.json', import.meta.url), 'utf8'));
+  for (const id of ['PCAL-LP-10-088', 'PCAL-LP-10-089']) {
+    const publishedQuestion = bank.find((item) => item.id === id);
+    assert.ok(publishedQuestion, `Questão publicada ausente: ${id}`);
+    assert.equal(publishedQuestion.contextoCompartilhado, '');
+    assert.match(resolveQuestionReferenceText(publishedQuestion), /Desconsiderar, no fenômeno estético/);
+  }
+});
+
+test('referência explícita tem prioridade e questão sem texto citado não inventa contexto', () => {
+  const explicit = {
+    statement: 'Analise o trecho e assinale a opção correta.',
+    textoReferencia: 'Trecho fornecido pelo pacote editorial.',
+  };
+  assert.equal(resolveQuestionReferenceText(explicit), 'Trecho fornecido pelo pacote editorial.');
+  assert.equal(questionRequiresReferenceText(explicit), false);
+  assert.equal(resolveQuestionReferenceText({ statement: 'Calcule o resultado de 2 + 2.' }), '');
 });

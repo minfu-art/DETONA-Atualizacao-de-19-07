@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v156-checkout-trust-universal';
+const CACHE = 'detona-v157-question-reference-text';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -118,6 +118,7 @@ const ASSETS = [
   './js/services/publishedCoursePackageService.js',
   './js/services/contestSummaryService.js',
   './js/services/questionExplanationService.js',
+  './js/services/questionReferenceService.js',
   './js/services/reviewService.js',
   './js/services/performanceService.js',
   './js/services/orionEvolutionService.js',
