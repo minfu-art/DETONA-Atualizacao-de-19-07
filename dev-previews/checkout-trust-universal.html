@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Preview — Antessala universal DETONA</title>
+  <link rel="stylesheet" href="../app/css/main.css">
+  <link rel="stylesheet" href="../app/css/design-system.css">
+  <link rel="stylesheet" href="../app/css/student-entry.css?v=8">
+  <style>
+    body { margin: 0; min-height: 100vh; color: #f7f8ff; background: #060a14; }
+    #screen { min-height: 100vh; overflow: auto; }
+    .preview-switcher { position: sticky; z-index: 20; top: 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 10px; border-bottom: 1px solid #293854; background: rgb(5 9 18 / 92%); backdrop-filter: blur(14px); }
+    .preview-switcher a { padding: 9px 13px; border: 1px solid #405274; border-radius: 999px; color: #d8e5ff; text-decoration: none; font: 700 12px/1 system-ui; }
+    .preview-switcher a[aria-current="page"] { border-color: #6edfff; color: #07101e; background: #6edfff; }
+  </style>
+</head>
+<body>
+  <nav class="preview-switcher" aria-label="Cursos de demonstração"></nav>
+  <main id="screen" data-screen="library" data-theme="library"></main>
+  <script type="module">
+    import { CONTEST_CATALOG } from '../app/js/contest/contestCatalog.js';
+    import { renderLibrary } from '../app/js/ui/library.js?v=161';
+
+    const allowed = ['pm_al_2026', 'pc_al_2026', 'pc_ba_2026', 'pm_ba_2026'];
+    const params = new URLSearchParams(location.search);
+    const requested = params.get('contest');
+    const contestId = allowed.includes(requested) ? requested : 'pm_al_2026';
+    const selected = CONTEST_CATALOG.find((contest) => contest.id === contestId);
+    const contest = {
+      ...selected,
+      coverAsset: selected.coverAsset ? `../app/${selected.coverAsset}` : null,
+    };
+
+    const labels = new Map(allowed.map((id) => [id, CONTEST_CATALOG.find((contest) => contest.id === id)?.code || id]));
+    document.querySelector('.preview-switcher').innerHTML = allowed.map((id) => (
+      `<a href="?contest=${id}" ${id === contestId ? 'aria-current="page"' : ''}>${labels.get(id)}</a>`
+    )).join('');
+
+    renderLibrary(document.querySelector('#screen'), {
+      user: { name: 'Aluno DETONA', email: 'preview@detonaconcursos.com' },
+      items: [{
+        contest,
+        owned: false,
+        accessVerificationRequired: false,
+        checkoutAction: { action: 'purchase', disabled: false },
+      }],
+      commercialIntent: { source: 'detona-site', contestId, directCheckout: true },
+      checkoutPreview: true,
+      links: { courses: 'https://detonaconcursos.com/cursos/' },
+      embedded: true,
+    });
+  </script>
+</body>
+</html>

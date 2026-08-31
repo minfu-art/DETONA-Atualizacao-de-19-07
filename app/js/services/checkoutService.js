@@ -2,6 +2,15 @@ import { PurchaseRepository } from '../repositories/entitlementRepository.js';
 import { isLocalDevelopment } from '../config/appEnvironment.js';
 import { getSupabaseClient } from '../supabase/client.js';
 
+export function isMercadoPagoCheckoutUrl(value) {
+  try {
+    const url = new URL(String(value || ''));
+    return url.protocol === 'https:' && /(^|\.)mercadopago\.com(?:\.br)?$/i.test(url.hostname);
+  } catch {
+    return false;
+  }
+}
+
 /** Adapter demonstrativo. Substituir por um gateway remoto sem alterar LibraryService. */
 export class LocalDemoCheckoutGateway {
   constructor({
@@ -52,9 +61,22 @@ export class MercadoPagoCheckoutGateway {
   } = {}) {
     this.getClient = getClient;
     this.idFactory = idFactory;
+    this.activeCheckouts = new Map();
   }
 
   async checkout({ contest }) {
+    if (this.activeCheckouts.has(contest.id)) return this.activeCheckouts.get(contest.id);
+    const attempt = this.#createOrRecoverCheckout(contest);
+    this.activeCheckouts.set(contest.id, attempt);
+    try {
+      return await attempt;
+    } catch (error) {
+      this.activeCheckouts.delete(contest.id);
+      throw error;
+    }
+  }
+
+  async #createOrRecoverCheckout(contest) {
     const client = await this.getClient();
     if (!client) throw new Error('Checkout indisponível neste ambiente.');
     const requestId = this.idFactory();
@@ -89,10 +111,10 @@ export class CheckoutService {
   async purchase(input) {
     const purchase = await this.gateway.checkout(input);
     if (purchase?.status === 'redirect') {
-      let redirect;
-      try { redirect = new URL(purchase.redirectUrl); }
-      catch { throw new Error('O checkout retornou um destino inválido.'); }
-      if (redirect.protocol !== 'https:') throw new Error('O checkout retornou um destino inseguro.');
+      if (!isMercadoPagoCheckoutUrl(purchase.redirectUrl)) {
+        throw new Error('O checkout retornou um destino que não pertence ao Mercado Pago.');
+      }
+      const redirect = new URL(purchase.redirectUrl);
       return { ...purchase, redirectUrl: redirect.toString() };
     }
     if (purchase?.status === 'pending') return purchase;

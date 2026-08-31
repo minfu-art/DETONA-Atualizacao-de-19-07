@@ -82,14 +82,14 @@ test('produção não compra indisponível nem concede acesso local', async () =
 test('checkout aceita apenas redirect HTTPS e não o persiste como pagamento', async () => {
   let writes = 0;
   const service = new CheckoutService({
-    gateway: { checkout: async () => ({ status: 'redirect', redirectUrl: 'https://checkout.example/abc' }) },
+    gateway: { checkout: async () => ({ status: 'redirect', redirectUrl: 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=abc' }) },
     purchases: { save: async () => { writes += 1; } },
     persistLocally: () => true,
   });
-  assert.equal((await service.purchase({})).redirectUrl, 'https://checkout.example/abc');
+  assert.equal((await service.purchase({})).redirectUrl, 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=abc');
   assert.equal(writes, 0);
   const unsafe = new CheckoutService({ gateway: { checkout: async () => ({ status: 'redirect', redirectUrl: 'http://example.test' }) } });
-  await assert.rejects(() => unsafe.purchase({}), /inseguro/);
+  await assert.rejects(() => unsafe.purchase({}), /não pertence ao Mercado Pago/);
 });
 
 test('gateway remoto envia somente concurso e idempotência e não concede acesso', async () => {

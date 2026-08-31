@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v155-pm-al-publicada';
+const CACHE = 'detona-v156-checkout-trust-universal';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -46,6 +46,13 @@ const ASSETS = [
   './assets/library/areas/fiscal-control.webp',
   './assets/library/areas/education-health.webp',
   './assets/library/areas/military.webp',
+  './assets/brands/mercado-pago-logo-footer-official.svg',
+  './assets/acquisition/feature-question-bank-v1.webp',
+  './assets/acquisition/feature-learning-trail-v1.webp',
+  './assets/acquisition/feature-vertical-edital-v1.webp',
+  './assets/acquisition/feature-missions-review-v1.webp',
+  './assets/acquisition/feature-preparation-state-v1.webp',
+  './assets/acquisition/feature-ranking-v1.webp',
   './js/core/types.js',
   './js/core/indexedDb.js',
   './js/core/runtimeRecovery.js',

@@ -169,7 +169,7 @@ test('interface privada remove descoberta e mantém responsividade e acessibilid
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(ui, /<h1 id="library-title">BIBLIOTECA<\/h1>/);
+  assert.match(ui, /acquisitionMode \? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'/);
   assert.match(ui, /\+ ADICIONAR CURSOS/);
   assert.match(ui, /rel="noopener noreferrer"/);
   assert.doesNotMatch(ui, /Pesquisar concurso|Explore por área|data-career-filter|data-interest-contest/);
@@ -208,12 +208,12 @@ test('jornada ativa tem CTA direto, contexto e bloqueio de abertura concorrente'
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
   assert.match(ui, /class="active-journey__action" data-open-contest/);
-  assert.match(ui, /CONTINUAR ESTUDANDO/);
+  assert.match(ui, /SUA JORNADA PRINCIPAL/);
   assert.match(ui, /const openingContests = new Set\(\)/);
   assert.match(ui, /if \(openingContests\.has\(contestId\)\) return/);
   assert.match(ui, /relatedButtons\.forEach/);
   assert.match(css, /\.active-journey/);
-  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.active-journey \{ grid-template-columns: 1fr/s);
+  assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.active-journey__content \{ width: 100%;/s);
 });
 
 test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE', async () => {

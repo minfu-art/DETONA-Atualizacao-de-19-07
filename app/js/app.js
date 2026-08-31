@@ -8,7 +8,7 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
 import { renderAuth } from './ui/auth.js?v=75';
-import { renderLibrary } from './ui/library.js';
+import { renderLibrary } from './ui/library.js?v=161';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';
@@ -28,7 +28,6 @@ import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import {
-  directCheckoutContestId,
   readCheckoutReturn,
   readCommercialIntent,
 } from './services/studentEntryModel.js';
@@ -149,7 +148,6 @@ let contestOpenGeneration = 0;
 const INTERACTIVE_SCREENS = new Set(['battle', 'review', 'rankedEvent']);
 let pendingContestMaintenance = null;
 let onlineFlushBinding = null;
-let directCheckoutAttempt = null;
 
 const isInteractiveScreen = () => INTERACTIVE_SCREENS.has(ctx.screen);
 
@@ -597,30 +595,6 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       embedded: true,
     });
     if (commerceReturn) clearCheckoutReturnUrl();
-    const directContestId = commerceReturn ? null : directCheckoutContestId(commercialIntent, state.items);
-    const attemptKey = directContestId ? `${user.id}:${directContestId}` : null;
-    if (attemptKey && directCheckoutAttempt !== attemptKey) {
-      directCheckoutAttempt = attemptKey;
-      const button = root.querySelector(`[data-commercial-intent="${CSS.escape(directContestId)}"]`);
-      const feedback = root.querySelector('[data-commercial-feedback]');
-      if (button) {
-        button.disabled = true;
-        button.setAttribute('aria-busy', 'true');
-        button.textContent = 'ABRINDO PAGAMENTO...';
-      }
-      if (feedback) feedback.textContent = 'Tudo certo. Levando você ao pagamento seguro.';
-      try {
-        await purchaseAndRedirect(user, directContestId);
-      } catch (checkoutError) {
-        directCheckoutAttempt = null;
-        if (button) {
-          button.disabled = false;
-          button.setAttribute('aria-busy', 'false');
-          button.textContent = 'TENTAR PAGAMENTO NOVAMENTE';
-        }
-        if (feedback) feedback.textContent = checkoutError?.message || 'Não foi possível iniciar o pagamento.';
-      }
-    }
   } catch (error) {
     if (generation !== contestOpenGeneration) return;
     root.innerHTML = errorState({
