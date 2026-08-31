@@ -202,3 +202,33 @@ test('publisher cria patch incremental e atualiza versão, hash e contagem', asy
   assert.match(registry, /expectedQuestionCount: 3/);
   assert.match(registry, /const DATA_VERSION = '2026\.08\.25\.2'/);
 });
+
+test('publisher aceita lista vazia e atualiza somente a versão específica do curso', async () => {
+  const { root, bundlePath } = await fixture();
+  const bundle = await loadBundle(bundlePath);
+  const registryPath = path.join(root, 'app/js/services/publishedCoursePackageService.js');
+  await writeFile(registryPath, `const DATA_VERSION = '2026.08.01.9';
+const DEMO_DATA_VERSION = '2026.08.25.1';
+export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
+  demo_2026: Object.freeze({
+    baseUrl: \`data/course-factory/demo-course-runtime.json?v=\${DEMO_DATA_VERSION}\`,
+    patchUrls: Object.freeze([]),
+    version: DEMO_DATA_VERSION,
+    contentHash: 'oldhash',
+    expectedQuestionCount: 2,
+    expectedSubtopicCount: 1,
+  }),
+});
+`, 'utf8');
+  const batch = { name: 'primeiro-patch-registrado', questions: [generatedQuestion('q_course_version')] };
+  const batchPath = path.join(root, 'course-version.json');
+  await writeJson(batchPath, batch);
+
+  const result = await publishPatch({ repoRoot: root, bundle, batchPath, now: new Date('2026-08-25T12:00:00Z') });
+  assert.equal(result.version, '2026.08.25.2');
+
+  const registry = await readFile(registryPath, 'utf8');
+  assert.match(registry, /patchUrls: Object\.freeze\(\[\s*\`data\/course-factory\/published\/demo-course-patch-002\.json\?v=\${DEMO_DATA_VERSION}\`,/);
+  assert.match(registry, /const DEMO_DATA_VERSION = '2026\.08\.25\.2'/);
+  assert.match(registry, /const DATA_VERSION = '2026\.08\.01\.9'/);
+});

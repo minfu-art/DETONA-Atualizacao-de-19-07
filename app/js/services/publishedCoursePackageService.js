@@ -1,5 +1,5 @@
 const DATA_VERSION = '2026.08.17.1';
-const PM_AL_DATA_VERSION = '2026.08.30.1';
+const PM_AL_DATA_VERSION = '2026.08.31.1';
 
 export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   pc_ba_2026: Object.freeze({
@@ -24,10 +24,12 @@ export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   }),
   pm_al_2026: Object.freeze({
     baseUrl: `data/course-factory/pm-al-2026-soldado-runtime.json?v=${PM_AL_DATA_VERSION}`,
-    patchUrls: Object.freeze([]),
+    patchUrls: Object.freeze([
+      `data/course-factory/published/pm-al-2026-soldado-patch-001.json?v=${PM_AL_DATA_VERSION}`,
+    ]),
     version: PM_AL_DATA_VERSION,
-    contentHash: '901daaecc2ecbf062ab1a37d625d60500e2121b389cbab1cd4d220cacc66bdf6',
-    expectedQuestionCount: 71,
+    contentHash: '588a184b953401247c55f6b637274bd8e7bbae2c116c19b54a834fe2e924d182',
+    expectedQuestionCount: 83,
     expectedSubtopicCount: 161,
     metadataOverride: Object.freeze({
       code: 'PM AL',

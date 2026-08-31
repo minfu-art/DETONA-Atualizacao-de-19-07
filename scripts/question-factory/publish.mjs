@@ -31,11 +31,12 @@ function registryEntry(source, contestId) {
   return { start, end: end + '\n  }),'.length, body: source.slice(start, end + '\n  }),'.length) };
 }
 
-function appendPatchUrl(body, relativeUrl) {
+function appendPatchUrl(body, relativeUrl, versionToken) {
   if (body.includes(relativeUrl)) throw new Error('patch_already_registered');
-  const block = body.match(/patchUrls:\s*Object\.freeze\(\[([\s\S]*?)\n\s*\]\),/);
+  const block = body.match(/patchUrls:\s*Object\.freeze\(\[([\s\S]*?)\]\),/);
   if (!block) throw new Error('registry_patch_urls_missing');
-  const insertion = `${block[1]}\n      \`${relativeUrl}?v=\${DATA_VERSION}\`,`;
+  const currentEntries = block[1].replace(/\s*$/, '');
+  const insertion = `${currentEntries}\n      \`${relativeUrl}?v=\${${versionToken}}\`,`;
   return body.replace(block[0], `patchUrls: Object.freeze([${insertion}\n    ]),`);
 }
 
@@ -73,17 +74,18 @@ export async function publishPatch({ repoRoot, bundle, batchPath, now = new Date
   if (composedBefore !== expectedBefore) throw new Error(`registry_count_mismatch:${expectedBefore}:${composedBefore}`);
   for (const question of batch.questions) if (existingIds.has(question.id)) throw new Error(`publish_duplicate_question:${question.id}`);
 
-  await mkdir(publishedDir, { recursive: true });
   const patchFilename = await nextPatchFile(publishedDir, slug);
   const patchPath = path.join(publishedDir, patchFilename);
-  await copyFile(batchPath, patchPath);
   const expectedAfter = expectedBefore + batch.questions.length;
 
-  const currentVersionMatch = registrySource.match(/const DATA_VERSION = '([^']+)'/);
+  const versionTokenMatch = entry.body.match(/version:\s*([A-Z][A-Z0-9_]*)/);
+  if (!versionTokenMatch) throw new Error('registry_version_token_missing');
+  const versionToken = versionTokenMatch[1];
+  const currentVersionMatch = registrySource.match(new RegExp(`const ${escapeRegex(versionToken)} = '([^']+)'`));
   if (!currentVersionMatch) throw new Error('registry_data_version_missing');
   const version = nextVersion(currentVersionMatch[1], now);
   const relativeUrl = `data/course-factory/published/${patchFilename}`;
-  let newBody = appendPatchUrl(entry.body, relativeUrl);
+  let newBody = appendPatchUrl(entry.body, relativeUrl, versionToken);
   const contentHash = sha256(JSON.stringify({
     contestId,
     base: runtime.contentHash || sha256(JSON.stringify(runtime)),
@@ -94,7 +96,12 @@ export async function publishPatch({ repoRoot, bundle, batchPath, now = new Date
   newBody = newBody.replace(/expectedQuestionCount:\s*\d+/, `expectedQuestionCount: ${expectedAfter}`);
 
   let nextRegistry = `${registrySource.slice(0, entry.start)}${newBody}${registrySource.slice(entry.end)}`;
-  nextRegistry = nextRegistry.replace(/const DATA_VERSION = '[^']+'/, `const DATA_VERSION = '${version}'`);
+  nextRegistry = nextRegistry.replace(
+    new RegExp(`const ${escapeRegex(versionToken)} = '[^']+'`),
+    `const ${versionToken} = '${version}'`,
+  );
+  await mkdir(publishedDir, { recursive: true });
+  await copyFile(batchPath, patchPath);
   await writeFile(registryPath, nextRegistry, 'utf8');
   return { patchPath, patchFilename, relativeUrl, expectedBefore, expectedAfter, version, contentHash, registryPath };
 }

@@ -1,0 +1,305 @@
+{
+  "name": "pmal-matematica-coverage-batch-001",
+  "questions": [
+    {
+      "id": "qf_1347e39603fea6aa",
+      "subtopic_id": "pmal_soldado_d02_matematica_t01_s01",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t01_s01_mk01"],
+      "statement": "Considerando os conjuntos numéricos usuais, assinale a opção correta.",
+      "options": [
+        { "label": "A", "text": "Todo número inteiro é natural." },
+        { "label": "B", "text": "Todo número natural é inteiro." },
+        { "label": "C", "text": "Nenhum número natural é racional." },
+        { "label": "D", "text": "O número -3 pertence ao conjunto dos naturais." },
+        { "label": "E", "text": "O número 1/2 pertence ao conjunto dos inteiros." }
+      ],
+      "correct_answer": "B",
+      "explanation": "O conjunto dos números naturais está contido no conjunto dos inteiros. Assim, todo natural é inteiro, mas existem inteiros negativos, como -3, que não são naturais; além disso, 1/2 é racional e não inteiro.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_00", "page_number": 7 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_00",
+        "trace_status": "available",
+        "page_number": 7,
+        "excerpt": "Todos os números naturais são também números inteiros."
+      }]
+    },
+    {
+      "id": "qf_be331f2edcc0c831",
+      "subtopic_id": "pmal_soldado_d02_matematica_t01_s02",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t01_s02_mk01"],
+      "statement": "Um candidato possuía saldo de R$ 3.100 e gastou R$ 1.500 na compra de um aparelho. Qual foi o saldo restante?",
+      "options": [
+        { "label": "A", "text": "R$ 1.400" },
+        { "label": "B", "text": "R$ 1.500" },
+        { "label": "C", "text": "R$ 1.600" },
+        { "label": "D", "text": "R$ 1.700" },
+        { "label": "E", "text": "R$ 4.600" }
+      ],
+      "correct_answer": "C",
+      "explanation": "A operação é 3.100 - 1.500 = 1.600. Portanto, o saldo restante é R$ 1.600.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_01", "page_number": 3 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_01",
+        "trace_status": "available",
+        "page_number": 3,
+        "excerpt": "Se você tinha R$ 3.100,00 e gastou R$ 1.500,00, agora ficou com R$ 1.600,00 de saldo."
+      }]
+    },
+    {
+      "id": "qf_28b7d7ceb944f0a8",
+      "subtopic_id": "pmal_soldado_d02_matematica_t01_s03",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t01_s03_mk01"],
+      "statement": "O resultado da soma 1/4 + 1/6 é igual a",
+      "options": [
+        { "label": "A", "text": "1/10" },
+        { "label": "B", "text": "2/10" },
+        { "label": "C", "text": "2/5" },
+        { "label": "D", "text": "5/12" },
+        { "label": "E", "text": "7/12" }
+      ],
+      "correct_answer": "D",
+      "explanation": "O mínimo múltiplo comum de 4 e 6 é 12. Logo, 1/4 = 3/12 e 1/6 = 2/12; somando, obtém-se 5/12.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_03", "page_number": 3 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_03",
+        "trace_status": "available",
+        "page_number": 3,
+        "excerpt": "Para somar e subtrair frações, devemos transformar todas as frações em frações equivalentes com o mesmo denominador."
+      }]
+    },
+    {
+      "id": "qf_0ee8712a1976e964",
+      "subtopic_id": "pmal_soldado_d02_matematica_t01_s04",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t01_s04_mk01"],
+      "statement": "Assinale o resultado correto da operação 120 + 13,25.",
+      "options": [
+        { "label": "A", "text": "121,325" },
+        { "label": "B", "text": "132,25" },
+        { "label": "C", "text": "133,25" },
+        { "label": "D", "text": "133,50" },
+        { "label": "E", "text": "253,25" }
+      ],
+      "correct_answer": "C",
+      "explanation": "Alinhando as casas decimais, 120 pode ser escrito como 120,00. Assim, 120,00 + 13,25 = 133,25.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_01", "page_number": 5 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_01",
+        "trace_status": "available",
+        "page_number": 5,
+        "excerpt": "Exemplo 3) 120 + 13,25. Para fazer o 'vírgula abaixo da vírgula', podemos completar com dois zeros à direita."
+      }]
+    },
+    {
+      "id": "qf_a66d093f3f5b505b",
+      "subtopic_id": "pmal_soldado_d02_matematica_t02_s01",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t02_s01_mk01"],
+      "statement": "Qual das igualdades a seguir representa uma proporção verdadeira?",
+      "options": [
+        { "label": "A", "text": "2/3 = 4/5" },
+        { "label": "B", "text": "3/4 = 6/8" },
+        { "label": "C", "text": "4/7 = 8/15" },
+        { "label": "D", "text": "5/6 = 15/20" },
+        { "label": "E", "text": "7/9 = 14/27" }
+      ],
+      "correct_answer": "B",
+      "explanation": "Uma proporção é uma igualdade entre razões. Em 3/4 = 6/8, os produtos cruzados são iguais: 3 × 8 = 4 × 6 = 24.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_03", "page_number": 38 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_03",
+        "trace_status": "available",
+        "page_number": 38,
+        "excerpt": "Proporção é a igualdade entre duas ou mais razões."
+      }]
+    },
+    {
+      "id": "qf_379b05a0a3dfe408",
+      "subtopic_id": "pmal_soldado_d02_matematica_t02_s02",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t02_s02_mk01"],
+      "statement": "Uma gratificação de R$ 900 será dividida em partes diretamente proporcionais a 2, 3 e 4. A maior parte será de",
+      "options": [
+        { "label": "A", "text": "R$ 200" },
+        { "label": "B", "text": "R$ 250" },
+        { "label": "C", "text": "R$ 300" },
+        { "label": "D", "text": "R$ 350" },
+        { "label": "E", "text": "R$ 400" }
+      ],
+      "correct_answer": "E",
+      "explanation": "A soma das partes proporcionais é 2 + 3 + 4 = 9. Cada unidade vale 900/9 = 100; a maior parte corresponde a 4 unidades, isto é, R$ 400.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_03", "page_number": 72 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_03",
+        "trace_status": "available",
+        "page_number": 72,
+        "excerpt": "Problemas de divisão em partes diretamente proporcionais tratam da divisão de uma quantia em partes proporcionais a alguns números."
+      }]
+    },
+    {
+      "id": "qf_1da3826a1de7a3ab",
+      "subtopic_id": "pmal_soldado_d02_matematica_t03_s01",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t03_s01_mk01"],
+      "statement": "Se 6 cadernos custam R$ 42, mantendo-se o mesmo preço unitário, 10 cadernos custarão",
+      "options": [
+        { "label": "A", "text": "R$ 60" },
+        { "label": "B", "text": "R$ 65" },
+        { "label": "C", "text": "R$ 70" },
+        { "label": "D", "text": "R$ 72" },
+        { "label": "E", "text": "R$ 84" }
+      ],
+      "correct_answer": "C",
+      "explanation": "Preço e quantidade são diretamente proporcionais. O preço unitário é 42/6 = 7; para 10 cadernos, 10 × 7 = R$ 70.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_04", "page_number": 3 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_04",
+        "trace_status": "available",
+        "page_number": 3,
+        "excerpt": "Quando falamos de regra de três simples, estamos relacionando exatamente duas grandezas."
+      }]
+    },
+    {
+      "id": "qf_9307680966a4607b",
+      "subtopic_id": "pmal_soldado_d02_matematica_t03_s02",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t03_s02_mk01"],
+      "statement": "Quatro máquinas, operando 6 horas por dia durante 5 dias, produzem 600 peças. Mantida a produtividade, quantas peças serão produzidas por 8 máquinas, operando 3 horas por dia durante 10 dias?",
+      "options": [
+        { "label": "A", "text": "300" },
+        { "label": "B", "text": "600" },
+        { "label": "C", "text": "900" },
+        { "label": "D", "text": "1.200" },
+        { "label": "E", "text": "2.400" }
+      ],
+      "correct_answer": "D",
+      "explanation": "A produção é diretamente proporcional ao número de máquinas, às horas diárias e aos dias. O fator de variação é (8/4) × (3/6) × (10/5) = 2; logo, 600 × 2 = 1.200 peças.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_04", "page_number": 8 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_04",
+        "trace_status": "available",
+        "page_number": 8,
+        "excerpt": "Note que são três grandezas. Nessas situações, devemos lembrar que a regra de três composta é uma ótima ferramenta."
+      }]
+    },
+    {
+      "id": "qf_d961be90786d88cd",
+      "subtopic_id": "pmal_soldado_d02_matematica_t04_s01",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t04_s01_mk01"],
+      "statement": "Em uma turma com 240 alunos, 15% faltaram a uma atividade. Quantos alunos faltaram?",
+      "options": [
+        { "label": "A", "text": "24" },
+        { "label": "B", "text": "30" },
+        { "label": "C", "text": "36" },
+        { "label": "D", "text": "40" },
+        { "label": "E", "text": "45" }
+      ],
+      "correct_answer": "C",
+      "explanation": "15% = 15/100. Portanto, 240 × 15/100 = 36 alunos.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_05", "page_number": 14 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_05",
+        "trace_status": "available",
+        "page_number": 14,
+        "excerpt": "Para transformar uma fração em uma taxa percentual, multiplicamos esta fração por 100."
+      }]
+    },
+    {
+      "id": "qf_32fe62eb9c2c5a0e",
+      "subtopic_id": "pmal_soldado_d02_matematica_t05_s01",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t05_s01_mk01"],
+      "statement": "Um capital de R$ 2.000 foi aplicado a juros simples de 2% ao mês durante 5 meses. O valor dos juros é",
+      "options": [
+        { "label": "A", "text": "R$ 100" },
+        { "label": "B", "text": "R$ 160" },
+        { "label": "C", "text": "R$ 180" },
+        { "label": "D", "text": "R$ 200" },
+        { "label": "E", "text": "R$ 220" }
+      ],
+      "correct_answer": "D",
+      "explanation": "Nos juros simples, J = C × i × t. Assim, J = 2.000 × 0,02 × 5 = R$ 200.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_06", "page_number": 22 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_06",
+        "trace_status": "available",
+        "page_number": 22,
+        "excerpt": "Os juros simples são sempre calculados aplicando a taxa de juros sobre o capital inicial."
+      }]
+    },
+    {
+      "id": "qf_992330e4eed6eab6",
+      "subtopic_id": "pmal_soldado_d02_matematica_t05_s02",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t05_s02_mk01"],
+      "statement": "Um capital de R$ 1.000 foi aplicado a juros compostos de 10% ao mês durante 2 meses. O montante ao final do período é",
+      "options": [
+        { "label": "A", "text": "R$ 1.100" },
+        { "label": "B", "text": "R$ 1.200" },
+        { "label": "C", "text": "R$ 1.210" },
+        { "label": "D", "text": "R$ 1.220" },
+        { "label": "E", "text": "R$ 2.100" }
+      ],
+      "correct_answer": "C",
+      "explanation": "Em juros compostos, M = C(1 + i)^t. Logo, M = 1.000 × 1,1² = 1.000 × 1,21 = R$ 1.210.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_07", "page_number": 3 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_07",
+        "trace_status": "available",
+        "page_number": 3,
+        "excerpt": "Na capitalização composta, os juros incidem não só sobre o capital inicial, mas também sobre os juros anteriores incorporados ao capital."
+      }]
+    },
+    {
+      "id": "qf_127b2218f33c8390",
+      "subtopic_id": "pmal_soldado_d02_matematica_t05_s03",
+      "microknowledge_ids": ["pmal_soldado_d02_matematica_t05_s03_mk01"],
+      "statement": "A respeito dos regimes de capitalização, assinale a opção correta.",
+      "options": [
+        { "label": "A", "text": "Na capitalização simples, a base de cálculo dos juros cresce a cada período." },
+        { "label": "B", "text": "Na capitalização composta, os juros de cada período são sempre calculados apenas sobre o capital inicial." },
+        { "label": "C", "text": "Capitalização é sinônimo de desconto e não se relaciona ao crescimento do capital." },
+        { "label": "D", "text": "Na capitalização composta, os juros incorporados passam a integrar a base de cálculo dos períodos seguintes." },
+        { "label": "E", "text": "Os regimes simples e composto produzem necessariamente o mesmo montante em qualquer prazo." }
+      ],
+      "correct_answer": "D",
+      "explanation": "No regime composto ocorre a incorporação periódica dos juros ao capital, fazendo com que a base dos períodos seguintes inclua os juros já acumulados. No regime simples, a base permanece o capital inicial.",
+      "difficulty": "facil",
+      "format": "multipla_escolha",
+      "source": { "source_id": "pmal_2026_matematica_06", "page_number": 9 },
+      "is_trick": false,
+      "traces": [{
+        "source_id": "pmal_2026_matematica_06",
+        "trace_status": "available",
+        "page_number": 9,
+        "excerpt": "Regime de capitalização é um modelo de aplicação financeira em que se analisa o crescimento do capital ao longo do tempo."
+      }]
+    }
+  ]
+}

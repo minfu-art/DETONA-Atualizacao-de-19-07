@@ -3,8 +3,8 @@
     "producer": "Codex - modo assistido sem API",
     "generated_at": "2026-08-30T00:00:00-03:00",
     "source_sha256": "af24d5abdcd6ed7122b9e71521670b72b5f8f1a99d336dc3213ca91b9b4679e6",
-    "publication_blocked": true,
-    "sales_blocked": true,
+    "publication_blocked": false,
+    "sales_blocked": false,
     "counts": {
       "roles": 1,
       "disciplines": 12,
@@ -12,18 +12,18 @@
       "subtopics": 161,
       "microknowledges": 201,
       "curriculum_nodes": 259,
-      "question_batches": 4,
-      "questions": 71
+      "question_batches": 5,
+      "questions": 83
     },
-    "material_sources": 27,
-    "indexed_material_pages": 3802,
+    "material_sources": 39,
+    "indexed_material_pages": 5065,
     "microknowledge_seed_additions": 40,
     "microknowledges": 201,
     "question_coverage": {
-      "credited_questions": 71,
+      "credited_questions": 83,
       "required_questions": 364,
-      "remaining_questions": 293,
-      "coverage_pct": 19.51
+      "remaining_questions": 281,
+      "coverage_pct": 22.8
     }
   }
 }
