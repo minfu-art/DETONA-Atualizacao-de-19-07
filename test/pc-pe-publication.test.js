@@ -60,3 +60,15 @@ test('migration publica apenas conteúdo da PC PE e mantém vendas fechadas', as
   assert.match(sql, /\r?\n\s*0,\r?\n\s*'BRL'/);
   assert.doesNotMatch(sql, /insert\s+into\s+public\.contest_entitlements/i);
 });
+
+test('rota pública de cursos preserva os recursos do app na raiz', async () => {
+  const [indexHtml, vercelConfig] = await Promise.all([
+    readFile(new URL('../app/index.html', import.meta.url), 'utf8'),
+    readFile(new URL('../app/vercel.json', import.meta.url), 'utf8').then(JSON.parse),
+  ]);
+
+  assert.match(indexHtml, /<base href="\/" \/>/);
+  assert.deepEqual(vercelConfig.rewrites, [
+    { source: '/cursos/:path*', destination: '/index.html' },
+  ]);
+});
