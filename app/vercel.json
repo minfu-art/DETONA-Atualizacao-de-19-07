@@ -3,6 +3,12 @@
   "framework": null,
   "buildCommand": "npm run build:env",
   "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/cursos/:path*",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/sw.js",
