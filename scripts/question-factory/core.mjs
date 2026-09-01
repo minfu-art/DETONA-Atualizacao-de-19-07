@@ -267,6 +267,7 @@ export async function promoteBatch({ bundle, batchPath, auditPath }) {
   const semantic = validateSemanticAudit(batch, audit);
   if (!semantic.valid) throw new Error(`semantic_audit_failed:${semantic.errors[0]}`);
   const target = await nextQuestionFile(bundle.bundlePath, batch.name);
+  await mkdir(path.dirname(target), { recursive: true });
   await copyFile(batchPath, target);
   return { target, batch, deterministic, semantic };
 }
