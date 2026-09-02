@@ -33,7 +33,7 @@ test('commercial handoff blocks duplicate clicks and requires validated HTTPS re
 
 test('service worker refreshes navigation and runtime configuration', async () => {
   const sw = await source('app/sw.js');
-  assert.match(sw, /detona-v157-question-reference-text/);
+  assert.match(sw, /detona-v158-checkout-auth-intent/);
   assert.match(sw, /asset === '\.\/env\.runtime\.js'/);
   assert.match(sw, /fetch\(e\.request, \{ cache: 'no-store' \}\)/);
   assert.match(sw, /e\.request\.mode === 'navigate'[\s\S]*fetch\(e\.request\)/);

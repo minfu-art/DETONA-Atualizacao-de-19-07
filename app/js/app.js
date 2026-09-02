@@ -7,7 +7,7 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
-import { renderAuth } from './ui/auth.js?v=75';
+import { renderAuth } from './ui/auth.js?v=76';
 import { renderLibrary } from './ui/library.js?v=161';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
@@ -533,7 +533,11 @@ function showAuth() {
   const root = document.getElementById('screen');
   if (root) {
     delete root.dataset.theme;
-    renderAuth(root, { authService, onAuthenticated: initializeAuthenticatedApp });
+    renderAuth(root, {
+      authService,
+      onAuthenticated: initializeAuthenticatedApp,
+      commercialIntent: readCommercialIntent(globalThis.location?.search || ''),
+    });
   }
 }
 
@@ -810,12 +814,6 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
     return;
   }
 
-  if (reason === 'register') {
-    clearActiveContestId();
-    await showLibrary();
-    return;
-  }
-
   const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
   if (commercialIntent) {
     let libraryState;
@@ -832,6 +830,12 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
       return;
     }
     await showLibrary({ libraryState });
+    return;
+  }
+
+  if (reason === 'register') {
+    clearActiveContestId();
+    await showLibrary();
     return;
   }
 

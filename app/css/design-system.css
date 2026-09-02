@@ -2267,6 +2267,18 @@ body.has-open-modal { overflow:hidden; }
 .auth-mode-heading .saas-kicker { font-size:9px; }
 .auth-mode-heading h1 { margin:4px 0 3px; font:800 23px var(--display); }
 .auth-mode-heading p { color:var(--ds-text-3); font-size:11px; }
+.auth-mode-heading--purchase { margin-bottom:12px; padding:14px; border:1px solid rgba(124,92,255,.3); border-radius:14px; background:linear-gradient(145deg,rgba(28,19,55,.92),rgba(8,13,27,.96)); text-align:left; box-shadow:0 14px 30px rgba(0,0,0,.2); }
+.auth-mode-heading--purchase .saas-kicker { color:#f7a342; }
+.auth-mode-heading--purchase h1 { color:#fff; font-size:21px; line-height:1.12; }
+.auth-mode-heading--purchase>p { margin:5px 0 0; color:#c2cadc; font-size:11px; line-height:1.45; }
+.auth-purchase-context { display:grid; gap:7px; margin-top:11px; padding-top:10px; border-top:1px solid rgba(148,163,184,.18); }
+.auth-purchase-context>strong { color:#f8fafc; font-size:11px; }
+.auth-purchase-context>span { color:#aeb8cd; font-size:10px; line-height:1.4; }
+.auth-purchase-context ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; margin:1px 0 0; padding:0; list-style:none; }
+.auth-purchase-context li { display:flex; align-items:center; gap:5px; min-width:0; color:#7f8aa4; font-size:9px; font-weight:750; }
+.auth-purchase-context li b { display:grid; flex:0 0 auto; width:19px; height:19px; place-items:center; border:1px solid #46516c; border-radius:50%; color:#a8b1c5; font-size:9px; }
+.auth-purchase-context li.is-current { color:#f6c57c; }
+.auth-purchase-context li.is-current b { border-color:#f59e42; color:#fff; background:#a43a0b; }
 .detona-login-card .auth-form { display:grid; gap:8px; margin:0; }
 .detona-login-card .auth-field { margin:0; }
 .auth-input { position:relative; }

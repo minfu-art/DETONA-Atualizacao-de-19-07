@@ -39,7 +39,12 @@ function passwordRules(value) {
   };
 }
 
-function modeCopy(mode) {
+function modeCopy(mode, commercialIntent = null) {
+  if (commercialIntent && mode === AUTH_MODES.REGISTER) return {
+    kicker: 'COMPRA SEGURA',
+    title: 'Crie sua conta para continuar a compra',
+    description: 'Sua conta vincula a jornada escolhida ao seu acesso depois da confirmação do pagamento.',
+  };
   if (mode === AUTH_MODES.REGISTER) return {
     kicker: 'Comece sua jornada',
     title: 'Crie sua conta',
@@ -65,6 +70,11 @@ function modeCopy(mode) {
     title: 'Confirme seu e-mail',
     description: 'Enviamos as instruções de confirmação. Depois disso, volte para entrar e abrir sua biblioteca.',
   };
+  if (commercialIntent && mode === AUTH_MODES.LOGIN) return {
+    kicker: 'COMPRA SEGURA',
+    title: 'Entre para continuar a compra',
+    description: 'Sua jornada continua selecionada para você revisar o curso e o preço antes de pagar.',
+  };
   return {
     kicker: 'Área do aluno',
     title: 'Bem-vindo de volta',
@@ -83,8 +93,12 @@ function passwordField({ id = 'auth-password', name = 'password', placeholder = 
   </div>`;
 }
 
-export function renderAuth(root, { authService, onAuthenticated }) {
-  let mode = authService.isPasswordRecoveryLocation?.() ? AUTH_MODES.RESET : AUTH_MODES.LOGIN;
+export function renderAuth(root, { authService, onAuthenticated, commercialIntent = null }) {
+  let mode = authService.isPasswordRecoveryLocation?.()
+    ? AUTH_MODES.RESET
+    : commercialIntent
+      ? AUTH_MODES.REGISTER
+      : AUTH_MODES.LOGIN;
   let draftEmail = '';
   const links = getStudentEntryLinks();
 
@@ -96,7 +110,7 @@ export function renderAuth(root, { authService, onAuthenticated }) {
     const reset = mode === AUTH_MODES.RESET;
     const login = mode === AUTH_MODES.LOGIN;
     const googleEnabled = authService.isGoogleLoginEnabled?.() === true;
-    const copy = modeCopy(mode);
+    const copy = modeCopy(mode, commercialIntent);
     const passwordRequirement = '<div class="auth-requirements" id="auth-requirements"><span data-rule="length">8 caracteres</span><span data-rule="letter">uma letra</span><span data-rule="number">um número</span><span data-rule="space">sem espaços</span></div>';
 
     root.innerHTML = `
@@ -120,10 +134,21 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                 <img src="assets/icons/icon-192.png" alt="" width="192" height="192">
                 <strong>DETONA <span>CONCURSOS</span></strong>
               </div>
-              <header class="auth-mode-heading">
+              <header class="auth-mode-heading ${commercialIntent && (login || register) ? 'is-visible auth-mode-heading--purchase' : ''}">
                 <span class="saas-kicker">${copy.kicker}</span>
                 <h1 id="auth-title">${copy.title}</h1>
                 <p>${copy.description}</p>
+                ${commercialIntent && (login || register) ? `
+                  <div class="auth-purchase-context" role="status">
+                    <strong>Compra segura em andamento</strong>
+                    <span>A jornada escolhida continua selecionada. Primeiro identifique-se; depois você revisa o curso e decide se deseja pagar.</span>
+                    <ol aria-label="Etapas da compra">
+                      <li class="is-current"><b>1</b> Conta</li>
+                      <li><b>2</b> Revisão</li>
+                      <li><b>3</b> Pagamento</li>
+                    </ol>
+                  </div>
+                ` : ''}
               </header>
               ${(forgotSent || verifyEmail) ? `
                 <div class="auth-sent" role="status">
@@ -144,7 +169,7 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                   ${(googleEnabled && (login || register)) ? `
                     <button class="auth-google" id="auth-google" type="button" aria-busy="false">
                       <span class="auth-google__mark" aria-hidden="true">G</span>
-                      <strong>CONTINUAR COM GOOGLE</strong>
+                      <strong>${commercialIntent ? 'CONTINUAR COM GOOGLE E PROSSEGUIR' : 'CONTINUAR COM GOOGLE'}</strong>
                     </button>
                     <div class="auth-divider" aria-hidden="true"><span>ou continue com e-mail</span></div>
                   ` : ''}
@@ -156,9 +181,9 @@ export function renderAuth(root, { authService, onAuthenticated }) {
                   ${(register || reset) ? passwordRequirement : ''}
                   ${login ? `<div class="auth-options"><span class="auth-session-note">${icon('check', 'ico--control')} Conexão protegida</span><button type="button" class="auth-forgot" id="auth-forgot">Esqueci minha senha</button></div>` : ''}
                   <p id="auth-error" class="auth-error ${messageType === 'success' ? 'is-success' : ''}" role="alert" aria-live="assertive">${escapeHtml(message)}</p>
-                  <button class="btn btn-primary btn-block auth-submit" type="submit" aria-busy="false"><span aria-hidden="true">${icon('bolt', 'ico--control')}</span><strong>${register ? 'CRIAR CONTA' : forgot ? 'ENVIAR LINK SEGURO' : reset ? 'SALVAR NOVA SENHA' : 'ENTRAR'}</strong><span aria-hidden="true">${icon('bolt', 'ico--control')}</span></button>
+                  <button class="btn btn-primary btn-block auth-submit" type="submit" aria-busy="false"><span aria-hidden="true">${icon('bolt', 'ico--control')}</span><strong>${register ? (commercialIntent ? 'CRIAR CONTA E CONTINUAR' : 'CRIAR CONTA') : forgot ? 'ENVIAR LINK SEGURO' : reset ? 'SALVAR NOVA SENHA' : (commercialIntent ? 'ENTRAR E CONTINUAR' : 'ENTRAR')}</strong><span aria-hidden="true">${icon('bolt', 'ico--control')}</span></button>
                 </form>
-                <button class="auth-switch" id="auth-switch" type="button">${register ? 'Já possui conta? <strong>ENTRAR</strong>' : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>'}</button>
+                <button class="auth-switch" id="auth-switch" type="button">${register ? (commercialIntent ? 'Já possui conta? <strong>ENTRAR E CONTINUAR</strong>' : 'Já possui conta? <strong>ENTRAR</strong>') : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : (commercialIntent ? 'Primeira vez aqui? <strong>CRIAR CONTA E CONTINUAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>')}</button>
               `}
               ${(!(forgotSent || verifyEmail) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
               <p class="auth-legal">Ao continuar, você concorda com os <a href="${escapeHtml(links.terms)}" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e a <a href="${escapeHtml(links.privacy)}" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
@@ -175,7 +200,7 @@ export function renderAuth(root, { authService, onAuthenticated }) {
       button.disabled = true;
       button.setAttribute('aria-busy', 'true');
       try {
-        await authService.loginWithGoogle();
+        await authService.loginWithGoogle({ redirectTo: globalThis.location?.href });
       } catch (error) {
         draw({ message: error.message || 'Não foi possível entrar com o Google agora.' });
       }
