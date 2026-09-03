@@ -5,9 +5,9 @@
   "contest_id": "pc_pe_2027",
   "publication_authorized": false,
   "counts": {
-    "technically_ready": 692,
+    "technically_ready": 1012,
     "certo_errado": 789,
-    "needs_review": 350,
+    "needs_review": 30,
     "pdfs": 141,
     "pages": 5257,
     "multipla_escolha": 253,
@@ -1566,5 +1566,12 @@
       "accepted_after_deduplication": 16,
       "duplicates_discarded": 0
     }
-  ]
+  ],
+  "repair": {
+    "repaired_at": "2026-09-03T23:43:06.969Z",
+    "baseline_technically_ready": 692,
+    "resolved_since_baseline": 320,
+    "current_technically_ready": 1012,
+    "current_needs_review": 30
+  }
 }
