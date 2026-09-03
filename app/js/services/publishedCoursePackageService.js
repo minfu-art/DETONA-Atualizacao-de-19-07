@@ -1,6 +1,6 @@
 const DATA_VERSION = '2026.08.17.1';
 const PM_AL_DATA_VERSION = '2026.08.31.1';
-const PC_PE_DATA_VERSION = '2026.09.01.1';
+const PC_PE_DATA_VERSION = '2026.09.03.1';
 
 export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   pc_ba_2026: Object.freeze({
@@ -45,21 +45,23 @@ export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   }),
   pc_pe_2026: Object.freeze({
     baseUrl: `data/course-factory/pc-pe-2026-agente-runtime.json?v=${PC_PE_DATA_VERSION}`,
-    patchUrls: Object.freeze([]),
+    patchUrls: Object.freeze([
+      `data/course-factory/published/pc-pe-2026-agente-patch-001.json?v=${PC_PE_DATA_VERSION}`,
+    ]),
     version: PC_PE_DATA_VERSION,
-    contentHash: '4bb1851f2e0bca22621bdadaf87beda18268facea7f1d5da72db267a5515d935',
-    expectedQuestionCount: 100,
+    contentHash: 'ccdec893269f3689e8930f3b44ff203b7aa2b529b1c584c7f3a51a74625151c2',
+    expectedQuestionCount: 317,
     expectedSubtopicCount: 188,
-    salesBlocked: true,
+    salesBlocked: false,
     metadataOverride: Object.freeze({
       code: 'PC PE',
-      name: 'PC PE — Agente de Polícia',
+      name: 'PC PE 2027 — Agente de Polícia',
       role: 'Agente de Polícia',
       content_status: 'ready',
-      sales_status: 'coming_soon',
-      price_cents: 0,
+      sales_status: 'available',
+      price_cents: 2490,
       currency: 'BRL',
-      status_label: 'CONTEÚDO PUBLICADO · PRÉ-EDITAL',
+      status_label: 'PUBLICADO · BANCO EM EXPANSÃO',
     }),
   }),
 });
