@@ -1,0 +1,36 @@
+{
+  "schema_version": "detona_question_bank_audit_v1",
+  "contest_id": "pc_pe_2026",
+  "generated_at": "2026-09-01",
+  "status": "draft_editorial_review_required",
+  "totals": {
+    "questions": 100,
+    "correct_true": 50,
+    "correct_false": 50,
+    "unique_ids": 100,
+    "unique_statements": 100,
+    "covered_subtopics": 95
+  },
+  "questions_by_discipline": {
+    "Noções de Direito Constitucional": 10,
+    "Noções de Direito Administrativo": 10,
+    "Noções de Direito Penal": 12,
+    "Noções de Direito Processual Penal": 12,
+    "Língua Portuguesa": 12,
+    "Informática": 10,
+    "Raciocínio Lógico": 12,
+    "Contabilidade Geral": 11,
+    "Estatística": 11
+  },
+  "excluded_for_dynamic_risk": [
+    "Legislação Estadual",
+    "Atualidades"
+  ],
+  "safeguards": {
+    "import_executed": false,
+    "publication_executed": false,
+    "entitlement_changed": false,
+    "requires_human_editorial_review": true,
+    "requires_normative_review_before_publication": true
+  }
+}

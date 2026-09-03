@@ -1,0 +1,160 @@
+{
+  "schema_version": "detona_course_roadmap_v1",
+  "status": "draft_ready_for_staging_validation",
+  "generated_at": "2026-09-03",
+  "identity": {
+    "contest_id": "pc_pe_2027",
+    "position_id": "pc_pe_2027_agente_policia",
+    "offering_id": "pc_pe_2027_agente",
+    "public_slug": "pc-pe-agente-2027",
+    "baseline": "Edital nº 1 — PCPE, de 21 de dezembro de 2023",
+    "cohort_label": "2027"
+  },
+  "mission_template": {
+    "principle": "reduzir decisões e transformar intenção em próxima ação observável",
+    "blocks": [
+      {
+        "order": 1,
+        "type": "estudo_guiado",
+        "target": "1 tópico ou fragmento prioritário"
+      },
+      {
+        "order": 2,
+        "type": "pratica_ativa",
+        "target": "questões vinculadas ao conteúdo estudado"
+      },
+      {
+        "order": 3,
+        "type": "feedback_e_revisao",
+        "target": "corrigir erros, registrar confiança e agendar retorno"
+      }
+    ],
+    "completion_signal": "missão concluída, progresso registrado e próxima ação preparada"
+  },
+  "phases": [
+    {
+      "id": "fase_01_base_de_execucao",
+      "name": "Base de execução",
+      "objective": "Criar ritmo, leitura de prova e raciocínio antes de aumentar a carga normativa.",
+      "disciplines": [
+        {
+          "order": 1,
+          "discipline_id": "pc_pe_2027_agente_policia_d06_lingua_portuguesa",
+          "name": "Língua Portuguesa",
+          "topics": 7,
+          "subtopics": 22
+        },
+        {
+          "order": 2,
+          "discipline_id": "pc_pe_2027_agente_policia_d08_raciocinio_logico",
+          "name": "Raciocínio Lógico",
+          "topics": 15,
+          "subtopics": 23
+        }
+      ],
+      "order": 1
+    },
+    {
+      "id": "fase_02_nucleo_juridico",
+      "name": "Núcleo jurídico policial",
+      "objective": "Construir a base constitucional, administrativa, penal e processual necessária à atividade policial.",
+      "disciplines": [
+        {
+          "order": 1,
+          "discipline_id": "pc_pe_2027_agente_policia_d02_nocoes_direito_con",
+          "name": "Noções de Direito Constitucional",
+          "topics": 9,
+          "subtopics": 16
+        },
+        {
+          "order": 2,
+          "discipline_id": "pc_pe_2027_agente_policia_d03_nocoes_direito_adm",
+          "name": "Noções de Direito Administrativo",
+          "topics": 13,
+          "subtopics": 24
+        },
+        {
+          "order": 3,
+          "discipline_id": "pc_pe_2027_agente_policia_d04_nocoes_direito_pen",
+          "name": "Noções de Direito Penal",
+          "topics": 20,
+          "subtopics": 25
+        },
+        {
+          "order": 4,
+          "discipline_id": "pc_pe_2027_agente_policia_d05_nocoes_direito_pro",
+          "name": "Noções de Direito Processual Penal",
+          "topics": 9,
+          "subtopics": 19
+        }
+      ],
+      "order": 2
+    },
+    {
+      "id": "fase_03_bloco_tecnico",
+      "name": "Bloco técnico",
+      "objective": "Consolidar informática, contabilidade e estatística com prática distribuída.",
+      "disciplines": [
+        {
+          "order": 1,
+          "discipline_id": "pc_pe_2027_agente_policia_d07_informatica",
+          "name": "Informática",
+          "topics": 2,
+          "subtopics": 15
+        },
+        {
+          "order": 2,
+          "discipline_id": "pc_pe_2027_agente_policia_d09_contabilidade_gera",
+          "name": "Contabilidade Geral",
+          "topics": 11,
+          "subtopics": 26
+        },
+        {
+          "order": 3,
+          "discipline_id": "pc_pe_2027_agente_policia_d10_estatistica",
+          "name": "Estatística",
+          "topics": 3,
+          "subtopics": 12
+        }
+      ],
+      "order": 3
+    },
+    {
+      "id": "fase_04_especifica_e_integracao",
+      "name": "Legislação específica e integração",
+      "objective": "Revisar legislação estadual após validação normativa e integrar o conteúdo em simulados e discursivas.",
+      "disciplines": [
+        {
+          "order": 1,
+          "discipline_id": "pc_pe_2027_agente_policia_d01_legislacao_estadua",
+          "name": "Legislação Estadual",
+          "topics": 5,
+          "subtopics": 5
+        },
+        {
+          "order": 2,
+          "discipline_id": "pc_pe_2027_agente_policia_d11_atualidades",
+          "name": "Atualidades",
+          "topics": 1,
+          "subtopics": 1
+        }
+      ],
+      "order": 4
+    }
+  ],
+  "progression_rules": [
+    "Nenhuma disciplina é removida do mapa por estimativa de incidência.",
+    "Questões erradas e acertos com baixa confiança retornam à revisão.",
+    "Conteúdo normativo dinâmico permanece bloqueado até conferência oficial.",
+    "Atualidades deve ser abastecida por recortes datados e nunca por conteúdo genérico permanente.",
+    "O novo edital, quando publicado, dispara reconciliação completa antes de qualquer promessa de cobertura."
+  ],
+  "release_gates": [
+    "validar o bundle localmente",
+    "importar somente em staging com autorização explícita",
+    "revisar editorialmente as questões",
+    "revisar legislação e conteúdos dinâmicos",
+    "homologar a aparência no app",
+    "publicar somente após aprovação humana"
+  ]
+}
