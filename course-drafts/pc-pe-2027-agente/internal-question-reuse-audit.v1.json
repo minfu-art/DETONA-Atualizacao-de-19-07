@@ -1,0 +1,727 @@
+{
+  "schema_version": "detona_pcpe_internal_question_reuse_audit_v1",
+  "generated_at": "2026-09-03",
+  "contest_id": "pc_pe_2027",
+  "status": "draft_editorial_remap_review_required",
+  "source_inventory": {
+    "total_internal_questions": 6480,
+    "eligible_sources_used": [
+      "app/data/questions/direito_constitucional.json",
+      "app/data/questions/direito_penal.json",
+      "app/data/questions/lingua_portuguesa.json",
+      "app/data/questions/tecnologia_informacao.json",
+      "app/data/questions/raciocinio_logico_matematico.json",
+      "app/data/questions/contabilidade.json",
+      "app/data/questions/estatistica.json"
+    ],
+    "selection_policy": "Somente itens certo/errado com status revisada, gabarito e explicação válidos; seleção temática conservadora."
+  },
+  "totals": {
+    "reused_questions": 217,
+    "correct_true": 91,
+    "correct_false": 126,
+    "unique_source_questions": 217,
+    "unique_statements": 217,
+    "subtopics_covered_by_reuse": 36,
+    "subtopics_covered_combined": 131,
+    "subtopics_pending_combined": 57,
+    "total_draft_questions_combined": 317
+  },
+  "questions_by_discipline": {
+    "Noções de Direito Constitucional": 8,
+    "Noções de Direito Penal": 11,
+    "Língua Portuguesa": 61,
+    "Informática": 8,
+    "Raciocínio Lógico": 59,
+    "Contabilidade Geral": 62,
+    "Estatística": 8
+  },
+  "rules": [
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "target_subtopic": "Segurança pública na Constituição do Estado de Pernambuco",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d02_t09_s05_seguranca_publica_",
+      "source_bank": "direito_constitucional.json",
+      "selected": 8,
+      "limit": 8,
+      "note": "Conteúdo constitucional geral de segurança pública; exige conferência final com a Constituição de Pernambuco."
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "target_subtopic": "Irretroatividade da lei penal",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d04_t03_s06_irretroatividade_d",
+      "source_bank": "direito_penal.json",
+      "selected": 1,
+      "limit": 2,
+      "note": null
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "target_subtopic": "Crimes contra a pessoa",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d04_t04_s01_crimes_contra_a_pe",
+      "source_bank": "direito_penal.json",
+      "selected": 10,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Tipos e gêneros textuais",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t02_s01_tipos_e_generos_te",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Compreensão e interpretação de textos de gêneros variados",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t01_s01_compreensao_e_inte",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 10,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Coordenação entre orações e termos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t05_s02_coordenacao_entre_",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 10,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Subordinação entre orações e termos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t05_s03_subordinacao_entre",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 10,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Substituição de palavras ou trechos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t06_s02_substituicao_de_pa",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Reorganização de orações e períodos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t06_s03_reorganizacao_de_o",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 8,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "target_subtopic": "Reescrita em diferentes gêneros e níveis de formalidade",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d06_t06_s04_reescrita_em_difer",
+      "source_bank": "lingua_portuguesa.json",
+      "selected": 7,
+      "limit": 10,
+      "note": null
+    },
+    {
+      "discipline": "Informática",
+      "target_subtopic": "Fundamentos e interface do Windows",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d07_t01_s01_fundamentos_e_inte",
+      "source_bank": "tecnologia_informacao.json",
+      "selected": 4,
+      "limit": 5,
+      "note": null
+    },
+    {
+      "discipline": "Informática",
+      "target_subtopic": "Grupos de discussão e redes sociais",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d07_t02_s02_grupos_de_discussa",
+      "source_bank": "tecnologia_informacao.json",
+      "selected": 3,
+      "limit": 3,
+      "note": null
+    },
+    {
+      "discipline": "Informática",
+      "target_subtopic": "Deep Web e Dark Web",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d07_t02_s05_deep_web_e_dark_we",
+      "source_bank": "tecnologia_informacao.json",
+      "selected": 1,
+      "limit": 2,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Divisão proporcional",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t03_s01_divisao_proporcion",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 3,
+      "limit": 3,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Equações e inequações de primeiro e segundo graus",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t04_s01_equacoes_e_inequac",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Funções e gráficos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t06_s01_funcoes_e_graficos",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Estruturas lógicas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t09_s01_estruturas_logicas",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Inferências",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t10_s02_inferencias",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Proposições simples e compostas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t11_s01_proposicoes_simple",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Diagramas lógicos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t11_s05_diagramas_logicos",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "target_subtopic": "Problemas aritméticos, geométricos e matriciais",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d08_t15_s01_problemas_aritmeti",
+      "source_bank": "raciocinio_logico_matematico.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Conceitos, objetivos e finalidades da contabilidade",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t01_s01_conceitos_objetivo",
+      "source_bank": "contabilidade.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Fatos modificativos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t03_s02_fatos_modificativo",
+      "source_bank": "contabilidade.json",
+      "selected": 1,
+      "limit": 4,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Conceito e elenco de contas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t05_s01_conceito_e_elenco_",
+      "source_bank": "contabilidade.json",
+      "selected": 6,
+      "limit": 6,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Função e funcionamento das contas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t05_s02_funcao_e_funcionam",
+      "source_bank": "contabilidade.json",
+      "selected": 3,
+      "limit": 6,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Métodos e processos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t06_s04_metodos_e_processo",
+      "source_bank": "contabilidade.json",
+      "selected": 3,
+      "limit": 6,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Juros, descontos e tributos",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t07_s01_juros_descontos_e_",
+      "source_bank": "contabilidade.json",
+      "selected": 5,
+      "limit": 5,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Aluguéis e variações monetária e cambial",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t07_s02_alugueis_e_variaco",
+      "source_bank": "contabilidade.json",
+      "selected": 5,
+      "limit": 5,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Folha de pagamento",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t07_s03_folha_de_pagamento",
+      "source_bank": "contabilidade.json",
+      "selected": 4,
+      "limit": 4,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Compras, vendas e provisões",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t07_s04_compras_vendas_e_p",
+      "source_bank": "contabilidade.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Depreciações e baixa de bens",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t07_s05_depreciacoes_e_bai",
+      "source_bank": "contabilidade.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Conceito, objetivo e composição",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t10_s01_conceito_objetivo_",
+      "source_bank": "contabilidade.json",
+      "selected": 8,
+      "limit": 8,
+      "note": null
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "target_subtopic": "Normas Brasileiras de Contabilidade",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d09_t11_s01_normas_brasileiras",
+      "source_bank": "contabilidade.json",
+      "selected": 3,
+      "limit": 4,
+      "note": null
+    },
+    {
+      "discipline": "Estatística",
+      "target_subtopic": "Gráficos, diagramas e tabelas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d10_t01_s01_graficos_diagramas",
+      "source_bank": "estatistica.json",
+      "selected": 1,
+      "limit": 3,
+      "note": null
+    },
+    {
+      "discipline": "Estatística",
+      "target_subtopic": "Assimetria e curtose",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d10_t01_s04_assimetria_e_curto",
+      "source_bank": "estatistica.json",
+      "selected": 4,
+      "limit": 4,
+      "note": null
+    },
+    {
+      "discipline": "Estatística",
+      "target_subtopic": "Definições básicas e axiomas",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d10_t02_s01_definicoes_basicas",
+      "source_bank": "estatistica.json",
+      "selected": 0,
+      "limit": 5,
+      "note": null
+    },
+    {
+      "discipline": "Estatística",
+      "target_subtopic": "Tamanho amostral",
+      "target_subtopic_id": "pc_pe_2027_agente_policia_d10_t03_s05_tamanho_amostral",
+      "source_bank": "estatistica.json",
+      "selected": 3,
+      "limit": 3,
+      "note": null
+    }
+  ],
+  "pending_subtopics": [
+    {
+      "discipline": "Legislação Estadual",
+      "topic": "1. Constituição do Estado de Pernambuco",
+      "subtopic": "Artigos 101 a 105-B",
+      "subtopic_id": "pc_pe_2027_agente_policia_d01_t01_s01_artigos_101_a_105_"
+    },
+    {
+      "discipline": "Legislação Estadual",
+      "topic": "2. Lei Estadual nº 6.425/1972",
+      "subtopic": "Estatuto do Policial Civil de Pernambuco",
+      "subtopic_id": "pc_pe_2027_agente_policia_d01_t02_s01_estatuto_do_polici"
+    },
+    {
+      "discipline": "Legislação Estadual",
+      "topic": "3. Lei Estadual nº 6.123/1968",
+      "subtopic": "Estatuto dos Funcionários Públicos Civis do Estado de Pernambuco",
+      "subtopic_id": "pc_pe_2027_agente_policia_d01_t03_s01_estatuto_dos_funci"
+    },
+    {
+      "discipline": "Legislação Estadual",
+      "topic": "4. Lei Complementar Estadual nº 137/2008",
+      "subtopic": "Carreira e remuneração dos policiais civis de Pernambuco",
+      "subtopic_id": "pc_pe_2027_agente_policia_d01_t04_s01_carreira_e_remuner"
+    },
+    {
+      "discipline": "Legislação Estadual",
+      "topic": "5. Lei Complementar Estadual nº 317/2015",
+      "subtopic": "Organização e regime jurídico da Polícia Civil de Pernambuco",
+      "subtopic_id": "pc_pe_2027_agente_policia_d01_t05_s01_organizacao_e_regi"
+    },
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "topic": "7. Poder Legislativo",
+      "subtopic": "Poder Legislativo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t07_s01_poder_legislativo"
+    },
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "topic": "8. Poder Judiciário",
+      "subtopic": "Poder Judiciário",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t08_s01_poder_judiciario"
+    },
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "topic": "9. Funções essenciais à Justiça e defesa do Estado",
+      "subtopic": "Ministério Público",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t09_s01_ministerio_publico"
+    },
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "topic": "9. Funções essenciais à Justiça e defesa do Estado",
+      "subtopic": "Advocacia Pública",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t09_s02_advocacia_publica"
+    },
+    {
+      "discipline": "Noções de Direito Constitucional",
+      "topic": "9. Funções essenciais à Justiça e defesa do Estado",
+      "subtopic": "Defensoria Pública",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t09_s03_defensoria_publica"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "2. Direito administrativo",
+      "subtopic": "Direito administrativo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t02_s01_direito_administra"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "4. Poderes da administração pública",
+      "subtopic": "Poder regulamentar",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t04_s03_poder_regulamentar"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "5. Regime jurídico-administrativo",
+      "subtopic": "Conceito",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t05_s01_conceito"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "5. Regime jurídico-administrativo",
+      "subtopic": "Princípios expressos e implícitos da administração pública",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t05_s02_principios_express"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "7. Serviços públicos",
+      "subtopic": "Serviços públicos",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t07_s01_servicos_publicos"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "8. Organização administrativa",
+      "subtopic": "Centralização e descentralização",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t08_s01_centralizacao_e_de"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "8. Organização administrativa",
+      "subtopic": "Administração direta e indireta",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t08_s03_administracao_dire"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "9. Controle da administração pública",
+      "subtopic": "Controle administrativo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t09_s01_controle_administr"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "9. Controle da administração pública",
+      "subtopic": "Controle legislativo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t09_s03_controle_legislati"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "10. Processo administrativo",
+      "subtopic": "Processo administrativo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t10_s01_processo_administr"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "11. Licitações e contratos administrativos",
+      "subtopic": "Licitações e contratos administrativos",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t11_s01_licitacoes_e_contr"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "12. Agentes públicos",
+      "subtopic": "Legislação pertinente",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t12_s01_legislacao_pertine"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "12. Agentes públicos",
+      "subtopic": "Disposições constitucionais aplicáveis",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t12_s02_disposicoes_consti"
+    },
+    {
+      "discipline": "Noções de Direito Administrativo",
+      "topic": "13. Cargo, emprego e função pública",
+      "subtopic": "Cargo, emprego e função pública",
+      "subtopic_id": "pc_pe_2027_agente_policia_d03_t13_s01_cargo_emprego_e_fu"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "3. Aplicação da lei penal",
+      "subtopic": "Contagem de prazo",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t03_s05_contagem_de_prazo"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "8. Crimes hediondos",
+      "subtopic": "Lei nº 8.072/1990",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t08_s01_lei_n_8_072_1990"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "9. Crimes resultantes de preconceito de raça ou de cor",
+      "subtopic": "Lei nº 7.716/1989",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t09_s01_lei_n_7_716_1989"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "12. Estatuto da Criança e do Adolescente",
+      "subtopic": "Lei nº 8.069/1990",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t12_s01_lei_n_8_069_1990"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "14. Crimes de trânsito",
+      "subtopic": "Lei nº 9.503/1997",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t14_s01_lei_n_9_503_1997"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "15. Violência doméstica e familiar contra a mulher",
+      "subtopic": "Lei nº 11.340/2006",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t15_s01_lei_n_11_340_2006"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "16. Lei de Drogas",
+      "subtopic": "Lei nº 11.343/2006",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t16_s01_lei_n_11_343_2006"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "17. Violência doméstica e familiar contra a criança e o adolescente",
+      "subtopic": "Lei nº 14.344/2022",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t17_s01_lei_n_14_344_2022"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "18. Crimes ambientais",
+      "subtopic": "Lei nº 9.605/1998",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t18_s01_lei_n_9_605_1998"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "19. Estatuto do Desarmamento",
+      "subtopic": "Lei nº 10.826/2003",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t19_s01_lei_n_10_826_2003"
+    },
+    {
+      "discipline": "Noções de Direito Penal",
+      "topic": "20. Disposições constitucionais aplicáveis ao Direito Penal",
+      "subtopic": "Disposições constitucionais aplicáveis ao Direito Penal",
+      "subtopic_id": "pc_pe_2027_agente_policia_d04_t20_s01_disposicoes_consti"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "1. Aplicação da lei processual penal",
+      "subtopic": "Lei processual em relação às pessoas",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t01_s03_lei_processual_em_"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "1. Aplicação da lei processual penal",
+      "subtopic": "Disposições preliminares do Código de Processo Penal",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t01_s04_disposicoes_prelim"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "3. Prova",
+      "subtopic": "Confissão e declarações do ofendido",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t03_s03_confissao_e_declar"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "3. Prova",
+      "subtopic": "Testemunhas",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t03_s04_testemunhas"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "3. Prova",
+      "subtopic": "Reconhecimento de pessoas e coisas",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t03_s05_reconhecimento_de_"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "3. Prova",
+      "subtopic": "Acareação",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t03_s06_acareacao"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "3. Prova",
+      "subtopic": "Documentos e indícios",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t03_s07_documentos_e_indic"
+    },
+    {
+      "discipline": "Noções de Direito Processual Penal",
+      "topic": "9. Disposições constitucionais aplicáveis ao Direito Processual Penal",
+      "subtopic": "Disposições constitucionais aplicáveis ao Direito Processual Penal",
+      "subtopic_id": "pc_pe_2027_agente_policia_d05_t09_s01_disposicoes_consti"
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "topic": "7. Correspondência oficial",
+      "subtopic": "Finalidade dos expedientes oficiais",
+      "subtopic_id": "pc_pe_2027_agente_policia_d06_t07_s02_finalidade_dos_exp"
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "topic": "7. Correspondência oficial",
+      "subtopic": "Adequação da linguagem ao documento",
+      "subtopic_id": "pc_pe_2027_agente_policia_d06_t07_s03_adequacao_da_lingu"
+    },
+    {
+      "discipline": "Língua Portuguesa",
+      "topic": "7. Correspondência oficial",
+      "subtopic": "Adequação do formato ao gênero",
+      "subtopic_id": "pc_pe_2027_agente_policia_d06_t07_s04_adequacao_do_forma"
+    },
+    {
+      "discipline": "Informática",
+      "topic": "1. Sistema operacional Windows e aplicativos de escritório",
+      "subtopic": "Microsoft PowerPoint",
+      "subtopic_id": "pc_pe_2027_agente_policia_d07_t01_s06_microsoft_powerpoi"
+    },
+    {
+      "discipline": "Informática",
+      "topic": "2. Redes de computadores e Internet",
+      "subtopic": "Busca e pesquisa na Internet",
+      "subtopic_id": "pc_pe_2027_agente_policia_d07_t02_s07_busca_e_pesquisa_n"
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "topic": "1. Conjuntos numéricos",
+      "subtopic": "Números inteiros, racionais e reais",
+      "subtopic_id": "pc_pe_2027_agente_policia_d08_t01_s01_numeros_inteiros_r"
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "topic": "2. Sistema legal de medidas",
+      "subtopic": "Sistema legal de medidas",
+      "subtopic_id": "pc_pe_2027_agente_policia_d08_t02_s01_sistema_legal_de_m"
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "topic": "5. Sistemas lineares",
+      "subtopic": "Sistemas lineares",
+      "subtopic_id": "pc_pe_2027_agente_policia_d08_t05_s01_sistemas_lineares"
+    },
+    {
+      "discipline": "Raciocínio Lógico",
+      "topic": "10. Lógica de argumentação",
+      "subtopic": "Analogias",
+      "subtopic_id": "pc_pe_2027_agente_policia_d08_t10_s01_analogias"
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "topic": "2. Patrimônio",
+      "subtopic": "Representação gráfica",
+      "subtopic_id": "pc_pe_2027_agente_policia_d09_t02_s04_representacao_graf"
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "topic": "4. Contas",
+      "subtopic": "Conceitos",
+      "subtopic_id": "pc_pe_2027_agente_policia_d09_t04_s01_conceitos"
+    },
+    {
+      "discipline": "Contabilidade Geral",
+      "topic": "6. Escrituração",
+      "subtopic": "Fórmulas de lançamentos",
+      "subtopic_id": "pc_pe_2027_agente_policia_d09_t06_s02_formulas_de_lancam"
+    },
+    {
+      "discipline": "Estatística",
+      "topic": "2. Probabilidade",
+      "subtopic": "Definições básicas e axiomas",
+      "subtopic_id": "pc_pe_2027_agente_policia_d10_t02_s01_definicoes_basicas"
+    },
+    {
+      "discipline": "Atualidades",
+      "topic": "1. Segurança pública na atualidade",
+      "subtopic": "Tópicos relevantes e atuais para a prova discursiva",
+      "subtopic_id": "pc_pe_2027_agente_policia_d11_t01_s01_topicos_relevantes"
+    }
+  ],
+  "safeguards": {
+    "import_executed": false,
+    "publication_executed": false,
+    "sales_enabled": false,
+    "source_text_modified": false,
+    "requires_human_editorial_review": true,
+    "requires_pcpe_taxonomy_review": true,
+    "requires_normative_currency_review": true
+  }
+}

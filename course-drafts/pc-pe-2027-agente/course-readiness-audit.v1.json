@@ -1,0 +1,55 @@
+{
+  "schema_version": "detona_pcpe_course_readiness_audit_v1",
+  "generated_at": "2026-09-03",
+  "status": "draft_ready_for_staging_validation",
+  "contest_id": "pc_pe_2027",
+  "baseline": {
+    "official_edital": "Edital nº 1 — PCPE, de 21 de dezembro de 2023",
+    "product_cohort": "2027",
+    "new_official_edital_available": false
+  },
+  "curriculum": {
+    "roles": 1,
+    "disciplines": 11,
+    "topics": 95,
+    "subtopics": 188,
+    "covered_by_initial_questions": 95,
+    "pending_initial_question_coverage": 93
+  },
+  "question_bank": {
+    "questions": 100,
+    "correct_true": 50,
+    "correct_false": 50,
+    "questions_by_discipline": {
+      "Legislação Estadual": 0,
+      "Noções de Direito Constitucional": 10,
+      "Noções de Direito Administrativo": 10,
+      "Noções de Direito Penal": 12,
+      "Noções de Direito Processual Penal": 12,
+      "Língua Portuguesa": 12,
+      "Informática": 10,
+      "Raciocínio Lógico": 12,
+      "Contabilidade Geral": 11,
+      "Estatística": 11,
+      "Atualidades": 0
+    },
+    "excluded_until_dynamic_review": [
+      "Legislação Estadual",
+      "Atualidades"
+    ]
+  },
+  "roadmap": {
+    "phases": 4,
+    "disciplines_scheduled": 11,
+    "mission_blocks": 3
+  },
+  "safeguards": {
+    "import_executed": false,
+    "publication_executed": false,
+    "sales_enabled": false,
+    "entitlement_changed": false,
+    "requires_human_editorial_review": true,
+    "requires_normative_review_before_publication": true,
+    "requires_new_edital_reconciliation": true
+  }
+}

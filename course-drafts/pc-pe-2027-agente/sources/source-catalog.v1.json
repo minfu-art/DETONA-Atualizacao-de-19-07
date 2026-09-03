@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "contest_id": "pc_pe_2027",
+  "baseline_status": "pre_edital_2027_using_official_2023_curriculum",
+  "sources": [
+    {
+      "source_id": "pc_pe_2023_edital_abertura",
+      "source_type": "official_edital",
+      "title": "Edital nº 1 — PCPE, de 21 de dezembro de 2023",
+      "publisher": "SAD/PE, SDS/PE, PCPE e Cebraspe",
+      "url": "https://cdn.cebraspe.org.br/concursos/PC_PE_23/arquivos/ED_1_2023_PC_PE_ABERTURA.PDF",
+      "location": "Item 21.2, páginas 59 a 61 do PDF",
+      "used_for": "Baseline do conteúdo programático de Agente de Polícia",
+      "authority": "official"
+    },
+    {
+      "source_id": "pc_pe_2027_autorizacao_reportada",
+      "source_type": "official_announcement_report",
+      "title": "Novo concurso PC PE autorizado com 1.315 vagas",
+      "publisher": "Folha Dirigida / Qconcursos",
+      "url": "https://folha.qconcursos.com/n/concurso-pc-pe-2027-autorizado",
+      "used_for": "Registro do anúncio de 1.200 vagas para Agente, 70 para Escrivão e 45 para Delegado",
+      "authority": "secondary_pending_primary_record"
+    }
+  ],
+  "cohort_label": "2027",
+  "reviewed_at": "2026-09-03",
+  "notes": [
+    "A identificação 2027 representa a jornada comercial e pedagógica do DETONA, não o ano de um novo edital oficial.",
+    "Até a revisão de 2026-09-03, o Edital nº 1 — PCPE, de 21 de dezembro de 2023, permanece como baseline curricular oficial adotada.",
+    "Todo conteúdo normativo e dinâmico exige nova conferência antes de publicação."
+  ]
+}
