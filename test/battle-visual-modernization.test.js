@@ -7,6 +7,7 @@ import { buildQuestionExplanation } from '../app/js/services/questionExplanation
 import {
   questionReferenceId,
   questionRequiresReferenceText,
+  resolveQuestionReferenceImage,
   resolveQuestionReferenceText,
 } from '../app/js/services/questionReferenceService.js';
 import {
@@ -230,4 +231,7 @@ test('referência explícita tem prioridade e questão sem texto citado não inv
   assert.equal(resolveQuestionReferenceText(explicit), 'Trecho fornecido pelo pacote editorial.');
   assert.equal(questionRequiresReferenceText(explicit), false);
   assert.equal(resolveQuestionReferenceText({ statement: 'Calcule o resultado de 2 + 2.' }), '');
+  assert.equal(resolveQuestionReferenceImage({ metadata: { reference_image: '/assets/tabela.webp' } }), '/assets/tabela.webp');
+  assert.equal(resolveQuestionReferenceImage({ reference_image: 'javascript:alert(1)' }), '');
+  assert.equal(resolveQuestionReferenceImage({ reference_image: '//servidor-externo.test/imagem.png' }), '');
 });

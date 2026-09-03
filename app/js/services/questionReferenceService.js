@@ -32,9 +32,25 @@ function explicitReferenceText(question = {}) {
     question.reference_text,
     question.contextoCompartilhado,
     question.metadata?.referenceText,
+    question.metadata?.reference_text,
     question.metadata?.textoReferencia,
     question.metadata?.contextoCompartilhado,
   ].map((value) => String(value || '').trim()).find(Boolean) || '';
+}
+
+export function resolveQuestionReferenceImage(question = {}) {
+  const candidate = [
+    question.referenceImage,
+    question.reference_image,
+    question.imagemReferencia,
+    question.metadata?.referenceImage,
+    question.metadata?.reference_image,
+    question.metadata?.imagemReferencia,
+  ].map((value) => String(value || '').trim()).find(Boolean) || '';
+  if (!candidate) return '';
+  if (/^https:\/\//i.test(candidate)) return candidate;
+  if (/^(?:\.{1,2}\/|\/(?!\/))/i.test(candidate)) return candidate;
+  return '';
 }
 
 export function questionReferenceId(question = {}) {

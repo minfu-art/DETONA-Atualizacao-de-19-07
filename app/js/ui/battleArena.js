@@ -8,43 +8,53 @@ import { heroImgHtml } from './heroAssets.js';
 import { enemyImgHtml, BATTLE_BG } from './enemyAssets.js';
 import { icon } from './icons.js?v=66';
 import { buildQuestionExplanation } from '../services/questionExplanationService.js';
-import { resolveQuestionReferenceText } from '../services/questionReferenceService.js';
+import {
+  resolveQuestionReferenceImage,
+  resolveQuestionReferenceText,
+} from '../services/questionReferenceService.js';
 
 /**
  * Arena de Quiz gamificada — fundo artístico + inimigos estilo avatar
  */
-export function renderQuestionReference(referenceText) {
-  if (!referenceText) return '';
+export function renderQuestionReference(referenceText, referenceImage = '') {
+  if (!referenceText && !referenceImage) return '';
+  const label = referenceImage ? 'Material de referência' : 'Texto de referência';
+  const collapsedLabel = referenceImage ? 'Expandir imagem' : 'Expandir texto';
   return `
     <section class="battle-reference is-collapsed" data-question-reference aria-labelledby="battle-reference-title">
       <header class="battle-reference__header">
         <div>
           <span class="battle-kicker">Material para análise</span>
-          <h2 id="battle-reference-title">Texto de referência</h2>
+          <h2 id="battle-reference-title">${label}</h2>
         </div>
         <div class="battle-reference__actions">
-          <button type="button" class="battle-reference__button" data-reference-toggle aria-expanded="false" aria-controls="battle-reference-content">Expandir texto</button>
-          <button type="button" class="battle-reference__button battle-reference__button--maximize" data-reference-maximize aria-label="Abrir texto de referência em tela ampliada">Ampliar</button>
+          <button type="button" class="battle-reference__button" data-reference-toggle aria-expanded="false" aria-controls="battle-reference-content">${collapsedLabel}</button>
+          <button type="button" class="battle-reference__button battle-reference__button--maximize" data-reference-maximize aria-label="${referenceImage ? 'Abrir imagem de referência em tela ampliada' : 'Abrir texto de referência em tela ampliada'}">Ampliar</button>
         </div>
       </header>
-      <div class="battle-reference__content" id="battle-reference-content" tabindex="0">${escapeHtml(referenceText)}</div>
+      <div class="battle-reference__content" id="battle-reference-content" tabindex="0">
+        ${referenceImage ? `<img class="battle-reference__image" src="${escapeAttr(referenceImage)}" alt="Imagem necessária para responder à questão" loading="eager" decoding="async">` : ''}
+        ${referenceText ? `<div class="battle-reference__text">${escapeHtml(referenceText)}</div>` : ''}
+      </div>
     </section>`;
 }
 
-export function bindQuestionReferenceControls(root, referenceText) {
-  if (!root || !referenceText) return;
+export function bindQuestionReferenceControls(root, referenceText, referenceImage = '') {
+  if (!root || (!referenceText && !referenceImage)) return;
   const referenceCard = root.querySelector('[data-question-reference]');
   const referenceToggle = root.querySelector('[data-reference-toggle]');
   referenceToggle?.addEventListener('click', () => {
     const expanded = referenceCard?.classList.toggle('is-expanded') === true;
     referenceCard?.classList.toggle('is-collapsed', !expanded);
     referenceToggle.setAttribute('aria-expanded', String(expanded));
-    referenceToggle.textContent = expanded ? 'Recolher texto' : 'Expandir texto';
+    referenceToggle.textContent = expanded
+      ? 'Recolher material'
+      : (referenceImage ? 'Expandir imagem' : 'Expandir texto');
   });
   root.querySelector('[data-reference-maximize]')?.addEventListener('click', () => {
     const modal = openModal(
-      'Texto de referência',
-      `<article class="battle-reference-modal__text">${escapeHtml(referenceText)}</article>`,
+      'Material de referência',
+      `${referenceImage ? `<img class="battle-reference-modal__image" src="${escapeAttr(referenceImage)}" alt="Imagem necessária para responder à questão">` : ''}${referenceText ? `<article class="battle-reference-modal__text">${escapeHtml(referenceText)}</article>` : ''}`,
       '<button type="button" class="btn btn-primary" data-reference-close autofocus>Voltar à questão</button>',
       { variant: 'editor' },
     );
@@ -137,6 +147,7 @@ export async function renderBattle(root, navigate, ctx) {
     const subjectLabel = sub?.name || sub?.enemy_name || 'Missão diária';
     const progress = Math.round((questionNumber / total) * 100);
     const referenceText = resolveQuestionReferenceText(q);
+    const referenceImage = resolveQuestionReferenceImage(q);
     root.innerHTML = `
       <div class="battle-shell battle-focus" data-battle-state="question">
         <header class="battle-header battle-focus__header">
@@ -186,7 +197,7 @@ export async function renderBattle(root, navigate, ctx) {
               ${/DETONA INÉDITA/i.test(`${q.fonte || ''} ${q.metadata?.colecao || ''}`) ? '<span class="is-detona">Questão DETONA inédita</span>' : ''}
               <span>Questão ${questionNumber} de ${total}</span>
             </div>
-            ${renderQuestionReference(referenceText)}
+            ${renderQuestionReference(referenceText, referenceImage)}
             <div class="battle-question__statement">
               <span class="battle-kicker battle-question__label">Enunciado</span>
               <p id="battle-statement" tabindex="-1">${escapeHtml(q.statement)}</p>
@@ -238,7 +249,7 @@ export async function renderBattle(root, navigate, ctx) {
     let selectedButton = null;
     const submit = $('#btn-answer', root);
     const hint = $('#battle-selection-hint', root);
-    bindQuestionReferenceControls(root, referenceText);
+    bindQuestionReferenceControls(root, referenceText, referenceImage);
     $('#answers', root).querySelectorAll('.answer-btn').forEach((btn) => {
       btn.setAttribute('aria-pressed', 'false');
       btn.addEventListener('click', () => {

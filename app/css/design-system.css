@@ -1874,11 +1874,14 @@ body.has-open-modal { overflow:hidden; }
 .battle-reference__button:focus-visible,.battle-reference__content:focus-visible { outline:3px solid var(--ds-focus); outline-offset:2px; }
 .battle-reference__button--maximize { border-color:rgba(167,139,250,.4); background:rgba(124,58,237,.1); color:#ddd6fe; }
 .battle-reference__content { position:relative; max-height:176px; overflow:hidden; padding:16px; color:var(--ds-text-2); font:500 15px/1.75 var(--sans); white-space:pre-wrap; overflow-wrap:break-word; transition:max-height var(--ds-duration-normal) ease; }
+.battle-reference__image { display:block; width:100%; max-height:520px; object-fit:contain; border-radius:12px; background:#fff; }
+.battle-reference__text:not(:first-child) { margin-top:14px; }
 .battle-reference.is-collapsed .battle-reference__content::after { position:absolute; right:0; bottom:0; left:0; height:72px; background:linear-gradient(transparent,rgba(5,10,24,.99)); content:""; pointer-events:none; }
 .battle-reference.is-expanded .battle-reference__content { max-height:none; overflow:visible; }
 .battle-reference.is-expanded .battle-reference__content::after { display:none; }
 .battle-reference-dialog .ds-modal { width:min(900px,100%); max-height:calc(100dvh - 24px); }
 .battle-reference-modal__text { max-height:calc(100dvh - 190px); overflow:auto; padding:2px 4px 10px; color:var(--ds-text-1); font:500 16px/1.8 var(--sans); white-space:pre-wrap; overflow-wrap:break-word; overscroll-behavior:contain; }
+.battle-reference-modal__image { display:block; width:100%; max-height:calc(100dvh - 220px); object-fit:contain; border-radius:12px; background:#fff; }
 .battle-question__statement { padding:19px 0 23px; border-top:1px solid rgba(140,164,255,.12); border-bottom:1px solid rgba(140,164,255,.12); }
 .battle-question__statement p { max-width:850px; margin-top:8px; scroll-margin-top:112px; overflow-wrap:break-word; color:#f8f9ff; font:550 clamp(18px,2.25vw,22px)/1.65 var(--sans); }
 .battle-answers,.battle-confidence { min-width:0; margin:21px 0 0; padding:0; border:0; }
