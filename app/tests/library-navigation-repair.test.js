@@ -37,5 +37,5 @@ test('botao do curso informa imediatamente que a jornada esta sendo preparada', 
 
 test('cache do PWA muda para distribuir o reparo', async () => {
   const sw = await source('../sw.js');
-  assert.match(sw, /detona-v159-pcpe-1318-release/);
+  assert.match(sw, /detona-v160-pe-three-courses-release/);
 });

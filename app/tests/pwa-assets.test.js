@@ -30,7 +30,7 @@ test('pré-cache é limitado ao shell essencial e processado em lotes', () => {
 
 test('service worker não bloqueia respostas em gravações e preserva dados locais', () => {
   const sw = readFileSync(join(appRoot, 'sw.js'), 'utf8');
-  assert.match(sw, /detona-v159-pcpe-1318-release/);
+  assert.match(sw, /detona-v160-pe-three-courses-release/);
   assert.match(sw, /!key\.startsWith\(CONTENT_CACHE_PREFIX\)/);
   assert.doesNotMatch(sw, /cache:\s*'reload'/);
   assert.match(sw, /e\.waitUntil\([\s\S]*putInCache\(e\.request, res\.clone\(\)\)/);
