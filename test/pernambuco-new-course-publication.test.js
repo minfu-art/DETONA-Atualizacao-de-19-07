@@ -3,6 +3,8 @@ import { access, readFile } from 'node:fs/promises';
 import test from 'node:test';
 
 import { buildDynamicSeedEntities } from '../app/js/core/seed.js';
+import { CONTEST_CATALOG } from '../app/js/contest/contestCatalog.js';
+import { normalizeDynamicContest } from '../app/js/services/contestCatalogService.js';
 import {
   PublishedCoursePackageService,
   STATIC_PUBLISHED_PACKAGES,
@@ -72,4 +74,29 @@ test('migração publica os dois cursos sem conceder entitlement', async () => {
   assert.match(sql, /'ready'/);
   assert.match(sql, /'available'/);
   assert.doesNotMatch(sql, /insert\s+into\s+public\.contest_entitlements/i);
+});
+
+test('catálogo local e catálogo remoto normalizado expõem as contagens publicadas', () => {
+  for (const expected of [
+    { contestId: 'pm_pe_2027', questions: 503, subtopics: 77 },
+    { contestId: 'pp_pe_2027', questions: 444, subtopics: 362 },
+  ]) {
+    const local = CONTEST_CATALOG.find(({ id }) => id === expected.contestId);
+    assert.equal(local?.contentStatus, 'ready');
+    assert.equal(local?.salesStatus, 'available');
+    assert.equal(local?.questionCount, expected.questions);
+    assert.equal(local?.subtopicCount, expected.subtopics);
+
+    const remote = normalizeDynamicContest({
+      id: expected.contestId,
+      code: local.code,
+      name: local.name,
+      content_status: 'ready',
+      sales_status: 'available',
+      question_count: 0,
+      subtopic_count: 0,
+    });
+    assert.equal(remote.questionCount, expected.questions);
+    assert.equal(remote.subtopicCount, expected.subtopics);
+  }
 });

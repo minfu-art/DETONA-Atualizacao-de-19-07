@@ -52,6 +52,14 @@ export function normalizeDynamicContest(contest) {
     normalized.subtopicCount ||= 188;
     normalized.questionCount ||= 1318;
   }
+  if (normalized.id === 'pm_pe_2027') {
+    normalized.subtopicCount ||= 77;
+    normalized.questionCount ||= 503;
+  }
+  if (normalized.id === 'pp_pe_2027') {
+    normalized.subtopicCount ||= 362;
+    normalized.questionCount ||= 444;
+  }
   if (!normalized.id || !normalized.code || !normalized.name) throw new Error('Concurso dinâmico inválido.');
   return normalized;
 }

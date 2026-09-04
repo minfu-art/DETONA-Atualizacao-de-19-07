@@ -38,11 +38,13 @@ test('catálogo vazio mantém fallback e sinaliza bootstrap', async () => {
   assert.equal(result.source, 'static_catalog');
   assert.equal(result.bootstrapRequired, true);
   assert.equal(result.writable, false);
-  assert.equal(result.rows.length, 7);
+  assert.equal(result.rows.length, 9);
   assert.ok(result.rows.some(({ id }) => id === 'pm_al_2026'));
   assert.ok(result.rows.some(({ id }) => id === 'pc_ba_2026'));
   assert.ok(result.rows.some(({ id }) => id === 'pm_ba_2026'));
   assert.ok(result.rows.some(({ id }) => id === 'pc_pe_2026'));
+  assert.ok(result.rows.some(({ id }) => id === 'pm_pe_2027'));
+  assert.ok(result.rows.some(({ id }) => id === 'pp_pe_2027'));
 });
 
 test('catálogo administrativo populado substitui fallback sem inventar escrita', async () => {
