@@ -64,6 +64,10 @@ function structuralReasons(question) {
   if (answer === null || answer === undefined || answer === '') reasons.push('answer_missing');
   else if (typeof answer === 'string' && options.length === 0) reasons.push('options_missing');
   else if (options.length && options.join('|') !== 'Certo|Errado') {
+    const optionTexts = options.map((option, index) => String(option || '')
+      .replace(new RegExp(`^${String.fromCharCode(65 + index)}(?:\\)|\\.|\\s|-|:)\\s*`, 'iu'), '')
+      .trim());
+    if (options.length < 2 || optionTexts.some((option) => !option)) reasons.push('options_incomplete');
     const allowed = options.map((_, index) => String.fromCharCode(65 + index));
     if (!allowed.includes(answer)) reasons.push('answer_not_in_options');
   }

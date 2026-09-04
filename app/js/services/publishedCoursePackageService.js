@@ -1,6 +1,6 @@
 const DATA_VERSION = '2026.08.17.1';
 const PM_AL_DATA_VERSION = '2026.08.31.1';
-const PC_PE_DATA_VERSION = '2026.09.03.1';
+const PC_PE_DATA_VERSION = '2026.09.03.2';
 
 export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   pc_ba_2026: Object.freeze({
@@ -47,10 +47,11 @@ export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
     baseUrl: `data/course-factory/pc-pe-2026-agente-runtime.json?v=${PC_PE_DATA_VERSION}`,
     patchUrls: Object.freeze([
       `data/course-factory/published/pc-pe-2026-agente-patch-001.json?v=${PC_PE_DATA_VERSION}`,
+      `data/course-factory/published/pc-pe-2026-agente-patch-002.json?v=${PC_PE_DATA_VERSION}`,
     ]),
     version: PC_PE_DATA_VERSION,
-    contentHash: 'ccdec893269f3689e8930f3b44ff203b7aa2b529b1c584c7f3a51a74625151c2',
-    expectedQuestionCount: 317,
+    contentHash: '1ffabec888e59f8293ed062af90b8978670d21f93cf86b0256b6061b05b989b7',
+    expectedQuestionCount: 1318,
     expectedSubtopicCount: 188,
     salesBlocked: false,
     metadataOverride: Object.freeze({

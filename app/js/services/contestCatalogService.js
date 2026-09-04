@@ -50,7 +50,7 @@ export function normalizeDynamicContest(contest) {
   }
   if (normalized.id === 'pc_pe_2026') {
     normalized.subtopicCount ||= 188;
-    normalized.questionCount ||= 317;
+    normalized.questionCount ||= 1318;
   }
   if (!normalized.id || !normalized.code || !normalized.name) throw new Error('Concurso dinâmico inválido.');
   return normalized;

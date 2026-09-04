@@ -1,7 +1,7 @@
 {
   "name": "pcpe_material_comentado_003",
   "status": "draft",
-  "generated_at": "2026-09-03",
+  "generated_at": "2026-09-04",
   "publication_authorized": false,
   "questions": [
     {
@@ -4683,45 +4683,6 @@
       }
     },
     {
-      "id": "pc_pe_2027_material_00538",
-      "contest_id": "pc_pe_2027",
-      "subtopic_id": "pc_pe_2027_agente_policia_d07_t01_s06_microsoft_powerpoi",
-      "statement": "Na criação de slides para uma apresentação pelo Microsoft PowerPoint 2016, o usuário notou que alguns dos slides não estavam sendo alterados para os layouts do tema quando ele tentava aplicar o tema nos slides. Anteriormente, os layouts haviam sido alterados manualmente. Para corrigir isso, o usuário pode restaurar o layout do tema, clicando o item que deseja restaurar e, em seguida, o ícone",
-      "options": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "correct_answer": "A",
-      "explanation": "Para restaurar o layout do tema em slides que foram alterados manualmente, o usuário deve clicar no slide e selecionar o ícone de Redefinir (ou Restaurar Layout). No PowerPoint, esse ícone fica na guia Página Inicial, grupo Slides, representado pelo ícone da alternativa A, que repõe o layout padrão definido pelo slide mestre. Gabarito: Letra A",
-      "source": "CEBRASPE / APEX - 2021",
-      "format": "multipla_escolha",
-      "status": "draft",
-      "editorial_review": "pending",
-      "reference_text": "",
-      "reference_image": "",
-      "metadata": {
-        "source_file": "Informatica/curso-362002-aula-16-97e8-completo.pdf",
-        "source_file_id": "pcpe_material_a92296a38d17",
-        "source_question_number": 4,
-        "source_pages": [
-          13,
-          14
-        ],
-        "source_page_span": 2,
-        "mapping_confidence": 0.833,
-        "mapping_margin": 5,
-        "requires_visual": false,
-        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
-        "copyright_review_required": true,
-        "publication_authorized": false,
-        "personal_identifiers_sanitized": true,
-        "technical_ready": true,
-        "review_reasons": []
-      }
-    },
-    {
       "id": "pc_pe_2027_material_00539",
       "contest_id": "pc_pe_2027",
       "subtopic_id": "pc_pe_2027_agente_policia_d07_t01_s06_microsoft_powerpoi",
@@ -7572,6 +7533,43 @@
         "technical_ready": true,
         "review_reasons": [],
         "mapping_review_accepted": true
+      }
+    },
+    {
+      "id": "pc_pe_2027_material_00617",
+      "contest_id": "pc_pe_2027",
+      "subtopic_id": "pc_pe_2027_agente_policia_d02_t03_s01_direitos_e_garanti",
+      "statement": "No que se refere aos direitos e garantias fundamentais, julgue o item a seguir, com base no disposto na Constituição Federal de 1988 (CF) e no entendimento do Supremo Tribunal Federal (STF). Aos trabalhadores urbanos e rurais é garantido o direito ao aviso prévio de, no máximo, 30 dias, independentemente do tempo de serviço.",
+      "options": [
+        "Certo",
+        "Errado"
+      ],
+      "correct_answer": false,
+      "explanation": "A afirmativa está incorreta, pois, conforme o inciso XXI do artigo 7º da Constituição Federal, o direito ao aviso prévio garantido aos trabalhadores urbanos e rurais será proporcional ao tempo de serviço, sendo de no mínimo (e não de no máximo) trinta dias. Art. 7º, XXI - aviso prévio proporcional ao tempo de serviço, sendo no mínimo de trinta dias, nos termos da lei; Gabarito: Errado.",
+      "source": "CEBRASPE/2025/INSS/Perito Médico Previdenciário",
+      "format": "certo_errado",
+      "status": "draft",
+      "editorial_review": "pending",
+      "reference_text": "",
+      "reference_image": "",
+      "metadata": {
+        "source_file": "Noções de Direito/curso-362008-aula-07-6585-completo.pdf",
+        "source_file_id": "pcpe_material_44c84bd5ec2f",
+        "source_question_number": 8,
+        "source_pages": [
+          20,
+          20
+        ],
+        "source_page_span": 1,
+        "mapping_confidence": 1,
+        "mapping_margin": 3.05,
+        "requires_visual": false,
+        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
+        "copyright_review_required": true,
+        "publication_authorized": false,
+        "personal_identifiers_sanitized": true,
+        "technical_ready": true,
+        "review_reasons": []
       }
     }
   ]

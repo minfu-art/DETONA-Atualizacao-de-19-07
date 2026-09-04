@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T23:43:07.591Z",
+  "generated_at": "2026-09-04T00:08:08.372Z",
   "status": "passed",
   "counts": {
     "questions": 1042,
-    "technically_ready": 1012,
-    "needs_review": 30,
+    "technically_ready": 1010,
+    "needs_review": 32,
     "reference_texts": 1,
     "reference_images": 23,
     "batches": 6
@@ -24,6 +24,7 @@
     "oversized_question_block": 20,
     "answer_missing": 10,
     "options_missing": 9,
+    "options_incomplete": 2,
     "visual_missing": 1,
     "source_question_annulled": 1,
     "explanation_incomplete": 1

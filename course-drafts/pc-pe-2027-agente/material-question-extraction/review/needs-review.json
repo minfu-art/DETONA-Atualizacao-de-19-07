@@ -546,6 +546,47 @@
       }
     },
     {
+      "id": "pc_pe_2027_material_00538",
+      "contest_id": "pc_pe_2027",
+      "subtopic_id": "pc_pe_2027_agente_policia_d07_t01_s06_microsoft_powerpoi",
+      "statement": "Na criação de slides para uma apresentação pelo Microsoft PowerPoint 2016, o usuário notou que alguns dos slides não estavam sendo alterados para os layouts do tema quando ele tentava aplicar o tema nos slides. Anteriormente, os layouts haviam sido alterados manualmente. Para corrigir isso, o usuário pode restaurar o layout do tema, clicando o item que deseja restaurar e, em seguida, o ícone",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": "A",
+      "explanation": "Para restaurar o layout do tema em slides que foram alterados manualmente, o usuário deve clicar no slide e selecionar o ícone de Redefinir (ou Restaurar Layout). No PowerPoint, esse ícone fica na guia Página Inicial, grupo Slides, representado pelo ícone da alternativa A, que repõe o layout padrão definido pelo slide mestre. Gabarito: Letra A",
+      "source": "CEBRASPE / APEX - 2021",
+      "format": "multipla_escolha",
+      "status": "draft",
+      "editorial_review": "pending",
+      "reference_text": "",
+      "reference_image": "",
+      "metadata": {
+        "source_file": "Informatica/curso-362002-aula-16-97e8-completo.pdf",
+        "source_file_id": "pcpe_material_a92296a38d17",
+        "source_question_number": 4,
+        "source_pages": [
+          13,
+          14
+        ],
+        "source_page_span": 2,
+        "mapping_confidence": 0.833,
+        "mapping_margin": 5,
+        "requires_visual": false,
+        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
+        "copyright_review_required": true,
+        "publication_authorized": false,
+        "personal_identifiers_sanitized": true,
+        "technical_ready": false,
+        "review_reasons": [
+          "options_incomplete"
+        ]
+      }
+    },
+    {
       "id": "pc_pe_2027_material_00555",
       "contest_id": "pc_pe_2027",
       "subtopic_id": "pc_pe_2027_agente_policia_d02_t09_s05_seguranca_publica_",
@@ -1076,6 +1117,50 @@
         "review_reasons": [
           "oversized_question_block"
         ]
+      }
+    },
+    {
+      "id": "pc_pe_2027_material_01008",
+      "contest_id": "pc_pe_2027",
+      "subtopic_id": "pc_pe_2027_agente_policia_d08_t15_s01_problemas_aritmeti",
+      "statement": "Um controlador de tráfego aéreo observa no radar que dois aviões A e B, que se aproximam de Rio Branco, estão, respectivamente, a 50 km e 80 km de distância de seu aeroporto. No radar, verifica-se que o ângulo entre as linhas de visada formadas pelos dois aviões e o aeroporto é de 60°. A partir dessa situação, assinale a opção que corresponde à distância entre os aviões A e",
+      "options": [
+        "",
+        "130 km",
+        "30 km",
+        "100/3√3 km",
+        "70 km",
+        "10√89 km"
+      ],
+      "correct_answer": "D",
+      "explanation": "Corujas, os dois aviões e o aeroporto formam um Triângulo. o Um lado mede 50 km; o Outro lado mede 80 km; o O ângulo entre eles é 60∘. 𝝅 ≅𝟑,𝟏𝟒 Quando conhecemos DOIS LADOS E O ÂNGULO ENTRE ELES, usamos a LEI DOS COSSENOS: 𝑐9=𝑎9+𝑏9−2𝑎𝑏cos (𝜃) Substituindo: 𝑑9=509+809−2⋅50⋅80⋅cos 60∘ Como: cos 60∘=89.Temos o seguinte: 𝑑9=2500+6400−8000⋅12 𝑑9=8900−4000 𝑑9=4900 𝑑=70 Portanto, a distância entre os aviões é 70 km. Gabarito: D",
+      "source": "CEBRASPE / Vestibular – UFAC / Medicina / 2026",
+      "format": "multipla_escolha",
+      "status": "draft",
+      "editorial_review": "pending",
+      "reference_text": "",
+      "reference_image": "",
+      "metadata": {
+        "source_file": "Raciocínio Lógico/curso-362285-aula-06-af36-completo.pdf",
+        "source_file_id": "pcpe_material_a6e13c540b26",
+        "source_question_number": 1,
+        "source_pages": [
+          26,
+          27
+        ],
+        "source_page_span": 2,
+        "mapping_confidence": 0.379,
+        "mapping_margin": 1.95,
+        "requires_visual": false,
+        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
+        "copyright_review_required": true,
+        "publication_authorized": false,
+        "personal_identifiers_sanitized": true,
+        "technical_ready": false,
+        "review_reasons": [
+          "options_incomplete"
+        ],
+        "mapping_review_accepted": true
       }
     },
     {

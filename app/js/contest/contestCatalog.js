@@ -71,7 +71,7 @@ export const CONTEST_CATALOG = [
     careerArea: 'police_security',
     careerSubarea: 'civil_police',
     subtopicCount: 188,
-    questionCount: 317,
+    questionCount: 1318,
     description: 'Jornada pré-edital 2027 com currículo verticalizado e 317 questões em banco ativo, sujeita à reconciliação quando sair o novo edital.',
   },
   {

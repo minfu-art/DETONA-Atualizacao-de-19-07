@@ -4,8 +4,8 @@
   "publication_authorized": false,
   "counts": {
     "total": 1042,
-    "technically_ready": 1012,
-    "needs_review": 30
+    "technically_ready": 1010,
+    "needs_review": 32
   },
   "questions": [
     {
@@ -20423,8 +20423,10 @@
         "copyright_review_required": true,
         "publication_authorized": false,
         "personal_identifiers_sanitized": true,
-        "technical_ready": true,
-        "review_reasons": []
+        "technical_ready": false,
+        "review_reasons": [
+          "options_incomplete"
+        ]
       }
     },
     {
@@ -38208,8 +38210,10 @@
         "copyright_review_required": true,
         "publication_authorized": false,
         "personal_identifiers_sanitized": true,
-        "technical_ready": true,
-        "review_reasons": [],
+        "technical_ready": false,
+        "review_reasons": [
+          "options_incomplete"
+        ],
         "mapping_review_accepted": true
       }
     },

@@ -1,87 +1,9 @@
 {
   "name": "pcpe_material_comentado_006",
   "status": "draft",
-  "generated_at": "2026-09-03",
+  "generated_at": "2026-09-04",
   "publication_authorized": false,
   "questions": [
-    {
-      "id": "pc_pe_2027_material_01031",
-      "contest_id": "pc_pe_2027",
-      "subtopic_id": "pc_pe_2027_agente_policia_d08_t04_s01_equacoes_e_inequac",
-      "statement": "Na compra de dois coletes e três caixas de munições, um policial pagou R$ 340; outro policial comprou três coletes e duas caixas de munições por R$ 360. Considerando-se que os preços unitários dos referidos produtos tenham sido os mesmos nas duas compras, é correto afirmar que um policial que compre um colete e uma caixa de munições pagará",
-      "options": [
-        "R$ 60.",
-        "R$ 70.",
-        "R$ 80.",
-        "R$ 140.",
-        "R$ 700."
-      ],
-      "correct_answer": "D",
-      "explanation": "Sendo: o C: Valor do Colete; e o T: Valor da Munição, temos que:!𝟐𝑪+𝟑𝑴=𝟑𝟒𝟎 (𝒆𝒒.𝒂)𝟑𝑪+𝟐𝑴=𝟑𝟔𝟎 (𝒆𝒒.𝒃) Eu tenho um macete pra resolver essa questão, vejam que legal: Vamos somar as duas equações? 5C + 5M = 700 o Agora, podemos dividir todos os termos da equação acima por 5, assim, teremos: C + M = 140 Ou seja: O valor de 1 Coleto + 1 Munição é 140, sendo, portanto, nosso gabarito;) Percebam, meus caros, que não precisamos saber quanto vale cada item, beleza? Apenas a soma total de ambos. Gabarito: D",
-      "source": "CEBRASPE / Perito Oficial – PC-PB / 2022",
-      "format": "multipla_escolha",
-      "status": "draft",
-      "editorial_review": "pending",
-      "reference_text": "",
-      "reference_image": "",
-      "metadata": {
-        "source_file": "Raciocínio Lógico/curso-362285-aula-10-d365-completo.pdf",
-        "source_file_id": "pcpe_material_d7c1d6c50777",
-        "source_question_number": 5,
-        "source_pages": [
-          17,
-          18
-        ],
-        "source_page_span": 2,
-        "mapping_confidence": 1,
-        "mapping_margin": 8.45,
-        "requires_visual": false,
-        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
-        "copyright_review_required": true,
-        "publication_authorized": false,
-        "personal_identifiers_sanitized": true,
-        "technical_ready": true,
-        "review_reasons": []
-      }
-    },
-    {
-      "id": "pc_pe_2027_material_01032",
-      "contest_id": "pc_pe_2027",
-      "subtopic_id": "pc_pe_2027_agente_policia_d08_t15_s01_problemas_aritmeti",
-      "statement": "Em uma instituição de ensino, 124 formandos votaram para escolher, entre dois candidatos, o orador da turma. Sabe-se que o eleito obteve 15 votos a mais que o seu concorrente e que houve 15 votos nulos. O aluno eleito obteve mais de 60 votos.",
-      "options": [
-        "Certo",
-        "Errado"
-      ],
-      "correct_answer": true,
-      "explanation": "• E: Votos do Eleito • C: Votos do Concorrente • E = C + 15 Total de Votos: 124 – 15 (nulos) = 109 votos, logo: E + C = 109 Então: E = C + 15 (eq. 1) E + C = 109 (eq. 2) Substituindo E = C + 15 em E + C = 109, temos: C + 15 + C = 109 2C = 109 – 15 C = 47 Como o Eleito teve 15 votos a mais do que o seu concorrente, logo ele teve 47 + 15 = 62 votos. Poderíamos responder essa questão da seguinte forma: E: votos do eleito E – 15: votos do concorrente (teve 15 a menos do que o eleito) E + E – 15 = 124 – 15 2E = 124 E = 62 Gabarito: Certo",
-      "source": "CEBRASPE / ESTRATÉGIA CONCURSOS / INÉDITAS / 2025",
-      "format": "certo_errado",
-      "status": "draft",
-      "editorial_review": "pending",
-      "reference_text": "",
-      "reference_image": "",
-      "metadata": {
-        "source_file": "Raciocínio Lógico/curso-362285-aula-10-d365-completo.pdf",
-        "source_file_id": "pcpe_material_d7c1d6c50777",
-        "source_question_number": 6,
-        "source_pages": [
-          18,
-          19
-        ],
-        "source_page_span": 2,
-        "mapping_confidence": 0.325,
-        "mapping_margin": 0,
-        "requires_visual": false,
-        "extraction_method": "pypdf_text_and_pdfplumber_targeted_visual_crop_v2",
-        "copyright_review_required": true,
-        "publication_authorized": false,
-        "personal_identifiers_sanitized": true,
-        "technical_ready": true,
-        "review_reasons": [],
-        "mapping_review_accepted": true
-      }
-    },
     {
       "id": "pc_pe_2027_material_01033",
       "contest_id": "pc_pe_2027",
