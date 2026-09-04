@@ -123,8 +123,8 @@ test('schema OpenAI é estrito e resposta estruturada é extraída sem texto liv
 });
 
 test('persistência staging é privada e não altera tabelas publicadas', async () => {
-  const sql = await readFile(new URL('../supabase/migrations/20260817014826_course_factory_ai_drafts.sql', import.meta.url), 'utf8');
-  const indexes = await readFile(new URL('../supabase/migrations/20260817020918_course_factory_fk_indexes.sql', import.meta.url), 'utf8');
+  const sql = await readFile(new URL('../supabase/migrations/20260817020802_course_factory_ai_drafts.sql', import.meta.url), 'utf8');
+  const indexes = await readFile(new URL('../supabase/migrations/20260817020939_course_factory_fk_indexes.sql', import.meta.url), 'utf8');
   assert.match(sql, /course_factory_drafts/);
   assert.match(sql, /course_factory_source_pages/);
   assert.match(sql, /course-factory-sources[\s\S]*false/);

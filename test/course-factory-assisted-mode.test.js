@@ -143,7 +143,7 @@ test('curso fictício não-PC-BA usa o mesmo contrato e a mesma prévia genéric
 });
 
 test('persistência é privada, transacional, auditável e isolada das tabelas publicadas', async () => {
-  const sql = await readFile(new URL('../supabase/migrations/20260817022750_course_factory_assisted_packages.sql', import.meta.url), 'utf8');
+  const sql = await readFile(new URL('../supabase/migrations/20260817024521_course_factory_assisted_packages.sql', import.meta.url), 'utf8');
   assert.match(sql, /course_factory_draft_questions/);
   assert.match(sql, /course_factory_audit_events/);
   assert.match(sql, /import_course_factory_assisted_package/);

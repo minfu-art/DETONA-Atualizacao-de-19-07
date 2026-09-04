@@ -180,7 +180,7 @@ export function validateQuestionBatch(bundle, batch) {
   const existingStatements = new Set(bundle.questions.map((q) => normalizeText(q.statement)).filter(Boolean));
   const localIds = new Set();
   const localStatements = new Set();
-  const allowed = ['id', 'subtopic_id', 'microknowledge_ids', 'statement', 'options', 'correct_answer', 'explanation', 'difficulty', 'format', 'source', 'is_trick', 'traces'];
+  const allowed = ['id', 'subtopic_id', 'microknowledge_ids', 'statement', 'reference_text', 'reference_image', 'options', 'correct_answer', 'explanation', 'difficulty', 'format', 'source', 'is_trick', 'traces'];
 
   if (!batch || typeof batch !== 'object' || !Array.isArray(batch.questions) || !batch.questions.length) {
     errors.push({ code: 'BATCH_INVALID', path: 'batch.questions', message: 'O lote deve possuir ao menos uma questão.' });
@@ -209,6 +209,18 @@ export function validateQuestionBatch(bundle, batch) {
     const normalized = normalizeText(statement);
     if (normalized && (existingStatements.has(normalized) || localStatements.has(normalized))) errors.push({ code: 'STATEMENT_DUPLICATE', path: `${base}.statement`, message: 'Enunciado duplicado.' });
     localStatements.add(normalized);
+
+    if (q.reference_text != null && typeof q.reference_text !== 'string') {
+      errors.push({ code: 'REFERENCE_TEXT_INVALID', path: `${base}.reference_text`, message: 'Texto de referência deve ser uma string.' });
+    }
+    if (q.reference_image != null) {
+      const image = String(q.reference_image || '').trim().replace(/\\/g, '/');
+      const safeLocalPath = image
+        && !image.startsWith('/')
+        && !image.includes('..')
+        && /^[A-Za-z0-9][A-Za-z0-9._/-]*\.(?:png|jpe?g|webp)$/i.test(image);
+      if (!safeLocalPath) errors.push({ code: 'REFERENCE_IMAGE_INVALID', path: `${base}.reference_image`, message: 'Imagem de referência deve usar caminho local relativo e seguro.' });
+    }
 
     const options = Array.isArray(q.options) ? q.options : [];
     if (options.length === 1) errors.push({ code: 'OPTIONS_INVALID', path: `${base}.options`, message: 'Múltipla escolha exige ao menos duas alternativas.' });

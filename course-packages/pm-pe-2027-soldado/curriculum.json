@@ -1,0 +1,1663 @@
+{
+  "nodes": [
+    {
+      "id": "pm_pe_2027_soldado",
+      "parent_id": null,
+      "type": "role",
+      "title": "Soldado da Polícia Militar de Pernambuco",
+      "description": "Mapa pré-edital baseado nas seis áreas do Anexo I do edital oficial PMPE de 2023.",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 35,
+          "excerpt": "NÍVEL MÉDIO – PARA O CARGO DE PRAÇA DA PMPE"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "Direito Constitucional",
+      "description": "",
+      "order": 0,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Direito Constitucional"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t06_aula_05",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 05",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t06_aula_05_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t06_aula_05",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 05",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t07_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t07_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t07_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t08_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t08_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t08_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t09_aula_08",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 08",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 8,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t09_aula_08_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t09_aula_08",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 08",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t10_aula_09",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 09",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 9,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t10_aula_09_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t10_aula_09",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 09",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t11_aula_10",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 10",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 10,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t11_aula_10_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t11_aula_10",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 10",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t12_aula_11",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 11",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 11,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t12_aula_11_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t12_aula_11",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 11",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t13_aula_12",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 12",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 12,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t13_aula_12_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t13_aula_12",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 12",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t14_aula_13",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional",
+      "type": "topic",
+      "title": "Aula 13",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 13,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d01_direito_constitucional_t14_aula_13_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d01_direito_constitucional_t14_aula_13",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 13",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "Direitos Humanos e Legislação Extravagante",
+      "description": "Área única conforme o Anexo I do edital PMPE de 2023.",
+      "order": 1,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Direitos Humanos e Legislação Extravagante"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t06_aula_05",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 05",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t06_aula_05_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t06_aula_05",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 05",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t07_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t07_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t07_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t08_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t08_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t08_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t09_aula_08",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 08",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 8,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t09_aula_08_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t09_aula_08",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 08",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t10_aula_09",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 09",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 9,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t10_aula_09_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t10_aula_09",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 09",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t11_aula_10",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 10",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 10,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t11_aula_10_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t11_aula_10",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 10",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t12_aula_11",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 11",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 11,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t12_aula_11_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t12_aula_11",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 11",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t13_aula_12",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 12",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 12,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t13_aula_12_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t13_aula_12",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 12",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t14_aula_13",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Direitos Humanos — Aula 13",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 13,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d02_direitos_humanos_t14_aula_13_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos_t14_aula_13",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 13",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d03_historia_de_pernambuco",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "História de Pernambuco",
+      "description": "",
+      "order": 2,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 35,
+          "excerpt": "História de Pernambuco"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d03_historia_de_pernambuco_t01_aula_unica",
+      "parent_id": "pm_pe_2027_soldado_d03_historia_de_pernambuco",
+      "type": "topic",
+      "title": "Material único",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d03_historia_de_pernambuco_t01_aula_unica_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d03_historia_de_pernambuco_t01_aula_unica",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Material único",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "Informática",
+      "description": "",
+      "order": 3,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Informática"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t06_aula_05",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 05",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t06_aula_05_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t06_aula_05",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 05",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t07_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t07_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t07_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t08_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t08_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t08_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t09_aula_08",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 08",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 8,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t09_aula_08_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t09_aula_08",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 08",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t10_aula_09",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 09",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 9,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t10_aula_09_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t10_aula_09",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 09",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t11_aula_10",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 10",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 10,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t11_aula_10_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t11_aula_10",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 10",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t12_aula_11",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 11",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 11,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t12_aula_11_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t12_aula_11",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 11",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t13_aula_12",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 12",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 12,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t13_aula_12_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t13_aula_12",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 12",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t14_aula_13",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 13",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 13,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t14_aula_13_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t14_aula_13",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 13",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t15_aula_14",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica",
+      "type": "topic",
+      "title": "Aula 14",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 14,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d04_informatica_t15_aula_14_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d04_informatica_t15_aula_14",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 14",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t06_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t06_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t06_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t07_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t07_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t07_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t08_aula_08",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 08",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t08_aula_08_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t08_aula_08",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 08",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t09_aula_09",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Aula 09",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 8,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t09_aula_09_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t09_aula_09",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 09",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t10_aula_unica",
+      "parent_id": "pm_pe_2027_soldado_d02_direitos_humanos",
+      "type": "topic",
+      "title": "Direitos Humanos — Legislação Extravagante — Material único",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 9,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t10_aula_unica_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d05_legislacao_extravagante_t10_aula_unica",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Material único",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "Língua Portuguesa",
+      "description": "",
+      "order": 5,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 35,
+          "excerpt": "Língua Portuguesa"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t06_aula_05",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 05",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t06_aula_05_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t06_aula_05",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 05",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t07_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t07_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t07_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t08_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t08_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t08_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t09_aula_08",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 08",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 8,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t09_aula_08_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t09_aula_08",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 08",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t10_aula_09",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 09",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 9,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t10_aula_09_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t10_aula_09",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 09",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t11_aula_10",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 10",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 10,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t11_aula_10_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t11_aula_10",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 10",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t12_aula_11",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 11",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 11,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t12_aula_11_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t12_aula_11",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 11",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t13_aula_12",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 12",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 12,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t13_aula_12_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t13_aula_12",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 12",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t14_aula_13",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 13",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 13,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t14_aula_13_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t14_aula_13",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 13",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t15_aula_14",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues",
+      "type": "topic",
+      "title": "Aula 14",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 14,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d06_portugues_t15_aula_14_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d06_portugues_t15_aula_14",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 14",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "parent_id": "pm_pe_2027_soldado",
+      "type": "discipline",
+      "title": "Raciocínio Lógico",
+      "description": "",
+      "order": 6,
+      "confidence": 1,
+      "traces": [
+        {
+          "source_id": "pm_pe_2023_edital_001",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Raciocínio Lógico"
+        }
+      ]
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t01_aula_00",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 00",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 0,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t01_aula_00_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t01_aula_00",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 00",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t02_aula_01",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 01",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 1,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t02_aula_01_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t02_aula_01",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 01",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t03_aula_02",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 02",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 2,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t03_aula_02_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t03_aula_02",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 02",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t04_aula_03",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 03",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 3,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t04_aula_03_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t04_aula_03",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 03",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t05_aula_04",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 04",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 4,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t05_aula_04_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t05_aula_04",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 04",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t06_aula_05",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 05",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 5,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t06_aula_05_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t06_aula_05",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 05",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t07_aula_06",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 06",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 6,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t07_aula_06_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t07_aula_06",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 06",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t08_aula_07",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico",
+      "type": "topic",
+      "title": "Aula 07",
+      "description": "Agrupamento provisório do material extraído.",
+      "order": 7,
+      "confidence": 0.35,
+      "traces": []
+    },
+    {
+      "id": "pm_pe_2027_soldado_d07_raciocinio_logico_t08_aula_07_s01_conteudo_extraido",
+      "parent_id": "pm_pe_2027_soldado_d07_raciocinio_logico_t08_aula_07",
+      "type": "subtopic",
+      "title": "Conteúdo extraído - Aula 07",
+      "description": "Exige reconciliação com o mapa oficial da PM-PE antes da publicação.",
+      "order": 0,
+      "confidence": 0.25,
+      "traces": []
+    }
+  ]
+}

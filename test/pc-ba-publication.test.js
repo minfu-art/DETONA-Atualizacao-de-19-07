@@ -99,7 +99,7 @@ test('conteúdo estático só é aberto após autorização do backend', async (
 });
 
 test('migration ativa apenas PC BA Investigador por R$ 69,90', async () => {
-  const sql = await readFile(new URL('../supabase/migrations/20260817024500_publish_pc_ba_investigador.sql', import.meta.url), 'utf8');
+  const sql = await readFile(new URL('../supabase/migrations/20260818035915_publish_pc_ba_investigador.sql', import.meta.url), 'utf8');
   assert.match(sql, /'pc_ba_2026'/);
   assert.match(sql, /'Investigador de Polícia Civil'/);
   assert.match(sql, /6990/);

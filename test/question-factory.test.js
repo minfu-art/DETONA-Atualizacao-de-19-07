@@ -168,6 +168,20 @@ test('validador bloqueia id e enunciado já existentes', async () => {
   assert.ok(validateQuestionBatch(bundle, duplicateStatement).errors.some(({ code }) => code === 'STATEMENT_DUPLICATE'));
 });
 
+test('validador aceita mídia local segura e bloqueia referência externa ou traversal', async () => {
+  const { bundlePath } = await fixture();
+  const bundle = await loadBundle(bundlePath);
+  const valid = generatedQuestion('q_with_image', 'Questão acompanhada de figura?');
+  valid.reference_text = 'Considere a figura apresentada antes de responder ao item.';
+  valid.reference_image = 'assets/question-references/figura-001.webp';
+  assert.equal(validateQuestionBatch(bundle, { name: 'with-image', questions: [valid] }).valid, true);
+
+  const external = { ...generatedQuestion('q_external_image', 'Questão com imagem externa?'), reference_image: 'https://example.test/figura.png' };
+  const traversal = { ...generatedQuestion('q_traversal_image', 'Questão com caminho inseguro?'), reference_image: '../figura.png' };
+  assert.ok(validateQuestionBatch(bundle, { name: 'external', questions: [external] }).errors.some(({ code }) => code === 'REFERENCE_IMAGE_INVALID'));
+  assert.ok(validateQuestionBatch(bundle, { name: 'traversal', questions: [traversal] }).errors.some(({ code }) => code === 'REFERENCE_IMAGE_INVALID'));
+});
+
 test('promoção exige QA semântico aprovado', async () => {
   const { root, bundlePath } = await fixture();
   const bundle = await loadBundle(bundlePath);

@@ -1,6 +1,8 @@
 const DATA_VERSION = '2026.08.17.1';
 const PM_AL_DATA_VERSION = '2026.08.31.1';
 const PC_PE_DATA_VERSION = '2026.09.03.2';
+const PM_PE_DATA_VERSION = '2026.09.04.1';
+const PP_PE_DATA_VERSION = '2026.09.04.1';
 
 export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
   pc_ba_2026: Object.freeze({
@@ -58,6 +60,44 @@ export const STATIC_PUBLISHED_PACKAGES = Object.freeze({
       code: 'PC PE',
       name: 'PC PE 2027 — Agente de Polícia',
       role: 'Agente de Polícia',
+      content_status: 'ready',
+      sales_status: 'available',
+      price_cents: 2490,
+      currency: 'BRL',
+      status_label: 'PUBLICADO · BANCO EM EXPANSÃO',
+    }),
+  }),
+  pm_pe_2027: Object.freeze({
+    baseUrl: `data/course-factory/pm-pe-2027-soldado-runtime.json?v=${PM_PE_DATA_VERSION}`,
+    patchUrls: Object.freeze([]),
+    version: PM_PE_DATA_VERSION,
+    contentHash: '94b248fa8923ab59c30662d102ba45d3afa6be6689013cbd83f1494dd7b286f8',
+    expectedQuestionCount: 503,
+    expectedSubtopicCount: 77,
+    salesBlocked: false,
+    metadataOverride: Object.freeze({
+      code: 'PM PE',
+      name: 'PM PE 2027 — Soldado',
+      role: 'Praça/Soldado',
+      content_status: 'ready',
+      sales_status: 'available',
+      price_cents: 2490,
+      currency: 'BRL',
+      status_label: 'PUBLICADO · BANCO EM EXPANSÃO',
+    }),
+  }),
+  pp_pe_2027: Object.freeze({
+    baseUrl: `data/course-factory/pp-pe-2027-policial-penal-runtime.json?v=${PP_PE_DATA_VERSION}`,
+    patchUrls: Object.freeze([]),
+    version: PP_PE_DATA_VERSION,
+    contentHash: '11fd17b759915127b2b843b19482690878911cfd0f4f7e959ba269d92318d5cd',
+    expectedQuestionCount: 444,
+    expectedSubtopicCount: 362,
+    salesBlocked: false,
+    metadataOverride: Object.freeze({
+      code: 'PP PE',
+      name: 'Polícia Penal PE 2027 — Policial Penal',
+      role: 'Policial Penal',
       content_status: 'ready',
       sales_status: 'available',
       price_cents: 2490,
