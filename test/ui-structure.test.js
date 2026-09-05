@@ -135,7 +135,8 @@ test('rotas academicas continuam protegidas e developer e separado antes da jorn
   assert.match(source, /contestContentService\.load\(user\.id, contestId, \{/);
   assert.match(contentService, /allowLegacyFallback = isLocalDevelopment/);
   assert.match(source, /isDeveloperUser\(authenticatedUser\)/);
-  assert.match(source, /redirectForRole\(authenticatedUser\)/);
+  assert.match(source, /redirectForRole\(authenticatedUser,\s*\{/);
+  assert.match(source, /preserveStudentEntry: Boolean\(commercialIntent\)/);
   assert.match(admin, /isDeveloperUser\(authService\.getCurrentUser\(\)\)/);
   assert.doesNotMatch(admin, /getActiveContestId|libraryService\.canAccess|progressRepository/);
 });

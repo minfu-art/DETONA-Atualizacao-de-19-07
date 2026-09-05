@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v160-pe-three-courses-release';
+const CACHE = 'detona-v161-pernambuco-purchase-flow';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -148,7 +148,7 @@ const ASSETS = [
   './js/ui/helpers.js',
   './js/ui/components.js',
   './js/ui/auth.js',
-  './js/ui/auth.js?v=75',
+  './js/ui/auth.js?v=76',
   './js/ui/library.js',
   './js/ui/heroAssets.js',
   './js/ui/enemyAssets.js',

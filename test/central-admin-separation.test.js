@@ -20,6 +20,16 @@ test('roteamento por role separa student e developer', () => {
   ), ADMIN_ENTRY);
   assert.equal(redirects[0], ADMIN_ENTRY);
   assert.equal(redirectForRole(
+    { role: 'developer' },
+    {
+      pathname: '/index.html',
+      search: '?source=detona-site&contestId=pc_pe_2026&action=buy',
+      preserveStudentEntry: true,
+      replace: (target) => redirects.push(target),
+    },
+  ), null);
+  assert.equal(redirects.length, 1);
+  assert.equal(redirectForRole(
     { role: 'student' },
     { pathname: '/admin.html', replace: (target) => redirects.push(target) },
   ), STUDENT_ENTRY);

@@ -17,11 +17,16 @@ export function redirectForRole(user, {
   pathname = globalThis.location?.pathname || '',
   search = globalThis.location?.search || '',
   environment = getAppEnvironment(),
+  preserveStudentEntry = false,
   replace = (target) => globalThis.location?.replace?.(target),
 } = {}) {
   const adminDocument = isAdminDocument(pathname);
   const stagingHomologation = isDeveloperUser(user) && environment === APP_ENVIRONMENTS.STAGING;
-  if (isDeveloperUser(user) && !adminDocument && !isCourseFactoryStudentPreview(search) && !stagingHomologation) {
+  if (isDeveloperUser(user)
+    && !adminDocument
+    && !isCourseFactoryStudentPreview(search)
+    && !stagingHomologation
+    && !preserveStudentEntry) {
     replace(ADMIN_ENTRY);
     return ADMIN_ENTRY;
   }

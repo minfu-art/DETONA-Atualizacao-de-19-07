@@ -124,20 +124,29 @@ test('troca de curso limpa somente contexto transitório', () => {
 });
 
 test('contratos visuais e administrativos da entrada permanecem explícitos', async () => {
-  const [auth, library, model, admin, sw, legal, index] = await Promise.all([
-    source('app/js/ui/auth.js'), source('app/js/ui/library.js'), source('app/js/services/studentEntryModel.js'),
+  const [auth, app, library, model, admin, sw, legal, index] = await Promise.all([
+    source('app/js/ui/auth.js'), source('app/js/app.js'), source('app/js/ui/library.js'), source('app/js/services/studentEntryModel.js'),
     source('app/js/admin/adminMediaScreen.js'), source('app/sw.js'), source('app/legal.html'), source('app/index.html'),
   ]);
   assert.match(auth, /autocomplete="email"/);
   assert.match(auth, /autocomplete = 'current-password'/);
   assert.match(auth, /autocomplete: 'new-password'/);
   assert.match(auth, /Se existir uma conta/);
+  assert.match(auth, /Crie sua conta para continuar a compra/);
+  assert.match(auth, /Compra segura em andamento/);
+  assert.match(auth, /commercialIntent\s*\? AUTH_MODES\.REGISTER/);
+  assert.match(auth, /loginWithGoogle\(\{ redirectTo: globalThis\.location\?\.href \}\)/);
+  const commercialRouting = app.indexOf("if (commercialIntent)");
+  const registerFallback = app.indexOf("if (reason === 'register')");
+  assert.ok(commercialRouting >= 0 && commercialRouting < registerFallback);
+  assert.match(app, /preserveStudentEntry: Boolean\(commercialIntent\)/);
   assert.match(library, /Meus Cursos/);
   assert.match(library, /ADICIONAR CURSOS/);
   assert.doesNotMatch(library, /data-purchase-contest|data-interest-contest/);
   assert.match(model, /Estamos confirmando seu acesso/);
   assert.match(admin, /Arte temática do concurso \(legado\)/);
   assert.match(admin, /tiers-v2/);
+  assert.match(sw, /detona-v161-pernambuco-purchase-flow/);
   assert.match(sw, /student-entry\.css/);
   assert.match(sw, /librarySnapshotRepository/);
   assert.equal((legal.match(/<h1\b/g) || []).length, 1);
