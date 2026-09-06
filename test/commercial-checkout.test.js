@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import {
   assertPurchasableContest,
   checkoutPreference,
+  resolveEmbeddedCheckout,
   resolveReservedCheckout,
   selectCheckoutUrl,
   validateCheckoutRequest,
@@ -204,6 +205,24 @@ test('duas solicitações simultâneas reutilizam um pedido e criam uma preferê
   assert.equal(first.redirectUrl, second.redirectUrl);
   assert.equal(preferenceCount, 1);
   assert.deepEqual(reservedRequestIds.sort(), requestIds);
+});
+
+test('checkout incorporado reutiliza o pedido sem criar preferência no provedor', async () => {
+  let releasedOrderId = '';
+  const result = await resolveEmbeddedCheckout({
+    order: { id: 'order-embedded', status: 'pending', checkout_url: null },
+    preferenceClaimed: true,
+  }, {
+    releaseClaim: async (orderId) => { releasedOrderId = orderId; },
+  });
+
+  assert.deepEqual(result, {
+    id: 'order-embedded',
+    status: 'embedded',
+    preferenceId: null,
+    redirectUrl: null,
+  });
+  assert.equal(releasedOrderId, 'order-embedded');
 });
 
 test('checkout antigo com URL e sem expiração explícita continua sendo reutilizado', async () => {

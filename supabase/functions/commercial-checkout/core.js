@@ -128,3 +128,15 @@ export async function resolveReservedCheckout(reservation, {
     throw error;
   }
 }
+
+export async function resolveEmbeddedCheckout(reservation, { releaseClaim }) {
+  const order = reservation?.order;
+  if (!order?.id || order.status !== 'pending') throw new Error('ORDER_NOT_PENDING');
+  if (reservation.preferenceClaimed) await releaseClaim(order.id);
+  return {
+    id: order.id,
+    status: 'embedded',
+    preferenceId: null,
+    redirectUrl: null,
+  };
+}

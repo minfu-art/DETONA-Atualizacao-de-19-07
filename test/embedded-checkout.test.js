@@ -104,9 +104,10 @@ test('Payment Brick mostra somente cartão e Pix e envia uma cobrança idempoten
 });
 
 test('feature flag mantém redirect como padrão e entitlement continua no webhook', async () => {
-  const [runtime, checkout, payment, webhook, migration, ui] = await Promise.all([
+  const [runtime, checkout, checkoutCore, payment, webhook, migration, ui] = await Promise.all([
     source('app/scripts/generate-runtime-env.mjs'),
     source('supabase/functions/commercial-checkout/index.ts'),
+    source('supabase/functions/commercial-checkout/core.js'),
     source('supabase/functions/commercial-payment/index.ts'),
     source('supabase/functions/commercial-webhook/index.ts'),
     source('supabase/migrations/20260906100000_embedded_checkout_payment_claim.sql'),
@@ -114,7 +115,11 @@ test('feature flag mantém redirect como padrão e entitlement continua no webho
   ]);
   assert.match(runtime, /CHECKOUT_EXPERIENCE \|\| 'redirect'/);
   assert.match(checkout, /body\.experience === 'embedded' && embeddedCheckoutOrigins\.has\(origin\)/);
+  assert.match(checkout, /resolveEmbeddedCheckout/);
+  assert.match(checkoutCore, /redirectUrl: null/);
   assert.match(payment, /embeddedCheckoutOrigins\.has\(origin\)/);
+  assert.match(payment, /MERCADO_PAGO_ACCESS_TOKEN_TEST/);
+  assert.doesNotMatch(payment, /Deno\.env\.get\('MERCADO_PAGO_ACCESS_TOKEN'\)/);
   assert.match(payment, /x-idempotency-key': input\.requestId/);
   assert.doesNotMatch(payment, /apply_verified_commerce_payment/);
   assert.match(webhook, /apply_verified_commerce_payment/);

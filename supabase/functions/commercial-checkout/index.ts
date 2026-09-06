@@ -3,6 +3,7 @@ import { createAllowedOrigins, handleCorsPreflight, isAllowedOrigin, jsonRespons
 import {
   assertPurchasableContest,
   checkoutPreference,
+  resolveEmbeddedCheckout,
   resolveReservedCheckout,
   selectCheckoutUrl,
   validateCheckoutRequest,
@@ -62,6 +63,25 @@ Deno.serve(async (request) => {
       throw reserved.error;
     }
 
+    const releasePreferenceClaim = async (orderId: string) => {
+      await admin.from('commerce_orders').update({
+        preference_claim_token: null,
+        preference_claimed_at: null,
+      }).eq('id', orderId).eq('preference_claim_token', body.requestId);
+    };
+    const embeddedRequested = body.experience === 'embedded' && embeddedCheckoutOrigins.has(origin);
+    if (embeddedRequested) {
+      const checkout = await resolveEmbeddedCheckout(reserved.data, { releaseClaim: releasePreferenceClaim });
+      return respond(200, {
+        checkout: {
+          ...checkout,
+          amountCents: contest.price_cents,
+          currency: contest.currency,
+          payerEmail: auth.user.email || '',
+        },
+      }, origin);
+    }
+
     const checkout = await resolveReservedCheckout(reserved.data, {
       readOrder: async (orderId) => {
         const result = await admin.from('commerce_orders').select('*').eq('id', orderId).single();
@@ -105,26 +125,10 @@ Deno.serve(async (request) => {
         if (saved.error) throw saved.error;
       },
       releaseClaim: async (orderId) => {
-        await admin.from('commerce_orders').update({
-          preference_claim_token: null,
-          preference_claimed_at: null,
-        }).eq('id', orderId).eq('preference_claim_token', body.requestId);
+        await releasePreferenceClaim(orderId);
       },
     });
-    // O app publicado continua recebendo redirect. O modo incorporado só existe
-    // para uma origem de Preview explicitamente autorizada no servidor.
-    const clientCheckout = body.experience === 'embedded' && embeddedCheckoutOrigins.has(origin)
-      ? {
-        id: checkout.id,
-        status: 'embedded',
-        preferenceId: checkout.preferenceId,
-        amountCents: contest.price_cents,
-        currency: contest.currency,
-        payerEmail: auth.user.email || '',
-        redirectUrl: checkout.redirectUrl,
-      }
-      : checkout;
-    return respond(200, { checkout: clientCheckout }, origin);
+    return respond(200, { checkout }, origin);
   } catch (error) {
     const code = error instanceof Error ? error.message : 'CHECKOUT_FAILED';
     const publicCodes = new Set([

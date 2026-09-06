@@ -9,7 +9,9 @@ import {
 const url = Deno.env.get('SUPABASE_URL')!;
 const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
 const serviceRole = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
+// O Checkout Transparente permanece em homologação e usa uma credencial de
+// teste separada. A credencial de produção nunca é usada por esta função.
+const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN_TEST') || '';
 const notificationUrl = Deno.env.get('CHECKOUT_WEBHOOK_URL') || '';
 const allowedOrigins = createAllowedOrigins(Deno.env.get('STUDENT_ALLOWED_ORIGINS'));
 const embeddedCheckoutOrigins = createAllowedOrigins(Deno.env.get('EMBEDDED_CHECKOUT_ALLOWED_ORIGINS'));
