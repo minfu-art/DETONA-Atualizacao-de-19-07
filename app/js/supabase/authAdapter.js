@@ -184,6 +184,45 @@ export class SupabaseAuthAdapter {
     return this.#activate(data.user, profile);
   }
 
+  async requestEmailOtp({ name, email, commercialIntent = null }) {
+    const cleanName = String(name || '').trim();
+    const cleanEmail = normalizeEmail(email);
+    if (cleanName.length < 2) throw new Error('Informe seu nome.');
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) throw new Error('Informe um e-mail válido.');
+
+    const client = await this.#client();
+    const pendingPurchase = commercialIntentMetadata(commercialIntent);
+    const { error } = await client.auth.signInWithOtp({
+      email: cleanEmail,
+      options: {
+        shouldCreateUser: true,
+        data: { name: cleanName, ...(pendingPurchase ? { pending_purchase: pendingPurchase } : {}) },
+      },
+    });
+    if (error) throw new Error('Não foi possível enviar o código agora. Aguarde um minuto e tente novamente.');
+    return { accepted: true, email: cleanEmail };
+  }
+
+  async verifyEmailOtp({ email, token }) {
+    const cleanEmail = normalizeEmail(email);
+    const cleanToken = String(token || '').replace(/\s+/g, '');
+    if (!/^\S+@\S+\.\S+$/.test(cleanEmail)) throw new Error('Informe um e-mail válido.');
+    if (!/^\d{6}$/.test(cleanToken)) throw new Error('Digite os 6 números enviados para o seu e-mail.');
+
+    const client = await this.#client();
+    const { data, error } = await client.auth.verifyOtp({
+      email: cleanEmail,
+      token: cleanToken,
+      type: 'email',
+    });
+    if (error || !data?.user || !data?.session) {
+      throw new Error('Código inválido ou expirado. Confira o e-mail ou solicite um novo código.');
+    }
+
+    const profile = await this.#ensureProfile(data.user);
+    return this.#activate(data.user, profile);
+  }
+
   async loginWithGoogle({ redirectTo } = {}) {
     const target = safeOAuthRedirectUrl(this.getLocation(), redirectTo);
     if (!target) throw new Error('Destino de autenticação inválido.');

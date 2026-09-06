@@ -77,6 +77,25 @@ export class CloudAwareAuthService {
     return user;
   }
 
+  async requestEmailOtp(input) {
+    this.#assertAuthAvailable();
+    if (!this.#useCloud()) {
+      throw new Error('A entrada por código está disponível no ambiente online.');
+    }
+    return this.cloudAuth.requestEmailOtp(input);
+  }
+
+  async verifyEmailOtp(input) {
+    this.#assertAuthAvailable();
+    if (!this.#useCloud()) {
+      throw new Error('A entrada por código está disponível no ambiente online.');
+    }
+    const user = await this.cloudAuth.verifyEmailOtp(input);
+    this.currentUser = user;
+    this.mode = 'cloud';
+    return user;
+  }
+
   isGoogleLoginEnabled() {
     return this.googleEnabled() === true && this.#useCloud();
   }

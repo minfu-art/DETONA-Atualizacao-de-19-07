@@ -76,6 +76,68 @@ test('Supabase solicita recuperação com e-mail normalizado e redirect explíci
   ]]);
 });
 
+test('OTP por e-mail cria ou entra sem senha e preserva a compra pretendida', async () => {
+  const calls = [];
+  const adapter = new SupabaseAuthAdapter({
+    getClient: async () => ({
+      auth: {
+        signInWithOtp: async (payload) => {
+          calls.push(payload);
+          return { error: null };
+        },
+      },
+    }),
+  });
+  const commercialIntent = {
+    source: 'detona-site',
+    contestId: 'pc_pe_2026',
+    courseId: 'pc-pe-2027',
+    salesPage: 'pc-pe-agente-2027',
+    directCheckout: true,
+  };
+
+  assert.deepEqual(await adapter.requestEmailOtp({
+    name: 'Maria Silva',
+    email: ' MARIA@EXEMPLO.COM ',
+    commercialIntent,
+  }), { accepted: true, email: 'maria@exemplo.com' });
+  assert.equal(calls[0].email, 'maria@exemplo.com');
+  assert.equal(calls[0].options.shouldCreateUser, true);
+  assert.equal(calls[0].options.data.name, 'Maria Silva');
+  assert.equal(calls[0].options.data.pending_purchase.contestId, 'pc_pe_2026');
+});
+
+test('OTP válido materializa perfil e ativa a sessão autenticada', async () => {
+  const calls = [];
+  const authUser = { id: 'user-otp', email: 'maria@example.com', user_metadata: { name: 'Maria' } };
+  const adapter = new SupabaseAuthAdapter({
+    getClient: async () => ({
+      auth: {
+        verifyOtp: async (payload) => {
+          calls.push(payload);
+          return { data: { user: authUser, session: { access_token: 'redacted' } }, error: null };
+        },
+      },
+      from: () => ({
+        select: () => ({
+          eq: () => ({
+            maybeSingle: async () => ({ data: { id: 'user-otp', name: 'Maria', email: 'maria@example.com' }, error: null }),
+          }),
+        }),
+      }),
+    }),
+  });
+
+  const user = await adapter.verifyEmailOtp({ email: ' MARIA@EXAMPLE.COM ', token: ' 123456 ' });
+  assert.equal(user.id, 'user-otp');
+  assert.equal(user.cloudAuth, true);
+  assert.deepEqual(calls, [{ email: 'maria@example.com', token: '123456', type: 'email' }]);
+  await assert.rejects(
+    () => adapter.verifyEmailOtp({ email: 'maria@example.com', token: '12345' }),
+    /6 números/,
+  );
+});
+
 test('OAuth Google preserva curso e origem comercial em redirect do mesmo domínio', async () => {
   const calls = [];
   const adapter = new SupabaseAuthAdapter({
@@ -202,6 +264,8 @@ test('serviço híbrido só expõe Google quando provedor e flag pública estão
     cloudAuth: {
       isAvailable: () => true,
       loginWithGoogle: async (input) => { calls.push(['google', input]); return { redirecting: true }; },
+      requestEmailOtp: async (input) => { calls.push(['otp-request', input]); return { accepted: true }; },
+      verifyEmailOtp: async (input) => { calls.push(['otp-verify', input]); return { id: 'otp-user' }; },
       resendSignupConfirmation: async (input) => { calls.push(['resend', input]); return { accepted: true }; },
     },
     cloudEnabled: () => true,
@@ -212,9 +276,13 @@ test('serviço híbrido só expõe Google quando provedor e flag pública estão
 
   assert.equal(service.isGoogleLoginEnabled(), true);
   assert.deepEqual(await service.loginWithGoogle(), { redirecting: true });
+  assert.deepEqual(await service.requestEmailOtp({ email: 'aluno@example.com' }), { accepted: true });
+  assert.deepEqual(await service.verifyEmailOtp({ email: 'aluno@example.com', token: '123456' }), { id: 'otp-user' });
   assert.deepEqual(await service.resendSignupConfirmation({ email: 'aluno@example.com' }), { accepted: true });
   assert.deepEqual(calls, [
     ['google', {}],
+    ['otp-request', { email: 'aluno@example.com' }],
+    ['otp-verify', { email: 'aluno@example.com', token: '123456' }],
     ['resend', { email: 'aluno@example.com' }],
   ]);
 });
@@ -234,6 +302,10 @@ test('interface oferece fluxo completo e acessível sem botão decorativo desabi
   assert.match(ui, /requestPasswordReset/);
   assert.match(ui, /updatePassword/);
   assert.match(ui, /CONTINUAR COM GOOGLE/);
+  assert.match(ui, /RECEBER CÓDIGO NO E-MAIL/);
+  assert.match(ui, /VALIDAR CÓDIGO E CONTINUAR/);
+  assert.match(ui, /autocomplete="one-time-code"/);
+  assert.match(ui, /verifyEmailOtp/);
   assert.match(ui, /JÁ CONFIRMEI — CONTINUAR/);
   assert.match(ui, /REENVIAR E-MAIL/);
   assert.match(ui, /resendSignupConfirmation/);

@@ -2545,6 +2545,24 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .detona-login-card .auth-secondary-action:disabled { opacity:.55; cursor:wait; }
 .auth-confirmation-feedback { margin:0 0 12px; color:#fda4af; font-size:11px; line-height:1.45; text-align:center; }
 .auth-confirmation-feedback.is-success { color:#86efac; }
+.detona-login-card .auth-otp-form { gap:10px; }
+.auth-otp-field label { display:block; margin:0 0 8px; color:#cbd5e1; font-size:11px; font-weight:750; text-align:center; }
+.detona-login-card .auth-otp-field input {
+  width:100%;
+  min-height:64px;
+  padding:10px 14px;
+  border:1px solid rgba(167,139,250,.52);
+  border-radius:13px;
+  background:rgba(3,7,18,.88);
+  color:#fff;
+  font:850 28px/1 var(--display);
+  letter-spacing:.32em;
+  text-align:center;
+  box-shadow:inset 0 1px rgba(255,255,255,.03),0 0 0 3px rgba(124,92,255,.06);
+}
+.detona-login-card .auth-otp-field input::placeholder { color:#59627c; }
+.detona-login-card .auth-otp-field input:focus { border-color:#c4b5fd; box-shadow:0 0 0 3px rgba(124,92,255,.2); }
+.auth-otp-form + .auth-confirmation-actions { margin-top:10px; }
 
 @media (max-width:760px) {
   .app-shell--auth .saas-auth { align-items:start; padding:8px; }
@@ -2568,6 +2586,11 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
   .detona-login-card .input-action button { min-height:42px; }
   .detona-login-card .auth-submit { min-height:50px; }
   .auth-legal { margin-top:11px; }
+  .detona-login-card:has(.auth-purchase-context) .auth-backdrop { height:108px; object-position:25% 19%; }
+  .detona-login-card:has(.auth-purchase-context) .saas-auth__story { height:96px; min-height:96px; padding:14px 18px; background:linear-gradient(90deg,rgba(2,4,11,.08),rgba(3,5,13,.82)); }
+  .detona-login-card:has(.auth-purchase-context) .auth-logo-lockup { top:17px; left:18px; }
+  .detona-login-card:has(.auth-purchase-context) .auth-story-copy { display:none; }
+  .detona-login-card:has(.auth-purchase-context) .saas-auth__panel { padding-top:16px; }
 }
 
 @media (max-height:720px) and (min-width:761px) {

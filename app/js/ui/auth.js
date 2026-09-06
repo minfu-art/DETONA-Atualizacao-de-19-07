@@ -9,6 +9,7 @@ const AUTH_MODES = Object.freeze({
   FORGOT: 'forgot',
   FORGOT_SENT: 'forgot-sent',
   VERIFY_EMAIL: 'verify-email',
+  EMAIL_OTP: 'email-otp',
   RESET: 'reset',
 });
 
@@ -70,6 +71,11 @@ function modeCopy(mode, commercialIntent = null) {
     title: 'Confirme seu e-mail',
     description: 'Enviamos as instruções de confirmação. Depois disso, volte para entrar e abrir sua biblioteca.',
   };
+  if (mode === AUTH_MODES.EMAIL_OTP) return {
+    kicker: 'ÚLTIMA ETAPA DA CONTA',
+    title: 'Digite o código recebido',
+    description: 'Você continua nesta tela e segue direto para a revisão da compra.',
+  };
   if (commercialIntent && mode === AUTH_MODES.LOGIN) return {
     kicker: 'COMPRA SEGURA',
     title: 'Entre para continuar a compra',
@@ -100,6 +106,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
       ? AUTH_MODES.REGISTER
       : AUTH_MODES.LOGIN;
   let draftEmail = '';
+  let draftName = '';
   const links = getStudentEntryLinks();
 
   const draw = ({ message = '', messageType = 'error' } = {}) => {
@@ -107,6 +114,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
     const forgot = mode === AUTH_MODES.FORGOT;
     const forgotSent = mode === AUTH_MODES.FORGOT_SENT;
     const verifyEmail = mode === AUTH_MODES.VERIFY_EMAIL;
+    const emailOtp = mode === AUTH_MODES.EMAIL_OTP;
     const reset = mode === AUTH_MODES.RESET;
     const login = mode === AUTH_MODES.LOGIN;
     const googleEnabled = authService.isGoogleLoginEnabled?.() === true;
@@ -150,14 +158,27 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                   </div>
                 ` : ''}
               </header>
-              ${(forgotSent || verifyEmail) ? `
+              ${(forgotSent || verifyEmail || emailOtp) ? `
                 <div class="auth-sent" role="status">
                   <span aria-hidden="true">${icon('mail', 'ico--control')}</span>
-                  <strong>${verifyEmail ? 'Ative sua conta para continuar' : 'Confira também o spam'}</strong>
-                  <p>${verifyEmail ? `Enviamos para <b>${escapeHtml(draftEmail)}</b>. Confirme em outra aba e volte aqui para continuar no curso escolhido.` : 'Por segurança, não informamos se o endereço está cadastrado.'}</p>
+                  <strong>${emailOtp ? 'Código enviado sem sair do DETONA' : verifyEmail ? 'Ative sua conta para continuar' : 'Confira também o spam'}</strong>
+                  <p>${emailOtp ? `Digite abaixo os 6 números enviados para <b>${escapeHtml(draftEmail)}</b>.` : verifyEmail ? `Enviamos para <b>${escapeHtml(draftEmail)}</b>. Confirme em outra aba e volte aqui para continuar no curso escolhido.` : 'Por segurança, não informamos se o endereço está cadastrado.'}</p>
                 </div>
                 ${message ? `<p class="auth-confirmation-feedback ${messageType === 'success' ? 'is-success' : ''}" role="status" aria-live="polite">${escapeHtml(message)}</p>` : ''}
-                ${verifyEmail ? `
+                ${emailOtp ? `
+                  <form id="auth-otp-form" class="auth-form auth-otp-form">
+                    <div class="field auth-field auth-otp-field">
+                      <label for="auth-otp">Código de acesso</label>
+                      <input id="auth-otp" name="token" type="text" inputmode="numeric" autocomplete="one-time-code" enterkeyhint="done" minlength="6" maxlength="6" pattern="[0-9]{6}" placeholder="000000" aria-describedby="auth-error" required autofocus>
+                    </div>
+                    <p id="auth-error" class="auth-error" role="alert" aria-live="assertive"></p>
+                    <button class="btn btn-primary btn-block auth-submit auth-submit--single" type="submit" aria-busy="false"><strong>VALIDAR CÓDIGO E CONTINUAR</strong></button>
+                  </form>
+                  <div class="auth-confirmation-actions">
+                    <button class="auth-secondary-action" id="auth-otp-resend" type="button">REENVIAR CÓDIGO</button>
+                    <button class="auth-switch" id="auth-change-email" type="button">E-mail errado? <strong>ALTERAR</strong></button>
+                  </div>
+                ` : verifyEmail ? `
                   <div class="auth-confirmation-actions">
                     <button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-confirmed" type="button"><strong>JÁ CONFIRMEI — CONTINUAR</strong></button>
                     <button class="auth-secondary-action" id="auth-resend" type="button">REENVIAR E-MAIL</button>
@@ -173,19 +194,19 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                     </button>
                     <div class="auth-divider" aria-hidden="true"><span>ou continue com e-mail</span></div>
                   ` : ''}
-                  ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" placeholder="Nome completo" required></div></div>` : ''}
+                  ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" value="${escapeHtml(draftName)}" placeholder="Nome completo" required></div></div>` : ''}
                   ${reset ? '' : `<div class="field auth-field"><label class="sr-only" for="auth-email">E-mail</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('mail', 'ico--control')}</span><input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(draftEmail)}" placeholder="E-mail cadastrado" aria-describedby="auth-error" required></div></div>`}
                   ${login ? passwordField() : ''}
-                  ${register ? passwordField({ placeholder: 'Mínimo de 8 caracteres', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' }) : ''}
+                  ${(register && !commercialIntent) ? passwordField({ placeholder: 'Mínimo de 8 caracteres', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' }) : ''}
                   ${reset ? `${passwordField({ placeholder: 'Nova senha', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' })}${passwordField({ id: 'auth-password-confirm', name: 'passwordConfirm', placeholder: 'Confirmar nova senha', autocomplete: 'new-password' })}` : ''}
-                  ${(register || reset) ? passwordRequirement : ''}
+                  ${((register && !commercialIntent) || reset) ? passwordRequirement : ''}
                   ${login ? `<div class="auth-options"><span class="auth-session-note">${icon('check', 'ico--control')} Conexão protegida</span><button type="button" class="auth-forgot" id="auth-forgot">Esqueci minha senha</button></div>` : ''}
                   <p id="auth-error" class="auth-error ${messageType === 'success' ? 'is-success' : ''}" role="alert" aria-live="assertive">${escapeHtml(message)}</p>
-                  <button class="btn btn-primary btn-block auth-submit" type="submit" aria-busy="false"><span aria-hidden="true">${icon('bolt', 'ico--control')}</span><strong>${register ? (commercialIntent ? 'CRIAR CONTA E CONTINUAR' : 'CRIAR CONTA') : forgot ? 'ENVIAR LINK SEGURO' : reset ? 'SALVAR NOVA SENHA' : (commercialIntent ? 'ENTRAR E CONTINUAR' : 'ENTRAR')}</strong><span aria-hidden="true">${icon('bolt', 'ico--control')}</span></button>
+                  <button class="btn btn-primary btn-block auth-submit" type="submit" aria-busy="false"><span aria-hidden="true">${icon('bolt', 'ico--control')}</span><strong>${register ? (commercialIntent ? 'RECEBER CÓDIGO NO E-MAIL' : 'CRIAR CONTA') : forgot ? 'ENVIAR LINK SEGURO' : reset ? 'SALVAR NOVA SENHA' : (commercialIntent ? 'ENTRAR E CONTINUAR' : 'ENTRAR')}</strong><span aria-hidden="true">${icon('bolt', 'ico--control')}</span></button>
                 </form>
                 <button class="auth-switch" id="auth-switch" type="button">${register ? (commercialIntent ? 'Já possui conta? <strong>ENTRAR E CONTINUAR</strong>' : 'Já possui conta? <strong>ENTRAR</strong>') : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : (commercialIntent ? 'Primeira vez aqui? <strong>CRIAR CONTA E CONTINUAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>')}</button>
               `}
-              ${(!(forgotSent || verifyEmail) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
+              ${(!(forgotSent || verifyEmail || emailOtp) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
               <p class="auth-legal">Ao continuar, você concorda com os <a href="${escapeHtml(links.terms)}" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e a <a href="${escapeHtml(links.privacy)}" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
               <a class="auth-support" href="${escapeHtml(links.support)}">Contato e suporte</a>
             </div>
@@ -214,6 +235,31 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
         draw({ message: 'Novo e-mail enviado. Confira também a caixa de spam.', messageType: 'success' });
       } catch (error) {
         draw({ message: error.message || 'Não foi possível reenviar agora.' });
+      }
+    });
+
+    root.querySelector('#auth-otp-resend')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      try {
+        await authService.requestEmailOtp({ name: draftName, email: draftEmail, commercialIntent });
+        draw({ message: 'Novo código enviado. Confira também a caixa de spam.', messageType: 'success' });
+      } catch (error) {
+        draw({ message: error.message || 'Não foi possível reenviar o código agora.' });
+      }
+    });
+
+    root.querySelector('#auth-otp-form')?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = event.currentTarget.querySelector('button[type="submit"]');
+      const token = String(new FormData(event.currentTarget).get('token') || '').replace(/\D/g, '');
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      try {
+        await authService.verifyEmailOtp({ email: draftEmail, token });
+        await onAuthenticated({ reason: 'email-otp' });
+      } catch (error) {
+        draw({ message: error.message || 'Não foi possível validar o código.' });
       }
     });
 
@@ -301,12 +347,19 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
           draw({ message: 'Senha atualizada. Entre novamente com sua nova senha.', messageType: 'success' });
           return;
         }
-        const input = {
+      const input = {
           name: form.get('name'),
           email: draftEmail,
           password: form.get('password'),
           commercialIntent,
         };
+        if (register && commercialIntent) {
+          draftName = String(form.get('name') || '').trim();
+          await authService.requestEmailOtp(input);
+          mode = AUTH_MODES.EMAIL_OTP;
+          draw();
+          return;
+        }
         if (register) await authService.register(input); else await authService.login(input);
         await onAuthenticated({ reason: register ? 'register' : 'login' });
       } catch (error) {
