@@ -30,7 +30,7 @@ export const authService = new CloudAwareAuthService({ localAuth });
 const commercialMode = requiresRemoteBackend();
 const entitlementRepository = commercialMode ? new SupabaseEntitlementRepository() : undefined;
 const remoteCheckoutGateway = ENV.CHECKOUT_PROVIDER === 'mercado_pago'
-  ? new MercadoPagoCheckoutGateway()
+  ? new MercadoPagoCheckoutGateway({ experience: ENV.CHECKOUT_EXPERIENCE })
   : new CheckoutUnavailableGateway();
 const checkout = new CheckoutService({
   gateway: commercialMode ? remoteCheckoutGateway : new LocalDemoCheckoutGateway(),

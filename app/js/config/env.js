@@ -30,6 +30,10 @@ export const ENV = Object.freeze({
     || 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm',
   /** disabled | mercado_pago. Não contém credenciais. */
   CHECKOUT_PROVIDER: String(injected.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase(),
+  /** redirect | embedded. O padrão mantém o Checkout Pro já publicado. */
+  CHECKOUT_EXPERIENCE: String(injected.CHECKOUT_EXPERIENCE || 'redirect').trim().toLowerCase(),
+  /** Chave pública usada pelo SDK oficial; nunca é um Access Token. */
+  MERCADO_PAGO_PUBLIC_KEY: String(injected.MERCADO_PAGO_PUBLIC_KEY || '').trim(),
   /** URL pública de descoberta de cursos; nunca recebe dados da sessão. */
   PUBLIC_COURSES_URL: String(injected.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
 });

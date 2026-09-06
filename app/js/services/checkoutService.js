@@ -58,9 +58,11 @@ export class MercadoPagoCheckoutGateway {
   constructor({
     getClient = getSupabaseClient,
     idFactory = () => globalThis.crypto?.randomUUID?.() || '',
+    experience = 'redirect',
   } = {}) {
     this.getClient = getClient;
     this.idFactory = idFactory;
+    this.experience = experience === 'embedded' ? 'embedded' : 'redirect';
     this.activeCheckouts = new Map();
   }
 
@@ -93,7 +95,7 @@ export class MercadoPagoCheckoutGateway {
   }
 
   capability() {
-    return { configured: true, provider: 'mercado_pago', reason: null };
+    return { configured: true, provider: 'mercado_pago', experience: this.experience, reason: null };
   }
 }
 
@@ -117,6 +119,17 @@ export class CheckoutService {
       const redirect = new URL(purchase.redirectUrl);
       return { ...purchase, redirectUrl: redirect.toString() };
     }
+    if (purchase?.status === 'embedded') {
+      if (!purchase.id || !Number.isInteger(purchase.amountCents) || purchase.amountCents <= 0 || purchase.currency !== 'BRL') {
+        throw new Error('O servidor não retornou uma sessão de pagamento incorporado válida.');
+      }
+      if (purchase.redirectUrl && !isMercadoPagoCheckoutUrl(purchase.redirectUrl)) {
+        throw new Error('O checkout alternativo retornou um destino inválido.');
+      }
+      return purchase.redirectUrl
+        ? { ...purchase, redirectUrl: new URL(purchase.redirectUrl).toString() }
+        : purchase;
+    }
     if (purchase?.status === 'pending') return purchase;
     const demoAllowed = purchase.status === 'demo_completed' && isLocalDevelopment();
     if (purchase.status !== 'paid' && !demoAllowed) throw new Error('Pagamento nao confirmado.');
@@ -129,6 +142,7 @@ export class CheckoutService {
     return Object.freeze({
       configured: value.configured === true,
       provider: value.provider || null,
+      experience: value.experience === 'embedded' ? 'embedded' : 'redirect',
       reason: value.reason || null,
     });
   }

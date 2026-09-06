@@ -15,6 +15,8 @@ const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
 const mode = Deno.env.get('CHECKOUT_MODE') === 'production' ? 'production' : 'test';
 const returnBaseUrl = Deno.env.get('CHECKOUT_RETURN_BASE_URL') || '';
 const notificationUrl = Deno.env.get('CHECKOUT_WEBHOOK_URL') || '';
+const checkoutExperience = Deno.env.get('CHECKOUT_EXPERIENCE') === 'embedded' ? 'embedded' : 'redirect';
+const publicKeyConfigured = Boolean(Deno.env.get('MERCADO_PAGO_PUBLIC_KEY'));
 const allowedOrigins = createAllowedOrigins(Deno.env.get('STUDENT_ALLOWED_ORIGINS'));
 const admin = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
 const respond = (status: number, payload: unknown, origin = '') => jsonResponse(status, payload, origin, allowedOrigins);
@@ -110,7 +112,18 @@ Deno.serve(async (request) => {
         }).eq('id', orderId).eq('preference_claim_token', body.requestId);
       },
     });
-    return respond(200, { checkout }, origin);
+    const clientCheckout = checkoutExperience === 'embedded' && publicKeyConfigured
+      ? {
+        id: checkout.id,
+        status: 'embedded',
+        preferenceId: checkout.preferenceId,
+        amountCents: contest.price_cents,
+        currency: contest.currency,
+        payerEmail: auth.user.email || '',
+        redirectUrl: checkout.redirectUrl,
+      }
+      : checkout;
+    return respond(200, { checkout: clientCheckout }, origin);
   } catch (error) {
     const code = error instanceof Error ? error.message : 'CHECKOUT_FAILED';
     const publicCodes = new Set([

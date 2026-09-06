@@ -57,6 +57,8 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     AUTH_GOOGLE_ENABLED: false,
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
+    CHECKOUT_EXPERIENCE: 'redirect',
+    MERCADO_PAGO_PUBLIC_KEY: '',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
 });
@@ -99,6 +101,8 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     AUTH_GOOGLE_ENABLED: false,
     SUPABASE_JS_URL: '',
     CHECKOUT_PROVIDER: 'disabled',
+    CHECKOUT_EXPERIENCE: 'redirect',
+    MERCADO_PAGO_PUBLIC_KEY: '',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
   assert.doesNotMatch(result.stdout, new RegExp(fakePublicKey));
@@ -116,6 +120,8 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     SUPABASE_ANON_KEY: '',
     AUTH_GOOGLE_ENABLED: false,
     CHECKOUT_PROVIDER: 'disabled',
+    CHECKOUT_EXPERIENCE: 'redirect',
+    MERCADO_PAGO_PUBLIC_KEY: '',
     PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
   });
 });

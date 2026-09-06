@@ -28,6 +28,7 @@ import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { navigateToCheckout } from './services/checkoutNavigation.js';
+import { mercadoPagoEmbeddedCheckout } from './services/mercadoPagoEmbeddedCheckout.js';
 import {
   readCheckoutReturn,
   readCommercialIntent,
@@ -396,6 +397,7 @@ function bindHabitReminderRuntime() {
 }
 
 async function navigate(screen, options = {}) {
+  if (ctx.screen === 'library' && screen !== 'library') await mercadoPagoEmbeddedCheckout.unmount();
   if (ctx.screen === 'battle' && screen !== 'battle' && ctx.battleFinalizing) return;
   if (ctx.screen === 'battle'
     && screen !== 'battle'
@@ -552,11 +554,14 @@ function clearCheckoutReturnUrl() {
 
 async function purchaseAndRedirect(user, contestId, { checkoutWindow = null } = {}) {
   const purchase = await libraryService.purchase(user, contestId);
+  if (purchase?.status === 'embedded') return purchase;
   if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
   navigateToCheckout(purchase.redirectUrl, { target: checkoutWindow });
+  return purchase;
 }
 
 async function showLibrary({ libraryState = null, refresh = false } = {}) {
+  await mercadoPagoEmbeddedCheckout.unmount();
   const generation = ++contestOpenGeneration;
   const activeContestId = getActiveContestId();
   clearActiveContestContent();
@@ -589,6 +594,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       activeContestId,
       commerceReturn,
       commercialIntent,
+      checkoutExperience: state.checkout?.experience || 'redirect',
       offline: state.offline,
       links: getStudentEntryLinks(),
       onOpen: (contestId) => openContest(contestId, {
@@ -596,6 +602,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
       onPurchase: (contestId, navigation) => purchaseAndRedirect(user, contestId, navigation),
+      onEmbeddedCheckout: (options) => mercadoPagoEmbeddedCheckout.mount(options),
       onLogout: logout,
       embedded: true,
     });

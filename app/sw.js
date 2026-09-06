@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v162-mobile-browser-checkout';
+const CACHE = 'detona-v163-embedded-checkout-preview';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -109,6 +109,7 @@ const ASSETS = [
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
   './js/services/checkoutNavigation.js',
+  './js/services/mercadoPagoEmbeddedCheckout.js',
   './js/services/libraryService.js',
   './js/services/homologationCourseService.js',
   './js/services/studentEntryLinks.js',

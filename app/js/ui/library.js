@@ -177,16 +177,19 @@ function acquisitionFeatures() {
     </article>`).join('');
 }
 
-function paymentTrustBlock({ compact = false } = {}) {
+function paymentTrustBlock({ compact = false, experience = 'redirect' } = {}) {
+  const embedded = experience === 'embedded';
   return `
     <div class="acquisition-payment-trust ${compact ? 'acquisition-payment-trust--compact' : ''}" aria-label="Segurança do pagamento">
       <div class="acquisition-payment-trust__brand">
         <img src="assets/brands/mercado-pago-logo-footer-official.svg" alt="Mercado Pago" loading="lazy" decoding="async">
       </div>
       <strong>${icon('lock', 'ico--inline')} Pagamento seguro processado pelo Mercado Pago</strong>
-      <p>Você será redirecionado para pagar. O DETONA não recebe os dados do seu cartão.</p>
+      <p>${embedded
+        ? 'Você paga nesta página. Os dados sensíveis do cartão são protegidos pelo Mercado Pago e não passam pelo DETONA.'
+        : 'Você será redirecionado para pagar. O DETONA não recebe os dados do seu cartão.'}</p>
       <div class="acquisition-payment-trust__proofs">
-        <span>${icon('checkCircle', 'ico--inline')} Retorno automático ao DETONA</span>
+        <span>${icon('checkCircle', 'ico--inline')} ${embedded ? 'Liberação automática após confirmação' : 'Retorno automático ao DETONA'}</span>
         <span>${icon('shield', 'ico--inline')} 7 dias de garantia pelo DETONA</span>
       </div>
     </div>`;
@@ -210,7 +213,30 @@ function checkoutReturnCard(notice, { preview = false } = {}) {
     </section>`;
 }
 
-function commercialIntentCard(resolution, links = {}, { preview = false, offerHidden = false } = {}) {
+function embeddedPaymentPanel(contest) {
+  return `
+    <section class="embedded-payment" data-embedded-payment hidden aria-labelledby="embedded-payment-title">
+      <header class="embedded-payment__header">
+        <div><span class="library-kicker">PAGAMENTO DENTRO DO DETONA</span><h2 id="embedded-payment-title">Finalize sem sair desta página.</h2><p>Escolha Pix ou cartão no ambiente seguro do Mercado Pago.</p></div>
+        <strong>${escapeHtml(formatCanonicalPrice(contest) || '')}</strong>
+      </header>
+      <div class="embedded-payment__body">
+        <div id="detona-payment-brick" class="embedded-payment__brick" aria-live="polite"></div>
+        <p class="embedded-payment__status" data-embedded-payment-status role="status" aria-live="polite">Carregando as formas de pagamento...</p>
+        <div class="embedded-payment__result" data-embedded-payment-result hidden>
+          <img data-pix-qr alt="QR Code Pix" hidden>
+          <div><strong data-payment-result-title></strong><p data-payment-result-copy></p><code data-pix-code tabindex="0" hidden></code></div>
+          <div class="embedded-payment__result-actions">
+            <button type="button" data-copy-pix hidden>COPIAR CÓDIGO PIX</button>
+            <button type="button" data-refresh-access>ATUALIZAR LIBERAÇÃO</button>
+          </div>
+        </div>
+        <a class="embedded-payment__fallback" data-checkout-fallback hidden target="_blank" rel="noopener noreferrer">Usar o checkout alternativo do Mercado Pago</a>
+      </div>
+    </section>`;
+}
+
+function commercialIntentCard(resolution, links = {}, { preview = false, offerHidden = false, checkoutExperience = 'redirect' } = {}) {
   if (!resolution) return '';
   const fallback = links.courses
     ? `<a href="${escapeHtml(links.courses)}" target="_blank" rel="noopener noreferrer">Voltar aos cursos</a>`
@@ -250,7 +276,7 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
             <li>${icon('check', 'ico--inline')} Acesso liberado após confirmação</li>
             <li>${icon('shieldCheck', 'ico--inline')} 7 dias de garantia pelo DETONA</li>
           </ul>
-          ${paymentTrustBlock({ compact: true })}
+          ${paymentTrustBlock({ compact: true, experience: checkoutExperience })}
           ${actionable
             ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">CONTINUAR PARA O PAGAMENTO SEGURO <span aria-hidden="true">→</span></button>`
             : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
@@ -272,6 +298,7 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
         </ol>
       </div>
     </section>
+    ${checkoutExperience === 'embedded' ? embeddedPaymentPanel(contest) : ''}
     </div>`;
 }
 
@@ -283,12 +310,14 @@ export function renderLibrary(root, {
   commerceStatus = null,
   commercialIntent = null,
   checkoutPreview = false,
+  checkoutExperience = 'redirect',
   offline = false,
   validating = false,
   links = {},
   onOpen,
   onRefreshAccess = async () => {},
   onPurchase = async () => {},
+  onEmbeddedCheckout = async () => {},
   onConfirmedPurchase = async () => {},
   onLogout,
   embedded = false,
@@ -316,7 +345,7 @@ export function renderLibrary(root, {
       ${validating ? `<aside class="library-network-state" role="status" aria-live="polite"><div><strong>Atualizando seus acessos...</strong><span>Você já pode visualizar a Biblioteca enquanto concluímos a validação segura.</span></div></aside>` : ''}
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${checkoutReturnCard(notice, { preview: checkoutPreview })}
-      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode })}
+      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode, checkoutExperience })}
       ${acquisitionMode ? '' : activeJourneyVisible ? continueJourney(activeJourney) : ''}
       ${acquisitionMode ? '' : activeJourneyVisible ? journeyFeatureOverview(activeJourney) : ''}
       ${acquisitionMode ? '' : owned.length ? (ownedOrdered.length ? `
@@ -387,13 +416,58 @@ export function renderLibrary(root, {
     checkoutAttempts.add(contestId);
     // Reserva a aba durante o gesto do usuário. Depois da chamada assíncrona,
     // navegadores móveis poderiam bloquear a abertura ou entregá-la ao app do provedor.
-    const checkoutWindow = reserveCheckoutBrowserWindow();
+    const embeddedCheckout = checkoutExperience === 'embedded';
+    const checkoutWindow = embeddedCheckout ? null : reserveCheckoutBrowserWindow();
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
     button.textContent = 'PREPARANDO AMBIENTE SEGURO...';
     if (feedback) feedback.textContent = 'Criando ou recuperando uma única sessão de checkout.';
     try {
-      await onPurchase(contestId, { checkoutWindow });
+      const purchase = await onPurchase(contestId, { checkoutWindow });
+      if (purchase?.status !== 'embedded') return;
+      const panel = root.querySelector('[data-embedded-payment]');
+      const container = root.querySelector('#detona-payment-brick');
+      const status = root.querySelector('[data-embedded-payment-status]');
+      const fallback = root.querySelector('[data-checkout-fallback]');
+      if (!panel || !container) throw new Error('A área de pagamento não foi carregada.');
+      panel.hidden = false;
+      if (purchase.redirectUrl && fallback) fallback.href = purchase.redirectUrl;
+      panel.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+      const showFailure = (error, context = {}) => {
+        if (status) status.textContent = error?.message || 'Não foi possível carregar o pagamento nesta página.';
+        if (context.stage === 'initialization' && fallback?.href) fallback.hidden = false;
+      };
+      await onEmbeddedCheckout({
+        containerId: container.id,
+        checkout: purchase,
+        contestId,
+        onReady: () => { if (status) status.textContent = 'Ambiente seguro pronto. Escolha Pix ou cartão.'; },
+        onError: showFailure,
+        onPayment: (payment) => {
+          const result = root.querySelector('[data-embedded-payment-result]');
+          const title = root.querySelector('[data-payment-result-title]');
+          const copy = root.querySelector('[data-payment-result-copy]');
+          const qr = root.querySelector('[data-pix-qr]');
+          const pixCode = root.querySelector('[data-pix-code]');
+          const copyButton = root.querySelector('[data-copy-pix]');
+          if (result) result.hidden = false;
+          if (status) status.textContent = '';
+          const isPix = payment?.paymentMethodId === 'pix' && payment?.pix?.code;
+          if (title) title.textContent = payment?.status === 'approved' ? 'Pagamento aprovado.' : isPix ? 'Pix criado com segurança.' : 'Pagamento recebido.';
+          if (copy) copy.textContent = payment?.status === 'approved'
+            ? 'Estamos confirmando a liberação do curso na sua conta.'
+            : isPix ? 'Pague pelo QR Code ou copie o código. O acesso será liberado após a confirmação.' : 'A confirmação pode levar alguns instantes.';
+          if (isPix && pixCode && copyButton) {
+            pixCode.textContent = payment.pix.code;
+            pixCode.hidden = false;
+            copyButton.hidden = false;
+          }
+          if (isPix && payment.pix.qrCodeBase64 && qr && /^[A-Za-z0-9+/=]+$/.test(payment.pix.qrCodeBase64)) {
+            qr.src = `data:image/png;base64,${payment.pix.qrCodeBase64}`;
+            qr.hidden = false;
+          }
+        },
+      });
     } catch (error) {
       closeReservedCheckoutWindow(checkoutWindow);
       checkoutAttempts.delete(contestId);
@@ -401,6 +475,16 @@ export function renderLibrary(root, {
       button.setAttribute('aria-busy', 'false');
       button.textContent = 'CONTINUAR PARA O PAGAMENTO SEGURO →';
       if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar o pagamento.';
+    }
+  });
+  root.querySelector('[data-copy-pix]')?.addEventListener('click', async (event) => {
+    const code = root.querySelector('[data-pix-code]')?.textContent || '';
+    if (!code) return;
+    try {
+      await globalThis.navigator?.clipboard?.writeText(code);
+      event.currentTarget.textContent = 'CÓDIGO COPIADO';
+    } catch {
+      root.querySelector('[data-pix-code]')?.focus?.();
     }
   });
   root.querySelector('[data-return-offer]')?.addEventListener('click', () => showCommercialPanel('offer'));

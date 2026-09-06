@@ -90,14 +90,24 @@ export async function resolveReservedCheckout(reservation, {
   let order = reservation?.order;
   if (!order?.id || order.status !== 'pending') throw new Error('ORDER_NOT_PENDING');
   if (order.checkout_url) {
-    return { id: order.id, status: 'redirect', redirectUrl: order.checkout_url };
+    return {
+      id: order.id,
+      status: 'redirect',
+      redirectUrl: order.checkout_url,
+      preferenceId: order.provider_preference_id || null,
+    };
   }
   if (!reservation.preferenceClaimed) {
     for (let attempt = 0; attempt < pollAttempts; attempt += 1) {
       await wait(pollIntervalMs);
       order = await readOrder(order.id);
       if (order?.checkout_url) {
-        return { id: order.id, status: 'redirect', redirectUrl: order.checkout_url };
+        return {
+          id: order.id,
+          status: 'redirect',
+          redirectUrl: order.checkout_url,
+          preferenceId: order.provider_preference_id || null,
+        };
       }
       if (order?.status !== 'pending') throw new Error('ORDER_NOT_PENDING');
     }
@@ -106,7 +116,12 @@ export async function resolveReservedCheckout(reservation, {
   try {
     const preference = await createPreference(order);
     await savePreference(order.id, preference);
-    return { id: order.id, status: 'redirect', redirectUrl: preference.redirectUrl };
+    return {
+      id: order.id,
+      status: 'redirect',
+      redirectUrl: preference.redirectUrl,
+      preferenceId: preference.id,
+    };
   } catch (error) {
     await releaseClaim(order.id);
     throw error;
