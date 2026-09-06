@@ -8,6 +8,10 @@ import {
   resolveCheckoutReturn,
   resolveCommercialIntent,
 } from '../services/studentEntryModel.js';
+import {
+  closeReservedCheckoutWindow,
+  reserveCheckoutBrowserWindow,
+} from '../services/checkoutNavigation.js';
 
 const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singular : multiple}`;
 const safePercent = (value) => Math.max(0, Math.min(100, Number(value) || 0));
@@ -381,13 +385,17 @@ export function renderLibrary(root, {
       return;
     }
     checkoutAttempts.add(contestId);
+    // Reserva a aba durante o gesto do usuário. Depois da chamada assíncrona,
+    // navegadores móveis poderiam bloquear a abertura ou entregá-la ao app do provedor.
+    const checkoutWindow = reserveCheckoutBrowserWindow();
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
     button.textContent = 'PREPARANDO AMBIENTE SEGURO...';
     if (feedback) feedback.textContent = 'Criando ou recuperando uma única sessão de checkout.';
     try {
-      await onPurchase(contestId);
+      await onPurchase(contestId, { checkoutWindow });
     } catch (error) {
+      closeReservedCheckoutWindow(checkoutWindow);
       checkoutAttempts.delete(contestId);
       button.disabled = false;
       button.setAttribute('aria-busy', 'false');

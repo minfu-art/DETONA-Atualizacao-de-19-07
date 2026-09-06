@@ -22,9 +22,10 @@ test('antessala usa dados canônicos de qualquer curso e não contém oferta fix
   assert.doesNotMatch(ui, /Confirme sua Jornada PC AL|R\$ 69,99|pc_al_2026/);
 });
 
-test('entrada comercial nunca abre o Mercado Pago automaticamente', async () => {
-  const app = await source('app/js/app.js');
-  assert.match(app, /onPurchase: \(contestId\) => purchaseAndRedirect\(user, contestId\)/);
+test('entrada comercial só reserva o navegador após o clique do comprador', async () => {
+  const [app, ui] = await Promise.all([source('app/js/app.js'), source('app/js/ui/library.js')]);
+  assert.match(app, /onPurchase: \(contestId, navigation\) => purchaseAndRedirect\(user, contestId, navigation\)/);
+  assert.match(ui, /reserveCheckoutBrowserWindow\(\)/);
   assert.doesNotMatch(app, /directCheckoutContestId/);
   assert.doesNotMatch(app, /ABRINDO PAGAMENTO/);
 });

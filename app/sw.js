@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v161-pernambuco-purchase-flow';
+const CACHE = 'detona-v162-mobile-browser-checkout';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -108,6 +108,7 @@ const ASSETS = [
   './js/services/legacyDataMigrationService.js',
   './js/services/contestDataMigrationService.js',
   './js/services/checkoutService.js',
+  './js/services/checkoutNavigation.js',
   './js/services/libraryService.js',
   './js/services/homologationCourseService.js',
   './js/services/studentEntryLinks.js',

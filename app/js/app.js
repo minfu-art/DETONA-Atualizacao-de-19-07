@@ -27,6 +27,7 @@ import { progressRepository } from './repositories/progressRepository.js';
 import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js';
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
+import { navigateToCheckout } from './services/checkoutNavigation.js';
 import {
   readCheckoutReturn,
   readCommercialIntent,
@@ -549,10 +550,10 @@ function clearCheckoutReturnUrl() {
   globalThis.history.replaceState(globalThis.history.state || {}, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
-async function purchaseAndRedirect(user, contestId) {
+async function purchaseAndRedirect(user, contestId, { checkoutWindow = null } = {}) {
   const purchase = await libraryService.purchase(user, contestId);
   if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
-  globalThis.location.assign(purchase.redirectUrl);
+  navigateToCheckout(purchase.redirectUrl, { target: checkoutWindow });
 }
 
 async function showLibrary({ libraryState = null, refresh = false } = {}) {
@@ -594,7 +595,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
         contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null,
       }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
-      onPurchase: (contestId) => purchaseAndRedirect(user, contestId),
+      onPurchase: (contestId, navigation) => purchaseAndRedirect(user, contestId, navigation),
       onLogout: logout,
       embedded: true,
     });
