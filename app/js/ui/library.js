@@ -213,15 +213,21 @@ function checkoutReturnCard(notice, { preview = false } = {}) {
     </section>`;
 }
 
-function embeddedPaymentPanel(contest) {
+function embeddedPaymentPanel(contest, { directCheckout = false } = {}) {
   return `
-    <section class="embedded-payment" data-embedded-payment hidden aria-labelledby="embedded-payment-title">
+    <section class="embedded-payment ${directCheckout ? 'embedded-payment--direct' : ''}" data-embedded-payment ${directCheckout ? '' : 'hidden'} aria-labelledby="embedded-payment-title">
       <header class="embedded-payment__header">
-        <div><span class="library-kicker">PAGAMENTO DENTRO DO DETONA</span><h2 id="embedded-payment-title">Finalize sem sair desta página.</h2><p>Escolha Pix ou cartão no ambiente seguro do Mercado Pago.</p></div>
+        <div><span class="library-kicker">ÚLTIMA ETAPA · AMBIENTE SEGURO</span><h2 id="embedded-payment-title">Finalize seu acesso.</h2><p>Escolha Pix ou cartão sem sair do DETONA.</p></div>
         <strong>${escapeHtml(formatCanonicalPrice(contest) || '')}</strong>
       </header>
       <div class="embedded-payment__body">
-        <div id="detona-payment-brick" class="embedded-payment__brick" aria-live="polite"></div>
+        <div class="embedded-payment__terminal">
+          <div class="embedded-payment__terminal-bar">
+            <span>${icon('lock', 'ico--inline')} PAGAMENTO PROTEGIDO</span>
+            <img src="assets/brands/mercado-pago-logo-footer-official.svg" alt="Mercado Pago" loading="eager" decoding="async">
+          </div>
+          <div id="detona-payment-brick" class="embedded-payment__brick" aria-live="polite"></div>
+        </div>
         <p class="embedded-payment__status" data-embedded-payment-status role="status" aria-live="polite">Carregando as formas de pagamento...</p>
         <div class="embedded-payment__result" data-embedded-payment-result hidden>
           <img data-pix-qr alt="QR Code Pix" hidden>
@@ -236,7 +242,12 @@ function embeddedPaymentPanel(contest) {
     </section>`;
 }
 
-function commercialIntentCard(resolution, links = {}, { preview = false, offerHidden = false, checkoutExperience = 'redirect' } = {}) {
+function commercialIntentCard(resolution, links = {}, {
+  preview = false,
+  offerHidden = false,
+  checkoutExperience = 'redirect',
+  directCheckout = false,
+} = {}) {
   if (!resolution) return '';
   const fallback = links.courses
     ? `<a href="${escapeHtml(links.courses)}" target="_blank" rel="noopener noreferrer">Voltar aos cursos</a>`
@@ -253,37 +264,39 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
   const preorder = contest.salesStatus === 'preorder';
   const metrics = acquisitionMetrics(contest);
   return `
-    <div data-acquisition-offer ${offerHidden ? 'hidden' : ''}>
-    <section class="commercial-intent ${actionable ? 'commercial-intent--ready' : 'commercial-intent--unavailable'}" ${contestTheme(contest)} aria-labelledby="commercial-intent-title">
+    <div class="${directCheckout ? 'acquisition-offer--checkout' : ''}" data-acquisition-offer ${offerHidden ? 'hidden' : ''}>
+    <section class="commercial-intent ${directCheckout ? 'commercial-intent--checkout' : ''} ${actionable ? 'commercial-intent--ready' : 'commercial-intent--unavailable'}" ${contestTheme(contest)} aria-labelledby="commercial-intent-title">
       <div class="acquisition-hero">
-        <div class="commercial-intent__art">
+        ${directCheckout ? '' : `<div class="commercial-intent__art">
           ${courseArt(contest, { eager: true })}
           <span class="acquisition-art__badge">JORNADA DETONA</span>
-        </div>
+        </div>`}
         <div class="commercial-intent__content">
-          <span class="library-kicker">${preorder ? 'PRÉ-VENDA SELECIONADA' : 'CURSO SELECIONADO'}</span>
+          <span class="library-kicker">${directCheckout ? 'RESUMO DO PEDIDO' : preorder ? 'PRÉ-VENDA SELECIONADA' : 'CURSO SELECIONADO'}</span>
           <p class="acquisition-code">${escapeHtml(contest.code)}</p>
           <h2 id="commercial-intent-title">${escapeHtml(contest.name)}</h2>
           <p class="acquisition-role">${escapeHtml(contest.role || 'Preparação completa')}</p>
-          <p class="acquisition-description">${escapeHtml(contest.description || 'Uma jornada de preparação organizada pelo edital.')}</p>
-          ${metrics ? `<div class="acquisition-metrics" aria-label="Dados do curso">${metrics}</div>` : ''}
+          ${directCheckout ? '' : `<p class="acquisition-description">${escapeHtml(contest.description || 'Uma jornada de preparação organizada pelo edital.')}</p>
+          ${metrics ? `<div class="acquisition-metrics" aria-label="Dados do curso">${metrics}</div>` : ''}`}
         </div>
         <aside class="commercial-intent__action" aria-label="Aquisição do curso">
-          <span>${preorder ? 'RESERVA DA JORNADA' : 'ACESSO AO CURSO'}</span>
+          <span>${directCheckout ? 'TOTAL DO PEDIDO' : preorder ? 'RESERVA DA JORNADA' : 'ACESSO AO CURSO'}</span>
           ${price ? `<strong class="commercial-intent__price">${escapeHtml(price)}</strong><small>pagamento único</small>` : ''}
           <ul>
             <li>${icon('check', 'ico--inline')} Curso vinculado à sua conta</li>
             <li>${icon('check', 'ico--inline')} Acesso liberado após confirmação</li>
             <li>${icon('shieldCheck', 'ico--inline')} 7 dias de garantia pelo DETONA</li>
           </ul>
-          ${paymentTrustBlock({ compact: true, experience: checkoutExperience })}
+          ${directCheckout
+            ? `<div class="checkout-secure-line"><img src="assets/brands/mercado-pago-logo-footer-official.svg" alt="Mercado Pago" loading="eager" decoding="async"><span>${icon('lock', 'ico--inline')} ambiente protegido</span></div>`
+            : paymentTrustBlock({ compact: true, experience: checkoutExperience })}
           ${actionable
             ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">CONTINUAR PARA O PAGAMENTO SEGURO <span aria-hidden="true">→</span></button>`
             : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
           <p class="library-action-feedback" data-commercial-feedback role="status" aria-live="polite"></p>
         </aside>
       </div>
-      <div class="acquisition-value" aria-labelledby="acquisition-value-title">
+      ${directCheckout ? '' : `<div class="acquisition-value" aria-labelledby="acquisition-value-title">
         <div class="acquisition-section-heading"><span class="library-kicker">MOTOR DE PREPARAÇÃO</span><h2 id="acquisition-value-title">Tudo trabalha junto para levar você até a prova.</h2><p>Não é apenas um banco de questões. É um sistema que organiza estudo, prática, revisão e tomada de decisão.</p></div>
         <div class="acquisition-feature-grid">${acquisitionFeatures()}</div>
       </div>
@@ -296,9 +309,9 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
           <li><strong>04</strong><span>Revise no momento certo</span></li>
           <li><strong>05</strong><span>Meça e ajuste a estratégia</span></li>
         </ol>
-      </div>
+      </div>`}
     </section>
-    ${checkoutExperience === 'embedded' ? embeddedPaymentPanel(contest) : ''}
+    ${checkoutExperience === 'embedded' ? embeddedPaymentPanel(contest, { directCheckout }) : ''}
     </div>`;
 }
 
@@ -331,21 +344,22 @@ export function renderLibrary(root, {
   const notice = resolveCheckoutReturn(commerceReturn, items, commerceStatus);
   const intentResolution = resolveCommercialIntent(commercialIntent, items);
   const acquisitionMode = Boolean(intentResolution?.item && intentResolution.state !== 'owned');
+  const directCheckoutMode = Boolean(acquisitionMode && commercialIntent?.directCheckout);
   const returnMode = Boolean(notice);
   const openingContests = new Set();
   const checkoutAttempts = new Set();
 
   root.innerHTML = `
-    <div class="library-page student-library student-library--private ${acquisitionMode ? 'student-library--acquisition' : ''} ${embedded ? 'library-page--embedded' : ''}">
+    <div class="library-page student-library student-library--private ${acquisitionMode ? 'student-library--acquisition' : ''} ${directCheckoutMode ? 'student-library--checkout-direct' : ''} ${embedded ? 'library-page--embedded' : ''}">
       ${embedded ? '' : `<header class="library-header"><div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div><div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div></header>`}
       <header class="private-library-header ${acquisitionMode ? 'private-library-header--acquisition' : ''}">
-        <div><span class="library-kicker">${acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'ÁREA PRIVADA'}</span><h1 id="library-title">${acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'}</h1><p>${acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : 'Suas jornadas de preparação.'}</p></div>
+        <div><span class="library-kicker">${directCheckoutMode ? 'COMPRA SEGURA' : acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'ÁREA PRIVADA'}</span><h1 id="library-title">${directCheckoutMode ? 'FINALIZE SUA COMPRA' : acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'}</h1><p>${directCheckoutMode ? 'Revise o pedido e escolha como pagar.' : acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : 'Suas jornadas de preparação.'}</p></div>
         ${publicCoursesAction({ href: links.courses, offline, label: acquisitionMode ? 'VER OUTROS CURSOS' : '+ ADICIONAR CURSOS' })}
       </header>
       ${validating ? `<aside class="library-network-state" role="status" aria-live="polite"><div><strong>Atualizando seus acessos...</strong><span>Você já pode visualizar a Biblioteca enquanto concluímos a validação segura.</span></div></aside>` : ''}
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${checkoutReturnCard(notice, { preview: checkoutPreview })}
-      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode, checkoutExperience })}
+      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode, checkoutExperience, directCheckout: directCheckoutMode })}
       ${acquisitionMode ? '' : activeJourneyVisible ? continueJourney(activeJourney) : ''}
       ${acquisitionMode ? '' : activeJourneyVisible ? journeyFeatureOverview(activeJourney) : ''}
       ${acquisitionMode ? '' : owned.length ? (ownedOrdered.length ? `
@@ -441,7 +455,13 @@ export function renderLibrary(root, {
         containerId: container.id,
         checkout: purchase,
         contestId,
-        onReady: () => { if (status) status.textContent = 'Ambiente seguro pronto. Escolha Pix ou cartão.'; },
+        onReady: () => {
+          if (status) status.textContent = 'Ambiente seguro pronto. Escolha Pix ou cartão.';
+          if (directCheckoutMode) {
+            button.hidden = true;
+            if (feedback) feedback.textContent = '';
+          }
+        },
         onError: showFailure,
         onPayment: (payment) => {
           const result = root.querySelector('[data-embedded-payment-result]');
@@ -477,6 +497,10 @@ export function renderLibrary(root, {
       if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar o pagamento.';
     }
   });
+  const directCheckoutButton = root.querySelector('[data-commercial-intent]');
+  if (directCheckoutMode && !returnMode && checkoutExperience === 'embedded' && directCheckoutButton && !checkoutPreview) {
+    Promise.resolve().then(() => directCheckoutButton.click());
+  }
   root.querySelector('[data-copy-pix]')?.addEventListener('click', async (event) => {
     const code = root.querySelector('[data-pix-code]')?.textContent || '';
     if (!code) return;

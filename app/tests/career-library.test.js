@@ -169,7 +169,11 @@ test('interface privada remove descoberta e mantém responsividade e acessibilid
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
+  assert.match(ui, /directCheckoutMode \? 'FINALIZE SUA COMPRA'/);
   assert.match(ui, /acquisitionMode \? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'/);
+  assert.match(ui, /directCheckout \? '' : `<div class="commercial-intent__art"/);
+  assert.match(ui, /directCheckout \? '' : `<div class="acquisition-value"/);
+  assert.match(ui, /directCheckoutMode && !returnMode && checkoutExperience === 'embedded'/);
   assert.match(ui, /\+ ADICIONAR CURSOS/);
   assert.match(ui, /rel="noopener noreferrer"/);
   assert.doesNotMatch(ui, /Pesquisar concurso|Explore por área|data-career-filter|data-interest-contest/);
