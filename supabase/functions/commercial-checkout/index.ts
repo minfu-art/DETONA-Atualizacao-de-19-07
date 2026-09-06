@@ -15,9 +15,8 @@ const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
 const mode = Deno.env.get('CHECKOUT_MODE') === 'production' ? 'production' : 'test';
 const returnBaseUrl = Deno.env.get('CHECKOUT_RETURN_BASE_URL') || '';
 const notificationUrl = Deno.env.get('CHECKOUT_WEBHOOK_URL') || '';
-const checkoutExperience = Deno.env.get('CHECKOUT_EXPERIENCE') === 'embedded' ? 'embedded' : 'redirect';
-const publicKeyConfigured = Boolean(Deno.env.get('MERCADO_PAGO_PUBLIC_KEY'));
 const allowedOrigins = createAllowedOrigins(Deno.env.get('STUDENT_ALLOWED_ORIGINS'));
+const embeddedCheckoutOrigins = createAllowedOrigins(Deno.env.get('EMBEDDED_CHECKOUT_ALLOWED_ORIGINS'));
 const admin = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
 const respond = (status: number, payload: unknown, origin = '') => jsonResponse(status, payload, origin, allowedOrigins);
 
@@ -112,7 +111,9 @@ Deno.serve(async (request) => {
         }).eq('id', orderId).eq('preference_claim_token', body.requestId);
       },
     });
-    const clientCheckout = checkoutExperience === 'embedded' && publicKeyConfigured
+    // O app publicado continua recebendo redirect. O modo incorporado só existe
+    // para uma origem de Preview explicitamente autorizada no servidor.
+    const clientCheckout = body.experience === 'embedded' && embeddedCheckoutOrigins.has(origin)
       ? {
         id: checkout.id,
         status: 'embedded',

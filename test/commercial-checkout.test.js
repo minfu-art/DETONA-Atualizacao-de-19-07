@@ -28,7 +28,7 @@ test('checkout valida entrada e deriva preço exclusivamente do concurso', () =>
   const input = validateCheckoutRequest({
     contestId: 'pc_al_2026', requestId: '11111111-1111-4111-8111-111111111111', amountCents: 1,
   });
-  assert.deepEqual(input, { contestId: 'pc_al_2026', requestId: '11111111-1111-4111-8111-111111111111' });
+  assert.deepEqual(input, { contestId: 'pc_al_2026', requestId: '11111111-1111-4111-8111-111111111111', experience: 'redirect' });
   assert.throws(() => assertPurchasableContest({ content_status: 'ready', sales_status: 'available', price_cents: 0, currency: 'BRL' }), /PRICE/);
 });
 

@@ -106,7 +106,7 @@ test('gateway remoto envia somente concurso e idempotência e não concede acess
   const result = await gateway.checkout({ userId: 'ignored', contest: { id: 'curso-a', priceCents: 1 } });
   assert.equal(request.name, 'commercial-checkout');
   assert.deepEqual(request.options.body, {
-    contestId: 'curso-a', requestId: '11111111-1111-4111-8111-111111111111',
+    contestId: 'curso-a', requestId: '11111111-1111-4111-8111-111111111111', experience: 'redirect',
   });
   assert.equal(result.status, 'redirect');
   assert.equal(gateway.capability().provider, 'mercado_pago');

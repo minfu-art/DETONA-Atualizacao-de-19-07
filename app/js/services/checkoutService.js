@@ -84,7 +84,7 @@ export class MercadoPagoCheckoutGateway {
     const requestId = this.idFactory();
     if (!requestId) throw new Error('Não foi possível criar uma solicitação segura de compra.');
     const { data, error } = await client.functions.invoke('commercial-checkout', {
-      body: { contestId: contest.id, requestId },
+      body: { contestId: contest.id, requestId, experience: this.experience },
     });
     if (error) throw new Error('Não foi possível iniciar o pagamento. Tente novamente.');
     if (data?.error) throw new Error(data.error === 'ALREADY_ENTITLED'

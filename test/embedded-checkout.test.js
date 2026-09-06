@@ -113,7 +113,8 @@ test('feature flag mantém redirect como padrão e entitlement continua no webho
     source('app/js/ui/library.js'),
   ]);
   assert.match(runtime, /CHECKOUT_EXPERIENCE \|\| 'redirect'/);
-  assert.match(checkout, /checkoutExperience === 'embedded' && publicKeyConfigured/);
+  assert.match(checkout, /body\.experience === 'embedded' && embeddedCheckoutOrigins\.has\(origin\)/);
+  assert.match(payment, /embeddedCheckoutOrigins\.has\(origin\)/);
   assert.match(payment, /x-idempotency-key': input\.requestId/);
   assert.doesNotMatch(payment, /apply_verified_commerce_payment/);
   assert.match(webhook, /apply_verified_commerce_payment/);

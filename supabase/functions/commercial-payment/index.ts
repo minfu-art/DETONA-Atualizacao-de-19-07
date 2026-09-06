@@ -11,8 +11,8 @@ const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
 const serviceRole = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const accessToken = Deno.env.get('MERCADO_PAGO_ACCESS_TOKEN') || '';
 const notificationUrl = Deno.env.get('CHECKOUT_WEBHOOK_URL') || '';
-const checkoutExperience = Deno.env.get('CHECKOUT_EXPERIENCE') === 'embedded' ? 'embedded' : 'redirect';
 const allowedOrigins = createAllowedOrigins(Deno.env.get('STUDENT_ALLOWED_ORIGINS'));
+const embeddedCheckoutOrigins = createAllowedOrigins(Deno.env.get('EMBEDDED_CHECKOUT_ALLOWED_ORIGINS'));
 const admin = createClient(url, serviceRole, { auth: { persistSession: false, autoRefreshToken: false } });
 const respond = (status: number, payload: unknown, origin = '') => jsonResponse(status, payload, origin, allowedOrigins);
 
@@ -35,7 +35,7 @@ Deno.serve(async (request) => {
   try {
     if (!isAllowedOrigin(origin, allowedOrigins)) return respond(403, { error: 'ORIGIN_NOT_ALLOWED' });
     if (request.method !== 'POST') return respond(405, { error: 'METHOD_NOT_ALLOWED' }, origin);
-    if (checkoutExperience !== 'embedded' || !accessToken || !notificationUrl) {
+    if (!embeddedCheckoutOrigins.has(origin) || !accessToken || !notificationUrl) {
       return respond(503, { error: 'EMBEDDED_CHECKOUT_NOT_CONFIGURED' }, origin);
     }
     const authorization = request.headers.get('authorization') || '';

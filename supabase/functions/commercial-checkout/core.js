@@ -11,7 +11,8 @@ export function validateCheckoutRequest(value) {
   const requestId = String(value.requestId || '').trim();
   if (!CONTEST_ID.test(contestId)) throw new Error('INVALID_CONTEST');
   if (!REQUEST_ID.test(requestId)) throw new Error('INVALID_REQUEST_ID');
-  return { contestId, requestId };
+  const experience = value.experience === 'embedded' ? 'embedded' : 'redirect';
+  return { contestId, requestId, experience };
 }
 
 export function assertPurchasableContest(contest) {
