@@ -37,7 +37,7 @@ const values = {
   CHECKOUT_PROVIDER: checkoutProvider,
   CHECKOUT_EXPERIENCE: checkoutExperience,
   MERCADO_PAGO_PUBLIC_KEY: mercadoPagoPublicKey,
-  PUBLIC_COURSES_URL: String(process.env.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
+  PUBLIC_COURSES_URL: String(process.env.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/cursos/').trim(),
 };
 const output = `/* Gerado no build; não adicionar segredos. */\nglobalThis.__DETONA_ENV__ = Object.freeze(${JSON.stringify(values, null, 2)});\n`;
 writeFileSync(resolve(import.meta.dirname, '../env.runtime.js'), output, 'utf8');

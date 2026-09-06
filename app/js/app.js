@@ -30,8 +30,9 @@ import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { navigateToCheckout } from './services/checkoutNavigation.js';
 import { mercadoPagoEmbeddedCheckout } from './services/mercadoPagoEmbeddedCheckout.js';
 import {
+  clearRememberedCommercialIntent,
   readCheckoutReturn,
-  readCommercialIntent,
+  resolveCommercialEntryIntent,
 } from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
@@ -539,7 +540,7 @@ function showAuth() {
     renderAuth(root, {
       authService,
       onAuthenticated: initializeAuthenticatedApp,
-      commercialIntent: readCommercialIntent(globalThis.location?.search || ''),
+      commercialIntent: resolveCommercialEntryIntent(globalThis.location?.search || ''),
     });
   }
 }
@@ -587,7 +588,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
     const state = libraryState || await libraryService.getLibraryState(user, { refresh });
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
-    const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
+    const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
     renderLibrary(root, {
       user,
       items: state.items,
@@ -786,6 +787,7 @@ async function logout() {
   onlineFlushBinding?.cancelPending();
   resetHabitReminderRuntime();
   await authService.logout();
+  clearRememberedCommercialIntent();
   clearActiveContestId();
   clearActiveContestContent();
   resetAcademicSessionContext(ctx);
@@ -799,7 +801,7 @@ ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitRemi
 async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
   const coursePreview = isCourseFactoryStudentPreview();
-  const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
+  const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
   if (isDeveloperUser(authenticatedUser) && !coursePreview) {
     const redirect = redirectForRole(authenticatedUser, {
       preserveStudentEntry: Boolean(commercialIntent),
@@ -836,6 +838,7 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
     }
     const intended = libraryState.items.find(({ contest }) => contest.id === commercialIntent.contestId);
     if (intended?.owned && intended.contest.contentStatus === 'ready') {
+      clearRememberedCommercialIntent();
       await openContest(intended.contest.id, { contestHint: intended.contest });
       return;
     }

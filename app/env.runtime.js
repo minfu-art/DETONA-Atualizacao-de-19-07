@@ -10,5 +10,5 @@ globalThis.__DETONA_ENV__ = Object.freeze({
   CHECKOUT_PROVIDER: 'disabled',
   CHECKOUT_EXPERIENCE: 'redirect',
   MERCADO_PAGO_PUBLIC_KEY: '',
-  PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+  PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos/',
 });

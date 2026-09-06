@@ -5,8 +5,12 @@ import {
   checkoutActionFor,
   directCheckoutContestId,
   formatCanonicalPrice,
+  clearRememberedCommercialIntent,
   readCommercialIntent,
+  readRememberedCommercialIntent,
   readCheckoutReturn,
+  rememberCommercialIntent,
+  resolveCommercialEntryIntent,
   resolveCommercialIntent,
   resolveCheckoutReturn,
 } from '../js/services/studentEntryModel.js';
@@ -26,6 +30,24 @@ test('commercial intent accepts only safe source and identifiers', () => {
   });
   assert.equal(readCommercialIntent('?source=outro&contestId=pc_al_2026'), null);
   assert.equal(readCommercialIntent('?source=detona-site&contestId=../../admin'), null);
+});
+
+test('intenção de compra sobrevive ao retorno do e-mail e expira com segurança', () => {
+  const values = new Map();
+  const storage = {
+    getItem: (key) => values.get(key) || null,
+    setItem: (key, value) => values.set(key, value),
+    removeItem: (key) => values.delete(key),
+  };
+  const startedAt = Date.UTC(2026, 8, 6, 12);
+  const intent = readCommercialIntent('?source=detona-site&contestId=pc_pe_2026&courseId=pc-pe-2027&action=buy');
+  rememberCommercialIntent(intent, storage, startedAt);
+  assert.deepEqual(readRememberedCommercialIntent(storage, startedAt + 60_000), intent);
+  assert.deepEqual(resolveCommercialEntryIntent('?code=email-confirmation', storage, startedAt + 60_000), intent);
+  assert.equal(readRememberedCommercialIntent(storage, startedAt + (49 * 60 * 60 * 1000)), null);
+  rememberCommercialIntent(intent, storage, startedAt);
+  clearRememberedCommercialIntent(storage);
+  assert.equal(readRememberedCommercialIntent(storage, startedAt), null);
 });
 
 test('handoff de compra direta elimina a confirmação duplicada sem contornar o catálogo', () => {

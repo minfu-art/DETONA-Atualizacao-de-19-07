@@ -35,5 +35,5 @@ export const ENV = Object.freeze({
   /** Chave pública usada pelo SDK oficial; nunca é um Access Token. */
   MERCADO_PAGO_PUBLIC_KEY: String(injected.MERCADO_PAGO_PUBLIC_KEY || '').trim(),
   /** URL pública de descoberta de cursos; nunca recebe dados da sessão. */
-  PUBLIC_COURSES_URL: String(injected.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
+  PUBLIC_COURSES_URL: String(injected.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/cursos/').trim(),
 });

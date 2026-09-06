@@ -140,13 +140,15 @@ test('contratos visuais e administrativos da entrada permanecem explícitos', as
   const registerFallback = app.indexOf("if (reason === 'register')");
   assert.ok(commercialRouting >= 0 && commercialRouting < registerFallback);
   assert.match(app, /preserveStudentEntry: Boolean\(commercialIntent\)/);
+  assert.match(app, /resolveCommercialEntryIntent\(globalThis\.location\?\.search \|\| ''\)/);
+  assert.match(app, /clearRememberedCommercialIntent\(\)/);
   assert.match(library, /Meus Cursos/);
   assert.match(library, /ADICIONAR CURSOS/);
   assert.doesNotMatch(library, /data-purchase-contest|data-interest-contest/);
   assert.match(model, /Estamos confirmando seu acesso/);
   assert.match(admin, /Arte temática do concurso \(legado\)/);
   assert.match(admin, /tiers-v2/);
-  assert.match(sw, /detona-v163-embedded-checkout-preview/);
+  assert.match(sw, /detona-v165-purchase-resume-preview/);
   assert.match(sw, /student-entry\.css/);
   assert.match(sw, /librarySnapshotRepository/);
   assert.equal((legal.match(/<h1\b/g) || []).length, 1);

@@ -59,7 +59,7 @@ test('desenvolvimento continua seguro com modo local permitido', () => {
     CHECKOUT_PROVIDER: 'disabled',
     CHECKOUT_EXPERIENCE: 'redirect',
     MERCADO_PAGO_PUBLIC_KEY: '',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos/',
   });
 });
 
@@ -103,7 +103,7 @@ test('staging gera runtime híbrido somente com valores públicos fictícios', (
     CHECKOUT_PROVIDER: 'disabled',
     CHECKOUT_EXPERIENCE: 'redirect',
     MERCADO_PAGO_PUBLIC_KEY: '',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos/',
   });
   assert.doesNotMatch(result.stdout, new RegExp(fakePublicKey));
   assert.doesNotMatch(result.runtime, /service_role/i);
@@ -122,7 +122,7 @@ test('valores fictícios de teste não permanecem no runtime versionado', () => 
     CHECKOUT_PROVIDER: 'disabled',
     CHECKOUT_EXPERIENCE: 'redirect',
     MERCADO_PAGO_PUBLIC_KEY: '',
-    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/',
+    PUBLIC_COURSES_URL: 'https://detonaconcursos.com/cursos/',
   });
 });
 

@@ -1,21 +1,69 @@
 const CHECKOUT_RETURN_VALUES = new Set(['success', 'cancelled']);
 const COMMERCIAL_SOURCE = 'detona-site';
 const SAFE_CONTEST_ID = /^[a-z0-9][a-z0-9_-]{1,79}$/;
+const PENDING_COMMERCIAL_INTENT_KEY = 'detona.pending-commercial-intent.v1';
+const PENDING_COMMERCIAL_INTENT_TTL_MS = 48 * 60 * 60 * 1000;
 
-export function readCommercialIntent(search = '') {
-  const params = search instanceof URLSearchParams ? search : new URLSearchParams(String(search || ''));
-  if (params.get('source') !== COMMERCIAL_SOURCE) return null;
-  const contestId = String(params.get('contestId') || '').trim();
+function normalizeCommercialIntent(value) {
+  if (!value || value.source !== COMMERCIAL_SOURCE) return null;
+  const contestId = String(value.contestId || '').trim();
   if (!SAFE_CONTEST_ID.test(contestId)) return null;
-  const courseId = String(params.get('courseId') || '').trim();
-  const salesPage = String(params.get('salesPage') || '').trim();
+  const courseId = String(value.courseId || '').trim();
+  const salesPage = String(value.salesPage || '').trim();
   return Object.freeze({
     source: COMMERCIAL_SOURCE,
     contestId,
     courseId: SAFE_CONTEST_ID.test(courseId) ? courseId : null,
     salesPage: SAFE_CONTEST_ID.test(salesPage) ? salesPage : null,
+    directCheckout: value.directCheckout === true,
+  });
+}
+
+export function readCommercialIntent(search = '') {
+  const params = search instanceof URLSearchParams ? search : new URLSearchParams(String(search || ''));
+  return normalizeCommercialIntent({
+    source: params.get('source'),
+    contestId: params.get('contestId'),
+    courseId: params.get('courseId'),
+    salesPage: params.get('salesPage'),
     directCheckout: params.get('action') === 'buy',
   });
+}
+
+export function rememberCommercialIntent(intent, storage = globalThis.localStorage, now = Date.now()) {
+  const safe = normalizeCommercialIntent(intent);
+  if (!safe || !storage?.setItem) return safe;
+  try {
+    storage.setItem(PENDING_COMMERCIAL_INTENT_KEY, JSON.stringify({ ...safe, savedAt: Number(now) }));
+  } catch { /* navegação continua mesmo se o armazenamento estiver indisponível */ }
+  return safe;
+}
+
+export function readRememberedCommercialIntent(storage = globalThis.localStorage, now = Date.now()) {
+  if (!storage?.getItem) return null;
+  try {
+    const saved = JSON.parse(storage.getItem(PENDING_COMMERCIAL_INTENT_KEY) || 'null');
+    const savedAt = Number(saved?.savedAt);
+    if (!Number.isFinite(savedAt) || Number(now) - savedAt > PENDING_COMMERCIAL_INTENT_TTL_MS) {
+      storage.removeItem?.(PENDING_COMMERCIAL_INTENT_KEY);
+      return null;
+    }
+    return normalizeCommercialIntent(saved);
+  } catch {
+    storage.removeItem?.(PENDING_COMMERCIAL_INTENT_KEY);
+    return null;
+  }
+}
+
+export function resolveCommercialEntryIntent(search = '', storage = globalThis.localStorage, now = Date.now()) {
+  const explicit = readCommercialIntent(search);
+  return explicit
+    ? rememberCommercialIntent(explicit, storage, now)
+    : readRememberedCommercialIntent(storage, now);
+}
+
+export function clearRememberedCommercialIntent(storage = globalThis.localStorage) {
+  try { storage?.removeItem?.(PENDING_COMMERCIAL_INTENT_KEY); } catch { /* noop */ }
 }
 
 export function resolveCommercialIntent(intent, items = []) {
