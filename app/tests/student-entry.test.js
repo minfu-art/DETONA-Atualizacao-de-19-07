@@ -3,10 +3,12 @@ import assert from 'node:assert/strict';
 
 import {
   checkoutActionFor,
+  commercialIntentMetadata,
   directCheckoutContestId,
   formatCanonicalPrice,
   clearRememberedCommercialIntent,
   readCommercialIntent,
+  readCommercialIntentMetadata,
   readRememberedCommercialIntent,
   readCheckoutReturn,
   rememberCommercialIntent,
@@ -44,6 +46,9 @@ test('intenção de compra sobrevive ao retorno do e-mail e expira com seguranç
   rememberCommercialIntent(intent, storage, startedAt);
   assert.deepEqual(readRememberedCommercialIntent(storage, startedAt + 60_000), intent);
   assert.deepEqual(resolveCommercialEntryIntent('?code=email-confirmation', storage, startedAt + 60_000), intent);
+  const metadata = commercialIntentMetadata(intent, startedAt);
+  assert.deepEqual(readCommercialIntentMetadata(metadata, startedAt + 60_000), intent);
+  assert.equal(readCommercialIntentMetadata(metadata, startedAt + (49 * 60 * 60 * 1000)), null);
   assert.equal(readRememberedCommercialIntent(storage, startedAt + (49 * 60 * 60 * 1000)), null);
   rememberCommercialIntent(intent, storage, startedAt);
   clearRememberedCommercialIntent(storage);

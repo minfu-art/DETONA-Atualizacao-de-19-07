@@ -9,6 +9,7 @@ import { getSupabaseClient } from './client.js';
 import { isCloudEnabled } from '../config/cloudConfig.js';
 import { clearActiveUserId, setActiveUserId } from '../auth/activeUser.js';
 import { USER_ROLES } from '../auth/authService.js';
+import { commercialIntentMetadata, readCommercialIntentMetadata } from '../services/studentEntryModel.js';
 
 const DEFAULT_MODULES = ['pc_al_2026'];
 const DEFAULT_PREFERENCES = { theme: 'dark', soundEnabled: true };
@@ -77,6 +78,7 @@ function mapProfileToUser(profile, authUser) {
     role: profile?.role === USER_ROLES.DEVELOPER ? USER_ROLES.DEVELOPER : USER_ROLES.STUDENT,
     cloudAuth: true,
     localAuthDemo: false,
+    pendingCommercialIntent: readCommercialIntentMetadata(authUser.user_metadata?.pending_purchase),
   };
 }
 
@@ -129,7 +131,7 @@ export class SupabaseAuthAdapter {
     return user;
   }
 
-  async register({ name, email, password }) {
+  async register({ name, email, password, commercialIntent = null }) {
     const cleanName = String(name || '').trim();
     const cleanEmail = normalizeEmail(email);
     const cleanPassword = String(password || '');
@@ -142,11 +144,12 @@ export class SupabaseAuthAdapter {
 
     const client = await this.#client();
     const emailRedirectTo = emailConfirmationRedirectUrl(this.getLocation());
+    const pendingPurchase = commercialIntentMetadata(commercialIntent);
     const { data, error } = await client.auth.signUp({
       email: cleanEmail,
       password: cleanPassword,
       options: {
-        data: { name: cleanName },
+        data: { name: cleanName, ...(pendingPurchase ? { pending_purchase: pendingPurchase } : {}) },
         ...(emailRedirectTo ? { emailRedirectTo } : {}),
       },
     });

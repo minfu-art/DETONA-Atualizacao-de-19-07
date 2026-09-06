@@ -32,6 +32,7 @@ import { mercadoPagoEmbeddedCheckout } from './services/mercadoPagoEmbeddedCheck
 import {
   clearRememberedCommercialIntent,
   readCheckoutReturn,
+  rememberCommercialIntent,
   resolveCommercialEntryIntent,
 } from './services/studentEntryModel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
@@ -801,7 +802,8 @@ ctx.clearHabitReminderRuntime = () => resetHabitReminderRuntime(currentHabitRemi
 async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const authenticatedUser = authService.getCurrentUser();
   const coursePreview = isCourseFactoryStudentPreview();
-  const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
+  const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '')
+    || rememberCommercialIntent(authenticatedUser?.pendingCommercialIntent);
   if (isDeveloperUser(authenticatedUser) && !coursePreview) {
     const redirect = redirectForRole(authenticatedUser, {
       preserveStudentEntry: Boolean(commercialIntent),

@@ -301,7 +301,12 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
           draw({ message: 'Senha atualizada. Entre novamente com sua nova senha.', messageType: 'success' });
           return;
         }
-        const input = { name: form.get('name'), email: draftEmail, password: form.get('password') };
+        const input = {
+          name: form.get('name'),
+          email: draftEmail,
+          password: form.get('password'),
+          commercialIntent,
+        };
         if (register) await authService.register(input); else await authService.login(input);
         await onAuthenticated({ reason: register ? 'register' : 'login' });
       } catch (error) {

@@ -31,24 +31,36 @@ export function readCommercialIntent(search = '') {
 }
 
 export function rememberCommercialIntent(intent, storage = globalThis.localStorage, now = Date.now()) {
-  const safe = normalizeCommercialIntent(intent);
+  const metadata = commercialIntentMetadata(intent, now);
+  const safe = readCommercialIntentMetadata(metadata, now);
   if (!safe || !storage?.setItem) return safe;
   try {
-    storage.setItem(PENDING_COMMERCIAL_INTENT_KEY, JSON.stringify({ ...safe, savedAt: Number(now) }));
+    storage.setItem(PENDING_COMMERCIAL_INTENT_KEY, JSON.stringify(metadata));
   } catch { /* navegação continua mesmo se o armazenamento estiver indisponível */ }
   return safe;
+}
+
+export function commercialIntentMetadata(intent, now = Date.now()) {
+  const safe = normalizeCommercialIntent(intent);
+  return safe ? Object.freeze({ ...safe, savedAt: Number(now) }) : null;
+}
+
+export function readCommercialIntentMetadata(metadata, now = Date.now()) {
+  const savedAt = Number(metadata?.savedAt);
+  if (!Number.isFinite(savedAt) || Number(now) - savedAt > PENDING_COMMERCIAL_INTENT_TTL_MS) return null;
+  return normalizeCommercialIntent(metadata);
 }
 
 export function readRememberedCommercialIntent(storage = globalThis.localStorage, now = Date.now()) {
   if (!storage?.getItem) return null;
   try {
     const saved = JSON.parse(storage.getItem(PENDING_COMMERCIAL_INTENT_KEY) || 'null');
-    const savedAt = Number(saved?.savedAt);
-    if (!Number.isFinite(savedAt) || Number(now) - savedAt > PENDING_COMMERCIAL_INTENT_TTL_MS) {
+    const intent = readCommercialIntentMetadata(saved, now);
+    if (!intent) {
       storage.removeItem?.(PENDING_COMMERCIAL_INTENT_KEY);
       return null;
     }
-    return normalizeCommercialIntent(saved);
+    return intent;
   } catch {
     storage.removeItem?.(PENDING_COMMERCIAL_INTENT_KEY);
     return null;
