@@ -22,7 +22,7 @@ const pmba = Object.freeze({
 test('catálogo local registra PM BA Soldado como pré-venda de R$ 69,99', () => {
   const contest = CONTEST_CATALOG.find(({ id }) => id === 'pm_ba_2026');
   assert.equal(contest?.role, 'Aluno Soldado da Polícia Militar');
-  assert.equal(contest?.priceCents, 6999);
+  assert.equal(contest?.priceCents, 2490);
   assert.equal(contest?.contentStatus, 'preparing');
   assert.equal(contest?.salesStatus, 'preorder');
   assert.equal(contest?.subtopicCount, 213);

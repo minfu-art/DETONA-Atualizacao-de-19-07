@@ -1,4 +1,5 @@
 import { escapeHtml, formatDate } from './helpers.js';
+import { CHECKOUT_ARTWORK } from '../contest/checkoutArtwork.js';
 import { progressBar } from './components.js';
 import { icon } from './icons.js';
 import { selectActiveJourney } from '../services/careerLibraryService.js';
@@ -229,11 +230,7 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
   return `
     <div data-acquisition-offer ${offerHidden ? 'hidden' : ''}>
     <section class="commercial-intent ${actionable ? 'commercial-intent--ready' : 'commercial-intent--unavailable'}" ${contestTheme(contest)} aria-labelledby="commercial-intent-title">
-      <div class="acquisition-hero">
-        <div class="commercial-intent__art">
-          ${courseArt(contest, { eager: true })}
-          <span class="acquisition-art__badge">JORNADA DETONA</span>
-        </div>
+      <div class="acquisition-hero acquisition-hero--compact" ${CHECKOUT_ARTWORK[contest.id] ? `style="--checkout-art:url('${escapeHtml(new URL('../../' + CHECKOUT_ARTWORK[contest.id], import.meta.url).href)}')"` : ''}>
         <div class="commercial-intent__content">
           <span class="library-kicker">${preorder ? 'PRÉ-VENDA SELECIONADA' : 'CURSO SELECIONADO'}</span>
           <p class="acquisition-code">${escapeHtml(contest.code)}</p>
@@ -251,6 +248,7 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
             <li>${icon('shieldCheck', 'ico--inline')} 7 dias de garantia pelo DETONA</li>
           </ul>
           ${paymentTrustBlock({ compact: true })}
+          <p class="checkout-redirect-guide">Você será direcionado ao Mercado Pago para finalizar sua compra. Prefere pagar pelo navegador? Se aparecer o aviso para abrir outro aplicativo com as opções “Voltar” e “Continuar”, toque em <strong>“Voltar”</strong>.</p>
           ${actionable
             ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">CONTINUAR PARA O PAGAMENTO SEGURO <span aria-hidden="true">→</span></button>`
             : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
@@ -258,18 +256,11 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
         </aside>
       </div>
       <div class="acquisition-value" aria-labelledby="acquisition-value-title">
-        <div class="acquisition-section-heading"><span class="library-kicker">MOTOR DE PREPARAÇÃO</span><h2 id="acquisition-value-title">Tudo trabalha junto para levar você até a prova.</h2><p>Não é apenas um banco de questões. É um sistema que organiza estudo, prática, revisão e tomada de decisão.</p></div>
-        <div class="acquisition-feature-grid">${acquisitionFeatures()}</div>
-      </div>
-      <div class="acquisition-flow" aria-label="Ciclo de preparação DETONA">
-        <span class="acquisition-flow__label">SEU CICLO DE PREPARAÇÃO</span>
-        <ol>
-          <li><strong>01</strong><span>Entenda o edital</span></li>
-          <li><strong>02</strong><span>Estude por missões</span></li>
-          <li><strong>03</strong><span>Pratique questões</span></li>
-          <li><strong>04</strong><span>Revise no momento certo</span></li>
-          <li><strong>05</strong><span>Meça e ajuste a estratégia</span></li>
-        </ol>
+        <h2 id="acquisition-value-title">Seu sonho pode ser grande. O preço para começar não precisa ser.</h2>
+        <picture class="acquisition-price-manifesto">
+          <source media="(max-width: 600px)" srcset="assets/manifesto-price-mobile.webp">
+          <img src="assets/manifesto-price-desktop.webp" alt="O valor do DETONA é simbólico: não queremos que o preço seja a barreira entre alguém e o seu sonho." loading="lazy" decoding="async">
+        </picture>
       </div>
     </section>
     </div>`;
