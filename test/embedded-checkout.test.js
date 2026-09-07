@@ -126,3 +126,31 @@ test('feature flag mantém redirect como padrão e entitlement continua no webho
   assert.match(migration, /revoke all on function public\.claim_commerce_payment_attempt[\s\S]*from public, anon, authenticated/);
   assert.match(ui, /embeddedCheckout \? null : reserveCheckoutBrowserWindow\(\)/);
 });
+
+test('Pix completa documento e preserva idempotência quando a resposta é incerta', async () => {
+  let settings;
+  const attempts = [];
+  const responses = [
+    { error: 'INVALID_PAYER_IDENTIFICATION' },
+    { error: 'PAYMENT_STATUS_UNKNOWN' },
+    { error: 'PAYMENT_STATUS_UNKNOWN' },
+  ];
+  let sequence = 0;
+  const service = new MercadoPagoEmbeddedCheckout({
+    publicKey: 'TEST-key', experience: 'embedded', storage: null,
+    idFactory: () => `attempt-${++sequence}`,
+    mercadoPagoFactory: class { bricks() { return { create: async (_a, _b, value) => { settings = value; return {}; } }; } },
+    getClient: async () => ({ functions: { invoke: async (_name, { body }) => {
+      attempts.push(body);
+      return { data: null, error: { context: new Response(JSON.stringify(responses.shift()), { status: 400 }) } };
+    } } }),
+  });
+  await service.mount({ containerId: 'payment', checkout: { id: orderId, amountCents: 2490 }, contestId: 'pc_pe_2026', getPayerIdentification: () => '123.456.789-00' });
+  const submit = () => settings.callbacks.onSubmit({ selectedPaymentMethod: 'bank_transfer', formData: { payment_method_id: 'pix', payer: {} } });
+  await assert.rejects(submit, /Confira o CPF/);
+  await assert.rejects(submit);
+  await assert.rejects(submit);
+  assert.deepEqual(attempts[0].formData.payer.identification, { type: 'CPF', number: '12345678900' });
+  assert.notEqual(attempts[0].requestId, attempts[1].requestId);
+  assert.equal(attempts[1].requestId, attempts[2].requestId);
+});

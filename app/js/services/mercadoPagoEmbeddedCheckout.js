@@ -87,12 +87,18 @@ export class MercadoPagoEmbeddedCheckout {
     if (error || data?.error || !data?.payment) {
       // Erros determinísticos permitem uma nova tentativa. Em falha de rede, a
       // mesma chave é preservada para o provedor nunca interpretar como nova cobrança.
-      if (!error && data?.error) {
+      let errorCode = data?.error;
+      if (!errorCode && error?.context?.clone) {
+        try { errorCode = (await error.context.clone().json())?.error; }
+        catch { /* Falhas de transporte preservam a tentativa. */ }
+      }
+      const safeRetry = new Set(['INVALID_PAYER_IDENTIFICATION', 'INVALID_PAYMENT_DATA', 'INVALID_PAYMENT_METHOD', 'INVALID_CARD_TOKEN', 'INVALID_INSTALLMENTS', 'PAYMENT_METHOD_NOT_ALLOWED']);
+      if (safeRetry.has(errorCode)) {
         this.storage?.removeItem?.(storageKey);
         this.requestId = '';
       }
-      const failure = new Error(paymentError(data?.error));
-      failure.code = data?.error || 'PAYMENT_FAILED';
+      const failure = new Error(paymentError(errorCode));
+      failure.code = errorCode || 'PAYMENT_FAILED';
       throw failure;
     }
     this.storage?.removeItem?.(storageKey);
@@ -100,7 +106,7 @@ export class MercadoPagoEmbeddedCheckout {
     return data.payment;
   }
 
-  async mount({ containerId, checkout, contestId, onReady = () => {}, onPayment = () => {}, onError = () => {} }) {
+  async mount({ containerId, checkout, contestId, getPayerIdentification = () => '', onReady = () => {}, onPayment = () => {}, onError = () => {} }) {
     if (!this.configured()) throw new Error('O pagamento nesta página ainda não está configurado.');
     await this.unmount();
     this.requestId = '';
@@ -126,6 +132,15 @@ export class MercadoPagoEmbeddedCheckout {
           onReady,
           onSubmit: async ({ selectedPaymentMethod, formData }) => {
             try {
+              if (formData?.payment_method_id === 'pix' && !formData?.payer?.identification?.number) {
+                const number = String(getPayerIdentification() || '').replace(/\D/g, '');
+                if (![11, 14].includes(number.length)) {
+                  const failure = new Error(paymentError('INVALID_PAYER_IDENTIFICATION'));
+                  failure.code = 'INVALID_PAYER_IDENTIFICATION';
+                  throw failure;
+                }
+                formData = { ...formData, payer: { ...formData.payer, identification: { type: number.length === 11 ? 'CPF' : 'CNPJ', number } } };
+              }
               const payment = await this.#submit(checkout, contestId, selectedPaymentMethod, formData);
               onPayment(payment);
               return payment;

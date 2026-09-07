@@ -226,6 +226,9 @@ function embeddedPaymentPanel(contest, { directCheckout = false } = {}) {
             <span>${icon('lock', 'ico--inline')} PAGAMENTO PROTEGIDO</span>
             <img src="assets/brands/mercado-pago-logo-footer-official.svg" alt="Mercado Pago" loading="eager" decoding="async">
           </div>
+          <label class="embedded-payment__document">CPF ou CNPJ para pagamento via Pix
+            <input type="text" inputmode="numeric" autocomplete="off" maxlength="18" data-payer-document placeholder="Somente números">
+          </label>
           <div id="detona-payment-brick" class="embedded-payment__brick" aria-live="polite"></div>
         </div>
         <p class="embedded-payment__status" data-embedded-payment-status role="status" aria-live="polite">Carregando as formas de pagamento...</p>
@@ -455,6 +458,7 @@ export function renderLibrary(root, {
         containerId: container.id,
         checkout: purchase,
         contestId,
+        getPayerIdentification: () => root.querySelector('[data-payer-document]')?.value || '',
         onReady: () => {
           if (status) status.textContent = 'Ambiente seguro pronto. Escolha Pix ou cartão.';
           if (directCheckoutMode) {
