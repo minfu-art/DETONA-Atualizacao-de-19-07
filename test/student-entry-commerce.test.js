@@ -133,7 +133,7 @@ test('contratos visuais e administrativos da entrada permanecem explícitos', as
   assert.match(auth, /autocomplete: 'new-password'/);
   assert.match(auth, /Se existir uma conta/);
   assert.match(auth, /Crie sua conta para continuar a compra/);
-  assert.match(auth, /Compra segura em andamento/);
+  assert.match(auth, /Seu curso já está selecionado/);
   assert.match(auth, /commercialIntent\s*\? AUTH_MODES\.REGISTER/);
   assert.match(auth, /requestEmailOtp\(input\)/);
   assert.match(auth, /reason: 'email-otp'/);
@@ -150,7 +150,7 @@ test('contratos visuais e administrativos da entrada permanecem explícitos', as
   assert.match(model, /Estamos confirmando seu acesso/);
   assert.match(admin, /Arte temática do concurso \(legado\)/);
   assert.match(admin, /tiers-v2/);
-  assert.match(sw, /detona-v166-email-otp-preview/);
+  assert.match(sw, /detona-v167-maximized-purchase-preview/);
   assert.match(sw, /student-entry\.css/);
   assert.match(sw, /librarySnapshotRepository/);
   assert.equal((legal.match(/<h1\b/g) || []).length, 1);

@@ -587,6 +587,23 @@
 .commercial-intent--checkout .commercial-intent__action { padding: 18px 20px; }
 .commercial-intent--checkout .commercial-intent__action ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin: 5px 0; }
 .commercial-intent--checkout .commercial-intent__action li { align-items: flex-start; font-size: 9px; }
+.app-shell--checkout {
+  max-width: none;
+  padding-bottom: 0;
+}
+.app-shell--checkout .app-sidebar,
+.app-shell--checkout .app-topbar,
+.app-shell--checkout .bottom-nav,
+.app-shell--checkout .pwa-install-banner { display: none !important; }
+.app-shell--checkout .app-shell__main,
+.app-shell--checkout .app-content { width: 100%; margin: 0; }
+.app-shell--checkout #screen { padding: 0; }
+.student-library--checkout-direct {
+  width: min(980px, calc(100% - clamp(28px, 5vw, 64px)));
+  padding-top: clamp(14px, 2.5vw, 28px);
+}
+.student-library--checkout-direct .student-entry-footer { padding-block: 10px; font-size: 11px; }
+.student-library--checkout-direct .student-entry-footer nav { gap: 12px; }
 .checkout-secure-line { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 8px 11px; border: 1px solid rgb(69 175 240 / 30%); border-radius: 11px; background: rgb(8 29 47 / 70%); }
 .checkout-secure-line img { width: 106px; height: auto; display: block; }
 .checkout-secure-line span { display: inline-flex; align-items: center; gap: 6px; color: #cfe8f2; font-size: 8px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }

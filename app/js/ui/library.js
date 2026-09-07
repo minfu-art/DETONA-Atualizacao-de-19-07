@@ -353,8 +353,8 @@ export function renderLibrary(root, {
     <div class="library-page student-library student-library--private ${acquisitionMode ? 'student-library--acquisition' : ''} ${directCheckoutMode ? 'student-library--checkout-direct' : ''} ${embedded ? 'library-page--embedded' : ''}">
       ${embedded ? '' : `<header class="library-header"><div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div><div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div></header>`}
       <header class="private-library-header ${acquisitionMode ? 'private-library-header--acquisition' : ''}">
-        <div><span class="library-kicker">${directCheckoutMode ? 'COMPRA SEGURA' : acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'ÁREA PRIVADA'}</span><h1 id="library-title">${directCheckoutMode ? 'FINALIZE SUA COMPRA' : acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'}</h1><p>${directCheckoutMode ? 'Revise o pedido e escolha como pagar.' : acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : 'Suas jornadas de preparação.'}</p></div>
-        ${publicCoursesAction({ href: links.courses, offline, label: acquisitionMode ? 'VER OUTROS CURSOS' : '+ ADICIONAR CURSOS' })}
+        <div><span class="library-kicker">${directCheckoutMode ? 'ETAPA 2 DE 2 · PAGAMENTO' : acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'ÁREA PRIVADA'}</span><h1 id="library-title">${directCheckoutMode ? 'FINALIZE SUA COMPRA' : acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'}</h1><p>${directCheckoutMode ? 'Sua identificação foi concluída. Agora escolha Pix ou cartão.' : acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : 'Suas jornadas de preparação.'}</p></div>
+        ${acquisitionMode ? '' : publicCoursesAction({ href: links.courses, offline, label: '+ ADICIONAR CURSOS' })}
       </header>
       ${validating ? `<aside class="library-network-state" role="status" aria-live="polite"><div><strong>Atualizando seus acessos...</strong><span>Você já pode visualizar a Biblioteca enquanto concluímos a validação segura.</span></div></aside>` : ''}
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
@@ -372,7 +372,7 @@ export function renderLibrary(root, {
           <div><span class="library-kicker">SUA PRÓXIMA CONQUISTA</span><h2 id="private-library-empty-title">Sua primeira jornada começa aqui.</h2><p>Escolha o concurso que você quer conquistar e conheça as jornadas DETONA.</p></div>
           ${publicCoursesAction({ href: links.courses, offline, label: 'EXPLORAR CURSOS', className: 'private-library-empty__action' })}
         </section>`}
-      <footer class="student-entry-footer"><span>Precisa de ajuda para entrar ou recuperar seu acesso?</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
+      <footer class="student-entry-footer"><span>${acquisitionMode ? 'Pagamento protegido e acesso vinculado à sua conta.' : 'Precisa de ajuda para entrar ou recuperar seu acesso?'}</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
     </div>`;
 
   const bindOpenActions = (scope) => {

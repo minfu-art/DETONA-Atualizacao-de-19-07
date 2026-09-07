@@ -7,8 +7,8 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
-import { renderAuth } from './ui/auth.js?v=76';
-import { renderLibrary } from './ui/library.js?v=161';
+import { renderAuth } from './ui/auth.js?v=77';
+import { renderLibrary } from './ui/library.js?v=162';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';
@@ -532,8 +532,11 @@ async function openPreferredJourney(screen) {
 function showAuth() {
   resetHabitReminderRuntime();
   resetStudentHistory();
-  document.getElementById('app')?.classList.add('app-shell--auth');
-  document.getElementById('app')?.classList.remove('app-shell--library');
+  const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
+  const app = document.getElementById('app');
+  app?.classList.add('app-shell--auth');
+  app?.classList.remove('app-shell--library');
+  app?.classList.toggle('app-shell--checkout', Boolean(commercialIntent?.directCheckout));
   document.getElementById('bottom-nav')?.classList.add('hidden');
   const root = document.getElementById('screen');
   if (root) {
@@ -541,7 +544,7 @@ function showAuth() {
     renderAuth(root, {
       authService,
       onAuthenticated: initializeAuthenticatedApp,
-      commercialIntent: resolveCommercialEntryIntent(globalThis.location?.search || ''),
+      commercialIntent,
     });
   }
 }
@@ -574,10 +577,13 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
   }
   ctx.contentPackage = null;
   ctx.screen = 'library';
+  const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
+  const directCheckout = Boolean(commercialIntent?.directCheckout);
   const app = document.getElementById('app');
   app?.classList.remove('app-shell--auth');
   app?.classList.add('app-shell--library');
-  document.getElementById('bottom-nav')?.classList.remove('hidden');
+  app?.classList.toggle('app-shell--checkout', directCheckout);
+  document.getElementById('bottom-nav')?.classList.toggle('hidden', directCheckout);
   const root = document.getElementById('screen');
   if (!root) return;
   root.dataset.screen = 'library';
@@ -589,7 +595,6 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
     const state = libraryState || await libraryService.getLibraryState(user, { refresh });
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
-    const commercialIntent = resolveCommercialEntryIntent(globalThis.location?.search || '');
     renderLibrary(root, {
       user,
       items: state.items,
@@ -733,6 +738,7 @@ async function openContest(contestId, { initialScreen = null, contestHint = null
   ctx.contest = contest;
   ctx.contentPackage = contentPackage;
   document.getElementById('app')?.classList.remove('app-shell--library');
+  document.getElementById('app')?.classList.remove('app-shell--checkout');
   await contestDataMigrationService.ensureCompatibility(user.id, contestId);
   assertCurrent();
   await openDB();

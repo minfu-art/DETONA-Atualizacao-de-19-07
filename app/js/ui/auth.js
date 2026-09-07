@@ -74,12 +74,12 @@ function modeCopy(mode, commercialIntent = null) {
   if (mode === AUTH_MODES.EMAIL_OTP) return {
     kicker: 'ÚLTIMA ETAPA DA CONTA',
     title: 'Digite o código recebido',
-    description: 'Você continua nesta tela e segue direto para a revisão da compra.',
+    description: 'Você continua nesta tela e segue direto para o pagamento.',
   };
   if (commercialIntent && mode === AUTH_MODES.LOGIN) return {
     kicker: 'COMPRA SEGURA',
     title: 'Entre para continuar a compra',
-    description: 'Sua jornada continua selecionada para você revisar o curso e o preço antes de pagar.',
+    description: 'Sua jornada continua selecionada e o pagamento vem logo depois.',
   };
   return {
     kicker: 'Área do aluno',
@@ -122,9 +122,9 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
     const passwordRequirement = '<div class="auth-requirements" id="auth-requirements"><span data-rule="length">8 caracteres</span><span data-rule="letter">uma letra</span><span data-rule="number">um número</span><span data-rule="space">sem espaços</span></div>';
 
     root.innerHTML = `
-      <section class="saas-auth saas-auth--${mode}" aria-labelledby="auth-title">
-        <div class="detona-login-card">
-          <img class="auth-backdrop" src="assets/ui/login-command-hall.webp" alt="" width="1536" height="1024" decoding="async" fetchpriority="high">
+      <section class="saas-auth saas-auth--${mode} ${commercialIntent ? 'saas-auth--purchase' : ''}" aria-labelledby="auth-title">
+        <div class="detona-login-card ${commercialIntent ? 'detona-login-card--purchase' : ''}">
+          ${commercialIntent ? '' : `<img class="auth-backdrop" src="assets/ui/login-command-hall.webp" alt="" width="1536" height="1024" decoding="async" fetchpriority="high">
           <div class="saas-auth__story">
             <div class="auth-logo-lockup" aria-label="Detona Concursos">
               <img class="auth-logo-lockup__emblem" src="assets/icons/icon-512.png" alt="" width="512" height="512" decoding="async" fetchpriority="high">
@@ -135,7 +135,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
               <h2>Seu próximo nível<br><em>começa agora.</em></h2>
               <p>Estratégia, constância e evolução reunidas em uma única jornada.</p>
             </div>
-          </div>
+          </div>`}
           <div class="saas-auth__panel">
             <div class="saas-auth__form-wrap">
               <div class="auth-mobile-brand" aria-hidden="true">
@@ -148,12 +148,11 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                 <p>${copy.description}</p>
                 ${commercialIntent && (login || register) ? `
                   <div class="auth-purchase-context" role="status">
-                    <strong>Compra segura em andamento</strong>
-                    <span>A jornada escolhida continua selecionada. Primeiro identifique-se; depois você revisa o curso e decide se deseja pagar.</span>
+                    <strong>Seu curso já está selecionado</strong>
+                    <span>Identifique-se agora e escolha Pix ou cartão na próxima tela.</span>
                     <ol aria-label="Etapas da compra">
-                      <li class="is-current"><b>1</b> Conta</li>
-                      <li><b>2</b> Revisão</li>
-                      <li><b>3</b> Pagamento</li>
+                      <li class="is-current"><b>1</b> Identificação</li>
+                      <li><b>2</b> Pagamento</li>
                     </ol>
                   </div>
                 ` : ''}
@@ -195,7 +194,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                     <div class="auth-divider" aria-hidden="true"><span>ou continue com e-mail</span></div>
                   ` : ''}
                   ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" value="${escapeHtml(draftName)}" placeholder="Nome completo" required></div></div>` : ''}
-                  ${reset ? '' : `<div class="field auth-field"><label class="sr-only" for="auth-email">E-mail</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('mail', 'ico--control')}</span><input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(draftEmail)}" placeholder="E-mail cadastrado" aria-describedby="auth-error" required></div></div>`}
+                  ${reset ? '' : `<div class="field auth-field"><label class="sr-only" for="auth-email">E-mail</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('mail', 'ico--control')}</span><input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(draftEmail)}" placeholder="${commercialIntent && register ? 'Seu melhor e-mail' : 'E-mail cadastrado'}" aria-describedby="auth-error" required></div></div>`}
                   ${login ? passwordField() : ''}
                   ${(register && !commercialIntent) ? passwordField({ placeholder: 'Mínimo de 8 caracteres', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' }) : ''}
                   ${reset ? `${passwordField({ placeholder: 'Nova senha', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' })}${passwordField({ id: 'auth-password-confirm', name: 'passwordConfirm', placeholder: 'Confirmar nova senha', autocomplete: 'new-password' })}` : ''}
@@ -206,7 +205,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                 </form>
                 <button class="auth-switch" id="auth-switch" type="button">${register ? (commercialIntent ? 'Já possui conta? <strong>ENTRAR E CONTINUAR</strong>' : 'Já possui conta? <strong>ENTRAR</strong>') : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : (commercialIntent ? 'Primeira vez aqui? <strong>CRIAR CONTA E CONTINUAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>')}</button>
               `}
-              ${(!(forgotSent || verifyEmail || emailOtp) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
+              ${(!commercialIntent && !(forgotSent || verifyEmail || emailOtp) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
               <p class="auth-legal">Ao continuar, você concorda com os <a href="${escapeHtml(links.terms)}" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e a <a href="${escapeHtml(links.privacy)}" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
               <a class="auth-support" href="${escapeHtml(links.support)}">Contato e suporte</a>
             </div>

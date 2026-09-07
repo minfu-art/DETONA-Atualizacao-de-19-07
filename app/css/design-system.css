@@ -3227,3 +3227,44 @@ body:has(.app-shell--auth) .pwa-install-banner { display:none !important; }
 .habit-local-reminder p { margin:4px 0 0; color:var(--ds-text-2); font-size:12px; line-height:1.45; }
 .habit-local-reminder__actions { display:flex; flex-wrap:wrap; gap:6px; }
 .habit-local-reminder__actions .btn { min-height:var(--ds-touch-target); flex:1 1 100px; }
+
+/* Compra direta: identificação compacta, sem arte ou convite à instalação. */
+.saas-auth--purchase { padding:clamp(10px,3vw,28px); }
+.saas-auth--purchase .detona-login-card--purchase {
+  width:min(560px,calc(100vw - 20px));
+  min-height:0;
+  grid-template-columns:1fr;
+}
+.saas-auth--purchase .detona-login-card--purchase::before {
+  background:radial-gradient(circle at 50% 0,rgba(124,92,255,.14),transparent 42%);
+}
+.saas-auth--purchase .saas-auth__panel {
+  min-height:0;
+  padding:clamp(22px,5vw,42px);
+  border:0;
+}
+.saas-auth--purchase .saas-auth__form-wrap { max-width:430px; }
+.saas-auth--purchase .auth-mobile-brand {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin-bottom:18px;
+  color:#f8fafc;
+  font:900 16px/1 var(--display);
+  letter-spacing:.04em;
+}
+.saas-auth--purchase .auth-mobile-brand img { width:38px; height:38px; border-radius:10px; }
+.saas-auth--purchase .auth-mobile-brand span { color:#fb923c; }
+.saas-auth--purchase .auth-mode-heading--purchase { margin-bottom:16px; }
+.saas-auth--purchase .auth-purchase-context ol { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.saas-auth--purchase .auth-support { min-height:34px; padding-block:8px; font-size:10px; }
+
+@media (max-width:760px) {
+  .saas-auth--purchase { padding:4px; }
+  .saas-auth--purchase .detona-login-card--purchase { width:calc(100vw - 8px); border-radius:18px; }
+  .saas-auth--purchase .saas-auth__panel { padding:18px 16px max(16px,env(safe-area-inset-bottom)); }
+  .saas-auth--purchase .auth-mobile-brand { margin-bottom:12px; }
+  .saas-auth--purchase .auth-mode-heading--purchase { padding:12px; }
+  .saas-auth--purchase .auth-mode-heading--purchase h1 { font-size:24px; }
+}
