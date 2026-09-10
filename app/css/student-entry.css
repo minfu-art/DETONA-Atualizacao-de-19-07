@@ -982,6 +982,7 @@
 
 .student-library--private:not(.student-library--acquisition) .private-owned-courses { gap: 15px; }
 .student-library--private:not(.student-library--acquisition) .private-owned-courses__title { padding-top: 2px; }
+.private-owned-courses__swipe { display: none; }
 .student-library--private:not(.student-library--acquisition) .private-owned-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
   gap: 16px;
@@ -1098,11 +1099,45 @@ body:has(.student-library--private:not(.student-library--acquisition)) .pwa-inst
   .student-library--private:not(.student-library--acquisition) .active-journey__action { width: 100%; min-height: 52px; }
   .student-library--private:not(.student-library--acquisition) .private-owned-courses__title { align-items: flex-start; gap: 4px; }
   .student-library--private:not(.student-library--acquisition) .private-owned-courses__title h2 { font-size: 23px; }
-  .student-library--private:not(.student-library--acquisition) .private-owned-grid { gap: 12px; }
+  .student-library--private:not(.student-library--acquisition) .private-owned-courses__title > p {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 11px;
+  }
+  .private-owned-courses__swipe {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #65dcff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .12em;
+  }
+  .student-library--private:not(.student-library--acquisition) .private-owned-grid {
+    width: calc(100% + 24px);
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(86vw, 370px);
+    gap: 12px;
+    margin-inline: 0 -12px;
+    padding: 1px 24px 12px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 0 24px;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #6840dc #11182a;
+    -webkit-overflow-scrolling: touch;
+  }
   .student-library--private:not(.student-library--acquisition) .owned-course-card {
     display: grid;
     grid-template-columns: 116px minmax(0, 1fr);
     align-items: stretch;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
   .student-library--private:not(.student-library--acquisition) .owned-course-card__art {
     height: 100%;
@@ -1143,6 +1178,7 @@ body:has(.student-library--private:not(.student-library--acquisition)) .pwa-inst
 
 @media (prefers-reduced-motion: reduce) {
   .student-library--private:not(.student-library--acquisition) .owned-course-card { transition: none; }
+  .student-library--private:not(.student-library--acquisition) .private-owned-grid { scroll-behavior: auto; }
 }
 
 .acquisition-hero.acquisition-hero--compact { grid-template-columns: minmax(0, 1fr) minmax(270px, 340px); position: relative; isolation: isolate; overflow: hidden; background: #060a14; }

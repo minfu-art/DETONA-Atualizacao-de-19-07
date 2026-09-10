@@ -227,6 +227,18 @@ test('biblioteca prioriza retomada e remove o bloco promocional do fluxo privado
   assert.match(css, /grid-template-columns:\s*116px minmax\(0, 1fr\)/);
 });
 
+test('outros cursos viram carrossel lateral acessível somente no celular', async () => {
+  const [ui, css] = await Promise.all([
+    readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
+    readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
+  ]);
+  assert.match(ui, /private-owned-courses__swipe[^>]*aria-hidden="true">DESLIZE →/);
+  assert.match(css, /grid-auto-flow:\s*column/);
+  assert.match(css, /grid-auto-columns:\s*min\(86vw, 370px\)/);
+  assert.match(css, /scroll-snap-type:\s*inline mandatory/);
+  assert.match(css, /scroll-snap-align:\s*start/);
+});
+
 test('biblioteca reaproveita a arte oficial de cada curso sem alterar a compra', async () => {
   const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
   assert.match(ui, /contest\.coverAsset \|\| CHECKOUT_ARTWORK\[contest\.id\]/);

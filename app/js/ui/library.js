@@ -339,7 +339,7 @@ export function renderLibrary(root, {
       ${acquisitionMode ? '' : activeJourneyVisible ? continueJourney(activeJourney) : ''}
       ${acquisitionMode ? '' : owned.length ? (ownedOrdered.length ? `
           <section class="private-owned-courses" aria-labelledby="owned-courses-title">
-            <div class="private-owned-courses__title"><div><span class="library-kicker">${activeJourneyVisible ? 'OUTRAS JORNADAS' : 'SEUS ACESSOS'}</span><h2 id="owned-courses-title">${activeJourneyVisible ? 'Outros cursos comprados' : 'Cursos comprados'}</h2></div><p>${plural(ownedOrdered.length, 'curso nesta seção', 'cursos nesta seção')}</p></div>
+            <div class="private-owned-courses__title"><div><span class="library-kicker">${activeJourneyVisible ? 'OUTRAS JORNADAS' : 'SEUS ACESSOS'}</span><h2 id="owned-courses-title">${activeJourneyVisible ? 'Outros cursos comprados' : 'Cursos comprados'}</h2></div><p>${plural(ownedOrdered.length, 'curso nesta seção', 'cursos nesta seção')}<span class="private-owned-courses__swipe" aria-hidden="true">DESLIZE →</span></p></div>
             <div class="private-owned-grid">${ownedOrdered.map((item) => ownedCourseCard(item, { active: item === activeJourney })).join('')}</div>
           </section>` : '') : `
         <section class="private-library-empty" aria-labelledby="private-library-empty-title">
