@@ -18,8 +18,9 @@ const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singu
 const safePercent = (value) => Math.max(0, Math.min(100, Number(value) || 0));
 
 function courseArt(contest, { eager = false } = {}) {
-  if (contest.coverAsset) {
-    return `<img src="${escapeHtml(contest.coverAsset)}" alt="" loading="${eager ? 'eager' : 'lazy'}" decoding="async">`;
+  const artwork = contest.coverAsset || CHECKOUT_ARTWORK[contest.id];
+  if (artwork) {
+    return `<img src="${escapeHtml(artwork)}" alt="" loading="${eager ? 'eager' : 'lazy'}" decoding="async">`;
   }
   return `<div class="owned-course-art__fallback" aria-hidden="true"><span>${escapeHtml(contest.icon || 'D')}</span><strong>${escapeHtml(contest.code)}</strong><small>DETONA CONCURSOS</small></div>`;
 }
@@ -46,39 +47,41 @@ function continueJourney(item) {
   const progress = safePercent(summary?.editalCompletionPct);
   const subtopicCount = Number(contest.subtopicCount || 0);
   const questionCount = Number(contest.questionCount || 0);
+  const started = progress > 0 || Boolean(summary?.lastAccessAt);
+  const actionLabel = started ? 'CONTINUAR ESTUDANDO' : 'COMEÇAR JORNADA';
+  const statusCopy = summary?.lastAccessAt
+    ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}`
+    : 'Sua primeira missão está pronta.';
+  const facts = [
+    subtopicCount > 0 ? `<span><strong>${subtopicCount.toLocaleString('pt-BR')}</strong> subtópicos</span>` : '',
+    questionCount > 0 ? `<span><strong>${questionCount.toLocaleString('pt-BR')}</strong> questões</span>` : '',
+  ].filter(Boolean).join('');
+
   return `
     <section class="active-journey" aria-labelledby="active-journey-title" ${contestTheme(contest)}>
       <div class="active-journey__backdrop" aria-hidden="true">${courseArt(contest, { eager: true })}</div>
       <div class="active-journey__content">
-        <span class="active-journey__access">${icon('shieldCheck', 'ico--inline')} ACESSO LIBERADO</span>
-        <strong class="active-journey__code">${escapeHtml(contest.code)}</strong>
-        ${homologationStatus(contest)}
-        <div class="active-journey__title"><span class="library-kicker">SUA JORNADA PRINCIPAL</span><h2 id="active-journey-title">${escapeHtml(contest.name)}</h2><p>${escapeHtml(contest.role)}</p></div>
-        <p class="active-journey__description">${escapeHtml(contest.description || 'Uma preparação completa, organizada pelo edital e guiada pelo seu desempenho.')}</p>
-        <div class="active-journey__metrics" aria-label="Resumo da jornada">
-          ${subtopicCount > 0 ? `<div><strong>${subtopicCount.toLocaleString('pt-BR')}</strong><span>subtópicos organizados</span></div>` : ''}
-          ${questionCount > 0 ? `<div><strong>${questionCount.toLocaleString('pt-BR')}</strong><span>questões disponíveis</span></div>` : ''}
-          <div><strong>${progress}%</strong><span>domínio do edital</span></div>
+        <div class="active-journey__eyebrow">
+          <span class="active-journey__access">${icon('shieldCheck', 'ico--inline')} ACESSO LIBERADO</span>
+          <strong class="active-journey__code">${escapeHtml(contest.code)}</strong>
         </div>
-        <div class="active-journey__progress">${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}</div>
+        ${homologationStatus(contest)}
+        <div class="active-journey__title">
+          <span class="library-kicker">SUA JORNADA PRINCIPAL</span>
+          <h2 id="active-journey-title">${escapeHtml(contest.name)}</h2>
+          <p>${escapeHtml(contest.role)}</p>
+        </div>
+        <div class="active-journey__progress">
+          <div class="active-journey__progress-copy"><span>PROGRESSO NO EDITAL</span><strong>${progress}%</strong></div>
+          ${progressBar({ value: progress, label: 'Progresso no edital', tone: 'plasma' })}
+        </div>
+        ${facts ? `<div class="active-journey__facts" aria-label="Conteúdo da jornada">${facts}</div>` : ''}
         <div class="active-journey__footer">
-          <small>${summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Tudo pronto para iniciar sua preparação.'}</small>
-          <button type="button" class="active-journey__action" data-open-contest="${escapeHtml(contest.id)}">${contest.previewOnly === true ? 'TESTAR CURSO' : 'ENTRAR NA JORNADA'} <span aria-hidden="true">→</span></button>
+          <small>${statusCopy}</small>
+          <button type="button" class="active-journey__action" data-open-contest="${escapeHtml(contest.id)}">${contest.previewOnly === true ? 'TESTAR CURSO' : actionLabel} <span aria-hidden="true">→</span></button>
         </div>
       </div>
       <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
-    </section>`;
-}
-
-function journeyFeatureOverview(item) {
-  if (!item) return '';
-  return `
-    <section class="journey-toolkit" aria-labelledby="journey-toolkit-title" ${contestTheme(item.contest)}>
-      <div class="journey-toolkit__heading">
-        <div><span class="library-kicker">SEU ECOSSISTEMA DETONA</span><h2 id="journey-toolkit-title">Tudo o que conduz sua preparação.</h2></div>
-        <p>Conteúdo, prática, revisão e estratégia trabalham juntos para mostrar o próximo passo.</p>
-      </div>
-      <div class="journey-toolkit__grid">${acquisitionFeatures()}</div>
     </section>`;
 }
 
@@ -88,19 +91,38 @@ function ownedCourseCard(item, { active = false } = {}) {
   const contentUnavailable = contest.contentStatus !== 'ready';
   const preorder = contest.salesStatus === 'preorder';
   const disabled = item.accessVerificationRequired === true || contentUnavailable;
+  const started = progress > 0 || Boolean(summary?.lastAccessAt);
+  const accessLabel = item.accessVerificationRequired
+    ? 'VALIDAÇÃO NECESSÁRIA'
+    : contentUnavailable && preorder ? 'PRÉ-VENDA CONFIRMADA' : 'ACESSO LIBERADO';
+  const actionLabel = item.accessVerificationRequired
+    ? 'CONECTE-SE PARA VALIDAR'
+    : contentUnavailable
+      ? preorder ? 'PRÉ-VENDA CONFIRMADA' : 'CONTEÚDO EM PREPARAÇÃO'
+      : contest.previewOnly === true
+        ? 'TESTAR CURSO'
+        : started ? 'CONTINUAR CURSO' : 'COMEÇAR CURSO';
+  const facts = [
+    Number(contest.subtopicCount || 0) > 0 ? `${Number(contest.subtopicCount).toLocaleString('pt-BR')} subtópicos` : '',
+    Number(contest.questionCount || 0) > 0 ? `${Number(contest.questionCount).toLocaleString('pt-BR')} questões` : '',
+  ].filter(Boolean).join(' · ');
+  const titleId = `owned-course-${escapeHtml(contest.id)}`;
+
   return `
-    <article class="owned-course-card ${active ? 'owned-course-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" ${contestTheme(contest)}>
-      <div class="owned-course-card__art">${courseArt(contest)}</div>
+    <article class="owned-course-card ${active ? 'owned-course-card--active' : ''}" data-contest-card="${escapeHtml(contest.id)}" ${contestTheme(contest)} aria-labelledby="${titleId}">
+      <div class="owned-course-card__art">
+        ${courseArt(contest)}
+        <span class="owned-course-card__access">${icon('shieldCheck', 'ico--inline')} ${accessLabel}</span>
+      </div>
       <div class="owned-course-card__body">
-        <span class="owned-course-card__code">${escapeHtml(contest.code)}</span>
-        ${homologationStatus(contest)}
-        <h3>${escapeHtml(contest.name)}</h3>
-        <p>${escapeHtml(contest.role)}</p>
-        <div class="owned-course-card__mastery"><span>DOMÍNIO DO EDITAL</span><strong>${progress}%</strong></div>
-        ${progressBar({ value: progress, label: 'Domínio do edital', tone: 'plasma' })}
-        <p class="owned-course-card__counts">${Number(contest.subtopicCount || 0)} subtópicos <span aria-hidden="true">·</span> ${Number(contest.questionCount || 0).toLocaleString('pt-BR')} questões</p>
-        <p class="owned-course-card__last">${contentUnavailable && preorder ? 'Seu acesso está garantido. Avisaremos quando a jornada inicial for liberada.' : summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Ainda sem atividade registrada.'}</p>
-        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${item.accessVerificationRequired ? 'CONECTE-SE PARA VALIDAR' : contentUnavailable ? preorder ? 'PRÉ-VENDA CONFIRMADA' : 'CONTEÚDO EM PREPARAÇÃO' : contest.previewOnly === true ? 'TESTAR CURSO' : 'CONTINUAR'}</button>
+        <div class="owned-course-card__heading"><span class="owned-course-card__code">${escapeHtml(contest.code)}</span>${homologationStatus(contest)}</div>
+        <h3 id="${titleId}">${escapeHtml(contest.name)}</h3>
+        <p class="owned-course-card__role">${escapeHtml(contest.role)}</p>
+        <div class="owned-course-card__mastery"><span>PROGRESSO NO EDITAL</span><strong>${progress}%</strong></div>
+        ${progressBar({ value: progress, label: 'Progresso no edital', tone: 'plasma' })}
+        ${facts ? `<p class="owned-course-card__counts">${facts}</p>` : ''}
+        <p class="owned-course-card__last">${contentUnavailable && preorder ? 'Seu acesso está garantido. Avisaremos quando a jornada inicial for liberada.' : summary?.lastAccessAt ? `Última atividade em ${escapeHtml(formatDate(summary.lastAccessAt))}` : 'Pronto para começar.'}</p>
+        <button type="button" class="owned-course-card__action" data-open-contest="${escapeHtml(contest.id)}" ${disabled ? 'disabled' : ''}>${actionLabel} <span aria-hidden="true">→</span></button>
         <p class="library-action-feedback" data-card-feedback role="status" aria-live="polite"></p>
       </div>
     </article>`;
@@ -296,23 +318,28 @@ export function renderLibrary(root, {
   const returnMode = Boolean(notice);
   const openingContests = new Set();
   const checkoutAttempts = new Set();
+  const libraryCount = plural(owned.length, 'jornada liberada', 'jornadas liberadas');
 
   root.innerHTML = `
     <div class="library-page student-library student-library--private ${acquisitionMode ? 'student-library--acquisition' : ''} ${embedded ? 'library-page--embedded' : ''}">
       ${embedded ? '' : `<header class="library-header"><div class="saas-brand"><img class="saas-brand__mark" src="assets/icons/icon-192.png" alt="" width="44" height="44" decoding="async"><strong>DETONA <em>CONCURSOS</em></strong></div><div class="library-account"><span>${escapeHtml(user.name.charAt(0).toUpperCase())}</span><div><strong>${escapeHtml(user.name)}</strong><small>${escapeHtml(user.email)}</small></div><button id="library-logout" type="button">Sair</button></div></header>`}
       <header class="private-library-header ${acquisitionMode ? 'private-library-header--acquisition' : ''}">
-        <div><span class="library-kicker">${acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'ÁREA PRIVADA'}</span><h1 id="library-title">${acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'}</h1><p>${acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : 'Suas jornadas de preparação.'}</p></div>
-        ${publicCoursesAction({ href: links.courses, offline, label: acquisitionMode ? 'VER OUTROS CURSOS' : '+ ADICIONAR CURSOS' })}
+        <div class="private-library-header__copy">
+          <span class="library-kicker">${acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'BIBLIOTECA DO ALUNO'}</span>
+          <h1 id="library-title">${acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'Meus cursos'}</h1>
+          <p>${acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : owned.length ? 'Continue de onde parou ou escolha outra jornada comprada.' : 'Quando uma jornada for liberada, ela aparecerá aqui pronta para começar.'}</p>
+          ${acquisitionMode || !owned.length ? '' : `<span class="library-access-count">${icon('book', 'ico--inline')} ${escapeHtml(libraryCount)}</span>`}
+        </div>
+        ${acquisitionMode ? publicCoursesAction({ href: links.courses, offline, label: 'VER OUTROS CURSOS' }) : ''}
       </header>
       ${validating ? `<aside class="library-network-state" role="status" aria-live="polite"><div><strong>Atualizando seus acessos...</strong><span>Você já pode visualizar a Biblioteca enquanto concluímos a validação segura.</span></div></aside>` : ''}
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${checkoutReturnCard(notice, { preview: checkoutPreview })}
       ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode })}
       ${acquisitionMode ? '' : activeJourneyVisible ? continueJourney(activeJourney) : ''}
-      ${acquisitionMode ? '' : activeJourneyVisible ? journeyFeatureOverview(activeJourney) : ''}
       ${acquisitionMode ? '' : owned.length ? (ownedOrdered.length ? `
           <section class="private-owned-courses" aria-labelledby="owned-courses-title">
-            <div class="private-owned-courses__title"><div><span class="library-kicker">OUTROS ACESSOS</span><h2 id="owned-courses-title">Meus Cursos</h2></div><p>${plural(owned.length, 'jornada na Biblioteca', 'jornadas na Biblioteca')}</p></div>
+            <div class="private-owned-courses__title"><div><span class="library-kicker">${activeJourneyVisible ? 'OUTRAS JORNADAS' : 'SEUS ACESSOS'}</span><h2 id="owned-courses-title">${activeJourneyVisible ? 'Outros cursos comprados' : 'Cursos comprados'}</h2></div><p>${plural(ownedOrdered.length, 'curso nesta seção', 'cursos nesta seção')}</p></div>
             <div class="private-owned-grid">${ownedOrdered.map((item) => ownedCourseCard(item, { active: item === activeJourney })).join('')}</div>
           </section>` : '') : `
         <section class="private-library-empty" aria-labelledby="private-library-empty-title">
@@ -320,6 +347,11 @@ export function renderLibrary(root, {
           <div><span class="library-kicker">SUA PRÓXIMA CONQUISTA</span><h2 id="private-library-empty-title">Sua primeira jornada começa aqui.</h2><p>Escolha o concurso que você quer conquistar e conheça as jornadas DETONA.</p></div>
           ${publicCoursesAction({ href: links.courses, offline, label: 'EXPLORAR CURSOS', className: 'private-library-empty__action' })}
         </section>`}
+      ${acquisitionMode || !owned.length ? '' : `
+        <aside class="library-add-course-panel">
+          <div><span class="library-kicker">CATÁLOGO DETONA</span><strong>Quer adicionar outra jornada?</strong><small>A compra acontece no site oficial e o novo acesso aparece aqui após a confirmação.</small></div>
+          ${publicCoursesAction({ href: links.courses, offline, label: 'VER OUTROS CURSOS' })}
+        </aside>`}
       <footer class="student-entry-footer"><span>Precisa de ajuda para entrar ou recuperar seu acesso?</span><nav aria-label="Ajuda e documentos">${supportLinks(links)}</nav></footer>
     </div>`;
 

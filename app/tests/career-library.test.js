@@ -169,7 +169,7 @@ test('interface privada remove descoberta e mantém responsividade e acessibilid
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(ui, /acquisitionMode \? 'CONHEÇA SUA JORNADA' : 'BIBLIOTECA'/);
+  assert.match(ui, /acquisitionMode \? 'CONHEÇA SUA JORNADA' : 'Meus cursos'/);
   assert.match(ui, /\+ ADICIONAR CURSOS/);
   assert.match(ui, /rel="noopener noreferrer"/);
   assert.doesNotMatch(ui, /Pesquisar concurso|Explore por área|data-career-filter|data-interest-contest/);
@@ -214,6 +214,24 @@ test('jornada ativa tem CTA direto, contexto e bloqueio de abertura concorrente'
   assert.match(ui, /relatedButtons\.forEach/);
   assert.match(css, /\.active-journey/);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.active-journey__content \{ width: 100%;/s);
+});
+
+test('biblioteca prioriza retomada e remove o bloco promocional do fluxo privado', async () => {
+  const [ui, css] = await Promise.all([
+    readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
+    readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
+  ]);
+  assert.match(ui, /CONTINUAR ESTUDANDO/);
+  assert.match(ui, /Outros cursos comprados/);
+  assert.doesNotMatch(ui, /journeyFeatureOverview\(activeJourney\)/);
+  assert.match(css, /grid-template-columns:\s*116px minmax\(0, 1fr\)/);
+});
+
+test('biblioteca reaproveita a arte oficial de cada curso sem alterar a compra', async () => {
+  const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
+  assert.match(ui, /contest\.coverAsset \|\| CHECKOUT_ARTWORK\[contest\.id\]/);
+  assert.match(ui, /commercialIntentCard/);
+  assert.match(ui, /CONTINUAR PARA O PAGAMENTO SEGURO/);
 });
 
 test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE', async () => {

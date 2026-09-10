@@ -146,7 +146,7 @@ test('contratos visuais e administrativos da entrada permanecem explícitos', as
   assert.match(model, /Estamos confirmando seu acesso/);
   assert.match(admin, /Arte temática do concurso \(legado\)/);
   assert.match(admin, /tiers-v2/);
-  assert.match(sw, /detona-v162-mobile-browser-checkout/);
+  assert.match(sw, /detona-v170-student-library/);
   assert.match(sw, /student-entry\.css/);
   assert.match(sw, /librarySnapshotRepository/);
   assert.equal((legal.match(/<h1\b/g) || []).length, 1);

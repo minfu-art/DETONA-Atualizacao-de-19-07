@@ -349,8 +349,8 @@ test('snapshot offline não habilita escrita de interesse', async () => {
   await assert.rejects(() => service.setInterest('prf_2027', true, { offline: true }), /Conecte-se/);
 });
 
-test('seção Meus Cursos é preservada', async () => {
-  assert.match(await source('app/js/ui/library.js'), /<h2 id="owned-courses-title">Meus Cursos<\/h2>/);
+test('seção de outros cursos comprados é preservada', async () => {
+  assert.match(await source('app/js/ui/library.js'), /<h2 id="owned-courses-title">\$\{activeJourneyVisible \? 'Outros cursos comprados' : 'Cursos comprados'\}<\/h2>/);
 });
 
 test('Cursos disponíveis não aparece na biblioteca privada', async () => {

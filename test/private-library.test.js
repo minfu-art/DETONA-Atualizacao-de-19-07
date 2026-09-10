@@ -34,7 +34,7 @@ test('commercial handoff blocks duplicate clicks and requires validated HTTPS re
 
 test('service worker refreshes navigation and runtime configuration', async () => {
   const sw = await source('app/sw.js');
-  assert.match(sw, /detona-v162-mobile-browser-checkout/);
+  assert.match(sw, /detona-v170-student-library/);
   assert.match(sw, /asset === '\.\/env\.runtime\.js'/);
   assert.match(sw, /fetch\(e\.request, \{ cache: 'no-store' \}\)/);
   assert.match(sw, /e\.request\.mode === 'navigate'[\s\S]*fetch\(e\.request\)/);
@@ -50,6 +50,12 @@ test('Biblioteca usa somente owned em Meus Cursos', async () => {
   const ui = await source('app/js/ui/library.js');
   assert.match(ui, /const \{ owned \} = partitionLibrary\(items\)/);
   assert.match(ui, /ownedOrdered\.map/);
+});
+
+test('jornada principal não reaparece na coleção de outros cursos', async () => {
+  const ui = await source('app/js/ui/library.js');
+  assert.match(ui, /owned\.filter\(\(\{ contest \}\) => contest\.id !== activeJourney\.contest\.id\)/);
+  assert.match(ui, /plural\(ownedOrdered\.length, 'curso nesta seção', 'cursos nesta seção'\)/);
 });
 
 test('catálogo comercial não aparece na UI privada', async () => {

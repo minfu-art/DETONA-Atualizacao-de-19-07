@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v169-exclusive-checkout-art';
+const CACHE = 'detona-v170-student-library';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
