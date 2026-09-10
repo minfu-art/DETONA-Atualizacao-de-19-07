@@ -8,7 +8,7 @@ import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
 import { renderAuth } from './ui/auth.js?v=76';
-import { renderLibrary } from './ui/library.js?v=170';
+import { renderLibrary } from './ui/library.js?v=171';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';

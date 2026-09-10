@@ -15,7 +15,7 @@ import {
 } from '../services/checkoutNavigation.js';
 
 const plural = (amount, singular, multiple) => `${amount} ${amount === 1 ? singular : multiple}`;
-const safePercent = (value) => Math.max(0, Math.min(100, Number(value) || 0));
+const safePercent = (value) => Math.round(Math.max(0, Math.min(100, Number(value) || 0)));
 
 function courseArt(contest, { eager = false } = {}) {
   const artwork = contest.coverAsset || CHECKOUT_ARTWORK[contest.id];
