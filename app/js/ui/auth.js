@@ -2,6 +2,8 @@ import { escapeHtml } from './helpers.js';
 import { installButtonHtml, bindInstallButtons } from '../core/pwaInstall.js';
 import { icon } from './icons.js?v=74';
 import { getStudentEntryLinks } from '../services/studentEntryLinks.js';
+import { CONTEST_CATALOG } from '../contest/contestCatalog.js';
+import { readCommercialIntent, readCheckoutReturn } from '../services/studentEntryModel.js';
 
 const AUTH_MODES = Object.freeze({
   LOGIN: 'login',
@@ -12,10 +14,24 @@ const AUTH_MODES = Object.freeze({
   RESET: 'reset',
 });
 
-function recoveryRedirectUrl(location = globalThis.location) {
+export function recoveryRedirectUrl(location = globalThis.location) {
   const url = new URL(location?.href || 'http://localhost/');
+  const intent = readCommercialIntent(url.search);
+  const returned = readCheckoutReturn(url.search);
   url.hash = '';
   url.search = '';
+  // Carry only navigation context, never auth tokens, prices or arbitrary redirects.
+  if (intent) {
+    url.searchParams.set('source', intent.source);
+    url.searchParams.set('contestId', intent.contestId);
+    if (intent.courseId) url.searchParams.set('courseId', intent.courseId);
+    if (intent.salesPage) url.searchParams.set('salesPage', intent.salesPage);
+    if (intent.directCheckout) url.searchParams.set('action', 'buy');
+  }
+  if (returned?.contestId && /^[a-z0-9][a-z0-9_-]{0,79}$/.test(returned.contestId)) {
+    url.searchParams.set('checkout', returned.state);
+    url.searchParams.set('contest', returned.contestId);
+  }
   url.searchParams.set('auth', 'recovery');
   return url.toString();
 }
@@ -68,7 +84,7 @@ function modeCopy(mode, commercialIntent = null) {
   if (mode === AUTH_MODES.VERIFY_EMAIL) return {
     kicker: 'Cadastro concluído',
     title: 'Confirme seu e-mail',
-    description: 'Enviamos as instruções de confirmação. Depois disso, volte para entrar e abrir sua biblioteca.',
+    description: commercialIntent ? 'Confirme seu e-mail e volte aqui para continuar a compra da jornada escolhida.' : 'Enviamos as instruções de confirmação. Depois disso, volte para entrar e abrir sua biblioteca.',
   };
   if (commercialIntent && mode === AUTH_MODES.LOGIN) return {
     kicker: 'COMPRA SEGURA',
@@ -100,7 +116,13 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
       ? AUTH_MODES.REGISTER
       : AUTH_MODES.LOGIN;
   let draftEmail = '';
+  let draftName = '';
+  let submitting = false;
   const links = getStudentEntryLinks();
+  const captureDraft = () => {
+    draftEmail = root.querySelector('#auth-email')?.value ?? draftEmail;
+    draftName = root.querySelector('#auth-name')?.value ?? draftName;
+  };
 
   const draw = ({ message = '', messageType = 'error' } = {}) => {
     const register = mode === AUTH_MODES.REGISTER;
@@ -111,10 +133,11 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
     const login = mode === AUTH_MODES.LOGIN;
     const googleEnabled = authService.isGoogleLoginEnabled?.() === true;
     const copy = modeCopy(mode, commercialIntent);
+    const selectedCourse = commercialIntent && CONTEST_CATALOG.find((course) => course.id === commercialIntent.contestId);
     const passwordRequirement = '<div class="auth-requirements" id="auth-requirements"><span data-rule="length">8 caracteres</span><span data-rule="letter">uma letra</span><span data-rule="number">um número</span><span data-rule="space">sem espaços</span></div>';
 
     root.innerHTML = `
-      <section class="saas-auth saas-auth--${mode}" aria-labelledby="auth-title">
+      <section class="saas-auth saas-auth--${mode} ${commercialIntent ? 'saas-auth--purchase' : ''}" aria-labelledby="auth-title">
         <div class="detona-login-card">
           <img class="auth-backdrop" src="assets/ui/login-command-hall.webp" alt="" width="1536" height="1024" decoding="async" fetchpriority="high">
           <div class="saas-auth__story">
@@ -134,22 +157,24 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                 <img src="assets/icons/icon-192.png" alt="" width="192" height="192">
                 <strong>DETONA <span>CONCURSOS</span></strong>
               </div>
-              <header class="auth-mode-heading ${commercialIntent && (login || register) ? 'is-visible auth-mode-heading--purchase' : ''}">
+              <header class="auth-mode-heading ${commercialIntent ? 'is-visible auth-mode-heading--purchase' : ''}">
                 <span class="saas-kicker">${copy.kicker}</span>
                 <h1 id="auth-title">${copy.title}</h1>
                 <p>${copy.description}</p>
-                ${commercialIntent && (login || register) ? `
+                ${commercialIntent ? `
                   <div class="auth-purchase-context" role="status">
                     <strong>Compra segura em andamento</strong>
+                    ${selectedCourse ? `<strong>Jornada escolhida: ${escapeHtml(selectedCourse.name)}</strong>` : ''}
                     <span>A jornada escolhida continua selecionada. Primeiro identifique-se; depois você revisa o curso e decide se deseja pagar.</span>
                     <ol aria-label="Etapas da compra">
                       <li class="is-current"><b>1</b> Conta</li>
-                      <li><b>2</b> Revisão</li>
-                      <li><b>3</b> Pagamento</li>
+                      <li><b>2</b> Conferir e pagar</li>
+                      <li><b>3</b> Começar</li>
                     </ol>
                   </div>
                 ` : ''}
               </header>
+              ${commercialIntent && (login || register) ? `<div class="auth-account-choice" role="group" aria-label="Como deseja continuar?"><button type="button" data-auth-mode="login" aria-pressed="${login}">Já tenho conta</button><button type="button" data-auth-mode="register" aria-pressed="${register}">Criar conta</button></div>` : ''}
               ${(forgotSent || verifyEmail) ? `
                 <div class="auth-sent" role="status">
                   <span aria-hidden="true">${icon('mail', 'ico--control')}</span>
@@ -160,6 +185,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                 ${verifyEmail ? `
                   <div class="auth-confirmation-actions">
                     <button class="btn btn-primary btn-block auth-submit auth-submit--single" id="auth-confirmed" type="button"><strong>JÁ CONFIRMEI — CONTINUAR</strong></button>
+                    <button class="auth-secondary-action" id="auth-confirm-login" type="button">ENTRAR COM E-MAIL E SENHA</button>
                     <button class="auth-secondary-action" id="auth-resend" type="button">REENVIAR E-MAIL</button>
                     <button class="auth-switch" id="auth-change-email" type="button">E-mail errado? <strong>ALTERAR CADASTRO</strong></button>
                   </div>
@@ -173,7 +199,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                     </button>
                     <div class="auth-divider" aria-hidden="true"><span>ou continue com e-mail</span></div>
                   ` : ''}
-                  ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" placeholder="Nome completo" required></div></div>` : ''}
+                  ${register ? `<div class="field auth-field"><label class="sr-only" for="auth-name">Nome completo</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('user', 'ico--control')}</span><input id="auth-name" name="name" autocomplete="name" minlength="2" placeholder="Nome completo" value="${escapeHtml(draftName)}" required></div></div>` : ''}
                   ${reset ? '' : `<div class="field auth-field"><label class="sr-only" for="auth-email">E-mail</label><div class="auth-input"><span class="auth-input__icon" aria-hidden="true">${icon('mail', 'ico--control')}</span><input id="auth-email" name="email" type="email" autocomplete="email" inputmode="email" value="${escapeHtml(draftEmail)}" placeholder="E-mail cadastrado" aria-describedby="auth-error" required></div></div>`}
                   ${login ? passwordField() : ''}
                   ${register ? passwordField({ placeholder: 'Mínimo de 8 caracteres', autocomplete: 'new-password', describedBy: 'auth-requirements auth-error' }) : ''}
@@ -185,7 +211,7 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
                 </form>
                 <button class="auth-switch" id="auth-switch" type="button">${register ? (commercialIntent ? 'Já possui conta? <strong>ENTRAR E CONTINUAR</strong>' : 'Já possui conta? <strong>ENTRAR</strong>') : (forgot || reset) ? 'Lembrou sua senha? <strong>VOLTAR PARA ENTRAR</strong>' : (commercialIntent ? 'Primeira vez aqui? <strong>CRIAR CONTA E CONTINUAR</strong>' : 'Ainda não tem conta? <strong>CADASTRE-SE</strong>')}</button>
               `}
-              ${(!(forgotSent || verifyEmail) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
+              ${(!commercialIntent && !(forgotSent || verifyEmail) && (login || register)) ? `<div class="auth-install-wrap">${installButtonHtml({ id: 'btn-install-auth', variant: 'ghost', block: false, label: 'Instalar aplicativo' })}</div>` : ''}
               <p class="auth-legal">Ao continuar, você concorda com os <a href="${escapeHtml(links.terms)}" target="_blank" rel="noopener noreferrer">Termos de Uso</a> e a <a href="${escapeHtml(links.privacy)}" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
               <a class="auth-support" href="${escapeHtml(links.support)}">Contato e suporte</a>
             </div>
@@ -194,9 +220,17 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
       </section>`;
 
     bindInstallButtons(root);
+    root.querySelectorAll('[data-auth-mode]').forEach((button) => button.addEventListener('click', () => {
+      if (submitting) return;
+      captureDraft();
+      mode = button.dataset.authMode === 'login' ? AUTH_MODES.LOGIN : AUTH_MODES.REGISTER;
+      draw();
+      root.querySelector('#auth-email')?.focus();
+    }));
 
     root.querySelector('#auth-google')?.addEventListener('click', async (event) => {
       const button = event.currentTarget;
+      captureDraft();
       button.disabled = true;
       button.setAttribute('aria-busy', 'true');
       try {
@@ -224,7 +258,8 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
       try {
         const user = await authService.restoreSession();
         if (!user) {
-          draw({ message: 'A confirmação ainda não apareceu. Abra o link do e-mail e tente novamente.' });
+          mode = AUTH_MODES.LOGIN;
+          draw({ message: `Não encontramos uma sessão neste navegador. Se já confirmou seu e-mail, entre abaixo para ${commercialIntent ? 'continuar a compra' : 'continuar'}.` });
           return;
         }
         await onAuthenticated({ reason: 'email-confirmation' });
@@ -238,17 +273,25 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
       draw();
       root.querySelector('#auth-email')?.focus();
     });
+    root.querySelector('#auth-confirm-login')?.addEventListener('click', () => {
+      mode = AUTH_MODES.LOGIN;
+      draw();
+      root.querySelector('#auth-password')?.focus();
+    });
 
     root.querySelector('#auth-back-login')?.addEventListener('click', () => {
       mode = AUTH_MODES.LOGIN;
       draw();
     });
     root.querySelector('#auth-switch')?.addEventListener('click', () => {
+      if (submitting) return;
+      captureDraft();
       if (mode === AUTH_MODES.RESET) clearRecoveryUrl();
       mode = register ? AUTH_MODES.LOGIN : login ? AUTH_MODES.REGISTER : AUTH_MODES.LOGIN;
       draw();
     });
     root.querySelector('#auth-forgot')?.addEventListener('click', () => {
+      if (submitting) return;
       draftEmail = root.querySelector('#auth-email')?.value || '';
       mode = AUTH_MODES.FORGOT;
       draw();
@@ -275,6 +318,9 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
 
     root.querySelector('#auth-form')?.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (submitting) return;
+      submitting = true;
+      captureDraft();
       const form = new FormData(event.currentTarget);
       const button = event.currentTarget.querySelector('button[type="submit"]');
       draftEmail = String(form.get('email') || draftEmail).trim();
@@ -311,6 +357,8 @@ export function renderAuth(root, { authService, onAuthenticated, commercialInten
           return;
         }
         draw({ message: error.message || 'Não foi possível concluir esta operação.' });
+      } finally {
+        submitting = false;
       }
     });
   };

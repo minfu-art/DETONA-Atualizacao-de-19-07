@@ -1189,7 +1189,50 @@ body:has(.student-library--private:not(.student-library--acquisition)) .pwa-inst
 .acquisition-price-manifesto { display: block; width: 100%; max-width: 840px; margin-inline: auto; }
 .acquisition-price-manifesto img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .checkout-redirect-guide { font-size: .95rem; line-height: 1.55; color: #d4dfef; }
+/* Focused purchase: preserve the library and game layout outside this state. */
+body:has(.student-library--acquisition) #pwa-install-banner,
+body:has(.auth-mode-heading--purchase) #pwa-install-banner,
+#app.app-shell--checkout #app-sidebar,
+#app.app-shell--checkout #bottom-nav { display: none; }
+#app.app-shell--checkout { grid-template-columns: minmax(0, 1fr); padding-left: 0; padding-bottom: 0; }
+#app.app-shell--checkout .app-shell__main { width: 100%; margin-left: 0; }
+#app.app-shell--checkout #app-topbar,
+#app.app-shell--checkout #screen { grid-column: 1 / -1; margin-left: 0; }
+.student-library--acquisition { max-width: 1080px; margin-inline: auto; padding: 24px; }
+.student-library--acquisition .private-library-header { margin-bottom: 20px; gap: 12px; }
+.student-library--acquisition .private-library-header h1 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.15; }
+.student-library--acquisition .checkout-change-course { min-height: 44px; width: auto; padding: 8px 12px; background: transparent; box-shadow: none; border-color: #574572; color: #d5bdff; font-size: .875rem; }
+.student-library--acquisition .acquisition-hero { padding: 24px; gap: 24px; }
+.student-library--acquisition .commercial-intent__content { align-content: start; }
+.student-library--acquisition .commercial-intent__content h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.12; }
+.student-library--acquisition .acquisition-description { font-size: 1rem; }
+.student-library--acquisition .commercial-intent__action { display: flex; flex-direction: column; align-items: stretch; gap: 12px; padding: 20px; }
+.student-library--acquisition .commercial-intent__action > span,
+.student-library--acquisition .commercial-intent__action > small,
+.student-library--acquisition .commercial-intent__action li { font-size: .875rem; line-height: 1.45; }
+.student-library--acquisition .commercial-intent__action button { font-size: .875rem; line-height: 1.35; min-height: 56px; background: linear-gradient(110deg, #6329d7, #a239ed); }
+.checkout-account { font-size: .875rem; line-height: 1.5; overflow-wrap: break-word; }
+.checkout-account strong { display: block; color: #fff; }
+.checkout-browser-help { font-size: .875rem; line-height: 1.5; color: #c8bedc; }
+.checkout-browser-help summary { cursor: pointer; padding-block: 8px; }
+.student-library--acquisition .acquisition-payment-trust { margin: 0; padding: 12px 0 0; background: transparent; box-shadow: none; }
+.student-library--acquisition .acquisition-payment-trust strong,
+.student-library--acquisition .acquisition-payment-trust p,
+.student-library--acquisition .acquisition-payment-trust__proofs span { font-size: .875rem; line-height: 1.45; }
+@media (max-width: 760px) {
+  .student-library--acquisition { padding: 16px; }
+  .student-library--acquisition .private-library-header { align-items: start; }
+  .student-library--acquisition .acquisition-hero { padding: 16px; gap: 18px; }
+  .student-library--acquisition .commercial-intent__action { padding: 16px; }
+  .student-library--acquisition .acquisition-metrics { gap: 8px; }
+}
 @media (max-width: 760px) {
   .acquisition-hero.acquisition-hero--compact { grid-template-columns: 1fr; }
   .acquisition-hero--compact::before { background-position: 60% top; }
 }
+.auth-account-choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0; }
+.auth-account-choice button { min-height: 48px; border: 1px solid #674c88; border-radius: 10px; color: #eee6ff; background: #1a102e; font: 750 .95rem/1.3 var(--sans); cursor: pointer; }
+.auth-account-choice button[aria-pressed="true"] { border-color: #ae72ff; background: #6931c9; color: #fff; }
+.saas-auth--purchase .auth-form + .auth-switch { display: none; }
+.saas-auth--purchase.saas-auth--forgot .auth-form + .auth-switch,
+.saas-auth--purchase.saas-auth--reset .auth-form + .auth-switch { display: block; }

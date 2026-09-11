@@ -174,7 +174,14 @@ export class SupabaseAuthAdapter {
       email: normalizeEmail(email),
       password: String(password || ''),
     });
-    if (error) throw new Error('E-mail ou senha invalidos.');
+    if (error) {
+      if (error.code === 'email_not_confirmed') {
+        const pending = new Error('Confirme seu e-mail para continuar.');
+        pending.code = 'EMAIL_CONFIRMATION_REQUIRED';
+        throw pending;
+      }
+      throw new Error('E-mail ou senha invalidos.');
+    }
     if (!data.user) throw new Error('E-mail ou senha invalidos.');
 
     const profile = await this.#ensureProfile(data.user);

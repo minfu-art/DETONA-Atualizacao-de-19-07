@@ -10,7 +10,7 @@ const source = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8'
 
 test('commercial handoff shows only the course selected on the public site', async () => {
   const ui = await source('app/js/ui/library.js');
-  assert.match(ui, /resolveCommercialIntent\(commercialIntent, items\)/);
+  assert.match(ui, /resolveCommercialIntent\(commercialIntent \|\|/);
   assert.match(ui, /data-commercial-intent=/);
   assert.match(ui, /formatCanonicalPrice\(contest\)/);
   assert.doesNotMatch(ui, /data-purchase-contest/);
@@ -23,7 +23,7 @@ test('commercial handoff blocks duplicate clicks and requires validated HTTPS re
     source('app/js/services/checkoutService.js'),
   ]);
   assert.match(ui, /if \(!contestId \|\| button\.disabled \|\| checkoutAttempts\.has\(contestId\)\) return/);
-  assert.match(ui, /CONTINUAR PARA O PAGAMENTO SEGURO/);
+  assert.match(ui, /IR PARA PAGAMENTO NO MERCADO PAGO/);
   assert.match(ui, /button\.disabled = true/);
   assert.match(app, /libraryService\.purchase\(user, contestId\)/);
   assert.match(app, /navigateToCheckout\(purchase\.redirectUrl, \{ target: checkoutWindow \}\)/);
@@ -34,7 +34,7 @@ test('commercial handoff blocks duplicate clicks and requires validated HTTPS re
 
 test('service worker refreshes navigation and runtime configuration', async () => {
   const sw = await source('app/sw.js');
-  assert.match(sw, /detona-v170-student-library/);
+  assert.match(sw, /detona-v173-purchase-recovery/);
   assert.match(sw, /asset === '\.\/env\.runtime\.js'/);
   assert.match(sw, /fetch\(e\.request, \{ cache: 'no-store' \}\)/);
   assert.match(sw, /e\.request\.mode === 'navigate'[\s\S]*fetch\(e\.request\)/);

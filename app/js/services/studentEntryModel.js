@@ -22,8 +22,8 @@ export function resolveCommercialIntent(intent, items = []) {
   if (!intent) return null;
   const item = items.find(({ contest }) => contest?.id === intent.contestId);
   if (!item) return { state: 'unavailable', item: null };
-  if (item.owned) return { state: 'owned', item };
   if (item.accessVerificationRequired) return { state: 'offline', item };
+  if (item.owned) return { state: 'owned', item };
   if (item.checkoutAction?.action === 'purchase' && item.checkoutAction.disabled !== true) {
     return { state: 'ready', item };
   }
@@ -76,16 +76,18 @@ export function resolveCheckoutReturn(returnState, items = []) {
   const item = returnState.contestId
     ? items.find(({ contest }) => contest?.id === returnState.contestId)
     : null;
-  if (returnState.state === 'cancelled') {
+  if (returnState.state === 'cancelled' && !item?.owned) {
+    const retryAllowed = Boolean(item && !item.accessVerificationRequired && item.checkoutAction?.action === 'purchase' && item.checkoutAction.disabled !== true);
     return {
       tone: 'warning',
       title: 'Compra não concluída.',
       description: 'Nenhum acesso foi concedido. Você pode tentar novamente quando o checkout estiver disponível.',
       contestId: returnState.contestId,
-      retryAllowed: Boolean(item && !item.owned && item.checkoutAction?.action === 'purchase'),
+      retryAllowed,
+      action: retryAllowed ? 'retry' : 'refresh',
     };
   }
-  if (item?.owned) {
+  if (item?.owned && !item.accessVerificationRequired) {
     const isPreorder = item.contest.contentStatus !== 'ready';
     return {
       tone: 'success',
@@ -95,6 +97,7 @@ export function resolveCheckoutReturn(returnState, items = []) {
         : `${item.contest.name} já está disponível em Meus cursos.`,
       contestId: item.contest.id,
       confirmed: true,
+      action: isPreorder ? 'library' : 'enter',
     };
   }
   return {
@@ -103,6 +106,7 @@ export function resolveCheckoutReturn(returnState, items = []) {
     description: 'A compra só libera o curso depois da confirmação segura no servidor.',
     contestId: returnState.contestId,
     pending: true,
+    action: 'refresh',
   };
 }
 

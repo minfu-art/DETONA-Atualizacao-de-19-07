@@ -7,8 +7,8 @@ import { ensureSeed, getPlayer } from './core/seed.js';
 import { recalculateEditalSSOT } from './core/ssot.js';
 import { setMuted, SFX } from './core/audio.js';
 import { initAppShell, updateAppShell } from './ui/appShell.js?v=73';
-import { renderAuth } from './ui/auth.js?v=76';
-import { renderLibrary } from './ui/library.js?v=171';
+import { renderAuth } from './ui/auth.js?v=77';
+import { renderLibrary } from './ui/library.js?v=173';
 import { authService, libraryService, contestDataMigrationService, contestContentService } from './services/appServices.js';
 import { canAccessInternalRoute, isDeveloperUser } from './auth/authService.js';
 import { redirectForRole } from './auth/roleRouting.js';
@@ -579,7 +579,7 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
   ctx.user = user;
   root.innerHTML = skeleton(5, 'Carregando sua biblioteca');
   try {
-    const state = libraryState || await libraryService.getLibraryState(user, { refresh });
+    const state = libraryState || await libraryService.getLibraryState(user, { refresh: refresh || Boolean(readCheckoutReturn(globalThis.location?.search || '')) });
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
     const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
@@ -596,10 +596,19 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
       }),
       onRefreshAccess: () => showLibrary({ refresh: true }),
       onPurchase: (contestId, navigation) => purchaseAndRedirect(user, contestId, navigation),
+      onConfirmedPurchase: async (contestId) => {
+        // openContest revalidates the student's entitlement before loading content.
+        await openContest(contestId, { contestHint: state.items.find((item) => item.contest.id === contestId)?.contest || null });
+        clearCheckoutReturnUrl();
+      },
+      onReturnLibrary: async () => {
+        clearCheckoutReturnUrl();
+        await showLibrary({ refresh: true });
+      },
       onLogout: logout,
       embedded: true,
     });
-    if (commerceReturn) clearCheckoutReturnUrl();
+    // Keep the return context while confirmation is pending, including refresh/reload.
   } catch (error) {
     if (generation !== contestOpenGeneration) return;
     root.innerHTML = errorState({
@@ -795,7 +804,7 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
   const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
   if (isDeveloperUser(authenticatedUser) && !coursePreview) {
     const redirect = redirectForRole(authenticatedUser, {
-      preserveStudentEntry: Boolean(commercialIntent),
+      preserveStudentEntry: Boolean(commercialIntent || readCheckoutReturn(globalThis.location?.search || '')),
     });
     if (redirect) return;
   }
@@ -815,6 +824,11 @@ async function initializeAuthenticatedApp({ reason = 'restore' } = {}) {
     await openContest(previewContestId, {
       contestHint: await courseFactoryPreviewService.loadStudentContest(previewContestId),
     });
+    return;
+  }
+
+  if (readCheckoutReturn(globalThis.location?.search || '')) {
+    await showLibrary({ refresh: true });
     return;
   }
 

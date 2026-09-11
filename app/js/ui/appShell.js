@@ -255,6 +255,8 @@ export function updateAppShell({ screen, player, contest }) {
   const activeScreen = primaryScreenFor(screen);
   const secondaryMobile = isMobileSecondaryScreen(screen);
   const immersive = screen === 'onboarding' || screen === 'celebration';
+  const checkout = screen === 'library' && Boolean(root?.querySelector('.student-library--acquisition'));
+  app?.classList.toggle('app-shell--checkout', checkout);
   shellController?.closeMore({ restoreFocus: false });
   app?.classList.toggle('app-shell--immersive', immersive);
   app?.classList.toggle('app-shell--private-library', screen === 'library');
@@ -305,11 +307,11 @@ export function updateAppShell({ screen, player, contest }) {
   setText('shell-player', player?.name || 'Detonador');
   setText('shell-avatar', (player?.name || 'D').trim().charAt(0).toUpperCase());
   setText('shell-context-label', screen === 'library' ? 'Área' : 'Jornada ativa');
-  setText('shell-contest', screen === 'library' ? 'Biblioteca' : (contest?.code || 'Biblioteca'));
+  setText('shell-contest', checkout ? 'Finalizar compra' : screen === 'library' ? 'Biblioteca' : (contest?.code || 'Biblioteca'));
   setText('shell-active-code', contest?.code || '—');
   const activeJourney = document.getElementById('shell-active-journey');
-  if (activeJourney) activeJourney.hidden = !(screen === 'library' && contest?.code);
-  document.title = `${titleForScreen(screen)} — ${contest?.code || 'DETONA'}`;
+  if (activeJourney) activeJourney.hidden = checkout || !(screen === 'library' && contest?.code);
+  document.title = checkout ? 'Finalizar compra — DETONA' : `${titleForScreen(screen)} — ${contest?.code || 'DETONA'}`;
   const announcer = document.getElementById('shell-announcer');
   if (announcer) announcer.textContent = `${titleForScreen(screen)} carregado`;
 }

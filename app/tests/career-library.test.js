@@ -169,7 +169,7 @@ test('interface privada remove descoberta e mantém responsividade e acessibilid
     readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8'),
     readFile(new URL('../css/student-entry.css', import.meta.url), 'utf8'),
   ]);
-  assert.match(ui, /acquisitionMode \? 'CONHEÇA SUA JORNADA' : 'Meus cursos'/);
+  assert.match(ui, /acquisitionMode \? 'Finalizar compra' : 'Meus cursos'/);
   assert.match(ui, /\+ ADICIONAR CURSOS/);
   assert.match(ui, /rel="noopener noreferrer"/);
   assert.doesNotMatch(ui, /Pesquisar concurso|Explore por área|data-career-filter|data-interest-contest/);
@@ -243,7 +243,7 @@ test('biblioteca reaproveita a arte oficial de cada curso sem alterar a compra',
   const ui = await readFile(new URL('../js/ui/library.js', import.meta.url), 'utf8');
   assert.match(ui, /contest\.coverAsset \|\| CHECKOUT_ARTWORK\[contest\.id\]/);
   assert.match(ui, /commercialIntentCard/);
-  assert.match(ui, /CONTINUAR PARA O PAGAMENTO SEGURO/);
+  assert.match(ui, /IR PARA PAGAMENTO NO MERCADO PAGO/);
 });
 
 test('migration é incremental, restrita ao catálogo e classifica PC AL e PP PE', async () => {

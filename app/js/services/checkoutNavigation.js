@@ -1,8 +1,9 @@
-function mobileCheckoutContext() {
+export function mobileCheckoutContext() {
   const standalone = globalThis.matchMedia?.('(display-mode: standalone)')?.matches
     || globalThis.navigator?.standalone === true;
-  const compactViewport = globalThis.matchMedia?.('(max-width: 760px)')?.matches;
-  return Boolean(standalone || compactViewport);
+  // A regular mobile browser can complete payment in the same tab.
+  // Only an installed PWA needs an external browser window.
+  return Boolean(standalone);
 }
 
 function renderWaitingState(target) {

@@ -13,8 +13,11 @@ function safeSupportEmail(value) {
 }
 
 export function getStudentEntryLinks() {
+  const configuredCourses = safePublicUrl(ENV.PUBLIC_COURSES_URL);
+  const courses = new URL(configuredCourses?.startsWith('https://') ? configuredCourses : 'https://detonaconcursos.com/cursos/');
+  if (courses.hostname === 'detonaconcursos.com' && courses.pathname === '/') courses.pathname = '/cursos/';
   return Object.freeze({
-    courses: safePublicUrl(ENV.PUBLIC_COURSES_URL, 'https://detonaconcursos.com/'),
+    courses: courses.href,
     support: safeSupportEmail(ENV.SUPPORT_EMAIL || 'adm@detonaconcursos.com'),
     terms: safePublicUrl(ENV.TERMS_URL, 'legal.html#termos'),
     privacy: safePublicUrl(ENV.PRIVACY_URL, 'legal.html#privacidade'),

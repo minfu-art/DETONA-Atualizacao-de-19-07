@@ -16,7 +16,7 @@ test('antessala usa dados canônicos de qualquer curso e não contém oferta fix
   assert.match(ui, /formatCanonicalPrice\(contest\)/);
   assert.match(ui, /Number\(contest\.questionCount \|\| 0\)/);
   assert.match(ui, /Number\(contest\.subtopicCount \|\| 0\)/);
-  assert.match(ui, /CONTINUAR PARA O PAGAMENTO SEGURO/);
+  assert.match(ui, /IR PARA PAGAMENTO NO MERCADO PAGO/);
   assert.match(ui, /Pagamento seguro processado pelo Mercado Pago/);
   assert.match(ui, /mercado-pago-logo-footer-official\.svg/);
   assert.doesNotMatch(ui, /Confirme sua Jornada PC AL|R\$ 69,99|pc_al_2026/);

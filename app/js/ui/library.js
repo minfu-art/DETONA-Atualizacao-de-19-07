@@ -223,17 +223,19 @@ function checkoutReturnCard(notice, { preview = false } = {}) {
       ? '<button type="button" class="checkout-return__primary" data-return-retry>TENTAR NOVAMENTE</button>'
       : notice.action === 'offer'
         ? '<button type="button" class="checkout-return__primary" data-return-offer>VOLTAR PARA A OFERTA</button>'
-        : '<button type="button" class="checkout-return__secondary" data-refresh-access>ATUALIZAR SITUAÇÃO</button>';
+        : notice.action === 'library'
+          ? '<button type="button" class="checkout-return__primary" data-return-library>VER MEUS CURSOS</button>'
+          : '<button type="button" class="checkout-return__secondary" data-refresh-access>ATUALIZAR SITUAÇÃO</button>';
   return `
     <section class="checkout-return checkout-return--${escapeHtml(notice.tone)}" data-checkout-return aria-labelledby="checkout-return-title">
       <span class="checkout-return__icon">${notice.confirmed ? icon('checkCircle') : notice.state === 'pending' ? icon('focus') : notice.state === 'rejected' ? icon('alert') : icon('shield')}</span>
       <div><span class="library-kicker">RETORNO DO MERCADO PAGO</span><h2 id="checkout-return-title">${escapeHtml(notice.title)}</h2><p>${escapeHtml(notice.description)}</p></div>
-      <aside><strong>${icon('shieldCheck', 'ico--inline')} Validação feita pelo backend</strong><span>O DETONA nunca libera acesso apenas pelos parâmetros da URL de retorno.</span></aside>
+      <aside><strong>${icon('shieldCheck', 'ico--inline')} Confirmação segura do pagamento</strong><span>${notice.pending ? 'Se acabou de pagar, aguarde a confirmação e atualize a situação. Não é necessário pagar novamente.' : 'Seu acesso depende da confirmação do pagamento, não apenas do retorno a esta página.'}</span></aside>
       <div class="checkout-return__actions">${action}${preview ? '<small>Estado demonstrativo do preview local.</small>' : ''}</div>
     </section>`;
 }
 
-function commercialIntentCard(resolution, links = {}, { preview = false, offerHidden = false } = {}) {
+function commercialIntentCard(resolution, links = {}, { preview = false, offerHidden = false, user = {} } = {}) {
   if (!resolution) return '';
   const fallback = links.courses
     ? `<a href="${escapeHtml(links.courses)}" target="_blank" rel="noopener noreferrer">Voltar aos cursos</a>`
@@ -258,31 +260,24 @@ function commercialIntentCard(resolution, links = {}, { preview = false, offerHi
           <p class="acquisition-code">${escapeHtml(contest.code)}</p>
           <h2 id="commercial-intent-title">${escapeHtml(contest.name)}</h2>
           <p class="acquisition-role">${escapeHtml(contest.role || 'Preparação completa')}</p>
-          <p class="acquisition-description">${escapeHtml(contest.description || 'Uma jornada de preparação organizada pelo edital.')}</p>
+          <p class="acquisition-description">${preorder ? 'Conteúdo em preparação. Esta compra reserva a jornada; o estudo será liberado quando o conteúdo inicial for publicado.' : 'Edital organizado, prática por questões, revisões e acompanhamento da sua evolução.'}</p>
           ${metrics ? `<div class="acquisition-metrics" aria-label="Dados do curso">${metrics}</div>` : ''}
         </div>
         <aside class="commercial-intent__action" aria-label="Aquisição do curso">
           <span>${preorder ? 'RESERVA DA JORNADA' : 'ACESSO AO CURSO'}</span>
           ${price ? `<strong class="commercial-intent__price">${escapeHtml(price)}</strong><small>pagamento único</small>` : ''}
           <ul>
-            <li>${icon('check', 'ico--inline')} Curso vinculado à sua conta</li>
-            <li>${icon('check', 'ico--inline')} Acesso liberado após confirmação</li>
-            <li>${icon('shieldCheck', 'ico--inline')} 7 dias de garantia pelo DETONA</li>
+            <li>${icon('check', 'ico--inline')} ${preorder ? 'Reserva confirmada após o pagamento' : 'Acesso após confirmação do pagamento'}</li>
+            <li>${icon('check', 'ico--inline')} ${preorder ? 'Conteúdo inicial ainda não liberado' : 'Estude pelo celular ou computador'}</li>
           </ul>
-          ${paymentTrustBlock({ compact: true })}
-          <p class="checkout-redirect-guide">Você será direcionado ao Mercado Pago para finalizar sua compra. Prefere pagar pelo navegador? Se aparecer o aviso para abrir outro aplicativo com as opções “Voltar” e “Continuar”, toque em <strong>“Voltar”</strong>.</p>
+          <p class="checkout-account">Acesso vinculado a <strong>${escapeHtml(user.email || user.name || 'sua conta')}</strong></p>
           ${actionable
-            ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">CONTINUAR PARA O PAGAMENTO SEGURO <span aria-hidden="true">→</span></button>`
+            ? `<button type="button" data-commercial-intent="${escapeHtml(contest.id)}">IR PARA PAGAMENTO NO MERCADO PAGO <span aria-hidden="true">→</span></button>`
             : `<p>${resolution.state === 'offline' ? 'Conecte-se para validar a disponibilidade.' : 'Pagamento temporariamente indisponível.'}</p>${fallback}`}
           <p class="library-action-feedback" data-commercial-feedback role="status" aria-live="polite"></p>
+          ${paymentTrustBlock({ compact: true })}
+          <details class="checkout-browser-help"><summary>Precisa de ajuda com o redirecionamento?</summary><p class="checkout-redirect-guide">Prefere pagar pelo navegador? Se aparecer o aviso para abrir outro aplicativo com “Voltar” e “Continuar”, toque em “Voltar”. Se o pagamento não abrir, tente novamente ou fale com o suporte.</p></details>
         </aside>
-      </div>
-      <div class="acquisition-value" aria-labelledby="acquisition-value-title">
-        <h2 id="acquisition-value-title">Seu sonho pode ser grande. O preço para começar não precisa ser.</h2>
-        <picture class="acquisition-price-manifesto">
-          <source media="(max-width: 600px)" srcset="assets/manifesto-price-mobile.webp">
-          <img src="assets/manifesto-price-desktop.webp" alt="O valor do DETONA é simbólico: não queremos que o preço seja a barreira entre alguém e o seu sonho." loading="lazy" decoding="async">
-        </picture>
       </div>
     </section>
     </div>`;
@@ -303,6 +298,7 @@ export function renderLibrary(root, {
   onRefreshAccess = async () => {},
   onPurchase = async () => {},
   onConfirmedPurchase = async () => {},
+  onReturnLibrary = async () => {},
   onLogout,
   embedded = false,
 }) {
@@ -313,7 +309,7 @@ export function renderLibrary(root, {
     ? owned.filter(({ contest }) => contest.id !== activeJourney.contest.id)
     : owned;
   const notice = resolveCheckoutReturn(commerceReturn, items, commerceStatus);
-  const intentResolution = resolveCommercialIntent(commercialIntent, items);
+  const intentResolution = resolveCommercialIntent(commercialIntent || (commerceReturn?.contestId ? { contestId: commerceReturn.contestId } : null), items);
   const acquisitionMode = Boolean(intentResolution?.item && intentResolution.state !== 'owned');
   const returnMode = Boolean(notice);
   const openingContests = new Set();
@@ -326,16 +322,16 @@ export function renderLibrary(root, {
       <header class="private-library-header ${acquisitionMode ? 'private-library-header--acquisition' : ''}">
         <div class="private-library-header__copy">
           <span class="library-kicker">${acquisitionMode ? 'AQUISIÇÃO SEGURA' : 'BIBLIOTECA DO ALUNO'}</span>
-          <h1 id="library-title">${acquisitionMode ? 'CONHEÇA SUA JORNADA' : 'Meus cursos'}</h1>
-          <p>${acquisitionMode ? 'Veja tudo o que fará parte da sua preparação.' : owned.length ? 'Continue de onde parou ou escolha outra jornada comprada.' : 'Quando uma jornada for liberada, ela aparecerá aqui pronta para começar.'}</p>
+          <h1 id="library-title">${acquisitionMode ? 'Finalizar compra' : 'Meus cursos'}</h1>
+          <p>${acquisitionMode ? 'Confira sua jornada. O pagamento acontece no Mercado Pago.' : owned.length ? 'Continue de onde parou ou escolha outra jornada comprada.' : 'Quando uma jornada for liberada, ela aparecerá aqui pronta para começar.'}</p>
           ${acquisitionMode || !owned.length ? '' : `<span class="library-access-count">${icon('book', 'ico--inline')} ${escapeHtml(libraryCount)}</span>`}
         </div>
-        ${acquisitionMode ? publicCoursesAction({ href: links.courses, offline, label: 'VER OUTROS CURSOS' }) : ''}
+        ${acquisitionMode ? publicCoursesAction({ href: links.courses, offline, label: 'Trocar curso', className: 'checkout-change-course' }) : ''}
       </header>
       ${validating ? `<aside class="library-network-state" role="status" aria-live="polite"><div><strong>Atualizando seus acessos...</strong><span>Você já pode visualizar a Biblioteca enquanto concluímos a validação segura.</span></div></aside>` : ''}
       ${offline ? `<aside class="library-network-state" id="library-offline-courses" role="status"><div><strong>Você está vendo a última biblioteca conhecida.</strong><span>Conecte-se para validar acessos e adicionar novos cursos.</span></div><button class="btn btn-ghost" type="button" data-refresh-access>Atualizar biblioteca</button></aside>` : ''}
       ${checkoutReturnCard(notice, { preview: checkoutPreview })}
-      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode })}
+      ${commercialIntentCard(intentResolution, links, { preview: checkoutPreview, offerHidden: returnMode, user })}
       ${acquisitionMode ? '' : activeJourneyVisible ? continueJourney(activeJourney) : ''}
       ${acquisitionMode ? '' : owned.length ? (ownedOrdered.length ? `
           <section class="private-owned-courses" aria-labelledby="owned-courses-title">
@@ -388,14 +384,17 @@ export function renderLibrary(root, {
   root.querySelectorAll('[data-refresh-access]').forEach((button) => button.addEventListener('click', async () => {
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
-    await onRefreshAccess();
+    try { await onRefreshAccess(); }
+    finally { button.disabled = false; button.setAttribute('aria-busy', 'false'); }
   }));
   const showCommercialPanel = (panel) => {
     const offer = root.querySelector('[data-acquisition-offer]');
     const returned = root.querySelector('[data-checkout-return]');
     if (offer) offer.hidden = panel !== 'offer';
     if (returned) returned.hidden = panel !== 'return';
-    offer?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+    const target = panel === 'offer' ? offer : returned;
+    target?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+    target?.querySelector('button, a')?.focus?.({ preventScroll: true });
   };
 
   root.querySelector('[data-commercial-intent]')?.addEventListener('click', async (event) => {
@@ -422,12 +421,15 @@ export function renderLibrary(root, {
       checkoutAttempts.delete(contestId);
       button.disabled = false;
       button.setAttribute('aria-busy', 'false');
-      button.textContent = 'CONTINUAR PARA O PAGAMENTO SEGURO →';
+      button.textContent = 'IR PARA PAGAMENTO NO MERCADO PAGO →';
       if (feedback) feedback.textContent = error?.message || 'Não foi possível iniciar o pagamento.';
     }
   });
   root.querySelector('[data-return-offer]')?.addEventListener('click', () => showCommercialPanel('offer'));
   root.querySelector('[data-return-retry]')?.addEventListener('click', () => showCommercialPanel('offer'));
+  root.querySelector('[data-return-library]')?.addEventListener('click', async () => {
+    if (!checkoutPreview) await onReturnLibrary();
+  });
   root.querySelector('[data-return-enter]')?.addEventListener('click', async (event) => {
     const button = event.currentTarget;
     if (checkoutPreview) {
@@ -436,7 +438,13 @@ export function renderLibrary(root, {
     }
     button.disabled = true;
     button.setAttribute('aria-busy', 'true');
-    await onConfirmedPurchase(notice?.contestId);
+    try { await onConfirmedPurchase(notice?.contestId); }
+    catch (error) {
+      button.disabled = false;
+      button.setAttribute('aria-busy', 'false');
+      const message = root.querySelector('#checkout-return-title + p');
+      if (message) message.textContent = error?.message || 'Não foi possível abrir agora. Tente novamente.';
+    }
   });
   bindOpenActions(root);
 }
