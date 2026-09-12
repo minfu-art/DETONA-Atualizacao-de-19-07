@@ -1,0 +1,73 @@
+import { buildPortugueseEditorialBatch } from './prf-portuguese-editorial-batch-lib.mjs';
+
+const aula07 = 'prf_pdf_dd8c41255dc9';
+const aula02 = 'prf_pdf_2e7edd5477b7';
+
+const result = await buildPortugueseEditorialBatch({
+  batch: 31, slug: 'b31', sourceId: aula07, sourceIds: [aula07, aula02],
+  sourcePages: { [aula07]: [48,49], [aula02]: [49,58] },
+  matrixStem: 'portuguese-aula07-aula02-coordination-editorial-matrix',
+  pages: [48,58], range: [1,20], subtopic: 'Coordenação',
+  scope: 'Orações coordenadas: autonomia, formas sindéticas e assindéticas, classificação e contraste com subordinação',
+  rules: ['Contar orações pelas formas verbais sem separar locuções', 'Verificar dependência sintática antes de classificar', 'Analisar a correlação completa, não a conjunção isolada', 'Distinguir coordenadas de subordinadas com sentido próximo'],
+  matrix: [
+    [1,48,'Coordenação 1 - INPI 2024','correlação aditiva','identificar duas estruturas paralelas adicionadas','classificar mas isoladamente como adversativo',aula07],
+    [2,48,'Coordenação 2 - Camaçari 2024','adversativa sindética','substituir porém por coordenativa equivalente','trocar coordenativa por subordinativa concessiva',aula07],
+    [3,49,'Conjunção 1 - PC-DF 2025','causal subordinada versus conclusão coordenada','distinguir porque subordinativo e portanto coordenativo','classificar apenas pela proximidade semântica',aula02],
+    [4,50,'Conjunção 2 - TRF6 2025','bem como coordenativo','reconhecer coordenação de termos e orações','supor que toda coordenação une orações',aula02],
+    [5,50,'Conjunção 3 - PC-DF 2025','correlação aditiva enfática','analisar tanto como par coordenativo','separar os componentes da correlação',aula02],
+    [6,50,'Conjunção 4 - Inoversasul 2025','adversativa independente','testar autonomia das orações ligadas por porém','confundir oposição com dependência',aula02],
+    [7,51,'Conjunção 5 - Inoversasul 2025','como se subordinativo','reconhecer comparação hipotética dependente','classificar toda sequência com duas formas como coordenação',aula02],
+    [8,51,'Conjunção 6 - Inoversasul 2025','comparativa elíptica','recuperar verbo implícito em oração comparativa','contar apenas verbos expressos',aula02],
+    [9,51,'Conjunção 7 - Inoversasul 2025','condicional subordinada','distinguir prótase dependente de coordenada','chamar toda relação lógica de coordenação',aula02],
+    [10,52,'Conjunção 8 - Inoversasul 2025','causal subordinada','identificar função adverbial da causa','considerar porquanto sempre coordenativo explicativo',aula02],
+    [11,52,'Conjunção 9 - Inoversasul 2025','porque causal ou explicativo','usar estrutura e modalidade para classificar','classificar porque invariavelmente',aula02],
+    [12,53,'Conjunção 10 - TRF6 2025','concessiva reduzida','reconhecer fragmento dependente','confundir ausência de verbo expresso com termo coordenado',aula02],
+    [13,53,'Conjunção 11 - PC-DF 2025','concessiva desenvolvida','testar dependência de embora','atribuir coordenação pelo sentido de contraste',aula02],
+    [14,53,'Conjunção 12 - PC-DF 2025','mas e embora','distinguir hierarquia coordenada e subordinada','tratar conectores opositivos como intercambiáveis',aula02],
+    [15,54,'Conjunção 13 - Inoversasul 2025','entretanto e conquanto','contrastar sindética adversativa e concessiva','preservar sintaxe em troca direta',aula02],
+    [16,55,'Conjunção 14 - Inoversasul 2025','consecutiva subordinada','identificar correlação intensiva tanto que','classificar que como coordenativo',aula02],
+    [17,55,'Conjunção 15 - TRF6 2025','pois conclusivo','usar posição para classificar coordenada','considerar pois sempre explicativo',aula02],
+    [18,56,'Conjunção 16 - PC-DF 2025','ao passo que contrastivo','avaliar coordenação e paralelismo contextual','decidir só pelo rótulo da locução',aula02],
+    [19,57,'Conjunção 17 - Inoversasul 2025','não apenas mas também','reconhecer coordenação correlativa','isolar mas como adversativo',aula02],
+    [20,58,'Conjunção 18 - Camaçari 2024','todavia adversativo','preservar classe e autonomia na substituição','trocar por conquanto sem reestruturar',aula02],
+  ],
+  microDefinitions: [
+    ['coordination_autonomy','Autonomia das orações coordenadas'],['syndetic_asyndetic','Coordenação sindética e assindética'],
+    ['additive_correlation','Coordenação aditiva correlativa'],['adversative_coordination','Coordenação adversativa'],
+    ['coordination_terms','Coordenação de termos e de orações'],['coordination_subordination','Coordenação versus subordinação'],
+    ['implicit_clause','Oração com verbo implícito'],['causal_explanatory','Causal subordinada e explicativa coordenada'],
+    ['conclusive_explanatory_pois','Pois conclusivo e explicativo'],['mixed_period','Período misto e paralelismo'],
+  ],
+  texts: {
+    a: `A central não apenas recebeu os alertas, mas também acionou as equipes. Os agentes verificaram o painel, conferiram os cabos, reiniciaram o sistema. O alarme cessou, porém a causa permaneceu desconhecida. O supervisor registrou a ocorrência e encerrou o plantão.`,
+    b: `As práticas mudaram porque novos testes revelaram falhas; portanto, a atualização foi necessária. O programa oferece treinamento, bem como suporte remoto. A equipe busca tanto rapidez como precisão. Era como se o equipamento respondesse ao operador.`,
+    c: `O método atual funciona melhor do que o anterior. Se os sensores falharem, o processo será interrompido. A revisão tornou-se indispensável, uma vez que surgiram divergências. Revise os dados, porque uma decisão sem evidências é arriscada.`,
+    d: `Mesmo em baixa intensidade, o ruído compromete a medição. Embora os filtros reduzam a interferência, não eliminam todo risco. O equipamento é moderno, mas exige supervisão. Os dados eram limitados; entretanto, sustentaram uma conclusão provisória.`,
+    e: `A falha incomodou tanto a equipe que o teste foi suspenso. O protocolo não exige formação específica e admite, pois, profissionais de áreas diversas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão. A solução depende não apenas de recursos, mas também de treinamento; todavia, sua aplicação ainda é desigual.`,
+  },
+  specs: [
+    ['a','additive_correlation','Na construção “não apenas... mas também”, “mas” integra uma correlação aditiva, e as duas ações são cumulativas.','C','O par correlativo soma receber os alertas e acionar as equipes. Analisar mas isoladamente como adversativo apagaria a estrutura completa não apenas X, mas também Y, típica da coordenação aditiva enfática.'],
+    ['a','syndetic_asyndetic','Em “verificaram o painel, conferiram os cabos, reiniciaram o sistema”, as três orações são coordenadas sindéticas porque as vírgulas funcionam como conjunções.','E','Cada forma verbal organiza uma oração autônoma e nenhuma conjunção aparece entre elas. As vírgulas realizam a justaposição, por isso a coordenação é assindética, isto é, sem síndeto.'],
+    ['a','coordination_autonomy','As orações “O alarme cessou” e “a causa permaneceu desconhecida” são independentes e ligadas por coordenação sindética adversativa.','C','Cada oração pode funcionar como frase completa. Porém é conjunção coordenativa adversativa e introduz contraste com a expectativa de que o fim do alarme viesse acompanhado da descoberta da causa.'],
+    ['a','coordination_terms','No último período, “registrou” e “encerrou” formam uma única locução verbal porque possuem o mesmo sujeito.','E','Registrou e encerrou são núcleos verbais distintos e não constituem locução: cada um carrega sentido lexical e complemento próprio. As duas orações compartilham sujeito e são coordenadas por e.'],
+    ['b','coordination_subordination','A oração iniciada por “porque” é subordinada causal, enquanto a iniciada por “portanto” é coordenada conclusiva.','C','Porque introduz a causa que modifica o fato de as práticas mudarem, exercendo função adverbial. Portanto liga uma oração autônoma que apresenta conclusão; semântica relacionada não significa mesma estrutura.'],
+    ['b','coordination_terms','Em “treinamento, bem como suporte remoto”, “bem como” coordena duas orações completas.','E','Bem como une dois objetos do verbo oferece. Como só existe a forma verbal oferece, o trecho contém uma oração; coordenação também pode organizar termos menores que exercem a mesma função sintática.'],
+    ['b','additive_correlation','“Tanto rapidez como precisão” coordena dois objetos diretos em uma correlação aditiva.','C','Rapidez e precisão completam o verbo busca e exercem a mesma função. Tanto... como acrescenta os dois objetivos com ênfase; não há duas orações porque nenhum dos termos contém verbo.'],
+    ['b','coordination_subordination','“Como se o equipamento respondesse ao operador” é oração coordenada porque possui verbo próprio.','E','Ter verbo permite reconhecer uma oração, mas não prova coordenação. O segmento depende da oração anterior e funciona como comparação hipotética; trata-se de subordinada adverbial comparativa.'],
+    ['c','implicit_clause','Em “melhor do que o anterior”, existe comparação com uma ação implícita: “do que o anterior funciona”.','C','A oração comparativa pode omitir o verbo recuperável pelo contexto. Embora apenas funciona esteja expresso uma vez, a estrutura profunda compara como o método atual funciona com como o anterior funciona.'],
+    ['c','coordination_subordination','A oração “Se os sensores falharem” é sintaticamente independente e, por isso, coordenada alternativa.','E','Isolado, o segmento deixa pendente a consequência da condição. Ele funciona como adjunto adverbial condicional de o processo será interrompido e é subordinado, não uma alternativa coordenada.'],
+    ['c','coordination_subordination','“Uma vez que surgiram divergências” exerce função causal em relação à oração principal e é subordinada.','C','A oração informa por que a revisão se tornou indispensável. Ao modificar toda a principal com circunstância de causa, estabelece dependência sintática característica da subordinação adverbial.'],
+    ['c','causal_explanatory','No último período, “porque uma decisão sem evidências é arriscada” justifica a ordem e pode ser classificada como coordenada explicativa.','C','A primeira oração está no imperativo, Revise. A oração com porque fornece a razão que sustenta a ordem, análise típica de coordenada sindética explicativa, e ambas admitem autonomia enunciativa.'],
+    ['d','coordination_subordination','“Mesmo em baixa intensidade” constitui oração coordenada concessiva, embora não apresente verbo.','E','Não existe a categoria coordenada concessiva. O segmento é expressão adverbial concessiva reduzida ou elíptica e depende da afirmação principal; a ausência de verbo expresso impede tratá-lo como oração autônoma completa.'],
+    ['d','coordination_subordination','A oração introduzida por “Embora” é subordinada concessiva, não coordenada adversativa.','C','Embora reduzam a interferência não funciona como frase completa no contexto e exerce valor adverbial de concessão sobre a principal. O subjuntivo e a dependência confirmam a subordinação.'],
+    ['d','coordination_subordination','Trocar diretamente “mas exige supervisão” por “embora exige supervisão” manteria coordenação e correção.','E','Mas introduz coordenada adversativa e aceita o indicativo exige. Embora criaria subordinada concessiva, normalmente com subjuntivo, e exigiria reorganização: embora exija supervisão, o equipamento é moderno.'],
+    ['d','adversative_coordination','“Entretanto” introduz coordenada sindética adversativa e pode ser substituído por “todavia”.','C','As duas orações são autônomas, e entretanto marca oposição entre limitação dos dados e possibilidade de concluir. Todavia pertence à mesma classe coordenativa adversativa e preserva essa estrutura.'],
+    ['e','coordination_subordination','Em “incomodou tanto... que o teste foi suspenso”, a oração com “que” é coordenada conclusiva.','E','A correlação intensiva tanto... que cria oração subordinada adverbial consecutiva. A suspensão é consequência do grau de incômodo, mas consequência semântica não equivale automaticamente à coordenação conclusiva.'],
+    ['e','conclusive_explanatory_pois','O “pois” colocado depois de “admite” e isolado por vírgulas introduz coordenada conclusiva.','C','Pois deslocado, após o verbo, assume valor conclusivo: a admissão de áreas diversas decorre da ausência de formação específica. Antes do verbo, pois tende a ser explicativo.'],
+    ['e','mixed_period','O paralelismo entre “prioriza rapidez” e “privilegia precisão” prova, por si só, que a oração introduzida por “ao passo que” é coordenada.','E','Paralelismo organiza estruturas equivalentes, mas não determina sozinho a hierarquia sintática. Ao passo que é tradicionalmente analisado como locução subordinativa proporcional ou contrastiva, conforme o contexto.'],
+    ['e','adversative_coordination','Substituir “todavia” por “conquanto” preservaria a coordenação adversativa sem exigir outras mudanças.','E','Todavia é coordenativa adversativa e liga afirmações autônomas. Conquanto é subordinativa concessiva, normalmente exige subjuntivo e altera a hierarquia; seria preciso reescrever o período.'],
+  ],
+});
+
+console.log(JSON.stringify(result, null, 2));

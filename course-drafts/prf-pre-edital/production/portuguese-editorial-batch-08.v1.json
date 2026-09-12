@@ -1,0 +1,1132 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-08-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b08_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Definição contextual e sentido técnico",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Quantificadores e extrapolação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Condição e restrição modal",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Continuidade, concessão e alcance",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Causa explicativa e metáfora",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Validade e eficácia",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Necessidade, suficiência e contrafactual",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Condição democrática e equilíbrio",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Participação, eficácia e equidade",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b08_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Precisão lexical e função institucional",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao_b08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Definições, modalização, condição, validade, eficácia e precisão lexical",
+      "essential_concepts": [
+        "Definição contextual e sentido técnico",
+        "Quantificadores e extrapolação",
+        "Condição e restrição modal",
+        "Continuidade, concessão e alcance",
+        "Causa explicativa e metáfora",
+        "Validade e eficácia",
+        "Necessidade, suficiência e contrafactual",
+        "Condição democrática e equilíbrio",
+        "Participação, eficácia e equidade",
+        "Precisão lexical e função institucional"
+      ],
+      "rules": [
+        "Distinguir definição de consenso",
+        "Não converter necessidade em garantia",
+        "Separar previsão, execução e resultado",
+        "Preservar diferenças entre termos próximos"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b08_mk_01",
+        "prf_d01_b08_mk_02",
+        "prf_d01_b08_mk_03",
+        "prf_d01_b08_mk_04",
+        "prf_d01_b08_mk_05",
+        "prf_d01_b08_mk_06",
+        "prf_d01_b08_mk_07",
+        "prf_d01_b08_mk_08",
+        "prf_d01_b08_mk_09",
+        "prf_d01_b08_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 228,
+          "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b08",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b08_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_01"
+          ],
+          "statement": "TEXTO A\nO regulamento distingue acesso clandestino, que consiste na obtenção indevida de dado reservado por pessoa não autorizada, de divulgação irregular, praticada por quem recebeu legitimamente a informação, mas tinha dever de sigilo. Cada unidade deve punir ambas as condutas. Isso não significa que todas adotem definições idênticas. Em situação de crise oficialmente reconhecida, a suspensão de credencial pode ser aplicada, após processo próprio, ao responsável; não se trata de consequência automática. A chamada “infração de confiança”, apesar do nome, é classificada tecnicamente como falta administrativa.\n\nJulgue o item: A diferença central entre acesso clandestino e divulgação irregular está na relação inicial do agente com a informação protegida.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "No acesso clandestino, a pessoa não tinha autorização para obter o dado; na divulgação, ela o recebeu legitimamente, mas violou o dever de sigilo. As práticas se relacionam, porém o agente ocupa posições distintas.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_02"
+          ],
+          "statement": "TEXTO A\nO regulamento distingue acesso clandestino, que consiste na obtenção indevida de dado reservado por pessoa não autorizada, de divulgação irregular, praticada por quem recebeu legitimamente a informação, mas tinha dever de sigilo. Cada unidade deve punir ambas as condutas. Isso não significa que todas adotem definições idênticas. Em situação de crise oficialmente reconhecida, a suspensão de credencial pode ser aplicada, após processo próprio, ao responsável; não se trata de consequência automática. A chamada “infração de confiança”, apesar do nome, é classificada tecnicamente como falta administrativa.\n\nJulgue o item: A obrigação atribuída a cada unidade permite concluir que uma delas pode deixar as duas condutas sem punição.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Cada unidade” distribui a obrigação por todos os integrantes do conjunto. Admitir uma unidade dispensada contraria o quantificador; seria necessário um marcador de exceção, inexistente na passagem.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_02"
+          ],
+          "statement": "TEXTO A\nO regulamento distingue acesso clandestino, que consiste na obtenção indevida de dado reservado por pessoa não autorizada, de divulgação irregular, praticada por quem recebeu legitimamente a informação, mas tinha dever de sigilo. Cada unidade deve punir ambas as condutas. Isso não significa que todas adotem definições idênticas. Em situação de crise oficialmente reconhecida, a suspensão de credencial pode ser aplicada, após processo próprio, ao responsável; não se trata de consequência automática. A chamada “infração de confiança”, apesar do nome, é classificada tecnicamente como falta administrativa.\n\nJulgue o item: O texto afirma que todas as unidades chegaram a uma definição consensual e idêntica das condutas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A previsão comum de punição não prova identidade conceitual, e a última frase do primeiro período temático nega essa conclusão. O item transforma tratamento recorrente em unanimidade de definição.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_03"
+          ],
+          "statement": "TEXTO A\nO regulamento distingue acesso clandestino, que consiste na obtenção indevida de dado reservado por pessoa não autorizada, de divulgação irregular, praticada por quem recebeu legitimamente a informação, mas tinha dever de sigilo. Cada unidade deve punir ambas as condutas. Isso não significa que todas adotem definições idênticas. Em situação de crise oficialmente reconhecida, a suspensão de credencial pode ser aplicada, após processo próprio, ao responsável; não se trata de consequência automática. A chamada “infração de confiança”, apesar do nome, é classificada tecnicamente como falta administrativa.\n\nJulgue o item: A suspensão de credencial depende de crise reconhecida e processo próprio, não decorrendo automaticamente da prática descrita.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto reúne condições materiais e procedimentais antes da possibilidade de suspensão. O modal “pode” indica autorização, não aplicação inevitável; retirar essas restrições tornaria a sanção absoluta.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_01"
+          ],
+          "statement": "TEXTO A\nO regulamento distingue acesso clandestino, que consiste na obtenção indevida de dado reservado por pessoa não autorizada, de divulgação irregular, praticada por quem recebeu legitimamente a informação, mas tinha dever de sigilo. Cada unidade deve punir ambas as condutas. Isso não significa que todas adotem definições idênticas. Em situação de crise oficialmente reconhecida, a suspensão de credencial pode ser aplicada, após processo próprio, ao responsável; não se trata de consequência automática. A chamada “infração de confiança”, apesar do nome, é classificada tecnicamente como falta administrativa.\n\nJulgue o item: Apesar da denominação “infração de confiança”, a conduta é tecnicamente enquadrada como falta administrativa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A passagem contrapõe nome corrente e natureza jurídica. O rótulo contém “infração”, mas a classificação expressa prevalece; interpretar apenas a aparência lexical produziria enquadramento diferente do texto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_04"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: A disputa informacional surgiu com o ciclo tecnológico mais recente.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O fenômeno acompanha as organizações há décadas; o que muda é sua intensidade a cada ciclo. Confundir intensificação recente com nascimento recente apaga a continuidade histórica afirmada.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_04"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: A baixa perceptibilidade pública é compatível, no texto, com a existência e o aumento da disputa informacional.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A concessão “embora” combina duas ideias: o fenômeno persiste e se intensifica, mas continua pouco visível. Ausência de percepção pública não equivale a ausência objetiva do processo.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_04"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: Por existirem, os efeitos da disputa são necessariamente conhecidos e amplamente divulgados.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto separa ocorrência e publicidade: efeitos podem existir sem divulgação ampla. O item cria uma implicação que a passagem rejeita e confunde realidade do fenômeno com conhecimento social sobre ele.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_05"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: A complexidade da disputa é explicada por seu caráter oculto e pelo jogo estratégico entre agentes.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A justificativa vem depois de “porque”: decisões ocorrem em ambiente pouco visível, com mensagens enganosas e compromissos calculados. Esses elementos sustentam a complexidade atribuída ao conflito.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_05"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: A expressão “corredores invisíveis da decisão” localiza as operações em uma instalação subterrânea específica.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A imagem é metafórica: corredores remetem aos bastidores institucionais, e invisíveis, ao sigilo. Não há descrição arquitetônica nem indicação de local físico; a leitura literal rompe o campo estratégico.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_06"
+          ],
+          "statement": "TEXTO B\nA disputa informacional acompanha as organizações há décadas e se intensifica a cada ciclo tecnológico, embora permaneça pouco perceptível ao público. Seus efeitos existem mesmo quando não são amplamente divulgados. O relatório a considera especialmente complexa porque ocorre “nos corredores invisíveis da decisão”: agentes identificam mensagens enganosas e celebram compromissos que pretendem abandonar depois. O fato de um compromisso não ser cumprido não o torna, por si só, juridicamente inválido.\n\nJulgue o item: O abandono posterior de um compromisso prova que ele era juridicamente nulo desde sua celebração.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Descumprimento diz respeito à eficácia ou execução; nulidade depende de defeito jurídico próprio. O texto nega que a primeira condição produza automaticamente a segunda, distinção decisiva em leitura precisa.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_07"
+          ],
+          "statement": "TEXTO C\nA unidade de mediação é indispensável à execução da política de convivência, mas sua simples existência não garante relações pacíficas. Sem ela, faltaria um mecanismo central para tratar conflitos; com ela, ainda é necessário obedecer a parâmetros democráticos. O modelo deve equilibrar segurança e liberdade. A participação dos moradores é um componente central, porém o relatório recomenda verificar se ela ocorre de fato e se diferentes grupos conseguem participar em condições equânimes.\n\nJulgue o item: A indispensabilidade da unidade de mediação significa que sua presença, sozinha, garante a pacificação.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Ser necessária não é ser suficiente. A unidade fornece mecanismo central, mas o texto exige parâmetros democráticos e outras condições. O item converte um requisito em garantia integral do resultado.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_07"
+          ],
+          "statement": "TEXTO C\nA unidade de mediação é indispensável à execução da política de convivência, mas sua simples existência não garante relações pacíficas. Sem ela, faltaria um mecanismo central para tratar conflitos; com ela, ainda é necessário obedecer a parâmetros democráticos. O modelo deve equilibrar segurança e liberdade. A participação dos moradores é um componente central, porém o relatório recomenda verificar se ela ocorre de fato e se diferentes grupos conseguem participar em condições equânimes.\n\nJulgue o item: A ausência da unidade retiraria um mecanismo central de tratamento dos conflitos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Essa é a consequência contrafactual explicitada: sem a unidade, faltaria um recurso essencial. A conclusão não afirma que sua presença resolva tudo; limita-se ao papel que deixaria de existir.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_08"
+          ],
+          "statement": "TEXTO C\nA unidade de mediação é indispensável à execução da política de convivência, mas sua simples existência não garante relações pacíficas. Sem ela, faltaria um mecanismo central para tratar conflitos; com ela, ainda é necessário obedecer a parâmetros democráticos. O modelo deve equilibrar segurança e liberdade. A participação dos moradores é um componente central, porém o relatório recomenda verificar se ela ocorre de fato e se diferentes grupos conseguem participar em condições equânimes.\n\nJulgue o item: Para atuar democraticamente, o modelo deve conciliar segurança e liberdade.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Os dois valores aparecem como polos simultâneos de um equilíbrio. Privilegiar apenas segurança ou apenas liberdade contrariaria a estrutura aditiva e a condição democrática estabelecida no texto.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_09"
+          ],
+          "statement": "TEXTO C\nA unidade de mediação é indispensável à execução da política de convivência, mas sua simples existência não garante relações pacíficas. Sem ela, faltaria um mecanismo central para tratar conflitos; com ela, ainda é necessário obedecer a parâmetros democráticos. O modelo deve equilibrar segurança e liberdade. A participação dos moradores é um componente central, porém o relatório recomenda verificar se ela ocorre de fato e se diferentes grupos conseguem participar em condições equânimes.\n\nJulgue o item: A presença da participação como componente central comprova que ela ocorre efetivamente e de modo equânime.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O relatório manda verificar efetividade e equidade, o que demonstra que ambas ainda são questões empíricas. Uma característica prevista no desenho institucional não garante implementação nem distribuição justa.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_10"
+          ],
+          "statement": "TEXTO D\nO Centro de Atendimento a Pessoas Vulneráveis recebe idosos, mulheres, crianças e outros públicos para registrar ocorrências, prestar orientação e encaminhar investigações. “Receber”, nesse contexto, significa acolher a demanda durante o serviço, não alojar permanentemente os usuários. A equipe também centraliza procedimentos iniciados em unidades locais e apura denúncias. Por isso, descrevê-lo apenas como abrigo elimina funções essenciais e altera a natureza da instituição.\n\nJulgue o item: No contexto, o verbo “recebe” informa que o centro oferece moradia permanente aos públicos vulneráveis.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O próprio texto delimita “receber” como acolher demandas durante atendimento. O sentido de hospedar, possível em outros contextos, é incompatível com registro, orientação e encaminhamento de ocorrências.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_10"
+          ],
+          "statement": "TEXTO D\nO Centro de Atendimento a Pessoas Vulneráveis recebe idosos, mulheres, crianças e outros públicos para registrar ocorrências, prestar orientação e encaminhar investigações. “Receber”, nesse contexto, significa acolher a demanda durante o serviço, não alojar permanentemente os usuários. A equipe também centraliza procedimentos iniciados em unidades locais e apura denúncias. Por isso, descrevê-lo apenas como abrigo elimina funções essenciais e altera a natureza da instituição.\n\nJulgue o item: O centro exerce funções de atendimento e de apoio à investigação, além de centralizar procedimentos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As três frentes aparecem expressamente: orientar e registrar demandas, concentrar procedimentos e apurar denúncias. A síntese integra as atividades sem reduzir a unidade a uma única função.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_10"
+          ],
+          "statement": "TEXTO D\nO Centro de Atendimento a Pessoas Vulneráveis recebe idosos, mulheres, crianças e outros públicos para registrar ocorrências, prestar orientação e encaminhar investigações. “Receber”, nesse contexto, significa acolher a demanda durante o serviço, não alojar permanentemente os usuários. A equipe também centraliza procedimentos iniciados em unidades locais e apura denúncias. Por isso, descrevê-lo apenas como abrigo elimina funções essenciais e altera a natureza da instituição.\n\nJulgue o item: Classificar o centro apenas como abrigo altera a natureza institucional apresentada no texto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "“Abrigo” sugere alojamento e proteção residencial, enquanto a unidade presta serviços policiais e administrativos. O advérbio “apenas” também apagaria centralização e investigação, tornando a descrição duplamente redutora.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_09"
+          ],
+          "statement": "TEXTO E\nUma norma pode prever consulta popular sem assegurar que todos participarão. A efetividade depende de divulgação, acesso e resposta institucional; a equidade exige ainda que barreiras não concentrem a voz em um único grupo. Do mesmo modo, uma agência pode ser necessária à política sem ser suficiente para produzir todos os resultados desejados. Em leitura rigorosa, “contribui”, “é indispensável” e “garante” expressam graus diferentes de compromisso com a conclusão.\n\nJulgue o item: Prever consulta popular equivale a assegurar participação universal e equilibrada.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Previsão normativa abre um canal, mas efetividade depende de condições de acesso e resposta; equidade requer distribuição não concentrada da voz. O item trata três etapas distintas como se fossem uma só.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b08_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b08_mk_06"
+          ],
+          "statement": "TEXTO E\nUma norma pode prever consulta popular sem assegurar que todos participarão. A efetividade depende de divulgação, acesso e resposta institucional; a equidade exige ainda que barreiras não concentrem a voz em um único grupo. Do mesmo modo, uma agência pode ser necessária à política sem ser suficiente para produzir todos os resultados desejados. Em leitura rigorosa, “contribui”, “é indispensável” e “garante” expressam graus diferentes de compromisso com a conclusão.\n\nJulgue o item: Os verbos “contribui”, “é indispensável” e “garante” atribuem exatamente o mesmo grau de certeza ao resultado.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Contribui” indica fator parcial; “indispensável” marca condição necessária; “garante” apresenta suficiência ou resultado assegurado. Igualá-los elimina diferenças modais que alteram o julgamento de itens CEBRASPE.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 08",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 228,
+              "excerpt": "Matriz agregada das questões 141-146, páginas 228-231: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T02:04:02.617Z",
+    "editorial_status": "batch_08_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula13-editorial-matrix-batch-08.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

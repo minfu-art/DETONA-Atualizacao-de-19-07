@@ -1,0 +1,1992 @@
+{
+  "schema_version": 1,
+  "contest_id": "prf_2026",
+  "roles": [
+    {
+      "id": "prf_2026_policial_rodoviario_federal",
+      "name": "Policial Rodoviário Federal",
+      "order": 0,
+      "disciplines": [
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+          "name": "Língua Portuguesa",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 0,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+              "name": "1. Compreensão e interpretação de textos de gêneros variados",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+                  "name": "Compreensão e interpretação de textos de gêneros variados",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t02_tipos_e_generos_t",
+              "name": "2. Tipos e gêneros textuais",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+                  "name": "Tipos e gêneros textuais",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t03_ortografia_oficia",
+              "name": "3. Ortografia oficial",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+                  "name": "Ortografia oficial",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+              "name": "4. Mecanismos de coesão textual",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+                  "name": "Referenciação, substituição e repetição",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+                  "name": "Conectores e sequenciação textual",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+                  "name": "Tempos e modos verbais",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+              "name": "5. Estrutura morfossintática do período",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+                  "name": "Classes de palavras",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+                  "name": "Coordenação",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+                  "name": "Subordinação",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+                  "name": "Pontuação",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+                  "name": "Concordância verbal e nominal",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+                  "name": "Regência verbal e nominal",
+                  "order": 5
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+                  "name": "Crase",
+                  "order": 6
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+                  "name": "Colocação pronominal",
+                  "order": 7
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+              "name": "6. Reescrita de frases e parágrafos",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+                  "name": "Significação das palavras",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+                  "name": "Substituição de palavras ou trechos",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+                  "name": "Reorganização de orações e períodos",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+                  "name": "Reescrita em diferentes gêneros e níveis de formalidade",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+              "name": "7. Correspondência oficial",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+                  "name": "Aspectos gerais",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+                  "name": "Finalidade dos expedientes",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+                  "name": "Adequação da linguagem",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+                  "name": "Adequação do formato ao gênero",
+                  "order": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d02_rlm",
+          "name": "Raciocínio Lógico-Matemático",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 1,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t01_modelagem_por_equ",
+              "name": "1. Modelagem por equações e sistemas",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t01_s01_equacoes_do",
+                  "name": "Equações do primeiro grau",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t01_s02_equacoes_do",
+                  "name": "Equações do segundo grau",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t01_s03_sistemas_li",
+                  "name": "Sistemas lineares",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t02_funcoes",
+              "name": "2. Funções",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s01_analise_gra",
+                  "name": "Análise gráfica",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s02_funcao_afim",
+                  "name": "Função afim",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s03_funcao_quad",
+                  "name": "Função quadrática",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s04_funcao_expo",
+                  "name": "Função exponencial",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s05_funcao_loga",
+                  "name": "Função logarítmica",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t02_s06_aplicacoes",
+                  "name": "Aplicações",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t03_taxas_de_variacao",
+              "name": "3. Taxas de variação",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t03_s01_razao_e_pro",
+                  "name": "Razão e proporção",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t03_s02_regra_de_tr",
+                  "name": "Regra de três simples e composta",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t04_porcentagem",
+              "name": "4. Porcentagem",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t04_s01_porcentagem",
+                  "name": "Porcentagem",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t05_regularidades_e_p",
+              "name": "5. Regularidades e padrões em sequências",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t05_s01_sequencias_",
+                  "name": "Sequências numéricas",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t05_s02_progressao_",
+                  "name": "Progressão aritmética",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t05_s03_progressao_",
+                  "name": "Progressão geométrica",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t06_contagem_probabil",
+              "name": "6. Contagem, probabilidade e estatística",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t06_s01_contagem_pr",
+                  "name": "Contagem, probabilidade e estatística",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t07_descricao_e_anali",
+              "name": "7. Descrição e análise de dados",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t07_s01_leitura_e_i",
+                  "name": "Leitura e interpretação de tabelas e gráficos",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t07_s02_medias_e_de",
+                  "name": "Médias e desvios",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t08_teoria_dos_conjun",
+              "name": "8. Teoria dos conjuntos",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t08_s01_teoria_dos_",
+                  "name": "Teoria dos conjuntos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t09_representacoes_de",
+              "name": "9. Representações de figuras planas e espaciais",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t09_s01_desenhos_ma",
+                  "name": "Desenhos, mapas e plantas",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t09_s02_escalas",
+                  "name": "Escalas",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t09_s03_figuras_esp",
+                  "name": "Figuras espaciais em diferentes posições",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t09_s04_projecoes_p",
+                  "name": "Projeções, planificações e cortes",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d02_t10_metrica",
+              "name": "10. Métrica",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t10_s01_areas",
+                  "name": "Áreas",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t10_s02_volumes",
+                  "name": "Volumes",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t10_s03_estimativas",
+                  "name": "Estimativas",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d02_t10_s04_aplicacoes",
+                  "name": "Aplicações",
+                  "order": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d03_informatica",
+          "name": "Informática",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 2,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d03_t01_internet_e_intran",
+              "name": "1. Internet e intranet",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t01_s01_internet_e_",
+                  "name": "Internet e intranet",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d03_t02_tecnologias_e_apl",
+              "name": "2. Tecnologias e aplicativos de Internet",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t02_s01_navegacao_c",
+                  "name": "Navegação, correio, grupos, busca, redes sociais e colaboração",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t02_s02_sistema_ope",
+                  "name": "Sistema operacional Windows",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t02_s03_acesso_remo",
+                  "name": "Acesso remoto e transferência de arquivos",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t02_s04_audio_video",
+                  "name": "Áudio, vídeo e multimídia",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d03_t03_transformacao_dig",
+              "name": "3. Transformação digital",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t03_s01_internet_da",
+                  "name": "Internet das coisas",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t03_s02_big_data",
+                  "name": "Big data",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t03_s03_inteligenci",
+                  "name": "Inteligência artificial",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d03_t04_protecao_e_segura",
+              "name": "4. Proteção e segurança",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t04_s01_virus_worms",
+                  "name": "Vírus, worms, phishing e pragas virtuais",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t04_s02_antivirus_f",
+                  "name": "Antivírus, firewall, antispyware e VPN",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d03_t05_computacao_em_nuv",
+              "name": "5. Computação em nuvem",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d03_t05_s01_computacao_",
+                  "name": "Computação em nuvem",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d04_fisica",
+          "name": "Física",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 3,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t01_cinematica_escala",
+              "name": "1. Cinemática escalar e vetorial",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t01_s01_cinematica_",
+                  "name": "Cinemática escalar e vetorial",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t02_movimento_circula",
+              "name": "2. Movimento circular",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t02_s01_movimento_c",
+                  "name": "Movimento circular",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t03_leis_de_newton_e_",
+              "name": "3. Leis de Newton e aplicações",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t03_s01_leis_de_new",
+                  "name": "Leis de Newton e aplicações",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t04_trabalho",
+              "name": "4. Trabalho",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t04_s01_trabalho",
+                  "name": "Trabalho",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t05_potencia",
+              "name": "5. Potência",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t05_s01_potencia",
+                  "name": "Potência",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t06_energia_cinetica_",
+              "name": "6. Energia cinética, potencial e atrito",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t06_s01_energia_cin",
+                  "name": "Energia cinética, potencial e atrito",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t07_conservacao_e_tra",
+              "name": "7. Conservação e transformação de energia",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t07_s01_conservacao",
+                  "name": "Conservação e transformação de energia",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t08_quantidade_de_mov",
+              "name": "8. Quantidade de movimento e impulso",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t08_s01_quantidade_",
+                  "name": "Quantidade de movimento e impulso",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d04_t09_colisoes",
+              "name": "9. Colisões",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d04_t09_s01_colisoes",
+                  "name": "Colisões",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d05_etica",
+          "name": "Ética e Cidadania",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 4,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d05_t01_etica_e_moral",
+              "name": "1. Ética e moral",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t01_s01_etica_e_mor",
+                  "name": "Ética e moral",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d05_t02_etica_principios_",
+              "name": "2. Ética, princípios e valores",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t02_s01_etica_princ",
+                  "name": "Ética, princípios e valores",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d05_t03_etica_e_funcao_pu",
+              "name": "3. Ética e função pública",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t03_s01_integridade",
+                  "name": "Integridade",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d05_t04_etica_no_setor_pu",
+              "name": "4. Ética no setor público",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s01_moralidade_",
+                  "name": "Moralidade administrativa — art. 37 da Constituição",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s02_deveres_dos",
+                  "name": "Deveres dos servidores — art. 116, IX, da Lei nº 8.112/1990",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s03_decreto_n_9",
+                  "name": "Decreto nº 9.203/2017 — governança pública",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s04_decreto_n_1",
+                  "name": "Decreto nº 1.171/1994 — Código de Ética",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s05_decreto_n_6",
+                  "name": "Decreto nº 6.029/2007 — Sistema de Gestão da Ética",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t04_s06_codigo_de_c",
+                  "name": "Código de Conduta da Alta Administração Federal",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d05_t05_etica_e_democraci",
+              "name": "5. Ética e democracia",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t05_s01_exercicio_d",
+                  "name": "Exercício da cidadania",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t05_s02_lei_n_12_52",
+                  "name": "Lei nº 12.527/2011 e Decreto nº 7.724/2012 — transparência e acesso à informação",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t05_s03_lei_n_12_81",
+                  "name": "Lei nº 12.813/2013 — conflito de interesses",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d05_t05_s04_decreto_n_7",
+                  "name": "Decreto nº 7.203/2010 — nepotismo",
+                  "order": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d06_geopolitica",
+          "name": "Geopolítica",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 5,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t01_brasil_politico_n",
+              "name": "1. Brasil político: nação e território",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t01_s01_brasil_poli",
+                  "name": "Brasil político: nação e território",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t02_organizacao_do_es",
+              "name": "2. Organização do Estado brasileiro",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t02_s01_organizacao",
+                  "name": "Organização do Estado brasileiro",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t03_divisao_inter_reg",
+              "name": "3. Divisão inter-regional do trabalho e da produção",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t03_s01_divisao_int",
+                  "name": "Divisão inter-regional do trabalho e da produção",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t04_estrutura_urbana_",
+              "name": "4. Estrutura urbana e metrópoles",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t04_s01_estrutura_u",
+                  "name": "Estrutura urbana e metrópoles",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t05_populacao_e_movim",
+              "name": "5. População e movimentos migratórios internos",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t05_s01_populacao_e",
+                  "name": "População e movimentos migratórios internos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t06_integracao_entre_",
+              "name": "6. Integração entre indústria, estrutura urbana e setor agrícola",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t06_s01_integracao_",
+                  "name": "Integração entre indústria, estrutura urbana e setor agrícola",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t07_rede_de_transport",
+              "name": "7. Rede de transportes no Brasil",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t07_s01_rede_de_tra",
+                  "name": "Rede de transportes no Brasil",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t08_internacionalizac",
+              "name": "8. Internacionalização da economia brasileira",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t08_s01_internacion",
+                  "name": "Internacionalização da economia brasileira",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t09_geografia_e_gesta",
+              "name": "9. Geografia e gestão ambiental",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t09_s01_geografia_e",
+                  "name": "Geografia e gestão ambiental",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d06_t10_biomas_dominios_e",
+              "name": "10. Biomas, domínios e ecossistemas brasileiros",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d06_t10_s01_biomas_domi",
+                  "name": "Biomas, domínios e ecossistemas brasileiros",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d07_lingua_estrang",
+          "name": "Língua Estrangeira",
+          "description": "Bloco 1 do edital PRF 2021.",
+          "order": 6,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d07_t01_lingua_inglesa",
+              "name": "I. Língua Inglesa",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d07_t01_s01_compreensao",
+                  "name": "Compreensão de texto em inglês",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d07_t01_s02_gramatica_r",
+                  "name": "Gramática relevante para compreensão semântica",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d07_t02_lingua_espanhola",
+              "name": "II. Língua Espanhola",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d07_t02_s01_compreensao",
+                  "name": "Compreensão de texto em espanhol",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d07_t02_s02_gramatica_r",
+                  "name": "Gramática relevante para compreensão semântica",
+                  "order": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d08_transito",
+          "name": "Legislação de Trânsito",
+          "description": "Bloco 2 do edital PRF 2021.",
+          "order": 7,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d08_t01_codigo_de_transit",
+              "name": "1. Código de Trânsito Brasileiro",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t01_s01_lei_n_9_503",
+                  "name": "Lei nº 9.503/1997 e alterações",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t01_s02_lei_n_14_07",
+                  "name": "Lei nº 14.071/2020 — alterações do CTB",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d08_t02_lei_n_5_970_1973",
+              "name": "2. Lei nº 5.970/1973",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t02_s01_lei_n_5_970",
+                  "name": "Lei nº 5.970/1973",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d08_t03_resolucoes_do_con",
+              "name": "3. Resoluções do CONTRAN",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s01_resolucao_c",
+                  "name": "Resolução CONTRAN nº 04/1998",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s02_resolucao_c",
+                  "name": "Resolução CONTRAN nº 14/1998",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s03_resolucao_c",
+                  "name": "Resolução CONTRAN nº 24/1998",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s04_resolucao_c",
+                  "name": "Resolução CONTRAN nº 36/1998",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s05_resolucao_c",
+                  "name": "Resolução CONTRAN nº 92/1998, exceto anexos",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s06_resolucao_c",
+                  "name": "Resolução CONTRAN nº 110/2000",
+                  "order": 5
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s07_resolucao_c",
+                  "name": "Resolução CONTRAN nº 160/2004",
+                  "order": 6
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s08_resolucao_c",
+                  "name": "Resolução CONTRAN nº 210/2011",
+                  "order": 7
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s09_resolucao_c",
+                  "name": "Resolução CONTRAN nº 211/2006",
+                  "order": 8
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s10_resolucao_c",
+                  "name": "Resolução CONTRAN nº 216/2006",
+                  "order": 9
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s11_resolucao_c",
+                  "name": "Resolução CONTRAN nº 227/2007, exceto anexos",
+                  "order": 10
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s12_resolucao_c",
+                  "name": "Resolução CONTRAN nº 253/2007",
+                  "order": 11
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s13_resolucao_c",
+                  "name": "Resolução CONTRAN nº 254/2007",
+                  "order": 12
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s14_resolucao_c",
+                  "name": "Resolução CONTRAN nº 268/2008",
+                  "order": 13
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s15_resolucao_c",
+                  "name": "Resolução CONTRAN nº 290/2008",
+                  "order": 14
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s16_resolucao_c",
+                  "name": "Resolução CONTRAN nº 292/2008",
+                  "order": 15
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s17_resolucao_c",
+                  "name": "Resolução CONTRAN nº 349/2010",
+                  "order": 16
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s18_resolucao_c",
+                  "name": "Resolução CONTRAN nº 360/2010",
+                  "order": 17
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s19_resolucao_c",
+                  "name": "Resolução CONTRAN nº 432/2013",
+                  "order": 18
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s20_resolucao_c",
+                  "name": "Resolução CONTRAN nº 441/2013",
+                  "order": 19
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s21_resolucao_c",
+                  "name": "Resolução CONTRAN nº 453/2013",
+                  "order": 20
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s22_resolucao_c",
+                  "name": "Resolução CONTRAN nº 471/2013",
+                  "order": 21
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s23_resolucao_c",
+                  "name": "Resolução CONTRAN nº 508/2014",
+                  "order": 22
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s24_resolucao_c",
+                  "name": "Resolução CONTRAN nº 520/2015",
+                  "order": 23
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s25_resolucao_c",
+                  "name": "Resolução CONTRAN nº 525/2015",
+                  "order": 24
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s26_resolucao_c",
+                  "name": "Resolução CONTRAN nº 552/2015, exceto anexos",
+                  "order": 25
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s27_resolucao_c",
+                  "name": "Resolução CONTRAN nº 561/2015, exceto fichas",
+                  "order": 26
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s28_resolucao_c",
+                  "name": "Resolução CONTRAN nº 619/2016",
+                  "order": 27
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s29_resolucao_c",
+                  "name": "Resolução CONTRAN nº 667/2017, exceto anexos",
+                  "order": 28
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s30_resolucao_c",
+                  "name": "Resolução CONTRAN nº 723/2018",
+                  "order": 29
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s31_resolucao_c",
+                  "name": "Resolução CONTRAN nº 735/2018",
+                  "order": 30
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s32_resolucao_c",
+                  "name": "Resolução CONTRAN nº 740/2018",
+                  "order": 31
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s33_resolucao_c",
+                  "name": "Resolução CONTRAN nº 780/2019",
+                  "order": 32
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s34_resolucao_c",
+                  "name": "Resolução CONTRAN nº 789/2020, Anexo I",
+                  "order": 33
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s35_resolucao_c",
+                  "name": "Resolução CONTRAN nº 798/2020",
+                  "order": 34
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s36_resolucao_c",
+                  "name": "Resolução CONTRAN nº 803/2020",
+                  "order": 35
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s37_resolucao_c",
+                  "name": "Resolução CONTRAN nº 806/2020",
+                  "order": 36
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s38_resolucao_c",
+                  "name": "Resolução CONTRAN nº 809/2020",
+                  "order": 37
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d08_t03_s39_resolucao_c",
+                  "name": "Resolução CONTRAN nº 810/2020",
+                  "order": 38
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d09_administrativo",
+          "name": "Direito Administrativo",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 8,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t01_organizacao_admin",
+              "name": "1. Organização administrativa",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t01_s01_centralizac",
+                  "name": "Centralização, descentralização, concentração e desconcentração",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t01_s02_administrac",
+                  "name": "Administração direta e indireta",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t01_s03_autarquias_",
+                  "name": "Autarquias, fundações, empresas públicas e sociedades de economia mista",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t02_ato_administrativ",
+              "name": "2. Ato administrativo",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t02_s01_conceito_re",
+                  "name": "Conceito, requisitos, atributos, classificação e espécies",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t03_agentes_publicos",
+              "name": "3. Agentes públicos",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s01_lei_n_8_112",
+                  "name": "Lei nº 8.112/1990",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s02_disposicoes",
+                  "name": "Disposições constitucionais",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s03_conceito_e_",
+                  "name": "Conceito e espécies",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s04_cargo_empre",
+                  "name": "Cargo, emprego e função pública",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s05_lei_n_9_654",
+                  "name": "Lei nº 9.654/1998 — carreira PRF",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s06_lei_n_12_85",
+                  "name": "Lei nº 12.855/2013 — indenização de fronteira",
+                  "order": 5
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s07_lei_n_13_71",
+                  "name": "Lei nº 13.712/2018 — indenização PRF",
+                  "order": 6
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t03_s08_decreto_n_8",
+                  "name": "Decreto nº 8.282/2014 — carreira PRF",
+                  "order": 7
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t04_poderes_administr",
+              "name": "4. Poderes administrativos",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t04_s01_hierarquico",
+                  "name": "Hierárquico, disciplinar, regulamentar e de polícia",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t04_s02_uso_e_abuso",
+                  "name": "Uso e abuso do poder",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t05_licitacao",
+              "name": "5. Licitação",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t05_s01_principios",
+                  "name": "Princípios",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t05_s02_dispensa_e_",
+                  "name": "Dispensa e inexigibilidade",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t05_s03_modalidades",
+                  "name": "Modalidades",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t05_s04_tipos",
+                  "name": "Tipos",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t05_s05_procediment",
+                  "name": "Procedimento",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t06_controle_da_admin",
+              "name": "6. Controle da Administração Pública",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t06_s01_controle_ad",
+                  "name": "Controle administrativo",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t06_s02_controle_ju",
+                  "name": "Controle judicial",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t06_s03_controle_le",
+                  "name": "Controle legislativo",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t07_responsabilidade_",
+              "name": "7. Responsabilidade civil do Estado",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t07_s01_responsabil",
+                  "name": "Responsabilidade por ato comissivo",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t07_s02_responsabil",
+                  "name": "Responsabilidade por omissão",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t07_s03_requisitos",
+                  "name": "Requisitos",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t07_s04_causas_excl",
+                  "name": "Causas excludentes e atenuantes",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d09_t08_regime_juridico_a",
+              "name": "8. Regime jurídico-administrativo",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t08_s01_conceito",
+                  "name": "Conceito",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d09_t08_s02_principios_",
+                  "name": "Princípios expressos e implícitos",
+                  "order": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d10_constitucional",
+          "name": "Direito Constitucional",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 9,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d10_t01_poder_constituint",
+              "name": "1. Poder constituinte",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t01_s01_fundamentos",
+                  "name": "Fundamentos",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t01_s02_originario_",
+                  "name": "Originário e derivado",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t01_s03_reforma_e_r",
+                  "name": "Reforma e revisão",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t01_s04_limitacoes",
+                  "name": "Limitações",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t01_s05_emendas_a_c",
+                  "name": "Emendas à Constituição",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d10_t02_direitos_e_devere",
+              "name": "2. Direitos e deveres fundamentais",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s01_direitos_in",
+                  "name": "Direitos individuais e coletivos",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s02_vida_liberd",
+                  "name": "Vida, liberdade, igualdade, segurança e propriedade",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s03_direitos_so",
+                  "name": "Direitos sociais, nacionalidade, cidadania e direitos políticos",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s04_garantias_i",
+                  "name": "Garantias individuais",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s05_garantias_c",
+                  "name": "Garantias coletivas, sociais e políticas",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t02_s06_remedios_co",
+                  "name": "Remédios constitucionais",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d10_t03_poder_executivo",
+              "name": "3. Poder Executivo",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t03_s01_forma_e_sis",
+                  "name": "Forma e sistema de governo",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t03_s02_chefias_de_",
+                  "name": "Chefias de Estado e de governo",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t03_s03_atribuicoes",
+                  "name": "Atribuições e responsabilidades do Presidente",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t03_s04_bens_e_comp",
+                  "name": "Bens e competências da União — arts. 20 a 24",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d10_t04_defesa_do_estado_",
+              "name": "4. Defesa do Estado e instituições democráticas",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t04_s01_forcas_arma",
+                  "name": "Forças Armadas — art. 142",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t04_s02_seguranca_p",
+                  "name": "Segurança pública — art. 144",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t04_s03_organizacao",
+                  "name": "Organização da segurança pública",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t04_s04_atribuicoes",
+                  "name": "Atribuições constitucionais da PRF",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d10_t05_ordem_social",
+              "name": "5. Ordem social",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t05_s01_base_e_obje",
+                  "name": "Base e objetivos",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t05_s02_seguridade_",
+                  "name": "Seguridade social",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t05_s03_meio_ambien",
+                  "name": "Meio ambiente",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d10_t05_s04_familia_cri",
+                  "name": "Família, criança, adolescente, idoso e povos indígenas",
+                  "order": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d11_penal",
+          "name": "Direito Penal",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 10,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t01_principios_basico",
+              "name": "1. Princípios básicos",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t01_s01_principios_",
+                  "name": "Princípios básicos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t02_aplicacao_da_lei_",
+              "name": "2. Aplicação da lei penal",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s01_lei_penal_n",
+                  "name": "Lei penal no tempo",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s02_tempo_do_cr",
+                  "name": "Tempo do crime",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s03_conflito_de",
+                  "name": "Conflito de leis no tempo",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s04_lei_penal_n",
+                  "name": "Lei penal no espaço",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s05_lugar_do_cr",
+                  "name": "Lugar do crime",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s06_territorial",
+                  "name": "Territorialidade",
+                  "order": 5
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t02_s07_extraterrit",
+                  "name": "Extraterritorialidade",
+                  "order": 6
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t03_tipicidade",
+              "name": "3. Tipicidade",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t03_s01_crime_dolos",
+                  "name": "Crime doloso e culposo",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t03_s02_erro_de_tip",
+                  "name": "Erro de tipo",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t03_s03_crime_consu",
+                  "name": "Crime consumado e tentado",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t03_s04_crime_impos",
+                  "name": "Crime impossível",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t03_s05_punibilidad",
+                  "name": "Punibilidade e extinção",
+                  "order": 4
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t04_ilicitude",
+              "name": "4. Ilicitude",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t04_s01_causas_de_e",
+                  "name": "Causas de exclusão",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t04_s02_excesso_pun",
+                  "name": "Excesso punível",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t05_culpabilidade",
+              "name": "5. Culpabilidade",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t05_s01_causas_de_e",
+                  "name": "Causas de exclusão",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t05_s02_imputabilid",
+                  "name": "Imputabilidade",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t05_s03_erro_de_pro",
+                  "name": "Erro de proibição",
+                  "order": 2
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d11_t06_crimes_em_especie",
+              "name": "6. Crimes em espécie",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s01_contra_a_pe",
+                  "name": "Contra a pessoa",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s02_contra_o_pa",
+                  "name": "Contra o patrimônio",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s03_contra_a_di",
+                  "name": "Contra a dignidade sexual",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s04_contra_a_in",
+                  "name": "Contra a incolumidade pública",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s05_contra_a_fe",
+                  "name": "Contra a fé pública",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d11_t06_s06_contra_a_ad",
+                  "name": "Contra a Administração Pública",
+                  "order": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d12_processual_pen",
+          "name": "Direito Processual Penal",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 11,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t01_acao_penal",
+              "name": "1. Ação penal",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t01_s01_conceito",
+                  "name": "Conceito",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t01_s02_caracterist",
+                  "name": "Características",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t01_s03_especies",
+                  "name": "Espécies",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t01_s04_condicoes",
+                  "name": "Condições",
+                  "order": 3
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t02_termo_circunstanc",
+              "name": "2. Termo Circunstanciado de Ocorrência",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t02_s01_lei_n_9_099",
+                  "name": "Lei nº 9.099/1995",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t02_s02_atos_proces",
+                  "name": "Atos processuais: forma, lugar e tempo",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t03_prova",
+              "name": "3. Prova",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s01_conceito_ob",
+                  "name": "Conceito, objeto e classificação",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s02_preservacao",
+                  "name": "Preservação do local de crime",
+                  "order": 1
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s03_requisitos_",
+                  "name": "Requisitos e ônus",
+                  "order": 2
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s04_provas_ilic",
+                  "name": "Provas ilícitas",
+                  "order": 3
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s05_meios_de_pr",
+                  "name": "Meios de prova",
+                  "order": 4
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t03_s06_busca_e_apr",
+                  "name": "Busca e apreensão",
+                  "order": 5
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t04_prisao",
+              "name": "4. Prisão",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t04_s01_conceito_fo",
+                  "name": "Conceito, formalidades, espécies e mandado",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t04_s02_prisao_em_f",
+                  "name": "Prisão em flagrante",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t05_identificacao_cri",
+              "name": "5. Identificação criminal",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t05_s01_art_5_lviii",
+                  "name": "Art. 5º, LVIII, da Constituição e Lei nº 12.037/2009",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d12_t06_diligencias_inves",
+              "name": "6. Diligências investigatórias",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d12_t06_s01_arts_6_e_13",
+                  "name": "Arts. 6º e 13 do Código de Processo Penal",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d13_legislacao_esp",
+          "name": "Legislação Especial",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 12,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t01_documentos_de_ide",
+              "name": "1. Documentos de identificação e identificação criminal",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t01_s01_lei_n_5_553",
+                  "name": "Lei nº 5.553/1968",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t01_s02_lei_n_12_03",
+                  "name": "Lei nº 12.037/2009",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t02_estatuto_da_crian",
+              "name": "2. Estatuto da Criança e do Adolescente",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t02_s01_lei_n_8_069",
+                  "name": "Lei nº 8.069/1990",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t03_crimes_hediondos",
+              "name": "3. Crimes hediondos",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t03_s01_lei_n_8_072",
+                  "name": "Lei nº 8.072/1990",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t04_competencias_e_or",
+              "name": "4. Competências e organização da PRF",
+              "order": 3,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t04_s01_decreto_n_1",
+                  "name": "Decreto nº 1.655/1995",
+                  "order": 0
+                },
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t04_s02_art_47_do_d",
+                  "name": "Art. 47 do Decreto nº 9.662/2019",
+                  "order": 1
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t05_juizados_especiai",
+              "name": "5. Juizados Especiais",
+              "order": 4,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t05_s01_lei_n_9_099",
+                  "name": "Lei nº 9.099/1995",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t06_tortura",
+              "name": "6. Tortura",
+              "order": 5,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t06_s01_lei_n_9_455",
+                  "name": "Lei nº 9.455/1997",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t07_crimes_ambientais",
+              "name": "7. Crimes ambientais",
+              "order": 6,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t07_s01_lei_n_9_605",
+                  "name": "Lei nº 9.605/1998 — capítulos III e V",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t08_estatuto_do_desar",
+              "name": "8. Estatuto do Desarmamento",
+              "order": 7,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t08_s01_lei_n_10_82",
+                  "name": "Lei nº 10.826/2003 — capítulo IV",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t09_lei_de_drogas",
+              "name": "9. Lei de Drogas",
+              "order": 8,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t09_s01_lei_n_11_34",
+                  "name": "Lei nº 11.343/2006",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t10_organizacoes_crim",
+              "name": "10. Organizações criminosas",
+              "order": 9,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t10_s01_lei_n_12_85",
+                  "name": "Lei nº 12.850/2013",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t11_sistema_unico_de_",
+              "name": "11. Sistema Único de Segurança Pública",
+              "order": 10,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t11_s01_lei_n_13_67",
+                  "name": "Lei nº 13.675/2018",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d13_t12_abuso_de_autorida",
+              "name": "12. Abuso de autoridade",
+              "order": 11,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d13_t12_s01_lei_n_13_86",
+                  "name": "Lei nº 13.869/2019",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "prf_2026_policial_rodoviario_federal_d14_direitos_human",
+          "name": "Direitos Humanos",
+          "description": "Bloco 3 do edital PRF 2021.",
+          "order": 13,
+          "topics": [
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d14_t01_direitos_humanos_",
+              "name": "1. Direitos humanos na Constituição",
+              "order": 0,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d14_t01_s01_constituica",
+                  "name": "Constituição e tratados internacionais de direitos humanos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d14_t02_declaracao_univer",
+              "name": "2. Declaração Universal dos Direitos Humanos",
+              "order": 1,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d14_t02_s01_declaracao_",
+                  "name": "Declaração Universal dos Direitos Humanos",
+                  "order": 0
+                }
+              ]
+            },
+            {
+              "id": "prf_2026_policial_rodoviario_federal_d14_t03_convencao_america",
+              "name": "3. Convenção Americana sobre Direitos Humanos",
+              "order": 2,
+              "subtopics": [
+                {
+                  "id": "prf_2026_policial_rodoviario_federal_d14_t03_s01_decreto_n_6",
+                  "name": "Decreto nº 678/1992",
+                  "order": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

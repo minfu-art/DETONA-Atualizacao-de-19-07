@@ -1,0 +1,4723 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-wave1-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t02_tipos_e_generos_t",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "2. Tipos e gêneros textuais",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t02_tipos_e_generos_t",
+        "type": "subtopic",
+        "title": "Tipos e gêneros textuais",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t03_ortografia_oficia",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "3. Ortografia oficial",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t03_ortografia_oficia",
+        "type": "subtopic",
+        "title": "Ortografia oficial",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "4. Mecanismos de coesão textual",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "type": "subtopic",
+        "title": "Referenciação, substituição e repetição",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "type": "subtopic",
+        "title": "Conectores e sequenciação textual",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "type": "subtopic",
+        "title": "Tempos e modos verbais",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "5. Estrutura morfossintática do período",
+        "description": "",
+        "order": 4,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Classes de palavras",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Coordenação",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Subordinação",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Pontuação",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Concordância verbal e nominal",
+        "description": "",
+        "order": 4,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Regência verbal e nominal",
+        "description": "",
+        "order": 5,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Crase",
+        "description": "",
+        "order": 6,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Colocação pronominal",
+        "description": "",
+        "order": 7,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "6. Reescrita de frases e parágrafos",
+        "description": "",
+        "order": 5,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+        "type": "subtopic",
+        "title": "Significação das palavras",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+        "type": "subtopic",
+        "title": "Substituição de palavras ou trechos",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+        "type": "subtopic",
+        "title": "Reorganização de orações e períodos",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t06_reescrita_de_fras",
+        "type": "subtopic",
+        "title": "Reescrita em diferentes gêneros e níveis de formalidade",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "7. Correspondência oficial",
+        "description": "",
+        "order": 6,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+        "type": "subtopic",
+        "title": "Aspectos gerais",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+        "type": "subtopic",
+        "title": "Finalidade dos expedientes",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+        "type": "subtopic",
+        "title": "Adequação da linguagem",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t07_correspondencia_o",
+        "type": "subtopic",
+        "title": "Adequação do formato ao gênero",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_t05_s06_mk01_relacao_regente_regido",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Relação entre termo regente, termo regido e complemento",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk02_transitividade_e_preposicao",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Transitividade verbal e exigência de preposição",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk03_sentido_altera_regencia",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Alteração da regência conforme o sentido do verbo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 41,
+          "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Preposição antes de pronome relativo determinada pela regência",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s06_mk05_regencia_nominal",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "title": "Regência nominal e complemento preposicionado",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 22,
+          "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk01_fusao_preposicao_artigo",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Crase como fusão da preposição a com artigo feminino a ou as",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk02_crase_demonstrativos",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Crase diante de aquele, aquela, aqueles, aquelas e aquilo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "title": "Ausência de crase antes de pronome pessoal e contraste com formas de tratamento que admitem artigo",
+      "scope_origin": "official",
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 62,
+          "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Distinguir informação explícita de inferência autorizada pelo texto",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 113,
+          "excerpt": "Distinguir informação explícita de inferência autorizada pelo texto"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+      "title": "Reconhecer tipologia predominante e finalidade do gênero",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Reconhecer tipologia predominante e finalidade do gênero"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Aplicar convenções ortográficas e de acentuação vigentes",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "Aplicar convenções ortográficas e de acentuação vigentes"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "title": "Identificar retomadas anafóricas e cadeias referenciais",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Identificar retomadas anafóricas e cadeias referenciais"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Reconhecer o valor semântico dos conectores",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Reconhecer o valor semântico dos conectores"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "title": "Interpretar valores temporais e modais das formas verbais",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Interpretar valores temporais e modais das formas verbais"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Classificar palavras conforme funcionamento no contexto",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_6676bb9418a2",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Classificar palavras conforme funcionamento no contexto"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "title": "Reconhecer orações coordenadas e relações semânticas",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 8,
+          "excerpt": "Reconhecer orações coordenadas e relações semânticas"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "title": "Reconhecer funções substantivas, adjetivas e adverbiais",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 10,
+          "excerpt": "Reconhecer funções substantivas, adjetivas e adverbiais"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Empregar pontuação conforme estrutura sintática e sentido",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Empregar pontuação conforme estrutura sintática e sentido"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+      "title": "Estabelecer concordância com o núcleo pertinente",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_44da85f679ee",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Estabelecer concordância com o núcleo pertinente"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+      "title": "Aplicar próclise, ênclise e mesóclise conforme o contexto",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 28,
+          "excerpt": "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+      "title": "Determinar sentido contextual, denotação e relações lexicais",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4fb632b375ef",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Determinar sentido contextual, denotação e relações lexicais"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+      "title": "Avaliar substituições quanto a sentido, coesão e correção",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Avaliar substituições quanto a sentido, coesão e correção"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+      "title": "Reordenar estruturas preservando vínculos sintáticos e referenciais",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+      "title": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+      "title": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+      "title": "Relacionar cada expediente oficial à sua finalidade comunicativa",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+      "title": "Empregar linguagem formal, clara, precisa e impessoal",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_wave1_mk_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+      "title": "Aplicar estrutura e formatação compatíveis com o documento oficial",
+      "scope_origin": "official",
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+      "scope": "Regência verbal e nominal em relações de complementação e na norma-padrão.",
+      "essential_concepts": [
+        "termo regente e regido",
+        "transitividade",
+        "preposição",
+        "regência nominal"
+      ],
+      "rules": [
+        "A regência depende da acepção e da função sintática.",
+        "A preposição do relativo deriva da regência interna."
+      ],
+      "exceptions": [
+        "Mudanças de sentido podem alterar transitividade e preposição."
+      ],
+      "applications": [
+        "análise sintática",
+        "reescrita",
+        "correção gramatical"
+      ],
+      "competencies": [
+        "identificar o termo regente",
+        "selecionar preposição",
+        "avaliar reescritas"
+      ],
+      "required_knowledge": [
+        "classes de palavras",
+        "complementos verbais",
+        "orações adjetivas"
+      ],
+      "microknowledge_ids": [
+        "prf_d01_t05_s06_mk01_relacao_regente_regido",
+        "prf_d01_t05_s06_mk02_transitividade_e_preposicao",
+        "prf_d01_t05_s06_mk03_sentido_altera_regencia",
+        "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado",
+        "prf_d01_t05_s06_mk05_regencia_nominal"
+      ],
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 2,
+          "excerpt": "O índice separa teoria e questões de regência verbal e nominal."
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+      "scope": "Emprego do sinal indicativo de crase conforme regência, artigo e pronomes.",
+      "essential_concepts": [
+        "preposição a",
+        "artigo feminino",
+        "fusão",
+        "pronomes demonstrativos"
+      ],
+      "rules": [
+        "A crase exige a coexistência dos elementos que se fundem."
+      ],
+      "exceptions": [
+        "Pronome pessoal não admite artigo.",
+        "Algumas formas de tratamento admitem artigo."
+      ],
+      "applications": [
+        "correção gramatical",
+        "reescrita",
+        "justificativa do acento grave"
+      ],
+      "competencies": [
+        "testar regência",
+        "testar artigo",
+        "distinguir proibição e possibilidade"
+      ],
+      "required_knowledge": [
+        "regência",
+        "artigo",
+        "pronomes"
+      ],
+      "microknowledge_ids": [
+        "prf_d01_t05_s07_mk01_fusao_preposicao_artigo",
+        "prf_d01_t05_s07_mk02_crase_demonstrativos",
+        "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+      ],
+      "confidence": 0.98,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bf5410c46bd3",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "A teoria apresenta a formação e os testes de crase."
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Distinguir informação explícita de inferência autorizada pelo texto",
+      "essential_concepts": [
+        "Distinguir informação explícita de inferência autorizada pelo texto"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_01"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 113,
+          "excerpt": "Distinguir informação explícita de inferência autorizada pelo texto"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+      "scope": "Reconhecer tipologia predominante e finalidade do gênero",
+      "essential_concepts": [
+        "Reconhecer tipologia predominante e finalidade do gênero"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_02"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Reconhecer tipologia predominante e finalidade do gênero"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "scope": "Aplicar convenções ortográficas e de acentuação vigentes",
+      "essential_concepts": [
+        "Aplicar convenções ortográficas e de acentuação vigentes"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_03"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 5,
+          "excerpt": "Aplicar convenções ortográficas e de acentuação vigentes"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "scope": "Identificar retomadas anafóricas e cadeias referenciais",
+      "essential_concepts": [
+        "Identificar retomadas anafóricas e cadeias referenciais"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_04"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Identificar retomadas anafóricas e cadeias referenciais"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "scope": "Reconhecer o valor semântico dos conectores",
+      "essential_concepts": [
+        "Reconhecer o valor semântico dos conectores"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_05"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Reconhecer o valor semântico dos conectores"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+      "scope": "Interpretar valores temporais e modais das formas verbais",
+      "essential_concepts": [
+        "Interpretar valores temporais e modais das formas verbais"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_06"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8283a4d35d2b",
+          "trace_status": "available",
+          "page_number": 4,
+          "excerpt": "Interpretar valores temporais e modais das formas verbais"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "scope": "Classificar palavras conforme funcionamento no contexto",
+      "essential_concepts": [
+        "Classificar palavras conforme funcionamento no contexto"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_07"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_6676bb9418a2",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Classificar palavras conforme funcionamento no contexto"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "scope": "Reconhecer orações coordenadas e relações semânticas",
+      "essential_concepts": [
+        "Reconhecer orações coordenadas e relações semânticas"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_08"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 8,
+          "excerpt": "Reconhecer orações coordenadas e relações semânticas"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "scope": "Reconhecer funções substantivas, adjetivas e adverbiais",
+      "essential_concepts": [
+        "Reconhecer funções substantivas, adjetivas e adverbiais"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_09"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 10,
+          "excerpt": "Reconhecer funções substantivas, adjetivas e adverbiais"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "scope": "Empregar pontuação conforme estrutura sintática e sentido",
+      "essential_concepts": [
+        "Empregar pontuação conforme estrutura sintática e sentido"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_10"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Empregar pontuação conforme estrutura sintática e sentido"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+      "scope": "Estabelecer concordância com o núcleo pertinente",
+      "essential_concepts": [
+        "Estabelecer concordância com o núcleo pertinente"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_11"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_44da85f679ee",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Estabelecer concordância com o núcleo pertinente"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+      "scope": "Aplicar próclise, ênclise e mesóclise conforme o contexto",
+      "essential_concepts": [
+        "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_12"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 28,
+          "excerpt": "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+      "scope": "Determinar sentido contextual, denotação e relações lexicais",
+      "essential_concepts": [
+        "Determinar sentido contextual, denotação e relações lexicais"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_13"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4fb632b375ef",
+          "trace_status": "available",
+          "page_number": 3,
+          "excerpt": "Determinar sentido contextual, denotação e relações lexicais"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+      "scope": "Avaliar substituições quanto a sentido, coesão e correção",
+      "essential_concepts": [
+        "Avaliar substituições quanto a sentido, coesão e correção"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_14"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Avaliar substituições quanto a sentido, coesão e correção"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+      "scope": "Reordenar estruturas preservando vínculos sintáticos e referenciais",
+      "essential_concepts": [
+        "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_15"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+      "scope": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade",
+      "essential_concepts": [
+        "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_16"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 21,
+          "excerpt": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+      "scope": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade",
+      "essential_concepts": [
+        "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_17"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+      "scope": "Relacionar cada expediente oficial à sua finalidade comunicativa",
+      "essential_concepts": [
+        "Relacionar cada expediente oficial à sua finalidade comunicativa"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_18"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+      "scope": "Empregar linguagem formal, clara, precisa e impessoal",
+      "essential_concepts": [
+        "Empregar linguagem formal, clara, precisa e impessoal"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_19"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 16,
+          "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+        }
+      ]
+    },
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+      "scope": "Aplicar estrutura e formatação compatíveis com o documento oficial",
+      "essential_concepts": [
+        "Aplicar estrutura e formatação compatíveis com o documento oficial"
+      ],
+      "rules": [],
+      "exceptions": [],
+      "applications": [
+        "diagnóstico por questão"
+      ],
+      "competencies": [
+        "reconhecer",
+        "aplicar",
+        "discriminar erro típico"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_wave1_mk_20"
+      ],
+      "confidence": 0.95,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_240c6227d2f5",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+        },
+        {
+          "source_id": "mrpr_3ed_oficial",
+          "trace_status": "available",
+          "page_number": 27,
+          "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-cobertura-diagnostica-22-subtopicos-v1",
+      "questions": [
+        {
+          "id": "prf_port_pilot_001",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "A regência estuda relações de dependência em que um termo exige ou orienta a forma de seu complemento.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O termo regente determina a relação sintática e, quando necessário, a preposição que introduz o termo regido.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_002",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "Na oração “O servidor confia no procedimento”, o segmento “no procedimento” exerce a função de objeto direto do verbo “confiar”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O verbo “confiar”, nessa acepção, rege a preposição “em”; por isso, “no procedimento” é objeto indireto.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_003",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk01_relacao_regente_regido"
+          ],
+          "statement": "Todo complemento introduzido por preposição deve ser classificado como objeto indireto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A preposição também pode introduzir complemento nominal e outros termos; objeto indireto é complemento de verbo transitivo indireto.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Regência descreve a relação de dependência entre termos regentes e regidos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_004",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "Um verbo transitivo indireto liga-se a seu complemento por meio de preposição exigida por sua regência.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A preposição integra o padrão de complementação do verbo transitivo indireto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_005",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "Em “A equipe assistiu ao treinamento”, o emprego da preposição “a” está de acordo com a regência do verbo “assistir” no sentido de ver.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "No sentido de presenciar ou ver, “assistir” é transitivo indireto e rege a preposição “a”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_006",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk02_transitividade_e_preposicao"
+          ],
+          "statement": "A construção “O candidato prefere estabilidade do que aventura” atende à norma-padrão de regência do verbo “preferir”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na comparação, a norma-padrão recomenda “preferir X a Y”: “prefere estabilidade a aventura”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Verbos transitivos indiretos exigem complemento preposicionado."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_007",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "A classificação de um verbo quanto à transitividade pode mudar quando muda o sentido assumido no contexto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A regência não é atributo imutável da forma verbal; depende da acepção e da construção em que o verbo aparece.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_008",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "Nas construções “pensou no problema” e “pensou uma solução”, o verbo “pensar” apresenta exatamente a mesma transitividade.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na primeira construção há complemento preposicionado; na segunda, complemento sem preposição. A transitividade varia.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_009",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk03_sentido_altera_regencia"
+          ],
+          "statement": "Se um verbo aparece como intransitivo em determinada frase, ele necessariamente será intransitivo em qualquer outro contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Diversos verbos admitem mais de uma regência e transitividade conforme a acepção empregada.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 41,
+              "excerpt": "A transitividade de um verbo pode variar conforme a construção e o sentido."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_010",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "A preposição que antecede um pronome relativo deve ser definida pela regência do verbo ou do nome com que o relativo se relaciona.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O pronome relativo retoma o antecedente, mas sua função na oração subordinada determina a preposição necessária.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_011",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "A redação “A norma a que me referi foi alterada” está adequada quanto à regência e ao emprego do pronome relativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Quem se refere, refere-se a algo; por isso, a preposição “a” deve anteceder o relativo “que”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_012",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk04_pronome_relativo_preposicionado"
+          ],
+          "statement": "Na frase “Este é o cargo que o servidor aspirava”, a ausência de preposição antes de “que” está correta quando “aspirar” significa desejar.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "No sentido de desejar, “aspirar” rege a preposição “a”: “o cargo a que o servidor aspirava”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "A regência do termo interno à oração determina a preposição do pronome relativo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_013",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "A regência nominal examina a relação entre nomes e os complementos preposicionados exigidos por eles.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Substantivos, adjetivos e advérbios podem atuar como termos regentes e selecionar preposições.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_014",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "Em “A medida é favorável aos usuários”, a preposição empregada está compatível com a regência do adjetivo “favorável”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O adjetivo “favorável” rege a preposição “a”, combinada com o artigo plural em “aos”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_015",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s06_regencia_ve",
+          "microknowledge_ids": [
+            "prf_d01_t05_s06_mk05_regencia_nominal"
+          ],
+          "statement": "A construção “O agente está apto de exercer a função” é a única forma admitida pela norma-padrão para complementar o adjetivo “apto”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O adjetivo “apto” admite, entre outras construções consagradas, “apto a” e “apto para”; a afirmação de exclusividade é incorreta.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 22,
+              "excerpt": "Substantivos, adjetivos e advérbios podem exigir complementos preposicionados."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_016",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "Para que ocorra crase antes de um substantivo feminino, devem coexistir a preposição “a” e o artigo feminino “a” ou “as”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A crase resulta da fusão dos dois elementos; a presença de apenas um deles não autoriza o acento grave.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_017",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "Na frase “O policial dirigiu-se à unidade operacional”, o acento grave pode ser justificado pela regência de “dirigir-se” e pelo artigo de “a unidade”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O verbo exige a preposição “a”, e o substantivo feminino determinado admite artigo “a”: a + a = à.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_018",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk01_fusao_preposicao_artigo"
+          ],
+          "statement": "A redação “O relatório foi entregue à uma chefia regional” está correta porque toda palavra feminina admite crase.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Antes do artigo indefinido “uma” não ocorre a fusão a + a; além disso, gênero feminino, isoladamente, não determina crase.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "O acento grave sinaliza a fusão da preposição a com artigo feminino a ou as."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_019",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "Quando um termo exige a preposição “a”, pode ocorrer crase diante de “aquele”, “aquela”, “aqueles”, “aquelas” e “aquilo”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A preposição funde-se com a vogal inicial do demonstrativo, produzindo “àquele”, “àquela”, “àqueles”, “àquelas” ou “àquilo”.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_020",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "Em “A comissão referiu-se àquele procedimento”, o acento grave está de acordo com a regência do verbo e com a forma do demonstrativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Quem se refere, refere-se a algo; a preposição “a” funde-se com “aquele”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_021",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk02_crase_demonstrativos"
+          ],
+          "statement": "A forma “O candidato visava aquele cargo” está plenamente adequada quando “visar” significa almejar, não havendo possibilidade de crase.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na norma-padrão, “visar”, no sentido de almejar, rege “a”; diante de “aquele”, forma-se “visava àquele cargo”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "A preposição a pode fundir-se com o a inicial de pronomes demonstrativos."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_022",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Em regra, não se emprega acento grave antes de pronome pessoal, pois esse pronome não é antecedido de artigo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Pode existir a preposição “a”, mas falta o artigo feminino necessário à fusão que caracteriza a crase.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_023",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Na frase “A chefia entregou a ela o documento”, a ausência de acento grave em “a ela” está correta.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O pronome pessoal “ela” não admite artigo; há somente a preposição “a”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_pilot_024",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s07_crase",
+          "microknowledge_ids": [
+            "prf_d01_t05_s07_mk03_pronome_pessoal_e_tratamento"
+          ],
+          "statement": "Na redação formal, toda forma de tratamento impede crase, razão pela qual apenas “dirigiu-se a senhora” pode estar correta.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Formas como “senhora” podem admitir artigo. Se o termo regente exige “a”, é possível “dirigiu-se à senhora”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - baseada no escopo oficial e em referência didática rastreada",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bf5410c46bd3",
+              "trace_status": "available",
+              "page_number": 62,
+              "excerpt": "Pronome pessoal não admite artigo; certas formas de tratamento podem admitir artigo."
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_025",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_01"
+          ],
+          "statement": "Compreender um texto inclui localizar informações expressas e relacioná-las para produzir inferências sustentadas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: distinguir informação explícita de inferência autorizada pelo texto. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 113,
+              "excerpt": "Distinguir informação explícita de inferência autorizada pelo texto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_026",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_01"
+          ],
+          "statement": "Uma inferência pode ser considerada válida mesmo quando contradiz uma informação expressa no texto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: distinguir informação explícita de inferência autorizada pelo texto. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 113,
+              "excerpt": "Distinguir informação explícita de inferência autorizada pelo texto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_027",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_01"
+          ],
+          "statement": "Toda interpretação é subjetiva e dispensa evidência textual.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: distinguir informação explícita de inferência autorizada pelo texto. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 113,
+              "excerpt": "Distinguir informação explícita de inferência autorizada pelo texto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_028",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_02"
+          ],
+          "statement": "A classificação tipológica considera os traços predominantes e a finalidade principal do texto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer tipologia predominante e finalidade do gênero. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer tipologia predominante e finalidade do gênero"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_029",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_02"
+          ],
+          "statement": "Um manual de procedimentos tende a apresentar predominância injuntiva por orientar ações.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer tipologia predominante e finalidade do gênero. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer tipologia predominante e finalidade do gênero"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_030",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t02_s01_tipos_e_gen",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_02"
+          ],
+          "statement": "A presença de descrição em uma narrativa impede que o texto seja classificado como narrativo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reconhecer tipologia predominante e finalidade do gênero. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer tipologia predominante e finalidade do gênero"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_031",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_03"
+          ],
+          "statement": "A ortografia oficial reúne convenções de grafia, acentuação, hífen e emprego de letras.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar convenções ortográficas e de acentuação vigentes. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Aplicar convenções ortográficas e de acentuação vigentes"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_032",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_03"
+          ],
+          "statement": "As formas “ideia” e “heroico” devem receber acento agudo segundo a ortografia vigente.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: aplicar convenções ortográficas e de acentuação vigentes. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Aplicar convenções ortográficas e de acentuação vigentes"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_033",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_03"
+          ],
+          "statement": "A palavra “saúde” recebe acento porque o “u” tônico forma hiato nas condições previstas pela regra.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar convenções ortográficas e de acentuação vigentes. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 5,
+              "excerpt": "Aplicar convenções ortográficas e de acentuação vigentes"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_034",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_04"
+          ],
+          "statement": "Um pronome pode retomar elemento anterior e contribuir para a coesão referencial.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: identificar retomadas anafóricas e cadeias referenciais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Identificar retomadas anafóricas e cadeias referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_035",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_04"
+          ],
+          "statement": "Em “A equipe publicou o relatório e o revisou”, o pronome “o” retoma “relatório”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: identificar retomadas anafóricas e cadeias referenciais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Identificar retomadas anafóricas e cadeias referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_036",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_04"
+          ],
+          "statement": "Toda repetição lexical constitui erro de coesão e deve ser eliminada.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: identificar retomadas anafóricas e cadeias referenciais. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Identificar retomadas anafóricas e cadeias referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_037",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_05"
+          ],
+          "statement": "Conectores organizam relações como causa, consequência, oposição e concessão.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer o valor semântico dos conectores. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer o valor semântico dos conectores"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_038",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_05"
+          ],
+          "statement": "Em “Embora chovesse, a operação continuou”, “embora” introduz concessão.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer o valor semântico dos conectores. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer o valor semântico dos conectores"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_039",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_05"
+          ],
+          "statement": "A troca de “contudo” por “portanto” preserva necessariamente a relação argumentativa.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reconhecer o valor semântico dos conectores. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Reconhecer o valor semântico dos conectores"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_040",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_06"
+          ],
+          "statement": "O modo subjuntivo pode marcar hipótese, possibilidade ou desejo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: interpretar valores temporais e modais das formas verbais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Interpretar valores temporais e modais das formas verbais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_041",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_06"
+          ],
+          "statement": "Em “Se houvesse recursos, ampliaríamos a operação”, as formas verbais constroem uma hipótese.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: interpretar valores temporais e modais das formas verbais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Interpretar valores temporais e modais das formas verbais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_042",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s03_tempos_e_mo",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_06"
+          ],
+          "statement": "O modo indicativo expressa certeza absoluta em qualquer contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: interpretar valores temporais e modais das formas verbais. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8283a4d35d2b",
+              "trace_status": "available",
+              "page_number": 4,
+              "excerpt": "Interpretar valores temporais e modais das formas verbais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_043",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_07"
+          ],
+          "statement": "A classe de uma palavra deve ser analisada também por seu funcionamento no enunciado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: classificar palavras conforme funcionamento no contexto. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_6676bb9418a2",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Classificar palavras conforme funcionamento no contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_044",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_07"
+          ],
+          "statement": "Em “ela está meio cansada”, “meio” funciona como advérbio e permanece invariável.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: classificar palavras conforme funcionamento no contexto. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_6676bb9418a2",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Classificar palavras conforme funcionamento no contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_045",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_07"
+          ],
+          "statement": "Uma mesma forma lexical pertence sempre à mesma classe, independentemente do contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: classificar palavras conforme funcionamento no contexto. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_6676bb9418a2",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Classificar palavras conforme funcionamento no contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_046",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_08"
+          ],
+          "statement": "Orações coordenadas não exercem função sintática uma em relação à outra.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer orações coordenadas e relações semânticas. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 8,
+              "excerpt": "Reconhecer orações coordenadas e relações semânticas"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_047",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_08"
+          ],
+          "statement": "Em “A equipe chegou, mas não iniciou a fiscalização”, a segunda oração é coordenada adversativa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer orações coordenadas e relações semânticas. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 8,
+              "excerpt": "Reconhecer orações coordenadas e relações semânticas"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_048",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_08"
+          ],
+          "statement": "Orações coordenadas são sempre desprovidas de relação semântica entre si.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reconhecer orações coordenadas e relações semânticas. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 8,
+              "excerpt": "Reconhecer orações coordenadas e relações semânticas"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_049",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_09"
+          ],
+          "statement": "Uma oração subordinada exerce função sintática em relação a outra estrutura.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer funções substantivas, adjetivas e adverbiais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 10,
+              "excerpt": "Reconhecer funções substantivas, adjetivas e adverbiais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_050",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_09"
+          ],
+          "statement": "Em “Quando a chuva cessou, a pista foi liberada”, a oração inicial expressa circunstância temporal.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer funções substantivas, adjetivas e adverbiais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 10,
+              "excerpt": "Reconhecer funções substantivas, adjetivas e adverbiais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_051",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_09"
+          ],
+          "statement": "Toda oração subordinada precisa apresentar verbo em forma finita e conjunção expressa.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reconhecer funções substantivas, adjetivas e adverbiais. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_dd8c41255dc9",
+              "trace_status": "available",
+              "page_number": 10,
+              "excerpt": "Reconhecer funções substantivas, adjetivas e adverbiais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_052",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_10"
+          ],
+          "statement": "A vírgula não deve separar, sem elemento intercalado, o sujeito de seu verbo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: empregar pontuação conforme estrutura sintática e sentido. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Empregar pontuação conforme estrutura sintática e sentido"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_053",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_10"
+          ],
+          "statement": "Em “Os agentes da unidade, concluíram o relatório”, a vírgula está corretamente empregada.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: empregar pontuação conforme estrutura sintática e sentido. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Empregar pontuação conforme estrutura sintática e sentido"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_054",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_10"
+          ],
+          "statement": "A pontuação pode alterar relações de sentido e não se reduz à marcação de pausas respiratórias.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: empregar pontuação conforme estrutura sintática e sentido. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Empregar pontuação conforme estrutura sintática e sentido"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_055",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_11"
+          ],
+          "statement": "Na regra geral, o verbo concorda em número e pessoa com o núcleo do sujeito.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: estabelecer concordância com o núcleo pertinente. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_44da85f679ee",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Estabelecer concordância com o núcleo pertinente"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_056",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_11"
+          ],
+          "statement": "Em “Faltam documentos no processo”, o plural verbal está de acordo com o sujeito posposto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: estabelecer concordância com o núcleo pertinente. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_44da85f679ee",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Estabelecer concordância com o núcleo pertinente"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_057",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s05_concordanci",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_11"
+          ],
+          "statement": "A forma “houveram ocorrências” está correta quando “haver” significa existir.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: estabelecer concordância com o núcleo pertinente. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_44da85f679ee",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Estabelecer concordância com o núcleo pertinente"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_058",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_12"
+          ],
+          "statement": "Palavra negativa anterior ao verbo normalmente atrai o pronome átono.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar próclise, ênclise e mesóclise conforme o contexto. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 28,
+              "excerpt": "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_059",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_12"
+          ],
+          "statement": "A colocação em “A equipe não se omitiu” está adequada à norma-padrão.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar próclise, ênclise e mesóclise conforme o contexto. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 28,
+              "excerpt": "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_060",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s08_colocacao_p",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_12"
+          ],
+          "statement": "Em registro formal, iniciar a oração com pronome átono em “Me informaram o resultado” é a única colocação possível.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: aplicar próclise, ênclise e mesóclise conforme o contexto. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 28,
+              "excerpt": "Aplicar próclise, ênclise e mesóclise conforme o contexto"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_061",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_13"
+          ],
+          "statement": "O sentido de uma palavra pode variar conforme o contexto em que ela ocorre.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: determinar sentido contextual, denotação e relações lexicais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4fb632b375ef",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Determinar sentido contextual, denotação e relações lexicais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_062",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_13"
+          ],
+          "statement": "Na expressão “a notícia caiu como uma bomba”, “bomba” é empregada em sentido estritamente denotativo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: determinar sentido contextual, denotação e relações lexicais. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4fb632b375ef",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Determinar sentido contextual, denotação e relações lexicais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_063",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s01_significaca",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_13"
+          ],
+          "statement": "Sinônimos podem apresentar diferenças de uso e nem sempre são intercambiáveis em todos os contextos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: determinar sentido contextual, denotação e relações lexicais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4fb632b375ef",
+              "trace_status": "available",
+              "page_number": 3,
+              "excerpt": "Determinar sentido contextual, denotação e relações lexicais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_064",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_14"
+          ],
+          "statement": "Uma substituição válida deve preservar as relações relevantes de sentido e a correção gramatical.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: avaliar substituições quanto a sentido, coesão e correção. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Avaliar substituições quanto a sentido, coesão e correção"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_065",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_14"
+          ],
+          "statement": "A troca de “contudo” por “porém” pode preservar uma relação adversativa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: avaliar substituições quanto a sentido, coesão e correção. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Avaliar substituições quanto a sentido, coesão e correção"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_066",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s02_substituica",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_14"
+          ],
+          "statement": "Palavras registradas como sinônimas podem ser trocadas livremente em qualquer contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: avaliar substituições quanto a sentido, coesão e correção. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Avaliar substituições quanto a sentido, coesão e correção"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_067",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_15"
+          ],
+          "statement": "A reorganização de um período exige controle de concordância, referência e relações lógico-semânticas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reordenar estruturas preservando vínculos sintáticos e referenciais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_068",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_15"
+          ],
+          "statement": "A passagem da voz ativa para a passiva pode preservar a informação central, desde que se façam os ajustes necessários.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reordenar estruturas preservando vínculos sintáticos e referenciais. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_069",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s03_reorganizac",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_15"
+          ],
+          "statement": "O deslocamento de qualquer oração subordinada é neutro e nunca exige alteração de pontuação.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reordenar estruturas preservando vínculos sintáticos e referenciais. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Reordenar estruturas preservando vínculos sintáticos e referenciais"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_070",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_16"
+          ],
+          "statement": "A reescrita deve considerar propósito comunicativo, destinatário e convenções do gênero.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_071",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_16"
+          ],
+          "statement": "Abreviações informais de conversa são sempre adequadas em comunicação administrativa formal.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_072",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t06_s04_reescrita_e",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_16"
+          ],
+          "statement": "Mudar o gênero textual envolve apenas substituir palavras, sem alterar organização ou finalidade.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_50f8727aed54",
+              "trace_status": "available",
+              "page_number": 21,
+              "excerpt": "Adequar a reescrita ao gênero, ao destinatário e ao grau de formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_073",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_17"
+          ],
+          "statement": "Clareza e precisão integram os atributos da redação oficial.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_074",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_17"
+          ],
+          "statement": "Impessoalidade significa ocultar informações indispensáveis sobre o órgão responsável.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_075",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s01_aspectos_ge",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_17"
+          ],
+          "statement": "Concisão consiste em transmitir o necessário sem redundância, e não em eliminar conteúdo essencial.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Reconhecer clareza, precisão, objetividade, concisão, coesão, impessoalidade e formalidade"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_076",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_18"
+          ],
+          "statement": "A escolha do expediente deve considerar a finalidade e os participantes da comunicação.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: relacionar cada expediente oficial à sua finalidade comunicativa. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_077",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_18"
+          ],
+          "statement": "Exposição de motivos e mensagem possuem finalidades institucionais idênticas e podem ser sempre intercambiadas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: relacionar cada expediente oficial à sua finalidade comunicativa. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_078",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s02_finalidade_",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_18"
+          ],
+          "statement": "A finalidade comunicativa ajuda a determinar o documento oficial adequado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: relacionar cada expediente oficial à sua finalidade comunicativa. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Relacionar cada expediente oficial à sua finalidade comunicativa"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_079",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_19"
+          ],
+          "statement": "A linguagem oficial deve ser compreensível, objetiva e adequada à situação institucional.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: empregar linguagem formal, clara, precisa e impessoal. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_080",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_19"
+          ],
+          "statement": "Formalidade autoriza o uso de construções obscuras sempre que o vocabulário seja técnico.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: empregar linguagem formal, clara, precisa e impessoal. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_081",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s03_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_19"
+          ],
+          "statement": "Precisão lexical reduz ambiguidades na comunicação oficial.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: empregar linguagem formal, clara, precisa e impessoal. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 16,
+              "excerpt": "Empregar linguagem formal, clara, precisa e impessoal"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_082",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_20"
+          ],
+          "statement": "Documentos oficiais devem observar a estrutura e os elementos previstos para seu gênero.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar estrutura e formatação compatíveis com o documento oficial. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_083",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_20"
+          ],
+          "statement": "Assunto, endereçamento e identificação do signatário podem ser posicionados aleatoriamente sem afetar a padronização.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Errado. O critério avaliado é: aplicar estrutura e formatação compatíveis com o documento oficial. O item contém generalização ou relação incompatível com a análise contextual e a norma-padrão.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_wave1_084",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t07_s04_adequacao_d",
+          "microknowledge_ids": [
+            "prf_d01_wave1_mk_20"
+          ],
+          "statement": "A padronização facilita identificação, tramitação e leitura dos expedientes.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Correto. O critério avaliado é: aplicar estrutura e formatação compatíveis com o documento oficial. A afirmação o aplica sem extrapolar a regra.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - cobertura diagnóstica PRF",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_240c6227d2f5",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            },
+            {
+              "source_id": "mrpr_3ed_oficial",
+              "trace_status": "available",
+              "page_number": 27,
+              "excerpt": "Aplicar estrutura e formatação compatíveis com o documento oficial"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-20T21:56:02.624Z",
+    "editorial_status": "draft_for_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 28,
+    "question_count": 84,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "initial_anchor_coverage_not_full_atomic_decomposition",
+    "canonical_subtopics_covered": 22
+  }
+}

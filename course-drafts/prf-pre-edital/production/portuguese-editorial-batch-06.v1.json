@@ -1,0 +1,1132 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-06-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b06_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Ambientação por pistas convergentes",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Alternância temporal e representação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Adesão, consciência e voz inclusiva",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Referente contextual e coesão",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Persistência histórica",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Contribuição e direção causal",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Escopo e restrição semântica",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Controle de primazia e valoração",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Finalidade, benefício e metáfora",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b06_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Contradição factual e proporcionalidade",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao_b06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Ambientação, referenciação, causalidade, extrapolação e relações proporcionais",
+      "essential_concepts": [
+        "Ambientação por pistas convergentes",
+        "Alternância temporal e representação",
+        "Adesão, consciência e voz inclusiva",
+        "Referente contextual e coesão",
+        "Persistência histórica",
+        "Contribuição e direção causal",
+        "Escopo e restrição semântica",
+        "Controle de primazia e valoração",
+        "Finalidade, benefício e metáfora",
+        "Contradição factual e proporcionalidade"
+      ],
+      "rules": [
+        "Fundamentar inferências em pistas convergentes",
+        "Resolver referentes pelo contexto",
+        "Preservar agentes e limites semânticos",
+        "Não acrescentar avaliações ausentes"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b06_mk_01",
+        "prf_d01_b06_mk_02",
+        "prf_d01_b06_mk_03",
+        "prf_d01_b06_mk_04",
+        "prf_d01_b06_mk_05",
+        "prf_d01_b06_mk_06",
+        "prf_d01_b06_mk_07",
+        "prf_d01_b06_mk_08",
+        "prf_d01_b06_mk_09",
+        "prf_d01_b06_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 202,
+          "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b06",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b06_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_01"
+          ],
+          "statement": "TEXTO A\nA antiga estação parecia apagada do mapa. O letreiro perdera metade das letras, ervas atravessavam as frestas da plataforma e duas janelas estavam vedadas por tábuas. Apenas o relógio, ainda funcionando, quebrava a impressão de abandono. O edifício fora restaurado para lembrar aos moradores as viagens que marcaram a formação da cidade, e não para exibir a riqueza da companhia ferroviária.\n\nJulgue o item: A caracterização da estação como “apagada do mapa” decorre principalmente das marcas de abandono reunidas na descrição.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Letreiro danificado, vegetação nas frestas e janelas vedadas convergem para a ideia de desuso. A inferência nasce do conjunto das pistas físicas; o relógio ativo funciona como exceção e não anula a ambientação predominante.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_01"
+          ],
+          "statement": "TEXTO A\nA antiga estação parecia apagada do mapa. O letreiro perdera metade das letras, ervas atravessavam as frestas da plataforma e duas janelas estavam vedadas por tábuas. Apenas o relógio, ainda funcionando, quebrava a impressão de abandono. O edifício fora restaurado para lembrar aos moradores as viagens que marcaram a formação da cidade, e não para exibir a riqueza da companhia ferroviária.\n\nJulgue o item: O relógio em funcionamento comprova que a estação mantinha todas as suas atividades regulares.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O relógio é apresentado como o único elemento que rompe a impressão de abandono. Um sinal residual de funcionamento não autoriza generalizar plena atividade para o edifício, sobretudo diante das várias marcas contrárias.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_02"
+          ],
+          "statement": "TEXTO A\nA antiga estação parecia apagada do mapa. O letreiro perdera metade das letras, ervas atravessavam as frestas da plataforma e duas janelas estavam vedadas por tábuas. Apenas o relógio, ainda funcionando, quebrava a impressão de abandono. O edifício fora restaurado para lembrar aos moradores as viagens que marcaram a formação da cidade, e não para exibir a riqueza da companhia ferroviária.\n\nJulgue o item: A restauração procurou evocar uma dimensão da memória coletiva ligada às viagens e à formação da cidade.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto declara a finalidade memorial da obra e associa as viagens à formação urbana. Assim, o edifício restaurado funciona como representação de uma experiência coletiva, não como simples demonstração material de riqueza.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_02"
+          ],
+          "statement": "TEXTO A\nA antiga estação parecia apagada do mapa. O letreiro perdera metade das letras, ervas atravessavam as frestas da plataforma e duas janelas estavam vedadas por tábuas. Apenas o relógio, ainda funcionando, quebrava a impressão de abandono. O edifício fora restaurado para lembrar aos moradores as viagens que marcaram a formação da cidade, e não para exibir a riqueza da companhia ferroviária.\n\nJulgue o item: Ao restaurar o edifício, os responsáveis pretendiam representar o poder econômico da antiga companhia.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A passagem nega expressamente essa finalidade e aponta outra: recordar viagens relevantes para a cidade. Confundir o objeto histórico com exaltação econômica ignora a oposição “e não” que delimita o sentido.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_02"
+          ],
+          "statement": "TEXTO B\nAlguns desvios éticos precedem o ingresso do servidor na instituição; outros se formam depois, pela convivência prolongada com práticas toleradas pelo grupo. Ao examinarmos esse problema, reconhecemos que nossas escolhas cotidianas também moldam a cultura organizacional. Muitos aderem formalmente ao código de conduta sem conhecer todas as suas regras, mas essa falta de conhecimento não equivale, por si só, à rejeição do código.\n\nJulgue o item: O texto admite que o desvio ético possa existir antes da entrada na instituição ou formar-se durante a convivência no ambiente institucional.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Os dois pontos temporais são coordenados: alguns casos precedem o ingresso; outros surgem depois, pela tolerância do grupo. A resposta adequada preserva a alternância em vez de reduzir todos os casos a uma origem única.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_03"
+          ],
+          "statement": "TEXTO B\nAlguns desvios éticos precedem o ingresso do servidor na instituição; outros se formam depois, pela convivência prolongada com práticas toleradas pelo grupo. Ao examinarmos esse problema, reconhecemos que nossas escolhas cotidianas também moldam a cultura organizacional. Muitos aderem formalmente ao código de conduta sem conhecer todas as suas regras, mas essa falta de conhecimento não equivale, por si só, à rejeição do código.\n\nJulgue o item: O emprego de “examinarmos” e “nossas” inclui o enunciador no grupo cuja conduta participa da cultura organizacional.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A primeira pessoa do plural aproxima autor, leitores e demais integrantes do coletivo. Ao falar em “nossas escolhas”, o texto distribui responsabilidade e não apresenta o problema como comportamento exclusivo de terceiros.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_03"
+          ],
+          "statement": "TEXTO B\nAlguns desvios éticos precedem o ingresso do servidor na instituição; outros se formam depois, pela convivência prolongada com práticas toleradas pelo grupo. Ao examinarmos esse problema, reconhecemos que nossas escolhas cotidianas também moldam a cultura organizacional. Muitos aderem formalmente ao código de conduta sem conhecer todas as suas regras, mas essa falta de conhecimento não equivale, por si só, à rejeição do código.\n\nJulgue o item: Quem desconhece parte das regras do código de conduta necessariamente discorda delas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto distingue adesão formal, conhecimento detalhado e rejeição. Ignorar parte do conteúdo pode revelar compreensão incompleta, mas não prova discordância; o item transforma ausência de conhecimento em posição contrária.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_07"
+          ],
+          "statement": "TEXTO B\nAlguns desvios éticos precedem o ingresso do servidor na instituição; outros se formam depois, pela convivência prolongada com práticas toleradas pelo grupo. Ao examinarmos esse problema, reconhecemos que nossas escolhas cotidianas também moldam a cultura organizacional. Muitos aderem formalmente ao código de conduta sem conhecer todas as suas regras, mas essa falta de conhecimento não equivale, por si só, à rejeição do código.\n\nJulgue o item: A convivência com práticas toleradas é apresentada como explicação possível para alguns desvios, não como causa de todos eles.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O quantificador “outros” delimita o grupo explicado pelo ambiente, enquanto “alguns” já possuíam desvios antes do ingresso. A conclusão respeita esse recorte e evita universalizar uma causa parcial.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_04"
+          ],
+          "statement": "TEXTO C\nUma pequena parcela dos usuários concentra a maior parte dos benefícios do programa; no contexto do relatório, “pequena parcela” designa os grupos já atendidos com maior frequência, não as comunidades mais vulneráveis. Decisões tomadas há décadas ainda influenciam a distribuição atual dos postos de atendimento. A formação recebida em casa pode contribuir para certos hábitos, mas não torna inevitável sua conservação. Quando esses hábitos alimentam a desconfiança contra outros grupos, a desconfiança surge como consequência, não como origem deles.\n\nJulgue o item: No relatório, “pequena parcela” refere-se aos usuários que concentram benefícios, e não automaticamente aos grupos socialmente vulneráveis.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O referente é definido pela predicação imediatamente associada: parcela que recebe a maior parte dos benefícios. Conhecimentos externos sobre a palavra “minoria” ou vulnerabilidade não podem substituir a definição fornecida no contexto.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_05"
+          ],
+          "statement": "TEXTO C\nUma pequena parcela dos usuários concentra a maior parte dos benefícios do programa; no contexto do relatório, “pequena parcela” designa os grupos já atendidos com maior frequência, não as comunidades mais vulneráveis. Decisões tomadas há décadas ainda influenciam a distribuição atual dos postos de atendimento. A formação recebida em casa pode contribuir para certos hábitos, mas não torna inevitável sua conservação. Quando esses hábitos alimentam a desconfiança contra outros grupos, a desconfiança surge como consequência, não como origem deles.\n\nJulgue o item: A distribuição presente dos postos é tratada como inteiramente independente de decisões históricas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A expressão “ainda influenciam” conecta escolhas antigas à configuração atual. O item rompe essa continuidade e transforma uma herança persistente em processo encerrado, contrariando diretamente a relação temporal apresentada.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_06"
+          ],
+          "statement": "TEXTO C\nUma pequena parcela dos usuários concentra a maior parte dos benefícios do programa; no contexto do relatório, “pequena parcela” designa os grupos já atendidos com maior frequência, não as comunidades mais vulneráveis. Decisões tomadas há décadas ainda influenciam a distribuição atual dos postos de atendimento. A formação recebida em casa pode contribuir para certos hábitos, mas não torna inevitável sua conservação. Quando esses hábitos alimentam a desconfiança contra outros grupos, a desconfiança surge como consequência, não como origem deles.\n\nJulgue o item: A formação familiar pode favorecer determinados hábitos sem ser suficiente para tornar sua permanência inevitável.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "“Pode contribuir” expressa influência possível e parcial; a oração adversativa rejeita determinação automática. A leitura correta conserva simultaneamente a contribuição causal e o limite imposto a ela.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_06"
+          ],
+          "statement": "TEXTO C\nUma pequena parcela dos usuários concentra a maior parte dos benefícios do programa; no contexto do relatório, “pequena parcela” designa os grupos já atendidos com maior frequência, não as comunidades mais vulneráveis. Decisões tomadas há décadas ainda influenciam a distribuição atual dos postos de atendimento. A formação recebida em casa pode contribuir para certos hábitos, mas não torna inevitável sua conservação. Quando esses hábitos alimentam a desconfiança contra outros grupos, a desconfiança surge como consequência, não como origem deles.\n\nJulgue o item: A desconfiança em relação a outros grupos é apontada como a causa inicial dos hábitos mencionados.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O último período estabelece o contrário: os hábitos alimentam a desconfiança, que aparece como consequência. O item mantém os mesmos conceitos, mas inverte a direção explicitamente marcada pelo texto.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_07"
+          ],
+          "statement": "TEXTO D\nValorizar a cultura local não estreita necessariamente a visão de mundo; o problema aparece quando alguém se limita a ela e desqualifica qualquer prática diferente. Em 2016, o município aderiu a um pacto de inclusão. O relatório não afirma que esse tenha sido o primeiro instrumento local nem avalia a iniciativa como a mais bem-sucedida. As ações previstas pelo pacto seriam executadas pelas instituições participantes e buscariam combater a exploração do trabalho infantil — o que não equivale a proibir todo trabalho permitido a adolescentes.\n\nJulgue o item: A crítica recai sobre o confinamento à própria cultura acompanhado da desqualificação de práticas diferentes, não sobre a valorização cultural em si.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A primeira oração rejeita que valorizar a cultura seja necessariamente limitador. O problema é definido depois por duas condições combinadas: limitar-se à própria referência e depreciar as demais.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_08"
+          ],
+          "statement": "TEXTO D\nValorizar a cultura local não estreita necessariamente a visão de mundo; o problema aparece quando alguém se limita a ela e desqualifica qualquer prática diferente. Em 2016, o município aderiu a um pacto de inclusão. O relatório não afirma que esse tenha sido o primeiro instrumento local nem avalia a iniciativa como a mais bem-sucedida. As ações previstas pelo pacto seriam executadas pelas instituições participantes e buscariam combater a exploração do trabalho infantil — o que não equivale a proibir todo trabalho permitido a adolescentes.\n\nJulgue o item: Por registrar a adesão em 2016, o relatório apresenta o pacto como o primeiro e o mais eficaz instrumento municipal de inclusão.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A data comprova quando houve adesão, mas não estabelece primazia; tampouco há resultados ou comparação que sustentem eficácia máxima. O item acrescenta dois superlativos — temporal e avaliativo — ausentes do texto.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_04"
+          ],
+          "statement": "TEXTO D\nValorizar a cultura local não estreita necessariamente a visão de mundo; o problema aparece quando alguém se limita a ela e desqualifica qualquer prática diferente. Em 2016, o município aderiu a um pacto de inclusão. O relatório não afirma que esse tenha sido o primeiro instrumento local nem avalia a iniciativa como a mais bem-sucedida. As ações previstas pelo pacto seriam executadas pelas instituições participantes e buscariam combater a exploração do trabalho infantil — o que não equivale a proibir todo trabalho permitido a adolescentes.\n\nJulgue o item: As instituições participantes, e não o pacto como agente autônomo, são responsáveis pela execução das ações previstas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto usa construção passiva e identifica os executores: as instituições participantes. O pacto organiza ou prevê as ações, mas não age por conta própria; distinguir norma e executor preserva a agência textual.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_07"
+          ],
+          "statement": "TEXTO D\nValorizar a cultura local não estreita necessariamente a visão de mundo; o problema aparece quando alguém se limita a ela e desqualifica qualquer prática diferente. Em 2016, o município aderiu a um pacto de inclusão. O relatório não afirma que esse tenha sido o primeiro instrumento local nem avalia a iniciativa como a mais bem-sucedida. As ações previstas pelo pacto seriam executadas pelas instituições participantes e buscariam combater a exploração do trabalho infantil — o que não equivale a proibir todo trabalho permitido a adolescentes.\n\nJulgue o item: Combater a exploração do trabalho infantil equivale, no texto, a proibir qualquer atividade laboral exercida por adolescente.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Exploração” e “todo trabalho” têm extensões distintas. A própria passagem ressalva atividades legalmente permitidas a adolescentes; ampliar o alvo da medida elimina uma distinção semântica decisiva.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_09"
+          ],
+          "statement": "TEXTO E\nPara localizar documentos adulterados, a equipe criou uma ferramenta capaz de comparar arquivos em poucos minutos; antes, a mesma triagem consumia várias semanas. O chefe descreveu o método anterior como “procurar uma agulha no escuro”, imagem de sua dificuldade, não prova de que inexistissem recursos técnicos. A licença é gratuita para órgãos de controle, e um teste foi realizado em um disco isolado da rede. Quanto maior a base de padrões confirmados, maior tende a ser a capacidade de reconhecer novas adulterações.\n\nJulgue o item: A comparação entre minutos e semanas sustenta que a ferramenta tornou a triagem mais célere.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O mesmo procedimento passa de várias semanas para poucos minutos. Essa oposição temporal fornece evidência direta do ganho operacional; não é necessário que o texto empregue literalmente o adjetivo “célere”.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_09"
+          ],
+          "statement": "TEXTO E\nPara localizar documentos adulterados, a equipe criou uma ferramenta capaz de comparar arquivos em poucos minutos; antes, a mesma triagem consumia várias semanas. O chefe descreveu o método anterior como “procurar uma agulha no escuro”, imagem de sua dificuldade, não prova de que inexistissem recursos técnicos. A licença é gratuita para órgãos de controle, e um teste foi realizado em um disco isolado da rede. Quanto maior a base de padrões confirmados, maior tende a ser a capacidade de reconhecer novas adulterações.\n\nJulgue o item: A imagem “procurar uma agulha no escuro” demonstra que a equipe não possuía nenhum recurso técnico antes da nova ferramenta.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A metáfora caracteriza dificuldade e baixa eficiência do método anterior, não ausência absoluta de recursos. Transformar uma imagem hiperbólica em informação técnica literal ultrapassa o que o texto permite concluir.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_10"
+          ],
+          "statement": "TEXTO E\nPara localizar documentos adulterados, a equipe criou uma ferramenta capaz de comparar arquivos em poucos minutos; antes, a mesma triagem consumia várias semanas. O chefe descreveu o método anterior como “procurar uma agulha no escuro”, imagem de sua dificuldade, não prova de que inexistissem recursos técnicos. A licença é gratuita para órgãos de controle, e um teste foi realizado em um disco isolado da rede. Quanto maior a base de padrões confirmados, maior tende a ser a capacidade de reconhecer novas adulterações.\n\nJulgue o item: O texto permite concluir que a ferramenta só funciona em equipamentos conectados à rede e que sua licença é vendida aos órgãos públicos.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "As duas partes são contrariadas: houve teste em disco isolado da rede e a licença é gratuita. Mesmo que outra conclusão sobre qualidade fosse plausível, premissas factualmente falsas tornam o item integralmente errado.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b06_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b06_mk_10"
+          ],
+          "statement": "TEXTO E\nPara localizar documentos adulterados, a equipe criou uma ferramenta capaz de comparar arquivos em poucos minutos; antes, a mesma triagem consumia várias semanas. O chefe descreveu o método anterior como “procurar uma agulha no escuro”, imagem de sua dificuldade, não prova de que inexistissem recursos técnicos. A licença é gratuita para órgãos de controle, e um teste foi realizado em um disco isolado da rede. Quanto maior a base de padrões confirmados, maior tende a ser a capacidade de reconhecer novas adulterações.\n\nJulgue o item: O aumento da base de padrões confirmados tende a ser acompanhado pelo aumento da capacidade de reconhecer adulterações.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A construção “quanto maior... maior” expressa variação correlata: o crescimento de uma grandeza acompanha o da outra. Isso não significa que elas sejam idênticas, mas estabelece relação proporcional no argumento.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 06",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 202,
+              "excerpt": "Matriz agregada das questões 101-120, páginas 202-213: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T01:53:40.517Z",
+    "editorial_status": "batch_06_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula13-editorial-matrix-batch-06.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

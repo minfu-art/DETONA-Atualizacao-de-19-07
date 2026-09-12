@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-28-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_4027ab525b8d",
+            "trace_status": "available",
+            "page_number": 49,
+            "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_4027ab525b8d",
+            "trace_status": "available",
+            "page_number": 49,
+            "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "5. Estrutura morfossintática do período",
+        "description": "",
+        "order": 4,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_4027ab525b8d",
+            "trace_status": "available",
+            "page_number": 49,
+            "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Classes de palavras",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_4027ab525b8d",
+            "trace_status": "available",
+            "page_number": 49,
+            "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b28_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Retomada de conteúdo proposicional",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Estrutura e sentido de cujo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Advérbio e colocação do pronome",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Concordância dos relativos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Regência dos relativos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Resolução contextual do referente",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Posição e sentido dos indefinidos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Valor possessivo de pronome pessoal",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Demonstrativos: dêixis, anáfora e catáfora",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b28_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "title": "Combinação e forma dos oblíquos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de__b28",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+      "scope": "Fechamento de pronomes: relativos, pessoais, possessivos, demonstrativos e indefinidos",
+      "essential_concepts": [
+        "Retomada de conteúdo proposicional",
+        "Estrutura e sentido de cujo",
+        "Advérbio e colocação do pronome",
+        "Concordância dos relativos",
+        "Regência dos relativos",
+        "Resolução contextual do referente",
+        "Posição e sentido dos indefinidos",
+        "Valor possessivo de pronome pessoal",
+        "Demonstrativos: dêixis, anáfora e catáfora",
+        "Combinação e forma dos oblíquos"
+      ],
+      "rules": [
+        "Resolver o referente antes de classificar o pronome",
+        "Distinguir correção gramatical e preservação de sentido",
+        "Observar posição e artigo na semântica dos indefinidos",
+        "Reconhecer combinações e adaptações gráficas dos oblíquos"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b28_mk_01",
+        "prf_d01_b28_mk_02",
+        "prf_d01_b28_mk_03",
+        "prf_d01_b28_mk_04",
+        "prf_d01_b28_mk_05",
+        "prf_d01_b28_mk_06",
+        "prf_d01_b28_mk_07",
+        "prf_d01_b28_mk_08",
+        "prf_d01_b28_mk_09",
+        "prf_d01_b28_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_4027ab525b8d",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b28",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b28_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_01"
+          ],
+          "statement": "TEXTO A\nA comissão pretendia distribuir igualmente os equipamentos entre as unidades. No passado, isso seria inviável; agora, é possível pensar nisso com seriedade. O plano prevê órgãos cujas equipes receberão treinamento, e os servidores muito se empenharam para concluir o levantamento.\n\nJulgue o item: Em “pensar nisso”, “nisso” retoma a ideia de distribuir igualmente os equipamentos entre as unidades.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O demonstrativo condensado em nisso recupera uma proposição inteira apresentada no início do texto. A expressão agora é possível pensar nisso contrasta com a inviabilidade anterior dessa mesma distribuição.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_02"
+          ],
+          "statement": "TEXTO A\nA comissão pretendia distribuir igualmente os equipamentos entre as unidades. No passado, isso seria inviável; agora, é possível pensar nisso com seriedade. O plano prevê órgãos cujas equipes receberão treinamento, e os servidores muito se empenharam para concluir o levantamento.\n\nJulgue o item: A inserção de artigo em “cujas as equipes” manteria a norma-padrão, pois “equipes” admite o artigo definido.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Cujo já funciona como determinante e estabelece a posse entre órgãos e equipes. Por isso, não se combina com artigo imediatamente posterior: a construção padrão é órgãos cujas equipes.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_03"
+          ],
+          "statement": "TEXTO A\nA comissão pretendia distribuir igualmente os equipamentos entre as unidades. No passado, isso seria inviável; agora, é possível pensar nisso com seriedade. O plano prevê órgãos cujas equipes receberão treinamento, e os servidores muito se empenharam para concluir o levantamento.\n\nJulgue o item: A forma “muito empenharam-se” poderia substituir “muito se empenharam” sem contrariar a colocação pronominal padrão.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Muito intensifica o verbo empenharam e funciona como advérbio sem pausa. Advérbios são fatores de atração do pronome átono, razão pela qual a próclise em muito se empenharam é a ordem esperada.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_05"
+          ],
+          "statement": "TEXTO A\nA comissão pretendia distribuir igualmente os equipamentos entre as unidades. No passado, isso seria inviável; agora, é possível pensar nisso com seriedade. O plano prevê órgãos cujas equipes receberão treinamento, e os servidores muito se empenharam para concluir o levantamento.\n\nJulgue o item: A redação “órgãos aonde as equipes receberão treinamento” seria equivalente e correta porque “órgãos” designa uma instituição.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Aonde pressupõe valor locativo associado à preposição a, normalmente exigida por verbo de movimento. Receber treinamento não rege essa preposição; além disso, a relação pretendida é de posse, expressa por cujas.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_04"
+          ],
+          "statement": "TEXTO B\nA política estabelece um ambiente no qual a sociedade acompanha os resultados. Foram atualizados o regulamento e o manual que orientam a fiscalização. A coordenadora releu a minuta e a corrigiu antes de enviá-la. Em sistemas ágeis de governança, na qual a participação popular seja efetiva, as decisões ganham legitimidade.\n\nJulgue o item: Em “o regulamento e o manual que orientam”, a troca de “que” por “os quais” preservaria a concordância com os antecedentes.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O relativo que é invariável e retoma os dois núcleos coordenados. Sua forma variável equivalente deve ir ao masculino plural, os quais, concordando com regulamento e manual em conjunto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_05"
+          ],
+          "statement": "TEXTO B\nA política estabelece um ambiente no qual a sociedade acompanha os resultados. Foram atualizados o regulamento e o manual que orientam a fiscalização. A coordenadora releu a minuta e a corrigiu antes de enviá-la. Em sistemas ágeis de governança, na qual a participação popular seja efetiva, as decisões ganham legitimidade.\n\nJulgue o item: No primeiro período, substituir “no qual” por “aonde” seria inadequado, pois “acompanhar” não exige a preposição “a”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A sociedade acompanha os resultados no ambiente definido pela política. Aonde combinaria a com onde, mas não há movimento nem regência de a que justifique essa forma; no qual conserva a relação em.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_06"
+          ],
+          "statement": "TEXTO B\nA política estabelece um ambiente no qual a sociedade acompanha os resultados. Foram atualizados o regulamento e o manual que orientam a fiscalização. A coordenadora releu a minuta e a corrigiu antes de enviá-la. Em sistemas ágeis de governança, na qual a participação popular seja efetiva, as decisões ganham legitimidade.\n\nJulgue o item: O pronome “a” em “a corrigiu” retoma “coordenadora”, por ser o substantivo feminino mais próximo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Quem pratica as ações é a coordenadora; o objeto corrigido é a minuta. O pronome a concorda com minuta e funciona como objeto direto, mostrando que proximidade isolada não resolve a referência.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_04"
+          ],
+          "statement": "TEXTO B\nA política estabelece um ambiente no qual a sociedade acompanha os resultados. Foram atualizados o regulamento e o manual que orientam a fiscalização. A coordenadora releu a minuta e a corrigiu antes de enviá-la. Em sistemas ágeis de governança, na qual a participação popular seja efetiva, as decisões ganham legitimidade.\n\nJulgue o item: Em “sistemas ágeis de governança, na qual...”, “na qual” pode retomar “governança”, embora essa leitura altere o referente em comparação com “nos quais”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Na qual concorda com governança, feminino singular, e produz uma estrutura gramatical. Nos quais retomaria sistemas. A flexão do relativo orienta o referente e pode mudar o sentido sem gerar, por si só, erro formal.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_04"
+          ],
+          "statement": "TEXTO B\nA política estabelece um ambiente no qual a sociedade acompanha os resultados. Foram atualizados o regulamento e o manual que orientam a fiscalização. A coordenadora releu a minuta e a corrigiu antes de enviá-la. Em sistemas ágeis de governança, na qual a participação popular seja efetiva, as decisões ganham legitimidade.\n\nJulgue o item: Como existe o antecedente plural “sistemas”, o emprego de “na qual” torna obrigatoriamente a oração agramatical.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A expressão de governança contém um núcleo feminino singular disponível para a retomada. Na qual pode ligar-se a governança; a questão relevante é a mudança de referente e de sentido, não uma concordância necessariamente errada.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_07"
+          ],
+          "statement": "TEXTO C\nCertos agentes seguiram pela rota alternativa; os agentes certos permaneceram na barreira principal. Ao receber a notícia, o comandante sentiu apertar-lhe o peito. Aqui, nesta unidade, os mapas ficam ao lado da central; nessa unidade mencionada por você, ficam no arquivo externo.\n\nJulgue o item: Em “Certos agentes”, “certos” equivale a “alguns”; em “agentes certos”, caracteriza os agentes como adequados ou determinados.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A anteposição favorece o valor de pronome indefinido, sem identificar exatamente quais agentes. Após o substantivo, certos assume valor adjetivo e seleciona os agentes adequados à tarefa.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_08"
+          ],
+          "statement": "TEXTO C\nCertos agentes seguiram pela rota alternativa; os agentes certos permaneceram na barreira principal. Ao receber a notícia, o comandante sentiu apertar-lhe o peito. Aqui, nesta unidade, os mapas ficam ao lado da central; nessa unidade mencionada por você, ficam no arquivo externo.\n\nJulgue o item: Em “apertar-lhe o peito”, “lhe” é objeto direto de “apertar” e poderia ser substituído por “o” sem mudança de estrutura.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O objeto direto de apertar é o peito. Lhe marca o possuidor da parte do corpo afetada e constitui dativo de posse, equivalente a apertar seu peito ou apertar o peito do comandante; não pode ser trocado por o.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_09"
+          ],
+          "statement": "TEXTO C\nCertos agentes seguiram pela rota alternativa; os agentes certos permaneceram na barreira principal. Ao receber a notícia, o comandante sentiu apertar-lhe o peito. Aqui, nesta unidade, os mapas ficam ao lado da central; nessa unidade mencionada por você, ficam no arquivo externo.\n\nJulgue o item: A oposição entre “nesta unidade” e “nessa unidade” organiza a referência, respectivamente, pela proximidade do enunciador e pela unidade mencionada pelo interlocutor.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Nesta combina em mais esta e aponta para o espaço de quem fala, reforçado por aqui. Nessa combina em mais essa e recupera a unidade ligada ao visitante, afastada do centro do enunciador.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_01"
+          ],
+          "statement": "TEXTO D\nA equipe poderia ter isolado a pista, mas deixou de fazê-lo. O relatório era preliminar e ainda o era quando foi encaminhado. O supervisor apresentou este aviso: “a ponte ficará interditada até as seis horas”. Depois, retirou duas cópias das pastas e entregou uma destas ao motorista.\n\nJulgue o item: Em “deixou de fazê-lo”, “lo” retoma somente o substantivo masculino “motorista”, implícito no contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Fazê-lo equivale a fazer isso e recupera a ação complexa de isolar a pista. O demonstrativo neutro não procura um substantivo masculino; ele encapsula o conteúdo verbal anterior.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_01"
+          ],
+          "statement": "TEXTO D\nA equipe poderia ter isolado a pista, mas deixou de fazê-lo. O relatório era preliminar e ainda o era quando foi encaminhado. O supervisor apresentou este aviso: “a ponte ficará interditada até as seis horas”. Depois, retirou duas cópias das pastas e entregou uma destas ao motorista.\n\nJulgue o item: Em “ainda o era”, o pronome “o” recupera o predicativo “preliminar”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A frase equivale a o relatório ainda era preliminar. O pronome demonstrativo substitui a qualidade atribuída ao sujeito, evitando repetição; não retoma relatório, que já aparece como sujeito elíptico.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_09"
+          ],
+          "statement": "TEXTO D\nA equipe poderia ter isolado a pista, mas deixou de fazê-lo. O relatório era preliminar e ainda o era quando foi encaminhado. O supervisor apresentou este aviso: “a ponte ficará interditada até as seis horas”. Depois, retirou duas cópias das pastas e entregou uma destas ao motorista.\n\nJulgue o item: Em “apresentou este aviso”, “este” exerce função catafórica, pois anuncia o conteúdo reproduzido depois dos dois-pontos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A informação apontada pelo demonstrativo ainda será explicitada na citação seguinte. Essa projeção para a frente do texto caracteriza catáfora, diferentemente da retomada anafórica de algo já mencionado.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_09"
+          ],
+          "statement": "TEXTO D\nA equipe poderia ter isolado a pista, mas deixou de fazê-lo. O relatório era preliminar e ainda o era quando foi encaminhado. O supervisor apresentou este aviso: “a ponte ficará interditada até as seis horas”. Depois, retirou duas cópias das pastas e entregou uma destas ao motorista.\n\nJulgue o item: Em “uma destas”, “destas” é anafórico porque retoma as “pastas”, o substantivo feminino plural mais próximo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O referente são as cópias retiradas das pastas: uma destas cópias. A concordância ajuda, mas não basta escolher o nome mais próximo; é necessário verificar qual entidade pode ser entregue ao motorista.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_04"
+          ],
+          "statement": "TEXTO E\nO acidente, o qual bloqueou a rodovia por três horas, não deixou vítimas. Qualquer motorista deve reduzir a velocidade em chuva intensa; todo o percurso, porém, exige atenção. O diretor pediu as fotografias e as recomendações; a chefia recebeu-as e lhas encaminhou. Para aprimorar o protocolo e torná-lo mais claro, revisou também seu glossário.\n\nJulgue o item: Em “O acidente, o qual bloqueou...”, substituir “o qual” por “que” prejudicaria a concordância, porque “que” não exibe gênero masculino.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O relativo que é invariável e pode retomar acidente sem precisar marcar gênero e número. O qual torna visíveis esses traços do antecedente, mas, na oração explicativa proposta, ambas as formas são corretas.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_07"
+          ],
+          "statement": "TEXTO E\nO acidente, o qual bloqueou a rodovia por três horas, não deixou vítimas. Qualquer motorista deve reduzir a velocidade em chuva intensa; todo o percurso, porém, exige atenção. O diretor pediu as fotografias e as recomendações; a chefia recebeu-as e lhas encaminhou. Para aprimorar o protocolo e torná-lo mais claro, revisou também seu glossário.\n\nJulgue o item: “Qualquer motorista” expressa generalização; já “todo o percurso” apresenta o percurso em sua integralidade.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Qualquer inclui indistintamente cada membro da classe dos motoristas. Todo seguido de artigo definido incide sobre a extensão completa de um referente determinado: o percurso inteiro.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_10"
+          ],
+          "statement": "TEXTO E\nO acidente, o qual bloqueou a rodovia por três horas, não deixou vítimas. Qualquer motorista deve reduzir a velocidade em chuva intensa; todo o percurso, porém, exige atenção. O diretor pediu as fotografias e as recomendações; a chefia recebeu-as e lhas encaminhou. Para aprimorar o protocolo e torná-lo mais claro, revisou também seu glossário.\n\nJulgue o item: Em “lhas encaminhou”, “lhas” resulta de “lhe” mais “as”: “lhe” retoma a chefia, e “as” reúne fotografias e recomendações.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "As retoma os objetos femininos plurais, mas lhe representa o diretor, destinatário da remessa. A chefia é sujeito de encaminhou; portanto, não pode ser simultaneamente o referente do objeto indireto lhe.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b28_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s01_classes_de_",
+          "microknowledge_ids": [
+            "prf_d01_b28_mk_10"
+          ],
+          "statement": "TEXTO E\nO acidente, o qual bloqueou a rodovia por três horas, não deixou vítimas. Qualquer motorista deve reduzir a velocidade em chuva intensa; todo o percurso, porém, exige atenção. O diretor pediu as fotografias e as recomendações; a chefia recebeu-as e lhas encaminhou. Para aprimorar o protocolo e torná-lo mais claro, revisou também seu glossário.\n\nJulgue o item: Em “torná-lo”, “lo” é a adaptação do pronome “o” após a retirada do “r” do infinitivo e retoma “protocolo”; “seu” também pode recuperar esse referente.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Ao ligar o pronome o a infinitivo terminado em r, elimina-se o r, acentua-se a forma quando necessário e emprega-se lo: tornar mais o resulta em torná-lo. Seu glossário pode ser entendido como o glossário do protocolo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 28",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_4027ab525b8d",
+              "trace_status": "available",
+              "page_number": 49,
+              "excerpt": "Matriz agregada das questões 21-37, páginas 49-57: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T03:47:32.910Z",
+    "editorial_status": "batch_28_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula03-final-pronouns-editorial-matrix-batch-28.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

@@ -1,0 +1,1132 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-07-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b07_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Precisão factual e quantificadores",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Inclusão de classe e pressuposto",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Condição necessária e definição",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Caracterização e comparação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Tese propositiva e condição argumentativa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Fundamentação e concessão",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Escopo temático",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Metáfora, memória e exemplo lexical",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Posição autoral e localização da tese",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b07_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Relação sistêmica e distinção conceitual",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao_b07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Precisão factual, pressupostos, comparação, argumentação e distinção conceitual",
+      "essential_concepts": [
+        "Precisão factual e quantificadores",
+        "Inclusão de classe e pressuposto",
+        "Condição necessária e definição",
+        "Caracterização e comparação",
+        "Tese propositiva e condição argumentativa",
+        "Fundamentação e concessão",
+        "Escopo temático",
+        "Metáfora, memória e exemplo lexical",
+        "Posição autoral e localização da tese",
+        "Relação sistêmica e distinção conceitual"
+      ],
+      "rules": [
+        "Controlar quantificadores e condições",
+        "Inferir pertencimento sem ampliar o conjunto",
+        "Integrar parágrafos na tese",
+        "Distinguir conceitos próximos pelo núcleo funcional"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b07_mk_01",
+        "prf_d01_b07_mk_02",
+        "prf_d01_b07_mk_03",
+        "prf_d01_b07_mk_04",
+        "prf_d01_b07_mk_05",
+        "prf_d01_b07_mk_06",
+        "prf_d01_b07_mk_07",
+        "prf_d01_b07_mk_08",
+        "prf_d01_b07_mk_09",
+        "prf_d01_b07_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 213,
+          "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b07",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b07_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_01"
+          ],
+          "statement": "TEXTO A\nEm 1920, moradores entregavam parte da produção ao armazém comunitário e podiam prestar até três dias de serviço por mês. Registros posteriores classificam esse arranjo como economia de subsistência organizada: nele, terra e trabalho eram os principais recursos. As contribuições cobradas dos comerciantes de fora eram maiores que as dos residentes. Para renovar a licença de venda, era indispensável quitar a contribuição anual; o aviso de cobrança apenas informava valores e prazos. O regulamento chamava esse direito de intransferível, embora admitisse restrições temporárias após processo regular.\n\nJulgue o item: Todos os moradores eram obrigados a prestar exatamente três dias de serviço por mês.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Podiam prestar até três dias” fixa um limite máximo e nem sequer torna a prestação universalmente obrigatória. O item troca possibilidade por obrigação e transforma teto variável em duração exata.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_02"
+          ],
+          "statement": "TEXTO A\nEm 1920, moradores entregavam parte da produção ao armazém comunitário e podiam prestar até três dias de serviço por mês. Registros posteriores classificam esse arranjo como economia de subsistência organizada: nele, terra e trabalho eram os principais recursos. As contribuições cobradas dos comerciantes de fora eram maiores que as dos residentes. Para renovar a licença de venda, era indispensável quitar a contribuição anual; o aviso de cobrança apenas informava valores e prazos. O regulamento chamava esse direito de intransferível, embora admitisse restrições temporárias após processo regular.\n\nJulgue o item: A descrição geral das economias de subsistência organizadas é aplicada ao arranjo dos moradores de 1920.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto primeiro classifica o arranjo e depois explica que, “nele”, terra e trabalho eram recursos centrais. O pronome retoma o sistema mencionado e confirma sua inclusão na classe descrita.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_02"
+          ],
+          "statement": "TEXTO A\nEm 1920, moradores entregavam parte da produção ao armazém comunitário e podiam prestar até três dias de serviço por mês. Registros posteriores classificam esse arranjo como economia de subsistência organizada: nele, terra e trabalho eram os principais recursos. As contribuições cobradas dos comerciantes de fora eram maiores que as dos residentes. Para renovar a licença de venda, era indispensável quitar a contribuição anual; o aviso de cobrança apenas informava valores e prazos. O regulamento chamava esse direito de intransferível, embora admitisse restrições temporárias após processo regular.\n\nJulgue o item: Se as contribuições dos comerciantes externos eram maiores, pressupõe-se que os residentes também contribuíam, porém em valor inferior.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O comparativo “maiores que” exige dois termos: a cobrança dos externos e a dos residentes. A segunda pode não ter valor numérico informado, mas sua existência e inferioridade são necessárias à comparação.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_03"
+          ],
+          "statement": "TEXTO A\nEm 1920, moradores entregavam parte da produção ao armazém comunitário e podiam prestar até três dias de serviço por mês. Registros posteriores classificam esse arranjo como economia de subsistência organizada: nele, terra e trabalho eram os principais recursos. As contribuições cobradas dos comerciantes de fora eram maiores que as dos residentes. Para renovar a licença de venda, era indispensável quitar a contribuição anual; o aviso de cobrança apenas informava valores e prazos. O regulamento chamava esse direito de intransferível, embora admitisse restrições temporárias após processo regular.\n\nJulgue o item: Receber o aviso de cobrança era a condição indispensável para renovar a licença.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O aviso apenas comunicava dados e auxiliava o pagamento. A condição necessária era quitar a contribuição anual. Confundir o documento informativo com o requisito troca o meio operacional pela obrigação principal.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_03"
+          ],
+          "statement": "TEXTO A\nEm 1920, moradores entregavam parte da produção ao armazém comunitário e podiam prestar até três dias de serviço por mês. Registros posteriores classificam esse arranjo como economia de subsistência organizada: nele, terra e trabalho eram os principais recursos. As contribuições cobradas dos comerciantes de fora eram maiores que as dos residentes. Para renovar a licença de venda, era indispensável quitar a contribuição anual; o aviso de cobrança apenas informava valores e prazos. O regulamento chamava esse direito de intransferível, embora admitisse restrições temporárias após processo regular.\n\nJulgue o item: O caráter intransferível do direito impede sua venda ou cessão, mas não exclui toda restrição temporária prevista em processo regular.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Intransferibilidade trata da passagem do direito a outra pessoa; restrição de exercício é questão distinta. O texto admite limitações temporárias sem afirmar que o titular perdeu ou alienou o direito.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_04"
+          ],
+          "statement": "TEXTO B\nO conselho atual é representativo: os bairros elegem delegados para deliberar em seu nome. O conselho antigo, embora reunisse cidadãos diretamente, excluía grande parte dos moradores. Os dois modelos nasceram em épocas distintas e usam mecanismos diferentes, mas compartilham a intenção de limitar decisões arbitrárias. A participação é considerada um direito de todos, ainda que seu exercício possa obedecer a requisitos legais específicos.\n\nJulgue o item: A eleição de delegados pelos bairros caracteriza a representatividade do conselho atual.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Os moradores não deliberam todos diretamente: escolhem representantes para agir em seu nome. Esse mecanismo é a pista central de representatividade e distingue o conselho atual do modelo antigo descrito.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_04"
+          ],
+          "statement": "TEXTO B\nO conselho atual é representativo: os bairros elegem delegados para deliberar em seu nome. O conselho antigo, embora reunisse cidadãos diretamente, excluía grande parte dos moradores. Os dois modelos nasceram em épocas distintas e usam mecanismos diferentes, mas compartilham a intenção de limitar decisões arbitrárias. A participação é considerada um direito de todos, ainda que seu exercício possa obedecer a requisitos legais específicos.\n\nJulgue o item: Os conselhos antigo e atual são idênticos porque ambos procuram conter decisões arbitrárias.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Compartilhar um propósito não elimina diferenças de composição, época e mecanismo. O antigo exercia participação direta e excludente; o atual usa delegados eleitos. O item confunde semelhança parcial com identidade.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_07"
+          ],
+          "statement": "TEXTO B\nO conselho atual é representativo: os bairros elegem delegados para deliberar em seu nome. O conselho antigo, embora reunisse cidadãos diretamente, excluía grande parte dos moradores. Os dois modelos nasceram em épocas distintas e usam mecanismos diferentes, mas compartilham a intenção de limitar decisões arbitrárias. A participação é considerada um direito de todos, ainda que seu exercício possa obedecer a requisitos legais específicos.\n\nJulgue o item: Ao afirmar que a participação é direito de todos, o texto declara inválido qualquer requisito legal para seu exercício.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A oração concessiva admite explicitamente requisitos específicos. Universalidade do direito e regulamentação do exercício podem coexistir; o item transforma o princípio geral em ausência absoluta de condições.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_05"
+          ],
+          "statement": "TEXTO C\nConcentrar conhecimento ambiental em poucos especialistas é insuficiente. Para que a sociedade reconheça riscos e participe das decisões, os resultados devem circular em escolas, rádios comunitárias e plataformas digitais. Essa difusão exige linguagem clara, mas não abandono do rigor; também depende do debate entre hipóteses concorrentes. Defender uma explicação não convencional requer coragem para submetê-la à crítica. O conhecimento é acessível a quem o estuda — embora barreiras econômicas tenham afastado muitos desse percurso. É a pesquisa científica que esclarece a origem dos fenômenos descritos; comunicação e participação ampliam seu alcance, mas não substituem a investigação.\n\nJulgue o item: O texto defende que o conhecimento ambiental permaneça sob controle de um grupo pequeno de especialistas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A frase inicial rejeita a concentração como insuficiente, e a sequência propõe circulação por diferentes meios. A tese é democratizar o acesso sem abandonar rigor, exatamente o oposto da exclusividade sugerida.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_05"
+          ],
+          "statement": "TEXTO C\nConcentrar conhecimento ambiental em poucos especialistas é insuficiente. Para que a sociedade reconheça riscos e participe das decisões, os resultados devem circular em escolas, rádios comunitárias e plataformas digitais. Essa difusão exige linguagem clara, mas não abandono do rigor; também depende do debate entre hipóteses concorrentes. Defender uma explicação não convencional requer coragem para submetê-la à crítica. O conhecimento é acessível a quem o estuda — embora barreiras econômicas tenham afastado muitos desse percurso. É a pesquisa científica que esclarece a origem dos fenômenos descritos; comunicação e participação ampliam seu alcance, mas não substituem a investigação.\n\nJulgue o item: A divulgação ampla deve combinar clareza de linguagem, rigor e confronto entre hipóteses.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Esses três elementos aparecem de forma complementar: linguagem acessível permite circulação, rigor preserva qualidade e debate testa explicações concorrentes. A tese não sacrifica um componente em favor dos demais.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_06"
+          ],
+          "statement": "TEXTO C\nConcentrar conhecimento ambiental em poucos especialistas é insuficiente. Para que a sociedade reconheça riscos e participe das decisões, os resultados devem circular em escolas, rádios comunitárias e plataformas digitais. Essa difusão exige linguagem clara, mas não abandono do rigor; também depende do debate entre hipóteses concorrentes. Defender uma explicação não convencional requer coragem para submetê-la à crítica. O conhecimento é acessível a quem o estuda — embora barreiras econômicas tenham afastado muitos desse percurso. É a pesquisa científica que esclarece a origem dos fenômenos descritos; comunicação e participação ampliam seu alcance, mas não substituem a investigação.\n\nJulgue o item: A coragem associada à pesquisa decorre, no texto, da disposição para expor ideias não convencionais à crítica.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A relação está na sequência entre explicação não convencional e submissão ao debate. Coragem não é apresentada como atributo físico, mas como disposição intelectual diante de oposição e avaliação pública.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_06"
+          ],
+          "statement": "TEXTO C\nConcentrar conhecimento ambiental em poucos especialistas é insuficiente. Para que a sociedade reconheça riscos e participe das decisões, os resultados devem circular em escolas, rádios comunitárias e plataformas digitais. Essa difusão exige linguagem clara, mas não abandono do rigor; também depende do debate entre hipóteses concorrentes. Defender uma explicação não convencional requer coragem para submetê-la à crítica. O conhecimento é acessível a quem o estuda — embora barreiras econômicas tenham afastado muitos desse percurso. É a pesquisa científica que esclarece a origem dos fenômenos descritos; comunicação e participação ampliam seu alcance, mas não substituem a investigação.\n\nJulgue o item: A ressalva entre travessões culpa os indivíduos afastados por não se dedicarem ao estudo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A concessão reconhece que o conhecimento pode ser aprendido, mas registra barreiras econômicas que impediram o acesso de muitos. Ela aponta exclusão estrutural, não incapacidade ou falta de empenho pessoal.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_07"
+          ],
+          "statement": "TEXTO C\nConcentrar conhecimento ambiental em poucos especialistas é insuficiente. Para que a sociedade reconheça riscos e participe das decisões, os resultados devem circular em escolas, rádios comunitárias e plataformas digitais. Essa difusão exige linguagem clara, mas não abandono do rigor; também depende do debate entre hipóteses concorrentes. Defender uma explicação não convencional requer coragem para submetê-la à crítica. O conhecimento é acessível a quem o estuda — embora barreiras econômicas tenham afastado muitos desse percurso. É a pesquisa científica que esclarece a origem dos fenômenos descritos; comunicação e participação ampliam seu alcance, mas não substituem a investigação.\n\nJulgue o item: Pesquisa científica, comunicação e participação são apresentadas como fontes equivalentes da explicação sobre a origem dos fenômenos.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto atribui à pesquisa a produção da explicação. Comunicação e participação ampliam circulação e uso social, mas são expressamente distinguidas da investigação; associação não significa equivalência funcional.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_08"
+          ],
+          "statement": "TEXTO D\nEstas anotações ficariam incompletas se eu omitisse as viagens feitas com minha irmã. Quero oferecer retratos verbais dos lugares e das pessoas, filtrados pela memória, sem ordem cronológica rígida. Chamo o capítulo de “estradas sem muros” porque viajar, para mim, aproxima experiências e enfraquece separações imaginárias; não proponho demolir fronteiras físicas. Em outra passagem, palavras de origem indígena — nomes de rios, plantas e utensílios — ilustram marcas deixadas por línguas antigas no português atual.\n\nJulgue o item: O narrador anuncia relatos subjetivos de viagens realizadas com a irmã, organizados sem cronologia rigorosa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "“Filtrados pela memória” marca subjetividade, e a passagem declara tanto a companhia da irmã quanto a ausência de ordem rígida. A conclusão combina pistas do gênero memorialístico sem acrescentar suporte inexistente.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_08"
+          ],
+          "statement": "TEXTO D\nEstas anotações ficariam incompletas se eu omitisse as viagens feitas com minha irmã. Quero oferecer retratos verbais dos lugares e das pessoas, filtrados pela memória, sem ordem cronológica rígida. Chamo o capítulo de “estradas sem muros” porque viajar, para mim, aproxima experiências e enfraquece separações imaginárias; não proponho demolir fronteiras físicas. Em outra passagem, palavras de origem indígena — nomes de rios, plantas e utensílios — ilustram marcas deixadas por línguas antigas no português atual.\n\nJulgue o item: A expressão “estradas sem muros” representa o desejo de diminuir separações entre experiências e pessoas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O narrador fornece sua própria chave interpretativa: viajar aproxima experiências e enfraquece divisões imaginárias. A metáfora articula abertura e encontro, não uma intervenção material sobre fronteiras.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_07"
+          ],
+          "statement": "TEXTO D\nEstas anotações ficariam incompletas se eu omitisse as viagens feitas com minha irmã. Quero oferecer retratos verbais dos lugares e das pessoas, filtrados pela memória, sem ordem cronológica rígida. Chamo o capítulo de “estradas sem muros” porque viajar, para mim, aproxima experiências e enfraquece separações imaginárias; não proponho demolir fronteiras físicas. Em outra passagem, palavras de origem indígena — nomes de rios, plantas e utensílios — ilustram marcas deixadas por línguas antigas no português atual.\n\nJulgue o item: A enumeração de nomes de rios, plantas e utensílios serve para ilustrar a permanência de línguas antigas no vocabulário atual.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Os exemplos pertencem a campos diferentes, mas cumprem a mesma função argumentativa: tornar visível uma herança lexical. O texto não pretende descrever hábitos completos nem construir estereótipos sociais.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_09"
+          ],
+          "statement": "TEXTO E\nO sistema de taxas municipais pesa proporcionalmente mais sobre os pequenos negócios, que comprometem parcela maior de sua receita com cobranças incidentes sobre o consumo.\n\nEsse desenho reduz a capacidade de investimento dos estabelecimentos menores e amplia a distância em relação às empresas de grande porte.\n\nUma alternativa seria transferir parte da cobrança sobre o consumo para patrimônios elevados, distribuindo o encargo segundo a capacidade econômica.\n\nSegundo o estudo, uma distribuição mais equilibrada estimula a atividade; quanto maior a justiça fiscal, menor tende a ser a desigualdade.\n\nDiante desse diagnóstico, o autor sustenta expressamente que o sistema precisa ser reformado para reduzir sua regressividade.\n\nEm outro relatório, análise estratégica transforma dados em cenários para decisões; proteção estratégica resguarda informações e estruturas contra ameaças. Ambas pertencem à segurança institucional, mas não têm o mesmo escopo.\n\nJulgue o item: A proposta do autor é tornar o sistema menos regressivo, e não simplesmente reduzir toda cobrança na mesma proporção.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A crítica incide na distribuição do peso: pequenos negócios pagam proporcionalmente mais. Transferir parte da incidência para patrimônios elevados altera essa distribuição, sem equivaler a corte uniforme de todas as taxas.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_10"
+          ],
+          "statement": "TEXTO E\nO sistema de taxas municipais pesa proporcionalmente mais sobre os pequenos negócios, que comprometem parcela maior de sua receita com cobranças incidentes sobre o consumo.\n\nEsse desenho reduz a capacidade de investimento dos estabelecimentos menores e amplia a distância em relação às empresas de grande porte.\n\nUma alternativa seria transferir parte da cobrança sobre o consumo para patrimônios elevados, distribuindo o encargo segundo a capacidade econômica.\n\nSegundo o estudo, uma distribuição mais equilibrada estimula a atividade; quanto maior a justiça fiscal, menor tende a ser a desigualdade.\n\nDiante desse diagnóstico, o autor sustenta expressamente que o sistema precisa ser reformado para reduzir sua regressividade.\n\nEm outro relatório, análise estratégica transforma dados em cenários para decisões; proteção estratégica resguarda informações e estruturas contra ameaças. Ambas pertencem à segurança institucional, mas não têm o mesmo escopo.\n\nJulgue o item: O texto relaciona equilíbrio tributário, atividade econômica e redução da desigualdade, estabelecendo relação inversa entre justiça fiscal e desigualdade.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A argumentação forma um sistema de efeitos: melhor distribuição estimula a economia e, quanto maior a justiça, menor a desigualdade. “Inversa” descreve a direção entre as duas últimas grandezas.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_09"
+          ],
+          "statement": "TEXTO E\nO sistema de taxas municipais pesa proporcionalmente mais sobre os pequenos negócios, que comprometem parcela maior de sua receita com cobranças incidentes sobre o consumo.\n\nEsse desenho reduz a capacidade de investimento dos estabelecimentos menores e amplia a distância em relação às empresas de grande porte.\n\nUma alternativa seria transferir parte da cobrança sobre o consumo para patrimônios elevados, distribuindo o encargo segundo a capacidade econômica.\n\nSegundo o estudo, uma distribuição mais equilibrada estimula a atividade; quanto maior a justiça fiscal, menor tende a ser a desigualdade.\n\nDiante desse diagnóstico, o autor sustenta expressamente que o sistema precisa ser reformado para reduzir sua regressividade.\n\nEm outro relatório, análise estratégica transforma dados em cenários para decisões; proteção estratégica resguarda informações e estruturas contra ameaças. Ambas pertencem à segurança institucional, mas não têm o mesmo escopo.\n\nJulgue o item: No primeiro relatório, a defesa explícita da reforma aparece no quinto parágrafo; os quatro anteriores constroem o diagnóstico e seus efeitos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Os quatro primeiros parágrafos apresentam peso desigual, consequência, alternativa e relação esperada. O quinto transforma essa preparação em proposta explícita. Localizar a tese exige separar fundamentação e proposição.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b07_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b07_mk_10"
+          ],
+          "statement": "TEXTO E\nO sistema de taxas municipais pesa proporcionalmente mais sobre os pequenos negócios, que comprometem parcela maior de sua receita com cobranças incidentes sobre o consumo.\n\nEsse desenho reduz a capacidade de investimento dos estabelecimentos menores e amplia a distância em relação às empresas de grande porte.\n\nUma alternativa seria transferir parte da cobrança sobre o consumo para patrimônios elevados, distribuindo o encargo segundo a capacidade econômica.\n\nSegundo o estudo, uma distribuição mais equilibrada estimula a atividade; quanto maior a justiça fiscal, menor tende a ser a desigualdade.\n\nDiante desse diagnóstico, o autor sustenta expressamente que o sistema precisa ser reformado para reduzir sua regressividade.\n\nEm outro relatório, análise estratégica transforma dados em cenários para decisões; proteção estratégica resguarda informações e estruturas contra ameaças. Ambas pertencem à segurança institucional, mas não têm o mesmo escopo.\n\nJulgue o item: Como pertencem à segurança institucional, análise estratégica e proteção estratégica possuem o mesmo objeto e executam a mesma função.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O pertencimento a uma atividade comum não funde seus ramos. A análise transforma dados em cenários para decidir; a proteção resguarda ativos contra ameaças. Objetivos e operações permanecem distintos.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 07",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 213,
+              "excerpt": "Matriz agregada das questões 121-140, páginas 213-228: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T01:59:20.992Z",
+    "editorial_status": "batch_07_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula13-editorial-matrix-batch-07.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

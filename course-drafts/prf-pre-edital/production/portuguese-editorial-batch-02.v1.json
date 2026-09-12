@@ -1,0 +1,1131 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-02-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_interpretacao_b02_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Preservação da direção causal",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Controle do escopo da afirmação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Reconstrução de ponto de vista equilibrado",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Localização e paráfrase de informação explícita",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Reconhecimento da progressão entre parágrafos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Preservação de modalidade e grau de certeza",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Identificação da função argumentativa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Interpretação de coexistência e adição",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Controle de comparação e grupos afetados",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_interpretacao_b02_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Preservação de condição, consequência e convergência",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao_editorial_b02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Compreensão e interpretação: escopo, causalidade, modalização e relações entre partes",
+      "essential_concepts": [
+        "Preservação da direção causal",
+        "Controle do escopo da afirmação",
+        "Reconstrução de ponto de vista equilibrado",
+        "Localização e paráfrase de informação explícita",
+        "Reconhecimento da progressão entre parágrafos",
+        "Preservação de modalidade e grau de certeza",
+        "Identificação da função argumentativa",
+        "Interpretação de coexistência e adição",
+        "Controle de comparação e grupos afetados",
+        "Preservação de condição, consequência e convergência"
+      ],
+      "rules": [
+        "Preservar escopo e direção lógica",
+        "Distinguir ressalva de rejeição",
+        "Conferir cada segmento da paráfrase"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "cinco textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "avaliar relações lógicas"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_interpretacao_b02_mk_01",
+        "prf_d01_interpretacao_b02_mk_02",
+        "prf_d01_interpretacao_b02_mk_03",
+        "prf_d01_interpretacao_b02_mk_04",
+        "prf_d01_interpretacao_b02_mk_05",
+        "prf_d01_interpretacao_b02_mk_06",
+        "prf_d01_interpretacao_b02_mk_07",
+        "prf_d01_interpretacao_b02_mk_08",
+        "prf_d01_interpretacao_b02_mk_09",
+        "prf_d01_interpretacao_b02_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 140,
+          "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-lote-02-interpretacao",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b02_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_01"
+          ],
+          "statement": "TEXTO A\nEm 2024, a unidade implantou um painel que reúne alertas de manutenção, histórico de falhas e disponibilidade das viaturas. A ferramenta não consertou equipamentos por si mesma; ela permitiu que a chefia antecipasse prioridades. Como resultado dessa reorganização, o tempo médio de indisponibilidade caiu. O relatório recomenda ampliar o uso do painel, mas ressalta que registros incompletos podem produzir decisões inadequadas.\n\nJulgue o item: A queda no tempo de indisponibilidade favoreceu a criação do painel e levou a chefia a reorganizar as prioridades.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O item inverte a direção causal. Segundo o texto, o painel forneceu informações, a chefia reorganizou prioridades e essa reorganização teve como resultado a queda da indisponibilidade. O efeito não pode ser apresentado como causa de sua própria condição antecedente.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_02"
+          ],
+          "statement": "TEXTO A\nEm 2024, a unidade implantou um painel que reúne alertas de manutenção, histórico de falhas e disponibilidade das viaturas. A ferramenta não consertou equipamentos por si mesma; ela permitiu que a chefia antecipasse prioridades. Como resultado dessa reorganização, o tempo médio de indisponibilidade caiu. O relatório recomenda ampliar o uso do painel, mas ressalta que registros incompletos podem produzir decisões inadequadas.\n\nJulgue o item: Ao advertir sobre registros incompletos, o texto afirma que o painel provocará necessariamente falhas mecânicas nas viaturas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A ressalva diz que dados incompletos podem levar a decisões inadequadas. Ela não trata da criação de defeitos mecânicos nem apresenta consequência necessária. O item troca um risco decisório possível por um dano técnico certo e não mencionado.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_03"
+          ],
+          "statement": "TEXTO B\nProgramas de análise automática conseguem examinar milhares de imagens em poucos minutos e podem auxiliar a triagem de ocorrências. Essa velocidade é uma vantagem concreta. Ainda assim, os resultados dependem dos dados utilizados e devem ser conferidos por profissionais, sobretudo quando servem de base para decisões que afetam pessoas. Nos parágrafos seguintes do estudo, os autores detalham duas limitações: imagens de baixa qualidade aumentam falsos alertas, e situações excepcionais podem escapar aos padrões aprendidos. Por isso, os pesquisadores defendem o uso supervisionado da ferramenta, não seu abandono.\n\nJulgue o item: Os pesquisadores são contrários ao emprego de programas automáticos na triagem de ocorrências.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto reconhece expressamente a velocidade e a utilidade desses programas e conclui pela utilização supervisionada. Apontar limites e exigir conferência humana não equivale a rejeitar a ferramenta; a posição é favorável, porém cautelosa.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_04"
+          ],
+          "statement": "TEXTO B\nProgramas de análise automática conseguem examinar milhares de imagens em poucos minutos e podem auxiliar a triagem de ocorrências. Essa velocidade é uma vantagem concreta. Ainda assim, os resultados dependem dos dados utilizados e devem ser conferidos por profissionais, sobretudo quando servem de base para decisões que afetam pessoas. Nos parágrafos seguintes do estudo, os autores detalham duas limitações: imagens de baixa qualidade aumentam falsos alertas, e situações excepcionais podem escapar aos padrões aprendidos. Por isso, os pesquisadores defendem o uso supervisionado da ferramenta, não seu abandono.\n\nJulgue o item: A capacidade de examinar grande quantidade de imagens rapidamente é apresentada como vantagem da análise automática.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A informação é explícita nos dois primeiros períodos: o programa examina milhares de imagens em minutos, e o texto chama essa velocidade de vantagem concreta. O item preserva a capacidade, a avaliação e o contexto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_05"
+          ],
+          "statement": "TEXTO B\nProgramas de análise automática conseguem examinar milhares de imagens em poucos minutos e podem auxiliar a triagem de ocorrências. Essa velocidade é uma vantagem concreta. Ainda assim, os resultados dependem dos dados utilizados e devem ser conferidos por profissionais, sobretudo quando servem de base para decisões que afetam pessoas. Nos parágrafos seguintes do estudo, os autores detalham duas limitações: imagens de baixa qualidade aumentam falsos alertas, e situações excepcionais podem escapar aos padrões aprendidos. Por isso, os pesquisadores defendem o uso supervisionado da ferramenta, não seu abandono.\n\nJulgue o item: Os parágrafos finais desenvolvem a afirmação de que os resultados automáticos precisam ser conferidos por profissionais.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Depois de anunciar a necessidade de conferência, o texto apresenta duas razões: baixa qualidade pode elevar falsos alertas e exceções podem escapar ao padrão aprendido. Esses detalhes desenvolvem e justificam a cautela anunciada antes.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_02"
+          ],
+          "statement": "TEXTO B\nProgramas de análise automática conseguem examinar milhares de imagens em poucos minutos e podem auxiliar a triagem de ocorrências. Essa velocidade é uma vantagem concreta. Ainda assim, os resultados dependem dos dados utilizados e devem ser conferidos por profissionais, sobretudo quando servem de base para decisões que afetam pessoas. Nos parágrafos seguintes do estudo, os autores detalham duas limitações: imagens de baixa qualidade aumentam falsos alertas, e situações excepcionais podem escapar aos padrões aprendidos. Por isso, os pesquisadores defendem o uso supervisionado da ferramenta, não seu abandono.\n\nJulgue o item: A possibilidade de falsos alertas permite concluir que o estudo prevê o uso desses programas para fabricar deliberadamente notícias falsas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Falso alerta” significa classificação técnica incorreta no contexto da triagem. O texto não menciona notícias, intenção de enganar ou divulgação pública. A conclusão usa uma associação externa à palavra “falso” e extrapola o campo temático.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_06"
+          ],
+          "statement": "TEXTO B\nProgramas de análise automática conseguem examinar milhares de imagens em poucos minutos e podem auxiliar a triagem de ocorrências. Essa velocidade é uma vantagem concreta. Ainda assim, os resultados dependem dos dados utilizados e devem ser conferidos por profissionais, sobretudo quando servem de base para decisões que afetam pessoas. Nos parágrafos seguintes do estudo, os autores detalham duas limitações: imagens de baixa qualidade aumentam falsos alertas, e situações excepcionais podem escapar aos padrões aprendidos. Por isso, os pesquisadores defendem o uso supervisionado da ferramenta, não seu abandono.\n\nJulgue o item: A substituição de “podem auxiliar a triagem” por “auxiliam a triagem” preservaria integralmente o grau de certeza do primeiro período.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O auxiliar “podem” marca possibilidade ou capacidade, sem afirmar ocorrência em todos os casos. A forma “auxiliam” apresenta o auxílio como fato habitual ou efetivo. A retirada do modal aumenta o compromisso do enunciador e altera o sentido.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_07"
+          ],
+          "statement": "TEXTO C\nA convivência democrática exige mais que o direito de falar: exige disposição para justificar posições e examinar razões contrárias. A argumentação permite que divergências sejam tratadas pela linguagem, e não pela força. Isso não garante consenso, mas cria condições para decisões públicas mais transparentes e contestáveis.\n\nJulgue o item: O texto defende a importância da argumentação para que divergências democráticas sejam processadas por razões, e não pela força.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Essa é a tese central. O segundo período fornece seu fundamento ao opor tratamento linguístico e uso da força; o último delimita o alcance, esclarecendo que argumentar favorece transparência, mas não garante consenso.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_04"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: Segundo o texto, estudar a dependência informacional envolve identificar detentores, destinatários, circulação e efeitos de falhas comunicativas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O último período enumera exatamente quatro dimensões: quem detém, quem precisa, como a informação circula e quais efeitos decorrem da falha. O item realiza uma paráfrase segmentada sem omitir nem acrescentar componente.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_08"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: O texto afirma que a sociedade da especialização substituiu a sociedade do conhecimento.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O advérbio “também” marca coexistência, e a construção “ao mesmo tempo” reforça a simultaneidade: há expansão do saber coletivo e especialização individual. O item transforma adição em substituição e elimina a tese do contraste.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_09"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: Infere-se que o aumento do conhecimento coletivo não torna cada indivíduo conhecedor de todo o acervo disponível.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A inferência é sustentada pela oposição entre “nunca houve tanto conhecimento” e “cada profissional domina apenas uma pequena parcela”. O texto separa o patrimônio coletivo da capacidade individual, portanto não autoriza igualá-los.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_04"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: O conhecimento coletivo aumentou, o domínio individual permanece parcial e a dependência do saber alheio se intensificou.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As três partes estão presentes e articuladas no texto. Em itens compostos, cada segmento precisa ser conferido: aumento coletivo, parcela individual limitada e maior dependência aparecem de forma compatível, sem contradição interna.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_02"
+          ],
+          "statement": "TEXTO C\nA convivência democrática exige mais que o direito de falar: exige disposição para justificar posições e examinar razões contrárias. A argumentação permite que divergências sejam tratadas pela linguagem, e não pela força. Isso não garante consenso, mas cria condições para decisões públicas mais transparentes e contestáveis.\n\nJulgue o item: A argumentação eliminou o uso da força em todas as sociedades democráticas existentes.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto afirma que a argumentação permite tratar divergências pela linguagem e cria condições melhores para decisões. Não declara eliminação histórica da força, nem fala de todas as democracias. O item acrescenta totalidade e resultado absoluto.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_09"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: As falhas de circulação da informação prejudicam igualmente todos os profissionais, independentemente de quem detenha ou necessite do dado.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto propõe justamente identificar papéis e efeitos concretos, o que impede pressupor impacto idêntico para todos. “Quem detém” e “quem precisa” são grupos funcionalmente distintos; a igualdade de prejuízo não foi afirmada.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_02"
+          ],
+          "statement": "TEXTO D\nNunca houve tanto conhecimento disponível. Cada profissional, porém, domina apenas uma pequena parcela desse acervo. Por isso, vivemos em uma sociedade do conhecimento e também da especialização: sabemos mais coletivamente, ao mesmo tempo que dependemos mais do saber de outras pessoas. Estudar essa dependência envolve identificar quem detém determinada informação, quem precisa dela, como ela circula e quais efeitos surgem quando a comunicação falha.\n\nJulgue o item: É possível concluir que a especialização começou somente depois que o conhecimento passou a circular por meios digitais.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto não apresenta marco inicial para a especialização nem menciona meios digitais. A disponibilidade atual de muito conhecimento não fornece, por si só, uma data de origem do fenômeno. O item cria comparação temporal sem dados.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_10"
+          ],
+          "statement": "TEXTO E\nProteger as nascentes é condição para assegurar abastecimento regular às comunidades do vale. Um plano regional acrescenta que a água deve atender não apenas às necessidades humanas, mas também à manutenção dos demais seres vivos. Os dois princípios convergem ao reconhecer que práticas tradicionais de manejo ajudam a conservar o recurso. Nesse contexto, autonomia não significa isolamento: significa reduzir relações de sujeição por meio de cooperação que inclua as comunidades afetadas. O documento descreve essas relações em tom expositivo, sem acusar instituições específicas.\n\nJulgue o item: O abastecimento regular é condição para que as nascentes sejam protegidas.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A relação foi invertida. O texto estabelece que proteger as nascentes é condição para assegurar o abastecimento. No esquema lógico, proteção é antecedente necessário apresentado; abastecimento regular é o resultado favorecido.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_09"
+          ],
+          "statement": "TEXTO E\nProteger as nascentes é condição para assegurar abastecimento regular às comunidades do vale. Um plano regional acrescenta que a água deve atender não apenas às necessidades humanas, mas também à manutenção dos demais seres vivos. Os dois princípios convergem ao reconhecer que práticas tradicionais de manejo ajudam a conservar o recurso. Nesse contexto, autonomia não significa isolamento: significa reduzir relações de sujeição por meio de cooperação que inclua as comunidades afetadas. O documento descreve essas relações em tom expositivo, sem acusar instituições específicas.\n\nJulgue o item: O plano regional amplia a perspectiva ao incluir os demais seres vivos entre os beneficiários da água.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O primeiro período focaliza o abastecimento humano; o segundo introduz explicitamente “não apenas” as necessidades humanas, “mas também” a manutenção dos demais seres vivos. Há ampliação de alcance, e não simples repetição.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_03"
+          ],
+          "statement": "TEXTO E\nProteger as nascentes é condição para assegurar abastecimento regular às comunidades do vale. Um plano regional acrescenta que a água deve atender não apenas às necessidades humanas, mas também à manutenção dos demais seres vivos. Os dois princípios convergem ao reconhecer que práticas tradicionais de manejo ajudam a conservar o recurso. Nesse contexto, autonomia não significa isolamento: significa reduzir relações de sujeição por meio de cooperação que inclua as comunidades afetadas. O documento descreve essas relações em tom expositivo, sem acusar instituições específicas.\n\nJulgue o item: Ao explicar o conceito de autonomia, o texto critica instituições específicas por manterem comunidades em situação de sujeição.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto define autonomia e descreve um caminho cooperativo, mas encerra afirmando que o tom é expositivo e que não há acusação a instituições específicas. Explicação conceitual não pode ser convertida em crítica dirigida sem marca avaliativa.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_10"
+          ],
+          "statement": "TEXTO E\nProteger as nascentes é condição para assegurar abastecimento regular às comunidades do vale. Um plano regional acrescenta que a água deve atender não apenas às necessidades humanas, mas também à manutenção dos demais seres vivos. Os dois princípios convergem ao reconhecer que práticas tradicionais de manejo ajudam a conservar o recurso. Nesse contexto, autonomia não significa isolamento: significa reduzir relações de sujeição por meio de cooperação que inclua as comunidades afetadas. O documento descreve essas relações em tom expositivo, sem acusar instituições específicas.\n\nJulgue o item: Os princípios mencionados convergem quanto ao valor das práticas tradicionais para a conservação da água.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A convergência é afirmada diretamente: ambos reconhecem que práticas tradicionais de manejo ajudam a conservar o recurso. O item preserva o ponto comum e não afirma identidade total entre os documentos.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b02_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_interpretacao_b02_mk_10"
+          ],
+          "statement": "TEXTO E\nProteger as nascentes é condição para assegurar abastecimento regular às comunidades do vale. Um plano regional acrescenta que a água deve atender não apenas às necessidades humanas, mas também à manutenção dos demais seres vivos. Os dois princípios convergem ao reconhecer que práticas tradicionais de manejo ajudam a conservar o recurso. Nesse contexto, autonomia não significa isolamento: significa reduzir relações de sujeição por meio de cooperação que inclua as comunidades afetadas. O documento descreve essas relações em tom expositivo, sem acusar instituições específicas.\n\nJulgue o item: A cooperação que inclui as comunidades afetadas é apresentada como meio de reduzir dependência, e não como renúncia à autonomia.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O último período redefine autonomia: ela não é isolamento, mas redução da sujeição por cooperação inclusiva. A inferência integra os conceitos do parágrafo e evita a falsa oposição entre participação coletiva e autonomia.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 02",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 140,
+              "excerpt": "Matriz agregada dos itens 21-40, páginas 140-155: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T01:06:53.701Z",
+    "editorial_status": "batch_02_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula13-editorial-matrix-batch-02.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

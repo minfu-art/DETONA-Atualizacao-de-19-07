@@ -1,0 +1,73 @@
+import { buildPortugueseEditorialBatch } from './prf-portuguese-editorial-batch-lib.mjs';
+
+const aula01 = 'prf_pdf_6676bb9418a2';
+const aula02 = 'prf_pdf_2e7edd5477b7';
+
+const result = await buildPortugueseEditorialBatch({
+  batch: 30, slug: 'b30', sourceId: aula01, sourceIds: [aula01, aula02],
+  sourcePages: { [aula01]: [106,108], [aula02]: [42,48] },
+  matrixStem: 'portuguese-aula01-aula02-adverbs-prepositions-editorial-matrix',
+  pages: [42,108], range: [1,20], subtopic: 'Classes de palavras',
+  scope: 'Fechamento de advérbios e preposições: classe, contração, regência e valores semânticos',
+  rules: ['Identificar a palavra modificada e o escopo', 'Distinguir preposição simples, contraída e locução prepositiva', 'Preservar a regência em substituições', 'Determinar o valor semântico pela relação contextual'],
+  matrix: [
+    [1,106,'Advérbio 14 - MRE 2018','melhor retificador','reconhecer advérbio de reformulação','interpretar todo melhor como comparação',aula01],
+    [2,106,'Advérbio 15 - SEDF 2017','posição da negação','distinguir pode não e não pode','tratar deslocamento como neutro',aula01],
+    [3,107,'Advérbio 16 - Câmara 2014','advérbio versus adjetivo','classificar oficialmente e permanente','agrupar palavras por terminação ou sentido',aula01],
+    [4,107,'Advérbio 17 - PM-CE 2014','rápido invariável','distinguir advérbio de adjetivo flexionado','concordar advérbio com sujeito',aula01],
+    [5,108,'Palavras especiais 1 - PGE-PE 2019','é que expletivo','retirar expressão de realce com ajuste','considerar todo que indispensável',aula01],
+    [6,42,'Preposição 1 - PC-AL 2023','impacto em ou sobre','reconhecer alternância regencial aceita','rejeitar sinônimo por preposição diferente',aula02],
+    [7,42,'Preposição 2 - CGDF 2023','em que e na qual','preservar preposição e referência','trocar em por a sem regência',aula02],
+    [8,43,'Preposição 3 - TJ-ES 2023','em mais uma','reconhecer contração normativa numa','classificar contração como oralidade',aula02],
+    [9,43,'Preposição 4 - SEE-PE 2023','para conformidade','parafrasear opinião por segundo','limitar para a finalidade',aula02],
+    [10,44,'Preposição 5 - DPE-RS 2022','para finalidade correlativa','identificar três propósitos coordenados','atribuir valores diferentes por repetição',aula02],
+    [11,45,'Preposição 6 - SEFAZ-AL 2020','a distância','usar a sem crase diante de numeral','marcar crase por ideia de distância',aula02],
+    [12,45,'Preposição 7 - SEFAZ-DF 2020','investir em','rejeitar aonde por regência','usar aonde para antecedente empresarial',aula02],
+    [13,45,'Preposição 8 - PGE-PE 2019','ante sem a','evitar acúmulo ante a','tratar ante a como locução fixa',aula02],
+    [14,46,'Preposição 9 - PGE-PE 2019','para mais infinitivo','reconhecer orações finais paralelas','confundir finalidade com consequência',aula02],
+    [15,46,'Preposição 10 - PRF 2019','em razão de causal','parafrasear locução por por causa de','interpretar razão como finalidade',aula02],
+    [16,46,'Preposição 11 - PM-AL 2018','de acordo com','reconhecer conformidade','interpretar acordo como adição',aula02],
+    [17,46,'Preposição 12 - TCE-PB 2018','supremacia sobre','distinguir superioridade e assunto','parafrasear todo sobre por acerca de',aula02],
+    [18,47,'Preposição 13 - IPHAN 2018','com causal','substituir com por devido a com crase','ler com apenas como companhia',aula02],
+    [19,47,'Preposição 14 - SEDUC-AL 2018','para se vacinar','reconhecer conectivo final em oração reduzida','classificar para como condição',aula02],
+    [20,47,'Preposição 15 - IHBDF 2018','para que final','identificar oração desenvolvida de finalidade','confundir subjuntivo com dúvida',aula02],
+  ],
+  microDefinitions: [
+    ['adverb_discourse','Advérbio de reformulação'],['negation_scope','Escopo da negação'],
+    ['adverb_adjective','Advérbio e adjetivo'],['expletive_expression','Expressão expletiva de realce'],
+    ['preposition_regency','Alternância e preservação da regência'],['preposition_contraction','Contrações prepositivas'],
+    ['para_semantics','Valores semânticos de para'],['distance_ante','Distância, ante e perante'],
+    ['prepositional_locutions','Locuções prepositivas e sentido'],['final_clauses','Preposição em orações finais'],
+  ],
+  texts: {
+    a: `O monitoramento começou na segunda-feira ou, melhor, na noite de domingo. O defeito pode não ter surgido no servidor central; pelos registros, não pode ter surgido no terminal externo. Oficialmente, a pane foi temporária, mas o bloqueio permanente exigiu providências. A resposta chegou rápido, não rápida.`,
+    b: `Foi mediante a revisão conjunta que os peritos esclareceram a divergência. O laudo registrou impacto no ecossistema e sobre o ecossistema. A norma criou uma etapa na qual a sociedade pode opinar, isto é, uma etapa em que a sociedade participa. Numa audiência pública, as contrações usuais da língua não tornam o texto informal.`,
+    c: `Para a coordenadora, o novo fluxo é mais seguro. As ferramentas foram atualizadas para reduzir falhas, para ampliar a rastreabilidade e para manter o histórico íntegro. A base fica a dois quilômetros do posto. Os técnicos investem em empresas nas quais confiam.`,
+    d: `Diante de uma emergência, ninguém deve ficar passivo; ante uma emergência, a reação também precisa ser imediata. O relatório não omite falhas para proteger a gestão nem exagera riscos para alarmar o público. Em razão de novas evidências, a análise foi reaberta. De acordo com o protocolo, duas assinaturas são necessárias.`,
+    e: `A versão final tem supremacia sobre a minuta, mas não é um texto sobre a história do projeto. Com o aumento das ocorrências, a equipe ampliou o plantão. Para atender melhor os usuários, o setor reorganizou as filas. Os gestores ajustaram os horários para que os usuários fossem recebidos sem atraso.`,
+  },
+  specs: [
+    ['a','adverb_discourse','Em “ou, melhor, na noite de domingo”, “melhor” retifica e torna mais precisa a informação anterior.','C','O advérbio não compara qualidades nem indica que domingo foi melhor. Ele funciona como marcador de reformulação: substitui a referência inicial, segunda-feira, por outra considerada mais exata.'],
+    ['a','negation_scope','“Pode não ter surgido” exprime possibilidade de não ocorrência; “não pode ter surgido” apresenta a origem como impossível.','C','No primeiro arranjo, a negação incide sobre ter surgido dentro do campo da possibilidade. No segundo, incide sobre pode e exclui a possibilidade; a posição altera o escopo e o grau de certeza.'],
+    ['a','adverb_adjective','“Oficialmente” e “permanente” pertencem à mesma classe porque ambos caracterizam a pane.','E','Oficialmente é advérbio e enquadra a afirmação segundo a versão oficial. Permanente é adjetivo, concorda com bloqueio e atribui a esse substantivo uma propriedade de duração.'],
+    ['a','adverb_adjective','Em “A resposta chegou rápido”, flexionar “rápido” para “rápida” preservaria classe e sentido.','E','Rápido modifica o verbo chegou e equivale a rapidamente, permanecendo invariável. Rápida concordaria com resposta e funcionaria como predicativo, atribuindo uma propriedade ao nome e alterando a análise.'],
+    ['b','expletive_expression','Em “Foi mediante a revisão conjunta que...”, o par “foi... que” realça o adjunto e pode ser retirado em uma reescrita bem ajustada.','C','A estrutura clivada põe foco em mediante a revisão conjunta. Sem o realce, obtém-se Os peritos esclareceram a divergência mediante a revisão conjunta; preservam-se o conteúdo básico e a correção.'],
+    ['b','preposition_regency','Substituir “impacto no ecossistema” por “impacto sobre o ecossistema” criaria erro de regência.','E','O substantivo impacto admite, nesse uso, complementos introduzidos por em e por sobre. As duas formas apresentam o ecossistema como domínio atingido, sem criar erro de regência.'],
+    ['b','preposition_regency','Em “uma etapa na qual...”, substituir “na qual” por “à qual” preservaria a relação de participação em uma etapa.','E','Participar, no sentido contextual, ocorre em determinada etapa: em mais a qual produz na qual. À qual introduziria a preposição a e não conservaria a relação sintática estabelecida no texto.'],
+    ['b','preposition_contraction','“Numa” resulta da contração de “em” com “uma” e é admitido pela norma-padrão, não sendo necessariamente marca de oralidade.','C','A contração numa é paralela a no, na, neles e nelas. Ela pode aparecer em textos formais; a escolha entre em uma e numa pode ser estilística, mas ambas pertencem à norma culta.'],
+    ['c','para_semantics','Em “Para a coordenadora”, “para” introduz ponto de vista e pode ser substituído por “segundo”.','C','O segmento apresenta a avaliação atribuída à coordenadora: segundo a coordenadora, o fluxo é mais seguro. Não se expressa destino nem finalidade, valores possíveis de para em outros contextos.'],
+    ['c','para_semantics','Nas três ocorrências, “para” assume, respectivamente, valores de finalidade, causa e destino.','E','Reduzir falhas, ampliar rastreabilidade e manter o histórico são três propósitos coordenados. A repetição da preposição reforça o paralelismo e mantém o mesmo valor final em cada segmento.'],
+    ['c','distance_ante','Em “a dois quilômetros”, deveria haver crase em “à” porque o trecho expressa distância.','E','A simples ideia de distância não cria crase. Diante do numeral masculino dois, não existe artigo feminino a para se fundir à preposição; escreve-se a dois quilômetros, sem acento grave.'],
+    ['c','preposition_regency','Substituir “nas quais confiam” por “aonde confiam” seria correto porque empresas podem representar lugares institucionais.','E','Confiar em alguém ou em uma empresa exige a preposição em, preservada em nas quais. Aonde contém a preposição a e se associa a destino ou movimento, inexistentes nessa construção.'],
+    ['d','distance_ante','A redação “ante a uma emergência” seria equivalente a “diante de uma emergência” na norma-padrão.','E','Ante já é preposição e liga-se diretamente ao complemento: ante uma emergência. Acrescentar a cria acúmulo inadequado; também seria possível usar perante uma emergência ou diante de uma emergência.'],
+    ['d','final_clauses','“Para proteger a gestão” e “para alarmar o público” expressam os propósitos negados pelo relatório.','C','As orações reduzidas de infinitivo respondem à pergunta com que finalidade o relatório omitiria ou exageraria. O texto nega essas intenções, mas o valor semântico introduzido por para continua sendo final.'],
+    ['d','prepositional_locutions','“Em razão de novas evidências” apresenta as evidências como causa da reabertura da análise.','C','Em razão de equivale a por causa de. As novas evidências motivaram a reabertura; não são a finalidade buscada pela análise nem uma condição apenas hipotética.'],
+    ['d','prepositional_locutions','“De acordo com o protocolo” exprime conformidade e pode ser parafraseado por “conforme o protocolo”.','C','A locução indica que a exigência segue o que dispõe o protocolo. Conforme mantém essa relação de conformidade; não se trata de companhia, instrumento ou causa.'],
+    ['e','prepositional_locutions','Nas duas ocorrências de “sobre”, a preposição tem o mesmo sentido de “a respeito de”.','E','Em supremacia sobre a minuta, sobre estabelece superioridade ou prevalência. Em texto sobre a história, introduz assunto e equivale a a respeito de; a mesma forma assume relações diferentes.'],
+    ['e','prepositional_locutions','“Com o aumento das ocorrências” pode ser reescrito como “Devido ao aumento das ocorrências”, preservando a relação causal.','C','O aumento explica por que o plantão foi ampliado. Devido a explicita a causa e combina-se com o artigo masculino, formando devido ao, sem alterar o encadeamento lógico.'],
+    ['e','final_clauses','Em “Para atender melhor os usuários”, “para” conecta uma oração reduzida de infinitivo com valor de finalidade.','C','A reorganização das filas foi realizada com o propósito de melhorar o atendimento. O infinitivo atender não vem flexionado nem introduzido por que, razão pela qual a oração é reduzida e final.'],
+    ['e','final_clauses','Em “para que os usuários fossem recebidos”, o subjuntivo transforma a oração final em expressão de dúvida.','E','Para que introduz finalidade em oração desenvolvida, e o subjuntivo é compatível com um resultado pretendido, ainda não realizado. O modo verbal não converte o propósito em simples dúvida.'],
+  ],
+});
+
+console.log(JSON.stringify(result, null, 2));
