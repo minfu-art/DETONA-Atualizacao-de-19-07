@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 
 import { validateAssistedCoursePackage } from '../supabase/functions/course-factory-assisted/core.js';
+import { loadCourseBundle } from '../scripts/course-provisioner/bundle.mjs';
 
 const root = path.resolve('course-drafts/prf-pre-edital');
 const readJson = async (file) => JSON.parse(await readFile(path.join(root, file), 'utf8'));
@@ -1357,4 +1358,61 @@ test('lote editorial 37 conclui as matrizes 41 a 60 de vírgula', async () => {
   });
   assert.equal(validation.valid, true, JSON.stringify(validation.errors));
   assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});
+
+test('lote editorial 38 avança vírgula sem romper dependências sintáticas', async () => {
+  const [raw, matrixRaw, preview] = await Promise.all([
+    readFile(path.join(root, 'production/portuguese-editorial-batch-38.v1.json'), 'utf8'),
+    readFile(path.join(root, 'sources/portuguese-aula08-comma-advanced-editorial-matrix-batch-38.v1.json'), 'utf8'),
+    readFile(path.join(root, 'previews/portuguese-editorial-batch-38.preview.md'), 'utf8'),
+  ]);
+  const course = JSON.parse(raw);
+  const matrix = JSON.parse(matrixRaw);
+  const questions = course.question_batches.flatMap(({ questions: items }) => items);
+  assert.equal(course.edital_map[0].subtopic_id, 'prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao');
+  assert.equal(course.metadata.editorial_source_matrix, 'sources/portuguese-aula08-comma-advanced-editorial-matrix-batch-38.v1.json');
+  assert.deepEqual(matrix.source_question_range, [61, 80]);
+  assert.deepEqual(matrix.source_pages, [86, 95]);
+  assert.equal(matrix.source_id, 'prf_pdf_bedbc3f890ba');
+  assert.deepEqual(matrix.items.map(({ source_question_number }) => source_question_number), Array.from({ length: 20 }, (_, index) => index + 61));
+  assert.ok(matrix.items.every(({ source_id }) => source_id === 'prf_pdf_bedbc3f890ba'));
+  assert.equal(course.microknowledges.length, 10);
+  assert.equal(questions.length, 20);
+  assert.equal(new Set(questions.map(({ statement }) => statement)).size, 20);
+  assert.equal(questions.filter(({ correct_answer }) => correct_answer === 'C').length, 10);
+  assert.equal(questions.filter(({ correct_answer }) => correct_answer === 'E').length, 10);
+  assert.ok(questions.every(({ explanation }) => explanation.length >= 150));
+  assert.ok(matrix.items.every(({ source_text_stored, source_statement_stored, commercial_copy_authorized }) =>
+    source_text_stored === false && source_statement_stored === false && commercial_copy_authorized === false));
+  assert.equal((preview.match(/^## Texto [A-Z]$/gm) || []).length, 5);
+  assert.equal((preview.match(/^### Questão \d{2}$/gm) || []).length, 20);
+  assert.equal((preview.match(/\*\*Comentário didático:\*\*/g) || []).length, 20);
+  assert.doesNotMatch(`${raw}\n${matrixRaw}\n${preview}`, /09880248457|thallysson/i);
+  const validation = await validateAssistedCoursePackage(course, {
+    uploadedSources: course.sources.filter(({ file_name: name }) => name).map(({ file_name: name }) => ({ file_name: name, status: 'uploaded' })),
+  });
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors));
+  assert.equal(validation.coverage.microknowledge_question_pct, 100);
+});
+
+test('bundle do app consolida os 38 lotes sem liberar venda ou publicação', async () => {
+  const bundleRoot = path.join(root, 'course-bundle');
+  const bundle = await loadCourseBundle(bundleRoot);
+  const questionFiles = (await readdir(path.join(bundleRoot, 'questions')))
+    .filter((filename) => filename.endsWith('.json'));
+
+  assert.equal(bundle.contest.id, 'prf_2026');
+  assert.equal(bundle.contest.content_status, 'preparing');
+  assert.equal(bundle.contest.sales_status, 'unavailable');
+  assert.equal(bundle.contest.price_cents, 0);
+  assert.deepEqual(bundle.curriculum.counts, {
+    roles: 1,
+    disciplines: 14,
+    topics: 91,
+    subtopics: 246,
+  });
+  assert.equal(questionFiles.length, 38);
+  assert.equal(bundle.questionBatches.length, 38);
+  assert.equal(bundle.questionCount, 760);
+  assert.deepEqual(bundle.distribution, { C: 423, E: 337 });
 });

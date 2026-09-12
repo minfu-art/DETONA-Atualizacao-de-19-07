@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b20_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_01"
+      ],
+      "statement": "TEXTO A\nO primeiro levantamento indicou redução de acidentes. Entretanto, os dados ainda cobriam apenas um trecho da rodovia. A amostra deve ser ampliada, porquanto conclusões nacionais exigem observação mais abrangente. Novas medições serão feitas para que a equipe compare períodos equivalentes.\n\nJulgue o item: “Entretanto” apresenta a cobertura restrita dos dados como conclusão decorrente da redução de acidentes.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O segundo período limita a força do resultado positivo informado no primeiro: houve redução, mas a cobertura ainda era parcial. Entretanto é adversativo e introduz ressalva, não uma conclusão derivada.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_02"
+      ],
+      "statement": "TEXTO A\nO primeiro levantamento indicou redução de acidentes. Entretanto, os dados ainda cobriam apenas um trecho da rodovia. A amostra deve ser ampliada, porquanto conclusões nacionais exigem observação mais abrangente. Novas medições serão feitas para que a equipe compare períodos equivalentes.\n\nJulgue o item: Substituir “porquanto” por “logo” preservaria a direção lógica entre a necessidade de ampliar a amostra e a exigência de observação abrangente.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Porquanto introduz a razão da ampliação: conclusões nacionais exigem base mais ampla. Logo introduziria uma conclusão e faria a exigência decorrer da ordem de ampliar, invertendo a arquitetura argumentativa.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_03"
+      ],
+      "statement": "TEXTO A\nO primeiro levantamento indicou redução de acidentes. Entretanto, os dados ainda cobriam apenas um trecho da rodovia. A amostra deve ser ampliada, porquanto conclusões nacionais exigem observação mais abrangente. Novas medições serão feitas para que a equipe compare períodos equivalentes.\n\nJulgue o item: A oração iniciada por “para que” expressa a finalidade das novas medições, e o subjuntivo “compare” é compatível com esse valor.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As medições serão realizadas com o objetivo de possibilitar a comparação entre períodos equivalentes. Para que é locução final e normalmente seleciona o subjuntivo porque apresenta um resultado pretendido.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_10"
+      ],
+      "statement": "TEXTO A\nO primeiro levantamento indicou redução de acidentes. Entretanto, os dados ainda cobriam apenas um trecho da rodovia. A amostra deve ser ampliada, porquanto conclusões nacionais exigem observação mais abrangente. Novas medições serão feitas para que a equipe compare períodos equivalentes.\n\nJulgue o item: A oração final poderia ser reescrita como “a fim de a equipe comparar períodos equivalentes”, preservando sentido e correção.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A fim de introduz uma oração reduzida de infinitivo com o mesmo propósito. Como o sujeito do infinitivo é expresso por a equipe, a sequência correta é a fim de a equipe comparar, sem crase.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_04"
+      ],
+      "statement": "TEXTO B\nNão se deve liberar a pista imediatamente, pois ainda há resíduos no acostamento. A retirada principal terminou. Mas não fica apenas nisso: também será preciso inspecionar a drenagem. A operação parecia encerrada; a equipe, porém, manteve o isolamento.\n\nJulgue o item: No primeiro período, “pois” explica por que a pista não deve ser liberada imediatamente.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A permanência de resíduos sustenta a recomendação anterior. Como pois inicia a oração justificativa e pode ser substituído por porque, seu valor é explicativo ou causal, não conclusivo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_04"
+      ],
+      "statement": "TEXTO B\nNão se deve liberar a pista imediatamente, pois ainda há resíduos no acostamento. A retirada principal terminou. Mas não fica apenas nisso: também será preciso inspecionar a drenagem. A operação parecia encerrada; a equipe, porém, manteve o isolamento.\n\nJulgue o item: O “pois” do primeiro período poderia ser deslocado para depois de “há”, entre vírgulas, sem alterar seu valor.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O deslocamento produziria a configuração típica do pois conclusivo e ainda prejudicaria a construção apresentada. A posição integra o funcionamento do conector; não basta conservar a mesma palavra para preservar a relação.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_05"
+      ],
+      "statement": "TEXTO B\nNão se deve liberar a pista imediatamente, pois ainda há resíduos no acostamento. A retirada principal terminou. Mas não fica apenas nisso: também será preciso inspecionar a drenagem. A operação parecia encerrada; a equipe, porém, manteve o isolamento.\n\nJulgue o item: “Mas não fica apenas nisso” amplia o conjunto de providências mediante uma ressalva, sem apresentar a inspeção como causa da retirada.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O segmento impede que o encerramento da retirada principal seja entendido como fim de toda a operação. Mas abre uma ressalva e acrescenta uma exigência contrastiva, não uma causa para o fato anterior.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_05"
+      ],
+      "statement": "TEXTO B\nNão se deve liberar a pista imediatamente, pois ainda há resíduos no acostamento. A retirada principal terminou. Mas não fica apenas nisso: também será preciso inspecionar a drenagem. A operação parecia encerrada; a equipe, porém, manteve o isolamento.\n\nJulgue o item: Por estar entre vírgulas, “porém” assume valor conclusivo equivalente a “portanto”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A intercalação altera a posição e exige pontuação, mas não transforma porém em conclusiva. O conector continua adversativo: a manutenção do isolamento contraria a expectativa gerada pelo aparente encerramento.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_02"
+      ],
+      "statement": "TEXTO C\nA análise tornou-se complexa, uma vez que três bases empregavam critérios diferentes. Agora, depois da padronização, os registros podem ser comparados. As divergências anteriores comprometiam o diagnóstico. Assim, todos os indicadores foram recalculados.\n\nJulgue o item: “Uma vez que” apresenta a diferença de critérios como causa da complexidade da análise.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A existência de três padrões explica por que a análise se tornou complexa. No contexto, uma vez que equivale a porque ou já que e conduz da afirmação à justificativa, não à consequência.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_06"
+      ],
+      "statement": "TEXTO C\nA análise tornou-se complexa, uma vez que três bases empregavam critérios diferentes. Agora, depois da padronização, os registros podem ser comparados. As divergências anteriores comprometiam o diagnóstico. Assim, todos os indicadores foram recalculados.\n\nJulgue o item: No segundo período, “Agora” possui valor adversativo e pode ser substituído diretamente por “entretanto”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Agora localiza a possibilidade de comparação no período posterior à padronização. O valor é temporal; entretanto criaria oposição. Embora agora possa ser contrastivo em outros contextos, a leitura depende deste enunciado.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_07"
+      ],
+      "statement": "TEXTO C\nA análise tornou-se complexa, uma vez que três bases empregavam critérios diferentes. Agora, depois da padronização, os registros podem ser comparados. As divergências anteriores comprometiam o diagnóstico. Assim, todos os indicadores foram recalculados.\n\nJulgue o item: “Assim” retoma o comprometimento do diagnóstico e introduz o recálculo como providência decorrente, não como modo de calcular.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O articulador conecta períodos e apresenta uma consequência prática do problema anterior. Ele equivale a por isso ou dessa forma em valor conclusivo; não modifica apenas o verbo como um adjunto de modo.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_07"
+      ],
+      "statement": "TEXTO C\nA análise tornou-se complexa, uma vez que três bases empregavam critérios diferentes. Agora, depois da padronização, os registros podem ser comparados. As divergências anteriores comprometiam o diagnóstico. Assim, todos os indicadores foram recalculados.\n\nJulgue o item: A substituição de “Assim” por “Por conseguinte” preservaria o encadeamento conclusivo do parágrafo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Ambas as expressões podem introduzir a decisão que decorre das divergências constatadas. Por conseguinte é mais formal, mas a diferença de registro não altera a relação lógico-semântica conclusiva.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_03"
+      ],
+      "statement": "TEXTO D\nO treinamento foi reformulado não apenas para reduzir o tempo de resposta, mas também para aumentar a precisão das decisões e, sobretudo, para proteger as equipes. Todos os setores receberam o mesmo protocolo, mas cada unidade pôde adaptá-lo às condições locais.\n\nJulgue o item: As três ocorrências de “para” introduzem finalidades paralelas da reformulação do treinamento.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Reduzir o tempo, aumentar a precisão e proteger as equipes são três propósitos coordenados. A correlação não apenas... mas também e o marcador sobretudo organizam a ênfase sem mudar o valor final.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_03"
+      ],
+      "statement": "TEXTO D\nO treinamento foi reformulado não apenas para reduzir o tempo de resposta, mas também para aumentar a precisão das decisões e, sobretudo, para proteger as equipes. Todos os setores receberam o mesmo protocolo, mas cada unidade pôde adaptá-lo às condições locais.\n\nJulgue o item: Na correlação do primeiro período, apenas a última ocorrência de “para” possui valor de finalidade; as anteriores exprimem consequência.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "As três construções dependem de foi reformulado e respondem para quê. Todas são orações reduzidas finais; os conectores correlativos distribuem e enfatizam objetivos, não convertem os dois primeiros em consequências.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_05"
+      ],
+      "statement": "TEXTO D\nO treinamento foi reformulado não apenas para reduzir o tempo de resposta, mas também para aumentar a precisão das decisões e, sobretudo, para proteger as equipes. Todos os setores receberam o mesmo protocolo, mas cada unidade pôde adaptá-lo às condições locais.\n\nJulgue o item: O “mas” do segundo período restringe a uniformidade do protocolo ao mostrar que sua aplicação admitiu adaptações locais.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O protocolo foi comum a todos, mas a execução não foi absolutamente idêntica. A segunda oração limita o alcance da primeira e funciona como ressalva adversativa, sem anulá-la por completo.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_07"
+      ],
+      "statement": "TEXTO E\nOs sensores ficaram mais precisos, por conseguinte diminuíram os alarmes indevidos. O sistema anterior era estável. O novo modelo, contudo, detecta obstáculos menores. Ao passo que cresce a sensibilidade, aumenta a necessidade de calibragem; os equipamentos registram mais detalhes, os analistas revisam mais sinais. O método é útil na medida em que reduz omissões, mas não é infalível porque depende de manutenção, de modo que falhas persistentes exigem intervenção técnica.\n\nJulgue o item: “Por conseguinte” apresenta a redução dos alarmes indevidos como conclusão do aumento de precisão dos sensores.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A queda dos alarmes é formulada como efeito lógico do aperfeiçoamento. Por conseguinte equivale a portanto ou logo e articula conclusão; a relação não é de mera simultaneidade.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_08"
+      ],
+      "statement": "TEXTO E\nOs sensores ficaram mais precisos, por conseguinte diminuíram os alarmes indevidos. O sistema anterior era estável. O novo modelo, contudo, detecta obstáculos menores. Ao passo que cresce a sensibilidade, aumenta a necessidade de calibragem; os equipamentos registram mais detalhes, os analistas revisam mais sinais. O método é útil na medida em que reduz omissões, mas não é infalível porque depende de manutenção, de modo que falhas persistentes exigem intervenção técnica.\n\nJulgue o item: Entre “O sistema anterior era estável” e “O novo modelo, contudo, detecta obstáculos menores”, há apenas adição neutra.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Contudo cria uma ressalva: a estabilidade do sistema antigo poderia favorecer sua manutenção, mas o novo oferece capacidade adicional. O conector orienta contraste argumentativo, não simples soma.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_09"
+      ],
+      "statement": "TEXTO E\nOs sensores ficaram mais precisos, por conseguinte diminuíram os alarmes indevidos. O sistema anterior era estável. O novo modelo, contudo, detecta obstáculos menores. Ao passo que cresce a sensibilidade, aumenta a necessidade de calibragem; os equipamentos registram mais detalhes, os analistas revisam mais sinais. O método é útil na medida em que reduz omissões, mas não é infalível porque depende de manutenção, de modo que falhas persistentes exigem intervenção técnica.\n\nJulgue o item: “Ao passo que” relaciona proporcionalmente o aumento da sensibilidade ao aumento da necessidade de calibragem.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As duas grandezas progridem juntas: quanto maior a sensibilidade, maior a necessidade de calibrar. Nesse contexto, ao passo que tem valor proporcional, ainda que possa expressar contraste em outros usos.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_08"
+      ],
+      "statement": "TEXTO E\nOs sensores ficaram mais precisos, por conseguinte diminuíram os alarmes indevidos. O sistema anterior era estável. O novo modelo, contudo, detecta obstáculos menores. Ao passo que cresce a sensibilidade, aumenta a necessidade de calibragem; os equipamentos registram mais detalhes, os analistas revisam mais sinais. O método é útil na medida em que reduz omissões, mas não é infalível porque depende de manutenção, de modo que falhas persistentes exigem intervenção técnica.\n\nJulgue o item: A vírgula entre “registram mais detalhes” e “os analistas revisam mais sinais” coordena orações independentes sem tornar o período incoerente.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Há coordenação assindética: as duas orações têm estrutura própria e são justapostas por vírgula. A relação aditiva permanece inferível pelo contexto, embora não esteja explicitada pela conjunção e.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b20_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b20_mk_10"
+      ],
+      "statement": "TEXTO E\nOs sensores ficaram mais precisos, por conseguinte diminuíram os alarmes indevidos. O sistema anterior era estável. O novo modelo, contudo, detecta obstáculos menores. Ao passo que cresce a sensibilidade, aumenta a necessidade de calibragem; os equipamentos registram mais detalhes, os analistas revisam mais sinais. O método é útil na medida em que reduz omissões, mas não é infalível porque depende de manutenção, de modo que falhas persistentes exigem intervenção técnica.\n\nJulgue o item: No último período, substituir “porque” por “de modo que” manteria a explicação de por que o método não é infalível.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Porque introduz a causa da falibilidade: a dependência de manutenção. De modo que normalmente introduziria consequência e mudaria a direção lógica; proximidade entre os segmentos não garante equivalência.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 20",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 73,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 73-86: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

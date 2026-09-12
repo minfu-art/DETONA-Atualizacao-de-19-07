@@ -140,7 +140,7 @@ Neste momento:
 - geração do mapa completo: reiniciada em lotes editoriais de 20 questões após reprovação do lote mecânico;
 - ingestão das 183 apostilas: concluída;
 - geração editorial de questões: autorizada para conteúdo estável ou oficialmente reconciliado;
-- Português: lote editorial 01 concluído, com 20 questões contextualizadas de compreensão e interpretação;
+- Português: 38 lotes editoriais concluídos, com 760 questões autorais comentadas, todos pendentes de revisão humana;
 - importação no Supabase: bloqueada;
 - publicação: bloqueada;
 - entitlement: bloqueado;

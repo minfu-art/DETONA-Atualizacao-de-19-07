@@ -1,19 +1,20 @@
 {
   "schema_version": 1,
-  "operation_id": "prf-pre-edital-foundation-v1",
+  "operation_id": "prf-pre-edital-foundation-v2-760-questions",
   "contest": {
     "id": "prf_2026",
     "code": "PRF",
     "slug": "prf-pre-edital",
     "name": "PRF — Policial Rodoviário Federal",
     "role": "Policial Rodoviário Federal",
-    "description": "Preparação pré-edital estruturada pelo edital oficial PRF 2021 e sujeita à reconciliação integral quando um novo edital for publicado.",
+    "description": "Preparação pré-edital PRF estruturada pelo edital oficial de 2021, com grade completa e banco editorial inicial de 760 questões autorais de Língua Portuguesa em revisão.",
     "content_status": "preparing",
     "sales_status": "unavailable",
     "price_cents": 0,
     "currency": "BRL",
     "exam_date": null,
     "color": "#1f4f3f",
-    "accent": "#f5c542"
+    "accent": "#f5c542",
+    "icon": "PRF"
   }
 }

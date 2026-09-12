@@ -31,4 +31,17 @@ O pacote `D:/CURSOS/PRF/` foi inventariado integralmente:
 
 A geração editorial de mapa e questões foi autorizada pelo usuário. A autorização é condicional: conteúdo normativo ou dinâmico só pode gerar lote definitivo após reconciliação com fonte oficial vigente.
 
-O lote mecânico de 528 itens foi rejeitado na revisão por não atingir a qualidade pedagógica exigida e removido da produção. Português passou a ser construído em lotes editoriais de 20 questões. O lote 01 trabalha compreensão e interpretação com cinco textos autorais, oito microconhecimentos e 20 questões comentadas, ainda sem importação ou publicação.
+O lote mecânico de 528 itens foi rejeitado na revisão por não atingir a qualidade pedagógica exigida e removido da produção. Português passou a ser construído em lotes editoriais de 20 questões. A trilha alcançou 38 lotes editoriais, com 760 questões autorais comentadas e previews humanos obrigatórios. O staging contém os 740 itens dos lotes 1 a 37 como rascunho; o lote 38 permanece preparado para importação incremental. Nenhum item foi publicado. O lote 38 avança Pontuação com valor restritivo e explicativo, pares correlatos, escopo e dependência sintática.
+
+## Pacote do app
+
+O diretório `course-bundle/` consolida a grade pré-edital e os 38 lotes editoriais para o provisionador do app:
+
+- 1 cargo;
+- 14 disciplinas;
+- 91 tópicos;
+- 246 subtópicos;
+- 38 lotes;
+- 760 questões, sendo 423 itens Certo e 337 itens Errado;
+- preço zerado, venda indisponível e conteúdo em preparação;
+- publicação bloqueada até revisão humana e cobertura editorial das demais disciplinas.

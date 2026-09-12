@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-38-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_bedbc3f890ba",
+            "trace_status": "available",
+            "page_number": 86,
+            "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_bedbc3f890ba",
+            "trace_status": "available",
+            "page_number": 86,
+            "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "5. Estrutura morfossintática do período",
+        "description": "",
+        "order": 4,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_bedbc3f890ba",
+            "trace_status": "available",
+            "page_number": 86,
+            "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t05_estrutura_morfoss",
+        "type": "subtopic",
+        "title": "Pontuação",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_bedbc3f890ba",
+            "trace_status": "available",
+            "page_number": 86,
+            "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b38_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Restrição e explicação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Pares correlatos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Retirada de expressão expletiva",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Adjunto e escopo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Dependência sintática",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Sinais explicativos equivalentes",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Oração intercalada",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Aposto explicativo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Expressão exemplificativa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b38_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "title": "Fronteira de segmentos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao_b38",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "scope": "Vírgula avançada: valor restritivo e explicativo, escopo, pares, dependência sintática e sinais equivalentes",
+      "essential_concepts": [
+        "Restrição e explicação",
+        "Pares correlatos",
+        "Retirada de expressão expletiva",
+        "Adjunto e escopo",
+        "Dependência sintática",
+        "Sinais explicativos equivalentes",
+        "Oração intercalada",
+        "Aposto explicativo",
+        "Expressão exemplificativa",
+        "Fronteira de segmentos"
+      ],
+      "rules": [
+        "Distinguir restrição de explicação",
+        "Preservar pares correlatos",
+        "Não separar termos sintaticamente dependentes",
+        "Reavaliar o escopo após deslocamentos"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b38_mk_01",
+        "prf_d01_b38_mk_02",
+        "prf_d01_b38_mk_03",
+        "prf_d01_b38_mk_04",
+        "prf_d01_b38_mk_05",
+        "prf_d01_b38_mk_06",
+        "prf_d01_b38_mk_07",
+        "prf_d01_b38_mk_08",
+        "prf_d01_b38_mk_09",
+        "prf_d01_b38_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 86,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b38",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b38_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_01"
+          ],
+          "statement": "TEXTO A\nA central regional, que funciona durante vinte e quatro horas, recebe alertas de diferentes trechos. Os avisos que indicam risco imediato são encaminhados primeiro. A equipe de análise, formada por servidores experientes, verifica cada registro antes do despacho.\n\nJulgue o item: As vírgulas que isolam “que funciona durante vinte e quatro horas” apresentam essa informação como explicação sobre a única central regional mencionada.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O trecho acrescenta uma característica da central já identificada e, por isso, tem leitura explicativa. As duas vírgulas delimitam a oração sem selecionar uma central entre várias possíveis no contexto.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_01"
+          ],
+          "statement": "TEXTO A\nA central regional, que funciona durante vinte e quatro horas, recebe alertas de diferentes trechos. Os avisos que indicam risco imediato são encaminhados primeiro. A equipe de análise, formada por servidores experientes, verifica cada registro antes do despacho.\n\nJulgue o item: Inserir vírgulas em “Os avisos que indicam risco imediato” preservaria necessariamente a quantidade de avisos encaminhados primeiro.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Sem vírgulas, apenas os avisos com risco imediato recebem prioridade. Com o par, a oração passa a explicar todos os avisos, sugerindo que todos indicam risco imediato e alterando o alcance do grupo.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_02"
+          ],
+          "statement": "TEXTO A\nA central regional, que funciona durante vinte e quatro horas, recebe alertas de diferentes trechos. Os avisos que indicam risco imediato são encaminhados primeiro. A equipe de análise, formada por servidores experientes, verifica cada registro antes do despacho.\n\nJulgue o item: A retirada apenas da primeira vírgula que delimita “formada por servidores experientes” manteria a correção do período.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O segmento explicativo está intercalado e depende de duas marcas correlatas. Se apenas a primeira for retirada, a vírgula restante separará indevidamente o sujeito completo do verbo verifica.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_02"
+          ],
+          "statement": "TEXTO A\nA central regional, que funciona durante vinte e quatro horas, recebe alertas de diferentes trechos. Os avisos que indicam risco imediato são encaminhados primeiro. A equipe de análise, formada por servidores experientes, verifica cada registro antes do despacho.\n\nJulgue o item: A retirada das duas vírgulas em torno de “formada por servidores experientes” produziria uma leitura restritiva possível, embora diferente da original.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Com as duas marcas, o trecho explica a composição da equipe já identificada. Sem ambas, ele pode selecionar, entre equipes possíveis, justamente aquela formada por servidores experientes; muda o sentido, não a correção.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_03"
+          ],
+          "statement": "TEXTO B\nÉ ao comparar séries históricas que os analistas identificam mudanças duradouras. Os índices, às vezes, variam por ocorrências isoladas. Os índices às vezes variam por ocorrências isoladas, mas a posição do adjunto pode alterar o alcance da observação.\n\nJulgue o item: A expressão de realce “É... que” pode ser retirada, desde que o período passe a registrar “Ao comparar séries históricas, os analistas identificam mudanças duradouras”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A retirada do realce devolve ao início uma oração reduzida adverbial antecipada. A vírgula depois de históricas marca a fronteira com a oração principal e conserva a estrutura sintática adequada.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_03"
+          ],
+          "statement": "TEXTO B\nÉ ao comparar séries históricas que os analistas identificam mudanças duradouras. Os índices, às vezes, variam por ocorrências isoladas. Os índices às vezes variam por ocorrências isoladas, mas a posição do adjunto pode alterar o alcance da observação.\n\nJulgue o item: Basta apagar “É” e “que” do primeiro período, sem qualquer outro ajuste, para manter a pontuação correta.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Sem a expressão expletiva, o segmento Ao comparar séries históricas fica antecipado e precisa ser separado da oração principal. A ausência da vírgula apaga uma fronteira sintática necessária nessa reescrita.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_04"
+          ],
+          "statement": "TEXTO B\nÉ ao comparar séries históricas que os analistas identificam mudanças duradouras. Os índices, às vezes, variam por ocorrências isoladas. Os índices às vezes variam por ocorrências isoladas, mas a posição do adjunto pode alterar o alcance da observação.\n\nJulgue o item: As vírgulas que isolam “às vezes” no segundo período são admissíveis, pois o adjunto curto aparece intercalado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O advérbio curto poderia aparecer sem vírgulas em muitos contextos, mas seu isolamento também é aceito para marcar a intercalação e organizar o ritmo. Facultatividade não significa incorreção.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_04"
+          ],
+          "statement": "TEXTO B\nÉ ao comparar séries históricas que os analistas identificam mudanças duradouras. Os índices, às vezes, variam por ocorrências isoladas. Os índices às vezes variam por ocorrências isoladas, mas a posição do adjunto pode alterar o alcance da observação.\n\nJulgue o item: A posição de “às vezes” jamais interfere no alcance da afirmação, porque se trata do mesmo advérbio em qualquer ponto da frase.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O deslocamento pode fazer o adjunto incidir mais diretamente sobre variar ou enquadrar uma afirmação mais ampla. A classe da palavra permanece, mas a porção do enunciado afetada pode mudar.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_07"
+          ],
+          "statement": "TEXTO C\nO protocolo, embora pareça simples, exige atenção aos detalhes. A confiança na estabilidade do sistema depende de testes periódicos. O relatório final — documento que consolida as verificações — será apresentado à coordenação; depois disso, começa a fase de correção.\n\nJulgue o item: As vírgulas em “embora pareça simples” são obrigatórias porque a oração concessiva aparece intercalada.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A oração introduz uma concessão dentro da principal e interrompe sua sequência. O par de vírgulas sinaliza o começo e o fim dessa unidade subordinada intercalada.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_05"
+          ],
+          "statement": "TEXTO C\nO protocolo, embora pareça simples, exige atenção aos detalhes. A confiança na estabilidade do sistema depende de testes periódicos. O relatório final — documento que consolida as verificações — será apresentado à coordenação; depois disso, começa a fase de correção.\n\nJulgue o item: Uma vírgula após “sistema” seria adequada para destacar o complemento “de testes periódicos”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "De testes periódicos completa o sentido do nome dependência. Inserir a vírgula entre o nome e seu complemento romperia uma ligação sintática direta; destaque ou pausa de leitura não autorizam essa separação.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_06"
+          ],
+          "statement": "TEXTO C\nO protocolo, embora pareça simples, exige atenção aos detalhes. A confiança na estabilidade do sistema depende de testes periódicos. O relatório final — documento que consolida as verificações — será apresentado à coordenação; depois disso, começa a fase de correção.\n\nJulgue o item: O par de travessões que isola “documento que consolida as verificações” poderia ser substituído por vírgulas sem eliminar seu valor explicativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O segmento identifica e explica o relatório final como um aposto. Travessões e vírgulas podem delimitar esse tipo de explicação; a troca altera a ênfase, mas preserva a estrutura.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_05"
+          ],
+          "statement": "TEXTO C\nO protocolo, embora pareça simples, exige atenção aos detalhes. A confiança na estabilidade do sistema depende de testes periódicos. O relatório final — documento que consolida as verificações — será apresentado à coordenação; depois disso, começa a fase de correção.\n\nJulgue o item: O ponto e vírgula antes de “depois disso” separa duas unidades coordenadas e poderia ocupar o interior de uma oração subordinada com a mesma liberdade.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "No texto, o sinal separa duas proposições autônomas e relacionadas. Uma oração subordinada depende sintaticamente de outra; inserir ponto e vírgula nessa fronteira quebraria uma relação que não admite separação tão forte.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_05"
+          ],
+          "statement": "TEXTO D\nA equipe constatou que o bloqueio havia sido removido. Terminada a inspeção, os técnicos liberaram o acesso. Helena, coordenadora do laboratório, registrou a decisão. O sistema permaneceu ativo, funcionando sem interrupções durante o teste.\n\nJulgue o item: Inserir vírgula depois de “constatou” separaria o verbo da oração que funciona como seu complemento e prejudicaria a correção.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A oração iniciada por que completa aquilo que a equipe constatou. Verbo e complemento formam uma unidade sintática direta, de modo que uma vírgula entre eles não se justifica por simples pausa de leitura.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_05"
+          ],
+          "statement": "TEXTO D\nA equipe constatou que o bloqueio havia sido removido. Terminada a inspeção, os técnicos liberaram o acesso. Helena, coordenadora do laboratório, registrou a decisão. O sistema permaneceu ativo, funcionando sem interrupções durante o teste.\n\nJulgue o item: Seria correto escrever “A equipe constatou que, o bloqueio havia sido removido”, pois a vírgula daria destaque ao conteúdo constatado.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O que introduz a oração que completa constatou. A vírgula logo depois do conector separaria o elemento introdutor do restante de sua própria oração, produzindo uma fragmentação sintática indevida.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_07"
+          ],
+          "statement": "TEXTO D\nA equipe constatou que o bloqueio havia sido removido. Terminada a inspeção, os técnicos liberaram o acesso. Helena, coordenadora do laboratório, registrou a decisão. O sistema permaneceu ativo, funcionando sem interrupções durante o teste.\n\nJulgue o item: A vírgula depois de “inspeção” delimita uma oração reduzida antecipada equivalente, no contexto, a “quando a inspeção terminou”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Terminada a inspeção expressa uma circunstância temporal anterior à liberação. Por vir antes da principal, a oração reduzida é separada por vírgula, que torna clara a fronteira entre os eventos.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_08"
+          ],
+          "statement": "TEXTO D\nA equipe constatou que o bloqueio havia sido removido. Terminada a inspeção, os técnicos liberaram o acesso. Helena, coordenadora do laboratório, registrou a decisão. O sistema permaneceu ativo, funcionando sem interrupções durante o teste.\n\nJulgue o item: “Coordenadora do laboratório” é um adjunto adverbial de lugar porque contém a expressão “do laboratório”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O segmento renomeia Helena e informa qual função ela exerce, mantendo identidade com o referente anterior. Trata-se de aposto explicativo; a presença de uma locução com de não o transforma em circunstância de lugar.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_09"
+          ],
+          "statement": "TEXTO E\nA operação reuniu recursos de apoio, por exemplo, equipes médicas e guinchos. Na base avançada, unidade instalada perto da serra, os chamados foram distribuídos rapidamente. Os veículos que precisavam de manutenção seguiram para a oficina; os demais, para a pista.\n\nJulgue o item: A expressão “por exemplo” está corretamente isolada por vírgulas dentro do trecho que introduz exemplos de recursos de apoio.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Por exemplo é uma expressão intercalada de valor exemplificativo e recebe duas marcas. A vírgula anterior também sucede apoio, enquanto a posterior fecha o segmento antes da enumeração.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_09"
+          ],
+          "statement": "TEXTO E\nA operação reuniu recursos de apoio, por exemplo, equipes médicas e guinchos. Na base avançada, unidade instalada perto da serra, os chamados foram distribuídos rapidamente. Os veículos que precisavam de manutenção seguiram para a oficina; os demais, para a pista.\n\nJulgue o item: Retirar apenas a vírgula posterior a “por exemplo” conservaria o isolamento completo da expressão.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Uma expressão intercalada precisa de marcas de abertura e fechamento. Manter somente a vírgula anterior deixaria o limite direito sem sinalização e tornaria assimétrica a organização do trecho exemplificativo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_10"
+          ],
+          "statement": "TEXTO E\nA operação reuniu recursos de apoio, por exemplo, equipes médicas e guinchos. Na base avançada, unidade instalada perto da serra, os chamados foram distribuídos rapidamente. Os veículos que precisavam de manutenção seguiram para a oficina; os demais, para a pista.\n\nJulgue o item: A vírgula depois de “serra” fecha o aposto iniciado por “unidade”, mesmo estando próxima de outro segmento circunstancial.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Unidade instalada perto da serra explica base avançada e está delimitada por um par. A marca final pertence ao fechamento desse aposto; a frase pode reunir fronteiras próximas sem que todas tenham a mesma função.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b38_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+          "microknowledge_ids": [
+            "prf_d01_b38_mk_01"
+          ],
+          "statement": "TEXTO E\nA operação reuniu recursos de apoio, por exemplo, equipes médicas e guinchos. Na base avançada, unidade instalada perto da serra, os chamados foram distribuídos rapidamente. Os veículos que precisavam de manutenção seguiram para a oficina; os demais, para a pista.\n\nJulgue o item: Inserir vírgulas em “Os veículos que precisavam de manutenção” preservaria a distinção entre os veículos enviados à oficina e os demais.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A oração sem vírgulas seleciona somente os veículos que necessitavam de manutenção e permite o contraste com os demais. Com vírgulas, ela explicaria todos os veículos, desfazendo a divisão lógica usada na sequência.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 38",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_bedbc3f890ba",
+              "trace_status": "available",
+              "page_number": 86,
+              "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-09-12T21:09:42.368Z",
+    "editorial_status": "batch_38_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula08-comma-advanced-editorial-matrix-batch-38.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

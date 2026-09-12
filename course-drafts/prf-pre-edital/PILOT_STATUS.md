@@ -548,3 +548,17 @@ O lote usa como referência uma matriz interna extraída dos itens 1 a 20 da Aul
 - preview obrigatório: `previews/portuguese-editorial-batch-37.preview.md`;
 - importação e publicação permanecem bloqueadas até revisão humana;
 - estado: `batch_37_pending_human_review`.
+
+## Lote editorial 38 - vírgula avançada e dependência sintática
+
+- fonte: Aula 08;
+- matriz de referência: questões comentadas 61 a 80, páginas 86 a 95;
+- cinco textos autorais;
+- dez microconhecimentos;
+- 20 questões comentadas, equilibradas em 10 C e 10 E;
+- foco: valor restritivo e explicativo, pares correlatos, expressão expletiva, escopo adverbial, dependência sintática, sinais equivalentes, aposto e expressão exemplificativa;
+- pacote: `production/portuguese-editorial-batch-38.v1.json`;
+- matriz: `sources/portuguese-aula08-comma-advanced-editorial-matrix-batch-38.v1.json`;
+- preview obrigatório: `previews/portuguese-editorial-batch-38.preview.md`;
+- importação e publicação permanecem bloqueadas até revisão humana;
+- estado: `batch_38_pending_human_review`.
