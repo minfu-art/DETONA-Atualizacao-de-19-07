@@ -32,4 +32,6 @@ export const ENV = Object.freeze({
   CHECKOUT_PROVIDER: String(injected.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase(),
   /** URL pública de descoberta de cursos; nunca recebe dados da sessão. */
   PUBLIC_COURSES_URL: String(injected.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
+  /** Identificador público do Meta Pixel usado para medir o funil comercial. */
+  META_PIXEL_ID: String(injected.META_PIXEL_ID || '2523798991419896').trim(),
 });

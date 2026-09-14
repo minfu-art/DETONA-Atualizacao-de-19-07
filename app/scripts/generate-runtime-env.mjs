@@ -27,6 +27,7 @@ const values = {
   SUPABASE_JS_URL: String(process.env.SUPABASE_JS_URL || ''),
   CHECKOUT_PROVIDER: checkoutProvider,
   PUBLIC_COURSES_URL: String(process.env.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
+  META_PIXEL_ID: String(process.env.META_PIXEL_ID || '2523798991419896').trim(),
 };
 const output = `/* Gerado no build; não adicionar segredos. */\nglobalThis.__DETONA_ENV__ = Object.freeze(${JSON.stringify(values, null, 2)});\n`;
 writeFileSync(resolve(import.meta.dirname, '../env.runtime.js'), output, 'utf8');

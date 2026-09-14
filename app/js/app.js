@@ -30,7 +30,9 @@ import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import {
   readCheckoutReturn,
   readCommercialIntent,
+  resolveCheckoutReturn,
 } from './services/studentEntryModel.js';
+import { trackConfirmedPurchase } from './analytics/metaPixel.js';
 import { selectActiveJourney } from './services/careerLibraryService.js';
 import {
   courseFactoryPreviewService,
@@ -578,6 +580,11 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
     const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
+    const checkoutNotice = resolveCheckoutReturn(commerceReturn, state.items);
+    if (commerceReturn?.state === 'success' && checkoutNotice?.confirmed) {
+      const confirmedItem = state.items.find(({ contest }) => contest?.id === checkoutNotice.contestId);
+      trackConfirmedPurchase(confirmedItem?.contest);
+    }
     renderLibrary(root, {
       user,
       items: state.items,
