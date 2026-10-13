@@ -9,6 +9,7 @@ import {
 } from './core.js';
 
 const origins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
+origins.add('https://app.detonaconcursos.com');
 const respond = (status: number, payload: unknown, origin = '') => (
   jsonResponse(status, payload, origin, origins)
 );
