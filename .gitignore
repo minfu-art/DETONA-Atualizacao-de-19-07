@@ -15,6 +15,7 @@ pnpm-debug.log*
 
 # Arquivos temporários e caches
 .cache/
+__pycache__/
 .tmp/
 tmp/
 temp/
