@@ -12,6 +12,10 @@ Em 13/10/2026, as 16 planilhas do pendrive continham 6.674 questões. A prepara�
 
 Todos os grupos têm uma **disciplina canônica candidata**. As 24 questões de “Carreira PRF” foram marcadas como candidatas a Direito Administrativo, mas exigem confirmação individual porque podem envolver Direito Constitucional ou Legislação Especial. Nenhuma questão recebeu subtópico ou microconhecimento por inferência automática.
 
+[`microknowledge-link-candidates.v1.json`](microknowledge-link-candidates.v1.json) cruza os 6.674 IDs do pendrive com o rascunho do novo mapa e apresenta até três sugestões de microconhecimento por questão. Usa somente enunciado e, em múltipla escolha, a alternativa indicada como correta após as 11 correções propostas. Há 832 itens com maior sobreposição de palavras, 5.511 com sinal fraco ou ambíguo e 331 sem sinal lexical. Uma amostra mostrou que até a primeira categoria contém vínculos errados. Por isso **todos** os campos `assigned_microknowledge_id` seguem nulos: o arquivo serve para priorizar revisão individual, não para importação ou publicação.
+
+O manifesto também sinaliza 130 enunciados que mencionam figura, gráfico, tabela ou equivalente sem anexo registrado na planilha, 25 marcadores `Resposta: .` truncados, oito enunciados que revelam a própria resposta e os 11 conflitos de gabarito já conhecidos. Esses são sinais para inspeção no PDF de origem, não contagens finais de questões irrecuperáveis.
+
 [`authorial-batch-readiness.json`](authorial-batch-readiness.json) verifica os 38 lotes autorais existentes. Todos têm exatamente 20 itens, um microconhecimento definido por questão, gabarito C/E e enunciado/comentário preenchidos. O lote 1 foi publicado no staging; os lotes 2–37 estavam em rascunho e o lote 38 apenas local na última conferência. A verificação técnica não substitui a revisão humana de cada lote.
 
 ## Abrangência curricular
