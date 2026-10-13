@@ -16,6 +16,24 @@ import openpyxl
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 COURSE = ROOT / "course-drafts" / "prf-pre-edital" / "course-bundle"
+DISCIPLINE_CANDIDATES = {
+    "Carreira PRF": ("Direito Administrativo", "candidate_only_mixed_career_content"),
+    "Código de Trânsito Brasileiro": ("Legislação de Trânsito", "by_source_discipline"),
+    "Direito Administrativo": ("Direito Administrativo", "by_source_discipline"),
+    "Direito Constitucional": ("Direito Constitucional", "by_source_discipline"),
+    "Direito Penal": ("Direito Penal", "by_source_discipline"),
+    "Direito Processual Penal": ("Direito Processual Penal", "by_source_discipline"),
+    "Direitos Humanos": ("Direitos Humanos", "by_source_discipline"),
+    "Estatuto da Criança e do Adolescente": ("Legislação Especial", "by_source_discipline"),
+    "Ética e Cidadania": ("Ética e Cidadania", "by_source_discipline"),
+    "Física": ("Física", "by_source_discipline"),
+    "Geopolítica": ("Geopolítica", "by_source_discipline"),
+    "Informática": ("Informática", "by_source_discipline"),
+    "Legislação Penal Especial": ("Legislação Especial", "by_source_discipline"),
+    "Legislação de Trânsito e CONTRAN": ("Legislação de Trânsito", "by_source_discipline"),
+    "Língua Portuguesa": ("Língua Portuguesa", "by_source_discipline"),
+    "Raciocínio Lógico-Matemático": ("Raciocínio Lógico-Matemático", "by_source_discipline"),
+}
 
 
 def sheet_rows(sheet):
@@ -70,6 +88,8 @@ def main():
                 effective = proposed
             queue.append({
                 "id": qid, "source_file": file.name, "source_discipline": str(row.get("disciplina") or ""),
+                "canonical_discipline_candidate": DISCIPLINE_CANDIDATES[str(row.get("disciplina") or "")][0],
+                "discipline_mapping_basis": DISCIPLINE_CANDIDATES[str(row.get("disciplina") or "")][1],
                 "source_answer": answer, "effective_answer": effective,
                 "source_pdf": str(row.get("arquivo_origem") or ""),
                 "microknowledge_id": None,
@@ -91,6 +111,8 @@ def main():
             segment = items[start:start + 20]
             batches.append({
                 "id": f"usb-{len(batches) + 1:03d}", "discipline": discipline,
+                "canonical_discipline_candidate": segment[0]["canonical_discipline_candidate"],
+                "discipline_mapping_basis": segment[0]["discipline_mapping_basis"],
                 "item_count": len(segment), "question_ids": [item["id"] for item in segment],
                 "status": "review_queue", "importable": False, "publishable": False,
                 "blocking_checks": ["microknowledge_mapping", "copyright_license_or_authorial_rewrite",
@@ -98,6 +120,9 @@ def main():
             })
 
     curriculum = json.loads((COURSE / "curriculum.json").read_text(encoding="utf-8"))
+    canonical_disciplines = {discipline["name"] for discipline in curriculum["roles"][0]["disciplines"]}
+    if any(item["canonical_discipline_candidate"] not in canonical_disciplines for item in queue):
+        raise SystemExit("Source discipline could not be reconciled with the PRF curriculum")
     authorial_files = sorted((COURSE / "questions").glob("*.json"))
     authored_batches = []
     authored = []

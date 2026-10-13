@@ -10,6 +10,8 @@ Em 13/10/2026, as 16 planilhas do pendrive continham 6.674 questões. A prepara�
 
 [`usb-review-batches.json`](usb-review-batches.json) distribui os 6.674 IDs em 343 grupos por disciplina, com no máximo 20 por grupo: 328 grupos de 20 e 15 grupos menores. São filas de revisão, não pacotes de importação. Cada grupo tem bloqueio explícito para mapeamento ao microconhecimento, revisão editorial/normativa e definição do direito de uso ou reescrita autoral dos comentários extraídos de apostilas.
 
+Todos os grupos têm uma **disciplina canônica candidata**. As 24 questões de “Carreira PRF” foram marcadas como candidatas a Direito Administrativo, mas exigem confirmação individual porque podem envolver Direito Constitucional ou Legislação Especial. Nenhuma questão recebeu subtópico ou microconhecimento por inferência automática.
+
 [`authorial-batch-readiness.json`](authorial-batch-readiness.json) verifica os 38 lotes autorais existentes. Todos têm exatamente 20 itens, um microconhecimento definido por questão, gabarito C/E e enunciado/comentário preenchidos. O lote 1 foi publicado no staging; os lotes 2–37 estavam em rascunho e o lote 38 apenas local na última conferência. A verificação técnica não substitui a revisão humana de cada lote.
 
 ## Abrangência curricular
