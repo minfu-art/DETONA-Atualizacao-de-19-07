@@ -159,7 +159,9 @@ export const CONTEST_CATALOG = [
     salesStatus: 'coming_soon',
     careerArea: 'police_security',
     careerSubarea: 'federal_highway_police',
-    description: 'Modulo independente pronto para receber edital e banco de questoes.',
+    subtopicCount: 246,
+    questionCount: 760,
+    description: 'Grade pre-edital completa e banco editorial inicial de 760 questoes de Lingua Portuguesa em revisao.',
   },
 ];
 

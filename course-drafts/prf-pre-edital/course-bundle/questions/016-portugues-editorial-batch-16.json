@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b16_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_01"
+      ],
+      "statement": "TEXTO A\nO conselho criou o Programa Alfa e atribuiu-lhe competências de fiscalização; o capítulo terceiro apenas descreve essa decisão. O indicador é calculado desde 2005; naquele ano, o limite foi alcançado em dezembro. Em linguagem figurada, o relatório opõe a justiça cá embaixo ao ideal de justiça lá em cima. O autor deseja que suas propostas sejam aceitas e que ele seja ouvido.\n\nJulgue o item: Em “atribuiu-lhe competências”, “lhe” retoma “o capítulo terceiro”, termo imediatamente anterior à explicação.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O destinatário das competências é o Programa Alfa; o capítulo apenas registra a decisão. A função semântica de beneficiário e a cadeia institucional superam a estratégia insegura de escolher o nome mais próximo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_02"
+      ],
+      "statement": "TEXTO A\nO conselho criou o Programa Alfa e atribuiu-lhe competências de fiscalização; o capítulo terceiro apenas descreve essa decisão. O indicador é calculado desde 2005; naquele ano, o limite foi alcançado em dezembro. Em linguagem figurada, o relatório opõe a justiça cá embaixo ao ideal de justiça lá em cima. O autor deseja que suas propostas sejam aceitas e que ele seja ouvido.\n\nJulgue o item: A expressão “naquele ano” retoma 2005, marco temporal já apresentado no mesmo período.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Naquele combina a preposição em com demonstrativo que aponta para um ano textual já mencionado e afastado do momento de fala. A concordância temporal e a posição anterior de 2005 tornam o referente inequívoco.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_02"
+      ],
+      "statement": "TEXTO A\nO conselho criou o Programa Alfa e atribuiu-lhe competências de fiscalização; o capítulo terceiro apenas descreve essa decisão. O indicador é calculado desde 2005; naquele ano, o limite foi alcançado em dezembro. Em linguagem figurada, o relatório opõe a justiça cá embaixo ao ideal de justiça lá em cima. O autor deseja que suas propostas sejam aceitas e que ele seja ouvido.\n\nJulgue o item: No uso figurado do texto, “cá embaixo” remete ao ideal transcendente, e “lá em cima”, à justiça terrena.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A oposição está invertida no item. Cá embaixo associa-se ao plano terreno e à justiça praticada entre seres humanos; lá em cima projeta o plano elevado ou divino. Os advérbios constroem uma dêixis simbólica.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_03"
+      ],
+      "statement": "TEXTO A\nO conselho criou o Programa Alfa e atribuiu-lhe competências de fiscalização; o capítulo terceiro apenas descreve essa decisão. O indicador é calculado desde 2005; naquele ano, o limite foi alcançado em dezembro. Em linguagem figurada, o relatório opõe a justiça cá embaixo ao ideal de justiça lá em cima. O autor deseja que suas propostas sejam aceitas e que ele seja ouvido.\n\nJulgue o item: Em “suas propostas” e “que ele seja ouvido”, o possessivo e o pronome pessoal retomam “o autor”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As propostas pertencem ao autor, e é o próprio autor que deseja ser ouvido. Embora as formas exerçam funções sintáticas diferentes, ambas integram a mesma cadeia referencial e evitam repetir o nome.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_04"
+      ],
+      "statement": "TEXTO B\nA credibilidade do método decorre do exame integral das evidências. Isso exige cautela antes de divulgar resultados. A rede foi ampliada e passou a exigir formação digital; nesse contexto, discutiu-se o uso pedagógico dos aparelhos. O projeto ocorreu em um período de seis dias em que a equipe trabalhou sem pausa. Plantas ressecadas recuperaram água e elas voltaram a crescer.\n\nJulgue o item: No segundo período, “Isso” retoma apenas o substantivo “evidências”, e não a afirmação anterior como um todo.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O demonstrativo resume a proposição de que a credibilidade do método decorre do exame integral das evidências. É essa relação metodológica inteira que exige cautela, não o substantivo evidências isoladamente.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_05"
+      ],
+      "statement": "TEXTO B\nA credibilidade do método decorre do exame integral das evidências. Isso exige cautela antes de divulgar resultados. A rede foi ampliada e passou a exigir formação digital; nesse contexto, discutiu-se o uso pedagógico dos aparelhos. O projeto ocorreu em um período de seis dias em que a equipe trabalhou sem pausa. Plantas ressecadas recuperaram água e elas voltaram a crescer.\n\nJulgue o item: “Nesse contexto” resume a ampliação da rede e a necessidade de formação digital, preparando a discussão sobre os aparelhos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A expressão demonstrativa encapsula as informações anteriores e cria uma ponte para o novo tópico. Ela não possui referente nominal único: retoma o cenário construído pelas duas ações do período precedente.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_06"
+      ],
+      "statement": "TEXTO B\nA credibilidade do método decorre do exame integral das evidências. Isso exige cautela antes de divulgar resultados. A rede foi ampliada e passou a exigir formação digital; nesse contexto, discutiu-se o uso pedagógico dos aparelhos. O projeto ocorreu em um período de seis dias em que a equipe trabalhou sem pausa. Plantas ressecadas recuperaram água e elas voltaram a crescer.\n\nJulgue o item: Em “um período de seis dias em que a equipe trabalhou”, o relativo “que” retoma “a equipe”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A preposição em e o valor temporal revelam o antecedente período: a equipe trabalhou durante esse período. Equipe é o sujeito da oração relativa, não o termo retomado pelo pronome.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_03"
+      ],
+      "statement": "TEXTO B\nA credibilidade do método decorre do exame integral das evidências. Isso exige cautela antes de divulgar resultados. A rede foi ampliada e passou a exigir formação digital; nesse contexto, discutiu-se o uso pedagógico dos aparelhos. O projeto ocorreu em um período de seis dias em que a equipe trabalhou sem pausa. Plantas ressecadas recuperaram água e elas voltaram a crescer.\n\nJulgue o item: Em “Plantas ressecadas recuperaram água e elas voltaram a crescer”, “elas” retoma “Plantas ressecadas”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A concordância no feminino plural e a continuidade do evento apontam para plantas. Água é singular, e nenhum outro antecedente feminino plural compete com o referente estabelecido no início da coordenação.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_06"
+      ],
+      "statement": "TEXTO C\nA norma define comunidades tradicionais como grupos que preservam costumes, que mantêm formas próprias de organização e que ocupam territórios específicos. A regulamentação ficou anos sem instrumento que orientasse sua efetivação. Dos vinte estados avaliados, apenas cinco não mudaram de posição. Após uma citação entre aspas, o parecer mencionou “este trecho”.\n\nJulgue o item: Na série descritiva, o último “que” retoma “formas próprias de organização”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "As três orações relativas coordenadas descrevem o mesmo antecedente grupos: grupos que preservam, que mantêm e que ocupam. Formas próprias de organização é objeto da oração intermediária e não passa a controlar a oração seguinte.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_01"
+      ],
+      "statement": "TEXTO C\nA norma define comunidades tradicionais como grupos que preservam costumes, que mantêm formas próprias de organização e que ocupam territórios específicos. A regulamentação ficou anos sem instrumento que orientasse sua efetivação. Dos vinte estados avaliados, apenas cinco não mudaram de posição. Após uma citação entre aspas, o parecer mencionou “este trecho”.\n\nJulgue o item: Em “sua efetivação”, o possessivo retoma “a regulamentação”, isto é, o processo que deveria ser efetivado.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O instrumento serviria para tornar efetiva a regulamentação. O sentido da nominalização efetivação e a posição temática do primeiro substantivo confirmam o referente, ainda que outro nome apareça no intervalo.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_07"
+      ],
+      "statement": "TEXTO C\nA norma define comunidades tradicionais como grupos que preservam costumes, que mantêm formas próprias de organização e que ocupam territórios específicos. A regulamentação ficou anos sem instrumento que orientasse sua efetivação. Dos vinte estados avaliados, apenas cinco não mudaram de posição. Após uma citação entre aspas, o parecer mencionou “este trecho”.\n\nJulgue o item: Em “dos vinte estados, apenas cinco não mudaram”, está elíptico o substantivo “estados” depois do numeral.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Cinco funciona como numeral substantivado porque o núcleo estados foi expresso no partitivo anterior e pode ser recuperado sem ambiguidade. A elipse evita repetição e mantém a coesão quantitativa.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_04"
+      ],
+      "statement": "TEXTO C\nA norma define comunidades tradicionais como grupos que preservam costumes, que mantêm formas próprias de organização e que ocupam territórios específicos. A regulamentação ficou anos sem instrumento que orientasse sua efetivação. Dos vinte estados avaliados, apenas cinco não mudaram de posição. Após uma citação entre aspas, o parecer mencionou “este trecho”.\n\nJulgue o item: A expressão “este trecho”, depois da citação, retoma necessariamente todo o parágrafo em que ela aparece.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O núcleo trecho e a posição imediatamente posterior delimitam o referente à passagem citada entre aspas. O demonstrativo pode ser anafórico, mas isso não autoriza ampliar automaticamente sua abrangência ao parágrafo inteiro.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_08"
+      ],
+      "statement": "TEXTO D\nPersistia a noção de que os rituais eram dispensáveis; essa ideia perdeu força. O conceito de cuidado ganhou espaço, e sua presença aumentou nas pesquisas. Marcos adormeceu cedo; ninguém o perturbou, e ele contou depois que se sentia exausto. O estudo avaliou os rituais e questionou sua relevância social.\n\nJulgue o item: “Essa ideia” retoma a “noção” apresentada antes por meio de uma substituição lexical de sentido equivalente.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Ideia e noção funcionam como sinônimos contextuais e designam a mesma crença sobre os rituais. A coesão lexical permite variar o vocabulário sem criar um novo referente nem repetir literalmente o substantivo.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_09"
+      ],
+      "statement": "TEXTO D\nPersistia a noção de que os rituais eram dispensáveis; essa ideia perdeu força. O conceito de cuidado ganhou espaço, e sua presença aumentou nas pesquisas. Marcos adormeceu cedo; ninguém o perturbou, e ele contou depois que se sentia exausto. O estudo avaliou os rituais e questionou sua relevância social.\n\nJulgue o item: Em “sua presença aumentou nas pesquisas”, “sua” retoma “as pesquisas”, porque concorda com o substantivo “presença”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O possessivo concorda com a coisa possuída, presença, e não revela por sua forma o número do possuidor. O que ganhou presença nas pesquisas foi o conceito de cuidado; esse é o referente recuperado pelo contexto.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_03"
+      ],
+      "statement": "TEXTO D\nPersistia a noção de que os rituais eram dispensáveis; essa ideia perdeu força. O conceito de cuidado ganhou espaço, e sua presença aumentou nas pesquisas. Marcos adormeceu cedo; ninguém o perturbou, e ele contou depois que se sentia exausto. O estudo avaliou os rituais e questionou sua relevância social.\n\nJulgue o item: Em “ninguém o perturbou, e ele contou depois que se sentia exausto”, “o” e “se” retomam Marcos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Marcos é o objeto de perturbou; depois, ele reaparece como sujeito expresso de contou e como sujeito recuperável de se sentia. As funções mudam, mas os pronomes permanecem na mesma cadeia referencial.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_09"
+      ],
+      "statement": "TEXTO D\nPersistia a noção de que os rituais eram dispensáveis; essa ideia perdeu força. O conceito de cuidado ganhou espaço, e sua presença aumentou nas pesquisas. Marcos adormeceu cedo; ninguém o perturbou, e ele contou depois que se sentia exausto. O estudo avaliou os rituais e questionou sua relevância social.\n\nJulgue o item: Em “avaliou os rituais e questionou sua relevância”, “sua” expressa a relevância dos rituais.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A pergunta implícita é relevância de quê?. O complemento recuperável é dos rituais, objeto apresentado na oração anterior. O possessivo estabelece essa ligação sem repetir a expressão nominal.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_09"
+      ],
+      "statement": "TEXTO E\nDesde o nascimento da democracia ateniense, discutem-se suas relações com a retórica. As necessidades do homem contemporâneo o impulsionam ao convívio e o lançam em novas experiências. Grandes mudanças representam saltos de época, que desorientam gerações. A modernidade foi descrita como um contrato. Poucos conseguem rescindi-lo ou transcendê-lo.\n\nJulgue o item: Em “suas relações com a retórica”, o possessivo retoma “a retórica”, termo que aparece depois dele.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A construção significa as relações da democracia ateniense com a retórica. O possessivo recupera o tópico democracia ateniense; retórica é o outro polo introduzido pela preposição com, não o possuidor.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_10"
+      ],
+      "statement": "TEXTO E\nDesde o nascimento da democracia ateniense, discutem-se suas relações com a retórica. As necessidades do homem contemporâneo o impulsionam ao convívio e o lançam em novas experiências. Grandes mudanças representam saltos de época, que desorientam gerações. A modernidade foi descrita como um contrato. Poucos conseguem rescindi-lo ou transcendê-lo.\n\nJulgue o item: Os dois pronomes “o” em “o impulsionam” e “o lançam” mantêm como referente o homem contemporâneo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Necessidades e experiências aparecem entre as ocorrências, mas o papel semântico permanece: são fatores que impulsionam e lançam o homem. A cadeia longa deve ser resolvida pela coerência das ações, não pela proximidade.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_06"
+      ],
+      "statement": "TEXTO E\nDesde o nascimento da democracia ateniense, discutem-se suas relações com a retórica. As necessidades do homem contemporâneo o impulsionam ao convívio e o lançam em novas experiências. Grandes mudanças representam saltos de época, que desorientam gerações. A modernidade foi descrita como um contrato. Poucos conseguem rescindi-lo ou transcendê-lo.\n\nJulgue o item: Em “saltos de época, que desorientam gerações”, “que” retoma “saltos de época”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O relativo introduz uma característica dos saltos e concorda indiretamente com o verbo plural desorientam. Substituí-lo por os quais evidencia o antecedente e afasta nomes intervenientes possíveis.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b16_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s01_referenciac",
+      "microknowledge_ids": [
+        "prf_d01_b16_mk_03"
+      ],
+      "statement": "TEXTO E\nDesde o nascimento da democracia ateniense, discutem-se suas relações com a retórica. As necessidades do homem contemporâneo o impulsionam ao convívio e o lançam em novas experiências. Grandes mudanças representam saltos de época, que desorientam gerações. A modernidade foi descrita como um contrato. Poucos conseguem rescindi-lo ou transcendê-lo.\n\nJulgue o item: Em “rescindi-lo ou transcendê-lo”, o primeiro “lo” retoma “contrato”, mas o segundo retoma uma etapa da vida.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Os dois verbos coordenados selecionam o mesmo objeto: rescindir o contrato ou transcender o contrato. A repetição dos clíticos preserva o referente; nenhum nome novo compatível foi introduzido entre as formas.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 16",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_50f8727aed54",
+          "trace_status": "available",
+          "page_number": 38,
+          "excerpt": "Matriz agregada das questões 21-41, páginas 38-53: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

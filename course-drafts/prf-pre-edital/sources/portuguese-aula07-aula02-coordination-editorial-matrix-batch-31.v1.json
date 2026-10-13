@@ -1,0 +1,279 @@
+{
+  "schema_version": "detona_editorial_source_matrix_v1",
+  "source_id": "prf_pdf_dd8c41255dc9",
+  "source_file": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+  "sources": [
+    {
+      "source_id": "prf_pdf_dd8c41255dc9",
+      "source_file": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "source_pages": [
+        48,
+        49
+      ]
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_file": "curso-240229-aula-02-somente-em-video-3ee6-completo.pdf",
+      "source_pages": [
+        49,
+        58
+      ]
+    }
+  ],
+  "source_pages": [
+    48,
+    58
+  ],
+  "source_question_range": [
+    1,
+    20
+  ],
+  "purpose": "internal_pattern_analysis_for_authorial_question_creation",
+  "copyright_safety": {
+    "source_text_stored": false,
+    "source_statements_stored": false,
+    "source_answers_stored": false
+  },
+  "items": [
+    {
+      "source_id": "prf_pdf_dd8c41255dc9",
+      "source_question_number": 1,
+      "page": 48,
+      "exam": "Coordenação 1 - INPI 2024",
+      "skill": "correlação aditiva",
+      "cognitive_operation": "identificar duas estruturas paralelas adicionadas",
+      "trap": "classificar mas isoladamente como adversativo",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_dd8c41255dc9",
+      "source_question_number": 2,
+      "page": 48,
+      "exam": "Coordenação 2 - Camaçari 2024",
+      "skill": "adversativa sindética",
+      "cognitive_operation": "substituir porém por coordenativa equivalente",
+      "trap": "trocar coordenativa por subordinativa concessiva",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 3,
+      "page": 49,
+      "exam": "Conjunção 1 - PC-DF 2025",
+      "skill": "causal subordinada versus conclusão coordenada",
+      "cognitive_operation": "distinguir porque subordinativo e portanto coordenativo",
+      "trap": "classificar apenas pela proximidade semântica",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 4,
+      "page": 50,
+      "exam": "Conjunção 2 - TRF6 2025",
+      "skill": "bem como coordenativo",
+      "cognitive_operation": "reconhecer coordenação de termos e orações",
+      "trap": "supor que toda coordenação une orações",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 5,
+      "page": 50,
+      "exam": "Conjunção 3 - PC-DF 2025",
+      "skill": "correlação aditiva enfática",
+      "cognitive_operation": "analisar tanto como par coordenativo",
+      "trap": "separar os componentes da correlação",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 6,
+      "page": 50,
+      "exam": "Conjunção 4 - Inoversasul 2025",
+      "skill": "adversativa independente",
+      "cognitive_operation": "testar autonomia das orações ligadas por porém",
+      "trap": "confundir oposição com dependência",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 7,
+      "page": 51,
+      "exam": "Conjunção 5 - Inoversasul 2025",
+      "skill": "como se subordinativo",
+      "cognitive_operation": "reconhecer comparação hipotética dependente",
+      "trap": "classificar toda sequência com duas formas como coordenação",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 8,
+      "page": 51,
+      "exam": "Conjunção 6 - Inoversasul 2025",
+      "skill": "comparativa elíptica",
+      "cognitive_operation": "recuperar verbo implícito em oração comparativa",
+      "trap": "contar apenas verbos expressos",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 9,
+      "page": 51,
+      "exam": "Conjunção 7 - Inoversasul 2025",
+      "skill": "condicional subordinada",
+      "cognitive_operation": "distinguir prótase dependente de coordenada",
+      "trap": "chamar toda relação lógica de coordenação",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 10,
+      "page": 52,
+      "exam": "Conjunção 8 - Inoversasul 2025",
+      "skill": "causal subordinada",
+      "cognitive_operation": "identificar função adverbial da causa",
+      "trap": "considerar porquanto sempre coordenativo explicativo",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 11,
+      "page": 52,
+      "exam": "Conjunção 9 - Inoversasul 2025",
+      "skill": "porque causal ou explicativo",
+      "cognitive_operation": "usar estrutura e modalidade para classificar",
+      "trap": "classificar porque invariavelmente",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 12,
+      "page": 53,
+      "exam": "Conjunção 10 - TRF6 2025",
+      "skill": "concessiva reduzida",
+      "cognitive_operation": "reconhecer fragmento dependente",
+      "trap": "confundir ausência de verbo expresso com termo coordenado",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 13,
+      "page": 53,
+      "exam": "Conjunção 11 - PC-DF 2025",
+      "skill": "concessiva desenvolvida",
+      "cognitive_operation": "testar dependência de embora",
+      "trap": "atribuir coordenação pelo sentido de contraste",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 14,
+      "page": 53,
+      "exam": "Conjunção 12 - PC-DF 2025",
+      "skill": "mas e embora",
+      "cognitive_operation": "distinguir hierarquia coordenada e subordinada",
+      "trap": "tratar conectores opositivos como intercambiáveis",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 15,
+      "page": 54,
+      "exam": "Conjunção 13 - Inoversasul 2025",
+      "skill": "entretanto e conquanto",
+      "cognitive_operation": "contrastar sindética adversativa e concessiva",
+      "trap": "preservar sintaxe em troca direta",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 16,
+      "page": 55,
+      "exam": "Conjunção 14 - Inoversasul 2025",
+      "skill": "consecutiva subordinada",
+      "cognitive_operation": "identificar correlação intensiva tanto que",
+      "trap": "classificar que como coordenativo",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 17,
+      "page": 55,
+      "exam": "Conjunção 15 - TRF6 2025",
+      "skill": "pois conclusivo",
+      "cognitive_operation": "usar posição para classificar coordenada",
+      "trap": "considerar pois sempre explicativo",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 18,
+      "page": 56,
+      "exam": "Conjunção 16 - PC-DF 2025",
+      "skill": "ao passo que contrastivo",
+      "cognitive_operation": "avaliar coordenação e paralelismo contextual",
+      "trap": "decidir só pelo rótulo da locução",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 19,
+      "page": 57,
+      "exam": "Conjunção 17 - Inoversasul 2025",
+      "skill": "não apenas mas também",
+      "cognitive_operation": "reconhecer coordenação correlativa",
+      "trap": "isolar mas como adversativo",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    },
+    {
+      "source_id": "prf_pdf_2e7edd5477b7",
+      "source_question_number": 20,
+      "page": 58,
+      "exam": "Conjunção 18 - Camaçari 2024",
+      "skill": "todavia adversativo",
+      "cognitive_operation": "preservar classe e autonomia na substituição",
+      "trap": "trocar por conquanto sem reestruturar",
+      "source_text_stored": false,
+      "source_statement_stored": false,
+      "commercial_copy_authorized": false
+    }
+  ]
+}

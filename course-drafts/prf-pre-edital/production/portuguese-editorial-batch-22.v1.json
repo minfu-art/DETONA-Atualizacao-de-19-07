@@ -1,0 +1,1167 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-22-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_2e7edd5477b7",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-02-somente-em-video-3ee6-completo.pdf",
+      "file_name": "curso-240229-aula-02-somente-em-video-3ee6-completo.pdf",
+      "page_count": 142,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ba7cca5ab676a8205f9c9366ef44cefcbbeecb4fdb8951066d2097e9bbada6f5"
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_2e7edd5477b7",
+            "trace_status": "available",
+            "page_number": 95,
+            "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_2e7edd5477b7",
+            "trace_status": "available",
+            "page_number": 95,
+            "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "4. Mecanismos de coesão textual",
+        "description": "",
+        "order": 3,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_2e7edd5477b7",
+            "trace_status": "available",
+            "page_number": 95,
+            "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t04_mecanismos_de_coe",
+        "type": "subtopic",
+        "title": "Conectores e sequenciação textual",
+        "description": "",
+        "order": 1,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_2e7edd5477b7",
+            "trace_status": "available",
+            "page_number": 95,
+            "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b22_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Coordenação aditiva negativa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Conectores e concordância",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Marcadores explicativos e discursivos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Polissemia de logo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Finalidade e causa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Adversidade versus causa",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Equivalência entre adversativas",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Posição e pontuação das adversativas",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Conclusão e retomada referencial",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b22_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "title": "Concessão, subordinação e modo verbal",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores__b22",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "scope": "Coordenação negativa, marcadores discursivos, logo temporal, finalidade, adversidade, concessão e reescrita sintática",
+      "essential_concepts": [
+        "Coordenação aditiva negativa",
+        "Conectores e concordância",
+        "Marcadores explicativos e discursivos",
+        "Polissemia de logo",
+        "Finalidade e causa",
+        "Adversidade versus causa",
+        "Equivalência entre adversativas",
+        "Posição e pontuação das adversativas",
+        "Conclusão e retomada referencial",
+        "Concessão, subordinação e modo verbal"
+      ],
+      "rules": [
+        "Usar posição e pontuação para interpretar conectores",
+        "Distinguir valor discursivo de classificação mecânica",
+        "Verificar concordância e modo verbal nas reescritas",
+        "Separar equivalência semântica de possibilidade gramatical"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b22_mk_01",
+        "prf_d01_b22_mk_02",
+        "prf_d01_b22_mk_03",
+        "prf_d01_b22_mk_04",
+        "prf_d01_b22_mk_05",
+        "prf_d01_b22_mk_06",
+        "prf_d01_b22_mk_07",
+        "prf_d01_b22_mk_08",
+        "prf_d01_b22_mk_09",
+        "prf_d01_b22_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 95,
+          "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b22",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b22_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_01"
+          ],
+          "statement": "TEXTO A\nNem o supervisor nem os técnicos ignoraram o alerta. Nenhum dos sensores, nem as câmeras nem os radares, permaneceram desligados. Pois bem, a operação começou somente depois da verificação de todos os dispositivos.\n\nJulgue o item: A correlação “Nem... nem...” soma dois grupos excluídos da ação de ignorar o alerta.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Nem coordena constituintes sob uma negação comum: o supervisor não ignorou e os técnicos também não ignoraram. O valor é aditivo-negativo, não uma alternativa em que apenas um grupo agiria.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_02"
+          ],
+          "statement": "TEXTO A\nNem o supervisor nem os técnicos ignoraram o alerta. Nenhum dos sensores, nem as câmeras nem os radares, permaneceram desligados. Pois bem, a operação começou somente depois da verificação de todos os dispositivos.\n\nJulgue o item: No segundo período, a coordenação introduzida por “nem... nem...” justifica a concordância de “permaneceram” no plural.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O sujeito reúne sensores, câmeras e radares em coordenação inclusiva, por isso o verbo vai ao plural: permaneceram desligados. A presença de nenhum não apaga a pluralidade dos núcleos coordenados.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_03"
+          ],
+          "statement": "TEXTO A\nNem o supervisor nem os técnicos ignoraram o alerta. Nenhum dos sensores, nem as câmeras nem os radares, permaneceram desligados. Pois bem, a operação começou somente depois da verificação de todos os dispositivos.\n\nJulgue o item: “Pois bem” funciona como marcador de progressão discursiva que encaminha a conclusão narrativa da verificação.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A expressão não introduz concessão. Ela retoma o raciocínio, chama a atenção do leitor e conduz ao passo seguinte; nesse uso, pois integra um marcador discursivo com matiz explicativo ou conclusivo.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_03"
+          ],
+          "statement": "TEXTO A\nNem o supervisor nem os técnicos ignoraram o alerta. Nenhum dos sensores, nem as câmeras nem os radares, permaneceram desligados. Pois bem, a operação começou somente depois da verificação de todos os dispositivos.\n\nJulgue o item: Retirar “Pois bem” manteria a correção gramatical, mas reduziria a sinalização explícita da passagem da verificação para o início da operação.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O terceiro período continuaria completo sem o marcador. A mudança seria discursiva: desapareceria o recurso que organiza a progressão e apresenta o início da operação como desfecho do procedimento anterior.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_04"
+          ],
+          "statement": "TEXTO B\nA maré subiria logo e alcançaria a passagem inferior. Logo nos primeiros minutos, a equipe isolou o acesso para impedir a entrada de veículos. A providência foi antecipada, já que o nível da água aumentava rapidamente.\n\nJulgue o item: Em “A maré subiria logo”, “logo” equivale a “em breve” e tem valor temporal.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A palavra modifica o momento da subida da maré e não conecta duas proposições por inferência. Sua posição junto da locução verbal e a possibilidade de substituição por em breve confirmam o valor temporal.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_04"
+          ],
+          "statement": "TEXTO B\nA maré subiria logo e alcançaria a passagem inferior. Logo nos primeiros minutos, a equipe isolou o acesso para impedir a entrada de veículos. A providência foi antecipada, já que o nível da água aumentava rapidamente.\n\nJulgue o item: Em “Logo nos primeiros minutos”, a posição inicial transforma “Logo” em conjunção conclusiva.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O sintagma nos primeiros minutos completa a indicação de tempo: logo significa já ou imediatamente. A posição inicial, sozinha, não define a classe; no uso conclusivo, normalmente haveria pausa e uma premissa anterior.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_05"
+          ],
+          "statement": "TEXTO B\nA maré subiria logo e alcançaria a passagem inferior. Logo nos primeiros minutos, a equipe isolou o acesso para impedir a entrada de veículos. A providência foi antecipada, já que o nível da água aumentava rapidamente.\n\nJulgue o item: A oração “para impedir a entrada de veículos” exprime a finalidade do isolamento do acesso.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O bloqueio foi realizado com o propósito de evitar a entrada. Para seguido de infinitivo introduz oração reduzida final; não apresenta um efeito já ocorrido, mas o resultado pretendido pela equipe.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_05"
+          ],
+          "statement": "TEXTO B\nA maré subiria logo e alcançaria a passagem inferior. Logo nos primeiros minutos, a equipe isolou o acesso para impedir a entrada de veículos. A providência foi antecipada, já que o nível da água aumentava rapidamente.\n\nJulgue o item: “Já que” introduz o aumento do nível da água como causa da antecipação e pode ser substituído por “uma vez que”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O crescimento rápido da água justifica a providência antecipada. Já que e uma vez que equivalem a porque nesse contexto, preservando a relação causal ou explicativa.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_06"
+          ],
+          "statement": "TEXTO C\nO sistema reduziu alarmes falsos. Contudo, ainda precisa de supervisão humana, porquanto situações atípicas escapam aos padrões. Porém, a revisão manual tornou-se mais rápida; os casos duvidosos, porém, continuam recebendo análise individual.\n\nJulgue o item: Substituir “Contudo” por “Porquanto” preservaria a ressalva relativa à necessidade de supervisão.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Contudo contrapõe a redução dos alarmes à permanência da supervisão. Porquanto introduziria causa ou explicação, eliminando a quebra de expectativa e alterando a direção argumentativa.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_06"
+          ],
+          "statement": "TEXTO C\nO sistema reduziu alarmes falsos. Contudo, ainda precisa de supervisão humana, porquanto situações atípicas escapam aos padrões. Porém, a revisão manual tornou-se mais rápida; os casos duvidosos, porém, continuam recebendo análise individual.\n\nJulgue o item: “Porquanto” explica por que a supervisão ainda é necessária, sem introduzir oposição.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As situações atípicas que escapam aos padrões constituem a razão da supervisão humana. Porquanto equivale a porque e se distingue de contudo, que organiza a ressalva anterior.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_07"
+          ],
+          "statement": "TEXTO C\nO sistema reduziu alarmes falsos. Contudo, ainda precisa de supervisão humana, porquanto situações atípicas escapam aos padrões. Porém, a revisão manual tornou-se mais rápida; os casos duvidosos, porém, continuam recebendo análise individual.\n\nJulgue o item: No terceiro período, “Porém” poderia ser substituído por “Entretanto” sem mudança da relação adversativa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Ambos introduzem a revisão mais rápida como contraponto à necessidade de supervisão. Na mesma posição inicial, a substituição preserva sentido, correção e pontuação.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_08"
+          ],
+          "statement": "TEXTO C\nO sistema reduziu alarmes falsos. Contudo, ainda precisa de supervisão humana, porquanto situações atípicas escapam aos padrões. Porém, a revisão manual tornou-se mais rápida; os casos duvidosos, porém, continuam recebendo análise individual.\n\nJulgue o item: No último período, o “porém” intercalado mostra que essa conjunção pode deslocar-se dentro da oração.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Diferentemente de mas, porém admite posição pós-sujeito e fica isolado por vírgulas. O valor continua adversativo: a análise individual permanece apesar do ganho geral de rapidez.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_09"
+          ],
+          "statement": "TEXTO D\nA investigação avançou; portanto, novas diligências foram autorizadas. Mas os resultados preliminares não encerraram o caso. Porém, a hipótese principal foi revista. A equipe manteve a cautela, mas, diante da nova evidência, alterou a sequência dos exames.\n\nJulgue o item: “Portanto” apresenta a autorização de novas diligências como conclusão do avanço investigativo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O segundo fato é inferido do primeiro: como a investigação avançou, tornou-se possível autorizar novas medidas. Portanto explicita a relação conclusiva entre orações coordenadas.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_08"
+          ],
+          "statement": "TEXTO D\nA investigação avançou; portanto, novas diligências foram autorizadas. Mas os resultados preliminares não encerraram o caso. Porém, a hipótese principal foi revista. A equipe manteve a cautela, mas, diante da nova evidência, alterou a sequência dos exames.\n\nJulgue o item: Deslocar “Mas” para depois de “os resultados preliminares”, isolando-o por vírgulas, preservaria a correção.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Mas deve ocupar o início da oração coordenada adversativa e não admite o deslocamento típico de porém. A forma os resultados preliminares, mas, não encerraram quebraria a estrutura e a pontuação.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_08"
+          ],
+          "statement": "TEXTO D\nA investigação avançou; portanto, novas diligências foram autorizadas. Mas os resultados preliminares não encerraram o caso. Porém, a hipótese principal foi revista. A equipe manteve a cautela, mas, diante da nova evidência, alterou a sequência dos exames.\n\nJulgue o item: Trocar “Porém,” por “Mas,” no terceiro período preservaria integralmente a pontuação.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na posição inicial, mas não recebe vírgula logo depois: a redação adequada seria Mas a hipótese principal foi revista. Porém pode aparecer seguido de vírgula nessa organização; a troca exige ajuste.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_08"
+          ],
+          "statement": "TEXTO D\nA investigação avançou; portanto, novas diligências foram autorizadas. Mas os resultados preliminares não encerraram o caso. Porém, a hipótese principal foi revista. A equipe manteve a cautela, mas, diante da nova evidência, alterou a sequência dos exames.\n\nJulgue o item: A vírgula após “mas” no último período é permitida porque inicia o isolamento de “diante da nova evidência”.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A vírgula não separa mas da oração que ele introduz por causa do conector. Ela abre um adjunto adverbial intercalado, fechado pela vírgula seguinte; sem o termo intercalado, seria mas alterou.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_10"
+          ],
+          "statement": "TEXTO E\nEmbora os dados sejam promissores, não se pode dispensar a validação. Ainda que surjam resultados favoráveis, a amostra deverá ser ampliada. O método foi revisto e, por isso, passou a detectar falhas menores. Não obstante apresente maior precisão, o sistema exige calibração; o modelo anterior era estável; não obstante, produzia mais omissões.\n\nJulgue o item: “Embora” introduz a qualidade promissora dos dados como obstáculo insuficiente para autorizar a dispensa da validação.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O dado favorável poderia sugerir menor controle, mas essa consequência não se realiza. Embora cria uma oração concessiva e o subjuntivo sejam é adequado à subordinação.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_10"
+          ],
+          "statement": "TEXTO E\nEmbora os dados sejam promissores, não se pode dispensar a validação. Ainda que surjam resultados favoráveis, a amostra deverá ser ampliada. O método foi revisto e, por isso, passou a detectar falhas menores. Não obstante apresente maior precisão, o sistema exige calibração; o modelo anterior era estável; não obstante, produzia mais omissões.\n\nJulgue o item: Substituir “Ainda que surjam” por “Embora surge” preservaria concessão, concordância e modo verbal.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Ainda que e embora são concessivas, mas a substituição precisa manter o subjuntivo e a concordância: embora surjam. A forma surge está no indicativo singular e não concorda com resultados.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_09"
+          ],
+          "statement": "TEXTO E\nEmbora os dados sejam promissores, não se pode dispensar a validação. Ainda que surjam resultados favoráveis, a amostra deverá ser ampliada. O método foi revisto e, por isso, passou a detectar falhas menores. Não obstante apresente maior precisão, o sistema exige calibração; o modelo anterior era estável; não obstante, produzia mais omissões.\n\nJulgue o item: “Por isso” poderia ser substituído por “Por esse motivo”, pois retoma a revisão como fundamento da melhora na detecção.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O demonstrativo esse recupera a revisão mencionada e a apresenta como motivo do resultado posterior. As duas expressões preservam o vínculo conclusivo ou causal-consecutivo e a coerência.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b22_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+          "microknowledge_ids": [
+            "prf_d01_b22_mk_10"
+          ],
+          "statement": "TEXTO E\nEmbora os dados sejam promissores, não se pode dispensar a validação. Ainda que surjam resultados favoráveis, a amostra deverá ser ampliada. O método foi revisto e, por isso, passou a detectar falhas menores. Não obstante apresente maior precisão, o sistema exige calibração; o modelo anterior era estável; não obstante, produzia mais omissões.\n\nJulgue o item: As duas ocorrências de “não obstante” têm a mesma estrutura sintática e poderiam ser trocadas por “contudo” sem ajustes.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Na primeira, não obstante introduz oração concessiva com subjuntivo: embora apresente. Na segunda, aparece isolado e coordena oração no indicativo, equivalendo a contudo. Só o segundo uso admite troca direta.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 22",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_2e7edd5477b7",
+              "trace_status": "available",
+              "page_number": 95,
+              "excerpt": "Matriz agregada das questões 81-95, páginas 95-101: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T03:21:22.091Z",
+    "editorial_status": "batch_22_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula02-editorial-matrix-batch-22.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b18_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_01"
+      ],
+      "statement": "TEXTO A\nAs práticas mudaram porque novas pesquisas revelaram riscos; portanto, a mudança não foi a causa das pesquisas. O programa oferece equipamentos, bem como formação técnica. Também busca tanto velocidade como segurança. O sistema é promissor, porém ainda apresenta falhas.\n\nJulgue o item: Substituir “porque” por “portanto” no primeiro período preservaria a direção lógica entre pesquisas e mudança.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Porque apresenta as pesquisas como causa da mudança das práticas. Portanto introduziria uma conclusão decorrente do trecho anterior e inverteria o encadeamento: a mudança passaria a ser inferida, não explicada por sua causa.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_02"
+      ],
+      "statement": "TEXTO A\nAs práticas mudaram porque novas pesquisas revelaram riscos; portanto, a mudança não foi a causa das pesquisas. O programa oferece equipamentos, bem como formação técnica. Também busca tanto velocidade como segurança. O sistema é promissor, porém ainda apresenta falhas.\n\nJulgue o item: “Bem como” adiciona formação técnica a equipamentos e pode equivaler a “e”, com eventual ajuste de pontuação.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A locução liga dois objetos oferecidos pelo programa e possui valor aditivo. A substituição por e preserva a soma, mas a vírgula usada antes de bem como pode deixar de ser adequada na coordenação simples.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_02"
+      ],
+      "statement": "TEXTO A\nAs práticas mudaram porque novas pesquisas revelaram riscos; portanto, a mudança não foi a causa das pesquisas. O programa oferece equipamentos, bem como formação técnica. Também busca tanto velocidade como segurança. O sistema é promissor, porém ainda apresenta falhas.\n\nJulgue o item: A correlação “tanto velocidade como segurança” apresenta dois objetivos cumulativos, não alternativas excludentes.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Tanto... como forma correlação aditiva enfática: o programa busca velocidade e segurança. Uma relação alternativa exigiria construção como ou... ou; nenhum dos polos exclui o outro no texto.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_03"
+      ],
+      "statement": "TEXTO A\nAs práticas mudaram porque novas pesquisas revelaram riscos; portanto, a mudança não foi a causa das pesquisas. O programa oferece equipamentos, bem como formação técnica. Também busca tanto velocidade como segurança. O sistema é promissor, porém ainda apresenta falhas.\n\nJulgue o item: No último período, “porém” poderia ser substituído por “portanto” sem alterar a relação entre promessa e falhas.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Porém contrapõe o potencial do sistema à persistência de falhas. Portanto apresentaria as falhas como conclusão do fato de o sistema ser promissor, relação ilógica e diferente da oposição original.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_04"
+      ],
+      "statement": "TEXTO B\nApós a atualização, era como se a equipe respirasse outro ar. Como um navegador que consulta a bússola, os analistas verificaram os indicadores. Se o método fosse tão preciso como o anterior, seria adotado. A revisão tornou-se necessária, uma vez que surgiram inconsistências.\n\nJulgue o item: A locução “como se” constrói uma comparação hipotética, coerente com a forma verbal “respirasse” no subjuntivo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A equipe não respira literalmente outro ar; a construção compara a sensação posterior à atualização com uma situação imaginada. O subjuntivo reforça o caráter não factual da hipótese introduzida por como se.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_04"
+      ],
+      "statement": "TEXTO B\nApós a atualização, era como se a equipe respirasse outro ar. Como um navegador que consulta a bússola, os analistas verificaram os indicadores. Se o método fosse tão preciso como o anterior, seria adotado. A revisão tornou-se necessária, uma vez que surgiram inconsistências.\n\nJulgue o item: Em “Como um navegador que consulta a bússola”, “como” introduz uma comparação entre modos de agir.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O trabalho dos analistas é aproximado do comportamento de um navegador que busca orientação. A locução inicial pode ser expandida por assim como, confirmando a relação comparativa, não causal.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_05"
+      ],
+      "statement": "TEXTO B\nApós a atualização, era como se a equipe respirasse outro ar. Como um navegador que consulta a bússola, os analistas verificaram os indicadores. Se o método fosse tão preciso como o anterior, seria adotado. A revisão tornou-se necessária, uma vez que surgiram inconsistências.\n\nJulgue o item: No terceiro período, “se” marca condição, ao passo que “como” introduz o parâmetro de comparação.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A adoção depende da hipótese de o método ser preciso, introduzida por se. Já como compara o grau de precisão ao do método anterior. Os conectores convivem no período, mas exercem funções diferentes.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_06"
+      ],
+      "statement": "TEXTO B\nApós a atualização, era como se a equipe respirasse outro ar. Como um navegador que consulta a bússola, os analistas verificaram os indicadores. Se o método fosse tão preciso como o anterior, seria adotado. A revisão tornou-se necessária, uma vez que surgiram inconsistências.\n\nJulgue o item: “Uma vez que” apresenta as inconsistências como causa da necessidade de revisão e pode ser substituída por “porquanto”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "No contexto, uma vez que equivale a porque ou já que. Porquanto também introduz causa ou explicação, mantendo a relação: a revisão foi necessária em razão das inconsistências surgidas.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_06"
+      ],
+      "statement": "TEXTO C\nO protocolo é valioso porque reduz erros. Mesmo em níveis baixos, a exposição ao agente pode causar danos. Embora os testes sejam úteis, não eliminam todo risco. O sistema é rápido, mas exige supervisão humana.\n\nJulgue o item: O “porque” de “valioso porque reduz erros” possui valor conclusivo, equivalente a “logo”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Reduzir erros é a razão pela qual o protocolo é considerado valioso. Porque introduz causa ou explicação; logo inverteria a arquitetura, apresentando a avaliação como consequência de uma oração anterior.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_07"
+      ],
+      "statement": "TEXTO C\nO protocolo é valioso porque reduz erros. Mesmo em níveis baixos, a exposição ao agente pode causar danos. Embora os testes sejam úteis, não eliminam todo risco. O sistema é rápido, mas exige supervisão humana.\n\nJulgue o item: Em “Mesmo em níveis baixos”, “mesmo” introduz uma ressalva concessiva que pode ser explicitada por “ainda que em níveis baixos”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O nível baixo poderia impedir o dano, mas esse obstáculo não produz o resultado esperado. A construção elíptica mantém a concessão: ainda que a exposição ocorra em níveis baixos, pode causar danos.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_07"
+      ],
+      "statement": "TEXTO C\nO protocolo é valioso porque reduz erros. Mesmo em níveis baixos, a exposição ao agente pode causar danos. Embora os testes sejam úteis, não eliminam todo risco. O sistema é rápido, mas exige supervisão humana.\n\nJulgue o item: “Embora” poderia ser substituído por “conquanto” sem mudar a concessão nem a exigência do subjuntivo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Embora e conquanto são conjunções subordinativas concessivas. Ambas apresentam a utilidade dos testes como obstáculo insuficiente para invalidar a oração principal, e ambas licenciam sejam.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_08"
+      ],
+      "statement": "TEXTO C\nO protocolo é valioso porque reduz erros. Mesmo em níveis baixos, a exposição ao agente pode causar danos. Embora os testes sejam úteis, não eliminam todo risco. O sistema é rápido, mas exige supervisão humana.\n\nJulgue o item: Trocar diretamente “mas exige supervisão” por “embora exige supervisão” preservaria correção e hierarquia informacional.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Mas coordena uma informação adversativa e admite exige no indicativo. Embora introduz oração subordinada concessiva, pede normalmente o subjuntivo e reorganiza a hierarquia; seria necessário reescrever a estrutura.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_08"
+      ],
+      "statement": "TEXTO D\nOs dados eram limitados; entretanto, permitiram uma decisão provisória. A falha incomodou tanto a equipe que o procedimento foi interrompido. A política não exige formação específica e admite, pois, candidatos de diferentes áreas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão.\n\nJulgue o item: Substituir diretamente “entretanto” por “conquanto” preservaria a sintaxe, pois ambos expressam oposição geral.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Entretanto coordena orações adversativas; conquanto subordina oração concessiva e normalmente seleciona subjuntivo. A noção ampla de oposição é comum, mas classe, hierarquia e forma verbal impedem troca direta.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_09"
+      ],
+      "statement": "TEXTO D\nOs dados eram limitados; entretanto, permitiram uma decisão provisória. A falha incomodou tanto a equipe que o procedimento foi interrompido. A política não exige formação específica e admite, pois, candidatos de diferentes áreas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão.\n\nJulgue o item: Em “incomodou tanto a equipe que o procedimento foi interrompido”, a segunda oração expressa consequência da intensidade anterior.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A correlação tanto... que organiza causa intensificada e resultado: o incômodo atingiu grau que levou à interrupção. A oração iniciada por que é subordinada consecutiva, não uma justificativa.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_01"
+      ],
+      "statement": "TEXTO D\nOs dados eram limitados; entretanto, permitiram uma decisão provisória. A falha incomodou tanto a equipe que o procedimento foi interrompido. A política não exige formação específica e admite, pois, candidatos de diferentes áreas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão.\n\nJulgue o item: O “pois” entre vírgulas, depois de “admite”, tem valor conclusivo e equivale a “portanto”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Quando pois aparece deslocado após o verbo e isolado por vírgulas, costuma assumir valor conclusivo. A admissão de diferentes candidatos decorre da ausência de exigência de formação específica.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_10"
+      ],
+      "statement": "TEXTO D\nOs dados eram limitados; entretanto, permitiram uma decisão provisória. A falha incomodou tanto a equipe que o procedimento foi interrompido. A política não exige formação específica e admite, pois, candidatos de diferentes áreas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão.\n\nJulgue o item: “Ao passo que” contrapõe a prioridade de rapidez à de precisão.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A locução coloca duas orientações em paralelo e destaca o contraste entre elas. Embora possa carregar simultaneidade em outros contextos, aqui sua função discursiva central é opor prioridades.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_02"
+      ],
+      "statement": "TEXTO E\nO conceito depende não apenas de recursos materiais, mas também de treinamento, e ambos já são reconhecidos como necessários. Porém, a implementação ainda é desigual. Se faltasse controle, então seria imprudente ampliar o sistema. Enquanto duas cidades testavam modelos digitais, outras regiões ainda buscavam infraestrutura básica.\n\nJulgue o item: Em “não apenas... mas também”, o vocábulo “mas” integra uma correlação aditiva e não introduz adversidade.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O par soma dois requisitos com ênfase: recursos materiais e treinamento. Analisar mas isoladamente levaria a erro; o valor nasce da construção correlativa completa não apenas X, mas também Y.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_03"
+      ],
+      "statement": "TEXTO E\nO conceito depende não apenas de recursos materiais, mas também de treinamento, e ambos já são reconhecidos como necessários. Porém, a implementação ainda é desigual. Se faltasse controle, então seria imprudente ampliar o sistema. Enquanto duas cidades testavam modelos digitais, outras regiões ainda buscavam infraestrutura básica.\n\nJulgue o item: “Porém” pode ser substituído por “todavia” porque ambos introduzem oposição à expectativa criada antes.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Os dois conectores são coordenativos adversativos. Após afirmar a dependência de dois fatores, o texto ressalva que a implementação permanece desigual; todavia conserva essa relação e a estrutura.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_05"
+      ],
+      "statement": "TEXTO E\nO conceito depende não apenas de recursos materiais, mas também de treinamento, e ambos já são reconhecidos como necessários. Porém, a implementação ainda é desigual. Se faltasse controle, então seria imprudente ampliar o sistema. Enquanto duas cidades testavam modelos digitais, outras regiões ainda buscavam infraestrutura básica.\n\nJulgue o item: No período “Se faltasse controle, então seria imprudente...”, “então” apresenta a consequência lógica da condição introduzida por “se”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Se abre a hipótese de ausência de controle; então aponta para o resultado que decorreria dela. O conector não explica uma afirmação anterior: organiza o segundo membro do par condição-consequência.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b18_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t04_s02_conectores_",
+      "microknowledge_ids": [
+        "prf_d01_b18_mk_10"
+      ],
+      "statement": "TEXTO E\nO conceito depende não apenas de recursos materiais, mas também de treinamento, e ambos já são reconhecidos como necessários. Porém, a implementação ainda é desigual. Se faltasse controle, então seria imprudente ampliar o sistema. Enquanto duas cidades testavam modelos digitais, outras regiões ainda buscavam infraestrutura básica.\n\nJulgue o item: “Enquanto” situa simultaneamente os testes de duas cidades e a busca de infraestrutura em outras regiões, além de favorecer o contraste.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As duas situações são apresentadas como paralelas no tempo: avanços digitais coexistem com carências básicas. Essa simultaneidade sustenta também um contraste, mas não pode ser apagada da leitura contextual.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 18",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz agregada das questões 1-20, páginas 49-59: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

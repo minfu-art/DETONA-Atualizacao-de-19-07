@@ -1,0 +1,349 @@
+{
+  "contest_id": "prf_2026",
+  "batch_size": 20,
+  "note": "Known staging states are from the 2026-10-13 verification; recheck before import or publication.",
+  "batches": [
+    {
+      "batch": 1,
+      "file": "001-portugues-editorial-batch-01.json",
+      "question_count": 20,
+      "microknowledge_count": 8,
+      "technical_issues": [],
+      "known_staging_state": "published",
+      "next_gate": "already_published"
+    },
+    {
+      "batch": 2,
+      "file": "002-portugues-editorial-batch-02.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 3,
+      "file": "003-portugues-editorial-batch-03.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 4,
+      "file": "004-portugues-editorial-batch-04.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 5,
+      "file": "005-portugues-editorial-batch-05.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 6,
+      "file": "006-portugues-editorial-batch-06.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 7,
+      "file": "007-portugues-editorial-batch-07.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 8,
+      "file": "008-portugues-editorial-batch-08.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 9,
+      "file": "009-portugues-editorial-batch-09.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 10,
+      "file": "010-portugues-editorial-batch-10.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 11,
+      "file": "011-portugues-editorial-batch-11.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 12,
+      "file": "012-portugues-editorial-batch-12.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 13,
+      "file": "013-portugues-editorial-batch-13.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 14,
+      "file": "014-portugues-editorial-batch-14.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 15,
+      "file": "015-portugues-editorial-batch-15.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 16,
+      "file": "016-portugues-editorial-batch-16.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 17,
+      "file": "017-portugues-editorial-batch-17.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 18,
+      "file": "018-portugues-editorial-batch-18.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 19,
+      "file": "019-portugues-editorial-batch-19.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 20,
+      "file": "020-portugues-editorial-batch-20.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 21,
+      "file": "021-portugues-editorial-batch-21.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 22,
+      "file": "022-portugues-editorial-batch-22.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 23,
+      "file": "023-portugues-editorial-batch-23.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 24,
+      "file": "024-portugues-editorial-batch-24.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 25,
+      "file": "025-portugues-editorial-batch-25.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 26,
+      "file": "026-portugues-editorial-batch-26.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 27,
+      "file": "027-portugues-editorial-batch-27.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 28,
+      "file": "028-portugues-editorial-batch-28.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 29,
+      "file": "029-portugues-editorial-batch-29.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 30,
+      "file": "030-portugues-editorial-batch-30.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 31,
+      "file": "031-portugues-editorial-batch-31.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 32,
+      "file": "032-portugues-editorial-batch-32.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 33,
+      "file": "033-portugues-editorial-batch-33.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 34,
+      "file": "034-portugues-editorial-batch-34.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 35,
+      "file": "035-portugues-editorial-batch-35.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 36,
+      "file": "036-portugues-editorial-batch-36.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 37,
+      "file": "037-portugues-editorial-batch-37.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "draft",
+      "next_gate": "human_editorial_review"
+    },
+    {
+      "batch": 38,
+      "file": "038-portugues-editorial-batch-38.json",
+      "question_count": 20,
+      "microknowledge_count": 10,
+      "technical_issues": [],
+      "known_staging_state": "local_only",
+      "next_gate": "human_editorial_review"
+    }
+  ]
+}

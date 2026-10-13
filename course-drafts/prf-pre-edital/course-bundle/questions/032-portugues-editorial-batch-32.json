@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b32_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_01"
+      ],
+      "statement": "TEXTO A\nÉ indispensável revisar os registros antes da reunião. A auditoria demonstrou que houve divergência entre as planilhas. O relatório menciona um protocolo que reduz falhas e que amplia a rastreabilidade. Os técnicos, que já conheciam o sistema, concluíram a conferência no mesmo dia.\n\nJulgue o item: Em “É indispensável revisar os registros”, a oração reduzida “revisar os registros” funciona como sujeito de “é indispensável”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O teste com isso confirma a função: revisar os registros é indispensável; isso é indispensável. A oração não completa um verbo transitivo, mas ocupa a posição de sujeito da avaliação.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_01"
+      ],
+      "statement": "TEXTO A\nÉ indispensável revisar os registros antes da reunião. A auditoria demonstrou que houve divergência entre as planilhas. O relatório menciona um protocolo que reduz falhas e que amplia a rastreabilidade. Os técnicos, que já conheciam o sistema, concluíram a conferência no mesmo dia.\n\nJulgue o item: Em “demonstrou que houve divergência”, a oração iniciada por “que” é sujeito do verbo “demonstrou”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A auditoria é o sujeito de demonstrou. A oração que houve divergência responde a demonstrou o quê?, funciona como objeto direto e pode ser substituída por isso: a auditoria demonstrou isso.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_03"
+      ],
+      "statement": "TEXTO A\nÉ indispensável revisar os registros antes da reunião. A auditoria demonstrou que houve divergência entre as planilhas. O relatório menciona um protocolo que reduz falhas e que amplia a rastreabilidade. Os técnicos, que já conheciam o sistema, concluíram a conferência no mesmo dia.\n\nJulgue o item: No segmento “que reduz falhas e que amplia a rastreabilidade”, duas orações adjetivas estão coordenadas e retomam “protocolo”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Cada relativo introduz uma propriedade do mesmo antecedente. As orações exercem função adjetiva equivalente e são ligadas por e; seria possível omitir o segundo que sem perder a retomada comum.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_04"
+      ],
+      "statement": "TEXTO A\nÉ indispensável revisar os registros antes da reunião. A auditoria demonstrou que houve divergência entre as planilhas. O relatório menciona um protocolo que reduz falhas e que amplia a rastreabilidade. Os técnicos, que já conheciam o sistema, concluíram a conferência no mesmo dia.\n\nJulgue o item: A oração “que já conheciam o sistema”, isolada por vírgulas, restringe os técnicos a apenas uma parte do grupo.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "As vírgulas apresentam a informação como explicação atribuída ao conjunto dos técnicos mencionado. Sem vírgulas, a leitura seria restritiva e selecionaria apenas aqueles que conheciam o sistema.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_04"
+      ],
+      "statement": "TEXTO B\nA base, que em janeiro continha mil registros, mais que dobrou: em julho, alcançou dois mil e cem. Há analistas que verificam os documentos e afirmam que precisam de mais tempo. Os processos que apresentam rasuras serão separados; os processos, que estão digitalizados, permanecerão acessíveis.\n\nJulgue o item: O primeiro período contém três orações, e “que em janeiro continha mil registros” é adjetiva explicativa.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As formas verbais continha, dobrou e alcançou organizam três orações. A oração com que retoma base e aparece entre vírgulas, acrescentando informação explicativa sobre o antecedente.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_02"
+      ],
+      "statement": "TEXTO B\nA base, que em janeiro continha mil registros, mais que dobrou: em julho, alcançou dois mil e cem. Há analistas que verificam os documentos e afirmam que precisam de mais tempo. Os processos que apresentam rasuras serão separados; os processos, que estão digitalizados, permanecerão acessíveis.\n\nJulgue o item: Nos dois empregos de “que” em “analistas que verificam... e afirmam que precisam...”, o vocábulo exerce função de sujeito.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O primeiro que é pronome relativo e funciona como sujeito de verificam, retomando analistas. O segundo é conjunção integrante: apenas introduz a oração objetiva direta e não exerce função sintática interna.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_04"
+      ],
+      "statement": "TEXTO B\nA base, que em janeiro continha mil registros, mais que dobrou: em julho, alcançou dois mil e cem. Há analistas que verificam os documentos e afirmam que precisam de mais tempo. Os processos que apresentam rasuras serão separados; os processos, que estão digitalizados, permanecerão acessíveis.\n\nJulgue o item: A oração “que apresentam rasuras” delimita quais processos serão separados e, por isso, é restritiva.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Sem vírgula, a adjetiva seleciona o subconjunto dos processos com rasuras. A separação não se aplica necessariamente a todos; a pontuação e o efeito de recorte sustentam a classificação restritiva.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_04"
+      ],
+      "statement": "TEXTO B\nA base, que em janeiro continha mil registros, mais que dobrou: em julho, alcançou dois mil e cem. Há analistas que verificam os documentos e afirmam que precisam de mais tempo. Os processos que apresentam rasuras serão separados; os processos, que estão digitalizados, permanecerão acessíveis.\n\nJulgue o item: Em “os processos, que estão digitalizados”, as vírgulas indicam que somente os digitalizados permanecerão acessíveis.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A oração entre vírgulas é explicativa e atribui a digitalização ao conjunto já definido de processos. A leitura de apenas alguns exigiria a forma restritiva sem vírgulas: os processos que estão digitalizados.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_04"
+      ],
+      "statement": "TEXTO C\nA empresa, cujos servidores ficam em outra cidade, ampliará a conexão segura. A direção solicitou uma política pautada em evidências. Como um perito que compara vestígios, o analista confrontou as versões. A falha tanto mais preocupava a equipe quanto menos informações o painel exibia.\n\nJulgue o item: “Cujos servidores ficam em outra cidade” é oração adjetiva explicativa, e “cujos” estabelece posse entre empresa e servidores.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O pronome relativo cujos concorda com servidores e liga o elemento possuído à empresa. Como a oração está isolada por vírgulas, acrescenta explicação, sem selecionar uma empresa entre várias.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_05"
+      ],
+      "statement": "TEXTO C\nA empresa, cujos servidores ficam em outra cidade, ampliará a conexão segura. A direção solicitou uma política pautada em evidências. Como um perito que compara vestígios, o analista confrontou as versões. A falha tanto mais preocupava a equipe quanto menos informações o painel exibia.\n\nJulgue o item: Em “uma política pautada em evidências”, inserir “que seja” antes de “pautada” transformaria o segmento em oração substantiva objetiva direta.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Pautada em evidências é construção reduzida de particípio que caracteriza política. A forma que seja pautada explicita o relativo e o verbo, mas continua adjetiva, pois mantém política como antecedente.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_06"
+      ],
+      "statement": "TEXTO C\nA empresa, cujos servidores ficam em outra cidade, ampliará a conexão segura. A direção solicitou uma política pautada em evidências. Como um perito que compara vestígios, o analista confrontou as versões. A falha tanto mais preocupava a equipe quanto menos informações o painel exibia.\n\nJulgue o item: “Como um perito que compara vestígios” introduz parâmetro de comparação para a atuação do analista.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O texto aproxima o modo de agir do analista ao de um perito. Como equivale a assim como ou da mesma forma que e introduz oração subordinada adverbial comparativa elíptica.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_06"
+      ],
+      "statement": "TEXTO C\nA empresa, cujos servidores ficam em outra cidade, ampliará a conexão segura. A direção solicitou uma política pautada em evidências. Como um perito que compara vestígios, o analista confrontou as versões. A falha tanto mais preocupava a equipe quanto menos informações o painel exibia.\n\nJulgue o item: Na correlação “tanto mais... quanto menos...”, a oração iniciada por “quanto” é a principal.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Quanto menos informações o painel exibia estabelece a variação proporcional da qual depende o aumento da preocupação. A principal é a falha tanto mais preocupava a equipe; ordem linear não define hierarquia.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_07"
+      ],
+      "statement": "TEXTO D\nO equipamento é moderno, mas exige supervisão constante. Embora reduza o tempo de resposta, não elimina a revisão humana. Por mais que o teste pareça simples, todas as etapas devem ser documentadas. Os agentes retornaram ao local para confirmar as medidas e para fotografar as placas.\n\nJulgue o item: “Mas exige supervisão” e “embora exija supervisão” seriam substituições diretas, sintática e semanticamente idênticas.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Mas introduz coordenada adversativa e destaca a exigência; embora cria subordinada concessiva, tende a rebaixar essa informação e exige reorganização da principal. O contraste amplo não torna as estruturas idênticas.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_07"
+      ],
+      "statement": "TEXTO D\nO equipamento é moderno, mas exige supervisão constante. Embora reduza o tempo de resposta, não elimina a revisão humana. Por mais que o teste pareça simples, todas as etapas devem ser documentadas. Os agentes retornaram ao local para confirmar as medidas e para fotografar as placas.\n\nJulgue o item: A oração “Embora reduza o tempo de resposta” é subordinada adverbial concessiva.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A redução do tempo poderia sugerir suficiência do equipamento, mas não impede a necessidade de revisão. Embora introduz esse obstáculo insuficiente e seleciona o subjuntivo reduza.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_07"
+      ],
+      "statement": "TEXTO D\nO equipamento é moderno, mas exige supervisão constante. Embora reduza o tempo de resposta, não elimina a revisão humana. Por mais que o teste pareça simples, todas as etapas devem ser documentadas. Os agentes retornaram ao local para confirmar as medidas e para fotografar as placas.\n\nJulgue o item: “Por mais que o teste pareça simples” exprime consequência do dever de documentar as etapas.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A aparente simplicidade funciona como argumento que poderia dispensar documentação, mas é anulada pela principal. Por mais que equivale a embora e introduz concessão, não consequência.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_08"
+      ],
+      "statement": "TEXTO D\nO equipamento é moderno, mas exige supervisão constante. Embora reduza o tempo de resposta, não elimina a revisão humana. Por mais que o teste pareça simples, todas as etapas devem ser documentadas. Os agentes retornaram ao local para confirmar as medidas e para fotografar as placas.\n\nJulgue o item: “Para confirmar as medidas” e “para fotografar as placas” são orações subordinadas adverbiais finais reduzidas de infinitivo.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Os dois segmentos apresentam os propósitos do retorno ao local. São reduzidos porque os verbos confirmar e fotografar estão no infinitivo e não há conjunção desenvolvida como para que.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_09"
+      ],
+      "statement": "TEXTO E\nAo coletar cada amostra, a perita registrou horário e temperatura. Se o recipiente estiver danificado, o material será descartado. O setor reorganizou a escala para que os resultados fossem entregues no prazo. A evidência era tão frágil que a comissão solicitou nova análise.\n\nJulgue o item: “Ao coletar cada amostra” pode ser desenvolvido como “Quando coletava cada amostra”, preservando valor temporal.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A construção ao mais infinitivo marca o momento em que a ação principal ocorre. Quando mais verbo finito explicita a oração temporal; no contexto iterativo, quando coletava mantém a relação.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_09"
+      ],
+      "statement": "TEXTO E\nAo coletar cada amostra, a perita registrou horário e temperatura. Se o recipiente estiver danificado, o material será descartado. O setor reorganizou a escala para que os resultados fossem entregues no prazo. A evidência era tão frágil que a comissão solicitou nova análise.\n\nJulgue o item: A oração “Se o recipiente estiver danificado” é substantiva objetiva direta porque pode ser substituída por “isso”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O segmento estabelece a condição para o descarte e funciona como adjunto adverbial da oração principal. A substituição isolada por isso não produz material será descartado isso nem revela objeto direto.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_08"
+      ],
+      "statement": "TEXTO E\nAo coletar cada amostra, a perita registrou horário e temperatura. Se o recipiente estiver danificado, o material será descartado. O setor reorganizou a escala para que os resultados fossem entregues no prazo. A evidência era tão frágil que a comissão solicitou nova análise.\n\nJulgue o item: “Para que os resultados fossem entregues no prazo” expressa a finalidade da reorganização da escala.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A oração informa o propósito buscado pelo setor e é desenvolvida, pois contém a locução fossem entregues e o conector para que. O subjuntivo é compatível com resultado pretendido.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b32_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s03_subordinaca",
+      "microknowledge_ids": [
+        "prf_d01_b32_mk_10"
+      ],
+      "statement": "TEXTO E\nAo coletar cada amostra, a perita registrou horário e temperatura. Se o recipiente estiver danificado, o material será descartado. O setor reorganizou a escala para que os resultados fossem entregues no prazo. A evidência era tão frágil que a comissão solicitou nova análise.\n\nJulgue o item: Em “tão frágil que a comissão solicitou nova análise”, a oração iniciada por “que” é substantiva completiva nominal.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A correlação tão... que combina intensidade e consequência. A solicitação de nova análise decorre do grau de fragilidade da evidência; portanto, a oração é subordinada adverbial consecutiva.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 32",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

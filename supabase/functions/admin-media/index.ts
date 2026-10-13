@@ -5,6 +5,7 @@ import { inspectImageBytes, validateMediaRequest } from './core.js';
 
 const BUCKET = 'admin-media';
 const origins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
+origins.add('https://app.detonaconcursos.com');
 const response = (status: number, body: unknown, origin = '') => (
   jsonResponse(status, body, origin, origins)
 );

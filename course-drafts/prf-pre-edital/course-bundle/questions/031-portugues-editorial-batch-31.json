@@ -1,0 +1,704 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b31_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_03"
+      ],
+      "statement": "TEXTO A\nA central não apenas recebeu os alertas, mas também acionou as equipes. Os agentes verificaram o painel, conferiram os cabos, reiniciaram o sistema. O alarme cessou, porém a causa permaneceu desconhecida. O supervisor registrou a ocorrência e encerrou o plantão.\n\nJulgue o item: Na construção “não apenas... mas também”, “mas” integra uma correlação aditiva, e as duas ações são cumulativas.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O par correlativo soma receber os alertas e acionar as equipes. Analisar mas isoladamente como adversativo apagaria a estrutura completa não apenas X, mas também Y, típica da coordenação aditiva enfática.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_02"
+      ],
+      "statement": "TEXTO A\nA central não apenas recebeu os alertas, mas também acionou as equipes. Os agentes verificaram o painel, conferiram os cabos, reiniciaram o sistema. O alarme cessou, porém a causa permaneceu desconhecida. O supervisor registrou a ocorrência e encerrou o plantão.\n\nJulgue o item: Em “verificaram o painel, conferiram os cabos, reiniciaram o sistema”, as três orações são coordenadas sindéticas porque as vírgulas funcionam como conjunções.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Cada forma verbal organiza uma oração autônoma e nenhuma conjunção aparece entre elas. As vírgulas realizam a justaposição, por isso a coordenação é assindética, isto é, sem síndeto.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_01"
+      ],
+      "statement": "TEXTO A\nA central não apenas recebeu os alertas, mas também acionou as equipes. Os agentes verificaram o painel, conferiram os cabos, reiniciaram o sistema. O alarme cessou, porém a causa permaneceu desconhecida. O supervisor registrou a ocorrência e encerrou o plantão.\n\nJulgue o item: As orações “O alarme cessou” e “a causa permaneceu desconhecida” são independentes e ligadas por coordenação sindética adversativa.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Cada oração pode funcionar como frase completa. Porém é conjunção coordenativa adversativa e introduz contraste com a expectativa de que o fim do alarme viesse acompanhado da descoberta da causa.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_05"
+      ],
+      "statement": "TEXTO A\nA central não apenas recebeu os alertas, mas também acionou as equipes. Os agentes verificaram o painel, conferiram os cabos, reiniciaram o sistema. O alarme cessou, porém a causa permaneceu desconhecida. O supervisor registrou a ocorrência e encerrou o plantão.\n\nJulgue o item: No último período, “registrou” e “encerrou” formam uma única locução verbal porque possuem o mesmo sujeito.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Registrou e encerrou são núcleos verbais distintos e não constituem locução: cada um carrega sentido lexical e complemento próprio. As duas orações compartilham sujeito e são coordenadas por e.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO B\nAs práticas mudaram porque novos testes revelaram falhas; portanto, a atualização foi necessária. O programa oferece treinamento, bem como suporte remoto. A equipe busca tanto rapidez como precisão. Era como se o equipamento respondesse ao operador.\n\nJulgue o item: A oração iniciada por “porque” é subordinada causal, enquanto a iniciada por “portanto” é coordenada conclusiva.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Porque introduz a causa que modifica o fato de as práticas mudarem, exercendo função adverbial. Portanto liga uma oração autônoma que apresenta conclusão; semântica relacionada não significa mesma estrutura.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_05"
+      ],
+      "statement": "TEXTO B\nAs práticas mudaram porque novos testes revelaram falhas; portanto, a atualização foi necessária. O programa oferece treinamento, bem como suporte remoto. A equipe busca tanto rapidez como precisão. Era como se o equipamento respondesse ao operador.\n\nJulgue o item: Em “treinamento, bem como suporte remoto”, “bem como” coordena duas orações completas.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Bem como une dois objetos do verbo oferece. Como só existe a forma verbal oferece, o trecho contém uma oração; coordenação também pode organizar termos menores que exercem a mesma função sintática.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_03"
+      ],
+      "statement": "TEXTO B\nAs práticas mudaram porque novos testes revelaram falhas; portanto, a atualização foi necessária. O programa oferece treinamento, bem como suporte remoto. A equipe busca tanto rapidez como precisão. Era como se o equipamento respondesse ao operador.\n\nJulgue o item: “Tanto rapidez como precisão” coordena dois objetos diretos em uma correlação aditiva.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Rapidez e precisão completam o verbo busca e exercem a mesma função. Tanto... como acrescenta os dois objetivos com ênfase; não há duas orações porque nenhum dos termos contém verbo.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO B\nAs práticas mudaram porque novos testes revelaram falhas; portanto, a atualização foi necessária. O programa oferece treinamento, bem como suporte remoto. A equipe busca tanto rapidez como precisão. Era como se o equipamento respondesse ao operador.\n\nJulgue o item: “Como se o equipamento respondesse ao operador” é oração coordenada porque possui verbo próprio.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Ter verbo permite reconhecer uma oração, mas não prova coordenação. O segmento depende da oração anterior e funciona como comparação hipotética; trata-se de subordinada adverbial comparativa.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_07"
+      ],
+      "statement": "TEXTO C\nO método atual funciona melhor do que o anterior. Se os sensores falharem, o processo será interrompido. A revisão tornou-se indispensável, uma vez que surgiram divergências. Revise os dados, porque uma decisão sem evidências é arriscada.\n\nJulgue o item: Em “melhor do que o anterior”, existe comparação com uma ação implícita: “do que o anterior funciona”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A oração comparativa pode omitir o verbo recuperável pelo contexto. Embora apenas funciona esteja expresso uma vez, a estrutura profunda compara como o método atual funciona com como o anterior funciona.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO C\nO método atual funciona melhor do que o anterior. Se os sensores falharem, o processo será interrompido. A revisão tornou-se indispensável, uma vez que surgiram divergências. Revise os dados, porque uma decisão sem evidências é arriscada.\n\nJulgue o item: A oração “Se os sensores falharem” é sintaticamente independente e, por isso, coordenada alternativa.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Isolado, o segmento deixa pendente a consequência da condição. Ele funciona como adjunto adverbial condicional de o processo será interrompido e é subordinado, não uma alternativa coordenada.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO C\nO método atual funciona melhor do que o anterior. Se os sensores falharem, o processo será interrompido. A revisão tornou-se indispensável, uma vez que surgiram divergências. Revise os dados, porque uma decisão sem evidências é arriscada.\n\nJulgue o item: “Uma vez que surgiram divergências” exerce função causal em relação à oração principal e é subordinada.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A oração informa por que a revisão se tornou indispensável. Ao modificar toda a principal com circunstância de causa, estabelece dependência sintática característica da subordinação adverbial.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_08"
+      ],
+      "statement": "TEXTO C\nO método atual funciona melhor do que o anterior. Se os sensores falharem, o processo será interrompido. A revisão tornou-se indispensável, uma vez que surgiram divergências. Revise os dados, porque uma decisão sem evidências é arriscada.\n\nJulgue o item: No último período, “porque uma decisão sem evidências é arriscada” justifica a ordem e pode ser classificada como coordenada explicativa.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A primeira oração está no imperativo, Revise. A oração com porque fornece a razão que sustenta a ordem, análise típica de coordenada sindética explicativa, e ambas admitem autonomia enunciativa.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO D\nMesmo em baixa intensidade, o ruído compromete a medição. Embora os filtros reduzam a interferência, não eliminam todo risco. O equipamento é moderno, mas exige supervisão. Os dados eram limitados; entretanto, sustentaram uma conclusão provisória.\n\nJulgue o item: “Mesmo em baixa intensidade” constitui oração coordenada concessiva, embora não apresente verbo.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Não existe a categoria coordenada concessiva. O segmento é expressão adverbial concessiva reduzida ou elíptica e depende da afirmação principal; a ausência de verbo expresso impede tratá-lo como oração autônoma completa.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO D\nMesmo em baixa intensidade, o ruído compromete a medição. Embora os filtros reduzam a interferência, não eliminam todo risco. O equipamento é moderno, mas exige supervisão. Os dados eram limitados; entretanto, sustentaram uma conclusão provisória.\n\nJulgue o item: A oração introduzida por “Embora” é subordinada concessiva, não coordenada adversativa.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Embora reduzam a interferência não funciona como frase completa no contexto e exerce valor adverbial de concessão sobre a principal. O subjuntivo e a dependência confirmam a subordinação.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO D\nMesmo em baixa intensidade, o ruído compromete a medição. Embora os filtros reduzam a interferência, não eliminam todo risco. O equipamento é moderno, mas exige supervisão. Os dados eram limitados; entretanto, sustentaram uma conclusão provisória.\n\nJulgue o item: Trocar diretamente “mas exige supervisão” por “embora exige supervisão” manteria coordenação e correção.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Mas introduz coordenada adversativa e aceita o indicativo exige. Embora criaria subordinada concessiva, normalmente com subjuntivo, e exigiria reorganização: embora exija supervisão, o equipamento é moderno.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_04"
+      ],
+      "statement": "TEXTO D\nMesmo em baixa intensidade, o ruído compromete a medição. Embora os filtros reduzam a interferência, não eliminam todo risco. O equipamento é moderno, mas exige supervisão. Os dados eram limitados; entretanto, sustentaram uma conclusão provisória.\n\nJulgue o item: “Entretanto” introduz coordenada sindética adversativa e pode ser substituído por “todavia”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As duas orações são autônomas, e entretanto marca oposição entre limitação dos dados e possibilidade de concluir. Todavia pertence à mesma classe coordenativa adversativa e preserva essa estrutura.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_06"
+      ],
+      "statement": "TEXTO E\nA falha incomodou tanto a equipe que o teste foi suspenso. O protocolo não exige formação específica e admite, pois, profissionais de áreas diversas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão. A solução depende não apenas de recursos, mas também de treinamento; todavia, sua aplicação ainda é desigual.\n\nJulgue o item: Em “incomodou tanto... que o teste foi suspenso”, a oração com “que” é coordenada conclusiva.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A correlação intensiva tanto... que cria oração subordinada adverbial consecutiva. A suspensão é consequência do grau de incômodo, mas consequência semântica não equivale automaticamente à coordenação conclusiva.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_09"
+      ],
+      "statement": "TEXTO E\nA falha incomodou tanto a equipe que o teste foi suspenso. O protocolo não exige formação específica e admite, pois, profissionais de áreas diversas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão. A solução depende não apenas de recursos, mas também de treinamento; todavia, sua aplicação ainda é desigual.\n\nJulgue o item: O “pois” colocado depois de “admite” e isolado por vírgulas introduz coordenada conclusiva.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Pois deslocado, após o verbo, assume valor conclusivo: a admissão de áreas diversas decorre da ausência de formação específica. Antes do verbo, pois tende a ser explicativo.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_10"
+      ],
+      "statement": "TEXTO E\nA falha incomodou tanto a equipe que o teste foi suspenso. O protocolo não exige formação específica e admite, pois, profissionais de áreas diversas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão. A solução depende não apenas de recursos, mas também de treinamento; todavia, sua aplicação ainda é desigual.\n\nJulgue o item: O paralelismo entre “prioriza rapidez” e “privilegia precisão” prova, por si só, que a oração introduzida por “ao passo que” é coordenada.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Paralelismo organiza estruturas equivalentes, mas não determina sozinho a hierarquia sintática. Ao passo que é tradicionalmente analisado como locução subordinativa proporcional ou contrastiva, conforme o contexto.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b31_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s02_coordenacao",
+      "microknowledge_ids": [
+        "prf_d01_b31_mk_04"
+      ],
+      "statement": "TEXTO E\nA falha incomodou tanto a equipe que o teste foi suspenso. O protocolo não exige formação específica e admite, pois, profissionais de áreas diversas. Um grupo prioriza rapidez, ao passo que outro privilegia precisão. A solução depende não apenas de recursos, mas também de treinamento; todavia, sua aplicação ainda é desigual.\n\nJulgue o item: Substituir “todavia” por “conquanto” preservaria a coordenação adversativa sem exigir outras mudanças.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Todavia é coordenativa adversativa e liga afirmações autônomas. Conquanto é subordinativa concessiva, normalmente exige subjuntivo e altera a hierarquia; seria preciso reescrever o período.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 31",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_dd8c41255dc9",
+          "trace_status": "available",
+          "page_number": 48,
+          "excerpt": "Matriz editorial 1/2: padrões cognitivos sem cópia textual"
+        },
+        {
+          "source_id": "prf_pdf_2e7edd5477b7",
+          "trace_status": "available",
+          "page_number": 49,
+          "excerpt": "Matriz editorial 2/2: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

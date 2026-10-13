@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b05_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_01"
+      ],
+      "statement": "TEXTO A\nTal como o treinamento técnico reduz falhas operacionais, a revisão coletiva também melhora a qualidade dos relatórios. Embora alguns servidores experientes dispensem roteiros, todos estão sujeitos aos mesmos protocolos de segurança. Quando o manual afirma que uma decisão “acendeu uma luz no fim do corredor”, descreve o surgimento de uma perspectiva de solução, não uma mudança na iluminação do prédio.\n\nJulgue o item: A correlação “tal como... também” autoriza concluir que somente a revisão coletiva, e não o treinamento técnico, melhora o trabalho.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A construção põe os dois fatores em paralelo: treinamento reduz falhas e revisão melhora relatórios. O advérbio “também” acrescenta o segundo efeito; não exclui o primeiro nem cria uma relação de exclusividade.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_01"
+      ],
+      "statement": "TEXTO A\nTal como o treinamento técnico reduz falhas operacionais, a revisão coletiva também melhora a qualidade dos relatórios. Embora alguns servidores experientes dispensem roteiros, todos estão sujeitos aos mesmos protocolos de segurança. Quando o manual afirma que uma decisão “acendeu uma luz no fim do corredor”, descreve o surgimento de uma perspectiva de solução, não uma mudança na iluminação do prédio.\n\nJulgue o item: A ressalva sobre servidores experientes não invalida a regra geral de submissão aos protocolos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A oração concessiva admite um comportamento particular — alguns dispensam roteiros —, mas o período seguinte inclui todos nos protocolos de segurança. Concessão cria contraste sem necessariamente derrubar a afirmação principal.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_04"
+      ],
+      "statement": "TEXTO A\nTal como o treinamento técnico reduz falhas operacionais, a revisão coletiva também melhora a qualidade dos relatórios. Embora alguns servidores experientes dispensem roteiros, todos estão sujeitos aos mesmos protocolos de segurança. Quando o manual afirma que uma decisão “acendeu uma luz no fim do corredor”, descreve o surgimento de uma perspectiva de solução, não uma mudança na iluminação do prédio.\n\nJulgue o item: A expressão “acendeu uma luz no fim do corredor” indica, no contexto, que surgiu uma possibilidade de resolver o problema.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O próprio texto explica a imagem como perspectiva de solução. Ler “luz” apenas como fenômeno físico ignoraria a pista metalinguística e produziria interpretação incompatível com o contexto decisório.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_04"
+      ],
+      "statement": "TEXTO A\nTal como o treinamento técnico reduz falhas operacionais, a revisão coletiva também melhora a qualidade dos relatórios. Embora alguns servidores experientes dispensem roteiros, todos estão sujeitos aos mesmos protocolos de segurança. Quando o manual afirma que uma decisão “acendeu uma luz no fim do corredor”, descreve o surgimento de uma perspectiva de solução, não uma mudança na iluminação do prédio.\n\nJulgue o item: Ao empregar a imagem da luz, o manual informa que houve falha elétrica no edifício.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Nenhum dado sustenta problema elétrico. A metáfora associa luz a esperança ou saída possível, e a frase final rejeita expressamente a leitura literal. O item troca o sentido figurado pelo concreto.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_02"
+      ],
+      "statement": "TEXTO B\nA digitalização acelerada alterou simultaneamente rotinas, competências e formas de supervisão. Essa mudança ampla desorientou parte das equipes; a desorientação gerou insegurança e, em alguns setores, a insegurança levou ao abandono do planejamento. Sem projeto próprio, esses setores passaram a aceitar prioridades definidas por fornecedores, nem sempre compatíveis com o interesse público. As transições, contudo, ocorreram em ritmos diferentes ao longo de duas décadas.\n\nJulgue o item: Segundo o texto, o abandono do planejamento foi uma das causas da digitalização acelerada.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A digitalização inicia a cadeia: mudança ampla, desorientação, insegurança e, em certos setores, abandono do planejamento. O item desloca o último efeito para o início e inverte toda a direção causal.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_02"
+      ],
+      "statement": "TEXTO B\nA digitalização acelerada alterou simultaneamente rotinas, competências e formas de supervisão. Essa mudança ampla desorientou parte das equipes; a desorientação gerou insegurança e, em alguns setores, a insegurança levou ao abandono do planejamento. Sem projeto próprio, esses setores passaram a aceitar prioridades definidas por fornecedores, nem sempre compatíveis com o interesse público. As transições, contudo, ocorreram em ritmos diferentes ao longo de duas décadas.\n\nJulgue o item: A aceitação de prioridades externas é apresentada como consequência mediata da desorientação das equipes.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A relação é mediata porque contém elos: desorientação produz insegurança, que leva alguns setores a abandonar o planejamento; sem projeto próprio, aceitam prioridades externas. A conclusão preserva essa cadeia.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_03"
+      ],
+      "statement": "TEXTO B\nA digitalização acelerada alterou simultaneamente rotinas, competências e formas de supervisão. Essa mudança ampla desorientou parte das equipes; a desorientação gerou insegurança e, em alguns setores, a insegurança levou ao abandono do planejamento. Sem projeto próprio, esses setores passaram a aceitar prioridades definidas por fornecedores, nem sempre compatíveis com o interesse público. As transições, contudo, ocorreram em ritmos diferentes ao longo de duas décadas.\n\nJulgue o item: As mudanças descritas ocorreram de maneira uniforme e simultânea em todos os setores durante uma única década.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O texto registra simultaneidade entre dimensões alteradas, não uniformidade entre setores, e afirma ritmos diferentes ao longo de duas décadas. O item amplia o alcance e ainda reduz indevidamente o período temporal.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_08"
+      ],
+      "statement": "TEXTO B\nA digitalização acelerada alterou simultaneamente rotinas, competências e formas de supervisão. Essa mudança ampla desorientou parte das equipes; a desorientação gerou insegurança e, em alguns setores, a insegurança levou ao abandono do planejamento. Sem projeto próprio, esses setores passaram a aceitar prioridades definidas por fornecedores, nem sempre compatíveis com o interesse público. As transições, contudo, ocorreram em ritmos diferentes ao longo de duas décadas.\n\nJulgue o item: Ao dizer que as prioridades dos fornecedores nem sempre coincidiam com o interesse público, o texto admite que em alguns casos poderia haver coincidência.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "“Nem sempre” nega a ocorrência constante, mas não nega toda ocorrência. Assim, fica pressuposta a possibilidade de coincidência em parte dos casos; trocar a expressão por “nunca” tornaria a afirmação mais forte.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_05"
+      ],
+      "statement": "TEXTO C\nÉ difícil afirmar que toda resistência a uma política resulte de desinformação: fatores econômicos, experiências anteriores e falhas de comunicação podem atuar em conjunto. Em certo programa, a demora no atendimento foi agravada, entre outros motivos, pela redução temporária da equipe. Concentrar a resposta apenas na compra de equipamentos pode aprofundar a crise real, que envolve também gestão, capacitação e acesso.\n\nJulgue o item: O autor sustenta com certeza que toda resistência a políticas públicas nasce da desinformação.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A abertura “É difícil afirmar” reduz o grau de certeza e introduz alternativas causais. Além disso, o quantificador “toda” aparece justamente na proposição relativizada, não como tese endossada pelo autor.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_03"
+      ],
+      "statement": "TEXTO C\nÉ difícil afirmar que toda resistência a uma política resulte de desinformação: fatores econômicos, experiências anteriores e falhas de comunicação podem atuar em conjunto. Em certo programa, a demora no atendimento foi agravada, entre outros motivos, pela redução temporária da equipe. Concentrar a resposta apenas na compra de equipamentos pode aprofundar a crise real, que envolve também gestão, capacitação e acesso.\n\nJulgue o item: O texto admite uma explicação multifatorial para a resistência a uma política.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "São enumerados fatores econômicos, experiências anteriores e falhas comunicacionais, que podem agir em conjunto. Essa formulação impede tanto a causa única quanto a conclusão de que todos os fatores sempre estejam presentes.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_06"
+      ],
+      "statement": "TEXTO C\nÉ difícil afirmar que toda resistência a uma política resulte de desinformação: fatores econômicos, experiências anteriores e falhas de comunicação podem atuar em conjunto. Em certo programa, a demora no atendimento foi agravada, entre outros motivos, pela redução temporária da equipe. Concentrar a resposta apenas na compra de equipamentos pode aprofundar a crise real, que envolve também gestão, capacitação e acesso.\n\nJulgue o item: A redução temporária da equipe é apontada como a única causa da demora no atendimento.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A expressão “entre outros motivos” classifica a redução como um dos fatores agravantes. O texto não exclui causas adicionais nem afirma que esse fator tenha originado sozinho a demora.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_06"
+      ],
+      "statement": "TEXTO C\nÉ difícil afirmar que toda resistência a uma política resulte de desinformação: fatores econômicos, experiências anteriores e falhas de comunicação podem atuar em conjunto. Em certo programa, a demora no atendimento foi agravada, entre outros motivos, pela redução temporária da equipe. Concentrar a resposta apenas na compra de equipamentos pode aprofundar a crise real, que envolve também gestão, capacitação e acesso.\n\nJulgue o item: Resolver apenas a falta de equipamentos é insuficiente, segundo o texto, porque a crise abrange outras dimensões.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A crise real inclui gestão, capacitação e acesso, além dos equipamentos. Logo, atacar apenas uma parcela não resolve o conjunto e pode até aprofundá-lo; a conclusão respeita a diferença entre parte e totalidade.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_07"
+      ],
+      "statement": "TEXTO D\nO modelo de gestão orientado exclusivamente por metas, aperfeiçoado por sistemas de monitoramento, transformou cada registro em indicador de produtividade. Os sistemas facilitaram a transformação, mas não foram apresentados como seu agente principal. A busca por reconhecimento profissional impulsionou reivindicações por critérios transparentes; estas, por sua vez, favoreceram regras comuns de avaliação. O conflito, quando institucionalizado, obrigou os grupos a reconhecer direitos recíprocos e preservou a cooperação.\n\nJulgue o item: Os sistemas de monitoramento são apresentados como o agente principal que transformou registros em indicadores.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O núcleo responsável é o modelo de gestão orientado por metas; os sistemas aparecem como meio de aperfeiçoamento e facilitação. Confundir instrumento auxiliar com agente principal altera a estrutura causal do período.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_02"
+      ],
+      "statement": "TEXTO D\nO modelo de gestão orientado exclusivamente por metas, aperfeiçoado por sistemas de monitoramento, transformou cada registro em indicador de produtividade. Os sistemas facilitaram a transformação, mas não foram apresentados como seu agente principal. A busca por reconhecimento profissional impulsionou reivindicações por critérios transparentes; estas, por sua vez, favoreceram regras comuns de avaliação. O conflito, quando institucionalizado, obrigou os grupos a reconhecer direitos recíprocos e preservou a cooperação.\n\nJulgue o item: As reivindicações por critérios transparentes decorreram da busca por reconhecimento profissional.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O verbo “impulsionou” estabelece a direção: a busca por reconhecimento funciona como origem, e as reivindicações são o resultado. A sequência posterior cria regras comuns, sem inverter esse primeiro nexo.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_02"
+      ],
+      "statement": "TEXTO D\nO modelo de gestão orientado exclusivamente por metas, aperfeiçoado por sistemas de monitoramento, transformou cada registro em indicador de produtividade. Os sistemas facilitaram a transformação, mas não foram apresentados como seu agente principal. A busca por reconhecimento profissional impulsionou reivindicações por critérios transparentes; estas, por sua vez, favoreceram regras comuns de avaliação. O conflito, quando institucionalizado, obrigou os grupos a reconhecer direitos recíprocos e preservou a cooperação.\n\nJulgue o item: A criação de regras comuns provocou inicialmente a busca por reconhecimento profissional.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O encadeamento textual segue a ordem oposta: reconhecimento, reivindicações e regras. O item transforma o último resultado em causa inicial, erro frequente quando os mesmos conceitos são mantidos, mas reordenados.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_10"
+      ],
+      "statement": "TEXTO D\nO modelo de gestão orientado exclusivamente por metas, aperfeiçoado por sistemas de monitoramento, transformou cada registro em indicador de produtividade. Os sistemas facilitaram a transformação, mas não foram apresentados como seu agente principal. A busca por reconhecimento profissional impulsionou reivindicações por critérios transparentes; estas, por sua vez, favoreceram regras comuns de avaliação. O conflito, quando institucionalizado, obrigou os grupos a reconhecer direitos recíprocos e preservou a cooperação.\n\nJulgue o item: No texto, o conflito institucionalizado pode contribuir para a continuidade da cooperação ao promover reconhecimento recíproco.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A passagem não celebra qualquer conflito: restringe o efeito ao conflito institucionalizado. Nessa condição, o reconhecimento de direitos mútuos preserva a cooperação, formando argumento causal delimitado.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_09"
+      ],
+      "statement": "TEXTO E\nDurante a mostra, dois projetos foram avaliados. Antes da apresentação, uma falha na programação trocou os nomes das equipes. O projeto da estreante, anunciado como obra do laboratório premiado, recebeu elogios; o do laboratório, atribuído à estreante, foi tratado com desconfiança. Hoje, a estreante é uma referência nacional, embora fosse desconhecida naquele evento. O episódio mostra que informações prévias interferem na recepção. Em sentido mais amplo, políticas de inovação não servem apenas para financiar pesquisas: também podem ampliar acesso, estimular setores estratégicos e produzir benefícios coletivos.\n\nJulgue o item: A reação aos projetos foi influenciada pelos nomes trocados, e não apenas pelas características percebidas nas apresentações.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O mesmo mecanismo de rotulagem favoreceu a estreante anunciada como premiada e prejudicou o laboratório anunciado como estreante. O contraste sustenta que a informação prévia orientou a recepção.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_03"
+      ],
+      "statement": "TEXTO E\nDurante a mostra, dois projetos foram avaliados. Antes da apresentação, uma falha na programação trocou os nomes das equipes. O projeto da estreante, anunciado como obra do laboratório premiado, recebeu elogios; o do laboratório, atribuído à estreante, foi tratado com desconfiança. Hoje, a estreante é uma referência nacional, embora fosse desconhecida naquele evento. O episódio mostra que informações prévias interferem na recepção. Em sentido mais amplo, políticas de inovação não servem apenas para financiar pesquisas: também podem ampliar acesso, estimular setores estratégicos e produzir benefícios coletivos.\n\nJulgue o item: O advérbio “Hoje” indica que a estreante já era uma referência nacional na época do evento.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "“Hoje” cria contraste entre o presente, em que ela é referência, e o passado do evento, quando era desconhecida. Transportar a condição atual para a época narrada elimina justamente a oposição temporal marcada.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_08"
+      ],
+      "statement": "TEXTO E\nDurante a mostra, dois projetos foram avaliados. Antes da apresentação, uma falha na programação trocou os nomes das equipes. O projeto da estreante, anunciado como obra do laboratório premiado, recebeu elogios; o do laboratório, atribuído à estreante, foi tratado com desconfiança. Hoje, a estreante é uma referência nacional, embora fosse desconhecida naquele evento. O episódio mostra que informações prévias interferem na recepção. Em sentido mais amplo, políticas de inovação não servem apenas para financiar pesquisas: também podem ampliar acesso, estimular setores estratégicos e produzir benefícios coletivos.\n\nJulgue o item: Do fato de a equipe estreante ser hoje uma referência não se pode concluir que ela já possuía esse prestígio quando ocorreu a mostra.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "O texto separa explicitamente os dois momentos por “embora”: referência no presente e desconhecimento no evento. A inferência respeita o limite temporal e evita projetar retrospectivamente uma condição adquirida depois.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b05_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "microknowledge_ids": [
+        "prf_d01_b05_mk_10"
+      ],
+      "statement": "TEXTO E\nDurante a mostra, dois projetos foram avaliados. Antes da apresentação, uma falha na programação trocou os nomes das equipes. O projeto da estreante, anunciado como obra do laboratório premiado, recebeu elogios; o do laboratório, atribuído à estreante, foi tratado com desconfiança. Hoje, a estreante é uma referência nacional, embora fosse desconhecida naquele evento. O episódio mostra que informações prévias interferem na recepção. Em sentido mais amplo, políticas de inovação não servem apenas para financiar pesquisas: também podem ampliar acesso, estimular setores estratégicos e produzir benefícios coletivos.\n\nJulgue o item: A tese final atribui às políticas de inovação funções financeiras, sociais e econômicas, sem reduzi-las ao financiamento de pesquisas.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A construção “não... apenas... também” organiza a síntese: financiar é uma função, mas ampliar acesso, estimular setores e gerar benefícios coletivos alargam o propósito. O item reúne a tese, em vez de isolar um exemplo.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 05",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 189,
+          "excerpt": "Matriz agregada das questões 81-100, páginas 189-201: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}

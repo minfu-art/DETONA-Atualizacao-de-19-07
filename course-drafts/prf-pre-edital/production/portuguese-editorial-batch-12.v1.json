@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-12-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_9da938cda32a",
+            "trace_status": "available",
+            "page_number": 76,
+            "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_9da938cda32a",
+            "trace_status": "available",
+            "page_number": 76,
+            "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t03_ortografia_oficia",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "3. Ortografia oficial",
+        "description": "",
+        "order": 2,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_9da938cda32a",
+            "trace_status": "available",
+            "page_number": 76,
+            "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t03_ortografia_oficia",
+        "type": "subtopic",
+        "title": "Ortografia oficial",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          },
+          {
+            "source_id": "prf_pdf_9da938cda32a",
+            "trace_status": "available",
+            "page_number": 76,
+            "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b12_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Acentuação de quê",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Acentuação com pronomes enclíticos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Acentuação dos hiatos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Paroxítonas terminadas em ditongo",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Monossílabos tônicos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Comparação de regras de acentuação",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Proparoxítonas eventuais",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Acentuação após o Acordo Ortográfico",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Acento grave e acento gráfico",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b12_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "title": "Regra residual das paroxítonas",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia__b12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+      "scope": "Acentuação aplicada: hiatos, monossílabos, enclíticos, crase e comparação entre regras",
+      "essential_concepts": [
+        "Acentuação de quê",
+        "Acentuação com pronomes enclíticos",
+        "Acentuação dos hiatos",
+        "Paroxítonas terminadas em ditongo",
+        "Monossílabos tônicos",
+        "Comparação de regras de acentuação",
+        "Proparoxítonas eventuais",
+        "Acentuação após o Acordo Ortográfico",
+        "Acento grave e acento gráfico",
+        "Regra residual das paroxítonas"
+      ],
+      "rules": [
+        "Classificar a tonicidade antes de comparar regras",
+        "Desconsiderar o pronome enclítico na análise do verbo",
+        "Separar acento gráfico, acento diferencial e crase",
+        "Reconhecer hiato e ditongo pelo funcionamento fonético"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b12_mk_01",
+        "prf_d01_b12_mk_02",
+        "prf_d01_b12_mk_03",
+        "prf_d01_b12_mk_04",
+        "prf_d01_b12_mk_05",
+        "prf_d01_b12_mk_06",
+        "prf_d01_b12_mk_07",
+        "prf_d01_b12_mk_08",
+        "prf_d01_b12_mk_09",
+        "prf_d01_b12_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_9da938cda32a",
+          "trace_status": "available",
+          "page_number": 76,
+          "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b12",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b12_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_01"
+          ],
+          "statement": "TEXTO A\nAo revisar uma resenha, a equipe manteve a frase “o projeto tem um quê de ousadia”. Em outro trecho, preferiu “obra literária” e “apreciá-la com atenção”. O revisor também comparou juízo, extraídos e período, evitando decidir a regra apenas pela aparência do acento.\n\nJulgue o item: Em “um quê de ousadia”, a retirada do circunflexo manteria a correção, pois o sentido substantivado já seria recuperado pelo contexto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O contexto ajuda a interpretar, mas não torna o acento dispensável. Nesse emprego, quê é substantivo e monossílabo tônico terminado em e; por isso, deve receber circunflexo. Sem o sinal, a grafia fica inadequada.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_02"
+          ],
+          "statement": "TEXTO A\nAo revisar uma resenha, a equipe manteve a frase “o projeto tem um quê de ousadia”. Em outro trecho, preferiu “obra literária” e “apreciá-la com atenção”. O revisor também comparou juízo, extraídos e período, evitando decidir a regra apenas pela aparência do acento.\n\nJulgue o item: “Literária” e “apreciá-la” recebem acento por regras distintas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Literária é paroxítona terminada em ditongo. Em apreciá-la, desconsidera-se o pronome átono la e analisa-se apreciá, forma oxítona terminada em a. A presença da ênclise não cria uma regra própria de acentuação.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_03"
+          ],
+          "statement": "TEXTO A\nAo revisar uma resenha, a equipe manteve a frase “o projeto tem um quê de ousadia”. Em outro trecho, preferiu “obra literária” e “apreciá-la com atenção”. O revisor também comparou juízo, extraídos e período, evitando decidir a regra apenas pela aparência do acento.\n\nJulgue o item: “Juízo” e “extraídos” seguem a regra do hiato, mas “período” é acentuada por ser proparoxítona.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Em juízo e extraídos, o i é tônico, forma hiato com a vogal anterior e aparece sozinho na sílaba ou seguido de s. Período se divide pe-rí-o-do e tem a antepenúltima sílaba tônica, razão pela qual é proparoxítona.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_03"
+          ],
+          "statement": "TEXTO A\nAo revisar uma resenha, a equipe manteve a frase “o projeto tem um quê de ousadia”. Em outro trecho, preferiu “obra literária” e “apreciá-la com atenção”. O revisor também comparou juízo, extraídos e período, evitando decidir a regra apenas pela aparência do acento.\n\nJulgue o item: A presença da sequência vocálica í-o em “período” basta para enquadrar a palavra na regra especial dos hiatos.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A regra especial não alcança qualquer encontro de vogais: exige i ou u tônico, sozinho ou seguido de s na sílaba, formando hiato com a vogal anterior. Em período, a justificativa segura é a tonicidade antepenúltima.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_04"
+          ],
+          "statement": "TEXTO B\nNo relatório, domínio foi empregado como substantivo; memória, como capacidade de recordar; perpétua, como adjetivo ligado a uma obrigação; e técnica, dentária e primária qualificaram procedimentos. A análise ortográfica deve respeitar a pronúncia e a função efetivamente assumida no contexto.\n\nJulgue o item: Na classificação usual das bancas, “domínio” é paroxítona terminada em ditongo oral.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A divisão do-mí-nio coloca a sílaba forte na penúltima posição, e o final io é tratado como ditongo oral. Assim, aplica-se a regra das paroxítonas terminadas em ditongo, sem exigir a análise eventual.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_07"
+          ],
+          "statement": "TEXTO B\nNo relatório, domínio foi empregado como substantivo; memória, como capacidade de recordar; perpétua, como adjetivo ligado a uma obrigação; e técnica, dentária e primária qualificaram procedimentos. A análise ortográfica deve respeitar a pronúncia e a função efetivamente assumida no contexto.\n\nJulgue o item: “Memória” admite, em análise consagrada, tanto a leitura de paroxítona terminada em ditongo quanto a de proparoxítona eventual.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Na divisão me-mó-ria, tem-se paroxítona terminada em ditongo crescente. Admitindo-se a separação me-mó-ri-a, surge a chamada proparoxítona eventual. A questão só aceita dupla justificativa quando essa alternativa teórica é expressamente considerada.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_04"
+          ],
+          "statement": "TEXTO B\nNo relatório, domínio foi empregado como substantivo; memória, como capacidade de recordar; perpétua, como adjetivo ligado a uma obrigação; e técnica, dentária e primária qualificaram procedimentos. A análise ortográfica deve respeitar a pronúncia e a função efetivamente assumida no contexto.\n\nJulgue o item: Em “obrigação perpétua”, suprimir o acento de “perpétua” preservaria o adjetivo e apenas modernizaria sua grafia.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "No contexto, perpétua é adjetivo paroxítono terminado em ditongo e precisa do acento. A forma perpetua existe como verbo, com tonicidade diferente, mas sua substituição mudaria a classe, a pronúncia e o sentido da frase.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_06"
+          ],
+          "statement": "TEXTO B\nNo relatório, domínio foi empregado como substantivo; memória, como capacidade de recordar; perpétua, como adjetivo ligado a uma obrigação; e técnica, dentária e primária qualificaram procedimentos. A análise ortográfica deve respeitar a pronúncia e a função efetivamente assumida no contexto.\n\nJulgue o item: “Dentária” e “primária” seguem a regra das paroxítonas terminadas em ditongo, enquanto “técnica” segue a regra geral das proparoxítonas.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Dentária e primária têm tonicidade penúltima e terminação em ditongo. Técnica apresenta sílaba forte na antepenúltima posição. Logo, a frase pode estar toda corretamente acentuada sem que uma única regra explique os três vocábulos.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_05"
+          ],
+          "statement": "TEXTO C\nConsidere os enunciados: “A demora dói”, “ele ficou só”, “nós prosseguimos”, “há três etapas”, “o prazo é curto” e “a equipe está pronta”. Embora todos contenham vocábulos acentuados, a condição de monossílabo ou de oxítona e o tipo de terminação podem conduzir a regras diferentes.\n\nJulgue o item: “Só” e “nós” são acentuados pela regra geral dos monossílabos tônicos terminados em o ou os.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Ambos têm apenas uma sílaba tônica: só termina em o, enquanto nós termina em os. Enquadram-se, portanto, na regra que acentua monossílabos tônicos terminados em a(s), e(s) e o(s), sem depender do timbre da vogal.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_05"
+          ],
+          "statement": "TEXTO C\nConsidere os enunciados: “A demora dói”, “ele ficou só”, “nós prosseguimos”, “há três etapas”, “o prazo é curto” e “a equipe está pronta”. Embora todos contenham vocábulos acentuados, a condição de monossílabo ou de oxítona e o tipo de terminação podem conduzir a regras diferentes.\n\nJulgue o item: O acento de “dói” decorre exatamente da mesma regra geral aplicada a “só” e “nós”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Dói é monossílabo tônico com ditongo aberto ói, alcançado pela regra específica dos ditongos abertos em monossílabos. Só e nós pertencem à regra geral das terminações o e os; a classificação monossilábica comum não elimina essa diferença.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_05"
+          ],
+          "statement": "TEXTO C\nConsidere os enunciados: “A demora dói”, “ele ficou só”, “nós prosseguimos”, “há três etapas”, “o prazo é curto” e “a equipe está pronta”. Embora todos contenham vocábulos acentuados, a condição de monossílabo ou de oxítona e o tipo de terminação podem conduzir a regras diferentes.\n\nJulgue o item: “Três” e “é” pertencem à mesma regra geral de acentuação dos monossílabos tônicos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Três termina em es, e é termina em e. As duas terminações estão no conjunto a(s), e(s), o(s) dos monossílabos tônicos. O timbre fechado ou aberto indicado pelo sinal não cria regras diferentes.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_06"
+          ],
+          "statement": "TEXTO C\nConsidere os enunciados: “A demora dói”, “ele ficou só”, “nós prosseguimos”, “há três etapas”, “o prazo é curto” e “a equipe está pronta”. Embora todos contenham vocábulos acentuados, a condição de monossílabo ou de oxítona e o tipo de terminação podem conduzir a regras diferentes.\n\nJulgue o item: “Está” e “três” recebem acento pela mesma regra porque, em ambos os casos, a terminação está entre as previstas pela ortografia.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Está possui duas sílabas e é oxítona terminada em a; três tem uma sílaba e é monossílabo tônico terminado em es. As listas de terminações se parecem, mas as classificações tônicas e, portanto, as regras são distintas.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_02"
+          ],
+          "statement": "TEXTO D\nUma servidora decidiu organizá-lo e fazê-la participar da revisão. Depois, encaminhou o documento à chefia e registrou que o texto é claro. Na versão final, preservou caráter, intransferível, órgãos e ideias. Sinais semelhantes na escrita podem desempenhar funções distintas.\n\nJulgue o item: Toda forma verbal seguida de pronome enclítico recebe acento gráfico, como demonstrariam “organizá-lo” e “fazê-la”.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O pronome enclítico deve ser separado da análise. Organizá e fazê recebem acento porque são formas oxítonas terminadas em a e e; construções como dizer-lhe mostram que a simples presença do pronome não obriga o uso de acento.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_09"
+          ],
+          "statement": "TEXTO D\nUma servidora decidiu organizá-lo e fazê-la participar da revisão. Depois, encaminhou o documento à chefia e registrou que o texto é claro. Na versão final, preservou caráter, intransferível, órgãos e ideias. Sinais semelhantes na escrita podem desempenhar funções distintas.\n\nJulgue o item: O sinal de “à” e o acento agudo de “é” têm a mesma justificativa: ambos marcam um monossílabo tônico terminado em a ou e.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "É recebe acento agudo pela regra dos monossílabos tônicos terminados em e. Em à, o grave registra a crase: no trecho, a preposição a funde-se com o artigo feminino a. O sinal não decorre de regra de tonicidade.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_10"
+          ],
+          "statement": "TEXTO D\nUma servidora decidiu organizá-lo e fazê-la participar da revisão. Depois, encaminhou o documento à chefia e registrou que o texto é claro. Na versão final, preservou caráter, intransferível, órgãos e ideias. Sinais semelhantes na escrita podem desempenhar funções distintas.\n\nJulgue o item: “Caráter”, “intransferível” e “órgãos” são paroxítonas, embora suas terminações acionem partes diferentes do conjunto residual dessa classe.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A sílaba forte de cada palavra é a penúltima. Caráter termina em r, intransferível em l e órgãos em ãos; todas escapam das terminações normalmente não acentuadas das paroxítonas e integram o conjunto residual acentuado.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_08"
+          ],
+          "statement": "TEXTO D\nUma servidora decidiu organizá-lo e fazê-la participar da revisão. Depois, encaminhou o documento à chefia e registrou que o texto é claro. Na versão final, preservou caráter, intransferível, órgãos e ideias. Sinais semelhantes na escrita podem desempenhar funções distintas.\n\nJulgue o item: A grafia “idéias” continua admitida ao lado de “ideias”, pois o acento apenas explicita a pronúncia aberta do ditongo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O Acordo Ortográfico suprimiu o acento dos ditongos abertos ei e oi em palavras paroxítonas. Ideias deve ser escrita sem agudo; a pronúncia aberta não transforma a grafia anterior em variante válida.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_04"
+          ],
+          "statement": "TEXTO E\nO parecer menciona indivíduos em condições precárias, o sistema penitenciário, a rotina carcerária e o controle judiciário. Também emprega bioestatística, específicos, cível, amável e útil. Comparar as palavras exige localizar a sílaba tônica e só depois verificar a terminação.\n\nJulgue o item: “Indivíduos” e “precárias” recebem acento pela mesma regra das paroxítonas terminadas em ditongo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As duas palavras têm a penúltima sílaba tônica e apresentam ditongo na terminação. Diferenças de gênero, número ou campo semântico não interferem na regra; a análise ortográfica depende da tonicidade e do final fonológico.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_04"
+          ],
+          "statement": "TEXTO E\nO parecer menciona indivíduos em condições precárias, o sistema penitenciário, a rotina carcerária e o controle judiciário. Também emprega bioestatística, específicos, cível, amável e útil. Comparar as palavras exige localizar a sílaba tônica e só depois verificar a terminação.\n\nJulgue o item: “Penitenciário”, “carcerária” e “judiciário” compartilham a regra das paroxítonas terminadas em ditongo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Em todas as três palavras, a tonicidade recai na penúltima sílaba e o segmento final forma ditongo. A alternância entre io e ia, bem como a classe ou o gênero do vocábulo, não altera a justificativa de acentuação.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_06"
+          ],
+          "statement": "TEXTO E\nO parecer menciona indivíduos em condições precárias, o sistema penitenciário, a rotina carcerária e o controle judiciário. Também emprega bioestatística, específicos, cível, amável e útil. Comparar as palavras exige localizar a sílaba tônica e só depois verificar a terminação.\n\nJulgue o item: “Bioestatística” e “específicos” são acentuadas por serem proparoxítonas, mas “órgãos” não pertence a essa mesma classe tônica.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Bioestatística e específicos têm a sílaba tônica na antepenúltima posição e seguem a regra universal das proparoxítonas. Órgãos tem tonicidade penúltima e é paroxítona terminada em ãos, embora também exiba acento agudo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b12_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t03_s01_ortografia_",
+          "microknowledge_ids": [
+            "prf_d01_b12_mk_10"
+          ],
+          "statement": "TEXTO E\nO parecer menciona indivíduos em condições precárias, o sistema penitenciário, a rotina carcerária e o controle judiciário. Também emprega bioestatística, específicos, cível, amável e útil. Comparar as palavras exige localizar a sílaba tônica e só depois verificar a terminação.\n\nJulgue o item: “Cível”, “amável” e “útil” seguem a mesma regra das paroxítonas terminadas em l.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "As três palavras têm a penúltima sílaba tônica e terminam em l. O fato de apresentarem vogais tônicas e timbres diferentes não muda a regra: paroxítonas com essa terminação recebem acento gráfico.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 12",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_9da938cda32a",
+              "trace_status": "available",
+              "page_number": 76,
+              "excerpt": "Matriz agregada das questões 21-40, páginas 76-82: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T02:27:29.686Z",
+    "editorial_status": "batch_12_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula00-editorial-matrix-batch-12.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

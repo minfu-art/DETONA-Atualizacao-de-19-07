@@ -1,0 +1,1132 @@
+{
+  "schema_version": 1,
+  "operation_id": "prf-2026-portugues-editorial-batch-03-v1",
+  "course": {
+    "contest_id": "prf_2026",
+    "position_id": "prf_2026_policial_rodoviario_federal",
+    "offering_id": "prf_2026_policial",
+    "code": "PRF",
+    "slug": "prf-2026-policial-rodoviario-federal",
+    "name": "PRF - Policial Rodoviário Federal",
+    "organization": "Polícia Rodoviária Federal",
+    "position": "Policial Rodoviário Federal",
+    "board": "CEBRASPE (baseline 2021)",
+    "year": "2026",
+    "exam_date": null,
+    "exam_format": "Pré-edital; baseline CEBRASPE 2021",
+    "description": "Lote-piloto editorial para ensino do Mapa Mestre por questões autorais."
+  },
+  "sources": [
+    {
+      "id": "prf_2021_edital_abertura",
+      "source_type": "official_edital",
+      "category": "edital",
+      "title": "Edital Concurso PRF nº 1, de 18 de janeiro de 2021",
+      "file_name": "ED_1_PRF_2021_ABERTURA.PDF",
+      "page_count": null,
+      "availability": "uploaded_pdf",
+      "url": "https://cdn.cebraspe.org.br/concursos/PRF_21/arquivos/ED_1_PRF_2021_ABERTURA.PDF",
+      "sha256": ""
+    },
+    {
+      "id": "prf_pdf_bf5410c46bd3",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "PRF Português - Aula 10 - Regência e Crase",
+      "file_name": "curso-240229-aula-10-somente-em-video-b24e-completo.pdf",
+      "page_count": 107,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "5f022489b5f00e2b5f1f981618e00866700231a7bb287c9ad7c6e8acbd1cd09b"
+    },
+    {
+      "id": "prf_pdf_8871f98bc130",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "file_name": "curso-240229-aula-13-somente-em-video-c7a7-completo.pdf",
+      "page_count": 308,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "4d267d4761ac54374a538b2cec7067ac3e65527e285ba6bb4ff12146e1d788ec"
+    },
+    {
+      "id": "prf_pdf_9da938cda32a",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "file_name": "curso-240229-aula-00-somente-em-video-05c7-completo.pdf",
+      "page_count": 130,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "751ed518499adaa766e7ce8b4f8860b92fc8034bc07db009f88a6b0849ac1350"
+    },
+    {
+      "id": "prf_pdf_50f8727aed54",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "file_name": "curso-240229-aula-11-somente-em-video-57c8-completo.pdf",
+      "page_count": 122,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e44972cc7afdb945fa5d48025b3bba23ae4cd75b22426565176cc5eaff835bc9"
+    },
+    {
+      "id": "prf_pdf_8283a4d35d2b",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "file_name": "curso-240229-aula-04-somente-em-video-107a-completo.pdf",
+      "page_count": 154,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "27c7782e35f78c233b1af9bc1063117e8e53bbbc0a1b3144a2245f1dcefccfa0"
+    },
+    {
+      "id": "prf_pdf_6676bb9418a2",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "file_name": "curso-240229-aula-01-somente-em-video-c672-completo.pdf",
+      "page_count": 133,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cdd5ac43cb5aa5be51949c9788aa5aa80ea3c02f4ba4fe55e88dddb1a25a616e"
+    },
+    {
+      "id": "prf_pdf_dd8c41255dc9",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "file_name": "curso-240229-aula-07-somente-em-video-521d-completo.pdf",
+      "page_count": 115,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "9b72f0d6c308c5e7aaefbdf0edc0172b0923e441eb2f583c33028ec9a8d70bf4"
+    },
+    {
+      "id": "prf_pdf_bedbc3f890ba",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "file_name": "curso-240229-aula-08-somente-em-video-71d9-completo.pdf",
+      "page_count": 163,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "ea5d745598963620c0682a63a5198ac3395705365652a648a6dda926f6ee900c"
+    },
+    {
+      "id": "prf_pdf_44da85f679ee",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "file_name": "curso-240229-aula-09-somente-em-video-49d9-completo.pdf",
+      "page_count": 129,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "1f344adb26f0d637bd3d2563708dca7073f68fa7b8e80fa7dca4d59512f56cae"
+    },
+    {
+      "id": "prf_pdf_4027ab525b8d",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "file_name": "curso-240229-aula-03-somente-em-video-82d3-completo.pdf",
+      "page_count": 94,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "cef4f20d98f40d35d2a3f1c92f33aaafc3f0b25603c5f3909c6205aa018fc47a"
+    },
+    {
+      "id": "prf_pdf_4fb632b375ef",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "file_name": "curso-240229-aula-12-somente-em-video-f98b-completo.pdf",
+      "page_count": 99,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "e5c6c7490bc8dce988dca01486481c594ddf68a8ceb3cb76eab1d2bed532e637"
+    },
+    {
+      "id": "prf_pdf_240c6227d2f5",
+      "source_type": "complementary",
+      "category": "material_curso",
+      "title": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "file_name": "curso-240229-aula-14-somente-em-video-7de4-completo.pdf",
+      "page_count": 137,
+      "availability": "reference_only",
+      "url": "",
+      "sha256": "2d7ec8933700bdf37b16fb8711128645600f96e031cd185cbdbfa9ad15a96d54"
+    },
+    {
+      "id": "mrpr_3ed_oficial",
+      "source_type": "complementary",
+      "category": "manual",
+      "title": "Manual de Redação da Presidência da República - 3ª edição",
+      "file_name": "Manual_Redacao_Presidencia_3ed.pdf",
+      "page_count": 189,
+      "availability": "external_reference",
+      "url": "https://www.gov.br/cvm/pt-br/assuntos/noticias/anexos/2020/20201222_Manual_Redacao_Presidencia.pdf",
+      "sha256": ""
+    }
+  ],
+  "curriculum": {
+    "nodes": [
+      {
+        "id": "prf_2026_policial_rodoviario_federal",
+        "parent_id": null,
+        "type": "role",
+        "title": "Policial Rodoviário Federal",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "parent_id": "prf_2026_policial_rodoviario_federal",
+        "type": "discipline",
+        "title": "Língua Portuguesa",
+        "description": "Bloco 1 do edital PRF 2021.",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_portugues",
+        "type": "topic",
+        "title": "1. Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      },
+      {
+        "id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+        "parent_id": "prf_2026_policial_rodoviario_federal_d01_t01_compreensao_e_int",
+        "type": "subtopic",
+        "title": "Compreensão e interpretação de textos de gêneros variados",
+        "description": "",
+        "order": 0,
+        "confidence": 1,
+        "traces": [
+          {
+            "source_id": "prf_2021_edital_abertura",
+            "trace_status": "available",
+            "page_number": 36,
+            "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+          }
+        ]
+      }
+    ]
+  },
+  "microknowledges": [
+    {
+      "id": "prf_d01_b03_mk_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Delimitação de referente",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Valor semântico de conectores",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Síntese e paráfrase contextual",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Separação entre vozes e ponto de vista",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Classe e sentido contextual",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Relação parcial entre conceitos",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Gênero e tipologia textual",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Referência pronominal genérica",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Modalização discursiva",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_d01_b03_mk_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "title": "Efeito semântico de estrutura restritiva",
+      "scope_origin": "official",
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "edital_map": [
+    {
+      "id": "map_prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao_b03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+      "scope": "Referência, relações semânticas, gênero, tipologia e modalização na interpretação",
+      "essential_concepts": [
+        "Delimitação de referente",
+        "Valor semântico de conectores",
+        "Síntese e paráfrase contextual",
+        "Separação entre vozes e ponto de vista",
+        "Classe e sentido contextual",
+        "Relação parcial entre conceitos",
+        "Gênero e tipologia textual",
+        "Referência pronominal genérica",
+        "Modalização discursiva",
+        "Efeito semântico de estrutura restritiva"
+      ],
+      "rules": [
+        "Delimitar referente",
+        "Preservar relação semântica",
+        "Classificar gênero pela finalidade",
+        "Reconhecer marcas do enunciador"
+      ],
+      "exceptions": [
+        "Sem extrapolar informação ausente"
+      ],
+      "applications": [
+        "5 textos autorais progressivos"
+      ],
+      "competencies": [
+        "localizar",
+        "inferir",
+        "comparar",
+        "julgar item C/E"
+      ],
+      "required_knowledge": [],
+      "microknowledge_ids": [
+        "prf_d01_b03_mk_01",
+        "prf_d01_b03_mk_02",
+        "prf_d01_b03_mk_03",
+        "prf_d01_b03_mk_04",
+        "prf_d01_b03_mk_05",
+        "prf_d01_b03_mk_06",
+        "prf_d01_b03_mk_07",
+        "prf_d01_b03_mk_08",
+        "prf_d01_b03_mk_09",
+        "prf_d01_b03_mk_10"
+      ],
+      "confidence": 0.97,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_8871f98bc130",
+          "trace_status": "available",
+          "page_number": 155,
+          "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ],
+  "question_batches": [
+    {
+      "name": "portugues-editorial-b03",
+      "questions": [
+        {
+          "id": "prf_port_editorial_b03_01",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_01"
+          ],
+          "statement": "TEXTO A\nA central registrou aumento de chamados após uma tempestade. Nessas circunstâncias, equipes extras foram deslocadas para os trechos alagados. A medida era necessária, pois havia risco de novas interdições; o atendimento, pois, precisaria ser reorganizado. O relatório anual informa média de 80 chamados mensais, sem indicar que esse número tenha ocorrido em janeiro.\n\nJulgue o item: A expressão “Nessas circunstâncias” retoma especificamente o aumento de chamados após a tempestade, e não todas as informações posteriores do parágrafo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A expressão aparece logo após a descrição do aumento de chamados e recupera esse cenário como condição do deslocamento. Referenciação exige delimitar o antecedente efetivo, sem englobar trechos que ainda nem foram apresentados.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_02",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_02"
+          ],
+          "statement": "TEXTO A\nA central registrou aumento de chamados após uma tempestade. Nessas circunstâncias, equipes extras foram deslocadas para os trechos alagados. A medida era necessária, pois havia risco de novas interdições; o atendimento, pois, precisaria ser reorganizado. O relatório anual informa média de 80 chamados mensais, sem indicar que esse número tenha ocorrido em janeiro.\n\nJulgue o item: Nas duas ocorrências de “pois”, o conector apresenta exatamente o mesmo valor conclusivo.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O primeiro “pois”, antes da oração justificadora, equivale a “porque” e explica a necessidade da medida. O segundo aparece deslocado entre vírgulas e introduz conclusão. A posição ajuda a distinguir os valores.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_03",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_03"
+          ],
+          "statement": "TEXTO A\nA central registrou aumento de chamados após uma tempestade. Nessas circunstâncias, equipes extras foram deslocadas para os trechos alagados. A medida era necessária, pois havia risco de novas interdições; o atendimento, pois, precisaria ser reorganizado. O relatório anual informa média de 80 chamados mensais, sem indicar que esse número tenha ocorrido em janeiro.\n\nJulgue o item: É correto concluir que a central recebeu exatamente 80 chamados em janeiro.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O relatório informa uma média mensal anual, não o resultado de janeiro. Média de um período não autoriza atribuir o mesmo número a cada mês. O item transforma medida agregada em dado mensal específico.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_04",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_03"
+          ],
+          "statement": "TEXTO B\nO planejamento municipal sustentável inclui preservação ambiental, serviços públicos acessíveis e participação social. Para a autora, elevar a qualidade de vida é objetivo prioritário da gestão. Autonomia local favorece soluções específicas, mas não é apresentada como condição suficiente nem indispensável para todo avanço. Um diagnóstico consistente, isto é, firme e bem fundamentado, depende de dados e diálogo.\n\nJulgue o item: A oferta de serviços públicos acessíveis integra o conceito de planejamento sustentável apresentado no texto.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A informação está na enumeração inicial. “Inclui” permite reconhecer os componentes do conceito, e “serviços acessíveis” preserva a ideia de disponibilização ampla, sem acrescentar finalidade estranha.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_05",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_04"
+          ],
+          "statement": "TEXTO B\nO planejamento municipal sustentável inclui preservação ambiental, serviços públicos acessíveis e participação social. Para a autora, elevar a qualidade de vida é objetivo prioritário da gestão. Autonomia local favorece soluções específicas, mas não é apresentada como condição suficiente nem indispensável para todo avanço. Um diagnóstico consistente, isto é, firme e bem fundamentado, depende de dados e diálogo.\n\nJulgue o item: A autora considera a elevação da qualidade de vida um objetivo prioritário da gestão municipal.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O segundo período declara expressamente essa prioridade. O item preserva quem avalia, qual objetivo recebe destaque e seu grau de importância, sem transformá-lo em objetivo único.",
+          "difficulty": "facil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_06",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_05"
+          ],
+          "statement": "TEXTO B\nO planejamento municipal sustentável inclui preservação ambiental, serviços públicos acessíveis e participação social. Para a autora, elevar a qualidade de vida é objetivo prioritário da gestão. Autonomia local favorece soluções específicas, mas não é apresentada como condição suficiente nem indispensável para todo avanço. Um diagnóstico consistente, isto é, firme e bem fundamentado, depende de dados e diálogo.\n\nJulgue o item: No texto, “consistente” é adjetivo e caracteriza um diagnóstico firme e bem fundamentado.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A palavra modifica o substantivo “diagnóstico”, portanto funciona como adjetivo. O próprio aposto explicativo fornece seu sentido contextual. Classe e significado precisam ser confirmados simultaneamente.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_07",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_06"
+          ],
+          "statement": "TEXTO C\nEm muitas cidades, iniciativas de mobilidade compartilhada coincidem apenas em alguns pontos com políticas de transporte público: ambas podem reduzir carros nas ruas, mas diferem quanto à gestão, ao financiamento e ao acesso. Esse tipo de iniciativa aparece em épocas e países diversos. Em uma narrativa curta, um motorista abandona sua rota habitual para devolver uma mochila esquecida; o episódio se encerra quando ele encontra a dona do objeto.\n\nJulgue o item: Mobilidade compartilhada e transporte público são conceitos totalmente equivalentes.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto afirma coincidência apenas parcial: há um possível efeito comum, mas gestão, financiamento e acesso diferem. Interseção entre algumas características não produz identidade conceitual absoluta.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_08",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_06"
+          ],
+          "statement": "TEXTO C\nEm muitas cidades, iniciativas de mobilidade compartilhada coincidem apenas em alguns pontos com políticas de transporte público: ambas podem reduzir carros nas ruas, mas diferem quanto à gestão, ao financiamento e ao acesso. Esse tipo de iniciativa aparece em épocas e países diversos. Em uma narrativa curta, um motorista abandona sua rota habitual para devolver uma mochila esquecida; o episódio se encerra quando ele encontra a dona do objeto.\n\nJulgue o item: O texto permite afirmar que iniciativas de mobilidade compartilhada ocorreram em diferentes contextos históricos e geográficos.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A expressão “épocas e países diversos” sustenta diretamente a conclusão. O item generaliza somente dentro dos dois eixos fornecidos, sem inventar universalidade ou continuidade permanente.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_09",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_07"
+          ],
+          "statement": "TEXTO C\nEm muitas cidades, iniciativas de mobilidade compartilhada coincidem apenas em alguns pontos com políticas de transporte público: ambas podem reduzir carros nas ruas, mas diferem quanto à gestão, ao financiamento e ao acesso. Esse tipo de iniciativa aparece em épocas e países diversos. Em uma narrativa curta, um motorista abandona sua rota habitual para devolver uma mochila esquecida; o episódio se encerra quando ele encontra a dona do objeto.\n\nJulgue o item: O episódio do motorista apresenta características de conto por constituir narrativa curta centrada em uma ação concluída.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Há personagem, mudança de ação, progressão e desfecho em extensão reduzida. Esses elementos sustentam a classificação como conto; narrar em terceira pessoa não transforma o texto em biografia.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_10",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_07"
+          ],
+          "statement": "TEXTO C\nEm muitas cidades, iniciativas de mobilidade compartilhada coincidem apenas em alguns pontos com políticas de transporte público: ambas podem reduzir carros nas ruas, mas diferem quanto à gestão, ao financiamento e ao acesso. Esse tipo de iniciativa aparece em épocas e países diversos. Em uma narrativa curta, um motorista abandona sua rota habitual para devolver uma mochila esquecida; o episódio se encerra quando ele encontra a dona do objeto.\n\nJulgue o item: A simples presença de um episódio envolvendo transporte permite classificar o texto como reportagem.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Gênero não é determinado pelo assunto isolado. Não há apuração informativa, fontes ou compromisso factual; há uma narrativa breve com personagem e desfecho, características incompatíveis com a classificação proposta.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_11",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_02"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: O conector “porém” introduz contraste entre a opinião dos especialistas e a ressalva apresentada pelo autor.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "Primeiro se apresenta a avaliação favorável dos especialistas; depois, “porém” marca a objeção do autor à confiabilidade irrestrita. A relação é adversativa, não temporal ou conclusiva.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_12",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_08"
+          ],
+          "statement": "TEXTO E\nEm comunicados de segurança, a expressão “você deve reduzir a velocidade” não aponta para uma pessoa determinada, mas para qualquer condutor na situação descrita. Alertas técnicos e advertências jurídicas podem referir-se ao mesmo fato, embora produzam efeitos avaliativos diferentes. Quem interpreta apenas aparências, se aceita a premissa do texto, não alcança a causa real. A recomendação dirigida aos veículos que transportam carga perigosa delimita um grupo e pressupõe a existência de veículos fora dele.\n\nJulgue o item: O pronome “você” refere-se exclusivamente ao leitor individual que estiver segurando o comunicado.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O texto explica que “você” tem referência genérica: alcança qualquer condutor que se encontre na situação. Não há interlocutor individual identificado; a forma funciona como generalização dirigida.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_13",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_04"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: O autor adere integralmente à opinião de que todo conteúdo disponível em plataforma digital é confiável.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "A tese atribuída ao autor é o contrário: ele contesta a confiabilidade automática e exige avaliação crítica. É preciso separar a voz inicial dos especialistas da posição marcada por “porém”.",
+          "difficulty": "media",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_14",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_04"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: A defesa de avaliação crítica e a rejeição completa da tecnologia são perspectivas equivalentes no texto.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "O último período afirma expressamente que reconhecer limites não significa rejeitar a tecnologia. Defender uso criterioso ocupa posição intermediária; não equivale nem a confiança irrestrita nem a abandono total.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_15",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_09"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: O advérbio “Evidentemente” apresenta como patente a distinção entre acesso e conhecimento.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O advérbio revela o grau de certeza do enunciador e enquadra a proposição como evidente. Ele desempenha função argumentativa, orientando o leitor a aceitar a distinção como ponto compartilhado.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_16",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_02"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: No texto, “Agora” estabelece um marco cronológico posterior à fala citada.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "“Agora” pode ter sentido temporal, mas neste contexto equivale a “porém” ou “por outro lado”. Ele contrapõe avaliação crítica e rejeição tecnológica; não localiza acontecimentos no tempo.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_17",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_07"
+          ],
+          "statement": "TEXTO D\nEspecialistas afirmam que plataformas digitais podem ampliar o acesso à informação. O autor, porém, contesta a ideia de que qualquer conteúdo disponível seja confiável. “Evidentemente, acesso não é sinônimo de conhecimento”, escreve. Agora, reconhecer esse limite não significa rejeitar a tecnologia: significa exigir avaliação crítica. O texto organiza uma tese e a sustenta por contraste e explicação.\n\nJulgue o item: Predomina no texto a tipologia dissertativo-argumentativa, pois uma tese é defendida mediante contraste e explicação.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "O texto não apenas informa que existem plataformas: assume posição sobre confiabilidade e sustenta a necessidade de avaliação crítica. Tese e argumentos caracterizam a predominância argumentativa.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_18",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_05"
+          ],
+          "statement": "TEXTO E\nEm comunicados de segurança, a expressão “você deve reduzir a velocidade” não aponta para uma pessoa determinada, mas para qualquer condutor na situação descrita. Alertas técnicos e advertências jurídicas podem referir-se ao mesmo fato, embora produzam efeitos avaliativos diferentes. Quem interpreta apenas aparências, se aceita a premissa do texto, não alcança a causa real. A recomendação dirigida aos veículos que transportam carga perigosa delimita um grupo e pressupõe a existência de veículos fora dele.\n\nJulgue o item: As expressões “alerta técnico” e “advertência jurídica” são plenamente equivalentes porque podem tratar do mesmo fato.",
+          "options": [],
+          "correct_answer": "E",
+          "explanation": "Compartilhar referente não elimina diferenças semânticas. “Técnico” e “jurídico” enquadram o fato por critérios e consequências distintos. Equivalência factual parcial não significa identidade de carga e função.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": true,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_19",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_10"
+          ],
+          "statement": "TEXTO E\nEm comunicados de segurança, a expressão “você deve reduzir a velocidade” não aponta para uma pessoa determinada, mas para qualquer condutor na situação descrita. Alertas técnicos e advertências jurídicas podem referir-se ao mesmo fato, embora produzam efeitos avaliativos diferentes. Quem interpreta apenas aparências, se aceita a premissa do texto, não alcança a causa real. A recomendação dirigida aos veículos que transportam carga perigosa delimita um grupo e pressupõe a existência de veículos fora dele.\n\nJulgue o item: Aceita a premissa de que interpretar apenas aparências impede alcançar a causa real, alguém limitado às aparências não alcançaria essa causa.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A conclusão aplica exatamente a condição apresentada: se a limitação às aparências é incompatível com o conhecimento causal, quem satisfaz essa premissa fica fora do resultado. A inferência permanece dentro do modelo textual.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        },
+        {
+          "id": "prf_port_editorial_b03_20",
+          "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t01_s01_compreensao",
+          "microknowledge_ids": [
+            "prf_d01_b03_mk_10"
+          ],
+          "statement": "TEXTO E\nEm comunicados de segurança, a expressão “você deve reduzir a velocidade” não aponta para uma pessoa determinada, mas para qualquer condutor na situação descrita. Alertas técnicos e advertências jurídicas podem referir-se ao mesmo fato, embora produzam efeitos avaliativos diferentes. Quem interpreta apenas aparências, se aceita a premissa do texto, não alcança a causa real. A recomendação dirigida aos veículos que transportam carga perigosa delimita um grupo e pressupõe a existência de veículos fora dele.\n\nJulgue o item: A expressão “veículos que transportam carga perigosa” permite pressupor que nem todos os veículos pertencem a esse grupo.",
+          "options": [],
+          "correct_answer": "C",
+          "explanation": "A oração restritiva delimita o subconjunto de veículos alcançado pela recomendação. Se todos estivessem incluídos, a restrição seria desnecessária. O efeito particularizante sustenta o pressuposto.",
+          "difficulty": "dificil",
+          "format": "certo_errado",
+          "source": "Autoral DETONA - Lote editorial PRF Português 03",
+          "is_trick": false,
+          "traces": [
+            {
+              "source_id": "prf_2021_edital_abertura",
+              "trace_status": "available",
+              "page_number": 36,
+              "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+            },
+            {
+              "source_id": "prf_pdf_8871f98bc130",
+              "trace_status": "available",
+              "page_number": 155,
+              "excerpt": "Matriz agregada das questões 41-60, páginas 155-174: padrões cognitivos sem cópia textual"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "producer": "ChatGPT/Codex - DETONA CONCURSOS",
+    "generated_at": "2026-08-21T01:36:57.043Z",
+    "editorial_status": "batch_03_pending_human_review",
+    "publication_blocked": true,
+    "import_blocked": true,
+    "source_questions_copied": false,
+    "authorial_questions": true,
+    "microknowledge_count": 10,
+    "question_count": 20,
+    "required_questions_per_microknowledge": 3,
+    "coverage_status": "incremental_editorial_batches_of_20",
+    "canonical_subtopics_covered": 1,
+    "editorial_source_matrix": "sources/portuguese-aula13-editorial-matrix-batch-03.v1.json",
+    "quality_contract": [
+      "texto-base autoral",
+      "decisão interpretativa real",
+      "distrator plausível",
+      "comentário que ensina o critério"
+    ]
+  }
+}

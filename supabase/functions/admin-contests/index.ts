@@ -13,6 +13,7 @@ import {
 } from '../_shared/cors.js';
 
 const allowedOrigins = createAllowedOrigins(Deno.env.get('ADMIN_ALLOWED_ORIGINS'));
+allowedOrigins.add('https://app.detonaconcursos.com');
 const json = (status: number, payload: unknown, origin = '') => (
   jsonResponse(status, payload, origin, allowedOrigins)
 );

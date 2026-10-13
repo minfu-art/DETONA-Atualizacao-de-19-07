@@ -1,0 +1,584 @@
+{
+  "questions": [
+    {
+      "id": "prf_port_editorial_b35_01",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_01"
+      ],
+      "statement": "TEXTO A\nApenas raramente o sistema falha durante a madrugada. O relatório que reúne os resultados de todas as unidades será apresentado amanhã. A equipe, talvez, conclua a revisão hoje. Para reduzir o tempo de espera dos usuários, o setor ampliou o atendimento remoto.\n\nJulgue o item: Deslocar “raramente” para antes de “falha”, escrevendo “Apenas o sistema raramente falha”, preservaria exatamente o mesmo escopo.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Na redação original, apenas incide sobre raramente e reforça a baixa frequência. Na reescrita, apenas pode focalizar o sistema, contrapondo-o a outros elementos; a posição altera o alcance.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_02",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_02"
+      ],
+      "statement": "TEXTO A\nApenas raramente o sistema falha durante a madrugada. O relatório que reúne os resultados de todas as unidades será apresentado amanhã. A equipe, talvez, conclua a revisão hoje. Para reduzir o tempo de espera dos usuários, o setor ampliou o atendimento remoto.\n\nJulgue o item: Inserir vírgula após “unidades” separaria o sujeito extenso “O relatório que reúne...” de seu verbo “será”.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A extensão do sujeito não autoriza vírgula antes do predicado. Todo o grupo iniciado por O relatório funciona como sujeito de será apresentado e deve permanecer ligado ao verbo.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_03",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_03"
+      ],
+      "statement": "TEXTO A\nApenas raramente o sistema falha durante a madrugada. O relatório que reúne os resultados de todas as unidades será apresentado amanhã. A equipe, talvez, conclua a revisão hoje. Para reduzir o tempo de espera dos usuários, o setor ampliou o atendimento remoto.\n\nJulgue o item: As vírgulas que isolam “talvez” podem ser retiradas sem prejuízo gramatical, pois se trata de advérbio curto intercalado.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Adjuntos adverbiais curtos admitem, em geral, pontuação facultativa. Tanto A equipe talvez conclua quanto A equipe, talvez, conclua são estruturas corretas, com diferença apenas de destaque.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_04",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_04"
+      ],
+      "statement": "TEXTO A\nApenas raramente o sistema falha durante a madrugada. O relatório que reúne os resultados de todas as unidades será apresentado amanhã. A equipe, talvez, conclua a revisão hoje. Para reduzir o tempo de espera dos usuários, o setor ampliou o atendimento remoto.\n\nJulgue o item: A vírgula depois de “usuários” marca o fim de uma oração final extensa antecipada e não deve ser simplesmente suprimida.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Para reduzir o tempo de espera dos usuários apresenta a finalidade antes da oração principal. A posição antecipada e a extensão do segmento justificam a separação obrigatória para clareza sintática.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_05",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_04"
+      ],
+      "statement": "TEXTO B\nEm uma análise de risco operacional, a origem do dado precisa ser confirmada. Os peritos produziram o laudo, compartilhando as conclusões com a chefia. O setor reorganizou a escala para atender os casos urgentes. A falha era tão grave que o serviço foi interrompido.\n\nJulgue o item: A vírgula após “operacional” é facultativa apenas porque o adjunto adverbial aparece no início do período.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A posição inicial, sozinha, não torna a vírgula facultativa em qualquer caso. Em uma análise de risco operacional é um adjunto antecipado de extensão relevante e deve ser delimitado antes da oração principal.",
+      "difficulty": "facil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_06",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_04"
+      ],
+      "statement": "TEXTO B\nEm uma análise de risco operacional, a origem do dado precisa ser confirmada. Os peritos produziram o laudo, compartilhando as conclusões com a chefia. O setor reorganizou a escala para atender os casos urgentes. A falha era tão grave que o serviço foi interrompido.\n\nJulgue o item: Substituir por ponto a vírgula antes de “compartilhando” criaria uma frase autônoma completa.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Compartilhando as conclusões depende do evento de produzir o laudo e expressa circunstância associada. Isolado por ponto, o gerúndio forma fragmento sem oração principal, apesar da inicial maiúscula.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_07",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_05"
+      ],
+      "statement": "TEXTO B\nEm uma análise de risco operacional, a origem do dado precisa ser confirmada. Os peritos produziram o laudo, compartilhando as conclusões com a chefia. O setor reorganizou a escala para atender os casos urgentes. A falha era tão grave que o serviço foi interrompido.\n\nJulgue o item: No período sobre a escala, inserir vírgula antes de “para atender” seria possível para destacar a finalidade posposta.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A oração final vem depois da principal, em posição regular. Nessa ordem, a vírgula pode ser omitida ou empregada para realce, desde que não se produza ambiguidade.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_08",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_05"
+      ],
+      "statement": "TEXTO B\nEm uma análise de risco operacional, a origem do dado precisa ser confirmada. Os peritos produziram o laudo, compartilhando as conclusões com a chefia. O setor reorganizou a escala para atender os casos urgentes. A falha era tão grave que o serviço foi interrompido.\n\nJulgue o item: A correlação “tão grave que...” exige obrigatoriamente vírgula antes de “que”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A consecutiva aparece depois da principal e se integra à correlação tão... que. A ausência de vírgula é correta; a pontuação pode aparecer por destaque em certos contextos, mas não é obrigatória.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_09",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_05"
+      ],
+      "statement": "TEXTO C\nO protocolo foi atualizado, por apresentar instruções ambíguas. Os sensores, que operam em ambiente externo, exigem manutenção frequente. Temia-se, naquele momento, que a pane atingisse outros setores. A empresa, que, por sua vez, administra a rede, iniciou a correção.\n\nJulgue o item: A vírgula antes de “por apresentar instruções ambíguas” pode ser retirada, mantendo a oração causal posposta correta.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "A causa segue a oração principal e pode vir sem vírgula: foi atualizado por apresentar instruções ambíguas. A vírgula existente apenas destaca a explicação causal.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_10",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_06"
+      ],
+      "statement": "TEXTO C\nO protocolo foi atualizado, por apresentar instruções ambíguas. Os sensores, que operam em ambiente externo, exigem manutenção frequente. Temia-se, naquele momento, que a pane atingisse outros setores. A empresa, que, por sua vez, administra a rede, iniciou a correção.\n\nJulgue o item: As vírgulas em “Os sensores, que operam em ambiente externo,” restringem a afirmação somente aos sensores instalados fora de ambientes fechados.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "A oração relativa isolada por vírgulas é explicativa: acrescenta uma informação sobre o conjunto referido por os sensores. A leitura restritiva, que selecionaria apenas parte deles, ocorreria sem as vírgulas.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_11",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_07"
+      ],
+      "statement": "TEXTO C\nO protocolo foi atualizado, por apresentar instruções ambíguas. Os sensores, que operam em ambiente externo, exigem manutenção frequente. Temia-se, naquele momento, que a pane atingisse outros setores. A empresa, que, por sua vez, administra a rede, iniciou a correção.\n\nJulgue o item: Em “Temia-se, naquele momento, que...”, as vírgulas indicam que a oração iniciada por “que” é adjetiva explicativa.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O par isola o adjunto adverbial naquele momento. A oração que a pane atingisse outros setores é substantiva e funciona como sujeito passivo de temia-se; sua classe não decorre das vírgulas anteriores.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_12",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_07"
+      ],
+      "statement": "TEXTO C\nO protocolo foi atualizado, por apresentar instruções ambíguas. Os sensores, que operam em ambiente externo, exigem manutenção frequente. Temia-se, naquele momento, que a pane atingisse outros setores. A empresa, que, por sua vez, administra a rede, iniciou a correção.\n\nJulgue o item: No último período, as vírgulas externas delimitam a oração adjetiva, e as internas isolam “por sua vez” dentro dela.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Há duas intercalações aninhadas: que administra a rede explica empresa, enquanto por sua vez é adjunto intercalado na subordinada. Cada par possui abertura e fechamento próprios.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_13",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_08"
+      ],
+      "statement": "TEXTO D\nA equipe encontrou duas alternativas; assim, suspendeu o procedimento. O técnico analisou, sob iluminação especial, as marcas do equipamento. Quando a perícia terminou e todos os vestígios foram acondicionados, o local foi liberado. O relatório foi, mais tarde, encaminhado à autoridade.\n\nJulgue o item: Retirar a vírgula depois de “assim” manteria inequivocamente o valor conclusivo equivalente a “portanto”.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Assim seguido de vírgula funciona claramente como conector conclusivo. Sem a marca, pode ser lido como advérbio de modo ligado a suspendeu, equivalente a dessa maneira, alterando o sentido.",
+      "difficulty": "media",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_14",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_07"
+      ],
+      "statement": "TEXTO D\nA equipe encontrou duas alternativas; assim, suspendeu o procedimento. O técnico analisou, sob iluminação especial, as marcas do equipamento. Quando a perícia terminou e todos os vestígios foram acondicionados, o local foi liberado. O relatório foi, mais tarde, encaminhado à autoridade.\n\nJulgue o item: Suprimir apenas a vírgula depois de “analisou” manteria correto o período porque “sob iluminação especial” passaria a integrar o objeto.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O termo está intercalado entre o verbo e seu objeto e precisa ser isolado por duas vírgulas. Retirar somente a primeira deixa a segunda separando analisou sob iluminação especial de as marcas.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_15",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_04"
+      ],
+      "statement": "TEXTO D\nA equipe encontrou duas alternativas; assim, suspendeu o procedimento. O técnico analisou, sob iluminação especial, as marcas do equipamento. Quando a perícia terminou e todos os vestígios foram acondicionados, o local foi liberado. O relatório foi, mais tarde, encaminhado à autoridade.\n\nJulgue o item: A vírgula após “acondicionados” é obrigatória por separar uma oração temporal extensa antecipada.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Todo o segmento iniciado por Quando vem antes da principal o local foi liberado. A vírgula marca o limite da subordinada temporal anteposta e orienta a leitura da estrutura.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_16",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_03"
+      ],
+      "statement": "TEXTO D\nA equipe encontrou duas alternativas; assim, suspendeu o procedimento. O técnico analisou, sob iluminação especial, as marcas do equipamento. Quando a perícia terminou e todos os vestígios foram acondicionados, o local foi liberado. O relatório foi, mais tarde, encaminhado à autoridade.\n\nJulgue o item: “Mais tarde” é adjunto adverbial curto intercalado; o par de vírgulas destaca o termo, mas pode ser omitido.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "As duas redações — foi, mais tarde, encaminhado e foi mais tarde encaminhado — são gramaticais. A pontuação facultativa muda o relevo informacional, não a função temporal.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_17",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_07"
+      ],
+      "statement": "TEXTO E\nA população nacional, que, em 2024, superou a estimativa inicial, exige planejamento contínuo. O direito dos usuários, o direito ao acesso, à informação e à segurança, deve orientar a política. A decisão não é menos importante, perante a direção, que o parecer técnico. A comissão examinou análises longas e detalhadas, produzidas por especialistas externos.\n\nJulgue o item: Retirar apenas a vírgula depois de “que” em “que, em 2024, superou” preservaria o equilíbrio dos pares de vírgulas.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "Essa vírgula abre a intercalação do adjunto em 2024 dentro da adjetiva; a vírgula posterior a 2024 a fecha. Remover apenas uma deixa o segmento pontuado de forma assimétrica.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_18",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_01"
+      ],
+      "statement": "TEXTO E\nA população nacional, que, em 2024, superou a estimativa inicial, exige planejamento contínuo. O direito dos usuários, o direito ao acesso, à informação e à segurança, deve orientar a política. A decisão não é menos importante, perante a direção, que o parecer técnico. A comissão examinou análises longas e detalhadas, produzidas por especialistas externos.\n\nJulgue o item: Mover “perante a direção”, com suas vírgulas, para imediatamente depois de “é” pode alterar a porção sobre a qual o adjunto incide.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Mesmo conservando o par de vírgulas, a nova posição aproxima o adjunto da cópula e pode enquadrar toda a avaliação, em vez de caracterizar diretamente a importância comparada.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_19",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_09"
+      ],
+      "statement": "TEXTO E\nA população nacional, que, em 2024, superou a estimativa inicial, exige planejamento contínuo. O direito dos usuários, o direito ao acesso, à informação e à segurança, deve orientar a política. A decisão não é menos importante, perante a direção, que o parecer técnico. A comissão examinou análises longas e detalhadas, produzidas por especialistas externos.\n\nJulgue o item: “O direito ao acesso, à informação e à segurança” acrescenta três núcleos ao sujeito, razão pela qual o verbo deveria ser flexionado no plural.",
+      "options": [],
+      "correct_answer": "E",
+      "explanation": "O segundo segmento é um aposto enumerativo que explicita o conteúdo de O direito dos usuários; não acrescenta núcleos coordenados ao sujeito. Por isso, o singular está de acordo com o núcleo direito.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": true,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    },
+    {
+      "id": "prf_port_editorial_b35_20",
+      "subtopic_id": "prf_2026_policial_rodoviario_federal_d01_t05_s04_pontuacao",
+      "microknowledge_ids": [
+        "prf_d01_b35_mk_10"
+      ],
+      "statement": "TEXTO E\nA população nacional, que, em 2024, superou a estimativa inicial, exige planejamento contínuo. O direito dos usuários, o direito ao acesso, à informação e à segurança, deve orientar a política. A decisão não é menos importante, perante a direção, que o parecer técnico. A comissão examinou análises longas e detalhadas, produzidas por especialistas externos.\n\nJulgue o item: Retirar a vírgula antes de “produzidas” manteria a gramática, mas restringiria a referência às análises produzidas por especialistas externos.",
+      "options": [],
+      "correct_answer": "C",
+      "explanation": "Com vírgula, a reduzida de particípio explica uma propriedade atribuída ao conjunto das análises. Sem vírgula, passa a selecionar somente as análises que tiveram aquela autoria.",
+      "difficulty": "dificil",
+      "format": "certo_errado",
+      "source": "Autoral DETONA - Lote editorial PRF Português 35",
+      "is_trick": false,
+      "traces": [
+        {
+          "source_id": "prf_2021_edital_abertura",
+          "trace_status": "available",
+          "page_number": 36,
+          "excerpt": "Regência verbal e nominal; emprego do sinal indicativo de crase."
+        },
+        {
+          "source_id": "prf_pdf_bedbc3f890ba",
+          "trace_status": "available",
+          "page_number": 50,
+          "excerpt": "Matriz editorial 1/1: padrões cognitivos sem cópia textual"
+        }
+      ]
+    }
+  ]
+}
