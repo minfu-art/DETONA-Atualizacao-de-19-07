@@ -26,6 +26,8 @@ const values = {
   AUTH_GOOGLE_ENABLED: googleAuthEnabled === 'true',
   SUPABASE_JS_URL: String(process.env.SUPABASE_JS_URL || ''),
   CHECKOUT_PROVIDER: checkoutProvider,
+  META_PIXEL_ID: String(process.env.META_PIXEL_ID || '').trim(),
+  META_PURCHASE_TRACKING_ENABLED: appEnv === 'production' && process.env.META_PURCHASE_TRACKING_ENABLED === 'true',
   PUBLIC_COURSES_URL: String(process.env.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
 };
 const output = `/* Gerado no build; não adicionar segredos. */\nglobalThis.__DETONA_ENV__ = Object.freeze(${JSON.stringify(values, null, 2)});\n`;

@@ -28,6 +28,7 @@ import { environmentLabel, isLocalDevelopment } from './config/appEnvironment.js
 import { resetAcademicSessionContext, resetContestTransientContext } from './auth/academicSessionContext.js';
 import { getStudentEntryLinks } from './services/studentEntryLinks.js';
 import { navigateToCheckout } from './services/checkoutNavigation.js';
+import { getPurchaseTracking } from './services/metaPurchaseTracking.js';
 import {
   readCheckoutReturn,
   readCommercialIntent,
@@ -553,6 +554,7 @@ function clearCheckoutReturnUrl() {
 async function purchaseAndRedirect(user, contestId, { checkoutWindow = null } = {}) {
   const purchase = await libraryService.purchase(user, contestId);
   if (!purchase?.redirectUrl) throw new Error('O pagamento não retornou um destino válido.');
+  getPurchaseTracking().remember({ userId: user?.id, contestId, orderId: purchase.id });
   navigateToCheckout(purchase.redirectUrl, { target: checkoutWindow });
 }
 
@@ -582,6 +584,8 @@ async function showLibrary({ libraryState = null, refresh = false } = {}) {
     const state = libraryState || await libraryService.getLibraryState(user, { refresh: refresh || Boolean(readCheckoutReturn(globalThis.location?.search || '')) });
     if (generation !== contestOpenGeneration || user?.id !== authService.getCurrentUser()?.id) return;
     const commerceReturn = readCheckoutReturn(globalThis.location?.search || '');
+    // Analytics failure must not delay or interrupt the student's library.
+    void getPurchaseTracking().check(user?.id);
     const commercialIntent = readCommercialIntent(globalThis.location?.search || '');
     renderLibrary(root, {
       user,

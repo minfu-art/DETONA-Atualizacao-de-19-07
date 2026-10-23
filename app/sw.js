@@ -1,5 +1,5 @@
 /* DETONA CONCURSOS — Service Worker offline-first */
-const CACHE = 'detona-v173-purchase-recovery';
+const CACHE = 'detona-v174-verified-purchase-tracking';
 const CONTENT_CACHE_PREFIX = 'detona-contest-content:';
 const PRECACHE_BATCH_SIZE = 12;
 const ASSETS = [
@@ -16,6 +16,8 @@ const ASSETS = [
   './css/dashboard-jrpg.css',
   './manifest.json',
   './js/app.js',
+  './js/services/verifiedPurchaseTracking.js',
+  './js/services/metaPurchaseTracking.js',
   './js/core/pwaInstall.js',
   './js/core/editalUiModel.js',
   './js/core/wellbeingMessages.js',

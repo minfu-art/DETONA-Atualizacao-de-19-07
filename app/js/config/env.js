@@ -30,6 +30,8 @@ export const ENV = Object.freeze({
     || 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm',
   /** disabled | mercado_pago. Não contém credenciais. */
   CHECKOUT_PROVIDER: String(injected.CHECKOUT_PROVIDER || 'disabled').trim().toLowerCase(),
+  META_PIXEL_ID: String(injected.META_PIXEL_ID || '').trim(),
+  META_PURCHASE_TRACKING_ENABLED: String(injected.META_PURCHASE_TRACKING_ENABLED || 'false') === 'true',
   /** URL pública de descoberta de cursos; nunca recebe dados da sessão. */
   PUBLIC_COURSES_URL: String(injected.PUBLIC_COURSES_URL || 'https://detonaconcursos.com/').trim(),
 });
